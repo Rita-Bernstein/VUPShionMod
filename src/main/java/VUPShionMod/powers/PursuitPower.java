@@ -1,0 +1,50 @@
+package VUPShionMod.powers;
+
+import VUPShionMod.VUPShionMod;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.patches.AbstractPlayerPatches;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+
+public class PursuitPower extends AbstractPower {
+    public static final String POWER_ID = VUPShionMod.makeID("PursuitPower");
+    private static final PowerStrings powerStrings;
+    public static final String NAME;
+    public static final String[] DESCRIPTIONS;
+
+    public PursuitPower(AbstractCreature owner, int amount) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.amount = amount;
+        this.type = PowerType.DEBUFF;
+        this.loadRegion("time");
+        updateDescription();
+    }
+
+    @Override
+    public void updateDescription() {
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if (!isPlayer) {
+            this.flash();
+            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
+                funnel.onPursuitEnemy(this.owner);
+            }
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
+    }
+
+    static {
+        powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+        NAME = powerStrings.NAME;
+        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    }
+}

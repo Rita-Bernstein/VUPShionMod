@@ -1,0 +1,25 @@
+{
+  "VUPShionMod:InvestigationFinFunnel": {
+    "NAME": "侦查浮游炮",
+    "DESCRIPTION": [
+      "回合开始时，对一名随机敌人造成 #b",
+      " 点伤害并给予 #b",
+      " 层 #y易伤 。"
+    ]
+  },
+  "VUPShionMod:GravityFinFunnel": {
+    "NAME": "重力浮游炮",
+    "DESCRIPTION": [
+      "回合开始时，对一名随机敌人造成 #b",
+      " 点伤害并给予 #b",
+      " 层 #y虚弱 。"
+    ]
+  },
+  "VUPShionMod:PursuitFinFunnel": {
+    "NAME": "追击浮游炮",
+    "DESCRIPTION": [
+      "回合开始时，对一名随机敌人造成 #b",
+      " 点伤害并给予造成伤害点数层的 #y追击 。"
+    ]
+  }
+}

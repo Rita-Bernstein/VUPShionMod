@@ -1,0 +1,110 @@
+{
+  "VUPShionMod:Cannonry": {
+    "NAME": "炮击",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成3+ vup_shion_mod:总炮强化 点伤害。",
+    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成4+ vup_shion_mod:总炮强化 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害。）"
+    ]
+  },
+  "VUPShionMod:Defend_Shion": {
+    "NAME": "防护",
+    "DESCRIPTION": "获得4+ vup_shion_mod:总炮强化 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得5+ vup_shion_mod:总炮强化 点 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得 !B! 点 格挡 。）"
+    ]
+  },
+  "VUPShionMod:DefenseSystemCharging": {
+    "NAME": "防御系统充能",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌打出的上一张牌是 vup_shion_mod:浮游炮 牌，则返回手牌并获得 消耗 。"
+  },
+  "VUPShionMod:DeploymentOfDefenseSystem": {
+    "NAME": "Anastasia防御系统全展开",
+    "DESCRIPTION": "本回合内，你每打出一张牌就获得 !M! 点 格挡 。"
+  },
+  "VUPShionMod:AttackSystemPreload": {
+    "NAME": "攻击系统预加载",
+    "DESCRIPTION": "将 !M! 张 快速攻击* 加入抽牌堆。"
+  },
+  "VUPShionMod:DefenseSystemPreload": {
+    "NAME": "防御系统预加载",
+    "DESCRIPTION": "将 !M! 张 快速防御* 加入抽牌堆。"
+  },
+  "VUPShionMod:RepairSystemPreload": {
+    "NAME": "修复系统预加载",
+    "DESCRIPTION": "将 !M! 张 快速修复* 加入抽牌堆。"
+  },
+  "VUPShionMod:QuickAttack": {
+    "NAME": "快速攻击",
+    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 使用 vup_shion_mod:浮游炮 。 NL 对随机一名敌人造成 3+ vup_shion_mod:总炮强化 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害。）"
+    ]
+  },
+  "VUPShionMod:QuickDefend": {
+    "NAME": "快速防御",
+    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 获得 8+ vup_shion_mod:总炮强化 点的 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得 !B! 点 格挡 。）"
+    ]
+  },
+  "VUPShionMod:QuickRepair": {
+    "NAME": "快速修复",
+    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 回复 6+ vup_shion_mod:总炮强化 点生命。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得 !M! 点生命。）"
+    ]
+  },
+  "VUPShionMod:SpeedShot": {
+    "NAME": "高速射击",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 !D! 点伤害 X 次。",
+    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 !D! 点伤害 X+1 次。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得 !M! 点生命。）"
+    ]
+  },
+  "VUPShionMod:AttackInitiation": {
+    "NAME": "攻击启动",
+    "DESCRIPTION": "本回合内，你每打出一张牌，抽一张牌"
+  },
+  "VUPShionMod:EnduranceInitiation": {
+    "NAME": "续航启动",
+    "DESCRIPTION": "选择一张牌，将这张牌的 !M! 张带有 消耗 的复制品加入抽牌堆。",
+    "UPGRADE_DESCRIPTION": "选择一张牌，将这张牌的 !M! 张复制品加入抽牌堆。"
+  },
+  "VUPShionMod:AttackPreparation": {
+    "NAME": "进攻准备",
+    "DESCRIPTION": "保留 手牌。 NL 下回合额外获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "保留 手牌。 NL 下回合额外获得 [E] [E] 。"
+  },
+  "VUPShionMod:Strafe": {
+    "NAME": "扫射",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 数的伤害2次。",
+    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 数的伤害3次。"
+  },
+  "VUPShionMod:AnastasiaCore": {
+    "NAME": "Anastasia核心",
+    "DESCRIPTION": "本回合内，当你打出 vup_shion_mod:浮游炮 牌时，获得 [E] 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "Anastasia智慧核心"
+    ]
+  },
+  "VUPShionMod:DimensionSplitting": {
+    "NAME": "维度裂解启动",
+    "DESCRIPTION": "本回合内，你每打出 vup_shion_mod:浮游炮 牌时，造成打出数量五倍的伤害"
+  },
+  "VUPShionMod:Goodbye": {
+    "NAME": "mmd不陪你玩了",
+    "DESCRIPTION": "消耗 所有手牌 。 NL 每 消耗 一张牌，造成 !D! 点伤害。"
+  },
+  "VUPShionMod:Bombardment": {
+    "NAME": "轰炸开始",
+    "DESCRIPTION": "触发 #y侦查浮游炮 、#y重力浮游炮 、#y追击浮游炮 的效果。",
+    "UPGRADE_DESCRIPTION": "触发 #y咏叹调型维度裂解者 、 #y侦查浮游炮 、#y重力浮游炮 、#y追击浮游炮 的效果。"
+  },
+  "VUPShionMod:Boot": {
+    "NAME": "系统启动",
+    "DESCRIPTION": "将所有手牌的 !M! 张带有 消耗 的复制品加入抽牌堆。 NL 结束你的回合。"
+  }
+}

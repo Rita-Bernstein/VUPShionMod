@@ -1,0 +1,10 @@
+{
+  "VUPShionMod:InvestigationFinFunnel": {
+    "NAME": "侦查浮游炮",
+    "DESCRIPTION": [
+      "回合开始时，对一名随机敌人造成 #b",
+      " 点伤害并给予 #b",
+      " 层 #y易伤 。"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "VUPShionMod:DimensionSplitterAria": {
+    "NAME": "咏叹调型维度裂解者",
+    "FLAVOR": "咏叹调型维度裂解者。",
+    "DESCRIPTIONS": [
+      "你的回合开始时，对随机一名敌人造成 #b%d ( #b5 + #y强化等级 )点伤害。 #y斩杀 时，获得 [E] 并重复上述操作。 NL 初始强化等级为0。 NL 当前强化等级： #b%d 。"
+    ]
+  },
+  "VUPShionMod:KuroisuDetermination": {
+    "NAME": "阿龙の决意",
+    "FLAVOR": "阿龙の决意。",
+    "DESCRIPTIONS": [
+      "受到致命伤害时，将自身状态至多返回到三个回合前。（仅能起效一次）",
+      "这件遗物已经耗尽。"
+    ]
+  },
+  "VUPShionMod:Croissant": {
+    "NAME": "龙角面包",
+    "FLAVOR": "龙角面包。",
+    "DESCRIPTIONS": [
+      "拾起时，回复 #b30 点生命。"
+    ]
+  },
+  "VUPShionMod:OpticalCamouflage": {
+    "NAME": "光学迷彩",
+    "FLAVOR": "光学迷彩。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时获得 #b1 层 #y无实体 。"
+    ]
+  },
+  "VUPShionMod:Sniperscope": {
+    "NAME": "狙击镜",
+    "FLAVOR": "狙击镜。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，给予生命值最低的敌人增加 #b1 层 #y易伤 。 NL 有 #y易伤 状态的敌人受到的伤害增加 #b75% 而非 #b50%。"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "DownfallExtension:CrowbotRitualPower": {
+    "NAME": "重编程：邪教",
+    "DESCRIPTIONS": [
+      "当 #y乌鸦机器人 的生命不高于 #b50% 时，其回合结束时失去 #b3 点生命并获得 #b",
+      " 点 #y力量 。"
+    ]
+  },
+  "DownfallExtension:DamageMultiplier": {
+    "NAME": "伤害增幅",
+    "DESCRIPTIONS": [
+      "#y攻击牌 造成 #b",
+      " 倍伤害。"
+    ]
+  },
+  "DownfallExtension:CompressionMold": {
+    "NAME": "压模",
+    "DESCRIPTIONS": [
+      "升级被 #y发射 后的弹药。"
+    ]
+  },
+  "DownfallExtension:LivingArmorPower": {
+    "NAME": "活性盔甲",
+    "DESCRIPTIONS": [
+      "每当 #y陨铁战士 受到攻击伤害时，获得生命损失量 #b75% 的 #y格挡 。 NL 它的回合开始时，回复 #y格挡 数量 #y一半 的生命。"
+    ]
+  },
+  "DownfallExtension:BullFormPower": {
+    "NAME": "公牛形态",
+    "DESCRIPTIONS": [
+      "每当 #y陨铁战士 打出攻击牌，获得 #b%d 点 #y力量 。"
+    ]
+  }
+}

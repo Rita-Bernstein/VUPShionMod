@@ -1,0 +1,26 @@
+{
+  "VUPShionMod:BadgeOfTimePower": {
+    "NAME": "时之徽记",
+    "DESCRIPTIONS": [
+      "#y克洛伊斯 的牌需要消耗 #y时之徽记 的层数。 NL 层数上限为 #b10 。"
+    ]
+  },
+  "VUPShionMod:SupportArmamentPower": {
+    "NAME": "支援兵装",
+    "DESCRIPTIONS": [
+      "#y南小棉 的牌需要消耗 #y支援兵装 的层数。 NL 层数上限为 #b20 。"
+    ]
+  },
+  "VUPShionMod:MarkOfThePaleBlueCrossPower": {
+    "NAME": "苍蓝十字徽记",
+    "DESCRIPTIONS": [
+      "#y黎夜竹 的牌需要消耗 #y苍蓝十字徽记 的层数。 NL 层数上限为 #b10 。"
+    ]
+  },
+  "VUPShionMod:PursuitPower": {
+    "NAME": "追击",
+    "DESCRIPTIONS": [
+      "它的回合结束时，受到 #b#d 点伤害。"
+    ]
+  }
+}

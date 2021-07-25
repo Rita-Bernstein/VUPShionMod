@@ -28,18 +28,16 @@ public class PursuitPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (!isPlayer) {
-            this.flash();
-            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
-                funnel.onPursuitEnemy(this.owner);
-            }
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    public void atStartOfTurn() {
+        this.flash();
+        for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
+            funnel.onPursuitEnemy(this.owner);
         }
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
     static {

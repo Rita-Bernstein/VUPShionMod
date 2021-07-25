@@ -17,6 +17,7 @@ public class AbstractPlayerPatches {
     )
     public static class AddFields {
         public static SpireField<List<AbstractFinFunnel>> finFunnelList = new SpireField<>(ArrayList::new);
+        public static SpireField<AbstractFinFunnel> activatedFinFunnel = new SpireField<>(() -> null);
     }
 
     @SpirePatch(
@@ -28,6 +29,7 @@ public class AbstractPlayerPatches {
             for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
                 funnel.atTurnStart();
             }
+            EnergyPanelPatches.energyUsedThisTurn = 0;
         }
     }
 

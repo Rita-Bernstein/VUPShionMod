@@ -3,6 +3,7 @@ package VUPShionMod.finfunnels;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.PursuitPower;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,12 +21,13 @@ import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 public class PursuitFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID("PursuitFinFunnel"));
+    private static final Texture IMG = new Texture(VUPShionMod.assetPath("img/finFunnels/pursuitFinFunnel.png"));
 
     public PursuitFinFunnel() {
         super();
         this.name = orbStrings.NAME;
         this.ID = VUPShionMod.makeID("PursuitFinFunnel");
-        this.img = ImageMaster.ORB_PLASMA;
+        this.img = IMG;
     }
 
     @Override

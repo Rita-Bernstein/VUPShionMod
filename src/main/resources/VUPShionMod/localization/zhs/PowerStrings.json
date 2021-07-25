@@ -20,7 +20,8 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "追击",
     "DESCRIPTIONS": [
-      "它的回合结束时，受到 #b#d 点伤害。"
+      "目标的回合开始时，所有的 #y追击浮游炮 将攻击目标一次，造成 #b",
+      " 点伤害。"
     ]
   }
 }

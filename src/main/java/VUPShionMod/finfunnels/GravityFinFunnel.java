@@ -2,6 +2,7 @@ package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,12 +21,13 @@ import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 public class GravityFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID("GravityFinFunnel"));
+    private static final Texture IMG = new Texture(VUPShionMod.assetPath("img/finFunnels/gravityFinFunnel.png"));
 
     public GravityFinFunnel() {
         super();
         this.name = orbStrings.NAME;
         this.ID = VUPShionMod.makeID("GravityFinFunnel");
-        this.img = ImageMaster.ORB_DARK;
+        this.img = IMG;
     }
 
     @Override

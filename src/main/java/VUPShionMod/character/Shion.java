@@ -1,6 +1,8 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
+import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
@@ -45,7 +47,7 @@ public class Shion extends CustomPlayer {
     public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("Shion"));
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int START_HP = 80;
+    public static final int START_HP = 88;
     public static final int START_GOLD = 99;
     public static boolean firstAttackAnimation = true;
 
@@ -92,9 +94,11 @@ public class Shion extends CustomPlayer {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MarkOfThePaleBlueCrossPower(this, 1)));
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-            funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX + 128.0F * Settings.scale, this.hb.cY + 300.0F * Settings.scale));
-            funnelList.add(new PursuitFinFunnel().setPosition(this.hb.cX - 192.0F * Settings.scale, this.hb.cY + 320.0F * Settings.scale));
-            funnelList.add(new GravityFinFunnel().setPosition(this.hb.cX - 128.0F * Settings.scale, this.hb.cY + 150.0F * Settings.scale));
+            funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX + 128.0F * Settings.scale, this.hb.cY + 300.0F * Settings.scale, false));
+            funnelList.add(new PursuitFinFunnel().setPosition(this.hb.cX - 192.0F * Settings.scale, this.hb.cY + 320.0F * Settings.scale, true));
+            funnelList.add(new GravityFinFunnel().setPosition(this.hb.cX - 128.0F * Settings.scale, this.hb.cY + 150.0F * Settings.scale, false));
+            AbstractPlayerPatches.AddFields.activatedFinFunnel.set(this, funnelList.get(1));
+            AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
         }
     }
 

@@ -1,6 +1,12 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.actions.MoveFinFunnelAction;
+import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
+import VUPShionMod.effects.FinFunnelSelectedEffect;
+import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.patches.EnergyPanelPatches;
+import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -9,7 +15,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.vfx.BobEffect;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 浮游炮抽象类
@@ -41,8 +51,8 @@ public abstract class AbstractFinFunnel {
         }
     }
 
-    public AbstractFinFunnel setPosition(float cX, float cY) {
-        addToBot(new MoveFinFunnelAction(this, cX, cY));
+    public AbstractFinFunnel setPosition(float cX, float cY, boolean moveEffect) {
+        addToBot(new MoveFinFunnelAction(this, cX, cY, moveEffect));
         return this;
     }
 
@@ -94,6 +104,13 @@ public abstract class AbstractFinFunnel {
         if (this.hb.hovered) {
             updateDescription();
             TipHelper.renderGenericTip(this.cX + 96.0F * Settings.scale, this.cY + 64.0F * Settings.scale, this.name, this.description);
+            if (InputHelper.justReleasedClickLeft && AbstractPlayerPatches.AddFields.activatedFinFunnel.get(AbstractDungeon.player) != this) {
+                if (EnergyPanelPatches.energyUsedThisTurn > 0) {
+                    EnergyPanelPatches.energyUsedThisTurn--;
+                    AbstractPlayerPatches.AddFields.activatedFinFunnel.set(AbstractDungeon.player, this);
+                    addToBot(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, this));
+                }
+            }
         }
 
         this.fontScale = MathHelper.scaleLerpSnap(this.fontScale, 0.7F);
@@ -121,5 +138,40 @@ public abstract class AbstractFinFunnel {
 
     protected void addToTop(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToTop(action);
+    }
+
+    static {
+        new FinFunnelSaver();
+    }
+
+    public static class FinFunnelSaver implements CustomSavable<List<Integer>> {
+
+        FinFunnelSaver() {
+            BaseMod.addSaveField("finFunnels", this);
+        }
+
+        @Override
+        public List<Integer> onSave() {
+            List<Integer> ret = new ArrayList<>();
+            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
+                ret.add(funnel.getLevel());
+            }
+            return ret;
+        }
+
+        @Override
+        public void onLoad(List<Integer> integerList) {
+            if (integerList != null) {
+                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
+                int index = 0;
+                for (Integer i :integerList) {
+                    if (funnelList.size() > index) {
+                        funnelList.get(index).level = i;
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

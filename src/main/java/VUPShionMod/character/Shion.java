@@ -79,10 +79,10 @@ public class Shion extends CustomPlayer {
                 "VUPShionMod/characters/Shion/corpse.png",
                 getLoadout(), 0.0F, -5.0F, 240.0F, 320.0F, new EnergyManager(ENERGY_PER_TURN));
 
-        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/hero_00601.atlas"), VUPShionMod.assetPath("characters/Shion/animation/hero_00601.json"), 1.6f);
+        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 3.2f);
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-        this.stateData.setMix("Hit", "Idle", 0.1F);
+//        this.stateData.setMix("Hit", "Idle", 0.1F);
         e.setTime(e.getEndTime() * MathUtils.random());
     }
 
@@ -237,11 +237,11 @@ public class Shion extends CustomPlayer {
     }
 
     public void damage(DamageInfo info) {
-        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            AnimationState.TrackEntry e = this.state.setAnimation(0, "Hit", false);
-            this.state.addAnimation(0, "Idle", true, 0.0F);
-            e.setTimeScale(1.0F);
-        }
+//        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
+//            AnimationState.TrackEntry e = this.state.setAnimation(0, "Hit", false);
+//            this.state.addAnimation(0, "Idle", true, 0.0F);
+//            e.setTimeScale(1.0F);
+//        }
 
         super.damage(info);
     }

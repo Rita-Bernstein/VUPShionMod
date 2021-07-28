@@ -1,0 +1,132 @@
+
+ShionAnimation.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 1108
+  size: 737, 922
+  orig: 737, 922
+  offset: 0, 0
+  index: -1
+gun
+  rotate: true
+  xy: 2, 154
+  size: 952, 587
+  orig: 952, 587
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 741, 1132
+  size: 482, 507
+  orig: 482, 507
+  offset: 0, 0
+  index: -1
+hand_left
+  rotate: true
+  xy: 1922, 1733
+  size: 297, 122
+  orig: 297, 122
+  offset: 0, 0
+  index: -1
+hand_right
+  rotate: false
+  xy: 1829, 1346
+  size: 58, 59
+  orig: 58, 59
+  offset: 0, 0
+  index: -1
+head_ring
+  rotate: false
+  xy: 434, 39
+  size: 61, 113
+  orig: 61, 113
+  offset: 0, 0
+  index: -1
+head_ring1
+  rotate: false
+  xy: 1922, 1639
+  size: 74, 92
+  orig: 74, 92
+  offset: 0, 0
+  index: -1
+head_ring2
+  rotate: false
+  xy: 591, 372
+  size: 68, 87
+  orig: 68, 87
+  offset: 0, 0
+  index: -1
+head_ring3
+  rotate: false
+  xy: 497, 70
+  size: 35, 82
+  orig: 35, 82
+  offset: 0, 0
+  index: -1
+leaves7_1
+  rotate: false
+  xy: 1998, 1705
+  size: 48, 26
+  orig: 48, 26
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 741, 1616
+  size: 892, 414
+  orig: 892, 414
+  offset: 0, 0
+  index: -1
+ring2
+  rotate: false
+  xy: 1829, 1407
+  size: 78, 168
+  orig: 78, 168
+  offset: 0, 0
+  index: -1
+wing1
+  rotate: true
+  xy: 591, 461
+  size: 228, 177
+  orig: 228, 177
+  offset: 0, 0
+  index: -1
+wing2
+  rotate: false
+  xy: 1563, 1122
+  size: 264, 453
+  orig: 264, 453
+  offset: 0, 0
+  index: -1
+wing3
+  rotate: false
+  xy: 591, 691
+  size: 136, 415
+  orig: 136, 415
+  offset: 0, 0
+  index: -1
+wing4
+  rotate: false
+  xy: 1635, 1577
+  size: 285, 453
+  orig: 285, 453
+  offset: 0, 0
+  index: -1
+wing5
+  rotate: false
+  xy: 2, 2
+  size: 430, 150
+  orig: 430, 150
+  offset: 0, 0
+  index: -1
+wing6
+  rotate: true
+  xy: 1250, 1156
+  size: 458, 311
+  orig: 458, 311
+  offset: 0, 0
+  index: -1

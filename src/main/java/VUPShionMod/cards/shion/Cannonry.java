@@ -30,7 +30,6 @@ public class Cannonry extends AbstractVUPShionCard {
 
     public Cannonry() {
         super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
-        this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.STARTER_STRIKE);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.baseDamage = 3;

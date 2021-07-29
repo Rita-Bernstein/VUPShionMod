@@ -1,7 +1,9 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
+import VUPShionMod.cards.shion.Cannonry;
+import VUPShionMod.cards.shion.Defend_Shion;
+import VUPShionMod.cards.shion.FinFunnelUpgrade;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -23,8 +25,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
-import com.megacrit.cardcrawl.cards.blue.Strike_Blue;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -94,9 +94,9 @@ public class Shion extends CustomPlayer {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MarkOfThePaleBlueCrossPower(this, 1)));
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-            funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX + 128.0F * Settings.scale, this.hb.cY + 300.0F * Settings.scale, false));
-            funnelList.add(new PursuitFinFunnel().setPosition(this.hb.cX - 192.0F * Settings.scale, this.hb.cY + 320.0F * Settings.scale, true));
-            funnelList.add(new GravityFinFunnel().setPosition(this.hb.cX - 128.0F * Settings.scale, this.hb.cY + 150.0F * Settings.scale, false));
+            funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX - 288.0F * Settings.scale, this.hb.cY - 60.0F * Settings.scale, false));
+            funnelList.add(new PursuitFinFunnel().setPosition(this.hb.cX + 128.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale, true));
+            funnelList.add(new GravityFinFunnel().setPosition(this.hb.cX - 164.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale, false));
             AbstractPlayerPatches.AddFields.activatedFinFunnel.set(this, funnelList.get(1));
             AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
         }
@@ -114,7 +114,15 @@ public class Shion extends CustomPlayer {
 
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Defend_Blue.ID);
+        retVal.add(Cannonry.ID);
+        retVal.add(Cannonry.ID);
+        retVal.add(Cannonry.ID);
+        retVal.add(Cannonry.ID);
+        retVal.add(Defend_Shion.ID);
+        retVal.add(Defend_Shion.ID);
+        retVal.add(Defend_Shion.ID);
+        retVal.add(Defend_Shion.ID);
+        retVal.add(FinFunnelUpgrade.ID);
 
         return retVal;
     }
@@ -168,7 +176,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike_Blue();
+        return new Defend_Shion();
     }
 
     @Override

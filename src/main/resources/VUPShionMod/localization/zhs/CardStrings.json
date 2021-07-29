@@ -175,23 +175,24 @@
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
-    "DESCRIPTION": " 固有 、 虚无 。 NL 从四张 *浮游炮升级计划 中选择一张。"
+    "DESCRIPTION": "从四张 *浮游炮升级计划 中选择一张。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 从四张 *浮游炮升级计划 中选择一张。"
   },
   "VUPShionMod:DimensionSplitterUpgrade": {
     "NAME": "咏叹调型维度裂解者升级计划",
-    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:任务 ：打出五张 vup_shion_mod:浮游炮 牌。 NL 奖励：咏叹调型维度裂解者强化加1。 NL 消耗 。"
+    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：咏叹调型维度裂解者强化等级加1。"
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "侦查浮游炮升级计划",
-    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:任务 ：打出五张 vup_shion_mod:浮游炮 牌。 NL 奖励：侦查浮游炮强化加1。 NL 消耗 。"
+    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：侦查浮游炮强化等级加1。"
   },
   "VUPShionMod:GravityUpgrade": {
     "NAME": "重力浮游炮升级计划",
-    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:任务 ：打出五张 vup_shion_mod:浮游炮 牌。 NL 奖励：重力浮游炮强化加1。 NL 消耗 。"
+    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：重力浮游炮强化等级加1。"
   },
   "VUPShionMod:PursuitUpgrade": {
     "NAME": "追击浮游炮升级计划",
-    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:任务 ：打出五张 vup_shion_mod:浮游炮 牌。 NL 奖励：追击浮游炮强化加1。 NL 消耗 。"
+    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：追击浮游炮强化等级加1。"
   },
   "VUPShionMod:TimeBacktracking": {
     "NAME": "时之回溯",

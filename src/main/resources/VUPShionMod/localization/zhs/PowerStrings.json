@@ -23,5 +23,33 @@
       "目标的回合开始时，所有的 #y追击浮游炮 将攻击目标一次，造成 #b",
       " 点伤害。"
     ]
+  },
+  "VUPShionMod:DimensionSplitterAriaUpgradePower": {
+    "NAME": "咏叹调型维度裂解者升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y咏叹调型维度裂解者 的强化等级提升 #b1 。"
+    ]
+  },
+  "VUPShionMod:InvestigationFinFunnelUpgradePower": {
+    "NAME": "侦查浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y侦查浮游炮 的强化等级提升 #b1 。"
+    ]
+  },
+  "VUPShionMod:GravityFinFunnelUpgradePower": {
+    "NAME": "重力浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y重力浮游炮 的强化等级提升 #b1 。"
+    ]
+  },
+  "VUPShionMod:PursuitFinFunnelUpgradePower": {
+    "NAME": "追击浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y追击浮游炮 的强化等级提升 #b1 。"
+    ]
   }
 }

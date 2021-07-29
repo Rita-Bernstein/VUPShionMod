@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -92,7 +93,7 @@ public abstract class AbstractFinFunnel {
     /**
      * 这里写浮游炮的行动方式
      */
-    public abstract void fire(AbstractCreature target);
+    public abstract void fire(AbstractCreature target, int damage, DamageInfo.DamageType type);
 
     /**
      * 更新

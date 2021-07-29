@@ -40,14 +40,14 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         if (this.level <= 0) return;
         AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         if (m != null) {
-            fire(m);
+            fire(m, this.level, DamageInfo.DamageType.THORNS);
         }
     }
 
     @Override
     public void onPursuitEnemy(AbstractCreature target) {
         if (this.level <= 0) return;
-        fire(target);
+        fire(target, this.level, DamageInfo.DamageType.THORNS);
     }
 
     @Override
@@ -59,11 +59,13 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
-    public void fire(AbstractCreature target) {
+    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
         addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         addToBot(new VFXAction(new SmallLaserEffect(target.hb.cX, target.hb.cY, this.hb.cX, this.hb.cY), 0.3F));
-        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, this.level, DamageInfo.DamageType.THORNS)));
-        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, this.level)));
+        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        if (this.level > 0) {
+            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, this.level)));
+        }
     }
 }

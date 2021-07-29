@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -40,7 +39,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
         if (this.level <= 0) return;
         AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         if (m != null) {
-            fire(m);
+            fire(m, this.level, DamageInfo.DamageType.THORNS);
         }
     }
 
@@ -53,11 +52,13 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
-    public void fire(AbstractCreature target) {
+    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
         addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         addToBot(new VFXAction(new SmallLaserEffect(target.hb.cX, target.hb.cY, this.hb.cX, this.hb.cY), 0.3F));
-        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, this.level, DamageInfo.DamageType.THORNS)));
-        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new WeakPower(target, this.level, false)));
+        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        if (this.level > 0) {
+            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new WeakPower(target, this.level, false)));
+        }
     }
 }

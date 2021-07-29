@@ -1,7 +1,16 @@
 package VUPShionMod;
 
+import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
+import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
+import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
+import VUPShionMod.cards.optionCards.PursuitFinFunnelUpgrade;
+import VUPShionMod.cards.shion.Cannonry;
+import VUPShionMod.cards.shion.Defend_Shion;
+import VUPShionMod.cards.shion.FinFunnelUpgrade;
 import VUPShionMod.character.Shion;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerEnum;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.relics.DimensionSplitterAria;
 import basemod.BaseMod;
@@ -18,7 +27,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -108,6 +119,20 @@ public class VUPShionMod implements
         saveSettings();
     }
 
+    public static int calculateTotalFinFunnelLevel() {
+        int ret = 0;
+        if (AbstractDungeon.player != null) {
+            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
+            for (AbstractFinFunnel funnel : funnelList) {
+                ret += funnel.getLevel();
+            }
+            AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
+            if (relic != null) {
+                ret += relic.counter;
+            }
+        }
+        return ret;
+    }
 
     @Override
     public void receivePostInitialize() {
@@ -120,7 +145,7 @@ public class VUPShionMod implements
     @Override
     public void receiveAddAudio() {
         for (int i=1;i<=18;i++) {
-            BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion_" + i + ".wav"));
+            BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion" + i + ".wav"));
         }
     }
 
@@ -134,12 +159,17 @@ public class VUPShionMod implements
 
         logger.info(Shion.charStrings.NAMES[1]);
         BaseMod.addCharacter(new Shion(Shion.charStrings.NAMES[1], AbstractPlayerEnum.VUP_Shion), assetPath("characters/Shion/Button.png"), assetPath("characters/Shion/portrait.png"), AbstractPlayerEnum.VUP_Shion);
-
     }
 
     @Override
     public void receiveEditCards() {
-
+        BaseMod.addCard(new Cannonry());
+        BaseMod.addCard(new Defend_Shion());
+        BaseMod.addCard(new FinFunnelUpgrade());
+        BaseMod.addCard(new DimensionSplitterUpgrade());
+        BaseMod.addCard(new InvestigationFinFunnelUpgrade());
+        BaseMod.addCard(new GravityFinFunnelUpgrade());
+        BaseMod.addCard(new PursuitFinFunnelUpgrade());
     }
 
     @Override

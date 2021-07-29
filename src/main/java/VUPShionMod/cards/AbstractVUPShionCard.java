@@ -52,11 +52,4 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         return this.secondaryM;
     }
 
-    @Override
-    public void render(SpriteBatch sb) {
-        super.render(sb);
-
-    }
-
-
 }

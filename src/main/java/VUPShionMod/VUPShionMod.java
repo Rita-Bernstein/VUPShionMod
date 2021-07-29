@@ -1,12 +1,9 @@
 package VUPShionMod;
 
-import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
-import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
-import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
-import VUPShionMod.cards.optionCards.PursuitFinFunnelUpgrade;
-import VUPShionMod.cards.shion.Cannonry;
-import VUPShionMod.cards.shion.Defend_Shion;
-import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
+import VUPShionMod.cards.optionCards.*;
+import VUPShionMod.cards.shion.*;
+import VUPShionMod.cards.anastasia.*;
+import VUPShionMod.cards.kuroisu.*;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -163,9 +160,20 @@ public class VUPShionMod implements
 
     @Override
     public void receiveEditCards() {
+//        紫音
         BaseMod.addCard(new Cannonry());
         BaseMod.addCard(new Defend_Shion());
+
+
+//        克洛伊斯
+        BaseMod.addCard(new TimeBacktracking());
+        BaseMod.addCard(new TimeSlack());
+        BaseMod.addCard(new TimeStop());
+
+
+//        anastasia
         BaseMod.addCard(new FinFunnelUpgrade());
+
         BaseMod.addCard(new DimensionSplitterUpgrade());
         BaseMod.addCard(new InvestigationFinFunnelUpgrade());
         BaseMod.addCard(new GravityFinFunnelUpgrade());

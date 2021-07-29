@@ -204,8 +204,8 @@
   },
   "VUPShionMod:TimeStop": {
     "NAME": "时间停止",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL stslib:击晕 一名敌人。 NL 触发 *咏叹调型维度裂解者 的效果。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL stslib:击晕 一名敌人。 NL 触发 *咏叹调型维度裂解者 和三种 vup_shion_mod:浮游炮 的效果。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL 暂停一名敌人本回合行动。触发 NL *咏叹调型维度裂解者 NL 的效果。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL 暂停一名敌人本回合行动。触发 NL *咏叹调型维度裂解者 NL 和三种 vup_shion_mod:浮游炮 的效果。"
   },
   "VUPShionMod:TimeBomb": {
     "NAME": "时空炸弹",

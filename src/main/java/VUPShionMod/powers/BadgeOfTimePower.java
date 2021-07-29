@@ -9,9 +9,9 @@ import VUPShionMod.VUPShionMod;
 
 public class BadgeOfTimePower extends AbstractPower {
     public static final String POWER_ID = VUPShionMod.makeID("BadgeOfTimePower");
-    private static final PowerStrings powerStrings;
-    public static final String NAME;
-    public static final String[] DESCRIPTIONS;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public BadgeOfTimePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -39,11 +39,5 @@ public class BadgeOfTimePower extends AbstractPower {
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
-    }
-
-    static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-        NAME = powerStrings.NAME;
-        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
 }

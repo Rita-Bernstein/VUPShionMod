@@ -20,9 +20,9 @@ import java.util.List;
 
 public class GravityFinFunnelUpgradePower extends AbstractPower {
     public static final String POWER_ID = VUPShionMod.makeID("GravityFinFunnelUpgradePower");
-    private static final PowerStrings powerStrings;
-    public static final String NAME;
-    public static final String[] DESCRIPTIONS;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public GravityFinFunnelUpgradePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -56,11 +56,5 @@ public class GravityFinFunnelUpgradePower extends AbstractPower {
                 addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
         }
-    }
-
-    static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-        NAME = powerStrings.NAME;
-        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
 }

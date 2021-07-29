@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class SupportArmamentPower extends AbstractPower {
     public static final String POWER_ID = VUPShionMod.makeID("SupportArmamentPower");
-    private static final PowerStrings powerStrings;
-    public static final String NAME;
-    public static final String[] DESCRIPTIONS;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public SupportArmamentPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -39,11 +39,5 @@ public class SupportArmamentPower extends AbstractPower {
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
-    }
-
-    static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-        NAME = powerStrings.NAME;
-        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
 }

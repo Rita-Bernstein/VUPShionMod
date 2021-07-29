@@ -23,10 +23,10 @@ public class TimeStop extends AbstractVUPShionCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
 
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 

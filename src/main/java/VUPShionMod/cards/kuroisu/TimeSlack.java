@@ -18,11 +18,11 @@ public class TimeSlack extends AbstractVUPShionCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu02.png");
-    private static final int COST = 2;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-
-    public static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
+
+    private static final int COST = 2;
+    public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 

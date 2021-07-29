@@ -169,6 +169,7 @@ public class VUPShionMod implements
         BaseMod.addCard(new TimeBacktracking());
         BaseMod.addCard(new TimeSlack());
         BaseMod.addCard(new TimeStop());
+        BaseMod.addCard(new TimeBomb());
 
 
 //        anastasia

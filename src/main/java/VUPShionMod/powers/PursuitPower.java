@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class PursuitPower extends AbstractPower {
     public static final String POWER_ID = VUPShionMod.makeID("PursuitPower");
-    private static final PowerStrings powerStrings;
-    public static final String NAME;
-    public static final String[] DESCRIPTIONS;
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public PursuitPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -38,11 +38,5 @@ public class PursuitPower extends AbstractPower {
             funnel.onPursuitEnemy(this.owner);
         }
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-    }
-
-    static {
-        powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-        NAME = powerStrings.NAME;
-        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
 }

@@ -1,6 +1,7 @@
 package VUPShionMod.cards.optionCards;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.GravityFinFunnelUpgradePower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class GravityFinFunnelUpgrade extends CustomCard {
+public class GravityFinFunnelUpgrade extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("GravityUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;

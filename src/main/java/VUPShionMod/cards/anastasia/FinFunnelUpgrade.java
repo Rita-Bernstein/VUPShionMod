@@ -1,6 +1,7 @@
 package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
 import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
 import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class FinFunnelUpgrade extends CustomCard {
+public class FinFunnelUpgrade extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;

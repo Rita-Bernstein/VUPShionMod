@@ -6,6 +6,7 @@ import VUPShionMod.cards.anastasia.*;
 import VUPShionMod.cards.kuroisu.*;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
@@ -27,6 +28,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -45,35 +47,16 @@ public class VUPShionMod implements
         EditKeywordsSubscriber,
         EditStringsSubscriber {
 
-    public static String MOD_ID = "VUPShionMod";
-
-    public static String makeID(String id) {
-        return MOD_ID + ":" + id;
-    }
-
-    public static String assetPath(String path) {
-        return MOD_ID + "/" + path;
-    }
-
-    public static String characterAssetPath(String className, String path) {
-        return MOD_ID + "/" + className + "/" + path;
-    }
-
     public static final String MODNAME = "VUPShionMod";
     public static final String AUTHOR = "Rita";
     public static final String DESCRIPTION = "";
-
-
-    public static Properties VUPShionDefaults = new Properties();
-
     public static final Color Shion_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
-
-
     public static final Logger logger = LogManager.getLogger(VUPShionMod.class.getSimpleName());
-
+    public static String MOD_ID = "VUPShionMod";
+    public static Properties VUPShionDefaults = new Properties();
     public static List<CustomCard> shion_Cards = new ArrayList<>();
-
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
+
 
     public VUPShionMod() {
         BaseMod.subscribe(this);
@@ -90,6 +73,18 @@ public class VUPShionMod implements
                 assetPath("img/cardui/Shion/1024/card_lime_orb.png"),
                 assetPath("img/cardui/Shion/512/card_lime_small_orb.png"));
 
+    }
+
+    public static String makeID(String id) {
+        return MOD_ID + ":" + id;
+    }
+
+    public static String assetPath(String path) {
+        return MOD_ID + "/" + path;
+    }
+
+    public static String characterAssetPath(String className, String path) {
+        return MOD_ID + "/" + className + "/" + path;
     }
 
     public static void saveSettings() {
@@ -131,6 +126,10 @@ public class VUPShionMod implements
         return ret;
     }
 
+    public static void initialize() {
+        new VUPShionMod();
+    }
+
     @Override
     public void receivePostInitialize() {
         loadSettings();
@@ -146,10 +145,6 @@ public class VUPShionMod implements
         }
     }
 
-    public static void initialize() {
-        new VUPShionMod();
-    }
-
     @Override
     public void receiveEditCharacters() {
         logger.info("========================= 开始加载人物 =========================");
@@ -160,25 +155,33 @@ public class VUPShionMod implements
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addDynamicVariable(new SecondaryMagicVariable());
+        List<CustomCard> cards = new ArrayList<>();
+
 //        紫音
-        BaseMod.addCard(new Cannonry());
-        BaseMod.addCard(new Defend_Shion());
+        cards.add(new Cannonry());
+        cards.add(new Defend_Shion());
 
 
 //        克洛伊斯
-        BaseMod.addCard(new TimeBacktracking());
-        BaseMod.addCard(new TimeSlack());
-        BaseMod.addCard(new TimeStop());
-        BaseMod.addCard(new TimeBomb());
+        cards.add(new TimeBacktracking());
+        cards.add(new TimeSlack());
+        cards.add(new TimeStop());
+        cards.add(new TimeBomb());
 
 
 //        anastasia
-        BaseMod.addCard(new FinFunnelUpgrade());
+        cards.add(new FinFunnelUpgrade());
 
-        BaseMod.addCard(new DimensionSplitterUpgrade());
-        BaseMod.addCard(new InvestigationFinFunnelUpgrade());
-        BaseMod.addCard(new GravityFinFunnelUpgrade());
-        BaseMod.addCard(new PursuitFinFunnelUpgrade());
+        cards.add(new DimensionSplitterUpgrade());
+        cards.add(new InvestigationFinFunnelUpgrade());
+        cards.add(new GravityFinFunnelUpgrade());
+        cards.add(new PursuitFinFunnelUpgrade());
+
+        for (CustomCard card : cards) {
+            BaseMod.addCard(card);
+            UnlockTracker.unlockCard(card.cardID);
+        }
     }
 
     @Override

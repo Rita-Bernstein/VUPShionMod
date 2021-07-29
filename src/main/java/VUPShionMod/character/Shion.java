@@ -3,7 +3,7 @@ package VUPShionMod.character;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.shion.Cannonry;
 import VUPShionMod.cards.shion.Defend_Shion;
-import VUPShionMod.cards.shion.FinFunnelUpgrade;
+import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;

@@ -1,4 +1,4 @@
-package VUPShionMod.cards.shion;
+package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;

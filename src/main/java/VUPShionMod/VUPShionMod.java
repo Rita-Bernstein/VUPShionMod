@@ -168,6 +168,12 @@ public class VUPShionMod implements
         cards.add(new TimeSlack());
         cards.add(new TimeStop());
         cards.add(new TimeBomb());
+        cards.add(new HourHand());
+        cards.add(new MinuteHand());
+        cards.add(new SecondHand());
+        cards.add(new CrackOfTime());
+        cards.add(new ReleaseFormKuroisu());
+        cards.add(new TimeWarp());
 
 
 //        anastasia

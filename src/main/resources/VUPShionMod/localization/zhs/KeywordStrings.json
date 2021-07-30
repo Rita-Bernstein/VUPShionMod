@@ -45,19 +45,19 @@
     "NAMES": [
       "时之徽记"
     ],
-    "DESCRIPTION": "#y克洛伊斯 的牌需要消耗 #y时之徽记 的层数。 NL 层数上限为 #b10 。"
+    "DESCRIPTION": "层数上限为 #b10 。"
   },
   {
     "NAMES": [
       "支援兵装"
     ],
-    "DESCRIPTION": "#y南小棉 的牌需要消耗 #y支援兵装 的层数。 NL 层数上限为 #b20 。"
+    "DESCRIPTION": "层数上限为 #b20 。"
   },
   {
     "NAMES": [
       "苍蓝十字徽记"
     ],
-    "DESCRIPTION": "#y黎夜竹 的牌需要消耗 #y苍蓝十字徽记 的层数。 NL 层数上限为 #b10 。"
+    "DESCRIPTION": "层数上限为 #b10 。"
   },
   {
     "NAMES": [

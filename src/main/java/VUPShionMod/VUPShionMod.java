@@ -174,6 +174,10 @@ public class VUPShionMod implements
         cards.add(new CrackOfTime());
         cards.add(new ReleaseFormKuroisu());
         cards.add(new TimeWarp());
+        cards.add(new BlackHand());
+        cards.add(new TimeOverload());
+        cards.add(new Limit());
+        cards.add(new OverspeedField());
 
 
 //        anastasia

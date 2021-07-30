@@ -240,11 +240,11 @@
   },
   "VUPShionMod:BlackHand": {
     "NAME": "黑色指针",
-    "DESCRIPTION": " vup_shion_mod:分支 。 NL 失去 !M! 点生命，获得2层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。 NL 抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "失去 !M! 点生命，获得2层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。 NL 抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 NL 消耗 。",
+    "DESCRIPTION": " vup_shion_mod:分支 。失去 !M! 点生命，获得1层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 消耗 。",
+    "UPGRADE_DESCRIPTION": "失去 !M! 点生命，获得2层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "银色指针",
-      "失去 !M! 点生命，获得2层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。 NL 抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 NL 消耗 。"
+      "失去 !M! 点生命，获得2层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。"
     ]
   },
   "VUPShionMod:TimeOverload": {
@@ -258,7 +258,7 @@
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "超速领域",
-    "DESCRIPTION": "触发 *咏叹调型维度裂解者 和三种 vup_shion_mod:浮游炮 的效果。 NL 抽 !M! 张牌。 NL 手牌中的牌本回合耗能变为0。 NL 下回合失去 [E] [E] 。 消耗 。"
+    "DESCRIPTION": "触发三种 vup_shion_mod:浮游炮 和 NL *咏叹调型维度裂解者 NL 的效果。抽 !M! 张牌。当前手牌本回合耗能为0。 NL 下回合失去 [E] [E] 。 消耗 。"
   },
   "VUPShionMod:DelayAvatar": {
     "NAME": "延时替身",

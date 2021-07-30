@@ -75,5 +75,13 @@
     "DESCRIPTIONS": [
       "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束时减少 #b1 层。"
     ]
+  },
+  "VUPShionMod:DenergizePower": {
+    "NAME": "失能",
+    "DESCRIPTIONS": [
+      "下一回合开始时失去 #b",
+      " [E] 。",
+      " [E] 。"
+    ]
   }
 }

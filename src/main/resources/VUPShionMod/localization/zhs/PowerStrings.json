@@ -101,5 +101,11 @@
     "DESCRIPTIONS": [
       " #y支援兵装 满层时，失去所有 #y支援兵装 并对所有敌人造成 #b%d 点伤害。"
     ]
+  },
+  "VUPShionMod:EnhancedSupportPower": {
+    "NAME": "强化支援",
+    "DESCRIPTIONS": [
+      "获得 #y支援兵装 时额外获得 #b%d 层。"
+    ]
   }
 }

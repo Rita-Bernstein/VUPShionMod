@@ -201,6 +201,9 @@ public class VUPShionMod implements
         cards.add(new AnestheticReagent());
         cards.add(new EnhancedSupport());
         cards.add(new BattlefieldHeritage());
+        cards.add(new GravityLoading());
+        cards.add(new ArmedTrain());
+        cards.add(new ArmedToTheTeeth());
 
 
 //        anastasia

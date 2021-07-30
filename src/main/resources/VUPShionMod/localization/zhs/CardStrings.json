@@ -346,7 +346,10 @@
   },
   "VUPShionMod:ArmedTrain": {
     "NAME": "武装列车",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 对所有敌人造成 vup_shion_mod:支援兵装 层数 !VUPShionSecondM! 倍的伤害。 NL 获得 !B! 点 格挡 。 NL 获得 vup_shion_mod:支援兵装 层数 !VUPShionSecondM! 倍的 格挡 。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。获得 vup_shion_mod:支援兵装 层数 !VUPShionSecondM! 倍的 格挡 。对所有敌人造成 vup_shion_mod:支援兵装 层数 !VUPShionSecondM! 倍的伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害。）"
+    ]
   },
   "VUPShionMod:ArmedToTheTeeth": {
     "NAME": "全副武装",

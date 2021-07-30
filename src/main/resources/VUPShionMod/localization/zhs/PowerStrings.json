@@ -83,5 +83,23 @@
       " [E] 。",
       " [E] 。"
     ]
+  },
+  "VUPShionMod:TempFinFunnelUpgradePower": {
+    "NAME": "临时总炮强化",
+    "DESCRIPTIONS": [
+      "本回合你的 #y总炮强化 额外提高 #b%d 点。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormMinamiPower": {
+    "NAME": "姿态解放-南小棉",
+    "DESCRIPTIONS": [
+      "你的回合开始时，获得 #b%d 层 #y支援兵装 。"
+    ]
+  },
+  "VUPShionMod:RailgunPower": {
+    "NAME": "南小棉-轨道炮",
+    "DESCRIPTIONS": [
+      " #y支援兵装 满层时，失去所有 #y支援兵装 并对所有敌人造成 #b%d 点伤害。"
+    ]
   }
 }

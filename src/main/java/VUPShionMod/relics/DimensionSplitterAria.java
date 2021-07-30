@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -45,13 +46,22 @@ public class DimensionSplitterAria extends CustomRelic {
 
     @Override
     public void atTurnStart() {
+        doDamage();
+    }
+
+    public void doDamage(int extraDamage, boolean isLoseHP) {
         AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
         if (m != null) {
             this.flash();
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.RED)));
             addToBot(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, this.hb.cX, this.hb.cY), 0.3F));
-            addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter + 5, DamageInfo.DamageType.THORNS)));
+
+            if(isLoseHP)
+                addToBot(new LoseHPAction(m,AbstractDungeon.player,this.counter + 5 + extraDamage));
+            else
+            addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter + 5 + extraDamage, DamageInfo.DamageType.THORNS)));
+
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {
@@ -64,5 +74,9 @@ public class DimensionSplitterAria extends CustomRelic {
                 }
             });
         }
+    }
+
+    public void doDamage() {
+        doDamage(0, false);
     }
 }

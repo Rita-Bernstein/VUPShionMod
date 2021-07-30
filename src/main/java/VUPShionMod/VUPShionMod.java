@@ -1,5 +1,6 @@
 package VUPShionMod;
 
+import VUPShionMod.cards.minami.*;
 import VUPShionMod.cards.optionCards.*;
 import VUPShionMod.cards.shion.*;
 import VUPShionMod.cards.anastasia.*;
@@ -10,6 +11,7 @@ import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import VUPShionMod.relics.DimensionSplitterAria;
 import basemod.BaseMod;
 
@@ -27,6 +29,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -122,6 +125,10 @@ public class VUPShionMod implements
             if (relic != null) {
                 ret += relic.counter;
             }
+
+            AbstractPower power = AbstractDungeon.player.getPower(TempFinFunnelUpgradePower.POWER_ID);
+            if(power != null)
+                ret += power.amount;
         }
         return ret;
     }
@@ -178,6 +185,20 @@ public class VUPShionMod implements
         cards.add(new TimeOverload());
         cards.add(new Limit());
         cards.add(new OverspeedField());
+
+
+
+//        南小棉
+        cards.add(new FinFunnelActive());
+        cards.add(new AttackWithDefense());
+        cards.add(new LockIndication());
+        cards.add(new TacticalLayout());
+        cards.add(new FinFunnelSupport());
+        cards.add(new CarefulPlan());
+        cards.add(new TacticalBunker());
+        cards.add(new SuperCharge());
+        cards.add(new ReleaseFormMinami());
+        cards.add(new AnestheticReagent());
 
 
 //        anastasia

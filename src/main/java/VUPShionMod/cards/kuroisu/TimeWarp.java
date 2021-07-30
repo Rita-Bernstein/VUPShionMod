@@ -56,7 +56,7 @@ public class TimeWarp extends AbstractVUPShionCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(BadgeOfTimePower.POWER_ID)) {
             if (p.getPower(BadgeOfTimePower.POWER_ID).amount >= 3)
-                return true;
+                return super.canUse(p, m);
         }
         return false;
     }

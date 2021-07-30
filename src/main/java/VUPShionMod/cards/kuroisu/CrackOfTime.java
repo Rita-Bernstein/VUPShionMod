@@ -49,8 +49,8 @@ public class CrackOfTime extends AbstractVUPShionCard {
                 if (p.hasPower(BadgeOfTimePower.POWER_ID)) {
                     int amount = p.getPower(BadgeOfTimePower.POWER_ID).amount;
                     if (amount > 1)
-                        addToBot(new ApplyPowerAction(p, p, new GainBadgeOfTimePower(p, (int) Math.floor(amount / 2.0f))));
-                    addToBot(new RemoveSpecificPowerAction(p, p, BadgeOfTimePower.POWER_ID));
+                        addToTop(new ApplyPowerAction(p, p, new GainBadgeOfTimePower(p, (int) Math.floor(amount / 2.0f))));
+                    addToTop(new RemoveSpecificPowerAction(p, p, BadgeOfTimePower.POWER_ID));
                 }
                 this.isDone = true;
             }

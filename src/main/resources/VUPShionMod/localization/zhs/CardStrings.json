@@ -404,13 +404,14 @@
       "力量建言",
       "获得 !M! 点 力量 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:苍蓝十字徽记 。"
     ]
-  },  "VUPShionMod:Pray": {
+  },
+  "VUPShionMod:Pray": {
     "NAME": "祈祷",
     "DESCRIPTION": "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
-      "神圣转换",
-      "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 如果有无色牌，则额外抽一张牌。 NL 消耗 。"
+      "希望祈祷",
+      "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 如果抽到的牌中有无色牌，则额外抽一张牌。"
     ]
   },
   "VUPShionMod:SantaCroce": {
@@ -419,7 +420,7 @@
     "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害并给予 !M! 层 vup_shion_mod:苍蓝十字印记 。 NL 你回复敌人身上 vup_shion_mod:苍蓝十字印记 层数 !VUPShionSecondM! 倍的生命。 NL 敌人失去所有 vup_shion_mod:苍蓝十字印记 。",
     "EXTENDED_DESCRIPTION": [
       "圣佑十字",
-      "对所有敌人造成 !D! 点伤害并给予 !M! 层 vup_shion_mod:苍蓝十字印记 。 NL 你回复敌人身上 vup_shion_mod:苍蓝十字印记 层数 !VUPShionSecondM! 倍的生命。 NL 敌人失去所有 vup_shion_mod:苍蓝十字印记 。"
+      "对所有敌人造成 !D! 点伤害并给予 !M! 层 vup_shion_mod:苍蓝十字印记 。 NL 你获得敌人身上 vup_shion_mod:苍蓝十字印记 层数 !VUPShionSecondM! 倍的 格挡 。 NL 敌人失去所有 vup_shion_mod:苍蓝十字印记 。"
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
@@ -453,11 +454,11 @@
   },
   "VUPShionMod:BlueRose": {
     "NAME": "湛蓝蔷薇",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:苍蓝十字徽记 对其造成的伤害提高 !M! 。 NL 失去所有  vup_shion_mod:苍蓝十字印记  和  vup_shion_mod:苍蓝十字徽记 。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:苍蓝十字徽记 对其造成的伤害提高 !M! 。 NL 失去所有  vup_shion_mod:苍蓝十字印记  和  vup_shion_mod:苍蓝十字徽记 。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:苍蓝十字徽记 层数之和的 !M! 倍为增加的额外伤害 。 NL 失去所有  vup_shion_mod:苍蓝十字印记  和  vup_shion_mod:苍蓝十字徽记 。 vup_shion_mod:分支 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:苍蓝十字徽记 层数之和的 !M! 倍为增加的额外伤害 。 NL 失去所有  vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:苍蓝十字徽记 。",
     "EXTENDED_DESCRIPTION": [
       "冰蓝蔷薇",
-      "对所有敌人造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 对其造成的伤害提高 !M! 。 NL 获得 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的 格挡 。 NL 失去所有  vup_shion_mod:苍蓝十字印记  和  vup_shion_mod:苍蓝十字徽记 。"
+      "对所有敌人造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 层数的 !M! 倍为增加的额外伤害。 NL 获得 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的 格挡 。 NL 失去所有 vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:苍蓝十字徽记 。"
     ]
   }
 }

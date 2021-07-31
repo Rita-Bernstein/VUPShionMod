@@ -5,6 +5,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
+import java.lang.reflect.Field;
+
 @SuppressWarnings("unused")
 public class AbstractCardPatches {
     @SpirePatch(
@@ -20,6 +22,14 @@ public class AbstractCardPatches {
             card.exhaust = c.exhaust;
             card.exhaustOnUseOnce = c.exhaustOnUseOnce;
             card.rawDescription = c.rawDescription;
+            card.type = c.type;
+            try {
+                Field field = AbstractCard.class.getDeclaredField("isMultiDamage");
+                field.setAccessible(true);
+                field.set(card, field.get(c));
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
             card.initializeDescription();
         }
     }

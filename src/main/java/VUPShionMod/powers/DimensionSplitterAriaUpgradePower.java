@@ -48,6 +48,7 @@ public class DimensionSplitterAriaUpgradePower extends AbstractPower {
                 if (relic != null) {
                     this.flash();
                     relic.counter++;
+                    ((DimensionSplitterAria) relic).setDescriptionAfterLoading();
                 }
                 addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }

@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class MarkOfThePaleBlueCrossPower extends AbstractPower {
-    public static final String POWER_ID = VUPShionMod.makeID("MarkOfThePaleBlueCrossPower");
+public class BadgeOfThePaleBlueCrossPower extends AbstractPower {
+    public static final String POWER_ID = VUPShionMod.makeID("BadgeOfThePaleBlueCrossPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public MarkOfThePaleBlueCrossPower(AbstractCreature owner, int amount) {
+    public BadgeOfThePaleBlueCrossPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -22,6 +22,19 @@ public class MarkOfThePaleBlueCrossPower extends AbstractPower {
         updateDescription();
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+
+        if (this.amount == 0) {
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
+
+        if (this.amount > 10) {
+            this.amount = 10;
+        }
+    }
 
     @Override
     public void updateDescription() {

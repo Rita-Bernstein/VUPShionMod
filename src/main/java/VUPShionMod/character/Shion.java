@@ -12,7 +12,7 @@ import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.BadgeOfTimePower;
-import VUPShionMod.powers.MarkOfThePaleBlueCrossPower;
+import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
 import VUPShionMod.powers.SupportArmamentPower;
 import VUPShionMod.relics.DimensionSplitterAria;
 import basemod.abstracts.CustomPlayer;
@@ -91,7 +91,7 @@ public class Shion extends CustomPlayer {
         super.preBattlePrep();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BadgeOfTimePower(this, 1)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SupportArmamentPower(this, 1)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MarkOfThePaleBlueCrossPower(this, 1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BadgeOfThePaleBlueCrossPower(this, 1)));
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
             funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX - 288.0F * Settings.scale, this.hb.cY - 60.0F * Settings.scale, false));

@@ -11,10 +11,16 @@
       " 层数上限为 #b20 。"
     ]
   },
-  "VUPShionMod:MarkOfThePaleBlueCrossPower": {
+  "VUPShionMod:BadgeOfThePaleBlueCrossPower": {
     "NAME": "苍蓝十字徽记",
     "DESCRIPTIONS": [
       "层数上限为 #b10 。"
+    ]
+  },
+  "VUPShionMod:MarkOfThePaleBlueCrossPower": {
+    "NAME": "苍蓝十字印记",
+    "DESCRIPTIONS": [
+      "印记"
     ]
   },
   "VUPShionMod:PursuitPower": {

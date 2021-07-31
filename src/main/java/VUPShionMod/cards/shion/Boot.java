@@ -3,8 +3,8 @@ package VUPShionMod.cards.shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
-import com.megacrit.cardcrawl.actions.common.EndTurnAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -41,6 +41,7 @@ public class Boot extends AbstractVUPShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractCard card : p.hand.group) {
+            if (card.cardID.equals(this.cardID)) continue;
             AbstractCard t = card.makeSameInstanceOf();
             if (!t.exhaust) {
                 t.rawDescription = t.rawDescription + cardStrings.EXTENDED_DESCRIPTION[0];
@@ -50,7 +51,7 @@ public class Boot extends AbstractVUPShionCard {
             addToBot(new MakeTempCardInDrawPileAction(t, this.baseMagicNumber, true, true, false));
         }
         AbstractDungeon.getCurrRoom().skipMonsterTurn = false;
-        addToBot(new EndTurnAction());
+        addToBot(new PressEndTurnButtonAction());
     }
 
     static {

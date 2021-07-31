@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +58,10 @@ public class AbstractPlayerPatches {
     )
     public static class PatchRender {
         public static void Postfix(AbstractPlayer player, SpriteBatch sb) {
-            for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
-                funnel.render(sb);
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
+                    funnel.render(sb);
+                }
             }
         }
     }

@@ -49,6 +49,7 @@ public class OverspeedField extends AbstractVUPShionCard {
                 for (AbstractCard c : AbstractDungeon.player.hand.group) {
                     c.setCostForTurn(0);
                 }
+                isDone = true;
             }
         });
         addToBot(new ApplyPowerAction(p, p, new DenergizePower(p, 2)));

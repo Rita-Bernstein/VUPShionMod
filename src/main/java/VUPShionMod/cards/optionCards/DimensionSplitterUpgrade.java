@@ -15,7 +15,7 @@ public class DimensionSplitterUpgrade extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("DimensionSplitterUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/relics/dimensionSplitterAria.png";
+    public static final String IMG_PATH = "img/relics/DimensionSplitterAria.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;

@@ -213,6 +213,7 @@ public class VUPShionMod implements
         cards.add(new TimeOverload());
         cards.add(new Limit());
         cards.add(new OverspeedField());
+        cards.add(new DelayAvatar());
 
 
 
@@ -253,6 +254,15 @@ public class VUPShionMod implements
 
 //        anastasia
         cards.add(new FinFunnelUpgrade());
+        cards.add(new AnastasiaPlan());
+        cards.add(new AttackOrderAlpha());
+        cards.add(new AttackOrderBeta());
+        cards.add(new AttackOrderDelta());
+        cards.add(new AttackOrderGamma());
+        cards.add(new EnergyReserve());
+        cards.add(new LockOn());
+        cards.add(new Reboot());
+        cards.add(new TeamWork());
 
         cards.add(new DimensionSplitterUpgrade());
         cards.add(new InvestigationFinFunnelUpgrade());
@@ -267,13 +277,9 @@ public class VUPShionMod implements
 
     @Override
     public void receiveEditRelics() {
-
         BaseMod.addRelicToCustomPool(new DimensionSplitterAria(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelic(new Croissant(), RelicType.SHARED);
         BaseMod.addRelic(new OpticalCamouflage(), RelicType.SHARED);
-
-
-
 
     }
 

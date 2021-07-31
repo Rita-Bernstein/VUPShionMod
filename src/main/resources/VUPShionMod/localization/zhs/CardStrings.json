@@ -352,7 +352,7 @@
   },
   "VUPShionMod:ArmedTrain": {
     "NAME": "武装列车",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。获得 vup_shion_mod:支援兵装 层数 !VUPShionSecondM! 倍的 格挡 。对所有敌人造成 vup_shion_mod:支援兵装 层数 !VUPShionSecondM! 倍的伤害。",
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。额外获得 vup_shion_mod:支援兵装 层 NL 数 !VUPShionSecondM! 倍的 格挡 。对所有敌人造成 vup_shion_mod:支援兵装 NL 层数 !VUPShionSecondM! 倍的伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]
@@ -385,7 +385,7 @@
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "苍蓝之刃",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并给予 !M! 层 vup_shion_mod:苍蓝十字印记 。 NL 额外对其造成其 vup_shion_mod:苍蓝十字印记 层数 !VUPShionSecondM! 倍的伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并给予 !M! 层 vup_shion_mod:苍蓝十字印记 。 NL 额外对其造成其 vup_shion_mod:苍蓝十字印记 层数 !VUPShionSecondM! 倍的伤害并失去  vup_shion_mod:苍蓝十字印记 。"
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神圣冲锋",

@@ -1,5 +1,6 @@
 package VUPShionMod;
 
+import VUPShionMod.cards.liyezhu.*;
 import VUPShionMod.cards.minami.*;
 import VUPShionMod.cards.optionCards.*;
 import VUPShionMod.cards.shion.*;
@@ -15,11 +16,12 @@ import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
-import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.relics.*;
 import basemod.BaseMod;
 
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -232,6 +234,23 @@ public class VUPShionMod implements
         cards.add(new ArmedToTheTeeth());
 
 
+//      黎夜竹
+        cards.add(new IntroductionSilence());
+        cards.add(new SacredAdvice());
+        cards.add(new DivineRedemption());
+        cards.add(new BlueBlade());
+        cards.add(new HolyCharge());
+        cards.add(new StrengthPray());
+        cards.add(new Pray());
+        cards.add(new SantaCroce());
+        cards.add(new ReleaseFormLiyezhu());
+        cards.add(new Awaken());
+        cards.add(new HolyCoffinSinkingSpirit());
+        cards.add(new HolySlashDown());
+        cards.add(new PainfulConfession());
+        cards.add(new HolyCoffinRelease());
+        cards.add(new BlueRose());
+
 //        anastasia
         cards.add(new FinFunnelUpgrade());
 
@@ -248,8 +267,18 @@ public class VUPShionMod implements
 
     @Override
     public void receiveEditRelics() {
+
         BaseMod.addRelicToCustomPool(new DimensionSplitterAria(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelic(new Croissant(), RelicType.SHARED);
+        BaseMod.addRelic(new OpticalCamouflage(), RelicType.SHARED);
+
+
+
+
     }
+
+
+
 
     private Settings.GameLanguage languageSupport() {
         switch (Settings.language) {

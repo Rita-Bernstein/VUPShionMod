@@ -21,14 +21,14 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.combat.ReaperEffect;
+import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class BlueRose extends AbstractVUPShionCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("BlueRose");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz12.png"); //TODO lyz15.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz15.png
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -67,7 +67,7 @@ public class BlueRose extends AbstractVUPShionCard implements BranchingUpgradesC
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.isBranchUpgrade()) {
-            addToBot(new VFXAction(new ReaperEffect()));
+            addToBot(new VFXAction(new CleaveEffect()));
             addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
             addToBot(new GainBlockAction(p, p.getPower(BadgeOfThePaleBlueCrossPower.POWER_ID).amount * this.baseMagicNumber));
             for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {

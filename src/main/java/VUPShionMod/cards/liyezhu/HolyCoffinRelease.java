@@ -19,8 +19,8 @@ import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class HolyCoffinRelease extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("PainfulConfession");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz12.png"); //TODO lyz14.png
+    public static final String ID = VUPShionMod.makeID("HolyCoffinRelease");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz14.png
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

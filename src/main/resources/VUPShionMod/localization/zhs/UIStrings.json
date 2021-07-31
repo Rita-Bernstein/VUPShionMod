@@ -15,5 +15,9 @@
       " 消耗 。",
       " vup_shion_mod:加载完成 。"
     ]
-  }
-}
+  },
+  "VUPShionMod:UpgradeAndZeroCostAction": {
+    "TEXT": [
+      "选择牌升级并将耗能变为0"
+    ]
+  }}

@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 public class DimensionSplitterAria extends CustomRelic {
     public static final String ID = VUPShionMod.makeID("DimensionSplitterAria");
     public static final String IMG_PATH = "img/relics/dimensionSplitterAria.png";
-    private static final String OUTLINE_PATH = "img/relics/dimensionSplitterAriaOutline.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/dimensionSplitterAria.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 

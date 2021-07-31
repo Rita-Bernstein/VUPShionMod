@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HolySlashDown extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("HolySlashDown");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz12.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz12.png
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

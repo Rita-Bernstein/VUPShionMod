@@ -69,8 +69,8 @@ public class SantaCroce extends AbstractVUPShionCard implements BranchingUpgrade
                             if (monster.hasPower(MarkOfThePaleBlueCrossPower.POWER_ID)) {
                                 int mul = monster.getPower(MarkOfThePaleBlueCrossPower.POWER_ID).amount;
                                 addToBot(new GainBlockAction(p, mul * SantaCroce.this.secondaryM));
-                                isDone = true;
                             }
+                            isDone = true;
                         }
                     });
                 } else {
@@ -80,8 +80,8 @@ public class SantaCroce extends AbstractVUPShionCard implements BranchingUpgrade
                             if (monster.hasPower(MarkOfThePaleBlueCrossPower.POWER_ID)) {
                                 int mul = monster.getPower(MarkOfThePaleBlueCrossPower.POWER_ID).amount;
                                 addToBot(new HealAction(p, p, mul * SantaCroce.this.secondaryM));
-                                isDone = true;
                             }
+                            isDone = true;
                         }
                     });
                 }

@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class TimeSlack extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("TimeSlack");
@@ -35,10 +34,6 @@ public class TimeSlack extends AbstractVUPShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, this.magicNumber)));
         addToBot(new GainBlockAction(p, p, this.block));
-    }
-
-    public AbstractCard makeCopy() {
-        return new TimeSlack();
     }
 
     public void upgrade() {

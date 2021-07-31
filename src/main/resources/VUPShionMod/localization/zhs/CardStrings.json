@@ -25,15 +25,15 @@
   },
   "VUPShionMod:AttackSystemPreload": {
     "NAME": "攻击系统预加载",
-    "DESCRIPTION": "将 !M! 张 快速攻击* 加入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *快速攻击 加入抽牌堆。"
   },
   "VUPShionMod:DefenseSystemPreload": {
     "NAME": "防御系统预加载",
-    "DESCRIPTION": "将 !M! 张 快速防御* 加入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *快速防御 加入抽牌堆。"
   },
   "VUPShionMod:RepairSystemPreload": {
     "NAME": "修复系统预加载",
-    "DESCRIPTION": "将 !M! 张 快速修复* 加入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *快速修复 加入抽牌堆。"
   },
   "VUPShionMod:QuickAttack": {
     "NAME": "快速攻击",
@@ -61,17 +61,17 @@
     "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 一半的伤害 X 次。",
     "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 一半伤害 X+1 次。",
     "EXTENDED_DESCRIPTION": [
-      " NL （造成 !D! 点伤害。）"
+      " NL （每次造成 !D! 点伤害。）"
     ]
   },
   "VUPShionMod:AttackInitiation": {
     "NAME": "攻击启动",
-    "DESCRIPTION": "本回合内，你每打出一张牌，抽 !M! 张牌。"
+    "DESCRIPTION": "本回合内，你打出的下 !M! 张牌附带抽1张牌的效果。"
   },
   "VUPShionMod:EnduranceInitiation": {
     "NAME": "续航启动",
-    "DESCRIPTION": "选择一张牌，将这张牌的 !M! 张带有 消耗 的复制品加入抽牌堆。",
-    "UPGRADE_DESCRIPTION": "选择一张牌，将这张牌的 !M! 张复制品加入抽牌堆。"
+    "DESCRIPTION": "选择一张牌，将这张牌的 !M! 张带有 消耗 的复制品加入抽牌堆。 消耗 。",
+    "UPGRADE_DESCRIPTION": "选择一张牌，将这张牌的 !M! 张带有 vup_shion_mod:加载完成 的复制品加入抽牌堆。 消耗 。"
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "进攻准备",
@@ -95,7 +95,10 @@
   },
   "VUPShionMod:DimensionSplitting": {
     "NAME": "维度裂解启动",
-    "DESCRIPTION": "本回合内，你每打出 vup_shion_mod:浮游炮 牌时，造成打出数量 !M! 倍的伤害"
+    "DESCRIPTION": "造成你本回合内打出的 vup_shion_mod:浮游炮 牌数量 !M! 倍的伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (造成 !D! 点伤害)"
+    ]
   },
   "VUPShionMod:Goodbye": {
     "NAME": "mmd不陪你玩了",
@@ -108,7 +111,10 @@
   },
   "VUPShionMod:Boot": {
     "NAME": "系统启动",
-    "DESCRIPTION": "将所有手牌的 !M! 张带有 消耗 的复制品加入抽牌堆。 NL 结束你的回合。"
+    "DESCRIPTION": "将所有手牌的 !M! 张带有 消耗 的复制品加入抽牌堆。 NL 结束你的回合。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 。"
+    ]
   },
   "VUPShionMod:AttackBeforeDefend": {
     "NAME": "先攻后防",

@@ -45,7 +45,7 @@ public class DimensionSplitterAria extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+        AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
         if (m != null) {
             this.flash();
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));

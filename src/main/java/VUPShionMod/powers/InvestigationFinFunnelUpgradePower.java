@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.List;
+import java.util.UUID;
 
 public class InvestigationFinFunnelUpgradePower extends AbstractPower {
     public static final String POWER_ID = VUPShionMod.makeID("InvestigationFinFunnelUpgradePower");
@@ -26,7 +27,7 @@ public class InvestigationFinFunnelUpgradePower extends AbstractPower {
 
     public InvestigationFinFunnelUpgradePower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = POWER_ID;
+        this.ID = POWER_ID + UUID.randomUUID();
         this.owner = owner;
         this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/InvestigationFinFunnelUpgrade128.png")), 0, 0, 128, 128);

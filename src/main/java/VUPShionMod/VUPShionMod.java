@@ -4,6 +4,9 @@ import VUPShionMod.cards.optionCards.*;
 import VUPShionMod.cards.shion.*;
 import VUPShionMod.cards.anastasia.*;
 import VUPShionMod.cards.kuroisu.*;
+import VUPShionMod.cards.tempCards.QuickAttack;
+import VUPShionMod.cards.tempCards.QuickDefend;
+import VUPShionMod.cards.tempCards.QuickRepair;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
@@ -56,6 +59,7 @@ public class VUPShionMod implements
     public static Properties VUPShionDefaults = new Properties();
     public static List<CustomCard> shion_Cards = new ArrayList<>();
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
+    public static AbstractFinFunnel.FinFunnelSaver finFunnelSaver;
 
 
     public VUPShionMod() {
@@ -136,6 +140,7 @@ public class VUPShionMod implements
         Texture badgeTexture = new Texture(assetPath("/img/badge.png"));
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
+        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
     }
 
     @Override
@@ -161,6 +166,27 @@ public class VUPShionMod implements
 //        紫音
         cards.add(new Cannonry());
         cards.add(new Defend_Shion());
+        cards.add(new DefenseSystemCharging());
+        cards.add(new DeploymentOfDefenseSystem());
+        cards.add(new AttackSystemPreload());
+        cards.add(new DefenseSystemPreload());
+        cards.add(new RepairSystemPreload());
+        cards.add(new QuickAttack());
+        cards.add(new QuickDefend());
+        cards.add(new QuickRepair());
+        cards.add(new DimensionSplitting());
+        cards.add(new AnastasiaCore());
+        cards.add(new Goodbye());
+        cards.add(new AttackInitiation());
+        cards.add(new EnduranceInitiation());
+        cards.add(new AttackPreparation());
+        cards.add(new SpeedShot());
+        cards.add(new Strafe());
+        cards.add(new Bombardment());
+        cards.add(new Boot());
+        cards.add(new AttackBeforeDefend());
+        cards.add(new BodyStrengthening());
+        cards.add(new Rob());
 
 
 //        克洛伊斯

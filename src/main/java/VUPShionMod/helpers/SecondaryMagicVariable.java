@@ -1,7 +1,6 @@
 package VUPShionMod.helpers;
 
 import VUPShionMod.cards.AbstractVUPShionCard;
-import VUPShionMod.cards.AbstractVUPShionCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -45,7 +44,7 @@ public class SecondaryMagicVariable extends DynamicVariable {
     public boolean upgraded(AbstractCard card) {
         if (card instanceof AbstractVUPShionCard) {
             AbstractVUPShionCard asc = (AbstractVUPShionCard) card;
-            return asc.upgradesecondaryM;
+            return asc.upgradeSecondaryM;
         } else {
             return false;
         }

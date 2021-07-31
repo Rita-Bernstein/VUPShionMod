@@ -52,6 +52,28 @@
       " 张带有 #y浮游炮 词条的牌，将 #y追击浮游炮 的强化等级提升 #b1 。"
     ]
   },
+  "VUPShionMod:DeploymentOfDefenseSystemPower": {
+    "NAME": "防御系统展开",
+    "DESCRIPTIONS": [
+      "在这个回合，你每打出一张牌，就获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:AnastasiaCorePower": {
+    "NAME": "Anastasia核心",
+    "DESCRIPTIONS": [
+      "在这个回合，你每打出一张牌，就获得 #b",
+      " [E] 。"
+    ]
+  },
+  "VUPShionMod:AttackInitiationPower": {
+    "NAME": "攻击启动",
+    "DESCRIPTIONS": [
+      "在这个回合，你打出的下 #b",
+      " 张牌附带抽 #b",
+      " 张牌的效果。"
+    ]
+  },
   "VUPShionMod:TimeBombPower": {
     "NAME": "时空炸弹",
     "DESCRIPTIONS": [

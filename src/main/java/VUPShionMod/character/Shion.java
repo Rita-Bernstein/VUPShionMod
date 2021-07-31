@@ -1,6 +1,7 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.cards.shion.Cannonry;
 import VUPShionMod.cards.shion.Defend_Shion;
 import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
@@ -94,12 +95,24 @@ public class Shion extends CustomPlayer {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MarkOfThePaleBlueCrossPower(this, 1)));
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-            funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX - 288.0F * Settings.scale, this.hb.cY - 60.0F * Settings.scale, false));
-            funnelList.add(new PursuitFinFunnel().setPosition(this.hb.cX + 128.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale, true));
-            funnelList.add(new GravityFinFunnel().setPosition(this.hb.cX - 164.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale, false));
+            funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX - 288.0F * Settings.scale, this.hb.cY - 60.0F * Settings.scale));
+            funnelList.add(new PursuitFinFunnel().setPosition(this.hb.cX + 128.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale));
+            funnelList.add(new GravityFinFunnel().setPosition(this.hb.cX - 164.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale));
             AbstractPlayerPatches.AddFields.activatedFinFunnel.set(this, funnelList.get(1));
-            AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
+            if (VUPShionMod.finFunnelSaver.data != null) {
+                int index = 0;
+                for (Integer i : VUPShionMod.finFunnelSaver.data) {
+                    if (funnelList.size() > index) {
+                        funnelList.get(index).upgradeLevel(i);
+                    } else {
+                        break;
+                    }
+                    index++;
+                }
+            }
         }
+        AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
+        AbstractDungeon.actionManager.addToBottom(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, AbstractPlayerPatches.AddFields.activatedFinFunnel.get(this)));
     }
 
     public String getPortraitImageName() {

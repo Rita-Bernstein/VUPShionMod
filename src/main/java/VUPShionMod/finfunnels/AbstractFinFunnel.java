@@ -43,7 +43,7 @@ public abstract class AbstractFinFunnel {
 
     public AbstractFinFunnel() {
         this.hb = new Hitbox(96.0F * Settings.scale, 96.0F * Settings.scale);
-        this.img = ImageMaster.ORB_LIGHTNING; //TODO 先用电球的贴图顶着
+        this.img = ImageMaster.ORB_LIGHTNING;
         this.bobEffect = new BobEffect(3.0F * Settings.scale, 3.0F);
         this.fontScale = 0.7F;
         if (AbstractDungeon.player != null) {
@@ -52,8 +52,8 @@ public abstract class AbstractFinFunnel {
         }
     }
 
-    public AbstractFinFunnel setPosition(float cX, float cY, boolean moveEffect) {
-        addToBot(new MoveFinFunnelAction(this, cX, cY, moveEffect));
+    public AbstractFinFunnel setPosition(float cX, float cY) {
+        addToBot(new MoveFinFunnelAction(this, cX, cY));
         return this;
     }
 
@@ -141,13 +141,11 @@ public abstract class AbstractFinFunnel {
         AbstractDungeon.actionManager.addToTop(action);
     }
 
-    static {
-        new FinFunnelSaver();
-    }
-
     public static class FinFunnelSaver implements CustomSavable<List<Integer>> {
 
-        FinFunnelSaver() {
+        public List<Integer> data;
+
+        public FinFunnelSaver() {
             BaseMod.addSaveField("finFunnels", this);
         }
 
@@ -162,17 +160,7 @@ public abstract class AbstractFinFunnel {
 
         @Override
         public void onLoad(List<Integer> integerList) {
-            if (integerList != null) {
-                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
-                int index = 0;
-                for (Integer i :integerList) {
-                    if (funnelList.size() > index) {
-                        funnelList.get(index).level = i;
-                    } else {
-                        break;
-                    }
-                }
-            }
+            this.data = integerList;
         }
     }
 }

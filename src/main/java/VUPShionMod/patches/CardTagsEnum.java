@@ -6,4 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 public class CardTagsEnum {
     @SpireEnum
     public static AbstractCard.CardTags FIN_FUNNEL;
+
+    @SpireEnum
+    public static AbstractCard.CardTags LOADED;
 }

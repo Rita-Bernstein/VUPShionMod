@@ -35,10 +35,6 @@ public class TimeBacktracking extends AbstractVUPShionCard {
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, 1), 1));
     }
 
-    public AbstractCard makeCopy() {
-        return new TimeBacktracking();
-    }
-
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();

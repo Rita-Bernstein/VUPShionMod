@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import java.util.UUID;
+
 public class DimensionSplitterAriaUpgradePower extends AbstractPower {
     public static final String POWER_ID = VUPShionMod.makeID("DimensionSplitterAriaUpgradePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -23,7 +25,7 @@ public class DimensionSplitterAriaUpgradePower extends AbstractPower {
 
     public DimensionSplitterAriaUpgradePower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = POWER_ID;
+        this.ID = POWER_ID + UUID.randomUUID();
         this.owner = owner;
         this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/DimensionSplitterAriaUpgrade128.png")), 0, 0, 128, 128);

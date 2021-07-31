@@ -14,43 +14,43 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Cannonry extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("Cannonry");
+public class Strafe extends AbstractVUPShionCard {
+    public static final String ID = VUPShionMod.makeID("Strafe");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy01.png";
+    public static final String IMG_PATH = "img/cards/shion/zy14.png"; //TODO zy15.png
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    public Cannonry() {
+    public Strafe() {
         super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
-        this.tags.add(CardTags.STARTER_STRIKE);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
-        this.baseDamage = 3;
+        this.baseDamage = 0;
+        this.baseMagicNumber = this.magicNumber = 2;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeMagicNumber(1);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
-        if (funnel != null) {
-            funnel.fire(m, this.damage, this.damageTypeForTurn);
-        } else {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        for(int i = 0; i < this.baseMagicNumber; i++) {
+            if (funnel != null) {
+                funnel.fire(m, this.damage, this.damageTypeForTurn);
+            } else {
+                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+            }
         }
     }
 

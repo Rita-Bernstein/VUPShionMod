@@ -1,5 +1,6 @@
 package VUPShionMod;
 
+import VUPShionMod.cards.liyezhu.*;
 import VUPShionMod.cards.minami.*;
 import VUPShionMod.cards.optionCards.*;
 import VUPShionMod.cards.shion.*;
@@ -230,6 +231,14 @@ public class VUPShionMod implements
         cards.add(new GravityLoading());
         cards.add(new ArmedTrain());
         cards.add(new ArmedToTheTeeth());
+
+
+//      黎夜竹
+        cards.add(new IntroductionSilence());
+        cards.add(new SacredAdvice());
+        cards.add(new DivineRedemption());
+
+
 
 
 //        anastasia

@@ -68,7 +68,10 @@ public class Cannonry extends AbstractVUPShionCard {
         int realBaseDamage = this.baseDamage;
         this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
         super.applyPowers();
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        if (upgraded)
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        else
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;

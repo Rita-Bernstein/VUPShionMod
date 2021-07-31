@@ -50,7 +50,10 @@ public class Defend_Shion extends AbstractVUPShionCard {
         int realBaseBlock = this.baseBlock;
         this.baseBlock += VUPShionMod.calculateTotalFinFunnelLevel();
         super.applyPowers();
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        if (upgraded)
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        else
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
         this.baseBlock = realBaseBlock;
         this.isBlockModified = this.block != this.baseBlock;

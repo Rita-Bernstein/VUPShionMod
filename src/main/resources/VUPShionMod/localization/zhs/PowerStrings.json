@@ -2,19 +2,25 @@
   "VUPShionMod:BadgeOfTimePower": {
     "NAME": "时之徽记",
     "DESCRIPTIONS": [
-      "#y克洛伊斯 的牌需要消耗 #y时之徽记 的层数。 NL 层数上限为 #b10 。"
+      "层数上限为 #b10 。"
     ]
   },
   "VUPShionMod:SupportArmamentPower": {
     "NAME": "支援兵装",
     "DESCRIPTIONS": [
-      "#y南小棉 的牌需要消耗 #y支援兵装 的层数。 NL 层数上限为 #b20 。"
+      " 层数上限为 #b20 。"
+    ]
+  },
+  "VUPShionMod:BadgeOfThePaleBlueCrossPower": {
+    "NAME": "苍蓝十字徽记",
+    "DESCRIPTIONS": [
+      "层数上限为 #b10 。"
     ]
   },
   "VUPShionMod:MarkOfThePaleBlueCrossPower": {
-    "NAME": "苍蓝十字徽记",
+    "NAME": "苍蓝十字印记",
     "DESCRIPTIONS": [
-      "#y黎夜竹 的牌需要消耗 #y苍蓝十字徽记 的层数。 NL 层数上限为 #b10 。"
+      "印记"
     ]
   },
   "VUPShionMod:PursuitPower": {
@@ -78,6 +84,56 @@
     "NAME": "时空炸弹",
     "DESCRIPTIONS": [
       "下次 #y时之徽记 达到 #b10 层时，失去所有 #y时之徽记 并对所有敌人造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:GainBadgeOfTimePower": {
+    "NAME": "获得时之徽记",
+    "DESCRIPTIONS": [
+      "你的下回合开始时获得 #b%d 层 #y时之徽记 。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormKuroisuPower": {
+    "NAME": "姿态解放-克洛伊斯",
+    "DESCRIPTIONS": [
+      "你的回合开始时，获得 #y时之徽记 层数 #b%d 倍的 #y格挡 。 NL 失去所有 #y时之徽记 。"
+    ]
+  },
+  "VUPShionMod:BleedingPower": {
+    "NAME": "流血",
+    "DESCRIPTIONS": [
+      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束时减少 #b1 层。"
+    ]
+  },
+  "VUPShionMod:DenergizePower": {
+    "NAME": "失能",
+    "DESCRIPTIONS": [
+      "下一回合开始时失去 #b",
+      " [E] 。",
+      " [E] 。"
+    ]
+  },
+  "VUPShionMod:TempFinFunnelUpgradePower": {
+    "NAME": "临时总炮强化",
+    "DESCRIPTIONS": [
+      "本回合你的 #y总炮强化 额外提高 #b%d 点。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormMinamiPower": {
+    "NAME": "姿态解放-南小棉",
+    "DESCRIPTIONS": [
+      "你的回合开始时，获得 #b%d 层 #y支援兵装 。"
+    ]
+  },
+  "VUPShionMod:RailgunPower": {
+    "NAME": "南小棉-轨道炮",
+    "DESCRIPTIONS": [
+      " #y支援兵装 满层时，失去所有 #y支援兵装 并对所有敌人造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:EnhancedSupportPower": {
+    "NAME": "强化支援",
+    "DESCRIPTIONS": [
+      "获得 #y支援兵装 时额外获得 #b%d 层。"
     ]
   }
 }

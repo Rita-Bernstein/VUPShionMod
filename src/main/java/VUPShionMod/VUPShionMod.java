@@ -16,11 +16,12 @@ import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
-import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.relics.*;
 import basemod.BaseMod;
 
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -257,8 +258,18 @@ public class VUPShionMod implements
 
     @Override
     public void receiveEditRelics() {
+
         BaseMod.addRelicToCustomPool(new DimensionSplitterAria(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelic(new Croissant(), RelicType.SHARED);
+        BaseMod.addRelic(new OpticalCamouflage(), RelicType.SHARED);
+
+
+
+
     }
+
+
+
 
     private Settings.GameLanguage languageSupport() {
         switch (Settings.language) {

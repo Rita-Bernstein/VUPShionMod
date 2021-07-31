@@ -133,7 +133,7 @@
   },
   "VUPShionMod:Rob": {
     "NAME": "掠夺",
-    "DESCRIPTION": "造成 vup_shion_mod:总浮游强化 层数的伤害。 NL 斩杀 时，获得20金币。",
+    "DESCRIPTION": "造成 vup_shion_mod:总炮强化 层数的伤害。 NL 斩杀 时，获得20金币。",
     "UPGRADE_DESCRIPTION": "造成4+ vup_shion_mod:总炮强化 层数的伤害。 NL 斩杀 时，获得20金币。",
     "EXTENDED_DESCRIPTION": [
       "（造成 !D! 点伤害）"

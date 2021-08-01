@@ -26,7 +26,7 @@ public class EnergyReserve extends AbstractVUPShionCard {
 
     public EnergyReserve() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override

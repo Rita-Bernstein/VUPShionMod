@@ -35,6 +35,7 @@ public class DelayAvatar extends AbstractVUPShionCard {
     public DelayAvatar() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 3;
 
     }
 
@@ -51,6 +52,7 @@ public class DelayAvatar extends AbstractVUPShionCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeSecondM(2);
         }
     }
 }

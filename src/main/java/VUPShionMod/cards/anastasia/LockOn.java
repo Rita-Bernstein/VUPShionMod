@@ -26,7 +26,7 @@ public class LockOn extends AbstractVUPShionCard {
 
     public LockOn() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

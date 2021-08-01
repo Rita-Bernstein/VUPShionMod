@@ -10,6 +10,7 @@ import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.cards.tempCards.QuickDefend;
 import VUPShionMod.cards.tempCards.QuickRepair;
 import VUPShionMod.character.Shion;
+import VUPShionMod.events.*;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -21,6 +22,7 @@ import basemod.BaseMod;
 
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
+import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -133,7 +135,7 @@ public class VUPShionMod implements
             }
 
             AbstractPower power = AbstractDungeon.player.getPower(TempFinFunnelUpgradePower.POWER_ID);
-            if(power != null)
+            if (power != null)
                 ret += power.amount;
         }
         return ret;
@@ -150,11 +152,16 @@ public class VUPShionMod implements
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
+
+        BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
+                //Event Character//
+                .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .create());
     }
 
     @Override
     public void receiveAddAudio() {
-        for (int i=1;i<=18;i++) {
+        for (int i = 1; i <= 18; i++) {
             BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion" + i + ".wav"));
         }
     }
@@ -214,7 +221,6 @@ public class VUPShionMod implements
         cards.add(new Limit());
         cards.add(new OverspeedField());
         cards.add(new DelayAvatar());
-
 
 
 //        南小棉
@@ -282,8 +288,6 @@ public class VUPShionMod implements
         BaseMod.addRelic(new OpticalCamouflage(), RelicType.SHARED);
 
     }
-
-
 
 
     private Settings.GameLanguage languageSupport() {

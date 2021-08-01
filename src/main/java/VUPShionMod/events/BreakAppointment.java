@@ -1,23 +1,28 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.kuroisu.BlackHand;
 import VUPShionMod.relics.Croissant;
+import VUPShionMod.relics.OpticalCamouflage;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
-public class CroissantEvent extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID("CroissantEvent");
+public class BreakAppointment extends AbstractImageEvent {
+    public static final String ID = VUPShionMod.makeID("BreakAppointment");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    private int damage = 15;
+
     private CurrentScreen curScreen = CurrentScreen.INTRO;
 
     private enum CurrentScreen {
@@ -25,10 +30,14 @@ public class CroissantEvent extends AbstractImageEvent {
     }
 
 
-    public CroissantEvent() {
-        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/CroissantEvent.jpg"));
-        this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1]);
+    public BreakAppointment() {
+        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/BreakAppointment.jpg"));
+        if (AbstractDungeon.player.gold >= 100)
+            this.imageEventText.setDialogOption(OPTIONS[0]);
+        else
+            this.imageEventText.setDialogOption(OPTIONS[1], true);
+
+        this.imageEventText.setDialogOption(OPTIONS[2]);
 
     }
 
@@ -43,16 +52,16 @@ public class CroissantEvent extends AbstractImageEvent {
             case INTRO:
                 if (buttonPressed == 0) {
                     if (AbstractDungeon.eventRng.randomBoolean(0.25f)) {
-                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
-                        this.imageEventText.removeDialogOption(1);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[2]);
-                        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, this.damage));
-                        AbstractDungeon.effectList.add(new FlashAtkImgEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractGameAction.AttackEffect.FIRE));
-                    } else {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
                         this.imageEventText.removeDialogOption(1);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[2]);
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new Croissant());
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        this.imageEventText.loadImage("img/events/BreakAppointment2.jpg");
+                    } else {
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
+                        this.imageEventText.removeDialogOption(1);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        AbstractCard c = new BlackHand();
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                     }
                     this.curScreen = CurrentScreen.COMPLETE;
 
@@ -60,6 +69,7 @@ public class CroissantEvent extends AbstractImageEvent {
                     this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
                     this.imageEventText.removeDialogOption(1);
                     this.imageEventText.updateDialogOption(0, OPTIONS[2]);
+                    this.imageEventText.loadImage("img/events/BreakAppointment3.jpg");
                     this.curScreen = CurrentScreen.COMPLETE;
                 }
                 return;

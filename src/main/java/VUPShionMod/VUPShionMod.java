@@ -157,6 +157,16 @@ public class VUPShionMod implements
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
                 .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
+                //Event Character//
+                .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(BreakAppointment.ID, BreakAppointment.class) //Event ID//
+                //Event Character//
+                .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .create());
     }
 
     @Override

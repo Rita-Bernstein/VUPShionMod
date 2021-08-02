@@ -80,9 +80,9 @@ public class Shion extends CustomPlayer {
                 "VUPShionMod/characters/Shion/corpse.png",
                 getLoadout(), 0.0F, -5.0F, 240.0F, 320.0F, new EnergyManager(ENERGY_PER_TURN));
 
-        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 3.2f);
+        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 2.0f);
 
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "idle_3fuyou", true);
 //        this.stateData.setMix("Hit", "Idle", 0.1F);
         e.setTime(e.getEndTime() * MathUtils.random());
     }

@@ -3,6 +3,8 @@ package VUPShionMod.cards.anastasia;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.powers.AttackOrderBetaPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -27,6 +29,7 @@ public class AttackOrderBeta extends AbstractVUPShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p,p,new AttackOrderBetaPower(p)));
     }
 
     @Override

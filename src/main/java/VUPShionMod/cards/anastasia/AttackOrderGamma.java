@@ -4,6 +4,8 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.powers.AttackOrderGammaPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -29,6 +31,7 @@ public class AttackOrderGamma extends AbstractAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p,p,new AttackOrderGammaPower(p)));
     }
 
     @Override

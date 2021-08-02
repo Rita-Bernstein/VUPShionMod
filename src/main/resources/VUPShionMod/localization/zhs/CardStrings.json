@@ -148,11 +148,11 @@
     "DESCRIPTION": " 固有 虚无 。 NL vup_shion_mod:浮游炮 牌将对所有敌人造成伤害。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderGamma": {
-    "NAME": "攻击指令·肆式",
-    "DESCRIPTION": " 固有 虚无 。 NL 受到 vup_shion_mod:浮游炮 牌攻击的敌人的 vup_shion_mod:流血 额外持续两回合。 NL 不与其他指令共存。"
+    "NAME": "攻击指令·叁式",
+    "DESCRIPTION": " 固有 虚无 。 NL 受到 vup_shion_mod:浮游炮 牌攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderDelta": {
-    "NAME": "攻击指令·叁式",
+    "NAME": "攻击指令·肆式",
     "DESCRIPTION": " 固有 虚无 。 NL vup_shion_mod:浮游炮 牌将给予你造成伤害一半的 格挡 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:Reboot": {
@@ -161,10 +161,7 @@
   },
   "VUPShionMod:TeamWork": {
     "NAME": "连携",
-    "DESCRIPTION": "分别从三张 *克洛伊斯 、*Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。",
-    "EXTENDED_DESCRIPTION": [
-      " NL 消耗 。"
-    ]
+    "DESCRIPTION": "分别从三张 *克洛伊斯 、*Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。"
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia计划",

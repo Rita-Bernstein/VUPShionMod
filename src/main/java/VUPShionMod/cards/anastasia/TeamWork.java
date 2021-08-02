@@ -1,11 +1,15 @@
 package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.SelectCardToHandAction;
 import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.patches.CardTagsEnum;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -21,10 +25,15 @@ public class TeamWork extends AbstractAnastasiaCard {
 
     public TeamWork() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.KUROISU_CARD), true, true));
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.ANASTASIA_CARD), true, true));
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.MINAMI_CARD), true, true));
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.LIYEZHU_CARD), true, true));
     }
 
     @Override
@@ -33,6 +42,36 @@ public class TeamWork extends AbstractAnastasiaCard {
             upgradeName();
             upgradeBaseCost(2);
         }
+    }
+
+    public static ArrayList<AbstractCard> returnRandomCardByCardTagInCombat(CardTags tag) {
+        ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
+        ArrayList<AbstractCard> returnCard = new ArrayList<AbstractCard>();
+        for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group) {
+            if (c.hasTag(tag) && !c.hasTag(AbstractCard.CardTags.HEALING)) {
+                list.add(c);
+            }
+        }
+        for (AbstractCard c : AbstractDungeon.srcUncommonCardPool.group) {
+            if (c.hasTag(tag) && !c.hasTag(AbstractCard.CardTags.HEALING)) {
+                list.add(c);
+            }
+        }
+        for (AbstractCard c : AbstractDungeon.srcRareCardPool.group) {
+            if (c.hasTag(tag) && !c.hasTag(AbstractCard.CardTags.HEALING)) {
+                list.add(c);
+            }
+        }
+
+
+        int temp;
+        for (int i = 0; i < 3; i++) {
+            temp = AbstractDungeon.cardRng.random(list.size() - 1);
+            returnCard.add(list.get(temp));
+            list.remove(temp);
+        }
+
+        return returnCard;
     }
 
 

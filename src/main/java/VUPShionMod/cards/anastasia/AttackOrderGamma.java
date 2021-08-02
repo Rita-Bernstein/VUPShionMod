@@ -24,6 +24,7 @@ public class AttackOrderGamma extends AbstractAnastasiaCard {
         this.isInnate = true;
         this.isEthereal = true;
         this.exhaust = true;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

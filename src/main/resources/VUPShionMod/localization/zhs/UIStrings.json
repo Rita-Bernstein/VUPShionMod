@@ -20,4 +20,11 @@
     "TEXT": [
       "选择牌升级并将耗能变为0"
     ]
-  }}
+  },
+  "VUPShionMod:SelectCardToHandAction": {
+    "TEXT": [
+      " NL 消耗 。",
+      " 虚无 。"
+    ]
+  }
+}

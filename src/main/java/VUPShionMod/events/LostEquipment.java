@@ -3,6 +3,7 @@ package VUPShionMod.events;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.relics.Croissant;
 import VUPShionMod.relics.OpticalCamouflage;
+import VUPShionMod.relics.Sniperscope;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -31,12 +32,12 @@ public class LostEquipment extends AbstractImageEvent {
     public LostEquipment() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/LostEquipment.jpg"));
         if (AbstractDungeon.player.gold >= 100)
-            this.imageEventText.setDialogOption(OPTIONS[0]);
+            this.imageEventText.setDialogOption(OPTIONS[0],new OpticalCamouflage());
         else
             this.imageEventText.setDialogOption(OPTIONS[1], true);
 
         if (AbstractDungeon.player.masterDeck.group.size() >= 1)
-            this.imageEventText.setDialogOption(OPTIONS[2]);
+            this.imageEventText.setDialogOption(OPTIONS[2], new Sniperscope());
         else
             this.imageEventText.setDialogOption(OPTIONS[3], true);
 
@@ -70,7 +71,7 @@ public class LostEquipment extends AbstractImageEvent {
                         CardCrawlGame.sound.play("CARD_EXHAUST");
                         AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, Settings.WIDTH *0.5f, Settings.HEIGHT *0.5f));
                         AbstractDungeon.player.masterDeck.removeCard(card);
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new OpticalCamouflage());
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new Sniperscope());
                         this.curScreen = CurrentScreen.COMPLETE;
                         return;
                     case 2:

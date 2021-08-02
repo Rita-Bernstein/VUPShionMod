@@ -2,9 +2,8 @@ package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
-import VUPShionMod.cards.shion.Cannonry;
-import VUPShionMod.cards.shion.Defend_Shion;
-import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
+import VUPShionMod.cards.anastasia.*;
+import VUPShionMod.cards.shion.*;;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -80,7 +79,7 @@ public class Shion extends CustomPlayer {
                 "VUPShionMod/characters/Shion/corpse.png",
                 getLoadout(), 0.0F, -5.0F, 240.0F, 320.0F, new EnergyManager(ENERGY_PER_TURN));
 
-        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 2.0f);
+        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 1.0f);
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "idle_3fuyou", true);
 //        this.stateData.setMix("Hit", "Idle", 0.1F);
@@ -136,6 +135,9 @@ public class Shion extends CustomPlayer {
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(FinFunnelUpgrade.ID);
+        retVal.add(AttackOrderAlpha.ID);
+        retVal.add(AttackOrderDelta.ID);
+
 
         return retVal;
     }
@@ -258,11 +260,11 @@ public class Shion extends CustomPlayer {
     }
 
     public void damage(DamageInfo info) {
-//        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-//            AnimationState.TrackEntry e = this.state.setAnimation(0, "Hit", false);
-//            this.state.addAnimation(0, "Idle", true, 0.0F);
-//            e.setTimeScale(1.0F);
-//        }
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
+            AnimationState.TrackEntry e = this.state.setAnimation(0, "hurt", false);
+            this.state.addAnimation(0, "idle_3fuyou", true, 0.0F);
+            e.setTimeScale(1.0F);
+        }
 
         super.damage(info);
     }

@@ -25,15 +25,15 @@
   },
   "VUPShionMod:AttackSystemPreload": {
     "NAME": "攻击系统预加载",
-    "DESCRIPTION": "将 !M! 张 *快速攻击 加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 将 !M! 张 *快速攻击 加入抽牌堆。"
   },
   "VUPShionMod:DefenseSystemPreload": {
     "NAME": "防御系统预加载",
-    "DESCRIPTION": "将 !M! 张 *快速防御 加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 将 !M! 张 *快速防御 加入抽牌堆。"
   },
   "VUPShionMod:RepairSystemPreload": {
     "NAME": "修复系统预加载",
-    "DESCRIPTION": "将 !M! 张 *快速修复 加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 将 !M! 张 *快速修复 加入抽牌堆。"
   },
   "VUPShionMod:QuickAttack": {
     "NAME": "快速攻击",
@@ -59,7 +59,7 @@
   "VUPShionMod:SpeedShot": {
     "NAME": "高速射击",
     "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 一半的伤害 X 次。",
-    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 一半伤害 X+1 次。",
+    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 一半的伤害 X+1 次。",
     "EXTENDED_DESCRIPTION": [
       " NL （每次造成 !D! 点伤害。）"
     ]
@@ -106,7 +106,7 @@
   },
   "VUPShionMod:Bombardment": {
     "NAME": "轰炸开始",
-    "DESCRIPTION": "触发三种  vup_shion_mod:浮游炮 的效果。",
+    "DESCRIPTION": "触发三种 vup_shion_mod:浮游炮 的效果。",
     "UPGRADE_DESCRIPTION": "触发 *咏叹调型维度裂解者 和三种  vup_shion_mod:浮游炮 的效果。"
   },
   "VUPShionMod:Boot": {
@@ -141,7 +141,7 @@
   },
   "VUPShionMod:AttackOrderAlpha": {
     "NAME": "攻击指令·壹式",
-    "DESCRIPTION": " 固有 虚无 。 NL 翻倍 vup_shion_mod:浮游炮 牌造成的伤害。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 固有 虚无 。 NL 不能被 升级 。 NL 翻倍 vup_shion_mod:浮游炮 牌造成的伤害。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderBeta": {
     "NAME": "攻击指令·贰式",
@@ -161,7 +161,7 @@
   },
   "VUPShionMod:TeamWork": {
     "NAME": "连携",
-    "DESCRIPTION": "分别从三张 *克洛伊斯 、*Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。"
+    "DESCRIPTION": "分别从三张 *克洛伊斯 、 *Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。"
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia计划",
@@ -179,23 +179,23 @@
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
     "DESCRIPTION": "从四张 *浮游炮升级计划 中选择一张。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 从四张 *浮游炮升级计划 中选择一张。"
+    "UPGRADE_DESCRIPTION": "固有 。从四张 *浮游炮升级计划 中选择一张。"
   },
   "VUPShionMod:DimensionSplitterUpgrade": {
     "NAME": "咏叹调型维度裂解者升级计划",
-    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：咏叹调型维度裂解者强化等级加1。"
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：咏叹调型维度裂解者强化等级加1。"
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "侦查浮游炮升级计划",
-    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：侦查浮游炮强化等级加1。"
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：侦查浮游炮强化等级加1。"
   },
   "VUPShionMod:GravityUpgrade": {
     "NAME": "重力浮游炮升级计划",
-    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：重力浮游炮强化等级加1。"
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：重力浮游炮强化等级加1。"
   },
   "VUPShionMod:PursuitUpgrade": {
     "NAME": "追击浮游炮升级计划",
-    "DESCRIPTION": "vup_shion_mod:任务 ：打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：追击浮游炮强化等级加1。"
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：追击浮游炮强化等级加1。"
   },
   "VUPShionMod:TimeBacktracking": {
     "NAME": "时之回溯",
@@ -323,16 +323,16 @@
   },
   "VUPShionMod:AnestheticReagent": {
     "NAME": "麻醉试剂",
-    "DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !VUPShionSecondM! 层 无实体 。 NL vup_shion_mod:分支 。 ",
-    "UPGRADE_DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !VUPShionSecondM! 层 无实体 。",
+    "DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !VUPShionSecondM! 层 无实体 。 NL 消耗 。 vup_shion_mod:分支 。 ",
+    "UPGRADE_DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !VUPShionSecondM! 层 无实体 。 NL 消耗 。 ",
     "EXTENDED_DESCRIPTION": [
       "EX麻醉",
-      "获得 !VUPShionSecondM! 层 无实体 。"
+      "获得 !VUPShionSecondM! 层 无实体 。 NL 消耗 。 "
     ]
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "强化支援",
-    "DESCRIPTION": "获得 vup_shion_mod:支援兵装 时额外获得 !M! 层。 NL 消耗 。"
+    "DESCRIPTION": "获得 vup_shion_mod:支援兵装 时额外获得 !M! 层。 消耗 。"
   },
   "VUPShionMod:BattlefieldHeritage": {
     "NAME": "战场拾遗",

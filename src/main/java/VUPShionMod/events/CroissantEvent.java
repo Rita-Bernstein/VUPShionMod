@@ -27,7 +27,7 @@ public class CroissantEvent extends AbstractImageEvent {
 
     public CroissantEvent() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/CroissantEvent.jpg"));
-        this.imageEventText.setDialogOption(OPTIONS[0]);
+        this.imageEventText.setDialogOption(OPTIONS[0], new Croissant());
         this.imageEventText.setDialogOption(OPTIONS[1]);
 
     }

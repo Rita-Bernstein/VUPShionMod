@@ -38,6 +38,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.LizardTail;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import org.apache.logging.log4j.LogManager;
@@ -135,9 +136,13 @@ public class VUPShionMod implements
             }
 
             AbstractPower power = AbstractDungeon.player.getPower(TempFinFunnelUpgradePower.POWER_ID);
-            if (power != null)
+            if (power != null) {
                 ret += power.amount;
+            }
+
         }
+
+
         return ret;
     }
 
@@ -294,9 +299,16 @@ public class VUPShionMod implements
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new DimensionSplitterAria(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.addRelic(new Croissant(), RelicType.SHARED);
-        BaseMod.addRelic(new OpticalCamouflage(), RelicType.SHARED);
-
+        BaseMod.addRelicToCustomPool(new KuroisuDetermination(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new Croissant(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new OpticalCamouflage(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.removeRelic(new LizardTail());
+        BaseMod.addRelic(new LizardTail() {
+            @Override
+            public boolean canSpawn() {
+                return !(AbstractDungeon.player instanceof Shion);
+            }
+        }, RelicType.SHARED);
     }
 
 

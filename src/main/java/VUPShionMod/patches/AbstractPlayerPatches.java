@@ -80,7 +80,7 @@ public class AbstractPlayerPatches {
         public static void Insert(AbstractPlayer p, int numCards, @ByRef(type = "cards.AbstractCard") Object[] _c) {
             AbstractCard c = (AbstractCard) _c[0];
             if (c.hasTag(CardTagsEnum.LOADED)) {
-                if (c instanceof EnergyReserve && p.currentHealth >= 40) {
+                if (c instanceof EnergyReserve && ((!c.upgraded && p.currentHealth >= 40) || (c.upgraded && p.currentHealth >= 50))) {
                     AbstractDungeon.actionManager.addToBottom(new DiscardSpecificCardAction(c));
                     AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
                 } else {

@@ -17,7 +17,7 @@ public class AttackOrderAlpha extends AbstractAnastasiaCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia01.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public AttackOrderAlpha() {
@@ -25,6 +25,11 @@ public class AttackOrderAlpha extends AbstractAnastasiaCard {
         this.isInnate = true;
         this.isEthereal = true;
         this.exhaust = true;
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return false;
     }
 
     @Override

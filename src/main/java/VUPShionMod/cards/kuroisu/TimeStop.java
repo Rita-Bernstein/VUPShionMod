@@ -20,7 +20,7 @@ public class TimeStop extends AbstractVUPShionCard {
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public TimeStop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

@@ -36,7 +36,7 @@ public class Cannonry extends AbstractShionCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
@@ -64,11 +64,12 @@ public class Cannonry extends AbstractShionCard {
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
         this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
+        System.out.println("基础伤害是：====="+baseDamage);
         super.applyPowers();
         if (upgraded)
-            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            this.rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[0];
         else
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;

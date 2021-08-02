@@ -31,7 +31,7 @@ public class Defend_Shion extends AbstractShionCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
@@ -48,9 +48,9 @@ public class Defend_Shion extends AbstractShionCard {
         this.baseBlock += VUPShionMod.calculateTotalFinFunnelLevel();
         super.applyPowers();
         if (upgraded)
-            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            this.rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[0];
         else
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
         this.baseBlock = realBaseBlock;
         this.isBlockModified = this.block != this.baseBlock;

@@ -26,7 +26,7 @@ public class ShionPortraitAnimation extends AbstractSkin {
 
     @Override
     public void setPos() {
-        portraitSkeleton.setPosition(0.0f * Settings.scale, Settings.HEIGHT - 1060.0f * Settings.scale);
+        portraitSkeleton.setPosition(0.0f * Settings.scale, Settings.HEIGHT - 1080.0f * Settings.scale);
     }
 
     @Override

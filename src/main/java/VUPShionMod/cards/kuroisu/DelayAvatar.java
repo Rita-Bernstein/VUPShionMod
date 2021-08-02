@@ -6,6 +6,7 @@ import VUPShionMod.actions.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
+import VUPShionMod.powers.DelayAvatarPower;
 import VUPShionMod.relics.DimensionSplitterAria;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -36,7 +37,7 @@ public class DelayAvatar extends AbstractVUPShionCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, this.magicNumber)));
-
+        addToBot(new ApplyPowerAction(p,p,new DelayAvatarPower(p,this.secondaryM)));
     }
 
     public AbstractCard makeCopy() {

@@ -26,7 +26,7 @@ public class AnastasiaPlan extends AbstractAnastasiaCard {
 
     public AnastasiaPlan() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
@@ -51,6 +51,8 @@ public class AnastasiaPlan extends AbstractAnastasiaCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

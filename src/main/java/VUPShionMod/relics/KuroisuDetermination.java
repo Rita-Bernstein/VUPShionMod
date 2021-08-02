@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnPlayerDeathRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -14,10 +15,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
+
+import java.util.ArrayList;
 
 public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRelic {
     public static final String ID = VUPShionMod.makeID("KuroisuDetermination");
@@ -26,6 +30,8 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
+    private ArrayList<Integer> playerHP;
+    private ArrayList<ArrayList<AbstractPower>> powers;
 
     public KuroisuDetermination() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -38,20 +44,43 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
         return this.DESCRIPTIONS[0];
     }
 
+    @Override
+    public void atBattleStartPreDraw() {
+        playerHP.clear();
+        powers.clear();
+    }
 
     @Override
     public void atTurnStart() {
-        super.atTurnStart();
-
+        if (!this.usedUp) {
+            if (GameActionManager.turn <= 3) {
+                playerHP.add(AbstractDungeon.player.currentHealth);
+                powers.add(AbstractDungeon.player.powers);
+            } else {
+                playerHP.remove(0);
+                playerHP.add(AbstractDungeon.player.currentHealth);
+                powers.remove(0);
+                powers.add(AbstractDungeon.player.powers);
+            }
+        }
     }
 
     @Override
     public boolean onPlayerDeath(AbstractPlayer abstractPlayer, DamageInfo damageInfo) {
-        if(this.counter == -1 && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+        if (this.counter == -1) {
             flash();
             addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-
             setCounter(-2);
+
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                AbstractDungeon.player.currentHealth = playerHP.get(0);
+                AbstractDungeon.player.powers = powers.get(0);
+            } else {
+                int healAmt = AbstractDungeon.player.maxHealth / 2;
+                if (healAmt < 1)   healAmt = 1;
+                AbstractDungeon.player.heal(healAmt, true);
+            }
+
         }
         return false;
     }

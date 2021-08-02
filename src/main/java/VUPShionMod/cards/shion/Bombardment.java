@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
@@ -14,13 +15,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.List;
 
-public class Bombardment extends AbstractVUPShionCard {
+public class Bombardment extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Bombardment");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy19.png";
-
-    private static final CardStrings cardStrings;
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy19.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -28,7 +25,7 @@ public class Bombardment extends AbstractVUPShionCard {
     private static final int COST = 1;
 
     public Bombardment() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
     }
 
     @Override
@@ -50,11 +47,5 @@ public class Bombardment extends AbstractVUPShionCard {
         for (AbstractFinFunnel funnel : funnelList) {
             funnel.atTurnStart();
         }
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

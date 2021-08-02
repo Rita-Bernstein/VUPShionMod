@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,13 +12,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
-public class AttackPreparation extends AbstractVUPShionCard {
+public class AttackPreparation extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("AttackPreparation");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy14.png";
-
-    private static final CardStrings cardStrings;
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy14.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -25,7 +22,7 @@ public class AttackPreparation extends AbstractVUPShionCard {
     private static final int COST = 1;
 
     public AttackPreparation() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseMagicNumber = 1;
     }
 
@@ -43,11 +40,5 @@ public class AttackPreparation extends AbstractVUPShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1)));
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.baseMagicNumber)));
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

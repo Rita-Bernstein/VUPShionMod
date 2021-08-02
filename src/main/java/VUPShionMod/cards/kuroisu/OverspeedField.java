@@ -23,18 +23,13 @@ import com.megacrit.cardcrawl.powers.EnergizedPower;
 public class OverspeedField extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("OverspeedField");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu14.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
-
     private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public OverspeedField() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
     }

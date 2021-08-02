@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -14,13 +15,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlyingOrbEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
-public class BodyStrengthening extends AbstractVUPShionCard {
+public class BodyStrengthening extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("BodyStrengthening");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy22.png";
-
-    private static final CardStrings cardStrings;
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy22.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -28,7 +25,7 @@ public class BodyStrengthening extends AbstractVUPShionCard {
     private static final int COST = 1;
 
     public BodyStrengthening() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.baseMagicNumber = this.magicNumber = 3;
         this.exhaust = true;
@@ -79,11 +76,5 @@ public class BodyStrengthening extends AbstractVUPShionCard {
         this.initializeDescription();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

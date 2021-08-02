@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
@@ -16,13 +17,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-public class SpeedShot extends AbstractVUPShionCard {
+public class SpeedShot extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("SpeedShot");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy11.png";
-
-    private static final CardStrings cardStrings;
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy11.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -30,7 +27,7 @@ public class SpeedShot extends AbstractVUPShionCard {
     private static final int COST = -1;
 
     public SpeedShot() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.baseDamage = 0;
     }
@@ -90,11 +87,5 @@ public class SpeedShot extends AbstractVUPShionCard {
         this.initializeDescription();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

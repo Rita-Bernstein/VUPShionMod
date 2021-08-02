@@ -3,6 +3,7 @@ package VUPShionMod.cards.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.UpgradeAndZeroCostAction;
+import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
@@ -19,21 +20,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DivineRedemption extends AbstractVUPShionCard {
+public class DivineRedemption extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("DivineRedemption");
     public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami09.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
-
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public DivineRedemption() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 1;
     }

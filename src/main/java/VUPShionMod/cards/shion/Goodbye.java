@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,13 +14,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Goodbye extends AbstractVUPShionCard {
+public class Goodbye extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Goodbye");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy18.png";
-
-    private static final CardStrings cardStrings;
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy18.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -27,7 +24,7 @@ public class Goodbye extends AbstractVUPShionCard {
     private static final int COST = 1;
 
     public Goodbye() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 5;
     }
 
@@ -58,11 +55,5 @@ public class Goodbye extends AbstractVUPShionCard {
                 isDone = true;
             }
         });
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

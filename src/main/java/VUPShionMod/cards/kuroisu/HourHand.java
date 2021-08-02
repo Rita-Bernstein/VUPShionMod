@@ -22,18 +22,13 @@ import com.megacrit.cardcrawl.powers.EnergizedPower;
 public class HourHand extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("HourHand");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu05.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
-
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
 
     public HourHand() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.baseDamage = 10;
         this.isMultiDamage = true;

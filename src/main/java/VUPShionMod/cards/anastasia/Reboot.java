@@ -1,6 +1,7 @@
 package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import com.megacrit.cardcrawl.actions.unique.CalculatedGambleAction;
@@ -11,22 +12,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class Reboot extends AbstractVUPShionCard {
+public class Reboot extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("Reboot");
     public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia05.png");
-
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
-
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Reboot() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
     }
 
     @Override

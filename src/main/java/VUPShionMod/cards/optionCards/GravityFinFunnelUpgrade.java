@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class GravityFinFunnelUpgrade extends AbstractVUPShionCard {
+public class GravityFinFunnelUpgrade extends CustomCard {
     public static final String ID = VUPShionMod.makeID("GravityUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;

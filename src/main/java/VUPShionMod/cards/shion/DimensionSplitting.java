@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
@@ -24,13 +25,9 @@ import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 import java.util.List;
 
-public class DimensionSplitting extends AbstractVUPShionCard {
+public class DimensionSplitting extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("DimensionSplitting");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy17.png";
-
-    private static final CardStrings cardStrings;
+    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy17.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -38,7 +35,7 @@ public class DimensionSplitting extends AbstractVUPShionCard {
     private static final int COST = 1;
 
     public DimensionSplitting() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.baseMagicNumber = 5;
     }
@@ -99,11 +96,5 @@ public class DimensionSplitting extends AbstractVUPShionCard {
             AbstractDungeon.effectList.add(new SmallLaserEffect(m.hb.cX, m.hb.cY, relic.hb.cX, relic.hb.cY));
         }
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

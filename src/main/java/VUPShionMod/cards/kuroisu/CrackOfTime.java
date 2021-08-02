@@ -24,18 +24,13 @@ import com.megacrit.cardcrawl.powers.EnergizedPower;
 public class CrackOfTime extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("CrackOfTime");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu08.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
-
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public CrackOfTime() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
     }
 

@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.DeploymentOfDefenseSystemPower;
@@ -14,13 +15,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
-public class DeploymentOfDefenseSystem extends AbstractVUPShionCard {
+public class DeploymentOfDefenseSystem extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("DeploymentOfDefenseSystem");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy04.png";
-
-    private static final CardStrings cardStrings;
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy04.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -28,7 +25,7 @@ public class DeploymentOfDefenseSystem extends AbstractVUPShionCard {
     private static final int COST = 1;
 
     public DeploymentOfDefenseSystem() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseMagicNumber = 2;
     }
 
@@ -45,11 +42,5 @@ public class DeploymentOfDefenseSystem extends AbstractVUPShionCard {
         addToBot(new SFXAction("RAGE"));
         addToBot(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.ORANGE, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.0F));
         addToBot(new ApplyPowerAction(p, p, new DeploymentOfDefenseSystemPower(p, this.baseMagicNumber)));
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

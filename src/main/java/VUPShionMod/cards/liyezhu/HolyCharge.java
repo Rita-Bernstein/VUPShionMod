@@ -1,6 +1,7 @@
 package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
@@ -14,21 +15,16 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 
-public class HolyCharge extends AbstractVUPShionCard implements BranchingUpgradesCard {
+public class HolyCharge extends AbstractLiyezhuCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("HolyCharge");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz05.png
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
-
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public HolyCharge() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 1;
@@ -39,6 +35,7 @@ public class HolyCharge extends AbstractVUPShionCard implements BranchingUpgrade
         if (!this.upgraded) {
             this.upgradeName();
             if (this.isBranchUpgrade()) {
+                this.tags.add(CardTags.HEALING);
                 this.type = CardType.SKILL;
                 this.name = cardStrings.EXTENDED_DESCRIPTION[0];
                 this.initializeTitle();

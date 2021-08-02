@@ -2,6 +2,7 @@ package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerDimensionSplitterAction;
+import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -20,21 +21,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class IntroductionSilence extends AbstractVUPShionCard implements BranchingUpgradesCard {
+public class IntroductionSilence extends AbstractLiyezhuCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("IntroductionSilence");
     public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final CardColor COLOR = CardColorEnum.VUP_Shion_LIME;
-
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     public IntroductionSilence() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber= this.baseMagicNumber = 1;
         this.secondaryM =this.baseSecondaryM = 2;
         this.baseDamage = 2;

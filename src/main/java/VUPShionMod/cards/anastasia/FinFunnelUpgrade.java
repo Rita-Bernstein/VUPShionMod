@@ -1,6 +1,7 @@
 package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
 import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
@@ -17,13 +18,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class FinFunnelUpgrade extends AbstractVUPShionCard {
+public class FinFunnelUpgrade extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelUpgrade");
-    public static final String NAME;
-    public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/shion/zy02.png"; //TODO anastasia10.png
-
-    private static final CardStrings cardStrings;
+    public static final String IMG = VUPShionMod.assetPath( "img/cards/shion/zy02.png"); //TODO anastasia10.png
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -31,7 +28,7 @@ public class FinFunnelUpgrade extends AbstractVUPShionCard {
     private static final int COST = 0;
 
     public FinFunnelUpgrade() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColorEnum.VUP_Shion_LIME, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
     }
 
     @Override
@@ -52,11 +49,5 @@ public class FinFunnelUpgrade extends AbstractVUPShionCard {
         list.add(new GravityFinFunnelUpgrade());
         list.add(new PursuitFinFunnelUpgrade());
         addToBot(new ChooseOneAction(list));
-    }
-
-    static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        NAME = cardStrings.NAME;
-        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

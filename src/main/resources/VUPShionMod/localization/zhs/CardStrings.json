@@ -177,7 +177,7 @@
   },
   "VUPShionMod:EnergyReserve": {
     "NAME": "能量储备",
-    "DESCRIPTION": " vup_shion_mod:加载完成 ：如果生命低于40，则获得 [E] [E] 并抽 !M! 张牌。 NL 否则丢弃并抽一张牌。"
+    "DESCRIPTION": "如果生命低于40， vup_shion_mod:加载完成 ：获得 [E] [E] 并抽 !M! 张牌。 NL 否则丢弃并抽一张牌。"
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",

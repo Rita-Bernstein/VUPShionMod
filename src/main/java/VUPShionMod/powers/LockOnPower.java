@@ -1,0 +1,39 @@
+package VUPShionMod.powers;
+
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import VUPShionMod.VUPShionMod;
+
+public class LockOnPower extends AbstractPower {
+    public static final String POWER_ID = VUPShionMod.makeID("LockOnPower");
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String NAME = powerStrings.NAME;
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+
+    public LockOnPower(AbstractCreature owner, int amount) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.amount = amount;
+        this.loadRegion("lockon");
+        updateDescription();
+    }
+
+    @Override
+    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+        if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS)
+            return damageAmount + this.amount;
+
+        return super.onAttackedToChangeDamage(info, damageAmount);
+    }
+
+    @Override
+    public void updateDescription() {
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
+    }
+}

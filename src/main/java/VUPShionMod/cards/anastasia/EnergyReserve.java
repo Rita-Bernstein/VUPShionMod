@@ -3,6 +3,9 @@ package VUPShionMod.cards.anastasia;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.patches.CardTagsEnum;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -27,17 +30,21 @@ public class EnergyReserve extends AbstractVUPShionCard {
     public EnergyReserve() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
+        this.tags.add(CardTagsEnum.LOADED);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainEnergyAction(2));
+        addToBot(new DrawCardAction(p,this.magicNumber));
     }
+
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeName();
+//            upgradeMagicNumber(1);
         }
     }
 

@@ -25,33 +25,33 @@
   },
   "VUPShionMod:AttackSystemPreload": {
     "NAME": "攻击系统预加载",
-    "DESCRIPTION": "不能被 升级 。 NL 将 !M! 张 *快速攻击 加入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *快速攻击 加入抽牌堆。"
   },
   "VUPShionMod:DefenseSystemPreload": {
     "NAME": "防御系统预加载",
-    "DESCRIPTION": "不能被 升级 。 NL 将 !M! 张 *快速防御 加入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *快速防御 加入抽牌堆。"
   },
   "VUPShionMod:RepairSystemPreload": {
     "NAME": "修复系统预加载",
-    "DESCRIPTION": "不能被 升级 。 NL 将 !M! 张 *快速修复 加入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *快速修复 加入抽牌堆。"
   },
   "VUPShionMod:QuickAttack": {
     "NAME": "快速攻击",
-    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 使用 vup_shion_mod:浮游炮 。 NL 对随机一名敌人造成 3+ vup_shion_mod:总炮强化 点伤害。",
+    "DESCRIPTION": "不能被 升级 。 NL vup_shion_mod:加载完成 。 NL 使用 vup_shion_mod:浮游炮 。 NL 对随机一名敌人造成 3+ vup_shion_mod:总炮强化 点伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "快速防御",
-    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 获得 8+ vup_shion_mod:总炮强化 点的 格挡 。",
+    "DESCRIPTION": "不能被 升级 。 NL vup_shion_mod:加载完成 。 NL 获得 8+ vup_shion_mod:总炮强化 点的 格挡 。",
     "EXTENDED_DESCRIPTION": [
       " NL （获得 !B! 点 格挡 。）"
     ]
   },
   "VUPShionMod:QuickRepair": {
     "NAME": "快速修复",
-    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 回复 6+ vup_shion_mod:总炮强化 点生命。",
+    "DESCRIPTION": "不能被 升级 。 NL vup_shion_mod:加载完成 。 NL 回复 6+ vup_shion_mod:总炮强化 点生命。",
     "EXTENDED_DESCRIPTION": [
       " NL （获得 !M! 点生命。）"
     ]
@@ -378,7 +378,7 @@
   },
   "VUPShionMod:DivineRedemption": {
     "NAME": "圣耀救赎",
-    "DESCRIPTION": "失去2点生命。 NL 获得 !M! 层 vup_shion_mod:苍蓝十字徽记 。 NL 选择手牌中的 !VUPShionSecondM! 张牌升级并在本回合耗能为0。"
+    "DESCRIPTION": "失去2点生命。 NL 获得 !M! 层 vup_shion_mod:苍蓝十字徽记 。 NL 选择手牌中的 !VUPShionSecondM! 张牌 升级 并在本回合耗能为0。"
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "苍蓝之刃",

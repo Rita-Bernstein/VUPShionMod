@@ -33,12 +33,14 @@ public class QuickAttack extends CustomCard {
         this.tags.add(CardTagsEnum.LOADED);
     }
 
+
+    @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(3);
-        }
     }
 
     @Override

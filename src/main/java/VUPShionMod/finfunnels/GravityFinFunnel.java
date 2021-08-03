@@ -1,6 +1,7 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.DamageAndGainBlockAction;
 import VUPShionMod.cards.anastasia.AttackOrderAlpha;
 import VUPShionMod.powers.*;
 import com.badlogic.gdx.graphics.Color;
@@ -76,7 +77,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
-                addToBot(new WallopAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type),0.5f));
             else
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
 

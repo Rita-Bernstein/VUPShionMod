@@ -182,7 +182,7 @@
   "VUPShionMod:DelayAvatarPower": {
     "NAME": "延时替身",
     "DESCRIPTIONS": [
-      "你的一名 #y替身 还剩 #b%d 点生命。NL 如果它被击杀，下回合对所有敌人造成 #b%d 点伤害 #b5 次。"
+      "你的一名 #y替身 还剩 #b%d 点生命。 NL 如果它被击杀，下回合对所有敌人造成 #b%d 点伤害 #b5 次。"
     ]
   },
   "VUPShionMod:DelayAvatarAttackPower": {

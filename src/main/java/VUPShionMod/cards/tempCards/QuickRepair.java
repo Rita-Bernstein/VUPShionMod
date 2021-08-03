@@ -30,11 +30,12 @@ public class QuickRepair extends CustomCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
+    @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(2);
-        }
     }
 
     @Override

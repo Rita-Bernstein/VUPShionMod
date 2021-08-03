@@ -2,6 +2,7 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.kuroisu.DelayAvatar;
+import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class DelayAvatarPower extends AbstractPower {
+public class DelayAvatarPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = VUPShionMod.makeID("DelayAvatarPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -30,9 +31,9 @@ public class DelayAvatarPower extends AbstractPower {
     }
 
     @Override
-    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type, AbstractCard card) {
+    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
         if (damage < this.amount) {
-            this.amount -= damage;
+            this.amount -= (int)damage;
         } else {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, DelayAvatarPower.POWER_ID));
             addToBot(new ApplyPowerAction(this.owner, this.owner, new DelayAvatarAttackPower(this.owner, this.damage)));
@@ -44,5 +45,10 @@ public class DelayAvatarPower extends AbstractPower {
     @Override
     public void updateDescription() {
         this.description = String.format(DESCRIPTIONS[0], this.amount, this.damage);
+    }
+
+    @Override
+    public AbstractPower makeCopy() {
+        return new DelayAvatarPower(this.owner, amount);
     }
 }

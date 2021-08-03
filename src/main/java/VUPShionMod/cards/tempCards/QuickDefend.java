@@ -29,11 +29,12 @@ public class QuickDefend extends CustomCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return false;
+    }
+
+    @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(3);
-        }
     }
 
     @Override

@@ -36,7 +36,7 @@ public class ReleaseFormMinami extends AbstractMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormMinamiPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new RailgunPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new RailgunPower(p, this.secondaryM)));
 
     }
 

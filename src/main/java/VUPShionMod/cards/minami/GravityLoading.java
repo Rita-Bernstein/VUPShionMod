@@ -26,7 +26,7 @@ public class GravityLoading extends AbstractMinamiCard {
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     public GravityLoading() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

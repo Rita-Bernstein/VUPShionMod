@@ -26,11 +26,6 @@ public class AttackSystemPreload extends AbstractShionCard {
     }
 
     @Override
-    public boolean canUpgrade() {
-        return false;
-    }
-
-    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();

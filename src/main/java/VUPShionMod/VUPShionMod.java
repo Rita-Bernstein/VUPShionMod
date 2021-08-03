@@ -302,6 +302,7 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new KuroisuDetermination(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Croissant(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new OpticalCamouflage(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new Sniperscope(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.removeRelic(new LizardTail());
         BaseMod.addRelic(new LizardTail() {
             @Override

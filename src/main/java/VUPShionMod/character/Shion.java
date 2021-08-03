@@ -3,6 +3,7 @@ package VUPShionMod.character;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.cards.anastasia.*;
+import VUPShionMod.cards.kuroisu.DelayAvatar;
 import VUPShionMod.cards.shion.*;;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
@@ -13,12 +14,16 @@ import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
+import VUPShionMod.powers.DelayAvatarPower;
 import VUPShionMod.powers.SupportArmamentPower;
 import VUPShionMod.relics.DimensionSplitterAria;
 import basemod.abstracts.CustomPlayer;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,11 +36,9 @@ import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.ModHelper;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
@@ -50,6 +53,7 @@ public class Shion extends CustomPlayer {
     public static final int START_HP = 88;
     public static final int START_GOLD = 99;
     public static boolean firstAttackAnimation = true;
+    private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/1.png",//4
@@ -77,7 +81,7 @@ public class Shion extends CustomPlayer {
                 "VUPShionMod/characters/Shion/shoulder2.png",
                 "VUPShionMod/characters/Shion/shoulder.png",
                 "VUPShionMod/characters/Shion/corpse.png",
-                getLoadout(), 0.0F, -5.0F, 240.0F, 320.0F, new EnergyManager(ENERGY_PER_TURN));
+                getLoadout(), 0.0F, -5.0F, 240.0F, 480.0F, new EnergyManager(ENERGY_PER_TURN));
 
         loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 1.0f);
 
@@ -267,6 +271,24 @@ public class Shion extends CustomPlayer {
         }
 
         super.damage(info);
+    }
+
+    @Override
+    public void renderPlayerImage(SpriteBatch sb) {
+        super.renderPlayerImage(sb);
+        boolean hasPower = false;
+        for(AbstractPower power : this.powers)
+            if(power instanceof DelayAvatarPower)
+                hasPower = true;
+
+        if (this.hasPower(DelayAvatarPower.POWER_ID)){
+            sb.setColor(Color.WHITE);
+            sb.setBlendFunction(770, 771);
+            sb.draw(this.avatar, this.hb.x + 40.0F * Settings.scale, this.hb.cY - this.hb.height + 50.0F * Settings.scale,
+                    this.avatar.getWidth() * 0.5f, this.avatar.getHeight() * 0.5f, this.avatar.getWidth(), this.avatar.getHeight(),
+                    0.6f * Settings.scale, 0.6f * Settings.scale, 0.0F, 0, 0, this.avatar.getWidth(), this.avatar.getHeight(), false, false);
+
+        }
     }
 }
 

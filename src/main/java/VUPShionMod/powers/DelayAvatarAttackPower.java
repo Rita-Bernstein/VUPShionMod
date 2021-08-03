@@ -35,6 +35,8 @@ public class DelayAvatarAttackPower extends AbstractPower {
                 addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true),
                         DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
+
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, DelayAvatarAttackPower.POWER_ID));
     }
 
     @Override

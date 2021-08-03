@@ -10,6 +10,8 @@ import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.esotericsoftware.spine.Bone;
+import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -32,19 +34,19 @@ public abstract class AbstractFinFunnel {
     public String description;
     public float cX = 0.0F;
     public float cY = 0.0F;
+    public float muzzle_X = 0.0F;
+    public float muzzle_Y = 0.0F;
     public String ID;
     public Hitbox hb;
-    protected Texture img;
-    protected BobEffect bobEffect;
     protected float fontScale;
+    protected Bone body;
+    protected Bone muzzle;
 
     /** 强化等级 */
     protected int level;
 
     public AbstractFinFunnel() {
-        this.hb = new Hitbox(96.0F * Settings.scale, 96.0F * Settings.scale);
-        this.img = ImageMaster.ORB_LIGHTNING;
-        this.bobEffect = new BobEffect(3.0F * Settings.scale, 3.0F);
+        this.hb = new Hitbox(192.0F * Settings.scale, 96.0F * Settings.scale);
         this.fontScale = 0.7F;
         if (AbstractDungeon.player != null) {
             this.cX = AbstractDungeon.player.hb.cX;
@@ -99,7 +101,7 @@ public abstract class AbstractFinFunnel {
      * 更新
      */
     public void update() {
-        this.bobEffect.update();
+
         this.hb.update();
 
         if (this.hb.hovered) {
@@ -117,6 +119,10 @@ public abstract class AbstractFinFunnel {
         this.fontScale = MathHelper.scaleLerpSnap(this.fontScale, 0.7F);
     }
 
+    public void updatePosition(Skeleton skeleton){
+
+    }
+
     /**
      * 渲染
      * @param sb 纹理画布
@@ -130,7 +136,7 @@ public abstract class AbstractFinFunnel {
      * @param sb 纹理画布
      */
     protected void renderText(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level), this.cX + 20.0F * Settings.scale, this.cY + this.bobEffect.y / 2.0F - 12.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level), this.cX + 20.0F * Settings.scale, this.cY - 12.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
     }
 
     protected void addToBot(AbstractGameAction action) {

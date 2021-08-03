@@ -23,6 +23,7 @@ public class RepairSystemPreload extends AbstractShionCard {
     public RepairSystemPreload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 2;
+        this.cardsToPreview = new QuickRepair();
     }
 
     @Override

@@ -37,7 +37,7 @@ public class DelayAvatar extends AbstractVUPShionCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new DelayAvatarPower(p,this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new DelayAvatarPower(p, this.secondaryM)));
     }
 
     public AbstractCard makeCopy() {

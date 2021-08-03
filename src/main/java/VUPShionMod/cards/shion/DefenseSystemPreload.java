@@ -23,6 +23,7 @@ public class DefenseSystemPreload extends AbstractShionCard {
     public DefenseSystemPreload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 2;
+        this.cardsToPreview = new QuickDefend();
     }
 
     @Override

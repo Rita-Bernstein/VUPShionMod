@@ -3,6 +3,7 @@ package VUPShionMod.patches;
 import VUPShionMod.cards.anastasia.EnergyReserve;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
@@ -11,10 +12,12 @@ import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +51,19 @@ public class AbstractPlayerPatches {
     )
     public static class PatchUpdate {
         public static void Postfix(AbstractPlayer player) {
+            try {
+                Field stateDataField = AbstractCreature.class.getDeclaredField("skeleton");
+                stateDataField.setAccessible(true);
+                Skeleton sk = ((Skeleton)stateDataField.get(player));
+                if(sk != null){
+                    for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
+                        funnel.updatePosition(sk);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
                 funnel.update();
             }

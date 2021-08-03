@@ -98,9 +98,9 @@ public class Shion extends CustomPlayer {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BadgeOfThePaleBlueCrossPower(this, 1)));
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-            funnelList.add(new InvestigationFinFunnel().setPosition(this.hb.cX - 288.0F * Settings.scale, this.hb.cY - 60.0F * Settings.scale));
-            funnelList.add(new PursuitFinFunnel().setPosition(this.hb.cX + 128.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale));
-            funnelList.add(new GravityFinFunnel().setPosition(this.hb.cX - 164.0F * Settings.scale, this.hb.cY - 120.0F * Settings.scale));
+            funnelList.add(new InvestigationFinFunnel());
+            funnelList.add(new PursuitFinFunnel());
+            funnelList.add(new GravityFinFunnel());
             AbstractPlayerPatches.AddFields.activatedFinFunnel.set(this, funnelList.get(1));
             if (VUPShionMod.finFunnelSaver.data != null) {
                 int index = 0;

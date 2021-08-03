@@ -6,6 +6,7 @@ import VUPShionMod.powers.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -33,7 +34,6 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         super();
         this.name = orbStrings.NAME;
         this.ID = VUPShionMod.makeID("InvestigationFinFunnel");
-        this.img = IMG;
     }
 
     @Override
@@ -53,7 +53,6 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     @Override
     public void render(SpriteBatch sb) {
         sb.setColor(1, 1, 1, 1);
-        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F + this.bobEffect.y);
         this.renderText(sb);
         this.hb.render(sb);
     }
@@ -62,7 +61,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
-            addToBot(new VFXAction(AbstractDungeon.player, new SweepingBeamEffect(this.hb.cX, this.hb.cY, AbstractDungeon.player.flipHorizontal), 0.4F));
+            addToBot(new VFXAction(AbstractDungeon.player, new SweepingBeamEffect(this.muzzle_X,this.muzzle_Y, AbstractDungeon.player.flipHorizontal), 0.4F));
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, false), type, AbstractGameAction.AttackEffect.FIRE));
             if (this.level > 0) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
@@ -72,7 +71,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         } else {
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-            addToBot(new VFXAction(new SmallLaserEffect(target.hb.cX, target.hb.cY, this.hb.cX, this.hb.cY), 0.3F));
+            addToBot(new VFXAction(new SmallLaserEffect(target.hb.cX, target.hb.cY, this.muzzle_X,this.muzzle_Y), 0.3F));
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
@@ -88,5 +87,19 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, this.level, false)));
             }
         }
+    }
+
+
+    @Override
+    public void updatePosition(Skeleton skeleton) {
+        body = skeleton.findBone("weapon2_bone");
+        muzzle = skeleton.findBone("weapon2_fire");
+
+        this.cX = skeleton.getX() + body.getWorldX();
+        this.cY = skeleton.getY() + body.getWorldY();
+        hb.move(cX + hb.width * 0.5f, cY);
+        this.muzzle_X = skeleton.getX() + muzzle.getWorldX();
+        this.muzzle_Y = skeleton.getY() + muzzle.getWorldY();
+
     }
 }

@@ -31,14 +31,14 @@ public class DelayAvatarPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
-    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
-        if (damage < this.amount) {
-            this.amount -= (int)damage;
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (damageAmount < this.amount) {
+            this.amount -= damageAmount;
         } else {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, DelayAvatarPower.POWER_ID));
             addToBot(new ApplyPowerAction(this.owner, this.owner, new DelayAvatarAttackPower(this.owner, this.damage)));
         }
-
+        updateDescription();
         return 0;
     }
 

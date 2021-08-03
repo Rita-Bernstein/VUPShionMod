@@ -1,6 +1,7 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 
-public class Limit extends AbstractVUPShionCard {
+public class Limit extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("Limit");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu13.png");
     private static final int COST = 2;

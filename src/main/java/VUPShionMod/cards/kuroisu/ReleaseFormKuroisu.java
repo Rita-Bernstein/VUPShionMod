@@ -3,6 +3,7 @@ package VUPShionMod.cards.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.TriggerDimensionSplitterAction;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -18,7 +19,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
-public class ReleaseFormKuroisu extends AbstractVUPShionCard {
+public class ReleaseFormKuroisu extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormKuroisu");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu09.png");
     private static final int COST = 2;

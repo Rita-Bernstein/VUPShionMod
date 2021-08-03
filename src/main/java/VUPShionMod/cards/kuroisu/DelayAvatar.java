@@ -3,6 +3,7 @@ package VUPShionMod.cards.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.TriggerDimensionSplitterAction;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
-public class DelayAvatar extends AbstractVUPShionCard {
+public class DelayAvatar extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("DelayAvatar");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu15.png");
     private static final int COST = 2;

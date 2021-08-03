@@ -141,19 +141,19 @@
   },
   "VUPShionMod:AttackOrderAlpha": {
     "NAME": "攻击指令·壹式",
-    "DESCRIPTION": " 固有 虚无 。 NL 不能被 升级 。 NL 翻倍 vup_shion_mod:浮游炮 牌造成的伤害。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 固有 虚无 。 NL 抽到这张牌时抽一张牌。 NL 不能被 升级 。 NL 翻倍 vup_shion_mod:浮游炮 牌造成的伤害。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderBeta": {
     "NAME": "攻击指令·贰式",
-    "DESCRIPTION": " 固有 虚无 。 NL vup_shion_mod:浮游炮 牌将对所有敌人造成伤害。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 固有 虚无 。 NL 抽到这张牌时抽一张牌。 NL vup_shion_mod:浮游炮 牌将对所有敌人造成伤害。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderGamma": {
     "NAME": "攻击指令·叁式",
-    "DESCRIPTION": " 固有 虚无 。 NL 受到 vup_shion_mod:浮游炮 牌攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 固有 虚无 。 NL 抽到这张牌时抽一张牌。 NL 受到 vup_shion_mod:浮游炮 牌攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderDelta": {
     "NAME": "攻击指令·肆式",
-    "DESCRIPTION": " 固有 虚无 。 NL vup_shion_mod:浮游炮 牌将给予你造成伤害一半的 格挡 。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 固有 虚无 。 NL 抽到这张牌时抽一张牌。 NL vup_shion_mod:浮游炮 牌将给予你造成伤害一半的 格挡 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:Reboot": {
     "NAME": "系统重启",
@@ -174,7 +174,7 @@
   },
   "VUPShionMod:EnergyReserve": {
     "NAME": "能量储备",
-    "DESCRIPTION": "如果生命低于40， vup_shion_mod:加载完成 ：获得 [E] [E] 并抽 !M! 张牌。 NL 否则丢弃并抽一张牌。"
+    "DESCRIPTION": "如果生命低于 !M! ， vup_shion_mod:加载完成 ：获得 [E] [E] 并抽 !VUPShionSecondM! 张牌。 NL 否则丢弃并抽一张牌。"
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
@@ -265,7 +265,7 @@
   },
   "VUPShionMod:DelayAvatar": {
     "NAME": "延时替身",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。召唤一名3点生命的 *时间替身 。如果被击杀，则下回合开始时对所有敌人造成 !VUPShionSecondM! 点伤害5次。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。召唤一名 !VUPShionSecondM! 点生命的 *时间替身 。如果被击杀，则下回合开始时对所有敌人造成 !VUPShionSecondM! 点伤害5次。"
   },
   "VUPShionMod:FinFunnelActive": {
     "NAME": "浮游炮激活",
@@ -426,7 +426,7 @@
   },
   "VUPShionMod:Awaken": {
     "NAME": "唤醒",
-    "DESCRIPTION": "回复 vup_shion_mod:苍蓝十字徽记 !M! 倍的生命。 NL 失去所有 vup_shion_mod:苍蓝十字徽记 。 NL 消耗 。"
+    "DESCRIPTION": "回复 vup_shion_mod:苍蓝十字徽记 !M! 倍的生命。失去所有 vup_shion_mod:苍蓝十字徽记 。 NL 消耗 。"
   },
   "VUPShionMod:HolyCoffinSinkingSpirit": {
     "NAME": "圣棺沉灵",

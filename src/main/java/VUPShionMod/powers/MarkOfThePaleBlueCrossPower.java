@@ -20,6 +20,7 @@ public class MarkOfThePaleBlueCrossPower extends AbstractPower {
         this.amount = amount;
         this.loadRegion("time");
         updateDescription();
+        this.type = PowerType.DEBUFF;
     }
 
 

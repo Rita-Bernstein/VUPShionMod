@@ -1,6 +1,7 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
-public class TimeBacktracking extends AbstractVUPShionCard {
+public class TimeBacktracking extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeBacktracking");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu01.png");

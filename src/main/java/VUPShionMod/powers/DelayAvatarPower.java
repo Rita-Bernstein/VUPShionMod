@@ -19,10 +19,12 @@ public class DelayAvatarPower extends AbstractPower implements CloneablePowerInt
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     private int damage;
+    private static int idOffset;
 
     public DelayAvatarPower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = POWER_ID;
+        this.ID = POWER_ID + idOffset;
+        idOffset++;
         this.owner = owner;
         this.amount = amount;
         this.damage = amount;
@@ -35,8 +37,8 @@ public class DelayAvatarPower extends AbstractPower implements CloneablePowerInt
         if (damageAmount < this.amount) {
             this.amount -= damageAmount;
         } else {
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, DelayAvatarPower.POWER_ID));
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new DelayAvatarAttackPower(this.owner, this.damage)));
+            addToTop(new ApplyPowerAction(this.owner, this.owner, new DelayAvatarAttackPower(this.owner, this.damage)));
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
         updateDescription();
         return 0;

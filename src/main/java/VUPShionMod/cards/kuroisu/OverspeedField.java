@@ -12,6 +12,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.unique.ApplyBulletTimeAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,16 +39,8 @@ public class OverspeedField extends AbstractVUPShionCard {
         addToBot(new TriggerAllFinFunnelAction());
         addToBot(new TriggerDimensionSplitterAction());
         addToBot(new DrawCardAction(p, this.magicNumber));
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                    c.setCostForTurn(0);
-                }
-                isDone = true;
-            }
-        });
         addToBot(new ApplyPowerAction(p, p, new DenergizePower(p, 2)));
+        addToBot(new ApplyBulletTimeAction());
     }
 
     public AbstractCard makeCopy() {

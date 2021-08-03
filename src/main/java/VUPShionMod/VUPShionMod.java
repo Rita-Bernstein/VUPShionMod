@@ -1,5 +1,7 @@
 package VUPShionMod;
 
+import VUPShionMod.cards.AbstractAnastasiaCard;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.liyezhu.*;
 import VUPShionMod.cards.minami.*;
 import VUPShionMod.cards.optionCards.*;
@@ -69,6 +71,11 @@ public class VUPShionMod implements
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
     public static AbstractFinFunnel.FinFunnelSaver finFunnelSaver;
 
+    public static List<CustomCard> an_Cards = new ArrayList<>();
+    public static List<CustomCard> ku_Cards = new ArrayList<>();
+    public static List<CustomCard> li_Cards = new ArrayList<>();
+    public static List<CustomCard> mi_Cards = new ArrayList<>();
+    public static List<CustomCard> shi_Cards = new ArrayList<>();
 
     public VUPShionMod() {
         BaseMod.subscribe(this);

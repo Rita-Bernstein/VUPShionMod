@@ -22,6 +22,7 @@ public class LockOnPower extends AbstractPower {
         this.amount = amount;
         this.loadRegion("lockon");
         updateDescription();
+        this.type = PowerType.DEBUFF;
     }
 
     @Override

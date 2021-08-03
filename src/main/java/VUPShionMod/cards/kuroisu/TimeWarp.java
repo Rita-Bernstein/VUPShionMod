@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TimeWarpAction;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.TriggerDimensionSplitterAction;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
-public class TimeWarp extends AbstractVUPShionCard {
+public class TimeWarp extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeWarp");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu10.png");
     private static final int COST = 1;

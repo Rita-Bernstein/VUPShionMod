@@ -24,7 +24,8 @@ public class EnergyReserve extends AbstractAnastasiaCard {
 
     public EnergyReserve() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 40;
+        this.secondaryM = this.baseSecondaryM = 3;
         this.tags.add(CardTagsEnum.LOADED);
     }
 
@@ -38,8 +39,8 @@ public class EnergyReserve extends AbstractAnastasiaCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-//            upgradeName();
-//            upgradeMagicNumber(1);
+            upgradeName();
+            upgradeMagicNumber(10);
         }
     }
 

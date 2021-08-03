@@ -6,8 +6,10 @@ import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.AttackOrderGammaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -41,6 +43,10 @@ public class AttackOrderGamma extends AbstractAnastasiaCard {
             upgradeBaseCost(0);
         }
     }
-
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        addToBot(new DrawCardAction(AbstractDungeon.player,1));
+    }
 
 }

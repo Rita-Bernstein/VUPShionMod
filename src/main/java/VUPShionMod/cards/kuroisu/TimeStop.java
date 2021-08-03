@@ -3,6 +3,7 @@ package VUPShionMod.cards.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.TriggerDimensionSplitterAction;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -14,7 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TimeStop extends AbstractVUPShionCard {
+public class TimeStop extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeStop");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu03.png");
     private static final int COST = 1;

@@ -68,7 +68,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
             addToBot(new VFXAction(AbstractDungeon.player, new SweepingBeamEffect(this.muzzle_X,this.muzzle_Y, AbstractDungeon.player.flipHorizontal), 0.4F));
-            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, false), type, AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
             if (this.level > 0) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                     addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new PursuitPower(mo, this.level)));

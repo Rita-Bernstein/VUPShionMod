@@ -1,6 +1,7 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TimeBomb extends AbstractVUPShionCard {
+public class TimeBomb extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeBomb");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu04.png");
     private static final int COST = 2;

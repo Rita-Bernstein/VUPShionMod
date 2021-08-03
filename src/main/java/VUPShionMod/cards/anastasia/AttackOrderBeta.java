@@ -1,18 +1,21 @@
 package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.AttackOrderBetaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class AttackOrderBeta extends AbstractVUPShionCard {
+public class AttackOrderBeta extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("AttackOrderBeta");
     public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia02.png");
     private static final int COST = 1;
@@ -40,5 +43,10 @@ public class AttackOrderBeta extends AbstractVUPShionCard {
         }
     }
 
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        addToBot(new DrawCardAction(AbstractDungeon.player,1));
+    }
 
 }

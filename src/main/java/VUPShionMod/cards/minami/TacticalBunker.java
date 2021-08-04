@@ -36,7 +36,7 @@ public class TacticalBunker extends AbstractMinamiCard implements BranchingUpgra
         addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
         addToBot(new GainBlockAction(p, this.block));
 
-        if (isBranchUpgrade())
+        if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {

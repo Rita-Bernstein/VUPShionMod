@@ -50,7 +50,7 @@ public class StrengthPray extends AbstractLiyezhuCard implements BranchingUpgrad
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.baseMagicNumber)));
-        if (!this.isBranchUpgrade()) {
+        if (!(upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)) {
             addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.baseMagicNumber)));
         }
         addToBot(new ApplyPowerAction(p, p, new BadgeOfThePaleBlueCrossPower(p, this.baseSecondaryM)));

@@ -54,8 +54,8 @@ public class AbstractPlayerPatches {
             try {
                 Field stateDataField = AbstractCreature.class.getDeclaredField("skeleton");
                 stateDataField.setAccessible(true);
-                Skeleton sk = ((Skeleton)stateDataField.get(player));
-                if(sk != null){
+                Skeleton sk = ((Skeleton) stateDataField.get(player));
+                if (sk != null) {
                     for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
                         funnel.updatePosition(sk);
                     }
@@ -98,7 +98,20 @@ public class AbstractPlayerPatches {
             if (c.hasTag(CardTagsEnum.LOADED)) {
                 if (c instanceof EnergyReserve && p.currentHealth >= c.magicNumber) {
                     AbstractDungeon.actionManager.addToBottom(new DiscardSpecificCardAction(c));
-                    AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
+                    if (!(AbstractDungeon.player.drawPile.group.size() == 0 && AbstractDungeon.player.discardPile.group.size() == 0)) {
+                        boolean hasOther = false;
+                        for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
+                            if (!(card instanceof EnergyReserve))
+                                hasOther = true;
+                        }
+                        for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+                            if (!(card instanceof EnergyReserve))
+                                hasOther = true;
+                        }
+                        if (hasOther)
+                            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
+                    }
+
                 } else {
                     c.exhaustOnUseOnce = true;
                     c.isInAutoplay = true;

@@ -62,7 +62,7 @@ public class BlueRose extends AbstractLiyezhuCard implements BranchingUpgradesCa
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.isBranchUpgrade()) {
+        if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE) {
             addToBot(new VFXAction(new CleaveEffect()));
             addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
             addToBot(new GainBlockAction(p, p.getPower(BadgeOfThePaleBlueCrossPower.POWER_ID).amount * this.baseMagicNumber));

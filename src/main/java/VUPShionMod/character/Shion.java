@@ -277,15 +277,16 @@ public class Shion extends CustomPlayer {
     public void renderPlayerImage(SpriteBatch sb) {
         super.renderPlayerImage(sb);
         boolean hasPower = false;
-        for(AbstractPower power : this.powers){
-            if(power instanceof DelayAvatarPower)
+        for (AbstractPower power : this.powers) {
+            if (power instanceof DelayAvatarPower)
                 hasPower = true;
         }
 
-        if (hasPower){
+        if (hasPower) {
             sb.setColor(Color.WHITE);
             sb.setBlendFunction(770, 771);
-            sb.draw(this.avatar, this.hb.x + 40.0F * Settings.scale, this.hb.cY - this.hb.height + 50.0F * Settings.scale,
+            sb.draw(this.avatar, this.hb.x - this.avatar.getWidth() * 0.5f + 300.0F * Settings.scale,
+                    this.hb.y - this.avatar.getHeight() * 0.5f + 120.0F * Settings.scale,
                     this.avatar.getWidth() * 0.5f, this.avatar.getHeight() * 0.5f, this.avatar.getWidth(), this.avatar.getHeight(),
                     0.6f * Settings.scale, 0.6f * Settings.scale, 0.0F, 0, 0, this.avatar.getWidth(), this.avatar.getHeight(), false, false);
 

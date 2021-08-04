@@ -64,7 +64,7 @@ public class Pray extends AbstractLiyezhuCard implements BranchingUpgradesCard {
                         break;
                     }
                 }
-                if (Pray.this.isBranchUpgrade()) {
+                if (Pray.this.upgraded && Pray.this.getUpgradeType() == UpgradeType.BRANCH_UPGRADE) {
                     ctr = 0;
                     for (AbstractCard card : DrawCardAction.drawnCards) {
                         if (card.color == CardColor.COLORLESS) {

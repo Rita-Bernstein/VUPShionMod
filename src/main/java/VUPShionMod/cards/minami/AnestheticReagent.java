@@ -38,12 +38,13 @@ public class AnestheticReagent extends AbstractMinamiCard implements BranchingUp
 
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        if (!isBranchUpgrade()) {
+        if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE) {
+            addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.secondaryM)));
+        } else{
             addToBot(new LoseHPAction(p, p, 4));
             addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
             addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.secondaryM)));
-        } else
-            addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.secondaryM)));
+        }
     }
 
     public AbstractCard makeCopy() {

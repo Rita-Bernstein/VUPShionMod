@@ -48,11 +48,12 @@ public class TacticalLayout extends AbstractMinamiCard implements BranchingUpgra
             }
         });
 
-        if (isBranchUpgrade())
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-        else if (upgraded)
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        else
+        if (upgraded) {
+            if (this.getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
+            else
+                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        } else
             this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
     }
@@ -68,35 +69,38 @@ public class TacticalLayout extends AbstractMinamiCard implements BranchingUpgra
         super.applyPowers();
 
         this.damage += this.block;
-        if (isBranchUpgrade())
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + cardStrings.EXTENDED_DESCRIPTION[2];
-        else if (upgraded)
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        else
-            this.rawDescription = cardStrings.DESCRIPTION;
+        if (upgraded) {
+            if (this.getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
+                this.rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+            else
+                this.rawDescription = UPGRADE_DESCRIPTION;
+        } else
+            this.rawDescription = DESCRIPTION;
 
         initializeDescription();
     }
 
     @Override
     public void onMoveToDiscard() {
-        if (isBranchUpgrade())
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-        else if (upgraded)
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        else
+        if (upgraded) {
+            if (this.getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
+                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
+            else
+                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        } else
             this.rawDescription = cardStrings.DESCRIPTION;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        if (isBranchUpgrade())
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1] + cardStrings.EXTENDED_DESCRIPTION[2];
-        else if (upgraded)
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        else
-            this.rawDescription = cardStrings.DESCRIPTION;
+        if (upgraded) {
+            if (this.getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
+                this.rawDescription = EXTENDED_DESCRIPTION[1] + EXTENDED_DESCRIPTION[2];
+            else
+                this.rawDescription = UPGRADE_DESCRIPTION;
+        } else
+            this.rawDescription = DESCRIPTION;
     }
 
     private void baseUpgrade() {

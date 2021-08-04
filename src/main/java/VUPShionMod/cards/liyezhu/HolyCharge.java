@@ -52,7 +52,7 @@ public class HolyCharge extends AbstractLiyezhuCard implements BranchingUpgrades
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.isBranchUpgrade()) {
+        if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE) {
             addToBot(new HealAction(p, p, 8));
             if (p.hasPower(BadgeOfThePaleBlueCrossPower.POWER_ID)) {
                 int mul = p.getPower(BadgeOfThePaleBlueCrossPower.POWER_ID).amount;

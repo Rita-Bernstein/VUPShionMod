@@ -32,7 +32,7 @@ public class BreakAppointment extends AbstractImageEvent {
 
     public BreakAppointment() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/BreakAppointment.jpg"));
-        if (AbstractDungeon.player.gold >= 100)
+        if (AbstractDungeon.player.gold >= 50)
             this.imageEventText.setDialogOption(OPTIONS[0]);
         else
             this.imageEventText.setDialogOption(OPTIONS[1], true);
@@ -60,7 +60,7 @@ public class BreakAppointment extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.removeDialogOption(1);
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        AbstractCard c = new BlackHand();
+                        AbstractCard c = VUPShionMod.ku_Cards.get(AbstractDungeon.eventRng.random(VUPShionMod.ku_Cards.size() - 1)).makeCopy();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                     }
                     this.curScreen = CurrentScreen.COMPLETE;

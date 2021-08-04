@@ -37,7 +37,7 @@ public class ArmedToTheTeeth extends AbstractMinamiCard implements BranchingUpgr
                 if (p.hasPower(SupportArmamentPower.POWER_ID)) {
                     this.amount = p.getPower(SupportArmamentPower.POWER_ID).amount;
                     addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, this.amount), this.amount));
-                    if (isBranchUpgrade())
+                    if (upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
                         addToTop(new ReducePowerAction(p, p, SupportArmamentPower.POWER_ID, (int) Math.ceil(amount * 0.5f)));
                     else
                         addToTop(new RemoveSpecificPowerAction(p, p, SupportArmamentPower.POWER_ID));

@@ -35,10 +35,10 @@ public class BattlefieldHeritage extends AbstractMinamiCard implements Branching
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
 
-        if (!isBranchUpgrade())
-            addToBot(new RandomDiscardPileToHandAction(this.secondaryM));
-        else
+        if (upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
             addToBot(new BetterDiscardPileToHandAction(1));
+        else
+            addToBot(new RandomDiscardPileToHandAction(this.secondaryM));
     }
 
     public AbstractCard makeCopy() {

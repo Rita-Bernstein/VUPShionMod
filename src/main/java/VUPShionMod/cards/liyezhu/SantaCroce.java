@@ -59,7 +59,7 @@ public class SantaCroce extends AbstractLiyezhuCard implements BranchingUpgrades
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
                 addToTop(new ApplyPowerAction(monster, p, new MarkOfThePaleBlueCrossPower(monster, this.baseMagicNumber)));
-                if (this.isBranchUpgrade()) {
+                if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE) {
                     addToBot(new AbstractGameAction() {
                         @Override
                         public void update() {

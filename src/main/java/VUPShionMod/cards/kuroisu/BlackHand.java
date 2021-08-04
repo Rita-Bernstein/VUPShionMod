@@ -36,7 +36,7 @@ public class BlackHand extends AbstractKuroisuCard implements BranchingUpgradesC
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p, p, this.magicNumber));
 
-        if (upgraded || isBranchUpgrade())
+        if (upgraded)
             addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, 2)));
         else
             addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, 1)));

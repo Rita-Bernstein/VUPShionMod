@@ -66,7 +66,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
             if (this.level > 0) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                    addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new VulnerablePower(mo, this.level, false)));
+                    addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new VulnerablePower(mo,1, false)));
                 }
             }
         } else {
@@ -86,7 +86,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2)));
 
             if (this.level > 0) {
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, 2, false)));
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, 1, false)));
             }
         }
     }

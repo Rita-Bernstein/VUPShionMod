@@ -4,7 +4,9 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.unique.GreedAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -37,6 +39,19 @@ public class Rob extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int count = MathUtils.random(3);
+        switch (count){
+            case 0:
+                addToBot(new SFXAction("SHION_1"));
+                break;
+            case 1:
+                addToBot(new SFXAction("SHION_2"));
+                break;
+            case 2:
+                addToBot(new SFXAction("SHION_6"));
+                break;
+        }
+
         addToBot(new GreedAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), 20));
     }
 

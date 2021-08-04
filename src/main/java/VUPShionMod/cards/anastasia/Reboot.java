@@ -5,6 +5,7 @@ import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import com.megacrit.cardcrawl.actions.unique.CalculatedGambleAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -25,7 +26,9 @@ public class Reboot extends AbstractAnastasiaCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {addToBot(new CalculatedGambleAction(false));
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("SHION_16"));
+        addToBot(new CalculatedGambleAction(false));
     }
 
     @Override

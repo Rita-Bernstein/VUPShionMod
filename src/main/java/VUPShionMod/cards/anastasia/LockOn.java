@@ -5,7 +5,9 @@ import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.LockOnPower;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -28,6 +30,16 @@ public class LockOn extends AbstractAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int count = MathUtils.random(2);
+        switch (count){
+            case 0:
+                addToBot(new SFXAction("SHION_10"));
+                break;
+            case 1:
+                addToBot(new SFXAction("SHION_11"));
+                break;
+        }
+
         addToBot(new ApplyPowerAction(m, p, new LockOnPower(m, this.magicNumber)));
     }
 

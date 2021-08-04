@@ -45,7 +45,7 @@ public class ArmedTrain extends AbstractMinamiCard {
 
         this.baseDamage = 0;
         AbstractPower power = AbstractDungeon.player.getPower(SupportArmamentPower.POWER_ID);
-        if(power != null){
+        if (power != null) {
             this.baseDamage = power.amount * this.secondaryM;
         }
 
@@ -61,9 +61,9 @@ public class ArmedTrain extends AbstractMinamiCard {
         this.baseBlock = 4;
 
         AbstractPower power = AbstractDungeon.player.getPower(SupportArmamentPower.POWER_ID);
-        if(power != null){
-            if(upgraded)
-            this.baseBlock = power.amount * this.secondaryM + 8;
+        if (power != null) {
+            if (upgraded)
+                this.baseBlock = power.amount * this.secondaryM + 8;
             else
                 this.baseBlock = power.amount * this.secondaryM + 4;
 
@@ -72,7 +72,7 @@ public class ArmedTrain extends AbstractMinamiCard {
 
 
         super.applyPowers();
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
@@ -85,8 +85,7 @@ public class ArmedTrain extends AbstractMinamiCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription += cardStrings.UPGRADE_DESCRIPTION;
+        this.rawDescription = cardStrings.DESCRIPTION + EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 

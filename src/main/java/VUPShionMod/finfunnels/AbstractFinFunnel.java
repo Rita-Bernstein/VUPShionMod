@@ -1,5 +1,6 @@
 package VUPShionMod.finfunnels;
 
+import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.MoveFinFunnelAction;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.character.Shion;
@@ -16,10 +17,12 @@ import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 

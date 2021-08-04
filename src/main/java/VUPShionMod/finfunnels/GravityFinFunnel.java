@@ -30,7 +30,7 @@ import com.megacrit.cardcrawl.vfx.combat.SweepingBeamEffect;
 
 public class GravityFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID("GravityFinFunnel"));
-    private static final Texture IMG = new Texture(VUPShionMod.assetPath("img/finFunnels/gravityFinFunnel.png"));
+
 
     public GravityFinFunnel() {
         super();

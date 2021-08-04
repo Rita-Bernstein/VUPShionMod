@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -39,6 +40,7 @@ public class QuickDefend extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("SHION_9"));
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
     }

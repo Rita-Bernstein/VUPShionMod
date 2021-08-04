@@ -28,6 +28,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -39,6 +40,7 @@ import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
@@ -216,7 +218,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(3)));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 
@@ -274,6 +276,7 @@ public class Shion extends CustomPlayer {
         super.damage(info);
     }
 
+
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
         super.renderPlayerImage(sb);
@@ -311,6 +314,28 @@ public class Shion extends CustomPlayer {
 
         }
         this.state.addAnimation(0, "idle_3fuyou", true, 0.0f);
+    }
+
+    @Override
+    public void playDeathAnimation() {
+        CardCrawlGame.sound.play("SHION_" + (14 + MathUtils.random(5)));
+        super.playDeathAnimation();
+    }
+
+    @Override
+    public void addPower(AbstractPower powerToApply) {
+        super.addPower(powerToApply);
+        if(powerToApply instanceof StrengthPower && powerToApply.amount >0){
+            int count = MathUtils.random(2);
+            switch (count){
+                case 0:
+                    CardCrawlGame.sound.play("SHION_7");
+                    break;
+                case 1:
+                    CardCrawlGame.sound.play("SHION_12");
+                    break;
+            }
+        }
     }
 }
 

@@ -6,6 +6,7 @@ import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.AnastasiaCorePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -38,6 +39,7 @@ public class AnastasiaCore extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("SHION_16"));
         addToBot(new ApplyPowerAction(p, p, new AnastasiaCorePower(p, 1)));
     }
 }

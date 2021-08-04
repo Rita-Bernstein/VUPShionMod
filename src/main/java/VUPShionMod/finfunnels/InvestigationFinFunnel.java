@@ -28,7 +28,7 @@ import com.megacrit.cardcrawl.vfx.combat.SweepingBeamEffect;
 
 public class InvestigationFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID("InvestigationFinFunnel"));
-    private static final Texture IMG = new Texture(VUPShionMod.assetPath("img/finFunnels/investigationFinFunnel.png"));
+
 
     public InvestigationFinFunnel() {
         super();

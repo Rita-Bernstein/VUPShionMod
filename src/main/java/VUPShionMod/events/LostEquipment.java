@@ -67,8 +67,7 @@ public class LostEquipment extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(OPTIONS[4]);
-                        AbstractCard card = AbstractDungeon.player.masterDeck.getRandomCard(AbstractDungeon.eventRng);
-                        CardCrawlGame.sound.play("CARD_EXHAUST");
+                        AbstractCard card = AbstractDungeon.player.masterDeck.getRandomCard(AbstractDungeon.eventRng);CardCrawlGame.sound.play("CARD_EXHAUST");
                         AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, Settings.WIDTH *0.5f, Settings.HEIGHT *0.5f));
                         AbstractDungeon.player.masterDeck.removeCard(card);
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new Sniperscope());

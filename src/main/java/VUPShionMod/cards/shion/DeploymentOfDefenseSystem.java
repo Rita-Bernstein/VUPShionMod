@@ -39,6 +39,7 @@ public class DeploymentOfDefenseSystem extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("SHION_9"));
         addToBot(new SFXAction("RAGE"));
         addToBot(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.ORANGE, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.0F));
         addToBot(new ApplyPowerAction(p, p, new DeploymentOfDefenseSystemPower(p, this.baseMagicNumber)));

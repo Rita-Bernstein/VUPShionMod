@@ -7,12 +7,14 @@ import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.SupportArmamentPower;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -35,9 +37,19 @@ public class LockIndication extends AbstractMinamiCard implements BranchingUpgra
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int count = MathUtils.random(2);
+        switch (count){
+            case 0:
+                addToBot(new SFXAction("SHION_10"));
+                break;
+            case 1:
+                addToBot(new SFXAction("SHION_11"));
+                break;
+        }
+
         addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
-        if (!isBranchUpgrade())
-            addToBot(new TriggerDimensionSplitterAction(this.secondaryM));
+        if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
+            addToBot(new TriggerDimensionSplitterAction(this.secondaryM,true));
         else
             addToBot(new TriggerDimensionSplitterAction(this.secondaryM));
     }

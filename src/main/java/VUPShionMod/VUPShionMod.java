@@ -184,7 +184,7 @@ public class VUPShionMod implements
     @Override
     public void receiveAddAudio() {
         for (int i = 1; i <= 18; i++) {
-            BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion" + i + ".wav"));
+            BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion" + i + ".ogg"));
         }
     }
 

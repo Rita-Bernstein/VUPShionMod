@@ -2,6 +2,7 @@ package VUPShionMod.finfunnels;
 
 import VUPShionMod.actions.MoveFinFunnelAction;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
+import VUPShionMod.character.Shion;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
@@ -169,5 +170,17 @@ public abstract class AbstractFinFunnel {
         public void onLoad(List<Integer> integerList) {
             this.data = integerList;
         }
+    }
+
+    public void playFinFunnelAnimation(String id){
+//        addToBot(new AbstractGameAction() {
+//            @Override
+//            public void update() {
+//                if(AbstractDungeon.player instanceof Shion){
+//                    ((Shion)AbstractDungeon.player).playFinFunnelAnimation(id);
+//                }
+//                isDone = true;
+//            }
+//        });
     }
 }

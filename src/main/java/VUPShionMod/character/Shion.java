@@ -88,6 +88,7 @@ public class Shion extends CustomPlayer {
         AnimationState.TrackEntry e = this.state.setAnimation(0, "idle_3fuyou", true);
 //        this.stateData.setMix("Hit", "Idle", 0.1F);
         e.setTime(e.getEndTime() * MathUtils.random());
+        e.setTimeScale(1.0f);
     }
 
     @Override
@@ -291,6 +292,25 @@ public class Shion extends CustomPlayer {
                     0.6f * Settings.scale, 0.6f * Settings.scale, 0.0F, 0, 0, this.avatar.getWidth(), this.avatar.getHeight(), false, false);
 
         }
+    }
+
+    public void playFinFunnelAnimation(String id) {
+        AnimationState.TrackEntry e = this.state.setAnimation(1, "attack_1", false);
+
+        switch (id) {
+            case "VUPShionMod:GravityFinFunnel":
+                e = this.state.setAnimation(0, "attack_1", false);
+                break;
+            case "VUPShionMod:InvestigationFinFunnel":
+                e = this.state.setAnimation(0, "attack_2", false);
+                break;
+            case "VUPShionMod:PursuitFinFunnel":
+                e = this.state.setAnimation(0, "attack_3", false);
+                break;
+
+
+        }
+        this.state.addAnimation(0, "idle_3fuyou", true, 0.0f);
     }
 }
 

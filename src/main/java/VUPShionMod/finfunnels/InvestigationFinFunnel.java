@@ -61,6 +61,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
+            playFinFunnelAnimation(this.ID);
             addToBot(new VFXAction(AbstractDungeon.player, new SweepingBeamEffect(this.muzzle_X,this.muzzle_Y, AbstractDungeon.player.flipHorizontal), 0.4F));
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
             if (this.level > 0) {
@@ -71,6 +72,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         } else {
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
+            playFinFunnelAnimation(this.ID);
             addToBot(new VFXAction(new SmallLaserEffect(target.hb.cX, target.hb.cY, this.muzzle_X,this.muzzle_Y), 0.3F));
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))

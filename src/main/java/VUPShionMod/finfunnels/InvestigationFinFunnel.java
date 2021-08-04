@@ -38,7 +38,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updateDescription() {
-        this.description = orbStrings.DESCRIPTION[0] + this.level + orbStrings.DESCRIPTION[1] + this.level + orbStrings.DESCRIPTION[2];
+        this.description = orbStrings.DESCRIPTION[0] + this.level + orbStrings.DESCRIPTION[1] + 2 + orbStrings.DESCRIPTION[2];
     }
 
     @Override
@@ -84,7 +84,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2)));
 
             if (this.level > 0) {
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, this.level, false)));
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, 2, false)));
             }
         }
     }

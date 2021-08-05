@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class BlueBlade extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("BlueBlade");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami14.png");//TODO lyz04.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz04.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

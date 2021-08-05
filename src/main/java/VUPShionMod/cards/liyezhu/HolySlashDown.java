@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HolySlashDown extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("HolySlashDown");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz12.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz12.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

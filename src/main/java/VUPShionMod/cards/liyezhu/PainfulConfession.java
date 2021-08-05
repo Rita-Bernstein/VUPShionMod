@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class PainfulConfession extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("PainfulConfession");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz13.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz13.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

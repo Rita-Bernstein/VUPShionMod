@@ -34,6 +34,11 @@ public class LockOnPower extends AbstractPower {
     }
 
     @Override
+    public void atStartOfTurn() {
+        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,LockOnPower.POWER_ID));
+    }
+
+    @Override
     public void updateDescription() {
         this.description = String.format(DESCRIPTIONS[0], this.amount);
     }

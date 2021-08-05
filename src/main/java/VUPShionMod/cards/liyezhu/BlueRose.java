@@ -29,7 +29,7 @@ import java.util.Iterator;
 
 public class BlueRose extends AbstractLiyezhuCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("BlueRose");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz15.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz15.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;

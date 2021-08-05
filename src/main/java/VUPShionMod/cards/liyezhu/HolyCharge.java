@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 
 public class HolyCharge extends AbstractLiyezhuCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("HolyCharge");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz05.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz05.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

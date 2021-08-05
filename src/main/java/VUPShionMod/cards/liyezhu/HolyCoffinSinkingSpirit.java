@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.vfx.combat.ReaperEffect;
 
 public class HolyCoffinSinkingSpirit extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("HolyCoffinSinkingSpirit");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz11.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz11.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

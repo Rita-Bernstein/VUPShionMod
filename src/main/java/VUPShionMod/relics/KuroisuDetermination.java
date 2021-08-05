@@ -34,7 +34,7 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
     private ArrayList<ArrayList<AbstractPower>> powers;
 
     public KuroisuDetermination() {
-        super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE_IMG, RelicTier.BOSS, LandingSound.CLINK);
         getUpdatedDescription();
         this.counter = -1;
     }

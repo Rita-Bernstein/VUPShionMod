@@ -31,6 +31,7 @@ import java.util.List;
 
 /**
  * 浮游炮抽象类
+ *
  * @author Temple9
  * @since 2021-07-22
  */
@@ -47,7 +48,9 @@ public abstract class AbstractFinFunnel {
     protected Bone body;
     protected Bone muzzle;
 
-    /** 强化等级 */
+    /**
+     * 强化等级
+     */
     protected int level;
 
     public AbstractFinFunnel() {
@@ -75,6 +78,7 @@ public abstract class AbstractFinFunnel {
 
     /**
      * 追击效果触发时
+     *
      * @param target 追击目标
      */
     public void onPursuitEnemy(AbstractCreature target) {
@@ -83,6 +87,7 @@ public abstract class AbstractFinFunnel {
 
     /**
      * 提升强化等级
+     *
      * @param amount 提升量
      */
     public void upgradeLevel(int amount) {
@@ -91,6 +96,7 @@ public abstract class AbstractFinFunnel {
 
     /**
      * 获得强化等级
+     *
      * @return 强化等级
      */
     public int getLevel() {
@@ -124,12 +130,13 @@ public abstract class AbstractFinFunnel {
         this.fontScale = MathHelper.scaleLerpSnap(this.fontScale, 0.7F);
     }
 
-    public void updatePosition(Skeleton skeleton){
+    public void updatePosition(Skeleton skeleton) {
 
     }
 
     /**
      * 渲染
+     *
      * @param sb 纹理画布
      */
     public void render(SpriteBatch sb) {
@@ -138,10 +145,12 @@ public abstract class AbstractFinFunnel {
 
     /**
      * 渲染强化等级
+     *
      * @param sb 纹理画布
      */
     protected void renderText(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level), this.cX + 20.0F * Settings.scale, this.cY - 12.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+        if (!AbstractDungeon.player.isDead)
+            FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level), this.cX + 20.0F * Settings.scale, this.cY - 12.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
     }
 
     protected void addToBot(AbstractGameAction action) {
@@ -175,7 +184,7 @@ public abstract class AbstractFinFunnel {
         }
     }
 
-    public void playFinFunnelAnimation(String id){
+    public void playFinFunnelAnimation(String id) {
 //        addToBot(new AbstractGameAction() {
 //            @Override
 //            public void update() {

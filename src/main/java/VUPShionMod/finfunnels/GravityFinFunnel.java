@@ -96,7 +96,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updatePosition(Skeleton skeleton) {
-        body = skeleton.findBone("weapon_bone");
+        body = skeleton.findBone("weapon1_bone");
         muzzle = skeleton.findBone("weapon1_fire");
 
         this.cX = skeleton.getX() + body.getWorldX();

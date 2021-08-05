@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Awaken extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("Awaken");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz10.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz10.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

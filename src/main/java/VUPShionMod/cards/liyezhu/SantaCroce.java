@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class SantaCroce extends AbstractLiyezhuCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("SantaCroce");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz08.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz08.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

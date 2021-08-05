@@ -1,159 +1,166 @@
 
 ShionAnimation.png
-size: 2048,512
+size: 1317,525
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 body
-  rotate: true
-  xy: 1478, 406
+  rotate: false
+  xy: 1160, 5
   size: 104, 229
   orig: 104, 229
   offset: 0, 0
   index: -1
 body_armor
   rotate: false
-  xy: 1901, 421
-  size: 141, 89
+  xy: 934, 439
+  size: 141, 86
   orig: 141, 89
   offset: 0, 0
   index: -1
 eyes_blink
   rotate: false
-  xy: 1484, 290
-  size: 97, 114
+  xy: 0, 1
+  size: 71, 79
   orig: 97, 114
-  offset: 0, 0
+  offset: 15, 16
   index: -1
 face
   rotate: false
-  xy: 1254, 223
+  xy: 71, 1
   size: 71, 79
   orig: 71, 79
   offset: 0, 0
   index: -1
 hair_behind
   rotate: false
-  xy: 846, 219
+  xy: 1077, 234
   size: 240, 291
   orig: 240, 291
   offset: 0, 0
   index: -1
 hair_frount
   rotate: true
-  xy: 1583, 329
+  xy: 142, 5
   size: 75, 128
   orig: 75, 128
   offset: 0, 0
   index: -1
 hair_frount2
   rotate: false
-  xy: 820, 145
+  xy: 270, 9
   size: 23, 71
   orig: 23, 71
   offset: 0, 0
   index: -1
 head_ring
-  rotate: false
-  xy: 1713, 347
-  size: 107, 59
+  rotate: true
+  xy: 1098, 128
+  size: 106, 59
   orig: 107, 59
-  offset: 0, 0
+  offset: 1, 0
   index: -1
 left_arm_armor
   rotate: false
-  xy: 1357, 285
+  xy: 1035, 2
   size: 125, 111
   orig: 125, 111
   offset: 0, 0
   index: -1
 left_arm_with_weapon
-  rotate: true
-  xy: 399, 218
+  rotate: false
+  xy: 0, 80
   size: 292, 445
   orig: 292, 445
   offset: 0, 0
   index: -1
 left_leg
   rotate: true
-  xy: 399, 127
+  xy: 293, 0
   size: 89, 419
   orig: 89, 419
   offset: 0, 0
   index: -1
 left_leg_armor
   rotate: true
-  xy: 2, 2
-  size: 34, 51
+  xy: 822, 103
+  size: 34, 50
   orig: 34, 51
   offset: 0, 0
   index: -1
 opai
-  rotate: false
-  xy: 1822, 350
+  rotate: true
+  xy: 712, 7
   size: 93, 56
   orig: 93, 56
   offset: 0, 0
   index: -1
 right_arm
   rotate: true
-  xy: 1088, 219
+  xy: 934, 151
   size: 83, 164
   orig: 83, 164
   offset: 0, 0
   index: -1
 right_leg
-  rotate: true
-  xy: 1088, 398
+  rotate: false
+  xy: 822, 137
   size: 112, 388
   orig: 112, 388
   offset: 0, 0
   index: -1
 right_leg_armor
-  rotate: true
-  xy: 193, 67
+  rotate: false
+  xy: 872, 105
   size: 16, 32
   orig: 16, 32
   offset: 0, 0
   index: -1
+shadow
+  rotate: true
+  xy: 292, 89
+  size: 436, 146
+  orig: 502, 202
+  offset: 41, 6
+  index: -1
 weapon1
-  rotate: false
-  xy: 2, 38
-  size: 149, 19
+  rotate: true
+  xy: 1057, 291
+  size: 148, 19
   orig: 149, 19
-  offset: 0, 0
+  offset: 1, 0
   index: -1
 weapon2
   rotate: false
-  xy: 2, 59
+  xy: 888, 113
   size: 189, 24
   orig: 189, 24
   offset: 0, 0
   index: -1
 weapon3
-  rotate: false
-  xy: 399, 104
-  size: 159, 21
+  rotate: true
+  xy: 1036, 281
+  size: 158, 21
   orig: 159, 21
   offset: 0, 0
   index: -1
 wing
   rotate: true
-  xy: 1088, 304
+  xy: 768, 8
   size: 92, 267
   orig: 92, 267
   offset: 0, 0
   index: -1
 wing2
   rotate: false
-  xy: 2, 85
-  size: 395, 425
+  xy: 438, 100
+  size: 384, 425
   orig: 395, 425
-  offset: 0, 0
+  offset: 7, 0
   index: -1
 wing3
-  rotate: true
-  xy: 1709, 408
+  rotate: false
+  xy: 934, 249
   size: 102, 190
   orig: 102, 190
   offset: 0, 0

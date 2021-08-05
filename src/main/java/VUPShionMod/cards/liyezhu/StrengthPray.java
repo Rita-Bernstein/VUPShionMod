@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class StrengthPray extends AbstractLiyezhuCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("StrengthPray");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz06.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz06.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

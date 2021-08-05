@@ -30,7 +30,7 @@ public class LockOn extends AbstractAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int count = MathUtils.random(2);
+        int count = MathUtils.random(1);
         switch (count){
             case 0:
                 addToBot(new SFXAction("SHION_10"));

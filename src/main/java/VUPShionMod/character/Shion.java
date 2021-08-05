@@ -35,6 +35,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.*;
@@ -87,10 +88,10 @@ public class Shion extends CustomPlayer {
 
         loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 1.0f);
 
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "idle_3fuyou", true);
-//        this.stateData.setMix("Hit", "Idle", 0.1F);
-        e.setTime(e.getEndTime() * MathUtils.random());
-        e.setTimeScale(1.0f);
+        this.state.setAnimation(0,"Idle_body",true);
+        this.state.setAnimation(1,"Idle_Weapon1",true);
+        this.state.setAnimation(2,"Idle_Weapon2",true);
+        this.state.setAnimation(3,"Idle_Weapon3",true);
     }
 
     @Override
@@ -218,7 +219,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(3)));
+        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(2)));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 
@@ -268,9 +269,14 @@ public class Shion extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            AnimationState.TrackEntry e = this.state.setAnimation(0, "hurt", false);
-            this.state.addAnimation(0, "idle_3fuyou", true, 0.0F);
-            e.setTimeScale(1.0F);
+            this.state.setAnimation(0,"Hit_Body",false);
+            this.state.setAnimation(1,"Hit_Weapon1",false);
+            this.state.setAnimation(2,"Hit_Weapon2",false);
+            this.state.setAnimation(3,"Hit_Weapon3",false);
+            this.state.addAnimation(0, "Idle_body", true, 0.0F);
+            this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F);
+            this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F);
+            this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F);
         }
 
         super.damage(info);
@@ -298,17 +304,18 @@ public class Shion extends CustomPlayer {
     }
 
     public void playFinFunnelAnimation(String id) {
-        AnimationState.TrackEntry e = this.state.setAnimation(1, "attack_1", false);
-
         switch (id) {
             case "VUPShionMod:GravityFinFunnel":
-                e = this.state.setAnimation(0, "attack_1", false);
+                this.state.setAnimation(1, "Attack_Weapon1", false);
+                this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F);
                 break;
             case "VUPShionMod:InvestigationFinFunnel":
-                e = this.state.setAnimation(0, "attack_2", false);
+                this.state.setAnimation(2, "Attack_Weapon2", false);
+                this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F);
                 break;
             case "VUPShionMod:PursuitFinFunnel":
-                e = this.state.setAnimation(0, "attack_3", false);
+                this.state.setAnimation(3, "Attack_Weapon3", false);
+                this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F);
                 break;
 
 
@@ -318,7 +325,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public void playDeathAnimation() {
-        CardCrawlGame.sound.play("SHION_" + (14 + MathUtils.random(5)));
+        CardCrawlGame.sound.play("SHION_" + (14 + MathUtils.random(3)));
         super.playDeathAnimation();
     }
 
@@ -326,7 +333,7 @@ public class Shion extends CustomPlayer {
     public void addPower(AbstractPower powerToApply) {
         super.addPower(powerToApply);
         if(powerToApply instanceof StrengthPower && powerToApply.amount >0){
-            int count = MathUtils.random(2);
+            int count = MathUtils.random(1);
             switch (count){
                 case 0:
                     CardCrawlGame.sound.play("SHION_7");
@@ -336,6 +343,15 @@ public class Shion extends CustomPlayer {
                     break;
             }
         }
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList();
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene1.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene2.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene3.png"));
+        return panels;
     }
 }
 

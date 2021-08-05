@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class HolyCoffinRelease extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("HolyCoffinRelease");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png"); //TODO lyz14.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz14.png");
     private static final int COST = -1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

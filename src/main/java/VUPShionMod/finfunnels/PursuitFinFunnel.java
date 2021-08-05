@@ -3,6 +3,8 @@ package VUPShionMod.finfunnels;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.DamageAndGainBlockAction;
 import VUPShionMod.powers.*;
+import VUPShionMod.vfx.FinFunnelBeamEffect;
+import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -66,20 +68,21 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     @Override
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
-            addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
             playFinFunnelAnimation(this.ID);
-            addToBot(new VFXAction(AbstractDungeon.player, new SweepingBeamEffect(this.muzzle_X,this.muzzle_Y, AbstractDungeon.player.flipHorizontal), 0.4F));
+            addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
+            addToBot(new VFXAction(AbstractDungeon.player, new FinFunnelBeamEffect(this), 0.4F));
             addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
+
             if (this.level > 0) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                     addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new PursuitPower(mo, this.level)));
                 }
             }
         } else {
+            playFinFunnelAnimation(this.ID);
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-            playFinFunnelAnimation(this.ID);
-            addToBot(new VFXAction(new SmallLaserEffect(target.hb.cX, target.hb.cY,this.muzzle_X,this.muzzle_Y), 0.3F));
+            addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target.hb.cX, target.hb.cY), 0.3F));
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));

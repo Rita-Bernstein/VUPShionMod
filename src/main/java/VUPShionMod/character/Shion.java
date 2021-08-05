@@ -88,10 +88,10 @@ public class Shion extends CustomPlayer {
 
         loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 1.0f);
 
-        this.state.setAnimation(0,"Idle_body",true);
-        this.state.setAnimation(1,"Idle_Weapon1",true);
-        this.state.setAnimation(2,"Idle_Weapon2",true);
-        this.state.setAnimation(3,"Idle_Weapon3",true);
+        this.state.setAnimation(0,"Idle_body",true).setTimeScale(2.0f);
+        this.state.setAnimation(1,"Idle_Weapon1",true).setTimeScale(2.0f);
+        this.state.setAnimation(2,"Idle_Weapon2",true).setTimeScale(2.0f);
+        this.state.setAnimation(3,"Idle_Weapon3",true).setTimeScale(2.0f);
     }
 
     @Override
@@ -269,14 +269,14 @@ public class Shion extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            this.state.setAnimation(0,"Hit_Body",false);
-            this.state.setAnimation(1,"Hit_Weapon1",false);
-            this.state.setAnimation(2,"Hit_Weapon2",false);
-            this.state.setAnimation(3,"Hit_Weapon3",false);
-            this.state.addAnimation(0, "Idle_body", true, 0.0F);
-            this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F);
-            this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F);
-            this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F);
+            this.state.setAnimation(0,"Hit_Body",false).setTimeScale(4.0f);
+            this.state.setAnimation(1,"Hit_Weapon1",false).setTimeScale(4.0f);
+            this.state.setAnimation(2,"Hit_Weapon2",false).setTimeScale(4.0f);
+            this.state.setAnimation(3,"Hit_Weapon3",false).setTimeScale(4.0f);
+            this.state.addAnimation(0, "Idle_body", true, 0.0F).setTimeScale(2.0f);
+            this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
+            this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
+            this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
         }
 
         super.damage(info);
@@ -306,21 +306,21 @@ public class Shion extends CustomPlayer {
     public void playFinFunnelAnimation(String id) {
         switch (id) {
             case "VUPShionMod:GravityFinFunnel":
-                this.state.setAnimation(1, "Attack_Weapon1", false);
-                this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F);
+                this.state.setAnimation(1, "Attack_Weapon1", false).setTimeScale(3.0f);
+                this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
                 break;
             case "VUPShionMod:InvestigationFinFunnel":
-                this.state.setAnimation(2, "Attack_Weapon2", false);
-                this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F);
+                this.state.setAnimation(2, "Attack_Weapon2", false).setTimeScale(3.0f);
+                this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
                 break;
             case "VUPShionMod:PursuitFinFunnel":
-                this.state.setAnimation(3, "Attack_Weapon3", false);
-                this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F);
+                this.state.setAnimation(3, "Attack_Weapon3", false).setTimeScale(3.0f);
+                this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
                 break;
-
-
         }
-        this.state.addAnimation(0, "idle_3fuyou", true, 0.0f);
+
+        this.state.setAnimation(0, "Attack_Body", false).setTimeScale(3.0f);
+        this.state.addAnimation(0, "Idle_body", true,0.0f).setTimeScale(2.0f);
     }
 
     @Override

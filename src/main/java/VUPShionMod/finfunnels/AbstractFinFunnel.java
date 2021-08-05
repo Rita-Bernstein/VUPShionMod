@@ -1,6 +1,7 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.CustomWaitAction;
 import VUPShionMod.actions.MoveFinFunnelAction;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.character.Shion;
@@ -185,14 +186,15 @@ public abstract class AbstractFinFunnel {
     }
 
     public void playFinFunnelAnimation(String id) {
-//        addToBot(new AbstractGameAction() {
-//            @Override
-//            public void update() {
-//                if(AbstractDungeon.player instanceof Shion){
-//                    ((Shion)AbstractDungeon.player).playFinFunnelAnimation(id);
-//                }
-//                isDone = true;
-//            }
-//        });
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if(AbstractDungeon.player instanceof Shion){
+                    ((Shion)AbstractDungeon.player).playFinFunnelAnimation(id);
+                }
+                isDone = true;
+            }
+        });
+        addToBot(new CustomWaitAction(0.25f));
     }
 }

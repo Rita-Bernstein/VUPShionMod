@@ -31,7 +31,7 @@ public class BlueRose extends AbstractLiyezhuCard implements BranchingUpgradesCa
     public static final String ID = VUPShionMod.makeID("BlueRose");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz15.png");
     private static final int COST = 2;
-    public static final CardType TYPE = CardType.ATTACK;
+    public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 

@@ -2,14 +2,10 @@ package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractLiyezhuCard;
-import VUPShionMod.cards.AbstractVUPShionCard;
-import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Awaken extends AbstractLiyezhuCard {

@@ -2,20 +2,15 @@ package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractAnastasiaCard;
-import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
 import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
 import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
 import VUPShionMod.cards.optionCards.PursuitFinFunnelUpgrade;
-import VUPShionMod.patches.CardColorEnum;
-import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;

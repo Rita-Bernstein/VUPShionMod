@@ -2,16 +2,10 @@ package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractAnastasiaCard;
-import VUPShionMod.cards.AbstractVUPShionCard;
-import VUPShionMod.patches.CardColorEnum;
 import com.megacrit.cardcrawl.actions.unique.CalculatedGambleAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.ArrayList;
 
 public class Reboot extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("Reboot");

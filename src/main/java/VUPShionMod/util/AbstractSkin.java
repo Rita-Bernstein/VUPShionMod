@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import VUPShionMod.VUPShionMod;
 
 import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 

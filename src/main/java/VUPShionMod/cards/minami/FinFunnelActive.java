@@ -3,20 +3,8 @@ package VUPShionMod.cards.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.cards.AbstractVUPShionCard;
-import VUPShionMod.patches.CardColorEnum;
-import VUPShionMod.powers.BadgeOfTimePower;
-import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FinFunnelActive extends AbstractMinamiCard {

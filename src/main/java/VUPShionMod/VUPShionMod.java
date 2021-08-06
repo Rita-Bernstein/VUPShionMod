@@ -1,18 +1,21 @@
 package VUPShionMod;
 
-import VUPShionMod.cards.AbstractAnastasiaCard;
-import VUPShionMod.cards.AbstractKuroisuCard;
-import VUPShionMod.cards.liyezhu.*;
-import VUPShionMod.cards.minami.*;
-import VUPShionMod.cards.optionCards.*;
-import VUPShionMod.cards.shion.*;
 import VUPShionMod.cards.anastasia.*;
 import VUPShionMod.cards.kuroisu.*;
+import VUPShionMod.cards.liyezhu.*;
+import VUPShionMod.cards.minami.*;
+import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
+import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
+import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
+import VUPShionMod.cards.optionCards.PursuitFinFunnelUpgrade;
+import VUPShionMod.cards.shion.*;
 import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.cards.tempCards.QuickDefend;
 import VUPShionMod.cards.tempCards.QuickRepair;
 import VUPShionMod.character.Shion;
-import VUPShionMod.events.*;
+import VUPShionMod.events.BreakAppointment;
+import VUPShionMod.events.CroissantEvent;
+import VUPShionMod.events.LostEquipment;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -21,7 +24,6 @@ import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import VUPShionMod.relics.*;
 import basemod.BaseMod;
-
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
 import basemod.eventUtil.AddEventParams;
@@ -33,7 +35,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -47,8 +48,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 @SpireInitializer
 public class VUPShionMod implements

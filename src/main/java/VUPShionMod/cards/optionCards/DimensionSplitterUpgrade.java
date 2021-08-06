@@ -1,7 +1,6 @@
 package VUPShionMod.cards.optionCards;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.DimensionSplitterAriaUpgradePower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

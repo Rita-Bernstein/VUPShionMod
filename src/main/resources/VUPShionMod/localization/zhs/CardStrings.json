@@ -1,19 +1,11 @@
 {
   "VUPShionMod:Cannonry": {
     "NAME": "炮击",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成3+ vup_shion_mod:总炮强化 点伤害。",
-    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成4+ vup_shion_mod:总炮强化 点伤害。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （造成 !D! 点伤害。）"
-    ]
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 !D! 点伤害。"
   },
   "VUPShionMod:Defend_Shion": {
     "NAME": "防护",
-    "DESCRIPTION": "获得4+ vup_shion_mod:总炮强化 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "获得5+ vup_shion_mod:总炮强化 点 格挡 。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （获得 !B! 点 格挡 。）"
-    ]
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
   "VUPShionMod:DefenseSystemCharging": {
     "NAME": "防御系统充能",

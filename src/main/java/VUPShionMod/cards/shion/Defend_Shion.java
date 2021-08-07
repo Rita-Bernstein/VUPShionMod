@@ -23,16 +23,14 @@ public class Defend_Shion extends AbstractShionCard {
     public Defend_Shion() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.baseBlock = 4;
+        this.baseBlock = 5;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(1);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeBlock(3);
         }
     }
 
@@ -40,19 +38,5 @@ public class Defend_Shion extends AbstractShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
-    }
-
-    @Override
-    public void applyPowers() {
-        int realBaseBlock = this.baseBlock;
-        this.baseBlock += VUPShionMod.calculateTotalFinFunnelLevel();
-        super.applyPowers();
-        if (upgraded)
-            this.rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        else
-            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
-        this.baseBlock = realBaseBlock;
-        this.isBlockModified = this.block != this.baseBlock;
     }
 }

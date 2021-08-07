@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class CarefulPlan extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("CarefulPlan");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami06.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

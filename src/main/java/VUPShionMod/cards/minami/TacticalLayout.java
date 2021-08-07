@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TacticalLayout extends AbstractMinamiCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("TacticalLayout");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami04.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

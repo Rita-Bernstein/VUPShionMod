@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 
 public class AttackBeforeDefend extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("AttackBeforeDefend");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy20.png");//TODO zy21.png
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy21.png");//TODO zy21.png
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

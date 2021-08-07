@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ArmedToTheTeeth extends AbstractMinamiCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("ArmedToTheTeeth");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami15.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

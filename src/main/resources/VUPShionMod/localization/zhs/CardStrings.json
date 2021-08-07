@@ -265,7 +265,7 @@
   },
   "VUPShionMod:DelayAvatar": {
     "NAME": "延时替身",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。召唤一名 !VUPShionSecondM! 点生命的 *时间替身 。如果被击杀，则下回合开始时对所有敌人造成 !VUPShionSecondM! 点伤害5次。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。召唤一名 !VUPShionSecondM! 点生命的 *时间替身 。如果被击杀，则下回合对所有敌人造成 !VUPShionSecondM! 点伤害5次。"
   },
   "VUPShionMod:FinFunnelActive": {
     "NAME": "浮游炮激活",
@@ -309,7 +309,7 @@
     "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL 抽 !VUPShionSecondM! 张牌。",
     "EXTENDED_DESCRIPTION": [
       "掩体屏障",
-      "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL 获得 vup_shion_mod:支援兵装 层数两倍的 格挡 。"
+      "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL 获得 vup_shion_mod:支援兵装 层数的 格挡 。"
     ]
   },
   "VUPShionMod:SuperCharge": {

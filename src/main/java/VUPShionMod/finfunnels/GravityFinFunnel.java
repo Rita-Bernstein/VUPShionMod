@@ -42,7 +42,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updateDescription() {
-        this.description = orbStrings.DESCRIPTION[0] + this.level + orbStrings.DESCRIPTION[1] + 2 + orbStrings.DESCRIPTION[2];
+        this.description = orbStrings.DESCRIPTION[0] + this.level + orbStrings.DESCRIPTION[1] + 1 + orbStrings.DESCRIPTION[2];
     }
 
     @Override
@@ -91,7 +91,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2)));
 
             if (this.level > 0) {
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new WeakPower(target, 12, false)));
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new WeakPower(target, 1, false)));
             }
         }
     }

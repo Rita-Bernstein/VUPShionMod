@@ -40,7 +40,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updateDescription() {
-        this.description = orbStrings.DESCRIPTION[0] + this.level + orbStrings.DESCRIPTION[1] + 2 + orbStrings.DESCRIPTION[2];
+        this.description = orbStrings.DESCRIPTION[0] + this.level + orbStrings.DESCRIPTION[1] + 1 + orbStrings.DESCRIPTION[2];
     }
 
     @Override

@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class TacticalBunker extends AbstractMinamiCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("TacticalBunker");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami07.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -27,7 +27,7 @@ public class TacticalBunker extends AbstractMinamiCard implements BranchingUpgra
 
     public TacticalBunker() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.baseBlock = 4;
         this.secondaryM = this.baseSecondaryM = 1;
     }
@@ -42,7 +42,7 @@ public class TacticalBunker extends AbstractMinamiCard implements BranchingUpgra
                 public void update() {
                     AbstractPower power = p.getPower(SupportArmamentPower.POWER_ID);
                     if (power != null)
-                        addToTop(new GainBlockAction(p, power.amount * 2));
+                        addToTop(new GainBlockAction(p, power.amount));
                     isDone = true;
                 }
             });
@@ -57,7 +57,6 @@ public class TacticalBunker extends AbstractMinamiCard implements BranchingUpgra
 
 
     private void baseUpgrade() {
-        upgradeMagicNumber(1);
         upgradeBlock(4);
         upgradeSecondM(1);
         this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;

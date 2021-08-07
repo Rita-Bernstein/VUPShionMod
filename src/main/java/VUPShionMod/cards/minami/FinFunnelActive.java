@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FinFunnelActive extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelActive");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami01.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Strafe extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Strafe");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy14.png"); //TODO zy15.png
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy15.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

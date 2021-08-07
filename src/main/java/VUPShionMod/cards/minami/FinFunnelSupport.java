@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class FinFunnelSupport extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelSupport");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami05.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

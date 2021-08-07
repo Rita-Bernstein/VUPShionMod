@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class FinFunnelUpgrade extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelUpgrade");
-    public static final String IMG = VUPShionMod.assetPath( "img/cards/shion/zy02.png"); //TODO anastasia10.png
+    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia10.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;

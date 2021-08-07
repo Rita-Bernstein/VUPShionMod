@@ -88,10 +88,10 @@ public class Shion extends CustomPlayer {
 
         loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 1.0f);
 
-        this.state.setAnimation(0,"Idle_body",true).setTimeScale(2.0f);
-        this.state.setAnimation(1,"Idle_Weapon1",true).setTimeScale(2.0f);
-        this.state.setAnimation(2,"Idle_Weapon2",true).setTimeScale(2.0f);
-        this.state.setAnimation(3,"Idle_Weapon3",true).setTimeScale(2.0f);
+        this.state.setAnimation(0, "Idle_body", true).setTimeScale(2.0f);
+        this.state.setAnimation(1, "Idle_Weapon1", true).setTimeScale(2.0f);
+        this.state.setAnimation(2, "Idle_Weapon2", true).setTimeScale(2.0f);
+        this.state.setAnimation(3, "Idle_Weapon3", true).setTimeScale(2.0f);
     }
 
     @Override
@@ -269,10 +269,10 @@ public class Shion extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            this.state.setAnimation(0,"Hit_Body",false).setTimeScale(4.0f);
-            this.state.setAnimation(1,"Hit_Weapon1",false).setTimeScale(4.0f);
-            this.state.setAnimation(2,"Hit_Weapon2",false).setTimeScale(4.0f);
-            this.state.setAnimation(3,"Hit_Weapon3",false).setTimeScale(4.0f);
+            this.state.setAnimation(0, "Hit_Body", false).setTimeScale(4.0f);
+            this.state.setAnimation(1, "Hit_Weapon1", false).setTimeScale(4.0f);
+            this.state.setAnimation(2, "Hit_Weapon2", false).setTimeScale(4.0f);
+            this.state.setAnimation(3, "Hit_Weapon3", false).setTimeScale(4.0f);
             this.state.addAnimation(0, "Idle_body", true, 0.0F).setTimeScale(2.0f);
             this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
             this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
@@ -320,21 +320,36 @@ public class Shion extends CustomPlayer {
         }
 
         this.state.setAnimation(0, "Attack_Body", false).setTimeScale(3.0f);
-        this.state.addAnimation(0, "Idle_body", true,0.0f).setTimeScale(2.0f);
+        this.state.addAnimation(0, "Idle_body", true, 0.0f).setTimeScale(2.0f);
     }
 
     @Override
     public void playDeathAnimation() {
-        CardCrawlGame.sound.play("SHION_" + (14 + MathUtils.random(3)));
+        int count = MathUtils.random(3);
+        switch (count) {
+            case 0:
+                CardCrawlGame.sound.play("SHION_14");
+                break;
+            case 1:
+                CardCrawlGame.sound.play("SHION_15");
+                break;
+            case 2:
+                CardCrawlGame.sound.play("SHION_17");
+                break;
+            case 3:
+                CardCrawlGame.sound.play("SHION_18");
+                break;
+        }
+
         super.playDeathAnimation();
     }
 
     @Override
     public void addPower(AbstractPower powerToApply) {
         super.addPower(powerToApply);
-        if(powerToApply instanceof StrengthPower && powerToApply.amount >0){
+        if (powerToApply instanceof StrengthPower && powerToApply.amount > 0) {
             int count = MathUtils.random(1);
-            switch (count){
+            switch (count) {
                 case 0:
                     CardCrawlGame.sound.play("SHION_7");
                     break;

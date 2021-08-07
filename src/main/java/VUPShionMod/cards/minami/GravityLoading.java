@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class GravityLoading extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("GravityLoading");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami13.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

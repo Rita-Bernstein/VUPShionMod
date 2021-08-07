@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BattlefieldHeritage extends AbstractMinamiCard implements BranchingUpgradesCard {
     public static final String ID = VUPShionMod.makeID("BattlefieldHeritage");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami12.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

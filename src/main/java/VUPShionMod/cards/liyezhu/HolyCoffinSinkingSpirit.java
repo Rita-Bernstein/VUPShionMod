@@ -57,13 +57,9 @@ public class HolyCoffinSinkingSpirit extends AbstractLiyezhuCard {
                 }
             }
         }
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                addToBot(new HealAction(p, p, p.getPower(BadgeOfThePaleBlueCrossPower.POWER_ID).amount * HolyCoffinSinkingSpirit.this.baseMagicNumber));
-                addToBot(new RemoveSpecificPowerAction(p, p, BadgeOfThePaleBlueCrossPower.POWER_ID));
-                isDone = true;
-            }
-        });
+        if(p.hasPower(BadgeOfThePaleBlueCrossPower.POWER_ID))
+        addToBot(new HealAction(p, p, p.getPower(BadgeOfThePaleBlueCrossPower.POWER_ID).amount * HolyCoffinSinkingSpirit.this.baseMagicNumber));
+        addToBot(new RemoveSpecificPowerAction(p, p, BadgeOfThePaleBlueCrossPower.POWER_ID));
+
     }
 }

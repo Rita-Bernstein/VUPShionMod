@@ -26,6 +26,7 @@ public class TimeStop extends AbstractKuroisuCard {
     public TimeStop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

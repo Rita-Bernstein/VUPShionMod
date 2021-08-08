@@ -48,7 +48,7 @@ public class TeamWork extends AbstractAnastasiaCard {
         ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
         ArrayList<AbstractCard> returnCard = new ArrayList<AbstractCard>();
         for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group) {
-            if (c.hasTag(tag) && !c.hasTag(AbstractCard.CardTags.HEALING)) {
+            if (c.hasTag(tag) && !c.hasTag(AbstractCard.CardTags.HEALING) && !(c instanceof TeamWork)) {
                 list.add(c);
             }
         }

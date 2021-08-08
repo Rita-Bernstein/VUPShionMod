@@ -33,7 +33,7 @@ public class AttackBeforeDefend extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(3);
+            this.upgradeBaseCost(1);
         }
     }
 

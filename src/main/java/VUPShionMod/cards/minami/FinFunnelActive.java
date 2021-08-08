@@ -5,6 +5,7 @@ import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.BadgeOfTimePower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -29,6 +30,7 @@ public class FinFunnelActive extends AbstractMinamiCard {
 
     public FinFunnelActive() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

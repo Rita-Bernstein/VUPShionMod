@@ -1,7 +1,6 @@
 package VUPShionMod;
 
-import VUPShionMod.cards.AbstractAnastasiaCard;
-import VUPShionMod.cards.AbstractKuroisuCard;
+import VUPShionMod.cards.*;
 import VUPShionMod.cards.liyezhu.*;
 import VUPShionMod.cards.minami.*;
 import VUPShionMod.cards.optionCards.*;
@@ -67,7 +66,6 @@ public class VUPShionMod implements
     public static final Logger logger = LogManager.getLogger(VUPShionMod.class.getSimpleName());
     public static String MOD_ID = "VUPShionMod";
     public static Properties VUPShionDefaults = new Properties();
-    public static List<CustomCard> shion_Cards = new ArrayList<>();
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
     public static AbstractFinFunnel.FinFunnelSaver finFunnelSaver;
 
@@ -300,6 +298,22 @@ public class VUPShionMod implements
         for (CustomCard card : cards) {
             BaseMod.addCard(card);
             UnlockTracker.unlockCard(card.cardID);
+
+            if(card instanceof AbstractAnastasiaCard)
+                an_Cards.add(card);
+
+            if(card instanceof AbstractKuroisuCard)
+                ku_Cards.add(card);
+
+            if(card instanceof AbstractLiyezhuCard)
+                li_Cards.add(card);
+
+            if(card instanceof AbstractMinamiCard)
+                mi_Cards.add(card);
+
+            if(card instanceof AbstractShionCard)
+                shi_Cards.add(card);
+
         }
     }
 

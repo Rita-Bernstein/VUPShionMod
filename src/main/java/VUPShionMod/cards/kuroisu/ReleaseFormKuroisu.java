@@ -1,23 +1,13 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.TriggerAllFinFunnelAction;
-import VUPShionMod.actions.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
-import VUPShionMod.cards.AbstractVUPShionCard;
-import VUPShionMod.patches.CardColorEnum;
-import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.ReleaseFormKuroisuPower;
-import VUPShionMod.relics.DimensionSplitterAria;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import VUPShionMod.powers.UpgradedReleaseFormKuroisuPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class ReleaseFormKuroisu extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormKuroisu");
@@ -30,10 +20,14 @@ public class ReleaseFormKuroisu extends AbstractKuroisuCard {
     public ReleaseFormKuroisu() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ReleaseFormKuroisuPower(p, this.magicNumber)));
+        if (upgraded)
+            addToBot(new ApplyPowerAction(p, p, new UpgradedReleaseFormKuroisuPower(p, this.secondaryM)));
+        else
+            addToBot(new ApplyPowerAction(p, p, new ReleaseFormKuroisuPower(p, this.magicNumber)));
     }
 
     public AbstractCard makeCopy() {
@@ -44,6 +38,8 @@ public class ReleaseFormKuroisu extends AbstractKuroisuCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

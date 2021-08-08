@@ -22,7 +22,7 @@ public class AttackInitiation extends AbstractShionCard {
 
     public AttackInitiation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
@@ -35,6 +35,6 @@ public class AttackInitiation extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AttackInitiationPower(p, 1, this.baseMagicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new AttackInitiationPower(p, this.magicNumber)));
     }
 }

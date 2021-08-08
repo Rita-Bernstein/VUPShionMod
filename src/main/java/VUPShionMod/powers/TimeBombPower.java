@@ -46,6 +46,7 @@ public class TimeBombPower extends AbstractPower {
                 addToBot(new DamageAllEnemiesAction(null,
                         DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
                 addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+                addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, BadgeOfTimePower.POWER_ID));
             }
         }
     }

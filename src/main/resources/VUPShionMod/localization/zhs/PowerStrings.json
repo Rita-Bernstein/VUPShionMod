@@ -75,9 +75,7 @@
   "VUPShionMod:AttackInitiationPower": {
     "NAME": "攻击启动",
     "DESCRIPTIONS": [
-      "在这个回合，你打出的下 #b",
-      " 张牌附带抽 #b",
-      " 张牌的效果。"
+      "在这个回合，你打出的下 #b%d 张牌附带抽 #b1 张牌的效果。"
     ]
   },
   "VUPShionMod:TimeBombPower": {
@@ -95,7 +93,13 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "姿态解放-克洛伊斯",
     "DESCRIPTIONS": [
-      "你的回合开始时，获得 #y时之徽记 层数 #b%d 倍的 #y格挡 。 NL 失去所有 #y时之徽记 。"
+      "你的回合开始时，获得 #y时之徽记 层数 #b%d 倍的 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
+    "NAME": "姿态解放-克洛伊斯+",
+    "DESCRIPTIONS": [
+      "在 #b%d 个回合内，你的回合开始时，获得 #y时之徽记 层数 #b3 倍的 #y格挡 。 NL 失去所有 #y时之徽记 。"
     ]
   },
   "VUPShionMod:BleedingPower": {

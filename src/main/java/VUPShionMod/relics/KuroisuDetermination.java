@@ -30,11 +30,11 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
-    private ArrayList<Integer> playerHP;
-    private ArrayList<ArrayList<AbstractPower>> powers;
+    private int playerHP;
+    private ArrayList<AbstractPower> powers = new ArrayList<>();
 
     public KuroisuDetermination() {
-        super(ID, IMG, OUTLINE_IMG, RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE_IMG, RelicTier.RARE, LandingSound.CLINK);
         getUpdatedDescription();
         this.counter = -1;
     }
@@ -46,21 +46,19 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
 
     @Override
     public void atBattleStartPreDraw() {
-        playerHP.clear();
         powers.clear();
+        if (!this.usedUp) {
+            playerHP = AbstractDungeon.player.currentHealth;
+            powers.addAll(AbstractDungeon.player.powers);
+        }
     }
 
     @Override
     public void atTurnStart() {
         if (!this.usedUp) {
-            if (GameActionManager.turn <= 3) {
-                playerHP.add(AbstractDungeon.player.currentHealth);
-                powers.add(AbstractDungeon.player.powers);
-            } else {
-                playerHP.remove(0);
-                playerHP.add(AbstractDungeon.player.currentHealth);
-                powers.remove(0);
-                powers.add(AbstractDungeon.player.powers);
+            if (GameActionManager.turn > 3) {
+                playerHP = AbstractDungeon.player.currentHealth;
+                powers.addAll(AbstractDungeon.player.powers);
             }
         }
     }
@@ -73,11 +71,12 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
             setCounter(-2);
 
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-                AbstractDungeon.player.currentHealth = playerHP.get(0);
-                AbstractDungeon.player.powers = powers.get(0);
+                AbstractDungeon.player.heal(playerHP, true);
+                AbstractDungeon.player.powers.clear();
+                AbstractDungeon.player.powers.addAll(powers);
             } else {
                 int healAmt = AbstractDungeon.player.maxHealth / 2;
-                if (healAmt < 1)   healAmt = 1;
+                if (healAmt < 1) healAmt = 1;
                 AbstractDungeon.player.heal(healAmt, true);
             }
 

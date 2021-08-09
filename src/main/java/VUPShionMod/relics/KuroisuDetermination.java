@@ -30,8 +30,11 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
-    private int playerHP;
-    private ArrayList<AbstractPower> powers = new ArrayList<>();
+    private ArrayList<Integer> playerHP = new ArrayList<>();
+
+    private ArrayList<AbstractPower> powers1 = new ArrayList<>();
+    private ArrayList<AbstractPower> powers2 = new ArrayList<>();
+    private ArrayList<AbstractPower> powers3 = new ArrayList<>();
 
     public KuroisuDetermination() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.RARE, LandingSound.CLINK);
@@ -46,19 +49,33 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
 
     @Override
     public void atBattleStartPreDraw() {
-        powers.clear();
+        playerHP.clear();
+        powers1.clear();
+        powers2.clear();
+        powers3.clear();
         if (!this.usedUp) {
-            playerHP = AbstractDungeon.player.currentHealth;
-            powers.addAll(AbstractDungeon.player.powers);
+            playerHP.add(AbstractDungeon.player.currentHealth);
+            powers1.addAll(AbstractDungeon.player.powers);
         }
     }
 
     @Override
     public void atTurnStart() {
         if (!this.usedUp) {
-            if (GameActionManager.turn > 3) {
-                playerHP = AbstractDungeon.player.currentHealth;
-                powers.addAll(AbstractDungeon.player.powers);
+            if (GameActionManager.turn == 2){
+                playerHP.add(AbstractDungeon.player.currentHealth);
+                powers2.addAll(AbstractDungeon.player.powers);
+            }else if(GameActionManager.turn == 3){
+                playerHP.add(AbstractDungeon.player.currentHealth);
+                powers3.addAll(AbstractDungeon.player.powers);
+            }else {
+                playerHP.remove(0);
+                playerHP.add(AbstractDungeon.player.currentHealth);
+                powers1.clear();
+                powers1.addAll(powers2);
+                powers2.clear();
+                powers2.addAll(powers3);
+                powers3.addAll(AbstractDungeon.player.powers);
             }
         }
     }
@@ -71,9 +88,9 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
             setCounter(-2);
 
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-                AbstractDungeon.player.heal(playerHP, true);
+                AbstractDungeon.player.heal(playerHP.get(0), true);
                 AbstractDungeon.player.powers.clear();
-                AbstractDungeon.player.powers.addAll(powers);
+                AbstractDungeon.player.powers.addAll(powers1);
             } else {
                 int healAmt = AbstractDungeon.player.maxHealth / 2;
                 if (healAmt < 1) healAmt = 1;

@@ -34,7 +34,7 @@ public class HolySlashDown extends AbstractLiyezhuCard {
             this.upgradeName();
             this.upgradeMagicNumber(4);
             this.upgradeSecondM(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

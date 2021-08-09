@@ -52,9 +52,9 @@ public class BlueRose extends AbstractLiyezhuCard implements BranchingUpgradesCa
                 this.isMultiDamage = true;
                 this.name = cardStrings.EXTENDED_DESCRIPTION[0];
                 this.initializeTitle();
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
+                this.rawDescription = EXTENDED_DESCRIPTION[1];
             } else {
-                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+                this.rawDescription = UPGRADE_DESCRIPTION;
             }
             this.initializeDescription();
         }

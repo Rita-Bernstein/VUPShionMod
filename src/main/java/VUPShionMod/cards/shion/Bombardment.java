@@ -6,6 +6,7 @@ import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.relics.DimensionSplitterAria;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,6 +27,7 @@ public class Bombardment extends AbstractShionCard {
 
     public Bombardment() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

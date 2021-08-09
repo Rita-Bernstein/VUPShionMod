@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
+import javax.smartcardio.Card;
 import java.util.List;
 
 public class DimensionSplitting extends AbstractShionCard {
@@ -38,6 +39,7 @@ public class DimensionSplitting extends AbstractShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.baseMagicNumber = 5;
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

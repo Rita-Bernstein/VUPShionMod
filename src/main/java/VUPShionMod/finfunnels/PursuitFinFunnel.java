@@ -55,6 +55,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     @Override
     public void onPursuitEnemy(AbstractCreature target) {
         if (this.level <= 0) return;
+        if(!target.isDeadOrEscaped())
         fire(target, this.level, DamageInfo.DamageType.THORNS);
     }
 

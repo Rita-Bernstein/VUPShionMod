@@ -39,12 +39,12 @@ public class HolyCharge extends AbstractLiyezhuCard implements BranchingUpgrades
                 this.type = CardType.SKILL;
                 this.name = cardStrings.EXTENDED_DESCRIPTION[0];
                 this.initializeTitle();
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
+                this.rawDescription = EXTENDED_DESCRIPTION[1];
                 this.upgradeSecondM(1);
             } else {
                 this.upgradeDamage(2);
                 this.upgradeMagicNumber(1);
-                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+                this.rawDescription = UPGRADE_DESCRIPTION;
             }
             this.initializeDescription();
         }

@@ -55,7 +55,7 @@ public class IntroductionSilence extends AbstractLiyezhuCard implements Branchin
     private void baseUpgrade() {
         upgradeDamage(2);
         upgradeSecondM(1);
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        this.rawDescription = UPGRADE_DESCRIPTION;
         initializeDescription();
     }
 

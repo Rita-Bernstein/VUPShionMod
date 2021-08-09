@@ -30,12 +30,7 @@ public class Sniperscope extends CustomRelic {
     }
 
     @Override
-    public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
-    }
-
-    @Override
-    public void atTurnStart() {
+    public void atBattleStart() {
         AbstractMonster weakestMonster = null;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped()) {
@@ -49,6 +44,11 @@ public class Sniperscope extends CustomRelic {
             }
         }
 
-        addToBot(new ApplyPowerAction(weakestMonster,AbstractDungeon.player,new VulnerablePower(weakestMonster,1,false)));
+        addToBot(new ApplyPowerAction(weakestMonster, AbstractDungeon.player, new VulnerablePower(weakestMonster, 1, false)));
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return this.DESCRIPTIONS[0];
     }
 }

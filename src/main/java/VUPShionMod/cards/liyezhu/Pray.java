@@ -37,14 +37,14 @@ public class Pray extends AbstractLiyezhuCard implements BranchingUpgradesCard {
             if (this.isBranchUpgrade()) {
                 this.name = cardStrings.EXTENDED_DESCRIPTION[0];
                 this.initializeTitle();
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
+                this.rawDescription = EXTENDED_DESCRIPTION[1];
                 this.upgradeMagicNumber(-1);
                 this.upgradeBaseCost(0);
                 this.exhaust = false;
             } else {
                 this.upgradeMagicNumber(1);
                 this.upgradeSecondM(1);
-                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+                this.rawDescription = UPGRADE_DESCRIPTION;
             }
             this.initializeDescription();
         }

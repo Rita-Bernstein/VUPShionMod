@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,7 +24,7 @@ public class CarefulPlan extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         addToBot(new DrawCardAction(p, this.secondaryM));
     }
 

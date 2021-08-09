@@ -1,14 +1,8 @@
 package VUPShionMod.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import VUPShionMod.VUPShionMod;
@@ -31,7 +25,7 @@ public class ReleaseFormMinamiPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ApplyPowerAction(this.owner,this.owner,new SupportArmamentPower(this.owner,this.amount)));
+        addToBot(new ApplyPowerAction(this.owner,this.owner,new HyperdimensionalLinksPower(this.owner,this.amount)));
     }
 
 

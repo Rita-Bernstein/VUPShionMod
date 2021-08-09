@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.shion.EnduranceInitiation;
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,12 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EnduranceInitiationAction extends AbstractGameAction {
-    private static final UIStrings uiStrings;
-    public static final String[] TEXT;
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction"));
+    public static final String[] TEXT = uiStrings.TEXT;
+    ;
     private AbstractPlayer p;
     private boolean upgraded;
     private int pickAmount = 1;
     private List<AbstractCard> toRemove = new ArrayList<>();
+
 
     public EnduranceInitiationAction(int amount, boolean upgraded) {
         this.amount = amount; //复制的份数，不是选择的牌数
@@ -44,17 +47,14 @@ public class EnduranceInitiationAction extends AbstractGameAction {
             this.p.hand.group.removeAll(toRemove);
 
             if (this.p.hand.size() <= pickAmount) {
-                for(AbstractCard card : this.p.hand.group) {
+                for (AbstractCard card : this.p.hand.group) {
                     AbstractCard t = card.makeSameInstanceOf();
-                    t.exhaustOnUseOnce = true;
-                    if (this.upgraded) {
-                        t.tags.add(CardTagsEnum.LOADED);
-                        t.rawDescription = t.rawDescription + TEXT[2];
-                    } else {
-                        t.rawDescription = t.rawDescription + TEXT[1];
-                    }
+                    t.tags.add(CardTagsEnum.LOADED);
+                    t.rawDescription = t.rawDescription + TEXT[1];
                     t.initializeDescription();
                     addToBot(new MakeTempCardInDrawPileAction(t, this.amount, true, true, false));
+                    if (upgraded)
+                        addToBot(new MakeTempCardInDiscardAction(t, this.amount));
                 }
 
                 AbstractDungeon.player.hand.applyPowers();
@@ -75,15 +75,13 @@ public class EnduranceInitiationAction extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard card : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 AbstractCard t = card.makeSameInstanceOf();
-                t.exhaustOnUseOnce = true;
-                if (this.upgraded) {
-                    t.tags.add(CardTagsEnum.LOADED);
-                    t.rawDescription = t.rawDescription + TEXT[2];
-                } else {
-                    t.rawDescription = t.rawDescription + TEXT[1];
-                }
+                t.tags.add(CardTagsEnum.LOADED);
+                t.rawDescription = t.rawDescription + TEXT[1];
                 t.initializeDescription();
                 addToBot(new MakeTempCardInDrawPileAction(t, this.amount, true, true, false));
+                if (upgraded)
+                    addToBot(new MakeTempCardInDiscardAction(t, this.amount));
+
                 this.p.hand.moveToHand(card);
             }
             returnCardsToHand();
@@ -98,10 +96,5 @@ public class EnduranceInitiationAction extends AbstractGameAction {
             this.p.hand.moveToHand(card);
         }
         this.p.hand.refreshHandLayout();
-    }
-
-    static {
-        uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction"));
-        TEXT = uiStrings.TEXT;
     }
 }

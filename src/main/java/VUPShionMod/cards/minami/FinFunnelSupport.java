@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -24,7 +24,7 @@ public class FinFunnelSupport extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower power = p.getPower(SupportArmamentPower.POWER_ID);
+        AbstractPower power = p.getPower(HyperdimensionalLinksPower.POWER_ID);
         if (power != null) {
             int a = (int) Math.ceil(power.amount * 0.5f);
             int b = (int) Math.floor(power.amount * 0.25f);
@@ -42,7 +42,7 @@ public class FinFunnelSupport extends AbstractMinamiCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        AbstractPower power = p.getPower(SupportArmamentPower.POWER_ID);
+        AbstractPower power = p.getPower(HyperdimensionalLinksPower.POWER_ID);
         if (power != null)
             if (power.amount > 1) return super.canUse(p, m);
 

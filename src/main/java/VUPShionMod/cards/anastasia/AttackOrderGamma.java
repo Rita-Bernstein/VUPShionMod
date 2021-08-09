@@ -19,9 +19,7 @@ public class AttackOrderGamma extends AbstractAnastasiaCard {
 
     public AttackOrderGamma() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.isInnate = true;
         this.isEthereal = true;
-        this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = 2;
     }
 
@@ -37,10 +35,4 @@ public class AttackOrderGamma extends AbstractAnastasiaCard {
             upgradeBaseCost(0);
         }
     }
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        addToBot(new DrawCardAction(AbstractDungeon.player,1));
-    }
-
 }

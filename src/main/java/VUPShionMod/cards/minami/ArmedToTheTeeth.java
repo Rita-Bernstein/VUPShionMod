@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -29,13 +29,13 @@ public class ArmedToTheTeeth extends AbstractMinamiCard implements BranchingUpgr
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if (p.hasPower(SupportArmamentPower.POWER_ID)) {
-                    this.amount = p.getPower(SupportArmamentPower.POWER_ID).amount;
+                if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+                    this.amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount;
                     addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, this.amount), this.amount));
                     if (upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
-                        addToTop(new ReducePowerAction(p, p, SupportArmamentPower.POWER_ID, (int) Math.ceil(amount * 0.5f)));
+                        addToTop(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, (int) Math.ceil(amount * 0.5f)));
                     else
-                        addToTop(new RemoveSpecificPowerAction(p, p, SupportArmamentPower.POWER_ID));
+                        addToTop(new RemoveSpecificPowerAction(p, p, HyperdimensionalLinksPower.POWER_ID));
                 }
                 isDone = true;
             }

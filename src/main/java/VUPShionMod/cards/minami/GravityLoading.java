@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +25,7 @@ public class GravityLoading extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
 
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {

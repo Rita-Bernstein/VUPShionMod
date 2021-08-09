@@ -3,7 +3,7 @@ package VUPShionMod.cards.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -37,7 +37,7 @@ public class LockIndication extends AbstractMinamiCard implements BranchingUpgra
                 break;
         }
 
-        addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
             addToBot(new TriggerDimensionSplitterAction(this.secondaryM,true));
         else

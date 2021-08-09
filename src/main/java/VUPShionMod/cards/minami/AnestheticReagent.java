@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -32,7 +32,7 @@ public class AnestheticReagent extends AbstractMinamiCard implements BranchingUp
             addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.secondaryM)));
         } else{
             addToBot(new LoseHPAction(p, p, 4));
-            addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+            addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
             addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.secondaryM)));
         }
     }

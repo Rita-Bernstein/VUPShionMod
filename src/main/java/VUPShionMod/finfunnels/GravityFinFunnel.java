@@ -55,6 +55,15 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
+        playFinFunnelAnimation(this.ID);
+        addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+        addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
+        addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target.hb.cX, target.hb.cY), 0.3F));
+        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+    }
+
+    @Override
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
 
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
@@ -76,7 +85,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
-                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 0.5f));
+                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));
             else
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
 

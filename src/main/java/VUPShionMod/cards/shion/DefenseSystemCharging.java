@@ -42,13 +42,6 @@ public class DefenseSystemCharging extends AbstractShionCard {
             AbstractCard card = cardList.get(cardList.size() - 2);
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
                 this.returnToHand = true;
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        DefenseSystemCharging.this.exhaust = true;
-                        isDone = true;
-                    }
-                });
             }
         }
     }

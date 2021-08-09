@@ -96,31 +96,12 @@ public class AbstractPlayerPatches {
         public static void Insert(AbstractPlayer p, int numCards, @ByRef(type = "cards.AbstractCard") Object[] _c) {
             AbstractCard c = (AbstractCard) _c[0];
             if (c.hasTag(CardTagsEnum.LOADED)) {
-                if (c instanceof EnergyReserve && p.currentHealth >= c.magicNumber) {
-                    AbstractDungeon.actionManager.addToBottom(new DiscardSpecificCardAction(c));
-                    if (!(AbstractDungeon.player.drawPile.group.size() == 0 && AbstractDungeon.player.discardPile.group.size() == 0)) {
-                        boolean hasOther = false;
-                        for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
-                            if (!(card instanceof EnergyReserve))
-                                hasOther = true;
-                        }
-                        for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
-                            if (!(card instanceof EnergyReserve))
-                                hasOther = true;
-                        }
-                        if (hasOther)
-                            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
-                    }
-
-                } else {
-                    c.exhaustOnUseOnce = true;
-                    c.isInAutoplay = true;
-                    AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
-                    c.applyPowers();
-                    p.useCard(c, m, 0);
-                    AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
-                    AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
-                }
+                c.isInAutoplay = true;
+                AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
+                c.applyPowers();
+                p.useCard(c, m, 0);
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
+                AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
             }
         }
     }

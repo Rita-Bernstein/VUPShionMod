@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.EnhancedSupportPower;
+import VUPShionMod.powers.EnhancedWeaponPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,7 +23,7 @@ public class EnhancedSupport extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new EnhancedSupportPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EnhancedWeaponPower(p, this.magicNumber)));
     }
 
     public AbstractCard makeCopy() {

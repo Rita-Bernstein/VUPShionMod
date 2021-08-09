@@ -2,7 +2,6 @@ package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractAnastasiaCard;
-import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
 import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
 import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
 import VUPShionMod.cards.optionCards.PursuitFinFunnelUpgrade;
@@ -18,9 +17,9 @@ import java.util.ArrayList;
 public class FinFunnelUpgrade extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelUpgrade");
     public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia10.png");
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 0;
 
@@ -30,10 +29,10 @@ public class FinFunnelUpgrade extends AbstractAnastasiaCard {
 
     public FinFunnelUpgrade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        cardsList.add(new DimensionSplitterUpgrade());
         cardsList.add(new InvestigationFinFunnelUpgrade());
         cardsList.add(new GravityFinFunnelUpgrade());
         cardsList.add(new PursuitFinFunnelUpgrade());
+        this.purgeOnUse = true;
     }
 
     @Override
@@ -49,7 +48,6 @@ public class FinFunnelUpgrade extends AbstractAnastasiaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> list = new ArrayList<>();
-        list.add(new DimensionSplitterUpgrade());
         list.add(new InvestigationFinFunnelUpgrade());
         list.add(new GravityFinFunnelUpgrade());
         list.add(new PursuitFinFunnelUpgrade());

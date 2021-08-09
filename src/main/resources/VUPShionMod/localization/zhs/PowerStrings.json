@@ -1,32 +1,14 @@
 {
-  "VUPShionMod:BadgeOfTimePower": {
-    "NAME": "时之徽记",
+  "VUPShionMod:HyperdimensionalLinksPower": {
+    "NAME": "超维链接",
     "DESCRIPTIONS": [
-      "层数上限为 #b10 。 NL 本场战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
-    ]
-  },
-  "VUPShionMod:SupportArmamentPower": {
-    "NAME": "支援兵装",
-    "DESCRIPTIONS": [
-      " 层数上限为 #b20 。 NL 本场战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
-    ]
-  },
-  "VUPShionMod:BadgeOfThePaleBlueCrossPower": {
-    "NAME": "苍蓝十字徽记",
-    "DESCRIPTIONS": [
-      "层数上限为 #b10 。 NL 本场战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
-    ]
-  },
-  "VUPShionMod:MarkOfThePaleBlueCrossPower": {
-    "NAME": "苍蓝十字印记",
-    "DESCRIPTIONS": [
-      "给予对方的印记，可以提高自己一部分卡牌的伤害"
+      "本场战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
     ]
   },
   "VUPShionMod:PursuitPower": {
     "NAME": "追击",
     "DESCRIPTIONS": [
-      "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
+      "目标的回合开始时， #y追击浮游炮 将主动攻击目标一次，造成 #b",
       " 点伤害。"
     ]
   },
@@ -134,10 +116,10 @@
       " #y支援兵装 满层时，失去所有 #y支援兵装 并对所有敌人造成 #b%d 点伤害。"
     ]
   },
-  "VUPShionMod:EnhancedSupportPower": {
-    "NAME": "强化支援",
+  "VUPShionMod:EnhancedWeaponPower": {
+    "NAME": "强化兵装",
     "DESCRIPTIONS": [
-      "获得 #y支援兵装 时额外获得 #b%d 层。"
+      "获得 #y兵装 时额外获得 #b%d 层。"
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuPower": {
@@ -162,7 +144,7 @@
   "VUPShionMod:AttackOrderAlphaPower": {
     "NAME": "攻击指令·壹式",
     "DESCRIPTIONS": [
-      "翻倍 #y浮游炮 牌造成的伤害。 NL 不与其他指令共存。"
+      " #y浮游炮 牌被动造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderBetaPower": {
@@ -180,7 +162,7 @@
   "VUPShionMod:AttackOrderDeltaPower": {
     "NAME": "攻击指令·肆式",
     "DESCRIPTIONS": [
-      "#y浮游炮 牌将给予你造成伤害一半的 #y格挡 。 NL 不与其他指令共存。"
+      "#y浮游炮 的被动攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:DelayAvatarPower": {

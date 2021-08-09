@@ -17,15 +17,15 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
 
-public class SupportArmamentPower extends AbstractPower {
-    public static final String POWER_ID = VUPShionMod.makeID("SupportArmamentPower");
+public class HyperdimensionalLinksPower extends AbstractPower {
+    public static final String POWER_ID = VUPShionMod.makeID("HyperdimensionalLinksPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private AbstractCard theCard;
 
 
-    public SupportArmamentPower(AbstractCreature owner, int amount) {
+    public HyperdimensionalLinksPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

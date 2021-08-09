@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -31,13 +31,13 @@ public class ArmedTrain extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
 
 
         this.baseDamage = 0;
-        AbstractPower power = AbstractDungeon.player.getPower(SupportArmamentPower.POWER_ID);
+        AbstractPower power = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID);
         if (power != null) {
             this.baseDamage = power.amount * this.secondaryM;
         }
@@ -53,7 +53,7 @@ public class ArmedTrain extends AbstractMinamiCard {
         this.baseDamage = 0;
         this.baseBlock = 4;
 
-        AbstractPower power = AbstractDungeon.player.getPower(SupportArmamentPower.POWER_ID);
+        AbstractPower power = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID);
         if (power != null) {
             if (upgraded)
                 this.baseBlock = power.amount * this.secondaryM + 8;

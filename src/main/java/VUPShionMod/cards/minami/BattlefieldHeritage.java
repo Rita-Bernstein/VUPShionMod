@@ -3,7 +3,7 @@ package VUPShionMod.cards.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.RandomDiscardPileToHandAction;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
@@ -26,7 +26,7 @@ public class BattlefieldHeritage extends AbstractMinamiCard implements Branching
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
 
         if (upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
             addToBot(new BetterDiscardPileToHandAction(1));

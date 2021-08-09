@@ -2,6 +2,7 @@ package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractShionCard;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AnastasiaCorePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -20,6 +21,7 @@ public class AnastasiaCore extends AbstractShionCard {
     public AnastasiaCore() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

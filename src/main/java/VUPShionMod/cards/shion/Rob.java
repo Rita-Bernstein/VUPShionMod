@@ -13,14 +13,15 @@ public class Rob extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Rob");
     public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy23.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public Rob() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
+        this.magicNumber = this.baseMagicNumber = 15;
     }
 
     @Override
@@ -28,6 +29,7 @@ public class Rob extends AbstractShionCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(4);
+            this.upgradeMagicNumber(5);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

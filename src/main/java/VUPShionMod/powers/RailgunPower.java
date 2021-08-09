@@ -1,8 +1,6 @@
 package VUPShionMod.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -46,9 +44,9 @@ public class RailgunPower extends AbstractPower {
     }
 
     private void triggerDamage(){
-        if(AbstractDungeon.player.hasPower(SupportArmamentPower.POWER_ID))
-            if( AbstractDungeon.player.getPower(SupportArmamentPower.POWER_ID).amount >= 20){
-                addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,SupportArmamentPower.POWER_ID));
+        if(AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID))
+            if( AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= 20){
+                addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, HyperdimensionalLinksPower.POWER_ID));
                 addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             }
     }

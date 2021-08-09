@@ -5,7 +5,7 @@ import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.cards.anastasia.AttackOrderAlpha;
 import VUPShionMod.cards.anastasia.AttackOrderDelta;
 import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
-import VUPShionMod.cards.shion.Cannonry;
+import VUPShionMod.cards.shion.Strike_Shion;
 import VUPShionMod.cards.shion.Defend_Shion;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
@@ -19,7 +19,7 @@ import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
 import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.DelayAvatarPower;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.relics.DimensionSplitterAria;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -59,17 +59,17 @@ public class Shion extends CustomPlayer {
     private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
 
     public static final String[] orbTextures = {
-            "VUPShionMod/img/ui/topPanel/Shion/1.png",//4
-            "VUPShionMod/img/ui/topPanel/Shion/2.png",//2
-            "VUPShionMod/img/ui/topPanel/Shion/3.png",//3
-            "VUPShionMod/img/ui/topPanel/Shion/4.png",//5
-            "VUPShionMod/img/ui/topPanel/Shion/5.png",//1
-            "VUPShionMod/img/ui/topPanel/Shion/border.png",
-            "VUPShionMod/img/ui/topPanel/Shion/1d.png",//4
-            "VUPShionMod/img/ui/topPanel/Shion/2d.png",//2
-            "VUPShionMod/img/ui/topPanel/Shion/3d.png",//3
-            "VUPShionMod/img/ui/topPanel/Shion/4d.png",//5
-            "VUPShionMod/img/ui/topPanel/Shion/5d.png",//1
+            "VUPShionMod/img/ui/topPanel/Shion/layer1.png",//4
+            "VUPShionMod/img/ui/topPanel/Shion/layer2.png",//2
+            "VUPShionMod/img/ui/topPanel/Shion/layer3.png",//3
+            "VUPShionMod/img/ui/topPanel/Shion/layer4.png",//5
+            "VUPShionMod/img/ui/topPanel/Shion/layer5.png",//1
+            "VUPShionMod/img/ui/topPanel/Shion/layer6.png",
+            "VUPShionMod/img/ui/topPanel/Shion/layer1d.png",//4
+            "VUPShionMod/img/ui/topPanel/Shion/layer2d.png",//2
+            "VUPShionMod/img/ui/topPanel/Shion/layer3d.png",//3
+            "VUPShionMod/img/ui/topPanel/Shion/layer4d.png",//5
+            "VUPShionMod/img/ui/topPanel/Shion/layer5d.png",//1
     };
 
     public Shion(String name, PlayerClass setClass) {
@@ -98,7 +98,7 @@ public class Shion extends CustomPlayer {
     public void preBattlePrep() {
         super.preBattlePrep();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BadgeOfTimePower(this, 1)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SupportArmamentPower(this, 1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new HyperdimensionalLinksPower(this, 1)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BadgeOfThePaleBlueCrossPower(this, 1)));
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
@@ -134,10 +134,10 @@ public class Shion extends CustomPlayer {
 
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Cannonry.ID);
-        retVal.add(Cannonry.ID);
-        retVal.add(Cannonry.ID);
-        retVal.add(Cannonry.ID);
+        retVal.add(Strike_Shion.ID);
+        retVal.add(Strike_Shion.ID);
+        retVal.add(Strike_Shion.ID);
+        retVal.add(Strike_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);

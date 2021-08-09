@@ -3,7 +3,7 @@ package VUPShionMod.cards.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TacticalLayoutAction;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -30,7 +30,7 @@ public class TacticalLayout extends AbstractMinamiCard implements BranchingUpgra
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new AbstractGameAction() {
             @Override

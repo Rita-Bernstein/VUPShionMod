@@ -13,11 +13,11 @@ public class EnduranceInitiation extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 0;
+    private static final int COST = 3;
 
     public EnduranceInitiation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
     }
 

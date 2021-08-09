@@ -2,7 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -29,14 +29,14 @@ public class TacticalBunker extends AbstractMinamiCard implements BranchingUpgra
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SupportArmamentPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         addToBot(new GainBlockAction(p, this.block));
 
         if (this.upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    AbstractPower power = p.getPower(SupportArmamentPower.POWER_ID);
+                    AbstractPower power = p.getPower(HyperdimensionalLinksPower.POWER_ID);
                     if (power != null)
                         addToTop(new GainBlockAction(p, power.amount));
                     isDone = true;

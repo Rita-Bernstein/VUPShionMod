@@ -19,9 +19,7 @@ public class AttackOrderDelta extends AbstractVUPShionCard {
 
     public AttackOrderDelta() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.isInnate = true;
         this.isEthereal = true;
-        this.exhaust = true;
     }
 
     @Override
@@ -35,11 +33,5 @@ public class AttackOrderDelta extends AbstractVUPShionCard {
             upgradeName();
             upgradeBaseCost(0);
         }
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        addToBot(new DrawCardAction(AbstractDungeon.player,1));
     }
 }

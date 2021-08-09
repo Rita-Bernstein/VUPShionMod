@@ -19,7 +19,7 @@ public class AttackPreparation extends AbstractShionCard {
 
     public AttackPreparation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
@@ -35,6 +35,7 @@ public class AttackPreparation extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1)));
-        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.baseMagicNumber)));
+        if(upgraded)
+        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber)));
     }
 }

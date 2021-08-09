@@ -6,25 +6,28 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.EnhancedWeaponPower;
 import VUPShionMod.relics.DimensionSplitterAria;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.List;
 
-public class Bombardment extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("Bombardment");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy19.png");
+public class EnhancedWeapon extends AbstractShionCard {
+    public static final String ID = VUPShionMod.makeID("EnhancedWeapon");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy19.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
 
-    public Bombardment() {
+    public EnhancedWeapon() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
+        this.exhaust = true;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
@@ -33,18 +36,12 @@ public class Bombardment extends AbstractShionCard {
             this.upgradeName();
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
+            this.exhaust = false;
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.upgraded && p.hasRelic(DimensionSplitterAria.ID)) {
-            AbstractRelic relic = p.getRelic(DimensionSplitterAria.ID);
-            relic.atTurnStart();
-        }
-        List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(p);
-        for (AbstractFinFunnel funnel : funnelList) {
-            funnel.atTurnStart();
-        }
+        addToBot(new ApplyPowerAction(p,p,new EnhancedWeaponPower(p,this.magicNumber),this.magicNumber));
     }
 }

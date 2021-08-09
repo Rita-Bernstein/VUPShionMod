@@ -50,7 +50,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void onPursuitEnemy(AbstractCreature target) {
         if (this.level <= 0) return;
         if(!target.isDeadOrEscaped())
-        fire(target, this.level, DamageInfo.DamageType.THORNS);
+        activeFire(target, this.level, DamageInfo.DamageType.THORNS);
     }
 
     @Override
@@ -58,6 +58,15 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         sb.setColor(1, 1, 1, 1);
         this.renderText(sb);
         this.hb.render(sb);
+    }
+
+    @Override
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
+        playFinFunnelAnimation(this.ID);
+        addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+        addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
+        addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target.hb.cX, target.hb.cY), 0.3F));
+        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
     }
 
     @Override
@@ -82,7 +91,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
-                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type),0.5f));
+                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type),1.0f));
             else
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
 

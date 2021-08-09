@@ -3,6 +3,7 @@ package VUPShionMod.cards.anastasia;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.patches.CardTagsEnum;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,14 +19,15 @@ public class EnergyReserve extends AbstractAnastasiaCard {
 
     public EnergyReserve() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 40;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.tags.add(CardTagsEnum.LOADED);
+        this.exhaust = true;
+        GraveField.grave.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(2));
+        addToBot(new GainEnergyAction(1));
         addToBot(new DrawCardAction(p,this.magicNumber));
     }
 

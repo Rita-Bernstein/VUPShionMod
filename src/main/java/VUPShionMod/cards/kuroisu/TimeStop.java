@@ -1,6 +1,7 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoadCardDiscardPileToTopOfDeckAction;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
@@ -20,22 +21,17 @@ public class TimeStop extends AbstractKuroisuCard {
 
     public TimeStop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, this.magicNumber)));
         addToBot(new StunMonsterAction(m, p, 1));
-        addToBot(new TriggerDimensionSplitterAction());
-        if (upgraded)
-            addToBot(new TriggerAllFinFunnelAction());
+        addToBot(new LoadCardDiscardPileToTopOfDeckAction(p, upgraded));
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

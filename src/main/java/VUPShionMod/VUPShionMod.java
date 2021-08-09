@@ -5,14 +5,13 @@ import VUPShionMod.cards.anastasia.*;
 import VUPShionMod.cards.kuroisu.*;
 import VUPShionMod.cards.liyezhu.*;
 import VUPShionMod.cards.minami.*;
-import VUPShionMod.cards.optionCards.DimensionSplitterUpgrade;
 import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
 import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
 import VUPShionMod.cards.optionCards.PursuitFinFunnelUpgrade;
 import VUPShionMod.cards.shion.*;
 import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.cards.tempCards.QuickDefend;
-import VUPShionMod.cards.tempCards.QuickRepair;
+import VUPShionMod.cards.tempCards.QuickScreen;
 import VUPShionMod.character.Shion;
 import VUPShionMod.events.BreakAppointment;
 import VUPShionMod.events.CroissantEvent;
@@ -61,7 +60,8 @@ public class VUPShionMod implements
         EditRelicsSubscriber,
         AddAudioSubscriber,
         EditKeywordsSubscriber,
-        EditStringsSubscriber {
+        EditStringsSubscriber,
+        PostDungeonInitializeSubscriber{
 
     public static final String MODNAME = "VUPShionMod";
     public static final String AUTHOR = "Rita";
@@ -191,6 +191,14 @@ public class VUPShionMod implements
     }
 
     @Override
+    public void receivePostDungeonInitialize() {
+        System.out.println("重开游戏");
+        if (AbstractDungeon.floorNum == 0) {
+            VUPShionMod.finFunnelSaver.data.clear();
+        }
+    }
+
+    @Override
     public void receiveEditCharacters() {
         logger.info("========================= 开始加载人物 =========================");
 
@@ -204,16 +212,16 @@ public class VUPShionMod implements
         List<CustomCard> cards = new ArrayList<>();
 
 //        紫音
-        cards.add(new Cannonry());
+        cards.add(new Strike_Shion());
         cards.add(new Defend_Shion());
         cards.add(new DefenseSystemCharging());
         cards.add(new DeploymentOfDefenseSystem());
         cards.add(new AttackSystemPreload());
         cards.add(new DefenseSystemPreload());
-        cards.add(new RepairSystemPreload());
+        cards.add(new AnalyseSystemPreload());
         cards.add(new QuickAttack());
         cards.add(new QuickDefend());
-        cards.add(new QuickRepair());
+        cards.add(new QuickScreen());
         cards.add(new DimensionSplitting());
         cards.add(new AnastasiaCore());
         cards.add(new Goodbye());
@@ -222,10 +230,10 @@ public class VUPShionMod implements
         cards.add(new AttackPreparation());
         cards.add(new SpeedShot());
         cards.add(new Strafe());
-        cards.add(new Bombardment());
+        cards.add(new EnhancedWeapon());
         cards.add(new Boot());
-        cards.add(new AttackBeforeDefend());
-        cards.add(new BodyStrengthening());
+        cards.add(new FirstStrike());
+        cards.add(new SpeedSlash());
         cards.add(new Rob());
 
 
@@ -294,7 +302,7 @@ public class VUPShionMod implements
         cards.add(new Reboot());
         cards.add(new TeamWork());
 
-        cards.add(new DimensionSplitterUpgrade());
+
         cards.add(new InvestigationFinFunnelUpgrade());
         cards.add(new GravityFinFunnelUpgrade());
         cards.add(new PursuitFinFunnelUpgrade());

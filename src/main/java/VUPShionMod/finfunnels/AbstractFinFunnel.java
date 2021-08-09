@@ -107,11 +107,12 @@ public abstract class AbstractFinFunnel {
      */
     public abstract void fire(AbstractCreature target, int damage, DamageInfo.DamageType type);
 
+    public abstract void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type);
+
     /**
      * 更新
      */
     public void update() {
-
         this.hb.update();
 
         if (this.hb.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
@@ -130,7 +131,6 @@ public abstract class AbstractFinFunnel {
     }
 
     public void updatePosition(Skeleton skeleton) {
-
     }
 
     /**

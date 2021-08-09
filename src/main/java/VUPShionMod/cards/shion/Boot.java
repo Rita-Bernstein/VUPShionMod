@@ -16,18 +16,18 @@ public class Boot extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public Boot() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = 2;
+        this.baseMagicNumber = 1;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(2);
+            this.upgradeBaseCost(1);
         }
     }
 
@@ -36,14 +36,9 @@ public class Boot extends AbstractShionCard {
         for (AbstractCard card : p.hand.group) {
             if (card.cardID.equals(this.cardID)) continue;
             AbstractCard t = card.makeSameInstanceOf();
-            if (!t.exhaust) {
-                t.rawDescription = t.rawDescription + cardStrings.EXTENDED_DESCRIPTION[0];
-                t.initializeDescription();
-            }
-            t.exhaustOnUseOnce = true;
-            addToBot(new MakeTempCardInDrawPileAction(t, this.baseMagicNumber, true, true, false));
+            addToBot(new MakeTempCardInDrawPileAction(t, this.magicNumber, true, true, false));
         }
-        AbstractDungeon.getCurrRoom().skipMonsterTurn = false;
+
         addToBot(new PressEndTurnButtonAction());
     }
 }

@@ -18,7 +18,7 @@ public class Strafe extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Strafe() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -38,7 +38,7 @@ public class Strafe extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
-        for(int i = 0; i < this.baseMagicNumber; i++) {
+        for(int i = 0; i < this.magicNumber; i++) {
             if (funnel != null) {
                 funnel.fire(m, this.damage, this.damageTypeForTurn);
             } else {

@@ -26,7 +26,7 @@ public class DimensionSplitting extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("DimensionSplitting");
     public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy17.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
@@ -34,7 +34,7 @@ public class DimensionSplitting extends AbstractShionCard {
     public DimensionSplitting() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
-        this.baseMagicNumber = 5;
+        this.baseMagicNumber = 6;
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
@@ -42,7 +42,7 @@ public class DimensionSplitting extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeMagicNumber(2);
         }
     }
 

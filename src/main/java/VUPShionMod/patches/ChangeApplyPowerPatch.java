@@ -1,7 +1,7 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.powers.EnhancedSupportPower;
-import VUPShionMod.powers.SupportArmamentPower;
+import VUPShionMod.powers.EnhancedWeaponPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -30,10 +30,10 @@ public class ChangeApplyPowerPatch {
                                                boolean isFast,
                                                AbstractGameAction.AttackEffect effect, @ByRef int[] amount, @ByRef float[] duration) {
 //            强化支援
-            if (AbstractDungeon.player.hasPower(EnhancedSupportPower.POWER_ID) && source != null && source.isPlayer && target != source && powerToApply.ID.equals(SupportArmamentPower.POWER_ID)) {
-                AbstractDungeon.player.getPower(EnhancedSupportPower.POWER_ID).flash();
-                powerToApply.amount += AbstractDungeon.player.getPower(EnhancedSupportPower.POWER_ID).amount;
-                amount[0] += AbstractDungeon.player.getPower(EnhancedSupportPower.POWER_ID).amount;
+            if (AbstractDungeon.player.hasPower(EnhancedWeaponPower.POWER_ID) && source != null && source.isPlayer && target != source && powerToApply.ID.equals(HyperdimensionalLinksPower.POWER_ID)) {
+                AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).flash();
+                powerToApply.amount += AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).amount;
+                amount[0] += AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).amount;
             }
 
 

@@ -1,12 +1,11 @@
 package VUPShionMod.patches;
 
 import com.badlogic.gdx.math.MathUtils;
-import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.RestRoom;
-import com.megacrit.cardcrawl.vfx.campfire.CampfireSleepEffect;
 import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 
 
@@ -16,7 +15,6 @@ public class ShionSoundPlayPatches {
             method = "update"
     )
     public static class CampfireSmithEffectPatch {
-        @SpirePostfixPatch
         public static void Postfix(CampfireSmithEffect _instance) {
             if (_instance.isDone && AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
                 CardCrawlGame.sound.play("SHION_13");
@@ -28,7 +26,6 @@ public class ShionSoundPlayPatches {
             method = "onPlayerEntry"
     )
     public static class CampfireSleepEffectPatch {
-        @SpirePostfixPatch
         public static void Postfix(RestRoom _instance) {
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
                 CardCrawlGame.sound.play("SHION_8");
@@ -41,7 +38,6 @@ public class ShionSoundPlayPatches {
             paramtypez = {boolean.class}
     )
     public static class AbstractMonsterPatch {
-        @SpirePostfixPatch
         public static void Postfix(AbstractMonster _instance,boolean triggerRelics) {
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
                 if (_instance.type == AbstractMonster.EnemyType.BOSS || _instance.type == AbstractMonster.EnemyType.ELITE){

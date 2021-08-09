@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 public class CharacterSelectScreenPatches {
-    public static ArrayList<AbstractGameEffect> char_effectsQueue = new ArrayList();
+    public static ArrayList<AbstractGameEffect> char_effectsQueue = new ArrayList<>();
 
-    public static ArrayList<AbstractGameEffect> char_effectsQueue_toRemove = new ArrayList();
+    public static ArrayList<AbstractGameEffect> char_effectsQueue_toRemove = new ArrayList<>();
 
     public static ShionPortraitAnimation shionSkin = new ShionPortraitAnimation();
 
@@ -37,15 +37,15 @@ public class CharacterSelectScreenPatches {
                         shionSkin.render(sb);
 
                         if (char_effectsQueue.size() > 0) {
-                            for (int k = 0; k < char_effectsQueue.size(); k++) {
-                                if (!char_effectsQueue.get(k).isDone) {
-                                    char_effectsQueue.get(k).update();
-                                    char_effectsQueue.get(k).render(sb);
+                            for (AbstractGameEffect aChar_effectsQueue : char_effectsQueue) {
+                                if (!aChar_effectsQueue.isDone) {
+                                    aChar_effectsQueue.update();
+                                    aChar_effectsQueue.render(sb);
                                 } else {
                                     if (char_effectsQueue_toRemove == null)
                                         char_effectsQueue_toRemove = new ArrayList<>();
-                                    if (!char_effectsQueue_toRemove.contains(char_effectsQueue.get(k)))
-                                        char_effectsQueue_toRemove.add(char_effectsQueue.get(k));
+                                    if (!char_effectsQueue_toRemove.contains(aChar_effectsQueue))
+                                        char_effectsQueue_toRemove.add(aChar_effectsQueue);
                                 }
                             }
                             if (char_effectsQueue_toRemove != null)

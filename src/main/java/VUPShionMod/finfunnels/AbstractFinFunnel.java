@@ -1,6 +1,5 @@
 package VUPShionMod.finfunnels;
 
-import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.CustomWaitAction;
 import VUPShionMod.actions.MoveFinFunnelAction;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
@@ -11,21 +10,20 @@ import VUPShionMod.patches.EnergyPanelPatches;
 import basemod.BaseMod;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Bone;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.MathHelper;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.BobEffect;
 
 import java.util.ArrayList;
 import java.util.List;

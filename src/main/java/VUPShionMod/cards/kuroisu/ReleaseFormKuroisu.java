@@ -2,6 +2,7 @@ package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractKuroisuCard;
+import VUPShionMod.cards.tempCards.QuickScreen;
 import VUPShionMod.powers.ReleaseFormKuroisuPower;
 import VUPShionMod.powers.UpgradedReleaseFormKuroisuPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -19,13 +20,13 @@ public class ReleaseFormKuroisu extends AbstractKuroisuCard {
 
     public ReleaseFormKuroisu() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 5;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.cardsToPreview = new QuickScreen();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded)
-            addToBot(new ApplyPowerAction(p, p, new UpgradedReleaseFormKuroisuPower(p, this.secondaryM)));
+            addToBot(new ApplyPowerAction(p, p, new UpgradedReleaseFormKuroisuPower(p, this.magicNumber)));
         else
             addToBot(new ApplyPowerAction(p, p, new ReleaseFormKuroisuPower(p, this.magicNumber)));
     }
@@ -37,7 +38,7 @@ public class ReleaseFormKuroisu extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            this.cardsToPreview.upgrade();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.cards.anastasia.EnergyReserve;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.powers.CrackOfTimePower;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
@@ -10,6 +11,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -102,6 +104,11 @@ public class AbstractPlayerPatches {
                 p.useCard(c, m, 0);
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
                 AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
+
+                if (AbstractDungeon.player.hasPower(CrackOfTimePower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,
+                            AbstractDungeon.player.getPower(CrackOfTimePower.POWER_ID).amount));
+                }
             }
         }
     }

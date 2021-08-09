@@ -192,27 +192,24 @@
   },
   "VUPShionMod:HourHand": {
     "NAME": "时针",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL 获得 !B! 点 格挡 。 NL 对所有敌人造成 !D! 点伤害。"
+    "DESCRIPTION": " 保留 。 NL 获得 !B! 点 格挡 。 NL 将一张 *快速筛选 加入你的弃牌堆。"
   },
   "VUPShionMod:MinuteHand": {
     "NAME": "分针",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 *快速攻击 加入你的弃牌堆。"
   },
   "VUPShionMod:SecondHand": {
     "NAME": "秒针",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL 对随机敌人造成 !D! 点伤害 !VUPShionSecondM! 次。"
+    "DESCRIPTION": "对随机敌人造成 !D! 点伤害 !M! 次。 NL 将这张牌放入你的抽牌堆。"
   },
   "VUPShionMod:CrackOfTime": {
     "NAME": "时之裂隙",
-    "DESCRIPTION": "获得 vup_shion_mod:时之徽记 层数 !M! 倍的 格挡 。 NL 失去所有 vup_shion_mod:时之徽记 。 NL 下回合获得失去层数一半的 vup_shion_mod:时之徽记 。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （获得 !B! 点 格挡 。）"
-    ]
+    "DESCRIPTION": "每触发一次 vup_shion_mod:加载完成 ，获得 !M! 点 格挡 。"
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "姿态解放-克洛伊斯",
-    "DESCRIPTION": "每回合开始时，获得 vup_shion_mod:时之徽记 层数 !M! 倍的 格挡 。",
-    "UPGRADE_DESCRIPTION": "接下来的 !VUPShionSecondM! 回合内，每回合开始时，获得 vup_shion_mod:时之徽记 层数 !M! 倍的 格挡 并失去所有 vup_shion_mod:时之徽记 。"
+    "DESCRIPTION": "每回合开始时，将 !M! 张 *快速筛选 加入你的弃牌堆。",
+    "UPGRADE_DESCRIPTION": "每回合开始时，将 !M! 张 *快速筛选+ 加入你的弃牌堆。"
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "时空扭曲",

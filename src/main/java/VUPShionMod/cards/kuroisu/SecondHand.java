@@ -20,15 +20,14 @@ public class SecondHand extends AbstractKuroisuCard {
 
     public SecondHand() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
         this.baseDamage = 2;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.shuffleBackIntoDrawPile = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, this.magicNumber)));
-        for (int i = 0; i < this.secondaryM; i++) {
-            addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.FIRE));
+        for (int i = 0; i < this.magicNumber; i++) {
+            addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }
 
@@ -39,9 +38,7 @@ public class SecondHand extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
             upgradeDamage(1);
-            upgradeSecondM(1);
         }
     }
 }

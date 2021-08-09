@@ -2,10 +2,12 @@ package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractKuroisuCard;
+import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.powers.BadgeOfTimePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,13 +23,13 @@ public class MinuteHand extends AbstractKuroisuCard {
 
     public MinuteHand() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.baseDamage = 10;
+        this.baseDamage = 7;
+        this.cardsToPreview = new QuickAttack();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, this.magicNumber)));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new MakeTempCardInDiscardAction(new QuickAttack(),1));
     }
 
     public AbstractCard makeCopy() {
@@ -37,8 +39,7 @@ public class MinuteHand extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradeDamage(5);
+            upgradeDamage(10);
         }
     }
 }

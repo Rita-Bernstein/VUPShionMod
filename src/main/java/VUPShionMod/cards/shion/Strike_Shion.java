@@ -24,7 +24,7 @@ public class Strike_Shion extends AbstractShionCard {
     public Strike_Shion() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTags.STARTER_STRIKE);
-        this.tags.add(CardTags.STRIKE);
+
         this.baseDamage = 6;
     }
 

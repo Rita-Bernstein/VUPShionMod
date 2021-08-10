@@ -1,6 +1,7 @@
 package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -19,11 +20,11 @@ public class SacredAdvice extends AbstractLiyezhuCard {
 
     public SacredAdvice() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.magicNumber));
+        addToBot(new LoseHyperdimensionalLinksAction(this.magicNumber));
         if (upgraded)
             addToBot(new GainEnergyAction(2));
         else

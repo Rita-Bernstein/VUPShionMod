@@ -1,8 +1,10 @@
 package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,10 +35,10 @@ public class Awaken extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(BadgeOfThePaleBlueCrossPower.POWER_ID)) {
-            int amount = p.getPower(BadgeOfThePaleBlueCrossPower.POWER_ID).amount;
+        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+            int amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount;
             addToBot(new HealAction(p, p, amount * this.baseMagicNumber));
-            addToBot(new RemoveSpecificPowerAction(p, p, BadgeOfThePaleBlueCrossPower.POWER_ID));
+            addToBot(new LoseHyperdimensionalLinksAction(true));
         }
     }
 }

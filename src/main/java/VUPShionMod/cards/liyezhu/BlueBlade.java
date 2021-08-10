@@ -1,7 +1,9 @@
 package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.powers.MarkOfThePaleBlueCrossPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -29,8 +31,27 @@ public class BlueBlade extends AbstractLiyezhuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.baseDamage = 6;
+        int amount = 0;
+        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID))
+            amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount * this.magicNumber;
+        this.baseDamage += amount;
+
+        calculateCardDamage(m);
+
         addToBot(new VFXAction(new CleaveEffect()));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+        addToBot(new LoseHyperdimensionalLinksAction(true));
+    }
+
+    @Override
+    public void applyPowers() {
+        this.baseDamage = 6;
+        int amount = 0;
+        if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID))
+            amount = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount * this.magicNumber;
+        this.baseDamage += amount;
+        super.applyPowers();
     }
 
     public void upgrade() {

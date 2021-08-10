@@ -1,6 +1,7 @@
 package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.badlogic.gdx.math.MathUtils;
@@ -33,7 +34,7 @@ public class ArmedToTheTeeth extends AbstractMinamiCard {
         if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
             int amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount;
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
-            addToBot(new RemoveSpecificPowerAction(p, p, HyperdimensionalLinksPower.POWER_ID));
+            addToBot(new LoseHyperdimensionalLinksAction(true));
         }
     }
 

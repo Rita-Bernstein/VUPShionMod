@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Pray extends AbstractLiyezhuCard implements BranchingUpgradesCard {
+public class Pray extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("Pray");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz07.png");
     private static final int COST = 1;
@@ -30,18 +30,8 @@ public class Pray extends AbstractLiyezhuCard implements BranchingUpgradesCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            if (this.isBranchUpgrade()) {
-                this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-                this.initializeTitle();
-                this.rawDescription = EXTENDED_DESCRIPTION[1];
-                this.upgradeMagicNumber(-1);
-                this.upgradeBaseCost(0);
-                this.exhaust = false;
-            } else {
-                this.upgradeMagicNumber(1);
-                this.upgradeSecondM(1);
-                this.rawDescription = UPGRADE_DESCRIPTION;
-            }
+            this.upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
@@ -59,15 +49,6 @@ public class Pray extends AbstractLiyezhuCard implements BranchingUpgradesCard {
                     if (ctr >= Pray.this.baseSecondaryM) {
                         break;
                     }
-                }
-                if (Pray.this.upgraded && Pray.this.getUpgradeType() == UpgradeType.BRANCH_UPGRADE) {
-                    ctr = 0;
-                    for (AbstractCard card : DrawCardAction.drawnCards) {
-                        if (card.color == CardColor.COLORLESS) {
-                            ctr++;
-                        }
-                    }
-                    addToBot(new DrawCardAction(ctr));
                 }
                 isDone = true;
             }

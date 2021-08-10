@@ -1,6 +1,7 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.actions.TimeWarpAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
@@ -26,7 +27,7 @@ public class TimeWarp extends AbstractKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.secondaryM));
+        addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
 
         AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 

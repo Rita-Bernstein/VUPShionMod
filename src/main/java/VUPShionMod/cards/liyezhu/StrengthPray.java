@@ -3,6 +3,7 @@ package VUPShionMod.cards.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class StrengthPray extends AbstractLiyezhuCard implements BranchingUpgradesCard {
+public class StrengthPray extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("StrengthPray");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz06.png");
     private static final int COST = 1;
@@ -20,35 +21,20 @@ public class StrengthPray extends AbstractLiyezhuCard implements BranchingUpgrad
 
     public StrengthPray() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 4;
-        this.baseSecondaryM = this.secondaryM = 1;
+        this.baseMagicNumber = this.magicNumber = 3;
+        this.selfRetain = true;
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            if (this.isBranchUpgrade()) {
-                this.type = CardType.POWER;
-                this.upgradeSecondM(2);
-                this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-                this.initializeTitle();
-                this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-                this.initializeDescription();
-            } else {
-                this.upgradeBaseCost(0);
-                this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-                this.initializeDescription();
-            }
+            upgradeMagicNumber(2);
         }
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.baseMagicNumber)));
-        if (!(upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)) {
-            addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.baseMagicNumber)));
-        }
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfThePaleBlueCrossPower(p, this.baseSecondaryM)));
     }
 }

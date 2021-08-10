@@ -2,11 +2,14 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import basemod.interfaces.CloneablePowerInterface;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -35,7 +38,11 @@ public class DelayAvatarPower extends AbstractPower implements CloneablePowerInt
         if (damageAmount < this.amount) {
             this.amount -= damageAmount;
         } else {
-            addToTop(new ApplyPowerAction(this.owner, this.owner, new DelayAvatarAttackPower(this.owner, this.damage)));
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                for (int i = 0; i < 5; i++)
+                    addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true),
+                            DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            }
             addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
         updateDescription();

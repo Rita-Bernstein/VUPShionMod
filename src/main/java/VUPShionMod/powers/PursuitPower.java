@@ -38,6 +38,5 @@ public class PursuitPower extends AbstractPower {
             if(!this.owner.isDeadOrEscaped())
             funnel.onPursuitEnemy(this.owner);
         }
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 }

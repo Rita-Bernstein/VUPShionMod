@@ -25,5 +25,11 @@
       " NL 消耗 。",
       " 虚无 。"
     ]
+  },
+  "VUPShionMod:AttackFromDiscardToHandAction": {
+    "TEXT": [
+      "将2张加载攻击牌加入手牌",
+      ""
+    ]
   }
 }

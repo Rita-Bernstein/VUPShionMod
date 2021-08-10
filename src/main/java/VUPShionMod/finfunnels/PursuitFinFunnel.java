@@ -24,12 +24,10 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
 public class PursuitFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID("PursuitFinFunnel"));
-
+    public static final String ID = VUPShionMod.makeID("InvestigationFinFunnel");
 
     public PursuitFinFunnel() {
-        super();
-        this.name = orbStrings.NAME;
-        this.ID = VUPShionMod.makeID("PursuitFinFunnel");
+        super(ID);
     }
 
     @Override
@@ -50,7 +48,8 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void onPursuitEnemy(AbstractCreature target) {
         if (this.level <= 0) return;
         if(!target.isDeadOrEscaped())
-        activeFire(target, this.level, DamageInfo.DamageType.THORNS);
+            if(target.hasPower(PursuitPower.POWER_ID))
+        activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS);
     }
 
     @Override
@@ -70,7 +69,8 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
-    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
+    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
+        if (target.isDeadOrEscaped()) return;
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
             playFinFunnelAnimation(this.ID);
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
@@ -102,6 +102,9 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, this.level)));
             }
         }
+
+        if (loopTimes > 0 )
+            fire(target, damage, type, loopTimes - 1);
     }
 
     @Override

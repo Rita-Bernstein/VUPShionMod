@@ -2,10 +2,9 @@ package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractKuroisuCard;
-import VUPShionMod.powers.BadgeOfTimePower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,19 +17,17 @@ public class Limit extends AbstractKuroisuCard {
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     public Limit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
-        this.baseDamage = 6;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.baseDamage = 9;
         this.isMultiDamage = true;
-        this.baseBlock = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ReducePowerAction(p, p, BadgeOfTimePower.POWER_ID, this.secondaryM));
-        addToBot(new GainBlockAction(p, p, this.block));
+        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.secondaryM));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.FIRE, true));
     }
 
@@ -40,8 +37,8 @@ public class Limit extends AbstractKuroisuCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(BadgeOfTimePower.POWER_ID)) {
-            if (p.getPower(BadgeOfTimePower.POWER_ID).amount >= 3)
+        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+            if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.magicNumber)
                 return super.canUse(p, m);
         }
         return false;
@@ -50,8 +47,8 @@ public class Limit extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(6);
-            upgradeBlock(6);
+            upgradeDamage(3);
+
         }
     }
 }

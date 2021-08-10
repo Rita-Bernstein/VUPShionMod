@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 public class BlueBlade extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("BlueBlade");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz04.png");
-    private static final int COST = 0;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -24,40 +24,13 @@ public class BlueBlade extends AbstractLiyezhuCard {
     public BlueBlade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 6;
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 2;
-        this.exhaust = true;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.isMultiDamage = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new CleaveEffect()));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
-        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!monster.isDeadOrEscaped()) {
-                addToBot(new ApplyPowerAction(monster, p, new MarkOfThePaleBlueCrossPower(monster, this.baseMagicNumber)));
-            }
-        }
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                int[] damage = new int[AbstractDungeon.getCurrRoom().monsters.monsters.size()];
-                for (int i=0;i<damage.length;i++) {
-                    int tmp = 0;
-                    if (AbstractDungeon.getCurrRoom().monsters.monsters.get(i).hasPower(MarkOfThePaleBlueCrossPower.POWER_ID)) {
-                        tmp += AbstractDungeon.getCurrRoom().monsters.monsters.get(i).getPower(MarkOfThePaleBlueCrossPower.POWER_ID).amount * BlueBlade.this.baseSecondaryM;
-                    }
-                    damage[i] = tmp;
-                }
-                addToBot(new DamageAllEnemiesAction(p, damage, BlueBlade.this.damageTypeForTurn, AttackEffect.SLASH_DIAGONAL));
-                for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    if (!monster.isDeadOrEscaped()) {
-                        addToBot(new RemoveSpecificPowerAction(monster, p, MarkOfThePaleBlueCrossPower.POWER_ID));
-                    }
-                }
-                isDone = true;
-            }
-        });
     }
 
     public void upgrade() {

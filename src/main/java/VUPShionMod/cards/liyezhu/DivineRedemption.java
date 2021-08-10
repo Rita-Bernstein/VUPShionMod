@@ -4,7 +4,9 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.UpgradeAndZeroCostAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,14 +22,13 @@ public class DivineRedemption extends AbstractLiyezhuCard {
 
     public DivineRedemption() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.baseBlock = 8;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseHPAction(p,p,2));
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfThePaleBlueCrossPower(p, this.magicNumber)));
-        addToBot(new UpgradeAndZeroCostAction(p,this.secondaryM));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber),this.magicNumber));
+        addToBot(new GainBlockAction(p,this.block));
     }
 
     public AbstractCard makeCopy() {
@@ -38,8 +39,8 @@ public class DivineRedemption extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
-            upgradeSecondM(1);
+            upgradeBlock(3);
+            upgradeMagicNumber(1);
         }
     }
 }

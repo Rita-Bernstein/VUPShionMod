@@ -25,12 +25,10 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
 public class InvestigationFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID("InvestigationFinFunnel"));
-
+    public static final String ID = VUPShionMod.makeID("InvestigationFinFunnel");
 
     public InvestigationFinFunnel() {
-        super();
-        this.name = orbStrings.NAME;
-        this.ID = VUPShionMod.makeID("InvestigationFinFunnel");
+        super(ID);
     }
 
     @Override
@@ -66,7 +64,8 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
 
     @Override
-    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
+    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
+        if(target.isDeadOrEscaped())return;
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
             playFinFunnelAnimation(this.ID);
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
@@ -74,7 +73,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
             if (this.level > 0) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                    addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new VulnerablePower(mo,1, false)));
+                    addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new VulnerablePower(mo, 1, false)));
                 }
             }
         } else {
@@ -86,7 +85,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
-                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type),1.0f));
+                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));
             else
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
 
@@ -97,6 +96,9 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, 1, false)));
             }
         }
+
+        if (loopTimes > 0)
+            fire(target, damage, type, loopTimes - 1);
     }
 
 

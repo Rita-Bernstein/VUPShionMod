@@ -2,7 +2,6 @@ package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractKuroisuCard;
-import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.DelayAvatarPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -19,14 +18,13 @@ public class DelayAvatar extends AbstractKuroisuCard {
 
     public DelayAvatar() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
+
 
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfTimePower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new DelayAvatarPower(p, this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new DelayAvatarPower(p, this.magicNumber)));
     }
 
     public AbstractCard makeCopy() {
@@ -36,8 +34,7 @@ public class DelayAvatar extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradeSecondM(2);
+            upgradeMagicNumber(2);
         }
     }
 }

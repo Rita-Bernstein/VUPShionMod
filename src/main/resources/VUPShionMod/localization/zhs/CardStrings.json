@@ -213,176 +213,138 @@
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "时空扭曲",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:时之徽记 。对随机敌人造成 !D! 点伤害 !M! 次并给予2点 虚弱 和 vup_shion_mod:流血 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。对随机敌人造成 !D! 点伤害 !M! 次并给予2点 虚弱 和 vup_shion_mod:流血 。"
   },
   "VUPShionMod:BlackHand": {
     "NAME": "黑色指针",
-    "DESCRIPTION": "失去 !M! 点生命，获得1层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 消耗 。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "失去 !M! 点生命，获得2层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 消耗 。",
-    "EXTENDED_DESCRIPTION": [
-      "银色指针",
-      "失去 !M! 点生命，获得2层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。"
-    ]
+    "DESCRIPTION": "失去 !M! 点生命。 NL 抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 消耗 。",
+    "UPGRADE_DESCRIPTION": "失去 !M! 点生命。 NL 抽 !VUPShionSecondM! 张牌 。 NL 抽到的牌本回合耗能变为0。 消耗 。"
   },
   "VUPShionMod:TimeOverload": {
     "NAME": "时之过载",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。 NL 下回合失去 [E] [E] 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。 NL 获得 [E] [E] 。 NL 下回合失去 [E] 。"
+    "DESCRIPTION": "获得 [E] [E] 。 NL 下回合失去 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] 。 NL 下回合失去 [E] 。"
   },
   "VUPShionMod:Limit": {
     "NAME": "十二刻时",
-    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:时之徽记 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "超速领域",
-    "DESCRIPTION": "触发三种 vup_shion_mod:浮游炮 和 NL *咏叹调型维度裂解者 NL 的效果。抽 !M! 张牌。当前手牌本回合耗能为0。 NL 下回合失去 [E] [E] 。 消耗 。"
+    "DESCRIPTION": "抽 !M! 张牌。当前手牌本回合耗能为0。 NL 下回合失去 [E] [E] 。 消耗 。"
   },
   "VUPShionMod:DelayAvatar": {
     "NAME": "延时替身",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:时之徽记 。召唤一名 !VUPShionSecondM! 点生命的 *时间替身 。如果被击杀，则下回合对所有敌人造成 !VUPShionSecondM! 点伤害5次。"
+    "DESCRIPTION": "召唤一名 !M! 点生命的 *时间替身 。被击杀时对所有敌人造成 !VUPShionSecondM! 点伤害5次。"
   },
   "VUPShionMod:FinFunnelActive": {
     "NAME": "浮游炮激活",
-    "DESCRIPTION": "触发三种 vup_shion_mod:浮游炮 的效果。"
+    "DESCRIPTION": "对一名敌人触发三种 vup_shion_mod:浮游炮 的被动效果。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "对一名敌人触发三种 vup_shion_mod:浮游炮 的被动效果。"
   },
   "VUPShionMod:AttackWithDefense": {
     "NAME": "攻防一体",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
   },
   "VUPShionMod:LockIndication": {
     "NAME": "锁定指示",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 触发 *咏叹调型维度裂解者 。这次的伤害额外增加 !VUPShionSecondM! 点。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 触发 *咏叹调型维度裂解者 。这次的伤害额外增加 !VUPShionSecondM! 点。",
-    "EXTENDED_DESCRIPTION": [
-      "锁定爆头",
-      "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 触发 *咏叹调型维度裂解者 。该伤害无视 格挡 。"
-    ]
+    "DESCRIPTION": "对一名敌人触发 *咏叹调型维度裂解者 。这次的伤害额外增加 !M! 点。 NL 该伤害无视 格挡 。"
   },
   "VUPShionMod:TacticalLayout": {
     "NAME": "战术布局",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。",
-    "EXTENDED_DESCRIPTION": [
-      "战术攻击",
-      "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL 造成你当前 格挡 值的伤害。 斩杀 时，抽一张牌并获得 [E] 。",
-      "（造成 !D! 点伤害）"
-    ]
+    "DESCRIPTION": "对随机敌人触发 vup_shion_mod:浮游炮 的被动效果 !M! 次。"
   },
   "VUPShionMod:FinFunnelSupport": {
     "NAME": "浮游支援",
-    "DESCRIPTION": "失去一半的 vup_shion_mod:支援兵装 。 NL 本回合提高失去层数一半的 vup_shion_mod:总炮强化 。",
-    "UPGRADE_DESCRIPTION": "失去一半的 vup_shion_mod:支援兵装 。 NL 本回合提高失去层数的 vup_shion_mod:总炮强化 。"
+    "DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 的被动效果。 NL 抽 !M! 张牌。"
   },
-  "VUPShionMod:CarefulPlan": {
-    "NAME": "精心策划",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 抽 !VUPShionSecondM! 张牌。"
+  "VUPShionMod:Anticoagulation": {
+    "NAME": "抗凝",
+    "DESCRIPTION": "本回合使一名敌人的流血不会消失。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "本回合使一名敌人的流血不会消失。"
   },
-  "VUPShionMod:TacticalBunker": {
-    "NAME": "战术掩体",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL 抽 !VUPShionSecondM! 张牌。 NL vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL 抽 !VUPShionSecondM! 张牌。",
-    "EXTENDED_DESCRIPTION": [
-      "掩体屏障",
-      "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。 NL 获得 vup_shion_mod:支援兵装 层数的 格挡 。"
-    ]
+  "VUPShionMod:Lure": {
+    "NAME": "诱敌致胜",
+    "DESCRIPTION": "触发所有敌人的 vup_shion_mod:追击 效果 !M! 次。"
   },
   "VUPShionMod:SuperCharge": {
     "NAME": "超能装填",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !VUPShionSecondM! 点临时 力量 。"
+    "DESCRIPTION": "消耗1层 vup_shion_mod:超维链接 。 NL 获得 !M! 点临时 力量 和 !VUPShionSecondM! 点临时 敏捷 。"
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "姿态解放-南小棉",
-    "DESCRIPTION": "每回合开始时，获得 !M! 层 vup_shion_mod:支援兵装 。 NL vup_shion_mod:支援兵装 满层时，失去所有 vup_shion_mod:支援兵装 并对所有敌人造成 !VUPShionSecondM! 点伤害。",
-    "UPGRADE_DESCRIPTION": "每回合开始时，获得 !M! 层 vup_shion_mod:支援兵装 。 NL vup_shion_mod:支援兵装 满层时，失去所有 vup_shion_mod:支援兵装 并对所有敌人造成 !VUPShionSecondM! 点伤害。"
+    "DESCRIPTION": "使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。"
   },
   "VUPShionMod:AnestheticReagent": {
     "NAME": "麻醉试剂",
-    "DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !VUPShionSecondM! 层 无实体 。 NL 消耗 。 vup_shion_mod:分支 。 ",
-    "UPGRADE_DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !VUPShionSecondM! 层 无实体 。 NL 消耗 。 ",
-    "EXTENDED_DESCRIPTION": [
-      "EX麻醉",
-      "获得 !VUPShionSecondM! 层 无实体 。 NL 消耗 。 "
-    ]
+    "DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 无实体 。 NL 消耗性 !stslib:ex! 。 "
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "强化支援",
-    "DESCRIPTION": "获得 vup_shion_mod:支援兵装 时额外获得 !M! 层。 消耗 。"
+    "DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果X次。",
+    "UPGRADE_DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果X+1次。"
   },
   "VUPShionMod:BattlefieldHeritage": {
     "NAME": "战场拾遗",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 将弃牌堆中随机 !VUPShionSecondM! 张牌加入手牌。 NL vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 将弃牌堆中随机 !VUPShionSecondM! 张牌加入手牌。",
-    "EXTENDED_DESCRIPTION": [
-      "精确回收",
-      "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 将弃牌堆中的 !VUPShionSecondM! 张牌加入手牌。"
-    ]
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 将弃牌堆中 !VUPShionSecondM! 张攻击牌加入手牌。"
   },
   "VUPShionMod:GravityLoading": {
     "NAME": "重力装填",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 给予所有敌人 !VUPShionSecondM! 层 虚弱 。"
+    "DESCRIPTION": "对所有敌人触发 *重力 vup_shion_mod:浮游炮 的被动效果一次。 NL 给予所有敌人 !M! 层 虚弱 。"
   },
-  "VUPShionMod:ArmedTrain": {
-    "NAME": "武装列车",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:支援兵装 。 NL 获得 !B! 点 格挡 。额外获得 vup_shion_mod:支援兵装 层 NL 数 !VUPShionSecondM! 倍的 格挡 。对所有敌人造成 vup_shion_mod:支援兵装 NL 层数 !VUPShionSecondM! 倍的伤害。",
+  "VUPShionMod:FirePower": {
+    "NAME": "火力倾泻",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 对所有敌人造成 vup_shion_mod:总炮强化 !M! 倍的伤害。 NL 本回合 vup_shion_mod:总炮强化 视为0",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]
   },
   "VUPShionMod:ArmedToTheTeeth": {
     "NAME": "全副武装",
-    "DESCRIPTION": "获得 vup_shion_mod:支援兵装 层数的 力量 。 NL 失去所有 vup_shion_mod:支援兵装 。 NL vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得 vup_shion_mod:支援兵装 层数的 力量 。 NL 失去所有 vup_shion_mod:支援兵装 。",
-    "EXTENDED_DESCRIPTION": [
-      "轻武装",
-      "获得 vup_shion_mod:支援兵装 层数的 力量 。 NL 失去一半的 vup_shion_mod:支援兵装 。"
-    ]
+    "DESCRIPTION": "获得 vup_shion_mod:超维链接 层数的 力量 。 NL 失去所有 vup_shion_mod:超维链接 。"
   },
   "VUPShionMod:IntroductionSilence": {
     "NAME": "静默导言",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并给予 !VUPShionSecondM! 层 虚弱 和 !M! 层 vup_shion_mod:苍蓝十字印记 。 NL vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害并给予 !VUPShionSecondM! 层 虚弱 和 !M! 层 vup_shion_mod:苍蓝十字印记 。",
-    "EXTENDED_DESCRIPTION": [
-      "静默导言",
-      "对所有敌人造成 !D! 点伤害并给予 !VUPShionSecondM! 层 虚弱 和 !M! 层 vup_shion_mod:苍蓝十字印记 。"
-    ]
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。"
   },
   "VUPShionMod:SacredAdvice": {
     "NAME": "神圣建言",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:苍蓝十字徽记 。 NL 获得 !B! 点 格挡 。 NL 获得 [E] [E] 。"
+    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] 。"
   },
   "VUPShionMod:DivineRedemption": {
     "NAME": "圣耀救赎",
-    "DESCRIPTION": "失去2点生命。 NL 获得 !M! 层 vup_shion_mod:苍蓝十字徽记 。 NL 选择手牌中的 !VUPShionSecondM! 张牌 升级 并在本回合耗能为0。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 !B! 点 格挡 。"
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "苍蓝之刃",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并给予 !M! 层 vup_shion_mod:苍蓝十字印记 。 NL 额外对其造成其 vup_shion_mod:苍蓝十字印记 层数 !VUPShionSecondM! 倍的伤害并失去 vup_shion_mod:苍蓝十字印记 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:超维链接 层数 !M! 倍的伤害。 NL 失去所有 vup_shion_mod:超维链接 。"
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神圣冲锋",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的伤害。 NL 获得 vup_shion_mod:苍蓝十字徽记 层数 !VUPShionSecondM! 倍的 再生 。 NL 失去所有 vup_shion_mod:苍蓝十字徽记 。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的伤害。 NL 获得 vup_shion_mod:苍蓝十字徽记 层数 !VUPShionSecondM! 倍的 再生 。 NL 失去所有 vup_shion_mod:苍蓝十字徽记 。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:超维链接 层数 !M! 倍的伤害。 NL 获得 vup_shion_mod:超维链接 层数 !VUPShionSecondM! 倍的 再生 。 NL 失去所有 vup_shion_mod:超维链接 。 vup_shion_mod:分支 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:超维链接 层数 !M! 倍的伤害。 NL 获得 vup_shion_mod:超维链接 层数 !VUPShionSecondM! 倍的 再生 。 NL 失去所有 vup_shion_mod:超维链接 。",
     "EXTENDED_DESCRIPTION": [
       "神圣转换",
-      "回复8点生命。 NL 额外回复 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的生命。 NL 获得 vup_shion_mod:苍蓝十字徽记 层数 !VUPShionSecondM! 倍的 格挡 。 NL 失去所有 vup_shion_mod:苍蓝十字徽记 。"
+      "回复8点生命。 NL 额外回复 vup_shion_mod:超维链接 层数 !M! 倍的生命。 NL 获得 vup_shion_mod:超维链接 层数 !VUPShionSecondM! 倍的 格挡 。 NL 失去所有 vup_shion_mod:超维链接 。"
     ]
   },
   "VUPShionMod:StrengthPray": {
     "NAME": "力量祈祷",
-    "DESCRIPTION": "获得 !M! 点临时 力量 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:苍蓝十字徽记 。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点临时 力量 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:苍蓝十字徽记 。",
+    "DESCRIPTION": "获得 !M! 点临时 力量 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。 vup_shion_mod:分支 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点临时 力量 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。",
     "EXTENDED_DESCRIPTION": [
       "力量建言",
-      "获得 !M! 点 力量 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:苍蓝十字徽记 。"
+      "获得 !M! 点 力量 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。"
     ]
   },
   "VUPShionMod:Pray": {
     "NAME": "祈祷",
-    "DESCRIPTION": "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。",
+    "DESCRIPTION": "获得1层 vup_shion_mod:超维链接 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。 vup_shion_mod:分支 。",
+    "UPGRADE_DESCRIPTION": "获得1层 vup_shion_mod:超维链接 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "希望祈祷",
-      "获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 如果抽到的牌中有无色牌，则额外抽一张牌。"
+      "获得1层 vup_shion_mod:超维链接 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 如果抽到的牌中有无色牌，则额外抽一张牌。"
     ]
   },
   "VUPShionMod:SantaCroce": {
@@ -396,20 +358,20 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "姿态解放-黎夜竹",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:苍蓝十字徽记 NL 每回合结束时对所有敌人造成 vup_shion_mod:苍蓝十字徽记 层数的伤害。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 NL 每回合结束时对所有敌人造成 vup_shion_mod:超维链接 层数的伤害。"
   },
   "VUPShionMod:Awaken": {
     "NAME": "唤醒",
-    "DESCRIPTION": "回复 vup_shion_mod:苍蓝十字徽记 !M! 倍的生命。失去所有 vup_shion_mod:苍蓝十字徽记 。 NL 消耗 。"
+    "DESCRIPTION": "回复 vup_shion_mod:超维链接 !M! 倍的生命。失去所有 vup_shion_mod:超维链接 。 NL 消耗 。"
   },
   "VUPShionMod:HolyCoffinSinkingSpirit": {
     "NAME": "圣棺沉灵",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将敌人的 vup_shion_mod:苍蓝十字印记 变为自身的 vup_shion_mod:苍蓝十字徽记 。 NL 回复 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的生命。 NL 失去所有 vup_shion_mod:苍蓝十字徽记 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将敌人的 vup_shion_mod:苍蓝十字印记 变为自身的 vup_shion_mod:超维链接 。 NL 回复 vup_shion_mod:超维链接 层数 !M! 倍的生命。 NL 失去所有 vup_shion_mod:超维链接 。"
   },
   "VUPShionMod:HolySlashDown": {
     "NAME": "圣耀十字斩",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:苍蓝十字徽记 。 NL 获得 vup_shion_mod:苍蓝十字徽记 1倍的 格挡 。 NL 下回合对所有敌人造成 vup_shion_mod:苍蓝十字徽记 !VUPShionSecondM! 倍的伤害。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:苍蓝十字徽记 。 NL 获得 vup_shion_mod:苍蓝十字徽记 2倍的 格挡 。 NL 下回合对所有敌人造成 vup_shion_mod:苍蓝十字徽记 !VUPShionSecondM! 倍的伤害。",
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 vup_shion_mod:超维链接 1倍的 格挡 。 NL 下回合对所有敌人造成 vup_shion_mod:超维链接 !VUPShionSecondM! 倍的伤害。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 vup_shion_mod:超维链接 2倍的 格挡 。 NL 下回合对所有敌人造成 vup_shion_mod:超维链接 !VUPShionSecondM! 倍的伤害。",
     "EXTENDED_DESCRIPTION": [
       "（获得 !B! 点 格挡 。）"
     ]
@@ -420,16 +382,16 @@
   },
   "VUPShionMod:HolyCoffinRelease": {
     "NAME": "圣棺解放",
-    "DESCRIPTION": "抽X张牌。 NL 它们有50%概率本回合耗能变为0。 NL 每抽一张牌，获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 对所有敌人造成获得 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的伤害。失去所有 vup_shion_mod:苍蓝十字徽记 。",
-    "UPGRADE_DESCRIPTION": "抽X+1张牌。 NL 它们有50%概率本回合耗能变为0。 NL 每抽一张牌，获得1层 vup_shion_mod:苍蓝十字徽记 。 NL 对所有敌人造成获得 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的伤害。失去所有 vup_shion_mod:苍蓝十字徽记 。"
+    "DESCRIPTION": "抽X张牌。 NL 它们有50%概率本回合耗能变为0。 NL 每抽一张牌，获得1层 vup_shion_mod:超维链接 。 NL 对所有敌人造成获得 vup_shion_mod:超维链接 层数 !M! 倍的伤害。失去所有 vup_shion_mod:超维链接 。",
+    "UPGRADE_DESCRIPTION": "抽X+1张牌。 NL 它们有50%概率本回合耗能变为0。 NL 每抽一张牌，获得1层 vup_shion_mod:超维链接 。 NL 对所有敌人造成获得 vup_shion_mod:超维链接 层数 !M! 倍的伤害。失去所有 vup_shion_mod:超维链接 。"
   },
   "VUPShionMod:BlueRose": {
     "NAME": "湛蓝蔷薇",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:苍蓝十字徽记 层数之和的 !M! 倍为增加的额外伤害。失去所有 vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:苍蓝十字徽记 。 vup_shion_mod:分支 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:苍蓝十字徽记 层数之和的 !M! 倍为增加的额外伤害。失去所有 vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:苍蓝十字徽记 。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:超维链接 层数之和的 !M! 倍为增加的额外伤害。失去所有 vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:超维链接 。 vup_shion_mod:分支 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 和你的 vup_shion_mod:超维链接 层数之和的 !M! 倍为增加的额外伤害。失去所有 vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:超维链接 。",
     "EXTENDED_DESCRIPTION": [
       "冰蓝蔷薇",
-      "对所有敌人造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 层数的 !M! 倍为增加的额外伤害。 NL 获得 vup_shion_mod:苍蓝十字徽记 层数 !M! 倍的 格挡 。失去所有 vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:苍蓝十字徽记 。"
+      "对所有敌人造成 !D! 点伤害。 NL 敌人身上的 vup_shion_mod:苍蓝十字印记 层数的 !M! 倍为增加的额外伤害。 NL 获得 vup_shion_mod:超维链接 层数 !M! 倍的 格挡 。失去所有 vup_shion_mod:苍蓝十字印记 和 vup_shion_mod:超维链接 。"
     ]
   }
 }

@@ -2,9 +2,9 @@ package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractKuroisuCard;
-import VUPShionMod.powers.BadgeOfTimePower;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

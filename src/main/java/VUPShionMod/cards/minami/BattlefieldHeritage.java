@@ -1,6 +1,7 @@
 package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.AttackFromDiscardToHandAction;
 import VUPShionMod.actions.RandomDiscardPileToHandAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BattlefieldHeritage extends AbstractMinamiCard implements BranchingUpgradesCard {
+public class BattlefieldHeritage extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("BattlefieldHeritage");
     public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami12.png");
     private static final int COST = 2;
@@ -27,40 +28,17 @@ public class BattlefieldHeritage extends AbstractMinamiCard implements Branching
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
-
-        if (upgraded && getUpgradeType() == UpgradeType.BRANCH_UPGRADE)
-            addToBot(new BetterDiscardPileToHandAction(1));
-        else
-            addToBot(new RandomDiscardPileToHandAction(this.secondaryM));
+        addToBot(new AttackFromDiscardToHandAction(this.secondaryM));
     }
 
     public AbstractCard makeCopy() {
         return new BattlefieldHeritage();
     }
 
-
-    private void baseUpgrade() {
-        upgradeBaseCost(1);
-        upgradeMagicNumber(1);
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        initializeDescription();
-    }
-
-    private void branchUpgrade() {
-        upgradeBaseCost(1);
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-        initializeDescription();
-    }
-
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            if (isBranchUpgrade()) {
-                branchUpgrade();
-            } else {
-                baseUpgrade();
-            }
+            upgradeMagicNumber(1);
         }
     }
 }

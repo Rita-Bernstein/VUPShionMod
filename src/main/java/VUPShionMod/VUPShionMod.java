@@ -21,6 +21,7 @@ import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import VUPShionMod.relics.*;
 import basemod.BaseMod;
@@ -61,7 +62,7 @@ public class VUPShionMod implements
         AddAudioSubscriber,
         EditKeywordsSubscriber,
         EditStringsSubscriber,
-        PostDungeonInitializeSubscriber{
+        PostDungeonInitializeSubscriber {
 
     public static final String MODNAME = "VUPShionMod";
     public static final String AUTHOR = "Rita";
@@ -149,8 +150,9 @@ public class VUPShionMod implements
                 ret += power.amount;
             }
 
+            if (AbstractDungeon.player.hasPower(LoseFinFunnelUpgradePower.POWER_ID)) ;
+            ret = 0;
         }
-
 
         return ret;
     }
@@ -196,6 +198,14 @@ public class VUPShionMod implements
         if (AbstractDungeon.floorNum == 0) {
             VUPShionMod.finFunnelSaver.data.clear();
         }
+
+        if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {
+            AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
+            relic.flash();
+            relic.counter++;
+            ((DimensionSplitterAria) relic).setDescriptionAfterLoading();
+        }
+
     }
 
     @Override
@@ -261,15 +271,15 @@ public class VUPShionMod implements
         cards.add(new LockIndication());
         cards.add(new TacticalLayout());
         cards.add(new FinFunnelSupport());
-        cards.add(new CarefulPlan());
-        cards.add(new TacticalBunker());
         cards.add(new SuperCharge());
+        cards.add(new Anticoagulation());
+        cards.add(new Lure());
         cards.add(new ReleaseFormMinami());
         cards.add(new AnestheticReagent());
         cards.add(new EnhancedSupport());
         cards.add(new BattlefieldHeritage());
         cards.add(new GravityLoading());
-        cards.add(new ArmedTrain());
+        cards.add(new FirePower());
         cards.add(new ArmedToTheTeeth());
 
 
@@ -311,19 +321,19 @@ public class VUPShionMod implements
             BaseMod.addCard(card);
             UnlockTracker.unlockCard(card.cardID);
 
-            if(card instanceof AbstractAnastasiaCard)
+            if (card instanceof AbstractAnastasiaCard)
                 an_Cards.add(card);
 
-            if(card instanceof AbstractKuroisuCard)
+            if (card instanceof AbstractKuroisuCard)
                 ku_Cards.add(card);
 
-            if(card instanceof AbstractLiyezhuCard)
+            if (card instanceof AbstractLiyezhuCard)
                 li_Cards.add(card);
 
-            if(card instanceof AbstractMinamiCard)
+            if (card instanceof AbstractMinamiCard)
                 mi_Cards.add(card);
 
-            if(card instanceof AbstractShionCard)
+            if (card instanceof AbstractShionCard)
                 shi_Cards.add(card);
 
         }

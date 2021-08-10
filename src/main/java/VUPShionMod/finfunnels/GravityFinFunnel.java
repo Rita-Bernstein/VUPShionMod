@@ -25,12 +25,10 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
 public class GravityFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID("GravityFinFunnel"));
-
+    public static final String ID = VUPShionMod.makeID("GravityFinFunnel");
 
     public GravityFinFunnel() {
-        super();
-        this.name = orbStrings.NAME;
-        this.ID = VUPShionMod.makeID("GravityFinFunnel");
+        super(ID);
     }
 
     @Override
@@ -64,8 +62,8 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
-    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
-
+    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
+        if(target.isDeadOrEscaped())return;
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
             playFinFunnelAnimation(this.ID);
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
@@ -96,7 +94,11 @@ public class GravityFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new WeakPower(target, 1, false)));
             }
         }
+
+        if (loopTimes > 0)
+            fire(target, damage, type, loopTimes - 1);
     }
+
 
     @Override
     public void updatePosition(Skeleton skeleton) {

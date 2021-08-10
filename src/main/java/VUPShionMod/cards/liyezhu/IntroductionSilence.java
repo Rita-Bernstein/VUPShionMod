@@ -6,37 +6,32 @@ import VUPShionMod.powers.MarkOfThePaleBlueCrossPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class IntroductionSilence extends AbstractLiyezhuCard implements BranchingUpgradesCard {
+public class IntroductionSilence extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("IntroductionSilence");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz01.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public IntroductionSilence() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber= this.baseMagicNumber = 1;
-        this.secondaryM =this.baseSecondaryM = 2;
-        this.baseDamage = 2;
+        this.baseDamage = 7;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
-            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                if (!mo.isDead && !mo.isDying){
-                    addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.secondaryM, false), this.secondaryM));
-                    addToBot(new ApplyPowerAction(mo, p, new MarkOfThePaleBlueCrossPower(mo, this.magicNumber), this.magicNumber));
-                }
-            }
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {
@@ -44,29 +39,11 @@ public class IntroductionSilence extends AbstractLiyezhuCard implements Branchin
     }
 
 
-    private void baseUpgrade() {
-        upgradeDamage(2);
-        upgradeSecondM(1);
-        this.rawDescription = UPGRADE_DESCRIPTION;
-        initializeDescription();
-    }
-
-    private void branchUpgrade() {
-        upgradeBaseCost(0);
-        upgradeSecondM(1);
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-        initializeDescription();
-    }
-
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            if (isBranchUpgrade()) {
-                branchUpgrade();
-            } else {
-                baseUpgrade();
-            }
+            upgradeDamage(2);
+            upgradeMagicNumber(1);
         }
     }
 }

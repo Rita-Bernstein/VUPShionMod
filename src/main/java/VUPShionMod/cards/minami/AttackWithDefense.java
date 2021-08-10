@@ -22,13 +22,12 @@ public class AttackWithDefense extends AbstractMinamiCard {
 
     public AttackWithDefense() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 4;
+        this.baseDamage = 8;
         this.baseBlock = 8;
-        this.magicNumber = this.baseMagicNumber = 2;
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }
@@ -41,7 +40,8 @@ public class AttackWithDefense extends AbstractMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeDamage(3);
+            upgradeBlock(3);
         }
     }
 }

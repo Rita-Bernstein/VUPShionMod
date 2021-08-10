@@ -2,10 +2,9 @@ package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractLiyezhuCard;
-import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,32 +13,41 @@ public class SacredAdvice extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("SacredAdvice");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz02.png");
     private static final int COST = 1;
-    public static final CardType TYPE = CardType.SKILL;
+    public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public SacredAdvice() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 4;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfThePaleBlueCrossPower(p, this.magicNumber)));
-        addToBot(new GainBlockAction(p, this.block));
-        addToBot(new GainEnergyAction(2));
+        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.magicNumber));
+        if (upgraded)
+            addToBot(new GainEnergyAction(2));
+        else
+            addToBot(new GainEnergyAction(1));
     }
 
     public AbstractCard makeCopy() {
         return new SacredAdvice();
     }
 
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+            if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.magicNumber)
+                return super.canUse(p, m);
+        }
+        return false;
+    }
 
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
-            upgradeBlock(4);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

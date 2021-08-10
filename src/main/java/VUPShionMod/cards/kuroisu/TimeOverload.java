@@ -2,7 +2,6 @@ package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractKuroisuCard;
-import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.DenergizePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -20,13 +19,9 @@ public class TimeOverload extends AbstractKuroisuCard {
 
     public TimeOverload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM = this.baseSecondaryM = 3;
-        this.baseDamage = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new BadgeOfTimePower(p,this.magicNumber)));
         addToBot(new GainEnergyAction(2));
         if(upgraded)
             addToBot(new ApplyPowerAction(p,p,new DenergizePower(p,1)));

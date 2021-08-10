@@ -49,18 +49,17 @@ public class DimensionSplitterAria extends CustomRelic {
         doDamage();
     }
 
-    public void doDamage(int extraDamage, boolean isLoseHP) {
-        AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+    public void doDamage(AbstractMonster m, int extraDamage, boolean isLoseHP) {
         if (m != null) {
             this.flash();
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.RED)));
             addToBot(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, this.hb.cX, this.hb.cY), 0.3F));
 
-            if(isLoseHP)
-                addToBot(new LoseHPAction(m,AbstractDungeon.player,this.counter + 5 + extraDamage));
+            if (isLoseHP)
+                addToBot(new LoseHPAction(m, AbstractDungeon.player, this.counter * 3 + 2 + extraDamage));
             else
-            addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter + 5 + extraDamage, DamageInfo.DamageType.THORNS)));
+                addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter * 3 + 2 + extraDamage, DamageInfo.DamageType.THORNS)));
 
             addToBot(new AbstractGameAction() {
                 @Override
@@ -68,7 +67,7 @@ public class DimensionSplitterAria extends CustomRelic {
                     if (m.isDying && !m.hasPower(MinionPower.POWER_ID)) {
                         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, DimensionSplitterAria.this));
                         addToBot(new GainEnergyAction(1));
-                        atTurnStart();
+                        doDamage(extraDamage, isLoseHP);
                     }
                     isDone = true;
                 }
@@ -78,5 +77,9 @@ public class DimensionSplitterAria extends CustomRelic {
 
     public void doDamage() {
         doDamage(0, false);
+    }
+
+    public void doDamage(int extraDamage, boolean isLoseHP) {
+        doDamage(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true), extraDamage, isLoseHP);
     }
 }

@@ -107,7 +107,7 @@
   "VUPShionMod:ReleaseFormMinamiPower": {
     "NAME": "姿态解放-南小棉",
     "DESCRIPTIONS": [
-      "你的回合开始时，获得 #b%d 层 #y支援兵装 。"
+      "使用卡牌触发 #y浮游炮 的被动效果时，额外触发 #b%d 次。"
     ]
   },
   "VUPShionMod:RailgunPower": {
@@ -168,7 +168,7 @@
   "VUPShionMod:DelayAvatarPower": {
     "NAME": "延时替身",
     "DESCRIPTIONS": [
-      "你的一名 #y替身 还剩 #b%d 点生命。 NL 如果它被击杀，下回合对所有敌人造成 #b%d 点伤害 #b5 次。"
+      "你的一名 #y替身 还剩 #b%d 点生命。 NL 它被击杀时对所有敌人造成 #b%d 点伤害 #b5 次。"
     ]
   },
   "VUPShionMod:DelayAvatarAttackPower": {
@@ -181,6 +181,18 @@
     "NAME": "时之裂隙",
     "DESCRIPTIONS": [
       "每触发一次 #y加载完成 ，获得 #b%d 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:AnticoagulationPower": {
+    "NAME": "抗凝",
+    "DESCRIPTIONS": [
+      "在 #b%d 回合内， #y流血 不会在回合结束时消失。"
+    ]
+  },
+  "VUPShionMod:LoseFinFunnelUpgradePower": {
+    "NAME": "火力倾泻",
+    "DESCRIPTIONS": [
+      "在 #b%d 个回合内，你的 #y总炮强化 视为0。"
     ]
   }
 }

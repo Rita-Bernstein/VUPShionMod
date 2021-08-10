@@ -16,6 +16,7 @@ import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -35,13 +36,13 @@ import java.util.List;
  * @since 2021-07-22
  */
 public abstract class AbstractFinFunnel {
+    public String id;
     public String name;
     public String description;
     public float cX = 0.0F;
     public float cY = 0.0F;
     public float muzzle_X = 0.0F;
     public float muzzle_Y = 0.0F;
-    public String ID;
     public Hitbox hb;
     protected float fontScale;
     protected Bone body;
@@ -50,15 +51,17 @@ public abstract class AbstractFinFunnel {
     /**
      * 强化等级
      */
-    protected int level;
+    public int level;
 
-    public AbstractFinFunnel() {
+    public AbstractFinFunnel(String id) {
         this.hb = new Hitbox(192.0F * Settings.scale, 96.0F * Settings.scale);
         this.fontScale = 0.7F;
         if (AbstractDungeon.player != null) {
             this.cX = AbstractDungeon.player.hb.cX;
             this.cY = AbstractDungeon.player.hb.cY;
         }
+        this.id = id;
+        this.name =  CardCrawlGame.languagePack.getOrbString(id).NAME;
     }
 
     public AbstractFinFunnel setPosition(float cX, float cY) {
@@ -105,7 +108,11 @@ public abstract class AbstractFinFunnel {
     /**
      * 这里写浮游炮的行动方式
      */
-    public abstract void fire(AbstractCreature target, int damage, DamageInfo.DamageType type);
+    public abstract void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes);
+
+    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
+        this.fire(target, damage, type, 0);
+    }
 
     public abstract void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type);
 
@@ -187,8 +194,8 @@ public abstract class AbstractFinFunnel {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if(AbstractDungeon.player instanceof Shion){
-                    ((Shion)AbstractDungeon.player).playFinFunnelAnimation(id);
+                if (AbstractDungeon.player instanceof Shion) {
+                    ((Shion) AbstractDungeon.player).playFinFunnelAnimation(id);
                 }
                 isDone = true;
             }

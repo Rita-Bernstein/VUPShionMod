@@ -19,10 +19,11 @@ public class FinFunnelActive extends AbstractMinamiCard {
     public FinFunnelActive() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new TriggerAllFinFunnelAction());
+        addToBot(new TriggerAllFinFunnelAction(m));
     }
 
     public AbstractCard makeCopy() {
@@ -33,7 +34,9 @@ public class FinFunnelActive extends AbstractMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.exhaust = false;
         }
     }
 }

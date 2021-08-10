@@ -27,8 +27,6 @@ public class OverspeedField extends AbstractVUPShionCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new TriggerAllFinFunnelAction());
-        addToBot(new TriggerDimensionSplitterAction());
         addToBot(new DrawCardAction(p, this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new DenergizePower(p, 2)));
         addToBot(new ApplyBulletTimeAction());

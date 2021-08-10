@@ -3,7 +3,7 @@ package VUPShionMod.cards.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TimeWarpAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
-import VUPShionMod.powers.BadgeOfTimePower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,7 +26,7 @@ public class TimeWarp extends AbstractKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ReducePowerAction(p, p, BadgeOfTimePower.POWER_ID, this.secondaryM));
+        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.secondaryM));
 
         AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
@@ -39,8 +39,8 @@ public class TimeWarp extends AbstractKuroisuCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(BadgeOfTimePower.POWER_ID)) {
-            if (p.getPower(BadgeOfTimePower.POWER_ID).amount >= 3)
+        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+            if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.secondaryM)
                 return super.canUse(p, m);
         }
         return false;

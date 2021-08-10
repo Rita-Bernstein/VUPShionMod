@@ -1,44 +1,41 @@
 package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.TriggerFinFunnelAction;
 import VUPShionMod.cards.AbstractMinamiCard;
-import VUPShionMod.finfunnels.GravityFinFunnel;
-import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class GravityLoading extends AbstractMinamiCard {
-    public static final String ID = VUPShionMod.makeID("GravityLoading");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami13.png");
+public class Lure extends AbstractMinamiCard {
+    public static final String ID = VUPShionMod.makeID("Lure");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami07.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    public GravityLoading() {
+    public Lure() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
-            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                if (!mo.isDeadOrEscaped()) {
-                    addToBot(new TriggerFinFunnelAction(mo, GravityFinFunnel.ID));
-                    addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
-                }
+        for (AbstractMonster mo : (AbstractDungeon.getMonsters()).monsters)
+            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
+                if (!mo.isDeadOrEscaped())
+                    funnel.onPursuitEnemy(mo);
             }
     }
 
     public AbstractCard makeCopy() {
-        return new GravityLoading();
+        return new Lure();
     }
 
 
@@ -46,6 +43,7 @@ public class GravityLoading extends AbstractMinamiCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
+
         }
     }
 }

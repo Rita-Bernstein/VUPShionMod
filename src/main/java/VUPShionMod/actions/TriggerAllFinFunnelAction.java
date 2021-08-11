@@ -1,6 +1,5 @@
 package VUPShionMod.actions;
 
-import VUPShionMod.cards.minami.ReleaseFormMinami;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -39,12 +38,10 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
         this.target = target;
         this.random = false;
         this.duration = 1.0f;
-        getPower();
     }
 
     public TriggerAllFinFunnelAction(boolean random) {
         this.random = random;
-        getPower();
     }
 
     private void getPower() {
@@ -68,8 +65,13 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
+
+//        初始化敌人数组，浮游炮数组。一些玩家power情况
+        getPower();
         ArrayList<AbstractMonster> monsters = new ArrayList<>();
         ArrayList<AbstractFinFunnel> availableFinFunnel = new ArrayList<>();
+
+//        获取敌人数组，浮游炮数组的具体信息
         for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelList.get(p)) {
             if (f.level > 0) {
                 availableFinFunnel.add(f);
@@ -84,7 +86,9 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
             }
         }
 
+
         if (availableFinFunnel.size() > 0) {
+//            特效部分
             if (isMultiDamage) {
                 addToBot(new VFXAction(new AllFinFunnelBeamEffect(availableFinFunnel, p.flipHorizontal), 0.4f));
             } else {
@@ -92,7 +96,7 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
                 addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
             }
 
-
+//攻击Action
             for (int i = 0; i < availableFinFunnel.size(); i++) {
                 AbstractFinFunnel f = availableFinFunnel.get(i);
 
@@ -111,23 +115,18 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
                 }
             }
 
-
-            if (isMultiDamage) {
-
-            } else {
-
-            }
+//            结算被动效果
 
             for (int i = 0; i < availableFinFunnel.size(); i++) {
                 AbstractFinFunnel f = availableFinFunnel.get(i);
                 if (isMultiDamage) {
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                         if (f instanceof GravityFinFunnel)
-                            addToBot(new GainBlockAction(p, 3, true));
+                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
                         if (f instanceof InvestigationFinFunnel)
-                            addToBot(new ApplyPowerAction(mo, p, new BleedingPower(mo, p, 1), 1));
+                            addToBot(new ApplyPowerAction(mo, p, new BleedingPower(mo, p, f.getFinalEffect())));
                         if (f instanceof PursuitFinFunnel)
-                            addToBot(new ApplyPowerAction(mo, p, new PursuitPower(mo, f.level * 2)));
+                            addToBot(new ApplyPowerAction(mo, p, new PursuitPower(mo, f.getFinalEffect())));
                     }
                 } else {
                     AbstractMonster m = monsters.get(i);
@@ -135,10 +134,14 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
                         addToBot(new GainBlockAction(p, 3, true));
 
                     if (f instanceof InvestigationFinFunnel)
-                        addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 1), 1));
+                        addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));
 
                     if (f instanceof PursuitFinFunnel)
-                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.level * 2)));
+                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.getFinalEffect())));
+
+
+//      额外给予流血效果
+
 
                     if (isApplyBleeding)
                         addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 2)));

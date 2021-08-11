@@ -38,9 +38,9 @@ public class EnhancedSupport extends AbstractMinamiCard {
             effect++;
         }
         if (effect > 0) {
-            for (int i = 0; i < effect; i++) {
-                addToBot(new TriggerFinFunnelAction(m));
-            }
+
+                addToBot(new TriggerFinFunnelAction(m,effect));
+
 
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);

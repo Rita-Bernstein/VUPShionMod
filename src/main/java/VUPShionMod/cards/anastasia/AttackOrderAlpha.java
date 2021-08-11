@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class AttackOrderAlpha extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("AttackOrderAlpha");
     public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia01.png");
-    private static final int COST = 0;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

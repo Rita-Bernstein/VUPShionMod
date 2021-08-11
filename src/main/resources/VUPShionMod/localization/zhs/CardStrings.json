@@ -1,7 +1,7 @@
 {
   "VUPShionMod:Strike_Shion": {
     "NAME": "炮击",
-    "DESCRIPTION": "造成 !D! 点伤害。"
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 !D! 点伤害。"
   },
   "VUPShionMod:Defend_Shion": {
     "NAME": "防护",
@@ -32,7 +32,7 @@
   },
   "VUPShionMod:QuickAttack": {
     "NAME": "快速攻击",
-    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 使用 vup_shion_mod:浮游炮  NL 造成 !D! 点伤害。 NL 消耗 。"
+    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 使用 vup_shion_mod:浮游炮 NL 造成 !D! 点伤害。 NL 消耗 。"
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "快速防御",
@@ -156,8 +156,8 @@
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
-    "DESCRIPTION": "从三张 *浮游炮升级计划 中选择一张。 NL 抹除 。",
-    "UPGRADE_DESCRIPTION": "固有 。从三张 *浮游炮升级计划 中选择一张。 NL 抹除 。"
+    "DESCRIPTION": "从三张 *浮游炮升级计划 中选择一张。 抹除 。",
+    "UPGRADE_DESCRIPTION": "固有 。从三张 *浮游炮升级计划 中选择一张。 抹除 。"
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "侦查浮游炮升级计划",

@@ -15,7 +15,7 @@ public class Strafe extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Strafe");
     public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy15.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
@@ -32,13 +32,14 @@ public class Strafe extends AbstractShionCard {
         this.baseDamage = VUPShionMod.calculateTotalFinFunnelLevel();
         calculateCardDamage(m);
         AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
-        for (int i = 0; i < this.magicNumber; i++) {
+
             if (funnel != null) {
-                funnel.activeFire(m, this.damage, this.damageTypeForTurn);
+                funnel.activeFire(m, this.damage, this.damageTypeForTurn,this.magicNumber);
             } else {
+                for (int i = 0; i < this.magicNumber; i++)
                 this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
             }
-        }
+
 
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();

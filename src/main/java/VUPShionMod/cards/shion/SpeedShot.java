@@ -52,13 +52,14 @@ public class SpeedShot extends AbstractShionCard {
         }
         if (effect > 0) {
             AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
-            for(int i = 0; i < effect; i++) {
+
                 if (funnel != null) {
-                    funnel.activeFire(m, this.damage, this.damageTypeForTurn);
+                    funnel.activeFire(m, this.damage, this.damageTypeForTurn,effect);
                 } else {
+                    for(int i = 0; i < effect; i++)
                     this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 }
-            }
+
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);
             }

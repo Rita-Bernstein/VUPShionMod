@@ -56,36 +56,41 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
             for (AbstractFinFunnel f : finFunnels)
                 ((Shion) AbstractDungeon.player).playFinFunnelAnimation(f.id);
 
-        if (this.duration < this.startingDuration && !posUpdated) {
+
+        if (this.duration < this.startingDuration) {
+            if (!posUpdated) {
+
+                for (int i = 0; i < finFunnels.size(); i++) {
+                    FinFunnelSmallLaserData data = new FinFunnelSmallLaserData();
+
+                    data.dX = finFunnels.get(i).muzzle_X;
+                    data.dY = finFunnels.get(i).muzzle_Y;
+                    data.sX = targets.get(i).hb.cX;
+                    data.sY = targets.get(i).hb.cY;
+                    data.dst = Vector2.dst(data.sX, data.sY, data.dX, data.dY) / Settings.scale;
+                    data.rotation = MathUtils.atan2(data.dX - data.sX, data.dY - data.sY);
+                    data.rotation *= 57.295776F;
+                    data.rotation = -data.rotation + 90.0F;
+
+                    dataList.add(data);
+
+                    CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT", 0.5f);
+
+                }
+            }
             posUpdated = true;
 
-            for (int i = 0; i < finFunnels.size(); i++) {
-                FinFunnelSmallLaserData data = new FinFunnelSmallLaserData();
 
-
-                data.dX = finFunnels.get(i).muzzle_X;
-                data.dY = finFunnels.get(i).muzzle_Y;
-                data.sX = targets.get(i).hb.cX;
-                data.sY = targets.get(i).hb.cY;
-                data.dst = Vector2.dst(data.sX, data.sY, data.dX, data.dY) / Settings.scale;
-                data.rotation = MathUtils.atan2(data.dX - data.sX, data.dY - data.sY);
-                data.rotation *= 57.295776F;
-                data.rotation = -data.rotation + 90.0F;
-
-                dataList.add(data);
-
-                CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT", 0.5f);
-
+            if (this.duration > this.startingDuration / 2.0F) {
+                this.color.a = Interpolation.pow2In.apply(1.0F, 0.0F, (this.duration - 0.25F) * 4.0F);
+            } else {
+                this.color.a = Interpolation.bounceIn.apply(0.0F, 1.0F, this.duration * 4.0F);
             }
         }
 
 
         this.duration -= Gdx.graphics.getDeltaTime();
-        if (this.duration > this.startingDuration / 2.0F && this.duration < this.startingDuration) {
-            this.color.a = Interpolation.pow2In.apply(1.0F, 0.0F, (this.duration - 0.25F) * 4.0F);
-        } else {
-            this.color.a = Interpolation.bounceIn.apply(0.0F, 1.0F, this.duration * 4.0F);
-        }
+
 
         if (this.duration < 0.0F) {
             this.isDone = true;

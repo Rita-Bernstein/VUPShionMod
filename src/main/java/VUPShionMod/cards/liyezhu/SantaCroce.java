@@ -40,7 +40,9 @@ public class SantaCroce extends AbstractLiyezhuCard {
 
     @Override
     public void applyPowers() {
-        this.baseBlock = this.magicNumber + this.secondaryM * 2;
+        this.baseBlock = this.magicNumber;
+        if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID))
+            this.baseBlock += AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount * this.secondaryM;
         super.applyPowers();
         this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         initializeDescription();

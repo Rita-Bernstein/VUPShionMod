@@ -5,6 +5,7 @@ import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.character.Shion;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.ReleaseFormMinamiPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,8 +26,16 @@ public class FinFunnelActive extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(AbstractDungeon.player instanceof Shion)
-        addToBot(new TriggerAllFinFunnelAction(m));
+        if (AbstractDungeon.player instanceof Shion) {
+            addToBot(new TriggerAllFinFunnelAction(m));
+
+            if (p.hasPower(ReleaseFormMinamiPower.POWER_ID)) {
+                for (int i = 0; i < p.getPower(ReleaseFormMinamiPower.POWER_ID).amount; i++)
+                    addToBot(new TriggerAllFinFunnelAction(m));
+            }
+
+        }
+
     }
 
     public AbstractCard makeCopy() {

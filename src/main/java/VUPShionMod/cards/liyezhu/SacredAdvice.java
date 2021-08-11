@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class SacredAdvice extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("SacredAdvice");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz02.png");
-    private static final int COST = 1;
-    public static final CardType TYPE = CardType.ATTACK;
+    private static final int COST = 0;
+    public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 

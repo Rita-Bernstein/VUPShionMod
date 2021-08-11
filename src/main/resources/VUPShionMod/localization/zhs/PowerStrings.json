@@ -12,13 +12,6 @@
       " 点伤害。"
     ]
   },
-  "VUPShionMod:DimensionSplitterAriaUpgradePower": {
-    "NAME": "咏叹调型维度裂解者升级计划",
-    "DESCRIPTIONS": [
-      "再打出 #b",
-      " 张带有 #y浮游炮 词条的牌，将 #y咏叹调型维度裂解者 的强化等级提升 #b1 。"
-    ]
-  },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
     "NAME": "侦查浮游炮升级计划",
     "DESCRIPTIONS": [
@@ -60,18 +53,6 @@
       "在这个回合，你打出的下 #b%d 张牌附带抽 #b1 张牌的效果。"
     ]
   },
-  "VUPShionMod:TimeBombPower": {
-    "NAME": "时空炸弹",
-    "DESCRIPTIONS": [
-      "下次 #y时之徽记 达到 #b10 层时，失去所有 #y时之徽记 并对所有敌人造成 #b%d 点伤害。"
-    ]
-  },
-  "VUPShionMod:GainBadgeOfTimePower": {
-    "NAME": "获得时之徽记",
-    "DESCRIPTIONS": [
-      "你的下回合开始时获得 #b%d 层 #y时之徽记 。"
-    ]
-  },
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "姿态解放-克洛伊斯",
     "DESCRIPTIONS": [
@@ -87,7 +68,7 @@
   "VUPShionMod:BleedingPower": {
     "NAME": "流血",
     "DESCRIPTIONS": [
-      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束时减少 #b1 层。"
+      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束失去该效果。"
     ]
   },
   "VUPShionMod:DenergizePower": {
@@ -108,12 +89,6 @@
     "NAME": "姿态解放-南小棉",
     "DESCRIPTIONS": [
       "使用卡牌触发 #y浮游炮 的被动效果时，额外触发 #b%d 次。"
-    ]
-  },
-  "VUPShionMod:RailgunPower": {
-    "NAME": "南小棉-轨道炮",
-    "DESCRIPTIONS": [
-      " #y支援兵装 满层时，失去所有 #y支援兵装 并对所有敌人造成 #b%d 点伤害。"
     ]
   },
   "VUPShionMod:EnhancedWeaponPower": {
@@ -169,12 +144,6 @@
     "NAME": "延时替身",
     "DESCRIPTIONS": [
       "你的一名 #y替身 还剩 #b%d 点生命。 NL 它被击杀时对所有敌人造成 #b%d 点伤害 #b5 次。"
-    ]
-  },
-  "VUPShionMod:DelayAvatarAttackPower": {
-    "NAME": "延时替身-攻击",
-    "DESCRIPTIONS": [
-      "下回合对所有敌人造成 #b%d 点伤害 #b5 次。"
     ]
   },
   "VUPShionMod:CrackOfTimePower": {

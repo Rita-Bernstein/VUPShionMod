@@ -58,7 +58,6 @@ public class AllFinFunnelBeamEffect extends AbstractGameEffect {
             for (AbstractFinFunnel f : finFunnels)
                 ((Shion) AbstractDungeon.player).playFinFunnelAnimation(f.id);
 
-        this.duration -= Gdx.graphics.getDeltaTime();
 
         if (this.duration < this.startingDuration) {
             if (!posUpdated) {
@@ -88,14 +87,16 @@ public class AllFinFunnelBeamEffect extends AbstractGameEffect {
                 data.rotation *= 57.295776F;
                 data.rotation = -data.rotation + 90.0F;
             }
+
+            if (this.duration > this.startingDuration / 2.0F) {
+                this.color.a = Interpolation.pow2In.apply(1.0F, 0.0F, (this.duration - 0.25F) * 4.0F);
+            } else {
+                this.color.a = Interpolation.pow2Out.apply(0.0F, 1.0F, this.duration * 4.0F);
+            }
         }
 
 
-        if (this.duration > this.startingDuration / 2.0F && this.duration < this.startingDuration) {
-            this.color.a = Interpolation.pow2In.apply(1.0F, 0.0F, (this.duration - 0.25F) * 4.0F);
-        } else {
-            this.color.a = Interpolation.pow2Out.apply(0.0F, 1.0F, this.duration * 4.0F);
-        }
+        this.duration -= Gdx.graphics.getDeltaTime();
 
         if (this.duration < 0.0F) {
             this.isDone = true;

@@ -1,6 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -21,13 +22,13 @@ public class EnhancedWeaponPower extends AbstractPower {
         updateDescription();
     }
 
-//    @Override
-//    public void atEndOfTurn(boolean isPlayer) {
-//        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
-//    }
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],this.amount) ;
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

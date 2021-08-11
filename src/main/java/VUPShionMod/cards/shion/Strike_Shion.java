@@ -24,7 +24,7 @@ public class Strike_Shion extends AbstractShionCard {
     public Strike_Shion() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTags.STARTER_STRIKE);
-
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.baseDamage = 6;
     }
 
@@ -38,6 +38,11 @@ public class Strike_Shion extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
+        if (funnel != null) {
+            funnel.activeFire(m, this.damage, this.damageTypeForTurn);
+        } else {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        }
     }
 }

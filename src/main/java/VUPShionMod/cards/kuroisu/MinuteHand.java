@@ -37,7 +37,7 @@ public class MinuteHand extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(10);
+            upgradeDamage(3);
         }
     }
 }

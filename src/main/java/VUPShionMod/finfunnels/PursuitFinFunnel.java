@@ -33,17 +33,18 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public PursuitFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
+        this.effect = 2;
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0],this.level);
+        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, this.level, getFinalEffect());
     }
 
     @Override
     public void atTurnStart() {
         if (this.level <= 0) return;
-        AbstractMonster m = AbstractDungeon.getRandomMonster();;
+        AbstractMonster m = AbstractDungeon.getRandomMonster();
         if (m != null) {
             fire(m, this.level, DamageInfo.DamageType.THORNS);
         }
@@ -52,25 +53,20 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     @Override
     public void onPursuitEnemy(AbstractCreature target) {
         if (this.level <= 0) return;
-        if(!target.isDeadOrEscaped())
-            if(target.hasPower(PursuitPower.POWER_ID))
-        activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS);
+        if (!target.isDeadOrEscaped())
+            if (target.hasPower(PursuitPower.POWER_ID))
+                activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS);
     }
 
-    @Override
-    public void render(SpriteBatch sb) {
-        sb.setColor(1, 1, 1, 1);
-        this.renderText(sb);
-        this.hb.render(sb);
-    }
 
     @Override
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
         playFinFunnelAnimation(ID);
         addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target.hb.cX, target.hb.cY), 0.3F));
-        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
+        for (int i = 0; i < loopTimes; i++)
+            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
     }
 
     @Override
@@ -80,36 +76,40 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
             playFinFunnelAnimation(ID);
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
             addToBot(new VFXAction(AbstractDungeon.player, new FinFunnelBeamEffect(this), 0.4F));
-            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
+            for (int i = 0; i < loopTimes; i++)
+                addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
 
             if (this.level > 0) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                    addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new PursuitPower(mo, this.level *2 )));
+                    for (int i = 0; i < loopTimes; i++)
+                        addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new PursuitPower(mo, getFinalEffect())));
                 }
             }
         } else {
             playFinFunnelAnimation(ID);
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-            addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target.hb.cX, target.hb.cY), 0.3F));
+            addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
-                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
+                for (int i = 0; i < loopTimes; i++)
+                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
-                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type),1.0f));
+                for (int i = 0; i < loopTimes; i++)
+                    addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));
             else
-                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+                for (int i = 0; i < loopTimes; i++)
+                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
 
             if (AbstractDungeon.player.hasPower(AttackOrderGammaPower.POWER_ID))
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2),2));
+                for (int i = 0; i < loopTimes; i++)
+                    addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2), 2));
 
             if (this.level > 0) {
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, this.level * 2)));
+                for (int i = 0; i < loopTimes; i++)
+                    addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, getFinalEffect())));
             }
         }
-
-        if (loopTimes > 0 )
-            fire(target, damage, type, loopTimes - 1);
     }
 
     @Override

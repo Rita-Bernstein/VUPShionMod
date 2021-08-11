@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.cards.anastasia.*;
 import VUPShionMod.cards.minami.TacticalLayout;
+import VUPShionMod.cards.shion.Strafe;
 import VUPShionMod.cards.shion.Strike_Shion;
 import VUPShionMod.cards.shion.Defend_Shion;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
@@ -139,7 +140,7 @@ public class Shion extends CustomPlayer {
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(TacticalLayout.ID);
-        retVal.add(FinFunnelUpgrade.ID);
+        retVal.add(Strafe.ID);
 
 
         return retVal;

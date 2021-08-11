@@ -39,7 +39,7 @@ public class BlueRose extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new LoseHyperdimensionalLinksPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new LoseHyperdimensionalLinksPower(p, 1)));
     }
 
     @Override

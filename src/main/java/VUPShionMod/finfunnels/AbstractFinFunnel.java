@@ -52,6 +52,7 @@ public abstract class AbstractFinFunnel {
      * 强化等级
      */
     public int level;
+    public int effect;
 
     public AbstractFinFunnel(String id) {
         this.hb = new Hitbox(192.0F * Settings.scale, 96.0F * Settings.scale);
@@ -115,10 +116,14 @@ public abstract class AbstractFinFunnel {
     public abstract void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes);
 
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
-        this.fire(target, damage, type, 0);
+        this.fire(target, damage, type, 1);
     }
 
-    public abstract void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type);
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
+        this.activeFire(target, damage, type, 1);
+    }
+
+    public abstract void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes);
 
     /**
      * 更新
@@ -150,7 +155,9 @@ public abstract class AbstractFinFunnel {
      * @param sb 纹理画布
      */
     public void render(SpriteBatch sb) {
-
+        sb.setColor(1, 1, 1, 1);
+        this.renderText(sb);
+        this.hb.render(sb);
     }
 
     /**
@@ -205,5 +212,10 @@ public abstract class AbstractFinFunnel {
             }
         });
         addToBot(new CustomWaitAction(0.25f));
+    }
+
+
+    public int getFinalEffect(){
+        return this.effect * (this.level+2)/3;
     }
 }

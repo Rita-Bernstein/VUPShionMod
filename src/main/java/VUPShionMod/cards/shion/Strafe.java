@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Strafe extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Strafe");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy15.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy15.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
@@ -28,42 +28,49 @@ public class Strafe extends AbstractShionCard {
     }
 
     @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        this.baseDamage = VUPShionMod.calculateTotalFinFunnelLevel();
+        calculateCardDamage(m);
+        AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
+        for (int i = 0; i < this.magicNumber; i++) {
+            if (funnel != null) {
+                funnel.activeFire(m, this.damage, this.damageTypeForTurn);
+            } else {
+                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+            }
+        }
+
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+
+
+    @Override
+    public void applyPowers() {
+        this.baseDamage = VUPShionMod.calculateTotalFinFunnelLevel();
+        super.applyPowers();
+        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        this.initializeDescription();
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
+    }
+
+    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
         }
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
-        for(int i = 0; i < this.magicNumber; i++) {
-            if (funnel != null) {
-                funnel.fire(m, this.damage, this.damageTypeForTurn);
-            } else {
-                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-            }
-        }
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
-        super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    @Override
-    public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
-        super.applyPowers();
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
     }
 }

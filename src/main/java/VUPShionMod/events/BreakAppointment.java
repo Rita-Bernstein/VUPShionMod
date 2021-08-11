@@ -31,7 +31,7 @@ public class BreakAppointment extends AbstractImageEvent {
 
 
     public BreakAppointment() {
-        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/BreakAppointment.jpg"));
+        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/BreakAppointment.png"));
         if (AbstractDungeon.player.gold >= 50)
             this.imageEventText.setDialogOption(OPTIONS[0]);
         else
@@ -55,7 +55,7 @@ public class BreakAppointment extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
                         this.imageEventText.removeDialogOption(1);
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BreakAppointment2.jpg"));
+                        this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BreakAppointment2.png"));
                     } else {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.removeDialogOption(1);
@@ -69,7 +69,7 @@ public class BreakAppointment extends AbstractImageEvent {
                     this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
                     this.imageEventText.removeDialogOption(1);
                     this.imageEventText.updateDialogOption(0, OPTIONS[2]);
-                    this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BreakAppointment3.jpg"));
+                    this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BreakAppointment3.png"));
                     this.curScreen = CurrentScreen.COMPLETE;
                 }
                 return;

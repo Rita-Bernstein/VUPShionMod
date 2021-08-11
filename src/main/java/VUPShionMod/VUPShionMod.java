@@ -150,8 +150,8 @@ public class VUPShionMod implements
                 ret += power.amount;
             }
 
-            if (AbstractDungeon.player.hasPower(LoseFinFunnelUpgradePower.POWER_ID)) ;
-            ret = 0;
+            if (AbstractDungeon.player.hasPower(LoseFinFunnelUpgradePower.POWER_ID))
+                ret = 0;
         }
 
         return ret;

@@ -67,7 +67,6 @@
   "VUPShionMod:Strafe": {
     "NAME": "扫射",
     "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 数的伤害 !M! 次。",
-    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 数的伤害 !M! 次。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]

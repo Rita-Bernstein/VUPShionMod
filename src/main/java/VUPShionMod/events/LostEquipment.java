@@ -30,7 +30,7 @@ public class LostEquipment extends AbstractImageEvent {
 
 
     public LostEquipment() {
-        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/LostEquipment.jpg"));
+        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/LostEquipment.png"));
         if (AbstractDungeon.player.gold >= 100)
             this.imageEventText.setDialogOption(OPTIONS[0],new OpticalCamouflage());
         else

@@ -16,7 +16,7 @@ public class SacredAdvice extends AbstractLiyezhuCard {
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     public SacredAdvice() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

@@ -22,7 +22,7 @@ public class ReleaseFormMinami extends AbstractMinamiCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.magicNumber = this.baseMagicNumber = 1;
-
+        this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,7 +37,9 @@ public class ReleaseFormMinami extends AbstractMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(2);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.isEthereal = false;
         }
     }
 }

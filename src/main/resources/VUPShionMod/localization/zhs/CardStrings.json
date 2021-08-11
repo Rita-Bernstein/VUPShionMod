@@ -9,7 +9,7 @@
   },
   "VUPShionMod:DefenseSystemCharging": {
     "NAME": "防御系统充能",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌打出的上一张牌是 vup_shion_mod:浮游炮 牌，则返回手牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌打出的上一张牌是 vup_shion_mod:浮游炮 牌，则再获得一次 格挡 。"
   },
   "VUPShionMod:DeploymentOfDefenseSystem": {
     "NAME": "Anastasia防御系统全展开",
@@ -124,7 +124,7 @@
   },
   "VUPShionMod:AttackOrderGamma": {
     "NAME": "攻击指令·叁式",
-    "DESCRIPTION": " 虚无 。NL 受到 vup_shion_mod:浮游炮 牌攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 虚无 。 NL 受到 vup_shion_mod:浮游炮 牌攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderDelta": {
     "NAME": "攻击指令·肆式",
@@ -157,7 +157,7 @@
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
     "DESCRIPTION": "从三张 *浮游炮升级计划 中选择一张。 NL 抹除 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 从三张 *浮游炮升级计划 中选择一张。 NL 抹除 。"
+    "UPGRADE_DESCRIPTION": "固有 。从三张 *浮游炮升级计划 中选择一张。 NL 抹除 。"
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "侦查浮游炮升级计划",
@@ -174,7 +174,7 @@
   "VUPShionMod:TimeBacktracking": {
     "NAME": "时之回溯",
     "DESCRIPTION": "抽 !M! 张牌。 NL 下回合额外获得 [E] 。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 下回合额外获得 [E] 。"
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 下回合额外获得 [E] [E] 。"
   },
   "VUPShionMod:TimeSlack": {
     "NAME": "缓时",
@@ -226,7 +226,7 @@
   },
   "VUPShionMod:Limit": {
     "NAME": "十二刻时",
-    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 对所有敌人造成 !D! 点伤害。"
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "超速领域",
@@ -234,7 +234,7 @@
   },
   "VUPShionMod:DelayAvatar": {
     "NAME": "延时替身",
-    "DESCRIPTION": "召唤一名 !M! 点生命的 *时间替身 。被击杀时对所有敌人造成 !VUPShionSecondM! 点伤害5次。"
+    "DESCRIPTION": "召唤一名 !M! 点生命的 *时间替身 。被击杀时对所有敌人造成 !M! 点伤害5次。 消耗 。"
   },
   "VUPShionMod:FinFunnelActive": {
     "NAME": "浮游炮激活",
@@ -268,11 +268,12 @@
   },
   "VUPShionMod:SuperCharge": {
     "NAME": "超能装填",
-    "DESCRIPTION": "消耗1层 vup_shion_mod:超维链接 。 NL 获得 !M! 点临时 力量 和 !VUPShionSecondM! 点临时 敏捷 。"
+    "DESCRIPTION": "消耗1层 vup_shion_mod:超维链接 。 NL 获得 !M! 点临时 力量 NL 和 !VUPShionSecondM! 点临时 敏捷 。"
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "姿态解放-南小棉",
-    "DESCRIPTION": "使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。"
+    "DESCRIPTION": " 虚无 。使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。",
+    "UPGRADE_DESCRIPTION": "使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。"
   },
   "VUPShionMod:AnestheticReagent": {
     "NAME": "麻醉试剂",
@@ -333,7 +334,7 @@
   },
   "VUPShionMod:SantaCroce": {
     "NAME": "圣十字",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 vup_shion_mod:超维链接 层数 !VUPShionSecondM! 倍的 格挡 。",
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 vup_shion_mod:超维链接 层 NL 数 !VUPShionSecondM! 倍的 格挡 。",
     "EXTENDED_DESCRIPTION": [
       "（获得 !B! 点 格挡 。）"
     ]

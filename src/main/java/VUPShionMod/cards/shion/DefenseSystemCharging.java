@@ -5,6 +5,7 @@ import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.watcher.FlickerReturnToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -41,7 +42,7 @@ public class DefenseSystemCharging extends AbstractShionCard {
         if (cardList.size() >= 2) {
             AbstractCard card = cardList.get(cardList.size() - 2);
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
-                this.returnToHand = true;
+                addToBot(new GainBlockAction(p, this.block));
             }
         }
     }

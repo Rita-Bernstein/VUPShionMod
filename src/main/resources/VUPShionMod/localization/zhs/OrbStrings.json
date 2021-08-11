@@ -2,19 +2,19 @@
   "VUPShionMod:InvestigationFinFunnel": {
     "NAME": "侦查浮游炮",
     "DESCRIPTION": [
-      "回合开始时，对一名随机敌人造成 #b%d 点伤害并给予 #b1 层 #y流血 。"
+      "#y被动： 每回合开始时，对一名随机敌人造成 #b%d 点伤害并给予 #b1 层 #y流血 。"
     ]
   },
   "VUPShionMod:GravityFinFunnel": {
     "NAME": "重力浮游炮",
     "DESCRIPTION": [
-      "回合开始时，对一名随机敌人造成 #b%d 点伤害并给予你 #b3 点 #y格挡 。"
+      "#y被动： 每回合开始时，对一名随机敌人造成 #b%d 点伤害并给予你 #b3 点 #y格挡 。"
     ]
   },
   "VUPShionMod:PursuitFinFunnel": {
     "NAME": "追击浮游炮",
     "DESCRIPTION": [
-      "回合开始时，对一名随机敌人造成 #b%d 点伤害并给予 #b2 层 #y追击 。"
+      "#y被动： 每回合开始时，对一名随机敌人造成 #b%d 点伤害并给予 #b2 层 #y追击 。"
     ]
   }
 }

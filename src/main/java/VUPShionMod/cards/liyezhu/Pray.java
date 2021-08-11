@@ -3,6 +3,7 @@ package VUPShionMod.cards.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -31,14 +32,12 @@ public class Pray extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BadgeOfThePaleBlueCrossPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, 1)));
         addToBot(new DrawCardAction(this.baseMagicNumber, new AbstractGameAction() {
             @Override
             public void update() {

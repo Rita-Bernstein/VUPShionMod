@@ -2,6 +2,7 @@ package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractAnastasiaCard;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AttackOrderAlphaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -22,6 +23,7 @@ public class AttackOrderAlpha extends AbstractAnastasiaCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

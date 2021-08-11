@@ -17,7 +17,7 @@ public class AnestheticReagent extends AbstractMinamiCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public AnestheticReagent() {
@@ -28,7 +28,7 @@ public class AnestheticReagent extends AbstractMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p, p, 4));
-        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
     }
 
 

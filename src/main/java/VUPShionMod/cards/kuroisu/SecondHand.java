@@ -21,7 +21,7 @@ public class SecondHand extends AbstractKuroisuCard {
     public SecondHand() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 2;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.shuffleBackIntoDrawPile = true;
     }
 
@@ -38,7 +38,7 @@ public class SecondHand extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(1);
+            upgradeMagicNumber(1);
         }
     }
 }

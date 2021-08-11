@@ -36,7 +36,7 @@ public class EnergyReserve extends AbstractAnastasiaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(10);
+            upgradeMagicNumber(1);
         }
     }
 

@@ -1,6 +1,7 @@
 package VUPShionMod.cards.optionCards;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.PursuitFinFunnelUpgradePower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,11 +11,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class PursuitFinFunnelUpgrade extends CustomCard {
+public class PursuitFinFunnelUpgrade extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("PursuitUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "VUPShionMod/img/finFunnels/pursuitFinFunnel.png";
+    public static final String IMG = VUPShionMod.assetPath("img/cards/colorless/PursuitFinFunnelUpgrade.png");
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
@@ -24,7 +25,8 @@ public class PursuitFinFunnelUpgrade extends CustomCard {
     private static final int COST = -2;
 
     public PursuitFinFunnelUpgrade() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.color = CardColor.COLORLESS;
     }
 
     @Override

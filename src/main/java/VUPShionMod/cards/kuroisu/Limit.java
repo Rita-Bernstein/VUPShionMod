@@ -24,6 +24,7 @@ public class Limit extends AbstractKuroisuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.baseDamage = 9;
+
         this.isMultiDamage = true;
     }
 

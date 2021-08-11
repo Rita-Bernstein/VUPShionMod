@@ -2,6 +2,7 @@ package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractVUPShionCard;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AttackOrderDeltaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -20,6 +21,7 @@ public class AttackOrderDelta extends AbstractVUPShionCard {
     public AttackOrderDelta() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

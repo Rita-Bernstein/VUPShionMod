@@ -62,7 +62,8 @@ public class VUPShionMod implements
         AddAudioSubscriber,
         EditKeywordsSubscriber,
         EditStringsSubscriber,
-        PostDungeonInitializeSubscriber {
+        PostDungeonInitializeSubscriber,
+        StartActSubscriber{
 
     public static final String MODNAME = "VUPShionMod";
     public static final String AUTHOR = "Rita";
@@ -195,6 +196,19 @@ public class VUPShionMod implements
     @Override
     public void receivePostDungeonInitialize() {
         System.out.println("重开游戏");
+
+
+//        if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {
+//            AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
+//            relic.flash();
+//            relic.counter++;
+//            ((DimensionSplitterAria) relic).setDescriptionAfterLoading();
+//        }
+
+    }
+
+    @Override
+    public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
             if (VUPShionMod.finFunnelSaver.data != null) {
                 List<Integer> levels = new ArrayList<>();
@@ -211,7 +225,6 @@ public class VUPShionMod implements
             relic.counter++;
             ((DimensionSplitterAria) relic).setDescriptionAfterLoading();
         }
-
     }
 
     @Override

@@ -2,6 +2,7 @@ package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractAnastasiaCard;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AttackOrderBetaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -20,6 +21,7 @@ public class AttackOrderBeta extends AbstractAnastasiaCard {
     public AttackOrderBeta() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

@@ -2,9 +2,8 @@ package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
-import VUPShionMod.cards.anastasia.AttackOrderAlpha;
-import VUPShionMod.cards.anastasia.AttackOrderDelta;
-import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
+import VUPShionMod.cards.anastasia.*;
+import VUPShionMod.cards.minami.TacticalLayout;
 import VUPShionMod.cards.shion.Strike_Shion;
 import VUPShionMod.cards.shion.Defend_Shion;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
@@ -97,20 +96,17 @@ public class Shion extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BadgeOfTimePower(this, 1)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new HyperdimensionalLinksPower(this, 1)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BadgeOfThePaleBlueCrossPower(this, 1)));
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-            funnelList.add(new InvestigationFinFunnel());
-            funnelList.add(new PursuitFinFunnel());
-            funnelList.add(new GravityFinFunnel());
+            funnelList.add(new InvestigationFinFunnel(1));
+            funnelList.add(new PursuitFinFunnel(1));
+            funnelList.add(new GravityFinFunnel(1));
             AbstractPlayerPatches.AddFields.activatedFinFunnel.set(this, funnelList.get(1));
             if (VUPShionMod.finFunnelSaver.data != null) {
                 int index = 0;
                 for (Integer i : VUPShionMod.finFunnelSaver.data) {
                     if (funnelList.size() > index) {
-                        funnelList.get(index).upgradeLevel(i);
+                        funnelList.get(index).setLevel(i);
                     } else {
                         break;
                     }
@@ -143,9 +139,7 @@ public class Shion extends CustomPlayer {
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(FinFunnelUpgrade.ID);
-        retVal.add(AttackOrderAlpha.ID);
-        retVal.add(AttackOrderDelta.ID);
-
+        retVal.add(TacticalLayout.ID);
 
         return retVal;
     }

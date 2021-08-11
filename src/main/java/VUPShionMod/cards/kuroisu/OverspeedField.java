@@ -1,8 +1,6 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.TriggerAllFinFunnelAction;
-import VUPShionMod.actions.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.DenergizePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

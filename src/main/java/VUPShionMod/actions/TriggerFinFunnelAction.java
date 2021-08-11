@@ -1,5 +1,6 @@
 package VUPShionMod.actions;
 
+import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.ReleaseFormMinamiPower;
@@ -36,9 +37,17 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if(!(AbstractDungeon.player instanceof Shion)){
+            this.isDone = true;
+            return;
+        }
         AbstractPlayer p = AbstractDungeon.player;
-        if (random || this.target == null)
-            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+        if (random || this.target == null){
+            AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
+            if(abstractMonster != null)
+                this.target = abstractMonster;
+        }
+
 
         AbstractFinFunnel f = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
 
@@ -50,7 +59,7 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
         }
 
         if (f.level >= 0 && this.target != null) {
-            if (this.target.isDeadOrEscaped())
+            if (!this.target.isDeadOrEscaped())
                 if (p.hasPower(ReleaseFormMinamiPower.POWER_ID))
                     f.fire(this.target, f.level, DamageInfo.DamageType.THORNS, p.getPower(ReleaseFormMinamiPower.POWER_ID).amount);
                 else

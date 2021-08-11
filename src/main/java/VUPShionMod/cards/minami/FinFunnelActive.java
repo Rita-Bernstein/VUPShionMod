@@ -3,9 +3,11 @@ package VUPShionMod.cards.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.AbstractMinamiCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FinFunnelActive extends AbstractMinamiCard {
@@ -14,7 +16,7 @@ public class FinFunnelActive extends AbstractMinamiCard {
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public FinFunnelActive() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -23,6 +25,7 @@ public class FinFunnelActive extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(AbstractDungeon.player instanceof Shion)
         addToBot(new TriggerAllFinFunnelAction(m));
     }
 

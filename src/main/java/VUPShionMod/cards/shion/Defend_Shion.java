@@ -11,7 +11,7 @@ public class Defend_Shion extends AbstractShionCard {
     public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy02.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 1;
 

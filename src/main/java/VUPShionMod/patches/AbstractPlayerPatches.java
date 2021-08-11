@@ -1,6 +1,8 @@
 package VUPShionMod.patches;
 
+import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.anastasia.EnergyReserve;
+import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.powers.CrackOfTimePower;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -40,9 +42,11 @@ public class AbstractPlayerPatches {
     )
     public static class PatchApplyStartOfTurnRelics {
         public static void Postfix(AbstractPlayer player) {
-            for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
-                funnel.atTurnStart();
-            }
+//            for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
+//                funnel.atTurnStart();
+//            }
+            if(AbstractDungeon.player instanceof Shion)
+            AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelAction(true));
             EnergyPanelPatches.energyUsedThisTurn = 0;
         }
     }

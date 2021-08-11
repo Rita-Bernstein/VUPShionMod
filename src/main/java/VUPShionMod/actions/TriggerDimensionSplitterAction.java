@@ -27,7 +27,7 @@ public class TriggerDimensionSplitterAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         if (target == null)
-            this.target = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+            this.target = AbstractDungeon.getRandomMonster();;
         if (p.hasRelic(DimensionSplitterAria.ID)) {
             if (target != null) {
                 if (target.isDeadOrEscaped())

@@ -196,7 +196,13 @@ public class VUPShionMod implements
     public void receivePostDungeonInitialize() {
         System.out.println("重开游戏");
         if (AbstractDungeon.floorNum == 0) {
-            VUPShionMod.finFunnelSaver.data.clear();
+            if (VUPShionMod.finFunnelSaver.data != null) {
+                List<Integer> levels = new ArrayList<>();
+                levels.add(1);
+                levels.add(1);
+                levels.add(1);
+                VUPShionMod.finFunnelSaver.onLoad(levels);
+            }
         }
 
         if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {

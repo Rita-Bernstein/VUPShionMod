@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -31,15 +32,20 @@ public class GravityFinFunnel extends AbstractFinFunnel {
         super(ID);
     }
 
+    public GravityFinFunnel(int level) {
+        super(ID);
+        upgradeLevel(level);
+    }
+
     @Override
     public void updateDescription() {
-        this.description = orbStrings.DESCRIPTION[0] + this.level + orbStrings.DESCRIPTION[1] + 1 + orbStrings.DESCRIPTION[2];
+        this.description = String.format(orbStrings.DESCRIPTION[0],this.level);
     }
 
     @Override
     public void atTurnStart() {
         if (this.level <= 0) return;
-        AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true);
+        AbstractMonster m = AbstractDungeon.getRandomMonster();;
         if (m != null) {
             fire(m, this.level, DamageInfo.DamageType.THORNS);
         }
@@ -54,7 +60,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
-        playFinFunnelAnimation(this.ID);
+        playFinFunnelAnimation(ID);
         addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target.hb.cX, target.hb.cY), 0.3F));
@@ -65,17 +71,17 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
         if(target.isDeadOrEscaped())return;
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
-            playFinFunnelAnimation(this.ID);
+            playFinFunnelAnimation(ID);
             addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
             addToBot(new VFXAction(AbstractDungeon.player, new FinFunnelBeamEffect(this), 0.4F));
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
             if (this.level > 0) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                    addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new WeakPower(mo, 1, false)));
+                    addToBot(new GainBlockAction(AbstractDungeon.player,3,true));
                 }
             }
         } else {
-            playFinFunnelAnimation(this.ID);
+            playFinFunnelAnimation(ID);
             addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
             addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target.hb.cX, target.hb.cY), 0.3F));
@@ -91,7 +97,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2)));
 
             if (this.level > 0) {
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new WeakPower(target, 1, false)));
+                addToBot(new GainBlockAction(AbstractDungeon.player,3,true));
             }
         }
 

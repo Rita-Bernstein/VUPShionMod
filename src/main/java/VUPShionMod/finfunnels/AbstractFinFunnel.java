@@ -61,7 +61,7 @@ public abstract class AbstractFinFunnel {
             this.cY = AbstractDungeon.player.hb.cY;
         }
         this.id = id;
-        this.name =  CardCrawlGame.languagePack.getOrbString(id).NAME;
+        this.name = CardCrawlGame.languagePack.getOrbString(id).NAME;
     }
 
     public AbstractFinFunnel setPosition(float cX, float cY) {
@@ -94,6 +94,10 @@ public abstract class AbstractFinFunnel {
      */
     public void upgradeLevel(int amount) {
         this.level += amount;
+    }
+
+    public void setLevel(int amount) {
+        this.level = amount;
     }
 
     /**

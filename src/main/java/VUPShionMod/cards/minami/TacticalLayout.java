@@ -21,8 +21,8 @@ public class TacticalLayout extends AbstractMinamiCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami04.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     public TacticalLayout() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

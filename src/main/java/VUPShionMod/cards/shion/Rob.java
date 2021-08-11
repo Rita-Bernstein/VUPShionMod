@@ -21,7 +21,7 @@ public class Rob extends AbstractShionCard {
     public Rob() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
-        this.magicNumber = this.baseMagicNumber = 15;
+        this.magicNumber = this.baseMagicNumber = 20;
     }
 
     @Override

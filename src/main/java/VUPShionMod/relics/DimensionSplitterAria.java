@@ -34,7 +34,7 @@ public class DimensionSplitterAria extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return String.format(this.DESCRIPTIONS[0], this.counter + 5, this.counter);
+        return String.format(this.DESCRIPTIONS[0], this.counter * 3 + 2, this.counter);
     }
 
     public void setDescriptionAfterLoading() {
@@ -80,6 +80,8 @@ public class DimensionSplitterAria extends CustomRelic {
     }
 
     public void doDamage(int extraDamage, boolean isLoseHP) {
-        doDamage(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true), extraDamage, isLoseHP);
+        AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
+        if (abstractMonster != null)
+            doDamage(abstractMonster, extraDamage, isLoseHP);
     }
 }

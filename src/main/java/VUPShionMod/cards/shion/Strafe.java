@@ -15,7 +15,7 @@ public class Strafe extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Strafe");
     public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy15.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;

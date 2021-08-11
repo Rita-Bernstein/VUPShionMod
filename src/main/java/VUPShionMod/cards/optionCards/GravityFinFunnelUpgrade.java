@@ -14,7 +14,7 @@ public class GravityFinFunnelUpgrade extends CustomCard {
     public static final String ID = VUPShionMod.makeID("GravityUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/finFunnels/gravityFinFunnel.png";
+    public static final String IMG_PATH = "VUPShionMod/img/finFunnels/gravityFinFunnel.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
@@ -24,7 +24,7 @@ public class GravityFinFunnelUpgrade extends CustomCard {
     private static final int COST = -2;
 
     public GravityFinFunnelUpgrade() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
     }
 
     @Override

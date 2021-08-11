@@ -14,7 +14,7 @@ public class PursuitFinFunnelUpgrade extends CustomCard {
     public static final String ID = VUPShionMod.makeID("PursuitUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/finFunnels/pursuitFinFunnel.png";
+    public static final String IMG_PATH = "VUPShionMod/img/finFunnels/pursuitFinFunnel.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
@@ -24,7 +24,7 @@ public class PursuitFinFunnelUpgrade extends CustomCard {
     private static final int COST = -2;
 
     public PursuitFinFunnelUpgrade() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
     }
 
     @Override

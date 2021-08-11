@@ -14,7 +14,7 @@ public class InvestigationFinFunnelUpgrade extends CustomCard {
     public static final String ID = VUPShionMod.makeID("InvestigationUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG_PATH = "img/finFunnels/investigationFinFunnel.png";
+    public static final String IMG_PATH = "VUPShionMod/img/finFunnels/investigationFinFunnel.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
@@ -24,7 +24,7 @@ public class InvestigationFinFunnelUpgrade extends CustomCard {
     private static final int COST = -2;
 
     public InvestigationFinFunnelUpgrade() {
-        super(ID, NAME, VUPShionMod.assetPath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
     }
 
     @Override

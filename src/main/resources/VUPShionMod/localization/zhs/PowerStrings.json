@@ -34,7 +34,7 @@
     ]
   },
   "VUPShionMod:DeploymentOfDefenseSystemPower": {
-    "NAME": "防御系统展开",
+    "NAME": "防御系统全展开",
     "DESCRIPTIONS": [
       "在这个回合，你每打出一张牌，就获得 #b",
       " 点 #y格挡 。"
@@ -80,7 +80,7 @@
     ]
   },
   "VUPShionMod:TempFinFunnelUpgradePower": {
-    "NAME": "临时总炮强化",
+    "NAME": "临时总炮强化（弃用）",
     "DESCRIPTIONS": [
       "本回合你的 #y总炮强化 额外提高 #b%d 点。"
     ]
@@ -101,13 +101,6 @@
     "NAME": "姿态解放-黎夜竹",
     "DESCRIPTIONS": [
       "你的回合结束时，对所有敌人造成你身上 #超维链接 层数 #b%d 倍的伤害。"
-    ]
-  },
-  "VUPShionMod:HolySlashDownPower": {
-    "NAME": "圣耀十字斩",
-    "DESCRIPTIONS": [
-      "在下回合开始时，对所有敌人造成你身上 #y苍蓝十字徽记 层数 #b",
-      " 倍的伤害。"
     ]
   },
   "VUPShionMod:LockOnPower": {

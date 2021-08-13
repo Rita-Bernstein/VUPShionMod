@@ -33,7 +33,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public PursuitFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 2;
+        this.effect = 1;
     }
 
     @Override

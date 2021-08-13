@@ -1,7 +1,35 @@
 {
-  "VUPShionMod:modsettings": {
+  "VUPShionMod:ModSettings": {
     "TEXT": [
-      "弹药"
+      "设置"
+    ]
+  },
+  "VUPShionMod:CharacterSelect": {
+    "TEXT": [
+      "设置"
+    ]
+  },
+  "VUPShionMod:EnduranceInitiationAction": {
+    "TEXT": [
+      "复制",
+      " vup_shion_mod:加载完成 。"
+    ]
+  },
+  "VUPShionMod:UpgradeAndZeroCostAction": {
+    "TEXT": [
+      "选择牌升级并将耗能变为0"
+    ]
+  },
+  "VUPShionMod:SelectCardToHandAction": {
+    "TEXT": [
+      " NL 消耗 。",
+      " 虚无 。"
+    ]
+  },
+  "VUPShionMod:AttackFromDiscardToHandAction": {
+    "TEXT": [
+      "将2张加载攻击牌加入手牌",
+      ""
     ]
   }
 }

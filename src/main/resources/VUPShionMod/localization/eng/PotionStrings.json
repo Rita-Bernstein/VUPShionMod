@@ -1,28 +1,4 @@
 {
-  "VUPShionMod:PoisonGrenadeBag": {
-    "NAME": "毒幕手雷包",
-    "DESCRIPTIONS": [
-      "将 #b%d 张 #y毒幕手雷 加入手牌。"
-    ]
-  },
-  "VUPShionMod:FragGrenadeBag": {
-    "NAME": "破片手雷包",
-    "DESCRIPTIONS": [
-      "将 #b%d 张 #y破片手雷 加入手牌。"
-    ]
-  },
-  "VUPShionMod:ShockGrenadeBag": {
-    "NAME": "震撼手雷包",
-    "DESCRIPTIONS": [
-      "将 #b%d 张 #y震撼手雷 加入手牌。"
-    ]
-  },
-  "VUPShionMod:BouncingGrenadeBag": {
-    "NAME": "弹跳手雷包",
-    "DESCRIPTIONS": [
-      "将 #b%d 张 #y弹跳手雷 加入手牌。"
-    ]
-  },
   "VUPShionMod:Hiroji": {
     "NAME": "嗯哼哼啊啊啊啊啊啊啊",
     "DESCRIPTIONS": [

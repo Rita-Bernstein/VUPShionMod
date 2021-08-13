@@ -35,19 +35,19 @@ public class HyperdimensionalLinksPower extends AbstractPower {
         updateDescription();
     }
 
-    @Override
-    public void stackPower(int stackAmount) {
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
-
-        if (this.amount == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-        }
-
-        if (this.amount > 20) {
-            this.amount = 20;
-        }
-    }
+//    @Override
+//    public void stackPower(int stackAmount) {
+//        this.fontScale = 8.0F;
+//        this.amount += stackAmount;
+//
+//        if (this.amount == 0) {
+//            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+//        }
+//
+//        if (this.amount > 20) {
+//            this.amount = 20;
+//        }
+//    }
 
 
     @Override

@@ -100,7 +100,7 @@
   "VUPShionMod:ReleaseFormLiyezhuPower": {
     "NAME": "姿态解放-黎夜竹",
     "DESCRIPTIONS": [
-      "你的回合结束时，对所有敌人造成你身上 #超维链接 层数 #b%d 倍的伤害。"
+      "你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
     ]
   },
   "VUPShionMod:HolySlashDownPower": {

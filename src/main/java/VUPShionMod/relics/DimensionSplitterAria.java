@@ -46,6 +46,7 @@ public class DimensionSplitterAria extends CustomRelic {
 
     @Override
     public void atTurnStart() {
+        setDescriptionAfterLoading();
         doDamage();
     }
 

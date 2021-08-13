@@ -16,7 +16,7 @@ public class Rob extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Rob() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

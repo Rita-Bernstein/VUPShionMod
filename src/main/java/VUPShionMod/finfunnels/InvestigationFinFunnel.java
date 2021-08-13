@@ -56,10 +56,8 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,int loopTimes) {
-        playFinFunnelAnimation(ID);
-        addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
-        addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
+        addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         for (int i = 0; i < loopTimes; i++)
         addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
     }

@@ -28,7 +28,7 @@ public class BlueRose extends AbstractLiyezhuCard {
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.SELF;
 
     public BlueRose() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

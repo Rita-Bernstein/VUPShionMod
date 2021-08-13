@@ -85,7 +85,9 @@ public abstract class AbstractFinFunnel {
      * @param target 追击目标
      */
     public void onPursuitEnemy(AbstractCreature target) {
-
+        onPursuitEnemy(target,1);
+    }
+    public void onPursuitEnemy(AbstractCreature target,int loop) {
     }
 
     /**

@@ -15,7 +15,7 @@ public class LockIndication extends AbstractMinamiCard {
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public LockIndication() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

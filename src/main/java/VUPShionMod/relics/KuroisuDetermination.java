@@ -62,6 +62,7 @@ public class KuroisuDetermination extends CustomRelic implements OnPlayerDeathRe
             }else {
                 playerHP.remove(0);
                 playerHP.add(AbstractDungeon.player.currentHealth);
+
                 powers1.clear();
                 powers1.addAll(powers2);
                 powers2.clear();

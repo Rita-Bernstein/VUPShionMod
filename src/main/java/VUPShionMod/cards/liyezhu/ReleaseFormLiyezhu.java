@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormLiyezhu");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png");
-    private static final int COST = 2;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;

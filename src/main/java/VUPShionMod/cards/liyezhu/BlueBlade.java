@@ -41,7 +41,7 @@ public class BlueBlade extends AbstractLiyezhuCard {
 
         addToBot(new VFXAction(new CleaveEffect()));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
-        addToBot(new LoseHyperdimensionalLinksAction(true));
+//        addToBot(new LoseHyperdimensionalLinksAction(true));
     }
 
     @Override

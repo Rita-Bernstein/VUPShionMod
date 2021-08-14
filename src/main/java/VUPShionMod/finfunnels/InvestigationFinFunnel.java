@@ -40,7 +40,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, this.level,getFinalEffect());
+        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, getFinalEffect(),this.level,getFinalEffect());
     }
 
     @Override
@@ -58,8 +58,12 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++)
-        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        for (int i = 0; i < loopTimes; i++){
+            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, getFinalEffect())));
+        }
+
+
     }
 
 

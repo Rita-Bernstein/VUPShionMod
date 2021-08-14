@@ -85,9 +85,10 @@ public abstract class AbstractFinFunnel {
      * @param target 追击目标
      */
     public void onPursuitEnemy(AbstractCreature target) {
-        onPursuitEnemy(target,1);
+        onPursuitEnemy(target, 1);
     }
-    public void onPursuitEnemy(AbstractCreature target,int loop) {
+
+    public void onPursuitEnemy(AbstractCreature target, int loop) {
     }
 
     /**
@@ -217,7 +218,7 @@ public abstract class AbstractFinFunnel {
     }
 
 
-    public int getFinalEffect(){
-        return this.effect * (this.level+2)/3;
+    public int getFinalEffect() {
+        return this.effect * (this.level + 2) / 3;
     }
 }

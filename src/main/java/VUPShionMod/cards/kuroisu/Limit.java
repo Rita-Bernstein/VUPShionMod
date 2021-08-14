@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Limit extends AbstractKuroisuCard {
     public static final String ID = VUPShionMod.makeID("Limit");
     public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu13.png");
-    private static final int COST = 2;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -29,7 +29,7 @@ public class Limit extends AbstractKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseHyperdimensionalLinksAction( this.secondaryM));
+//        addToBot(new LoseHyperdimensionalLinksAction( this.secondaryM));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.FIRE, true));
     }
 

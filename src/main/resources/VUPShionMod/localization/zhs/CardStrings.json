@@ -226,7 +226,7 @@
   },
   "VUPShionMod:Limit": {
     "NAME": "十二刻时",
-    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 对所有敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "超速领域",
@@ -318,7 +318,7 @@
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "苍蓝之刃",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:超维链接 层数 !M! 倍的伤害。 NL 失去所有 vup_shion_mod:超维链接 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:超维链接 层数 !M! 倍的伤害。"
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神圣冲锋",

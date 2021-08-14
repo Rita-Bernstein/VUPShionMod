@@ -8,8 +8,8 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "追击",
     "DESCRIPTIONS": [
-      "目标的回合开始时， #y追击浮游炮 将主动攻击目标一次，造成 #b",
-      " 点伤害。"
+      "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
+      " 点伤害并失去该效果。"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -68,7 +68,7 @@
   "VUPShionMod:BleedingPower": {
     "NAME": "流血",
     "DESCRIPTIONS": [
-      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束失去该效果。"
+      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束减半该效果。"
     ]
   },
   "VUPShionMod:DenergizePower": {
@@ -112,25 +112,25 @@
   "VUPShionMod:AttackOrderAlphaPower": {
     "NAME": "攻击指令·壹式",
     "DESCRIPTIONS": [
-      " #y浮游炮 牌被动造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
+      " #y浮游炮 的每回合攻击造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderBetaPower": {
     "NAME": "攻击指令·贰式",
     "DESCRIPTIONS": [
-      "#y浮游炮 牌将对所有敌人造成伤害。 NL 不与其他指令共存。"
+      "#y浮游炮 的每回合攻击将对所有敌人造成伤害。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderGammaPower": {
     "NAME": "攻击指令·叁式",
     "DESCRIPTIONS": [
-      "受到 #y浮游炮 牌攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
+      "受到 #y浮游炮 的每回合攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderDeltaPower": {
     "NAME": "攻击指令·肆式",
     "DESCRIPTIONS": [
-      "#y浮游炮 的被动攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
+      "#y浮游炮 的每回合攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:DelayAvatarPower": {
@@ -148,7 +148,7 @@
   "VUPShionMod:AnticoagulationPower": {
     "NAME": "抗凝",
     "DESCRIPTIONS": [
-      "在 #b%d 回合内， #y流血 不会在回合结束时消失。"
+      "在 #b%d 回合内， #y流血 不会在回合结束时减半。"
     ]
   },
   "VUPShionMod:LoseFinFunnelUpgradePower": {

@@ -9,7 +9,7 @@
   },
   "VUPShionMod:DefenseSystemCharging": {
     "NAME": "防御系统充能",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌打出的上一张牌是 vup_shion_mod:浮游炮 牌，则再获得一次 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌打出的上一张牌是使用 vup_shion_mod:浮游炮 的牌，则再获得一次 格挡 。"
   },
   "VUPShionMod:DeploymentOfDefenseSystem": {
     "NAME": "Anastasia防御系统全展开",
@@ -32,7 +32,7 @@
   },
   "VUPShionMod:QuickAttack": {
     "NAME": "快速攻击",
-    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 使用 vup_shion_mod:浮游炮 NL 造成 !D! 点伤害。 NL 消耗 。"
+    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 NL 造成 !D! 点伤害。 NL 消耗 。"
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "快速防御",
@@ -44,8 +44,8 @@
   },
   "VUPShionMod:SpeedShot": {
     "NAME": "高速射击",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X 次。",
-    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X+1 次。",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X 次。",
+    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X+1 次。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]
@@ -66,21 +66,21 @@
   },
   "VUPShionMod:Strafe": {
     "NAME": "扫射",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 vup_shion_mod:总炮强化 数的伤害 !M! 次。",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 vup_shion_mod:总炮强化 数的伤害 !M! 次。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]
   },
   "VUPShionMod:AnastasiaCore": {
     "NAME": "Anastasia核心",
-    "DESCRIPTION": "本回合内，当你打出 vup_shion_mod:浮游炮 牌时，获得 [E] 。 NL 消耗 。",
+    "DESCRIPTION": "本回合内，当你打出使用 vup_shion_mod:浮游炮 的牌时，获得 [E] 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "Anastasia智慧核心"
     ]
   },
   "VUPShionMod:DimensionSplitting": {
     "NAME": "维度裂解启动",
-    "DESCRIPTION": "造成你本回合内打出的 vup_shion_mod:浮游炮 牌数量 !M! 倍的伤害。",
+    "DESCRIPTION": "造成你本回合内打出的使用 vup_shion_mod:浮游炮 的牌的数量 !M! 倍的伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL (造成 !D! 点伤害)"
     ]
@@ -116,19 +116,19 @@
   },
   "VUPShionMod:AttackOrderAlpha": {
     "NAME": "攻击指令·壹式",
-    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:浮游炮 牌被动攻击造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:浮游炮 的每回合攻击造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderBeta": {
     "NAME": "攻击指令·贰式",
-    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:浮游炮 牌将对所有敌人造成伤害。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:浮游炮 的每回合攻击将对所有敌人造成伤害。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderGamma": {
     "NAME": "攻击指令·叁式",
-    "DESCRIPTION": " 虚无 。 NL 受到 vup_shion_mod:浮游炮 牌攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 虚无 。 NL 受到 vup_shion_mod:浮游炮 的每回合攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderDelta": {
     "NAME": "攻击指令·肆式",
-    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:浮游炮 的被动攻击将给予你造成伤害的 格挡 。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:浮游炮 的每回合攻击将给予你造成伤害的 格挡 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:Reboot": {
     "NAME": "系统重启",
@@ -161,15 +161,15 @@
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "侦查浮游炮升级计划",
-    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：侦查浮游炮强化等级加1。"
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张使用 vup_shion_mod:浮游炮 的牌。 NL 奖励：侦查浮游炮强化等级加1。"
   },
   "VUPShionMod:GravityUpgrade": {
     "NAME": "重力浮游炮升级计划",
-    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：重力浮游炮强化等级加1。"
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张使用 vup_shion_mod:浮游炮 的牌。 NL 奖励：重力浮游炮强化等级加1。"
   },
   "VUPShionMod:PursuitUpgrade": {
     "NAME": "追击浮游炮升级计划",
-    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张 vup_shion_mod:浮游炮 牌。 NL 奖励：追击浮游炮强化等级加1。"
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张使用 vup_shion_mod:浮游炮 的牌。 NL 奖励：追击浮游炮强化等级加1。"
   },
   "VUPShionMod:TimeBacktracking": {
     "NAME": "时之回溯",
@@ -226,7 +226,7 @@
   },
   "VUPShionMod:Limit": {
     "NAME": "十二刻时",
-    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 对所有敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "超速领域",
@@ -294,7 +294,7 @@
   },
   "VUPShionMod:FirePower": {
     "NAME": "火力倾泻",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 对所有敌人造成 vup_shion_mod:总炮强化 !M! 倍的伤害。 NL 本回合 vup_shion_mod:总炮强化 视为0",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。对所有敌人造成 vup_shion_mod:总炮强化 !M! 倍的伤害。 NL 本回合 vup_shion_mod:总炮强化 视为0",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]
@@ -318,7 +318,7 @@
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "苍蓝之刃",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:超维链接 层数 !M! 倍的伤害。 NL 失去所有 vup_shion_mod:超维链接 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 额外造成 vup_shion_mod:超维链接 层数 !M! 倍的伤害。"
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神圣冲锋",
@@ -330,7 +330,7 @@
   },
   "VUPShionMod:Pray": {
     "NAME": "祈祷",
-    "DESCRIPTION": "获得1层 vup_shion_mod:超维链接 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。"
+    "DESCRIPTION": "获得2层 vup_shion_mod:超维链接 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。"
   },
   "VUPShionMod:SantaCroce": {
     "NAME": "圣十字",

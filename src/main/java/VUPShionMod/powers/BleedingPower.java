@@ -48,7 +48,7 @@ public class BleedingPower extends AbstractPower implements HealthBarRenderPower
                 AbstractDungeon.player.getPower(AnticoagulationPower.POWER_ID).flash();
                 flashWithoutSound();
             } else
-                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+                addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, (int) Math.ceil(this.amount * 0.5f)));
         }
     }
 

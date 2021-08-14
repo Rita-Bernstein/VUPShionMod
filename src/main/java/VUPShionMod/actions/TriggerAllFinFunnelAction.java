@@ -131,7 +131,7 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
                 } else {
                     AbstractMonster m = monsters.get(i);
                     if (f instanceof GravityFinFunnel)
-                        addToBot(new GainBlockAction(p, 3, true));
+                        addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
 
                     if (f instanceof InvestigationFinFunnel)
                         addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));

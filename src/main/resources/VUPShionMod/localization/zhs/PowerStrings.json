@@ -9,7 +9,7 @@
     "NAME": "追击",
     "DESCRIPTIONS": [
       "目标的回合开始时， #y追击浮游炮 将主动攻击目标一次，造成 #b",
-      " 点伤害。"
+      " 点伤害并失去该效果。"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -68,7 +68,7 @@
   "VUPShionMod:BleedingPower": {
     "NAME": "流血",
     "DESCRIPTIONS": [
-      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束失去该效果。"
+      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束减半该效果。"
     ]
   },
   "VUPShionMod:DenergizePower": {
@@ -148,7 +148,7 @@
   "VUPShionMod:AnticoagulationPower": {
     "NAME": "抗凝",
     "DESCRIPTIONS": [
-      "在 #b%d 回合内， #y流血 不会在回合结束时消失。"
+      "在 #b%d 回合内， #y流血 不会在回合结束时减半。"
     ]
   },
   "VUPShionMod:LoseFinFunnelUpgradePower": {

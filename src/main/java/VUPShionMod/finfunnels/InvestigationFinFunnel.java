@@ -34,7 +34,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     public InvestigationFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 1;
+        this.effect = 2;
     }
 
 

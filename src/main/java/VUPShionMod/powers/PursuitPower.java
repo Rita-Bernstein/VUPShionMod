@@ -35,8 +35,10 @@ public class PursuitPower extends AbstractPower {
     public void atStartOfTurn() {
         this.flash();
         for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
-            if(!this.owner.isDeadOrEscaped())
-            funnel.onPursuitEnemy(this.owner);
+            if (!this.owner.isDeadOrEscaped()) {
+                funnel.onPursuitEnemy(this.owner);
+                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+            }
         }
     }
 }

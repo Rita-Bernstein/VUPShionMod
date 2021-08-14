@@ -172,7 +172,7 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
 
 
                         if (f instanceof GravityFinFunnel)
-                            addToBot(new GainBlockAction(p, 3, true));
+                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
 
                         if (f instanceof InvestigationFinFunnel)
                             addToBot(new ApplyPowerAction(target, p, new BleedingPower(target, p, f.getFinalEffect())));

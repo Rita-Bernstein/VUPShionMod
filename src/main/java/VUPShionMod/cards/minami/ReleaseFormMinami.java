@@ -20,7 +20,6 @@ public class ReleaseFormMinami extends AbstractMinamiCard {
 
     public ReleaseFormMinami() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.magicNumber = this.baseMagicNumber = 1;
         this.isEthereal = true;
     }

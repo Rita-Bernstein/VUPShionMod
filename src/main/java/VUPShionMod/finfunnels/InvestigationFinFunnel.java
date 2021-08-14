@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -55,11 +56,15 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
 
     @Override
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,int loopTimes) {
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,boolean triggerPassive,int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         for (int i = 0; i < loopTimes; i++)
-        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type),AbstractGameAction.AttackEffect.FIRE));
+
+        if (triggerPassive)
+            for (int i = 0; i < loopTimes; i++)
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target,AbstractDungeon.player, getFinalEffect())));
 
     }
 

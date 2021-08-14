@@ -60,7 +60,8 @@ public class DimensionSplitterAria extends CustomRelic {
             if (isLoseHP)
                 addToBot(new LoseHPAction(m, AbstractDungeon.player, this.counter * 3 + 2 + extraDamage));
             else
-                addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter * 3 + 2 + extraDamage, DamageInfo.DamageType.THORNS)));
+                addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter * 3 + 2 + extraDamage,
+                        DamageInfo.DamageType.THORNS),AbstractGameAction.AttackEffect.FIRE));
 
             addToBot(new AbstractGameAction() {
                 @Override

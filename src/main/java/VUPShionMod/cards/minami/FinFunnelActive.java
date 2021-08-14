@@ -21,7 +21,6 @@ public class FinFunnelActive extends AbstractMinamiCard {
 
     public FinFunnelActive() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.exhaust = true;
     }
 

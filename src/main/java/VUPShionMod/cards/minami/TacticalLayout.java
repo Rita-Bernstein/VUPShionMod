@@ -27,7 +27,6 @@ public class TacticalLayout extends AbstractMinamiCard {
     public TacticalLayout() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

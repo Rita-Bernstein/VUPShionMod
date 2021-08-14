@@ -54,6 +54,7 @@ public class FinFunnelSmallLaserEffect extends AbstractGameEffect {
     public void update() {
         if (duration == 0.8F)
             ((Shion) AbstractDungeon.player).playFinFunnelAnimation(finFunnel.id);
+
         if (this.duration < this.startingDuration) {
             if (!posUpdated) {
                 this.dX = finFunnel.muzzle_X;
@@ -86,7 +87,7 @@ public class FinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void render(SpriteBatch sb) {
-        if (this.duration < this.startingDuration) {
+        if (this.duration < this.startingDuration && posUpdated) {
             sb.setBlendFunction(770, 1);
             sb.setColor(this.color);
             sb.draw(img, this.sX, this.sY - img.packedHeight / 2.0F + 10.0F * Settings.scale, 0.0F, img.packedHeight / 2.0F, this.dst, 50.0F, this.scale + MathUtils.random(-0.01F, 0.01F), this.scale, this.rotation);

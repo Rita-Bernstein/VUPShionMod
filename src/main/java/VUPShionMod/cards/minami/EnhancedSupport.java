@@ -22,7 +22,7 @@ public class EnhancedSupport extends AbstractMinamiCard {
 
     public EnhancedSupport() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

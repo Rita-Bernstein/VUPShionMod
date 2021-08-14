@@ -1,7 +1,9 @@
 package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.AbstractMinamiCard;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -27,6 +29,7 @@ public class FirePower extends AbstractMinamiCard {
         this.baseDamage = 0;
         this.isMultiDamage = true;
         this.magicNumber = this.baseMagicNumber = 3;
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

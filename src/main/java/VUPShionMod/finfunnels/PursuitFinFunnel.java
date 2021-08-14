@@ -55,16 +55,21 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         if (this.level <= 0) return;
         if (!target.isDeadOrEscaped())
             if (target.hasPower(PursuitPower.POWER_ID))
-                activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS, loop);
+                activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS, false, loop);
     }
 
 
     @Override
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         for (int i = 0; i < loopTimes; i++)
-            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type), AbstractGameAction.AttackEffect.FIRE));
+
+        if (triggerPassive)
+            for (int i = 0; i < loopTimes; i++)
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, getFinalEffect())));
+
     }
 
     @Override

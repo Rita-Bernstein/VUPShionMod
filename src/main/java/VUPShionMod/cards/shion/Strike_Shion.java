@@ -40,7 +40,7 @@ public class Strike_Shion extends AbstractShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
         if (funnel != null) {
-            funnel.activeFire(m, this.damage, this.damageTypeForTurn);
+            funnel.activeFire(m, this.damage, this.damageTypeForTurn,false);
         } else {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }

@@ -21,7 +21,6 @@ public class AttackOrderBeta extends AbstractAnastasiaCard {
     public AttackOrderBeta() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

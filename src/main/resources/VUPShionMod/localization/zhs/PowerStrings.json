@@ -8,7 +8,7 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "追击",
     "DESCRIPTIONS": [
-      "目标的回合开始时， #y追击浮游炮 将主动攻击目标一次，造成 #b",
+      "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
       " 点伤害并失去该效果。"
     ]
   },
@@ -112,25 +112,25 @@
   "VUPShionMod:AttackOrderAlphaPower": {
     "NAME": "攻击指令·壹式",
     "DESCRIPTIONS": [
-      " #y浮游炮 牌被动造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
+      " #y浮游炮 的每回合攻击造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderBetaPower": {
     "NAME": "攻击指令·贰式",
     "DESCRIPTIONS": [
-      "#y浮游炮 牌将对所有敌人造成伤害。 NL 不与其他指令共存。"
+      "#y浮游炮 的每回合攻击将对所有敌人造成伤害。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderGammaPower": {
     "NAME": "攻击指令·叁式",
     "DESCRIPTIONS": [
-      "受到 #y浮游炮 牌攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
+      "受到 #y浮游炮 的每回合攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderDeltaPower": {
     "NAME": "攻击指令·肆式",
     "DESCRIPTIONS": [
-      "#y浮游炮 的被动攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
+      "#y浮游炮 的每回合攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:DelayAvatarPower": {

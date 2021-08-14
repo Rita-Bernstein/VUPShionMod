@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
+import VUPShionMod.actions.TurnTriggerAllFinFunnelAction;
 import VUPShionMod.cards.anastasia.EnergyReserve;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
@@ -46,7 +47,7 @@ public class AbstractPlayerPatches {
 //                funnel.atTurnStart();
 //            }
             if(AbstractDungeon.player instanceof Shion)
-            AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelAction(true));
+            AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
             EnergyPanelPatches.energyUsedThisTurn = 0;
         }
     }

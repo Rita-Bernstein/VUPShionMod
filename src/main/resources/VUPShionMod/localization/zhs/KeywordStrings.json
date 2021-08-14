@@ -45,6 +45,6 @@
     "NAMES": [
       "点射"
     ],
-    "DESCRIPTION": "主动攻击时触发被动效果。"
+    "DESCRIPTION": "触发一次 #y浮游炮 的被动效果。"
   }
 ]

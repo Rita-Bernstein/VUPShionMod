@@ -68,7 +68,6 @@ public class GravityFinFunnel extends AbstractFinFunnel {
             addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type),AbstractGameAction.AttackEffect.FIRE));
 
         if (triggerPassive)
-            for (int i = 0; i < loopTimes; i++)
                 addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
     }
 

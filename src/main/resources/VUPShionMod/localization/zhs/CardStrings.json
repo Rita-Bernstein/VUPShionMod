@@ -330,7 +330,7 @@
   },
   "VUPShionMod:Pray": {
     "NAME": "祈祷",
-    "DESCRIPTION": "获得1层 vup_shion_mod:超维链接 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。"
+    "DESCRIPTION": "获得2层 vup_shion_mod:超维链接 。 NL 抽 !M! 张牌。 NL 将其中的 !VUPShionSecondM! 张牌在本回合耗能变为0。 NL 消耗 。"
   },
   "VUPShionMod:SantaCroce": {
     "NAME": "圣十字",

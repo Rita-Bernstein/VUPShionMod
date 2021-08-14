@@ -23,7 +23,7 @@ public class HolyCharge extends AbstractLiyezhuCard {
     public HolyCharge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 15;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

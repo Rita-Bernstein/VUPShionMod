@@ -23,7 +23,7 @@ public class DivineRedemption extends AbstractLiyezhuCard {
     public DivineRedemption() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 8;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

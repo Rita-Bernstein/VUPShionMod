@@ -2,7 +2,7 @@
   "VUPShionMod:InvestigationFinFunnel": {
     "NAME": "侦查浮游炮",
     "DESCRIPTION": [
-      "当前强化等级： #b%d 。 NL #y主动： 对敌人造成伤害并给予 #b%d 层 #y流血 。 NL #y被动： 每回合开始时，对一名随机敌人造成 #b%d 点伤害并给予 #b%d 层 #y流血 。 NL （除 #y初始等级 外，每 #b3 级提升这个效果。）"
+      "当前强化等级： #b%d 。 NL NL #y被动： 每回合开始时，对一名随机敌人造成 #b%d 点伤害并给予 #b%d 层 #y流血 。 NL （除 #y初始等级 外，每 #b3 级提升这个效果。）"
     ]
   },
   "VUPShionMod:GravityFinFunnel": {

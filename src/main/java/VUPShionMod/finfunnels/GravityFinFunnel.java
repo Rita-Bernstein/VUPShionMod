@@ -64,8 +64,10 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++)
+        for (int i = 0; i < loopTimes; i++){
             addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type),AbstractGameAction.AttackEffect.FIRE));
+        }
+
 
         if (triggerPassive)
                 addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));

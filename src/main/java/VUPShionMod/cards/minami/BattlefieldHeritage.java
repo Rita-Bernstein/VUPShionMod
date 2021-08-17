@@ -22,7 +22,7 @@ public class BattlefieldHeritage extends AbstractMinamiCard {
 
     public BattlefieldHeritage() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -38,7 +38,7 @@ public class BattlefieldHeritage extends AbstractMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeSecondM(1);
         }
     }
 }

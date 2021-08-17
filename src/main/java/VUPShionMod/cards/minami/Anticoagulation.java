@@ -20,7 +20,7 @@ public class Anticoagulation extends AbstractMinamiCard  {
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public Anticoagulation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -29,7 +29,7 @@ public class Anticoagulation extends AbstractMinamiCard  {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new AnticoagulationPower(p, this.magicNumber),this.magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new AnticoagulationPower(m, this.magicNumber),this.magicNumber));
     }
 
 

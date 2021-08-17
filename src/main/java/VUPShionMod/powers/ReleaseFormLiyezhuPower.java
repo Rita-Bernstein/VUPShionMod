@@ -47,7 +47,7 @@ public class ReleaseFormLiyezhuPower extends AbstractPower {
                         addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY)));
                     }
                 }
-                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg*this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
             }
         }
     }

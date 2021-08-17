@@ -140,6 +140,7 @@ public class Shion extends CustomPlayer {
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(TacticalLayout.ID);
+        retVal.add(FinFunnelUpgrade.ID);
         retVal.add(Strafe.ID);
 
 

@@ -2,7 +2,9 @@ package VUPShionMod.cards.optionCards;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractVUPShionCard;
+import VUPShionMod.powers.GravityFinFunnelUpgradePower;
 import VUPShionMod.powers.InvestigationFinFunnelUpgradePower;
+import VUPShionMod.powers.PursuitFinFunnelUpgradePower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -37,7 +39,11 @@ public class InvestigationFinFunnelUpgrade extends AbstractVUPShionCard {
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new InvestigationFinFunnelUpgradePower(p, 5)));
+        if (!p.hasPower(InvestigationFinFunnelUpgradePower.POWER_ID) &&
+                !p.hasPower(GravityFinFunnelUpgradePower.POWER_ID) &&
+                !p.hasPower(PursuitFinFunnelUpgradePower.POWER_ID)
+        )
+            addToBot(new ApplyPowerAction(p, p, new InvestigationFinFunnelUpgradePower(p, 5)));
     }
 
     @Override

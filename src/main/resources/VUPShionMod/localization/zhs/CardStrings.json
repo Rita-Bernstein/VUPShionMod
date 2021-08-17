@@ -36,7 +36,7 @@
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "快速防御",
-    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点的 格挡 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
   },
   "VUPShionMod:QuickScreen": {
     "NAME": "快速筛选",
@@ -156,8 +156,8 @@
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
-    "DESCRIPTION": "从三张 *浮游炮升级计划 中选择一张。 抹除 。",
-    "UPGRADE_DESCRIPTION": "固有 。从三张 *浮游炮升级计划 中选择一张。 抹除 。"
+    "DESCRIPTION": "从三张 *浮游炮升级计划 中选择一张。 NL 其效果不能累加。 抹除 。",
+    "UPGRADE_DESCRIPTION": "固有 。从三张 *浮游炮升级计划 中选择一张。 NL 其效果不能累加。 抹除 。"
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "侦查浮游炮升级计划",
@@ -259,8 +259,8 @@
   },
   "VUPShionMod:Anticoagulation": {
     "NAME": "抗凝",
-    "DESCRIPTION": "本回合使一名敌人的流血不会消失。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "本回合使一名敌人的流血不会消失。"
+    "DESCRIPTION": "本回合使一名敌人的 vup_shion_mod:流血 不会减半。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "本回合使一名敌人的 vup_shion_mod:流血 不会减半。"
   },
   "VUPShionMod:Lure": {
     "NAME": "诱敌致胜",
@@ -272,7 +272,7 @@
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "姿态解放-南小棉",
-    "DESCRIPTION": " 虚无 。使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。",
+    "DESCRIPTION": " 虚无 。 NL 使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。",
     "UPGRADE_DESCRIPTION": "使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。"
   },
   "VUPShionMod:AnestheticReagent": {
@@ -322,7 +322,7 @@
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神圣冲锋",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 将这个效果提高1点。 NL 造成 !D! 点伤害。"
   },
   "VUPShionMod:StrengthPray": {
     "NAME": "力量祈祷",

@@ -106,12 +106,21 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 
                 } else {
                     AbstractMonster m = monsters.get(i);
-                    if (isDoubleDamage)
-                        addToBot(new DamageAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS),AbstractGameAction.AttackEffect.FIRE));
-                    else if (isGainBlock)
-                        addToBot(new DamageAndGainBlockAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1.0f));
-                    else
-                        addToBot(new DamageAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS),AbstractGameAction.AttackEffect.FIRE));
+                    if(f instanceof PursuitFinFunnel){
+                        if (isDoubleDamage)
+                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS), 1, true));
+                        else if (isGainBlock)
+                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true,true));
+                        else
+                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true));
+                    }else {
+                        if (isDoubleDamage)
+                            addToBot(new DamageAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS),AbstractGameAction.AttackEffect.FIRE));
+                        else if (isGainBlock)
+                            addToBot(new DamageAndGainBlockAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1.0f));
+                        else
+                            addToBot(new DamageAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS),AbstractGameAction.AttackEffect.FIRE));
+                    }
                 }
             }
 
@@ -125,8 +134,8 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                             addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
                         if (f instanceof InvestigationFinFunnel)
                             addToBot(new ApplyPowerAction(mo, p, new BleedingPower(mo, p, f.getFinalEffect())));
-                        if (f instanceof PursuitFinFunnel)
-                            addToBot(new ApplyPowerAction(mo, p, new PursuitPower(mo, f.getFinalEffect())));
+//                        if (f instanceof PursuitFinFunnel)
+//                            addToBot(new ApplyPowerAction(mo, p, new PursuitPower(mo, f.getFinalEffect())));
                     }
                 } else {
                     AbstractMonster m = monsters.get(i);
@@ -136,13 +145,11 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                     if (f instanceof InvestigationFinFunnel)
                         addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));
 
-                    if (f instanceof PursuitFinFunnel)
-                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.getFinalEffect())));
+//                    if (f instanceof PursuitFinFunnel)
+//                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.getFinalEffect())));
 
 
 //      额外给予流血效果
-
-
                     if (isApplyBleeding)
                         addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 2)));
                 }

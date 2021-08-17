@@ -35,7 +35,12 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     public GravityFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 3;
+        this.effect = 2;
+    }
+
+    @Override
+    public int getFinalEffect() {
+        return this.effect * (this.level - 1) / 3 + 3;
     }
 
     @Override
@@ -64,13 +69,13 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++){
-            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type),AbstractGameAction.AttackEffect.FIRE));
+        for (int i = 0; i < loopTimes; i++) {
+            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type), AbstractGameAction.AttackEffect.FIRE));
         }
 
 
         if (triggerPassive)
-                addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+            addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
     }
 
 

@@ -58,7 +58,7 @@ public class BlueBlade extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(2);
-            upgradeSecondM(1);
+            upgradeMagicNumber(1);
         }
     }
 }

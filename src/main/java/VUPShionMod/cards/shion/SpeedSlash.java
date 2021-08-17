@@ -27,7 +27,7 @@ public class SpeedSlash extends AbstractShionCard {
 
     public SpeedSlash() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 1;
+        this.baseDamage = 2;
         this.baseMagicNumber = this.magicNumber = 4;
     }
 

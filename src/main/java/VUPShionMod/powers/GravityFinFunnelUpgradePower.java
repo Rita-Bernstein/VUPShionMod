@@ -24,10 +24,11 @@ public class GravityFinFunnelUpgradePower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private boolean used = false;
 
     public GravityFinFunnelUpgradePower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = POWER_ID + UUID.randomUUID();
+        this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/GravityFinFunnelUpgrade128.png")), 0, 0, 128, 128);
@@ -45,7 +46,9 @@ public class GravityFinFunnelUpgradePower extends AbstractPower {
         if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
             this.amount--;
             updateDescription();
-            if (this.amount <= 0) {
+            if (this.amount <= 0 && !used) {
+                this.used = true;
+                this.amount = -1;
                 List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
                 for (AbstractFinFunnel funnel : funnelList) {
                     if (funnel instanceof GravityFinFunnel) {
@@ -54,7 +57,7 @@ public class GravityFinFunnelUpgradePower extends AbstractPower {
                         break;
                     }
                 }
-                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+//                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
         }
     }

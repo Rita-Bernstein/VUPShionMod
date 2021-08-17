@@ -44,9 +44,8 @@ public class BleedingPower extends AbstractPower implements HealthBarRenderPower
 
     public void atStartOfTurn() {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            if (AbstractDungeon.player.hasPower(AnticoagulationPower.POWER_ID)) {
-                AbstractDungeon.player.getPower(AnticoagulationPower.POWER_ID).flash();
-                flashWithoutSound();
+            if (this.owner.hasPower(AnticoagulationPower.POWER_ID)) {
+                this.owner.getPower(AnticoagulationPower.POWER_ID).flash();
             } else
                 addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, (int) Math.ceil(this.amount * 0.5f)));
         }

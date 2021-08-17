@@ -35,9 +35,13 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     public InvestigationFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 2;
+        this.effect = 1;
     }
 
+    @Override
+    public int getFinalEffect() {
+        return this.effect * (this.level - 1) / 3 + 2;
+    }
 
     @Override
     public void updateDescription() {

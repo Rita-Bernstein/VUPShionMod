@@ -36,7 +36,7 @@
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "快速防御",
-    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点的 格挡 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
   },
   "VUPShionMod:QuickScreen": {
     "NAME": "快速筛选",
@@ -268,7 +268,7 @@
   },
   "VUPShionMod:SuperCharge": {
     "NAME": "超能装填",
-    "DESCRIPTION": "消耗1层 vup_shion_mod:超维链接 。 NL 获得 !M! 点临时 力量 NL 和 !VUPShionSecondM! 点临时 敏捷 。"
+    "DESCRIPTION": "失去1层 vup_shion_mod:超维链接 。 NL 获得 !M! 点临时 力量 NL 和 !VUPShionSecondM! 点临时 敏捷 。"
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "姿态解放-南小棉",

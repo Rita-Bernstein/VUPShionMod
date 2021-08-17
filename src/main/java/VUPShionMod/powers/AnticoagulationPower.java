@@ -26,7 +26,7 @@ public class AnticoagulationPower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfRound() {
         addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
     }
 

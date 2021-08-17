@@ -48,7 +48,7 @@ public class AbstractPlayerPatches {
 //            }
             if(AbstractDungeon.player instanceof Shion)
             AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
-            EnergyPanelPatches.energyUsedThisTurn = 0;
+            EnergyPanelPatches.energyUsedThisTurn = 1;
         }
     }
 

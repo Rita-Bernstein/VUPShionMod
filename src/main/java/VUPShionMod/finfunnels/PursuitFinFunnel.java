@@ -1,6 +1,7 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.DamageAndApplyPursuitAction;
 import VUPShionMod.actions.DamageAndGainBlockAction;
 import VUPShionMod.powers.*;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
@@ -33,7 +34,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public PursuitFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 1;
+        this.effect = 2;
     }
 
     @Override
@@ -63,14 +64,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++){
-            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type), AbstractGameAction.AttackEffect.FIRE));
-        }
-
-
-        if (triggerPassive)
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, getFinalEffect())));
-
+        addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, damage, type), loopTimes, triggerPassive));
     }
 
     @Override

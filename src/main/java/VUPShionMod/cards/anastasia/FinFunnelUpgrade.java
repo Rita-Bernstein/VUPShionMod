@@ -18,7 +18,7 @@ public class FinFunnelUpgrade extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelUpgrade");
     public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia10.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -33,6 +33,9 @@ public class FinFunnelUpgrade extends AbstractAnastasiaCard {
         cardsList.add(new GravityFinFunnelUpgrade());
         cardsList.add(new PursuitFinFunnelUpgrade());
         this.purgeOnUse = true;
+
+        this.setBannerTexture("VUPShionMod/img/banner/512/banner_rare.png", "VUPShionMod/img/banner/1024/banner_rare.png");
+        this.setPortraitTextures("VUPShionMod/img/banner/512/frame_skill_rare.png", "VUPShionMod/img/banner/1024/frame_skill_rare.png");
     }
 
     @Override
@@ -75,5 +78,10 @@ public class FinFunnelUpgrade extends AbstractAnastasiaCard {
                 rotationTimer -= Gdx.graphics.getDeltaTime();
             }
         }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return super.makeCopy();
     }
 }

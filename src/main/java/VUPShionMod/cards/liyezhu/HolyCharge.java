@@ -33,6 +33,7 @@ public class HolyCharge extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 upgradeMagicNumber(1);
+                isDone = true;
             }
         });
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));

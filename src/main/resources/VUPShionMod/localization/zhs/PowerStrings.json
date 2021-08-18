@@ -43,7 +43,7 @@
   "VUPShionMod:AnastasiaCorePower": {
     "NAME": "Anastasia核心",
     "DESCRIPTIONS": [
-      "在这个回合，你每打出一张牌，就获得 #b",
+      "在这个回合，你每打出一张 #y使用浮游炮 牌，就获得 #b",
       " [E] 。"
     ]
   },
@@ -94,7 +94,7 @@
   "VUPShionMod:EnhancedWeaponPower": {
     "NAME": "强化兵装",
     "DESCRIPTIONS": [
-      "获得 #y兵装 时额外获得 #b%d 层。"
+      "获得 #y超维链接 时额外获得 #b%d 层。"
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuPower": {

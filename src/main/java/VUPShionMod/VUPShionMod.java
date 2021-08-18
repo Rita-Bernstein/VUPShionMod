@@ -73,7 +73,11 @@ public class VUPShionMod implements
     public static String MOD_ID = "VUPShionMod";
     public static Properties VUPShionDefaults = new Properties();
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
-    public static AbstractFinFunnel.FinFunnelSaver finFunnelSaver;
+//    public static AbstractFinFunnel.FinFunnelSaver finFunnelSaver;
+
+    public static int gravityFinFunnelLevel = 1;
+    public static int investigationFinFunnelLevel = 1;
+    public static int pursuitFinFunnelLevel = 1;
 
     public static List<CustomCard> an_Cards = new ArrayList<>();
     public static List<CustomCard> ku_Cards = new ArrayList<>();
@@ -110,28 +114,34 @@ public class VUPShionMod implements
         return MOD_ID + "/" + className + "/" + path;
     }
 
-    public static void saveSettings() {
+    public static void saveFinFunnels() {
         try {
             SpireConfig config = new SpireConfig("VUPShionMod", "VUPShionMod_settings", VUPShionDefaults);
+            config.setInt("gravityFinFunnelLevel", gravityFinFunnelLevel);
+            config.setInt("investigationFinFunnelLevel", investigationFinFunnelLevel);
+            config.setInt("pursuitFinFunnelLevel", pursuitFinFunnelLevel);
             config.save();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void loadSettings() {
+    public static void loadFinFunnels() {
         try {
             SpireConfig config = new SpireConfig("VUPShionMod", "VUPShionMod_settings", VUPShionDefaults);
             config.load();
+            gravityFinFunnelLevel = config.getInt("gravityFinFunnelLevel");
+            investigationFinFunnelLevel = config.getInt("investigationFinFunnelLevel");
+            pursuitFinFunnelLevel = config.getInt("pursuitFinFunnelLevel");
 
         } catch (Exception e) {
             e.printStackTrace();
-            clearSettings();
+            clearFinFunnels();
         }
     }
 
-    public static void clearSettings() {
-        saveSettings();
+    public static void clearFinFunnels() {
+        saveFinFunnels();
     }
 
     public static int calculateTotalFinFunnelLevel() {
@@ -164,11 +174,10 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostInitialize() {
-        loadSettings();
         Texture badgeTexture = new Texture(assetPath("/img/badge.png"));
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
-        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
+//        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 
         BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
                 //Event Character//
@@ -210,12 +219,17 @@ public class VUPShionMod implements
     @Override
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
-            if (VUPShionMod.finFunnelSaver.data != null) {
-                List<Integer> levels = new ArrayList<>();
-                levels.add(1);
-                levels.add(1);
-                levels.add(1);
-                VUPShionMod.finFunnelSaver.onLoad(levels);
+            try {
+                SpireConfig config = new SpireConfig("VUPShionMod", "VUPShionMod_settings", VUPShionDefaults);
+                gravityFinFunnelLevel = 1;
+                investigationFinFunnelLevel = 1;
+                pursuitFinFunnelLevel = 1;
+                config.setInt("gravityFinFunnelLevel", gravityFinFunnelLevel);
+                config.setInt("investigationFinFunnelLevel", investigationFinFunnelLevel);
+                config.setInt("pursuitFinFunnelLevel", pursuitFinFunnelLevel);
+                config.save();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 

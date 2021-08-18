@@ -39,6 +39,12 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
+    public void upgradeLevel(int amount) {
+        this.level += amount;
+        VUPShionMod.gravityFinFunnelLevel = level;
+    }
+
+    @Override
     public int getFinalEffect() {
         return this.effect * (this.level - 1) / 3 + 3;
     }

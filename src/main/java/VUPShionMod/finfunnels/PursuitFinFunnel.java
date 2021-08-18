@@ -38,6 +38,12 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
+    public void upgradeLevel(int amount) {
+        this.level += amount;
+        VUPShionMod.pursuitFinFunnelLevel = level;
+    }
+
+    @Override
     public void updateDescription() {
         this.description = String.format(orbStrings.DESCRIPTION[0], this.level, this.level, getFinalEffect());
     }

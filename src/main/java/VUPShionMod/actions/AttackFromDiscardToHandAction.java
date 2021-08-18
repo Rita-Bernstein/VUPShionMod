@@ -1,5 +1,6 @@
 package VUPShionMod.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -35,25 +36,28 @@ public class AttackFromDiscardToHandAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            if (tmp.size() == 1) {
-                AbstractCard card = tmp.getTopCard();
+            if (tmp.size() <= this.amount) {
+                for(int i = 0; i < this.amount ;i++){
+                    AbstractCard card = tmp.getTopCard();
 
-                if (this.p.hand.size() == 10) {
-                    this.p.discardPile.moveToDiscardPile(card);
-                    this.p.createHandIsFullDialog();
-                } else {
-                    card.unhover();
-                    card.lighten(true);
-                    card.setAngle(0.0F);
-                    card.drawScale = 0.12F;
-                    card.targetDrawScale = 0.75F;
-                    card.current_x = CardGroup.DRAW_PILE_X;
-                    card.current_y = CardGroup.DRAW_PILE_Y;
-                    this.p.discardPile.removeCard(card);
-                    AbstractDungeon.player.hand.addToTop(card);
-                    AbstractDungeon.player.hand.refreshHandLayout();
-                    AbstractDungeon.player.hand.applyPowers();
+                    if (this.p.hand.size() == BaseMod.MAX_HAND_SIZE) {
+//                    this.p.discardPile.moveToDiscardPile(card);
+                        this.p.createHandIsFullDialog();
+                    } else {
+                        card.unhover();
+                        card.lighten(true);
+                        card.setAngle(0.0F);
+                        card.drawScale = 0.12F;
+                        card.targetDrawScale = 0.75F;
+                        card.current_x = CardGroup.DISCARD_PILE_X;
+                        card.current_y = CardGroup.DISCARD_PILE_Y;
+                        this.p.discardPile.removeCard(card);
+                        AbstractDungeon.player.hand.addToTop(card);
+                        AbstractDungeon.player.hand.refreshHandLayout();
+                        AbstractDungeon.player.hand.applyPowers();
+                    }
                 }
+
                 this.isDone = true;
 
                 return;

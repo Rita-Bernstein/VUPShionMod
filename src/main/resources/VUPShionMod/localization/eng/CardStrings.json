@@ -32,7 +32,7 @@
   },
   "VUPShionMod:QuickAttack": {
     "NAME": "Quick Attack",
-    "DESCRIPTION": " vup_shion_mod:Loading_Complete . NL vup_shion_mod:Fire vup_shion_mod:Funnel NL Deal !D! Damage. NL Exhaust ."
+    "DESCRIPTION": " vup_shion_mod:Loading_Complete . NL vup_shion_mod:Fire vup_shion_mod:Funnel . NL Deal !D! Damage. NL Exhaust ."
   },
   "VUPShionMod:QuickDefence": {
     "NAME": "Quick Defense",
@@ -47,7 +47,7 @@
     "DESCRIPTION": " vup_shion_mod:Fire vup_shion_mod:Funnel . NL Deal Damage equal to vup_shion_mod:Total_Upgrade X times.",
     "UPGRADE_DESCRIPTION": " vup_shion_mod:Fire vup_shion_mod:Funnel . NL Deal Damage equal to vup_shion_mod:Total_Upgrade X+1 times.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !D! Damage each time.)"
+      " NL （Deal !D! Damage each time.）"
     ]
   },
   "VUPShionMod:AttackInitiation": {
@@ -56,19 +56,19 @@
   },
   "VUPShionMod:EnduranceInitiation": {
     "NAME": "Endure",
-    "DESCRIPTION": "Add 1 copy of the chosen card into your draw pile. NL Grant vup_shion_mod:Loading_Complete . NL Exhaust .",
-    "UPGRADE_DESCRIPTION": "Add 2 copies of the chosen card into your draw pile and discard pile. NL Grant vup_shion_mod:Loading_Complete . NL Exhaust ."
+    "DESCRIPTION": "Shuffle 1 copy of the chosen card into your draw pile. NL Grant vup_shion_mod:Loading_Complete . NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Shuffle 2 copies of the chosen card into your draw pile and discard pile. NL Grant vup_shion_mod:Loading_Complete . NL Exhaust ."
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "Get Ready",
-    "DESCRIPTION": "Retain your hand.",
-    "UPGRADE_DESCRIPTION": "Retain your hand. NL Gain [E] next turn."
+    "DESCRIPTION": " Retain your hand.",
+    "UPGRADE_DESCRIPTION": " Retain your hand. NL Gain [E] next turn."
   },
   "VUPShionMod:Strafe": {
     "NAME": "Strafe",
     "DESCRIPTION": "vup_shion_mod:Fire vup_shion_mod:Funnel . NL Deal Damage equal to vup_shion_mod:Total_Upgrade !M! times.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !D! Damage each time.)"
+      " NL （Deal !D! Damage each time.）"
     ]
   },
   "VUPShionMod:AnastasiaCore": {
@@ -111,7 +111,7 @@
     "DESCRIPTION": "Deal Damage equal to vup_shion_mod:Total_Upgrade . NL If Fatal , gain !M! gold.",
     "UPGRADE_DESCRIPTION": "Deal Damage equal to 4+ vup_shion_mod:Total_Upgrade . NL If Fatal , gain !M! gold.",
     "EXTENDED_DESCRIPTION": [
-      "(Deal !D! Damage)"
+      "（Deal !D! Damage）"
     ]
   },
   "VUPShionMod:AttackOrderAlpha": {
@@ -143,12 +143,12 @@
     "DESCRIPTION": "Gain Block equal to vup_shion_mod:Hyperdimensional_Link .",
     "UPGRADE_DESCRIPTION": "Gain Block equal to vup_shion_mod:Hyperdimensional_Link +3.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Gain !B! Block )"
+      " NL （Gain !B! Block ）"
     ]
   },
   "VUPShionMod:LockOn": {
     "NAME": "Lock On",
-    "DESCRIPTION": "Target takes !M! additional Damage whenever Attacked this turn."
+    "DESCRIPTION": "Target takes !M! additional Damage from Attacks this turn."
   },
   "VUPShionMod:EnergyReserve": {
     "NAME": "Energy Reserve",
@@ -230,7 +230,7 @@
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "Hypervelocity",
-    "DESCRIPTION": "Draw !M! cards. Reduce the cost of all cards in your hand to 0 this turn. NL Lose [E] [E] next turn. Exhaust ."
+    "DESCRIPTION": "Draw !M! cards. Then reduce the cost of all cards in your hand to 0 this turn. NL Lose [E] [E] next turn. Exhaust ."
   },
   "VUPShionMod:DelayAvatar": {
     "NAME": "Lure",
@@ -259,8 +259,8 @@
   },
   "VUPShionMod:Anticoagulation": {
     "NAME": "Anticoagulate",
-    "DESCRIPTION": "Retain Bleeding on an enemy this turn. NL Exhaust .",
-    "UPGRADE_DESCRIPTION": "Retain Bleeding on an enemy this turn. "
+    "DESCRIPTION": "Prevent Bleeding on an enemy from decreasing this turn. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Prevent Bleeding on an enemy from decreasing this turn. "
   },
   "VUPShionMod:Lure": {
     "NAME": "Ambush",
@@ -294,9 +294,9 @@
   },
   "VUPShionMod:FirePower": {
     "NAME": "All Out",
-    "DESCRIPTION": "Shoot with vup_shion_mod:Funnel . Deal Damage !M! times as much as vup_shion_mod:Total_Upgrade . NL Set vup_shion_mod:Total_Upgrade to 0 this turn.",
+    "DESCRIPTION": "Shoot a massive blast with vup_shion_mod:Funnel . Deal Damage !M! times as much as vup_shion_mod:Total_Upgrade . NL Set vup_shion_mod:Total_Upgrade to 0 this turn.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !D! Damage)"
+      " NL （Deal !D! Damage）"
     ]
   },
   "VUPShionMod:ArmedToTheTeeth": {
@@ -336,7 +336,7 @@
     "NAME": "Cross",
     "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional_Link . NL Gain Block !VUPShionSecondM! times as much as vup_shion_mod:Hyperdimensional_Link .",
     "EXTENDED_DESCRIPTION": [
-      "(Gain !B! Block )"
+      "（Gain !B! Block ）"
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
@@ -361,7 +361,7 @@
   },
   "VUPShionMod:HolyCoffinRelease": {
     "NAME": "Suspend",
-    "DESCRIPTION": "Retain vup_shion_mod:Hyperdimensional_Link this turn. NL Exhaust ."
+    "DESCRIPTION": "Prevent vup_shion_mod:Hyperdimensional_Link from decreasing this turn. NL Exhaust ."
   },
   "VUPShionMod:BlueRose": {
     "NAME": "Sapphire Rose",

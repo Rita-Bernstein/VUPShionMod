@@ -1,13 +1,53 @@
 {
-  "VUPShionMod:MindBloom": {
-    "NAME": "Mind Bloom",
+  "VUPShionMod:SpireHeart_Shion": {
+    "NAME": "Spire Heart",
     "DESCRIPTIONS": [
-      "While walking and traversing through the Spire, your thoughts suddenly begin to feel very... #p~real... ~ NL NL Imaginings of #rAdventurers and #yCollected #ySpirits begin to manifest themselves into reality. NL The sensation is quickly fleeting, what do you do?",
-      "You have been here before, and you know that. NL NL Again and again, chasing the same adventurer... NL NL Is this real? NL NL How many times have you been slayed?",
-      "Everything makes sense now. NL The only purpose, the endless combat, the #pCorrupted Heart. NL NL this is the way it always was. NL This is the way it always will be. NL And will be forgotten again soon..."
+      "NL You imbue your Funnels with all the energy you have..."
     ],
     "OPTIONS": [
-      "[I am War] #rFight a special enemy. #gObtain a Rare Relic."
+    ]
+  },
+  "VUPShionMod:CroissantEvent": {
+    "NAME": "Croissant",
+    "DESCRIPTIONS": [
+      "Something resembling a dragon's horn catches your attention. No...no dragon's horn, upon closer inspection it is a croissant on the floors.",
+      "Just when you pick it up, you hear a voice laughing “Fus Roh Dah！” full of playful implication. Before you could think, you are carried away by a sudden thrust of wind and lose consciousness...",
+      "You just obtained a croissant to serve as food reserve and replenish energy.（It has a name CLOYCE written on it. Seems you may have left someone hungry, probably...）",
+      "You are more of a rice person who hates the crumbs you may left about while eating breads, so goodbye."
+    ],
+    "OPTIONS": [
+      "[Pick It Up] #r25%: Lose 15 HP, #g75%: Obtain Croissant.",
+      "[Ignore]",
+      "[Leave]"
+    ]
+  },
+  "VUPShionMod:LostEquipment": {
+    "NAME": "Lost Equipment",
+    "DESCRIPTIONS": [
+      "You find a lost equipment from the battlefield. It is all worn out and will not function until you do something about it.",
+      "What a pity..."
+    ],
+    "OPTIONS": [
+      "[Stitch] #rLose 100 gold. #gObtain Optical Camouflage.",
+      "[Locked] No less than 100 gold is required.",
+      "[Repair] #rRemove a random card. #gObtain Sniperscope.",
+      "[Locked] No less than 1 card is required.",
+      "[Leave]"
+    ]
+  },
+  "VUPShionMod:BreakAppointment": {
+    "NAME": "Gu~gu~gu!",
+    "DESCRIPTIONS": [
+      "You encounter a pigeon holding a pen in its beak. It's staring right straightly at you without showing any intention. What do you do?",
+      "The pigeon draws something with the pen in its beak and flees away with the gold, leaving you to the figures of absolute ambiguity on the ground.",
+      "The pigeon suddenly snatches the gold from your hand and vanishes into the sky before you could even react.",
+      "Hmmm...Coming soon, no rush!"
+    ],
+    "OPTIONS": [
+      "[Feed] #rLose 50 gold. #g75%：Obtain a Cloyce card.",
+      "[Locked] No less than 50 gold is required.",
+      "[Gu!]",
+      "[Leave]"
     ]
   }
 }

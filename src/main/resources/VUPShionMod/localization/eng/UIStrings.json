@@ -1,7 +1,34 @@
 {
-  "VUPShionMod:modsettings": {
+  "VUPShionMod:ModSettings": {
     "TEXT": [
-      "Ammo"
+      "设置"
+    ]
+  },
+  "VUPShionMod:CharacterSelect": {
+    "TEXT": [
+      "设置"
+    ]
+  },
+  "VUPShionMod:EnduranceInitiationAction": {
+    "TEXT": [
+      "Copy",
+      " vup_shion_mod:Loading_Complete ."
+    ]
+  },
+  "VUPShionMod:UpgradeAndZeroCostAction": {
+    "TEXT": [
+      "选择牌升级并将耗能变为0"
+    ]
+  },
+  "VUPShionMod:SelectCardToHandAction": {
+    "TEXT": [
+      " NL Exhaust 。",
+      " Ethereal ."
+    ]
+  },
+  "VUPShionMod:AttackFromDiscardToHandAction": {
+    "TEXT": [
+      "Add 2 Attacks to your hand"
     ]
   }
 }

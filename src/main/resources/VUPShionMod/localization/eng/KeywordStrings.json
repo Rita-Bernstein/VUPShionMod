@@ -1,52 +1,52 @@
 [
   {
     "NAMES": [
-      "Loading_Complete"
+      "loading_complete"
     ],
 	"PROPER_NAME": "Loading Complete",
     "DESCRIPTION": "Will be played without any cost when drawn. Draw 1 card."
   },
   {
     "NAMES": [
-      "Funnel"
+      "funnel"
     ],
     "DESCRIPTION": "#yFunnel attacks at the start of each turn. NL Whenever Energy is cost this turn, you may switch #yFunnel."
   },
   {
     "NAMES": [
-      "Total_Upgrade"
+      "total_upgrade"
     ],
 	"PROPER_NAME": "Total Upgrade",
     "DESCRIPTION": "Sum of the upgrades of #yDimension #ySplitter: #yAria and the three #yFunnels."
   },
   {
     "NAMES": [
-      "Task"
+      "task"
     ],
     "DESCRIPTION": "You are rewarded upon completing tasks during combat."
   },
   {
     "NAMES": [
-      "Pursued"
+      "pursued"
     ],
-    "DESCRIPTION": " #yPursuing #yFunnel will deal damage to #yPursued enemies at the start of the next turn and remove #Pursued status."
+    "DESCRIPTION": " #yPursuing #yFunnel deals damage to #yPursued enemies at the start of the their turn and remove #Pursued status."
   },
   {
     "NAMES": [
-      "Bleeding"
+      "bleeding"
     ],
-    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding whenever Attacked this turn. NL It halves at the end of turn."
+    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding from Attacks this turn. NL It halves at the end of turn."
   },
   {
     "NAMES": [
-      "Hyperdimensional_Link"
+      "hyperdimensional_link"
     ],
 	"PROPER_NAME": "Hyperdimensional Link",
     "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLinks, a random card will be upgraded."
   },
   {
     "NAMES": [
-      "Fire"
+      "fire"
     ],
     "DESCRIPTION": "Trigger the passive ability of your #yFunnel."
   }

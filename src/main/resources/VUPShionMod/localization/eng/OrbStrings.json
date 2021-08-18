@@ -2,19 +2,19 @@
   "VUPShionMod:InvestigationFinFunnel": {
     "NAME": "Scouting Funnel",
     "DESCRIPTION": [
-      "Current Upgrade: #b%d . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding . NL (Except #yStarting #yLevel , its passive becomes more effective after every #b3 upgrades.)"
+      "Current Upgrade: #b%d . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding . NL （Except #yStarting #yLevel , its passive becomes more effective after every #b3 upgrades.）"
     ]
   },
   "VUPShionMod:GravityFinFunnel": {
     "NAME": "Gravity Funnel",
     "DESCRIPTION": [
-      "Current Upgrade: #b%d . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock . NL (Except #yStarting #yLevel , its passive becomes more effective after every #b3 upgrades.)"
+      "Current Upgrade: #b%d . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock . NL （Except #yStarting #yLevel , its passive becomes more effective after every #b3 upgrades.）"
     ]
   },
   "VUPShionMod:PursuitFinFunnel": {
     "NAME": "Pursuing Funnel",
     "DESCRIPTION": [
-      "Current Upgrade: #b%d . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued . NL (Except #yStarting #yLevel , its passive becomes more effective after every #b3 upgrades.)"
+      "Current Upgrade: #b%d . NL #yActive: Deal Damage, trigger the passive ability if dealt unblocked Damage. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability if dealt unblocked Damage. NL #yPassive: Apply #b%d #yPursued . NL （Except #yStarting #yLevel , its passive becomes more effective after every #b3 upgrades.）"
     ]
   }
 }

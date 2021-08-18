@@ -78,7 +78,7 @@
     ]
   },
   "VUPShionMod:TempFinFunnelUpgradePower": {
-    "NAME": "Temporary Total Upgrade(弃用)",
+    "NAME": "Temporary Total Upgrade（弃用）",
     "DESCRIPTIONS": [
       " #yTotal #yUpgrade is increased by #b%d this turn."
     ]

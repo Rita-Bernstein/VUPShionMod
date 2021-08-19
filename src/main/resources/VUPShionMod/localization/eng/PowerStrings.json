@@ -8,7 +8,8 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "Pursued",
     "DESCRIPTIONS": [
-      "At the start of the target's turn, #yPursuing #yFunnel deals #b damage."
+      "At the start of the target's turn, #yPursuing #yFunnel deals #b",
+      " damage."
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -35,13 +36,15 @@
   "VUPShionMod:DeploymentOfDefenseSystemPower": {
     "NAME": "Defense Unfold",
     "DESCRIPTIONS": [
-      "This turn, gain #b Block whenever you play a card."
+      "This turn, gain #b",
+      " Block whenever you play a card"
     ]
   },
   "VUPShionMod:AnastasiaCorePower": {
     "NAME": "Anastasia Core",
     "DESCRIPTIONS": [
-      "This turn, gain #b [E] whenever you play a #yFunnel card."
+      "This turn, gain #b",
+      " [E] whenever you play a #yFunnel card."
     ]
   },
   "VUPShionMod:AttackInitiationPower": {

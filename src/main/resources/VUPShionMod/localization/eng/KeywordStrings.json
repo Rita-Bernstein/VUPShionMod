@@ -1,7 +1,7 @@
 [
   {
     "NAMES": [
-      "loading_complete"
+      "loading\u00a0complete"
     ],
 	"PROPER_NAME": "Loading Complete",
     "DESCRIPTION": "Will be played without any cost when drawn. Draw a card."
@@ -14,7 +14,7 @@
   },
   {
     "NAMES": [
-      "total_upgrade"
+      "total\u00a0upgrade"
     ],
 	"PROPER_NAME": "Total Upgrade",
     "DESCRIPTION": "Sum of the upgrades of #yDimension #ySplitter: #yAria and the three #yFunnels."
@@ -39,7 +39,7 @@
   },
   {
     "NAMES": [
-      "hyperdimensional_link"
+      "hyperdimensional\u00a0link"
     ],
 	"PROPER_NAME": "Hyperdimensional Link",
     "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLink, a random card will be upgraded."

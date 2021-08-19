@@ -8,8 +8,7 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "Pursued",
     "DESCRIPTIONS": [
-      "At the start of the target's turn, #yPursuing #yFunnel deals #b Damage",
-      " and removes this status."
+      "At the start of the target's turn, #yPursuing #yFunnel deals #b damage."
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -34,7 +33,7 @@
     ]
   },
   "VUPShionMod:DeploymentOfDefenseSystemPower": {
-    "NAME": "Anastasia Defense Unfold",
+    "NAME": "Defense Unfold",
     "DESCRIPTIONS": [
       "This turn, gain #b Block whenever you play a card."
     ]
@@ -42,7 +41,7 @@
   "VUPShionMod:AnastasiaCorePower": {
     "NAME": "Anastasia Core",
     "DESCRIPTIONS": [
-      "This turn, gain #b [E] whenever you play a #yFunnel card.",
+      "This turn, gain #b [E] whenever you play a #yFunnel card."
     ]
   },
   "VUPShionMod:AttackInitiationPower": {
@@ -58,7 +57,7 @@
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
-    "NAME": "Liberated Form: Cloyce",
+    "NAME": "Liberated Form: Cloyce+",
     "DESCRIPTIONS": [
       "At the start of your turn, shuffle #b%d #yQuick #ySkim+ into your discard pile."
     ]
@@ -66,7 +65,7 @@
   "VUPShionMod:BleedingPower": {
     "NAME": "Bleeding",
     "DESCRIPTIONS": [
-      "Takes #b%d additional Damage from Attacks this turn. NL This status halves at the end of turn."
+      "Takes #b%d additional damage from Attacks this turn. NL This status halves at the end of turn."
     ]
   },
   "VUPShionMod:DenergizePower": {
@@ -86,7 +85,7 @@
   "VUPShionMod:ReleaseFormMinamiPower": {
     "NAME": "Liberated Form: Minami",
     "DESCRIPTIONS": [
-      "Whenever you trigger the passive ability of #yFunnel , trigger #b%d additional times."
+      "Whenever you trigger the passive ability of #yFunnel by cards, trigger #b%d additional times."
     ]
   },
   "VUPShionMod:EnhancedWeaponPower": {
@@ -98,13 +97,13 @@
   "VUPShionMod:ReleaseFormLiyezhuPower": {
     "NAME": "Liberated Form: Liyezhu",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal Damage #b%d times as much as your #yHyperdimensional #yLink ."
+      "At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink ."
     ]
   },
   "VUPShionMod:LockOnPower": {
-    "NAME": "Lock On",
+    "NAME": "Locked On",
     "DESCRIPTIONS": [
-      "This enemy takes #b%d additional Damage from Attacks."
+      "This enemy takes #b%d additional damage from Attacks."
     ]
   },
   "VUPShionMod:AttackOrderAlphaPower": {
@@ -134,7 +133,7 @@
   "VUPShionMod:DelayAvatarPower": {
     "NAME": "Lure",
     "DESCRIPTIONS": [
-      "Your #yLure has #b%d HP remaining. NL It deals #b%d Damage #b5 times to ALL enemies upon being destroyed."
+      "Your #yLure has #b%d HP remaining. NL It deals #b%d damage #b5 times to ALL enemies upon being destroyed."
     ]
   },
   "VUPShionMod:CrackOfTimePower": {
@@ -158,13 +157,13 @@
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
     "NAME": "Holy Coffin",
     "DESCRIPTIONS": [
-      "Whenever you gain #yHyperdimensional #yLink , deal #b%d Damage to a random enemy."
+      "Whenever you gain #yHyperdimensional #yLink , deal #b%d damage to a random enemy."
     ]
   },
   "VUPShionMod:HolyCoffinReleasePower": {
     "NAME": "Suspend",
     "DESCRIPTIONS": [
-      "For the next #b%d turns, retain #yHyperdimensional #yLink ."
+      "For the next #b%d turns, prevent #yHyperdimensional #yLink from decreasing."
     ]
   } ,
   "VUPShionMod:LoseHyperdimensionalLinksPower": {

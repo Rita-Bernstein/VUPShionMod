@@ -17,7 +17,7 @@
   },
   "VUPShionMod:UpgradeAndZeroCostAction": {
     "TEXT": [
-      "选择牌升级并将耗能变为0"
+      "Select a card upgrade and set cost to 0"
     ]
   },
   "VUPShionMod:SelectCardToHandAction": {

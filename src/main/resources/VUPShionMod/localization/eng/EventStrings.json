@@ -12,7 +12,7 @@
     "DESCRIPTIONS": [
       "Something resembling a dragon's horn catches your attention. No...no dragon's horn, upon closer inspection it is a croissant on the floors.",
       "Just when you pick it up, you hear a voice laughing “Fus Roh Dah！” full of playful implication. Before you could think, you are carried away by a sudden thrust of wind and lose consciousness...",
-      "You just obtained a croissant to serve as food reserve and replenish energy.（It has a name CLOYCE written on it. Seems you may have left someone hungry, probably...）",
+      "You just obtained a croissant to replenish energy and serve as food reserve.（It has a name #yCloyce written on it. Seems you may have left someone hungry, much probably...）",
       "You are more of a rice person who hates the crumbs you may left about while eating breads, so goodbye."
     ],
     "OPTIONS": [
@@ -24,8 +24,8 @@
   "VUPShionMod:LostEquipment": {
     "NAME": "Lost Equipment",
     "DESCRIPTIONS": [
-      "You find a lost equipment from the battlefield. It is all worn out and will not function until you do something about it.",
-      "What a pity..."
+      "On your ascension, you find a lost equipment from the battlefield. It is all worn out and will not function until you do something about it.",
+      "This should work now."
     ],
     "OPTIONS": [
       "[Stitch] #rLose 100 gold. #gObtain Optical Camouflage.",

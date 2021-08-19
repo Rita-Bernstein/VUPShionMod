@@ -4,13 +4,13 @@
       "loading_complete"
     ],
 	"PROPER_NAME": "Loading Complete",
-    "DESCRIPTION": "Will be played without any cost when drawn. Draw 1 card."
+    "DESCRIPTION": "Will be played without any cost when drawn. Draw a card."
   },
   {
     "NAMES": [
       "funnel"
     ],
-    "DESCRIPTION": "#yFunnel attacks at the start of each turn. NL Whenever Energy is cost this turn, you may switch #yFunnel."
+    "DESCRIPTION": "#yFunnel attacks at the start of each turn. NL For each Energy cost this turn, you may switch #yFunnel."
   },
   {
     "NAMES": [
@@ -29,20 +29,20 @@
     "NAMES": [
       "pursued"
     ],
-    "DESCRIPTION": " #yPursuing #yFunnel deals damage to #yPursued enemies at the start of the their turn and remove #Pursued status."
+    "DESCRIPTION": " #yPursuing #yFunnel deals damage to #ypursued enemies at the start of the their turn."
   },
   {
     "NAMES": [
       "bleeding"
     ],
-    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding from Attacks this turn. NL It halves at the end of turn."
+    "DESCRIPTION": "Bleeding creatures take additional damage equal to #ybleeding from Attacks this turn. NL It halves at the end of turn."
   },
   {
     "NAMES": [
       "hyperdimensional_link"
     ],
 	"PROPER_NAME": "Hyperdimensional Link",
-    "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLinks, a random card will be upgraded."
+    "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLink, a random card will be upgraded."
   },
   {
     "NAMES": [

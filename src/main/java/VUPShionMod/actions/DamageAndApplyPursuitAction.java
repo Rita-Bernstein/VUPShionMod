@@ -16,8 +16,9 @@ public class DamageAndApplyPursuitAction extends AbstractGameAction {
     private boolean applyPower;
     private boolean gainBlock;
     private int times;
+    private int pursuitAmount;
 
-    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info,int times, boolean applyPower,boolean gainBlock) {
+    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info,int times, boolean applyPower,boolean gainBlock,int pursuitAmount) {
         this.info = info;
         setValues(target, info);
         this.actionType = ActionType.DAMAGE;
@@ -26,9 +27,10 @@ public class DamageAndApplyPursuitAction extends AbstractGameAction {
         this.applyPower = applyPower;
         this.gainBlock = gainBlock;
         this.times = times;
+        this.pursuitAmount = pursuitAmount;
     }
 
-    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info,int times, boolean applyPower){
+    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info,int times, boolean applyPower,int pursuitAmount){
         this.info = info;
         setValues(target, info);
         this.actionType = ActionType.DAMAGE;
@@ -37,6 +39,7 @@ public class DamageAndApplyPursuitAction extends AbstractGameAction {
         this.applyPower = applyPower;
         this.gainBlock = false;
         this.times = times;
+        this.pursuitAmount = pursuitAmount;
     }
 
 
@@ -58,7 +61,7 @@ public class DamageAndApplyPursuitAction extends AbstractGameAction {
                 if(gainBlock)
                     addToTop(new GainBlockAction(this.source, (int) Math.floor(this.target.lastDamageTaken)));
                 if (!this.target.isDeadOrEscaped() && applyPower) {
-                    addToTop(new ApplyPowerAction(this.target, this.target, new PursuitPower(this.target, this.target.lastDamageTaken)));
+                    addToTop(new ApplyPowerAction(this.target, this.target, new PursuitPower(this.target, pursuitAmount)));
                 }
             }
 

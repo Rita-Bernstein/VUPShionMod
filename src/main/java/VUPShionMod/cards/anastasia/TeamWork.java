@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.SelectCardToHandAction;
 import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.patches.CardTagsEnum;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,7 +22,7 @@ public class TeamWork extends AbstractAnastasiaCard {
 
     public TeamWork() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
 
     @Override

@@ -108,11 +108,11 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                     AbstractMonster m = monsters.get(i);
                     if(f instanceof PursuitFinFunnel){
                         if (isDoubleDamage)
-                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS), 1, true));
+                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS), 1, true,f.getFinalEffect()));
                         else if (isGainBlock)
-                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true,true));
+                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true,true,f.getFinalEffect()));
                         else
-                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true));
+                            addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true,f.getFinalEffect()));
                     }else {
                         if (isDoubleDamage)
                             addToBot(new DamageAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS),AbstractGameAction.AttackEffect.FIRE));

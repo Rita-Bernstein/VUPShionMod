@@ -136,7 +136,7 @@
   },
   "VUPShionMod:TeamWork": {
     "NAME": "连携",
-    "DESCRIPTION": "分别从三张 *克洛伊斯 、 *Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。"
+    "DESCRIPTION": "分别从三张 *克洛伊斯 、 *Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。 NL 消耗性 !stslib:ex! 。"
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia计划",
@@ -277,7 +277,7 @@
   },
   "VUPShionMod:AnestheticReagent": {
     "NAME": "麻醉试剂",
-    "DESCRIPTION": "失去4点生命。 NL 获得 !M! 层 无实体 。 NL 消耗性 !stslib:ex! 。 "
+    "DESCRIPTION": "失去 !VUPShionSecondM! 点生命。 NL 获得 !M! 层 无实体 。 NL 消耗性 !stslib:ex! 。 "
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "强化支援",

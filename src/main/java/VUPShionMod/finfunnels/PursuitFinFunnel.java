@@ -70,7 +70,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, damage, type), loopTimes, triggerPassive));
+        addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, damage, type), loopTimes, triggerPassive,getFinalEffect()));
     }
 
     @Override

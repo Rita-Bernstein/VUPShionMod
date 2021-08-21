@@ -16,7 +16,7 @@ public class Boot extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Boot() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -27,7 +27,7 @@ public class Boot extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(1);
+            this.upgradeBaseCost(0);
         }
     }
 

@@ -24,6 +24,7 @@ public class GravityLoading extends AbstractMinamiCard {
     public GravityLoading() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

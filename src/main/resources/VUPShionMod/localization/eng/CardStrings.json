@@ -9,7 +9,7 @@
   },
   "VUPShionMod:DefenseSystemCharging": {
     "NAME": "Back on Defense",
-    "DESCRIPTION": "Gain !B! Block. NL If the last card played this combat was a vup_shion_mod:Funnel card, gain Block twice."
+    "DESCRIPTION": "Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel . NL If the last card played this combat was a vup_shion_mod:Funnel card, return this to your hand."
   },
   "VUPShionMod:DeploymentOfDefenseSystem": {
     "NAME": "Defense Unfold",
@@ -34,9 +34,9 @@
     "NAME": "Quick Attack",
     "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL vup_shion_mod:Fire vup_shion_mod:Funnel. NL Deal !D! damage. NL Exhaust."
   },
-  "VUPShionMod:QuickDefence": {
+  "VUPShionMod:QuickDefend": {
     "NAME": "Quick Defense",
-    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Gain !B! Block. NL Exhaust."
+    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel . NL Exhaust."
   },
   "VUPShionMod:QuickSkim": {
     "NAME": "Quick Skim",
@@ -61,8 +61,8 @@
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "Get Ready",
-    "DESCRIPTION": " Retain your hand.",
-    "UPGRADE_DESCRIPTION": " Retain your hand. NL Gain [E] next turn."
+    "DESCRIPTION": " Retain your hand. NL Gain [E] next turn.",
+    "UPGRADE_DESCRIPTION": " Retain your hand. NL Gain [E] [E] next turn."
   },
   "VUPShionMod:Strafe": {
     "NAME": "Strafe",
@@ -178,7 +178,7 @@
   },
   "VUPShionMod:TimeSlack": {
     "NAME": "Cushion",
-    "DESCRIPTION": "Gain !B! Block. NL Shuffle !M! *Quick *Defense into your discard pile."
+    "DESCRIPTION": "Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel . NL Shuffle !M! *Quick *Defense into your discard pile."
   },
   "VUPShionMod:TimeStop": {
     "NAME": "Pause",
@@ -207,8 +207,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "Liberated: Cloyce",
-    "DESCRIPTION": "At the start of your turn, shuffle !M! *Quick *Skim into your discard pile.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, shuffle !M! *Quick *Skim+ into your discard pile."
+    "DESCRIPTION": "At the end of your turn,add !M! *Quick *Skim on the top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn,add !M! *Quick *Skim+ on the top of your draw pile."
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "Time Warp",
@@ -221,8 +221,8 @@
   },
   "VUPShionMod:TimeOverload": {
     "NAME": "Overload",
-    "DESCRIPTION": "Gain [E] [E]. NL Lose [E] [E] next turn.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E]. NL Lose [E] next turn."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional Link. NL Gain [E] [E]. NL Lose [E] [E] next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional Link. NL Gain [E] [E]. NL Lose [E] next turn."
   },
   "VUPShionMod:Limit": {
     "NAME": "Close",
@@ -243,7 +243,7 @@
   },
   "VUPShionMod:AttackWithDefense": {
     "NAME": "Offend to Defend",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block."
+    "DESCRIPTION": "Shuffle !M! *Quick *Attack into your draw pile. NL Gain !B! Block."
   },
   "VUPShionMod:LockIndication": {
     "NAME": "Snipe",
@@ -268,7 +268,7 @@
   },
   "VUPShionMod:SuperCharge": {
     "NAME": "Hoarse Charging",
-    "DESCRIPTION": "Lose 1 vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain !M! temporary Strength NL and !VUPShionSecondM! temporary Dexterity."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain !M! Strength and Dexterity."
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "Liberated: Minami",
@@ -281,16 +281,16 @@
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "Enhanced Support",
-    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy X times.",
-    "UPGRADE_DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy X+1 times."
+    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy 2X times.",
+    "UPGRADE_DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy 2(X+1) times."
   },
   "VUPShionMod:BattlefieldHeritage": {
     "NAME": "Battlefield Heritage",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Put !VUPShionSecondM! Attacks from your discard pile into your hand."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Put !VUPShionSecondM! Attacks from your discard pile into your hand. NL Reduce cost of them by 1 in this turn."
   },
   "VUPShionMod:GravityLoading": {
     "NAME": "Zero Gravity",
-    "DESCRIPTION": "Trigger the passive ability of *Gravity vup_shion_mod:Funnel to ALL enemies. NL Apply !M! Weak."
+    "DESCRIPTION": "Trigger the passive ability of *Gravity vup_shion_mod:Funnel for each enemies. NL Apply !M! Weak."
   },
   "VUPShionMod:FirePower": {
     "NAME": "All Out",

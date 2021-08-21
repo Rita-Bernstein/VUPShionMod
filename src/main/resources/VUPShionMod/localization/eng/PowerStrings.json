@@ -56,13 +56,13 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "Liberated Form: Cloyce",
     "DESCRIPTIONS": [
-      "At the start of your turn, shuffle #b%d #yQuick #ySkim into your discard pile."
+      "At the end of your turn,add #b%d #yQuick #ySkim on the top of your draw pile."
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
     "NAME": "Liberated Form: Cloyce+",
     "DESCRIPTIONS": [
-      "At the start of your turn, shuffle #b%d #yQuick #ySkim+ into your discard pile."
+      "At the end of your turn,add #b%d #yQuick #ySkim+ on the top of your draw pile."
     ]
   },
   "VUPShionMod:BleedingPower": {

@@ -1,10 +1,8 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.cards.tempCards.QuickScreen;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -28,11 +26,13 @@ public class UpgradedReleaseFormKuroisuPower extends AbstractPower {
         this.isTurnBased = true;
     }
 
+
+
     @Override
-    public void atStartOfTurn() {
+    public void atEndOfTurn(boolean isPlayer) {
         AbstractCard c = new QuickScreen();
         c.upgrade();
-        addToBot(new MakeTempCardInDiscardAction(c, 1));
+        addToBot(new MakeTempCardInDrawPileAction(c, this.amount, false, true, false));
     }
 
     @Override

@@ -22,7 +22,7 @@ public class DeploymentOfDefenseSystem extends AbstractShionCard {
 
     public DeploymentOfDefenseSystem() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
@@ -38,6 +38,6 @@ public class DeploymentOfDefenseSystem extends AbstractShionCard {
         addToBot(new SFXAction("SHION_9"));
         addToBot(new SFXAction("RAGE"));
         addToBot(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.ORANGE, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.0F));
-        addToBot(new ApplyPowerAction(p, p, new DeploymentOfDefenseSystemPower(p, this.baseMagicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DeploymentOfDefenseSystemPower(p, this.magicNumber)));
     }
 }

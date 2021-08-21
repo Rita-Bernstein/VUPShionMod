@@ -37,7 +37,7 @@ public class AttackFromDiscardToHandAction extends AbstractGameAction {
                 return;
             }
             if (tmp.size() <= this.amount) {
-                for(int i = 0; i < this.amount ;i++){
+                for (int i = 0; i < this.amount; i++) {
                     AbstractCard card = tmp.getTopCard();
 
                     if (this.p.hand.size() == BaseMod.MAX_HAND_SIZE) {
@@ -51,6 +51,8 @@ public class AttackFromDiscardToHandAction extends AbstractGameAction {
                         card.targetDrawScale = 0.75F;
                         card.current_x = CardGroup.DISCARD_PILE_X;
                         card.current_y = CardGroup.DISCARD_PILE_Y;
+                        if (card.costForTurn >= 0)
+                            card.setCostForTurn(card.costForTurn - 1);
                         this.p.discardPile.removeCard(card);
                         AbstractDungeon.player.hand.addToTop(card);
                         AbstractDungeon.player.hand.refreshHandLayout();
@@ -78,6 +80,8 @@ public class AttackFromDiscardToHandAction extends AbstractGameAction {
                     this.p.createHandIsFullDialog();
                 } else {
                     this.p.discardPile.removeCard(c);
+                    if (c.costForTurn >= 0)
+                        c.setCostForTurn(c.costForTurn - 1);
                     this.p.hand.addToTop(c);
                 }
                 this.p.hand.refreshHandLayout();

@@ -27,7 +27,7 @@ public class EnhancedWeapon extends AbstractShionCard {
     public EnhancedWeapon() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

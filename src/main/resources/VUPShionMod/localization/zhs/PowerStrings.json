@@ -56,13 +56,13 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "姿态解放-克洛伊斯",
     "DESCRIPTIONS": [
-      "你的回合开始时，将 #b%d 张 #y快速筛选 加入你的弃牌堆。"
+      "你的回合结束时，将 #b%d 张 #y快速筛选 加入抽牌堆顶部。"
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
     "NAME": "姿态解放-克洛伊斯+",
     "DESCRIPTIONS": [
-      "你的回合开始时，将 #b%d 张 #y快速筛选+ 加入你的弃牌堆。"
+      "你的回合结束时，将 #b%d 张 #y快速筛选+ 加入抽牌堆顶部。"
     ]
   },
   "VUPShionMod:BleedingPower": {

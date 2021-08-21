@@ -1,8 +1,11 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.TriggerFinFunnelAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.tempCards.QuickDefend;
+import VUPShionMod.finfunnels.GravityFinFunnel;
+import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,13 +21,16 @@ public class TimeSlack extends AbstractKuroisuCard {
 
     public TimeSlack() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 4;
+        this.baseBlock = 2;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.cardsToPreview = new QuickDefend();
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, this.block));
+        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
         addToBot(new MakeTempCardInDiscardAction(new QuickDefend(),this.magicNumber));
     }
 

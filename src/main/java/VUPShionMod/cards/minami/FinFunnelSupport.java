@@ -24,7 +24,7 @@ public class FinFunnelSupport extends AbstractMinamiCard {
 
     public FinFunnelSupport() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.magicNumber = this.baseMagicNumber = 2;
     }
 

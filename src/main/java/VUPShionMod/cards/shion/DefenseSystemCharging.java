@@ -1,7 +1,9 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.TriggerFinFunnelAction;
 import VUPShionMod.cards.AbstractShionCard;
+import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -24,7 +26,8 @@ public class DefenseSystemCharging extends AbstractShionCard {
 
     public DefenseSystemCharging() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = this.block = 3;
+        this.baseBlock = this.block = 2;
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
     }
 
     @Override
@@ -38,11 +41,21 @@ public class DefenseSystemCharging extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
+        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
         List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         if (cardList.size() >= 2) {
             AbstractCard card = cardList.get(cardList.size() - 2);
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
-                addToBot(new GainBlockAction(p, this.block));
+//                addToBot(new GainBlockAction(p, this.block));
+
+                this.returnToHand = true;
+                addToBot(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        DefenseSystemCharging.this.exhaust = true;
+                        isDone = true;
+                    }
+                });
             }
         }
     }

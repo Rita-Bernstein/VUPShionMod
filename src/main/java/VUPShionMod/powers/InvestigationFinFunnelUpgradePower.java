@@ -43,7 +43,7 @@ public class InvestigationFinFunnelUpgradePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
+        if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
             this.amount--;
             updateDescription();
             if (this.amount <= 0 && !used) {

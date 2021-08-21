@@ -22,6 +22,7 @@ public class FinFunnelActive extends AbstractMinamiCard {
     public FinFunnelActive() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

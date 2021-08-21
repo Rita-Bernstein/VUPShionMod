@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class ReleaseFormMinami extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormMinami");
     public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami09.png");
-    private static final int COST = 3;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;

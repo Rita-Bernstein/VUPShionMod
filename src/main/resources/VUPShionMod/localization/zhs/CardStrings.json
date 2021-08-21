@@ -9,7 +9,7 @@
   },
   "VUPShionMod:DefenseSystemCharging": {
     "NAME": "防御系统充能",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌打出的上一张牌是使用 vup_shion_mod:浮游炮 的牌，则再获得一次 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果 。 NL 如果这张牌打出的上一张牌是使用 vup_shion_mod:浮游炮 的牌，则返回手牌 。"
   },
   "VUPShionMod:DeploymentOfDefenseSystem": {
     "NAME": "Anastasia防御系统全展开",
@@ -36,7 +36,7 @@
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "快速防御",
-    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点 格挡 。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果 。 NL 消耗 。"
   },
   "VUPShionMod:QuickScreen": {
     "NAME": "快速筛选",
@@ -61,8 +61,8 @@
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "进攻准备",
-    "DESCRIPTION": "保留 当前手牌。",
-    "UPGRADE_DESCRIPTION": "保留 当前手牌。 NL 下回合获得 [E] 。"
+    "DESCRIPTION": "保留 当前手牌。 NL 下回合获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "保留 当前手牌。 NL 下回合获得 [E] [E] 。"
   },
   "VUPShionMod:Strafe": {
     "NAME": "扫射",
@@ -178,7 +178,7 @@
   },
   "VUPShionMod:TimeSlack": {
     "NAME": "缓时",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张 *快速防御 加入弃牌堆。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果 。 NL 将 !M! 张 *快速防御 加入弃牌堆。"
   },
   "VUPShionMod:TimeStop": {
     "NAME": "时间停止",
@@ -207,8 +207,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "姿态解放-克洛伊斯",
-    "DESCRIPTION": "每回合开始时，将 !M! 张 *快速筛选 加入你的弃牌堆。",
-    "UPGRADE_DESCRIPTION": "每回合开始时，将 !M! 张 *快速筛选+ 加入你的弃牌堆。"
+    "DESCRIPTION": "每回合结束时，将 !M! 张 *快速筛选 加入抽牌堆顶部。",
+    "UPGRADE_DESCRIPTION": "每回合结束时，将 !M! 张 *快速筛选+ 加入抽牌堆顶部。"
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "时空扭曲",
@@ -221,8 +221,8 @@
   },
   "VUPShionMod:TimeOverload": {
     "NAME": "时之过载",
-    "DESCRIPTION": "获得 [E] [E] 。 NL 下回合失去 [E] [E] 。",
-    "UPGRADE_DESCRIPTION": "获得 [E] [E] 。 NL 下回合失去 [E] 。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] 。 NL 下回合失去 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] 。 NL 下回合失去 [E] 。"
   },
   "VUPShionMod:Limit": {
     "NAME": "十二刻时",
@@ -243,7 +243,7 @@
   },
   "VUPShionMod:AttackWithDefense": {
     "NAME": "攻防一体",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "将 !M! 张 *快速攻击 放入抽牌堆。 NL 获得 !B! 点 格挡 。"
   },
   "VUPShionMod:LockIndication": {
     "NAME": "锁定指示",
@@ -268,7 +268,7 @@
   },
   "VUPShionMod:SuperCharge": {
     "NAME": "超能装填",
-    "DESCRIPTION": "消耗1层 vup_shion_mod:超维链接 。 NL 获得 !M! 点临时 力量 NL 和 !VUPShionSecondM! 点临时 敏捷 。"
+    "DESCRIPTION": "消耗 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。 NL 获得 !M! 点 力量 和 敏捷 。"
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "姿态解放-南小棉",
@@ -281,16 +281,16 @@
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "强化支援",
-    "DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果X次。",
-    "UPGRADE_DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果X+1次。"
+    "DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果2X次。",
+    "UPGRADE_DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果2(X+1)次。"
   },
   "VUPShionMod:BattlefieldHeritage": {
     "NAME": "战场拾遗",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 将弃牌堆中 !VUPShionSecondM! 张攻击牌加入手牌。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 将弃牌堆中 !VUPShionSecondM! 张攻击牌加入手牌。 NL 它们本回合的耗能降低1点。"
   },
   "VUPShionMod:GravityLoading": {
     "NAME": "重力装填",
-    "DESCRIPTION": "对所有敌人触发 *重力 vup_shion_mod:浮游炮 的被动效果一次。 NL 给予所有敌人 !M! 层 虚弱 。"
+    "DESCRIPTION": "每有一名敌人触发 *重力 vup_shion_mod:浮游炮 的被动效果一次。 NL 给予所有敌人 !M! 层 虚弱 。"
   },
   "VUPShionMod:FirePower": {
     "NAME": "火力倾泻",

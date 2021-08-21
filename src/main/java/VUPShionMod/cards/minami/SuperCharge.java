@@ -21,15 +21,13 @@ public class SuperCharge extends AbstractMinamiCard {
     public SuperCharge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, 1));
+        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.secondaryM), this.secondaryM));
-        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.secondaryM), this.secondaryM));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {
@@ -40,7 +38,7 @@ public class SuperCharge extends AbstractMinamiCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         AbstractPower power = p.getPower(HyperdimensionalLinksPower.POWER_ID);
         if (power == null) return false;
-        if (power.amount < 1) return false;
+        if (power.amount < this.secondaryM) return false;
         else
             return super.canUse(p, m);
 
@@ -49,8 +47,7 @@ public class SuperCharge extends AbstractMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
-            upgradeSecondM(1);
+            upgradeSecondM(-1);
         }
     }
 }

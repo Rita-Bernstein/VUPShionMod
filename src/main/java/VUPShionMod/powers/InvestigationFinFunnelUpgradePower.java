@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.List;
 import java.util.UUID;
 
-public class InvestigationFinFunnelUpgradePower extends AbstractPower {
+public class InvestigationFinFunnelUpgradePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("InvestigationFinFunnelUpgradePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

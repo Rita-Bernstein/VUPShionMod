@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.OmegaFlashEffect;
 
-public class HolyCoffinSinkingSpiritPower extends AbstractPower {
+public class HolyCoffinSinkingSpiritPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("HolyCoffinSinkingSpiritPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

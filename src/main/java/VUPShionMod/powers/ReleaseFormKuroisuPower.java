@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import VUPShionMod.VUPShionMod;
 
-public class ReleaseFormKuroisuPower extends AbstractPower {
+public class ReleaseFormKuroisuPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("ReleaseFormKuroisuPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -22,7 +22,7 @@ public class ReleaseFormKuroisuPower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.loadRegion("time");
+        this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
     }
 

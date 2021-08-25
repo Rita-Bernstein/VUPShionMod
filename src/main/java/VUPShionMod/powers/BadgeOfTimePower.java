@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
 
-public class BadgeOfTimePower extends AbstractPower {
+public class BadgeOfTimePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("BadgeOfTimePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

@@ -5,12 +5,18 @@ import VUPShionMod.actions.AttackFromDiscardToHandAction;
 import VUPShionMod.actions.RandomDiscardPileToHandAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.BranchingUpgradesCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class BattlefieldHeritage extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("BattlefieldHeritage");
@@ -28,7 +34,13 @@ public class BattlefieldHeritage extends AbstractMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
-        addToBot(new AttackFromDiscardToHandAction(this.secondaryM));
+        Predicate<AbstractCard> predicate = (pr) -> pr.type == CardType.ATTACK;
+        Consumer<List<AbstractCard>> callback = cards -> {
+            for(AbstractCard c : cards)
+                c.setCostForTurn(c.costForTurn -1);
+        };
+
+        addToBot(new MoveCardsAction(p.hand, p.discardPile, predicate, 2, callback));
     }
 
     public AbstractCard makeCopy() {

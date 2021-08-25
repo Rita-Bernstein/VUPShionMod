@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class DelayAvatarPower extends AbstractPower implements CloneablePowerInterface {
+public class DelayAvatarPower extends AbstractShionPower implements CloneablePowerInterface {
     public static final String POWER_ID = VUPShionMod.makeID("DelayAvatarPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -29,7 +29,7 @@ public class DelayAvatarPower extends AbstractPower implements CloneablePowerInt
         this.owner = owner;
         this.amount = amount;
         this.damage = amount;
-        this.loadRegion("time");
+        this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
     }
 

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class BleedingPower extends AbstractPower implements HealthBarRenderPower {
+public class BleedingPower extends AbstractShionPower implements HealthBarRenderPower {
     public static final String POWER_ID = VUPShionMod.makeID("BleedingPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -30,7 +30,7 @@ public class BleedingPower extends AbstractPower implements HealthBarRenderPower
         this.amount = amount;
         this.type = PowerType.DEBUFF;
         updateDescription();
-        this.loadRegion("poison");
+        this.setImage("Bleeding84.png", "Bleeding32.png");
     }
 
 

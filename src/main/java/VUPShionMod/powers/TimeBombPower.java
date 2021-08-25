@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import VUPShionMod.VUPShionMod;
 
-public class TimeBombPower extends AbstractPower {
+public class TimeBombPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("TimeBombPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

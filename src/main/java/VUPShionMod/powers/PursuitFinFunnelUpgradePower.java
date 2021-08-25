@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.List;
 import java.util.UUID;
 
-public class PursuitFinFunnelUpgradePower extends AbstractPower {
+public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("PursuitFinFunnelUpgradePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -43,7 +43,7 @@ public class PursuitFinFunnelUpgradePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
+        if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)){
             this.amount--;
             updateDescription();
             if (this.amount <= 0 && !used) {

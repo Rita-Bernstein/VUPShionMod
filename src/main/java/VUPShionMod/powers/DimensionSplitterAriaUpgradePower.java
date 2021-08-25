@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.UUID;
 
-public class DimensionSplitterAriaUpgradePower extends AbstractPower {
+public class DimensionSplitterAriaUpgradePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("DimensionSplitterAriaUpgradePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

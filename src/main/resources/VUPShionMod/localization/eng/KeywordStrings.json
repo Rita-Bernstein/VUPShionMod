@@ -4,7 +4,7 @@
       "loading\u00a0complete"
     ],
 	"PROPER_NAME": "Loading Complete",
-    "DESCRIPTION": "Will be played without any cost when drawn. Draw a card."
+    "DESCRIPTION": "Will be played without any cost when drawn. Draw a card upon being played."
   },
   {
     "NAMES": [
@@ -29,7 +29,7 @@
     "NAMES": [
       "pursued"
     ],
-    "DESCRIPTION": " #yPursuing #yFunnel deals damage to #ypursued enemies at the start of the their turn."
+    "DESCRIPTION": " #yPursuing #yFunnel deals damage to #yPursued enemies at the start of the their turn."
   },
   {
     "NAMES": [
@@ -42,7 +42,7 @@
       "hyperdimensional\u00a0link"
     ],
 	"PROPER_NAME": "Hyperdimensional Link",
-    "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLink, a random card will be upgraded."
+    "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLink, a random card is upgraded."
   },
   {
     "NAMES": [

@@ -161,15 +161,15 @@
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "Scouting Upgrade",
-    "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Scouting Funnel is upgraded by 1."
+    "DESCRIPTION": " vup_shion_mod:Mission ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Scouting Funnel is upgraded by 1."
   },
   "VUPShionMod:GravityUpgrade": {
     "NAME": "Gravity Upgrade",
-    "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Gravity Funnel is upgraded by 1."
+    "DESCRIPTION": " vup_shion_mod:Mission ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Gravity Funnel is upgraded by 1."
   },
   "VUPShionMod:PursuitUpgrade": {
     "NAME": "Pursuing Upgrade",
-    "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Pursuing Funnel is upgraded by 1."
+    "DESCRIPTION": " vup_shion_mod:Mission ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Pursuing Funnel is upgraded by 1."
   },
   "VUPShionMod:TimeBacktracking": {
     "NAME": "Reverse Time",

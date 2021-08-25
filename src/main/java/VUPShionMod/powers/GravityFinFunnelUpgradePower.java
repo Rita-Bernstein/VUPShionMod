@@ -54,6 +54,7 @@ public class GravityFinFunnelUpgradePower extends AbstractShionPower {
                     if (funnel instanceof GravityFinFunnel) {
                         this.flash();
                         funnel.upgradeLevel(1);
+                        this.description = DESCRIPTIONS[2];
                         break;
                     }
                 }

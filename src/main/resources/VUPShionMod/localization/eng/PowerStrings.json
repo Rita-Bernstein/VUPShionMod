@@ -16,21 +16,24 @@
     "NAME": "Scouting Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
-      " #yFunnel cards, upgrade #yScouting #yFunnel by #b1 ."
+      " #yFunnel cards, upgrade #yScouting #yFunnel by #b1 .",
+      "Mission Complete!"
     ]
   },
   "VUPShionMod:GravityFinFunnelUpgradePower": {
     "NAME": "Gravity Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
-      " #yFunnel cards, upgrade #yGravity #yFunnel by #b1 ."
+      " #yFunnel cards, upgrade #yGravity #yFunnel by #b1 .",
+      "Mission Complete!"
     ]
   },
   "VUPShionMod:PursuitFinFunnelUpgradePower": {
     "NAME": "Pursuing Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
-      " #yFunnel cards, upgrade #yPursuing #yFunnel by #b1 ."
+      " #yFunnel cards, upgrade #yPursuing #yFunnel by #b1 .",
+      "Mission Complete!"
     ]
   },
   "VUPShionMod:DeploymentOfDefenseSystemPower": {

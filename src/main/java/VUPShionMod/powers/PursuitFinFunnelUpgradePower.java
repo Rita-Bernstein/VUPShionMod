@@ -54,6 +54,7 @@ public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
                     if (funnel instanceof PursuitFinFunnel) {
                         this.flash();
                         funnel.upgradeLevel(1);
+                        this.description = DESCRIPTIONS[2];
                         break;
                     }
 

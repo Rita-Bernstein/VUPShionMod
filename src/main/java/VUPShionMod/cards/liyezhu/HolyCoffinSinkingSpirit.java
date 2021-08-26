@@ -27,7 +27,7 @@ public class HolyCoffinSinkingSpirit extends AbstractLiyezhuCard {
 
     public HolyCoffinSinkingSpirit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override

@@ -103,7 +103,7 @@
   "VUPShionMod:ReleaseFormLiyezhuPower": {
     "NAME": "Liberated Form: Liyezhu",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink ."
+      "At the start of your turn,gain #b%d #yHyperdimensional. NL At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink ."
     ]
   },
   "VUPShionMod:LockOnPower": {
@@ -163,7 +163,7 @@
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
     "NAME": "Holy Coffin",
     "DESCRIPTIONS": [
-      "Whenever you gain #yHyperdimensional #yLink , deal #b%d damage to a random enemy."
+      "Whenever you gain or lose #yHyperdimensional #yLink , deal #b%d damage to a random enemy."
     ]
   },
   "VUPShionMod:HolyCoffinReleasePower": {

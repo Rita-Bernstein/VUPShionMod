@@ -3,6 +3,7 @@ package VUPShionMod.powers;
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -30,7 +31,12 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);
+        this.description = String.format(DESCRIPTIONS[0], amount * 2, amount);
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new HyperdimensionalLinksPower(this.owner, this.amount * 2)));
     }
 
     @Override
@@ -47,7 +53,7 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
                         addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY)));
                     }
                 }
-                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg*this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg * this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
             }
         }
     }

@@ -103,7 +103,7 @@
   "VUPShionMod:ReleaseFormLiyezhuPower": {
     "NAME": "姿态解放-黎夜竹",
     "DESCRIPTIONS": [
-      "你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
+      "你的回合开始时获得 #b%d 层 #y超维链接 。 NL 你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
     ]
   },
   "VUPShionMod:LockOnPower": {
@@ -163,7 +163,7 @@
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
     "NAME": "圣棺沉灵",
     "DESCRIPTIONS": [
-      "每当你获得 #y超维链接 时，对一名随机敌人造成 #b%d 点伤害。"
+      "每当你获得或失去 #y超维链接 时，对一名随机敌人造成 #b%d 点伤害。"
     ]
   },
   "VUPShionMod:HolyCoffinReleasePower": {

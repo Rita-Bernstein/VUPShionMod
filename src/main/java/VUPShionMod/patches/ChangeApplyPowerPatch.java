@@ -1,5 +1,6 @@
 package VUPShionMod.patches;
 
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.EnhancedWeaponPower;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
@@ -8,9 +9,13 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import java.util.ArrayList;
 
 public class ChangeApplyPowerPatch {
 
@@ -40,6 +45,23 @@ public class ChangeApplyPowerPatch {
             return SpireReturn.Continue();
         }
     }
+//
+//    @SpirePatch(
+//            clz = ReducePowerAction.class,
+//            method = "update"
+//
+//    )
+//    public static class OnModifyPowerPatch {
+//        @SpireInsertPatch(rloc = 16, localvars = {"reduceMe"})
+//        public static SpireReturn<Void> Insert(ReducePowerAction _instance, @ByRef(type = "powers.AbstractPower") Object[] reduceMe) {
+//            if (AbstractDungeon.player != null) {
+//                for (AbstractPower p : AbstractDungeon.player.powers)
+//                    if (p instanceof AbstractShionPower)
+//                        ((AbstractShionPower) p).onReducePower((AbstractPower)reduceMe[0], _instance.target, _instance.source);
+//            }
+//            return SpireReturn.Continue();
+//        }
+//    }
 
 }
 

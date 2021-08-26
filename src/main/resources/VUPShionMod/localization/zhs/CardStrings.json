@@ -140,7 +140,7 @@
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia计划",
-    "DESCRIPTION": "获得 vup_shion_mod:超维链接 层数的 格挡 。",
+    "DESCRIPTION": "获得 vup_shion_mod:超维链接 层数 !M! 倍的 格挡 。",
     "UPGRADE_DESCRIPTION": "获得 vup_shion_mod:超维链接 层数+3的 格挡 。",
     "EXTENDED_DESCRIPTION": [
       " NL （获得 !B! 点 格挡 。）"
@@ -341,7 +341,7 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "姿态解放-黎夜竹",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 vup_shion_mod:超维链接 层数的伤害。"
+    "DESCRIPTION": "立即且你的每回合开始时获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 vup_shion_mod:超维链接 层数的伤害。"
   },
   "VUPShionMod:Awaken": {
     "NAME": "唤醒",
@@ -349,11 +349,11 @@
   },
   "VUPShionMod:HolyCoffinSinkingSpirit": {
     "NAME": "圣棺沉灵",
-    "DESCRIPTION": "每当你获得 vup_shion_mod:超维链接 时，对一名随机敌人造成 !M! 点伤害。"
+    "DESCRIPTION": "每当你获得或失去 vup_shion_mod:超维链接 时，获得 !M! 点 格挡 。"
   },
   "VUPShionMod:HolySlashDown": {
     "NAME": "圣耀十字斩",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。能被多次 升级 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。 NL 能被多次 升级 。"
   },
   "VUPShionMod:PainfulConfession": {
     "NAME": "沉痛忏悔",

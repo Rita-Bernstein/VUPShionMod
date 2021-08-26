@@ -2,6 +2,7 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -19,5 +20,9 @@ public class AbstractShionPower extends AbstractPower {
     public void setTinyImage(String imgName) {
         String path = VUPShionMod.assetPath("img/powers/");
         this.img = ImageMaster.loadImage(path + imgName);
+    }
+
+    public void onReducePower(AbstractPower power, AbstractCreature target, AbstractCreature source){
+
     }
 }

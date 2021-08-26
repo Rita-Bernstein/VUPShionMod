@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,12 +35,22 @@ public class HolyCoffinSinkingSpiritPower extends AbstractShionPower {
         this.description = String.format(DESCRIPTIONS[0], amount);
     }
 
+
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         super.onApplyPower(power, target, source);
         if(power instanceof HyperdimensionalLinksPower && target.isPlayer && power.amount > 0){
             flash();
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+            addToBot(new GainBlockAction(this.owner,this.amount));
         }
     }
+
+//    @Override
+//    public void onReducePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+//        super.onReducePower(power, target, source);
+//        if(power instanceof HyperdimensionalLinksPower && target.isPlayer && power.amount > 0){
+//            flash();
+//            addToBot(new GainBlockAction(this.owner,this.amount));
+//        }
+//    }
 }

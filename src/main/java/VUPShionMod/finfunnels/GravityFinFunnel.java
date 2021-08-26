@@ -35,7 +35,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     public GravityFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 2;
+        this.effect = 1;
     }
 
     @Override

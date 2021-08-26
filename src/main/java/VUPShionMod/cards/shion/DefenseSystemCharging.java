@@ -19,7 +19,7 @@ public class DefenseSystemCharging extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("DefenseSystemCharging");
     public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy03.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 0;
@@ -39,6 +39,11 @@ public class DefenseSystemCharging extends AbstractShionCard {
     }
 
     @Override
+    public void postReturnToHand() {
+        this.returnToHand = false;
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
@@ -46,7 +51,6 @@ public class DefenseSystemCharging extends AbstractShionCard {
         if (cardList.size() >= 2) {
             AbstractCard card = cardList.get(cardList.size() - 2);
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
-
                 this.returnToHand = true;
             }
         }

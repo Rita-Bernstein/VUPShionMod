@@ -43,6 +43,7 @@ public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
+        if(this.amount > 0)
         if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)){
             this.amount--;
             updateDescription();

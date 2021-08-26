@@ -23,6 +23,7 @@ public class AnticoagulationPower extends AbstractShionPower {
         this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
         this.isTurnBased = true;
+        this.type = PowerType.DEBUFF;
     }
 
     @Override

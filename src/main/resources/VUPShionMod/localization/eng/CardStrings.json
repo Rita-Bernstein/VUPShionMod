@@ -38,7 +38,7 @@
     "NAME": "Quick Defense",
     "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Gain !B! Block . NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel . NL Exhaust."
   },
-  "VUPShionMod:QuickSkim": {
+  "VUPShionMod:QuickScreen": {
     "NAME": "Quick Skim",
     "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Scry !M!. NL Draw !VUPShionSecondM! cards. NL Exhaust."
   },
@@ -60,7 +60,7 @@
     "UPGRADE_DESCRIPTION": "Shuffle 2 copies of the chosen card into your draw pile and discard pile. NL Grant vup_shion_mod:Loading\u00a0Complete. NL Exhaust."
   },
   "VUPShionMod:AttackPreparation": {
-    "NAME": "Get Ready",
+    "NAME": "Ready Posture",
     "DESCRIPTION": " Retain your hand. NL Gain [E] next turn.",
     "UPGRADE_DESCRIPTION": " Retain your hand. NL Gain [E] [E] next turn."
   },
@@ -136,12 +136,11 @@
   },
   "VUPShionMod:TeamWork": {
     "NAME": "Teamwork",
-    "DESCRIPTION": "Choose 3 cards from *Cloyce, *Anastasia, *Minami and *Liyezhu cards to add into your hand. They cost 0 this turn and will be Exhausted upon being played. NL Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Choose 3 cards from *Cloyce, *Anastasia, *Minami and *Liyezhu cards to add into your hand. They cost 0 this turn and Exhaust upon being played. NL Exhaustive !stslib:ex!."
   },
   "VUPShionMod:AnastasiaPlan": {
-    "NAME": "Anastasia Plan",
-    "DESCRIPTION": "Gain Block equals to !M! times of vup_shion_mod:Hyperdimensional\u00a0Link.",
-    "UPGRADE_DESCRIPTION": "Gain Block equal to vup_shion_mod:Hyperdimensional\u00a0Link +3.",
+    "NAME": "Anastasia Program",
+    "DESCRIPTION": "Gain Block !M! times as much as vup_shion_mod:Hyperdimensional\u00a0Link.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain !B! Block.)"
     ]
@@ -161,15 +160,15 @@
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "Scouting Upgrade",
-    "DESCRIPTION": " vup_shion_mod:Mission ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Scouting Funnel is upgraded by 1."
+    "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Scouting Funnel is upgraded by 1."
   },
   "VUPShionMod:GravityUpgrade": {
     "NAME": "Gravity Upgrade",
-    "DESCRIPTION": " vup_shion_mod:Mission ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Gravity Funnel is upgraded by 1."
+    "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Gravity Funnel is upgraded by 1."
   },
   "VUPShionMod:PursuitUpgrade": {
     "NAME": "Pursuing Upgrade",
-    "DESCRIPTION": " vup_shion_mod:Mission ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Pursuing Funnel is upgraded by 1."
+    "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Pursuing Funnel is upgraded by 1."
   },
   "VUPShionMod:TimeBacktracking": {
     "NAME": "Reverse Time",
@@ -183,7 +182,7 @@
   "VUPShionMod:TimeStop": {
     "NAME": "Pause",
     "DESCRIPTION": "Prevent an enemy from acting this turn. NL Shuffle all vup_shion_mod:Loading\u00a0Complete cards from your discard pile into your draw pile. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Prevent an enemy from acting this turn. NL Put all vup_shion_mod:Loading\u00a0Complete cards from your discard pile at the top of your draw pile. Exhaust."
+    "UPGRADE_DESCRIPTION": "Prevent an enemy from acting this turn. NL Put all vup_shion_mod:Loading\u00a0Complete cards from your discard pile on the top of your draw pile. Exhaust."
   },
   "VUPShionMod:TimeBomb": {
     "NAME": "Delayed Explosion",
@@ -247,7 +246,7 @@
   },
   "VUPShionMod:LockIndication": {
     "NAME": "Snipe",
-    "DESCRIPTION": "Trigger *Dimension *Splitter: *Aria to an enemy. Damage dealt this way is increased by !M! and ignores Block."
+    "DESCRIPTION": "Trigger Dimension Splitter: Aria to an enemy. Damage dealt this way is increased by !M! and ignores Block."
   },
   "VUPShionMod:TacticalLayout": {
     "NAME": "Tactical Layout",
@@ -258,9 +257,9 @@
     "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy. NL Draw !M! cards."
   },
   "VUPShionMod:Anticoagulation": {
-    "NAME": "Anticoagulate",
-    "DESCRIPTION": "Retain vup_shion_mod:Bleeding on an enemy this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain vup_shion_mod:Bleeding on an enemy this turn. "
+    "NAME": "Anticoagulant",
+    "DESCRIPTION": "Prevent vup_shion_mod:Bleeding on an enemy from halving at the end of this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Prevent vup_shion_mod:Bleeding on an enemy from halving at the end of this turn. "
   },
   "VUPShionMod:Lure": {
     "NAME": "Ambush",
@@ -322,7 +321,7 @@
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "Sacred Lunge",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Deal !D! damage."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain additional 1 for each time it is played during this combat. NL Deal !D! damage."
   },
   "VUPShionMod:StrengthPray": {
     "NAME": "Zeal",
@@ -341,7 +340,7 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "Liyezhu Form",
-    "DESCRIPTION": "Immediately gain !M! vup_shion_mod:Hyperdimensional\u00a0Link and gain it at the start of your turn. NL At the end of your turn, deal damage equal to vup_shion_mod:Hyperdimensional\u00a0Link to ALL enemies."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain again at the start of each of your turn. NL At the end of your turn, deal damage equal to vup_shion_mod:Hyperdimensional\u00a0Link to ALL enemies."
   },
   "VUPShionMod:Awaken": {
     "NAME": "Resuscitate",
@@ -349,11 +348,11 @@
   },
   "VUPShionMod:HolyCoffinSinkingSpirit": {
     "NAME": "Holy Coffin",
-    "DESCRIPTION": "Whenever you gain or lose vup_shion_mod:Hyperdimensional\u00a0Link , deal !M! damage to a random enemy."
+    "DESCRIPTION": "Whenever you gain or lose vup_shion_mod:Hyperdimensional\u00a0Link , gain !M! Block ."
   },
   "VUPShionMod:HolySlashDown": {
     "NAME": "Crucifixion",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Can be Upgraded any number of times."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Can be Upgraded any number of times."
   },
   "VUPShionMod:PainfulConfession": {
     "NAME": "Lament", 

@@ -73,7 +73,7 @@
   },
   "VUPShionMod:AnastasiaCore": {
     "NAME": "Anastasia Reactor",
-    "DESCRIPTION": "Whenever you play a vup_shion_mod:Funnel card this turn, gain [E]. NL Exhaust.",
+    "DESCRIPTION": "Whenever you play a vup_shion_mod:Funnel card this turn, gain [E] and draw a card. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Anastasia Core"
     ]
@@ -91,8 +91,8 @@
   },
   "VUPShionMod:EnhancedWeapon": {
     "NAME": "Intensify",
-    "DESCRIPTION": "Whenever you gain vup_shion_mod:Hyperdimensional\u00a0Link this turn, gain additional !M!. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Whenever you gain vup_shion_mod:Hyperdimensional\u00a0Link this turn, gain additional !M!."
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading Complete ,draw a card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you trigger vup_shion_mod:Loading Complete ,draw a card."
   },
   "VUPShionMod:Boot": {
     "NAME": "Boot Up",
@@ -321,7 +321,7 @@
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "Sacred Lunge",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain additional 1 for each time it is played during this combat. NL Deal !D! damage."
+    "DESCRIPTION": "Retain. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain additional 1 for each time it is played during this combat. NL Deal !D! damage."
   },
   "VUPShionMod:StrengthPray": {
     "NAME": "Zeal",
@@ -352,7 +352,10 @@
   },
   "VUPShionMod:HolySlashDown": {
     "NAME": "Crucifixion",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Can be Upgraded any number of times."
+    "DESCRIPTION": "Deal 7+ vup_shion_mod:Hyperdimensional\u00a0Link damage !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Can be Upgraded any number of times.",
+    "EXTENDED_DESCRIPTION": [
+      "(Deal !D! damage)"
+    ]
   },
   "VUPShionMod:PainfulConfession": {
     "NAME": "Lament", 
@@ -360,7 +363,7 @@
   },
   "VUPShionMod:HolyCoffinRelease": {
     "NAME": "Suspend",
-    "DESCRIPTION": "Prevent vup_shion_mod:Hyperdimensional\u00a0Link from decreasing this turn. NL Exhaust."
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete ,gain !M vup_shion_mod:Hyperdimensional\u00a0Link."
   },
   "VUPShionMod:BlueRose": {
     "NAME": "Sapphire Rose",

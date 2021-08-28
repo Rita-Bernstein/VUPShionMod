@@ -23,6 +23,7 @@ public class AbstractShionPower extends AbstractPower {
     }
 
     public void onReducePower(AbstractPower power, AbstractCreature target, AbstractCreature source){
-
     }
+
+    public void onTriggerLoaded(){}
 }

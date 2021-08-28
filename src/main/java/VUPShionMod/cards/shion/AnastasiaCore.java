@@ -26,7 +26,6 @@ public class AnastasiaCore extends AbstractShionCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            ++this.timesUpgraded;
             this.upgraded = true;
             this.name = cardStrings.EXTENDED_DESCRIPTION[0];
             this.initializeTitle();

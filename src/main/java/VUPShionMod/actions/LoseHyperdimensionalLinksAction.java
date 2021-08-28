@@ -25,7 +25,7 @@ public class LoseHyperdimensionalLinksAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (!AbstractDungeon.player.hasPower(HolyCoffinReleasePower.POWER_ID))
+//        if (!AbstractDungeon.player.hasPower(HolyCoffinReleasePower.POWER_ID))
             if (removeAll)
                 addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, HyperdimensionalLinksPower.POWER_ID));
             else

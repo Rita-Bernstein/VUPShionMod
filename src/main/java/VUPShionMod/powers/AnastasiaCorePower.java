@@ -2,6 +2,7 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -31,6 +32,7 @@ public class AnastasiaCorePower extends AbstractShionPower {
         if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
             this.flash();
             addToBot(new GainEnergyAction(this.amount));
+            addToBot(new DrawCardAction(this.amount));
         }
     }
 

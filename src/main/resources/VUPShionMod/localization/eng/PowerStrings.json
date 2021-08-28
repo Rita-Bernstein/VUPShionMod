@@ -47,7 +47,7 @@
     "NAME": "Anastasia Core",
     "DESCRIPTIONS": [
       "This turn, gain #b",
-      " [E] whenever you play a #yFunnel card."
+      " [E] and draw a card whenever you play a #yFunnel card."
     ]
   },
   "VUPShionMod:AttackInitiationPower": {
@@ -97,7 +97,7 @@
   "VUPShionMod:EnhancedWeaponPower": {
     "NAME": "Intensified",
     "DESCRIPTIONS": [
-      "Whenever you gain #yHyperdimensional #yLink, gain additional #b%d ."
+      "Whenever you trigger #yLoading #yComplete ,draw #b%d card(s)."
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuPower": {
@@ -115,7 +115,7 @@
   "VUPShionMod:AttackOrderAlphaPower": {
     "NAME": "Order: Aggressive",
     "DESCRIPTIONS": [
-      "Damage dealt by #yFunnel each turn is increased by !M! times. NL Incompatible with other Orders."
+      "Damage dealt by #yFunnel each turn is increased by #b%d times. NL Incompatible with other Orders."
     ]
   },
   "VUPShionMod:AttackOrderBetaPower": {
@@ -169,7 +169,7 @@
   "VUPShionMod:HolyCoffinReleasePower": {
     "NAME": "Suspended",
     "DESCRIPTIONS": [
-      "For the next #b%d turns, prevent #yHyperdimensional #yLink from decreasing."
+      "Whenever you trigger #yLoading #yComplete ,gain #b%d #yHyperdimensional #yLink."
     ]
   } ,
   "VUPShionMod:LoseHyperdimensionalLinksPower": {

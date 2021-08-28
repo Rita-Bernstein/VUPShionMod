@@ -3,6 +3,7 @@ package VUPShionMod.powers;
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -35,9 +36,15 @@ public class HolyCoffinReleasePower extends AbstractShionPower {
     public void updateDescription() {
         this.description = String.format(DESCRIPTIONS[0], amount);
     }
+//
+//    @Override
+//    public void atStartOfTurn() {
+//        addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
+//    }
+
 
     @Override
-    public void atStartOfTurn() {
-        addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
+    public void onTriggerLoaded() {
+        addToBot(new ApplyPowerAction(this.owner,this.owner,new HyperdimensionalLinksPower(this.owner,this.amount)));
     }
 }

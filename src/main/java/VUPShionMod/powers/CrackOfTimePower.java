@@ -1,5 +1,6 @@
 package VUPShionMod.powers;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,5 +26,10 @@ public class CrackOfTimePower extends AbstractShionPower {
     @Override
     public void updateDescription() {
         this.description = String.format(DESCRIPTIONS[0],this.amount) ;
+    }
+
+    @Override
+    public void onTriggerLoaded() {
+        addToBot(new GainBlockAction(this.owner,this.amount));
     }
 }

@@ -18,7 +18,7 @@ public class AttackOrderAlphaPower extends AbstractShionPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = -1;
+        this.amount = 3;
         this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
     }

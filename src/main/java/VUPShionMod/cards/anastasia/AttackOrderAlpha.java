@@ -22,7 +22,7 @@ public class AttackOrderAlpha extends AbstractAnastasiaCard {
     public AttackOrderAlpha() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override

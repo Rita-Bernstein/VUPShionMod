@@ -104,7 +104,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
+                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 3, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
                     addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));

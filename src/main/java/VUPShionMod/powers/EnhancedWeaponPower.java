@@ -1,6 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -23,8 +24,8 @@ public class EnhancedWeaponPower extends AbstractShionPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    public void onTriggerLoaded() {
+        addToBot(new DrawCardAction(this.amount));
     }
 
     @Override

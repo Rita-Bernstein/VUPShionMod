@@ -35,11 +35,11 @@ public class ChangeApplyPowerPatch {
                                                boolean isFast,
                                                AbstractGameAction.AttackEffect effect, @ByRef int[] amount, @ByRef float[] duration) {
 //            强化支援
-            if (AbstractDungeon.player.hasPower(EnhancedWeaponPower.POWER_ID) && source != null && source.isPlayer && powerToApply.ID.equals(HyperdimensionalLinksPower.POWER_ID)) {
-                AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).flash();
-                powerToApply.amount += AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).amount;
-                amount[0] += AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).amount;
-            }
+//            if (AbstractDungeon.player.hasPower(EnhancedWeaponPower.POWER_ID) && source != null && source.isPlayer && powerToApply.ID.equals(HyperdimensionalLinksPower.POWER_ID)) {
+//                AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).flash();
+//                powerToApply.amount += AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).amount;
+//                amount[0] += AbstractDungeon.player.getPower(EnhancedWeaponPower.POWER_ID).amount;
+//            }
 
 
             return SpireReturn.Continue();

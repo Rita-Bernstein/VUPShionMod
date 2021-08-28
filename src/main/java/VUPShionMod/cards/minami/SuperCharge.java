@@ -1,6 +1,7 @@
 package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -25,7 +26,8 @@ public class SuperCharge extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.secondaryM));
+        addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
+//        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
     }

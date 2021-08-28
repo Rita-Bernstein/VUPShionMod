@@ -24,6 +24,12 @@ public class HolyCharge extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 15;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.selfRetain = true;
+    }
+
+    @Override
+    public void onRetained() {
+        addToBot(new ReduceCostAction(this));
     }
 
     @Override

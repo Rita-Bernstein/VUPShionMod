@@ -73,14 +73,14 @@
   },
   "VUPShionMod:AnastasiaCore": {
     "NAME": "Anastasia Reactor",
-    "DESCRIPTION": "Whenever you play a vup_shion_mod:Funnel card this turn, gain [E] and draw a card. NL Exhaust.",
+    "DESCRIPTION": "Whenever you play a vup_shion_mod:Funnel card this turn, gain [E] and draw 1 card. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Anastasia Core"
     ]
   },
   "VUPShionMod:DimensionSplitting": {
     "NAME": "Dimension Split",
-    "DESCRIPTION": "Deal !M! damage for each vup_shion_mod:Funnel cards played this turn.",
+    "DESCRIPTION": "Deal damage !M! times as much as the number of vup_shion_mod:Funnel cards played this turn.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
     ]
@@ -90,7 +90,7 @@
     "DESCRIPTION": " Exhaust your hand. NL For each card Exhausted , deal !D! damage."
   },
   "VUPShionMod:EnhancedWeapon": {
-    "NAME": "Intensify",
+    "NAME": "Accelerate",
     "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading Complete ,draw a card.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you trigger vup_shion_mod:Loading Complete ,draw a card."
   },
@@ -206,8 +206,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "Cloyce Form",
-    "DESCRIPTION": "At the end of your turn, put !M! *Quick *Skim at the top of your draw pile.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, put !M! *Quick *Skim+ at the top of your draw pile."
+    "DESCRIPTION": "At the end of your turn, put !M! *Quick *Skim on the top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, put !M! *Quick *Skim+ on the top of your draw pile."
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "Time Warp",
@@ -241,7 +241,7 @@
     "UPGRADE_DESCRIPTION": "Trigger the passive ability of all the three vup_shion_mod:Funnel to an enemy."
   },
   "VUPShionMod:AttackWithDefense": {
-    "NAME": "Offend to Defend",
+    "NAME": "Feint",
     "DESCRIPTION": "Shuffle !M! *Quick *Attack into your draw pile. NL Gain !B! Block ."
   },
   "VUPShionMod:LockIndication": {
@@ -292,7 +292,7 @@
     "DESCRIPTION": "Trigger the passive ability of *Gravity vup_shion_mod:Funnel for each enemy. NL Apply !M! Weak to ALL enemies."
   },
   "VUPShionMod:FirePower": {
-    "NAME": "All Out",
+    "NAME": "All Out！",
     "DESCRIPTION": "Shoot a massive blast with vup_shion_mod:Funnel. Deal damage !M! times as much as vup_shion_mod:Total\u00a0Upgrade to ALL enemies. NL Set vup_shion_mod:Total\u00a0Upgrade to 0 this turn.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
@@ -321,7 +321,7 @@
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "Sacred Lunge",
-    "DESCRIPTION": "Retain. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain additional 1 for each time it is played during this combat. NL Deal !D! damage."
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain additional 1 for each time it is played during this combat. NL Whenever it is Retained, reduce the cost by 1."
   },
   "VUPShionMod:StrengthPray": {
     "NAME": "Zeal",
@@ -362,8 +362,8 @@
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Apply !M! Vulnerable."
   },
   "VUPShionMod:HolyCoffinRelease": {
-    "NAME": "Suspend",
-    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete ,gain !M vup_shion_mod:Hyperdimensional\u00a0Link."
+    "NAME": "Liberation",
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete, gain !M vup_shion_mod:Hyperdimensional\u00a0Link."
   },
   "VUPShionMod:BlueRose": {
     "NAME": "Sapphire Rose",

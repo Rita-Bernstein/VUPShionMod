@@ -322,7 +322,7 @@
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神圣冲锋",
-    "DESCRIPTION": "保留 。 NL 获得 !M! 层 vup_shion_mod:超维链接 。 NL 将这个效果提高1点。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": "保留 。 NL 获得 !M! 层 vup_shion_mod:超维链接 。 NL 将这个效果提高1点。被保留时，减少1点耗费。 NL 造成 !D! 点伤害。"
   },
   "VUPShionMod:StrengthPray": {
     "NAME": "力量祈祷",

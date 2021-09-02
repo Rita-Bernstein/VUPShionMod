@@ -19,6 +19,7 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private int damageScale = 1;
 
     public ReleaseFormLiyezhuPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -31,12 +32,18 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount * 2, amount);
+        this.description = String.format(DESCRIPTIONS[0], damageScale * amount, damageScale);
     }
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new HyperdimensionalLinksPower(this.owner, this.amount * 2)));
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new HyperdimensionalLinksPower(this.owner, damageScale * amount)));
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        this.damageScale++;
     }
 
     @Override
@@ -53,7 +60,7 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
                         addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY)));
                     }
                 }
-                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg * this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg * this.damageScale, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
             }
         }
     }

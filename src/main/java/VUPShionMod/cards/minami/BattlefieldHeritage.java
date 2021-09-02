@@ -40,7 +40,7 @@ public class BattlefieldHeritage extends AbstractMinamiCard {
                 c.setCostForTurn(c.costForTurn -1);
         };
 
-        addToBot(new MoveCardsAction(p.hand, p.discardPile, predicate, 2, callback));
+        addToBot(new MoveCardsAction(p.hand, p.discardPile, predicate, this.secondaryM, callback));
     }
 
     public AbstractCard makeCopy() {

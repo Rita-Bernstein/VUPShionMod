@@ -76,12 +76,15 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
             if (f.level > 0) {
                 availableFinFunnel.add(f);
                 if (!isMultiDamage) {
-                    if (random || this.target == null) {
+                    if (!random) {
+                        if(target == null)
+                            this.target = AbstractDungeon.getRandomMonster();
+                        monsters.add(target);
+                    } else {
                         AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
                         if (abstractMonster != null)
                             monsters.add(abstractMonster);
-                    } else
-                        monsters.add(target);
+                    }
                 }
             }
         }

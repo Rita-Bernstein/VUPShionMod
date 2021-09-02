@@ -49,12 +49,15 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
         for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelList.get(p)) {
             if (f.level > 0) {
                 availableFinFunnel.add(f);
-                if (random || this.target == null) {
+                if (!random) {
+                    if(target == null)
+                        this.target = AbstractDungeon.getRandomMonster();
+                    monsters.add(target);
+                } else {
                     AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
                     if (abstractMonster != null)
                         monsters.add(abstractMonster);
-                } else
-                    monsters.add(target);
+                }
             }
         }
 
@@ -64,15 +67,15 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
 
             for (int i = 0; i < availableFinFunnel.size(); i++) {
                 AbstractFinFunnel f = availableFinFunnel.get(i);
-                    AbstractMonster m = monsters.get(i);
-                    if (f instanceof GravityFinFunnel)
-                        addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                AbstractMonster m = monsters.get(i);
+                if (f instanceof GravityFinFunnel)
+                    addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
 
-                    if (f instanceof InvestigationFinFunnel)
-                        addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));
+                if (f instanceof InvestigationFinFunnel)
+                    addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));
 
-                    if (f instanceof PursuitFinFunnel)
-                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.getFinalEffect())));
+                if (f instanceof PursuitFinFunnel)
+                    addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.getFinalEffect())));
             }
         }
 

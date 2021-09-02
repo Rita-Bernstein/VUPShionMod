@@ -363,7 +363,7 @@
   },
   "VUPShionMod:HolyCoffinRelease": {
     "NAME": "Liberation",
-    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete, gain !M vup_shion_mod:Hyperdimensional\u00a0Link."
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete, gain !M! vup_shion_mod:Hyperdimensional\u00a0Link."
   },
   "VUPShionMod:BlueRose": {
     "NAME": "Sapphire Rose",

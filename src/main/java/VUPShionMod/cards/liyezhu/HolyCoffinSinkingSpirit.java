@@ -20,14 +20,14 @@ import com.megacrit.cardcrawl.vfx.combat.ReaperEffect;
 public class HolyCoffinSinkingSpirit extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("HolyCoffinSinkingSpirit");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz11.png");
-    private static final int COST = 2;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public HolyCoffinSinkingSpirit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override

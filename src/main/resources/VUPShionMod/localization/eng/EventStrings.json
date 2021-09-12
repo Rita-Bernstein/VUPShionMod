@@ -2,52 +2,52 @@
   "VUPShionMod:SpireHeart_Shion": {
     "NAME": "Spire Heart",
     "DESCRIPTIONS": [
-      "NL 你操纵着浮游炮发起了全力一击……"
+      "NL You imbue your Funnels with all the energy you have..."
     ],
     "OPTIONS": [
     ]
   },
   "VUPShionMod:CroissantEvent": {
-    "NAME": "龙角面包",
+    "NAME": "Croissant",
     "DESCRIPTIONS": [
-      "你发现地板上有一个形似龙角的物体，走近一看，原来是一块面包，你决定？",
-      "在你准备拿起它的时候，突然听到了一声像是“Fus Roh Dah！”的声音，紧接着你就被吹飞到了十里开外，失去了意识。",
-      "你获得了一块储备粮！看起来好像是能恢复体力的亚子！（上面写着克洛伊斯四个大字，看来你好像拿走了某人的食物……）",
-      "你比较喜欢米饭，对面包毫无兴趣，再见，I'm 外星人。"
+      "Something resembling a dragon's horn catches your attention. NL No...no dragon's horn, upon closer inspection it is a croissant on the floors.",
+      "Just when you pick it up, you hear a voice laughing “Fus Roh Dah！” full of playful implication. Before you could think, you are carried away by a sudden thrust of wind and lose consciousness...",
+      "You just obtained a croissant to replenish energy and serve as food reserve. （It has a name #yCloyce written on it. Seems you may have left someone hungry, much probably...）",
+      "You are more of a rice person who hates the crumbs you may left about while eating breads, so goodbye."
     ],
     "OPTIONS": [
-      "[拿起] #r25%：失去15点生命， #g75%：获得龙角面包。",
-      "[无视]",
-      "[离开]"
+      "[Pick It Up] #r25%: Lose 15 HP, #g75%: Obtain Croissant.",
+      "[Ignore]",
+      "[Leave]"
     ]
   },
   "VUPShionMod:LostEquipment": {
-    "NAME": "遗落装备",
+    "NAME": "Lost Equipment",
     "DESCRIPTIONS": [
-      "你找到了遗落在战场上的某件装备，是否要修复它？",
-      "离开文本"
+      "On your ascension, you find a lost equipment from the battlefield. It is all worn out and will not function until you do something about it.",
+      "This should work now."
     ],
     "OPTIONS": [
-      "[修复] #r失去100金币。 #g获得光学迷彩。",
-      "[锁定] 需要至少 100 金币",
-      "[修复] #r随机移除一张牌。 #g获得狙击镜。",
-      "[锁定] 牌组中需要有牌",
-      "[离开]"
+      "[Stitch] #rLose 100 gold. #gObtain Optical Camouflage.",
+      "[Locked] No less than 100 gold is required.",
+      "[Repair] #rRemove a random card. #gObtain Sniperscope.",
+      "[Locked] No less than 1 card is required.",
+      "[Leave]"
     ]
   },
   "VUPShionMod:BreakAppointment": {
-    "NAME": "咕咕咕！",
+    "NAME": "Gu~gu~gu!",
     "DESCRIPTIONS": [
-      "你发现了一只叼着一支数位笔的红头绳双呆毛小鸽子，它直勾勾的盯着你，要做点什么呢？",
-      "小鸽子看到金币后叼着数位笔在地上画了起来，留下一些神秘的图案后心满意足地带着金币离开了。",
-      "小鸽子看了看金币，又意味深长地看了看你，带着金币离开了。",
-      "嗯嗯，在路上了，马上到"
+      "You encounter a pigeon holding a pen in its beak. It's staring right straightly at you without showing any intention. What do you do?",
+      "The pigeon draws something with the pen in its beak and flees away with the gold, leaving you to the figures of absolute ambiguity on the ground.",
+      "The pigeon suddenly snatches the gold from your hand and vanishes into the sky before you could even react.",
+      "Hmmm...Coming soon, no rush!"
     ],
     "OPTIONS": [
-      "[投喂] #r失去50金币。 #g75%：获得一张克洛伊斯牌。",
-      "[锁定] 需要至少 50 金币",
-      "[咕了]",
-      "[离开]"
+      "[Feed] #rLose 50 gold. #g75%：Obtain a Cloyce card.",
+      "[Locked] No less than 50 gold is required.",
+      "[Gu!]",
+      "[Leave]"
     ]
   }
 }

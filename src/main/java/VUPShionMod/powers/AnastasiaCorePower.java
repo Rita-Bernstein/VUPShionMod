@@ -2,6 +2,7 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class AnastasiaCorePower extends AbstractPower {
+public class AnastasiaCorePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("AnastasiaCorePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -31,6 +32,7 @@ public class AnastasiaCorePower extends AbstractPower {
         if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
             this.flash();
             addToBot(new GainEnergyAction(this.amount));
+            addToBot(new DrawCardAction(this.amount));
         }
     }
 

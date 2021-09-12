@@ -1,7 +1,9 @@
 package VUPShionMod.cards.tempCards;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.TriggerFinFunnelAction;
 import VUPShionMod.cards.AbstractVUPShionCard;
+import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -24,7 +26,9 @@ public class QuickDefend extends AbstractVUPShionCard {
     public QuickDefend() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = this.block = 4;
+        this.secondaryM = this.baseSecondaryM = 2;
         this.tags.add(CardTagsEnum.LOADED);
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.exhaust = true;
         this.color = CardColor.COLORLESS;
     }
@@ -42,5 +46,6 @@ public class QuickDefend extends AbstractVUPShionCard {
         addToBot(new SFXAction("SHION_9"));
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
+        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
     }
 }

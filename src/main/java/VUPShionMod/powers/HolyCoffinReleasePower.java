@@ -3,6 +3,7 @@ package VUPShionMod.powers;
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.OmegaFlashEffect;
 
-public class HolyCoffinReleasePower extends AbstractPower {
+public class HolyCoffinReleasePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("HolyCoffinReleasePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -35,9 +36,15 @@ public class HolyCoffinReleasePower extends AbstractPower {
     public void updateDescription() {
         this.description = String.format(DESCRIPTIONS[0], amount);
     }
+//
+//    @Override
+//    public void atStartOfTurn() {
+//        addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
+//    }
+
 
     @Override
-    public void atStartOfTurn() {
-        addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
+    public void onTriggerLoaded() {
+        addToBot(new ApplyPowerAction(this.owner,this.owner,new HyperdimensionalLinksPower(this.owner,this.amount)));
     }
 }

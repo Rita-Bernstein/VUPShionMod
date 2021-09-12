@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormLiyezhu");
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png");
-    private static final int COST = 1;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -24,8 +24,8 @@ public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.baseMagicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p,1),1));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p,this.magicNumber),this.magicNumber));
     }
 
     @Override
@@ -33,6 +33,7 @@ public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            this.upgradeBaseCost(1);
         }
     }
 

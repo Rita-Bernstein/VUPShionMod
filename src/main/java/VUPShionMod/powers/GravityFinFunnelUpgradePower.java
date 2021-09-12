@@ -19,15 +19,16 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.List;
 import java.util.UUID;
 
-public class GravityFinFunnelUpgradePower extends AbstractPower {
+public class GravityFinFunnelUpgradePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("GravityFinFunnelUpgradePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private boolean used = false;
 
     public GravityFinFunnelUpgradePower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = POWER_ID + UUID.randomUUID();
+        this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/GravityFinFunnelUpgrade128.png")), 0, 0, 128, 128);
@@ -42,19 +43,23 @@ public class GravityFinFunnelUpgradePower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
+        if(this.amount > 0)
+        if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
             this.amount--;
             updateDescription();
-            if (this.amount <= 0) {
+            if (this.amount <= 0 && !used) {
+                this.used = true;
+                this.amount = -1;
                 List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
                 for (AbstractFinFunnel funnel : funnelList) {
                     if (funnel instanceof GravityFinFunnel) {
                         this.flash();
                         funnel.upgradeLevel(1);
+                        this.description = DESCRIPTIONS[2];
                         break;
                     }
                 }
-                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+//                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
         }
     }

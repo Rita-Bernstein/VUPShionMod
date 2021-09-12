@@ -97,26 +97,23 @@ public class Shion extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
+        VUPShionMod.loadFinFunnels();
+
         if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-            funnelList.add(new InvestigationFinFunnel(1));
-            funnelList.add(new PursuitFinFunnel(1));
-            funnelList.add(new GravityFinFunnel(1));
+            funnelList.add(new InvestigationFinFunnel(VUPShionMod.investigationFinFunnelLevel));
+            funnelList.add(new PursuitFinFunnel(VUPShionMod.pursuitFinFunnelLevel));
+            funnelList.add(new GravityFinFunnel(VUPShionMod.gravityFinFunnelLevel));
             AbstractPlayerPatches.AddFields.activatedFinFunnel.set(this, funnelList.get(1));
-            if (VUPShionMod.finFunnelSaver.data != null) {
-                int index = 0;
-                for (Integer i : VUPShionMod.finFunnelSaver.data) {
-                    if (funnelList.size() > index) {
-                        funnelList.get(index).setLevel(i);
-                    } else {
-                        break;
-                    }
-                    index++;
-                }
-            }
         }
         AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
         AbstractDungeon.actionManager.addToBottom(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, AbstractPlayerPatches.AddFields.activatedFinFunnel.get(this)));
+    }
+
+    @Override
+    public void onVictory() {
+        VUPShionMod.saveFinFunnels();
+        super.onVictory();
     }
 
     public String getPortraitImageName() {
@@ -140,6 +137,7 @@ public class Shion extends CustomPlayer {
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(TacticalLayout.ID);
+        retVal.add(FinFunnelUpgrade.ID);
         retVal.add(Strafe.ID);
 
 

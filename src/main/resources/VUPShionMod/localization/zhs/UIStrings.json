@@ -28,8 +28,8 @@
   },
   "VUPShionMod:AttackFromDiscardToHandAction": {
     "TEXT": [
-      "将2张加载攻击牌加入手牌",
-      ""
+      "将2张加载攻击牌加入手牌"
+
     ]
   }
 }

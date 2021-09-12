@@ -74,4 +74,6 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         card.isSecondaryMModified = this.isSecondaryMModified;
         return card;
     }
+
+    public void postReturnToHand(){}
 }

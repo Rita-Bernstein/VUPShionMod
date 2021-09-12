@@ -22,8 +22,8 @@ public class DivineRedemption extends AbstractLiyezhuCard {
 
     public DivineRedemption() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 8;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.baseBlock = 10;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -40,7 +40,7 @@ public class DivineRedemption extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeBlock(3);
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
         }
     }
 }

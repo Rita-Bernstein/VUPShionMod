@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -34,9 +35,19 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     public InvestigationFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 2;
+        this.effect = 1;
     }
 
+    @Override
+    public void upgradeLevel(int amount) {
+        this.level += amount;
+        VUPShionMod.investigationFinFunnelLevel = level;
+    }
+
+    @Override
+    public int getFinalEffect() {
+        return this.effect * (this.level - 1) / 3 + 2;
+    }
 
     @Override
     public void updateDescription() {
@@ -55,11 +66,16 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
 
     @Override
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,int loopTimes) {
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,boolean triggerPassive,int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++)
-        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        for (int i = 0; i < loopTimes; i++){
+            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type),AbstractGameAction.AttackEffect.FIRE));
+        }
+
+
+        if (triggerPassive)
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target,AbstractDungeon.player, getFinalEffect())));
 
     }
 
@@ -87,7 +103,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
+                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 3, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
                 addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));

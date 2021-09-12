@@ -11,25 +11,24 @@
   },
   "VUPShionMod:EnduranceInitiationAction": {
     "TEXT": [
-      "复制",
-      " vup_shion_mod:加载完成 。"
+      "Copy",
+      " vup_shion_mod:Loading_Complete ."
     ]
   },
   "VUPShionMod:UpgradeAndZeroCostAction": {
     "TEXT": [
-      "选择牌升级并将耗能变为0"
+      "Select a card upgrade and set cost to 0"
     ]
   },
   "VUPShionMod:SelectCardToHandAction": {
     "TEXT": [
-      " NL 消耗 。",
-      " 虚无 。"
+      " NL Exhaust 。",
+      " Ethereal ."
     ]
   },
   "VUPShionMod:AttackFromDiscardToHandAction": {
     "TEXT": [
-      "将2张加载攻击牌加入手牌",
-      ""
+      "Add 2 Attacks to your hand"
     ]
   }
 }

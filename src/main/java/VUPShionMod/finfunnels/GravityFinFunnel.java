@@ -5,6 +5,7 @@ import VUPShionMod.actions.DamageAndGainBlockAction;
 import VUPShionMod.powers.*;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
 import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
+import VUPShionMod.vfx.MonstersFinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
@@ -21,7 +22,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
 public class GravityFinFunnel extends AbstractFinFunnel {
@@ -35,7 +35,18 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     public GravityFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 3;
+        this.effect = 1;
+    }
+
+    @Override
+    public void upgradeLevel(int amount) {
+        this.level += amount;
+        VUPShionMod.gravityFinFunnelLevel = level;
+    }
+
+    @Override
+    public int getFinalEffect() {
+        return this.effect * (this.level - 1) / 3 + 3;
     }
 
     @Override
@@ -61,20 +72,24 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,int loopTimes) {
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++)
-        addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        for (int i = 0; i < loopTimes; i++) {
+            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type), AbstractGameAction.AttackEffect.FIRE));
+        }
+
+
+        if (triggerPassive)
+            addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
     }
+
 
     @Override
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
         if (target.isDeadOrEscaped()) return;
         if (AbstractDungeon.player.hasPower(AttackOrderBetaPower.POWER_ID)) {
-            playFinFunnelAnimation(ID);
-            addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
-            addToBot(new VFXAction(AbstractDungeon.player, new FinFunnelBeamEffect(this), 0.4F));
+            addToBot(new VFXAction(AbstractDungeon.player, new FinFunnelBeamEffect(this, AbstractDungeon.player.flipHorizontal), 0.4F));
             for (int i = 0; i < loopTimes; i++)
                 addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
             if (this.level > 0) {
@@ -84,28 +99,26 @@ public class GravityFinFunnel extends AbstractFinFunnel {
                     }
             }
         } else {
-            playFinFunnelAnimation(ID);
-            addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+//            addToBot(new VFXAction(new MonstersFinFunnelSmallLaserEffect(this, monsters), 0.3F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-            addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
+                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 3, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));
+                    addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));
             else
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
 
             if (AbstractDungeon.player.hasPower(AttackOrderGammaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2)));
+                    addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2)));
 
             if (this.level > 0) {
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+                    addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
             }
         }
     }

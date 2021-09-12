@@ -18,7 +18,7 @@ public class AnalyseSystemPreload extends AbstractShionCard {
 
     public AnalyseSystemPreload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 2;
+        this.baseMagicNumber = this.magicNumber = 3;
         this.cardsToPreview = new QuickScreen();
     }
 

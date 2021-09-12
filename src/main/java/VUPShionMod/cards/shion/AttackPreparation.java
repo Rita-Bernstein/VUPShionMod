@@ -26,16 +26,15 @@ public class AttackPreparation extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
+            upgradeMagicNumber(1);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1)));
-        if(upgraded)
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber)));
     }
 }

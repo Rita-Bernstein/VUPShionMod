@@ -1,38 +1,38 @@
 {
   "VUPShionMod:DimensionSplitterAria": {
-    "NAME": "咏叹调型维度裂解者",
-    "FLAVOR": "咏叹调型维度裂解者。",
+    "NAME": "Dimension Splitter: Aria",
+    "FLAVOR": "The engine imbued with otherworldly destruction.",
     "DESCRIPTIONS": [
-      "你的回合开始时，对随机一名敌人造成 #b%d ( #b2 + #y强化等级 )点伤害。 #y斩杀 时，获得 [E] 并重复上述操作。 NL 每进入下一阶段，获得强化。 NL 当前强化等级： #b%d 。"
+      "At the start of your turn, deal #b%d ( #b2 + #yUpgrade x3) damage to a random enemy. If #yFatal , repeats and gain [E] . NL It is upgraded whenever you enter the next Act. NL Current Upgrade： #b%d."
     ]
   },
   "VUPShionMod:KuroisuDetermination": {
-    "NAME": "阿龙の决意",
-    "FLAVOR": "阿龙の决意。",
+    "NAME": "Cloyce's Determination",
+    "FLAVOR": "Even the undetermined may become otherwise. Determination can be caught like a flu.",
     "DESCRIPTIONS": [
-      "在战斗中受到致命伤害时，将自身的生命与效果至多返回到三个回合前。不在战斗中时则回复到最大生命值的 #b50% 。（仅能起效一次）。",
-      "这件遗物已经耗尽。"
+      "When you would die, restore your HP and status back to at most three turns before if during combat, heal to #b50% of your Max HP otherwise.（works once）.",
+      "This relic has been exhausted."
     ]
   },
   "VUPShionMod:Croissant": {
-    "NAME": "龙角面包",
-    "FLAVOR": "龙角面包。",
+    "NAME": "Croissant",
+    "FLAVOR": "Such delicacy is utterly incompatible with the Spire.",
     "DESCRIPTIONS": [
-      "拾起时，回复 #b30 点生命。"
+      "Upon pickup, heal #b30 HP."
     ]
   },
   "VUPShionMod:OpticalCamouflage": {
-    "NAME": "光学迷彩",
-    "FLAVOR": "光学迷彩。",
+    "NAME": "Optical Camouflage",
+    "FLAVOR": "Don't believe what you see.",
     "DESCRIPTIONS": [
-      "每场战斗开始时获得 #b1 层 #y无实体 。"
+      "Start each combat with #b1 #yIntangible."
     ]
   },
   "VUPShionMod:Sniperscope": {
-    "NAME": "狙击镜",
-    "FLAVOR": "狙击镜。",
+    "NAME": "Sniperscope",
+    "FLAVOR": "Snipe for the weakness and deliver a critical blow.",
     "DESCRIPTIONS": [
-      "每场战斗开始时，给予生命值最低的敌人增加 #b1 层 #y易伤 。 NL 有 #y易伤 状态的敌人受到的伤害增加 #b75% 而非 #b50%。"
+      "At the start of each combat, apply #b1 #yVulnerable to the enemy with the least HP. NL Enemies with #yVulnerable take #b75% more damage rather than #b50%."
     ]
   }
 }

@@ -29,12 +29,6 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 浮游炮抽象类
- *
- * @author Temple9
- * @since 2021-07-22
- */
 public abstract class AbstractFinFunnel {
     public String id;
     public String name;
@@ -48,9 +42,6 @@ public abstract class AbstractFinFunnel {
     protected Bone body;
     protected Bone muzzle;
 
-    /**
-     * 强化等级
-     */
     public int level;
     public int effect;
 
@@ -72,18 +63,21 @@ public abstract class AbstractFinFunnel {
 
     public abstract void updateDescription();
 
-    /**
-     * 玩家回合开始时调用此方法
-     */
     public void atTurnStart() {
+    }
+
+    public void upgradeLevel(int amount) {
 
     }
 
-    /**
-     * 追击效果触发时
-     *
-     * @param target 追击目标
-     */
+    public void setLevel(int amount) {
+        this.level = amount;
+    }
+
+    public int getLevel() {
+        return this.level;
+    }
+
     public void onPursuitEnemy(AbstractCreature target) {
         onPursuitEnemy(target, 1);
     }
@@ -91,31 +85,6 @@ public abstract class AbstractFinFunnel {
     public void onPursuitEnemy(AbstractCreature target, int loop) {
     }
 
-    /**
-     * 提升强化等级
-     *
-     * @param amount 提升量
-     */
-    public void upgradeLevel(int amount) {
-        this.level += amount;
-    }
-
-    public void setLevel(int amount) {
-        this.level = amount;
-    }
-
-    /**
-     * 获得强化等级
-     *
-     * @return 强化等级
-     */
-    public int getLevel() {
-        return this.level;
-    }
-
-    /**
-     * 这里写浮游炮的行动方式
-     */
     public abstract void fire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes);
 
     public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
@@ -123,14 +92,20 @@ public abstract class AbstractFinFunnel {
     }
 
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
-        this.activeFire(target, damage, type, 1);
+        this.activeFire(target, damage, type, true, 1);
     }
 
-    public abstract void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes);
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive) {
+        this.activeFire(target, damage, type, triggerPassive, 1);
+    }
 
-    /**
-     * 更新
-     */
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
+        this.activeFire(target, damage, type, true, loopTimes);
+    }
+
+    public abstract void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes);
+
+
     public void update() {
         this.hb.update();
 
@@ -152,22 +127,13 @@ public abstract class AbstractFinFunnel {
     public void updatePosition(Skeleton skeleton) {
     }
 
-    /**
-     * 渲染
-     *
-     * @param sb 纹理画布
-     */
     public void render(SpriteBatch sb) {
         sb.setColor(1, 1, 1, 1);
         this.renderText(sb);
         this.hb.render(sb);
     }
 
-    /**
-     * 渲染强化等级
-     *
-     * @param sb 纹理画布
-     */
+
     protected void renderText(SpriteBatch sb) {
         if (!AbstractDungeon.player.isDead)
             FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level), this.cX + 20.0F * Settings.scale, this.cY - 12.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class PursuitPower extends AbstractPower {
+public class PursuitPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("PursuitPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -22,7 +22,7 @@ public class PursuitPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.DEBUFF;
-        this.loadRegion("time");
+        this.setImage("Lock84.png", "Lock32.png");
         updateDescription();
     }
 
@@ -37,7 +37,6 @@ public class PursuitPower extends AbstractPower {
         for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
             if (!this.owner.isDeadOrEscaped()) {
                 funnel.onPursuitEnemy(this.owner);
-                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
         }
     }

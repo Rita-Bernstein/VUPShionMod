@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class MarkOfThePaleBlueCrossPower extends AbstractPower {
+public class MarkOfThePaleBlueCrossPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("MarkOfThePaleBlueCrossPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

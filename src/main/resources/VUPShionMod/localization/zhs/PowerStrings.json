@@ -8,29 +8,32 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "追击",
     "DESCRIPTIONS": [
-      "目标的回合开始时， #y追击浮游炮 将主动攻击目标一次，造成 #b",
-      " 点伤害并失去该效果。"
+      "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
+      " 点伤害"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
     "NAME": "侦查浮游炮升级计划",
     "DESCRIPTIONS": [
       "再打出 #b",
-      " 张带有 #y浮游炮 词条的牌，将 #y侦查浮游炮 的强化等级提升 #b1 。"
+      " 张带有 #y浮游炮 词条的牌，将 #y侦查浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
     ]
   },
   "VUPShionMod:GravityFinFunnelUpgradePower": {
     "NAME": "重力浮游炮升级计划",
     "DESCRIPTIONS": [
       "再打出 #b",
-      " 张带有 #y浮游炮 词条的牌，将 #y重力浮游炮 的强化等级提升 #b1 。"
+      " 张带有 #y浮游炮 词条的牌，将 #y重力浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
     ]
   },
   "VUPShionMod:PursuitFinFunnelUpgradePower": {
     "NAME": "追击浮游炮升级计划",
     "DESCRIPTIONS": [
       "再打出 #b",
-      " 张带有 #y浮游炮 词条的牌，将 #y追击浮游炮 的强化等级提升 #b1 。"
+      " 张带有 #y浮游炮 词条的牌，将 #y追击浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
     ]
   },
   "VUPShionMod:DeploymentOfDefenseSystemPower": {
@@ -43,8 +46,8 @@
   "VUPShionMod:AnastasiaCorePower": {
     "NAME": "Anastasia核心",
     "DESCRIPTIONS": [
-      "在这个回合，你每打出一张牌，就获得 #b",
-      " [E] 。"
+      "在这个回合，你每打出一张 #y使用浮游炮 牌，就获得 #b",
+      " [E] 并抽一张牌。"
     ]
   },
   "VUPShionMod:AttackInitiationPower": {
@@ -56,19 +59,19 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "姿态解放-克洛伊斯",
     "DESCRIPTIONS": [
-      "你的回合开始时，将 #b%d 张 #y快速筛选 加入你的弃牌堆。"
+      "你的回合结束时，将 #b%d 张 #y快速筛选 加入抽牌堆顶部。"
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
     "NAME": "姿态解放-克洛伊斯+",
     "DESCRIPTIONS": [
-      "你的回合开始时，将 #b%d 张 #y快速筛选+ 加入你的弃牌堆。"
+      "你的回合结束时，将 #b%d 张 #y快速筛选+ 加入抽牌堆顶部。"
     ]
   },
   "VUPShionMod:BleedingPower": {
     "NAME": "流血",
     "DESCRIPTIONS": [
-      "受到攻击伤害时额外受到 #b%d 点伤害。 NL 每回合结束减半该效果。"
+      "受到攻击伤害时额外失去 #b%d 点生命。 NL 每回合结束减半该效果。"
     ]
   },
   "VUPShionMod:DenergizePower": {
@@ -94,13 +97,13 @@
   "VUPShionMod:EnhancedWeaponPower": {
     "NAME": "强化兵装",
     "DESCRIPTIONS": [
-      "获得 #y兵装 时额外获得 #b%d 层。"
+      "触发 #y加载完成 时抽 #b%d 张牌。"
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuPower": {
     "NAME": "姿态解放-黎夜竹",
     "DESCRIPTIONS": [
-      "你的回合结束时，对所有敌人造成你身上 #超维链接 层数 #b%d 倍的伤害。"
+      "你的回合开始时获得 #b%d 层 #y超维链接 。 NL 你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
     ]
   },
   "VUPShionMod:LockOnPower": {
@@ -112,25 +115,25 @@
   "VUPShionMod:AttackOrderAlphaPower": {
     "NAME": "攻击指令·壹式",
     "DESCRIPTIONS": [
-      " #y浮游炮 牌被动造成的伤害提高 !M! 倍。 NL 不与其他指令共存。"
+      " #y浮游炮 的每回合攻击造成的伤害提高 #b%d 倍。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderBetaPower": {
     "NAME": "攻击指令·贰式",
     "DESCRIPTIONS": [
-      "#y浮游炮 牌将对所有敌人造成伤害。 NL 不与其他指令共存。"
+      "#y浮游炮 的每回合攻击将对所有敌人造成伤害。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderGammaPower": {
     "NAME": "攻击指令·叁式",
     "DESCRIPTIONS": [
-      "受到 #y浮游炮 牌攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
+      "受到 #y浮游炮 的每回合攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderDeltaPower": {
     "NAME": "攻击指令·肆式",
     "DESCRIPTIONS": [
-      "#y浮游炮 的被动攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
+      "#y浮游炮 的每回合攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:DelayAvatarPower": {
@@ -160,13 +163,13 @@
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
     "NAME": "圣棺沉灵",
     "DESCRIPTIONS": [
-      "每当你获得 #y超维链接 时，对一名随机敌人造成 #b%d 点伤害。"
+      "每当你获得或失去 #y超维链接 时，对一名随机敌人造成 #b%d 点伤害。"
     ]
   },
   "VUPShionMod:HolyCoffinReleasePower": {
     "NAME": "圣棺解放",
     "DESCRIPTIONS": [
-      "在 #b%d 个回合内，你不会失去 #y超维链接 。"
+      "触发 #y加载完成 时获得 #b%d 层 #y超维链接 。"
     ]
   } ,
   "VUPShionMod:LoseHyperdimensionalLinksPower": {

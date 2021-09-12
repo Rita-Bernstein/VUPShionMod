@@ -1,6 +1,7 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.DamageAndApplyPursuitAction;
 import VUPShionMod.actions.DamageAndGainBlockAction;
 import VUPShionMod.powers.*;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
@@ -33,7 +34,13 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public PursuitFinFunnel(int level) {
         super(ID);
         upgradeLevel(level);
-        this.effect = 1;
+        this.effect = 2;
+    }
+
+    @Override
+    public void upgradeLevel(int amount) {
+        this.level += amount;
+        VUPShionMod.pursuitFinFunnelLevel = level;
     }
 
     @Override
@@ -55,16 +62,15 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         if (this.level <= 0) return;
         if (!target.isDeadOrEscaped())
             if (target.hasPower(PursuitPower.POWER_ID))
-                activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS, loop);
+                activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS, false, loop);
     }
 
 
     @Override
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
+    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++)
-            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
+        addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, damage, type), loopTimes, triggerPassive,getFinalEffect()));
     }
 
     @Override
@@ -88,7 +94,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 2, type)));
+                    addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 3, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
                     addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));

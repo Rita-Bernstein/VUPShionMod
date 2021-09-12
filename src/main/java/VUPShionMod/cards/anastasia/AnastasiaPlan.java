@@ -19,37 +19,38 @@ public class AnastasiaPlan extends AbstractAnastasiaCard {
     public AnastasiaPlan() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 0;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, this.block));
-
-        if (!this.upgraded) {
-            this.rawDescription = cardStrings.DESCRIPTION;
-        } else {
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        }
-        initializeDescription();
+        this.rawDescription = cardStrings.DESCRIPTION;
+//        if (!this.upgraded) {
+//            this.rawDescription = cardStrings.DESCRIPTION;
+//        } else {
+//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+//        }
+//        initializeDescription();
     }
 
 
     public void applyPowers() {
         this.baseBlock = 0;
-        if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID)){
-            this.baseBlock = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount;
+        if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+            this.baseBlock = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount * this.magicNumber;
         }
 
-        if (this.upgraded) {
-            this.baseBlock += 3;
-        }
+//        if (this.upgraded) {
+//            this.baseBlock += 3;
+//        }
         super.applyPowers();
 
-        if (!this.upgraded) {
-            this.rawDescription = cardStrings.DESCRIPTION;
-        } else {
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        }
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+//        if (!this.upgraded) {
+//            this.rawDescription = cardStrings.DESCRIPTION;
+//        } else {
+//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+//        }
+        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
@@ -57,9 +58,9 @@ public class AnastasiaPlan extends AbstractAnastasiaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBlock(3);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMagicNumber(1);
+//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+//            initializeDescription();
         }
     }
 

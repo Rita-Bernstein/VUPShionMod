@@ -18,7 +18,7 @@ import java.util.List;
 public class EnhancedWeapon extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("EnhancedWeapon");
     public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy19.png");
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
@@ -28,6 +28,7 @@ public class EnhancedWeapon extends AbstractShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = 1;
+
     }
 
     @Override
@@ -36,7 +37,7 @@ public class EnhancedWeapon extends AbstractShionCard {
             this.upgradeName();
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
-            this.exhaust = false;
+            this.isInnate = true;
         }
     }
 

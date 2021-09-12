@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.OmegaFlashEffect;
 
-public class LoseHyperdimensionalLinksPower extends AbstractPower {
+public class LoseHyperdimensionalLinksPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("LoseHyperdimensionalLinksPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -27,7 +27,7 @@ public class LoseHyperdimensionalLinksPower extends AbstractPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.loadRegion("time");
+        this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
         this.isTurnBased = true;
     }

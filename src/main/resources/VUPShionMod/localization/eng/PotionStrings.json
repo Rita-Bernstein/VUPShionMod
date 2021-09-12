@@ -1,8 +1,32 @@
 {
-  "VUPShionMod:Hiroji": {
-    "NAME": "嗯哼哼啊啊啊啊啊啊啊",
+  "VUPShionMod:PoisonGrenadeBag": {
+    "NAME": "Poison Grenade",
     "DESCRIPTIONS": [
-      "大声呐喊，本回合获得 #b%d 点 #y力量 。"
+      "Add #b%d #yPoison #yGrenade into your hand."
+    ]
+  },
+  "VUPShionMod:FragGrenadeBag": {
+    "NAME": "Frag Grenade",
+    "DESCRIPTIONS": [
+      "Add #b%d #yFrag #yGrenade into your hand."
+    ]
+  },
+  "VUPShionMod:ShockGrenadeBag": {
+    "NAME": "Shock Grenade",
+    "DESCRIPTIONS": [
+      "Add #b%d #yShock #yGrenade into your hand."
+    ]
+  },
+  "VUPShionMod:BouncingGrenadeBag": {
+    "NAME": "Bouncing Grenade",
+    "DESCRIPTIONS": [
+      "Add #b%d #yBouncing #yGrenade into your hand."
+    ]
+  },
+  "VUPShionMod:Hiroji": {
+    "NAME": "Leave This ALONE!",
+    "DESCRIPTIONS": [
+      "Gain #b%d #yStrength this turn from its killing smell."
     ]
   }
 }

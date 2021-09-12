@@ -21,7 +21,6 @@ public class AttackOrderDelta extends AbstractVUPShionCard {
     public AttackOrderDelta() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

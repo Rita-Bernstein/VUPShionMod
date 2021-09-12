@@ -1,9 +1,11 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
+import VUPShionMod.actions.TurnTriggerAllFinFunnelAction;
 import VUPShionMod.cards.anastasia.EnergyReserve;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.CrackOfTimePower;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
@@ -19,6 +21,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.lang.reflect.Field;
@@ -45,9 +48,9 @@ public class AbstractPlayerPatches {
 //            for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
 //                funnel.atTurnStart();
 //            }
-            if(AbstractDungeon.player instanceof Shion)
-            AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelAction(true));
-            EnergyPanelPatches.energyUsedThisTurn = 0;
+            if (AbstractDungeon.player instanceof Shion)
+                AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
+            EnergyPanelPatches.energyUsedThisTurn = 1;
         }
     }
 
@@ -109,10 +112,9 @@ public class AbstractPlayerPatches {
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
                 AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
 
-                if (AbstractDungeon.player.hasPower(CrackOfTimePower.POWER_ID)) {
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player,
-                            AbstractDungeon.player.getPower(CrackOfTimePower.POWER_ID).amount));
-                }
+                for (AbstractPower power : AbstractDungeon.player.powers)
+                    if (power instanceof AbstractShionPower)
+                        ((AbstractShionPower) power).onTriggerLoaded();
             }
         }
     }

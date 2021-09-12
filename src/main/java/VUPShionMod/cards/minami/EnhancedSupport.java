@@ -22,7 +22,7 @@ public class EnhancedSupport extends AbstractMinamiCard {
 
     public EnhancedSupport() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,9 +37,12 @@ public class EnhancedSupport extends AbstractMinamiCard {
         if (this.upgraded) {
             effect++;
         }
+
+        effect *= 2;
+
         if (effect > 0) {
 
-                addToBot(new TriggerFinFunnelAction(m,effect));
+            addToBot(new TriggerFinFunnelAction(m, effect));
 
 
             if (!this.freeToPlayOnce) {

@@ -36,15 +36,15 @@ public class Limit extends AbstractKuroisuCard {
     public AbstractCard makeCopy() {
         return new Limit();
     }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
-            if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.magicNumber)
-                return super.canUse(p, m);
-        }
-        return false;
-    }
+//
+//    @Override
+//    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+//        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+//            if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.magicNumber)
+//                return super.canUse(p, m);
+//        }
+//        return false;
+//    }
 
     public void upgrade() {
         if (!this.upgraded) {

@@ -52,7 +52,7 @@ public class SantaCroce extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+            upgradeSecondM(1);
         }
     }
 

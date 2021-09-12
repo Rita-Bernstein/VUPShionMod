@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class HolySlashDownPower extends AbstractPower {
+public class HolySlashDownPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("HolySlashDownPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -21,7 +21,7 @@ public class HolySlashDownPower extends AbstractPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = multiplier;
-        this.loadRegion("time");
+        this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
     }
 

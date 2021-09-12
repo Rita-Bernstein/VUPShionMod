@@ -8,6 +8,9 @@ public class CardTagsEnum {
     public static AbstractCard.CardTags FIN_FUNNEL;
 
     @SpireEnum
+    public static AbstractCard.CardTags TRIGGER_FIN_FUNNEL;
+
+    @SpireEnum
     public static AbstractCard.CardTags LOADED;
 
     @SpireEnum

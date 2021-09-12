@@ -1,44 +1,53 @@
 [
   {
     "NAMES": [
-      "加载完成"
+      "loading\u00a0complete"
     ],
-    "DESCRIPTION": "抽到这张牌时触发这张牌的效果并抽一张牌。"
+	"PROPER_NAME": "Loading Complete",
+    "DESCRIPTION": "Will be played without any cost when drawn. Draw a card upon being played."
   },
   {
     "NAMES": [
-      "浮游炮"
+      "funnel"
     ],
-    "DESCRIPTION": " #y浮游炮 将会在每回合开始时进行被动攻击。 NL 本回合每使用一点耗能，你能主动点击切换一次所选的 #y浮游炮 。"
+    "DESCRIPTION": "#yFunnel attacks at the start of each turn. NL For each Energy cost this turn, you may switch #yFunnel."
   },
   {
     "NAMES": [
-      "总炮强化"
+      "total\u00a0upgrade"
     ],
-    "DESCRIPTION": " #y咏叹调型维度裂解者 和 三个 #y浮游炮 的强化等级之和。"
+	"PROPER_NAME": "Total Upgrade",
+    "DESCRIPTION": "Sum of the upgrades of #yDimension #ySplitter: #yAria and the three #yFunnels."
   },
   {
     "NAMES": [
-      "任务"
+      "task"
     ],
-    "DESCRIPTION": "在本场战斗中完成任务即可获得奖励。"
+    "DESCRIPTION": "You are rewarded upon completing tasks during combat."
   },
   {
     "NAMES": [
-      "追击"
+      "pursued"
     ],
-    "DESCRIPTION": " #y追击浮游炮 将再下一回合对有 #y追击 的敌人 #y主动 造成其层数的伤害。"
+    "DESCRIPTION": " #yPursuing #yFunnel deals damage to #yPursued enemies at the start of the their turn."
   },
   {
     "NAMES": [
-      "流血"
+      "bleeding"
     ],
-    "DESCRIPTION": "本回合受到攻击伤害时额外受到 #y流血 层数的伤害。"
+    "DESCRIPTION": "Bleeding creatures take additional damage equal to #ybleeding from Attacks this turn. NL It halves at the end of turn."
   },
   {
     "NAMES": [
-      "超维链接"
+      "hyperdimensional\u00a0link"
     ],
-    "DESCRIPTION": "战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
+	"PROPER_NAME": "Hyperdimensional Link",
+    "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLink, a random card is upgraded."
+  },
+  {
+    "NAMES": [
+      "fire"
+    ],
+    "DESCRIPTION": "Trigger the passive ability of your #yFunnel."
   }
 ]

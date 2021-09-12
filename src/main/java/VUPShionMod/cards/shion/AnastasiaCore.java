@@ -21,13 +21,11 @@ public class AnastasiaCore extends AbstractShionCard {
     public AnastasiaCore() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
-        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            ++this.timesUpgraded;
             this.upgraded = true;
             this.name = cardStrings.EXTENDED_DESCRIPTION[0];
             this.initializeTitle();

@@ -23,12 +23,25 @@ public class HolyCharge extends AbstractLiyezhuCard {
     public HolyCharge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 15;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
+        this.selfRetain = true;
+    }
+
+    @Override
+    public void onRetained() {
+        addToBot(new ReduceCostAction(this));
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber),this.magicNumber));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                upgradeMagicNumber(1);
+                isDone = true;
+            }
+        });
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 

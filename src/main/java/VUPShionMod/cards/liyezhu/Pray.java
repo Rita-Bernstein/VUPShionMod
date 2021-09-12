@@ -37,7 +37,7 @@ public class Pray extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, 2)));
         addToBot(new DrawCardAction(this.baseMagicNumber, new AbstractGameAction() {
             @Override
             public void update() {

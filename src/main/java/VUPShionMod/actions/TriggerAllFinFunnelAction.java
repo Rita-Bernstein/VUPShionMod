@@ -105,13 +105,15 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
                             DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
 
                 } else {
-                    AbstractMonster m = monsters.get(i);
-                    if (isDoubleDamage)
-                        addToBot(new DamageAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS)));
-                    else if (isGainBlock)
-                        addToBot(new DamageAndGainBlockAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1.0f));
-                    else
-                        addToBot(new DamageAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS)));
+                    if (i < monsters.size()) {
+                        AbstractMonster m = monsters.get(i);
+                        if (isDoubleDamage)
+                            addToBot(new DamageAction(m, new DamageInfo(p, f.level * 2, DamageInfo.DamageType.THORNS)));
+                        else if (isGainBlock)
+                            addToBot(new DamageAndGainBlockAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1.0f));
+                        else
+                            addToBot(new DamageAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS)));
+                    }
                 }
             }
 

@@ -40,7 +40,7 @@ public class SuperCharge extends AbstractMinamiCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         AbstractPower power = p.getPower(HyperdimensionalLinksPower.POWER_ID);
         if (power == null) return false;
-        if (power.amount < 1) return false;
+        if (power.amount < secondaryM) return false;
         else
             return super.canUse(p, m);
 

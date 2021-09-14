@@ -1,7 +1,7 @@
 {
   "VUPShionMod:ModSettings": {
     "TEXT": [
-      "设置"
+      "使用简洁能量球"
     ]
   },
   "VUPShionMod:CharacterSelect": {
@@ -29,7 +29,6 @@
   "VUPShionMod:AttackFromDiscardToHandAction": {
     "TEXT": [
       "将2张加载攻击牌加入手牌"
-
     ]
   }
 }

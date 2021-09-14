@@ -17,7 +17,7 @@ import java.util.List;
 
 public class DefenseSystemCharging extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("DefenseSystemCharging");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy03.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy03.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -52,6 +52,19 @@ public class DefenseSystemCharging extends AbstractShionCard {
             AbstractCard card = cardList.get(cardList.size() - 2);
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
                 this.returnToHand = true;
+            }
+        }
+    }
+
+
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+        if (cardList.size() >= 2) {
+            AbstractCard card = cardList.get(cardList.size() - 2);
+            if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
             }
         }
     }

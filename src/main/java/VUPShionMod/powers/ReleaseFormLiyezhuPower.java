@@ -32,12 +32,12 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], damageScale * amount, damageScale);
+        this.description = String.format(DESCRIPTIONS[0], amount, damageScale);
     }
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new HyperdimensionalLinksPower(this.owner, damageScale * amount)));
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new HyperdimensionalLinksPower(this.owner, amount)));
     }
 
     @Override

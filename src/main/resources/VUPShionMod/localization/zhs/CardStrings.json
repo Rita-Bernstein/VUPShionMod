@@ -268,7 +268,7 @@
   },
   "VUPShionMod:SuperCharge": {
     "NAME": "超能装填",
-    "DESCRIPTION": "消耗 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。 NL 获得 !M! 点 力量 和 敏捷 。"
+    "DESCRIPTION": "使用 !VUPShionSecondM! 层 vup_shion_mod:超维链接 。 NL 获得 !M! 点 力量 和 敏捷 。"
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "姿态解放-南小棉",

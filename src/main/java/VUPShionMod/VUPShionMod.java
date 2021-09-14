@@ -25,6 +25,7 @@ import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import VUPShionMod.relics.*;
 import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
 import basemod.eventUtil.AddEventParams;
@@ -37,8 +38,10 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -85,6 +88,10 @@ public class VUPShionMod implements
     public static List<CustomCard> mi_Cards = new ArrayList<>();
     public static List<CustomCard> shi_Cards = new ArrayList<>();
 
+    public static boolean useSimpleOrb = false;
+
+    public static ModLabeledToggleButton useSimpleOrbSwitch;
+
     public VUPShionMod() {
         BaseMod.subscribe(this);
 
@@ -93,13 +100,43 @@ public class VUPShionMod implements
                 assetPath("img/cardui/Shion/512/bg_attack_lime.png"),
                 assetPath("img/cardui/Shion/512/bg_skill_lime.png"),
                 assetPath("img/cardui/Shion/512/bg_power_lime.png"),
-                assetPath("img/cardui/Shion/512/card_lime_orb.png"),
+                assetPath("img/cardui/Shion/512/card_lime_orb_w.png"),
                 assetPath("img/cardui/Shion/1024/bg_attack_lime.png"),
                 assetPath("img/cardui/Shion/1024/bg_skill_lime.png"),
                 assetPath("img/cardui/Shion/1024/bg_power_lime.png"),
-                assetPath("img/cardui/Shion/1024/card_lime_orb.png"),
+                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
                 assetPath("img/cardui/Shion/512/card_lime_small_orb.png"));
 
+    }
+
+
+    public static void saveSettings() {
+        try {
+            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
+            config.setBool("useSimpleOrb", useSimpleOrb);
+
+            System.out.println("==============reskin存入数据");
+
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void loadSettings() {
+        try {
+            SpireConfig config = new SpireConfig("RingOfDestiny", "settings", VUPShionDefaults);
+            config.load();
+            useSimpleOrb = config.getBool("useSimpleOrb");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            clearSettings();
+        }
+    }
+
+    public static void clearSettings() {
+        saveSettings();
     }
 
     public static String makeID(String id) {
@@ -174,9 +211,18 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostInitialize() {
+        loadSettings();
         Texture badgeTexture = new Texture(assetPath("/img/badge.png"));
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
+
+        useSimpleOrbSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[0], 400.0f, 720.0f - 0 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, useSimpleOrb, settingsPanel,
+                (label) -> {
+                }, (button) -> {
+            useSimpleOrb = button.enabled;
+            saveSettings();
+        });
+
 //        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 
         BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//

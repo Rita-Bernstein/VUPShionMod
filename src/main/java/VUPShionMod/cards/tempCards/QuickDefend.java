@@ -5,11 +5,14 @@ import VUPShionMod.actions.TriggerFinFunnelAction;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -43,6 +46,8 @@ public class QuickDefend extends AbstractVUPShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
+                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
         addToBot(new SFXAction("SHION_9"));
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));

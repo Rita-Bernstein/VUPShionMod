@@ -3,10 +3,14 @@ package VUPShionMod.cards.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.MarkOfThePaleBlueCrossPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -28,7 +32,14 @@ public class PainfulConfession extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY, true));
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!monster.isDeadOrEscaped()) {
+                addToBot(new SFXAction("BLUNT_FAST"));
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 002 Impact Radial", monster.hb.cX, monster.hb.cY + 0.0f * Settings.scale,
+                        125.0f, 125.0f, 2.5f * Settings.scale, 2, false)));
+            }
+        }
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
                 addToBot(new ApplyPowerAction(monster, p, new VulnerablePower(monster, this.baseMagicNumber, false)));

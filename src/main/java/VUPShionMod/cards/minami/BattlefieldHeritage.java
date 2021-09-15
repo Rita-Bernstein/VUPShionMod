@@ -2,6 +2,7 @@ package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.AttackFromDiscardToHandAction;
+import VUPShionMod.actions.GainHyperdimensionalLinksAction;
 import VUPShionMod.actions.RandomDiscardPileToHandAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
@@ -33,7 +34,8 @@ public class BattlefieldHeritage extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
+        addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
+//        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         Predicate<AbstractCard> predicate = (pr) -> pr.type == CardType.ATTACK;
         Consumer<List<AbstractCard>> callback = cards -> {
             for(AbstractCard c : cards)

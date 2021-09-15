@@ -1,6 +1,7 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.powers.DenergizePower;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
@@ -25,7 +26,8 @@ public class TimeOverload extends AbstractKuroisuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainEnergyAction(2));
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
+        addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
+//        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         if(upgraded)
             addToBot(new ApplyPowerAction(p,p,new DenergizePower(p,1)));
         else

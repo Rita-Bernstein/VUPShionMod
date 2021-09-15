@@ -1,11 +1,11 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.SecondHandAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,7 +27,7 @@ public class SecondHand extends AbstractKuroisuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.magicNumber; i++) {
-            addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            addToBot(new SecondHandAction(this));
         }
     }
 

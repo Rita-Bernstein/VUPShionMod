@@ -1,0 +1,104 @@
+
+Energy 020 Slash1 Ray Right.png
+size: 525,346
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Energy 020 Slash1 Ray Right_00000
+  rotate: false
+  xy: 442, 166
+  size: 42, 42
+  orig: 250, 250
+  offset: 14, 81
+  index: -1
+Energy 020 Slash1 Ray Right_00001
+  rotate: false
+  xy: 446, 210
+  size: 55, 55
+  orig: 250, 250
+  offset: 4, 78
+  index: -1
+Energy 020 Slash1 Ray Right_00002
+  rotate: false
+  xy: 446, 267
+  size: 75, 77
+  orig: 250, 250
+  offset: 1, 80
+  index: -1
+Energy 020 Slash1 Ray Right_00003
+  rotate: false
+  xy: 392, 77
+  size: 121, 87
+  orig: 250, 250
+  offset: 0, 81
+  index: -1
+Energy 020 Slash1 Ray Right_00004
+  rotate: false
+  xy: 212, 79
+  size: 178, 93
+  orig: 250, 250
+  offset: 1, 81
+  index: -1
+Energy 020 Slash1 Ray Right_00005
+  rotate: false
+  xy: 2, 255
+  size: 220, 89
+  orig: 250, 250
+  offset: 3, 85
+  index: -1
+Energy 020 Slash1 Ray Right_00006
+  rotate: false
+  xy: 224, 259
+  size: 220, 85
+  orig: 250, 250
+  offset: 6, 89
+  index: -1
+Energy 020 Slash1 Ray Right_00007
+  rotate: false
+  xy: 224, 174
+  size: 216, 83
+  orig: 250, 250
+  offset: 11, 91
+  index: -1
+Energy 020 Slash1 Ray Right_00008
+  rotate: false
+  xy: 2, 170
+  size: 208, 83
+  orig: 250, 250
+  offset: 19, 90
+  index: -1
+Energy 020 Slash1 Ray Right_00009
+  rotate: false
+  xy: 2, 85
+  size: 172, 83
+  orig: 250, 250
+  offset: 55, 87
+  index: -1
+Energy 020 Slash1 Ray Right_00010
+  rotate: false
+  xy: 2, 2
+  size: 163, 81
+  orig: 250, 250
+  offset: 64, 86
+  index: -1
+Energy 020 Slash1 Ray Right_00011
+  rotate: false
+  xy: 167, 2
+  size: 149, 75
+  orig: 250, 250
+  offset: 77, 86
+  index: -1
+Energy 020 Slash1 Ray Right_00012
+  rotate: false
+  xy: 318, 10
+  size: 139, 65
+  orig: 250, 250
+  offset: 84, 86
+  index: -1
+Energy 020 Slash1 Ray Right_00013
+  rotate: false
+  xy: 486, 171
+  size: 37, 37
+  orig: 250, 250
+  offset: 173, 90
+  index: -1

@@ -223,6 +223,9 @@ public class VUPShionMod implements
             saveSettings();
         });
 
+
+        settingsPanel.addUIElement(useSimpleOrbSwitch);
+
 //        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 
         BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//

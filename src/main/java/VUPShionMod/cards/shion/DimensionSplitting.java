@@ -6,13 +6,16 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -81,17 +84,23 @@ public class DimensionSplitting extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(p);
-        addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
-        for (AbstractFinFunnel funnel : funnelList) {
-            AbstractDungeon.effectList.add(new BorderFlashEffect(Color.SKY));
-            AbstractDungeon.effectList.add(new SmallLaserEffect(m.hb.cX, m.hb.cY, funnel.hb.cX, funnel.hb.cY));
-        }
-        AbstractRelic relic = p.getRelic(DimensionSplitterAria.ID);
-        if (relic != null) {
-            AbstractDungeon.effectList.add(new BorderFlashEffect(Color.SKY));
-            AbstractDungeon.effectList.add(new SmallLaserEffect(m.hb.cX, m.hb.cY, relic.hb.cX, relic.hb.cY));
-        }
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+//        List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(p);
+//        addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+//        for (AbstractFinFunnel funnel : funnelList) {
+//            AbstractDungeon.effectList.add(new BorderFlashEffect(Color.SKY));
+//            AbstractDungeon.effectList.add(new SmallLaserEffect(m.hb.cX, m.hb.cY, funnel.hb.cX, funnel.hb.cY));
+//        }
+//        AbstractRelic relic = p.getRelic(DimensionSplitterAria.ID);
+//        if (relic != null) {
+//            AbstractDungeon.effectList.add(new BorderFlashEffect(Color.SKY));
+//            AbstractDungeon.effectList.add(new SmallLaserEffect(m.hb.cX, m.hb.cY, relic.hb.cX, relic.hb.cY));
+//        }
+
+        addToBot(new SFXAction("ATTACK_IRON_2", -0.5F,true));
+
+        addToBot(new VFXAction(new AbstractAtlasGameEffect("Fire 071 Ray Shot Up MIX", m.hb.cX, m.hb.y + 550.f * Settings.scale,
+                130.0f, 213.0f, 3.0f * Settings.scale, 2,false)));
+
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
     }
 }

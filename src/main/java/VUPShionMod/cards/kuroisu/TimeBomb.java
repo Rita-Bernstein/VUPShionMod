@@ -3,10 +3,14 @@ package VUPShionMod.cards.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TimeBomb extends AbstractKuroisuCard {
@@ -23,11 +27,17 @@ public class TimeBomb extends AbstractKuroisuCard {
         this.isMultiDamage = true;
         this.tags.add(CardTagsEnum.LOADED);
         this.exhaust = true;
-        GraveField.grave.set(this,true);
+        GraveField.grave.set(this, true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!mo.isDeadOrEscaped()) {
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Explosion 010 Impact Radial MIX", mo.hb.cX, mo.hb.cY,
+                        124.0f, 130.0f, 2.0f * Settings.scale, 2, false)));
+            }
+        }
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }
 
     public void upgrade() {

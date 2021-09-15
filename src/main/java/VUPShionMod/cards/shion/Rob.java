@@ -1,6 +1,7 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.RobAction;
 import VUPShionMod.cards.AbstractShionCard;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.unique.GreedAction;
@@ -50,7 +51,7 @@ public class Rob extends AbstractShionCard {
                 break;
         }
 
-        addToBot(new GreedAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), 20));
+        addToBot(new RobAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), 20));
     }
 
     @Override

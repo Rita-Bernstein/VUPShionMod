@@ -1,6 +1,8 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.GainHyperdimensionalLinksAction;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -8,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -37,7 +40,8 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new HyperdimensionalLinksPower(this.owner, amount)));
+        addToBot(new GainHyperdimensionalLinksAction(this.amount));
+//        addToBot(new ApplyPowerAction(this.owner, this.owner, new HyperdimensionalLinksPower(this.owner, amount)));
     }
 
     @Override
@@ -57,10 +61,12 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
                 this.flash();
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDeadOrEscaped()) {
-                        addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY)));
+//                        addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY)));
+                        addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 097 Explosion Radial MIX", m.hb.cX, m.hb.cY,
+                                124.0f, 132.0f, 1.5f * Settings.scale, 2,false)));
                     }
                 }
-                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg * this.damageScale, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+                addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg * this.damageScale, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
             }
         }
     }

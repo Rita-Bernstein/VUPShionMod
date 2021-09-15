@@ -6,9 +6,12 @@ import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.tempCards.QuickDefend;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TimeSlack extends AbstractKuroisuCard {
@@ -29,6 +32,8 @@ public class TimeSlack extends AbstractKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
+                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
         addToBot(new GainBlockAction(p, p, this.block));
         addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
         addToBot(new MakeTempCardInDiscardAction(new QuickDefend(),this.magicNumber));

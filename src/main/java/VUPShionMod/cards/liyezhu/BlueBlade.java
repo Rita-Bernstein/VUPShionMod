@@ -5,12 +5,15 @@ import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.powers.MarkOfThePaleBlueCrossPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
@@ -39,7 +42,13 @@ public class BlueBlade extends AbstractLiyezhuCard {
 
         calculateCardDamage(m);
 
-        addToBot(new VFXAction(new CleaveEffect()));
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!monster.isDeadOrEscaped()) {
+                addToBot(new SFXAction("BLUNT_FAST"));
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 016 Impact Explosion Radial", monster.hb.cX, monster.hb.cY + 0.0f * Settings.scale,
+                        125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
+            }
+        }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
 //        addToBot(new LoseHyperdimensionalLinksAction(true));
     }

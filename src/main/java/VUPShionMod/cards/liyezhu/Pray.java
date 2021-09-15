@@ -1,6 +1,7 @@
 package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
@@ -37,7 +38,8 @@ public class Pray extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, 2)));
+        addToBot(new GainHyperdimensionalLinksAction(2));
+//        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, 2)));
         addToBot(new DrawCardAction(this.baseMagicNumber, new AbstractGameAction() {
             @Override
             public void update() {

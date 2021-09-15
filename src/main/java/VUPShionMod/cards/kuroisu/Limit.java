@@ -4,11 +4,15 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 
@@ -29,8 +33,13 @@ public class Limit extends AbstractKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-//        addToBot(new LoseHyperdimensionalLinksAction( this.secondaryM));
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.FIRE, true));
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!mo.isDeadOrEscaped()) {
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 090 Explosion Radial MIX", mo.hb.cX, mo.hb.cY + 20.0f * Settings.scale,
+                        128.0f, 133.0f, 3.0f * Settings.scale, 2, false)));
+            }
+        }
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
     }
 
     public AbstractCard makeCopy() {

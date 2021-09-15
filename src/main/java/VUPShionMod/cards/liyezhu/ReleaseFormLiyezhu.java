@@ -1,12 +1,16 @@
 package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.powers.ReleaseFormLiyezhuPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
@@ -19,13 +23,14 @@ public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
 
     public ReleaseFormLiyezhu() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber  = 2;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p,this.magicNumber),this.magicNumber));
+        addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
+//        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override

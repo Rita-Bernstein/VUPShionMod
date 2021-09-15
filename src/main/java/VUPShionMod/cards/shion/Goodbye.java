@@ -2,7 +2,9 @@ package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractShionCard;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -40,14 +42,17 @@ public class Goodbye extends AbstractShionCard {
             @Override
             public void update() {
                 for(int i = 0; i < p.hand.size(); i++) {
-                    this.addToTop(new DamageAction(m, new DamageInfo(p, Goodbye.this.damage, Goodbye.this.damageTypeForTurn), AttackEffect.FIRE));
+                    addToTop(new DamageAction(m, new DamageInfo(p, Goodbye.this.damage, Goodbye.this.damageTypeForTurn), AttackEffect.NONE));
+                    addToTop(new VFXAction(new AbstractAtlasGameEffect("Sparks 069 Impact Explosion Radial", m.hb.cX, m.hb.cY + 0.0f * Settings.scale,
+                            125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
+                    addToTop(new SFXAction("BLUNT_FAST"));
                 }
 
                 for(int i = 0; i < p.hand.size(); i++) {
                     if (Settings.FAST_MODE) {
-                        this.addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
+                        addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
                     } else {
-                        this.addToTop(new ExhaustAction(1, true, true));
+                        addToTop(new ExhaustAction(1, true, true));
                     }
                 }
                 isDone = true;

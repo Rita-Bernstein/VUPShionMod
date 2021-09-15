@@ -1,17 +1,21 @@
 package VUPShionMod.cards.liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
 import VUPShionMod.powers.HolySlashDownPower;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -45,10 +49,13 @@ public class HolySlashDown extends AbstractLiyezhuCard {
         calculateCardDamage(m);
 
         for (int i = 0; i < this.magicNumber; i++) {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 020 Slash1 Ray Right", m.hb.cX, m.hb.cY,
+                    125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.secondaryM)));
+        addToBot(new GainHyperdimensionalLinksAction(this.secondaryM));
+//        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.secondaryM)));
 
         this.rawDescription = DESCRIPTION;
         initializeDescription();

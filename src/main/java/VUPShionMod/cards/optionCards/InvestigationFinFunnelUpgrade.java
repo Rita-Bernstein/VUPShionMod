@@ -29,6 +29,8 @@ public class InvestigationFinFunnelUpgrade extends AbstractVUPShionCard {
     public InvestigationFinFunnelUpgrade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.color = CardColor.COLORLESS;
+
+        setDisplayRarity(CardRarity.RARE);
     }
 
     @Override

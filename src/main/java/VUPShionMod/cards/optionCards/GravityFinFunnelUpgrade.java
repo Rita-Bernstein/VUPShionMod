@@ -29,6 +29,8 @@ public class GravityFinFunnelUpgrade extends AbstractVUPShionCard {
     public GravityFinFunnelUpgrade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.color = CardColor.COLORLESS;
+
+        setDisplayRarity(CardRarity.RARE);
     }
 
     @Override

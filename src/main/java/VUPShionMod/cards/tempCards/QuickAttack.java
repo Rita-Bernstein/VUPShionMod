@@ -31,6 +31,8 @@ public class QuickAttack extends AbstractVUPShionCard {
         this.tags.add(CardTagsEnum.LOADED);
         this.exhaust = true;
         this.color = CardColor.COLORLESS;
+
+        setDisplayRarity(CardRarity.UNCOMMON);
     }
 
 

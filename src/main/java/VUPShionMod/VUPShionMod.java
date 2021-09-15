@@ -125,7 +125,7 @@ public class VUPShionMod implements
 
     public static void loadSettings() {
         try {
-            SpireConfig config = new SpireConfig("RingOfDestiny", "settings", VUPShionDefaults);
+            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
             config.load();
             useSimpleOrb = config.getBool("useSimpleOrb");
 
@@ -224,7 +224,7 @@ public class VUPShionMod implements
         });
 
 
-        settingsPanel.addUIElement(useSimpleOrbSwitch);
+//        settingsPanel.addUIElement(useSimpleOrbSwitch);
 
 //        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 

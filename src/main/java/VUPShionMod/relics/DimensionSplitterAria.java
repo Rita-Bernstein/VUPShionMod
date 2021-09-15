@@ -34,7 +34,10 @@ public class DimensionSplitterAria extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return String.format(this.DESCRIPTIONS[0], this.counter * 3 + 2, this.counter);
+        if (this.counter <= 1)
+            return String.format(DESCRIPTIONS[1] + DESCRIPTIONS[0], this.counter * 3 + 2, this.counter);
+        else
+            return String.format(this.DESCRIPTIONS[0], this.counter * 3 + 2, this.counter);
     }
 
     public void setDescriptionAfterLoading() {
@@ -47,7 +50,8 @@ public class DimensionSplitterAria extends CustomRelic {
     @Override
     public void atTurnStart() {
         setDescriptionAfterLoading();
-        doDamage();
+        if (this.counter > 1)
+            doDamage();
     }
 
     public void doDamage(AbstractMonster m, int extraDamage, boolean isLoseHP) {
@@ -61,7 +65,7 @@ public class DimensionSplitterAria extends CustomRelic {
                 addToBot(new LoseHPAction(m, AbstractDungeon.player, this.counter * 3 + 2 + extraDamage));
             else
                 addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter * 3 + 2 + extraDamage,
-                        DamageInfo.DamageType.THORNS),AbstractGameAction.AttackEffect.FIRE));
+                        DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 
             addToBot(new AbstractGameAction() {
                 @Override

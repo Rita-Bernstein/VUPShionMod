@@ -41,7 +41,8 @@ public class AnestheticReagent extends AbstractMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
+            ExhaustiveVariable.upgrade(this,1);
         }
     }
 }

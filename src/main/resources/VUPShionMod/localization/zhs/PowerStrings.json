@@ -177,5 +177,11 @@
     "DESCRIPTIONS": [
       "下 #b%d 个回合开始时，失去所有 #y超维链接 。"
     ]
+  },
+  "VUPShionMod:DoubleCardPower": {
+    "NAME": "Anastasia计划",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张牌将打出两次。"
+    ]
   }
 }

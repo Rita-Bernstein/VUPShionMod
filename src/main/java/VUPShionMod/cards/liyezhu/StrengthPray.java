@@ -17,7 +17,7 @@ public class StrengthPray extends AbstractLiyezhuCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz06.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public StrengthPray() {

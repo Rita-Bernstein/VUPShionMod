@@ -140,7 +140,7 @@
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia计划",
-    "DESCRIPTION": "获得 vup_shion_mod:超维链接 层数 !M! 倍的 格挡 。",
+    "DESCRIPTION": "你打出的下 !M! 张牌将打出两次。",
     "UPGRADE_DESCRIPTION": "获得 vup_shion_mod:超维链接 层数+3的 格挡 。",
     "EXTENDED_DESCRIPTION": [
       " NL （获得 !B! 点 格挡 。）"

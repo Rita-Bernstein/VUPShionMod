@@ -177,5 +177,11 @@
     "DESCRIPTIONS": [
       "At the start of the next #b%d turns, lose ALL #yHyperdimensional #yLink ."
     ]
+  },
+  "VUPShionMod:DoubleCardPower": {
+    "NAME": "Anastasia Program",
+    "DESCRIPTIONS": [
+      "Next #b%d card(s) is played twice."
+    ]
   }
 }

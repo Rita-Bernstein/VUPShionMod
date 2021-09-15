@@ -140,7 +140,7 @@
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia Program",
-    "DESCRIPTION": "Gain Block !M! times as much as vup_shion_mod:Hyperdimensional\u00a0Link.",
+    "DESCRIPTION": "Your next !M! card(s) is played twice.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain !B! Block.)"
     ]

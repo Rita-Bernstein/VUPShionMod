@@ -3,7 +3,8 @@
     "NAME": "Dimension Splitter: Aria",
     "FLAVOR": "The engine imbued with otherworldly destruction.",
     "DESCRIPTIONS": [
-      "At the start of your turn, deal #b%d ( #b2 + #yUpgrade x3) damage to a random enemy. If #yFatal , repeats and gain [E] . NL It is upgraded whenever you enter the next Act. NL Current Upgrade： #b%d."
+      "At the start of your turn, deal #b%d ( #b2 + #yUpgrade x3) damage to a random enemy. If #yFatal , repeats and gain [E] . NL It is upgraded whenever you enter the next Act. NL Current Upgrade： #b%d.",
+      "Space-based Weapon Preloading... NL "
     ]
   },
   "VUPShionMod:KuroisuDetermination": {

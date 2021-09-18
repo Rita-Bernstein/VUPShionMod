@@ -29,12 +29,14 @@ public class AnastasiaNecklace extends CustomRelic {
     private static final String OUTLINE_PATH = "img/relics/outline/AnastasiaNecklace.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
+    private static final Texture UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/AnastasiaNecklaceUpgrade.png"));
 
     private boolean triggered = false;
 
     public AnastasiaNecklace() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
         getUpdatedDescription();
+        UPGRADE_IMG.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     }
 
     @Override
@@ -53,6 +55,8 @@ public class AnastasiaNecklace extends CustomRelic {
                 }
             }
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttackOrderSpecialPower(AbstractDungeon.player)));
+
+            this.img = UPGRADE_IMG;
         }
     }
 

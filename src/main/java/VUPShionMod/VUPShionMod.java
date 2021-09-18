@@ -16,6 +16,7 @@ import VUPShionMod.character.Shion;
 import VUPShionMod.events.BreakAppointment;
 import VUPShionMod.events.CroissantEvent;
 import VUPShionMod.events.LostEquipment;
+import VUPShionMod.events.Newborn;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -231,16 +232,24 @@ public class VUPShionMod implements
         BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() ->!AbstractDungeon.id.equals("TheEnding"))
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() ->!AbstractDungeon.id.equals("TheEnding"))
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(BreakAppointment.ID, BreakAppointment.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() ->!AbstractDungeon.id.equals("TheEnding"))
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(Newborn.ID, Newborn.class) //Event ID//
+                //Event Character//
+                .spawnCondition(() ->AbstractDungeon.id.equals("TheEnding"))
                 .create());
     }
 

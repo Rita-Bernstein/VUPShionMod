@@ -224,7 +224,7 @@ public class VUPShionMod implements
         });
 
 
-//        settingsPanel.addUIElement(useSimpleOrbSwitch);
+        settingsPanel.addUIElement(useSimpleOrbSwitch);
 
 //        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 

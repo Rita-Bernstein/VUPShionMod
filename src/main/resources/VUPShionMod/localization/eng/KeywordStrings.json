@@ -10,7 +10,7 @@
     "NAMES": [
       "funnel"
     ],
-    "DESCRIPTION": "#yFunnel attacks at the start of each turn. NL For each Energy cost this turn, you may switch #yFunnel."
+    "DESCRIPTION": "#yFunnel attacks at the start of each of your turn. NL For each Energy cost this turn, you may switch #yFunnel."
   },
   {
     "NAMES": [
@@ -35,7 +35,7 @@
     "NAMES": [
       "bleeding"
     ],
-    "DESCRIPTION": "Bleeding creatures take additional damage equal to #ybleeding from Attacks this turn. NL It halves at the end of turn."
+    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding from Attacks this turn. NL It halves at the end of turn."
   },
   {
     "NAMES": [

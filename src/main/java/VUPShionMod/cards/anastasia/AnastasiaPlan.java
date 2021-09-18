@@ -21,14 +21,14 @@ public class AnastasiaPlan extends AbstractAnastasiaCard {
     public AnastasiaPlan() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 0;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
 //        addToBot(new GainBlockAction(p, p, this.block));
 //        this.rawDescription = cardStrings.DESCRIPTION;
 
-        addToBot(new ApplyPowerAction(p,p,new DoubleCardPower(p,1)));
+        addToBot(new ApplyPowerAction(p,p,new DoubleCardPower(p,this.magicNumber)));
     }
 /*
 

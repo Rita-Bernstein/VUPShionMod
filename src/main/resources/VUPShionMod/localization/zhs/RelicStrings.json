@@ -4,7 +4,7 @@
     "FLAVOR": "咏叹调型维度裂解者。",
     "DESCRIPTIONS": [
       "你的回合开始时，对随机一名敌人造成 #b%d ( #b2 + #y强化等级 x3)点伤害。 #y斩杀 时，获得 [E] 并重复上述操作。 NL 每进入下一阶段，获得强化。 NL 当前强化等级： #b%d 。",
-      "天基武器载入中…… NL "
+      "天基武器将在一层不启动 NL "
     ]
   },
   "VUPShionMod:KuroisuDetermination": {

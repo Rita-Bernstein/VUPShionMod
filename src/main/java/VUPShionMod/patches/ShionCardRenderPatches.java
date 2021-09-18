@@ -3,10 +3,10 @@ package VUPShionMod.patches;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
+import VUPShionMod.util.CardTypeHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
@@ -23,7 +22,7 @@ import javassist.expr.MethodCall;
 
 
 public class ShionCardRenderPatches {
-    public static float drawYFix = 12.0f;
+    public static float drawYFix = 18.0f;
 
     @SpirePatch(
             clz = AbstractCard.class,
@@ -36,8 +35,8 @@ public class ShionCardRenderPatches {
     public static class RenderPortraitPatch {
         @SpireInsertPatch(rloc = 3, localvars = {"drawY"})
         public static void Insert(AbstractCard card, SpriteBatch sb, @ByRef float[] drawY) {
-            if (card instanceof AbstractVUPShionCard)
-                drawY[0] = card.current_y - 95.0F + drawYFix;
+            if (card instanceof AbstractVUPShionCard && card.rarity != AbstractCard.CardRarity.SPECIAL)
+                drawY[0] = card.current_y - 95.0F + drawYFix * card.drawScale * Settings.scale;
 
             SpireReturn.Continue();
         }
@@ -54,8 +53,8 @@ public class ShionCardRenderPatches {
     public static class RenderPortraitPatch2 {
         @SpireInsertPatch(rloc = 12, localvars = {"drawY"})
         public static void Insert(AbstractCard card, SpriteBatch sb, @ByRef float[] drawY) {
-            if (card instanceof AbstractVUPShionCard)
-                drawY[0] = card.current_y - card.portrait.packedHeight / 2.0F + drawYFix;
+            if (card instanceof AbstractVUPShionCard && card.rarity != AbstractCard.CardRarity.SPECIAL)
+                drawY[0] = card.current_y - card.portrait.packedHeight / 2.0F + drawYFix * card.drawScale * Settings.scale;
 
             SpireReturn.Continue();
         }
@@ -71,8 +70,12 @@ public class ShionCardRenderPatches {
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getClassName().equals(FontHelper.class.getName()) && m.getMethodName().equals("renderRotatedText")) {
-                        m.replace("if(this instanceof " + AbstractVUPShionCard.class.getName() + "){ $proceed($1,$2,$3,$4,$5, -10.0f * this.drawScale * " + Settings.class.getName()
-                                + ".scale,188.0f * this.drawScale *" + Settings.class.getName() + ".scale,$8,$9,$10);"
+                        m.replace("if(this instanceof " + AbstractVUPShionCard.class.getName() + " && this.rarity !=" + AbstractCard.class.getName() + ".CardRarity.SPECIAL){ " +
+                                "if(" + Settings.class.getName() + ".language == " + Settings.class.getName() + ".GameLanguage.ZHS){" +
+                                "$proceed($1,$2,$3,$4,$5, -10.0f * this.drawScale * " + Settings.class.getName()
+                                + ".scale,188.0f * this.drawScale *" + Settings.class.getName() + ".scale,$8,$9,$10);} else{" +
+                                CardTypeHelper.class.getName() + ".renderRotatedText($1,$2,$3,$4,$5, -90.0f * this.drawScale * " + Settings.class.getName()
+                                + ".scale,188.0f * this.drawScale *" + Settings.class.getName() + ".scale,$8,$9,$10);}"
                                 + "} else {"
                                 + "$proceed($$);"
                                 + "}"
@@ -89,13 +92,15 @@ public class ShionCardRenderPatches {
             method = "renderType"
     )
     public static class RenderType {
+
+
         public static ExprEditor Instrument() {
             return new ExprEditor() {
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getClassName().equals(FontHelper.class.getName()) && m.getMethodName().equals("renderRotatedText")) {
-                        m.replace("if(this instanceof " + AbstractVUPShionCard.class.getName() +
-                                "){ $proceed($1,$2,$3,$4,$5,$6, 28.0f * this.drawScale *" + Settings.class.getName() + ".scale,$8,$9,$10);"
+                        m.replace("if(this instanceof " + AbstractVUPShionCard.class.getName() + " && this.rarity !=" + AbstractCard.class.getName() + ".CardRarity.SPECIAL){"
+                                + CardTypeHelper.class.getName() + ".renderRotatedText($1,$2,$3,$4,$5,$6, 28.0f * this.drawScale *" + Settings.class.getName() + ".scale,$8,$9,$10,this.rarity);"
                                 + "} else {"
                                 + "$proceed($$);"
                                 + "}"
@@ -115,7 +120,7 @@ public class ShionCardRenderPatches {
     public static class MissingPortraitFix {
         @SpireInsertPatch(rloc = 19, localvars = {"card", "portraitImg"})
         public static SpireReturn<Void> Insert(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard card, Texture portraitImg) {
-            if (card instanceof AbstractVUPShionCard) {
+            if (card instanceof AbstractVUPShionCard && card.rarity != AbstractCard.CardRarity.SPECIAL) {
                 sb.draw(portraitImg, Settings.WIDTH / 2.0F - 250.0F, Settings.HEIGHT / 2.0F - 190.0F + 190.0F * Settings.scale, 250.0F, 190.0F, 500.0F, 380.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 500, 380, false, false);
                 return SpireReturn.Return(null);
             }
@@ -134,10 +139,15 @@ public class ShionCardRenderPatches {
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getClassName().equals(FontHelper.class.getName()) && m.getMethodName().equals("renderFontCentered")) {
-                        m.replace("if(this.card instanceof " + AbstractVUPShionCard.class.getName() + "){ $proceed($1,$2,$3,"
+                        m.replace("if(this.card instanceof " + AbstractVUPShionCard.class.getName() + " && this.card.rarity !=" + AbstractCard.class.getName() + ".CardRarity.SPECIAL){" +
+                                "if(" + Settings.class.getName() + ".language == " + Settings.class.getName() + ".GameLanguage.ZHS){" +
+                                " $proceed($1,$2,$3,"
                                 + Settings.class.getName() + ".WIDTH / 2.0F - 20.0F * " + Settings.class.getName() + ".scale,"
                                 + Settings.class.getName() + ".HEIGHT / 2.0F + 376.0F *" + Settings.class.getName() + ".scale,$6);"
-                                + "} else {"
+                                + "}else{" + FontHelper.class.getName() + ".renderFont(" +
+                                "$1,$2,$3," + Settings.class.getName() + ".WIDTH / 2.0F - 180.0F * " + Settings.class.getName() + ".scale,"
+                                + Settings.class.getName() + ".HEIGHT / 2.0F + 394.0F *" + Settings.class.getName() + ".scale,$6" +
+                                ");}} else {"
                                 + "$proceed($$);"
                                 + "}"
 
@@ -159,8 +169,9 @@ public class ShionCardRenderPatches {
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getClassName().equals(FontHelper.class.getName()) && m.getMethodName().equals("renderFontCentered")) {
-                        m.replace("if(this.card instanceof " + AbstractVUPShionCard.class.getName() + "){ $proceed($1,$2,$3,$4,"
-                                + Settings.class.getName() + ".HEIGHT / 2.0F + 10.0F *" + Settings.class.getName() + ".scale,$6);"
+                        m.replace("if(this.card instanceof " + AbstractVUPShionCard.class.getName() + " && this.card.rarity !=" + AbstractCard.class.getName() + ".CardRarity.SPECIAL){ $proceed($1,$2,$3,$4,"
+                                + Settings.class.getName() + ".HEIGHT / 2.0F + 10.0F *" + Settings.class.getName() + ".scale," +
+                                Color.class.getName() + ".BLACK);"
                                 + "} else {"
                                 + "$proceed($$);"
                                 + "}"
@@ -189,7 +200,7 @@ public class ShionCardRenderPatches {
         @SpireInsertPatch(rloc = 0, localvars = {"card"})
         public static SpireReturn<Void> Insert(SingleCardViewPopup _instance, SpriteBatch sb,
                                                @ByRef(type = "com.megacrit.cardcrawl.cards.AbstractCard") Object[] card) {
-            if ((card[0] instanceof AbstractVUPShionCard)) {
+            if ((card[0] instanceof AbstractVUPShionCard && ((AbstractCard) card[0]).rarity != AbstractCard.CardRarity.SPECIAL)) {
                 AbstractVUPShionCard c = ((AbstractVUPShionCard) card[0]);
                 if (c.isLocked || !c.isSeen) {
                     return SpireReturn.Return(null);
@@ -266,8 +277,8 @@ public class ShionCardRenderPatches {
             sb.draw(img, x - img.getWidth() / 2.0F, y - img.getHeight() / 2.0F,
                     img.getWidth() / 2.0f, img.getHeight() / 2.0f,
                     img.getWidth(), img.getHeight(),
-                    Settings.scale,
-                    Settings.scale,
+                    1.2f * Settings.scale,
+                    1.2f * Settings.scale,
                     0.0F,
                     0, 0,
                     img.getWidth(), img.getHeight(),

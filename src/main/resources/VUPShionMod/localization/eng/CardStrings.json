@@ -9,7 +9,7 @@
   },
   "VUPShionMod:DefenseSystemCharging": {
     "NAME": "Back on Defense",
-    "DESCRIPTION": "Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel . NL If the last card played this combat was a vup_shion_mod:Funnel card, return to your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel. NL If the last card played this combat was a vup_shion_mod:Funnel card, return to your hand."
   },
   "VUPShionMod:DeploymentOfDefenseSystem": {
     "NAME": "Defense Unfold",
@@ -36,11 +36,11 @@
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "Quick Defense",
-    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Gain !B! Block . NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel . NL Exhaust."
+    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel. NL Exhaust."
   },
   "VUPShionMod:QuickScreen": {
     "NAME": "Quick Skim",
-    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Scry !M!. NL Draw !VUPShionSecondM! cards. NL Exhaust."
+    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Scry !M!. NL Draw !VUPShionSecondM! card. NL Exhaust."
   },
   "VUPShionMod:SpeedShot": {
     "NAME": "Bombard",
@@ -87,12 +87,12 @@
   },
   "VUPShionMod:Goodbye": {
     "NAME": "Enough!",
-    "DESCRIPTION": " Exhaust your hand. NL For each card Exhausted , deal !D! damage."
+    "DESCRIPTION": " Exhaust your hand. NL For each card Exhausted, deal !D! damage."
   },
   "VUPShionMod:EnhancedWeapon": {
     "NAME": "Accelerate",
-    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading Complete ,draw a card.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you trigger vup_shion_mod:Loading Complete ,draw a card."
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading Complete, draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you trigger vup_shion_mod:Loading Complete, draw 1 card."
   },
   "VUPShionMod:Boot": {
     "NAME": "Boot Up",
@@ -108,8 +108,8 @@
   },
   "VUPShionMod:Rob": {
     "NAME": "Pillage",
-    "DESCRIPTION": "Deal damage equal to vup_shion_mod:Total\u00a0Upgrade. NL If Fatal , gain !M! gold.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to 4+ vup_shion_mod:Total\u00a0Upgrade. NL If Fatal , gain !M! gold.",
+    "DESCRIPTION": "Deal damage equal to vup_shion_mod:Total\u00a0Upgrade. NL If Fatal, gain !M! gold.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 4+ vup_shion_mod:Total\u00a0Upgrade. NL If Fatal, gain !M! gold.",
     "EXTENDED_DESCRIPTION": [
       "（Deal !D! damage.）"
     ]
@@ -140,7 +140,7 @@
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia Program",
-    "DESCRIPTION": "Your next !M! card(s) is played twice.",
+    "DESCRIPTION": "Your next !M! card is played twice.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain !B! Block.)"
     ]
@@ -177,7 +177,7 @@
   },
   "VUPShionMod:TimeSlack": {
     "NAME": "Cushion",
-    "DESCRIPTION": "Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel . NL Shuffle !M! *Quick *Defense into your discard pile."
+    "DESCRIPTION": "Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel. NL Shuffle !M! *Quick *Defense into your discard pile."
   },
   "VUPShionMod:TimeStop": {
     "NAME": "Pause",
@@ -202,7 +202,7 @@
   },
   "VUPShionMod:CrackOfTime": {
     "NAME": "Fissure in Time",
-    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete , gain !M! Block ."
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete, gain !M! Block."
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "Cloyce Form",
@@ -229,7 +229,7 @@
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "Hypervelocity",
-    "DESCRIPTION": "Draw !M! cards. Then reduce the cost of all cards in your hand to 0 this turn. NL Lose [E] [E] next turn. Exhaust."
+    "DESCRIPTION": "Draw !M! cards, then reduce the cost of all cards in your hand to 0 this turn. NL Lose [E] [E] next turn. Exhaust."
   },
   "VUPShionMod:DelayAvatar": {
     "NAME": "Lure",
@@ -242,7 +242,7 @@
   },
   "VUPShionMod:AttackWithDefense": {
     "NAME": "Feint",
-    "DESCRIPTION": "Shuffle !M! *Quick *Attack into your draw pile. NL Gain !B! Block ."
+    "DESCRIPTION": "Shuffle !M! *Quick *Attack into your draw pile. NL Gain !B! Block."
   },
   "VUPShionMod:LockIndication": {
     "NAME": "Snipe",
@@ -250,7 +250,7 @@
   },
   "VUPShionMod:TacticalLayout": {
     "NAME": "Tactical Layout",
-    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to random enemies !M! times."
+    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to a random enemy !M! times."
   },
   "VUPShionMod:FinFunnelSupport": {
     "NAME": "Reinforcement",
@@ -285,7 +285,7 @@
   },
   "VUPShionMod:BattlefieldHeritage": {
     "NAME": "Battlefield Heritage",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Put !VUPShionSecondM! Attacks from your discard pile into your hand. NL Reduce cost of them by 1 in this turn."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Put !VUPShionSecondM! Attacks from your discard pile into your hand. NL Reduce the cost of them by 1 this turn."
   },
   "VUPShionMod:GravityLoading": {
     "NAME": "Zero Gravity",
@@ -348,11 +348,11 @@
   },
   "VUPShionMod:HolyCoffinSinkingSpirit": {
     "NAME": "Holy Coffin",
-    "DESCRIPTION": "Whenever you gain or lose vup_shion_mod:Hyperdimensional\u00a0Link , gain !M! Block ."
+    "DESCRIPTION": "Whenever you gain or lose vup_shion_mod:Hyperdimensional\u00a0Link, gain !M! Block."
   },
   "VUPShionMod:HolySlashDown": {
     "NAME": "Crucifixion",
-    "DESCRIPTION": "Deal 7+ vup_shion_mod:Hyperdimensional\u00a0Link damage !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Can be Upgraded any number of times.",
+    "DESCRIPTION": "Deal damage equal to 7+ vup_shion_mod:Hyperdimensional\u00a0Link !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Can be Upgraded any number of times.",
     "EXTENDED_DESCRIPTION": [
       "(Deal !D! damage)"
     ]

@@ -136,6 +136,12 @@
       "Damage dealt by #yFunnel each turn now grants you equal #yBlock . NL Incompatible with other Orders."
     ]
   },
+  "VUPShionMod:AttackOrderSpecialPower": {
+    "NAME": "Order: Special",
+    "DESCRIPTIONS": [
+      "Damage dealt by #yFunnel now hit ALL enemies."
+    ]
+  },
   "VUPShionMod:DelayAvatarPower": {
     "NAME": "Lure",
     "DESCRIPTIONS": [

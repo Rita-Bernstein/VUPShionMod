@@ -136,6 +136,12 @@
       "#y浮游炮 的每回合攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
     ]
   },
+  "VUPShionMod:AttackOrderSpecialPower": {
+    "NAME": "攻击指令·伍式",
+    "DESCRIPTIONS": [
+      "#y浮游炮 的攻击将对所有敌人造成伤害。"
+    ]
+  },
   "VUPShionMod:DelayAvatarPower": {
     "NAME": "延时替身",
     "DESCRIPTIONS": [

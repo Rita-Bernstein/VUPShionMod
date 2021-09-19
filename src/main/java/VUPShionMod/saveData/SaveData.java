@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.monsters.city.Champ;
@@ -106,17 +107,17 @@ public class SaveData {
             //AbstractDungeon then loads that data from the SaveFile.
 
 
-            System.out.println(file.room_x);
-            if (file.room_x == 3 && file.room_y == 5 && AbstractDungeon.id.equals("TheEnding")) {
-                System.out.println("WE GOT ONE!");
-                loadIntoShionEvent();
-            }
+//            System.out.println(file.room_x);
+//            if (file.room_x == -1 && file.room_y == 15 && AbstractDungeon.actNum >= 4 && Settings.isStandardRun()) {
+//                System.out.println("WE GOT ONE!");
+//                loadIntoShionEvent();
+//            }
         }
     }
 
     public static void loadIntoShionEvent() {
         AbstractDungeon.bossKey = Champ.ID;
-        MapRoomNode node = new MapRoomNode(3, 5);
+        MapRoomNode node = new MapRoomNode(-1, 15);
         node.room = new MonsterRoomBoss();
     }
 }

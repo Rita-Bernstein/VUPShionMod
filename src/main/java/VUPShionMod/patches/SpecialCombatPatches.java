@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.map.MapRoomNode;
@@ -23,7 +24,7 @@ public class SpecialCombatPatches {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(ProceedButton _instance) {
             if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(Champ.ID)) {
-                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && AbstractDungeon.id.equals("TheEnding")) {
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && AbstractDungeon.actNum >= 4 && Settings.isStandardRun()) {
                     goToShionEvent(_instance);
                     return SpireReturn.Return(null);
                 }
@@ -51,7 +52,7 @@ public class SpecialCombatPatches {
         AbstractDungeon.closeCurrentScreen();
     }
 
-
+/*
     @SpirePatch(
             clz = TheEnding.class,
             method = "generateSpecialMap"
@@ -74,5 +75,5 @@ public class SpecialCombatPatches {
 
             return SpireReturn.Continue();
         }
-    }
+    }*/
 }

@@ -45,16 +45,17 @@ public class Newborn extends AbstractImageEvent {
             case INTRO:
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.setDialogOption(OPTIONS[1], new AnastasiaNecklace());
+                this.imageEventText.setDialogOption(OPTIONS[3], true);
                 this.imageEventText.setDialogOption(OPTIONS[2]);
                 this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BossEvent2.png"));
                 this.curScreen = CurrentScreen.COMPLETE;
                 break;
             case COMPLETE:
-                if (buttonPressed == 0)
-                    fightBoss();
-                 else
+                if (buttonPressed == 0){
+//                    fightBoss();
+                } else{
                     leave();
+                }
                 break;
         }
     }
@@ -64,7 +65,7 @@ public class Newborn extends AbstractImageEvent {
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         AbstractDungeon.bossKey = Champ.ID;
-        MapRoomNode node = new MapRoomNode(3, 5);
+        MapRoomNode node = new MapRoomNode(-1, 15);
         node.room = new MonsterRoomBoss();
         AbstractDungeon.nextRoom = node;
         CardCrawlGame.music.fadeOutTempBGM();

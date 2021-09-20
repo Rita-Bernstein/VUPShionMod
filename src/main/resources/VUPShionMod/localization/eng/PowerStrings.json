@@ -189,5 +189,17 @@
     "DESCRIPTIONS": [
       "Next #b%d card(s) is played twice."
     ]
+  },
+  "VUPShionMod:DefectPower": {
+    "NAME": "缺损",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将失去 #b%d 点最大生命。"
+    ]
+  },
+  "VUPShionMod:ShockPower": {
+    "NAME": "震荡",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将 #y消耗 #b%d 张稀有度最高的牌。"
+    ]
   }
 }

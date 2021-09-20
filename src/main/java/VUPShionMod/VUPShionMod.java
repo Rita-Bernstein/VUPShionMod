@@ -19,6 +19,7 @@ import VUPShionMod.events.LostEquipment;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
+import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardColorEnum;
@@ -251,6 +252,9 @@ public class VUPShionMod implements
                 //Event Character//
                 .spawnCondition(() ->AbstractDungeon.id.equals("TheEnding"))
                 .create());
+
+
+        BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
     }
 
     @Override

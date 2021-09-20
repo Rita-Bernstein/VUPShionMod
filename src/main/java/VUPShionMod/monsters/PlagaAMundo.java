@@ -58,10 +58,10 @@ public class PlagaAMundo extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/crowbot.atlas", "VUPShionMod/img/monsters/PlagaAMundo/crowbot.json", 1.0f);
+        loadAnimation("images/monsters/theBottom/cultist/skeleton.atlas", "images/monsters/theBottom/cultist/skeleton.json", 1.0f);
 
 
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "waving", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = false;
 
@@ -159,10 +159,10 @@ public class PlagaAMundo extends CustomMonster {
     public void damage(DamageInfo info) {
         super.damage(info);
 
-        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > 0 && currentHealth > 0) {
-            this.state.setAnimation(0, "Hit", false);
-            this.state.addAnimation(0, "Idle", true, 0.0F);
-        }
+//        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > 0 && currentHealth > 0) {
+//            this.state.setAnimation(0, "Hit", false);
+//            this.state.addAnimation(0, "Idle", true, 0.0F);
+//        }
 
         if (this.currentHealth < 1000 && !isGunMode) {
             this.isGunMode = true;

@@ -3,6 +3,7 @@ package VUPShionMod.relics;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cutscenes.CGlayout;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.monsters.PlagaAMundoMinion;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.AttackOrderSpecialPower;
@@ -73,7 +74,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         }
     }
 
-    public void applyEffect(){
+    public void applyEffect() {
         setDescriptionAfterLoading();
 
         AbstractDungeon.player.increaseMaxHp(200, true);
@@ -128,7 +129,15 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
 
     @Override
     public boolean onPlayerDeath(AbstractPlayer abstractPlayer, DamageInfo damageInfo) {
-        if (!triggered) {
+        boolean canTrigger = false;
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (m.id.equals(PlagaAMundoMinion.ID)){
+                canTrigger = true;
+                break;
+            }
+        }
+
+        if (!triggered && canTrigger) {
             triggerRelic();
             AbstractDungeon.player.halfDead = true;
             (AbstractDungeon.getCurrRoom()).cannotLose = true;
@@ -142,17 +151,17 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     @Override
     public void render(SpriteBatch sb) {
         super.render(sb);
-        if(this.triggered)
-        cg.render(sb);
+        if (this.triggered)
+            cg.render(sb);
     }
 
     @Override
     public void update() {
         super.update();
-        if(this.triggered)
-        cg.update();
+        if (this.triggered)
+            cg.update();
 
-        if(cg.isDone && !effectApplied){
+        if (cg.isDone && !effectApplied) {
             effectApplied = true;
             AbstractDungeon.isScreenUp = false;
             GameCursor.hidden = false;
@@ -168,8 +177,8 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
 
     }
 
-    public void renderAbove(SpriteBatch sb){
-        if(this.triggered)
+    public void renderAbove(SpriteBatch sb) {
+        if (this.triggered)
             cg.renderAbove(sb);
     }
 }

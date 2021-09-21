@@ -219,7 +219,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_DAGGER_1";
+        return "SHION_" + (3 + MathUtils.random(2));
     }
 
     @Override

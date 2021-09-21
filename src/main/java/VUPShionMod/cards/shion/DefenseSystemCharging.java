@@ -67,8 +67,8 @@ public class DefenseSystemCharging extends AbstractShionCard {
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
-        if (cardList.size() >= 2) {
-            AbstractCard card = cardList.get(cardList.size() - 2);
+        if (cardList.size() >= 1) {
+            AbstractCard card = cardList.get(cardList.size() - 1);
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
             }

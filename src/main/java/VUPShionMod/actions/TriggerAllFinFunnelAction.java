@@ -51,10 +51,10 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
                 availableFinFunnel.add(f);
                 if (!random) {
                     if(target == null)
-                        this.target = AbstractDungeon.getRandomMonster();
+                        this.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                     monsters.add(target);
                 } else {
-                    AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
+                    AbstractMonster abstractMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                     if (abstractMonster != null)
                         monsters.add(abstractMonster);
                 }

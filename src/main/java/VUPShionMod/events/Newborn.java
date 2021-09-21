@@ -1,6 +1,7 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.relics.AnastasiaNecklace;
 import VUPShionMod.relics.Croissant;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -45,14 +46,14 @@ public class Newborn extends AbstractImageEvent {
             case INTRO:
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.setDialogOption(OPTIONS[3], true);
+                this.imageEventText.setDialogOption(OPTIONS[1]);
                 this.imageEventText.setDialogOption(OPTIONS[2]);
                 this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BossEvent2.png"));
                 this.curScreen = CurrentScreen.COMPLETE;
                 break;
             case COMPLETE:
                 if (buttonPressed == 0){
-//                    fightBoss();
+                    fightBoss();
                 } else{
                     leave();
                 }
@@ -64,7 +65,7 @@ public class Newborn extends AbstractImageEvent {
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new AnastasiaNecklace());
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-        AbstractDungeon.bossKey = Champ.ID;
+        AbstractDungeon.bossKey = PlagaAMundo.ID;
         MapRoomNode node = new MapRoomNode(-1, 15);
         node.room = new MonsterRoomBoss();
         AbstractDungeon.nextRoom = node;

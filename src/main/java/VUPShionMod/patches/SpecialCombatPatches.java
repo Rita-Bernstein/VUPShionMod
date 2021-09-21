@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.events.Newborn;
+import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.relics.AnastasiaNecklace;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
@@ -10,9 +11,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheEnding;
-import com.megacrit.cardcrawl.map.MapRoomNode;
-import com.megacrit.cardcrawl.monsters.city.Champ;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
@@ -28,7 +26,7 @@ public class SpecialCombatPatches {
     public static class ProceedButtonPatch {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(ProceedButton _instance) {
-            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(Champ.ID)) {
+            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && AbstractDungeon.actNum >= 4 && Settings.isStandardRun()) {
                     goToShionEvent(_instance);
                     return SpireReturn.Return(null);

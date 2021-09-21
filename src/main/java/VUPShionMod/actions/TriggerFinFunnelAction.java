@@ -120,7 +120,7 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
         for (int i = 0; i < this.loops; i++) {
 //            获取敌人
             if (random || this.target == null) {
-                AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
+                AbstractMonster abstractMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                 if (abstractMonster != null)
                     this.target = abstractMonster;
             }

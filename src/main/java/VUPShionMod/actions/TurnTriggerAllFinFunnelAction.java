@@ -83,8 +83,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                         monsters.add(target);
                     } else {
                         AbstractMonster abstractMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
-                        if (abstractMonster != null)
-                            monsters.add(abstractMonster);
+                        monsters.add(abstractMonster);
                     }
                 }
             }
@@ -111,6 +110,11 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                 } else {
                     if (monsters.size() >= availableFinFunnel.size()) {
                         AbstractMonster m = monsters.get(i);
+                        if (m == null) {
+                            m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
+                            monsters.set(i, m);
+                        }
+
                         if (f instanceof PursuitFinFunnel) {
                             if (isDoubleDamage)
                                 addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level * 3, DamageInfo.DamageType.THORNS), 1, true, f.getFinalEffect()));
@@ -144,25 +148,31 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 //                            addToBot(new ApplyPowerAction(mo, p, new PursuitPower(mo, f.getFinalEffect())));
                     }
                 } else {
-                    AbstractMonster m = monsters.get(i);
-                    if (f instanceof GravityFinFunnel)
-                        addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                    if (monsters.size() >= availableFinFunnel.size()) {
+                        AbstractMonster m = monsters.get(i);
+                        if (m == null) {
+                            m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
+                            monsters.set(i, m);
+                        }
+                        if (f instanceof GravityFinFunnel)
+                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
 
-                    if (f instanceof InvestigationFinFunnel)
-                        addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));
+                        if (f instanceof InvestigationFinFunnel)
+                            addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));
 
 //                    if (f instanceof PursuitFinFunnel)
 //                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.getFinalEffect())));
 
 
 //      额外给予流血效果
-                    if (isApplyBleeding)
-                        addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 2)));
+                        if (isApplyBleeding)
+                            addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 2)));
+                    }
+
                 }
-
             }
-        }
 
-        this.isDone = true;
+            this.isDone = true;
+        }
     }
 }

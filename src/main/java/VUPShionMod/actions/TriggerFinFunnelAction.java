@@ -74,20 +74,6 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
         this.forceFinFunnel = forceFinFunnel;
     }
 
-    private void getPower() {
-        if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
-            isDoubleDamage = false;
-
-        if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID))
-            isMultiDamage = true;
-
-        if (AbstractDungeon.player.hasPower(AttackOrderGammaPower.POWER_ID))
-            isApplyBleeding = false;
-
-        if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
-            isGainBlock = false;
-    }
-
     @Override
     public void update() {
         if (!(AbstractDungeon.player instanceof Shion)) {
@@ -96,9 +82,6 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
         }
 
 //        初始化敌人数组， 初始化浮游炮数组并获取。一些玩家power情况
-
-        getPower();
-
         AbstractPlayer p = AbstractDungeon.player;
         AbstractFinFunnel f = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
 
@@ -117,73 +100,30 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
 
         ArrayList<AbstractMonster> monsters = new ArrayList<>();
 
-        for (int i = 0; i < this.loops; i++) {
+
 //            获取敌人
+        for (int i = 0; i < this.loops; i++) {
+
             if (random || this.target == null) {
-                AbstractMonster abstractMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
+                AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
                 if (abstractMonster != null)
                     this.target = abstractMonster;
             }
             monsters.add(target);
         }
 
-//                    特效单独弄
-        if (f.level >= 0 && this.target != null) {
-            if (!this.target.isDeadOrEscaped()) {
-                if (isMultiDamage) {
-                    addToBot(new VFXAction(AbstractDungeon.player, new FinFunnelBeamEffect(f, p.flipHorizontal), 0.4F));
-                } else {
-                    addToBot(new VFXAction(new MonstersFinFunnelSmallLaserEffect(f, monsters), 0.3F));
-                    addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-                }
-            }
-        }
-
 
         for (int i = 0; i < this.loops; i++) {
             if (f.level >= 0 && this.target != null) {
                 if (!this.target.isDeadOrEscaped()) {
-//                    aoe的时候的造成伤害还有被动结算
-                    if (isMultiDamage) {
+                    if (f instanceof GravityFinFunnel)
+                        addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
 
-                        addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(f.level, true),
-                                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                    if (f instanceof InvestigationFinFunnel)
+                        addToBot(new ApplyPowerAction(target, p, new BleedingPower(target, p, f.getFinalEffect())));
 
-                        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                            if (f instanceof GravityFinFunnel)
-                                addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
-                            if (f instanceof InvestigationFinFunnel)
-                                addToBot(new ApplyPowerAction(mo, p, new BleedingPower(mo, p, f.getFinalEffect())));
-                            if (f instanceof PursuitFinFunnel)
-                                addToBot(new ApplyPowerAction(mo, p, new PursuitPower(mo, f.getFinalEffect())));
-                        }
-
-                    } else {
-
-//                    对单的时候的造成伤害还有被动结算
-
-
-                        if (isDoubleDamage)
-                            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, f.level * 2, DamageInfo.DamageType.THORNS)));
-                        else if (isGainBlock)
-                            addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, f.level, DamageInfo.DamageType.THORNS), 1.0f));
-                        else
-                            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, f.level, DamageInfo.DamageType.THORNS)));
-
-
-                        if (f instanceof GravityFinFunnel)
-                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
-
-                        if (f instanceof InvestigationFinFunnel)
-                            addToBot(new ApplyPowerAction(target, p, new BleedingPower(target, p, f.getFinalEffect())));
-
-                        if (f instanceof PursuitFinFunnel)
-                            addToBot(new ApplyPowerAction(target, p, new PursuitPower(target, f.getFinalEffect())));
-
-                        if (isApplyBleeding)
-                            addToBot(new ApplyPowerAction(target, p, new BleedingPower(target, p, 2)));
-
-                    }
+                    if (f instanceof PursuitFinFunnel)
+                        addToBot(new ApplyPowerAction(target, p, new PursuitPower(target, f.getFinalEffect())));
                 }
             } else {
                 this.isDone = true;

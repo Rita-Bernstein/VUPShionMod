@@ -199,7 +199,19 @@
   "VUPShionMod:ShockPower": {
     "NAME": "震荡",
     "DESCRIPTIONS": [
+      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将 #y丢弃 抽牌堆稀有度最高的的 #b%d 张牌。"
+    ]
+  },
+  "VUPShionMod:DestroyPower": {
+    "NAME": "摧毁",
+    "DESCRIPTIONS": [
       "每当这个敌人对你造成未被 #y格挡 的伤害时，你将 #y消耗 #b%d 张稀有度最高的牌。"
+    ]
+  },
+  "VUPShionMod:LifeLinkPower": {
+    "NAME": "生命连接",
+    "DESCRIPTIONS": [
+      "如果其他敌人还生存，将在下回合后以满血复活。"
     ]
   }
 }

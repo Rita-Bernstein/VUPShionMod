@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 @SuppressWarnings("unused")
@@ -29,8 +30,10 @@ public class EnergyPanelPatches {
     )
     public static class PatchRender {
         public static void Postfix(EnergyPanel panel, SpriteBatch sb) {
-            AbstractDungeon.player.getEnergyNumFont().getData().setScale(EnergyPanel.fontScale * 0.7F);
-            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), Integer.toString(energyUsedThisTurn), panel.current_x, panel.current_y - 32.0F * Settings.scale, ENERGY_TEXT_COLOR);
+            if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion){
+                AbstractDungeon.player.getEnergyNumFont().getData().setScale(EnergyPanel.fontScale * 0.7F);
+                FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), Integer.toString(energyUsedThisTurn), panel.current_x, panel.current_y - 32.0F * Settings.scale, ENERGY_TEXT_COLOR);
+            }
         }
     }
 }

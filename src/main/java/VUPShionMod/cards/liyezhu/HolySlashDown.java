@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -49,6 +50,7 @@ public class HolySlashDown extends AbstractLiyezhuCard {
         calculateCardDamage(m);
 
         for (int i = 0; i < this.magicNumber; i++) {
+            addToBot(new SFXAction("ATTACK_FAST"));
             addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 020 Slash1 Ray Right", m.hb.cX, m.hb.cY,
                     125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));

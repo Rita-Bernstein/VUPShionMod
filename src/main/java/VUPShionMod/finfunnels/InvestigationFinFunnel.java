@@ -67,16 +67,30 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,boolean triggerPassive,int loopTimes) {
-        addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
-        addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-        for (int i = 0; i < loopTimes; i++){
-            addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type),AbstractGameAction.AttackEffect.FIRE));
-        }
+        if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)){
+            addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
+            addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
+            for (int i = 0; i < loopTimes; i++)
+                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
 
+            if (triggerPassive){
+                if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
+                    for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                        if (!mo.isDeadOrEscaped()) {
+                            addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new BleedingPower(mo,AbstractDungeon.player, getFinalEffect())));
+                        }
+                    }
+            }
+        }else {
+            addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
+            addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
+            for (int i = 0; i < loopTimes; i++) {
+                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type), AbstractGameAction.AttackEffect.FIRE));
+            }
 
-        if (triggerPassive)
+            if (triggerPassive)
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target,AbstractDungeon.player, getFinalEffect())));
-
+        }
     }
 
 

@@ -6,9 +6,11 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.monsters.PlagaAMundoMinion;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AttackOrderSpecialPower;
 import VUPShionMod.powers.BleedingPower;
 import VUPShionMod.powers.PursuitPower;
+import VUPShionMod.util.ChargeHelper;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -18,6 +20,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.GameCursor;
@@ -37,7 +41,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     private static final Texture UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/AnastasiaNecklaceUpgrade.png"));
 
     private boolean triggered = false;
-    private boolean effectApplied = false;
+    public boolean effectApplied = false;
 
     private CGlayout cg = new CGlayout();
 
@@ -87,9 +91,9 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
             }
         }
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttackOrderSpecialPower(AbstractDungeon.player)));
-//        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BerserkPower(AbstractDungeon.player,1)));
-
         this.img = UPGRADE_IMG;
+
+        AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active = true;
     }
 
     @Override
@@ -99,9 +103,14 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
 
     }
 
+
     @Override
     public void atTurnStart() {
         super.atTurnStart();
+        if (AbstractDungeon.player.halfDead) {
+            triggerRelic();
+        }
+
         if (this.triggered)
             addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 200));
     }
@@ -131,14 +140,13 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     public boolean onPlayerDeath(AbstractPlayer abstractPlayer, DamageInfo damageInfo) {
         boolean canTrigger = false;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (m.id.equals(PlagaAMundoMinion.ID)){
+            if (m.id.equals(PlagaAMundoMinion.ID)) {
                 canTrigger = true;
                 break;
             }
         }
 
         if (!triggered && canTrigger) {
-            triggerRelic();
             AbstractDungeon.player.halfDead = true;
             (AbstractDungeon.getCurrRoom()).cannotLose = true;
             return false;
@@ -147,19 +155,29 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         }
     }
 
+    @Override
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        super.onUseCard(targetCard, useCardAction);
+        if (AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active)
+            if (targetCard.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL) || targetCard.hasTag(CardTagsEnum.FIN_FUNNEL)) {
+                AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).addCount(1);
+            }
+    }
 
     @Override
     public void render(SpriteBatch sb) {
         super.render(sb);
-        if (this.triggered)
+        if (this.triggered) {
             cg.render(sb);
+        }
     }
 
     @Override
     public void update() {
         super.update();
-        if (this.triggered)
+        if (this.triggered) {
             cg.update();
+        }
 
         if (cg.isDone && !effectApplied) {
             effectApplied = true;
@@ -171,14 +189,10 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         }
     }
 
-    @Override
-    public void renderInTopPanel(SpriteBatch sb) {
-        super.renderInTopPanel(sb);
-
-    }
-
     public void renderAbove(SpriteBatch sb) {
         if (this.triggered)
             cg.renderAbove(sb);
     }
+
+
 }

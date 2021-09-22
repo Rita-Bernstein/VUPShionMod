@@ -7,6 +7,7 @@ import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.CrackOfTimePower;
+import VUPShionMod.util.ChargeHelper;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
@@ -37,6 +38,7 @@ public class AbstractPlayerPatches {
     public static class AddFields {
         public static SpireField<List<AbstractFinFunnel>> finFunnelList = new SpireField<>(ArrayList::new);
         public static SpireField<AbstractFinFunnel> activatedFinFunnel = new SpireField<>(() -> null);
+        public static SpireField<ChargeHelper> chargeHelper = new SpireField<>(() -> new ChargeHelper());
     }
 
     @SpirePatch(
@@ -76,6 +78,11 @@ public class AbstractPlayerPatches {
             for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
                 funnel.update();
             }
+
+            if (AddFields.chargeHelper.get(player).active) {
+                AddFields.chargeHelper.get(player).update();
+            }
+
         }
     }
 
@@ -88,6 +95,10 @@ public class AbstractPlayerPatches {
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                 for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
                     funnel.render(sb);
+                }
+
+                if (AddFields.chargeHelper.get(player).active) {
+                    AddFields.chargeHelper.get(player).render(sb);
                 }
             }
         }

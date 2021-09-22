@@ -1,5 +1,6 @@
 package VUPShionMod.actions;
 
+import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,6 +21,10 @@ public class GainHyperdimensionalLinksAction extends AbstractGameAction {
         addToTop(new VFXAction(new AbstractAtlasGameEffect("Sparks 086 Impact Up MIX", AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY + 125.0f * Settings.scale,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
         addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new HyperdimensionalLinksPower(AbstractDungeon.player, amount)));
+
+        if (AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active) {
+            AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).addCount(1);
+        }
         isDone = true;
     }
 }

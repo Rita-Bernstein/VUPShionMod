@@ -25,7 +25,7 @@
     "NAME": "Lost Equipment",
     "DESCRIPTIONS": [
       "On your ascension, you find a lost equipment from the battlefield. It is all worn out and will not function until you do something about it.",
-      "This should work now."
+      "You leave this place."
     ],
     "OPTIONS": [
       "[Stitch] #rLose 100 gold. #gObtain Optical Camouflage.",

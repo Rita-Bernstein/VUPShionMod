@@ -79,6 +79,11 @@ public class PlagaAMundo extends CustomMonster {
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
         else
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
+
+        if (AbstractDungeon.ascensionLevel >= 5)
+            addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, (int) Math.floor(AbstractDungeon.player.maxHealth * 0.75f)));
+        else
+            addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth));
     }
 
 

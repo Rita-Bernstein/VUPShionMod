@@ -26,7 +26,7 @@ public class ChargeHelper implements Disposable {
     private int maxCount = 10;
     private int count = 9;
     private AbstractPlayer p = AbstractDungeon.player;
-    public boolean active = true;
+    public boolean active = false;
     private float drawX = 0.0f;
     private float drawY = 0.0f;
     private float drawScale = 0.8f;

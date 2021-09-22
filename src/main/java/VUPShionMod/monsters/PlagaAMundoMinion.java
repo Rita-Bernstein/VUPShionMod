@@ -74,7 +74,7 @@ public class PlagaAMundoMinion extends CustomMonster {
 //        AbstractDungeon.scene.fadeOutAmbiance();
 //        AbstractDungeon.getCurrRoom().playBgmInstantly("fight");
         (AbstractDungeon.getCurrRoom()).cannotLose = true;
-        addToBot(new ApplyPowerAction(this,this,new LifeLinkPower(this)));
+        addToBot(new ApplyPowerAction(this, this, new LifeLinkPower(this)));
 
         if (AbstractDungeon.ascensionLevel >= 19)
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
@@ -130,14 +130,14 @@ public class PlagaAMundoMinion extends CustomMonster {
             if (num < 33) {
                 if (lastTwoMoves((byte) 0))
                     setMove((byte) 1, Intent.ATTACK, this.damage.get(1).base, this.baseAttackTimes, true);
-                setMove((byte) 0, Intent.ATTACK, this.damage.get(0).base, this.baseAttackTimes , true);
+                setMove((byte) 0, Intent.ATTACK, this.damage.get(0).base, this.baseAttackTimes, true);
             } else if (num < 67) {
                 if (lastTwoMoves((byte) 1))
                     setMove((byte) 2, Intent.ATTACK, this.damage.get(2).base, this.baseAttackTimes, true);
                 setMove((byte) 1, Intent.ATTACK, this.damage.get(1).base, this.baseAttackTimes, true);
             } else {
                 if (lastTwoMoves((byte) 2))
-                    setMove((byte) 0, Intent.ATTACK, this.damage.get(0).base, this.baseAttackTimes , true);
+                    setMove((byte) 0, Intent.ATTACK, this.damage.get(0).base, this.baseAttackTimes, true);
                 setMove((byte) 2, Intent.ATTACK, this.damage.get(2).base, this.baseAttackTimes, true);
             }
         }
@@ -184,26 +184,25 @@ public class PlagaAMundoMinion extends CustomMonster {
             }
 
 
-
             this.powers.clear();
 
             boolean allDead = true;
 
-            for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters){
-                if (!m.halfDead){
+            for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
+                if (m.id.equals(this.id) && !m.halfDead) {
                     allDead = false;
                 }
             }
 
-            if (!allDead){
+            if (!allDead) {
                 setMove((byte) 98, Intent.UNKNOWN);
                 createIntent();
-                addToBot(new SetMoveAction(this, (byte)98, AbstractMonster.Intent.UNKNOWN));
-            }else {
+                addToBot(new SetMoveAction(this, (byte) 98, AbstractMonster.Intent.UNKNOWN));
+            } else {
                 (AbstractDungeon.getCurrRoom()).cannotLose = false;
                 this.halfDead = false;
 
-                for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters){
+                for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
                     m.die();
                 }
 
@@ -216,6 +215,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         switch (stateName) {
             case "REVIVE":
                 this.halfDead = false;
+                this.isGunMode = false;
                 break;
         }
     }

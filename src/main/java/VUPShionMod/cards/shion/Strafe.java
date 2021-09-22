@@ -24,7 +24,7 @@ public class Strafe extends AbstractShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.baseDamage = 0;
-        this.baseMagicNumber = this.magicNumber = 2;
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     @Override

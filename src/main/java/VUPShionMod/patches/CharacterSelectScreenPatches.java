@@ -85,26 +85,26 @@ public class CharacterSelectScreenPatches {
     }
 
 
-    @SpirePatch(
-            clz = CustomModeCharacterButton.class,
-            method = "updateHitbox"
-    )
-
-    public static class CustomModeCharacterButtonPatch {
-        public static ExprEditor Instrument() {
-            return new ExprEditor() {
-                @Override
-                public void edit(MethodCall m) throws CannotCompileException {
-                    if (m.getClassName().equals(CardCrawlGame.class.getName()) && m.getMethodName().equals("playA")) {
-                        m.replace("if(this.c instanceof " + Shion.class.getName() + " ){ " +
-                                CardCrawlGame.class.getName() + ".sound.play(this.c.getCustomModeCharacterButtonSoundKey());" +
-                                "} else {"
-                                + "$proceed($$);"
-                                + "}"
-                        );
-                    }
-                }
-            };
-        }
-    }
+//    @SpirePatch(
+//            clz = CustomModeCharacterButton.class,
+//            method = "updateHitbox"
+//    )
+//
+//    public static class CustomModeCharacterButtonPatch {
+//        public static ExprEditor Instrument() {
+//            return new ExprEditor() {
+//                @Override
+//                public void edit(MethodCall m) throws CannotCompileException {
+//                    if (m.getClassName().equals(CardCrawlGame.class.getName()) && m.getMethodName().equals("playA")) {
+//                        m.replace("if(this.c instanceof " + Shion.class.getName() + " ){ " +
+//                                CardCrawlGame.class.getName() + ".sound.play(this.c.getCustomModeCharacterButtonSoundKey());" +
+//                                "} else {"
+//                                + "$proceed($$);"
+//                                + "}"
+//                        );
+//                    }
+//                }
+//            };
+//        }
+//    }
 }

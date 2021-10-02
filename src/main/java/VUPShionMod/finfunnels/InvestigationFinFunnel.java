@@ -68,7 +68,6 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     @Override
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type,boolean triggerPassive,int loopTimes) {
         if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)){
-            addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
             addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
             for (int i = 0; i < loopTimes; i++)
                 addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));

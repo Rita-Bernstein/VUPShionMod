@@ -24,7 +24,7 @@ public class ChargeHelper implements Disposable {
     private Texture iconImg15 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon15.png");
     private Texture iconImg10 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon10.png");
     private int maxCount = 10;
-    private int count = 9;
+    private int count = 0;
     private AbstractPlayer p = AbstractDungeon.player;
     public boolean active = false;
     private float drawX = 0.0f;
@@ -40,6 +40,8 @@ public class ChargeHelper implements Disposable {
     public ChargeHelper() {
         name = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ChargeHelper")).TEXT[0];
         description = String.format(CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ChargeHelper")).TEXT[1], damage);
+        if (AbstractDungeon.ascensionLevel >= 19)
+            this.maxCount = 15;
     }
 
     public void render(SpriteBatch sb) {

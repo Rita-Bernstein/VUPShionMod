@@ -37,12 +37,12 @@
     ]
   },
   "VUPShionMod:AnastasiaNecklace": {
-    "NAME": "Anastasia Necklace",
-    "FLAVOR": "Anastasia Necklace",
+    "NAME": "Anastasia Droplet",
+    "FLAVOR": "Within which all the power beyond your wield is concentrated.",
     "DESCRIPTIONS": [
-      "每场战斗开始时获得 #y壁垒 。",
-      "获得 #b200 点最大生命。 NL 每回合开始时获得 #b200 点 #y格挡 。 NL 每场战斗开始时获得 #y壁垒 。 NL 每回合开始时获得 [E] 。",
-      " NL 所有 #y浮游炮 获得 #b9 层强化。 NL #y追击 个体死亡时，将 #y追击 转移到其他敌人。 NL #y浮游炮 将对所有敌人攻击。"
+      "Start each combat with #yBarricade.",
+      "Gain #b200 Max HP. NL Gain #b200 #yBlock at the start of your turn. NL Start each combat with #yBarricade. NL Gain [E] at the start of your turn.",
+      " NL ALL #yFunnels are upgraded by #b9. NL #yFunnels now hit ALL enemies. NL Whenever an enemy dies, transfer any #yPursued it has to a random enemy."
     ]
   }
 }

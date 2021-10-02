@@ -219,7 +219,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "SHION_" + (3 + MathUtils.random(2));
+        return "ATTACK_MAGIC_BEAM_SHORT";
     }
 
     @Override

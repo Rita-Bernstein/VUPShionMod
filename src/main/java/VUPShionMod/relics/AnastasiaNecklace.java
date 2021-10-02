@@ -16,10 +16,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnPlayerDeathRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -83,14 +80,15 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
 
         AbstractDungeon.player.increaseMaxHp(200, true);
         AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
-        AbstractDungeon.player.energy.energy++;
         AbstractDungeon.player.energy.energyMaster++;
+
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
             for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
                 f.upgradeLevel(9);
             }
         }
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttackOrderSpecialPower(AbstractDungeon.player)));
+        addToBot(new GainEnergyAction(1));
         this.img = UPGRADE_IMG;
 
         AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active = true;

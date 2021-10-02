@@ -61,15 +61,19 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void onPursuitEnemy(AbstractCreature target, int loop) {
         if (this.level <= 0) return;
         if (!target.isDeadOrEscaped())
-            if (target.hasPower(PursuitPower.POWER_ID))
-                activeFire(target, target.getPower(PursuitPower.POWER_ID).amount, DamageInfo.DamageType.THORNS, false, loop);
+            if (target.hasPower(PursuitPower.POWER_ID)) {
+                addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
+                addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
+                addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, target.getPower(PursuitPower.POWER_ID).amount,
+                        DamageInfo.DamageType.THORNS), loop, false, getFinalEffect()));
+            }
+
     }
 
 
     @Override
     public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
         if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
-            addToBot(new SFXAction("ATTACK_DEFECT_BEAM"));
             addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
             for (int i = 0; i < loopTimes; i++) {
                 addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
@@ -86,9 +90,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         } else {
             addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-            for (int i = 0; i < loopTimes; i++) {
-                addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, damage, type), loopTimes, triggerPassive, getFinalEffect()));
-            }
+            addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, damage, type), loopTimes, triggerPassive, getFinalEffect()));
         }
     }
 

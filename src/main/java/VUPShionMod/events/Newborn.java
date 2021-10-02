@@ -46,7 +46,7 @@ public class Newborn extends AbstractImageEvent {
             case INTRO:
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.setDialogOption(OPTIONS[1]);
+                this.imageEventText.setDialogOption(OPTIONS[3],true);
                 this.imageEventText.setDialogOption(OPTIONS[2]);
                 this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BossEvent2.png"));
                 this.curScreen = CurrentScreen.COMPLETE;

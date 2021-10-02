@@ -67,7 +67,9 @@ public abstract class AbstractFinFunnel {
     }
 
     public void upgradeLevel(int amount) {
+    }
 
+    public void loseLevel(int amount) {
     }
 
     public void setLevel(int amount) {

@@ -36,7 +36,7 @@
   },
   "VUPShionMod:QuickDefend": {
     "NAME": "快速防御",
-    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点 格挡 。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 获得 !B! 点 格挡 。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果。 NL 消耗 。"
   },
   "VUPShionMod:QuickScreen": {
     "NAME": "快速筛选",
@@ -390,7 +390,10 @@
   },
   "VUPShionMod:OverloadFortress": {
     "NAME": "过载堡垒",
-    "DESCRIPTION": "保留 。 NL 获得 !VUPShionSecondM! 倍 *重力 vup_shion_mod:浮游炮 强化等级的 格挡 。 NL 失去 !M! 层 *重力 vup_shion_mod:浮游炮 强化。"
+    "DESCRIPTION": "保留 。 NL 获得 !VUPShionSecondM! 倍 *重力 vup_shion_mod:浮游炮 强化等级的 格挡 。 NL 失去 !M! 层 *重力 vup_shion_mod:浮游炮 强化。",
+    "EXTENDED_DESCRIPTION": [
+      "（获得 !B! 点 格挡 。）"
+    ]
   },
   "VUPShionMod:GravityImpact": {
     "NAME": "重力冲击",

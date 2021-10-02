@@ -340,6 +340,9 @@ public class VUPShionMod implements
         cards.add(new FirstStrike());
         cards.add(new SpeedSlash());
         cards.add(new Rob());
+        cards.add(new Gravitonium());
+        cards.add(new QuickTrigger());
+        cards.add(new GravityImpact());
 
 
 //        克洛伊斯
@@ -376,6 +379,7 @@ public class VUPShionMod implements
         cards.add(new GravityLoading());
         cards.add(new FirePower());
         cards.add(new ArmedToTheTeeth());
+        cards.add(new GravityCharging());
 
 
 //      黎夜竹
@@ -406,6 +410,8 @@ public class VUPShionMod implements
         cards.add(new LockOn());
         cards.add(new Reboot());
         cards.add(new TeamWork());
+        cards.add(new Read());
+        cards.add(new OverloadFortress());
 
 
         cards.add(new InvestigationFinFunnelUpgrade());

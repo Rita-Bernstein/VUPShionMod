@@ -140,6 +140,10 @@ public abstract class AbstractVUPShionCard extends CustomCard {
     public void postReturnToHand() {
     }
 
+    public void onTriggerLoaded(){
+
+    }
+
     @SpireOverride
     protected void renderEnergy(SpriteBatch sb) {
         if (this.rarity != CardRarity.SPECIAL) {

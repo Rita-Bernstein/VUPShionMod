@@ -213,5 +213,17 @@
     "DESCRIPTIONS": [
       "如果其他敌人还生存，将在下回合后以满血复活。"
     ]
+  },
+  "VUPShionMod:GravitoniumPower": {
+    "NAME": "重力鎓",
+    "DESCRIPTIONS": [
+      " #y重力浮游炮 给予的 #y格挡 将变为 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:QuickTriggerPower": {
+    "NAME": "快速触发",
+    "DESCRIPTIONS": [
+      "下 #b%d 次生成 #y加载完成 时，直接触发这张牌的效果。"
+    ]
   }
 }

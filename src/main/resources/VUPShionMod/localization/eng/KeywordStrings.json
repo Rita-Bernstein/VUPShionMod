@@ -49,5 +49,11 @@
       "fire"
     ],
     "DESCRIPTION": "Trigger the passive ability of your #yFunnel."
+  },
+  {
+    "NAMES": [
+      "护盾"
+    ],
+    "DESCRIPTION": "减少受到的伤害，回合结束时不会 #y消失 。"
   }
 ]

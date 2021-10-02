@@ -369,30 +369,30 @@
     "NAME": "Sapphire Rose",
     "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link next turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": " Retain. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link next turn. NL Exhaust."
-  },
+  }
   "VUPShionMod:Gravitonium": {
-    "NAME": "重力鎓",
-    "DESCRIPTION": "接下来 *重力 vup_shion_mod:浮游炮 给予的 格挡 将变为 vup_shion_mod:护盾 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 接下来 *重力 vup_shion_mod:浮游炮 获得的 格挡 将变为 vup_shion_mod:护盾 。"
+    "NAME": "Gravitonium",
+    "DESCRIPTION": "Block gained from *Gravity vup_shion_mod:Funnel is now converted into vup_shion_mod:Shield.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Block gained from *Gravity vup_shion_mod:Funnel is now converted into vup_shion_mod:Shield."
   },
   "VUPShionMod:Read": {
-    "NAME": "读取",
-    "DESCRIPTION": "将抽牌堆中的 !M! 张 vup_shion_mod:加载完成 牌加入手牌。"
+    "NAME": "Read",
+    "DESCRIPTION": "Put !M! vup_shion_mod:Loading\u00a0Complete cards from your draw pile into your hand."
   },
   "VUPShionMod:GravityCharging": {
-    "NAME": "重力充能",
-    "DESCRIPTION": "保留 。 NL 触发 vup_shion_mod:加载完成 时，这张牌的耗能减少 [E] 。 NL 触发 !M! *重力 vup_shion_mod:浮游炮 的被动效果。"
+    "NAME": "Gravitational Recharge",
+    "DESCRIPTION": "Retain. NL Every time you trigger vup_shion_mod:Loading\u00a0Complete, reduce the cost by 1. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel !M! times."
   },
   "VUPShionMod:QuickTrigger": {
-    "NAME": "快速触发",
-    "DESCRIPTION": "下一次生成 vup_shion_mod:加载完成 时，直接触发这张牌的效果。"
+    "NAME": "Sequence",
+    "DESCRIPTION": "The next time when vup_shion_mod:Loading\u00a0Complete cards are created, trigger them at once. "
   },
   "VUPShionMod:OverloadFortress": {
-    "NAME": "过载堡垒",
-    "DESCRIPTION": "保留 。 NL 获得 !VUPShionSecondM! 倍 *重力 vup_shion_mod:浮游炮 强化等级的 格挡 。 NL 失去 !M! 层 *重力 vup_shion_mod:浮游炮 强化。"
+    "NAME": "Overdrive",
+    "DESCRIPTION": "Retain. NL Gain Block !VUPShionSecondM! times as much as the upgrades of *Gravity vup_shion_mod:Funnel. NL Lose !M! *Gravity vup_shion_mod:Funnel upgrade."
   },
   "VUPShionMod:GravityImpact": {
-    "NAME": "重力冲击",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 !D! 点伤害。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果。"
+    "NAME": "Gravity Impact",
+    "DESCRIPTION": "vup_shion_mod:Fire vup_shion_mod:Funnel. NL Deal !D! damage. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel."
   }
 }

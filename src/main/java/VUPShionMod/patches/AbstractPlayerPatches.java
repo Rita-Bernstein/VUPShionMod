@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.TurnTriggerAllFinFunnelAction;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.cards.anastasia.EnergyReserve;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
@@ -120,12 +121,27 @@ public class AbstractPlayerPatches {
                 AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
                 c.applyPowers();
                 p.useCard(c, m, 0);
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
+
                 AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
 
                 for (AbstractPower power : AbstractDungeon.player.powers)
                     if (power instanceof AbstractShionPower)
                         ((AbstractShionPower) power).onTriggerLoaded();
+
+                for (AbstractCard card : p.hand.group) {
+                    if (card instanceof AbstractVUPShionCard)
+                        ((AbstractVUPShionCard) card).onTriggerLoaded();
+                }
+
+                for (AbstractCard card : p.discardPile.group) {
+                    if (card instanceof AbstractVUPShionCard)
+                        ((AbstractVUPShionCard) card).onTriggerLoaded();
+                }
+
+                for (AbstractCard card : p.drawPile.group) {
+                    if (card instanceof AbstractVUPShionCard)
+                        ((AbstractVUPShionCard) card).onTriggerLoaded();
+                }
             }
         }
     }

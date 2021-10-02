@@ -1,0 +1,167 @@
+
+Idle_BOSS.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bike
+  rotate: false
+  xy: 2, 423
+  size: 987, 586
+  orig: 987, 586
+  offset: 0, 0
+  index: -1
+bike_armor_frount
+  rotate: false
+  xy: 394, 36
+  size: 273, 115
+  orig: 273, 115
+  offset: 0, 0
+  index: -1
+bike_handle
+  rotate: false
+  xy: 1593, 660
+  size: 91, 34
+  orig: 91, 34
+  offset: 0, 0
+  index: -1
+bike_left_armor
+  rotate: false
+  xy: 394, 153
+  size: 461, 147
+  orig: 461, 147
+  offset: 0, 0
+  index: -1
+bike_wing1
+  rotate: false
+  xy: 2, 3
+  size: 381, 70
+  orig: 381, 70
+  offset: 0, 0
+  index: -1
+bike_wing2
+  rotate: false
+  xy: 991, 801
+  size: 611, 208
+  orig: 611, 208
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1885, 745
+  size: 159, 264
+  orig: 159, 264
+  offset: 0, 0
+  index: -1
+clouth_behind2
+  rotate: false
+  xy: 1535, 650
+  size: 56, 149
+  orig: 56, 149
+  offset: 0, 0
+  index: -1
+clouth_frount
+  rotate: false
+  xy: 991, 560
+  size: 373, 239
+  orig: 373, 239
+  offset: 0, 0
+  index: -1
+hair_behind
+  rotate: false
+  xy: 1604, 760
+  size: 279, 249
+  orig: 279, 249
+  offset: 0, 0
+  index: -1
+hair_behind_left
+  rotate: false
+  xy: 892, 297
+  size: 122, 124
+  orig: 122, 124
+  offset: 0, 0
+  index: -1
+hair_frount
+  rotate: false
+  xy: 1184, 351
+  size: 58, 79
+  orig: 58, 79
+  offset: 0, 0
+  index: -1
+hair_frount2
+  rotate: true
+  xy: 1016, 294
+  size: 46, 144
+  orig: 46, 144
+  offset: 0, 0
+  index: -1
+head_armor
+  rotate: false
+  xy: 1535, 583
+  size: 72, 65
+  orig: 72, 65
+  offset: 0, 0
+  index: -1
+head_armor2
+  rotate: true
+  xy: 1723, 695
+  size: 63, 101
+  orig: 63, 101
+  offset: 0, 0
+  index: -1
+left_arm
+  rotate: true
+  xy: 991, 432
+  size: 126, 282
+  orig: 126, 282
+  offset: 0, 0
+  index: -1
+left_leg
+  rotate: false
+  xy: 1366, 593
+  size: 167, 206
+  orig: 167, 206
+  offset: 0, 0
+  index: -1
+light_ring
+  rotate: false
+  xy: 1275, 429
+  size: 102, 129
+  orig: 102, 129
+  offset: 0, 0
+  index: -1
+light_ring_bozao
+  rotate: false
+  xy: 669, 2
+  size: 174, 149
+  orig: 174, 149
+  offset: 0, 0
+  index: -1
+right_arm
+  rotate: true
+  xy: 1016, 342
+  size: 88, 166
+  orig: 88, 166
+  offset: 0, 0
+  index: -1
+right_leg
+  rotate: true
+  xy: 1593, 696
+  size: 62, 128
+  orig: 62, 128
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 302
+  size: 888, 119
+  orig: 888, 119
+  offset: 0, 0
+  index: -1
+stick
+  rotate: true
+  xy: 2, 75
+  size: 225, 390
+  orig: 225, 390
+  offset: 0, 0
+  index: -1

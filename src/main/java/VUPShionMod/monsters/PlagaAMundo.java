@@ -61,10 +61,10 @@ public class PlagaAMundo extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("images/monsters/theBottom/cultist/skeleton.atlas", "images/monsters/theBottom/cultist/skeleton.json", 1.0f);
+        loadAnimation("img/monsters/PlagaAMundo/Idle_BOSS.atlas", "img/monsters/PlagaAMundo/Idle_BOSS.json", 1.0f);
 
 
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "waving", true);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = false;
     }
@@ -111,11 +111,9 @@ public class PlagaAMundo extends CustomMonster {
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50), 50));
                 break;
             case 98:
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-360, 0), 1));
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-180, 280), 2));
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(0, 120), 3));
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(180, 0), 4));
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(360, 280), 5));
+                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(0, 120, 1.0f), 1));
+                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(180, 0, 0.8f), 2));
+                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-360, 280, 1.2f), 3));
                 addToBot(new ChangeStateAction(this, "Die"));
                 break;
             case 99:

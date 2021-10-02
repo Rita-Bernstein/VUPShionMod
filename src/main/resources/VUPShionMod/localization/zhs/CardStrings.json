@@ -370,5 +370,30 @@
     "NAME": "湛蓝蔷薇",
     "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 下回合失去所有 vup_shion_mod:超维链接 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "保留 。 NL 获得 !M! 层 vup_shion_mod:超维链接 。 NL 下回合失去所有 vup_shion_mod:超维链接 。 NL 消耗 。"
+  },
+  "VUPShionMod:Gravitonium": {
+    "NAME": "重力鎓",
+    "DESCRIPTION": "接下来 *重力 vup_shion_mod:浮游炮 给予的 格挡 将变为 vup_shion_mod:护盾 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 接下来 *重力 vup_shion_mod:浮游炮 获得的 格挡 将变为 vup_shion_mod:护盾 。"
+  },
+  "VUPShionMod:Read": {
+    "NAME": "读取",
+    "DESCRIPTION": "将抽牌堆中的 !M! 张 vup_shion_mod:加载完成 牌加入手牌。"
+  },
+  "VUPShionMod:GravityCharging": {
+    "NAME": "重力充能",
+    "DESCRIPTION": "保留 。 NL 触发 vup_shion_mod:加载完成 时，这张牌的耗能减少 [E] 。 NL 触发 !M! *重力 vup_shion_mod:浮游炮 的被动效果。"
+  },
+  "VUPShionMod:QuickTrigger": {
+    "NAME": "快速触发",
+    "DESCRIPTION": "下一次生成 vup_shion_mod:加载完成 时，直接触发这张牌的效果。"
+  },
+  "VUPShionMod:OverloadFortress": {
+    "NAME": "过载堡垒",
+    "DESCRIPTION": "保留 。 NL 获得 !VUPShionSecondM! 倍 *重力 vup_shion_mod:浮游炮 强化等级的 格挡 。 NL 失去 !M! 层 *重力 vup_shion_mod:浮游炮 强化。"
+  },
+  "VUPShionMod:GravityImpact": {
+    "NAME": "重力冲击",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 !D! 点伤害。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果。"
   }
 }

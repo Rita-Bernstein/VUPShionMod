@@ -29,7 +29,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     private int baseAttackTimes = 15;
     private boolean isGunMode = false;
 
-    public PlagaAMundoMinion(float x, float y) {
+    public PlagaAMundoMinion(float x, float y,float scale) {
         super(NAME, ID, 88, 0.0F, -15.0F, 360.0F, 360.0F, null, x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
@@ -60,10 +60,10 @@ public class PlagaAMundoMinion extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("images/monsters/theBottom/cultist/skeleton.atlas", "images/monsters/theBottom/cultist/skeleton.json", 1.0f);
+        loadAnimation("img/monsters/PlagaAMundo/Idle_BOSS.atlas", "img/monsters/PlagaAMundo/Idle_BOSS.json", 1.0f * scale);
 
 
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "waving", true);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = false;
     }

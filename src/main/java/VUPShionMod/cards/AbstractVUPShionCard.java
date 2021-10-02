@@ -3,11 +3,13 @@ package VUPShionMod.cards;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
 import VUPShionMod.patches.CardColorEnum;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,6 +45,8 @@ public abstract class AbstractVUPShionCard extends CustomCard {
     private static final Texture orb_ab = ImageMaster.loadImage("VUPShionMod/img/cardui/Shion/512/card_lime_orb_ab.png");
     private static final Texture orb_ag = ImageMaster.loadImage("VUPShionMod/img/cardui/Shion/512/card_lime_orb_ag.png");
     private static final Texture orb_aw = ImageMaster.loadImage("VUPShionMod/img/cardui/Shion/512/card_lime_orb_aw.png");
+
+    public String betaArtPath;
 
     public AbstractVUPShionCard(String id, String img, int cost, CardType type, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type,
@@ -228,5 +232,13 @@ public abstract class AbstractVUPShionCard extends CustomCard {
                 0, 0,
                 img.getWidth(), img.getHeight(),
                 false, false);
+    }
+
+    public void loadJokeCardImage(String img) {
+        this.betaArtPath = img;
+        Texture cardTexture = ImageMaster.loadImage(img);
+        cardTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        TextureAtlas.AtlasRegion cardImg = new TextureAtlas.AtlasRegion(cardTexture, 0, 0, cardTexture.getWidth(), cardTexture.getHeight());
+        ReflectionHacks.setPrivate(this, AbstractCard.class, "jokePortrait", cardImg);
     }
 }

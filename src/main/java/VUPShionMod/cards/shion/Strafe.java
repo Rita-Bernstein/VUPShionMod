@@ -25,6 +25,7 @@ public class Strafe extends AbstractShionCard {
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.baseDamage = 0;
         this.baseMagicNumber = this.magicNumber = 1;
+        loadJokeCardImage(VUPShionMod.assetPath("img/cards/joke/zy15.png"));
     }
 
     @Override

@@ -26,6 +26,7 @@ public class Strike_Shion extends AbstractShionCard {
         this.tags.add(CardTags.STARTER_STRIKE);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.baseDamage = 6;
+        loadJokeCardImage(VUPShionMod.assetPath("img/cards/joke/zy01.png"));
     }
 
     @Override

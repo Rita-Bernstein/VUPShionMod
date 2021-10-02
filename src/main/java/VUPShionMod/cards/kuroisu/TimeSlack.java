@@ -1,8 +1,10 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.actions.TriggerFinFunnelAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
+import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.cards.tempCards.QuickDefend;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
@@ -36,7 +38,8 @@ public class TimeSlack extends AbstractKuroisuCard {
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
         addToBot(new GainBlockAction(p, p, this.block));
         addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
-        addToBot(new MakeTempCardInDiscardAction(new QuickDefend(),this.magicNumber));
+        addToBot(new MakeLoadedCardAction(new QuickDefend(),this.magicNumber,true));
+//        addToBot(new MakeTempCardInDiscardAction(new QuickDefend(),this.magicNumber));
     }
 
     public void upgrade() {

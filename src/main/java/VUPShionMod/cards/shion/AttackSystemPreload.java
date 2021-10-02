@@ -1,8 +1,10 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.cards.AbstractShionCard;
 import VUPShionMod.cards.tempCards.QuickAttack;
+import VUPShionMod.cards.tempCards.QuickScreen;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -34,6 +36,7 @@ public class AttackSystemPreload extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(), this.magicNumber, true, true, false));
+        addToBot(new MakeLoadedCardAction(new QuickAttack(),this.magicNumber));
+//        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(), this.magicNumber, true, true, false));
     }
 }

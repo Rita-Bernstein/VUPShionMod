@@ -358,7 +358,7 @@
     ]
   },
   "VUPShionMod:PainfulConfession": {
-    "NAME": "Lament", 
+    "NAME": "Lament",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Apply !M! Vulnerable."
   },
   "VUPShionMod:HolyCoffinRelease": {
@@ -369,7 +369,7 @@
     "NAME": "Sapphire Rose",
     "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link next turn. NL Exhaust.",
     "UPGRADE_DESCRIPTION": " Retain. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link next turn. NL Exhaust."
-  }
+  },
   "VUPShionMod:Gravitonium": {
     "NAME": "Gravitonium",
     "DESCRIPTION": "Block gained from *Gravity vup_shion_mod:Funnel is now converted into vup_shion_mod:Shield.",

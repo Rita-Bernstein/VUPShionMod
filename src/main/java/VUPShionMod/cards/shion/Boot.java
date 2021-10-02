@@ -1,7 +1,9 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.cards.AbstractShionCard;
+import VUPShionMod.cards.tempCards.QuickAttack;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -35,7 +37,8 @@ public class Boot extends AbstractShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractCard card : p.hand.group) {
             AbstractCard t = card.makeSameInstanceOf();
-            addToBot(new MakeTempCardInDrawPileAction(t, this.magicNumber, true, true, false));
+            addToBot(new MakeLoadedCardAction(t,this.magicNumber));
+//            addToBot(new MakeTempCardInDrawPileAction(t, this.magicNumber, true, true, false));
         }
 
         addToBot(new PressEndTurnButtonAction());

@@ -1,7 +1,9 @@
 package VUPShionMod.cards.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.cards.AbstractShionCard;
+import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.cards.tempCards.QuickScreen;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -34,6 +36,7 @@ public class AnalyseSystemPreload extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInDrawPileAction(new QuickScreen(), this.magicNumber, true, true, false));
+        addToBot(new MakeLoadedCardAction(new QuickScreen(),this.magicNumber));
+//        addToBot(new MakeTempCardInDrawPileAction(new QuickScreen(), this.magicNumber, true, true, false));
     }
 }

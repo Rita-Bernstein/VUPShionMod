@@ -2,10 +2,7 @@ package VUPShionMod.actions;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.shion.EnduranceInitiation;
-import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -48,13 +45,7 @@ public class EnduranceInitiationAction extends AbstractGameAction {
 
             if (this.p.hand.size() <= pickAmount) {
                 for (AbstractCard card : this.p.hand.group) {
-                    AbstractCard t = card.makeSameInstanceOf();
-                    t.tags.add(CardTagsEnum.LOADED);
-                    t.rawDescription = t.rawDescription + TEXT[1];
-                    t.initializeDescription();
-                    addToBot(new MakeTempCardInDrawPileAction(t, this.amount, true, true, false));
-                    if (upgraded)
-                        addToBot(new MakeTempCardInDiscardAction(t, this.amount));
+                    addToBot(new MakeNewLoadedCardAction(card,this.amount));
                 }
 
                 AbstractDungeon.player.hand.applyPowers();
@@ -74,14 +65,7 @@ public class EnduranceInitiationAction extends AbstractGameAction {
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard card : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                AbstractCard t = card.makeSameInstanceOf();
-                t.tags.add(CardTagsEnum.LOADED);
-                t.rawDescription = t.rawDescription + TEXT[1];
-                t.initializeDescription();
-                addToBot(new MakeTempCardInDrawPileAction(t, this.amount, true, true, false));
-                if (upgraded)
-                    addToBot(new MakeTempCardInDiscardAction(t, this.amount));
-
+                addToBot(new MakeNewLoadedCardAction(card,this.amount));
                 this.p.hand.moveToHand(card);
             }
             returnCardsToHand();

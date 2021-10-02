@@ -1,5 +1,6 @@
 package VUPShionMod.powers;
 
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.cards.tempCards.QuickScreen;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -32,7 +33,8 @@ public class UpgradedReleaseFormKuroisuPower extends AbstractShionPower {
     public void atEndOfTurn(boolean isPlayer) {
         AbstractCard c = new QuickScreen();
         c.upgrade();
-        addToBot(new MakeTempCardInDrawPileAction(c, this.amount, false, true, false));
+        addToBot(new MakeLoadedCardAction(c,this.amount));
+//        addToBot(new MakeTempCardInDrawPileAction(c, this.amount, false, true, false));
     }
 
     @Override

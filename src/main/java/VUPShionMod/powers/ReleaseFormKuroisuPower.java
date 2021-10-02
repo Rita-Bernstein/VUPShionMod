@@ -1,11 +1,10 @@
 package VUPShionMod.powers;
 
+import VUPShionMod.actions.MakeLoadedCardAction;
+import VUPShionMod.cards.tempCards.QuickDefend;
 import VUPShionMod.cards.tempCards.QuickScreen;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -31,7 +30,8 @@ public class ReleaseFormKuroisuPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new MakeTempCardInDrawPileAction(new QuickScreen(), this.amount, false, true, false));
+        addToBot(new MakeLoadedCardAction(new QuickScreen(),this.amount));
+//        addToBot(new MakeTempCardInDrawPileAction(new QuickScreen(), this.amount, false, true, false));
     }
 
     @Override

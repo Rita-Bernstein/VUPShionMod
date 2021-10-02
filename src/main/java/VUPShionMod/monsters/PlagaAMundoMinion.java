@@ -60,7 +60,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("img/monsters/PlagaAMundo/Idle_BOSS.atlas", "img/monsters/PlagaAMundo/Idle_BOSS.json", 1.0f * scale);
+        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 1.0f * scale);
 
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);

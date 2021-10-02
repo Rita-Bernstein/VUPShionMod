@@ -386,7 +386,7 @@
   },
   "VUPShionMod:QuickTrigger": {
     "NAME": "快速触发",
-    "DESCRIPTION": "下一次生成 vup_shion_mod:加载完成 时，直接触发这张牌的效果。"
+    "DESCRIPTION": "下一次生成 vup_shion_mod:加载完成 牌时，直接触发这张牌的效果。"
   },
   "VUPShionMod:OverloadFortress": {
     "NAME": "过载堡垒",

@@ -1,7 +1,9 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
+import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.cards.tempCards.QuickScreen;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
@@ -26,7 +28,8 @@ public class HourHand extends AbstractKuroisuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, this.block));
-        addToBot(new MakeTempCardInDiscardAction(new QuickScreen(),1));
+        addToBot(new MakeLoadedCardAction(new QuickScreen(),true));
+//        addToBot(new MakeTempCardInDiscardAction(new QuickScreen(),1));
     }
 
     public AbstractCard makeCopy() {

@@ -1,8 +1,10 @@
 package VUPShionMod.cards.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.cards.AbstractKuroisuCard;
 import VUPShionMod.cards.tempCards.QuickAttack;
+import VUPShionMod.cards.tempCards.QuickScreen;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -37,7 +39,7 @@ public class MinuteHand extends AbstractKuroisuCard {
                 128.0f, 232.0f, 2.5f * Settings.scale, 2, false)));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new MakeTempCardInDiscardAction(new QuickAttack(), 1));
+        addToBot(new MakeLoadedCardAction(new QuickAttack(),true));
     }
 
     public AbstractCard makeCopy() {

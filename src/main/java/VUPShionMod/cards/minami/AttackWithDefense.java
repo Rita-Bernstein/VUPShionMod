@@ -1,6 +1,7 @@
 package VUPShionMod.cards.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.cards.AbstractMinamiCard;
 import VUPShionMod.cards.tempCards.QuickAttack;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
@@ -30,7 +31,8 @@ public class AttackWithDefense extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(), this.magicNumber, true, true, false));
+        addToBot(new MakeLoadedCardAction(new QuickAttack(),this.magicNumber));
+//        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(), this.magicNumber, true, true, false));
         addToBot(new GainBlockAction(p, this.block));
     }
 

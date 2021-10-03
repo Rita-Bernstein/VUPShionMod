@@ -52,8 +52,8 @@
   },
   {
     "NAMES": [
-      "护盾"
+      "shield"
     ],
-    "DESCRIPTION": "减少受到的伤害，回合结束时不会 #y消失 。"
+    "DESCRIPTION": "Prevents damage."
   }
 ]

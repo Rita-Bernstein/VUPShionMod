@@ -5,6 +5,7 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.patches.EnergyPanelPatches;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -58,8 +59,8 @@ public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
                         this.description = DESCRIPTIONS[2];
                         break;
                     }
-
                 }
+                EnergyPanelPatches.levelUP = true;
             }
         }
     }

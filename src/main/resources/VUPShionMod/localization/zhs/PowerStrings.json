@@ -103,7 +103,13 @@
   "VUPShionMod:ReleaseFormLiyezhuPower": {
     "NAME": "姿态解放-黎夜竹",
     "DESCRIPTIONS": [
-      "你的回合开始时获得 #b%d 层 #y超维链接 。 NL 你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
+      "你的回合开始时获得 #b%d 层 #y超维链接 。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuBPower": {
+    "NAME": "姿态解放-黎夜竹",
+    "DESCRIPTIONS": [
+      "你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
     ]
   },
   "VUPShionMod:LockOnPower": {
@@ -223,7 +229,7 @@
   "VUPShionMod:QuickTriggerPower": {
     "NAME": "快速触发",
     "DESCRIPTIONS": [
-      "下 #b%d 次生成 #y加载完成 时，直接触发这张牌的效果。"
+      "下 #b%d 次生成 #y加载完成 时，直接触发所有生成的牌的效果。"
     ]
   }
 }

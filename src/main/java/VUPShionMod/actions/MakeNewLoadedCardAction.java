@@ -43,41 +43,18 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if (AbstractDungeon.player.hasPower(QuickTriggerPower.POWER_ID)) {
-            int loopTimes = AbstractDungeon.player.getPower(QuickTriggerPower.POWER_ID).amount;
-            if (loopTimes <= this.amount) {
-                this.amount -= loopTimes;
-                addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID));
-
-                for (int i = 0; i < loopTimes; i++) {
-                    AbstractCard t = card.makeSameInstanceOf();
-                    t.tags.add(CardTagsEnum.LOADED);
-                    t.rawDescription = t.rawDescription + text;
-                    t.initializeDescription();
-                    AbstractDungeon.player.useCard(t,
-                            AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
-                    AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
-                }
-            } else {
-                loopTimes -= this.amount;
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID, this.amount));
-
-                for (int i = 0; i < this.amount; i++) {
-                    AbstractCard t = card.makeSameInstanceOf();
-                    t.tags.add(CardTagsEnum.LOADED);
-                    t.rawDescription = t.rawDescription + text;
-                    t.initializeDescription();
-                    AbstractDungeon.player.useCard(t,
-                            AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
-                    AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
-                }
-
-                this.amount = 0;
+            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID,1));
+            for (int i = 0; i < this.amount; i++) {
+                AbstractCard t = card.makeSameInstanceOf();
+                t.tags.add(CardTagsEnum.LOADED);
+                t.rawDescription = t.rawDescription + text;
+                t.initializeDescription();
+                AbstractDungeon.player.useCard(t,
+                        AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
+                AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
             }
 
-
-        }
-
-        if (this.amount > 0) {
+        } else {
             AbstractCard t = card.makeSameInstanceOf();
             t.tags.add(CardTagsEnum.LOADED);
             t.rawDescription = t.rawDescription + text;

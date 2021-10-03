@@ -20,13 +20,13 @@ public class OverloadFortress extends AbstractAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("OverloadFortress");
     public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia12.png");
     private static final int COST = 1;
-    public static final CardType TYPE = CardType.POWER;
+    public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     public OverloadFortress() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 5;
         this.baseBlock = 0;
         this.selfRetain = true;

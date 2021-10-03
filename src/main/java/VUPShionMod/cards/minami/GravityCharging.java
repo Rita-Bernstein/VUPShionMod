@@ -25,6 +25,7 @@ public class GravityCharging extends AbstractMinamiCard {
     public GravityCharging() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
+        this.selfRetain = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

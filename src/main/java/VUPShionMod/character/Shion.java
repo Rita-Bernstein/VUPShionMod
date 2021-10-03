@@ -64,17 +64,21 @@ public class Shion extends CustomPlayer {
 
 
     public static final String[] orbTextures = {
-            "VUPShionMod/img/ui/topPanel/Shion/layer1.png",//4
-            "VUPShionMod/img/ui/topPanel/Shion/layer2.png",//2
-            "VUPShionMod/img/ui/topPanel/Shion/layer3.png",//3
-            "VUPShionMod/img/ui/topPanel/Shion/layer4.png",//5
-            "VUPShionMod/img/ui/topPanel/Shion/layer5.png",//1
+            "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
+            "VUPShionMod/img/ui/topPanel/Shion/layer2.png",
+            "VUPShionMod/img/ui/topPanel/Shion/layer3.png",
+            "VUPShionMod/img/ui/topPanel/Shion/layer4.png",
+            "VUPShionMod/img/ui/topPanel/Shion/layer5.png",
             "VUPShionMod/img/ui/topPanel/Shion/layer6.png",
-            "VUPShionMod/img/ui/topPanel/Shion/layer1d.png",//4
-            "VUPShionMod/img/ui/topPanel/Shion/layer2d.png",//2
-            "VUPShionMod/img/ui/topPanel/Shion/layer3d.png",//3
-            "VUPShionMod/img/ui/topPanel/Shion/layer4d.png",//5
-            "VUPShionMod/img/ui/topPanel/Shion/layer5d.png",//1
+            "VUPShionMod/img/ui/topPanel/Shion/layer7.png",
+            "VUPShionMod/img/ui/topPanel/Shion/levelBack.png",//中间
+            "VUPShionMod/img/ui/topPanel/Shion/levelBack.png",
+            "VUPShionMod/img/ui/topPanel/Shion/level1.png",
+            "VUPShionMod/img/ui/topPanel/Shion/level2.png",
+            "VUPShionMod/img/ui/topPanel/Shion/level3.png",
+            "VUPShionMod/img/ui/topPanel/Shion/level4.png",
+            "VUPShionMod/img/ui/topPanel/Shion/level5.png",
+            "VUPShionMod/img/ui/topPanel/Shion/levelMax.png"
     };
 
     public Shion(String name, PlayerClass setClass) {

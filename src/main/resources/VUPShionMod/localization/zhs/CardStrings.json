@@ -341,7 +341,7 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "姿态解放-黎夜竹",
-    "DESCRIPTION": "立即且你的每回合开始时获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 vup_shion_mod:超维链接 层数的伤害。"
+    "DESCRIPTION": "立即且你的每回合开始时获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 vup_shion_mod:超维链接 层数 !VUPShionSecondM! 倍的伤害。"
   },
   "VUPShionMod:Awaken": {
     "NAME": "唤醒",
@@ -386,7 +386,7 @@
   },
   "VUPShionMod:QuickTrigger": {
     "NAME": "快速触发",
-    "DESCRIPTION": "下一次生成 vup_shion_mod:加载完成 牌时，直接触发这张牌的效果。"
+    "DESCRIPTION": "下 !M! 次生成 vup_shion_mod:加载完成 牌时，直接触发所有生成的牌的效果。"
   },
   "VUPShionMod:OverloadFortress": {
     "NAME": "过载堡垒",
@@ -397,6 +397,6 @@
   },
   "VUPShionMod:GravityImpact": {
     "NAME": "重力冲击",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 造成 !D! 点伤害。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果。"
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 !D! 点伤害。 NL 触发 *重力 vup_shion_mod:浮游炮 的被动效果。"
   }
 }

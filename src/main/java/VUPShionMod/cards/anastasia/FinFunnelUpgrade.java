@@ -21,7 +21,7 @@ public class FinFunnelUpgrade extends AbstractAnastasiaCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
 
     private float rotationTimer;
     private int previewIndex;

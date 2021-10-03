@@ -43,34 +43,14 @@ public class MakeLoadedCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if (AbstractDungeon.player.hasPower(QuickTriggerPower.POWER_ID)) {
-            int loopTimes = AbstractDungeon.player.getPower(QuickTriggerPower.POWER_ID).amount;
-            if (loopTimes <= this.amount) {
-                this.amount -= loopTimes;
-                addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID));
-
-                for (int i = 0; i < loopTimes; i++) {
-                    AbstractCard card = this.card.makeSameInstanceOf();
-                    AbstractDungeon.player.useCard(card,
-                            AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
-                    AbstractDungeon.actionManager.cardsPlayedThisTurn.add(card);
-                }
-
-            } else {
-                loopTimes -= this.amount;
-                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID, this.amount));
-
-                for (int i = 0; i < this.amount; i++) {
-                    AbstractCard card = this.card.makeSameInstanceOf();
-                    AbstractDungeon.player.useCard(card,
-                            AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
-                    AbstractDungeon.actionManager.cardsPlayedThisTurn.add(card);
-                }
-
-                this.amount = 0;
+            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID,1));
+            for (int i = 0; i < this.amount; i++) {
+                AbstractCard card = this.card.makeSameInstanceOf();
+                AbstractDungeon.player.useCard(card,
+                        AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
+                AbstractDungeon.actionManager.cardsPlayedThisTurn.add(card);
             }
-        }
-
-        if (this.amount > 0) {
+        } else {
             if (!inDiscardPile)
                 addToBot(new MakeTempCardInDrawPileAction(this.card, this.amount, true, true, false));
             else

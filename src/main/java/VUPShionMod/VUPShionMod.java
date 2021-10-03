@@ -94,9 +94,11 @@ public class VUPShionMod implements
 
     public static ModLabeledToggleButton useSimpleOrbSwitch;
 
+    public static Color transparent = Color.WHITE.cpy();
+
     public VUPShionMod() {
         BaseMod.subscribe(this);
-
+        transparent.a = 0.0f;
         BaseMod.addColor(CardColorEnum.VUP_Shion_LIME,
                 Shion_Color, Shion_Color, Shion_Color, Shion_Color, Shion_Color, Shion_Color, Shion_Color,
                 assetPath("img/cardui/Shion/512/bg_attack_lime.png"),

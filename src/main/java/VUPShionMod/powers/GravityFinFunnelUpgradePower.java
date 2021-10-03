@@ -5,6 +5,7 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.patches.EnergyPanelPatches;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -59,7 +60,7 @@ public class GravityFinFunnelUpgradePower extends AbstractShionPower {
                         break;
                     }
                 }
-//                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+                EnergyPanelPatches.levelUP = true;
             }
         }
     }

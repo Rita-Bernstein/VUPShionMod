@@ -186,7 +186,9 @@ public abstract class AbstractFinFunnel {
     }
 
 
-    public int getFinalEffect() {
-        return this.effect * (this.level + 2) / 3;
+    public abstract int getFinalEffect();
+
+    public int getFinalDamage() {
+        return (this.level -1) / 2 +1;
     }
 }

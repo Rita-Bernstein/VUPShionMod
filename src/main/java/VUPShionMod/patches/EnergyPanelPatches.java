@@ -6,10 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -160,6 +157,22 @@ public class EnergyPanelPatches {
         }
     }
 
+
+    @SpirePatch(
+            clz = EnergyPanel.class,
+            method = "render"
+    )
+    public static class PatchRenderSetScale {
+        @SpireInsertPatch(rloc = 11, localvars = "energyMsg")
+        public static SpireReturn<Void> Insert(EnergyPanel panel, SpriteBatch sb,@ByRef String[] energyMsg) {
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
+                AbstractDungeon.player.getEnergyNumFont().getData().setScale(EnergyPanel.fontScale * 1.3f);
+//                energyMsg[0] = EnergyPanel.totalCount + "" + AbstractDungeon.player.energy.energy;
+            }
+
+            return SpireReturn.Continue();
+        }
+    }
 
     @SpirePatch(
             clz = EnergyPanel.class,

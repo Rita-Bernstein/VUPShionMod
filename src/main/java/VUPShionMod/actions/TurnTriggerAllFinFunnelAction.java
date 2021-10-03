@@ -104,7 +104,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                 AbstractFinFunnel f = availableFinFunnel.get(i);
 
                 if (isMultiDamage) {
-                    addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(f.level, true),
+                    addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(f.getFinalDamage(), true),
                             DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
 
                 } else {
@@ -117,18 +117,18 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 
                         if (f instanceof PursuitFinFunnel) {
                             if (isDoubleDamage)
-                                addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level * 3, DamageInfo.DamageType.THORNS), 1, true, f.getFinalEffect()));
+                                addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.getFinalDamage() * 3, DamageInfo.DamageType.THORNS), 1, true, f.getFinalEffect()));
                             else if (isGainBlock)
-                                addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true, true, f.getFinalEffect()));
+                                addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.getFinalDamage(), DamageInfo.DamageType.THORNS), 1, true, true, f.getFinalEffect()));
                             else
-                                addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1, true, f.getFinalEffect()));
+                                addToBot(new DamageAndApplyPursuitAction(m, new DamageInfo(p, f.getFinalDamage(), DamageInfo.DamageType.THORNS), 1, true, f.getFinalEffect()));
                         } else {
                             if (isDoubleDamage)
-                                addToBot(new DamageAction(m, new DamageInfo(p, f.level * 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+                                addToBot(new DamageAction(m, new DamageInfo(p, f.getFinalDamage() * 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
                             else if (isGainBlock)
-                                addToBot(new DamageAndGainBlockAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), 1.0f));
+                                addToBot(new DamageAndGainBlockAction(m, new DamageInfo(p, f.getFinalDamage(), DamageInfo.DamageType.THORNS), 1.0f));
                             else
-                                addToBot(new DamageAction(m, new DamageInfo(p, f.level, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+                                addToBot(new DamageAction(m, new DamageInfo(p, f.getFinalDamage(), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
                         }
                     }
                 }

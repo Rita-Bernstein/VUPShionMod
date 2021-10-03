@@ -61,7 +61,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, this.level, getFinalEffect());
+        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, getFinalDamage(), getFinalEffect());
     }
 
     @Override

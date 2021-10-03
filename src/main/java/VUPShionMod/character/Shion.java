@@ -13,10 +13,7 @@ import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.modules.EnergyOrbShion;
-import VUPShionMod.patches.AbstractPlayerEnum;
-import VUPShionMod.patches.AbstractPlayerPatches;
-import VUPShionMod.patches.CardColorEnum;
-import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.patches.*;
 import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
 import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.DelayAvatarPower;
@@ -217,7 +214,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public BitmapFont getEnergyNumFont() {
-        return FontHelper.energyNumFontPurple;
+        return FontHelperPatches.energyNumFontShion;
     }
 
     @Override

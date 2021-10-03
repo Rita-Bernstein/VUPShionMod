@@ -54,7 +54,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public int getFinalEffect() {
-        return this.effect * (this.level - 1) / 3 + 2;
+        return this.effect * (this.level - 1) / 2 + 2;
     }
 
     @Override

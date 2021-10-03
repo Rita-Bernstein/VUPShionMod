@@ -52,6 +52,11 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
+    public int getFinalEffect() {
+        return this.effect * (this.level - 1) / 2 + 1;
+    }
+
+    @Override
     public void updateDescription() {
         this.description = String.format(orbStrings.DESCRIPTION[0], this.level, this.level, getFinalEffect());
     }

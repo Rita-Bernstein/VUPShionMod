@@ -28,27 +28,39 @@ public class Shield implements Disposable {
     private float renderScale = 0.8f;
 
     public Shield() {
-
     }
 
     public void update() {
-
     }
 
     public void render(SpriteBatch sb, float x, float y, float blockOffset, float blockScale) {
         sb.setColor(this.blockColor);
 
         if (this.currentShield > 0) {
-            sb.draw(blockImg,
-                    x + BLOCK_ICON_X - 50.0F, y + BLOCK_ICON_Y - 50.0F + blockOffset + 50.0f * Settings.scale * renderScale,
-                    50.0F, 50.0F,
-                    100.0F, 100.0F,
-                    renderScale * Settings.scale, renderScale * Settings.scale,
-                    0, 0, 0,
-                    100, 100, false, false);
+            if (AbstractDungeon.player.currentBlock > 0) {
+                sb.draw(blockImg,
+                        x + BLOCK_ICON_X - 50.0F, y + BLOCK_ICON_Y - 50.0F + blockOffset + 50.0f * Settings.scale * renderScale,
+                        50.0F, 50.0F,
+                        100.0F, 100.0F,
+                        renderScale * Settings.scale, renderScale * Settings.scale,
+                        0, 0, 0,
+                        100, 100, false, false);
 
-            FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.currentShield),
-                    x + BLOCK_ICON_X, y - 16.0F * Settings.scale + 50.0f * Settings.scale * renderScale, this.blockTextColor, blockScale);
+                FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.currentShield),
+                        x + BLOCK_ICON_X, y - 16.0F * Settings.scale + 50.0f * Settings.scale * renderScale, this.blockTextColor, blockScale);
+            } else {
+                sb.draw(blockImg,
+                        x + BLOCK_ICON_X - 50.0F, y + BLOCK_ICON_Y - 50.0F + blockOffset,
+                        50.0F, 50.0F,
+                        100.0F, 100.0F,
+                        renderScale * Settings.scale, renderScale * Settings.scale,
+                        0, 0, 0,
+                        100, 100, false, false);
+
+                FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.currentShield),
+                        x + BLOCK_ICON_X, y - 16.0F * Settings.scale, this.blockTextColor, blockScale);
+            }
+
         }
     }
 

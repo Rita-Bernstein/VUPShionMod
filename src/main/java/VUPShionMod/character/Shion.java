@@ -22,6 +22,7 @@ import VUPShionMod.powers.BadgeOfTimePower;
 import VUPShionMod.powers.DelayAvatarPower;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.util.Shield;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -60,6 +61,7 @@ public class Shion extends CustomPlayer {
     public static final int START_GOLD = 99;
     public static boolean firstAttackAnimation = true;
     private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
+
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",//4

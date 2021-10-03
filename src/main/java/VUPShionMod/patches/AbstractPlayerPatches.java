@@ -9,12 +9,10 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.CrackOfTimePower;
 import VUPShionMod.util.ChargeHelper;
+import VUPShionMod.util.Shield;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -41,6 +39,8 @@ public class AbstractPlayerPatches {
         public static SpireField<AbstractFinFunnel> activatedFinFunnel = new SpireField<>(() -> null);
         public static SpireField<ChargeHelper> chargeHelper = new SpireField<>(() -> new ChargeHelper());
     }
+
+
 
     @SpirePatch(
             clz = AbstractPlayer.class,
@@ -83,7 +83,6 @@ public class AbstractPlayerPatches {
             if (AddFields.chargeHelper.get(player).active) {
                 AddFields.chargeHelper.get(player).update();
             }
-
         }
     }
 

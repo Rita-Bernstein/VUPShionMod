@@ -2,6 +2,7 @@ package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.DamageAndGainBlockAction;
+import VUPShionMod.actions.GainShieldAction;
 import VUPShionMod.powers.*;
 import VUPShionMod.vfx.AllFinFunnelBeamEffect;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
@@ -93,7 +94,10 @@ public class GravityFinFunnel extends AbstractFinFunnel {
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                         if (!mo.isDeadOrEscaped()) {
-                            addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+                            if (AbstractDungeon.player.hasPower(GravitoniumPower.POWER_ID))
+                                addToBot(new GainShieldAction(AbstractDungeon.player, getFinalEffect(), true));
+                            else
+                                addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
                         }
                     }
             }
@@ -105,8 +109,13 @@ public class GravityFinFunnel extends AbstractFinFunnel {
                 addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type), AbstractGameAction.AttackEffect.FIRE));
             }
 
-            if (triggerPassive)
-                addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+            if (triggerPassive) {
+                if (AbstractDungeon.player.hasPower(GravitoniumPower.POWER_ID))
+                    addToBot(new GainShieldAction(AbstractDungeon.player, getFinalEffect(), true));
+                else
+                    addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+            }
+
         }
 
 
@@ -123,7 +132,10 @@ public class GravityFinFunnel extends AbstractFinFunnel {
             if (this.level > 0) {
                 for (int i = 0; i < loopTimes; i++)
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                        addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+                        if (AbstractDungeon.player.hasPower(GravitoniumPower.POWER_ID))
+                            addToBot(new GainShieldAction(AbstractDungeon.player, getFinalEffect(), true));
+                        else
+                            addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
                     }
             }
         } else {
@@ -146,7 +158,10 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
             if (this.level > 0) {
                 for (int i = 0; i < loopTimes; i++)
-                    addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+                    if (AbstractDungeon.player.hasPower(GravitoniumPower.POWER_ID))
+                        addToBot(new GainShieldAction(AbstractDungeon.player, getFinalEffect(), true));
+                    else
+                        addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
             }
         }
     }

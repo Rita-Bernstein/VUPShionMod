@@ -116,8 +116,13 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
         for (int i = 0; i < this.loops; i++) {
             if (f.level >= 0 && this.target != null) {
                 if (!this.target.isDeadOrEscaped()) {
-                    if (f instanceof GravityFinFunnel)
-                        addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                    if (f instanceof GravityFinFunnel){
+                        if (p.hasPower(GravitoniumPower.POWER_ID))
+                            addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
+                        else
+                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                    }
+
 
                     if (f instanceof InvestigationFinFunnel)
                         addToBot(new ApplyPowerAction(target, p, new BleedingPower(target, p, f.getFinalEffect())));

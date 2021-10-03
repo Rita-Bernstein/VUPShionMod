@@ -50,7 +50,7 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
             if (f.level > 0) {
                 availableFinFunnel.add(f);
                 if (!random) {
-                    if(target == null)
+                    if (target == null)
                         this.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                     monsters.add(target);
                 } else {
@@ -68,8 +68,13 @@ public class TriggerAllFinFunnelAction extends AbstractGameAction {
             for (int i = 0; i < availableFinFunnel.size(); i++) {
                 AbstractFinFunnel f = availableFinFunnel.get(i);
                 AbstractMonster m = monsters.get(i);
-                if (f instanceof GravityFinFunnel)
-                    addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                if (f instanceof GravityFinFunnel) {
+                    if (p.hasPower(GravitoniumPower.POWER_ID))
+                        addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
+                    else
+                        addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                }
+
 
                 if (f instanceof InvestigationFinFunnel)
                     addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));

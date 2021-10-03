@@ -6,6 +6,8 @@ import VUPShionMod.powers.QuickTriggerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -41,16 +43,41 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if (AbstractDungeon.player.hasPower(QuickTriggerPower.POWER_ID)) {
-            for (int i = 0; i < this.amount; i++) {
-                AbstractCard t = card.makeSameInstanceOf();
-                t.tags.add(CardTagsEnum.LOADED);
-                t.rawDescription = t.rawDescription + text;
-                t.initializeDescription();
-                AbstractDungeon.player.useCard(t,
-                        AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
-                AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
+            int loopTimes = AbstractDungeon.player.getPower(QuickTriggerPower.POWER_ID).amount;
+            if (loopTimes <= this.amount) {
+                this.amount -= loopTimes;
+                addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID));
+
+                for (int i = 0; i < loopTimes; i++) {
+                    AbstractCard t = card.makeSameInstanceOf();
+                    t.tags.add(CardTagsEnum.LOADED);
+                    t.rawDescription = t.rawDescription + text;
+                    t.initializeDescription();
+                    AbstractDungeon.player.useCard(t,
+                            AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
+                    AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
+                }
+            } else {
+                loopTimes -= this.amount;
+                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID, this.amount));
+
+                for (int i = 0; i < this.amount; i++) {
+                    AbstractCard t = card.makeSameInstanceOf();
+                    t.tags.add(CardTagsEnum.LOADED);
+                    t.rawDescription = t.rawDescription + text;
+                    t.initializeDescription();
+                    AbstractDungeon.player.useCard(t,
+                            AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
+                    AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
+                }
+
+                this.amount = 0;
             }
-        } else {
+
+
+        }
+
+        if (this.amount > 0) {
             AbstractCard t = card.makeSameInstanceOf();
             t.tags.add(CardTagsEnum.LOADED);
             t.rawDescription = t.rawDescription + text;
@@ -60,6 +87,7 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
             else
                 addToBot(new MakeTempCardInDiscardAction(t, this.amount));
         }
+
 
         isDone = true;
     }

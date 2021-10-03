@@ -140,8 +140,13 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                 AbstractFinFunnel f = availableFinFunnel.get(i);
                 if (isMultiDamage) {
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                        if (f instanceof GravityFinFunnel)
-                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                        if (f instanceof GravityFinFunnel){
+                            if (p.hasPower(GravitoniumPower.POWER_ID))
+                                addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
+                            else
+                                addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                        }
+
                         if (f instanceof InvestigationFinFunnel)
                             addToBot(new ApplyPowerAction(mo, p, new BleedingPower(mo, p, f.getFinalEffect())));
 //                        if (f instanceof PursuitFinFunnel)
@@ -154,8 +159,13 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                             m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                             monsters.set(i, m);
                         }
-                        if (f instanceof GravityFinFunnel)
-                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                        if (f instanceof GravityFinFunnel){
+                            if (p.hasPower(GravitoniumPower.POWER_ID))
+                                addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
+                            else
+                                addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
+                        }
+
 
                         if (f instanceof InvestigationFinFunnel)
                             addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));

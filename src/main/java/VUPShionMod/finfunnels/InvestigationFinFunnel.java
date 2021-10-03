@@ -45,6 +45,14 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
+    public void loseLevel(int amount) {
+        this.level -= amount;
+        if (this.level < 0)
+            this.level = 0;
+        VUPShionMod.investigationFinFunnelLevel = level;
+    }
+
+    @Override
     public int getFinalEffect() {
         return this.effect * (this.level - 1) / 3 + 2;
     }

@@ -96,6 +96,7 @@ public class VUPShionMod implements
     public static ModLabeledToggleButton useSimpleOrbSwitch;
 
     public static Color transparent = Color.WHITE.cpy();
+    public static boolean fightSpecialBoss = false;
 
     public VUPShionMod() {
         BaseMod.subscribe(this);

@@ -40,6 +40,7 @@ public class ReleaseFormKuroisu extends AbstractKuroisuCard {
             upgradeName();
             this.cardsToPreview.upgrade();
             this.rawDescription = UPGRADE_DESCRIPTION;
+            this.cardsToPreview.upgrade();
             initializeDescription();
             this.upgradeMagicNumber(1);
         }

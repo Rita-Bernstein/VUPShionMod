@@ -9,14 +9,18 @@ import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AttackOrderSpecialPower;
 import VUPShionMod.powers.BleedingPower;
+import VUPShionMod.powers.LifeLinkPower;
 import VUPShionMod.powers.PursuitPower;
 import VUPShionMod.util.ChargeHelper;
 import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnPlayerDeathRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -25,10 +29,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.BerserkPower;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
 
 public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic {
@@ -98,6 +105,24 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         this.img = UPGRADE_IMG;
 
         AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active = true;
+
+        addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
+        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
+        addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!monster.isDeadOrEscaped()) {
+                addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, LifeLinkPower.POWER_ID));
+                addToBot(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        monster.decreaseMaxHealth(500);
+                        isDone = true;
+                    }
+                });
+
+            }
+        }
+
     }
 
     @Override

@@ -178,7 +178,7 @@ public class PlagaAMundoMinion extends CustomMonster {
             createIntent();
         }
 
-        if (this.currentHealth <= 0 && !this.halfDead) {
+        if (this.currentHealth <= 0 && !this.halfDead && !this.hasPower(LifeLinkPower.POWER_ID)) {
             this.halfDead = true;
 
             for (AbstractPower p : this.powers) {
@@ -195,7 +195,7 @@ public class PlagaAMundoMinion extends CustomMonster {
             boolean allDead = true;
 
             for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
-                if (m.id.equals(this.id) && !m.halfDead) {
+                if (m.id.equals(this.id) && !m.halfDead && m.hasPower(LifeLinkPower.POWER_ID)) {
                     allDead = false;
                 }
             }

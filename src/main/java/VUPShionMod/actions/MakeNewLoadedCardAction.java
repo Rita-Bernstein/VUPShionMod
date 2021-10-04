@@ -47,6 +47,7 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
             for (int i = 0; i < this.amount; i++) {
                 AbstractCard t = card.makeSameInstanceOf();
                 t.tags.add(CardTagsEnum.LOADED);
+                t.exhaust = true;
                 t.rawDescription = t.rawDescription + text;
                 t.initializeDescription();
                 AbstractDungeon.player.useCard(t,
@@ -57,6 +58,7 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
         } else {
             AbstractCard t = card.makeSameInstanceOf();
             t.tags.add(CardTagsEnum.LOADED);
+            t.exhaust = true;
             t.rawDescription = t.rawDescription + text;
             t.initializeDescription();
             if (!inDiscardPile)

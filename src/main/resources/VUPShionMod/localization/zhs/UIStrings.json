@@ -12,7 +12,7 @@
   "VUPShionMod:EnduranceInitiationAction": {
     "TEXT": [
       "复制",
-      " vup_shion_mod:加载完成 。"
+      " NL vup_shion_mod:加载完成 消耗 。"
     ]
   },
   "VUPShionMod:UpgradeAndZeroCostAction": {

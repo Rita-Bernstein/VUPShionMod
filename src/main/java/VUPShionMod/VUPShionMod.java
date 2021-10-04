@@ -84,6 +84,7 @@ public class VUPShionMod implements
     public static int gravityFinFunnelLevel = 1;
     public static int investigationFinFunnelLevel = 1;
     public static int pursuitFinFunnelLevel = 1;
+    public static int activeFinFunnel = 1;
 
     public static List<CustomCard> an_Cards = new ArrayList<>();
     public static List<CustomCard> ku_Cards = new ArrayList<>();
@@ -163,6 +164,7 @@ public class VUPShionMod implements
             config.setInt("gravityFinFunnelLevel", gravityFinFunnelLevel);
             config.setInt("investigationFinFunnelLevel", investigationFinFunnelLevel);
             config.setInt("pursuitFinFunnelLevel", pursuitFinFunnelLevel);
+            config.setInt("activeFinFunnel", activeFinFunnel);
             config.save();
         } catch (Exception e) {
             e.printStackTrace();
@@ -176,6 +178,7 @@ public class VUPShionMod implements
             gravityFinFunnelLevel = config.getInt("gravityFinFunnelLevel");
             investigationFinFunnelLevel = config.getInt("investigationFinFunnelLevel");
             pursuitFinFunnelLevel = config.getInt("pursuitFinFunnelLevel");
+            activeFinFunnel = config.getInt("activeFinFunnel");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -290,9 +293,11 @@ public class VUPShionMod implements
                 gravityFinFunnelLevel = 1;
                 investigationFinFunnelLevel = 1;
                 pursuitFinFunnelLevel = 1;
+                activeFinFunnel = 1;
                 config.setInt("gravityFinFunnelLevel", gravityFinFunnelLevel);
                 config.setInt("investigationFinFunnelLevel", investigationFinFunnelLevel);
                 config.setInt("pursuitFinFunnelLevel", pursuitFinFunnelLevel);
+                config.setInt("activeFinFunnel", activeFinFunnel);
                 config.save();
             } catch (Exception e) {
                 e.printStackTrace();

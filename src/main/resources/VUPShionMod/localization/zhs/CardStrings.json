@@ -56,8 +56,8 @@
   },
   "VUPShionMod:EnduranceInitiation": {
     "NAME": "续航启动",
-    "DESCRIPTION": "将一张手牌复制一张加入抽牌堆。 NL 其获得 vup_shion_mod:加载完成 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "将一张手牌各复制一张加入抽牌堆和弃牌堆。 NL 其获得 vup_shion_mod:加载完成 。 NL 消耗 。"
+    "DESCRIPTION": "将一张手牌复制一张加入抽牌堆。 NL 其获得 vup_shion_mod:加载完成 和 消耗 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将一张手牌各复制一张加入抽牌堆和弃牌堆。 NL 其获得 vup_shion_mod:加载完成 和 消耗 。 NL 消耗 。"
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "进攻准备",
@@ -382,7 +382,7 @@
   },
   "VUPShionMod:GravityCharging": {
     "NAME": "重力充能",
-    "DESCRIPTION": "保留 。 NL 触发 vup_shion_mod:加载完成 时，这张牌的耗能减少 [E] 。 NL 触发 !M! *重力 vup_shion_mod:浮游炮 的被动效果。"
+    "DESCRIPTION": "保留 。 NL 触发 vup_shion_mod:加载完成 时，这张牌的耗能减少 [E] 。 NL 触发 !M! 次 *重力 vup_shion_mod:浮游炮 的被动效果。"
   },
   "VUPShionMod:QuickTrigger": {
     "NAME": "快速触发",

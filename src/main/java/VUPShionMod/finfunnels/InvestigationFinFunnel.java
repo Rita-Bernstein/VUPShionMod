@@ -148,7 +148,11 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         body = skeleton.findBone("weapon2_bone");
         muzzle = skeleton.findBone("weapon2_fire");
 
-        this.cX = skeleton.getX() + body.getWorldX();
+        if(AbstractDungeon.player.flipHorizontal){
+            this.cX = skeleton.getX() - body.getWorldX();
+        }else {
+            this.cX = skeleton.getX() + body.getWorldX();
+        }
         this.cY = skeleton.getY() + body.getWorldY();
         hb.move(cX + hb.width * 0.5f, cY);
         this.muzzle_X = skeleton.getX() + muzzle.getWorldX();

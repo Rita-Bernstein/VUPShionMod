@@ -56,7 +56,7 @@ public class DoubleCardPower extends AbstractShionPower {
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
             --this.amount;
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Double Tap"));
+                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             }
         }
 

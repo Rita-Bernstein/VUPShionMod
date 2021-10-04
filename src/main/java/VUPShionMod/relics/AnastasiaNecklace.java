@@ -21,9 +21,11 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.BerserkPower;
@@ -36,6 +38,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
     private static final Texture UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/AnastasiaNecklaceUpgrade.png"));
+    private static final RelicStrings relicString = CardCrawlGame.languagePack.getRelicStrings(ID);
 
     private boolean triggered = false;
     public boolean effectApplied = false;
@@ -60,7 +63,10 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     public void setDescriptionAfterLoading() {
         this.description = getUpdatedDescription();
         this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
+        if (this.triggered)
+            this.tips.add(new PowerTip(this.name, this.description));
+        else
+            this.tips.add(new PowerTip(relicString.DESCRIPTIONS[3], this.description));
         this.initializeTips();
     }
 

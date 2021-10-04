@@ -36,12 +36,12 @@ public class CGlayout implements Disposable {
         switch (Settings.language) {
             case ZHS:
                 for (int i = 1; i < 10; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/zhs/CG0" + i + ".png"));
+                    this.panels.add(new BetterCutscenePanel("VUPShionMod/img/cg/zhs/CG0" + i + ".png", 2.0f));
                 }
                 break;
             default:
                 for (int i = 1; i < 10; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/eng/CG0" + i + ".png"));
+                    this.panels.add(new BetterCutscenePanel("VUPShionMod/img/cg/eng/CG0" + i + ".png", 2.0f));
                 }
         }
 
@@ -52,7 +52,7 @@ public class CGlayout implements Disposable {
         updateFadeOut();
         updateFadeIn();
 
-        for (CutscenePanel p : this.panels){
+        for (CutscenePanel p : this.panels) {
             p.update();
         }
 

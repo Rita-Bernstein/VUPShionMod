@@ -29,6 +29,7 @@ public class PlagaAMundo extends CustomMonster {
     private boolean isFirstMove = true;
     private int baseAttackTimes = 10;
     private boolean isGunMode = false;
+    private boolean isFirstGunMode = true;
 
     public PlagaAMundo() {
         super(NAME, ID, 88, 0.0F, -15.0F, 360.0F, 360.0F, null, 0.0F, 120.0F);
@@ -180,7 +181,13 @@ public class PlagaAMundo extends CustomMonster {
 
         if (this.currentHealth < 1000 && !isGunMode) {
             this.isGunMode = true;
-            setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
+            if (isFirstGunMode) {
+                setMove((byte) 99, Intent.UNKNOWN);
+                this.isFirstGunMode = false;
+            } else {
+                setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
+            }
+
             addToBot(new RemoveSpecificPowerAction(this, this, DefectPower.POWER_ID));
             if (AbstractDungeon.ascensionLevel >= 19)
                 addToBot(new ApplyPowerAction(this, this, new ShockPower(this, 2)));

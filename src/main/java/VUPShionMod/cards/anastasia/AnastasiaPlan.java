@@ -6,6 +6,7 @@ import VUPShionMod.powers.DoubleCardPower;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,42 +26,18 @@ public class AnastasiaPlan extends AbstractAnastasiaCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-//        addToBot(new GainBlockAction(p, p, this.block));
-//        this.rawDescription = cardStrings.DESCRIPTION;
-
         addToBot(new ApplyPowerAction(p,p,new DoubleCardPower(p,this.magicNumber)));
     }
-/*
 
-    public void applyPowers() {
-        this.baseBlock = 0;
-        if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
-            this.baseBlock = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount * this.magicNumber;
-        }
-
-//        if (this.upgraded) {
-//            this.baseBlock += 3;
-//        }
-        super.applyPowers();
-
-//        if (!this.upgraded) {
-//            this.rawDescription = cardStrings.DESCRIPTION;
-//        } else {
-//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-//        }
-        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        initializeDescription();
-    }
-
-*/
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-//            upgradeMagicNumber(1);
-//            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-//            initializeDescription();
             upgradeBaseCost(0);
         }
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new AnastasiaPlan();
+    }
 }

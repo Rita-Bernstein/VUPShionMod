@@ -47,9 +47,6 @@ public class DiscardRarityCardAction extends AbstractGameAction {
         }
 
         tickDuration();
-//        if (this.isDone && this.card != null) {
-//            addToTop(new ShowCardAction(this.card));
-//        }
     }
 }
 

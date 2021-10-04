@@ -80,12 +80,12 @@ public class SpecialCombatPatches {
 
 
     @SpirePatch(
-            clz = TopPanel.class,
+            clz = AbstractDungeon.class,
             method = "render"
     )
     public static class CGRenderPatch {
         @SpirePostfixPatch
-        public static void Postfix(TopPanel _instance, SpriteBatch sb) {
+        public static void Postfix(AbstractDungeon _instance, SpriteBatch sb) {
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 if (r instanceof AnastasiaNecklace) {
                     ((AnastasiaNecklace) r).renderAbove(sb);

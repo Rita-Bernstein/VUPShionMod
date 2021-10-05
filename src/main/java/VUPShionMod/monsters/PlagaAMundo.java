@@ -2,6 +2,8 @@ package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.SummonMundoMinionAction;
+import VUPShionMod.effects.FinFunnelSelectedEffect;
+import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.powers.DefectPower;
 import VUPShionMod.powers.ShockPower;
 import basemod.abstracts.CustomMonster;
@@ -32,7 +34,7 @@ public class PlagaAMundo extends CustomMonster {
     private boolean isFirstGunMode = true;
 
     public PlagaAMundo() {
-        super(NAME, ID, 88, -15.0F, 160.0F, 460.0F, 320.0F, null, 0.0F, 0.0F);
+        super(NAME, ID, 88, -15.0F, 160.0F, 420.0F, 320.0F, null, 0.0F, -20.0F);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             setHp(2500);
@@ -62,7 +64,7 @@ public class PlagaAMundo extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 2.0f);
+        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 2.5f);
 
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
@@ -85,6 +87,8 @@ public class PlagaAMundo extends CustomMonster {
             addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, (int) Math.floor(AbstractDungeon.player.maxHealth * 0.75f)));
         else
             addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth));
+
+        AbstractDungeon.effectList.add(new ShionBossBackgroundEffect());
     }
 
 
@@ -112,9 +116,10 @@ public class PlagaAMundo extends CustomMonster {
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50), 50));
                 break;
             case 98:
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(0, 120, 1.0f), 1));
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(180, 0, 0.8f), 2));
-                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-360, 280, 1.2f), 3));
+                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-400, -20, 1.0f), 1));
+                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-60, 30, 1.3f), 2));
+                addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(220, -80, 0.8f), 3));
+
                 addToBot(new ChangeStateAction(this, "Die"));
                 break;
             case 99:

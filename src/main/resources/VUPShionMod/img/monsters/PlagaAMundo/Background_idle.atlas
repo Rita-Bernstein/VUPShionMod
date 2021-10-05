@@ -1,0 +1,258 @@
+
+Background_idle.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background
+  rotate: false
+  xy: 2, 990
+  size: 1980, 1056
+  orig: 1980, 1056
+  offset: 0, 0
+  index: -1
+debris_1
+  rotate: false
+  xy: 1161, 771
+  size: 298, 217
+  orig: 298, 217
+  offset: 0, 0
+  index: -1
+debris_10
+  rotate: false
+  xy: 1785, 834
+  size: 158, 154
+  orig: 158, 154
+  offset: 0, 0
+  index: -1
+debris_11
+  rotate: true
+  xy: 196, 2
+  size: 133, 86
+  orig: 133, 86
+  offset: 0, 0
+  index: -1
+debris_12
+  rotate: false
+  xy: 196, 354
+  size: 151, 272
+  orig: 151, 272
+  offset: 0, 0
+  index: -1
+debris_13
+  rotate: false
+  xy: 391, 697
+  size: 386, 291
+  orig: 386, 291
+  offset: 0, 0
+  index: -1
+debris_14
+  rotate: false
+  xy: 2, 21
+  size: 162, 96
+  orig: 162, 96
+  offset: 0, 0
+  index: -1
+debris_15
+  rotate: false
+  xy: 1785, 709
+  size: 144, 123
+  orig: 144, 123
+  offset: 0, 0
+  index: -1
+debris_16
+  rotate: false
+  xy: 1984, 1737
+  size: 55, 309
+  orig: 55, 309
+  offset: 0, 0
+  index: -1
+debris_17
+  rotate: true
+  xy: 559, 635
+  size: 60, 167
+  orig: 60, 167
+  offset: 0, 0
+  index: -1
+debris_18
+  rotate: false
+  xy: 391, 631
+  size: 166, 64
+  orig: 166, 64
+  offset: 0, 0
+  index: -1
+debris_19
+  rotate: true
+  xy: 1984, 1176
+  size: 74, 38
+  orig: 74, 38
+  offset: 0, 0
+  index: -1
+debris_2
+  rotate: true
+  xy: 779, 749
+  size: 239, 380
+  orig: 239, 380
+  offset: 0, 0
+  index: -1
+debris_20
+  rotate: true
+  xy: 1461, 775
+  size: 130, 176
+  orig: 130, 176
+  offset: 0, 0
+  index: -1
+debris_21
+  rotate: false
+  xy: 284, 2
+  size: 79, 133
+  orig: 79, 133
+  offset: 0, 0
+  index: -1
+debris_22
+  rotate: false
+  xy: 1984, 1252
+  size: 55, 72
+  orig: 55, 72
+  offset: 0, 0
+  index: -1
+debris_23
+  rotate: true
+  xy: 1161, 750
+  size: 19, 30
+  orig: 19, 30
+  offset: 0, 0
+  index: -1
+debris_24
+  rotate: false
+  xy: 728, 648
+  size: 43, 47
+  orig: 43, 47
+  offset: 0, 0
+  index: -1
+debris_25
+  rotate: true
+  xy: 906, 675
+  size: 72, 102
+  orig: 72, 102
+  offset: 0, 0
+  index: -1
+debris_26
+  rotate: false
+  xy: 1984, 1624
+  size: 58, 111
+  orig: 58, 111
+  offset: 0, 0
+  index: -1
+debris_27
+  rotate: true
+  xy: 1945, 856
+  size: 132, 101
+  orig: 132, 101
+  offset: 0, 0
+  index: -1
+debris_28
+  rotate: false
+  xy: 1984, 1326
+  size: 60, 88
+  orig: 60, 88
+  offset: 0, 0
+  index: -1
+debris_29
+  rotate: true
+  xy: 1010, 673
+  size: 74, 100
+  orig: 74, 100
+  offset: 0, 0
+  index: -1
+debris_3
+  rotate: true
+  xy: 1461, 907
+  size: 81, 294
+  orig: 81, 294
+  offset: 0, 0
+  index: -1
+debris_30
+  rotate: false
+  xy: 1112, 674
+  size: 45, 73
+  orig: 45, 73
+  offset: 0, 0
+  index: -1
+debris_31
+  rotate: false
+  xy: 349, 516
+  size: 37, 110
+  orig: 37, 110
+  offset: 0, 0
+  index: -1
+debris_32
+  rotate: true
+  xy: 779, 710
+  size: 37, 125
+  orig: 37, 125
+  offset: 0, 0
+  index: -1
+debris_33
+  rotate: false
+  xy: 2, 628
+  size: 387, 360
+  orig: 387, 360
+  offset: 0, 0
+  index: -1
+debris_34
+  rotate: false
+  xy: 1984, 1416
+  size: 49, 105
+  orig: 49, 105
+  offset: 0, 0
+  index: -1
+debris_35
+  rotate: false
+  xy: 1757, 970
+  size: 14, 18
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+debris_4
+  rotate: false
+  xy: 2, 119
+  size: 192, 507
+  orig: 192, 507
+  offset: 0, 0
+  index: -1
+debris_5
+  rotate: true
+  xy: 1984, 1523
+  size: 99, 59
+  orig: 99, 59
+  offset: 0, 0
+  index: -1
+debris_6
+  rotate: false
+  xy: 196, 137
+  size: 123, 215
+  orig: 123, 215
+  offset: 0, 0
+  index: -1
+debris_7
+  rotate: false
+  xy: 349, 420
+  size: 70, 94
+  orig: 70, 94
+  offset: 0, 0
+  index: -1
+debris_8
+  rotate: false
+  xy: 349, 352
+  size: 88, 66
+  orig: 88, 66
+  offset: 0, 0
+  index: -1
+debris_9
+  rotate: false
+  xy: 1639, 757
+  size: 144, 148
+  orig: 144, 148
+  offset: 0, 0
+  index: -1

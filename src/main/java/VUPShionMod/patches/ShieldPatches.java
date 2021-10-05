@@ -3,9 +3,7 @@ package VUPShionMod.patches;
 import VUPShionMod.util.Shield;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireField;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -52,9 +50,9 @@ public class ShieldPatches {
             method = "damage"
     )
     public static class PatchAbsMonster {
-        @SpireInsertPatch(rloc = 22)
-        public static void Insert(AbstractMonster _instance, DamageInfo info, int ___damageAmount) {
-            ___damageAmount = ShieldPatches.AddFields.shield.get(_instance).decrementBlock(info, ___damageAmount, _instance);
+        @SpireInsertPatch(rloc = 22 , localvars = {"damageAmount"})
+        public static void Insert(AbstractMonster _instance, DamageInfo info,@ByRef int[] damageAmount) {
+            damageAmount[0] = ShieldPatches.AddFields.shield.get(_instance).decrementBlock(info, damageAmount[0], _instance);
         }
     }
 
@@ -63,9 +61,21 @@ public class ShieldPatches {
             method = "damage"
     )
     public static class PatchAbsPlayer {
-        @SpireInsertPatch(rloc = 17)
-        public static void Insert(AbstractPlayer _instance, DamageInfo info, int ___damageAmount) {
-            ___damageAmount = ShieldPatches.AddFields.shield.get(_instance).decrementBlock(info, ___damageAmount, _instance);
+        @SpireInsertPatch(rloc = 17, localvars = {"damageAmount"})
+        public static void Insert(AbstractPlayer _instance, DamageInfo info,@ByRef int[] damageAmount) {
+            damageAmount[0] = ShieldPatches.AddFields.shield.get(_instance).decrementBlock(info, damageAmount[0], _instance);
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "onVictory"
+    )
+    public static class PatchPlayerOnVictory {
+        @SpirePostfixPatch
+        public static void Postfix(AbstractPlayer _instance) {
+            ShieldPatches.AddFields.shield.get(_instance).loseBlock();
         }
     }
 

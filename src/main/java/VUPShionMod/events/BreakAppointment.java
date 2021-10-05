@@ -60,7 +60,7 @@ public class BreakAppointment extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.removeDialogOption(1);
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        AbstractCard c = VUPShionMod.ku_Cards.get(AbstractDungeon.eventRng.random(VUPShionMod.mi_Cards.size() - 1)).makeCopy();
+                        AbstractCard c = VUPShionMod.mi_Cards.get(AbstractDungeon.eventRng.random(VUPShionMod.mi_Cards.size() - 1)).makeCopy();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                     }
                     this.curScreen = CurrentScreen.COMPLETE;

@@ -118,7 +118,7 @@ public class Shield implements Disposable {
         }
     }
 
-    private void loseBlock() {
+    public void loseBlock() {
         loseBlock(this.currentShield);
     }
 

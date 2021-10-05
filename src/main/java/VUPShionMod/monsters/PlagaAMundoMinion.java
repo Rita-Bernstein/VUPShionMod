@@ -31,7 +31,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     private boolean isFirstGunMode = true;
 
     public PlagaAMundoMinion(float x, float y, float scale) {
-        super(NAME, ID, 88, -15.0F, 160.0F, 460.0F, 320.0F, null,  x, y);
+        super(NAME, ID, 88, -15.0F, 160.0F / scale, 300.0F / scale, 280.0F / scale, null, x, y);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             setHp(3000);
@@ -61,7 +61,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 2.0f * scale);
+        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 2.5f * scale);
 
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
@@ -226,4 +226,13 @@ public class PlagaAMundoMinion extends CustomMonster {
         }
     }
 
+    @Override
+    public void applyEndOfTurnTriggers() {
+        super.applyEndOfTurnTriggers();
+    }
+
+    @Override
+    public void applyStartOfTurnPowers() {
+        super.applyStartOfTurnPowers();
+    }
 }

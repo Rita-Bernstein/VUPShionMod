@@ -18,7 +18,7 @@ public class AttackInitiation extends AbstractShionCard {
 
     public AttackInitiation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

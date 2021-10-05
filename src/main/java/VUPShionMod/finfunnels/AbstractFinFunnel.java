@@ -117,7 +117,6 @@ public abstract class AbstractFinFunnel {
             if (InputHelper.justReleasedClickLeft && AbstractPlayerPatches.AddFields.activatedFinFunnel.get(AbstractDungeon.player) != this) {
                 if (EnergyPanelPatches.energyUsedThisTurn > 0) {
                     EnergyPanelPatches.energyUsedThisTurn--;
-                    AbstractPlayerPatches.AddFields.activatedFinFunnel.set(AbstractDungeon.player, this);
                     addToBot(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, this));
                 }
             }
@@ -138,7 +137,14 @@ public abstract class AbstractFinFunnel {
 
     protected void renderText(SpriteBatch sb) {
         if (!AbstractDungeon.player.isDead)
-            FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level), this.cX + 20.0F * Settings.scale, this.cY - 12.0F * Settings.scale, new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+            if(AbstractDungeon.player.flipHorizontal)
+            FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level),
+                    this.cX + 24.0F * Settings.scale, this.cY - 12.0F * Settings.scale,
+                    new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+            else
+                FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level),
+                        this.cX - 24.0F * Settings.scale, this.cY - 12.0F * Settings.scale,
+                        new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
     }
 
     protected void addToBot(AbstractGameAction action) {

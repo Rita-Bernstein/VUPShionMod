@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -148,13 +149,13 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         body = skeleton.findBone("weapon2_bone");
         muzzle = skeleton.findBone("weapon2_fire");
 
-        if(AbstractDungeon.player.flipHorizontal){
-            this.cX = skeleton.getX() - body.getWorldX();
-        }else {
-            this.cX = skeleton.getX() + body.getWorldX();
-        }
+        if (AbstractDungeon.player.flipHorizontal)
+            this.cX = skeleton.getX() + body.getWorldX() - 48.0f * Settings.scale;
+        else
+            this.cX = skeleton.getX() + body.getWorldX() + 48.0f * Settings.scale;
+
         this.cY = skeleton.getY() + body.getWorldY();
-        hb.move(cX + hb.width * 0.5f, cY);
+        hb.move(cX, cY);
         this.muzzle_X = skeleton.getX() + muzzle.getWorldX();
         this.muzzle_Y = skeleton.getY() + muzzle.getWorldY();
 

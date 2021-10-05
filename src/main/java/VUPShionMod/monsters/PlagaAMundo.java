@@ -32,7 +32,7 @@ public class PlagaAMundo extends CustomMonster {
     private boolean isFirstGunMode = true;
 
     public PlagaAMundo() {
-        super(NAME, ID, 88, 0.0F, -15.0F, 360.0F, 360.0F, null, 0.0F, 120.0F);
+        super(NAME, ID, 88, -15.0F, 160.0F, 460.0F, 320.0F, null, 0.0F, 0.0F);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             setHp(2500);
@@ -62,7 +62,7 @@ public class PlagaAMundo extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 1.0f);
+        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 2.0f);
 
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);

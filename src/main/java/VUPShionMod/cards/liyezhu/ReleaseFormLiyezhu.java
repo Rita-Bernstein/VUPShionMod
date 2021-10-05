@@ -24,7 +24,7 @@ public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
 
     public ReleaseFormLiyezhu() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 4;
     }
 

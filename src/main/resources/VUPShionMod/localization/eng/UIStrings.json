@@ -42,5 +42,12 @@
       "没有后援的胜利",
       "击败深空孽障"
     ]
+  },
+  "VUPShionMod:ReadAction": {
+    "TEXT": [
+      "Add a copy of a card to your hand.",
+      "Add copies of ",
+      " cards to your hand."
+    ]
   }
 }

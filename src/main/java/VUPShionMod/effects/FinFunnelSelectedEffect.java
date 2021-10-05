@@ -1,6 +1,8 @@
 package VUPShionMod.effects;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,6 +12,7 @@ public class FinFunnelSelectedEffect extends AbstractGameEffect {
     private Texture img;
     public float cX = 0.0F;
     public float cY = 0.0F;
+    public boolean selfPos = false;
     public static FinFunnelSelectedEffect instance;
 
     public FinFunnelSelectedEffect() {
@@ -22,14 +25,17 @@ public class FinFunnelSelectedEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-
+        if (selfPos) {
+            this.cX = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(AbstractDungeon.player).cX;
+            this.cY = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(AbstractDungeon.player).cY;
+        }
     }
 
     @Override
     public void render(SpriteBatch sb) {
         sb.setColor(1, 1, 1, 1);
-        if(AbstractDungeon.rs != AbstractDungeon.RenderScene.EVENT && !AbstractDungeon.isScreenUp)
-        sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F);
+        if (AbstractDungeon.rs != AbstractDungeon.RenderScene.EVENT && !AbstractDungeon.isScreenUp)
+            sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F);
     }
 
     @Override

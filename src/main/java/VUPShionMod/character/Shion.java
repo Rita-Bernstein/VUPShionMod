@@ -105,15 +105,14 @@ public class Shion extends CustomPlayer {
         super.preBattlePrep();
         VUPShionMod.loadFinFunnels();
 
-        if (AbstractPlayerPatches.AddFields.finFunnelList.get(this).isEmpty()) {
-            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
+        List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
+        if (funnelList.isEmpty()) {
             funnelList.add(new InvestigationFinFunnel(VUPShionMod.investigationFinFunnelLevel));
             funnelList.add(new PursuitFinFunnel(VUPShionMod.pursuitFinFunnelLevel));
             funnelList.add(new GravityFinFunnel(VUPShionMod.gravityFinFunnelLevel));
-            AbstractPlayerPatches.AddFields.activatedFinFunnel.set(this, funnelList.get(VUPShionMod.activeFinFunnel));
         }
         AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
-        AbstractDungeon.actionManager.addToBottom(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, AbstractPlayerPatches.AddFields.activatedFinFunnel.get(this)));
+        AbstractDungeon.actionManager.addToBottom(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, funnelList.get(VUPShionMod.activeFinFunnel)));
     }
 
     @Override

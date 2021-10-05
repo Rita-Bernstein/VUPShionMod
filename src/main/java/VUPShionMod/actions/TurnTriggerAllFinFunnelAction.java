@@ -140,7 +140,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                 AbstractFinFunnel f = availableFinFunnel.get(i);
                 if (isMultiDamage) {
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                        if (f instanceof GravityFinFunnel){
+                        if (f instanceof GravityFinFunnel) {
                             if (p.hasPower(GravitoniumPower.POWER_ID))
                                 addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
                             else
@@ -159,7 +159,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                             m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                             monsters.set(i, m);
                         }
-                        if (f instanceof GravityFinFunnel){
+                        if (f instanceof GravityFinFunnel) {
                             if (p.hasPower(GravitoniumPower.POWER_ID))
                                 addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
                             else
@@ -167,16 +167,18 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                         }
 
 
-                        if (f instanceof InvestigationFinFunnel)
+                        if (f instanceof InvestigationFinFunnel) {
+//      额外给予流血效果
+                            if (isApplyBleeding)
+                                addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 2)));
                             addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, f.getFinalEffect())));
+                        }
+
 
 //                    if (f instanceof PursuitFinFunnel)
 //                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, f.getFinalEffect())));
 
 
-//      额外给予流血效果
-                        if (isApplyBleeding)
-                            addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 2)));
                     }
 
                 }

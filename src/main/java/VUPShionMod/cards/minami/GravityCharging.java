@@ -17,7 +17,7 @@ import java.util.function.Predicate;
 public class GravityCharging extends AbstractMinamiCard {
     public static final String ID = VUPShionMod.makeID("GravityCharging");
     public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami16.png");
-    private static final int COST = 5;
+    private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

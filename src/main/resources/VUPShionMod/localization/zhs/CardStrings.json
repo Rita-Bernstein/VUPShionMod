@@ -124,7 +124,7 @@
   },
   "VUPShionMod:AttackOrderGamma": {
     "NAME": "攻击指令·叁式",
-    "DESCRIPTION": " 虚无 。 NL 受到 vup_shion_mod:浮游炮 的每回合攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
+    "DESCRIPTION": " 虚无 。 NL 受到 *侦查 vup_shion_mod:浮游炮 的每回合攻击的敌人，再给予 !M! 层 vup_shion_mod:流血 。 NL 不与其他指令共存。"
   },
   "VUPShionMod:AttackOrderDelta": {
     "NAME": "攻击指令·肆式",
@@ -374,11 +374,11 @@
   "VUPShionMod:Gravitonium": {
     "NAME": "重力鎓",
     "DESCRIPTION": "接下来 *重力 vup_shion_mod:浮游炮 给予的 格挡 将变为 vup_shion_mod:护盾 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 接下来 *重力 vup_shion_mod:浮游炮 获得的 格挡 将变为 vup_shion_mod:护盾 。"
+    "UPGRADE_DESCRIPTION": "固有 。 NL 接下来 *重力 vup_shion_mod:浮游炮 给予的 格挡 将变为 vup_shion_mod:护盾 。"
   },
   "VUPShionMod:Read": {
     "NAME": "读取",
-    "DESCRIPTION": "将抽牌堆中的 !M! 张 vup_shion_mod:加载完成 牌加入手牌。"
+    "DESCRIPTION": "将抽牌堆中的 !M! 张 vup_shion_mod:加载完成 牌的复制品加入手牌。"
   },
   "VUPShionMod:GravityCharging": {
     "NAME": "重力充能",

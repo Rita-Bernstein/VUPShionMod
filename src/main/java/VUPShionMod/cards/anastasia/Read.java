@@ -1,6 +1,7 @@
 package VUPShionMod.cards.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.ReadAction;
 import VUPShionMod.cards.AbstractAnastasiaCard;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.LockOnPower;
@@ -31,8 +32,9 @@ public class Read extends AbstractAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Predicate<AbstractCard> predicate = (pr) -> pr.hasTag(CardTagsEnum.LOADED);
-        addToBot(new MoveCardsAction(p.hand, p.drawPile, predicate, this.magicNumber));
+//        Predicate<AbstractCard> predicate = (pr) -> pr.hasTag(CardTagsEnum.LOADED);
+//        addToBot(new MoveCardsAction(p.hand, p.drawPile, predicate, this.magicNumber));
+        addToBot(new ReadAction(this.magicNumber));
     }
 
     @Override

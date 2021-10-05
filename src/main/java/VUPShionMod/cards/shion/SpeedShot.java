@@ -7,6 +7,7 @@ import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -84,5 +85,11 @@ public class SpeedShot extends AbstractShionCard {
         this.initializeDescription();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
+    }
+
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new SpeedShot();
     }
 }

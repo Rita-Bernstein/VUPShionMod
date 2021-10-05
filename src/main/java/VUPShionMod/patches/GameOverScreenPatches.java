@@ -36,7 +36,7 @@ public class GameOverScreenPatches {
     )
     public static class PatchGameOverScreen {
         @SpireInsertPatch(rloc = 91)
-        public static SpireReturn<Void> Insert(GameOverScreen _instance, boolean victory, int ___points) {
+        public static SpireReturn<Void> Insert(boolean victory, int ___points) {
             if (VUPShionMod.fightSpecialBoss) {
                 ___points += 1000;
             }

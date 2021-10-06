@@ -7,6 +7,7 @@ import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.powers.DefectPower;
 import VUPShionMod.powers.ShockPower;
+import VUPShionMod.powers.StrengthenPower;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DemonFormPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -30,7 +32,7 @@ public class PlagaAMundo extends CustomMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
     private boolean isFirstMove = true;
-    private int baseAttackTimes = 10;
+    private int baseAttackTimes = 13;
     private boolean isGunMode = false;
     private boolean isFirstGunMode = true;
 
@@ -46,14 +48,10 @@ public class PlagaAMundo extends CustomMonster {
 
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 3));
-            this.damage.add(new DamageInfo(this, 4));
-            this.damage.add(new DamageInfo(this, 5));
-            this.damage.add(new DamageInfo(this, 100));
+            this.damage.add(new DamageInfo(this, 150));
         } else {
             this.damage.add(new DamageInfo(this, 3));
-            this.damage.add(new DamageInfo(this, 4));
-            this.damage.add(new DamageInfo(this, 5));
-            this.damage.add(new DamageInfo(this, 100));
+            this.damage.add(new DamageInfo(this, 150));
         }
 
         if (AbstractDungeon.ascensionLevel >= 4)
@@ -77,7 +75,7 @@ public class PlagaAMundo extends CustomMonster {
     public void usePreBattleAction() {
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
-//        AbstractDungeon.getCurrRoom().playBgmInstantly("fight");
+        AbstractDungeon.getCurrRoom().playBgmInstantly("VUPShionMod:Boss_Phase1");
         (AbstractDungeon.getCurrRoom()).cannotLose = true;
         if (AbstractDungeon.ascensionLevel >= 19)
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
@@ -89,6 +87,7 @@ public class PlagaAMundo extends CustomMonster {
         else
             addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth));
 
+
         AbstractDungeon.effectList.add(new ShionBossBackgroundEffect());
     }
 
@@ -96,22 +95,14 @@ public class PlagaAMundo extends CustomMonster {
     public void takeTurn() {
         switch (this.nextMove) {
             case 0:
-                for (int i = 0; i < baseAttackTimes + 2; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
-                break;
-            case 1:
-                for (int i = 0; i < baseAttackTimes + 1; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
-                break;
-            case 2:
                 for (int i = 0; i < baseAttackTimes; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.FIRE, true));
+                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 3:
                 addToBot(new GainBlockAction(this, this, 50));
                 break;
             case 4:
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE));
                 break;
             case 5:
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50), 50));
@@ -130,6 +121,7 @@ public class PlagaAMundo extends CustomMonster {
                 });
                 break;
             case 99:
+                addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 2)));
                 break;
         }
 
@@ -140,7 +132,7 @@ public class PlagaAMundo extends CustomMonster {
 
     protected void getMove(int num) {
         if (this.isFirstMove) {
-            setMove((byte) 99, Intent.UNKNOWN);
+            setMove((byte) 99, Intent.BUFF);
             this.isFirstMove = false;
             return;
         }
@@ -150,26 +142,9 @@ public class PlagaAMundo extends CustomMonster {
                 setMove((byte) 5, Intent.BUFF);
                 return;
             }
-            setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
+            setMove((byte) 4, Intent.ATTACK, this.damage.get(1).base);
         } else {
-
-            if (num < 25) {
-                if (lastTwoMoves((byte) 0))
-                    setMove((byte) 3, Intent.DEFEND);
-                setMove((byte) 0, Intent.ATTACK, this.damage.get(0).base, this.baseAttackTimes + 2, true);
-            } else if (num < 50) {
-                if (lastTwoMoves((byte) 1))
-                    setMove((byte) 3, Intent.DEFEND);
-                setMove((byte) 1, Intent.ATTACK, this.damage.get(1).base, this.baseAttackTimes + 1, true);
-            } else if (num < 75) {
-                if (lastTwoMoves((byte) 2))
-                    setMove((byte) 3, Intent.DEFEND);
-                setMove((byte) 2, Intent.ATTACK, this.damage.get(2).base, this.baseAttackTimes, true);
-            } else {
-                if (lastTwoMoves((byte) 3))
-                    setMove((byte) 2, Intent.ATTACK, this.damage.get(2).base, this.baseAttackTimes, true);
-                setMove((byte) 3, Intent.DEFEND);
-            }
+            setMove((byte) 0, Intent.ATTACK, this.damage.get(0).base, baseAttackTimes, true);
         }
     }
 
@@ -191,16 +166,18 @@ public class PlagaAMundo extends CustomMonster {
 //            this.state.addAnimation(0, "Idle", true, 0.0F);
 //        }
 
-        if (this.currentHealth < 1000 && !isGunMode) {
+        if ((this.currentHealth < 1000 || this.currentHealth < 1500 && AbstractDungeon.ascensionLevel >= 7) && !isGunMode) {
             this.isGunMode = true;
             if (isFirstGunMode) {
-                setMove((byte) 99, Intent.UNKNOWN);
+                setMove((byte) 99, Intent.BUFF);
                 this.isFirstGunMode = false;
             } else {
-                setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
+                setMove((byte) 4, Intent.ATTACK, this.damage.get(1).base);
             }
 
             addToBot(new RemoveSpecificPowerAction(this, this, DefectPower.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this, this, StrengthenPower.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this, this, StrengthPower.POWER_ID));
             if (AbstractDungeon.ascensionLevel >= 19)
                 addToBot(new ApplyPowerAction(this, this, new ShockPower(this, 2)));
             else
@@ -227,12 +204,17 @@ public class PlagaAMundo extends CustomMonster {
             createIntent();
             addToBot(new SetMoveAction(this, (byte) 98, AbstractMonster.Intent.UNKNOWN));
             applyPowers();
+
+            AbstractDungeon.scene.fadeOutAmbiance();
+            CardCrawlGame.music.precacheTempBgm("VUPShionMod:Boss_Phase2");
+
         }
     }
 
     public void changeState(String stateName) {
         switch (stateName) {
             case "Die":
+                CardCrawlGame.music.playPrecachedTempBgm();
                 this.halfDead = false;
                 this.die(true);
                 break;

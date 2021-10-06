@@ -126,6 +126,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
                 addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, LifeLinkPower.POWER_ID));
+                addToBot(new LoseHPAction(monster,AbstractDungeon.player,500));
                 addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {

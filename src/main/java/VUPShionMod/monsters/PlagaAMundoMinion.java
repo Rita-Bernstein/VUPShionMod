@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.DefectPower;
 import VUPShionMod.powers.DestroyPower;
 import VUPShionMod.powers.LifeLinkPower;
+import VUPShionMod.powers.StrengthenPower;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DemonFormPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -45,7 +47,7 @@ public class PlagaAMundoMinion extends CustomMonster {
             this.damage.add(new DamageInfo(this, 5));
             this.damage.add(new DamageInfo(this, 6));
             this.damage.add(new DamageInfo(this, 100));
-        } else {
+        }else{
             this.damage.add(new DamageInfo(this, 4));
             this.damage.add(new DamageInfo(this, 5));
             this.damage.add(new DamageInfo(this, 6));
@@ -81,6 +83,8 @@ public class PlagaAMundoMinion extends CustomMonster {
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
         else
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
+
+        addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 2)));
     }
 
 
@@ -123,7 +127,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     protected void getMove(int num) {
         if (isGunMode) {
             if (lastMove((byte) 4)) {
-                setMove((byte) 5, Intent.BUFF);
+                setMove((byte) 5, Intent.UNKNOWN);
                 return;
             }
             setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
@@ -162,7 +166,7 @@ public class PlagaAMundoMinion extends CustomMonster {
 //            this.state.addAnimation(0, "Idle", true, 0.0F);
 //        }
 
-        if (this.currentHealth < 1500 && !isGunMode) {
+        if ((this.currentHealth < 1500 || this.currentHealth < 2000 && AbstractDungeon.ascensionLevel >= 7) && !isGunMode) {
             this.isGunMode = true;
             if (isFirstGunMode) {
                 setMove((byte) 99, Intent.UNKNOWN);
@@ -171,6 +175,8 @@ public class PlagaAMundoMinion extends CustomMonster {
                 setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
             }
             addToBot(new RemoveSpecificPowerAction(this, this, DefectPower.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this, this, StrengthenPower.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this, this, StrengthPower.POWER_ID));
             if (AbstractDungeon.ascensionLevel >= 19)
                 addToBot(new ApplyPowerAction(this, this, new DestroyPower(this, 2)));
             else

@@ -231,5 +231,11 @@
     "DESCRIPTIONS": [
       "下 #b%d 次生成 #y加载完成 时，直接触发这张牌的效果。"
     ]
+  },
+  "VUPShionMod:StrengthenPower": {
+    "NAME": "增伤",
+    "DESCRIPTIONS": [
+      "下 #b%d 次生成 #y加载完成 时，直接触发所有生成的牌的效果。"
+    ]
   }
 }

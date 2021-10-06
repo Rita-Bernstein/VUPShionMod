@@ -457,13 +457,6 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new OpticalCamouflage(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Sniperscope(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new AnastasiaNecklace(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.removeRelic(new LizardTail());
-        BaseMod.addRelic(new LizardTail() {
-            @Override
-            public boolean canSpawn() {
-                return !(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion);
-            }
-        }, RelicType.SHARED);
     }
 
 

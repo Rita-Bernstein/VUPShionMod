@@ -1,0 +1,131 @@
+
+ShionBackground.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beijing
+  rotate: false
+  xy: 2, 1035
+  size: 2000, 1000
+  orig: 2000, 1000
+  offset: 0, 0
+  index: -1
+leaves2
+  rotate: true
+  xy: 2004, 688
+  size: 46, 39
+  orig: 46, 39
+  offset: 0, 0
+  index: -1
+leaves7_1
+  rotate: false
+  xy: 1004, 5
+  size: 48, 26
+  orig: 48, 26
+  offset: 0, 0
+  index: -1
+leaves7_2
+  rotate: false
+  xy: 2004, 649
+  size: 35, 37
+  orig: 35, 37
+  offset: 0, 0
+  index: -1
+leaves7_3
+  rotate: false
+  xy: 1054, 20
+  size: 24, 11
+  orig: 24, 11
+  offset: 0, 0
+  index: -1
+light_1
+  rotate: true
+  xy: 2, 2
+  size: 29, 1000
+  orig: 29, 1000
+  offset: 0, 0
+  index: -1
+light_2
+  rotate: true
+  xy: 2004, 736
+  size: 1299, 31
+  orig: 1299, 31
+  offset: 0, 0
+  index: -1
+light_lizi
+  rotate: false
+  xy: 2, 33
+  size: 2000, 1000
+  orig: 2000, 1000
+  offset: 0, 0
+  index: -1
+
+ShionBackground2.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+leaves1
+  rotate: true
+  xy: 667, 53
+  size: 201, 255
+  orig: 201, 255
+  offset: 0, 0
+  index: -1
+leaves1_1
+  rotate: false
+  xy: 1200, 200
+  size: 99, 54
+  orig: 99, 54
+  offset: 0, 0
+  index: -1
+leaves3
+  rotate: false
+  xy: 1047, 95
+  size: 103, 50
+  orig: 103, 50
+  offset: 0, 0
+  index: -1
+leaves4
+  rotate: false
+  xy: 1047, 147
+  size: 151, 107
+  orig: 151, 107
+  offset: 0, 0
+  index: -1
+leaves5
+  rotate: false
+  xy: 924, 69
+  size: 121, 185
+  orig: 121, 185
+  offset: 0, 0
+  index: -1
+leaves6
+  rotate: true
+  xy: 667, 2
+  size: 49, 58
+  orig: 49, 58
+  offset: 0, 0
+  index: -1
+leaves7
+  rotate: false
+  xy: 2, 70
+  size: 372, 184
+  orig: 372, 184
+  offset: 0, 0
+  index: -1
+leaves8
+  rotate: false
+  xy: 2, 2
+  size: 53, 66
+  orig: 53, 66
+  offset: 0, 0
+  index: -1
+leaves9
+  rotate: true
+  xy: 376, 18
+  size: 236, 289
+  orig: 236, 289
+  offset: 0, 0
+  index: -1

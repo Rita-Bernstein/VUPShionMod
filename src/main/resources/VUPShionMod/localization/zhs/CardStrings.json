@@ -341,7 +341,7 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "姿态解放-黎夜竹",
-    "DESCRIPTION": "立即且你的每回合开始时获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 vup_shion_mod:超维链接 层数 !VUPShionSecondM! 倍的伤害。"
+    "DESCRIPTION": "立即且你的每回合开始时获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 !VUPShionSecondM! + vup_shion_mod:超维链接 层数 的伤害。"
   },
   "VUPShionMod:Awaken": {
     "NAME": "唤醒",

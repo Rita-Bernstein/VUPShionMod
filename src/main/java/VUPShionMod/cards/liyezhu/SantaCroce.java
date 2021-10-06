@@ -26,7 +26,7 @@ public class SantaCroce extends AbstractLiyezhuCard {
     public SantaCroce() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.baseBlock = 0;
     }
 

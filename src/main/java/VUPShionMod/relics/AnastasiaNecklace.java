@@ -2,6 +2,7 @@ package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cutscenes.CGlayout;
+import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.monsters.PlagaAMundoMinion;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -94,6 +95,19 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         AbstractDungeon.player.increaseMaxHp(200, true);
         AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
         AbstractDungeon.player.energy.energyMaster++;
+
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                ShionBossBackgroundEffect.instance.loadAnimation(
+                        "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.atlas",
+                        "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.json", 1.0f);
+                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle1", true);
+                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle2", true);
+                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle3", true);
+                isDone = true;
+            }
+        });
 
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
             for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {

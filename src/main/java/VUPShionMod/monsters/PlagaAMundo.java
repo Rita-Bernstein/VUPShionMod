@@ -1,6 +1,7 @@
 package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.GachaAction;
 import VUPShionMod.actions.SummonMundoMinionAction;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
@@ -64,7 +65,7 @@ public class PlagaAMundo extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 2.5f);
+        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.atlas", "VUPShionMod/img/monsters/PlagaAMundo/Idle_BOSS.json", 2.0f);
 
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
@@ -119,8 +120,14 @@ public class PlagaAMundo extends CustomMonster {
                 addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-400, -20, 1.0f), 1));
                 addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(-60, 30, 1.3f), 2));
                 addToBot(new SummonMundoMinionAction(this, new PlagaAMundoMinion(220, -80, 0.8f), 3));
-
                 addToBot(new ChangeStateAction(this, "Die"));
+                addToBot(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        addToBot(new GachaAction());
+                        isDone = true;
+                    }
+                });
                 break;
             case 99:
                 break;

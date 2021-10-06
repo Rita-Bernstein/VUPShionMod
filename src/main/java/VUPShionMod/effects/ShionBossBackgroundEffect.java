@@ -29,12 +29,10 @@ public class ShionBossBackgroundEffect extends AbstractGameEffect {
 
         this.renderBehind = true;
 
-        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/Background_idle.atlas",
-                "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.json", 1.0f);
+        loadAnimation("VUPShionMod/img/monsters/PlagaAMundo/ShionBackground.atlas",
+                "VUPShionMod/img/monsters/PlagaAMundo/ShionBackground.json", 1.0f);
 
         this.state.setAnimation(0, "Background_idle1", true);
-        this.state.setAnimation(1, "Background_idle2", true);
-        this.state.setAnimation(2, "Background_idle3", true);
     }
 
     public void loadAnimation(String atlasUrl, String skeletonUrl, float scale) {
@@ -49,8 +47,8 @@ public class ShionBossBackgroundEffect extends AbstractGameEffect {
         this.state = new AnimationState(this.stateData);
     }
 
-    public void setAnimation(int trackIndex, String animationName) {
-        this.state.setAnimation(trackIndex, animationName, true);
+    public void setAnimation(int trackIndex, String animationName,boolean loop) {
+        this.state.setAnimation(trackIndex, animationName, loop);
     }
 
     @Override

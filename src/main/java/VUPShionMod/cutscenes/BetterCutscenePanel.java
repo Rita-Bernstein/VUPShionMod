@@ -3,9 +3,14 @@ package VUPShionMod.cutscenes;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class BetterCutscenePanel extends CutscenePanel {
+    private Texture img;
     private Color color;
     private float timeScale;
 
@@ -13,6 +18,7 @@ public class BetterCutscenePanel extends CutscenePanel {
         super(imgUrl, sfx);
         this.color = new Color(1.0F, 1.0F, 1.0F, 0.0F);
         this.timeScale = timeScale;
+        this.img = ImageMaster.loadImage(imgUrl);
     }
 
     public BetterCutscenePanel(String imgUrl, float timeScale) {
@@ -45,6 +51,18 @@ public class BetterCutscenePanel extends CutscenePanel {
             if (this.color.a > 1.0F) {
                 this.color.a = 1.0F;
                 this.finished = true;
+            }
+        }
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        if (this.img != null) {
+            sb.setColor(this.color);
+            if (Settings.isSixteenByTen) {
+                sb.draw(this.img, 0.0F, 0.0F, (float)Settings.WIDTH, (float)Settings.HEIGHT);
+            } else {
+                sb.draw(this.img, 0.0F, -50.0F * Settings.scale, (float)Settings.WIDTH, (float)Settings.HEIGHT + 110.0F * Settings.scale);
             }
         }
     }

@@ -36,12 +36,12 @@ public class CGlayout implements Disposable {
         switch (Settings.language) {
             case ZHS:
                 for (int i = 1; i < 10; i++) {
-                    this.panels.add(new BetterCutscenePanel("VUPShionMod/img/cg/zhs/CG0" + i + ".png", 2.0f));
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/zhs/CG0" + i + ".png"));
                 }
                 break;
             default:
                 for (int i = 1; i < 10; i++) {
-                    this.panels.add(new BetterCutscenePanel("VUPShionMod/img/cg/eng/CG0" + i + ".png", 2.0f));
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/eng/CG0" + i + ".png"));
                 }
         }
 
@@ -87,7 +87,7 @@ public class CGlayout implements Disposable {
             for (CutscenePanel p : this.panels) {
                 if (!p.activated) {
                     p.activate();
-                    this.switchTimer = 5.0F;
+                    this.switchTimer = 2.0F;
                     return;
                 }
             }
@@ -128,7 +128,7 @@ public class CGlayout implements Disposable {
     }
 
     public void renderAbove(SpriteBatch sb) {
-        if (!isDone) {
+        if(!this.isDone){
             sb.setColor(Color.BLACK);
             sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT);
         }
@@ -138,10 +138,12 @@ public class CGlayout implements Disposable {
             renderImg(sb, this.bgImg);
         }
 
+
         renderPanels(sb);
+
         sb.setColor(this.screenColor);
         sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT);
-
+        sb.setColor(Color.WHITE);
     }
 
     private void renderPanels(SpriteBatch sb) {

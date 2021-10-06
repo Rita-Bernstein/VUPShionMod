@@ -205,16 +205,12 @@ public class PlagaAMundo extends CustomMonster {
             addToBot(new SetMoveAction(this, (byte) 98, AbstractMonster.Intent.UNKNOWN));
             applyPowers();
 
-            AbstractDungeon.scene.fadeOutAmbiance();
-            CardCrawlGame.music.precacheTempBgm("VUPShionMod:Boss_Phase2");
-
         }
     }
 
     public void changeState(String stateName) {
         switch (stateName) {
             case "Die":
-                CardCrawlGame.music.playPrecachedTempBgm();
                 this.halfDead = false;
                 this.die(true);
                 break;

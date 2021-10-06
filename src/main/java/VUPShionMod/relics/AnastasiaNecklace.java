@@ -72,9 +72,9 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         this.description = getUpdatedDescription();
         this.tips.clear();
         if (this.triggered)
-            this.tips.add(new PowerTip(this.name, this.description));
-        else
             this.tips.add(new PowerTip(relicString.DESCRIPTIONS[3], this.description));
+        else
+            this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
     }
 
@@ -86,28 +86,25 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
             GameCursor.hidden = true;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NO_INTERACT;
 
+            ShionBossBackgroundEffect.instance.loadAnimation(
+                    "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.atlas",
+                    "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.json", 1.0f);
+            ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle1", true);
+            ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle2", true);
+            ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle3", true);
+
         }
     }
 
     public void applyEffect() {
         setDescriptionAfterLoading();
 
+        CardCrawlGame.music.playTempBGM("VUPShionMod:Boss_Phase2");
+
         AbstractDungeon.player.increaseMaxHp(200, true);
         AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
         AbstractDungeon.player.energy.energyMaster++;
-
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                ShionBossBackgroundEffect.instance.loadAnimation(
-                        "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.atlas",
-                        "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.json", 1.0f);
-                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle1", true);
-                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle2", true);
-                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle3", true);
-                isDone = true;
-            }
-        });
+        AbstractDungeon.player.energy.energy++;
 
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
             for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
@@ -125,8 +122,8 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
-                addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, LifeLinkPower.POWER_ID));
-                addToBot(new LoseHPAction(monster,AbstractDungeon.player,500));
+                addToBot(new RemoveSpecificPowerAction(monster, AbstractDungeon.player, LifeLinkPower.POWER_ID));
+                addToBot(new LoseHPAction(monster, AbstractDungeon.player, 500));
                 addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {
@@ -191,6 +188,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         }
 
         if (!triggered && canTrigger) {
+            CardCrawlGame.music.justFadeOutTempBGM();
             AbstractDungeon.player.halfDead = true;
             (AbstractDungeon.getCurrRoom()).cannotLose = true;
             return false;

@@ -169,7 +169,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         if ((this.currentHealth < 1500 || this.currentHealth < 2000 && AbstractDungeon.ascensionLevel >= 7) && !isGunMode) {
             this.isGunMode = true;
             if (isFirstGunMode) {
-                setMove((byte) 99, Intent.UNKNOWN);
+                setMove((byte) 99, Intent.BUFF);
                 this.isFirstGunMode = false;
             } else {
                 setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
@@ -184,7 +184,7 @@ public class PlagaAMundoMinion extends CustomMonster {
             createIntent();
         }
 
-        if (this.currentHealth <= 0 && !this.halfDead && !this.hasPower(LifeLinkPower.POWER_ID)) {
+        if (this.currentHealth <= 0 && !this.halfDead) {
             this.halfDead = true;
 
             for (AbstractPower p : this.powers) {

@@ -63,6 +63,7 @@ public class Newborn extends AbstractImageEvent {
 
     private void fightBoss() {
         VUPShionMod.fightSpecialBoss = false;
+        VUPShionMod.fightSpecialBossWithout = false;
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new AnastasiaNecklace());
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;

@@ -24,11 +24,17 @@ public class GameOverScreenPatches {
     public static class PatchVictoryScreen {
         @SpireInsertPatch(rloc = 197)
         public static SpireReturn<Void> Insert(VictoryScreen _instance) {
-            if (VUPShionMod.fightSpecialBoss) {
-                ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(_instance, GameOverScreen.class, "stats");
+            ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(_instance, GameOverScreen.class, "stats");
+            if (VUPShionMod.fightSpecialBossWithout) {
                 stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[1], Integer.toString(1000)));
-                VUPShionMod.fightSpecialBoss = false;
             }
+
+            if (VUPShionMod.fightSpecialBoss) {
+                stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(1000)));
+            }
+
+            VUPShionMod.fightSpecialBossWithout = false;
+            VUPShionMod.fightSpecialBoss = false;
             return SpireReturn.Continue();
         }
     }
@@ -40,8 +46,12 @@ public class GameOverScreenPatches {
     public static class PatchGameOverScreen {
         @SpireInsertPatch(rloc = 91, localvars = {"points"})
         public static SpireReturn<Void> Insert(boolean victory, @ByRef int[] points) {
-            if (VUPShionMod.fightSpecialBoss) {
+            if (VUPShionMod.fightSpecialBossWithout) {
                 points[0] += 1000;
+            }
+
+            if (VUPShionMod.fightSpecialBoss) {
+                points[0] += 500;
             }
             return SpireReturn.Continue();
         }

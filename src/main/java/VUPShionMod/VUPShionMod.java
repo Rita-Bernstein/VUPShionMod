@@ -98,6 +98,7 @@ public class VUPShionMod implements
 
     public static Color transparent = Color.WHITE.cpy();
     public static boolean fightSpecialBoss = false;
+    public static boolean fightSpecialBossWithout = false;
 
 
     public VUPShionMod() {
@@ -305,6 +306,7 @@ public class VUPShionMod implements
             }
 
             fightSpecialBoss = false;
+            fightSpecialBossWithout = false;
         }
 
         if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {

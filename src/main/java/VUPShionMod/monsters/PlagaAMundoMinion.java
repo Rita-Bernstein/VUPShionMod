@@ -2,10 +2,7 @@ package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.CustomWaitAction;
-import VUPShionMod.powers.DefectPower;
-import VUPShionMod.powers.ShockPower;
-import VUPShionMod.powers.LifeLinkPower;
-import VUPShionMod.powers.StrengthenPower;
+import VUPShionMod.powers.*;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -166,8 +163,12 @@ public class PlagaAMundoMinion extends CustomMonster {
             useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);
             onBossVictoryLogic();
+            if(!AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)){
+                VUPShionMod.fightSpecialBossWithout = true;
+            }else {
+                VUPShionMod.fightSpecialBoss = true;
+            }
 
-            VUPShionMod.fightSpecialBoss = true;
         }
     }
 

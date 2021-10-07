@@ -84,7 +84,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         else
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
 
-        addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 2)));
+        addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
     }
 
 

@@ -20,7 +20,7 @@ public class QuickAttack extends AbstractVUPShionCard {
 
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 0;
 

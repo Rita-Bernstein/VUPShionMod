@@ -16,7 +16,6 @@ public class OpticalCamouflage extends CustomRelic {
 
     public OpticalCamouflage() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
-        getUpdatedDescription();
     }
 
     @Override

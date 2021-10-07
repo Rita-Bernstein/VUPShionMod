@@ -11,7 +11,7 @@
     "NAME": "Cloyce's Determination",
     "FLAVOR": "Even the undetermined may become otherwise. Determination can be caught like a flu.",
     "DESCRIPTIONS": [
-      "When you would die, restore your HP and status back to at most three turns before if during combat, heal to #b50% of your Max HP otherwise.（works once）.",
+      " #y右键使用 ：额外获得一个回合，结束你的回合。 （仅能起效 #b%d 次）",
       "This relic has been exhausted."
     ]
   },

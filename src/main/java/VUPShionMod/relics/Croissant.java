@@ -14,7 +14,6 @@ public class Croissant extends CustomRelic {
 
     public Croissant() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
-        getUpdatedDescription();
     }
 
     @Override

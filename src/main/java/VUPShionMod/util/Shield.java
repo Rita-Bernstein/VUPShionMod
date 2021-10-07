@@ -47,7 +47,7 @@ public class Shield implements Disposable {
                         100, 100, false, false);
 
                 FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.currentShield),
-                        x + BLOCK_ICON_X, y - 16.0F * Settings.scale + 50.0f * Settings.scale * renderScale, this.blockTextColor, blockScale);
+                        x + BLOCK_ICON_X, y - 16.0F * Settings.scale + 50.0f * Settings.scale * renderScale, this.blockTextColor, 1.0f);
             } else {
                 sb.draw(blockImg,
                         x + BLOCK_ICON_X - 50.0F, y + BLOCK_ICON_Y - 50.0F + blockOffset,
@@ -58,7 +58,7 @@ public class Shield implements Disposable {
                         100, 100, false, false);
 
                 FontHelper.renderFontCentered(sb, FontHelper.blockInfoFont, Integer.toString(this.currentShield),
-                        x + BLOCK_ICON_X, y - 16.0F * Settings.scale, this.blockTextColor, blockScale);
+                        x + BLOCK_ICON_X, y - 16.0F * Settings.scale, this.blockTextColor, 1.0f);
             }
 
         }

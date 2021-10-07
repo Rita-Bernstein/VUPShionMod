@@ -48,12 +48,12 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
     private AbstractPlayer p = AbstractDungeon.player;
 
     public static class FinFunnelSmallLaserData {
-        public float sX;
-        public float sY;
-        public float dX;
-        public float dY;
-        public float dst;
-        public float rotation;
+        public float sX = 0.0f;
+        public float sY = 0.0f;
+        public float dX = 0.0f;
+        public float dY = 0.0f;
+        public float dst = 0.0f;
+        public float rotation = 0.0f;
     }
 
     private void getPower() {
@@ -99,6 +99,8 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
             if (!posUpdated) {
                 for (AbstractFinFunnel finFunnel : this.finFunnels) {
                     AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
+                    if(m == null)
+                        return;
 
                     FinFunnelSmallLaserData data = new FinFunnelSmallLaserData();
                     data.dX = finFunnel.muzzle_X;
@@ -185,9 +187,9 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
                 if (this.atkImg != null) {
                     sb.setColor(this.atkColor);
-                    sb.draw(this.atkImg, data.sX - this.atkImg.packedWidth / 2.0f, data.sY - this.atkImg.packedHeight / 2.0f,
-                            this.atkImg.packedWidth / 2.0F, this.atkImg.packedHeight / 2.0F,
-                            this.atkImg.packedWidth, this.atkImg.packedHeight,
+                    sb.draw(atkImg, data.sX - atkImg.packedWidth / 2.0f, data.sY - atkImg.packedHeight / 2.0f,
+                            atkImg.packedWidth / 2.0F, atkImg.packedHeight / 2.0F,
+                            atkImg.packedWidth, atkImg.packedHeight,
                             this.scale, this.scale, this.rotation);
                 }
 

@@ -17,7 +17,6 @@ public class Sniperscope extends CustomRelic {
 
     public Sniperscope() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
-        getUpdatedDescription();
     }
 
     @Override

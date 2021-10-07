@@ -50,12 +50,12 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
 
     private boolean triggered = false;
     public boolean effectApplied = false;
+    private boolean lockHealth = false;
 
     private CGlayout cg = new CGlayout();
 
     public AnastasiaNecklace() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
-        getUpdatedDescription();
         UPGRADE_IMG.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     }
 
@@ -148,7 +148,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     @Override
     public void atTurnStart() {
         super.atTurnStart();
-        if (AbstractDungeon.player.halfDead) {
+        if (this.lockHealth) {
             triggerRelic();
         }
 
@@ -189,7 +189,8 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
 
         if (!triggered && canTrigger) {
             CardCrawlGame.music.justFadeOutTempBGM();
-            AbstractDungeon.player.halfDead = true;
+            this.lockHealth = true;
+            AbstractDungeon.player.hideHealthBar();
             (AbstractDungeon.getCurrRoom()).cannotLose = true;
             return false;
         } else {
@@ -226,7 +227,8 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
             AbstractDungeon.isScreenUp = false;
             GameCursor.hidden = false;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NONE;
-            AbstractDungeon.player.halfDead = false;
+            this.lockHealth = false;
+            (AbstractDungeon.getCurrRoom()).cannotLose = false;
             applyEffect();
         }
     }

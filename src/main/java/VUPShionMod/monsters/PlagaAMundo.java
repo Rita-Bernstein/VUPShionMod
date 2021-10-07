@@ -121,7 +121,7 @@ public class PlagaAMundo extends CustomMonster {
                 });
                 break;
             case 99:
-                addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 2)));
+                addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
                 break;
         }
 

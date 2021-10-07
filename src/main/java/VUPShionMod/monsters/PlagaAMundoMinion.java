@@ -2,7 +2,7 @@ package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.DefectPower;
-import VUPShionMod.powers.DestroyPower;
+import VUPShionMod.powers.ShockPower;
 import VUPShionMod.powers.LifeLinkPower;
 import VUPShionMod.powers.StrengthenPower;
 import basemod.abstracts.CustomMonster;
@@ -47,7 +47,7 @@ public class PlagaAMundoMinion extends CustomMonster {
             this.damage.add(new DamageInfo(this, 5));
             this.damage.add(new DamageInfo(this, 6));
             this.damage.add(new DamageInfo(this, 100));
-        }else{
+        } else {
             this.damage.add(new DamageInfo(this, 4));
             this.damage.add(new DamageInfo(this, 5));
             this.damage.add(new DamageInfo(this, 6));
@@ -116,6 +116,8 @@ public class PlagaAMundoMinion extends CustomMonster {
                     addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
                 else
                     addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
+
+                addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
                 break;
         }
 
@@ -152,10 +154,13 @@ public class PlagaAMundoMinion extends CustomMonster {
     public void die() {
         if (!(AbstractDungeon.getCurrRoom()).cannotLose)
             super.die();
-//        if(AbstractDungeon.getMonsters().areMonstersBasicallyDead()){
-//            AbstractDungeon.scene.fadeInAmbiance();
-//            CardCrawlGame.music.fadeOutTempBGM();
-//        }
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            useFastShakeAnimation(5.0F);
+            CardCrawlGame.screenShake.rumble(4.0F);
+            onBossVictoryLogic();
+
+            VUPShionMod.fightSpecialBoss = true;
+        }
     }
 
     public void damage(DamageInfo info) {
@@ -178,9 +183,9 @@ public class PlagaAMundoMinion extends CustomMonster {
             addToBot(new RemoveSpecificPowerAction(this, this, StrengthenPower.POWER_ID));
             addToBot(new RemoveSpecificPowerAction(this, this, StrengthPower.POWER_ID));
             if (AbstractDungeon.ascensionLevel >= 19)
-                addToBot(new ApplyPowerAction(this, this, new DestroyPower(this, 2)));
+                addToBot(new ApplyPowerAction(this, this, new ShockPower(this, 2)));
             else
-                addToBot(new ApplyPowerAction(this, this, new DestroyPower(this, 1)));
+                addToBot(new ApplyPowerAction(this, this, new ShockPower(this, 1)));
             createIntent();
         }
 
@@ -199,27 +204,34 @@ public class PlagaAMundoMinion extends CustomMonster {
             this.powers.clear();
 
             boolean allDead = true;
-
             for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
-                if (m.id.equals(this.id) && !m.halfDead && m.hasPower(LifeLinkPower.POWER_ID)) {
+                if (m.id.equals(this.id) && !m.halfDead) {
                     allDead = false;
                 }
             }
 
-            if (!allDead) {
+            if (!allDead && this.hasPower(LifeLinkPower.POWER_ID)) {
                 setMove((byte) 98, Intent.UNKNOWN);
                 createIntent();
                 addToBot(new SetMoveAction(this, (byte) 98, AbstractMonster.Intent.UNKNOWN));
-            } else {
+
+                return;
+            }
+
+            if (allDead && this.hasPower(LifeLinkPower.POWER_ID)) {
                 (AbstractDungeon.getCurrRoom()).cannotLose = false;
                 this.halfDead = false;
 
                 for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
+                    m.halfDead = false;
                     m.die();
                 }
-
+                return;
             }
 
+
+            (AbstractDungeon.getCurrRoom()).cannotLose = false;
+            this.die();
         }
     }
 

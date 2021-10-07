@@ -97,6 +97,8 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
         if (this.duration < this.startingDuration) {
             if (!posUpdated) {
+                posUpdated = true;
+
                 for (AbstractFinFunnel finFunnel : this.finFunnels) {
                     AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                     if(m == null)
@@ -143,8 +145,6 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
                     CardCrawlGame.sound.play("ATTACK_FIRE");
                     CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT", 0.5f);
                 }
-
-                posUpdated = true;
             }
 
 

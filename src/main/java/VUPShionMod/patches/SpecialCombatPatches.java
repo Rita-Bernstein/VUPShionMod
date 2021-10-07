@@ -4,6 +4,7 @@ import VUPShionMod.events.Newborn;
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.relics.AnastasiaNecklace;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -24,7 +25,7 @@ public class SpecialCombatPatches {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(ProceedButton _instance) {
             if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
-                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && AbstractDungeon.actNum >= 4 && Settings.isStandardRun()) {
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding") )&& Settings.isStandardRun()) {
                     goToShionEvent(_instance);
                     return SpireReturn.Return(null);
                 }
@@ -102,7 +103,7 @@ public class SpecialCombatPatches {
     public static class ActLikeItContinueOntoHeartPatchPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(ProceedButton __instance) {
-            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
+            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID) && Loader.isModLoaded("actlikeit")) {
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && AbstractDungeon.actNum >= 4 && Settings.isStandardRun()) {
 //                    goToShionEvent(__instance);
                     return SpireReturn.Return(null);

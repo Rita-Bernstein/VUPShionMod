@@ -2,12 +2,15 @@ package VUPShionMod.util;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,6 +19,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class ChargeHelper implements Disposable {
@@ -48,6 +52,7 @@ public class ChargeHelper implements Disposable {
         sb.setColor(Color.WHITE);
         sb.setBlendFunction(770, 771);
 
+        if(!AbstractDungeon.player.isDead)
         if (AbstractDungeon.ascensionLevel >= 19) {
             render15UI(sb);
         } else {
@@ -124,6 +129,13 @@ public class ChargeHelper implements Disposable {
     }
 
     private void triggerEffect() {
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_IRON_2", -0.5F,true));
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!monster.isDeadOrEscaped()) {
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new AbstractAtlasGameEffect(
+                        "Fire 071 Ray Shot Up MIX", monster.hb.cX, monster.hb.y + 550.f * Settings.scale,
+                        130.0f, 213.0f, 3.0f * Settings.scale, 2,false)));
+            }}
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelAction(true));

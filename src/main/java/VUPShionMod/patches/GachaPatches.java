@@ -15,7 +15,7 @@ public class GachaPatches {
             method = "update"
     )
     public static class PatchMonsterStartTurnAction {
-        @SpireInsertPatch(rloc = 2)
+        @SpireInsertPatch(rloc = 4)
         public static SpireReturn<Void> Insert(MonsterStartTurnAction _instance) {
             boolean hasMonster = false;
             if (!(AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {

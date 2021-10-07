@@ -35,6 +35,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.BerserkPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
@@ -123,6 +124,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
                 addToBot(new RemoveSpecificPowerAction(monster, AbstractDungeon.player, LifeLinkPower.POWER_ID));
+                addToBot(new RemoveSpecificPowerAction(monster, AbstractDungeon.player, StrengthPower.POWER_ID));
                 addToBot(new LoseHPAction(monster, AbstractDungeon.player, 500));
                 addToBot(new AbstractGameAction() {
                     @Override
@@ -227,6 +229,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
             AbstractDungeon.isScreenUp = false;
             GameCursor.hidden = false;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NONE;
+            AbstractDungeon.player.showHealthBar();
             this.lockHealth = false;
             (AbstractDungeon.getCurrRoom()).cannotLose = false;
             applyEffect();

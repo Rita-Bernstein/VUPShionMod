@@ -33,7 +33,7 @@ public class SpeedShot extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
@@ -81,7 +81,7 @@ public class SpeedShot extends AbstractShionCard {
         int realBaseDamage = this.baseDamage;
         this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
         super.applyPowers();
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;

@@ -1,6 +1,7 @@
 package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.CustomWaitAction;
 import VUPShionMod.powers.DefectPower;
 import VUPShionMod.powers.ShockPower;
 import VUPShionMod.powers.LifeLinkPower;
@@ -91,18 +92,23 @@ public class PlagaAMundoMinion extends CustomMonster {
     public void takeTurn() {
         switch (this.nextMove) {
             case 0:
+                addToBot(new ChangeStateAction(this, "Attack2"));
                 for (int i = 0; i < baseAttackTimes; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 1:
+                addToBot(new ChangeStateAction(this, "Attack2"));
                 for (int i = 0; i < baseAttackTimes; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 2:
+                addToBot(new ChangeStateAction(this, "Attack2"));
                 for (int i = 0; i < baseAttackTimes; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 4:
+                addToBot(new ChangeStateAction(this, "Attack1"));
+                addToBot(new CustomWaitAction(1.0f));
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.FIRE));
                 break;
             case 5:
@@ -118,6 +124,8 @@ public class PlagaAMundoMinion extends CustomMonster {
                     addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
 
                 addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
+                break;
+            case 99:
                 break;
         }
 
@@ -174,7 +182,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         if ((this.currentHealth < 1500 || this.currentHealth < 2000 && AbstractDungeon.ascensionLevel >= 7) && !isGunMode) {
             this.isGunMode = true;
             if (isFirstGunMode) {
-                setMove((byte) 99, Intent.BUFF);
+                setMove((byte) 99, Intent.UNKNOWN);
                 this.isFirstGunMode = false;
             } else {
                 setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
@@ -210,15 +218,16 @@ public class PlagaAMundoMinion extends CustomMonster {
                 }
             }
 
-            if (!allDead && this.hasPower(LifeLinkPower.POWER_ID)) {
-                setMove((byte) 98, Intent.UNKNOWN);
-                createIntent();
-                addToBot(new SetMoveAction(this, (byte) 98, AbstractMonster.Intent.UNKNOWN));
-
-                return;
-            }
-
-            if (allDead && this.hasPower(LifeLinkPower.POWER_ID)) {
+            if (!allDead) {
+                if (otherHasLink()) {
+                    setMove((byte) 98, Intent.UNKNOWN);
+                    createIntent();
+                    addToBot(new SetMoveAction(this, (byte) 98, AbstractMonster.Intent.UNKNOWN));
+                } else {
+                    this.halfDead = false;
+                    this.die();
+                }
+            } else {
                 (AbstractDungeon.getCurrRoom()).cannotLose = false;
                 this.halfDead = false;
 
@@ -226,13 +235,18 @@ public class PlagaAMundoMinion extends CustomMonster {
                     m.halfDead = false;
                     m.die();
                 }
-                return;
             }
-
-
-            (AbstractDungeon.getCurrRoom()).cannotLose = false;
-            this.die();
         }
+    }
+
+    private boolean otherHasLink() {
+        boolean otherHasLink = false;
+        for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
+            if (m.hasPower(LifeLinkPower.POWER_ID))
+                otherHasLink = true;
+        }
+
+        return otherHasLink;
     }
 
     public void changeState(String stateName) {
@@ -240,6 +254,14 @@ public class PlagaAMundoMinion extends CustomMonster {
             case "REVIVE":
                 this.halfDead = false;
                 this.isGunMode = false;
+                break;
+            case "Attack1":
+                this.state.setAnimation(0, "armor1_fire", false);
+                this.state.addAnimation(0, "idle", true, 0.0F);
+                break;
+            case "Attack2":
+                this.state.setAnimation(0, "armor2_fire", false);
+                this.state.addAnimation(0, "idle", true, 0.0F);
                 break;
         }
     }

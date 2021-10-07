@@ -27,7 +27,6 @@ public class ChargeHelper implements Disposable {
     private Texture mainImg10 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeUI10.png");
     private Texture iconImg15 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon15.png");
     private Texture iconImg10 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon10.png");
-    private int maxCount = 10;
     private int count = 0;
     private AbstractPlayer p = AbstractDungeon.player;
     public boolean active = false;
@@ -44,20 +43,18 @@ public class ChargeHelper implements Disposable {
     public ChargeHelper() {
         name = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ChargeHelper")).TEXT[0];
         description = String.format(CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ChargeHelper")).TEXT[1], damage);
-        if (AbstractDungeon.ascensionLevel >= 19)
-            this.maxCount = 15;
     }
 
     public void render(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
         sb.setBlendFunction(770, 771);
 
-        if(!AbstractDungeon.player.isDead)
-        if (AbstractDungeon.ascensionLevel >= 19) {
-            render15UI(sb);
-        } else {
-            render10UI(sb);
-        }
+        if (!AbstractDungeon.player.isDead)
+            if (AbstractDungeon.ascensionLevel >= 19) {
+                render15UI(sb);
+            } else {
+                render10UI(sb);
+            }
 
         this.hb.render(sb);
     }
@@ -122,20 +119,29 @@ public class ChargeHelper implements Disposable {
     }
 
     private void checkIfTrigger() {
-        if (this.count >= maxCount) {
-            this.count -= maxCount;
-            triggerEffect();
+        if (AbstractDungeon.ascensionLevel >= 19) {
+            if (this.count >= 15) {
+                this.count = 0;
+                triggerEffect();
+            }
+        } else {
+            if (this.count >= 10) {
+                this.count = 0;
+                triggerEffect();
+            }
         }
+
     }
 
     private void triggerEffect() {
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_IRON_2", -0.5F,true));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_IRON_2", -0.5F, true));
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new AbstractAtlasGameEffect(
                         "Fire 071 Ray Shot Up MIX", monster.hb.cX, monster.hb.y + 550.f * Settings.scale,
-                        130.0f, 213.0f, 3.0f * Settings.scale, 2,false)));
-            }}
+                        130.0f, 213.0f, 3.0f * Settings.scale, 3, false)));
+            }
+        }
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelAction(true));

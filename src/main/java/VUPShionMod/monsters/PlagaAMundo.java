@@ -1,6 +1,7 @@
 package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.CustomWaitAction;
 import VUPShionMod.actions.GachaAction;
 import VUPShionMod.actions.SummonMundoMinionAction;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
@@ -95,6 +96,8 @@ public class PlagaAMundo extends CustomMonster {
     public void takeTurn() {
         switch (this.nextMove) {
             case 0:
+                addToBot(new ChangeStateAction(this,"Attack2"));
+
                 for (int i = 0; i < baseAttackTimes; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
@@ -102,6 +105,8 @@ public class PlagaAMundo extends CustomMonster {
                 addToBot(new GainBlockAction(this, this, 50));
                 break;
             case 4:
+                addToBot(new ChangeStateAction(this,"Attack1"));
+                addToBot(new CustomWaitAction(1.0f));
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE));
                 break;
             case 5:
@@ -122,6 +127,8 @@ public class PlagaAMundo extends CustomMonster {
                 break;
             case 99:
                 addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
+                break;
+            case 97:
                 break;
         }
 
@@ -169,7 +176,7 @@ public class PlagaAMundo extends CustomMonster {
         if ((this.currentHealth < 1000 || this.currentHealth < 1500 && AbstractDungeon.ascensionLevel >= 7) && !isGunMode) {
             this.isGunMode = true;
             if (isFirstGunMode) {
-                setMove((byte) 99, Intent.BUFF);
+                setMove((byte) 97, Intent.UNKNOWN);
                 this.isFirstGunMode = false;
             } else {
                 setMove((byte) 4, Intent.ATTACK, this.damage.get(1).base);
@@ -214,6 +221,15 @@ public class PlagaAMundo extends CustomMonster {
                 this.halfDead = false;
                 this.die(true);
                 break;
+            case "Attack1":
+                this.state.setAnimation(0, "armor1_fire", false);
+                this.state.addAnimation(0, "idle", true, 0.0F);
+                break;
+            case "Attack2":
+                this.state.setAnimation(0, "armor2_fire", false);
+                this.state.addAnimation(0, "idle", true, 0.0F);
+                break;
+
         }
     }
 

@@ -31,10 +31,13 @@ public class PatchStunPower {
             } else {
                 switch (___moveByte) {
                     case 99:
-                        m.setMove((byte) 98, AbstractMonster.Intent.BUFF);
+                        m.setMove((byte) 99, AbstractMonster.Intent.BUFF);
                         break;
                     case 98:
                         m.setMove((byte) 98, AbstractMonster.Intent.UNKNOWN);
+                        break;
+                    case 97:
+                        m.setMove((byte) 97, AbstractMonster.Intent.UNKNOWN);
                         break;
                     default:
                         if (AbstractDungeon.ascensionLevel >= 4)
@@ -69,6 +72,9 @@ public class PatchStunPower {
                         break;
                     case 98:
                         m.setMove((byte) 98, AbstractMonster.Intent.UNKNOWN);
+                        break;
+                    case 99:
+                        m.setMove((byte) 99, AbstractMonster.Intent.UNKNOWN);
                         break;
                     default:
                         m.setMove((byte) 0, AbstractMonster.Intent.ATTACK, m.damage.get(0).base, 15, true);

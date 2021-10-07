@@ -29,7 +29,7 @@ public class AbstractAtlasGameEffect extends AbstractGameEffect {
         this.xPosition = x;
         this.yPosition = y;
         this.info = new Info();
-        this.info.fps = Settings.MAX_FPS;
+        this.info.fps = 60;
         this.info.id = id;
 
         Animation animation = new Animation();

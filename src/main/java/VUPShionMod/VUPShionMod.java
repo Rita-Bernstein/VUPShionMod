@@ -99,6 +99,7 @@ public class VUPShionMod implements
     public static Color transparent = Color.WHITE.cpy();
     public static boolean fightSpecialBoss = false;
 
+
     public VUPShionMod() {
         BaseMod.subscribe(this);
         transparent.a = 0.0f;

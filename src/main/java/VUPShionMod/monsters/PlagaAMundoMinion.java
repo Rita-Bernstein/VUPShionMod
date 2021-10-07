@@ -127,7 +127,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     protected void getMove(int num) {
         if (isGunMode) {
             if (lastMove((byte) 4)) {
-                setMove((byte) 5, Intent.UNKNOWN);
+                setMove((byte) 5, Intent.BUFF);
                 return;
             }
             setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);

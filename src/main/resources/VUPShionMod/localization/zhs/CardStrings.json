@@ -281,8 +281,8 @@
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "强化支援",
-    "DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果2X次。",
-    "UPGRADE_DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果2(X+1)次。"
+    "DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果X次。",
+    "UPGRADE_DESCRIPTION": "对一名敌人触发 vup_shion_mod:浮游炮 被动效果X+1次。"
   },
   "VUPShionMod:BattlefieldHeritage": {
     "NAME": "战场拾遗",

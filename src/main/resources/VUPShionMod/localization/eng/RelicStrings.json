@@ -11,7 +11,7 @@
     "NAME": "Cloyce's Determination",
     "FLAVOR": "Even the undetermined may become otherwise. Determination can be caught like a flu.",
     "DESCRIPTIONS": [
-      " #y右键使用 ：额外获得一个回合，结束你的回合。 （仅能起效 #b%d 次）",
+      " #yRight #yClick: Take an extra turn after this turn, end your turn.（works #b%d times）",
       "This relic has been exhausted."
     ]
   },

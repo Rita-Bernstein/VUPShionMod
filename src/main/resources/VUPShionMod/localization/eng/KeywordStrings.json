@@ -54,6 +54,6 @@
     "NAMES": [
       "shield"
     ],
-    "DESCRIPTION": "Prevents damage."
+    "DESCRIPTION": "Prevents damage. Does not fade at the end of turn."
   }
 ]

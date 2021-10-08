@@ -197,45 +197,45 @@
     ]
   },
   "VUPShionMod:DefectPower": {
-    "NAME": "缺损",
+    "NAME": "Crippling",
     "DESCRIPTIONS": [
-      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将失去 #b%d 点最大生命。"
+      "Every time you receive #yunblocked damage from this enemy, lose #b%d Max HP."
     ]
   },
   "VUPShionMod:ShockPower": {
-    "NAME": "震荡",
+    "NAME": "Agitating",
     "DESCRIPTIONS": [
-      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将 #y丢弃 抽牌堆稀有度最高的的 #b%d 张牌。"
+      "Every time you receive #yunblocked damage from this enemy, #ydiscard #b%d rarest cards in your draw pile."
     ]
   },
   "VUPShionMod:DestroyPower": {
-    "NAME": "摧毁",
+    "NAME": "Pulverizing",
     "DESCRIPTIONS": [
-      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将 #y消耗 #b%d 张稀有度最高的牌。"
+      "Every time you receive #yunblocked damage from this enemy, #yexhaust #b%d rarest cards."
     ]
   },
   "VUPShionMod:LifeLinkPower": {
-    "NAME": "生命连接",
+    "NAME": "Life Link",
     "DESCRIPTIONS": [
-      "如果其他敌人还生存，将在下回合后以满血复活。"
+      "Next turn, revives with full HP if other enemies are still alive."
     ]
   },
   "VUPShionMod:GravitoniumPower": {
-    "NAME": "重力鎓",
+    "NAME": "Gravitonium",
     "DESCRIPTIONS": [
-      " #y重力浮游炮 给予的 #y格挡 将变为 #y护盾 。"
+      " #yBlock gained from #yGravity #yFunnel is converted into #yShield."
     ]
   },
   "VUPShionMod:QuickTriggerPower": {
-    "NAME": "快速触发",
+    "NAME": "Sequence",
     "DESCRIPTIONS": [
-      "下 #b%d 次生成 #y加载完成 时，直接触发这张牌的效果。"
+      "The next #b%d times when #yLoading #yComplete cards are created, trigger them at once."
     ]
   },
   "VUPShionMod:StrengthenPower": {
-    "NAME": "增伤",
+    "NAME": "Ferocity",
     "DESCRIPTIONS": [
-      "每回合结束时，其获得 #b%d 点 #y力量 。"
+      "At the end of turn, gain #b%d #yStrength."
     ]
   }
 }

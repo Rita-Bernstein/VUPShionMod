@@ -28,6 +28,7 @@ public class ReadAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == this.startDuration) {
+
             if (this.player.drawPile.isEmpty() || this.numberOfCards <= 0) {
                 this.isDone = true;
                 return;

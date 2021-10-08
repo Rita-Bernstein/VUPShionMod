@@ -3,12 +3,17 @@ package VUPShionMod.patches;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.relics.AnastasiaNecklace;
+import basemod.CustomEventRoom;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.events.RoomEventDialog;
+import com.megacrit.cardcrawl.map.MapEdge;
+import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
@@ -25,7 +30,7 @@ public class SpecialCombatPatches {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(ProceedButton _instance) {
             if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
-                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding") )&& Settings.isStandardRun()) {
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))) {
                     goToShionEvent(_instance);
                     return SpireReturn.Return(null);
                 }
@@ -36,22 +41,49 @@ public class SpecialCombatPatches {
 
     private static void goToShionEvent(ProceedButton __instance) {
 //        CardCrawlGame.music.fadeOutBGM();
-        CardCrawlGame.music.fadeOutTempBGM();
-        AbstractDungeon.currMapNode.room = new EventRoom() {
-            @Override
-            public void onPlayerEntry() {
-                AbstractDungeon.overlayMenu.proceedButton.hide();
-                this.event = new Newborn();
-                this.event.onEnterRoom();
-            }
-        };
-        AbstractDungeon.getCurrRoom().onPlayerEntry();
-        AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
+//        CardCrawlGame.music.fadeOutTempBGM();
 
-        AbstractDungeon.combatRewardScreen.clear();
+//        AbstractDungeon.currMapNode.room = new EventRoom() {
+//            @Override
+//            public void onPlayerEntry() {
+//                AbstractDungeon.overlayMenu.proceedButton.hide();
+//                this.event = new Newborn();
+//                this.event.onEnterRoom();
+//            }
+//        };
+
+
+        RoomEventDialog.optionList.clear();
+
+        AbstractDungeon.eventList.add(0, Newborn.ID);
+
+        MapRoomNode cur = AbstractDungeon.currMapNode;
+        MapRoomNode node = new MapRoomNode(cur.x, cur.y);
+        node.room = new CustomEventRoom();
+
+        ArrayList<MapEdge> curEdges = cur.getEdges();
+        for (MapEdge edge : curEdges) {
+            node.addEdge(edge);
+        }
+
+        AbstractDungeon.player.releaseCard();
+        AbstractDungeon.overlayMenu.hideCombatPanels();
         AbstractDungeon.previousScreen = null;
+        AbstractDungeon.dynamicBanner.hide();
+        AbstractDungeon.dungeonMapScreen.closeInstantly();
         AbstractDungeon.closeCurrentScreen();
-        AbstractDungeon.nextRoomTransitionStart();
+        AbstractDungeon.topPanel.unhoverHitboxes();
+        AbstractDungeon.fadeIn();
+        AbstractDungeon.effectList.clear();
+        AbstractDungeon.topLevelEffects.clear();
+        AbstractDungeon.topLevelEffectsQueue.clear();
+        AbstractDungeon.effectsQueue.clear();
+        AbstractDungeon.dungeonMapScreen.dismissable = true;
+        AbstractDungeon.nextRoom = node;
+        AbstractDungeon.setCurrMapNode(node);
+        AbstractDungeon.getCurrRoom().onPlayerEntry();
+        AbstractDungeon.scene.nextRoom(node.room);
+        AbstractDungeon.rs = node.room.event instanceof AbstractImageEvent ? AbstractDungeon.RenderScene.EVENT : AbstractDungeon.RenderScene.NORMAL;
     }
 
 /*

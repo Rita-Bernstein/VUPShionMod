@@ -44,7 +44,7 @@ public class EnhancedSupport extends AbstractMinamiCard {
             effect++;
         }
 
-        effect *= 2;
+        effect *= 1;
 
         if (effect > 0) {
 

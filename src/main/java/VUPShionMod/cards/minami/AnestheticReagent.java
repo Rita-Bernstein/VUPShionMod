@@ -23,8 +23,8 @@ public class AnestheticReagent extends AbstractMinamiCard {
     public AnestheticReagent() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 5;
-        ExhaustiveVariable.setBaseValue(this, 2);
+        this.secondaryM = this.baseSecondaryM = 10;
+        ExhaustiveVariable.setBaseValue(this, 1);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

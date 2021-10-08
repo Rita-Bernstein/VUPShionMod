@@ -280,8 +280,8 @@
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "Enhanced Support",
-    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy 2X times.",
-    "UPGRADE_DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy 2(X+1) times."
+    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy X times.",
+    "UPGRADE_DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy X+1 times."
   },
   "VUPShionMod:BattlefieldHeritage": {
     "NAME": "Battlefield Heritage",

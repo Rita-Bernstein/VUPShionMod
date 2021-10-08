@@ -30,7 +30,7 @@ public class GameOverScreenPatches {
             }
 
             if (VUPShionMod.fightSpecialBoss) {
-                stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(1000)));
+                stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(500)));
             }
 
             VUPShionMod.fightSpecialBossWithout = false;

@@ -76,6 +76,7 @@ public class PlagaAMundoMinion extends CustomMonster {
 //        AbstractDungeon.getCurrRoom().playBgmInstantly("fight");
         (AbstractDungeon.getCurrRoom()).cannotLose = true;
         addToBot(new ApplyPowerAction(this, this, new LifeLinkPower(this)));
+        addToBot(new ApplyPowerAction(this, this, new IterativePower(this)));
 
         if (AbstractDungeon.ascensionLevel >= 19)
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
@@ -83,6 +84,7 @@ public class PlagaAMundoMinion extends CustomMonster {
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
 
         addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
+
     }
 
 
@@ -115,6 +117,7 @@ public class PlagaAMundoMinion extends CustomMonster {
                 addToBot(new HealAction(this, this, this.maxHealth));
                 addToBot(new ChangeStateAction(this, "REVIVE"));
                 addToBot(new ApplyPowerAction(this, this, new LifeLinkPower(this)));
+                addToBot(new ApplyPowerAction(this, this, new IterativePower(this)));
                 if (AbstractDungeon.ascensionLevel >= 19)
                     addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
                 else
@@ -163,9 +166,9 @@ public class PlagaAMundoMinion extends CustomMonster {
             useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);
             onBossVictoryLogic();
-            if(!AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)){
+            if (!AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
                 VUPShionMod.fightSpecialBossWithout = true;
-            }else {
+            } else {
                 VUPShionMod.fightSpecialBoss = true;
             }
 

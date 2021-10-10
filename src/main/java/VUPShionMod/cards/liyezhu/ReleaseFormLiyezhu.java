@@ -3,10 +3,7 @@ package VUPShionMod.cards.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.AbstractLiyezhuCard;
-import VUPShionMod.powers.BadgeOfThePaleBlueCrossPower;
-import VUPShionMod.powers.HyperdimensionalLinksPower;
-import VUPShionMod.powers.ReleaseFormLiyezhuBPower;
-import VUPShionMod.powers.ReleaseFormLiyezhuPower;
+import VUPShionMod.powers.*;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -33,7 +30,7 @@ public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p, this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new OmegaPower(p, this.secondaryM), this.secondaryM));
+        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuCPower(p, this.secondaryM), this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuBPower(p, 1), 1));
     }
 

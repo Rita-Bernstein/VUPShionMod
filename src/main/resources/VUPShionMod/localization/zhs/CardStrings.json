@@ -44,8 +44,8 @@
   },
   "VUPShionMod:SpeedShot": {
     "NAME": "高速射击",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X 次。",
-    "UPGRADE_DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X+1 次。",
+    "DESCRIPTION": " 使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X 次。",
+    "UPGRADE_DESCRIPTION": " 使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 造成 vup_shion_mod:总炮强化 的伤害 X+1 次。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害。）"
     ]
@@ -152,7 +152,7 @@
   },
   "VUPShionMod:EnergyReserve": {
     "NAME": "能量储备",
-    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 获得 [E] 。 NL 抽 !M! 张牌。 NL 消耗 墓地 。"
+    "DESCRIPTION": "vup_shion_mod:加载完成 。 NL 获得 [E] 。 NL 抽 !M! 张牌。 NL 消耗 ， 墓地 。"
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
@@ -187,7 +187,7 @@
   },
   "VUPShionMod:TimeBomb": {
     "NAME": "时空炸弹",
-    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 对所有敌人造成 !D! 点伤害。 NL 消耗 墓地 。"
+    "DESCRIPTION": " vup_shion_mod:加载完成 。 NL 对所有敌人造成 !D! 点伤害。 NL 消耗 ， 墓地 。"
   },
   "VUPShionMod:HourHand": {
     "NAME": "时针",

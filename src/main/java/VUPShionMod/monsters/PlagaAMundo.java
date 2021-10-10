@@ -6,15 +6,18 @@ import VUPShionMod.actions.GachaAction;
 import VUPShionMod.actions.SummonMundoMinionAction;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
+import VUPShionMod.powers.ChaoticPower;
 import VUPShionMod.powers.DefectPower;
 import VUPShionMod.powers.ShockPower;
 import VUPShionMod.powers.StrengthenPower;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -25,6 +28,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DemonFormPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+
+import java.util.function.Predicate;
 
 public class PlagaAMundo extends CustomMonster {
     public static final String ID = VUPShionMod.makeID("PlagaAMundo");
@@ -90,6 +95,8 @@ public class PlagaAMundo extends CustomMonster {
 
 
         AbstractDungeon.effectList.add(new ShionBossBackgroundEffect());
+
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new ChaoticPower(AbstractDungeon.player,2)));
     }
 
 

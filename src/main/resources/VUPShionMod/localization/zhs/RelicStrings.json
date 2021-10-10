@@ -1,7 +1,7 @@
 {
   "VUPShionMod:DimensionSplitterAria": {
     "NAME": "咏叹调型维度裂解者",
-    "FLAVOR": "咏叹调型维度裂解者。",
+    "FLAVOR": "“你，已经不被需要了呢。”——光芒凝聚，由至高之天而来的审判即将落下。",
     "DESCRIPTIONS": [
       "你的回合开始时，对随机一名敌人造成 #b%d ( #b2 + #y强化等级 x3)点伤害。 #y斩杀 时，获得 [E] 并重复上述操作。 NL 每进入下一阶段，获得强化。 NL 当前强化等级： #b%d 。",
       "天基武器将在一层不启动 NL "
@@ -9,7 +9,7 @@
   },
   "VUPShionMod:KuroisuDetermination": {
     "NAME": "阿龙の决意",
-    "FLAVOR": "阿龙の决意。",
+    "FLAVOR": "未来总是扩散而无法预测的。但只要决心依旧，过去就会帮助你走向更有利的未来。",
     "DESCRIPTIONS": [
       " #y右键使用 ：额外获得一个回合，结束你的回合。 （仅能起效 #b%d 次）",
       "这件遗物已经耗尽。"
@@ -17,28 +17,28 @@
   },
   "VUPShionMod:Croissant": {
     "NAME": "龙角面包",
-    "FLAVOR": "龙角面包。",
+    "FLAVOR": "“天呐，这是何等美味……等等，这形状？这不是你同伴头上的……什么？你说不是？真的不是？你确定？”",
     "DESCRIPTIONS": [
       "拾起时，回复 #b30 点生命。"
     ]
   },
   "VUPShionMod:OpticalCamouflage": {
     "NAME": "光学迷彩",
-    "FLAVOR": "光学迷彩。",
+    "FLAVOR": "所言皆虚，所见皆幻，所听皆妄，所为皆梦。",
     "DESCRIPTIONS": [
       "每场战斗开始时获得 #b1 层 #y无实体 。"
     ]
   },
   "VUPShionMod:Sniperscope": {
     "NAME": "狙击镜",
-    "FLAVOR": "狙击镜。",
+    "FLAVOR": "感受到了吗？那就是你生命流逝的声音。没关系，只是一瞬间，不会很疼的。",
     "DESCRIPTIONS": [
       "每场战斗开始时，给予生命值最低的敌人增加 #b1 层 #y易伤 。 NL 有 #y易伤 状态的敌人受到的伤害增加 #b75% 而非 #b50%。"
     ]
   },
   "VUPShionMod:AnastasiaNecklace": {
     "NAME": "Anastasia吊坠",
-    "FLAVOR": "Anastasia吊坠。",
+    "FLAVOR": "一切的进化蕴含在这枚吊坠之中，这是Anastasia的杰作，也是给予资格之人的试炼。",
     "DESCRIPTIONS": [
       "每场战斗开始时获得 #y壁垒 。",
       "获得 #b200 点最大生命。 NL 每回合开始时获得 #b200 点 #y格挡 。 NL 每场战斗开始时获得 #y壁垒 。 NL 每回合开始时获得 [E] 。",

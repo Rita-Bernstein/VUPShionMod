@@ -109,7 +109,13 @@
   "VUPShionMod:ReleaseFormLiyezhuBPower": {
     "NAME": "Liberated Form: Liyezhu",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink ."
+      "At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink to All Enemies."
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuCPower": {
+    "NAME": "Liberated Form: Liyezhu",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal damage #b%d to All Enemies."
     ]
   },
   "VUPShionMod:LockOnPower": {
@@ -236,6 +242,18 @@
     "NAME": "Ferocity",
     "DESCRIPTIONS": [
       "At the end of turn, gain #b%d #yStrength."
+    ]
+  },
+  "VUPShionMod:ChaoticPower": {
+    "NAME": "Chaotic Reshuffle",
+    "DESCRIPTIONS": [
+      "Every time you shuffle your draw pile, shuffle 2 #yDazed into it."
+    ]
+  },
+  "VUPShionMod:IterativePower": {
+    "NAME": "Iterative Evolution",
+    "DESCRIPTIONS": [
+      "At the start of turn, grab a random number to determine whether to buff themselves or to Debuff you."
     ]
   }
 }

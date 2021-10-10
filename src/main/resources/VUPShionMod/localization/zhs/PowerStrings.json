@@ -112,6 +112,12 @@
       "你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
     ]
   },
+  "VUPShionMod:ReleaseFormLiyezhuCPower": {
+    "NAME": "姿态解放-黎夜竹",
+    "DESCRIPTIONS": [
+      "你的回合结束时，对所有敌人 #b%d 点伤害。"
+    ]
+  },
   "VUPShionMod:LockOnPower": {
     "NAME": "锁定",
     "DESCRIPTIONS": [
@@ -236,6 +242,18 @@
     "NAME": "增伤",
     "DESCRIPTIONS": [
       "每回合结束时，其获得 #b%d 点 #y力量 。"
+    ]
+  },
+  "VUPShionMod:ChaoticPower": {
+    "NAME": "破序重组",
+    "DESCRIPTIONS": [
+      "每当你洗牌时，将 #b%d 张 #y晕眩 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:IterativePower": {
+    "NAME": "进化推演",
+    "DESCRIPTIONS": [
+      "每回合开始时， #y深空孽障 将随机对自己 #y增益 或给予你 #y负面效果 。"
     ]
   }
 }

@@ -224,6 +224,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
             cg.update();
         }
 
+
         if (cg.isDone && !effectApplied) {
             effectApplied = true;
             AbstractDungeon.isScreenUp = false;
@@ -235,6 +236,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
             applyEffect();
         }
     }
+
 
     public void renderAbove(SpriteBatch sb) {
         if (this.triggered)

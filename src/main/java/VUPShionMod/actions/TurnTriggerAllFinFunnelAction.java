@@ -99,7 +99,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 
 //            结算被动效果
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                        if (f instanceof GravityFinFunnel) {
+                        if (f instanceof GravityFinFunnel && !mo.isDeadOrEscaped()) {
                             if (p.hasPower(GravitoniumPower.POWER_ID))
                                 addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
                             else

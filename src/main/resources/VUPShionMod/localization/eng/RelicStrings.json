@@ -42,7 +42,8 @@
     "DESCRIPTIONS": [
       "Start each combat with #yBarricade.",
       "Gain #b200 Max HP. NL Gain #b200 #yBlock at the start of your turn. NL Start each combat with #yBarricade. NL Gain [E] at the start of your turn.",
-      " NL ALL #yFunnels are upgraded by #b9. NL #yFunnels now hit ALL enemies. NL Whenever an enemy dies, transfer any #yPursued it has to a random enemy."
+      " NL ALL #yFunnels are upgraded by #b9. NL #yFunnels now hit ALL enemies. NL Whenever an enemy dies, transfer any #yPursued it has to a random enemy.",
+      "Anastasia Droplet(Awakened)"
     ]
   }
 }

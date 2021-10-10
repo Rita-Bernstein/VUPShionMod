@@ -30,7 +30,7 @@ public class KuroisuDetermination extends CustomRelic implements ClickableRelic 
 
     public KuroisuDetermination() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.BOSS, LandingSound.CLINK);
-        this.counter = 2;
+        this.counter = 3;
     }
 
     @Override

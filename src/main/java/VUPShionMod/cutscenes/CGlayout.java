@@ -43,6 +43,7 @@ public class CGlayout implements Disposable {
                 for (int i = 1; i < 10; i++) {
                     this.panels.add(new CutscenePanel("VUPShionMod/img/cg/eng/CG0" + i + ".png"));
                 }
+                break;
         }
 
     }

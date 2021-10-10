@@ -26,4 +26,6 @@ public class AbstractShionPower extends AbstractPower {
     }
 
     public void onTriggerLoaded(){}
+
+    public void onShuffle(){}
 }

@@ -340,7 +340,7 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "Liyezhu Form",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain again at the start of each of your turn. NL At the end of your turn, deal damage equal to vup_shion_mod:Hyperdimensional\u00a0Link to ALL enemies."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain again at the start of each of your turn. NL At the end of your turn, deal damage equal to !VUPShionSecondM! + vup_shion_mod:Hyperdimensional\u00a0Link to ALL enemies."
   },
   "VUPShionMod:Awaken": {
     "NAME": "Resuscitate",
@@ -389,7 +389,10 @@
   },
   "VUPShionMod:OverloadFortress": {
     "NAME": "Overdrive",
-    "DESCRIPTION": "Retain. NL Gain Block !VUPShionSecondM! times as much as the upgrades of *Gravity vup_shion_mod:Funnel. NL Lose !M! *Gravity vup_shion_mod:Funnel upgrade."
+    "DESCRIPTION": "Retain. NL Gain Block !VUPShionSecondM! times as much as the upgrades of *Gravity vup_shion_mod:Funnel. NL Lose !M! *Gravity vup_shion_mod:Funnel upgrade.",
+    "EXTENDED_DESCRIPTION": [
+      "(Gain !B! Block.)"
+    ]
   },
   "VUPShionMod:GravityImpact": {
     "NAME": "Gravity Impact",

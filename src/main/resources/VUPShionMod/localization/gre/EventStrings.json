@@ -1,0 +1,66 @@
+{
+  "VUPShionMod:SpireHeart_Shion": {
+    "NAME": "Spire Heart",
+    "DESCRIPTIONS": [
+      "NL Deine Kanonen werden mit jeder Energie gefüttert die du finden kannst..."
+    ],
+    "OPTIONS": [
+    ]
+  },
+  "VUPShionMod:CroissantEvent": {
+    "NAME": "Croissant",
+    "DESCRIPTIONS": [
+      "Irgendetwas das wie ein Drachenhorn aussieht fällt dir ins Auge. NL Nein...kein Drachenhorn, bei genauerer betrachtung liegt da ein Croissant auf dem Boden.",
+      "Als du es aufhebst, hörst du eine Stimme “Fus Roh Dah！” sie hallt mit spielerischer Absicht durch den Raum.Bevor du es realisierst wirst du von einem Windstoß hinfort geweht und verlierst dein Bewusstsein...",
+      "Du hast gerade einen Croissant bekommen um deine Lebensenergie zu füllen und deinen Hunger zu stillen. （Ein Name ist vermerkt - #yCloyce . Sieht wohl so aus als müsste da jemand anderes hungern...）",
+      "You are more of a rice person who hates the crumbs you may left about while eating breads, so goodbye."
+    ],
+    "OPTIONS": [
+      "[Fettige Finger bekommen] #r25%: Verliere 15 HP, #g75%: Bekomme Croissant.",
+      "[Ignorieren]",
+      "[Verlassen]"
+    ]
+  },
+  "VUPShionMod:LostEquipment": {
+    "NAME": "Verlorenes Equipment",
+    "DESCRIPTIONS": [
+      "Bei deinem Aufstieg findest du ein verlorenes Equipment der letzten Schlacht. Es ist total verranzt und wird vermutlich nichts machen bis du etwas dran änderst.",
+      "Du verlässt den Platz."
+    ],
+    "OPTIONS": [
+      "[Stich] #rVerliere 100 gold. #gErhalte Optisches Camouflage.",
+      "[Verschlossen] Komm wieder wenn du mehr als 99 Gold in der Tasche hast.",
+      "[Reparieren] #rEntferne eine Karte. #gErhalte Sniperscope.",
+      "[Verschlossen] Warte.. wie bist du hier ohne Karten...",
+      "[Verlassen]"
+    ]
+  },
+  "VUPShionMod:BreakAppointment": {
+    "NAME": "Gu~gu~gu!",
+    "DESCRIPTIONS": [
+      "Du triffst auf eine Taube welche einen Stift im Schnabel trägt. Es durchbohrt dich mit seinen Blicken. Was machst du jetzt?",
+      "Die Taube malt etwas mit dem Stift und fliegt mit dem Gold davon und lässt dich mit den mehr als Zweideutigen Figuren sitzen.",
+      "Die Taube krallt sich das Gold auf deiner Hand bevor du überhaupt reagieren konntest.",
+      "Hmmm...Kommt bald, keine Eile!"
+    ],
+    "OPTIONS": [
+      "[Füttern] #rVerliere 50 gold. #g75%：Bekomme eine Cloyce card.",
+      "[Verschlossen] Vielleicht solltest du lieber Kuchen anstatt Croissant's essen. 50 Gold wird benötigt.",
+      "[Gu!]",
+      "[Verlassen]"
+    ]
+  },
+  "VUPShionMod:Newborn": {
+    "NAME": "Eine Nachricht",
+    "DESCRIPTIONS": [
+	  "Als du gerade verschwinden wolltest bekommst du eine Nachricht.",
+      "Sie ist von Anastasia. Mal wieder bringt der Krieg @total@ @devastation@ auf den Planeten, welcher das vermutlich nicht mehr länger aushält."
+    ],
+    "OPTIONS": [
+      "[Weiter] ...",
+      "[AUF IN DIE SCHLACHT] . #gErhalte Anastasia's Tropfen.",
+      "[Zurück Heim]",
+      "[Locked] Further Update Awaits."
+    ]
+  }
+}

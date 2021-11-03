@@ -35,7 +35,7 @@ public class KuroisuDetermination extends CustomRelic implements ClickableRelic 
 
     @Override
     public String getUpdatedDescription() {
-        return String.format(this.DESCRIPTIONS[0], 2);
+        return String.format(this.DESCRIPTIONS[0], 3);
     }
 
     @Override

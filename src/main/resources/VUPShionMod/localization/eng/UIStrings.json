@@ -1,7 +1,8 @@
 {
   "VUPShionMod:ModSettings": {
     "TEXT": [
-      "Use simple card ui"
+      "Use simple card ui",
+      "Disable title screen replacement."
     ]
   },
   "VUPShionMod:CharacterSelect": {

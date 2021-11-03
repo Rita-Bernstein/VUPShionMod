@@ -1,0 +1,49 @@
+{
+  "VUPShionMod:DimensionSplitterAria": {
+    "NAME": "Dimensions Splitter: Aria",
+    "FLAVOR": "Das Gerät - wird mit ausserweltlicher Technologie betrieben.",
+    "DESCRIPTIONS": [
+      "Zu Beginn deines Zuges füge #b%d ( #b2 + #yAufwertung x3) einem Zufälligen Gegner zu. Wenn #ytötlich , wiederhole und erhalte [E] . NL Verbessert sich zu beginn eines neuen Aktes. NL Aktuelle Stufe： #b%d.",
+      "Weltraumwaffe lädt in Akt 1... NL "
+    ]
+  },
+  "VUPShionMod:KuroisuDetermination": {
+    "NAME": "Cloyce's Bestimmung",
+    "FLAVOR": "Sogar die unbestimmten können sich ändern. Bestimmung kann wie ein Virus eingefangen werden.",
+    "DESCRIPTIONS": [
+      " #yRechts #yKlick: Nimm dir nen extra Zug nach diesem Zug, beende deinen Zug.（funktioniert noch #b%d mal）",
+      "Dieses Relikt wurde erschöpft - Es ist Mittwoch meine Kerle."
+    ]
+  },
+  "VUPShionMod:Croissant": {
+    "NAME": "Croissant",
+    "FLAVOR": "Es ist soooo lecker.. es gehört hier nicht hin.. wobei du gehört hier auch hin...",
+    "DESCRIPTIONS": [
+      "Wenn aufgenommen erhalte #b30 Leben."
+    ]
+  },
+  "VUPShionMod:OpticalCamouflage": {
+    "NAME": "Optisches Camouflage",
+    "FLAVOR": "Du traust deinen Augen nicht.",
+    "DESCRIPTIONS": [
+      "Fange jeden Kampf mit #b1 #yImmateriell an."
+    ]
+  },
+  "VUPShionMod:Sniperscope": {
+    "NAME": "Sniperscope",
+    "FLAVOR": "Snipe dir den Schwächsten!.",
+    "DESCRIPTIONS": [
+      "Zu beginn jedes Zuges wende #b1 #yGebrechlich auf den Gegner mit dem wenigsten Leben an. NL Gegner mit #yGebrechlich nehmen #b75% mehr Schaden anstatt #b50%."
+    ]
+  },
+  "VUPShionMod:AnastasiaNecklace": {
+    "NAME": "Anastasia's Tropfen",
+    "FLAVOR": "Hier drin ist mehr Kraft als du jemals halten könntest.",
+    "DESCRIPTIONS": [
+      "Starte jeden Kampf mit #yBarrikade.",
+      "Erhalte #b200 maximales Leben. NL Erhalte #b200 #yBlocken zu Beginn deines Zuges. NL Starte jeden Kampf mit #yBarrikade. NL Erhalte [E] zu Beginn deines Zuges.",
+      " NL ALLE #yKanonen werden um #b9 verbessert. NL #yKanonen treffen jetzt alle Gegner. NL Immer wenn ein Gegner stirbt, übertrage verbleibende #yJagd auf einen zufälligen Gegner.",
+      "Anastasia's Tropfen(Erwacht)"
+    ]
+  }
+}

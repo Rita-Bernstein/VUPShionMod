@@ -235,7 +235,7 @@
   "VUPShionMod:QuickTriggerPower": {
     "NAME": "快速触发",
     "DESCRIPTIONS": [
-      "下 #b%d 次生成 #y加载完成 时，直接触发所有生成的牌的效果。"
+      "下 #b%d 次生成 #y加载完成 牌时，直接触发所有生成的牌的效果。"
     ]
   },
   "VUPShionMod:StrengthenPower": {

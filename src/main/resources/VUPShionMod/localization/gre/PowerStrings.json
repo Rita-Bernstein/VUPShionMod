@@ -1,0 +1,259 @@
+{
+  "VUPShionMod:HyperdimensionalLinksPower": {
+    "NAME": "Hyperdimensionale Verbindung",
+    "DESCRIPTIONS": [
+      "Immer wenn du den Kampf mit #b10 oder mehr #yHyperdimensionale #yVerbindung beendest wird eine Zufällige deiner Karten aufgewertet."
+    ]
+  },
+  "VUPShionMod:PursuitPower": {
+    "NAME": "Jagd",
+    "DESCRIPTIONS": [
+      "Zu beginn deines Zuges fügt #yJagd #yKanone  #b",
+      " Schaden zu."
+    ]
+  },
+  "VUPShionMod:InvestigationFinFunnelUpgradePower": {
+    "NAME": "Blutungs Verbesserung",
+    "DESCRIPTIONS": [
+      "Nachdem du #b",
+      " #yKanonen Karten gespielt hast, verbessere #yBlutungs #yKanone um #b1 .",
+      "Aufgabe erledigt!"
+    ]
+  },
+  "VUPShionMod:GravityFinFunnelUpgradePower": {
+    "NAME": "Schwerkraft Verbesserung",
+    "DESCRIPTIONS": [
+      "Nachdem du #b",
+      " #yKanonen Karten gespielt hast, verbessere #ySchwerkraft #yKanone by #b1 .",
+      "Aufgabe erledigt!"
+    ]
+  },
+  "VUPShionMod:PursuitFinFunnelUpgradePower": {
+    "NAME": "Jagd Verbesserung",
+    "DESCRIPTIONS": [
+      "Nachdem du #b",
+      " #yKanonen Karten gespielt hast, verbessere #yJagd #yKanone um #b1 .",
+      "Aufgabe erledigt!"
+    ]
+  },
+  "VUPShionMod:DeploymentOfDefenseSystemPower": {
+    "NAME": "Verteidigung entfalten",
+    "DESCRIPTIONS": [
+      "Immer wenn du diesen Zug eine Karte spielst, erhalte #b",
+      " Blocken"
+    ]
+  },
+  "VUPShionMod:AnastasiaCorePower": {
+    "NAME": "Anastasia's Kernstück",
+    "DESCRIPTIONS": [
+      "Immer wenn du diesen Zug eine #yKanone Karte spielst erhalte #b",
+      " [E] und ziehe eine Karte."
+    ]
+  },
+  "VUPShionMod:AttackInitiationPower": {
+    "NAME": "Initialisieren",
+    "DESCRIPTIONS": [
+      "Für die nächsten #b%d  Karten diesen Zug, ziehe #b1 Karte immer wenn du eine Karte spielst."
+    ]
+  },
+  "VUPShionMod:ReleaseFormKuroisuPower": {
+    "NAME": "Befreite Form: Cloyce",
+    "DESCRIPTIONS": [
+      "Am Ende deines Zuges, nimm #b%d #ySchnelles #yÜberfliegen an oberste Stelle deines Nachziehstapels."
+    ]
+  },
+  "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
+    "NAME": "Befreite Form: Cloyce+",
+    "DESCRIPTIONS": [
+      "Am Ende deines Zuges, nimm #b%d #ySchnelles #yÜberfliegen+ an oberste Stelle deines Nachziehstapels."
+    ]
+  },
+  "VUPShionMod:BleedingPower": {
+    "NAME": "Blutung",
+    "DESCRIPTIONS": [
+      "Nimmt #b%d zusätzlichen Schaden von Angriffen für diesen Zug. NL Dieser Effekt halbiert sich."
+    ]
+  },
+  "VUPShionMod:DenergizePower": {
+    "NAME": "Entladen",
+    "DESCRIPTIONS": [
+      "Nächster Zug, verliere #b",
+      " [E] .",
+      " [E] ."
+    ]
+  },
+  "VUPShionMod:TempFinFunnelUpgradePower": {
+    "NAME": "Temporär Alle Aufwertungen（弃用）",
+    "DESCRIPTIONS": [
+      " #yAlle #yAufwertungen sind um #b%d erhöht für diesen Zug."
+    ]
+  },
+  "VUPShionMod:ReleaseFormMinamiPower": {
+    "NAME": "Befreite Form: Minami",
+    "DESCRIPTIONS": [
+      "Immer wenn du die passive Fähgkeit deiner #yKanone mit Karten auslöst, löse sie #b%d weiteres mal aus."
+    ]
+  },
+  "VUPShionMod:EnhancedWeaponPower": {
+    "NAME": "Intensivierung",
+    "DESCRIPTIONS": [
+      "Immer wenn du #yVolle #yLadung erhälst,ziehe #b%d Karte(n)."
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuPower": {
+    "NAME": "Befreite Form: Liyezhu",
+    "DESCRIPTIONS": [
+      "Erhalte #b%d #yHyperdimensionale wiederholt sich zu Zugbeginn."
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuBPower": {
+    "NAME": "Befreite Form: Liyezhu",
+    "DESCRIPTIONS": [
+      "Am Ende deines Zuges, füge Schaden in Höhe von #b%d mal #yHyperdimensionale #yVerbindung ALLEN Gegnern zu."
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuCPower": {
+    "NAME": "Befreite Form: Liyezhu",
+    "DESCRIPTIONS": [
+      "Am ende deines Zuges füge ALLEN Gegnern #b%d Schaden zu."
+    ]
+  },
+  "VUPShionMod:LockOnPower": {
+    "NAME": "Im Auge behalten",
+    "DESCRIPTIONS": [
+      "Ziel nimmt #b%d extra Schaden von Angriffen für diesen Zug."
+    ]
+  },
+  "VUPShionMod:AttackOrderAlphaPower": {
+    "NAME": "Befehl: Aggressivität",
+    "DESCRIPTIONS": [
+      "Schaden zugefügt von #yKanone erhöht sich jeden Zug #b%d mal. NL Inkompatibel mit anderen Befehlen."
+    ]
+  },
+  "VUPShionMod:AttackOrderBetaPower": {
+    "NAME": "Befehl: Furie",
+    "DESCRIPTIONS": [
+      "Schaden zugefügt durch #yKanone trifft jeden Zug alle Gegner. NL Inkompatibel mit anderen Befehlen."
+    ]
+  },
+  "VUPShionMod:AttackOrderGammaPower": {
+    "NAME": "Befehl: Ausbluten",
+    "DESCRIPTIONS": [
+      "Schaden zugefügt durch #yKanone fügt nun jeden Zug #b2 #yBlutung hinzu. NL Inkompatibel mit anderen Befehlen."
+    ]
+  },
+  "VUPShionMod:AttackOrderDeltaPower": {
+    "NAME": "Befehl: Vielseitigkeit",
+    "DESCRIPTIONS": [
+      "Schaden zugefügt durch #yKanone gewährt dir nun jeden Zug gleich viel #yBlocken . NL Inkompatibel mit anderen Befehlen."
+    ]
+  },
+  "VUPShionMod:AttackOrderSpecialPower": {
+    "NAME": "Befehl: Spezial",
+    "DESCRIPTIONS": [
+      "Schaden zugefügt durch #yKanone trifft jetzt alle Gegner."
+    ]
+  },
+  "VUPShionMod:DelayAvatarPower": {
+    "NAME": "Verlockend...",
+    "DESCRIPTIONS": [
+      "Dein #yVerlockend... hat #b%d Leben verbleibend. NL Sie verursacht #b%d Schaden #b5 mal an allen Gegnern wenn sie 'aufgebraucht' wird."
+    ]
+  },
+  "VUPShionMod:CrackOfTimePower": {
+    "NAME": "Zeit sprung",
+    "DESCRIPTIONS": [
+      "Immer wenn du #yVolle #yLadung erhälst, erhalte #b%d #yBlocken ."
+    ]
+  },
+  "VUPShionMod:AnticoagulationPower": {
+    "NAME": "Antikoagulanzien",
+    "DESCRIPTIONS": [
+      "Verhindere das #yBlutung sich #b%d Züge halbiert."
+    ]
+  },
+  "VUPShionMod:LoseFinFunnelUpgradePower": {
+    "NAME": "Verzupf dich!",
+    "DESCRIPTIONS": [
+      "Für die nächsten #b%d Züge, verliere #yAlle #yAufwertungen."
+    ]
+  },
+  "VUPShionMod:HolyCoffinSinkingSpiritPower": {
+    "NAME": "Heiliger Sarg",
+    "DESCRIPTIONS": [
+      "Immer wenn du #yHyperdimensionale #yVerbindung, erhälst oder verlierst, erhalte #b%d Blocken."
+    ]
+  },
+  "VUPShionMod:HolyCoffinReleasePower": {
+    "NAME": "Ausgesetzt",
+    "DESCRIPTIONS": [
+      "Immer wenn du #yVolle #yLadung erhälst,erhalte #b%d #yHyperdimensionale #yVerbindung."
+    ]
+  } ,
+  "VUPShionMod:LoseHyperdimensionalLinksPower": {
+    "NAME": "Verliere Hyperdimensionale Verbindung",
+    "DESCRIPTIONS": [
+      "Zu beginn deiner nächsten #b%d Züge verliere JEDE #yHyperdimensionale #yVerbindung ."
+    ]
+  },
+  "VUPShionMod:DoubleCardPower": {
+    "NAME": "Anastasia's Programm",
+    "DESCRIPTIONS": [
+      "Die nächste #b%d Karte(n) wird zweimal gespielt."
+    ]
+  },
+  "VUPShionMod:DefectPower": {
+    "NAME": "Verkrüppeln ",
+    "DESCRIPTIONS": [
+      "Jedesmal wenn du #yungeblockten Schaden von diesem Gegner bekommst, verliere #b%d maximales Leben."
+    ]
+  },
+  "VUPShionMod:ShockPower": {
+    "NAME": "Beunruhigend...",
+    "DESCRIPTIONS": [
+      "Jedesmal wenn du #yungeblockten Schaden von diesem Gegner bekommst, #ywirf #b%d deiner seltensten Karten in deinen Nachziehstapel ab."
+    ]
+  },
+  "VUPShionMod:DestroyPower": {
+    "NAME": "Pulverisierend",
+    "DESCRIPTIONS": [
+      "Jedesmal wenn du #yungeblockten Schaden von diesem Gegner bekommst, #yErschöpft #b%d deiner seltensten Karten."
+    ]
+  },
+  "VUPShionMod:LifeLinkPower": {
+    "NAME": "Lebens erhaltung",
+    "DESCRIPTIONS": [
+      "Werde im nächsten Zug mit vollem Leben wiedergeboren wenn noch Gegner am Leben sind."
+    ]
+  },
+  "VUPShionMod:GravitoniumPower": {
+    "NAME": "Schwerkrafteinheit",
+    "DESCRIPTIONS": [
+      " #yBlocken erhalten durch #ySchwerkraft #yKanone wird in #ySchild umgewandelt."
+    ]
+  },
+  "VUPShionMod:QuickTriggerPower": {
+    "NAME": "Abfolge",
+    "DESCRIPTIONS": [
+      "Die nächsten #b%d male wenn #yVolle #yLadung Karten kreiert werden, Löse sie aus."
+    ]
+  },
+  "VUPShionMod:StrengthenPower": {
+    "NAME": "Pelzige Wut",
+    "DESCRIPTIONS": [
+      "Am ende deines Zuges, erhalte #b%d #yStärke."
+    ]
+  },
+  "VUPShionMod:ChaoticPower": {
+    "NAME": "Chaotisches Mischen",
+    "DESCRIPTIONS": [
+      "Jedesmal wenn du deinen Nachziehstapel mischt, mische 2 #ybenommen dazu."
+    ]
+  },
+  "VUPShionMod:IterativePower": {
+    "NAME": "Iterative Evolution",
+    "DESCRIPTIONS": [
+      "Zu Beginn deines Zuges, wähle eine Zufällige Nummer um dich zu Buffen oder Debuffen."
+    ]
+  }
+}

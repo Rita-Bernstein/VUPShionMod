@@ -93,8 +93,10 @@ public class VUPShionMod implements
     public static List<CustomCard> shi_Cards = new ArrayList<>();
 
     public static boolean useSimpleOrb = false;
+    public static boolean notReplaceTitle = false;
 
     public static ModLabeledToggleButton useSimpleOrbSwitch;
+    public static ModLabeledToggleButton notReplaceTitleSwitch;
 
     public static Color transparent = Color.WHITE.cpy();
     public static boolean fightSpecialBoss = false;
@@ -123,6 +125,7 @@ public class VUPShionMod implements
         try {
             SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
             config.setBool("useSimpleOrb", useSimpleOrb);
+            config.setBool("notReplaceTitle", notReplaceTitle);
 
             System.out.println("==============reskin存入数据");
 
@@ -137,6 +140,7 @@ public class VUPShionMod implements
             SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
             config.load();
             useSimpleOrb = config.getBool("useSimpleOrb");
+            notReplaceTitle = config.getBool("notReplaceTitle");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -233,9 +237,16 @@ public class VUPShionMod implements
             useSimpleOrb = button.enabled;
             saveSettings();
         });
+        notReplaceTitleSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[1], 400.0f, 720.0f - 1 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, notReplaceTitle, settingsPanel,
+                (label) -> {
+                }, (button) -> {
+            notReplaceTitle = button.enabled;
+            saveSettings();
+        });
 
 
         settingsPanel.addUIElement(useSimpleOrbSwitch);
+        settingsPanel.addUIElement(notReplaceTitleSwitch);
 
 //        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 
@@ -468,6 +479,8 @@ public class VUPShionMod implements
     private Settings.GameLanguage languageSupport() {
         switch (Settings.language) {
             case ZHS:
+                return Settings.language;
+            case GRE:
                 return Settings.language;
             default:
                 return Settings.GameLanguage.ENG;

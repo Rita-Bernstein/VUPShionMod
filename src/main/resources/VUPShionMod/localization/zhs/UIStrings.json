@@ -1,7 +1,8 @@
 {
   "VUPShionMod:ModSettings": {
     "TEXT": [
-      "使用简洁卡牌界面"
+      "使用简洁卡牌界面",
+      "禁用替换主界面"
     ]
   },
   "VUPShionMod:CharacterSelect": {

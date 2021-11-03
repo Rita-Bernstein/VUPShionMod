@@ -1,0 +1,32 @@
+{
+  "VUPShionMod:PoisonGrenadeBag": {
+    "NAME": "Gift Granate",
+    "DESCRIPTIONS": [
+      "Füge #b%d #yGift #yGranate deiner Hand hinzu."
+    ]
+  },
+  "VUPShionMod:FragGrenadeBag": {
+    "NAME": "Splitter Granate",
+    "DESCRIPTIONS": [
+      "Füge #b%d #ySplitter #yGranate deiner Hand hinzu."
+    ]
+  },
+  "VUPShionMod:ShockGrenadeBag": {
+    "NAME": "Schock Granate",
+    "DESCRIPTIONS": [
+      "Füge #b%d #ySchock #yGranate deiner Hand hinzu."
+    ]
+  },
+  "VUPShionMod:BouncingGrenadeBag": {
+    "NAME": "Springende Granate",
+    "DESCRIPTIONS": [
+      "Füge #b%d #ySpringende #yGranate deiner Hand hinzu."
+    ]
+  },
+  "VUPShionMod:Hiroji": {
+    "NAME": "LASS DAS INRUHE!",
+    "DESCRIPTIONS": [
+      "Erhalte #b%d #yStärke für diesen Zug (Es stinkt echt ekelhaft)."
+    ]
+  }
+}

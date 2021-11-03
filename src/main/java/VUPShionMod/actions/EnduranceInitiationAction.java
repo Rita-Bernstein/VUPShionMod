@@ -15,7 +15,6 @@ import java.util.List;
 public class EnduranceInitiationAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction"));
     public static final String[] TEXT = uiStrings.TEXT;
-    ;
     private AbstractPlayer p;
     private boolean upgraded;
     private int pickAmount = 1;
@@ -46,6 +45,8 @@ public class EnduranceInitiationAction extends AbstractGameAction {
             if (this.p.hand.size() <= pickAmount) {
                 for (AbstractCard card : this.p.hand.group) {
                     addToBot(new MakeNewLoadedCardAction(card,this.amount));
+                    if(this.upgraded)
+                        addToBot(new MakeNewLoadedCardAction(card,this.amount,true));
                 }
 
                 AbstractDungeon.player.hand.applyPowers();
@@ -66,6 +67,8 @@ public class EnduranceInitiationAction extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard card : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 addToBot(new MakeNewLoadedCardAction(card,this.amount));
+                if(this.upgraded)
+                    addToBot(new MakeNewLoadedCardAction(card,this.amount,true));
                 this.p.hand.moveToHand(card);
             }
             returnCardsToHand();

@@ -1,0 +1,20 @@
+{
+  "VUPShionMod:InvestigationFinFunnel": {
+    "NAME": "Blutungs Kanone",
+    "DESCRIPTION": [
+      "Aktuelle Verbesserung: #b%d . NL Zu beginn deines Zuges,füge einem zufälligen Gegner #b%d Schaden zu und löse die passive Fähigkeit aus. NL #yPassive: Wende #b%d #yBlutung an . NL （Ausser bei #yLevelbeginn , diese passive wird stärker nach #b3 verbesserungen.）"
+    ]
+  },
+  "VUPShionMod:GravityFinFunnel": {
+    "NAME": "Schwerkraft Kanone",
+    "DESCRIPTION": [
+      "Aktuelle Verbesserung: #b%d . NL Zu beginn deines Zuges, füge einem zufälligen Gegner #b%d Schaden zu und löse die passive Fähigkeit aus. NL #yPassive: Erhalte #b%d #yBlocken . NL （Ausser bei #yLevelbeginn , diese passive wird stärker nach #b3 verbesserungen.）"
+    ]
+  },
+  "VUPShionMod:PursuitFinFunnel": {
+    "NAME": "Jagd Kanone",
+    "DESCRIPTION": [
+      "Aktuelle Verbesserung: #b%d . NL #yAktiv: Füge Schaden zu, löse die passive Fähigkeit bei ungeblocktem Schaden aus. NL Zu beginn deines Zuges, füge einem zufälligen Gegner #b%d Schaden zu und löse die passive Fähigkeit aus wenn ungeblockter Schaden hinzugefügt wurde. NL #yPassive: Wende #b%d #yJagd an . NL （Ausser bei #yLevelbeginn , diese passive wird stärker nach #b3 verbesserungen.）"
+    ]
+  }
+}

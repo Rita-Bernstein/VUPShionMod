@@ -1,0 +1,56 @@
+{
+  "VUPShionMod:ModSettings": {
+    "TEXT": [
+      "Use simple card ui",
+      "Disable title screen replacement."
+    ]
+  },
+  "VUPShionMod:CharacterSelect": {
+    "TEXT": [
+      "设置"
+    ]
+  },
+  "VUPShionMod:EnduranceInitiationAction": {
+    "TEXT": [
+      "Copy",
+      " NL vup_shion_mod:Loading_Complete Exhaust."
+    ]
+  },
+  "VUPShionMod:UpgradeAndZeroCostAction": {
+    "TEXT": [
+      "Select a card upgrade and set cost to 0"
+    ]
+  },
+  "VUPShionMod:SelectCardToHandAction": {
+    "TEXT": [
+      " NL Exhaust 。",
+      " Ethereal ."
+    ]
+  },
+  "VUPShionMod:AttackFromDiscardToHandAction": {
+    "TEXT": [
+      "Add 2 Attacks to your hand"
+    ]
+  },
+  "VUPShionMod:ChargeHelper": {
+    "TEXT": [
+      "充能条",
+      "每当你打出 #y浮游炮 牌或获得 #y超维链接 时为其充能。 NL 满充能时对所有敌人造成 #b%d 点伤害并触发所有 #y浮游炮 的效果。 NL 然后失去所有充能。"
+    ]
+  },
+  "VUPShionMod:VictoryScreen": {
+    "TEXT": [
+      "没有后援的胜利",
+      "不依靠吊坠的力量获得胜利",
+      "新生",
+      "击败深空孽障"
+    ]
+  },
+  "VUPShionMod:ReadAction": {
+    "TEXT": [
+      "Add a copy of a card to your hand.",
+      "Add copies of ",
+      " cards to your hand."
+    ]
+  }
+}

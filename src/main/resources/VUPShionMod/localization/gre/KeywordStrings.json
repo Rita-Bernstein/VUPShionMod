@@ -1,0 +1,60 @@
+[
+  {
+    "NAMES": [
+      "Volle\u00a0Ladung"
+    ],
+	"PROPER_NAME": "Volle Ladung",
+    "DESCRIPTION": "Wird beim Ziehen automatisch und gratis gespielt. Ziehe eine Karte Nachdem sie gespielt wurde."
+  },
+  {
+    "NAMES": [
+      "Schwebende\u00a0Kanone"
+    ],
+	"PROPER_NAME":  "Schwebende Kanone",
+    "DESCRIPTION": "#yKanone greift zu beginn jedes Zuges an. NL Für Energiekosten kannst du deine #yKanone wechseln."
+  },
+  {
+    "NAMES": [
+      "Alle\u00a0Aufwertungen"
+    ],
+	"PROPER_NAME": "Alle Aufwertungen",
+    "DESCRIPTION": "Anzahl der Aufwertungen von #yDimensions #ySplitter: #yAria und die drei #yKanonen."
+  },
+  {
+    "NAMES": [
+      "Aufgabe"
+    ],
+    "DESCRIPTION": "Du wirst belohnt für das Erledigen von Aufgaben im Kampf."
+  },
+  {
+    "NAMES": [
+      "Jagd"
+    ],
+    "DESCRIPTION": " #yJagd #yKanone fügt #ygejagdten Gegnern am Anfang ihres Zuges Schaden zu."
+  },
+  {
+    "NAMES": [
+      "Blutung"
+    ],
+    "DESCRIPTION": "Blutende Kreaturen erhalten extra Schaden in Höhe von #yBlutung von Angriffen diesen Zug. NL Blutung halbiert sich am ende des Zuges."
+  },
+  {
+    "NAMES": [
+      "Hyperdimensionale\u00a0Verbindung"
+    ],
+	"PROPER_NAME": "Hyperdimensionale Verbindung",
+    "DESCRIPTION": "Immer wenn du den Kampf mit #b10 oder mehr #yHyperdimensionale #yVerbindung beendest wird eine Zufällige deiner Karten aufgewertet."
+  },
+  {
+    "NAMES": [
+      "Feure"
+    ],
+    "DESCRIPTION": "Löse die passive Fähigkeit deiner #yKanone aus."
+  },
+  {
+    "NAMES": [
+      "Schild"
+    ],
+    "DESCRIPTION": "Schützt für Schaden. Verschwindet nicht am ende deines Zuges."
+  }
+]

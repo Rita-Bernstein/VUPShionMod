@@ -1,0 +1,29 @@
+{
+  "VUPShionMod:ShionMinion": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Shion's Ersatz",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:PlagaAMundo": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Plage der Welt",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:PlagaAMundoMinion": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Plage der Welt",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

@@ -124,6 +124,9 @@ public class PlagaAMundoMinion extends CustomMonster {
                     addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
 
                 addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
+                for (AbstractRelic r : AbstractDungeon.player.relics){
+                    r.onSpawnMonster(this);
+                }
                 break;
             case 99:
                 break;

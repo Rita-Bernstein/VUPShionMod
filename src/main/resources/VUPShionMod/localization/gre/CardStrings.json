@@ -1,0 +1,401 @@
+{
+  "VUPShionMod:Strike_Shion": {
+    "NAME": "Schuss",
+    "DESCRIPTION": "Schieße mit vup_shion_mod:Schwebende\u00a0Kanone. NL Füge !D! Schaden zu."
+  },
+  "VUPShionMod:Defend_Shion": {
+    "NAME": "Verteidigen",
+    "DESCRIPTION": "Erhalte !B! Blocken."
+  },
+  "VUPShionMod:DefenseSystemCharging": {
+    "NAME": "Abwehrsystem Aufladen",
+    "DESCRIPTION": "Erhalte !B! Blocken. NL Löse die passive Fähigkeit von *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone aus. NL Wenn die letzte gespielte Karte dieses Kampfes eine vup_shion_mod:Schwebende\u00a0Kanone Karte war, erhalte Abwehrsystem zurück auf die Hand."
+  },
+  "VUPShionMod:DeploymentOfDefenseSystem": {
+    "NAME": "Verteidigung entfalten",
+    "DESCRIPTION": "Immer wenn du diesen Zug eine Karte spielst, erhalte !M! Blocken."
+  },
+  "VUPShionMod:AttackSystemPreload": {
+    "NAME": "Offensives Vorladen",
+    "DESCRIPTION": "Mische !M! *Schneller *Angriff in deinen Nachziehstapel.",
+    "UPGRADE_DESCRIPTION": "Mische !M! *Schneller *Angriff+ in deinen Nachziehstapel."
+  },
+  "VUPShionMod:DefenseSystemPreload": {
+    "NAME": "Defensives Vorladen",
+    "DESCRIPTION": "Mische !M! *Schnelle *Verteidigung in deinen Nachziehstapel.",
+    "UPGRADE_DESCRIPTION": "Mische !M! *Schnelle *Verteidigung+ in deinen Nachziehstapel."
+  },
+  "VUPShionMod:AnalyseSystemPreload": {
+    "NAME": "Analytisches Vorladen",
+    "DESCRIPTION": "Mische !M! *Schnelles *Überfliegen in deinen Nachziehstapel.",
+    "UPGRADE_DESCRIPTION": "Mische !M! *Schnelles *Überfliegen+ in deinen Nachziehstapel."
+  },
+  "VUPShionMod:QuickAttack": {
+    "NAME": "Schneller Angriff",
+    "DESCRIPTION": "vup_shion_mod:Volle\u00a0Ladung. NL vup_shion_mod:Feure vup_shion_mod:Schwebende\u00a0Kanone. NL Füge !D! Schaden zu. NL Erschöpft."
+  },
+  "VUPShionMod:QuickDefend": {
+    "NAME": "Schnelle Verteidigung",
+    "DESCRIPTION": "vup_shion_mod:Volle\u00a0Ladung. NL Erhalte !B! Blocken. NL Löse die passive Fähigkeit von *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone aus. NL Erschöpft."
+  },
+  "VUPShionMod:QuickScreen": {
+    "NAME": "Schnelles Überfliegen",
+    "DESCRIPTION": "vup_shion_mod:Volle\u00a0Ladung. NL Spähe !M!. NL Ziehe !VUPShionSecondM! Karte. NL Erschöpft."
+  },
+  "VUPShionMod:SpeedShot": {
+    "NAME": "Bombadieren",
+    "DESCRIPTION": " vup_shion_mod:Feure vup_shion_mod:Schwebende\u00a0Kanone. NL Füge Schaden in Höhe von vup_shion_mod:Alle\u00a0Aufwertungen X mal zu.",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:Feure vup_shion_mod:Schwebende\u00a0Kanone. NL Füge Schaden in Höhe von vup_shion_mod:Alle\u00a0Aufwertungen X+1 mal zu.",
+    "EXTENDED_DESCRIPTION": [
+      " NL （Füge jedesmal !D! Schaden zu.）"
+    ]
+  },
+  "VUPShionMod:AttackInitiation": {
+    "NAME": "Initialisieren",
+    "DESCRIPTION": "Für die nächsten !M! Karten diesen Zug, ziehe 1 Karte immer wenn du eine Karte spielst."
+  },
+  "VUPShionMod:EnduranceInitiation": {
+    "NAME": "Aushalten",
+    "DESCRIPTION": "Mische eine Kopie der ausgewählten Karte in deinen Nachziehstapel. NL Gib ihr vup_shion_mod:Volle\u00a0Ladung. NL Erschöpft.",
+    "UPGRADE_DESCRIPTION": "Mische 2 Kopieen der ausgewählten Karte in deinen Nachzieh/- Abwurfstapel. NL Gib ihnen vup_shion_mod:Volle\u00a0Ladung. NL Erschöpft."
+  },
+  "VUPShionMod:AttackPreparation": {
+    "NAME": "Bereit machen",
+    "DESCRIPTION": " Behalte deine Hand. NL Erhalte [E] im nächsten Zug.",
+    "UPGRADE_DESCRIPTION": " Behalte deine Hand. NL Erhalte [E] [E] im nächsten Zug."
+  },
+  "VUPShionMod:Strafe": {
+    "NAME": "Feuer Frei",
+    "DESCRIPTION": "vup_shion_mod:Feure vup_shion_mod:Schwebende\u00a0Kanone. NL Füge Schaden in Höhe von vup_shion_mod:Alle\u00a0Aufwertungen !M! mal zu.",
+    "EXTENDED_DESCRIPTION": [
+      " NL （Füge jedesmal !D! Schaden zu.）"
+    ]
+  },
+  "VUPShionMod:AnastasiaCore": {
+    "NAME": "Anastasia's Reaktor",
+    "DESCRIPTION": "Immer wenn du eine vup_shion_mod:Schwebende\u00a0Kanone Karte diesen Zug spielst, erhalte [E] und ziehe 1 Karte. NL Erschöpft.",
+    "EXTENDED_DESCRIPTION": [
+      "Anastasia's Kernstück"
+    ]
+  },
+  "VUPShionMod:DimensionSplitting": {
+    "NAME": "Dimensions teiler",
+    "DESCRIPTION": "Füge !M! mal Schaden zu. Schaden entspricht den gespielten vup_shion_mod:Schwebende\u00a0Kanone Karten dieses Zuges.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Füge !D! Schaden zu.)"
+    ]
+  },
+  "VUPShionMod:Goodbye": {
+    "NAME": "HALT STOP - JETZT...!",
+    "DESCRIPTION": " Erschöpfe deine Hand. NL Füge für jede erschöpfte Karte !D! Schaden zu."
+  },
+  "VUPShionMod:EnhancedWeapon": {
+    "NAME": "Beschleunigen",
+    "DESCRIPTION": "Immer wenn du vup_shion_mod:Volle\u00a0Ladung erhällst, ziehe 1 Karte.",
+    "UPGRADE_DESCRIPTION": "Angeboren. NL Immer wenn du vup_shion_mod:Volle\u00a0Ladung erhällst, ziehe 1 Karte."
+  },
+  "VUPShionMod:Boot": {
+    "NAME": "Hochfahren",
+    "DESCRIPTION": "Mische !M! Kopie deiner hand in den Nachziehstapel. NL Beende deinen Zug."
+  },
+  "VUPShionMod:FirstStrike": {
+    "NAME": "Erster Treffer",
+    "DESCRIPTION": "Füge !D! Schaden zu. NL Kostet !M! [E] mehr, jedesmal wenn diese Karte in diesem Kampf gespielt wird."
+  },
+  "VUPShionMod:SpeedSlash": {
+    "NAME": "Schnelle Hiebe",
+    "DESCRIPTION": "Füge !D! Schaden !M! mal zu."
+  },
+  "VUPShionMod:Rob": {
+    "NAME": "Ausplündern",
+    "DESCRIPTION": "Füge Schaden in Höhe von vup_shion_mod:Alle\u00a0Aufwertungen zu. NL Wenn tötlich, erhalte !M! Golddublonen.",
+    "UPGRADE_DESCRIPTION": "Füge Schaden in Höhe von 4+ vup_shion_mod:Alle\u00a0Aufwertungen zu. NL Wenn tötlich, erhalte !M! Golddublonen.",
+    "EXTENDED_DESCRIPTION": [
+      "（Füge !D! Schaden zu.）"
+    ]
+  },
+  "VUPShionMod:AttackOrderAlpha": {
+    "NAME": "Befehl: Aggressivität",
+    "DESCRIPTION": " Ätherisch. NL Schaden zugefügt von vup_shion_mod:Schwebende\u00a0Kanone erhöht sich jeden Zug !M! mal. NL Inkompatibel mit anderen Befehlen."
+  },
+  "VUPShionMod:AttackOrderBeta": {
+    "NAME": "Befehl: Furie",
+    "DESCRIPTION": " Ätherisch. NL Schaden zugefügt durch vup_shion_mod:Schwebende\u00a0Kanone trifft jeden Zug ALLE Gegner . NL Inkompatibel mit anderen Befehlen."
+  },
+  "VUPShionMod:AttackOrderGamma": {
+    "NAME": "Befehl: Ausbluten",
+    "DESCRIPTION": " Ätherisch. NL Schagen zugefügt durch vup_shion_mod:Schwebende\u00a0Kanone fügt nun jeden Zug !M! vup_shion_mod:Blutung hinzu. NL Inkompatibel mit anderen Befehlen."
+  },
+  "VUPShionMod:AttackOrderDelta": {
+    "NAME": "Befehl: Vielseitigkeit",
+    "DESCRIPTION": " Ätherisch. NL Schaden zugefügt durch vup_shion_mod:Schwebende\u00a0Kanone gewährt dir nun jeden Zug gleich viel Blocken. NL Inkompatibel mit anderen Befehlen."
+  },
+  "VUPShionMod:Reboot": {
+    "NAME": "Neu installieren",
+    "DESCRIPTION": "Wirf deine Hand ab, ziehe gleich viele Karten."
+  },
+  "VUPShionMod:TeamWork": {
+    "NAME": "Teamwork",
+    "DESCRIPTION": "Wähle 3 Karten von *Cloyce, *Anastasia, *Minami und *Liyezhu um sie deiner Hand hinzuzufügen. Sie Kosten diesen Zug 0 und Erschöpfen. NL Erschöpfbar !stslib:ex!."
+  },
+  "VUPShionMod:AnastasiaPlan": {
+    "NAME": "Anastasia's Programm",
+    "DESCRIPTION": "Deine nächste !M! Karte wird zwei mal gespielt.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Erhalte !B! Blocken.)"
+    ]
+  },
+  "VUPShionMod:LockOn": {
+    "NAME": "Im Auge behalten",
+    "DESCRIPTION": "Ziel nimmt !M! extra Schaden von Angriffen für diesen Zug."
+  },
+  "VUPShionMod:EnergyReserve": {
+    "NAME": "Energiereserve",
+    "DESCRIPTION": " vup_shion_mod:Volle\u00a0Ladung. NL Erhalte [E]. NL Ziehe !M! Karten. NL Erschöpft Bestattung."
+  },
+  "VUPShionMod:FinFunnelUpgrade": {
+    "NAME": "Kanone verbessern",
+    "DESCRIPTION": "Wähle 1 von 3 *Schwebende\u00a0Kanone *Verbesserungen. Verschwindet.",
+    "UPGRADE_DESCRIPTION": " Angeboren. Wähle 1 von 3 *Schwebende\u00a0Kanone *Verbesserungen. Verschwindet."
+  },
+  "VUPShionMod:InvestigationUpgrade": {
+    "NAME": "verbesserte Blutung",
+    "DESCRIPTION": " vup_shion_mod:Task ： NL Spiele 5 vup_shion_mod:Schwebende\u00a0Kanone Karten in diesem Kampf. NL Belohnung: Ausblutungs Kanone wird um 1 verbessert."
+  },
+  "VUPShionMod:GravityUpgrade": {
+    "NAME": "verbesserte Schwerkraft",
+    "DESCRIPTION": " vup_shion_mod:Task ： NL Spiele 5 vup_shion_mod:Schwebende\u00a0Kanone Karten in diesem Kampf. NL Belohnung: Schwerkraft Kanone wird um 1 verbessert."
+  },
+  "VUPShionMod:PursuitUpgrade": {
+    "NAME": "verbesserte Jagd",
+    "DESCRIPTION": " vup_shion_mod:Task ： NL Spiele 5 vup_shion_mod:Schwebende\u00a0Kanone Karten in diesem Kampf. NL Reward: Jagd Kanone wird um 1 verbessert."
+  },
+  "VUPShionMod:TimeBacktracking": {
+    "NAME": "Zurück in die Zukunft",
+    "DESCRIPTION": "Ziehe !M! Karten. NL Erhalte [E] im nächsten Zug.",
+    "UPGRADE_DESCRIPTION": "Ziehe !M! Karten. NL Erhalte [E] [E] im nächsten Zug."
+  },
+  "VUPShionMod:TimeSlack": {
+    "NAME": "In Watte packen",
+    "DESCRIPTION": "Erhalte !B! Blocken. NL Löse die passive Fähigkeit von *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone aus. NL Mische !M! *Schnelle *Verteidigung in deinen Abwurfstapel."
+  },
+  "VUPShionMod:TimeStop": {
+    "NAME": "Pause",
+    "DESCRIPTION": "Pausiere das Vorhaben des Gegners für einen Zug. NL Mische alle vup_shion_mod:Volle\u00a0Ladung Karten von deinem Abwurfstapel in den Nachziehstapel. Erschöpft.",
+    "UPGRADE_DESCRIPTION": "Pausiere das Vorhaben des Gegners für einen Zug. NL Nimm alle vup_shion_mod:Volle\u00a0Ladung Karten von deinem Abwurfstapel an oberste Stelle deines Nachziehstapels. Erschöpft."
+  },
+  "VUPShionMod:TimeBomb": {
+    "NAME": "Verzögerte Explosion",
+    "DESCRIPTION": "vup_shion_mod:Volle\u00a0Ladung. NL Füge ALLEN Gegnern !D! Schaden zu. NL Erschöpft Bestattung."
+  },
+  "VUPShionMod:HourHand": {
+    "NAME": "Zur richtigen Stunde",
+    "DESCRIPTION": " Behalte. NL Erhalte !B! Blocken. NL Mische 1 *Schnelles *Überfliegen in deinen Abwurfstapel."
+  },
+  "VUPShionMod:MinuteHand": {
+    "NAME": "Zur richtigen Minute",
+    "DESCRIPTION": "Füge !D! Schaden zu. NL Mische 1 *Schneller *Angriff in deinen Abwurfstapel."
+  },
+  "VUPShionMod:SecondHand": {
+    "NAME": "Zur richtigen Sekunde",
+    "DESCRIPTION": "Füge !D! Schaden einem zufälligen Gegner !M! mal zu. NL Mische diese Karte in deinen Nachziehstapel."
+  },
+  "VUPShionMod:CrackOfTime": {
+    "NAME": "Zeit sprung",
+    "DESCRIPTION": "Immer wenn du vup_shion_mod:Volle\u00a0Ladung auslöst, erhalte !M! Blocken."
+  },
+  "VUPShionMod:ReleaseFormKuroisu": {
+    "NAME": "Cloyce Form",
+    "DESCRIPTION": "Am Ende deines Zuges, nimm !M! *Schnelles *Überfliegen an oberste Stelle deines Nachziehstapels.",
+    "UPGRADE_DESCRIPTION": "Am Ende deines Zuges, nimm !M! *Schnelles *Überfliegen+ an oberste Stelle deines Nachziehstapels."
+  },
+  "VUPShionMod:TimeWarp": {
+    "NAME": "Zeitsprung",
+    "DESCRIPTION": "Verliere !VUPShionSecondM! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. Füge zufälligen Gegnern !D! Schaden !M! mal zu. Füge ausserdem 2 vup_shion_mod:Blutung hinzu."
+  },
+  "VUPShionMod:BlackHand": {
+    "NAME": "Schwarzer Zeiger",
+    "DESCRIPTION": "Verliere !M! Leben. NL Ziehe !VUPShionSecondM! Karten. NL Karten welche auf diese Art gezogen werden Kosten 0. Erschöpft.",
+    "UPGRADE_DESCRIPTION": "Verliere !M! Leben. NL Ziehe !VUPShionSecondM! Karten. NL Karten welche auf diese Art gezogen werden Kosten 0. Erschöpft."
+  },
+  "VUPShionMod:TimeOverload": {
+    "NAME": "Überladen",
+    "DESCRIPTION": "Erhalte !M! vup_shion_mod:Hyperdimensionale Verbindung. NL Erhalte [E] [E]. NL Verliere [E] [E] zu Beginn deines nächsten Zugs.",
+    "UPGRADE_DESCRIPTION": "Erhalte !M! vup_shion_mod:Hyperdimensionale Verbindung. NL Erhalte [E] [E]. NL Verliere [E] zu Beginn deines nächsten Zugs."
+  },
+  "VUPShionMod:Limit": {
+    "NAME": "Abschluss",
+    "DESCRIPTION": "Füge ALLEN Gegnern !D! Schaden zu."
+  },
+  "VUPShionMod:OverspeedField": {
+    "NAME": "Hypergeschwindigkeit",
+    "DESCRIPTION": "Ziehe !M! Karten, dann reduziere die Kosten aller Handkarten auf 0 für diesen Zug. NL Verliere [E] [E] zu Beginn des nächsten Zugs. Erschöpft."
+  },
+  "VUPShionMod:DelayAvatar": {
+    "NAME": "Verlockend...",
+    "DESCRIPTION": "Stell eine *Verlockung mit !M! Leben auf. Sie verursacht !M! Schaden 5 mal an allen Gegnern wenn sie 'aufgebraucht' wird. Erschöpftt."
+  },
+  "VUPShionMod:FinFunnelActive": {
+    "NAME": "Kanonen startklar",
+    "DESCRIPTION": "Löse alle drei Kanonen von vup_shion_mod:Schwebende\u00a0Kanone an einem Gegner aus. NL Erschöpft.",
+    "UPGRADE_DESCRIPTION": "Löse alle drei Kanonen von vup_shion_mod:Schwebende\u00a0Kanone an einem Gegner aus."
+  },
+  "VUPShionMod:AttackWithDefense": {
+    "NAME": "Verschwinden",
+    "DESCRIPTION": "Mische !M! *Schneller *Angriff in deinen Nachziehstapel. NL Erhalte !B! Blocken."
+  },
+  "VUPShionMod:LockIndication": {
+    "NAME": "Snipe",
+    "DESCRIPTION": "Löse Dimensionalier Splitter auf einen Gegner aus. Schaden der auf diese Art ausgeführt wird erhöht sich um !M! und ignoriert Blocken."
+  },
+  "VUPShionMod:TacticalLayout": {
+    "NAME": "Taktische Auslegung",
+    "DESCRIPTION": "Löse die passive Fähigkeit von vup_shion_mod:Schwebende\u00a0Kanone an einem zufälligen Gegner !M! mal aus."
+  },
+  "VUPShionMod:FinFunnelSupport": {
+    "NAME": "Verstärkung",
+    "DESCRIPTION": "Löse die passive Fähigkeit von vup_shion_mod:Schwebende\u00a0Kanone an einem Gegner aus. NL Ziehe !M! Karten."
+  },
+  "VUPShionMod:Anticoagulation": {
+    "NAME": "Antikoagulanzien",
+    "DESCRIPTION": "Verhindere das vup_shion_mod:Blutung sich diesen Zug auf einem Gegner halbiert. NL Erschöpft.",
+    "UPGRADE_DESCRIPTION": "Verhindere das vup_shion_mod:Blutung sich diesen Zug auf einem Gegner halbiert. "
+  },
+  "VUPShionMod:Lure": {
+    "NAME": "Hinterhalt",
+    "DESCRIPTION": "Löse vup_shion_mod:Jagd an ALLEN Gegnern !M! mal aus."
+  },
+  "VUPShionMod:SuperCharge": {
+    "NAME": "Grobmotorisches Laden",
+    "DESCRIPTION": "Verliere !VUPShionSecondM! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Erhalte !M! Stärke und Geschicklichkeit."
+  },
+  "VUPShionMod:ReleaseFormMinami": {
+    "NAME": "Minami Form",
+    "DESCRIPTION": " Ätherisch. Immer wenn du die passive Fähgkeit deiner vup_shion_mod:Schwebende\u00a0Kanone mit Karten auslöst, löse sie !M! weiteres mal aus.",
+    "UPGRADE_DESCRIPTION": "Immer wenn du die passive Fähgkeit deiner vup_shion_mod:Schwebende\u00a0Kanone mit Karten auslöst, löse sie !M! weiteres mal aus."
+  },
+  "VUPShionMod:AnestheticReagent": {
+    "NAME": "Anästhetika",
+    "DESCRIPTION": "Verliere !VUPShionSecondM! Leben. NL Erhalte !M! Immateriell. NL Erschöpfbar !stslib:ex!."
+  },
+  "VUPShionMod:EnhancedSupport": {
+    "NAME": "Verstärkte Unterstützung",
+    "DESCRIPTION": "Löse die passive Fähigkeit deiner vup_shion_mod:Schwebende\u00a0Kanone an einem Gegner X mal aus.",
+    "UPGRADE_DESCRIPTION": "Löse die passive Fähigkeit deiner vup_shion_mod:Schwebende\u00a0Kanone an einem Gegner X+1 mal aus."
+  },
+  "VUPShionMod:BattlefieldHeritage": {
+    "NAME": "Erbe der Schlacht",
+    "DESCRIPTION": "Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Füge !VUPShionSecondM! Angriffe von deinem Abwurfstapel deiner Hand hinzu. NL Reduziere ihre Kosten für diesen Zug um 1."
+  },
+  "VUPShionMod:GravityLoading": {
+    "NAME": "Zero Gravity",
+    "DESCRIPTION": "Löse die passive Fähigkeit von *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone für jeden Gegner aus. NL Wende an ALLEN !M! Schwach an."
+  },
+  "VUPShionMod:FirePower": {
+    "NAME": "Verzupf dich！",
+    "DESCRIPTION": "Schieße eine gewaltige vup_shion_mod:Schwebende\u00a0Kanone. Füge ALLEN Gegnern !M! mal Schaden zu. Soviel wie vup_shion_mod:Alle\u00a0Aufwertungungen. NL Verliere vup_shion_mod:Alle\u00a0Aufwertungen für diesen Zug.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Füge !D! Schaden zu.)"
+    ]
+  },
+  "VUPShionMod:ArmedToTheTeeth": {
+    "NAME": "Kriegslustig",
+    "DESCRIPTION": "Erhalte Stärke entsprechend vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Verliere alle vup_shion_mod:Hyperdimensionale\u00a0Verbindung."
+  },
+  "VUPShionMod:IntroductionSilence": {
+    "NAME": "Allgorythmisches Schweigen",
+    "DESCRIPTION": "Füge !D! Schaden zu. NL Wende !M! Schwach an."
+  },
+  "VUPShionMod:SacredAdvice": {
+    "NAME": "Offenbarung",
+    "DESCRIPTION": "Verliere !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Erhalte [E].",
+    "UPGRADE_DESCRIPTION": "Verliere !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Erhalte [E] [E]."
+  },
+  "VUPShionMod:DivineRedemption": {
+    "NAME": "Göttliche Erlösung",
+    "DESCRIPTION": "Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Erhalte !B! Blocken."
+  },
+  "VUPShionMod:BlueBlade": {
+    "NAME": "Azurklinge",
+    "DESCRIPTION": "Füge allen Gegnern !D! Schaden zu. NL Extra Schaden: !M! mal soviel wie vup_shion_mod:Hyperdimensionale\u00a0Verbindung."
+  },
+  "VUPShionMod:HolyCharge": {
+    "NAME": "Heiliger Ausfallschritt",
+    "DESCRIPTION": "Behalte. NL Füge !D! Schaden zu. NL Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung, erhalet zusätzlich 1 für jedesmal wenn diese Karte im Kampf gespielt wurde. NL Reduziert Kosten um 1 für jeden Zug behalten."
+  },
+  "VUPShionMod:StrengthPray": {
+    "NAME": "Eifer",
+    "DESCRIPTION": " Behalten. NL Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung."
+  },
+  "VUPShionMod:Pray": {
+    "NAME": "Gebet",
+    "DESCRIPTION": "Erhalte 2 vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Ziehe !M! Karten. NL Reduziere die kosten einer zufälligen so gezogenen !VUPShionSecondM! Karte auf 0 diesen Zug. NL Erschöpft."
+  },
+  "VUPShionMod:SantaCroce": {
+    "NAME": "Kreuz",
+    "DESCRIPTION": "Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Erhalte Blocken !VUPShionSecondM! mal soviel wie vup_shion_mod:Hyperdimensionale\u00a0Verbindung.",
+    "EXTENDED_DESCRIPTION": [
+      "(Erhalte !B! Blocken.)"
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhu": {
+    "NAME": "Liyezhu Form",
+    "DESCRIPTION": "Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung, wiederholt sich zu Zugbeginn. NL Am Ende deines Zuges, Füge Schaden in Höhe von !VUPShionSecondM! + vup_shion_mod:Hyperdimensionale\u00a0Verbindung ALLEN Gegnern zu."
+  },
+  "VUPShionMod:Awaken": {
+    "NAME": "Heal me omg",
+    "DESCRIPTION": "Heile Leben !M! mal soviel wie vup_shion_mod:Hyperdimensionale\u00a0Verbindung. Verliere vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Erschöpft."
+  },
+  "VUPShionMod:HolyCoffinSinkingSpirit": {
+    "NAME": "Heiliger Sarg",
+    "DESCRIPTION": "Immer wenn du vup_shion_mod:Hyperdimensionale\u00a0Verbindung erhälst oder verlierst, erhalte !M! Blocken."
+  },
+  "VUPShionMod:HolySlashDown": {
+    "NAME": "Festgenagelt",
+    "DESCRIPTION": "Füge Schaden in Höhe von 7+ vup_shion_mod:Hyperdimensionale\u00a0Verbindung !M! mal zu. NL Erhalte !VUPShionSecondM! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Unendlich Aufwertbar.",
+    "EXTENDED_DESCRIPTION": [
+      "(Füge !D! Schaden zu)"
+    ]
+  },
+  "VUPShionMod:PainfulConfession": {
+    "NAME": "Klage ",
+    "DESCRIPTION": "Füge allen Gegnern !D! Schaden zu. NL Wende !M! Gebrechlich an."
+  },
+  "VUPShionMod:HolyCoffinRelease": {
+    "NAME": "Befreiung",
+    "DESCRIPTION": "Immer wenn du vup_shion_mod:Volle\u00a0Ladung auslöst, erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung."
+  },
+  "VUPShionMod:BlueRose": {
+    "NAME": "Saphirrose",
+    "DESCRIPTION": "Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Verliere JEDE vup_shion_mod:Hyperdimensionale\u00a0Verbindung im nächsten Zug. NL Erschöpft.",
+    "UPGRADE_DESCRIPTION": " Behalte. NL Erhalte !M! vup_shion_mod:Hyperdimensionale\u00a0Verbindung. NL Verliere JEDE vup_shion_mod:Hyperdimensionale\u00a0Verbindung im nächsten Zug. NL Erschöpft."
+  },
+  "VUPShionMod:Gravitonium": {
+    "NAME": "Schwerkrafteinheit",
+    "DESCRIPTION": "Blocken durch *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone wird nun in vup_shion_mod:Schild verwandelt.",
+    "UPGRADE_DESCRIPTION": "Angeboren. NL Blocken durch *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone wird nun in vup_shion_mod:Schild verwandelt."
+  },
+  "VUPShionMod:Read": {
+    "NAME": "Lesen",
+    "DESCRIPTION": "Nimm !M! vup_shion_mod:Volle\u00a0Ladung Karten von deinem Nachziehstapel auf die Hand."
+  },
+  "VUPShionMod:GravityCharging": {
+    "NAME": "Schwerkraft Re-cha-cha-rge",
+    "DESCRIPTION": "Behalte. NL Jedesmal wenn du vup_shion_mod:Volle\u00a0Ladung auslöst, reduziere die Kosten der Karte um 1. NL Löse die passive Fähigkeit von *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone !M! mal aus."
+  },
+  "VUPShionMod:QuickTrigger": {
+    "NAME": "Abfolge",
+    "DESCRIPTION": "Das nächste Mal wenn vup_shion_mod:Volle\u00a0Ladung Karten kreiert werden, löse sie aus. "
+  },
+  "VUPShionMod:OverloadFortress": {
+    "NAME": "Notfall Überladen",
+    "DESCRIPTION": "Behalte. NL Erhalte Blocken !VUPShionSecondM! mal soviel wie *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone. NL Verliere !M! *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone verbesserungen.",
+    "EXTENDED_DESCRIPTION": [
+      "(Erhalte !B! Blocken.)"
+    ]
+  },
+  "VUPShionMod:GravityImpact": {
+    "NAME": "Schwerkraft Einschlag",
+    "DESCRIPTION": "vup_shion_mod:Feure vup_shion_mod:Schwebende\u00a0Kanone. NL Füge !D! Schaden zu. NL Löse die passive Fähigkeit von *Schwerkraft vup_shion_mod:Schwebende\u00a0Kanone aus."
+  }
+}

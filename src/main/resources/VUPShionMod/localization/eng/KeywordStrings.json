@@ -35,7 +35,7 @@
     "NAMES": [
       "bleeding"
     ],
-    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding from Attacks this turn. NL It halves at the end of turn."
+    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding from Attacks. NL Its stack halves at the end of turn."
   },
   {
     "NAMES": [

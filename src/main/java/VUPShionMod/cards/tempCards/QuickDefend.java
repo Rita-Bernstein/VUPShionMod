@@ -28,7 +28,7 @@ public class QuickDefend extends AbstractVUPShionCard {
 
     public QuickDefend() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = this.block = 4;
+        this.baseBlock = this.block = 2;
         this.secondaryM = this.baseSecondaryM = 2;
         this.tags.add(CardTagsEnum.LOADED);
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);

@@ -33,7 +33,7 @@ public class UpgradedReleaseFormKuroisuPower extends AbstractShionPower {
     public void atEndOfTurn(boolean isPlayer) {
         AbstractCard c = new QuickScreen();
         c.upgrade();
-        addToBot(new MakeLoadedCardAction(c,this.amount));
+        addToBot(new MakeLoadedCardAction(true,c,this.amount));
 //        addToBot(new MakeTempCardInDrawPileAction(c, this.amount, false, true, false));
     }
 

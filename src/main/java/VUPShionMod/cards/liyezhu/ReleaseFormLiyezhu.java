@@ -29,9 +29,9 @@ public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p, this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuCPower(p, this.secondaryM), this.secondaryM));
-        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuBPower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p, this.magicNumber), 0));
+        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuCPower(p, this.secondaryM), 0));
+        addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuBPower(p, 1), 0));
     }
 
     @Override

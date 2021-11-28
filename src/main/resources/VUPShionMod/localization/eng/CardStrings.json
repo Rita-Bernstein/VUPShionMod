@@ -56,8 +56,8 @@
   },
   "VUPShionMod:EnduranceInitiation": {
     "NAME": "Endure",
-    "DESCRIPTION": "Shuffle 1 copy of the chosen card into your draw pile. NL Grant vup_shion_mod:Loading\u00a0Complete. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Shuffle 2 copies of the chosen card into your draw pile and discard pile. NL Grant vup_shion_mod:Loading\u00a0Complete. NL Exhaust."
+    "DESCRIPTION": "Create 1 copy of the chosen card and shuffle it into your draw pile. NL Grant it vup_shion_mod:Loading\u00a0Complete. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Create 2 copies of the chosen card and shuffle one each into your draw pile and discard pile. NL Grant both vup_shion_mod:Loading\u00a0Complete. NL Exhaust."
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "Ready Posture",
@@ -186,7 +186,7 @@
   },
   "VUPShionMod:TimeBomb": {
     "NAME": "Delayed Explosion",
-    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Deal !D! damage to ALL enemies. NL Exhaust Grave."
+    "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Deal !D! damage to ALL enemies. NL Exhaust. Grave."
   },
   "VUPShionMod:HourHand": {
     "NAME": "Hour Hand",
@@ -206,8 +206,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "Cloyce Form",
-    "DESCRIPTION": "At the end of your turn, put !M! *Quick *Skim on the top of your draw pile.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, put !M! *Quick *Skim+ on the top of your draw pile."
+    "DESCRIPTION": "Unstackable. At the end of your turn, put !M! *Quick *Skim on the top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Unstackable. At the end of your turn, put !M! *Quick *Skim+ on the top of your draw pile."
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "Time Warp",
@@ -271,8 +271,8 @@
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "Minami Form",
-    "DESCRIPTION": " Ethereal. Whenever you trigger the passive ability of your vup_shion_mod:Funnel by cards, trigger !M! additional time.",
-    "UPGRADE_DESCRIPTION": "Whenever you trigger the passive ability of your vup_shion_mod:Funnel by cards, trigger !M! additional time."
+    "DESCRIPTION": "Unstackable. Ethereal. Whenever you trigger the passive ability of your vup_shion_mod:Funnel by cards, trigger !M! additional time.",
+    "UPGRADE_DESCRIPTION": "Unstackable. Whenever you trigger the passive ability of your vup_shion_mod:Funnel by cards, trigger !M! additional time."
   },
   "VUPShionMod:AnestheticReagent": {
     "NAME": "Anesthetics",
@@ -289,10 +289,10 @@
   },
   "VUPShionMod:GravityLoading": {
     "NAME": "Zero Gravity",
-    "DESCRIPTION": "Trigger the passive ability of *Gravity vup_shion_mod:Funnel for each enemy. NL Apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "Trigger the passive ability of *Gravity vup_shion_mod:Funnel to ALL enemies. NL Apply !M! Weak to ALL enemies."
   },
   "VUPShionMod:FirePower": {
-    "NAME": "All Out！",
+    "NAME": "All Out!",
     "DESCRIPTION": "Shoot a massive blast with vup_shion_mod:Funnel. Deal damage !M! times as much as vup_shion_mod:Total\u00a0Upgrade to ALL enemies. NL Set vup_shion_mod:Total\u00a0Upgrade to 0 this turn.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
@@ -340,7 +340,7 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "Liyezhu Form",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain again at the start of each of your turn. NL At the end of your turn, deal damage equal to !VUPShionSecondM! + vup_shion_mod:Hyperdimensional\u00a0Link to ALL enemies."
+    "DESCRIPTION": "Unstackable. Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link, gain again at the start of each of your turn. NL At the end of your turn, deal damage equal to !VUPShionSecondM! + vup_shion_mod:Hyperdimensional\u00a0Link to ALL enemies."
   },
   "VUPShionMod:Awaken": {
     "NAME": "Resuscitate",
@@ -380,7 +380,7 @@
     "DESCRIPTION": "Put !M! vup_shion_mod:Loading\u00a0Complete cards from your draw pile into your hand."
   },
   "VUPShionMod:GravityCharging": {
-    "NAME": "Gravitational Recharge",
+    "NAME": "Gravity Recharge",
     "DESCRIPTION": "Retain. NL Every time you trigger vup_shion_mod:Loading\u00a0Complete, reduce the cost by 1. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel !M! times."
   },
   "VUPShionMod:QuickTrigger": {
@@ -396,6 +396,6 @@
   },
   "VUPShionMod:GravityImpact": {
     "NAME": "Gravity Impact",
-    "DESCRIPTION": "vup_shion_mod:Fire vup_shion_mod:Funnel. NL Deal !D! damage. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel."
+    "DESCRIPTION": "Deal !D! damage. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel."
   }
 }

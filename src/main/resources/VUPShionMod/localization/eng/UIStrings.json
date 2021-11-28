@@ -1,13 +1,13 @@
 {
   "VUPShionMod:ModSettings": {
     "TEXT": [
-      "Use simple card ui",
+      "Use simple card UI",
       "Disable title screen replacement."
     ]
   },
   "VUPShionMod:CharacterSelect": {
     "TEXT": [
-      "设置"
+      "Options"
     ]
   },
   "VUPShionMod:EnduranceInitiationAction": {
@@ -18,39 +18,39 @@
   },
   "VUPShionMod:UpgradeAndZeroCostAction": {
     "TEXT": [
-      "Select a card upgrade and set cost to 0"
+      "Select a card to upgrade and set its cost to 0."
     ]
   },
   "VUPShionMod:SelectCardToHandAction": {
     "TEXT": [
-      " NL Exhaust 。",
-      " Ethereal ."
+      " NL Exhaust.",
+      " Ethereal."
     ]
   },
   "VUPShionMod:AttackFromDiscardToHandAction": {
     "TEXT": [
-      "Add 2 Attacks to your hand"
+      "Add 2 Attacks into your hand."
     ]
   },
   "VUPShionMod:ChargeHelper": {
     "TEXT": [
-      "充能条",
-      "每当你打出 #y浮游炮 牌或获得 #y超维链接 时为其充能。 NL 满充能时对所有敌人造成 #b%d 点伤害并触发所有 #y浮游炮 的效果。 NL 然后失去所有充能。"
+      "Charge Bar",
+      "Charge Bar fills whenever you play #yFunnel cards or gain #yHyperdimensional #yLink. NL At full charge, lose all charge and deal #b%d damage as well as fire all #yFunnels to ALL enemies."
     ]
   },
   "VUPShionMod:VictoryScreen": {
     "TEXT": [
-      "没有后援的胜利",
-      "不依靠吊坠的力量获得胜利",
-      "新生",
-      "击败深空孽障"
+      "A Lone, Victorious",
+      "Victory against Plaga A Mundo without any asisstance.",
+      "Reborn",
+      "Defeat Plaga A Mundo."
     ]
   },
   "VUPShionMod:ReadAction": {
     "TEXT": [
-      "Add a copy of a card to your hand.",
+      "Add a copy of a card into your hand.",
       "Add copies of ",
-      " cards to your hand."
+      " cards into your hand."
     ]
   }
 }

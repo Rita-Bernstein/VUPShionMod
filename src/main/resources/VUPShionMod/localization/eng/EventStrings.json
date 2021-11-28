@@ -44,7 +44,7 @@
       "Hmmm...Coming soon, no rush!"
     ],
     "OPTIONS": [
-      "[Feed] #rLose 50 gold. #g75%：Obtain a Cloyce card.",
+      "[Feed] #rLose 50 gold. #g75%：Obtain a #yCloyce card.",
       "[Locked] No less than 50 gold is required.",
       "[Gu!]",
       "[Leave]"
@@ -54,11 +54,11 @@
     "NAME": "A Message",
     "DESCRIPTIONS": [
 	  "As you are about to depart, a message come to you.",
-      "It's from Anastasia. Again, war is bringing @total@ @devastation@ to a planet, which may not hold out much longer."
+      "It's from Anastasia. Again, war is bringing @total@ @devastation@ to a planet, just as it always."
     ],
     "OPTIONS": [
       "[Proceed] ...",
-      "[Do Something About It] Battle Ahead. #gObtain Anastasia Droplet.",
+      "[Not This Time!] Battle Ahead. #gObtain Anastasia Droplet.",
       "[Return Home]",
       "[Locked] Further Update Awaits."
     ]

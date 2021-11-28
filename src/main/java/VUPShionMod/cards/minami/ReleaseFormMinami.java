@@ -25,7 +25,8 @@ public class ReleaseFormMinami extends AbstractMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ReleaseFormMinamiPower(p, this.magicNumber),this.magicNumber));
+
+        addToBot(new ApplyPowerAction(p, p, new ReleaseFormMinamiPower(p, this.magicNumber), 0));
     }
 
     public AbstractCard makeCopy() {

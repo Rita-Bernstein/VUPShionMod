@@ -1,6 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,7 +37,7 @@ public class DoubleCardPower extends AbstractShionPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (!card.purgeOnUse && this.amount > 0) {
-            this.flash();
+            flash();
             AbstractMonster m = null;
             if (action.target != null) {
                 m = (AbstractMonster) action.target;
@@ -54,9 +55,10 @@ public class DoubleCardPower extends AbstractShionPower {
 
             tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
-            --this.amount;
+
+            this.amount--;
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+                addToTop(new ReducePowerAction(this.owner, this.owner, POWER_ID,1));
             }
         }
 

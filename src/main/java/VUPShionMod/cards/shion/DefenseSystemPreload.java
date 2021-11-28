@@ -20,7 +20,7 @@ public class DefenseSystemPreload extends AbstractShionCard {
 
     public DefenseSystemPreload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 3;
+        this.baseMagicNumber = this.magicNumber = 2;
         this.cardsToPreview = new QuickDefend();
     }
 
@@ -28,6 +28,7 @@ public class DefenseSystemPreload extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
@@ -36,7 +37,7 @@ public class DefenseSystemPreload extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeLoadedCardAction(new QuickDefend(),this.magicNumber));
+        addToBot(new MakeLoadedCardAction(this.upgraded,new QuickDefend(),this.magicNumber));
 //        addToBot(new MakeTempCardInDrawPileAction(new QuickDefend(), this.magicNumber, true, true, false));
     }
 }

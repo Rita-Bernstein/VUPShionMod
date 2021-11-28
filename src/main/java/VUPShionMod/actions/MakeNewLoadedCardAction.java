@@ -2,6 +2,7 @@ package VUPShionMod.actions;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.QuickTriggerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class MakeNewLoadedCardAction extends AbstractGameAction {
     private AbstractCard card;
@@ -43,7 +45,7 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if (AbstractDungeon.player.hasPower(QuickTriggerPower.POWER_ID)) {
-            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID,1));
+            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID, 1));
             for (int i = 0; i < this.amount; i++) {
                 AbstractCard t = card.makeSameInstanceOf();
                 t.tags.add(CardTagsEnum.LOADED);
@@ -53,6 +55,14 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
                 AbstractDungeon.player.useCard(t,
                         AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
                 AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
+
+            }
+
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof AbstractShionPower) {
+                    for (int i = 0; i < this.amount; i++)
+                        ((AbstractShionPower) p).onTriggerLoaded();
+                }
             }
 
         } else {

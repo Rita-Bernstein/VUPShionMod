@@ -207,8 +207,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "姿态解放-克洛伊斯",
-    "DESCRIPTION": "每回合结束时，将 !M! 张 *快速筛选 加入抽牌堆顶部。",
-    "UPGRADE_DESCRIPTION": "每回合结束时，将 !M! 张 *快速筛选+ 加入抽牌堆顶部。"
+    "DESCRIPTION": "效果不能叠加。 NL 每回合结束时，将 !M! 张 *快速筛选 加入抽牌堆顶部。",
+    "UPGRADE_DESCRIPTION": "效果不能叠加。 NL 每回合结束时，将 !M! 张 *快速筛选+ 加入抽牌堆顶部。"
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "时空扭曲",
@@ -272,8 +272,8 @@
   },
   "VUPShionMod:ReleaseFormMinami": {
     "NAME": "姿态解放-南小棉",
-    "DESCRIPTION": " 虚无 。 NL 使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。",
-    "UPGRADE_DESCRIPTION": "使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。"
+    "DESCRIPTION": " 虚无 ,效果不能叠加。 NL 使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。",
+    "UPGRADE_DESCRIPTION": "效果不能叠加。 NL 使用卡牌触发 vup_shion_mod:浮游炮 的被动效果时，额外触发 !M! 次。"
   },
   "VUPShionMod:AnestheticReagent": {
     "NAME": "麻醉试剂",
@@ -341,7 +341,7 @@
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
     "NAME": "姿态解放-黎夜竹",
-    "DESCRIPTION": "立即且你的每回合开始时获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 !VUPShionSecondM! + vup_shion_mod:超维链接 层数 的伤害。"
+    "DESCRIPTION": "能力效果不可叠加。 NL 立即且你的每回合开始时获得 !M! 层 vup_shion_mod:超维链接 。 NL 每回合结束时对所有敌人造成 !VUPShionSecondM! + vup_shion_mod:超维链接 层数 的伤害。"
   },
   "VUPShionMod:Awaken": {
     "NAME": "唤醒",

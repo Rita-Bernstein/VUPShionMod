@@ -28,6 +28,7 @@ public class AttackSystemPreload extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
@@ -36,7 +37,7 @@ public class AttackSystemPreload extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeLoadedCardAction(new QuickAttack(),this.magicNumber));
+        addToBot(new MakeLoadedCardAction(upgraded,new QuickAttack(),this.magicNumber));
 //        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(), this.magicNumber, true, true, false));
     }
 }

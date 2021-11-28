@@ -2,7 +2,7 @@
   "VUPShionMod:HyperdimensionalLinksPower": {
     "NAME": "Hyperdimensional Link",
     "DESCRIPTIONS": [
-      "Whenever you end combat with #b10 or more #yHyperdimensional #yLinks, a random card will be upgraded."
+      "Whenever you end combat with #b10 or more #yHyperdimensional #yLink, a random card will be upgraded."
     ]
   },
   "VUPShionMod:PursuitPower": {
@@ -16,7 +16,7 @@
     "NAME": "Scouting Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
-      " #yFunnel cards, upgrade #yScouting #yFunnel by #b1 .",
+      " #yFunnel cards, upgrade #yScouting #yFunnel by #b1.",
       "Task Completed!"
     ]
   },
@@ -24,7 +24,7 @@
     "NAME": "Gravity Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
-      " #yFunnel cards, upgrade #yGravity #yFunnel by #b1 .",
+      " #yFunnel cards, upgrade #yGravity #yFunnel by #b1.",
       "Task Completed!"
     ]
   },
@@ -32,7 +32,7 @@
     "NAME": "Pursuing Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
-      " #yFunnel cards, upgrade #yPursuing #yFunnel by #b1 .",
+      " #yFunnel cards, upgrade #yPursuing #yFunnel by #b1.",
       "Task Completed!"
     ]
   },
@@ -40,7 +40,7 @@
     "NAME": "Defense Unfold",
     "DESCRIPTIONS": [
       "This turn, gain #b",
-      " Block whenever you play a card"
+      " #yBlock whenever you play a card."
     ]
   },
   "VUPShionMod:AnastasiaCorePower": {
@@ -71,7 +71,7 @@
   "VUPShionMod:BleedingPower": {
     "NAME": "Bleeding",
     "DESCRIPTIONS": [
-      "Takes #b%d additional damage from Attacks this turn. NL This status halves at the end of turn."
+      "Takes #b%d additional damage from Attacks this turn. NL Its stack halves at the end of turn."
     ]
   },
   "VUPShionMod:DenergizePower": {
@@ -95,27 +95,27 @@
     ]
   },
   "VUPShionMod:EnhancedWeaponPower": {
-    "NAME": "Intensified",
+    "NAME": "Accelerate",
     "DESCRIPTIONS": [
-      "Whenever you trigger #yLoading #yComplete ,draw #b%d card(s)."
+      "Whenever you trigger #yLoading #yComplete, draw #b%d card(s)."
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuPower": {
     "NAME": "Liberated Form: Liyezhu",
     "DESCRIPTIONS": [
-      "At the start of your turn,gain #b%d #yHyperdimensional, gain again at the start of each of your turn. "
+      "At the start of your turn, gain #b%d #yHyperdimensional #yLink, gain again at the start of each of your turn. "
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuBPower": {
     "NAME": "Liberated Form: Liyezhu",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink to All Enemies."
+      "At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink to ALL enemies."
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuCPower": {
     "NAME": "Liberated Form: Liyezhu",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage #b%d to All Enemies."
+      "At the end of your turn, deal #b%d damage to ALL enemies."
     ]
   },
   "VUPShionMod:LockOnPower": {
@@ -139,13 +139,13 @@
   "VUPShionMod:AttackOrderGammaPower": {
     "NAME": "Order: Harrasing",
     "DESCRIPTIONS": [
-      "Damage dealt by #yFunnel each turn now also applies #b2 #yBleeding . NL Incompatible with other Orders."
+      "Damage dealt by #yFunnel each turn now also applies #b2 #yBleeding. NL Incompatible with other Orders."
     ]
   },
   "VUPShionMod:AttackOrderDeltaPower": {
     "NAME": "Order: Versatile",
     "DESCRIPTIONS": [
-      "Damage dealt by #yFunnel each turn now grants you equal #yBlock . NL Incompatible with other Orders."
+      "Damage dealt by #yFunnel each turn now grants you equal #yBlock. NL Incompatible with other Orders."
     ]
   },
   "VUPShionMod:AttackOrderSpecialPower": {
@@ -163,7 +163,7 @@
   "VUPShionMod:CrackOfTimePower": {
     "NAME": "Fissure in Time",
     "DESCRIPTIONS": [
-      "Whenever you trigger #yLoading #yComplete , gain #b%d #yBlock ."
+      "Whenever you trigger #yLoading #yComplete, gain #b%d #yBlock."
     ]
   },
   "VUPShionMod:AnticoagulationPower": {
@@ -173,27 +173,27 @@
     ]
   },
   "VUPShionMod:LoseFinFunnelUpgradePower": {
-    "NAME": "All Out",
+    "NAME": "All Out!",
     "DESCRIPTIONS": [
-      "For the next #b%d turns, #yTotal #yUpgrade is set to 0."
+      "#yTotal #yUpgrade is set to 0."
     ]
   },
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
     "NAME": "Holy Coffin",
     "DESCRIPTIONS": [
-      "Whenever you gain or lose #yHyperdimensional #yLink , gain #b%d Block ."
+      "Whenever you gain or lose #yHyperdimensional #yLink, gain #b%d #yBlock."
     ]
   },
   "VUPShionMod:HolyCoffinReleasePower": {
-    "NAME": "Suspended",
+    "NAME": "Liberation",
     "DESCRIPTIONS": [
-      "Whenever you trigger #yLoading #yComplete ,gain #b%d #yHyperdimensional #yLink."
+      "Whenever you trigger #yLoading #yComplete, gain #b%d #yHyperdimensional #yLink."
     ]
   } ,
   "VUPShionMod:LoseHyperdimensionalLinksPower": {
     "NAME": "Lose Hyperdimensional Link",
     "DESCRIPTIONS": [
-      "At the start of the next #b%d turns, lose ALL #yHyperdimensional #yLink ."
+      "At the start of the next #b%d turns, lose ALL #yHyperdimensional #yLink."
     ]
   },
   "VUPShionMod:DoubleCardPower": {
@@ -223,13 +223,13 @@
   "VUPShionMod:LifeLinkPower": {
     "NAME": "Life Link",
     "DESCRIPTIONS": [
-      "Next turn, revives with full HP if other enemies are still alive."
+      "Next turn, revives at full HP if other enemies are still alive."
     ]
   },
   "VUPShionMod:GravitoniumPower": {
     "NAME": "Gravitonium",
     "DESCRIPTIONS": [
-      " #yBlock gained from #yGravity #yFunnel is converted into #yShield."
+      "#yBlock gained from #yGravity #yFunnel is converted into #yShield."
     ]
   },
   "VUPShionMod:QuickTriggerPower": {
@@ -253,7 +253,7 @@
   "VUPShionMod:IterativePower": {
     "NAME": "Iterative Evolution",
     "DESCRIPTIONS": [
-      "At the start of turn, grab a random number to determine whether to buff themselves or to Debuff you."
+      "At the start of each turn, grab a random number to determine whether to buff themselves or to debuff you."
     ]
   }
 }

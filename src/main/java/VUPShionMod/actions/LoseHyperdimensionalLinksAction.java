@@ -35,8 +35,11 @@ public class LoseHyperdimensionalLinksAction extends AbstractGameAction {
             addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, HyperdimensionalLinksPower.POWER_ID, amount));
 
         AbstractPower p = AbstractDungeon.player.getPower(HolyCoffinSinkingSpiritPower.POWER_ID);
-        if (p != null)
+        if (p != null){
+            p.flash();
             addToBot(new GainBlockAction(AbstractDungeon.player, p.amount));
+        }
+
 
         this.isDone = true;
     }

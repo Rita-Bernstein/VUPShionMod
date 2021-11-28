@@ -1,0 +1,20 @@
+{
+  "VUPShionMod:InvestigationFinFunnel": {
+    "NAME": "偵查浮游炮",
+    "DESCRIPTION": [
+      "當前強化等級： #b%d 。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害並觸發被動效果。 NL #y被動： 給予 #b%d 層 #y流血 。 NL （除 #y初始等級 外，每 #b3 級提升被動效果。）"
+    ]
+  },
+  "VUPShionMod:GravityFinFunnel": {
+    "NAME": "重力浮游炮",
+    "DESCRIPTION": [
+      "當前強化等級： #b%d 。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害並觸發被動效果。 NL #y被動： 給予你 #b%d 點 #y格擋 。 NL （除 #y初始等級 外，每 #b2 級提升被動效果。）"
+    ]
+  },
+  "VUPShionMod:PursuitFinFunnel": {
+    "NAME": "追擊浮游炮",
+    "DESCRIPTION": [
+      "當前強化等級： #b%d 。 NL #y主動： 造成傷害，如果造成了未被格擋的傷害，觸發被動效果。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害。如果造成了未被格擋的傷害，觸發被動效果。 NL #y被動： 給予 #b%d 層 #y追擊 。 NL （除 #y初始等級 外，每 #b2 級提升被動效果。）"
+    ]
+  }
+}

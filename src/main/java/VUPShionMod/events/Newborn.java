@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.monsters.city.Champ;
+import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.TrueVictoryRoom;
@@ -53,6 +54,7 @@ public class Newborn extends AbstractImageEvent {
                 break;
             case COMPLETE:
                 if (buttonPressed == 0){
+                    AbstractDungeon.player.loseRelic(MarkOfTheBloom.ID);
                     fightBoss();
                 } else{
                     leave();

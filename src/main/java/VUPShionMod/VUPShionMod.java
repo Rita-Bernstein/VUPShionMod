@@ -480,7 +480,9 @@ public class VUPShionMod implements
         switch (Settings.language) {
             case ZHS:
                 return Settings.language;
-            case GRE:
+            case DEU:
+                return Settings.language;
+            case ZHT:
                 return Settings.language;
             default:
                 return Settings.GameLanguage.ENG;

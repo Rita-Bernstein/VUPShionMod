@@ -1,0 +1,56 @@
+{
+  "VUPShionMod:ModSettings": {
+    "TEXT": [
+      "使用簡潔卡牌界面",
+      "禁用替換主界面"
+    ]
+  },
+  "VUPShionMod:CharacterSelect": {
+    "TEXT": [
+      "設置"
+    ]
+  },
+  "VUPShionMod:EnduranceInitiationAction": {
+    "TEXT": [
+      "複製",
+      " NL vup_shion_mod:加載完成 消耗 。"
+    ]
+  },
+  "VUPShionMod:UpgradeAndZeroCostAction": {
+    "TEXT": [
+      "選擇牌升級並將耗能變為0"
+    ]
+  },
+  "VUPShionMod:SelectCardToHandAction": {
+    "TEXT": [
+      " NL 消耗 。",
+      " 虛無 。"
+    ]
+  },
+  "VUPShionMod:AttackFromDiscardToHandAction": {
+    "TEXT": [
+      "將2張加載攻擊牌加入手牌"
+    ]
+  },
+  "VUPShionMod:ChargeHelper": {
+    "TEXT": [
+      "充能條",
+      "每當你打出 #y浮游炮 牌或獲得 #y超維連結 時為其充能。 NL 滿充能時對所有敵人造成 #b%d 點傷害並觸發所有 #y浮游炮 的效果。 NL 然後失去所有充能。"
+    ]
+  },
+  "VUPShionMod:VictoryScreen": {
+    "TEXT": [
+      "沒有後援的勝利",
+      "不依靠吊墜的力量獲得勝利",
+      "新生",
+      "擊敗深空孽障"
+    ]
+  },
+  "VUPShionMod:ReadAction": {
+    "TEXT": [
+      "將一張牌複製到手牌",
+      "將",
+      " 張牌複製到手牌"
+    ]
+  }
+}

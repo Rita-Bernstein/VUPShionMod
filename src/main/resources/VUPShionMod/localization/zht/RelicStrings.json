@@ -1,0 +1,49 @@
+{
+  "VUPShionMod:DimensionSplitterAria": {
+    "NAME": "詠嘆調型維度裂解者",
+    "FLAVOR": "「你，已經不被需要了呢。」——光芒凝聚，由至高之天而來的審判即將落下。",
+    "DESCRIPTIONS": [
+      "你的回合開始時，對隨機一名敵人造成 #b%d ( #b2 + #y強化等級 x3)點傷害。 #y斬殺 時，獲得 [E] 並重複上述操作。 NL 每進入下一階段，獲得強化。 NL 當前強化等級： #b%d 。",
+      "天基武器將在一層不啟動 NL "
+    ]
+  },
+  "VUPShionMod:KuroisuDetermination": {
+    "NAME": "阿龍の決意",
+    "FLAVOR": "未來總是擴散而無法預測的。但只要決心依舊，過去就會幫助你走向更有利的未來。",
+    "DESCRIPTIONS": [
+      " #y右鍵使用 ：額外獲得一個回合，結束你的回合。 （僅能起效 #b%d 次）",
+      "這件遺物已經耗盡。"
+    ]
+  },
+  "VUPShionMod:Croissant": {
+    "NAME": "龍角麵包",
+    "FLAVOR": "「天吶，這是何等美味……等等，這形狀？這不是你同伴頭上的……什麼？你說不是？真的不是？你確定？」",
+    "DESCRIPTIONS": [
+      "拾起時，回復 #b30 點生命。"
+    ]
+  },
+  "VUPShionMod:OpticalCamouflage": {
+    "NAME": "光學迷彩",
+    "FLAVOR": "所言皆虛，所見皆幻，所聽皆妄，所為皆夢。",
+    "DESCRIPTIONS": [
+      "每場戰鬥開始時獲得 #b1 層 #y無實體 。"
+    ]
+  },
+  "VUPShionMod:Sniperscope": {
+    "NAME": "狙擊鏡",
+    "FLAVOR": "感受到了嗎？那就是你生命流逝的聲音。沒關係，只是一瞬間，不會很疼的。",
+    "DESCRIPTIONS": [
+      "每場戰鬥開始時，給予生命值最低的敵人增加 #b1 層 #y易傷 。 NL 有 #y易傷 狀態的敵人受到的傷害增加 #b75% 而非 #b50%。"
+    ]
+  },
+  "VUPShionMod:AnastasiaNecklace": {
+    "NAME": "Anastasia吊墜",
+    "FLAVOR": "一切的進化蘊含在這枚吊墜之中，這是Anastasia的傑作，也是給予資格之人的試煉。",
+    "DESCRIPTIONS": [
+      "每場戰鬥開始時獲得 #y壁壘 。",
+      "獲得 #b200 點最大生命。 NL 每回合開始時獲得 #b200 點 #y格擋 。 NL 每場戰鬥開始時獲得 #y壁壘 。 NL 每回合開始時獲得 [E] 。",
+      " NL 所有 #y浮游炮 獲得 #b9 層強化。 NL #y追擊 或 #y流血 個體死亡時，將 #y追擊 或 #y流血 轉移到其他敵人上。 NL #y浮游炮 將對所有敵人攻擊。",
+      "Anastasia吊墜（覺醒）"
+    ]
+  }
+}

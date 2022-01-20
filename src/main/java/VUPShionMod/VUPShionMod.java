@@ -13,6 +13,7 @@ import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
 import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
 import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
 import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.BreakAppointment;
 import VUPShionMod.events.CroissantEvent;
 import VUPShionMod.events.LostEquipment;
@@ -343,7 +344,14 @@ public class VUPShionMod implements
         logger.info("========================= 开始加载人物 =========================");
 
         logger.info(Shion.charStrings.NAMES[1]);
-        BaseMod.addCharacter(new Shion(Shion.charStrings.NAMES[1], AbstractPlayerEnum.VUP_Shion), assetPath("characters/Shion/Button.png"), assetPath("characters/Shion/portrait.png"), AbstractPlayerEnum.VUP_Shion);
+        BaseMod.addCharacter(new Shion(Shion.charStrings.NAMES[1], AbstractPlayerEnum.VUP_Shion),
+                assetPath("characters/Shion/Button.png"),
+                assetPath("characters/Shion/portrait.png"),
+                AbstractPlayerEnum.VUP_Shion);
+        BaseMod.addCharacter(new WangChuan(WangChuan.charStrings.NAMES[1], AbstractPlayerEnum.WangChuan),
+                assetPath("characters/WangChuan/Button.png"),
+                assetPath("characters/WangChuan/portrait.png"),
+                AbstractPlayerEnum.WangChuan);
     }
 
     @Override

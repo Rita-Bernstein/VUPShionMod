@@ -13,6 +13,7 @@ import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.modules.EnergyOrbShion;
+import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
 import VUPShionMod.relics.DimensionSplitterAria;
 import basemod.abstracts.CustomPlayer;
@@ -32,21 +33,19 @@ import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbBlue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static VUPShionMod.VUPShionMod.Shion_Color;
+import static VUPShionMod.VUPShionMod.WangChuan_Color;
 
 public class WangChuan extends CustomPlayer {
-    public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("Shion"));
-
+    public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("WangChuan"));
     public static final int ENERGY_PER_TURN = 3;
     public static final int START_HP = 88;
     public static final int START_GOLD = 99;
-    public static boolean firstAttackAnimation = true;
-//    private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
-
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
@@ -67,7 +66,7 @@ public class WangChuan extends CustomPlayer {
     };
 
     public WangChuan(String name, PlayerClass setClass) {
-        super(name, setClass, new EnergyOrbShion(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
+        super(name, setClass,  new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
 
@@ -88,26 +87,6 @@ public class WangChuan extends CustomPlayer {
         this.state.setAnimation(3, "Idle_Weapon3", true).setTimeScale(2.0f);
     }
 
-    @Override
-    public void preBattlePrep() {
-        super.preBattlePrep();
-        VUPShionMod.loadFinFunnels();
-
-        List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-        if (funnelList.isEmpty()) {
-            funnelList.add(new InvestigationFinFunnel(VUPShionMod.investigationFinFunnelLevel));
-            funnelList.add(new PursuitFinFunnel(VUPShionMod.pursuitFinFunnelLevel));
-            funnelList.add(new GravityFinFunnel(VUPShionMod.gravityFinFunnelLevel));
-        }
-        AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
-        AbstractDungeon.actionManager.addToBottom(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, funnelList.get(VUPShionMod.activeFinFunnel)));
-    }
-
-    @Override
-    public void onVictory() {
-        VUPShionMod.saveFinFunnels();
-        super.onVictory();
-    }
 
     public String getPortraitImageName() {
         return null;
@@ -181,7 +160,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return CardColorEnum.VUP_Shion_LIME;
+        return CardColorEnum.WangChuan_LIME;
     }
 
     @Override
@@ -191,7 +170,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public Color getCardTrailColor() {
-        return Shion_Color.cpy();
+        return WangChuan_Color.cpy();
     }
 
     @Override
@@ -222,18 +201,18 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public AbstractPlayer newInstance() {
-        return new WangChuan(this.name, AbstractPlayerEnum.VUP_Shion);
+        return new WangChuan(this.name, AbstractPlayerEnum.WangChuan);
     }
 
     @Override
     public String getSpireHeartText() {
-        return CardCrawlGame.languagePack.getEventString(VUPShionMod.makeID("SpireHeart_Shion")).DESCRIPTIONS[0];
+        return CardCrawlGame.languagePack.getEventString(VUPShionMod.makeID("SpireHeart_WangChuan")).DESCRIPTIONS[0];
     }
 
 
     @Override
     public Color getSlashAttackColor() {
-        return Color.PURPLE;
+        return Color.GOLD;
     }
 
 
@@ -244,7 +223,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public Color getCardRenderColor() {
-        return Settings.PURPLE_COLOR;
+        return Settings.GOLD_COLOR;
     }
 
 
@@ -254,80 +233,6 @@ public class WangChuan extends CustomPlayer {
         };
     }
 
-//    public void damage(DamageInfo info) {
-//        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-//            this.state.setAnimation(0, "Hit_Body", false).setTimeScale(4.0f);
-//            this.state.setAnimation(1, "Hit_Weapon1", false).setTimeScale(4.0f);
-//            this.state.setAnimation(2, "Hit_Weapon2", false).setTimeScale(4.0f);
-//            this.state.setAnimation(3, "Hit_Weapon3", false).setTimeScale(4.0f);
-//            this.state.addAnimation(0, "Idle_body", true, 0.0F).setTimeScale(2.0f);
-//            this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
-//            this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
-//            this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
-//        }
-//
-//        super.damage(info);
-//    }
-
-
-//    @Override
-//    public void renderPlayerImage(SpriteBatch sb) {
-//        super.renderPlayerImage(sb);
-//        boolean hasPower = false;
-//        for (AbstractPower power : this.powers) {
-//            if (power instanceof DelayAvatarPower)
-//                hasPower = true;
-//        }
-//
-//        if (hasPower) {
-//            sb.setColor(Color.WHITE);
-//            sb.setBlendFunction(770, 771);
-//            sb.draw(this.avatar, this.hb.x - this.avatar.getWidth() * 0.5f + 300.0F * Settings.scale,
-//                    this.hb.y - this.avatar.getHeight() * 0.5f + 120.0F * Settings.scale,
-//                    this.avatar.getWidth() * 0.5f, this.avatar.getHeight() * 0.5f, this.avatar.getWidth(), this.avatar.getHeight(),
-//                    0.6f * Settings.scale, 0.6f * Settings.scale, 0.0F, 0, 0, this.avatar.getWidth(), this.avatar.getHeight(), false, false);
-//
-//        }
-//    }
-
-
-
-//    @Override
-//    public void playDeathAnimation() {
-//        int count = MathUtils.random(3);
-//        switch (count) {
-//            case 0:
-//                CardCrawlGame.sound.play("SHION_14");
-//                break;
-//            case 1:
-//                CardCrawlGame.sound.play("SHION_15");
-//                break;
-//            case 2:
-//                CardCrawlGame.sound.play("SHION_17");
-//                break;
-//            case 3:
-//                CardCrawlGame.sound.play("SHION_18");
-//                break;
-//        }
-//
-//        super.playDeathAnimation();
-//    }
-
-//    @Override
-//    public void addPower(AbstractPower powerToApply) {
-//        super.addPower(powerToApply);
-//        if (powerToApply instanceof StrengthPower && powerToApply.amount > 0) {
-//            int count = MathUtils.random(1);
-//            switch (count) {
-//                case 0:
-//                    CardCrawlGame.sound.play("SHION_7");
-//                    break;
-//                case 1:
-//                    CardCrawlGame.sound.play("SHION_12");
-//                    break;
-//            }
-//        }
-//    }
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {
@@ -337,14 +242,5 @@ public class WangChuan extends CustomPlayer {
         panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene3.png"));
         return panels;
     }
-
-//    @Override
-//    public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
-//        super.useCard(c, monster, energyOnUse);
-//
-//        if (c.hasTag(CardTagsEnum.LOADED)){
-//            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
-//        }
-//    }
 }
 

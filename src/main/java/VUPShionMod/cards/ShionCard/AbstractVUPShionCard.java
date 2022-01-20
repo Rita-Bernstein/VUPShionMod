@@ -123,9 +123,6 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         }
     }
 
-    public int getModifyAlterDamage() {
-        return this.secondaryM;
-    }
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {

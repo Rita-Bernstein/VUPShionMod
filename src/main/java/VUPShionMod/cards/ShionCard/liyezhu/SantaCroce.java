@@ -1,0 +1,55 @@
+package VUPShionMod.cards.ShionCard.liyezhu;
+
+import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.GainHyperdimensionalLinksAction;
+import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.powers.HyperdimensionalLinksPower;
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+public class SantaCroce extends AbstractLiyezhuCard {
+    public static final String ID = VUPShionMod.makeID("SantaCroce");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz08.png");
+    private static final int COST = 1;
+    public static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
+
+    public SantaCroce() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
+        this.baseBlock = 0;
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
+//        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new GainBlockAction(p, this.block));
+        this.rawDescription = DESCRIPTION;
+        initializeDescription();
+    }
+
+
+    @Override
+    public void applyPowers() {
+        this.baseBlock = this.magicNumber * this.secondaryM;
+        if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID))
+            this.baseBlock += AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount * this.secondaryM;
+        super.applyPowers();
+        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        initializeDescription();
+    }
+
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            upgradeSecondM(1);
+        }
+    }
+
+}

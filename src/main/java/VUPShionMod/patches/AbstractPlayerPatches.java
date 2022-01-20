@@ -1,21 +1,14 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.actions.TriggerAllFinFunnelAction;
 import VUPShionMod.actions.TurnTriggerAllFinFunnelAction;
-import VUPShionMod.cards.AbstractVUPShionCard;
-import VUPShionMod.cards.anastasia.EnergyReserve;
+import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.powers.AbstractShionPower;
-import VUPShionMod.powers.CrackOfTimePower;
-import VUPShionMod.util.ChargeHelper;
-import VUPShionMod.util.Shield;
+import VUPShionMod.helpers.ChargeHelper;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;

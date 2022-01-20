@@ -1,17 +1,17 @@
 package VUPShionMod;
 
-import VUPShionMod.cards.*;
-import VUPShionMod.cards.anastasia.*;
-import VUPShionMod.cards.kuroisu.*;
-import VUPShionMod.cards.liyezhu.*;
-import VUPShionMod.cards.minami.*;
-import VUPShionMod.cards.optionCards.GravityFinFunnelUpgrade;
-import VUPShionMod.cards.optionCards.InvestigationFinFunnelUpgrade;
-import VUPShionMod.cards.optionCards.PursuitFinFunnelUpgrade;
-import VUPShionMod.cards.shion.*;
-import VUPShionMod.cards.tempCards.QuickAttack;
-import VUPShionMod.cards.tempCards.QuickDefend;
-import VUPShionMod.cards.tempCards.QuickScreen;
+import VUPShionMod.cards.ShionCard.*;
+import VUPShionMod.cards.ShionCard.anastasia.*;
+import VUPShionMod.cards.ShionCard.kuroisu.*;
+import VUPShionMod.cards.ShionCard.liyezhu.*;
+import VUPShionMod.cards.ShionCard.minami.*;
+import VUPShionMod.cards.ShionCard.optionCards.GravityFinFunnelUpgrade;
+import VUPShionMod.cards.ShionCard.optionCards.InvestigationFinFunnelUpgrade;
+import VUPShionMod.cards.ShionCard.optionCards.PursuitFinFunnelUpgrade;
+import VUPShionMod.cards.ShionCard.shion.*;
+import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
+import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
+import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
 import VUPShionMod.character.Shion;
 import VUPShionMod.events.BreakAppointment;
 import VUPShionMod.events.CroissantEvent;
@@ -31,12 +31,10 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
 import basemod.eventUtil.AddEventParams;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -48,7 +46,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.LizardTail;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import org.apache.logging.log4j.LogManager;
@@ -75,6 +72,7 @@ public class VUPShionMod implements
     public static final String AUTHOR = "Rita";
     public static final String DESCRIPTION = "";
     public static final Color Shion_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
+    public static final Color WangChuan_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
     public static final Logger logger = LogManager.getLogger(VUPShionMod.class.getSimpleName());
     public static String MOD_ID = "VUPShionMod";
     public static Properties VUPShionDefaults = new Properties();
@@ -115,6 +113,18 @@ public class VUPShionMod implements
                 assetPath("img/cardui/Shion/1024/bg_attack_lime.png"),
                 assetPath("img/cardui/Shion/1024/bg_skill_lime.png"),
                 assetPath("img/cardui/Shion/1024/bg_power_lime.png"),
+                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
+                assetPath("img/cardui/Shion/512/card_lime_small_orb.png"));
+
+        BaseMod.addColor(CardColorEnum.WangChuan_LIME,
+                WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color,
+                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
+                assetPath("img/cardui/Shion/512/card_lime_orb_w.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
                 assetPath("img/cardui/Shion/512/card_lime_small_orb.png"));
 

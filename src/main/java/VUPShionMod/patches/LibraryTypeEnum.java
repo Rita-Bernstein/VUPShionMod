@@ -6,4 +6,6 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 public class LibraryTypeEnum {
 	@SpireEnum
 	public static CardLibrary.LibraryType VUP_Shion_LIME;
+	@SpireEnum
+	public static CardLibrary.LibraryType WangChuan_LIME;
 }

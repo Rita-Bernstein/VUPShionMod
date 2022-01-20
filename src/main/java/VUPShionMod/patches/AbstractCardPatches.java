@@ -1,11 +1,10 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.cards.AbstractVUPShionCard;
+import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CtBehavior;
 
 import java.lang.reflect.Field;

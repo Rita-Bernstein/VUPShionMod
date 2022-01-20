@@ -3,6 +3,7 @@ package VUPShionMod.effects;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.Settings;
@@ -34,14 +35,14 @@ public class FinFunnelSelectedEffect extends AbstractGameEffect {
 
     @Override
     public void render(SpriteBatch sb) {
-        sb.setColor(1, 1, 1, 1);
+        sb.setColor(Color.WHITE);
         if (AbstractDungeon.rs != AbstractDungeon.RenderScene.EVENT && !AbstractDungeon.isScreenUp)
-            sb.draw(this.img, this.cX - 48.0F, this.cY - 48.0F,
-            24.0f,24.0f,
+            sb.draw(this.img, this.cX - 48.0F + 24.0F * Settings.scale, this.cY - 48.0F + 24.0F * Settings.scale,
+            48.0f,48.0f,
                     48.0f,48.0f,
-                    Settings.scale,Settings.scale,
+                    2.0f*Settings.scale,2.0f*Settings.scale,
                     0.0f,0,0,
-                    48,48,
+                    96,96,
                     false,false
             );
 

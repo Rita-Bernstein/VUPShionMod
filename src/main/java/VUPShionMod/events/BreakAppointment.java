@@ -1,20 +1,13 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.kuroisu.BlackHand;
-import VUPShionMod.relics.Croissant;
-import VUPShionMod.relics.OpticalCamouflage;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class BreakAppointment extends AbstractImageEvent {
     public static final String ID = VUPShionMod.makeID("BreakAppointment");

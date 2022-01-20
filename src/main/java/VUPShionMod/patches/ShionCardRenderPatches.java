@@ -1,9 +1,9 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.AbstractVUPShionCard;
-import VUPShionMod.cards.anastasia.FinFunnelUpgrade;
-import VUPShionMod.util.CardTypeHelper;
+import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
+import VUPShionMod.helpers.CardTypeHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

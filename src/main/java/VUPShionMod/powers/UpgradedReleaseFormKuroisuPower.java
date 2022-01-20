@@ -1,14 +1,11 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.actions.MakeLoadedCardAction;
-import VUPShionMod.cards.tempCards.QuickScreen;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import VUPShionMod.VUPShionMod;
 
 public class UpgradedReleaseFormKuroisuPower extends AbstractShionPower {

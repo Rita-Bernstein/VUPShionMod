@@ -481,6 +481,20 @@ public class VUPShionMod implements
         cards.add(new SeverPetal());
         cards.add(new AethereScindo());
         cards.add(new GladiiInfiniti());
+        cards.add(new Guard());
+        cards.add(new LunaMergo());
+        cards.add(new Reflect());
+        cards.add(new Sharpen());
+        cards.add(new FlawlessParry());
+        cards.add(new Moonstrider());
+        cards.add(new SubLuna());
+        cards.add(new SeverCurrent());
+        cards.add(new WeatherEye());
+        cards.add(new Focus());
+        cards.add(new OffensiveAdvance());
+        cards.add(new EbbAndFlow());
+
+
 
 
 

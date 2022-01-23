@@ -515,7 +515,7 @@
   "VUPShionMod:LunaMergo": {
     "NAME": "调息",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 失去1点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去1点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 获得2点 vup_shion_mod:剑意 。 NL 失去1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "月读"
     ]

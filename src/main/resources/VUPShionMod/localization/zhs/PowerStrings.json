@@ -255,5 +255,24 @@
     "DESCRIPTIONS": [
       "每回合开始时， #y深空孽障 将随机对自己 #y增益 或给予你 #y负面效果 。"
     ]
+  },
+  "VUPShionMod:StiffnessPower": {
+    "NAME": "硬直",
+    "DESCRIPTIONS": [
+      "在 #y硬直 大于等于 #b4 层时，结束你的回合并移除本效果。"
+    ]
+  },
+  "VUPShionMod:CorGladiiPower": {
+    "NAME": "剑意",
+    "DESCRIPTIONS": [
+      " #y剑意 能提高部分攻击牌的伤害。"
+    ]
+  },
+  "VUPShionMod:MagiamObruorPower": {
+    "NAME": "魔能过载",
+    "DESCRIPTIONS": [
+      "下回合失去 [E] 。",
+      "下回合失去 #b%d [E] 。"
+    ]
   }
 }

@@ -466,6 +466,21 @@ public class VUPShionMod implements
 
 //        忘川
         cards.add(new HiltBash());
+        cards.add(new Slide());
+        cards.add(new PreExecution());
+        cards.add(new Sheathe());
+        cards.add(new InTheBlink());
+
+//        忘川-拔刀系
+        cards.add(new GlandesMagicae());
+        cards.add(new StrideSlash());
+        cards.add(new OnrushingTip());
+        cards.add(new VertexGladii());
+        cards.add(new SeverWrist());
+        cards.add(new SeverAnkle());
+        cards.add(new SeverPetal());
+        cards.add(new AethereScindo());
+        cards.add(new GladiiInfiniti());
 
 
 

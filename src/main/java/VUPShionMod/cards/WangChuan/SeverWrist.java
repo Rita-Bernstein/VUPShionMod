@@ -1,45 +1,46 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.CorGladiiPower;
+import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class HiltBash extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("HiltBash");
+public class SeverWrist extends AbstractWCCard {
+    public static final String ID = VUPShionMod.makeID("SeverWrist");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
 
-    public HiltBash() {
+    public SeverWrist() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
+        this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.baseSecondaryM = this.secondaryM = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (upgraded)
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            for(int i = 0;i < this.secondaryM ;i++){
+                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                addToBot(new ApplyPowerAction(m,p,new WeakPower(m,this.magicNumber,false)));
+            }
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(-1);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.name = EXTENDED_DESCRIPTION[0];
-            this.initializeTitle();
-            this.initializeDescription();
+            upgradeDamage(3);
         }
     }
 }

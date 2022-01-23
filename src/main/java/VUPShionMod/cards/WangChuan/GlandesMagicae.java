@@ -1,45 +1,40 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HiltBash extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("HiltBash");
+public class GlandesMagicae extends AbstractWCCard {
+    public static final String ID = VUPShionMod.makeID("GlandesMagicae");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
-    public HiltBash() {
+    public GlandesMagicae() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.baseDamage = 9;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (upgraded)
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(-1);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.name = EXTENDED_DESCRIPTION[0];
-            this.initializeTitle();
-            this.initializeDescription();
+            upgradeDamage(3);
         }
     }
 }

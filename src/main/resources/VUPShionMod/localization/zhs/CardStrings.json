@@ -433,8 +433,8 @@
   },
   "VUPShionMod:InTheBlink": {
     "NAME": "拔刀斩",
-    "DESCRIPTION": "能被多次 升级 。",
-    "UPGRADE_DESCRIPTION": "不能被 升级 。",
+    "DESCRIPTION": "能被多次 升级 。 NL ",
+    "UPGRADE_DESCRIPTION": "不能被 升级 。 NL ",
     "EXTENDED_DESCRIPTION": [
       "拔刀前斩",
       "拔刀一闪",
@@ -446,10 +446,11 @@
       "霹雳一闪·六连",
       "霹雳一闪·七连",
       "造成 !M! + vup_shion_mod:剑意 的伤害。 NL ",
-      "对所有敌人造成 !M! + vup_shion_mod:剑意 的伤害。 NL ",
-      "对所有敌人造成（ !M! + vup_shion_mod:剑意 ）x vup_shion_mod:剑意 的伤害。 NL ",
+      "对所有敌人造成 NL !M! + vup_shion_mod:剑意 的伤害。 NL ",
+      "对所有敌人造成 NL （ !M! + vup_shion_mod:剑意 ） !VUPShionSecondM! 倍的伤害。 NL ",
       "失去一点 vup_shion_mod:剑意 。",
       "获得一点 vup_shion_mod:硬直 。",
+      "获得两点 vup_shion_mod:硬直 。",
       "获得三点 vup_shion_mod:硬直 。",
       "获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL ",
       "获得10点 vup_shion_mod:剑意 。 NL ",
@@ -458,8 +459,7 @@
   },
   "VUPShionMod:GlandesMagicae": {
     "NAME": "序言：魔弹",
-    "DESCRIPTION": "造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 下回合失去 [E] 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:StrideSlash": {
     "NAME": "踏步斩",
@@ -479,8 +479,8 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斩",
-    "DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 失去1点 vup_shion_mod:剑意 。 NL 获得2层 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得2点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 失去1点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得2点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
       "（获得 !B! 点 格挡 。）"
@@ -506,7 +506,7 @@
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
     "DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害X+2次。 NL 获得 !M! 层 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害X+3次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。"
+    "UPGRADE_DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害X+3次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。"
   },
   "VUPShionMod:Guard": {
     "NAME": "守势",

@@ -7,6 +7,7 @@ import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.cards.ShionCard.shion.Strafe;
 import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
+import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -100,17 +101,17 @@ public class WangChuan extends CustomPlayer {
 
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(TacticalLayout.ID);
-        retVal.add(FinFunnelUpgrade.ID);
-        retVal.add(Strafe.ID);
+        retVal.add(HiltBash.ID);
+        retVal.add(HiltBash.ID);
+        retVal.add(HiltBash.ID);
+        retVal.add(HiltBash.ID);
+        retVal.add(Slide.ID);
+        retVal.add(Slide.ID);
+        retVal.add(Slide.ID);
+        retVal.add(Slide.ID);
+        retVal.add(PreExecution.ID);
+        retVal.add(Sheathe.ID);
+        retVal.add(InTheBlink.ID);
 
 
         return retVal;

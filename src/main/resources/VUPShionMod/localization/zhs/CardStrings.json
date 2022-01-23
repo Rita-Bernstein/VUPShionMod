@@ -503,7 +503,7 @@
     "DESCRIPTION": "造成上次造成的攻击伤害。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
     "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害两次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。"
   },
-  "VUPShionMod:GladiiInfinity": {
+  "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
     "DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害X+2次。 NL 获得 !M! 层 vup_shion_mod:剑意 。",
     "UPGRADE_DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害X+3次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。"
@@ -539,8 +539,8 @@
   },
   "VUPShionMod:SubLuna": {
     "NAME": "月隐",
-    "DESCRIPTION": "获得1层 无实体 。 NL 下回合获得 [E] [E] [E] 。 NL 失去 !M! 点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得1层 无实体 。 NL 下回合获得 [E] [E] [E] 。 NL 失去 !M! 点 vup_shion_mod:硬直 。"
+    "DESCRIPTION": "获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] [E] 。 ",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] [E] 。 "
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "断水",
@@ -640,7 +640,7 @@
   },
   "VUPShionMod:VampireForm": {
     "NAME": "突然想起来自己是个吸血鬼",
-    "DESCRIPTION": "造成未被 格挡 的伤害是，回复 !M! 点生命。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成未被 格挡 的伤害是，回复 !M! 点生命。"
+    "DESCRIPTION": "造成未被 格挡 的伤害时，回复 !M! 点生命。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成未被 格挡 的伤害时，回复 !M! 点生命。"
   }
 }

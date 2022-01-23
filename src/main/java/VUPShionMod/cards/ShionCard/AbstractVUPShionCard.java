@@ -151,7 +151,7 @@ public abstract class AbstractVUPShionCard extends CustomCard {
             float x = -108.0f;
             float y = 200.0f;
 
-            if (VUPShionMod.useSimpleOrb) {
+            if (VUPShionMod.useSimpleOrb || this.color == CardColorEnum.WangChuan_LIME) {
                 if (this instanceof FinFunnelUpgrade)
                     darkOrbRenderHelper(sb, orb_g, x, y);
                 else

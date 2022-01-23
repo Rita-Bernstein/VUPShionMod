@@ -12,6 +12,7 @@ import VUPShionMod.cards.ShionCard.shion.*;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
 import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
 import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
+import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.BreakAppointment;
@@ -73,7 +74,7 @@ public class VUPShionMod implements
     public static final String AUTHOR = "Rita";
     public static final String DESCRIPTION = "";
     public static final Color Shion_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
-    public static final Color WangChuan_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
+    public static final Color WangChuan_Color = new Color(0.203F, 0.176F, 0.168F, 1.0F);
     public static final Logger logger = LogManager.getLogger(VUPShionMod.class.getSimpleName());
     public static String MOD_ID = "VUPShionMod";
     public static Properties VUPShionDefaults = new Properties();
@@ -122,12 +123,12 @@ public class VUPShionMod implements
                 assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
                 assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
                 assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
-                assetPath("img/cardui/Shion/512/card_lime_orb_w.png"),
+                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
                 assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
                 assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
                 assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
-                assetPath("img/cardui/Shion/512/card_lime_small_orb.png"));
+                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
 
     }
 
@@ -460,6 +461,13 @@ public class VUPShionMod implements
         cards.add(new InvestigationFinFunnelUpgrade());
         cards.add(new GravityFinFunnelUpgrade());
         cards.add(new PursuitFinFunnelUpgrade());
+
+
+
+//        忘川
+        cards.add(new HiltBash());
+
+
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);

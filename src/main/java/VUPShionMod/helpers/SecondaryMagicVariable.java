@@ -16,9 +16,6 @@ public class SecondaryMagicVariable extends DynamicVariable {
         if (card instanceof AbstractVUPShionCard) {
             AbstractVUPShionCard asc = (AbstractVUPShionCard) card;
             return asc.isSecondaryMModified;
-        } else if (card instanceof AbstractWCCard) {
-            AbstractWCCard asc = (AbstractWCCard) card;
-            return asc.isSecondaryMModified;
         } else
             return false;
     }
@@ -27,9 +24,6 @@ public class SecondaryMagicVariable extends DynamicVariable {
     public int value(AbstractCard card) {
         if (card instanceof AbstractVUPShionCard) {
             AbstractVUPShionCard asc = (AbstractVUPShionCard) card;
-            return asc.secondaryM;
-        } else if (card instanceof AbstractWCCard) {
-            AbstractWCCard asc = (AbstractWCCard) card;
             return asc.secondaryM;
         } else
             return 0;
@@ -40,9 +34,6 @@ public class SecondaryMagicVariable extends DynamicVariable {
         if (card instanceof AbstractVUPShionCard) {
             AbstractVUPShionCard asc = (AbstractVUPShionCard) card;
             return asc.baseSecondaryM;
-        } else if (card instanceof AbstractWCCard) {
-            AbstractWCCard asc = (AbstractWCCard) card;
-            return asc.baseSecondaryM;
         } else {
             return 0;
         }
@@ -52,9 +43,6 @@ public class SecondaryMagicVariable extends DynamicVariable {
     public boolean upgraded(AbstractCard card) {
         if (card instanceof AbstractVUPShionCard) {
             AbstractVUPShionCard asc = (AbstractVUPShionCard) card;
-            return asc.upgradeSecondaryM;
-        } else if (card instanceof AbstractWCCard) {
-            AbstractWCCard asc = (AbstractWCCard) card;
             return asc.upgradeSecondaryM;
         } else {
             return false;

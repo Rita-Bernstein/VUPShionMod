@@ -27,4 +27,7 @@ public class CardTagsEnum {
 
     @SpireEnum
     public static AbstractCard.CardTags MINAMI_CARD;
+
+    @SpireEnum
+    public static AbstractCard.CardTags WANGCHUAN_CARD;
 }

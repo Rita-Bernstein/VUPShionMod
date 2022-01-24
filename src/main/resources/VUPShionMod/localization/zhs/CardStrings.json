@@ -573,7 +573,8 @@
   },
   "VUPShionMod:FullBloom": {
     "NAME": "满开",
-    "DESCRIPTION": "每回合开始时 NL 获得 !M! [E] 。"
+    "DESCRIPTION": "每回合开始时 NL 获得 !M! [E] 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 每回合开始时 NL 获得 !M! [E] 。"
   },
   "VUPShionMod:BombardaMagica": {
     "NAME": "魔连弹",
@@ -585,15 +586,16 @@
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "四之章：荆棘",
-    "DESCRIPTION": " 虚无 。 NL 对所有敌人造成7(X+1)点伤害并给予 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": " 虚无 。 NL 给予对所有敌人7X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": " 虚无 。 NL 给予对所有敌人10X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "终章：热寂",
-    "DESCRIPTION": "每回合失去 !M! [E] 。 NL 不能打出技能牌。 NL !VUPShionSecondM! 回合后消灭所有敌人。"
+    "DESCRIPTION": "每回合失去 !M! [E] 。 NL 不能打出 *技能牌 。 NL !VUPShionSecondM! 回合后消灭所有敌人。"
   },
   "VUPShionMod:HeliumLuxque": {
     "NAME": "九之章：氦闪",
-    "DESCRIPTION": "下回合开始时对所有敌人造成 !D! 点伤害。 NL vup_shion_mod:魔能过载 3。"
+    "DESCRIPTION": "下回合开始时对所有敌人造成 !D! 点伤害。 NL vup_shion_mod:魔能过载 !VUPShionSecondM! 。"
   },
   "VUPShionMod:Skip": {
     "NAME": "跳读",
@@ -615,12 +617,13 @@
   },
   "VUPShionMod:AnimaSpiritusque": {
     "NAME": "七之章：复苏",
-    "DESCRIPTION": "下回合获得 !M! [E] 。 NL 获得5层再生 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 下回合获得 !M! [E] 。 NL 获得5层再生 。"
+    "DESCRIPTION": "下回合获得 !M! [E] 。 NL 获得5层 *再生 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 下回合获得 !M! [E] 。 NL 获得5层 *再生 。"
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：觉醒",
-    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 层 vup_shion_mod:剑意 。"
+    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 层 vup_shion_mod:剑意 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 触发 vup_shion_mod:魔能过载 时，变为获得 !M! 层 vup_shion_mod:剑意 。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：乐园",

@@ -493,7 +493,27 @@ public class VUPShionMod implements
         cards.add(new Focus());
         cards.add(new OffensiveAdvance());
         cards.add(new EbbAndFlow());
+        cards.add(new PetalsFall());
+        cards.add(new Poise());
+        cards.add(new FullBloom());
 
+//        忘川-魔法系
+        cards.add(new BombardaMagica());
+        cards.add(new AfflictioBellumque());
+        cards.add(new RosaSpinaque());
+        cards.add(new MorsLibraque());
+        cards.add(new Skip());
+        cards.add(new DistantiaAbsensque());
+        cards.add(new VitaNaturaque());
+        cards.add(new CorLapisque());
+        cards.add(new AnimaSpiritusque());
+        cards.add(new MensVirtusque());
+
+//        忘川-支援
+        cards.add(new SupportShion());
+        cards.add(new BlockThis());
+        cards.add(new Replenish());
+        cards.add(new VampireForm());
 
 
 

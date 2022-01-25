@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class AethereScindo extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("AethereScindo");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc13.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;

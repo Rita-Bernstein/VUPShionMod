@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 public class ElysiumSpesque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("ElysiumSpesque");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc41.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

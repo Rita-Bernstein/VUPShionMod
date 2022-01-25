@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LunaMergo extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("LunaMergo");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc16.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -39,7 +39,9 @@ public class LunaMergo extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
-            upgradeBaseCost(1);
+            this.cost = 1;
+            this.costForTurn = 1;
+            this.upgradedCost = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             initializeDescription();

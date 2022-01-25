@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 
 public class AfflictioBellumque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("AfflictioBellumque");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc31.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -54,6 +54,7 @@ public class AfflictioBellumque extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
+            upgradeDamage(4);
         }
     }
 }

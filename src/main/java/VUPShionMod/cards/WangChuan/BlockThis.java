@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BlockThis extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("BlockThis");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc43.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

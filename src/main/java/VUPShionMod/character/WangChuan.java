@@ -45,8 +45,8 @@ import static VUPShionMod.VUPShionMod.WangChuan_Color;
 public class WangChuan extends CustomPlayer {
     public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("WangChuan"));
     public static final int ENERGY_PER_TURN = 3;
-    public static final int START_HP = 88;
-    public static final int START_GOLD = 99;
+    public static final int START_HP = 50;
+    public static final int START_GOLD = 1;
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",

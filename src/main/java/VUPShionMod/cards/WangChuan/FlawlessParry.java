@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 
 public class FlawlessParry extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("Guard");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String ID = VUPShionMod.makeID("FlawlessParry");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc19.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

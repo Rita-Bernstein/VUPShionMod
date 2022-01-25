@@ -631,7 +631,7 @@
   },
   "VUPShionMod:SupportShion": {
     "NAME": "火力支援：紫音",
-    "DESCRIPTION": "等于所有敌人造成 !D! 点伤害。 NL 消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 消耗 。"
   },
   "VUPShionMod:BlockThis": {
     "NAME": "这里就由你来挡住！",

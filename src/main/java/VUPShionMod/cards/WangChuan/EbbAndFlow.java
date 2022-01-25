@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.powers.DrawPower;
 
 public class EbbAndFlow extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("EbbAndFlow");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc26.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;

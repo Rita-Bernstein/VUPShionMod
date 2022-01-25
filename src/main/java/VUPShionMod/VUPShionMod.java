@@ -502,12 +502,14 @@ public class VUPShionMod implements
         cards.add(new AfflictioBellumque());
         cards.add(new RosaSpinaque());
         cards.add(new MorsLibraque());
+        cards.add(new HeliumLuxque());
         cards.add(new Skip());
         cards.add(new DistantiaAbsensque());
         cards.add(new VitaNaturaque());
         cards.add(new CorLapisque());
         cards.add(new AnimaSpiritusque());
         cards.add(new MensVirtusque());
+        cards.add(new ElysiumSpesque());
 
 //        忘川-支援
         cards.add(new SupportShion());

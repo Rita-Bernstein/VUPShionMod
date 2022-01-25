@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HeliumLuxque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("HeliumLuxque");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/PlaceHolder.png");  // todo
+    public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc34.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
@@ -20,7 +20,7 @@ public class HeliumLuxque extends AbstractWCCard {
 
     public HeliumLuxque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 30;
+        this.baseDamage = 30;
         this.secondaryM = this.baseSecondaryM = 3;
     }
 
@@ -33,7 +33,7 @@ public class HeliumLuxque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(8);
+            upgradeDamage(8);
             upgradeSecondM(-1);
         }
     }

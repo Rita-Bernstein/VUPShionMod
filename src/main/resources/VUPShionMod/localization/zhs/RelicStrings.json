@@ -45,5 +45,19 @@
       " NL 所有 #y浮游炮 获得 #b9 层强化。 NL #y追击 或 #y流血 个体死亡时，将 #y追击 或 #y流血 转移到其他敌人上。 NL #y浮游炮 将对所有敌人攻击。",
       "Anastasia吊坠（觉醒）"
     ]
+  },
+  "VUPShionMod:Nebula": {
+    "NAME": "支援系统：星云",
+    "FLAVOR": "Anastasia通用型支援装备，装备了基本的能量护盾和推进装置。",
+    "DESCRIPTIONS": [
+      "每回合开始时获得获得 #b3 点 #y格挡 并失去 #b1 点 #y硬直 。"
+    ]
+  },
+  "VUPShionMod:Protostar": {
+    "NAME": "支援系统：星核",
+    "FLAVOR": "在星云型的基础上加装了灵能护盾发生器，并增强了推进器功率。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时获得 #b2 层 #y缓冲 和 #y敏捷 并失去 #b2 点 #y硬直 。"
+    ]
   }
 }

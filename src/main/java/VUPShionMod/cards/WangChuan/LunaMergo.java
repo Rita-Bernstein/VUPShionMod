@@ -39,13 +39,26 @@ public class LunaMergo extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
-            this.cost = 1;
-            this.costForTurn = 1;
-            this.upgradedCost = true;
+            upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             initializeDescription();
             initializeTitle();
         }
+    }
+
+    @Override
+    protected void upgradeBaseCost(int newBaseCost) {
+        int diff = this.costForTurn - this.cost;
+        this.cost = newBaseCost;
+        if (this.costForTurn >= 0) {
+            this.costForTurn = this.cost + diff;
+        }
+
+        if (this.costForTurn < 0) {
+            this.costForTurn = 0;
+        }
+
+        this.upgradedCost = true;
     }
 }

@@ -45,7 +45,6 @@ public class AbstractAtlasGameEffect extends AbstractGameEffect {
         layerAnimation.flipX = false;
         layerAnimation.flipY = false;
 
-        System.out.println(atlas.getRegions().size);
         ArrayList<Frame> frames = new ArrayList<>();
         for (int i = 0; i < atlas.getRegions().size; i++) {
             Frame frame = new Frame();

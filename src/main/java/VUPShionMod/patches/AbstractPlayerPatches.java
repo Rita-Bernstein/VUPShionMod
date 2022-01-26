@@ -6,6 +6,7 @@ import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.helpers.ChargeHelper;
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -144,13 +145,40 @@ public class AbstractPlayerPatches {
             method = "damage"
     )
     public static class OnUnblockDamagePatch {
-        @SpireInsertPatch(rloc = 61)
-        public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info) {
+        @SpireInsertPatch(rloc = 61,localvars = {"damageAmount"})
+        public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info,int damageAmount) {
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p instanceof AbstractShionPower) {
-                    ((AbstractShionPower) p).onUnblockDamage(info, _instance);
+                    ((AbstractShionPower) p).monsterAfterOnAttack(info, _instance,damageAmount);
                 }
             }
+
+//            for(AbstractCard card : AbstractDungeon.player.hand.group){
+//                if(card instanceof AbstractVUPShionCard){
+//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
+//                }
+//            }
+//
+//            for(AbstractCard card : AbstractDungeon.player.discardPile.group){
+//                if(card instanceof AbstractVUPShionCard){
+//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
+//                }
+//            }
+//
+//            for(AbstractCard card : AbstractDungeon.player.drawPile.group){
+//                if(card instanceof AbstractVUPShionCard){
+//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
+//                }
+//            }
+//
+//            for(AbstractCard card : AbstractDungeon.player.exhaustPile.group){
+//                if(card instanceof AbstractVUPShionCard){
+//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
+//                }
+//            }
+
+
+
             return SpireReturn.Continue();
         }
     }

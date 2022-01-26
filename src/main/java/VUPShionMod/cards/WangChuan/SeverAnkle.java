@@ -28,9 +28,9 @@ public class SeverAnkle extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             for(int i = 0;i < this.secondaryM ;i++){
-                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 addToBot(new ApplyPowerAction(m,p,new VulnerablePower(m,this.magicNumber,false)));
             }
     }

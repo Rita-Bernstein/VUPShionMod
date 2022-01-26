@@ -483,7 +483,7 @@
     "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得2点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
-      "（获得 !B! 点 格挡 。）"
+      "（造成 !D! 点伤害，获得 !B! 点 格挡 。）"
     ]
   },
   "VUPShionMod:SeverWrist": {
@@ -496,17 +496,26 @@
   },
   "VUPShionMod:SeverPetal": {
     "NAME": "雁落斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得1点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。"
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得1点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "（造成 !D! 点伤害）"
+    ]
   },
   "VUPShionMod:AethereScindo": {
     "NAME": "燕反",
     "DESCRIPTION": "造成上次造成的攻击伤害。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害两次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。"
+    "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害两次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "（造成 !D! 点伤害）"
+    ]
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
     "DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害X+2次。 NL 获得 !M! 层 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害X+3次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。"
+    "UPGRADE_DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害X+3次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "（造成 !D! 点伤害）"
+    ]
   },
   "VUPShionMod:Guard": {
     "NAME": "守势",

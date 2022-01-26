@@ -38,7 +38,7 @@ public class Reflect extends AbstractWCCard {
         this.baseDamage = d;
         calculateCardDamage(m);
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
         initializeDescription();
 
     }
@@ -50,22 +50,22 @@ public class Reflect extends AbstractWCCard {
         this.baseDamage = d;
         super.applyPowers();
 
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription += cardStrings.UPGRADE_DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
+        this.rawDescription += UPGRADE_DESCRIPTION;
         initializeDescription();
     }
 
 
     public void onMoveToDiscard() {
-        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
         initializeDescription();
     }
 
 
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription += cardStrings.UPGRADE_DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
+        this.rawDescription += UPGRADE_DESCRIPTION;
         initializeDescription();
     }
 

@@ -17,6 +17,7 @@ import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
 import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.relics.Nebula;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -78,14 +79,12 @@ public class WangChuan extends CustomPlayer {
                 "VUPShionMod/characters/Shion/shoulder2.png",
                 "VUPShionMod/characters/Shion/shoulder.png",
                 "VUPShionMod/characters/Shion/corpse.png",
-                getLoadout(), 0.0F, -5.0F, 240.0F, 480.0F, new EnergyManager(ENERGY_PER_TURN));
+                getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
-        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 1.0f);
+        loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"), VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json"), 3.0f);
 
-        this.state.setAnimation(0, "Idle_body", true).setTimeScale(2.0f);
-        this.state.setAnimation(1, "Idle_Weapon1", true).setTimeScale(2.0f);
-        this.state.setAnimation(2, "Idle_Weapon2", true).setTimeScale(2.0f);
-        this.state.setAnimation(3, "Idle_Weapon3", true).setTimeScale(2.0f);
+        this.state.setAnimation(0, "idle", true);
+        this.state.setAnimation(1, "idle_YOFU", true);
     }
 
 
@@ -95,7 +94,7 @@ public class WangChuan extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(DimensionSplitterAria.ID);
+        retVal.add(Nebula.ID);
         return retVal;
     }
 

@@ -113,7 +113,6 @@ public class EnergyOrbShion extends CustomEnergyOrb {
                 sb.draw(this.noEnergyLayers[amount], current_x - 221.0F, current_y - 221.0F, 221.0F, 221.0F, 442.0F, 442.0F, ORB_IMG_SCALE, ORB_IMG_SCALE, 0.0f, 0, 0, 442, 442, false, false);
 
             sb.setColor(EnergyPanelPatches.levelColor);
-            System.out.println(EnergyPanelPatches.levelColor.a);
             sb.draw(this.noEnergyLayers[6], current_x - 221.0F, current_y - 221.0F, 221.0F, 221.0F, 442.0F, 442.0F, ORB_IMG_SCALE, ORB_IMG_SCALE, 0.0f, 0, 0, 442, 442, false, false);
         }
     }

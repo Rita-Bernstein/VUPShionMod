@@ -32,7 +32,7 @@ public class VampireFormPower extends AbstractShionPower {
     }
 
     @Override
-    public void onUnblockDamage(DamageInfo info, AbstractMonster m) {
+    public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount) {
         if (m != null)
             if (m.lastDamageTaken > 0) {
                 flash();

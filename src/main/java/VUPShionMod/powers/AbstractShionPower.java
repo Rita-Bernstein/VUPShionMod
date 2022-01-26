@@ -31,7 +31,7 @@ public class AbstractShionPower extends AbstractPower {
 
     public void onShuffle(){}
 
-    public void onUnblockDamage(DamageInfo info, AbstractMonster m){
+    public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount){
 
     }
 }

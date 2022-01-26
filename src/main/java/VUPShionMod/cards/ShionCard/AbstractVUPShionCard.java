@@ -13,12 +13,14 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 
 public abstract class AbstractVUPShionCard extends CustomCard {
@@ -134,12 +136,6 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         return card;
     }
 
-    public void postReturnToHand() {
-    }
-
-    public void onTriggerLoaded(){
-
-    }
 
     @SpireOverride
     protected void renderEnergy(SpriteBatch sb) {
@@ -242,4 +238,15 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         TextureAtlas.AtlasRegion cardImg = new TextureAtlas.AtlasRegion(cardTexture, 0, 0, cardTexture.getWidth(), cardTexture.getHeight());
         ReflectionHacks.setPrivate(this, AbstractCard.class, "jokePortrait", cardImg);
     }
+
+
+    public void postReturnToHand() {
+    }
+
+    public void onTriggerLoaded() {
+    }
+
+    public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m, int damageAmount) {
+    }
+
 }

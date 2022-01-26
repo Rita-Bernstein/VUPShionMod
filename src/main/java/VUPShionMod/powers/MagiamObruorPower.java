@@ -1,10 +1,13 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class MagiamObruorPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("MagiamObruorPower");
@@ -24,7 +27,13 @@ public class MagiamObruorPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new LoseEnergyAction(this.amount));
+        flash();
+        if (this.owner.hasPower(MensVirtusquePower.POWER_ID)) {
+            AbstractPower p = this.owner.getPower(MensVirtusquePower.POWER_ID);
+            p.flash();
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, p.amount * this.amount)));
+        } else
+            addToBot(new LoseEnergyAction(this.amount));
     }
 
     @Override

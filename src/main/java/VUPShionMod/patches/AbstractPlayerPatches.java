@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,7 +33,6 @@ public class AbstractPlayerPatches {
         public static SpireField<AbstractFinFunnel> activatedFinFunnel = new SpireField<>(() -> null);
         public static SpireField<ChargeHelper> chargeHelper = new SpireField<>(() -> new ChargeHelper());
     }
-
 
 
     @SpirePatch(
@@ -135,6 +135,23 @@ public class AbstractPlayerPatches {
                         ((AbstractVUPShionCard) card).onTriggerLoaded();
                 }
             }
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractMonster.class,
+            method = "damage"
+    )
+    public static class OnUnblockDamagePatch {
+        @SpireInsertPatch(rloc = 61)
+        public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info) {
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof AbstractShionPower) {
+                    ((AbstractShionPower) p).onUnblockDamage(info, _instance);
+                }
+            }
+            return SpireReturn.Continue();
         }
     }
 }

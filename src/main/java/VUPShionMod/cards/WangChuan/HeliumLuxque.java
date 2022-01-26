@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.HeliumLuxquePower;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,12 +21,13 @@ public class HeliumLuxque extends AbstractWCCard {
 
     public HeliumLuxque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 30;
+        this.magicNumber = this.baseMagicNumber = 30;
         this.secondaryM = this.baseSecondaryM = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new HeliumLuxquePower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, this.secondaryM)));
     }
 
@@ -33,7 +35,7 @@ public class HeliumLuxque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(8);
+            upgradeMagicNumber(8);
             upgradeSecondM(-1);
         }
     }

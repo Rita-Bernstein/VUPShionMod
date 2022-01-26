@@ -1,10 +1,12 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class CorGladiiPower extends AbstractShionPower {
@@ -23,6 +25,18 @@ public class CorGladiiPower extends AbstractShionPower {
         updateDescription();
     }
 
+    @Override
+    public void reducePower(int reduceAmount) {
+        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID))
+            return;
+        super.reducePower(reduceAmount);
+    }
+
+    @Override
+    public void onRemove() {
+        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID))
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(this.owner, this.amount)));
+    }
 
     @Override
     public void updateDescription() {

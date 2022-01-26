@@ -2,8 +2,10 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class AbstractShionPower extends AbstractPower {
@@ -28,4 +30,8 @@ public class AbstractShionPower extends AbstractPower {
     public void onTriggerLoaded(){}
 
     public void onShuffle(){}
+
+    public void onUnblockDamage(DamageInfo info, AbstractMonster m){
+
+    }
 }

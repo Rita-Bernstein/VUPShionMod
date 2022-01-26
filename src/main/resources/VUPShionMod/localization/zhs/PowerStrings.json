@@ -274,5 +274,59 @@
       "下回合失去 [E] 。",
       "下回合失去 #b%d [E] 。"
     ]
+  },
+  "VUPShionMod:VampireFormPower": {
+    "NAME": "突然想起来自己是个吸血鬼",
+    "DESCRIPTIONS": [
+      "每对敌人造成未被 #y格挡 的伤害时，回复 #b%d 点生命。"
+    ]
+  },
+  "VUPShionMod:MensVirtusquePower": {
+    "NAME": "八之章：觉醒",
+    "DESCRIPTIONS": [
+      "触发 #y魔能过载 时，变为获得 #b%d 点 #y剑意 。"
+    ]
+  },
+  "VUPShionMod:HeliumLuxquePower": {
+    "NAME": "九之章：氦闪",
+    "DESCRIPTIONS": [
+      "下回合开始时对所有敌人造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:NoSkillsPower": {
+    "NAME": "禁用技能",
+    "DESCRIPTIONS": [
+      "你不能打出 #y技能牌 。"
+    ]
+  },
+  "VUPShionMod:MorsLibraquePower": {
+    "NAME": "终章：热寂",
+    "DESCRIPTIONS": [
+      " #b%d 回合后消灭所有敌人。"
+    ]
+  },
+  "VUPShionMod:PoisePower": {
+    "NAME": "缄默",
+    "DESCRIPTIONS": [
+      "每回合开始时 NL 获得 #b%d 层 #y缓冲 。 NL 你不会获得 #y硬直 。"
+    ]
+  },
+  "VUPShionMod:PetalsFallPower": {
+    "NAME": "缄默",
+    "DESCRIPTIONS": [
+      "你不会失去 #y剑意 。"
+    ]
+  },
+  "VUPShionMod:GainCorGladiiPower": {
+    "NAME": "蓄气",
+    "DESCRIPTIONS": [
+      "每回合开始时 NL 获得 #b%d 层 #y剑意 。"
+    ]
+  },
+  "VUPShionMod:MoonstriderPower": {
+    "NAME": "月步",
+    "DESCRIPTIONS": [
+      "本回合每次受到攻击时，获得 #b%d 点 #y剑意 。"
+    ]
   }
 }

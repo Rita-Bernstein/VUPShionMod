@@ -1,11 +1,15 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.MorsLibraquePower;
+import VUPShionMod.powers.NoSkillsPower;
 import VUPShionMod.powers.StiffnessPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.EnergyDownPower;
 
 public class MorsLibraque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("MorsLibraque");
@@ -19,13 +23,15 @@ public class MorsLibraque extends AbstractWCCard {
     public MorsLibraque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM =this.baseSecondaryM = 5;
+        this.secondaryM = this.baseSecondaryM = 5;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ReducePowerAction(p,p, StiffnessPower.POWER_ID,this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new EnergyDownPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new NoSkillsPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new MorsLibraquePower(p, this.secondaryM)));
+
     }
 
     @Override

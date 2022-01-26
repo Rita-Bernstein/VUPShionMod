@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
@@ -26,11 +27,26 @@ public class StiffnessPower extends AbstractShionPower {
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-        if(this.amount >=4){
+    public void onInitialApplication() {
+        if (AbstractDungeon.player.hasPower(PoisePower.POWER_ID)) {
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, StiffnessPower.POWER_ID));
+            return;
+        }
+
+        if (this.amount >= 4) {
             addToBot(new PressEndTurnButtonAction());
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        if (AbstractDungeon.player.hasPower(PoisePower.POWER_ID))
+            return;
+        super.stackPower(stackAmount);
+        if (this.amount >= 4) {
+            addToBot(new PressEndTurnButtonAction());
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
     }
 

@@ -24,8 +24,8 @@ public class SupportShion extends AbstractWCCard {
     public SupportShion() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 28;
-        this.isMultiDamage =true;
-        this.exhaust =true;
+        this.isMultiDamage = true;
+        this.exhaust = true;
     }
 
     @Override

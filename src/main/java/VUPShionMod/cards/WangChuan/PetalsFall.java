@@ -1,7 +1,11 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.CorGladiiPower;
+import VUPShionMod.powers.GainCorGladiiPower;
+import VUPShionMod.powers.PetalsFallPower;
 import VUPShionMod.powers.StiffnessPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,11 +23,15 @@ public class PetalsFall extends AbstractWCCard {
     public PetalsFall() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
+        this.secondaryM = this.baseSecondaryM = 5;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        addToBot(new ApplyPowerAction(p,p,new GainCorGladiiPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PetalsFallPower(p)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
     }
 
     @Override

@@ -19,8 +19,8 @@ public class BlockThis extends AbstractWCCard {
     public BlockThis() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 18;
-        this.exhaust =true;
-        this.selfRetain =true;
+        this.exhaust = true;
+        this.selfRetain = true;
     }
 
     @Override

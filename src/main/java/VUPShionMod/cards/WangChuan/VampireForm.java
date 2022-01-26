@@ -2,6 +2,8 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.VampireFormPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,6 +25,7 @@ public class VampireForm extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new VampireFormPower(p, this.magicNumber)));
     }
 
     @Override
@@ -31,8 +34,8 @@ public class VampireForm extends AbstractWCCard {
             this.upgradeName();
             upgradeMagicNumber(1);
             upgradeBaseCost(1);
-            this.isInnate =true;
-            this.rawDescription =UPGRADE_DESCRIPTION;
+            this.isInnate = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -522,7 +522,8 @@
   },
   "VUPShionMod:Reflect": {
     "NAME": "反射",
-    "DESCRIPTION": " 保留 。 NL 获得 !B! 点 格挡 。 NL 造成 vup_shion_mod:剑意 的伤害。"
+    "DESCRIPTION": " 保留 。 NL 获得 !B! 点 格挡 。 NL 造成 vup_shion_mod:剑意 的伤害。",
+    "UPGRADE_DESCRIPTION": " NL (造成 !D! 点伤害)"
   },
   "VUPShionMod:Sharpen": {
     "NAME": "锐意",
@@ -595,7 +596,7 @@
   },
   "VUPShionMod:HeliumLuxque": {
     "NAME": "九之章：氦闪",
-    "DESCRIPTION": "下回合开始时对所有敌人造成 !D! 点伤害。 NL vup_shion_mod:魔能过载 !VUPShionSecondM! 。"
+    "DESCRIPTION": "下回合开始时对所有敌人造成 !M! 点伤害。 NL vup_shion_mod:魔能过载 !VUPShionSecondM! 。"
   },
   "VUPShionMod:Skip": {
     "NAME": "跳读",
@@ -622,8 +623,8 @@
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：觉醒",
-    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 层 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 触发 vup_shion_mod:魔能过载 时，变为获得 !M! 层 vup_shion_mod:剑意 。"
+    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：乐园",
@@ -643,7 +644,7 @@
   },
   "VUPShionMod:VampireForm": {
     "NAME": "突然想起来自己是个吸血鬼",
-    "DESCRIPTION": "造成未被 格挡 的伤害时，回复 !M! 点生命。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成未被 格挡 的伤害时，回复 !M! 点生命。"
+    "DESCRIPTION": "每对敌人造成未被 格挡 的伤害时，回复 !M! 点生命。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 每对敌人造成未被 格挡 的伤害时，回复 !M! 点生命。"
   }
 }

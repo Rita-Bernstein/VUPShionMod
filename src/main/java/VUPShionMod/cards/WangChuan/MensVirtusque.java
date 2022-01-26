@@ -1,7 +1,9 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.MensVirtusquePower;
 import VUPShionMod.powers.StiffnessPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,11 +20,12 @@ public class MensVirtusque extends AbstractWCCard {
 
     public MensVirtusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new MensVirtusquePower(p, this.magicNumber)));
     }
 
     @Override

@@ -1,10 +1,15 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.CorGladiiPower;
 import VUPShionMod.powers.StiffnessPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Reflect extends AbstractWCCard {
@@ -25,8 +30,45 @@ public class Reflect extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ReducePowerAction(p,p, StiffnessPower.POWER_ID,this.magicNumber));
+
+
+        int d = 0;
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+            d = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+        this.baseDamage = d;
+        calculateCardDamage(m);
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+
     }
+
+    public void applyPowers() {
+        int d = 0;
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+            d = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+        this.baseDamage = d;
+        super.applyPowers();
+
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription += cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
+    }
+
+
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription += cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
+    }
+
 
     @Override
     public void upgrade() {

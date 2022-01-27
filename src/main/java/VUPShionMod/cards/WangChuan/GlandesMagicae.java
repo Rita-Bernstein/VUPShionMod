@@ -13,7 +13,7 @@ public class GlandesMagicae extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("GlandesMagicae");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc06.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 0;

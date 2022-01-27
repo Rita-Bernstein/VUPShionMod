@@ -112,6 +112,7 @@ public class WangChuan extends CustomPlayer {
         retVal.add(PreExecution.ID);
         retVal.add(Sheathe.ID);
         retVal.add(InTheBlink.ID);
+        retVal.add(GlandesMagicae.ID);
 
 
         return retVal;

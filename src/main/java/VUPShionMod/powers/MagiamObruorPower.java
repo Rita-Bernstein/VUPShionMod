@@ -3,6 +3,7 @@ package VUPShionMod.powers;
 import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,6 +39,8 @@ public class MagiamObruorPower extends AbstractShionPower {
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, p.amount * this.amount)));
         } else
             addToBot(new LoseEnergyAction(this.amount));
+
+        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player,MagiamObruorPower.POWER_ID));
     }
 
     @Override

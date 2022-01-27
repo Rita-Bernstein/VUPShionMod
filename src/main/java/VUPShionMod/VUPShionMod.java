@@ -15,10 +15,7 @@ import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
-import VUPShionMod.events.BreakAppointment;
-import VUPShionMod.events.CroissantEvent;
-import VUPShionMod.events.LostEquipment;
-import VUPShionMod.events.Newborn;
+import VUPShionMod.events.*;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.PlagaAMundo;
@@ -265,12 +262,14 @@ public class VUPShionMod implements
         BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .playerClass(AbstractPlayerEnum.WangChuan)
                 .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .playerClass(AbstractPlayerEnum.WangChuan)
                 .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
                 .create());
 
@@ -281,6 +280,11 @@ public class VUPShionMod implements
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(Newborn.ID, Newborn.class) //Event ID//
+                //Event Character//
+                .spawnCondition(() -> AbstractDungeon.id.equals("TheEnding"))
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(Contact.ID, Contact.class) //Event ID//
                 //Event Character//
                 .spawnCondition(() -> AbstractDungeon.id.equals("TheEnding"))
                 .create());

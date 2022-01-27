@@ -26,8 +26,8 @@ Blink2
   offset: 0, 0
   index: -1
 F_hair
-  rotate: false
-  xy: 1563, 31
+  rotate: true
+  xy: 1370, 38
   size: 116, 123
   orig: 116, 123
   offset: 0, 0
@@ -41,14 +41,14 @@ LD_YOFO
   index: -1
 LD_light1
   rotate: true
-  xy: 1609, 221
+  xy: 1993, 111
   size: 97, 43
   orig: 97, 43
   offset: 0, 0
   index: -1
 LD_light1_1
-  rotate: false
-  xy: 1935, 167
+  rotate: true
+  xy: 1309, 64
   size: 109, 59
   orig: 109, 59
   offset: 0, 0
@@ -69,7 +69,7 @@ LD_light2_1
   index: -1
 LU_YOFO
   rotate: true
-  xy: 1384, 3
+  xy: 1860, 210
   size: 59, 174
   orig: 59, 174
   offset: 0, 0
@@ -82,8 +82,8 @@ LU_light1
   offset: 0, 0
   index: -1
 LU_light1_1
-  rotate: true
-  xy: 1656, 269
+  rotate: false
+  xy: 1860, 271
   size: 172, 77
   orig: 172, 77
   offset: 0, 0
@@ -131,15 +131,15 @@ L_arm2
   offset: 0, 0
   index: -1
 L_arm_peishi
-  rotate: false
-  xy: 1654, 172
+  rotate: true
+  xy: 1598, 28
   size: 68, 95
   orig: 68, 95
   offset: 0, 0
   index: -1
 L_bingjiao
   rotate: false
-  xy: 1939, 228
+  xy: 1495, 33
   size: 101, 121
   orig: 101, 121
   offset: 0, 0
@@ -181,21 +181,21 @@ Qunbai2
   index: -1
 RD_YOFU
   rotate: true
-  xy: 1735, 275
+  xy: 1656, 262
   size: 76, 202
   orig: 76, 202
   offset: 0, 0
   index: -1
 RD_light1
-  rotate: false
-  xy: 1744, 147
+  rotate: true
+  xy: 1958, 450
   size: 83, 51
   orig: 83, 51
   offset: 0, 0
   index: -1
 RD_light1_1
-  rotate: true
-  xy: 1681, 77
+  rotate: false
+  xy: 1695, 35
   size: 93, 61
   orig: 93, 61
   offset: 0, 0
@@ -215,36 +215,36 @@ RD_light2_1
   offset: 0, 0
   index: -1
 RU_YOFU
-  rotate: false
-  xy: 1958, 351
+  rotate: true
+  xy: 1809, 136
   size: 72, 182
   orig: 72, 182
   offset: 0, 0
   index: -1
 RU_light1
   rotate: false
-  xy: 1735, 200
+  xy: 1609, 187
   size: 198, 73
   orig: 198, 73
   offset: 0, 0
   index: -1
 RU_light1_1
   rotate: false
-  xy: 1735, 353
+  xy: 1602, 98
   size: 195, 87
   orig: 195, 87
   offset: 0, 0
   index: -1
 RU_light2
-  rotate: true
-  xy: 1309, 7
+  rotate: false
+  xy: 1799, 61
   size: 166, 73
   orig: 166, 73
   offset: 0, 0
   index: -1
 RU_light2_1
   rotate: false
-  xy: 1384, 64
+  xy: 1858, 350
   size: 177, 90
   orig: 177, 90
   offset: 0, 0
@@ -272,7 +272,7 @@ R_arm
   index: -1
 R_bingjiao
   rotate: true
-  xy: 1560, 4
+  xy: 1790, 34
   size: 25, 121
   orig: 25, 121
   offset: 0, 0
@@ -292,8 +292,8 @@ R_leg
   offset: 0, 0
   index: -1
 R_meimao
-  rotate: false
-  xy: 1932, 432
+  rotate: true
+  xy: 1799, 161
   size: 24, 8
   orig: 24, 8
   offset: 0, 0
@@ -352,5 +352,12 @@ mawei
   xy: 1525, 793
   size: 227, 391
   orig: 227, 391
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1656, 340
+  size: 200, 100
+  orig: 200, 100
   offset: 0, 0
   index: -1

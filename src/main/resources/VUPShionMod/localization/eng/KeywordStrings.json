@@ -55,5 +55,35 @@
       "shield"
     ],
     "DESCRIPTION": "Prevents damage. Does not fade at the end of turn."
+  },
+  {
+    "NAMES": [
+      "cor\u00a0gladii"
+    ],
+    "DESCRIPTION": "Enhances and powers certain Attacks. "
+  },
+  {
+    "NAMES": [
+      "stiffness"
+    ],
+    "DESCRIPTION": "Upon adding up to 4, end your turn."
+  },
+  {
+    "NAMES": [
+      "magiam\u00a0obruor"
+    ],
+    "DESCRIPTION": "Lose [E] next turn."
+  },
+  {
+    "NAMES": [
+      "magiam\u00a0barrier"
+    ],
+    "DESCRIPTION": "Offsets against the HP you would lose."
+  },
+  {
+    "NAMES": [
+      "afterimage"
+    ],
+    "DESCRIPTION": "#yBlock does not fade at the end of turn."
   }
 ]

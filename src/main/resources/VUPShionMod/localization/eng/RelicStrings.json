@@ -1,7 +1,7 @@
 {
   "VUPShionMod:DimensionSplitterAria": {
     "NAME": "Dimension Splitter: Aria",
-    "FLAVOR": "The engine imbued with otherworldly destruction.",
+    "FLAVOR": "'Your existence is futile.' says the otherworldly light portends impending destruction.",
     "DESCRIPTIONS": [
       "At the start of your turn, deal #b%d ( #b2 + #yUpgrade x3) damage to a random enemy. If #yFatal, repeats and gain [E] . NL It is upgraded whenever you enter the next Act. NL Current Upgrade: #b%d.",
       "Space-based Weapon Preloading in Act 1... NL "
@@ -9,7 +9,7 @@
   },
   "VUPShionMod:KuroisuDetermination": {
     "NAME": "Cloyce's Determination",
-    "FLAVOR": "Even the undetermined may become otherwise. Determination can be caught like a flu.",
+    "FLAVOR": "Future is a scattering illusion of time that is not ours to foretell. Push through with determination, and this is the most we can do.",
     "DESCRIPTIONS": [
       " #yRight #yClick: Take an extra turn after this turn, end your turn.（works #b%d times）",
       "This relic has been exhausted."
@@ -17,21 +17,21 @@
   },
   "VUPShionMod:Croissant": {
     "NAME": "Croissant",
-    "FLAVOR": "Such delicacy is utterly incompatible with the Spire.",
+    "FLAVOR": "You just won't bother to notice the void of something on your friend's head, yes?",
     "DESCRIPTIONS": [
       "Upon pickup, heal #b30 HP."
     ]
   },
   "VUPShionMod:OpticalCamouflage": {
     "NAME": "Optical Camouflage",
-    "FLAVOR": "Don't believe what you see.",
+    "FLAVOR": "Appearance outweights existence.",
     "DESCRIPTIONS": [
       "Start each combat with #b1 #yIntangible."
     ]
   },
   "VUPShionMod:Sniperscope": {
     "NAME": "Sniperscope",
-    "FLAVOR": "Snipe for the weakness and deliver a critical blow.",
+    "FLAVOR": "Heard the ticking of your remaining time? Fear not, it will be quick, it will not hurt.",
     "DESCRIPTIONS": [
       "At the start of each combat, apply #b1 #yVulnerable to the enemy with the least HP. NL Enemies with #yVulnerable take #b75% more damage rather than #b50%."
     ]
@@ -44,6 +44,20 @@
       "Gain #b200 Max HP. NL Gain #b200 #yBlock at the start of your turn. NL Start each combat with #yBarricade. NL Gain [E] at the start of your turn.",
       " NL ALL #yFunnels are upgraded by #b9. NL #yFunnels now hit ALL enemies. NL Whenever an enemy dies, transfer any #yPursued it has to a random enemy.",
       "Anastasia Droplet(Awakened)"
+    ]
+  },
+  "VUPShionMod:Nebula": {
+    "NAME": "Nebula",
+    "FLAVOR": "Universal type of support equipment of Anastasia, includes elementary thrusters and energy shields.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b3 #yBlock. Lose #b1 #yStiffness each turn."
+    ]
+  },
+  "VUPShionMod:Protostar": {
+    "NAME": "Protostar",
+    "FLAVOR": "Improved model of Nebula with greater thruster power and extra magia barrier generators.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b2 #yBuffer. Lose #b2 #yStiffness each turn."
     ]
   }
 }

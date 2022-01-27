@@ -14,8 +14,8 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class Protostar extends CustomRelic {
     public static final String ID = VUPShionMod.makeID("Protostar");
-    public static final String IMG_PATH = "img/relics/Croissant.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/Croissant.png";
+    public static final String IMG_PATH = "img/relics/Protostar.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/Protostar.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
@@ -30,9 +30,12 @@ public class Protostar extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new BufferPower(AbstractDungeon.player,2)));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,2)));
         addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, StiffnessPower.POWER_ID, 2));
+    }
+
+    @Override
+    public void atBattleStart() {
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new BufferPower(AbstractDungeon.player,2)));
     }
 
     @Override

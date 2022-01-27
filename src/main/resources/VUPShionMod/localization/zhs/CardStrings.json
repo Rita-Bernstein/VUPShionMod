@@ -417,8 +417,8 @@
   },
   "VUPShionMod:PreExecution": {
     "NAME": "拟斩",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 层 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 层 vup_shion_mod:剑意 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:剑意 。",
     "EXTENDED_DESCRIPTION": [
       "心眼"
     ]

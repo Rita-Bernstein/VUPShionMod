@@ -255,5 +255,24 @@
     "DESCRIPTIONS": [
       "At the start of each turn, grab a random number to determine whether to buff themselves or to debuff you."
     ]
+  },
+   "VUPShionMod:StiffnessPower": {
+    "NAME": "Stiffness",
+    "DESCRIPTIONS": [
+      "Upon adding up to #b4, remove all #yStiffness and end your turn."
+    ]
+  },
+  "VUPShionMod:CorGladiiPower": {
+    "NAME": "Cor Gladii",
+    "DESCRIPTIONS": [
+      "#yCor #yGladii enhances and powers certain Attacks."
+    ]
+  },
+  "VUPShionMod:MagiamObruorPower": {
+    "NAME": "Magiam Obruor",
+    "DESCRIPTIONS": [
+      "Lose [E] next turn.",
+      "Lose #b%d [E] next turn."
+    ]
   }
 }

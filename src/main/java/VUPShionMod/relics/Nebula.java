@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class Nebula extends CustomRelic {
     public static final String ID = VUPShionMod.makeID("Nebula");
-    public static final String IMG_PATH = "img/relics/Croissant.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/Croissant.png";
+    public static final String IMG_PATH = "img/relics/Nebula.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/Nebula.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 

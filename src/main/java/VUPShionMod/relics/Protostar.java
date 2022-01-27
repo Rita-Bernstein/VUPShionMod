@@ -30,6 +30,7 @@ public class Protostar extends CustomRelic {
 
     @Override
     public void atTurnStart() {
+        flash();
         addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, StiffnessPower.POWER_ID, 2));
     }
 

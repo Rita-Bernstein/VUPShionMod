@@ -26,6 +26,7 @@ public class Nebula extends CustomRelic {
 
     @Override
     public void atTurnStart() {
+        flash();
         addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 3));
         addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, StiffnessPower.POWER_ID, 1));
     }

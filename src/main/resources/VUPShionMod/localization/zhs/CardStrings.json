@@ -474,7 +474,8 @@
     "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得3点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
     "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得3点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
-      "舍身斩"
+      "舍身斩",
+      "（造成 !D! 点伤害）"
     ]
   },
   "VUPShionMod:VertexGladii": {
@@ -601,7 +602,8 @@
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "终章：热寂",
-    "DESCRIPTION": "每回合失去 !M! [E] 。 NL 不能打出 *技能牌 。 NL !VUPShionSecondM! 回合后消灭所有敌人。"
+    "DESCRIPTION": "每回合失去 !M! [E] 。 NL 不能打出 *技能牌 。 NL !VUPShionSecondM! 回合后消灭所有敌人。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 每回合失去 !M! [E] 。 NL 不能打出 *技能牌 。 NL !VUPShionSecondM! 回合后消灭所有敌人。"
   },
   "VUPShionMod:HeliumLuxque": {
     "NAME": "九之章：氦闪",

@@ -79,7 +79,7 @@ public class WangChuan extends CustomPlayer {
         initializeClass(null,
                 "VUPShionMod/characters/Shion/shoulder2.png",
                 "VUPShionMod/characters/Shion/shoulder.png",
-                "VUPShionMod/characters/Shion/corpse.png",
+                "VUPShionMod/characters/WangChuan/corpse.png",
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"), VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json"), 3.0f);

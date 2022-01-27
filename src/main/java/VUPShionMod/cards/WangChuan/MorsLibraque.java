@@ -39,6 +39,9 @@ public class MorsLibraque extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeSecondM(-1);
+            this.selfRetain = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

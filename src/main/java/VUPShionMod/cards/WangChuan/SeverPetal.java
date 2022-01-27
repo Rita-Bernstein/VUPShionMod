@@ -49,7 +49,7 @@ public class SeverPetal extends AbstractWCCard {
     public void applyPowers() {
         int d = this.magicNumber;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-            d = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+            d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
         this.baseDamage = d;
         super.applyPowers();
 

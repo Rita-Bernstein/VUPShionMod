@@ -55,7 +55,7 @@ public class OnrushingTip extends AbstractWCCard {
         super.applyPowers();
 
         this.rawDescription = DESCRIPTION;
-        this.rawDescription += EXTENDED_DESCRIPTION[0];
+        this.rawDescription += EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
 
@@ -69,7 +69,7 @@ public class OnrushingTip extends AbstractWCCard {
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
         this.rawDescription = DESCRIPTION;
-        this.rawDescription += EXTENDED_DESCRIPTION[0];
+        this.rawDescription += EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
 

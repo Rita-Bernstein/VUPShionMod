@@ -16,7 +16,7 @@ public class Poise extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public Poise() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -32,7 +32,7 @@ public class Poise extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
         }
     }
 }

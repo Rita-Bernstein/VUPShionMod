@@ -23,7 +23,7 @@ public class MorsLibraque extends AbstractWCCard {
     public MorsLibraque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM = this.baseSecondaryM = 5;
+        this.secondaryM = this.baseSecondaryM = 4;
     }
 
     @Override

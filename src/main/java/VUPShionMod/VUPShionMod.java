@@ -262,16 +262,30 @@ public class VUPShionMod implements
         BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
+                //Event Character//
                 .playerClass(AbstractPlayerEnum.WangChuan)
                 .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
                 .create());
 
+
+
         BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.WangChuan)
                 .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
                 .create());
+
+
+
 
         BaseMod.addEvent(new AddEventParams.Builder(BreakAppointment.ID, BreakAppointment.class) //Event ID//
                 //Event Character//

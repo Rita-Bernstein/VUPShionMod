@@ -24,13 +24,14 @@ public class SubLuna extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 9;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new IntangiblePlayerPower(p,1)));
-        addToBot(new ReducePowerAction(p,p, StiffnessPower.POWER_ID,this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new EnergizedBluePower(p,3)));
+        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
+        addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, 3)));
     }
 
     @Override

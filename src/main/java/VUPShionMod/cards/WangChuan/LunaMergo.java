@@ -17,7 +17,7 @@ public class LunaMergo extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public LunaMergo() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -39,7 +39,6 @@ public class LunaMergo extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
-            upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             initializeDescription();

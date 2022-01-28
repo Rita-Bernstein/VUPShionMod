@@ -23,7 +23,7 @@ public class Reflect extends AbstractWCCard {
 
     public Reflect() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 10;
+        this.magicNumber = 3;
         this.selfRetain = true;
     }
 
@@ -44,10 +44,16 @@ public class Reflect extends AbstractWCCard {
     }
 
     public void applyPowers() {
-        int d = 0;
-        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+        int d = 0; int b = this.magicNumber;
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID)){
             d = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+            b +=AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+        }
+
         this.baseDamage = d;
+        this.baseBlock = b;
+
+
         super.applyPowers();
 
         this.rawDescription = DESCRIPTION;

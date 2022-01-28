@@ -24,6 +24,7 @@ public class SeverAnkle extends AbstractWCCard {
         this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 1;
         this.baseSecondaryM = this.secondaryM = 3;
+        this.exhaust =true;
     }
 
     @Override

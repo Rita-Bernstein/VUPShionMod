@@ -21,7 +21,7 @@ public class HeliumLuxque extends AbstractWCCard {
 
     public HeliumLuxque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 30;
+        this.magicNumber = this.baseMagicNumber = 40;
         this.secondaryM = this.baseSecondaryM = 3;
     }
 
@@ -35,7 +35,7 @@ public class HeliumLuxque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(8);
+            upgradeMagicNumber(10);
             upgradeSecondM(-1);
         }
     }

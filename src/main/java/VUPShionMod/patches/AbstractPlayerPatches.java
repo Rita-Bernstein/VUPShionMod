@@ -14,9 +14,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.lang.reflect.Field;
@@ -145,11 +148,11 @@ public class AbstractPlayerPatches {
             method = "damage"
     )
     public static class OnUnblockDamagePatch {
-        @SpireInsertPatch(rloc = 61,localvars = {"damageAmount"})
-        public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info,int damageAmount) {
+        @SpireInsertPatch(rloc = 61, localvars = {"damageAmount"})
+        public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info, int damageAmount) {
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p instanceof AbstractShionPower) {
-                    ((AbstractShionPower) p).monsterAfterOnAttack(info, _instance,damageAmount);
+                    ((AbstractShionPower) p).monsterAfterOnAttack(info, _instance, damageAmount);
                 }
             }
 
@@ -178,7 +181,22 @@ public class AbstractPlayerPatches {
 //            }
 
 
+            return SpireReturn.Continue();
+        }
+    }
 
+
+    @SpirePatch(
+            clz = AbstractDungeon.class,
+            method = "getEvent"
+    )
+    public static class NoGhostsPatch {
+        @SpireInsertPatch(rloc = 40)
+        public static SpireReturn<AbstractEvent> Insert(Random rng) {
+            ArrayList<String> tmp = ReflectionHacks.getPrivate(CardCrawlGame.dungeon, AbstractDungeon.class, "tmp");
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+                tmp.remove("Ghosts");
+            }
             return SpireReturn.Continue();
         }
     }

@@ -447,14 +447,15 @@
       "霹雳一闪·七连",
       "造成 !M! + vup_shion_mod:剑意 的伤害。 NL ",
       "对所有敌人造成 NL !M! + vup_shion_mod:剑意 的伤害。 NL ",
-      "对所有敌人造成 NL （ !M! + vup_shion_mod:剑意 ） !VUPShionSecondM! 倍的伤害。 NL ",
+      "对所有敌人造成 NL vup_shion_mod:剑意 的伤害 !VUPShionSecondM! 次。 NL ",
       "失去一点 vup_shion_mod:剑意 。",
       "获得一点 vup_shion_mod:硬直 。",
       "获得两点 vup_shion_mod:硬直 。",
       "获得三点 vup_shion_mod:硬直 。",
       "获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL ",
       "获得10点 vup_shion_mod:剑意 。 NL ",
-      "获得1层 无实体 。"
+      "获得1层 无实体 。",
+      "对所有敌人造成 NL vup_shion_mod:剑意 的伤害。 NL "
     ]
   },
   "VUPShionMod:GlandesMagicae": {
@@ -532,8 +533,8 @@
   },
   "VUPShionMod:Reflect": {
     "NAME": "反射",
-    "DESCRIPTION": " 保留 。 NL 获得 !B! 点 格挡 。 NL 造成 vup_shion_mod:剑意 的伤害。",
-    "UPGRADE_DESCRIPTION": " NL (造成 !D! 点伤害)"
+    "DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 造成 vup_shion_mod:剑意 的伤害。",
+    "UPGRADE_DESCRIPTION": " NL (造成 !D! 点伤害，获得 !B! 点 格挡 )"
   },
   "VUPShionMod:Sharpen": {
     "NAME": "锐意",
@@ -545,13 +546,17 @@
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "月步",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !B! 点 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。"
+    "DESCRIPTION": "获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
+    "EXTENDED_DESCRIPTION": [
+      "（获得 !B! 点 格挡 ）"
+    ]
+
   },
   "VUPShionMod:SubLuna": {
     "NAME": "月隐",
-    "DESCRIPTION": "获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] [E] 。 ",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] [E] 。 "
+    "DESCRIPTION": "获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] [E] 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] [E] 。 NL 消耗 。"
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "断水",
@@ -597,8 +602,8 @@
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "四之章：荆棘",
-    "DESCRIPTION": " 虚无 。 NL 给予对所有敌人7X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": " 虚无 。 NL 给予对所有敌人10X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": " 虚无 。 NL 给予对所有敌人5X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": " 虚无 。 NL 给予对所有敌人7X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "终章：热寂",
@@ -615,8 +620,8 @@
   },
   "VUPShionMod:DistantiaAbsensque": {
     "NAME": "三之章：远行",
-    "DESCRIPTION": "获得当前 格挡 的 多层护甲 。 vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得当前 格挡 的 多层护甲 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": "获得当前 格挡 的 多层护甲 。 vup_shion_mod:魔能过载 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得当前 格挡 的 多层护甲 。 NL vup_shion_mod:魔能过载 。 NL 消耗 。"
   },
   "VUPShionMod:VitaNaturaque": {
     "NAME": "六之章：延续",

@@ -20,7 +20,7 @@ public class BombardaMagica extends AbstractWCCard {
 
     public BombardaMagica() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
+        this.baseDamage = 5;
         this.selfRetain = true;
         this.exhaust = true;
     }
@@ -40,7 +40,7 @@ public class BombardaMagica extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(2);
         }
     }
 }

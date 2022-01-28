@@ -14,13 +14,14 @@ public class DistantiaAbsensque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("DistantiaAbsensque");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc36.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 0;
 
     public DistantiaAbsensque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.exhaust =true;
     }
 
     @Override

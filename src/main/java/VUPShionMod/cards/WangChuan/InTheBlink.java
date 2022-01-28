@@ -40,10 +40,8 @@ public class InTheBlink extends AbstractWCCard {
 //=================请不要动这里的代码，因为就算是写的人也不知道它是怎么运行的
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         switch (this.timesUpgraded) {
             case 0:
                 int d = this.magicNumber;
@@ -73,31 +71,12 @@ public class InTheBlink extends AbstractWCCard {
         }
 
 
-        if (this.timesUpgraded >= 3 && this.timesUpgraded < 9) {
-            addBaseAoeDamage(this.secondaryM);
+        if (this.timesUpgraded >= 3) {
+            addBaseAoeDamage();
             doAoeDamage();
-            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
-        }
-
-        if (this.timesUpgraded >= 9) {
-            addBaseAoeDamage(this.secondaryM);
-            doAoeDamage();
-            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 10)));
-        }
-
-
-        if (this.timesUpgraded >= 3 && this.timesUpgraded <= 5) {
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 2)));
-        }
-        if (this.timesUpgraded == 6 || this.timesUpgraded == 7) {
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));
-        }
-
-        if (this.timesUpgraded >= 9) {
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
             addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
         }
-
-
     }
 
     private void addBaseAoeDamage() {
@@ -117,7 +96,8 @@ public class InTheBlink extends AbstractWCCard {
     private void doAoeDamage() {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
+        for (int i = 0; i < this.secondaryM; i++)
+            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
     }
 
 
@@ -141,35 +121,13 @@ public class InTheBlink extends AbstractWCCard {
                     this.rarity = CardRarity.UNCOMMON;
                     break;
                 case 3:
-                    upgradeMagicNumber(2);
+                    this.magicNumber = this.baseMagicNumber = 0;
                     this.rarity = CardRarity.RARE;
                     break;
-                case 4:
-                    upgradeMagicNumber(1);
-                    upgradeSecondM(1);
-                    break;
-                case 5:
-                    upgradeMagicNumber(1);
-                    upgradeSecondM(1);
-                    break;
-                case 6:
-                    upgradeMagicNumber(2);
-                    upgradeSecondM(1);
-                    break;
-                case 7:
-                    upgradeMagicNumber(2);
-                    upgradeSecondM(1);
-                    break;
-                case 8:
-                    upgradeMagicNumber(2);
-                    upgradeSecondM(1);
-                    break;
-                case 9:
-                    upgradeMagicNumber(2);
-                    upgradeSecondM(1);
-                    break;
-
             }
+
+            if (this.timesUpgraded > 3)
+                upgradeSecondM(1);
 
 
             this.name = EXTENDED_DESCRIPTION[this.timesUpgraded];
@@ -201,40 +159,10 @@ public class InTheBlink extends AbstractWCCard {
             case 2:
                 this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[10] + EXTENDED_DESCRIPTION[15];
                 break;
-            case 3:
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[10] + EXTENDED_DESCRIPTION[16] + EXTENDED_DESCRIPTION[14];
-                break;
-            case 4:
-                upgradeMagicNumber(1);
-                upgradeSecondM(1);
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[16] + EXTENDED_DESCRIPTION[14];
-                break;
-            case 5:
-                upgradeMagicNumber(1);
-                upgradeSecondM(1);
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[16] + EXTENDED_DESCRIPTION[14];
-                break;
-            case 6:
-                upgradeMagicNumber(2);
-                upgradeSecondM(1);
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[16] + EXTENDED_DESCRIPTION[13];
-                break;
-            case 7:
-                upgradeMagicNumber(2);
-                upgradeSecondM(1);
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[16] + EXTENDED_DESCRIPTION[13];
-                break;
-            case 8:
-                upgradeMagicNumber(2);
-                upgradeSecondM(1);
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[16];
-                break;
-            case 9:
-                upgradeMagicNumber(2);
-                upgradeSecondM(1);
-                this.rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[17] + EXTENDED_DESCRIPTION[18];
-                break;
+        }
 
+        if (this.timesUpgraded >= 3) {
+            this.rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[15] + EXTENDED_DESCRIPTION[18];
         }
 
         initializeDescription();

@@ -25,15 +25,16 @@ public class SeverWrist extends AbstractWCCard {
         this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 1;
         this.baseSecondaryM = this.secondaryM = 3;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            for(int i = 0;i < this.secondaryM ;i++){
-                addToBot(new ApplyPowerAction(m,p,new WeakPower(m,this.magicNumber,false)));
-            }
+        for (int i = 0; i < this.secondaryM; i++) {
+            addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false)));
+        }
     }
 
     @Override

@@ -21,7 +21,7 @@ public class WeatherEye extends AbstractWCCard {
     public WeatherEye() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 9;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override

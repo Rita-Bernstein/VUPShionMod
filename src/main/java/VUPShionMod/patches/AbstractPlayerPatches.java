@@ -186,18 +186,18 @@ public class AbstractPlayerPatches {
     }
 
 
-    @SpirePatch(
-            clz = AbstractDungeon.class,
-            method = "getEvent"
-    )
-    public static class NoGhostsPatch {
-        @SpireInsertPatch(rloc = 40)
-        public static SpireReturn<AbstractEvent> Insert(Random rng) {
-            ArrayList<String> tmp = ReflectionHacks.getPrivate(CardCrawlGame.dungeon, AbstractDungeon.class, "tmp");
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
-                tmp.remove("Ghosts");
-            }
-            return SpireReturn.Continue();
-        }
-    }
+//    @SpirePatch(
+//            clz = AbstractDungeon.class,
+//            method = "getEvent"
+//    )
+//    public static class NoGhostsPatch {
+//        @SpireInsertPatch(rloc = 40)
+//        public static SpireReturn<AbstractEvent> Insert(Random rng) {
+//            ArrayList<String> tmp = ReflectionHacks.getPrivate(CardCrawlGame.dungeon, AbstractDungeon.class, "tmp");
+//            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+//                tmp.removeIf(e ->e.equals("Ghosts"));
+//            }
+//            return SpireReturn.Continue();
+//        }
+//    }
 }

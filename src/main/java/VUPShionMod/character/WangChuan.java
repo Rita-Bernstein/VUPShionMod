@@ -167,7 +167,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Defend_Shion();
+        return new Sheathe();
     }
 
     @Override

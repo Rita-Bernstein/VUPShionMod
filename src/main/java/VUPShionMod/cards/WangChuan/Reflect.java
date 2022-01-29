@@ -23,7 +23,7 @@ public class Reflect extends AbstractWCCard {
 
     public Reflect() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = 3;
+        this.magicNumber = this.baseMagicNumber =  3;
         this.selfRetain = true;
     }
 

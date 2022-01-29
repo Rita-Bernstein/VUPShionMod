@@ -11,20 +11,20 @@
     "NAME": "Cloyce's Determination",
     "FLAVOR": "Future is a scattering illusion of time that is not ours to foretell. Push through with determination, and this is the most we can do.",
     "DESCRIPTIONS": [
-      " #yRight #yClick: Take an extra turn after this turn, end your turn.（works #b%d times）",
+      " #yRight #yClick: Take an extra turn after this turn, end your turn.(works #b%d times)",
       "This relic has been exhausted."
     ]
   },
   "VUPShionMod:Croissant": {
     "NAME": "Croissant",
-    "FLAVOR": "You just won't bother to notice the void of something on your friend's head, yes?",
+    "FLAVOR": "You just won't bother to notice the void of something on your friend's head, will you?",
     "DESCRIPTIONS": [
       "Upon pickup, heal #b30 HP."
     ]
   },
   "VUPShionMod:OpticalCamouflage": {
     "NAME": "Optical Camouflage",
-    "FLAVOR": "Appearance outweights existence.",
+    "FLAVOR": "Appearance outweighs existence.",
     "DESCRIPTIONS": [
       "Start each combat with #b1 #yIntangible."
     ]
@@ -57,7 +57,7 @@
     "NAME": "Protostar",
     "FLAVOR": "Improved model of Nebula with greater thruster power and extra magia barrier generators.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b2 #yBuffer. Lose #b2 #yStiffness each turn."
+      "At the start of each combat, gain #b2 #yMagia #yBarrier. Lose #b2 #yStiffness each turn."
     ]
   }
 }

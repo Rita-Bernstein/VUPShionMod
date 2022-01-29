@@ -62,11 +62,24 @@
     "NAME": "A Message",
     "DESCRIPTIONS": [
 	  "As you are about to depart, a message come to you.",
-      "It's from Anastasia. Again, war is bringing @total@ @devastation@ to a planet, just as it always."
+      "It's from Anastasia. Again, @total@ @devastation@ is about to be brought to a planet by an atrocious invasion, which just smacks of your past."
     ],
     "OPTIONS": [
       "[Proceed] ...",
       "[Not This Time!] Battle Ahead. #gObtain Anastasia Droplet.",
+      "[Return Home]",
+      "[Locked] Further Update Awaits."
+    ]
+  },
+   "VUPShionMod:Contact": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "As you are about to depart, a message come to you.",
+      "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures."
+    ],
+    "OPTIONS": [
+      "[Proceed] ...",
+      "[Fists Can Talk!] Battle Ahead.",
       "[Return Home]",
       "[Locked] Further Update Awaits."
     ]

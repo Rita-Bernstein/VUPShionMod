@@ -36,7 +36,7 @@ public class Protostar extends CustomRelic {
 
     @Override
     public void atBattleStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new BufferPower(AbstractDungeon.player,2)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BufferPower(AbstractDungeon.player, 2)));
     }
 
     @Override
@@ -48,5 +48,10 @@ public class Protostar extends CustomRelic {
                 .ifPresent(index -> instantObtain(player, index, true));
 
         (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.25F;
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic(Nebula.ID);
     }
 }

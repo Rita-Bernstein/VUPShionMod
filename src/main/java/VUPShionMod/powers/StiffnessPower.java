@@ -33,7 +33,7 @@ public class StiffnessPower extends AbstractShionPower {
     @Override
     public void onInitialApplication() {
         if (AbstractDungeon.player.hasPower(PoisePower.POWER_ID)) {
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, StiffnessPower.POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             return;
         }
 

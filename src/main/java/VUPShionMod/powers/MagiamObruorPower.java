@@ -25,6 +25,7 @@ public class MagiamObruorPower extends AbstractShionPower {
         this.owner = owner;
         this.amount = amount;
         updateDescription();
+        this.type = PowerType.DEBUFF;
 
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MagiamObruorPower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MagiamObruorPower36.png")), 0, 0, 36, 36);

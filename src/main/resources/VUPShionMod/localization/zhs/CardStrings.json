@@ -448,13 +448,13 @@
       "造成 !M! + vup_shion_mod:剑意 的伤害。 NL ",
       "对所有敌人造成 NL !M! + vup_shion_mod:剑意 的伤害。 NL ",
       "对所有敌人造成 NL vup_shion_mod:剑意 的伤害 !VUPShionSecondM! 次。 NL ",
-      "失去一点 vup_shion_mod:剑意 。",
-      "获得一点 vup_shion_mod:硬直 。",
-      "获得两点 vup_shion_mod:硬直 。",
-      "获得三点 vup_shion_mod:硬直 。",
+      " NL 失去一点 vup_shion_mod:剑意 。",
+      " NL 获得一点 vup_shion_mod:硬直 。",
+      " NL 获得两点 vup_shion_mod:硬直 。",
+      " NL 获得三点 vup_shion_mod:硬直 。",
       "获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL ",
       "获得10点 vup_shion_mod:剑意 。 NL ",
-      "获得1层 无实体 。",
+      " NL 获得1层 无实体 。",
       "对所有敌人造成 NL vup_shion_mod:剑意 的伤害。 NL "
     ]
   },
@@ -546,8 +546,8 @@
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "月步",
-    "DESCRIPTION": "获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
+    "DESCRIPTION": "获得 !VUPShionSecondM! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !VUPShionSecondM! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
     "EXTENDED_DESCRIPTION": [
       "（获得 !B! 点 格挡 ）"
     ]

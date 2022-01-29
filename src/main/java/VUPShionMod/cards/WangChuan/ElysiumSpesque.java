@@ -21,7 +21,7 @@ public class ElysiumSpesque extends AbstractWCCard {
 
     public ElysiumSpesque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 9;
+        this.magicNumber = this.baseMagicNumber = 7;
         this.exhaust = true;
     }
 
@@ -35,7 +35,7 @@ public class ElysiumSpesque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(5);
+            upgradeMagicNumber(4);
         }
     }
 }

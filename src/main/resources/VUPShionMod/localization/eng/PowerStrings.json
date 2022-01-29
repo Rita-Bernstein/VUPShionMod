@@ -274,5 +274,59 @@
       "Lose [E] next turn.",
       "Lose #b%d [E] next turn."
     ]
+  },
+  "VUPShionMod:VampireFormPower": {
+    "NAME": "Vampire Form",
+    "DESCRIPTIONS": [
+      "Whenever you deal #yunblocked damage, heal #b%d HP."
+    ]
+  },
+  "VUPShionMod:MensVirtusquePower": {
+    "NAME": "Mens Virtusque",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yMagiam #yObruor, gain #b%d #yCor #yGladii instead."
+    ]
+  },
+  "VUPShionMod:HeliumLuxquePower": {
+    "NAME": "Helium Luxque",
+    "DESCRIPTIONS": [
+      "At the start of next turn, deal #b%d damage to ALL enemies."
+    ]
+  },
+  "VUPShionMod:NoSkillsPower": {
+    "NAME": "Ban Skills",
+    "DESCRIPTIONS": [
+      "You can no longer play any #ySkill."
+    ]
+  },
+  "VUPShionMod:MorsLibraquePower": {
+    "NAME": "Mors Libraque",
+    "DESCRIPTIONS": [
+      "Eliminate ALL enemies after #b%d turns."
+    ]
+  },
+  "VUPShionMod:PoisePower": {
+    "NAME": "Poise",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%d #yBarrier. NL You no longer gain #yStiffness."
+    ]
+  },
+  "VUPShionMod:PetalsFallPower": {
+    "NAME": "Petals Fall",
+    "DESCRIPTIONS": [
+      "You no longer lose #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:GainCorGladiiPower": {
+    "NAME": "Focus",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%d #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:MoonstriderPower": {
+    "NAME": "Moonstrider",
+    "DESCRIPTIONS": [
+      "Whenever attacked this turn, gain #b%d #yCor #yGladii."
+    ]
   }
 }

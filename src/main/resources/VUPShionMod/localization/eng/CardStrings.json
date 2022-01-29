@@ -419,7 +419,7 @@
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii.",
     "EXTENDED_DESCRIPTION": [
-      "Ready to Chop"
+      "Executioner Stance"
     ]
   },
   "VUPShionMod:Sheathe": {
@@ -446,7 +446,7 @@
       "Hepta Thundersteel",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL ",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL ",
-      "Deal damage !VUPShionSecondM! times as much as ( !M! + vup_shion_mod:Cor\u00a0Gladii ) to ALL enemies. NL ",
+      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for !VUPShionSecondM! times to ALL enemies. NL ",
       "Lose 1 vup_shion_mod:Cor\u00a0Gladii.",
       "Gain 1 vup_shion_mod:Stiffness.",
       "Gain 2 vup_shion_mod:Stiffness.",
@@ -454,6 +454,7 @@
       "Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL ",
       "Gain 10 vup_shion_mod:Cor\u00a0Gladii. NL ",
       "Gain 1 Intangible."
+	  "Deal damage equal to vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL "
     ]
   },
   "VUPShionMod:GlandesMagicae": {
@@ -465,7 +466,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "Stride Slash+"
+      "Forwarding Hew"
     ]
   },
   "VUPShionMod:OnrushingTip": {
@@ -478,19 +479,19 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "Vertex Gladii",
-    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii twice. NL Gain !B! Block. NL Lose 1 vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii 2 times. NL Gain !B! Block. NL Lose 1 vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
     "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii 3 times. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
       "Turbo Gladii",
-      "（Gain !B! Block.）"
+      "(Deal !D! damage, Gain !B! Block.)"
     ]
   },
   "VUPShionMod:SeverWrist": {
-    "NAME": "Sever Wrist",
+    "NAME": "Cut Wrist",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak !VUPShionSecondM! times. NL Exhaust."
   },
   "VUPShionMod:SeverAnkle": {
-    "NAME": "Sever Ankle",
+    "NAME": "Cut Ankle",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable !VUPShionSecondM! times. NL Exhaust."
   },
   "VUPShionMod:SeverPetal": {
@@ -499,29 +500,32 @@
   },
   "VUPShionMod:AethereScindo": {
     "NAME": "Aethere Scindo",
-    "DESCRIPTION": "Deal damage equal to the damage dealt last time. NL Draw 1 card. NL Gain 1 vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to the damage dealt last time for twice. NL Draw 1 card. NL Gain 1 vup_shion_mod:Stiffness."
+    "DESCRIPTION": "Deal damage equal to the damage dealt last time for 2 times. NL Draw 1 card. NL Gain 1 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the damage dealt last time for 3 times. NL Draw 1 card. NL Gain 1 vup_shion_mod:Stiffness."
+    "EXTENDED_DESCRIPTION": [
+      "(Deal !D! damage.)"
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "Gladii Infiniti",
-    "DESCRIPTION": "Deal damage equal to 3+ vup_shion_mod:Cor\u00a0Gladii X+2 times. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to 5+ vup_shion_mod:Cor\u00a0Gladii X+3 times. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness."
+    "DESCRIPTION": "Deal damage equal to 3+ vup_shion_mod:Cor\u00a0Gladii for X+2 times. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 5+ vup_shion_mod:Cor\u00a0Gladii for X+3 times. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness."
   },
   "VUPShionMod:Guard": {
     "NAME": "Guard",
     "DESCRIPTION": "Gain !B! Block. NL Lose !M! vup_shion_mod:Stiffness."
   },
   "VUPShionMod:LunaMergo": {
-    "NAME": "Luna Mergo",
+    "NAME": "Wind Susurrates",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Lose 1 vup_shion_mod:Stiffness.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Gain 2 vup_shion_mod:Cor\u00a0Gladii. NL Lose 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "Luna Mergo+"
+      "Luna Mergo"
     ]
   },
   "VUPShionMod:Reflect": {
     "NAME": "Reflect",
-    "DESCRIPTION": " Retain. NL Gain !B! Block. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii."
+    "DESCRIPTION": " Retain. NL Gain Block equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii."
+    "UPGRADE_DESCRIPTION": "(Deal !D! damage, gain !B! Block.)"
   },
   "VUPShionMod:Sharpen": {
     "NAME": "Sharpen",
@@ -529,17 +533,17 @@
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "Flawless Parry",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Magia\u00a0Barrier."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Barrier."
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "Moonstrider",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn."
+    "DESCRIPTION": "Gain Block equal to !VUPShionSecondM! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to !VUPShionSecondM! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn."
   },
   "VUPShionMod:SubLuna": {
     "NAME": "Sub Luna",
-    "DESCRIPTION": "Gain 1 Intangible. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] [E] next turn.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain 1 Intangible. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] [E] next turn."
+    "DESCRIPTION": "Gain 1 Intangible. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] [E] next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain 1 Intangible. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] [E] next turn. NL Exhaust."
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "Sever Current",
@@ -568,7 +572,7 @@
   },
   "VUPShionMod:Poise": {
     "NAME": "Poise",
-    "DESCRIPTION": "At the start of your turn, gain !M! vup_shion_mod:Magia\u00a0Barrier. NL You no longer gain vup_shion_mod:Stiffness."
+    "DESCRIPTION": "At the start of your turn, gain !M! vup_shion_mod:Barrier. NL You no longer gain vup_shion_mod:Stiffness."
   },
   "VUPShionMod:FullBloom": {
     "NAME": "Full Bloom",
@@ -577,7 +581,7 @@
   },
   "VUPShionMod:BombardaMagica": {
     "NAME": "Bombarda Magica",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL If left unplayed in your hand at the end of turn, add a copy of this crad into your hand. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL If left unplayed in your hand at the end of turn, add a copy of this card into your hand. NL Exhaust."
   },
   "VUPShionMod:AfflictioBellumque": {
     "NAME": "Afflictio Bellumque",
@@ -590,11 +594,12 @@
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "Mors Libraque",
-    "DESCRIPTION": "At the start of your turn, lose !M! [E] . NL You can no longer play ANY *Skill. NL Eliminate ALL enemies after !VUPShionSecondM! turns."
+    "DESCRIPTION": "At the start of your turn, lose !M! [E] . NL You can no longer play any *Skill. NL Eliminate ALL enemies after !VUPShionSecondM! turns."
+    "UPGRADE_DESCRIPTION": "Retain. At the start of your turn, lose !M! [E] . NL You can no longer play any *Skill. NL Eliminate ALL enemies after !VUPShionSecondM! turns."
   },
   "VUPShionMod:HeliumLuxque": {
     "NAME": "Helium Luxque",
-    "DESCRIPTION": "At the strat of next turn, deal !D! damage to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor !VUPShionSecondM! ."
+    "DESCRIPTION": "At the start of next turn, deal !D! damage to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor !VUPShionSecondM! ."
   },
   "VUPShionMod:Skip": {
     "NAME": "Skip",
@@ -611,8 +616,8 @@
   },
   "VUPShionMod:CorLapisque": {
     "NAME": "Cor Lapisque",
-    "DESCRIPTION": "Innate. NL Gain !M! vup_shion_mod:Magia\u00a0Barrier. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain !B! Block. NL Gain !M! vup_shion_mod:Magia\u00a0Barrier. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Gain !M! vup_shion_mod:Barrier. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !B! Block. NL Gain !M! vup_shion_mod:Barrier. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
   },
   "VUPShionMod:AnimaSpiritusque": {
     "NAME": "Anima Spiritusque",

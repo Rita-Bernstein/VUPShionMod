@@ -20,7 +20,7 @@ public class InTheBlink extends AbstractWCCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc05.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
 
@@ -109,28 +109,33 @@ public class InTheBlink extends AbstractWCCard {
     @Override
     public void upgrade() {
         if (this.timesUpgraded <= 8) {
-            switch (this.timesUpgraded + 1) {
-                case 1:
-                    this.target = CardTarget.ALL_ENEMY;
-                    this.isMultiDamage = true;
-                    upgradeMagicNumber(1);
-                    upgradeBaseCost(2);
-                    break;
-                case 2:
-                    upgradeMagicNumber(4);
-                    this.rarity = CardRarity.UNCOMMON;
-                    break;
-                case 3:
-                    this.magicNumber = this.baseMagicNumber = 0;
-                    this.rarity = CardRarity.RARE;
-                    break;
+
+            if (this.timesUpgraded == 0) {
+                this.target = CardTarget.ALL_ENEMY;
+                this.isMultiDamage = true;
+                upgradeMagicNumber(1);
+                upgradeBaseCost(2);
+                this.rarity = CardRarity.COMMON;
+                vupCardSetBanner();
             }
 
-            if (this.timesUpgraded > 3)
+            if (this.timesUpgraded == 1) {
+                upgradeMagicNumber(4);
+                this.rarity = CardRarity.UNCOMMON;
+                vupCardSetBanner();
+            }
+
+            if (this.timesUpgraded == 2) {
+                this.magicNumber = this.baseMagicNumber = 0;
+                this.rarity = CardRarity.RARE;
+                vupCardSetBanner();
+            }
+
+            if (this.timesUpgraded >= 3)
                 upgradeSecondM(1);
 
 
-            this.name = EXTENDED_DESCRIPTION[this.timesUpgraded];
+            this.name = EXTENDED_DESCRIPTION[this.timesUpgraded] + (this.timesUpgraded + 1);
             this.upgraded = true;
             this.timesUpgraded++;
             initializeTitle();
@@ -162,15 +167,19 @@ public class InTheBlink extends AbstractWCCard {
         }
 
         if (this.timesUpgraded >= 3) {
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[15] + EXTENDED_DESCRIPTION[18];
+        }
+        if (this.timesUpgraded >= 9) {
             this.rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[15] + EXTENDED_DESCRIPTION[18];
         }
+
 
         initializeDescription();
     }
 
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new InTheBlink(this.timesUpgraded);
-    }
+//    @Override
+//    public AbstractCard makeCopy() {
+//        return new InTheBlink(this.timesUpgraded);
+//    }
 }

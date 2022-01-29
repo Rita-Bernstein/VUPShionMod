@@ -76,14 +76,19 @@
   },
   {
     "NAMES": [
-      "magiam\u00a0barrier"
+      "barrier"
     ],
-    "DESCRIPTION": "Offsets against the HP you would lose."
+    "DESCRIPTION": "Prevents you from losing HP."
   },
   {
     "NAMES": [
       "afterimage"
     ],
     "DESCRIPTION": "#yBlock does not fade at the end of turn."
+  },
+     "NAMES": [
+      "tangled"
+    ],
+    "DESCRIPTION": "Receive damage equal to its stack each turn."
   }
 ]

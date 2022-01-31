@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
+import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 public class HeliumLuxquePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("HeliumLuxquePower");
@@ -40,7 +41,7 @@ public class HeliumLuxquePower extends AbstractShionPower {
     @Override
     public void atStartOfTurn() {
         addToBot(new SFXAction("ATTACK_HEAVY"));
-        addToBot(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
+        addToBot(new VFXAction(AbstractDungeon.player, new MindblastEffect(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY,AbstractDungeon.player.flipHorizontal), 0.1F));
         addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(this.amount, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, HeliumLuxquePower.POWER_ID));

@@ -20,7 +20,7 @@ public class Sheathe extends AbstractWCCard {
     public Sheathe() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
-        this.secondaryM =this.baseSecondaryM = 1;
+        this.secondaryM =this.baseSecondaryM = 3;
     }
 
     @Override

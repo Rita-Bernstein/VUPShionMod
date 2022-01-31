@@ -472,11 +472,11 @@
   },
   "VUPShionMod:OnrushingTip": {
     "NAME": "突进斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得3点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得3点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得6点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得6点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "舍身斩",
-      "（造成 !D! 点伤害）"
+      " NL （造成 !D! 点伤害）"
     ]
   },
   "VUPShionMod:VertexGladii": {
@@ -498,17 +498,17 @@
   },
   "VUPShionMod:SeverPetal": {
     "NAME": "雁落斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得1点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
-      "（造成 !D! 点伤害）"
+      " NL （造成 !D! 点伤害）"
     ]
   },
   "VUPShionMod:AethereScindo": {
     "NAME": "燕反",
-    "DESCRIPTION": "造成上次造成的攻击伤害。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害两次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成上次造成的攻击伤两害。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害三次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
-      "（造成 !D! 点伤害）"
+      " NL （造成 !M! 点伤害）"
     ]
   },
   "VUPShionMod:GladiiInfiniti": {
@@ -516,7 +516,7 @@
     "DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害X+2次。 NL 获得 !M! 层 vup_shion_mod:剑意 。",
     "UPGRADE_DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害X+3次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
-      "（造成 !D! 点伤害）"
+      " NL （造成 !D! 点伤害）"
     ]
   },
   "VUPShionMod:Guard": {
@@ -549,9 +549,8 @@
     "DESCRIPTION": "获得 !VUPShionSecondM! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !VUPShionSecondM! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
     "EXTENDED_DESCRIPTION": [
-      "（获得 !B! 点 格挡 ）"
+      " NL （获得 !B! 点 格挡 ）"
     ]
-
   },
   "VUPShionMod:SubLuna": {
     "NAME": "月隐",
@@ -607,7 +606,7 @@
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "终章：热寂",
-    "DESCRIPTION": "每回合失去 !M! [E] 。 NL 不能打出 *技能牌 。 NL !VUPShionSecondM! 回合后消灭所有敌人。",
+    "DESCRIPTION": " 保留 。 NL 每回合失去 !M! [E] 。 NL 不能打出 *技能牌 。 NL !VUPShionSecondM! 回合后消灭所有敌人。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 每回合失去 !M! [E] 。 NL 不能打出 *技能牌 。 NL !VUPShionSecondM! 回合后消灭所有敌人。"
   },
   "VUPShionMod:HeliumLuxque": {

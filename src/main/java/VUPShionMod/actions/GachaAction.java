@@ -68,13 +68,13 @@ public class GachaAction extends AbstractGameAction {
         int amount = 0;
         switch (this.block) {
             case 1:
-                amount = 15;
-                break;
-            case 2:
                 amount = 30;
                 break;
+            case 2:
+                amount = 40;
+                break;
             default:
-                amount = 50;
+                amount = 70;
                 break;
         }
 
@@ -90,13 +90,13 @@ public class GachaAction extends AbstractGameAction {
         int amount = 0;
         switch (this.healing) {
             case 1:
-                amount = 5;
+                amount = 20;
                 break;
             case 2:
-                amount = 15;
+                amount = 30;
                 break;
             default:
-                amount = 30;
+                amount = 50;
                 break;
         }
 
@@ -113,13 +113,13 @@ public class GachaAction extends AbstractGameAction {
         int amount = 0;
         switch (this.artifact) {
             case 1:
-                amount = 0;
-                break;
-            case 2:
                 amount = 1;
                 break;
-            default:
+            case 2:
                 amount = 2;
+                break;
+            default:
+                amount = 3;
                 break;
         }
 
@@ -143,7 +143,7 @@ public class GachaAction extends AbstractGameAction {
                 amount = 1;
                 break;
             default:
-                amount = 2;
+                amount = 3;
                 break;
         }
 

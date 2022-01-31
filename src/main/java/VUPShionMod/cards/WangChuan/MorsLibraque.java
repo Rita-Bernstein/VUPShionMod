@@ -24,6 +24,7 @@ public class MorsLibraque extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 4;
+        this.selfRetain = true;
     }
 
     @Override
@@ -39,7 +40,6 @@ public class MorsLibraque extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeSecondM(-1);
-            this.selfRetain = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

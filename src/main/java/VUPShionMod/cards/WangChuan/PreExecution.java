@@ -20,7 +20,7 @@ public class PreExecution extends AbstractWCCard {
     public PreExecution() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 3;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.secondaryM = this.baseSecondaryM = 1;
     }
 
@@ -37,12 +37,27 @@ public class PreExecution extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBlock(5);
-            upgradeMagicNumber(5);
+            upgradeMagicNumber(8);
             upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             this.initializeTitle();
             this.initializeDescription();
         }
+    }
+
+    @Override
+    protected void upgradeBaseCost(int newBaseCost) {
+        int diff = this.costForTurn - this.cost;
+        this.cost = newBaseCost;
+        if (this.costForTurn >= 0) {
+            this.costForTurn = this.cost + diff;
+        }
+
+        if (this.costForTurn < 0) {
+            this.costForTurn = 0;
+        }
+
+        this.upgradedCost = true;
     }
 }

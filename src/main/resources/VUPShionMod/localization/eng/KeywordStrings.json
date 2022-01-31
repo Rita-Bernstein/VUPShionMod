@@ -60,6 +60,7 @@
     "NAMES": [
       "cor\u00a0gladii"
     ],
+	"PROPER_NAME": "Cor Gladii",
     "DESCRIPTION": "Enhances and powers certain Attacks. "
   },
   {
@@ -72,13 +73,14 @@
     "NAMES": [
       "magiam\u00a0obruor"
     ],
+	"PROPER_NAME": "Magiam Obruor",
     "DESCRIPTION": "Lose [E] next turn."
   },
   {
     "NAMES": [
-      "barrier"
+      "buffer"
     ],
-    "DESCRIPTION": "Prevents you from losing HP."
+    "DESCRIPTION": "Prevents the next time you would lose HP."
   },
   {
     "NAMES": [
@@ -86,8 +88,9 @@
     ],
     "DESCRIPTION": "#yBlock does not fade at the end of turn."
   },
+  {
      "NAMES": [
-      "tangled"
+      "constricted"
     ],
     "DESCRIPTION": "Receive damage equal to its stack each turn."
   }

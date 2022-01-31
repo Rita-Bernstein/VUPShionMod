@@ -113,6 +113,7 @@ public class WangChuan extends CustomPlayer {
         retVal.add(Sheathe.ID);
         retVal.add(InTheBlink.ID);
         retVal.add(GlandesMagicae.ID);
+        retVal.add(MorsLibraque.ID);
 
 
         return retVal;
@@ -248,9 +249,7 @@ public class WangChuan extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene1.png"));
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene2.png"));
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene3.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/WangChuanCutScene.png"));
         return panels;
     }
 }

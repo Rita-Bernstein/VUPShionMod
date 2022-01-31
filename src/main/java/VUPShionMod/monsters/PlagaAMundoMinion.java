@@ -111,7 +111,7 @@ public class PlagaAMundoMinion extends CustomMonster {
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.FIRE));
                 break;
             case 5:
-                addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 25), 25));
+                addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50)));
                 break;
             case 98:
                 addToBot(new HealAction(this, this, this.maxHealth));

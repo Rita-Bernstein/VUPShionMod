@@ -17,7 +17,7 @@ public class CorLapisque extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public CorLapisque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

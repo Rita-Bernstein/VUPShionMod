@@ -21,7 +21,7 @@ public class VitaNaturaque extends AbstractWCCard {
 
     public VitaNaturaque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 11;
+        this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 1;
     }
 
@@ -36,7 +36,7 @@ public class VitaNaturaque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(5);
+            upgradeBlock(3);
             upgradeMagicNumber(1);
         }
     }

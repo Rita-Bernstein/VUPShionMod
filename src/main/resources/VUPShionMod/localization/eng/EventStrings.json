@@ -52,7 +52,7 @@
       "Hmmm...Coming soon, no rush!"
     ],
     "OPTIONS": [
-      "[Feed] #rLose 50 gold. #g75%：Obtain a #yCloyce card.",
+      "[Feed] #rLose 50 gold. #g75%:Obtain a #yCloyce card.",
       "[Locked] No less than 50 gold is required.",
       "[Gu!]",
       "[Leave]"
@@ -79,7 +79,7 @@
     ],
     "OPTIONS": [
       "[Proceed] ...",
-      "[Fists Can Talk!] Battle Ahead.",
+      "[Fists Can Talk!] Battle Ahead.(work in progress)",
       "[Return Home]",
       "[Locked] Further Update Awaits."
     ]

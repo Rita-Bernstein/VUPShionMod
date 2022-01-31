@@ -24,19 +24,22 @@ public class AethereScindo extends AbstractWCCard {
 
     public AethereScindo() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 0;
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.baseSecondaryM = this.secondaryM = 1;
+        this.magicNumber = this.baseMagicNumber = 0;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        calculateCardDamage(m);
+        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastDamageDeal;
         if (this.upgraded)
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+            addToBot(new DamageAction(m, new DamageInfo(p, this.magicNumber, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+        addToBot(new DamageAction(m, new DamageInfo(p, this.magicNumber, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.magicNumber, this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        initializeDescription();
 
         addToBot(new DrawCardAction(1));
         addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));
@@ -44,8 +47,8 @@ public class AethereScindo extends AbstractWCCard {
 
 
     public void applyPowers() {
+        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastDamageDeal;
         super.applyPowers();
-        this.damage = GameStatsPatch.lastDamageDeal;
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
@@ -59,8 +62,8 @@ public class AethereScindo extends AbstractWCCard {
 
 
     public void calculateCardDamage(AbstractMonster mo) {
+        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastDamageDeal;
         super.calculateCardDamage(mo);
-        this.damage = GameStatsPatch.lastDamageDeal;
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();

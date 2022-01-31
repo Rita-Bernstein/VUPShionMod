@@ -75,7 +75,8 @@ public class InTheBlink extends AbstractWCCard {
             addBaseAoeDamage();
             doAoeDamage();
             addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
-            addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
+            if (this.timesUpgraded >= 9)
+                addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
         }
     }
 
@@ -135,7 +136,7 @@ public class InTheBlink extends AbstractWCCard {
                 upgradeSecondM(1);
 
 
-            this.name = EXTENDED_DESCRIPTION[this.timesUpgraded] + (this.timesUpgraded + 1);
+            this.name = EXTENDED_DESCRIPTION[this.timesUpgraded];
             this.upgraded = true;
             this.timesUpgraded++;
             initializeTitle();
@@ -167,7 +168,7 @@ public class InTheBlink extends AbstractWCCard {
         }
 
         if (this.timesUpgraded >= 3) {
-            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[15] + EXTENDED_DESCRIPTION[18];
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[15];
         }
         if (this.timesUpgraded >= 9) {
             this.rawDescription = UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[11] + EXTENDED_DESCRIPTION[15] + EXTENDED_DESCRIPTION[18];

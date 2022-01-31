@@ -20,7 +20,7 @@ public class GlandesMagicae extends AbstractWCCard {
 
     public GlandesMagicae() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 9;
+        this.baseDamage = 12;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class GlandesMagicae extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(4);
         }
     }
 }

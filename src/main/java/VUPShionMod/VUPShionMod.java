@@ -546,7 +546,7 @@ public class VUPShionMod implements
         cards.add(new VampireForm());
 
 
-        cards.add(new ChaosRapidus());
+        cards.add(new CodexChai());
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);

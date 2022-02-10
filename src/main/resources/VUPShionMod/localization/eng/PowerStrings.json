@@ -265,7 +265,7 @@
   "VUPShionMod:CorGladiiPower": {
     "NAME": "Cor Gladii",
     "DESCRIPTIONS": [
-      "#yCor #yGladii enhances and powers certain Attacks."
+      "Enhances and powers certain Attacks."
     ]
   },
   "VUPShionMod:MagiamObruorPower": {
@@ -327,6 +327,18 @@
     "NAME": "Moonstrider",
     "DESCRIPTIONS": [
       "Whenever attacked this turn, gain #b%d #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:DistantiaAbsensquePower": {
+    "NAME": "三之章：远行",
+    "DESCRIPTIONS": [
+      "每当你获得 #y魔能过载 时，获得 #b%d 层 #y多层护甲 。"
+    ]
+  },
+  "VUPShionMod:WeatherEyePower": {
+    "NAME": "警觉",
+    "DESCRIPTIONS": [
+      "每当你获得 #y剑意 时，获得 #b%d 点 #y格挡 。"
     ]
   }
 }

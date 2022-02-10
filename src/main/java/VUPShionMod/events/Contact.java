@@ -2,6 +2,7 @@ package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.monsters.PlagaAMundo;
+import VUPShionMod.relics.TrackingBeacon;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
@@ -41,16 +42,16 @@ public class Contact extends AbstractImageEvent {
             case INTRO:
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.setDialogOption(OPTIONS[1]);
+                this.imageEventText.setDialogOption(OPTIONS[1], new TrackingBeacon());
                 this.imageEventText.setDialogOption(OPTIONS[2]);
                 this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BossEvent2.png"));
                 this.curScreen = CurrentScreen.COMPLETE;
                 break;
             case COMPLETE:
-                if (buttonPressed == 0){
+                if (buttonPressed == 0) {
                     AbstractDungeon.player.loseRelic(MarkOfTheBloom.ID);
                     fightBoss();
-                } else{
+                } else {
                     leave();
                 }
                 break;

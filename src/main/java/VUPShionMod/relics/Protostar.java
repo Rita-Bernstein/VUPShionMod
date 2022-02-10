@@ -37,6 +37,7 @@ public class Protostar extends CustomRelic {
     @Override
     public void atBattleStart() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BufferPower(AbstractDungeon.player, 2)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 2)));
     }
 
     @Override

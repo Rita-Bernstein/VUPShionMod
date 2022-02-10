@@ -8,4 +8,6 @@ public class CardColorEnum {
 	public static AbstractCard.CardColor VUP_Shion_LIME;
 	@SpireEnum
 	public static AbstractCard.CardColor WangChuan_LIME;
+	@SpireEnum(name = "Codex")
+	public static AbstractCard.CardColor Codex_LIME;
 }

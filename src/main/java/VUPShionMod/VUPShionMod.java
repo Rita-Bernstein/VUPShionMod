@@ -5,14 +5,11 @@ import VUPShionMod.cards.ShionCard.anastasia.*;
 import VUPShionMod.cards.ShionCard.kuroisu.*;
 import VUPShionMod.cards.ShionCard.liyezhu.*;
 import VUPShionMod.cards.ShionCard.minami.*;
-import VUPShionMod.cards.ShionCard.optionCards.GravityFinFunnelUpgrade;
-import VUPShionMod.cards.ShionCard.optionCards.InvestigationFinFunnelUpgrade;
-import VUPShionMod.cards.ShionCard.optionCards.PursuitFinFunnelUpgrade;
+import VUPShionMod.cards.ShionCard.optionCards.*;
 import VUPShionMod.cards.ShionCard.shion.*;
-import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
-import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
-import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
+import VUPShionMod.cards.ShionCard.tempCards.*;
 import VUPShionMod.cards.WangChuan.*;
+import VUPShionMod.cards.Codex.*;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.*;
@@ -126,6 +123,19 @@ public class VUPShionMod implements
                 assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
                 assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
+
+        BaseMod.addColor(CardColorEnum.Codex_LIME,
+                WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color, WangChuan_Color,
+                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
+                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
+                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
+                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
+
 
     }
 
@@ -536,7 +546,7 @@ public class VUPShionMod implements
         cards.add(new VampireForm());
 
 
-
+        cards.add(new ChaosRapidus());
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);
@@ -571,6 +581,7 @@ public class VUPShionMod implements
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new TrackingBeacon(), CardColorEnum.WangChuan_LIME);
     }
 
 

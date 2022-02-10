@@ -30,4 +30,7 @@ public class CardTagsEnum {
 
     @SpireEnum
     public static AbstractCard.CardTags WANGCHUAN_CARD;
+
+    @SpireEnum
+    public static AbstractCard.CardTags Codex_CARD;
 }

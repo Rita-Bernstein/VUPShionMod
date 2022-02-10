@@ -2,6 +2,7 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.WeatherEyePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -20,20 +21,19 @@ public class WeatherEye extends AbstractWCCard {
 
     public WeatherEye() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 9;
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new MetallicizePower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p,p,new WeatherEyePower(p,this.magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(3);
         }
     }
 }

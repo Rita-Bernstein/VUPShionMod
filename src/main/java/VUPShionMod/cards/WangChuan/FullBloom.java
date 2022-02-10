@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.LoseMaxHPAction;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -18,25 +19,46 @@ public class FullBloom extends AbstractWCCard {
 
     private static final int COST = 3;
 
-    public FullBloom() {
+    public FullBloom(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 3;
+        this.timesUpgraded = upgrades;
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.secondaryM = this.baseSecondaryM = 3;
+    }
+
+    public FullBloom() {
+        this(0);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new BerserkPower(p,this.magicNumber)));
+        addToBot(new LoseMaxHPAction(p,p,this.secondaryM));
+        addToBot(new ApplyPowerAction(p, p, new BerserkPower(p, this.magicNumber)));
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return this.timesUpgraded <= 1;
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeBaseCost(2);
-            upgradeMagicNumber(1);
+        if (this.timesUpgraded <= 1) {
+            if (this.timesUpgraded < 1) {
+                this.upgraded = true;
+                this.name = this.name + "+";
+                this.initializeTitle();
+                upgradeMagicNumber(1);
+                this.rawDescription = UPGRADE_DESCRIPTION;
+                initializeDescription();
+            } else {
+
+                this.name = EXTENDED_DESCRIPTION[1];
+                initializeTitle();
+            }
             this.isInnate = true;
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            this.timesUpgraded++;
+            upgradeSecondM(-1);
         }
     }
 }

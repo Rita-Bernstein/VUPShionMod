@@ -52,5 +52,10 @@
       "将",
       " 张牌复制到手牌"
     ]
+  },
+  "VUPShionMod:CodexCardPatch": {
+    "TEXT": [
+      "通典魔法"
+    ]
   }
 }

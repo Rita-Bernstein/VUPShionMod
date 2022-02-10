@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
 import VUPShionMod.powers.MorsLibraquePower;
 import VUPShionMod.powers.NoSkillsPower;
 import VUPShionMod.powers.StiffnessPower;
@@ -9,13 +10,17 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.watcher.EnergyDownPower;
+
+import java.util.function.Supplier;
 
 public class MorsLibraque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("MorsLibraque");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc33.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -25,13 +30,16 @@ public class MorsLibraque extends AbstractWCCard {
         this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 4;
         this.selfRetain = true;
+
+        vupCardSetBanner(CardRarity.RARE, this.type);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new EnergyDownPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new NoSkillsPower(p)));
-        addToBot(new ApplyPowerAction(p, p, new MorsLibraquePower(p, this.secondaryM)));
+        Supplier<AbstractPower> powerToApply = () -> new MorsLibraquePower(null, this.secondaryM);
+        addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
 
     }
 

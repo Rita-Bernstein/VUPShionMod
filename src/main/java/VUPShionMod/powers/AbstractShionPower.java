@@ -32,6 +32,9 @@ public class AbstractShionPower extends AbstractPower {
     public void onShuffle(){}
 
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount){
+    }
+
+    public void onStackPower(AbstractPower power){
 
     }
 }

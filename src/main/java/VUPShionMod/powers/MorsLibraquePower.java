@@ -51,14 +51,8 @@ public class MorsLibraquePower extends AbstractShionPower {
         addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, MorsLibraquePower.POWER_ID, 1));
         if (this.amount == 1) {
             flash();
-            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                    if (!monster.isDeadOrEscaped()) {
-                        addToBot(new VFXAction(new GiantTextEffect(monster.hb.cX, monster.hb.cY)));
-                        addToBot(new InstantKillAction(monster));
-                    }
-                }
-            }
+            addToBot(new VFXAction(new GiantTextEffect(this.owner.hb.cX, this.owner.hb.cY)));
+            addToBot(new InstantKillAction(this.owner));
         }
     }
 }

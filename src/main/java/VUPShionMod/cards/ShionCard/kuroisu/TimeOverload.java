@@ -41,7 +41,7 @@ public class TimeOverload extends AbstractKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.rawDescription = this.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

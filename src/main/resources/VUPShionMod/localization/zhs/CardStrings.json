@@ -505,7 +505,7 @@
   },
   "VUPShionMod:AethereScindo": {
     "NAME": "燕反",
-    "DESCRIPTION": "造成上次造成的攻击伤两害。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成上次造成的攻击伤害两次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
     "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害三次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !M! 点伤害）"
@@ -513,8 +513,8 @@
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
-    "DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害X+2次。 NL 获得 !M! 层 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害X+3次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 层 vup_shion_mod:剑意 。 NL 击晕 敌人。",
+    "UPGRADE_DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 击晕 敌人。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害）"
     ]
@@ -563,7 +563,7 @@
   },
   "VUPShionMod:WeatherEye": {
     "NAME": "警觉",
-    "DESCRIPTION": "每回合开始时 NL 获得 !M! 点 格挡 。"
+    "DESCRIPTION": "每当你获得 vup_shion_mod:剑意 时，获得 !M! 点 格挡 。"
   },
   "VUPShionMod:Focus": {
     "NAME": "蓄气",
@@ -579,7 +579,7 @@
   },
   "VUPShionMod:PetalsFall": {
     "NAME": "散华",
-    "DESCRIPTION": "你的 vup_shion_mod:剑意 不再降低。 NL 每回合开始时 NL 获得 !M! 层 vup_shion_mod:剑意 。",
+    "DESCRIPTION": "每当你打出一张攻击牌，获得 !M! 层 vup_shion_mod:剑意 。",
     "UPGRADE_DESCRIPTION": "获得 !VUPShionSecondM! 层 vup_shion_mod:剑意 。 NL 你的 vup_shion_mod:剑意 不再降低。 NL 每回合开始时 NL 获得 !M! 层 vup_shion_mod:剑意 。"
   },
   "VUPShionMod:Poise": {
@@ -588,8 +588,11 @@
   },
   "VUPShionMod:FullBloom": {
     "NAME": "满开",
-    "DESCRIPTION": "每回合开始时 NL 获得 !M! [E] 。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 每回合开始时 NL 获得 !M! [E] 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 点最大生命。 NL 每回合开始时 NL 获得 !M! [E] 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 失去 !VUPShionSecondM! 点最大生命。 NL 每回合开始时 NL 获得 !M! [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      "大满开"
+    ]
   },
   "VUPShionMod:BombardaMagica": {
     "NAME": "魔连弹",
@@ -619,7 +622,7 @@
   },
   "VUPShionMod:DistantiaAbsensque": {
     "NAME": "三之章：远行",
-    "DESCRIPTION": "获得当前 格挡 的 多层护甲 。 vup_shion_mod:魔能过载 。 NL 消耗 。",
+    "DESCRIPTION": "每当你获得 vup_shion_mod:魔能过载 时，获得 !M! 层 多层护甲 。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 获得当前 格挡 的 多层护甲 。 NL vup_shion_mod:魔能过载 。 NL 消耗 。"
   },
   "VUPShionMod:VitaNaturaque": {
@@ -661,5 +664,65 @@
     "NAME": "突然想起来自己是个吸血鬼",
     "DESCRIPTION": "每对敌人造成未被 格挡 的伤害时，回复 !M! 点生命。",
     "UPGRADE_DESCRIPTION": " 固有 。 NL 每对敌人造成未被 格挡 的伤害时，回复 !M! 点生命。"
+  },
+  "VUPShionMod:ChaosNimius": {
+    "NAME": "通典：混沌",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
+    "UPGRADE_DESCRIPTION": "抽满手牌。 NL 消耗 任意张牌。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：混沌（泛滥）",
+      "通典：混沌（极意）",
+      "抽 !M! 张牌。 NL 至多 消耗 3张牌。"
+    ]
+  },
+  "VUPShionMod:ChaosRapidus": {
+    "NAME": "通典：混沌",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：混沌（神速）",
+      "通典：混沌（极意）",
+      "抽 !M! 张牌。 NL 至多 消耗 3张牌。"
+    ]
+  },
+  "VUPShionMod:LuxRapida": {
+    "NAME": "通典：光",
+    "DESCRIPTION": "击晕 所有敌人。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "击晕 所有敌人。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：光（神速）",
+      "通典：光（极意）",
+      "击晕 所有敌人两次。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:LuxConstans": {
+    "NAME": "通典：光",
+    "DESCRIPTION": "击晕 所有敌人。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "击晕所有敌人。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：光（永续）",
+      "通典：光（极意）",
+      "击晕 所有敌人两次。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:CaligoConstans": {
+    "NAME": "通典：暗",
+    "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：暗（永续）",
+      "通典：暗（极意）",
+      "下回合造成三倍伤害。 NL 下回合抽2张攻击牌。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:CaligoRapida": {
+    "NAME": "通典：暗",
+    "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。 NL 下回合抽1张攻击牌 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：暗（神速）",
+      "通典：暗（极意）",
+      "下回合造成三倍伤害。 NL 下回合抽2张攻击牌。 NL 消耗 。"
+    ]
   }
 }

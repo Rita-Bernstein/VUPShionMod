@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class CorGladiiPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("CorGladiiPower");
@@ -29,17 +30,25 @@ public class CorGladiiPower extends AbstractShionPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CorGladiiPower36.png")), 0, 0, 36, 36);
     }
 
+
     @Override
-    public void reducePower(int reduceAmount) {
-        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID))
-            return;
-        super.reducePower(reduceAmount);
+    public void onInitialApplication() {
+        super.onInitialApplication();
+        for(AbstractPower p : AbstractDungeon.player.powers){
+            if(p instanceof AbstractShionPower){
+                ((AbstractShionPower) p).onStackPower(this);
+            }
+        }
     }
 
     @Override
-    public void onRemove() {
-        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID))
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(this.owner, this.amount)));
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        for(AbstractPower p : AbstractDungeon.player.powers){
+            if(p instanceof AbstractShionPower){
+                ((AbstractShionPower) p).onStackPower(this);
+            }
+        }
     }
 
     @Override

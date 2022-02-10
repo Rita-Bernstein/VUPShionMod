@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,11 +20,11 @@ public class PetalsFallPower extends AbstractShionPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    public PetalsFallPower(AbstractCreature owner) {
+    public PetalsFallPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = -1;
+        this.amount = amount;
         updateDescription();
 
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PetalsFallPower128.png")), 0, 0, 128, 128);
@@ -33,7 +34,14 @@ public class PetalsFallPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description =DESCRIPTIONS[0];
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
+    @Override
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        if (card.type == AbstractCard.CardType.ATTACK) {
+            flash();
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new CorGladiiPower(this.owner, this.amount)));
+        }
+    }
 }

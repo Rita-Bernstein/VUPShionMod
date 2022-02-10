@@ -92,6 +92,6 @@
      "NAMES": [
       "constricted"
     ],
-    "DESCRIPTION": "Receive damage equal to its stack each turn."
+    "DESCRIPTION": "Receive damage each turn."
   }
 ]

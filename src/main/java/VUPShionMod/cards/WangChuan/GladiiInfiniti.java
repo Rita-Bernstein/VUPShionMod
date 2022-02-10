@@ -5,6 +5,8 @@ import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.XActionAction;
 import VUPShionMod.powers.CorGladiiPower;
 import VUPShionMod.powers.StiffnessPower;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,10 +14,13 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ConstrictedPower;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -33,11 +38,13 @@ public class GladiiInfiniti extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = 5;
-        this.baseSecondaryM = this.secondaryM = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.play("POWER_TIME_WARP", 0.05F);
+        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
+        AbstractDungeon.topLevelEffectsQueue.add(new TimeWarpTurnEndEffect());
 
         int d = upgraded ? 5 : 3;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
@@ -46,23 +53,15 @@ public class GladiiInfiniti extends AbstractWCCard {
 
         calculateCardDamage(m);
 
-        Consumer<Integer> actionConsumer = effect -> {
-            for (int i = 0; i < effect + 2; i++)
-                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            if (upgraded)
-                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        };
-
-        addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
+        for (int i = 0; i < 8; i++)
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         initializeDescription();
 
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
-        if (upgraded)
-            addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.secondaryM));
+        addToBot(new StunMonsterAction(m, p, 1));
     }
 
 

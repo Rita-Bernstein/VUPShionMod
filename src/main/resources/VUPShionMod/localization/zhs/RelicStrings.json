@@ -57,7 +57,28 @@
     "NAME": "支援系统：星核",
     "FLAVOR": "在星云型的基础上加装了灵能护盾发生器，并增强了推进器功率。",
     "DESCRIPTIONS": [
-      "每场战斗开始时获得 #b2 层 #y缓冲 。 NL 每回合开始时失去 #b2 点 #y硬直 。"
+      "每场战斗开始时获得 #b2 层 #y缓冲 和 #y敏捷 。 NL 每回合开始时失去 #b2 点 #y硬直 。"
+    ]
+  },
+  "VUPShionMod:TrackingBeacon": {
+    "NAME": "引导信标",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "向其他队员发送了战场位置"
+    ]
+  },
+  "VUPShionMod:BlueGiant": {
+    "NAME": "特化装备：蓝巨星",
+    "FLAVOR": "牺牲了机甲部分机动性，换取了强大的远程火力",
+    "DESCRIPTIONS": [
+      "初始浮游炮等级+1 每回合获得一张浮游炮激活"
+    ]
+  },
+  "VUPShionMod:DarkStar": {
+    "NAME": "特化装备：暗星",
+    "FLAVOR": "在友人的帮助下，为机甲加装了魔能触发装置",
+    "DESCRIPTIONS": [
+      "战斗开始时将一张 通典：雷（神速） 加入手牌 （奖励卡牌中加入通用魔法）"
     ]
   }
 }

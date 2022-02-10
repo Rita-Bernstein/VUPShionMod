@@ -424,8 +424,8 @@
   },
   "VUPShionMod:Sheathe": {
     "NAME": "Sheathe",
-    "DESCRIPTION": "Gain !B! Block. NL Reduce !VUPShionSecondM! vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Reduce !VUPShionSecondM! vup_shion_mod:Stiffness. NL Draw 1 card.",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Draw 1 card.",
     "EXTENDED_DESCRIPTION": [
       "Shadowy Edge"
     ]
@@ -513,7 +513,10 @@
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "Gladii Infiniti",
     "DESCRIPTION": "Deal damage equal to 3+ vup_shion_mod:Cor\u00a0Gladii for X+2 times. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to 5+ vup_shion_mod:Cor\u00a0Gladii for X+3 times. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness."
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 5+ vup_shion_mod:Cor\u00a0Gladii for X+3 times. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !D! damage.)"
+    ]
   },
   "VUPShionMod:Guard": {
     "NAME": "Guard",
@@ -530,7 +533,7 @@
   "VUPShionMod:Reflect": {
     "NAME": "Reflect",
     "DESCRIPTION": " Retain. NL Gain Block equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii.",
-    "UPGRADE_DESCRIPTION": "(Deal !D! damage, gain !B! Block.)"
+    "UPGRADE_DESCRIPTION": " NL (Deal !D! damage, gain !B! Block.)"
   },
   "VUPShionMod:Sharpen": {
     "NAME": "Sharpen",
@@ -559,7 +562,7 @@
   },
   "VUPShionMod:WeatherEye": {
     "NAME": "Weather Eye",
-    "DESCRIPTION": "At the start of your turn, gain !M! Block."
+    "DESCRIPTION": "At the end of your turn, gain !M! Block."
   },
   "VUPShionMod:Focus": {
     "NAME": "Focus",
@@ -597,8 +600,8 @@
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "Rosa Spinaque",
-    "DESCRIPTION": "Ethereal. NL Apply 7X vup_shion_mod:Tangled and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
-    "UPGRADE_DESCRIPTION": "Ethereal. NL Apply 10X vup_shion_mod:Tangled and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
+    "DESCRIPTION": "Ethereal. NL Apply 7X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Apply 10X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "Mors Libraque",
@@ -618,8 +621,8 @@
   },
   "VUPShionMod:DistantiaAbsensque": {
     "NAME": "Iter Absensque",
-    "DESCRIPTION": "Gain Plated Armor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain Plated Armor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor."
+    "DESCRIPTION": "Gain Plated Armor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Plated Armor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
   },
   "VUPShionMod:VitaNaturaque": {
     "NAME": "Terra Naturaque",
@@ -632,8 +635,8 @@
   },
   "VUPShionMod:AnimaSpiritusque": {
     "NAME": "Anima Spiritusque",
-    "DESCRIPTION": "Gain !M! [E] next turn. NL Gain 5 *Regen.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! [E] next turn. NL Gain 5 *Regen."
+    "DESCRIPTION": "Gain !M! [E] next turn. NL Gain 5 *Regen. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! [E] next turn. NL Gain 5 *Regen. NL Exhaust."
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "Mens Virtusque",

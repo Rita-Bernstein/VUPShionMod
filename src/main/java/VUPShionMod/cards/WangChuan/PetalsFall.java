@@ -22,25 +22,19 @@ public class PetalsFall extends AbstractWCCard {
 
     public PetalsFall() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 6;
-        this.secondaryM = this.baseSecondaryM = 5;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new GainCorGladiiPower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new PetalsFallPower(p)));
-        if (this.upgraded)
-            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new PetalsFallPower(p,this.magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(9);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMagicNumber(1);
         }
     }
 }

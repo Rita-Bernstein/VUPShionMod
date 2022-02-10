@@ -32,6 +32,26 @@ public class MagiamObruorPower extends AbstractShionPower {
     }
 
     @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
+        for(AbstractPower p : AbstractDungeon.player.powers){
+            if(p instanceof AbstractShionPower){
+                ((AbstractShionPower) p).onStackPower(this);
+            }
+        }
+    }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        for(AbstractPower p : AbstractDungeon.player.powers){
+            if(p instanceof AbstractShionPower){
+                ((AbstractShionPower) p).onStackPower(this);
+            }
+        }
+    }
+
+    @Override
     public void atStartOfTurn() {
         flash();
         if (this.owner.hasPower(MensVirtusquePower.POWER_ID)) {

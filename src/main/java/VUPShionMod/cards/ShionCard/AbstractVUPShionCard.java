@@ -66,6 +66,11 @@ public abstract class AbstractVUPShionCard extends CustomCard {
     }
 
     public void vupCardSetBanner() {
+        vupCardSetBanner(this.rarity, this.type);
+    }
+
+
+    public void vupCardSetBanner(CardRarity rarity, CardType type) {
         String rarityString;
         String typeString;
 
@@ -147,7 +152,7 @@ public abstract class AbstractVUPShionCard extends CustomCard {
             float x = -108.0f;
             float y = 200.0f;
 
-            if (VUPShionMod.useSimpleOrb || this.color == CardColorEnum.WangChuan_LIME) {
+            if (VUPShionMod.useSimpleOrb || this.color == CardColorEnum.WangChuan_LIME|| this.color == CardColorEnum.Codex_LIME) {
                 if (this instanceof FinFunnelUpgrade)
                     darkOrbRenderHelper(sb, orb_g, x, y);
                 else

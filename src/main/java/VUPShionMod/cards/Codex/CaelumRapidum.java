@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DoubleTapPower;
 
 public class CaelumRapidum extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("CaelumNimium");
+    public static final String ID = VUPShionMod.makeID("CaelumRapidum");
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/tian.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -37,38 +37,10 @@ public class CaelumRapidum extends AbstractCodexCard {
                 addToBot(new ApplyPowerAction(p,p,new TwoAttackPower(p,1)));
                 break;
             case 1:
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        GameStatsPatch.wontGainStiffnessPower = true;
-                        isDone = true;
-                    }
-                });
-                addToBot(new ApplyPowerAction(p,p,new FourAttackPower(p,1)));
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        GameStatsPatch.wontGainStiffnessPower = false;
-                        isDone = true;
-                    }
-                });
+                addToBot(new ApplyPowerAction(p,p,new TwoAttackPower(p,1)));
                 break;
             case 2:
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        GameStatsPatch.wontGainStiffnessPower = true;
-                        isDone = true;
-                    }
-                });
                 addToBot(new ApplyPowerAction(p,p,new ThreeAttackPower(p,1)));
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        GameStatsPatch.wontGainStiffnessPower = false;
-                        isDone = true;
-                    }
-                });
                 break;
         }
     }
@@ -79,7 +51,7 @@ public class CaelumRapidum extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1)
-                upgradeBaseCost(2);
+                upgradeBaseCost(0);
 
             if (this.timesUpgraded == 2){
                 upgradeBaseCost(1);

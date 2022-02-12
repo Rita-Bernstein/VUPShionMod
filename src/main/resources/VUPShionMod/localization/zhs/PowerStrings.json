@@ -352,8 +352,8 @@
   "VUPShionMod:TripleDamagePower": {
     "NAME": "三倍伤害",
     "DESCRIPTIONS": [
-      "下回合造成 #y双倍伤害 。",
-      "下 #b%d 个回合造成 #y三倍伤害 。"
+      "本回合造成 #y三倍伤害 。",
+      "接下来的 #b%d 个回合造成 #y三倍伤害 。"
     ]
   },
   "VUPShionMod:NextTurnAttackPower": {
@@ -364,24 +364,24 @@
     ]
   },
   "VUPShionMod:TwoAttackPower": {
-    "NAME": "两次攻击",
+    "NAME": "双倍攻击",
     "DESCRIPTIONS": [
-      "你的下 #b%d 张 #y攻击牌 将打出两次。",
-      "你的下 #b%d 张 #y攻击牌 将打出两次。"
+      "你的下 #b%d 张 #y攻击牌 将造成双倍伤害。",
+      "你的下 #b%d 张 #y攻击牌 将造成双倍伤害。"
     ]
   },
   "VUPShionMod:ThreeAttackPower": {
-    "NAME": "三次攻击",
+    "NAME": "双倍攻击",
     "DESCRIPTIONS": [
-      "你的下 #b%d 张 #y攻击牌 将打出三次。",
-      "你的下 #b%d 张 #y攻击牌 将打出三次。"
+      "你的下 #b%d 张 #y攻击牌 将造成三倍伤害。",
+      "你的下 #b%d 张 #y攻击牌 将造成三倍伤害。"
     ]
   },
   "VUPShionMod:FourAttackPower": {
-    "NAME": "四次攻击",
+    "NAME": "四倍攻击",
     "DESCRIPTIONS": [
-      "你的下 #b%d 张 #y攻击牌 将打出四次。",
-      "你的下 #b%d 张 #y攻击牌 将打出四次。"
+      "你的下 #b%d 张 #y攻击牌 将造成四倍伤害。",
+      "你的下 #b%d 张 #y攻击牌 将造成四倍伤害。"
     ]
   },
   "VUPShionMod:TwoSkillPower": {
@@ -424,6 +424,19 @@
     "DESCRIPTIONS": [
       "你的下 #b%d 张 #y能力牌 将打出四次。",
       "你的下 #b%d 张 #y能力牌 将打出四次。"
+    ]
+  },
+  "VUPShionMod:FreeCardPower": {
+    "NAME": "免费出牌",
+    "DESCRIPTIONS": [
+      "你打出的的下 #b%d 张牌耗能为0。",
+      "你打出的的下 #b%d 张牌耗能为0。"
+    ]
+  },
+  "VUPShionMod:TurnDexPower": {
+    "NAME": "回合敏捷",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 #b%d 点 #y敏捷 。"
     ]
   }
 }

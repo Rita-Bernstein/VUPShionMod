@@ -52,5 +52,10 @@
       "將",
       " 張牌複製到手牌"
     ]
+  },
+  "VUPShionMod:UpgradeAction": {
+    "TEXT": [
+      "選擇牌升級"
+    ]
   }
 }

@@ -727,22 +727,22 @@
   },
   "VUPShionMod:CaelumNimium": {
     "NAME": "通典：天",
-    "DESCRIPTION": "下张攻击牌打出 !M! 次",
-    "UPGRADE_DESCRIPTION": "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。",
+    "UPGRADE_DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。",
     "EXTENDED_DESCRIPTION": [
       "通典：天（泛滥）",
       "通典：天（极意）",
-      "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。"
+      "下张攻击牌造成 !M! 倍伤害。"
     ]
   },
   "VUPShionMod:CaelumRapidum": {
     "NAME": "通典：天",
-    "DESCRIPTION": "下张攻击牌打出 !M! 次",
-    "UPGRADE_DESCRIPTION": "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。",
+    "UPGRADE_DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。",
     "EXTENDED_DESCRIPTION": [
       "通典：天（神速）",
       "通典：天（极意）",
-      "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。"
+      "下张攻击牌造成 !M! 倍伤害。"
     ]
   },
   "VUPShionMod:TerraNimia": {
@@ -803,6 +803,86 @@
       "通典：水（神速）",
       "通典：水（极意）",
       "下回合获得 !M! [E] 。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:IgnisRapidus": {
+    "NAME": "通典：火",
+    "DESCRIPTION": "下 !M! 张牌耗能为0。 打出后将其 消耗 。",
+    "UPGRADE_DESCRIPTION": "下 !M! 张牌耗能为0。 打出后将其 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：火（泛滥）",
+      "通典：火（极意）",
+      "下 !M! 张牌耗能为0。 打出后将其 消耗 。"
+    ]
+  },
+  "VUPShionMod:IgnisNimius": {
+    "NAME": "通典：火",
+    "DESCRIPTION": "下 !M! 张牌耗能为0。 打出后将其 消耗 。",
+    "UPGRADE_DESCRIPTION": "下 !M! 张牌耗能为0。 打出后将其 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：火（泛滥）",
+      "通典：火（极意）",
+      "下 !M! 张牌耗能为0。 打出后将其 消耗 。"
+    ]
+  },
+  "VUPShionMod:VentusRapidus": {
+    "NAME": "通典：风",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 敏捷 。 NL 你的回合开始时， NL 获得 !VUPShionSecondM! 点 敏捷 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：风（神速）",
+      "通典：风（极意）",
+      "获得 !M! 点 敏捷 。"
+    ]
+  },
+  "VUPShionMod:VentusNimius": {
+    "NAME": "通典：风",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 敏捷 。 NL 你的回合开始时， NL 获得 !VUPShionSecondM! 点 敏捷 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：风（永续）",
+      "通典：风（极意）",
+      "获得 !VUPShionSecondM! 点 敏捷 。"
+    ]
+  },
+  "VUPShionMod:AurumNimium": {
+    "NAME": "通典：金",
+    "DESCRIPTION": " 升级 !M! 张手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "升级 !M! 张牌堆或手牌中的牌。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：金（泛滥）",
+      "通典：金（极意）",
+      "升级所有张手牌。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:AurumFidum": {
+    "NAME": "通典：金",
+    "DESCRIPTION": " 升级 !M! 张手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "升级 !M! 张牌堆或手牌中的牌。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：金（如意）",
+      "通典：金（极意）",
+      "升级 !M! 张牌堆或手牌中的牌。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:LignumNimium": {
+    "NAME": "通典：木",
+    "DESCRIPTION": "保留 手牌 !M! 个回合。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 手牌 !M! 个回合。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：木（泛滥）",
+      "通典：木（极意）",
+      "保留 手牌 !M! 个回合。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:LignumConstans": {
+    "NAME": "通典：木",
+    "DESCRIPTION": "保留 手牌 !M! 个回合。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 手牌 !M! 个回合。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：木（永续）",
+      "通典：木（极意）",
+      "保留 手牌 !M! 个回合。 NL 消耗 。"
     ]
   }
 }

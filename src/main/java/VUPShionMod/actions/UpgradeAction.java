@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 
-public class UpgradeAndZeroCostAction extends AbstractGameAction {
+public class UpgradeAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("VUPShionMod:UpgradeAndZeroCostAction");
     private static final float DURATION_PER_CARD = 0.25F;
     public static final String[] TEXT = uiStrings.TEXT;
@@ -21,12 +21,12 @@ public class UpgradeAndZeroCostAction extends AbstractGameAction {
     private ArrayList<AbstractCard> cannotDuplicate;
 
 
-    public UpgradeAndZeroCostAction(AbstractCreature source, int amount) {
+    public UpgradeAction(AbstractCreature source, int amount) {
         this.dupeAmount = 1;
         this.cannotDuplicate = new ArrayList();
 
         setValues(AbstractDungeon.player, source, amount);
-        this.actionType = AbstractGameAction.ActionType.DRAW;
+        this.actionType = ActionType.DRAW;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
         this.dupeAmount = amount;
@@ -37,7 +37,7 @@ public class UpgradeAndZeroCostAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
 
             for (AbstractCard c : this.p.hand.group) {
-                if (!isDualWieldable(c)) {
+                if (!c.canUpgrade()) {
                     this.cannotDuplicate.add(c);
                 }
             }
@@ -80,7 +80,6 @@ public class UpgradeAndZeroCostAction extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 c.upgrade();
-                c.setCostForTurn(0);
                 addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
             }
 
@@ -103,7 +102,7 @@ public class UpgradeAndZeroCostAction extends AbstractGameAction {
 
 
     private boolean isDualWieldable(AbstractCard card) {
-        return (!card.canUpgrade() || card.costForTurn > 0 || card.cost > 0);
+        return (!card.upgraded || card.costForTurn > 0 || card.cost > 0);
     }
 }
 

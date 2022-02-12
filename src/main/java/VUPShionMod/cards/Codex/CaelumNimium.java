@@ -42,24 +42,10 @@ public class CaelumNimium extends AbstractCodexCard {
                 addToBot(new ApplyPowerAction(p,p,new TwoAttackPower(p,1)));
                 break;
             case 1:
-                addToBot(new ApplyPowerAction(p,p,new TwoAttackPower(p,1)));
+                addToBot(new ApplyPowerAction(p,p,new FourAttackPower(p,1)));
                 break;
             case 2:
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        GameStatsPatch.wontGainStiffnessPower = true;
-                        isDone = true;
-                    }
-                });
                 addToBot(new ApplyPowerAction(p,p,new ThreeAttackPower(p,1)));
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        GameStatsPatch.wontGainStiffnessPower = false;
-                        isDone = true;
-                    }
-                });
                 break;
         }
     }
@@ -70,7 +56,7 @@ public class CaelumNimium extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1){
-                upgradeBaseCost(0);
+                upgradeBaseCost(2);
                 upgradeMagicNumber(2);
             }
 

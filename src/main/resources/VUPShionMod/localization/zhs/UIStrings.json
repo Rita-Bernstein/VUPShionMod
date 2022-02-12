@@ -57,5 +57,10 @@
     "TEXT": [
       "通典魔法"
     ]
+  },
+  "VUPShionMod:UpgradeAction": {
+    "TEXT": [
+      "选择牌升级"
+    ]
   }
 }

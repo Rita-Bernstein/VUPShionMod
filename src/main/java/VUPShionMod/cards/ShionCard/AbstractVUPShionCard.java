@@ -254,4 +254,19 @@ public abstract class AbstractVUPShionCard extends CustomCard {
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m, int damageAmount) {
     }
 
+
+    @Override
+    protected void upgradeBaseCost(int newBaseCost) {
+        int diff = this.costForTurn - this.cost;
+        this.cost = newBaseCost;
+        if (this.costForTurn >= 0) {
+            this.costForTurn = this.cost + diff;
+        }
+
+        if (this.costForTurn < 0) {
+            this.costForTurn = 0;
+        }
+
+        this.upgradedCost = true;
+    }
 }

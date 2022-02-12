@@ -363,6 +363,13 @@
       "下回合开始时将 #b%d 张 #y攻击牌 加入手牌。"
     ]
   },
+  "VUPShionMod:TwoAttackPower": {
+    "NAME": "两次攻击",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y攻击牌 将打出两次。",
+      "你的下 #b%d 张 #y攻击牌 将打出两次。"
+    ]
+  },
   "VUPShionMod:ThreeAttackPower": {
     "NAME": "三次攻击",
     "DESCRIPTIONS": [
@@ -375,6 +382,13 @@
     "DESCRIPTIONS": [
       "你的下 #b%d 张 #y攻击牌 将打出四次。",
       "你的下 #b%d 张 #y攻击牌 将打出四次。"
+    ]
+  },
+  "VUPShionMod:TwoSkillPower": {
+    "NAME": "两次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y技能牌 将打出两次。",
+      "你的下 #b%d 张 #y技能牌 将打出两次。"
     ]
   },
   "VUPShionMod:ThreeSkillPower": {
@@ -391,6 +405,13 @@
       "你的下 #b%d 张 #y技能牌 将打出四次。"
     ]
   },
+  "VUPShionMod:TwoPowerPower": {
+    "NAME": "两次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y能力牌 将打出两次。",
+      "你的下 #b%d 张 #y能力牌 将打出两次。"
+    ]
+  },
   "VUPShionMod:ThreePowerPower": {
     "NAME": "三次能力",
     "DESCRIPTIONS": [
@@ -402,7 +423,7 @@
     "NAME": "四次能力",
     "DESCRIPTIONS": [
       "你的下 #b%d 张 #y能力牌 将打出四次。",
-      "你的下 #b%d 张 #y技能牌 将打出四次。"
+      "你的下 #b%d 张 #y能力牌 将打出四次。"
     ]
   }
 }

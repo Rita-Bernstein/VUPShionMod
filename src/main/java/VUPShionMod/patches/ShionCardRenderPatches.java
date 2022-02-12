@@ -158,6 +158,10 @@ public class ShionCardRenderPatches {
         }
     }
 
+    public boolean leftTitle() {
+        return false;
+    }
+
 
     @SpirePatch(
             clz = SingleCardViewPopup.class,
@@ -207,7 +211,7 @@ public class ShionCardRenderPatches {
                 }
 
                 if (c.cost > -2) {
-                    if (VUPShionMod.useSimpleOrb  || c.color == CardColorEnum.WangChuan_LIME || c.color == CardColorEnum.Codex_LIME) {
+                    if (VUPShionMod.useSimpleOrb || c.color == CardColorEnum.WangChuan_LIME || c.color == CardColorEnum.Codex_LIME) {
                         if (c instanceof FinFunnelUpgrade)
                             renderHelper(sb, Settings.WIDTH / 2.0F - 270.0F * Settings.scale, Settings.HEIGHT / 2.0F + 380.0F * Settings.scale, orb_g);
                         else

@@ -189,7 +189,7 @@
     "DESCRIPTIONS": [
       "触发 #y加载完成 时获得 #b%d 层 #y超维链接 。"
     ]
-  } ,
+  },
   "VUPShionMod:LoseHyperdimensionalLinksPower": {
     "NAME": "失去超维链接",
     "DESCRIPTIONS": [
@@ -199,6 +199,7 @@
   "VUPShionMod:DoubleCardPower": {
     "NAME": "Anastasia计划",
     "DESCRIPTIONS": [
+      "你的下 #b%d 张牌将打出两次。",
       "你的下 #b%d 张牌将打出两次。"
     ]
   },
@@ -339,6 +340,69 @@
     "NAME": "警觉",
     "DESCRIPTIONS": [
       "每当你获得 #y剑意 时，获得 #b%d 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:PreTripleDamagePower": {
+    "NAME": "准备三倍伤害",
+    "DESCRIPTIONS": [
+      "下回合造成 #y双倍伤害 。",
+      "下 #b%d 个回合造成 #y三倍伤害 。"
+    ]
+  },
+  "VUPShionMod:TripleDamagePower": {
+    "NAME": "三倍伤害",
+    "DESCRIPTIONS": [
+      "下回合造成 #y双倍伤害 。",
+      "下 #b%d 个回合造成 #y三倍伤害 。"
+    ]
+  },
+  "VUPShionMod:NextTurnAttackPower": {
+    "NAME": "次回攻击",
+    "DESCRIPTIONS": [
+      "下回合开始时将 #b%d 张 #y攻击牌 加入手牌。",
+      "下回合开始时将 #b%d 张 #y攻击牌 加入手牌。"
+    ]
+  },
+  "VUPShionMod:ThreeAttackPower": {
+    "NAME": "三次攻击",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y攻击牌 将打出三次。",
+      "你的下 #b%d 张 #y攻击牌 将打出三次。"
+    ]
+  },
+  "VUPShionMod:FourAttackPower": {
+    "NAME": "四次攻击",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y攻击牌 将打出四次。",
+      "你的下 #b%d 张 #y攻击牌 将打出四次。"
+    ]
+  },
+  "VUPShionMod:ThreeSkillPower": {
+    "NAME": "三次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y技能牌 将打出三次。",
+      "你的下 #b%d 张 #y技能牌 将打出三次。"
+    ]
+  },
+  "VUPShionMod:FourSkillPower": {
+    "NAME": "四次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y技能牌 将打出四次。",
+      "你的下 #b%d 张 #y技能牌 将打出四次。"
+    ]
+  },
+  "VUPShionMod:ThreePowerPower": {
+    "NAME": "三次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y能力牌 将打出三次。",
+      "你的下 #b%d 张 #y能力牌 将打出三次。"
+    ]
+  },
+  "VUPShionMod:FourPowerPower": {
+    "NAME": "四次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y能力牌 将打出四次。",
+      "你的下 #b%d 张 #y技能牌 将打出四次。"
     ]
   }
 }

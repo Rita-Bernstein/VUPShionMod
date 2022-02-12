@@ -53,6 +53,7 @@ public class VertexGladii extends AbstractWCCard {
         else
             addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
 
+        if(StiffnessPower.applyStiffness())
         addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, upgraded ? 1 : 2)));
 
 

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GameStatsPatch {
     public static int lastDamageDeal = 0;
+    public static boolean wontGainStiffnessPower = false;
 
     @SpirePatch(
             clz = AbstractMonster.class,
@@ -28,10 +29,12 @@ public class GameStatsPatch {
 
     //    ========================================重置
     public static void turnBaseReset() {
+
     }
 
     public static void combatBaseReset() {
         lastDamageDeal = 0;
+        wontGainStiffnessPower = false;
     }
 
     @SpirePatch(

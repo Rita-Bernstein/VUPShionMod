@@ -30,13 +30,12 @@ public class StiffnessPower extends AbstractShionPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/StiffnessPower36.png")), 0, 0, 36, 36);
     }
 
+    public static boolean applyStiffness(){
+        return AbstractDungeon.player.hasPower(PoisePower.POWER_ID);
+    }
+
     @Override
     public void onInitialApplication() {
-        if (AbstractDungeon.player.hasPower(PoisePower.POWER_ID)) {
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-            return;
-        }
-
         if (this.amount >= 4) {
             addToBot(new PressEndTurnButtonAction());
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
@@ -45,8 +44,6 @@ public class StiffnessPower extends AbstractShionPower {
 
     @Override
     public void stackPower(int stackAmount) {
-        if (AbstractDungeon.player.hasPower(PoisePower.POWER_ID))
-            return;
         super.stackPower(stackAmount);
         if (this.amount >= 4) {
             addToBot(new PressEndTurnButtonAction());

@@ -668,11 +668,11 @@
   "VUPShionMod:ChaosNimius": {
     "NAME": "通典：混沌",
     "DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
-    "UPGRADE_DESCRIPTION": "抽满手牌。 NL 消耗 任意张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：混沌（泛滥）",
       "通典：混沌（极意）",
-      "抽 !M! 张牌。 NL 至多 消耗 3张牌。"
+      "抽满手牌。 NL 消耗 任意张牌。 NL 消耗 。"
     ]
   },
   "VUPShionMod:ChaosRapidus": {
@@ -723,6 +723,26 @@
       "通典：暗（神速）",
       "通典：暗（极意）",
       "下回合造成三倍伤害。 NL 下回合抽2张攻击牌。 NL 消耗 。"
+    ]
+  },
+  "VUPShionMod:CaelumNimium": {
+    "NAME": "通典：天",
+    "DESCRIPTION": "下张攻击牌打出 !M! 次",
+    "UPGRADE_DESCRIPTION": "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：天（泛滥）",
+      "通典：天（极意）",
+      "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。"
+    ]
+  },
+  "VUPShionMod:CaelumRapidum": {
+    "NAME": "通典：天",
+    "DESCRIPTION": "下张攻击牌打出 !M! 次",
+    "UPGRADE_DESCRIPTION": "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "通典：天（神速）",
+      "通典：天（极意）",
+      "下张攻击牌打出 !M! 次。 NL 它们不会给予 vup_shion_mod:硬直 。"
     ]
   }
 }

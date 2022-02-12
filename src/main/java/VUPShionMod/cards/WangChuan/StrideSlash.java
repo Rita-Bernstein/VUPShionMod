@@ -36,6 +36,7 @@ public class StrideSlash extends AbstractWCCard {
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+        if(StiffnessPower.applyStiffness())
         addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
     }
 

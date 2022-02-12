@@ -55,17 +55,20 @@ public class InTheBlink extends AbstractWCCard {
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
+                if(StiffnessPower.applyStiffness())
                 addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));
                 break;
             case 1:
                 addBaseAoeDamage();
                 doAoeDamage();
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
+                if(StiffnessPower.applyStiffness())
                 addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
             case 2:
                 addBaseAoeDamage();
                 doAoeDamage();
+                if(StiffnessPower.applyStiffness())
                 addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
         }
@@ -74,7 +77,10 @@ public class InTheBlink extends AbstractWCCard {
         if (this.timesUpgraded >= 3) {
             addBaseAoeDamage();
             doAoeDamage();
+
+            if(StiffnessPower.applyStiffness())
             addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+
             if (this.timesUpgraded >= 9)
                 addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
         }

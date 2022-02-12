@@ -29,6 +29,7 @@ public class PreExecution extends AbstractWCCard {
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
         if (!this.upgraded)
+            if(StiffnessPower.applyStiffness())
             addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
     }
 

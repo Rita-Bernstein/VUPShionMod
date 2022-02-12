@@ -199,7 +199,8 @@
   "VUPShionMod:DoubleCardPower": {
     "NAME": "Anastasia Program",
     "DESCRIPTIONS": [
-      "Next #b%d card(s) is played twice."
+      "Next #b%d card is played twice.",
+      "Next #b%d cards is played twice."
     ]
   },
   "VUPShionMod:DefectPower": {

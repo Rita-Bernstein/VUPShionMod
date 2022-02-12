@@ -49,7 +49,7 @@ public class CaligoConstans extends AbstractCodexCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 this.exhaust = false;
-                upgradeBaseCost(1);
+                upgradeBaseCost(0);
             }
 
             if (this.timesUpgraded == 2) {

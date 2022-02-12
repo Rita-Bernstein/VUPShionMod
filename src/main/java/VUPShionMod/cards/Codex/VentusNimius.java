@@ -19,6 +19,7 @@ public class VentusNimius extends AbstractCodexCard {
     public VentusNimius(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.timesUpgraded = upgrades;
     }
 
@@ -33,11 +34,11 @@ public class VentusNimius extends AbstractCodexCard {
                 addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
                 break;
             case 1:
-                addToBot(new ApplyPowerAction(p, p, new TurnDexPower(p, 1)));
+                addToBot(new ApplyPowerAction(p, p, new TurnDexPower(p, this.secondaryM)));
                 break;
             case 2:
                 addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
-                addToBot(new ApplyPowerAction(p, p, new TurnDexPower(p, 1)));
+                addToBot(new ApplyPowerAction(p, p, new TurnDexPower(p, this.secondaryM)));
                 break;
         }
 

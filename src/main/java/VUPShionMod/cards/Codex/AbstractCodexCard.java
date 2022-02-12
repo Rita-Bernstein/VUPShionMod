@@ -25,9 +25,9 @@ public abstract class AbstractCodexCard extends AbstractWCCard {
             this.name = EXTENDED_DESCRIPTION[timesUpgraded];
             this.initializeTitle();
             if (timesUpgraded < 1)
-                this.rawDescription = UPGRADE_DESCRIPTION;
-            else
                 this.rawDescription = EXTENDED_DESCRIPTION[2];
+            else
+                this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.timesUpgraded++;
         }

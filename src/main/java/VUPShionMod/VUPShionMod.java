@@ -567,6 +567,10 @@ public class VUPShionMod implements
         cards.add(new VentusNimius());
         cards.add(new AurumNimium());
         cards.add(new AurumFidum());
+        cards.add(new LignumNimium());
+        cards.add(new LignumConstans());
+        cards.add(new TonitrusConstans());
+        cards.add(new TonitrusRapidus());
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);

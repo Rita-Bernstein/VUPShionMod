@@ -38,6 +38,6 @@ public class DistantiaAbsensquePower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = String.format(DESCRIPTIONS[0],this.amount);
     }
 }

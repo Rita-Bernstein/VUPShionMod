@@ -42,7 +42,7 @@ public class OnrushingTip extends AbstractWCCard {
         this.rawDescription = DESCRIPTION;
         initializeDescription();
 
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 6)));
         if(StiffnessPower.applyStiffness())
         addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
     }

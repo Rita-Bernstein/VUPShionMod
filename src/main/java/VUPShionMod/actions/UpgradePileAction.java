@@ -39,19 +39,19 @@ public class UpgradePileAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
             for (AbstractCard c : this.p.hand.group) {
-                if (!c.canUpgrade()) {
-                    temp.addToTop(c);
+                if (c.canUpgrade()) {
+                    temp.addToTop(c.makeSameInstanceOf());
                 }
             }
 
             for (AbstractCard c : this.p.drawPile.group) {
-                if (!c.canUpgrade()) {
+                if (c.canUpgrade()) {
                     temp.addToTop(c);
                 }
             }
 
             for (AbstractCard c : this.p.discardPile.group) {
-                if (!c.canUpgrade()) {
+                if (c.canUpgrade()) {
                     temp.addToTop(c);
                 }
             }
@@ -60,7 +60,7 @@ public class UpgradePileAction extends AbstractGameAction {
 
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
-            AbstractDungeon.gridSelectScreen.open(temp, this.amount, TEXT[0], true);
+            AbstractDungeon.gridSelectScreen.open(temp, this.amount, TEXT[0], false);
 
         }
 
@@ -69,11 +69,13 @@ public class UpgradePileAction extends AbstractGameAction {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards)  {
                     for(AbstractCard card : GetAllInBattleInstances.get(c.uuid)){
                             card.upgrade();
+                            card.superFlash();
                     }
             }
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             AbstractDungeon.player.hand.refreshHandLayout();
+
         }
 
 

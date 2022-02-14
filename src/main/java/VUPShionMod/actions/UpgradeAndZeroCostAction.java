@@ -103,7 +103,7 @@ public class UpgradeAndZeroCostAction extends AbstractGameAction {
 
 
     private boolean isDualWieldable(AbstractCard card) {
-        return (!card.canUpgrade() || card.costForTurn > 0 || card.cost > 0);
+        return (card.canUpgrade() || card.costForTurn > 0 || card.cost > 0);
     }
 }
 

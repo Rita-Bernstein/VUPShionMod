@@ -23,7 +23,7 @@ public class Guard extends AbstractWCCard {
 
     public Guard() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 9;
+        this.baseBlock = 13;
         this.magicNumber = this.baseMagicNumber = 2;
     }
 
@@ -37,7 +37,7 @@ public class Guard extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(3);
+            upgradeBlock(5);
         }
     }
 }

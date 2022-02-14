@@ -48,7 +48,7 @@ public class MorsLibraquePower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, MorsLibraquePower.POWER_ID, 1));
+        addToBot(new ReducePowerAction(this.owner, this.owner, MorsLibraquePower.POWER_ID, 1));
         if (this.amount == 1) {
             flash();
             addToBot(new VFXAction(new GiantTextEffect(this.owner.hb.cX, this.owner.hb.cY)));

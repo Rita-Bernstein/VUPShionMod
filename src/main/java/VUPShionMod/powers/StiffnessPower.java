@@ -31,7 +31,7 @@ public class StiffnessPower extends AbstractShionPower {
     }
 
     public static boolean applyStiffness(){
-        return AbstractDungeon.player.hasPower(PoisePower.POWER_ID);
+        return !AbstractDungeon.player.hasPower(PoisePower.POWER_ID);
     }
 
     @Override

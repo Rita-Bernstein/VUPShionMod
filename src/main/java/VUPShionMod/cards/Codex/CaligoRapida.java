@@ -54,7 +54,8 @@ public class CaligoRapida extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(1);
-
+                this.exhaust = false;
+                this.shuffleBackIntoDrawPile = true;
             }
         }
     }

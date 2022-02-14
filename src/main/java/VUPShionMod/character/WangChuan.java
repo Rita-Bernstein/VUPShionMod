@@ -158,6 +158,10 @@ public class WangChuan extends CustomPlayer {
             CardLibrary.addPurpleCards(tmpPool);
         }
 
+        for(AbstractCard c : VUPShionMod.codex_Cards){
+            tmpPool.add(c.makeCopy());
+        }
+
         return super.getCardPool(tmpPool);
     }
 

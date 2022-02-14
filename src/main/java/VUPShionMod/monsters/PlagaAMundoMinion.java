@@ -44,12 +44,12 @@ public class PlagaAMundoMinion extends CustomMonster {
             this.damage.add(new DamageInfo(this, 4));
             this.damage.add(new DamageInfo(this, 5));
             this.damage.add(new DamageInfo(this, 6));
-            this.damage.add(new DamageInfo(this, 100));
+            this.damage.add(new DamageInfo(this, 150));
         } else {
             this.damage.add(new DamageInfo(this, 4));
             this.damage.add(new DamageInfo(this, 5));
             this.damage.add(new DamageInfo(this, 6));
-            this.damage.add(new DamageInfo(this, 100));
+            this.damage.add(new DamageInfo(this, 150));
         }
 
 //        if (AbstractDungeon.ascensionLevel >= 4)
@@ -139,10 +139,10 @@ public class PlagaAMundoMinion extends CustomMonster {
 
     protected void getMove(int num) {
         if (isGunMode) {
-            if (lastMove((byte) 4)) {
-                setMove((byte) 5, Intent.BUFF);
-                return;
-            }
+//            if (lastMove((byte) 4)) {
+//                setMove((byte) 5, Intent.BUFF);
+//                return;
+//            }
             setMove((byte) 4, Intent.ATTACK, this.damage.get(3).base);
         } else {
             if (num < 33) {

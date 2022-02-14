@@ -2,10 +2,7 @@ package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.GameStatsPatch;
-import VUPShionMod.powers.FourAttackPower;
-import VUPShionMod.powers.ThreeAttackPower;
-import VUPShionMod.powers.ThreeSkillPower;
-import VUPShionMod.powers.TwoSkillPower;
+import VUPShionMod.powers.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -39,7 +36,7 @@ public class TerraNimia extends AbstractCodexCard {
                 addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,1)));
                 break;
             case 1:
-                addToBot(new ApplyPowerAction(p,p,new FourAttackPower(p,1)));
+                addToBot(new ApplyPowerAction(p,p,new FourSkillPower(p,1)));
                 break;
             case 2:
                 addToBot(new ApplyPowerAction(p,p,new ThreeSkillPower(p,1)));

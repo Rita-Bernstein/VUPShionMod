@@ -85,6 +85,8 @@ public class VUPShionMod implements
     public static List<CustomCard> li_Cards = new ArrayList<>();
     public static List<CustomCard> mi_Cards = new ArrayList<>();
     public static List<CustomCard> shi_Cards = new ArrayList<>();
+    public static List<CustomCard> chuan_Cards = new ArrayList<>();
+    public static List<CustomCard> codex_Cards = new ArrayList<>();
 
     public static boolean useSimpleOrb = false;
     public static boolean notReplaceTitle = false;
@@ -590,6 +592,9 @@ public class VUPShionMod implements
 
             if (card instanceof AbstractShionCard)
                 shi_Cards.add(card);
+
+            if (card instanceof AbstractCodexCard)
+                codex_Cards.add(card);
 
         }
     }

@@ -21,7 +21,7 @@ public class LunaMergo extends AbstractWCCard {
 
     public LunaMergo() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 6;
+        this.baseBlock = 9;
         this.magicNumber = this.baseMagicNumber = 1;
     }
 
@@ -39,6 +39,7 @@ public class LunaMergo extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
+            upgradeBlock(3);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             initializeDescription();

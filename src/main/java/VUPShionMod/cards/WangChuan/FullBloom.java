@@ -17,7 +17,7 @@ public class FullBloom extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 3;
+    private static final int COST = 1;
 
     public FullBloom(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -53,7 +53,7 @@ public class FullBloom extends AbstractWCCard {
                 initializeDescription();
             } else {
 
-                this.name = EXTENDED_DESCRIPTION[1];
+                this.name = EXTENDED_DESCRIPTION[0];
                 initializeTitle();
             }
             this.isInnate = true;

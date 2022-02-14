@@ -19,7 +19,7 @@ public class Replenish extends AbstractWCCard {
 
     public Replenish() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 10;
+        this.magicNumber = this.baseMagicNumber = 15;
         this.exhaust =true;
     }
 

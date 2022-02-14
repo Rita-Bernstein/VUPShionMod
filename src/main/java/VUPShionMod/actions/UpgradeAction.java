@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 
 public class UpgradeAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("VUPShionMod:UpgradeAndZeroCostAction");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("VUPShionMod:UpgradeAction");
     private static final float DURATION_PER_CARD = 0.25F;
     public static final String[] TEXT = uiStrings.TEXT;
     private AbstractPlayer p;
@@ -102,7 +102,7 @@ public class UpgradeAction extends AbstractGameAction {
 
 
     private boolean isDualWieldable(AbstractCard card) {
-        return (!card.upgraded || card.costForTurn > 0 || card.cost > 0);
+        return (card.canUpgrade() || card.costForTurn > 0 || card.cost > 0);
     }
 }
 

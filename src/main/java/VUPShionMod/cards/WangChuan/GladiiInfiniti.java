@@ -32,7 +32,7 @@ public class GladiiInfiniti extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = -1;
+    private static final int COST = 6;
 
     public GladiiInfiniti() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -97,6 +97,7 @@ public class GladiiInfiniti extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(2);
+            upgradeBaseCost(5);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

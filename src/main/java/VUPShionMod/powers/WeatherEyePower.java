@@ -28,13 +28,13 @@ public class WeatherEyePower extends AbstractShionPower {
     public void onStackPower(AbstractPower power) {
         if (power.ID.equals(CorGladiiPower.POWER_ID)) {
             flash();
-            addToBot(new GainBlockAction(this.owner,this.owner,this.amount));
+            addToBot(new GainBlockAction(this.owner, this.owner, this.amount));
         }
 
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

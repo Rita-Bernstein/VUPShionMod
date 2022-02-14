@@ -46,9 +46,10 @@ public class ChaosRapidus extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded < 2)
+            if (this.timesUpgraded == 1)
                 upgradeMagicNumber(1);
-            else
+
+            if (this.timesUpgraded == 2)
                 upgradeMagicNumber(-1);
         }
     }

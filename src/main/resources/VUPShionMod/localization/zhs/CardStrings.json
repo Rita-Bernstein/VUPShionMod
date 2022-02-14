@@ -668,7 +668,7 @@
   "VUPShionMod:ChaosNimius": {
     "NAME": "通典：混沌",
     "DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 至多 消耗 3张牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：混沌（泛滥）",
       "通典：混沌（极意）",
@@ -678,51 +678,51 @@
   "VUPShionMod:ChaosRapidus": {
     "NAME": "通典：混沌",
     "DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 至多 消耗 3张牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：混沌（神速）",
       "通典：混沌（极意）",
-      "抽 !M! 张牌。 NL 至多 消耗 3张牌。"
+      "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。"
     ]
   },
   "VUPShionMod:LuxRapida": {
     "NAME": "通典：光",
     "DESCRIPTION": "击晕 所有敌人。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "击晕 所有敌人。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "击晕 所有敌人两次。 NL 消耗 ",
     "EXTENDED_DESCRIPTION": [
       "通典：光（神速）",
       "通典：光（极意）",
-      "击晕 所有敌人两次。 NL 消耗 。"
+      "击晕 所有敌人。 NL 消耗 。"
     ]
   },
   "VUPShionMod:LuxConstans": {
     "NAME": "通典：光",
     "DESCRIPTION": "击晕 所有敌人。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "击晕所有敌人。",
+    "UPGRADE_DESCRIPTION": "击晕 所有敌人两次。 NL 消耗 ",
     "EXTENDED_DESCRIPTION": [
       "通典：光（永续）",
       "通典：光（极意）",
-      "击晕 所有敌人两次。 NL 消耗 。"
+      "击晕所有敌人。"
     ]
   },
   "VUPShionMod:CaligoConstans": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。",
+    "UPGRADE_DESCRIPTION": "下回合造成三倍伤害。 NL 下回合抽2张攻击牌。 NL 将这张牌放入你的抽牌堆。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（永续）",
       "通典：暗（极意）",
-      "下回合造成三倍伤害。 NL 下回合抽2张攻击牌。 NL 消耗 。"
+      "下回合造成双倍伤害。"
     ]
   },
   "VUPShionMod:CaligoRapida": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。 NL 下回合抽1张攻击牌 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "下回合造成三倍伤害。 NL 下回合抽2张攻击牌。 NL 将这张牌放入你的抽牌堆。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（神速）",
       "通典：暗（极意）",
-      "下回合造成三倍伤害。 NL 下回合抽2张攻击牌。 NL 消耗 。"
+      "下回合造成双倍伤害。 NL 下回合抽1张攻击牌。 NL 消耗 。"
     ]
   },
   "VUPShionMod:CaelumNimium": {
@@ -757,7 +757,7 @@
   },
   "VUPShionMod:TerraRapida": {
     "NAME": "通典：地",
-    "DESCRIPTION": "下张攻击牌打出 !M! 次。",
+    "DESCRIPTION": "下张技能牌打出 !M! 次。",
     "UPGRADE_DESCRIPTION": "下张技能牌打出 !M! 次。",
     "EXTENDED_DESCRIPTION": [
       "通典：地（神速）",
@@ -770,8 +770,8 @@
     "DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
-      "通典：地（神速）",
-      "通典：地（极意）",
+      "通典：人（神速）",
+      "通典：人（极意）",
       "下张能力牌打出 !M! 次。 NL 消耗 。"
     ]
   },
@@ -780,8 +780,8 @@
     "DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
-      "通典：地（泛滥）",
-      "通典：地（极意）",
+      "通典：人（泛滥）",
+      "通典：人（极意）",
       "下张能力牌打出 !M! 次。 NL 消耗 。"
     ]
   },
@@ -797,7 +797,7 @@
   },
   "VUPShionMod:AquaRapida": {
     "NAME": "通典：水",
-    "DESCRIPTION": "下回合获得 !M! [E] 。",
+    "DESCRIPTION": "下回合获得 !M! [E] 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。",
     "EXTENDED_DESCRIPTION": [
       "通典：水（神速）",
@@ -882,7 +882,7 @@
     "EXTENDED_DESCRIPTION": [
       "通典：木（永续）",
       "通典：木（极意）",
-      "保留 手牌 !M! 个回合。 NL 消耗 。"
+      "保留 手牌 !M! 个回合。"
     ]
   },
   "VUPShionMod:TonitrusConstans": {

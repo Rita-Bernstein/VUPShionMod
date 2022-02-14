@@ -54,10 +54,10 @@ public class PlagaAMundo extends CustomMonster {
 
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 3));
-            this.damage.add(new DamageInfo(this, 150));
+            this.damage.add(new DamageInfo(this, 300));
         } else {
             this.damage.add(new DamageInfo(this, 3));
-            this.damage.add(new DamageInfo(this, 150));
+            this.damage.add(new DamageInfo(this, 300));
         }
 
         if (AbstractDungeon.ascensionLevel >= 4)
@@ -152,10 +152,10 @@ public class PlagaAMundo extends CustomMonster {
         }
 
         if (isGunMode) {
-            if (lastMove((byte) 4)) {
-                setMove((byte) 5, Intent.BUFF);
-                return;
-            }
+//            if (lastMove((byte) 4)) {
+//                setMove((byte) 5, Intent.BUFF);
+//                return;
+//            }
             setMove((byte) 4, Intent.ATTACK, this.damage.get(1).base);
         } else {
             setMove((byte) 0, Intent.ATTACK, this.damage.get(0).base, baseAttackTimes, true);

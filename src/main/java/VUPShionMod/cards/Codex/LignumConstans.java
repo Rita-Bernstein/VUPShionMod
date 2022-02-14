@@ -19,7 +19,7 @@ public class LignumConstans extends AbstractCodexCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     public LignumConstans() {
@@ -36,13 +36,13 @@ public class LignumConstans extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1){
-                this.exhaust =false;
+            if (this.timesUpgraded == 1) {
+                this.exhaust = false;
             }
 
 
-            if (this.timesUpgraded == 2){
-                this.exhaust =true;
+            if (this.timesUpgraded == 2) {
+                this.exhaust = true;
                 upgradeMagicNumber(2);
             }
         }

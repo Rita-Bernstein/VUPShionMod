@@ -18,7 +18,7 @@ public class DistantiaAbsensque extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public DistantiaAbsensque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

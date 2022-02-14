@@ -42,7 +42,7 @@ public class SeverPetal extends AbstractWCCard {
         this.rawDescription = DESCRIPTION;
         initializeDescription();
 
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
         if(StiffnessPower.applyStiffness())
         addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 2)));
     }

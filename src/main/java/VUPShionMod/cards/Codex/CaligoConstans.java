@@ -49,13 +49,13 @@ public class CaligoConstans extends AbstractCodexCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 this.exhaust = false;
-                upgradeBaseCost(0);
+                upgradeBaseCost(1);
             }
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(2);
-                this.exhaust = true;
                 upgradeBaseCost(0);
+                this.shuffleBackIntoDrawPile = true;
             }
         }
     }

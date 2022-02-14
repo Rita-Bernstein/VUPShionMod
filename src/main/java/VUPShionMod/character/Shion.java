@@ -183,6 +183,8 @@ public class Shion extends CustomPlayer {
             CardLibrary.addPurpleCards(tmpPool);
         }
 
+
+
         return super.getCardPool(tmpPool);
     }
 

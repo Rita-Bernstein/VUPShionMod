@@ -72,7 +72,7 @@ public class AbstractCardPatches {
             if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null
                     && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT
                     && AbstractDungeon.player.hasPower(FreeCardPower.POWER_ID))
-                SpireReturn.Return(true);
+               return SpireReturn.Return(true);
 
 
             return SpireReturn.Continue();

@@ -2,6 +2,7 @@ package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.CustomWaitAction;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.powers.*;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
@@ -9,6 +10,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -89,26 +91,32 @@ public class PlagaAMundoMinion extends CustomMonster {
 
 
     public void takeTurn() {
+        AbstractPlayer trueTarget = AbstractDungeon.player;
+        if (AbstractDungeon.player instanceof WangChuan) {
+            if (((WangChuan) AbstractDungeon.player).shionHelper != null)
+                if (!((WangChuan) AbstractDungeon.player).shionHelper.halfDead)
+                    trueTarget = ((WangChuan) AbstractDungeon.player).shionHelper;
+        }
         switch (this.nextMove) {
             case 0:
                 addToBot(new ChangeStateAction(this, "Attack2"));
                 for (int i = 0; i < baseAttackTimes; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
+                    addToBot(new DamageAction(trueTarget, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 1:
                 addToBot(new ChangeStateAction(this, "Attack2"));
                 for (int i = 0; i < baseAttackTimes; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
+                    addToBot(new DamageAction(trueTarget, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 2:
                 addToBot(new ChangeStateAction(this, "Attack2"));
                 for (int i = 0; i < baseAttackTimes; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.FIRE, true));
+                    addToBot(new DamageAction(trueTarget, this.damage.get(2), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 4:
                 addToBot(new ChangeStateAction(this, "Attack1"));
                 addToBot(new CustomWaitAction(1.0f));
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new DamageAction(trueTarget, this.damage.get(3), AbstractGameAction.AttackEffect.FIRE));
                 break;
             case 5:
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50)));
@@ -124,7 +132,7 @@ public class PlagaAMundoMinion extends CustomMonster {
                     addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
 
                 addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
-                for (AbstractRelic r : AbstractDungeon.player.relics){
+                for (AbstractRelic r : AbstractDungeon.player.relics) {
                     r.onSpawnMonster(this);
                 }
                 break;
@@ -171,7 +179,14 @@ public class PlagaAMundoMinion extends CustomMonster {
             onBossVictoryLogic();
             if (!AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
                 VUPShionMod.fightSpecialBossWithout = true;
-            } else {
+            }
+
+            if (AbstractDungeon.player instanceof WangChuan) {
+                if (((WangChuan) AbstractDungeon.player).shionHelper == null)
+                    VUPShionMod.fightSpecialBossWithout = true;
+            }
+
+            if (!VUPShionMod.fightSpecialBossWithout) {
                 VUPShionMod.fightSpecialBoss = true;
             }
 

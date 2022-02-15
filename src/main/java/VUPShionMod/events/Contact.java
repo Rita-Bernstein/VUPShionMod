@@ -2,8 +2,10 @@ package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.monsters.PlagaAMundo;
+import VUPShionMod.relics.AnastasiaNecklace;
 import VUPShionMod.relics.TrackingBeacon;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
@@ -61,6 +63,8 @@ public class Contact extends AbstractImageEvent {
     private void fightBoss() {
         VUPShionMod.fightSpecialBoss = false;
         VUPShionMod.fightSpecialBossWithout = false;
+        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new TrackingBeacon());
+
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
         AbstractDungeon.bossKey = PlagaAMundo.ID;
         MapRoomNode node = new MapRoomNode(-1, 15);

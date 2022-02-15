@@ -562,7 +562,7 @@
   },
   "VUPShionMod:WeatherEye": {
     "NAME": "Weather Eye",
-    "DESCRIPTION": "At the end of your turn, gain !M! Block."
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Cor\u00a0Gladii, gain !M! Block."
   },
   "VUPShionMod:Focus": {
     "NAME": "Focus",
@@ -578,7 +578,7 @@
   },
   "VUPShionMod:PetalsFall": {
     "NAME": "Petals Fall",
-    "DESCRIPTION": "You no longer lose vup_shion_mod:Cor\u00a0Gladii. NL At the start of your turn, gain !M! vup_shion_mod:Cor\u00a0Gladii.",
+    "DESCRIPTION": "Whenever you play an Attack, gain !M! vup_shion_mod:Cor\u00a0Gladii.",
     "UPGRADE_DESCRIPTION": "Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL You no longer lose vup_shion_mod:Cor\u00a0Gladii. NL At the start of your turn, gain !M! vup_shion_mod:Cor\u00a0Gladii."
   },
   "VUPShionMod:Poise": {
@@ -586,25 +586,29 @@
     "DESCRIPTION": "At the start of your turn, gain !M! vup_shion_mod:Buffer. NL You no longer gain vup_shion_mod:Stiffness."
   },
   "VUPShionMod:FullBloom": {
-    "NAME": "Full Bloom",
-    "DESCRIPTION": "At the start of your turn, gain !M! [E] .",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, gain !M! [E] ."
+    "NAME": "Bloom",
+    "DESCRIPTION": "Lose !VUPShionSecondM! Max HP. NL At the start of your turn, gain !M! [E] .",
+    "UPGRADE_DESCRIPTION": "Innate . NL Lose !VUPShionSecondM! Max HP. NL At the start of your turn, gain !M! [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "Full Bloom",
+      "Innate. NL Gain !VUPShionSecondM! Max HP. NL At the start of your turn, gain !M! [E] ."
+    ]
   },
   "VUPShionMod:BombardaMagica": {
     "NAME": "Bombarda Magica",
     "DESCRIPTION": "Retain. NL Deal !D! damage. NL If left unplayed in your hand at the end of turn, add a copy of this card into your hand. NL Exhaust."
   },
   "VUPShionMod:AfflictioBellumque": {
-    "NAME": "Chaos Bellumque",
+    "NAME": "Afflictio Belli",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage and apply !M! Vulnerable to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:RosaSpinaque": {
-    "NAME": "Rosa Spinaque",
+    "NAME": "Spina Rosae",
     "DESCRIPTION": "Ethereal. NL Apply 7X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
     "UPGRADE_DESCRIPTION": "Ethereal. NL Apply 10X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:MorsLibraque": {
-    "NAME": "Mors Libraque",
+    "NAME": "Mors Universi",
     "DESCRIPTION": "Retain. NL At the start of your turn, lose !M! [E] . NL You can no longer play any *Skill. NL Eliminate ALL enemies after !VUPShionSecondM! turns.",
     "UPGRADE_DESCRIPTION": "Retain. NL At the start of your turn, lose !M! [E] . NL You can no longer play any *Skill. NL Eliminate ALL enemies after !VUPShionSecondM! turns.",
     "EXTENDED_DESCRIPTION": [
@@ -612,7 +616,7 @@
     ]
   },
   "VUPShionMod:HeliumLuxque": {
-    "NAME": "Helium Luxque",
+    "NAME": "Lux Helii",
     "DESCRIPTION": "At the start of next turn, deal !M! damage to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor !VUPShionSecondM! ."
   },
   "VUPShionMod:Skip": {
@@ -620,31 +624,31 @@
     "DESCRIPTION": "Draw !M! cards. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:DistantiaAbsensque": {
-    "NAME": "Iter Absensque",
-    "DESCRIPTION": "Gain Plated Armor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain Plated Armor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
+    "NAME": "Viatrix Absens",
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! #yPlated #yArmor.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain #yPlated #yArmor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
   },
   "VUPShionMod:VitaNaturaque": {
-    "NAME": "Terra Naturaque",
+    "NAME": "Firmitas Vitae",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Afterimage. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:CorLapisque": {
-    "NAME": "Cor Lapisque",
+    "NAME": "Lapis Cordis",
     "DESCRIPTION": "Innate. NL Gain !M! vup_shion_mod:Buffer. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Innate. NL Gain !B! Block. NL Gain !M! vup_shion_mod:Buffer. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
   },
   "VUPShionMod:AnimaSpiritusque": {
-    "NAME": "Anima Spiritusque",
+    "NAME": "Solacium Aurae",
     "DESCRIPTION": "Gain !M! [E] next turn. NL Gain 5 *Regen. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! [E] next turn. NL Gain 5 *Regen. NL Exhaust."
   },
   "VUPShionMod:MensVirtusque": {
-    "NAME": "Mens Virtusque",
-    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! vup_shion_mod:Cor\u00a0Gladii instead.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! vup_shion_mod:Cor\u00a0Gladii instead."
+    "NAME": "Anima Virtutis",
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Magiam\u00a0Obruor, gain !M! vup_shion_mod:Cor\u00a0Gladii instead.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you trigger vup_shion_mod:Magiam\u00a0Obruor, gain !M! vup_shion_mod:Cor\u00a0Gladii instead."
   },
   "VUPShionMod:ElysiumSpesque": {
-    "NAME": "Elysium Spesque",
+    "NAME": "Elysium Spei",
     "DESCRIPTION": "Gain !M! Plated Armor. NL vup_shion_mod:Magiam\u00a0Obruor. Exhaust."
   },
   "VUPShionMod:SupportShion": {
@@ -663,5 +667,245 @@
     "NAME": "Vampire Form",
     "DESCRIPTION": "Whenever you deal unblocked damage with Attacks, heal !M! HP.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you deal unblocked damage with Attacks, heal !M! HP."
+  },
+   "VUPShionMod:ChaosNimius": {
+    "NAME": "Codex Chai",
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust 1 card. NL Discard 1 card.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust up to 3 cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Chaos Nimius",
+      "Chaos Intensus",
+      "Draw cards until your hand is full. NL Exhaust any number of cards. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:ChaosRapidus": {
+    "NAME": "Codex Chai",
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust 1 card. NL Discard 1 card.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust up to 3 cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Chaos Rapidus",
+      "Chaos Intensus",
+      "Draw !M! cards. NL Exhaust 1 card. NL Discard 1 card."
+    ]
+  },
+  "VUPShionMod:LuxRapida": {
+    "NAME": "Codex Lucis",
+    "DESCRIPTION": "Apply 1 Stunned to ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 2 Stunned to ALL enemies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Lux Rapida",
+      "Lux Intensa",
+      "Apply 1 Stunned to ALL enemies. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:LuxConstans": {
+    "NAME": "Codex Lucis",
+    "DESCRIPTION": "Apply 1 Stunned to ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 2 Stunned to ALL enemies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Lux Constans",
+      "Lux Intensa",
+      "Apply 1 Stunned to ALL enemies."
+    ]
+  },
+  "VUPShionMod:CaligoConstans": {
+    "NAME": "Codex Caliginis",
+    "DESCRIPTION": "Next turn, your Attacks deal double damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Next turn, your Attacks deal triple damage. NL Next turn, draw 2 Attacks. NL Shuffle this card into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Caligo Constans",
+      "Caligo Intensa",
+      "Next turn, your Attacks deal double damage."
+    ]
+  },
+  "VUPShionMod:CaligoRapida": {
+    "NAME": "Codex Caliginis",
+    "DESCRIPTION": "Next turn, your Attacks deal double damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Next turn, your Attacks deal triple damage. NL Next turn, draw 2 Attacks. NL Shuffle this card into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "Caligo Rapida",
+      "Caligo Intensa",
+      "Next turn, your Attacks deal double damage. NL Next turn, draw 1 Attcak. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:CaelumNimium": {
+    "NAME": "Codex Caeli",
+    "DESCRIPTION": "Your next Attack deals !M! times of damage.",
+    "UPGRADE_DESCRIPTION": "Your next Attack deals !M! times of damage.",
+    "EXTENDED_DESCRIPTION": [
+      "Caelum Nimium",
+      "Caelum Intensum",
+      "Your next Attack deals !M! times of damage."
+    ]
+  },
+  "VUPShionMod:CaelumRapidum": {
+    "NAME": "Codex Caeli",
+    "DESCRIPTION": "Your next Attack deals !M! times of damage.",
+    "UPGRADE_DESCRIPTION": "Your next Attack deals !M! times of damage.",
+    "EXTENDED_DESCRIPTION": [
+      "Caelum Rapidum",
+      "Caelum Intensum",
+      "Your next Attack deals !M! times of damage."
+    ]
+  },
+  "VUPShionMod:TerraNimia": {
+    "NAME": "Codex Terrae",
+    "DESCRIPTION": "Your next Skill is played !M! times.",
+    "UPGRADE_DESCRIPTION": "Your next Skill is played !M! times.",
+    "EXTENDED_DESCRIPTION": [
+      "Terra Nimia",
+      "Terra Intensa",
+      "Your next Skill is played !M! times."
+    ]
+  },
+  "VUPShionMod:TerraRapida": {
+    "NAME": "Codex Terrae",
+    "DESCRIPTION": "Your next Skill is played !M! times.",
+    "UPGRADE_DESCRIPTION": "Your next Skill is played !M! times.",
+    "EXTENDED_DESCRIPTION": [
+      "Terra Rapida",
+      "Terra Intensa",
+      "Your next Skill is played !M! times."
+    ]
+  },
+  "VUPShionMod:HomoRapidus": {
+    "NAME": "Codex Hominis",
+    "DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Homo Rapidus",
+      "Homo Intensus",
+      "Your next Power is played !M! times. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:HomoNimius": {
+    "NAME": "Codex Hominis",
+    "DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Homo Nimius",
+      "Homo Intensus",
+      "Your next Power is played !M! times. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:AquaConstans": {
+    "NAME": "Codex Aquae",
+    "DESCRIPTION": "Next turn, gain !M! [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Next turn, gain !M! [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "Aqua Constans",
+      "Aqua Intensa",
+      "Next turn, gain !M! [E] ."
+    ]
+  },
+  "VUPShionMod:AquaRapida": {
+    "NAME": "Codex Aquae",
+    "DESCRIPTION": "Next turn, gain !M! [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Next turn, gain !M! [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "Aqua Rapida",
+      "Aqua Intensa",
+      "Next turn, gain !M! [E] . NL Exhaust."
+    ]
+  },
+  "VUPShionMod:IgnisRapidus": {
+    "NAME": "Codex Ignis",
+    "DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played.",
+    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played.",
+    "EXTENDED_DESCRIPTION": [
+      "Ignis Rapidus",
+      "Ignis Intensus",
+      "Your next !M! cards cost 0 and Exhaust upon being played."
+    ]
+  },
+  "VUPShionMod:IgnisNimius": {
+    "NAME": "Codex Ignis",
+    "DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played.",
+    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played.",
+    "EXTENDED_DESCRIPTION": [
+      "Ignis Nimius",
+      "Ignis Intensus",
+      "Your next !M! cards cost 0 and Exhaust upon being played."
+    ]
+  },
+  "VUPShionMod:VentusRapidus": {
+    "NAME": "Codex Venti",
+    "DESCRIPTION": "Gain !M! Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL At the start of your turn, gain !VUPShionSecondM! Dexterity.",
+    "EXTENDED_DESCRIPTION": [
+      "Ventus Rapidus",
+      "Ventus Intensus",
+      "Gain !M! Dexterity."
+    ]
+  },
+  "VUPShionMod:VentusNimius": {
+    "NAME": "Codex Venti",
+    "DESCRIPTION": "Gain !M! Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL At the start of your turn, gain !VUPShionSecondM! Dexterity.",
+    "EXTENDED_DESCRIPTION": [
+      "Ventus Constans",
+      "Ventus Intensus",
+      "At the start of your turn, gain !VUPShionSecondM! Dexterity."
+    ]
+  },
+  "VUPShionMod:AurumNimium": {
+    "NAME": "Codex Auri",
+    "DESCRIPTION": "Upgrade !M! cards in your hand for the rest of the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upgrade !M! cards in your hand and discard pile and draw pile for the rest of the combat.",
+    "EXTENDED_DESCRIPTION": [
+      "Aurum Nimium",
+      "Aurum Intensum",
+      "Upgrade all cards in your hand for the rest of the combat. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:AurumFidum": {
+    "NAME": "Codex Auri",
+    "DESCRIPTION": "Upgrade !M! cards in your hand for the rest of the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upgrade !M! cards in your hand and discard pile and draw pile for the rest of the combat.",
+    "EXTENDED_DESCRIPTION": [
+      "Aurum Fidum",
+      "Aurum Intensum",
+      "Upgrade !M! cards in your hand and discard pile and draw pile for the rest of the combat. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:LignumNimium": {
+    "NAME": "Codex Ligni",
+    "DESCRIPTION": "Retain your hand for !M! turns. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain your hand for !M! turns. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Lignum Nimium",
+      "Lignum Intensum",
+      "Retain your hand for !M! turns. NL Exhaust."
+    ]
+  },
+  "VUPShionMod:LignumConstans": {
+    "NAME": "Codex Ligni",
+    "DESCRIPTION": "Retain your hand for !M! turns. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain your hand for !M! turns. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Lignum Constans",
+      "Lignum Intensum",
+      "Retain your hand for !M! turns."
+    ]
+  },
+  "VUPShionMod:TonitrusConstans": {
+    "NAME": "Codex Tonitrus",
+    "DESCRIPTION": "Gain !M! [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E] . NL Draw !VUPShionSecondM! cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Tonitrus Constans",
+      "Tonitrus Intensus",
+      "Gain !M! [E] ."
+    ]
+  },
+  "VUPShionMod:TonitrusRapidus": {
+    "NAME": "Codex Tonitrus",
+    "DESCRIPTION": "Gain !M! [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E] . NL Draw !VUPShionSecondM! cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Tonitrus Rapidus",
+      "Tonitrus Intensus",
+      "Gain !M! [E] . NL Draw !VUPShionSecondM! cards. NL Exhaust."
+    ]
   }
 }

@@ -3,12 +3,15 @@ package VUPShionMod.patches;
 import VUPShionMod.events.Contact;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.monsters.PlagaAMundo;
+import VUPShionMod.powers.GravitoniumOverPower;
 import VUPShionMod.relics.AnastasiaNecklace;
 import VUPShionMod.relics.TrackingBeacon;
 import basemod.CustomEventRoom;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -115,6 +118,22 @@ public class SpecialCombatPatches {
 //                    goToShionEvent(__instance);
                     return SpireReturn.Return(null);
                 }
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "damage"
+    )
+    public static class ShionHelperUnDeadPatch {
+        @SpireInsertPatch(rloc = 124)
+        public static SpireReturn<Void> Insert(AbstractPlayer _instance, DamageInfo info) {
+            if (_instance.hasPower(GravitoniumOverPower.POWER_ID) && _instance.currentHealth < 1) {
+                _instance.halfDead = true;
+                return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();
         }

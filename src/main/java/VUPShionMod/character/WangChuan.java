@@ -19,8 +19,12 @@ import VUPShionMod.patches.*;
 import VUPShionMod.relics.DimensionSplitterAria;
 import VUPShionMod.relics.Nebula;
 import basemod.abstracts.CustomPlayer;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -35,6 +39,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbBlue;
 
@@ -50,6 +55,9 @@ public class WangChuan extends CustomPlayer {
     public static final int START_HP = 50;
     public static final int START_GOLD = 1;
 
+
+    public AbstractPlayer shionHelper;
+
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
             "VUPShionMod/img/ui/topPanel/Shion/layer2.png",
@@ -58,7 +66,7 @@ public class WangChuan extends CustomPlayer {
             "VUPShionMod/img/ui/topPanel/Shion/layer5.png",
             "VUPShionMod/img/ui/topPanel/Shion/layer6.png",
             "VUPShionMod/img/ui/topPanel/Shion/layer7.png",
-            "VUPShionMod/img/ui/topPanel/Shion/levelBack.png",//中间
+            "VUPShionMod/img/ui/topPanel/Shion/levelBack.png",
             "VUPShionMod/img/ui/topPanel/Shion/levelBack.png",
             "VUPShionMod/img/ui/topPanel/Shion/level1.png",
             "VUPShionMod/img/ui/topPanel/Shion/level2.png",
@@ -68,8 +76,9 @@ public class WangChuan extends CustomPlayer {
             "VUPShionMod/img/ui/topPanel/Shion/levelMax.png"
     };
 
+
     public WangChuan(String name, PlayerClass setClass) {
-        super(name, setClass,  new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
+        super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
 
@@ -82,10 +91,13 @@ public class WangChuan extends CustomPlayer {
                 "VUPShionMod/characters/WangChuan/corpse.png",
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
-        loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"), VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json"), 3.0f);
+        loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"),
+                VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json"), 3.0f);
+
 
         this.state.setAnimation(0, "idle", true);
         this.state.setAnimation(1, "idle_YOFU", true);
+
     }
 
 
@@ -158,7 +170,7 @@ public class WangChuan extends CustomPlayer {
             CardLibrary.addPurpleCards(tmpPool);
         }
 
-        for(AbstractCard c : VUPShionMod.codex_Cards){
+        for (AbstractCard c : VUPShionMod.codex_Cards) {
             tmpPool.add(c.makeCopy());
         }
 
@@ -192,7 +204,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-//        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(2)));
+
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 
@@ -255,6 +267,25 @@ public class WangChuan extends CustomPlayer {
         List<CutscenePanel> panels = new ArrayList();
         panels.add(new CutscenePanel("VUPShionMod/img/scenes/WangChuanCutScene.png"));
         return panels;
+    }
+
+
+    @Override
+    public void update() {
+        super.update();
+
+        if (this.shionHelper != null)
+            shionHelper.update();
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        if (this.shionHelper != null){
+            shionHelper.renderPlayerBattleUi(sb);
+            shionHelper.render(sb);
+        }
+
     }
 }
 

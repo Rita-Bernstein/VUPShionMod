@@ -345,7 +345,7 @@
   "VUPShionMod:PreTripleDamagePower": {
     "NAME": "准备三倍伤害",
     "DESCRIPTIONS": [
-      "下回合造成 #y双倍伤害 。",
+      "下回合造成 #y三倍伤害 。",
       "下 #b%d 个回合造成 #y三倍伤害 。"
     ]
   },
@@ -437,6 +437,12 @@
     "NAME": "回合敏捷",
     "DESCRIPTIONS": [
       "每回合开始时获得 #b%d 点 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:GravitoniumOverPower": {
+    "NAME": "重力炮极限超载",
+    "DESCRIPTIONS": [
+      " #y紫音 将 #y重力浮游炮 过载到了极限……"
     ]
   }
 }

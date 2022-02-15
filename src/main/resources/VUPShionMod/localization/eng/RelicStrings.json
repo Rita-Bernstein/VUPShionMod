@@ -61,24 +61,24 @@
     ]
   },
   "VUPShionMod:TrackingBeacon": {
-    "NAME": "引导信标",
+    "NAME": "Tracking Beacon",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "向其他队员发送了战场位置"
+      "Coordinates have been sent out to your comrades."
     ]
   },
   "VUPShionMod:BlueGiant": {
-    "NAME": "特化装备：蓝巨星",
-    "FLAVOR": "牺牲了机甲部分机动性，换取了强大的远程火力",
+    "NAME": "Blue Giant",
+    "FLAVOR": "Potent ranged firepower in exchange of mobility.",
     "DESCRIPTIONS": [
-      "初始浮游炮等级+1 每回合获得一张浮游炮激活"
+      "Upgrade your starting #yFunnels by 1. At the start of each turn, add an #yActivate #yFunnel into your hand."
     ]
   },
   "VUPShionMod:DarkStar": {
-    "NAME": "特化装备：暗星",
-    "FLAVOR": "在友人的帮助下，为机甲加装了魔能触发装置",
+    "NAME": "Dark Star",
+    "FLAVOR": "Additionally modulized Magia trigger devices, installed with your friends' assistance.",
     "DESCRIPTIONS": [
-      "战斗开始时将一张 通典：雷（神速） 加入手牌 （奖励卡牌中加入通用魔法）"
+      "At the start of each combat, add 1 #yTonitrus #yRapidus into your hand. Combat reward screens now contain cards from universial #yCodex."
     ]
   }
 }

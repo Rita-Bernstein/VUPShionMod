@@ -2,6 +2,8 @@ package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.MorsLibraque;
+import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.cutscenes.CGlayout;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
@@ -9,6 +11,7 @@ import VUPShionMod.monsters.PlagaAMundoMinion;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.AttackOrderSpecialPower;
+import VUPShionMod.powers.GravitoniumOverPower;
 import VUPShionMod.powers.LifeLinkPower;
 import VUPShionMod.powers.StiffnessPower;
 import basemod.abstracts.CustomRelic;
@@ -25,9 +28,13 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.BarricadePower;
+import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
@@ -76,7 +83,28 @@ public class TrackingBeacon extends CustomRelic implements OnPlayerDeathRelic {
 //        setDescriptionAfterLoading();
 
         CardCrawlGame.music.playTempBGM("VUPShionMod:Boss_Phase2");
-        AbstractDungeon.player.heal(10);
+        AbstractDungeon.player.increaseMaxHp(10, false);
+
+
+        AbstractDungeon.player.movePosition(Settings.WIDTH * 0.1F, 340.0F * Settings.yScale);
+
+
+        if (AbstractDungeon.player instanceof WangChuan) {
+            ((WangChuan) AbstractDungeon.player).shionHelper = new Shion(Shion.charStrings.NAMES[1], AbstractPlayerEnum.VUP_Shion);
+            ((WangChuan) AbstractDungeon.player).shionHelper.healthBarUpdatedEvent();
+            ((WangChuan) AbstractDungeon.player).shionHelper.showHealthBar();
+            ((WangChuan) AbstractDungeon.player).shionHelper.increaseMaxHp(600 - 88, false);
+
+            addToBot(new ApplyPowerAction(((WangChuan) AbstractDungeon.player).shionHelper,
+                    AbstractDungeon.player, new BarricadePower(((WangChuan) AbstractDungeon.player).shionHelper)));
+            addToBot(new ApplyPowerAction(((WangChuan) AbstractDungeon.player).shionHelper,
+                    AbstractDungeon.player, new GravitoniumOverPower(((WangChuan) AbstractDungeon.player).shionHelper)));
+//            addToBot(new GainBlockAction(((WangChuan) AbstractDungeon.player).shionHelper, AbstractDungeon.player, 700));
+//            ((WangChuan) AbstractDungeon.player).shionHelper.addBlock(700);
+
+            addToBot(new GainBlockAction(((WangChuan) AbstractDungeon.player).shionHelper, AbstractDungeon.player, 700));
+
+        }
 
         AbstractCard card = new MorsLibraque();
         card.upgrade();
@@ -90,6 +118,12 @@ public class TrackingBeacon extends CustomRelic implements OnPlayerDeathRelic {
         if (this.lockHealth) {
             triggerRelic();
         }
+
+        if (this.triggered)
+            if (((WangChuan) AbstractDungeon.player).shionHelper != null)
+                if (!((WangChuan) AbstractDungeon.player).shionHelper.halfDead)
+                    addToBot(new GainBlockAction(((WangChuan) AbstractDungeon.player).shionHelper, AbstractDungeon.player, 700));
+
     }
 
     @Override

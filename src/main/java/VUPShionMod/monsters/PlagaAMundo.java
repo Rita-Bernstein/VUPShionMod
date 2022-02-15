@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.CustomWaitAction;
 import VUPShionMod.actions.GachaAction;
 import VUPShionMod.actions.SummonMundoMinionAction;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.powers.ChaoticPower;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -96,25 +98,31 @@ public class PlagaAMundo extends CustomMonster {
 
         AbstractDungeon.effectList.add(new ShionBossBackgroundEffect());
 
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new ChaoticPower(AbstractDungeon.player,2)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new ChaoticPower(AbstractDungeon.player, 2)));
     }
 
 
     public void takeTurn() {
+        AbstractPlayer trueTarget = AbstractDungeon.player;
+        if (AbstractDungeon.player instanceof WangChuan) {
+            if (((WangChuan) AbstractDungeon.player).shionHelper != null)
+                if (!((WangChuan) AbstractDungeon.player).shionHelper.halfDead)
+                    trueTarget = ((WangChuan) AbstractDungeon.player).shionHelper;
+        }
         switch (this.nextMove) {
             case 0:
-                addToBot(new ChangeStateAction(this,"Attack2"));
+                addToBot(new ChangeStateAction(this, "Attack2"));
 
                 for (int i = 0; i < baseAttackTimes; i++)
-                    addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
+                    addToBot(new DamageAction(trueTarget, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
                 break;
             case 3:
                 addToBot(new GainBlockAction(this, this, 50));
                 break;
             case 4:
-                addToBot(new ChangeStateAction(this,"Attack1"));
+                addToBot(new ChangeStateAction(this, "Attack1"));
                 addToBot(new CustomWaitAction(1.0f));
-                addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new DamageAction(trueTarget, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE));
                 break;
             case 5:
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50), 50));

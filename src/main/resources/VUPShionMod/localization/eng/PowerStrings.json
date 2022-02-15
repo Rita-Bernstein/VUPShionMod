@@ -283,13 +283,13 @@
     ]
   },
   "VUPShionMod:MensVirtusquePower": {
-    "NAME": "Mens Virtusque",
+    "NAME": "Anima Virtutis",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor, gain #b%d #yCor #yGladii instead."
+      "Whenever you trigger #yMagiam #yObruor, gain #b%d #yCor #yGladii instead."
     ]
   },
   "VUPShionMod:HeliumLuxquePower": {
-    "NAME": "Helium Luxque",
+    "NAME": "Lux Helii",
     "DESCRIPTIONS": [
       "At the start of next turn, deal #b%d damage to ALL enemies."
     ]
@@ -301,7 +301,7 @@
     ]
   },
   "VUPShionMod:MorsLibraquePower": {
-    "NAME": "Mors Libraque",
+    "NAME": "Mors Universi",
     "DESCRIPTIONS": [
       "Eliminate ALL enemies after #b%d turns."
     ]
@@ -315,7 +315,7 @@
   "VUPShionMod:PetalsFallPower": {
     "NAME": "Petals Fall",
     "DESCRIPTIONS": [
-      "You no longer lose #yCor #yGladii."
+      "Whenever you play an #yAttack, gain #b%d #yCor #yGladii."
     ]
   },
   "VUPShionMod:GainCorGladiiPower": {
@@ -331,15 +331,112 @@
     ]
   },
   "VUPShionMod:DistantiaAbsensquePower": {
-    "NAME": "三之章：远行",
+    "NAME": "Viatrix Absens",
     "DESCRIPTIONS": [
-      "每当你获得 #y魔能过载 时，获得 #b%d 层 #y多层护甲 。"
+      "Whenever you gain #yMagiam #yObruor, gain #b%d #yPlated #yArmor."
     ]
   },
   "VUPShionMod:WeatherEyePower": {
-    "NAME": "警觉",
+    "NAME": "Weather Eye",
     "DESCRIPTIONS": [
-      "每当你获得 #y剑意 时，获得 #b%d 点 #y格挡 。"
+      "Whenever you gain #yCor #yGladii, gain #b%d #yBlock."
+    ]
+  },
+  "VUPShionMod:PreTripleDamagePower": {
+    "NAME": "Prepare Triple Damage",
+    "DESCRIPTIONS": [
+      "Next turn, your #yAttacks deal triple damage.",
+      "For the next #b%d turns, your #yAttacks deal triple damage."
+    ]
+  },
+  "VUPShionMod:TripleDamagePower": {
+    "NAME": "Deal Triple Damage",
+    "DESCRIPTIONS": [
+      "This turn, your #yAttacks deal triple damage.",
+      "For the next #b%d turns, your #yAttacks deal triple damage."
+    ]
+  },
+  "VUPShionMod:NextTurnAttackPower": {
+    "NAME": "Draw Attack",
+    "DESCRIPTIONS": [
+      "At the start of next turn, draw #b%d #yAttacks.",
+      "At the start of next turn, draw #b%d #yAttacks."
+    ]
+  },
+  "VUPShionMod:TwoAttackPower": {
+    "NAME": "Double Damage",
+    "DESCRIPTIONS": [
+      "Your next #b%d #yAttacks deal double damage.",
+      "Your next #b%d #yAttacks deal double damage."
+    ]
+  },
+  "VUPShionMod:ThreeAttackPower": {
+    "NAME": "Triple Damage",
+    "DESCRIPTIONS": [
+      "Your next #b%d #yAttacks deal triple damage.",
+      "Your next #b%d #yAttacks deal triple damage."
+    ]
+  },
+  "VUPShionMod:FourAttackPower": {
+    "NAME": "Quadra Damage",
+    "DESCRIPTIONS": [
+      "Your next #b%d #yAttacks deal quadra damage.",
+      "Your next #b%d #yAttacks deal quadra damage."
+    ]
+  },
+  "VUPShionMod:TwoSkillPower": {
+    "NAME": "Double Skill",
+    "DESCRIPTIONS": [
+      "Your next #b%d #ySkills are played twice.",
+      "Your next #b%d #ySkills are played twice."
+    ]
+  },
+  "VUPShionMod:ThreeSkillPower": {
+    "NAME": "Triple Skill",
+    "DESCRIPTIONS": [
+      "Your next #b%d #ySkills are played thrice.",
+      "Your next #b%d #ySkills are played thrice."
+    ]
+  },
+  "VUPShionMod:FourSkillPower": {
+    "NAME": "Quadra Skill",
+    "DESCRIPTIONS": [
+      "Your next #b%d #ySkills are played 4 times.",
+      "Your next #b%d #ySkills are played 4 times."
+    ]
+  },
+  "VUPShionMod:TwoPowerPower": {
+    "NAME": "Double Power",
+    "DESCRIPTIONS": [
+      "Your next #b%d #yPower are played twice.",
+      "Your next #b%d #yPower are played twice."
+    ]
+  },
+  "VUPShionMod:ThreePowerPower": {
+    "NAME": "Triple Power",
+    "DESCRIPTIONS": [
+      "Your next #b%d #yPower are played thrice.",
+      "Your next #b%d #yPower are played thrice."
+    ]
+  },
+  "VUPShionMod:FourPowerPower": {
+    "NAME": "Quadra Power",
+    "DESCRIPTIONS": [
+      "Your next #b%d #yPower are played 4 times.",
+      "Your next #b%d #yPower are played 4 times."
+    ]
+  },
+  "VUPShionMod:FreeCardPower": {
+    "NAME": "No Cost",
+    "DESCRIPTIONS": [
+      "Your next #b%d cards cost 0.",
+      "Your next #b%d cards cost 0."
+    ]
+  },
+  "VUPShionMod:TurnDexPower": {
+    "NAME": "Gain Dexterity",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%d #yDexterity."
     ]
   }
 }

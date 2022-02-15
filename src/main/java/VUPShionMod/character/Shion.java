@@ -54,8 +54,6 @@ public class Shion extends CustomPlayer {
     public static boolean firstAttackAnimation = true;
     private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
 
-    public AbstractPlayer shionHelper;
-
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
             "VUPShionMod/img/ui/topPanel/Shion/layer2.png",
@@ -183,7 +181,6 @@ public class Shion extends CustomPlayer {
         if (ModHelper.isModEnabled("Purple Cards")) {
             CardLibrary.addPurpleCards(tmpPool);
         }
-
 
 
         return super.getCardPool(tmpPool);
@@ -370,24 +367,9 @@ public class Shion extends CustomPlayer {
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
         super.useCard(c, monster, energyOnUse);
 
-        if (c.hasTag(CardTagsEnum.LOADED)){
+        if (c.hasTag(CardTagsEnum.LOADED)) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
         }
-    }
-
-    @Override
-    public void render(SpriteBatch sb) {
-        super.render(sb);
-        if(shionHelper != null)
-            shionHelper.render(sb);
-    }
-
-    @Override
-    public void update() {
-        super.update();
-
-        if(shionHelper != null)
-            shionHelper.update();
     }
 }
 

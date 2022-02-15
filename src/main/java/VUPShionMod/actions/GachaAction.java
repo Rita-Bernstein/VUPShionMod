@@ -73,7 +73,7 @@ public class GachaAction extends AbstractGameAction {
             case 2:
                 amount = 40;
                 break;
-            default:
+            case 3:
                 amount = 70;
                 break;
         }
@@ -95,7 +95,7 @@ public class GachaAction extends AbstractGameAction {
             case 2:
                 amount = 30;
                 break;
-            default:
+            case 3:
                 amount = 50;
                 break;
         }
@@ -118,7 +118,7 @@ public class GachaAction extends AbstractGameAction {
             case 2:
                 amount = 2;
                 break;
-            default:
+            case 3:
                 amount = 3;
                 break;
         }
@@ -142,7 +142,7 @@ public class GachaAction extends AbstractGameAction {
             case 2:
                 amount = 1;
                 break;
-            default:
+            case 3:
                 amount = 3;
                 break;
         }

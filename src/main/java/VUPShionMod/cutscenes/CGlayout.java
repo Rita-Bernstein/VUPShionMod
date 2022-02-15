@@ -29,23 +29,28 @@ public class CGlayout implements Disposable {
     public boolean isDone = false;
 
     public CGlayout() {
+        this("Shion");
+    }
+
+    public CGlayout(String name) {
         this.bgColor = Color.WHITE.cpy();
         this.screenColor = new Color(0.0F, 0.0F, 0.0F, 0.0F);
 //        this.bgImg = ImageMaster.loadImage("images/scenes/redBg.jpg");
+        String lang = Settings.language == Settings.GameLanguage.ZHS ? "zhs" : "eng";
 
-        switch (Settings.language) {
-            case ZHS:
-                for (int i = 1; i < 10; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/zhs/CG0" + i + ".png"));
+
+        switch (name) {
+            case "WangChuan":
+                for (int i = 1; i < 6; i++) {
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/WangChuan/" + lang + "/CG0" + i + ".png"));
                 }
                 break;
             default:
                 for (int i = 1; i < 10; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/eng/CG0" + i + ".png"));
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Shion/" + lang + "/CG0" + i + ".png"));
                 }
                 break;
         }
-
     }
 
 
@@ -129,7 +134,7 @@ public class CGlayout implements Disposable {
     }
 
     public void renderAbove(SpriteBatch sb) {
-        if(!this.isDone){
+        if (!this.isDone) {
             sb.setColor(Color.BLACK);
             sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT);
         }

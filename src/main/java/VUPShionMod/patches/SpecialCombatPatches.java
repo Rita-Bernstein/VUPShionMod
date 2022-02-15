@@ -4,6 +4,7 @@ import VUPShionMod.events.Contact;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.relics.AnastasiaNecklace;
+import VUPShionMod.relics.TrackingBeacon;
 import basemod.CustomEventRoom;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -91,6 +92,10 @@ public class SpecialCombatPatches {
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 if (r instanceof AnastasiaNecklace) {
                     ((AnastasiaNecklace) r).renderAbove(sb);
+                }
+
+                if (r instanceof TrackingBeacon) {
+                    ((TrackingBeacon) r).renderAbove(sb);
                 }
             }
         }

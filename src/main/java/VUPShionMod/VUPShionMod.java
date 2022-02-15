@@ -607,10 +607,12 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new OpticalCamouflage(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Sniperscope(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new AnastasiaNecklace(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new BlueGiant(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new TrackingBeacon(), CardColorEnum.WangChuan_LIME);
+
     }
 
 

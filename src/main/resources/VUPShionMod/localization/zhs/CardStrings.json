@@ -591,7 +591,8 @@
     "DESCRIPTION": "失去 !VUPShionSecondM! 点最大生命。 NL 每回合开始时 NL 获得 !M! [E] 。",
     "UPGRADE_DESCRIPTION": " 固有 。 NL 失去 !VUPShionSecondM! 点最大生命。 NL 每回合开始时 NL 获得 !M! [E] 。",
     "EXTENDED_DESCRIPTION": [
-      "大满开"
+      "大满开",
+      " 固有 。 NL 获得 !VUPShionSecondM! 点最大生命。 NL 每回合开始时 NL 获得 !M! [E] 。"
     ]
   },
   "VUPShionMod:BombardaMagica": {

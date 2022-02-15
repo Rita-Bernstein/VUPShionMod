@@ -37,7 +37,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
-
 public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic {
     public static final String ID = VUPShionMod.makeID("AnastasiaNecklace");
     public static final String IMG_PATH = "img/relics/AnastasiaNecklace.png";
@@ -141,7 +140,6 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     public void atBattleStartPreDraw() {
         super.atBattleStartPreDraw();
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BarricadePower(AbstractDungeon.player)));
-
     }
 
 

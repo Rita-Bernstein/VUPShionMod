@@ -46,8 +46,8 @@ public class HeliumLuxquePower extends AbstractShionPower {
 //        addToBot(new VFXAction(AbstractDungeon.player, new MindblastEffect(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY,AbstractDungeon.player.flipHorizontal), 0.1F));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 010 Charge Impact Up", mo.hb.cX, mo.hb.cY + 20.0f * Settings.scale,
-                        50.0f, 90.0f, 10.0f * Settings.scale, 2, false)));
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 010 Charge Impact Up", mo.hb.cX, mo.hb.cY + 580.0f * Settings.scale,
+                        50.0f, 90.0f, 8.0f * Settings.scale, 2, false)));
             }
         }
 

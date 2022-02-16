@@ -1,236 +1,236 @@
 
 Energy 019 Ray Up.png
-size: 104,1036
+size: 1044,104
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Energy 019 Ray Up_00000
-  rotate: true
-  xy: 32, 2
+  rotate: false
+  xy: 902, 6
   size: 26, 22
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00001
   rotate: false
-  xy: 72, 30
+  xy: 987, 12
   size: 26, 34
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00002
   rotate: false
-  xy: 2, 10
+  xy: 987, 48
   size: 28, 54
   orig: 100, 100
   offset: 34, 0
   index: -1
 Energy 019 Ray Up_00003
-  rotate: true
-  xy: 2, 104
+  rotate: false
+  xy: 902, 30
   size: 28, 72
   orig: 100, 100
   offset: 34, 0
   index: -1
 Energy 019 Ray Up_00004
-  rotate: true
-  xy: 2, 134
+  rotate: false
+  xy: 872, 19
   size: 28, 83
   orig: 100, 100
   offset: 34, 0
   index: -1
 Energy 019 Ray Up_00005
-  rotate: true
-  xy: 2, 164
+  rotate: false
+  xy: 782, 16
   size: 31, 86
   orig: 100, 100
   offset: 33, 0
   index: -1
 Energy 019 Ray Up_00006
-  rotate: true
-  xy: 2, 627
+  rotate: false
+  xy: 537, 2
   size: 33, 100
   orig: 100, 100
   offset: 32, 0
   index: -1
 Energy 019 Ray Up_00007
-  rotate: true
-  xy: 2, 906
+  rotate: false
+  xy: 88, 2
   size: 40, 100
   orig: 100, 100
   offset: 29, 0
   index: -1
 Energy 019 Ray Up_00008
-  rotate: true
-  xy: 2, 482
+  rotate: false
+  xy: 416, 6
   size: 38, 96
   orig: 100, 100
   offset: 30, 0
   index: -1
 Energy 019 Ray Up_00009
-  rotate: true
-  xy: 2, 312
+  rotate: false
+  xy: 496, 10
   size: 39, 92
   orig: 100, 100
   offset: 30, 0
   index: -1
 Energy 019 Ray Up_00010
-  rotate: true
-  xy: 2, 442
+  rotate: false
+  xy: 456, 7
   size: 38, 95
   orig: 100, 100
   offset: 30, 0
   index: -1
 Energy 019 Ray Up_00011
-  rotate: true
-  xy: 2, 552
+  rotate: false
+  xy: 256, 3
   size: 40, 99
   orig: 100, 100
   offset: 29, 0
   index: -1
 Energy 019 Ray Up_00012
-  rotate: true
-  xy: 2, 864
+  rotate: false
+  xy: 130, 2
   size: 40, 100
   orig: 100, 100
   offset: 29, 0
   index: -1
 Energy 019 Ray Up_00013
-  rotate: true
-  xy: 2, 822
+  rotate: false
+  xy: 172, 2
   size: 40, 100
   orig: 100, 100
   offset: 29, 0
   index: -1
 Energy 019 Ray Up_00014
-  rotate: true
-  xy: 2, 991
+  rotate: false
+  xy: 2, 2
   size: 41, 100
   orig: 100, 100
   offset: 28, 0
   index: -1
 Energy 019 Ray Up_00015
-  rotate: true
-  xy: 2, 948
+  rotate: false
+  xy: 45, 2
   size: 41, 100
   orig: 100, 100
   offset: 28, 0
   index: -1
 Energy 019 Ray Up_00016
-  rotate: true
-  xy: 2, 780
+  rotate: false
+  xy: 214, 2
   size: 40, 100
   orig: 100, 100
   offset: 29, 0
   index: -1
 Energy 019 Ray Up_00017
-  rotate: true
-  xy: 2, 739
+  rotate: false
+  xy: 298, 2
   size: 39, 100
   orig: 100, 100
   offset: 29, 0
   index: -1
 Energy 019 Ray Up_00018
-  rotate: true
-  xy: 2, 700
+  rotate: false
+  xy: 339, 2
   size: 37, 100
   orig: 100, 100
   offset: 31, 0
   index: -1
 Energy 019 Ray Up_00019
-  rotate: true
-  xy: 2, 662
+  rotate: false
+  xy: 378, 2
   size: 36, 100
   orig: 100, 100
   offset: 31, 0
   index: -1
 Energy 019 Ray Up_00020
-  rotate: true
-  xy: 2, 594
+  rotate: false
+  xy: 572, 2
   size: 31, 100
   orig: 100, 100
   offset: 34, 0
   index: -1
 Energy 019 Ray Up_00021
-  rotate: true
-  xy: 2, 522
+  rotate: false
+  xy: 605, 4
   size: 28, 98
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00022
-  rotate: true
-  xy: 2, 412
+  rotate: false
+  xy: 635, 7
   size: 28, 95
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00023
-  rotate: true
-  xy: 2, 382
+  rotate: false
+  xy: 665, 7
   size: 28, 95
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00024
-  rotate: true
-  xy: 2, 353
+  rotate: false
+  xy: 695, 8
   size: 27, 94
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00025
-  rotate: true
-  xy: 2, 283
+  rotate: false
+  xy: 724, 11
   size: 27, 91
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00026
-  rotate: true
-  xy: 2, 254
+  rotate: false
+  xy: 753, 11
   size: 27, 91
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00027
-  rotate: true
-  xy: 2, 225
+  rotate: false
+  xy: 815, 12
   size: 27, 90
   orig: 100, 100
   offset: 35, 0
   index: -1
 Energy 019 Ray Up_00028
-  rotate: true
-  xy: 2, 197
+  rotate: false
+  xy: 844, 13
   size: 26, 89
   orig: 100, 100
   offset: 36, 0
   index: -1
 Energy 019 Ray Up_00029
   rotate: false
-  xy: 76, 66
+  xy: 932, 36
   size: 26, 66
   orig: 100, 100
   offset: 36, 0
   index: -1
 Energy 019 Ray Up_00030
-  rotate: true
-  xy: 2, 77
+  rotate: false
+  xy: 960, 37
   size: 25, 65
   orig: 100, 100
   offset: 36, 0
   index: -1
 Energy 019 Ray Up_00031
-  rotate: true
-  xy: 56, 4
+  rotate: false
+  xy: 1017, 59
   size: 24, 43
   orig: 100, 100
   offset: 37, 0
   index: -1
 Energy 019 Ray Up_00032
-  rotate: true
-  xy: 32, 53
+  rotate: false
+  xy: 1015, 8
   size: 22, 38
   orig: 100, 100
   offset: 38, 5

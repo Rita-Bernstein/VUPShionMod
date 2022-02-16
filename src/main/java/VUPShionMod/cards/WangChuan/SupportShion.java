@@ -35,7 +35,7 @@ public class SupportShion extends AbstractWCCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 039 Radial Transition", mo.hb.cX, mo.hb.cY + 20.0f * Settings.scale,
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 039 Radial Transition", mo.hb.cX, mo.hb.cY + 50.0f * Settings.scale,
                         80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
             }
         }

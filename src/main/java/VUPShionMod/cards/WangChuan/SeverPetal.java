@@ -42,8 +42,8 @@ public class SeverPetal extends AbstractWCCard {
         calculateCardDamage(m);
 
         if(m != null)
-            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", m.hb.cX, m.hb.cY,
-                    50.0f, 90.0f, 10.0f * Settings.scale, 2, false)));
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", m.hb.cX, m.hb.y +700.0f*Settings.scale,
+                    50.0f, 90.0f, 8.0f * Settings.scale, 1, false)));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.NONE));

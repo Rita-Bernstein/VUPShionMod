@@ -1,180 +1,180 @@
 
 Energy 105 Ray Left Loop.png
-size: 644,168
+size: 1048,108
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Energy 105 Ray Left Loop_00000
-  rotate: true
-  xy: 591, 13
+  rotate: false
+  xy: 730, 12
   size: 75, 48
   orig: 100, 100
   offset: 6, 23
   index: -1
 Energy 105 Ray Left Loop_00001
-  rotate: true
-  xy: 405, 88
+  rotate: false
+  xy: 249, 3
   size: 78, 51
   orig: 100, 100
   offset: 6, 23
   index: -1
 Energy 105 Ray Left Loop_00002
-  rotate: true
-  xy: 57, 83
+  rotate: false
+  xy: 87, 54
   size: 83, 52
   orig: 100, 100
   offset: 5, 22
   index: -1
 Energy 105 Ray Left Loop_00003
-  rotate: true
-  xy: 2, 83
+  rotate: false
+  xy: 2, 53
   size: 83, 53
   orig: 100, 100
   offset: 5, 22
   index: -1
 Energy 105 Ray Left Loop_00004
-  rotate: true
-  xy: 111, 84
+  rotate: false
+  xy: 165, 2
   size: 82, 50
   orig: 100, 100
   offset: 5, 25
   index: -1
 Energy 105 Ray Left Loop_00005
-  rotate: true
-  xy: 256, 3
+  rotate: false
+  xy: 2, 2
   size: 80, 49
   orig: 100, 100
   offset: 6, 26
   index: -1
 Energy 105 Ray Left Loop_00006
-  rotate: true
-  xy: 258, 86
+  rotate: false
+  xy: 418, 59
   size: 80, 47
   orig: 100, 100
   offset: 6, 26
   index: -1
 Energy 105 Ray Left Loop_00007
-  rotate: true
-  xy: 209, 2
+  rotate: false
+  xy: 581, 61
   size: 81, 45
   orig: 100, 100
   offset: 5, 25
   index: -1
 Energy 105 Ray Left Loop_00008
-  rotate: true
-  xy: 447, 8
+  rotate: false
+  xy: 807, 14
   size: 78, 46
   orig: 100, 100
   offset: 4, 24
   index: -1
 Energy 105 Ray Left Loop_00009
-  rotate: true
-  xy: 356, 87
+  rotate: false
+  xy: 500, 59
   size: 79, 47
   orig: 100, 100
   offset: 4, 24
   index: -1
 Energy 105 Ray Left Loop_00010
-  rotate: true
-  xy: 163, 84
+  rotate: false
+  xy: 664, 62
   size: 82, 44
   orig: 100, 100
   offset: 3, 25
   index: -1
 Energy 105 Ray Left Loop_00011
-  rotate: true
-  xy: 209, 85
+  rotate: false
+  xy: 335, 59
   size: 81, 47
   orig: 100, 100
   offset: 4, 25
   index: -1
 Energy 105 Ray Left Loop_00012
-  rotate: true
-  xy: 106, 2
+  rotate: false
+  xy: 84, 2
   size: 79, 49
   orig: 100, 100
   offset: 5, 24
   index: -1
 Energy 105 Ray Left Loop_00013
-  rotate: true
-  xy: 2, 2
+  rotate: false
+  xy: 254, 56
   size: 79, 50
   orig: 100, 100
   offset: 6, 24
   index: -1
 Energy 105 Ray Left Loop_00014
-  rotate: true
-  xy: 54, 2
+  rotate: false
+  xy: 329, 4
   size: 79, 50
   orig: 100, 100
   offset: 7, 24
   index: -1
 Energy 105 Ray Left Loop_00015
-  rotate: true
-  xy: 157, 2
+  rotate: false
+  xy: 172, 56
   size: 80, 50
   orig: 100, 100
   offset: 7, 25
   index: -1
 Energy 105 Ray Left Loop_00016
-  rotate: true
-  xy: 401, 6
+  rotate: false
+  xy: 748, 62
   size: 79, 44
   orig: 100, 100
   offset: 6, 31
   index: -1
 Energy 105 Ray Left Loop_00017
-  rotate: true
-  xy: 351, 5
+  rotate: false
+  xy: 410, 9
   size: 79, 48
   orig: 100, 100
   offset: 6, 27
   index: -1
 Energy 105 Ray Left Loop_00018
-  rotate: true
-  xy: 555, 90
+  rotate: false
+  xy: 887, 13
   size: 76, 47
   orig: 100, 100
   offset: 7, 29
   index: -1
 Energy 105 Ray Left Loop_00019
-  rotate: true
-  xy: 541, 11
+  rotate: false
+  xy: 652, 11
   size: 76, 48
   orig: 100, 100
   offset: 8, 28
   index: -1
 Energy 105 Ray Left Loop_00020
-  rotate: true
-  xy: 458, 88
+  rotate: false
+  xy: 965, 17
   size: 78, 45
   orig: 100, 100
   offset: 7, 31
   index: -1
 Energy 105 Ray Left Loop_00021
-  rotate: true
-  xy: 307, 4
+  rotate: false
+  xy: 909, 64
   size: 80, 42
   orig: 100, 100
   offset: 5, 32
   index: -1
 Energy 105 Ray Left Loop_00022
-  rotate: true
-  xy: 495, 8
+  rotate: false
+  xy: 829, 62
   size: 78, 44
   orig: 100, 100
   offset: 5, 28
   index: -1
 Energy 105 Ray Left Loop_00023
-  rotate: true
-  xy: 505, 89
+  rotate: false
+  xy: 573, 9
   size: 77, 48
   orig: 100, 100
   offset: 6, 24
   index: -1
 Energy 105 Ray Left Loop_00024
-  rotate: true
-  xy: 307, 86
+  rotate: false
+  xy: 491, 10
   size: 80, 47
   orig: 100, 100
   offset: 4, 26

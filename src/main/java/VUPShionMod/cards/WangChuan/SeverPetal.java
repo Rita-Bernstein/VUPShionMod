@@ -3,11 +3,14 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.CorGladiiPower;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -29,6 +32,8 @@ public class SeverPetal extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+
         int d = this.magicNumber;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
             d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
@@ -36,8 +41,12 @@ public class SeverPetal extends AbstractWCCard {
 
         calculateCardDamage(m);
 
+        if(m != null)
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", m.hb.cX, m.hb.cY,
+                    50.0f, 90.0f, 10.0f * Settings.scale, 2, false)));
+
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                AbstractGameAction.AttackEffect.NONE));
 
         this.rawDescription = DESCRIPTION;
         initializeDescription();

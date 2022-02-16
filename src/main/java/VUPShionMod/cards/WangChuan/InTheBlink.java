@@ -3,6 +3,7 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.CorGladiiPower;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
@@ -51,6 +53,8 @@ public class InTheBlink extends AbstractWCCard {
 
                 calculateCardDamage(m);
 
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                        212.0f, 255.0f, 1.0f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
@@ -101,8 +105,14 @@ public class InTheBlink extends AbstractWCCard {
     }
 
     private void doAoeDamage() {
-        addToBot(new SFXAction("ATTACK_HEAVY"));
-        addToBot(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
+//        addToBot(new SFXAction("ATTACK_HEAVY"));
+//        addToBot(new VFXAction(AbstractDungeon.player, new CleaveEffect(), 0.1F));
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!mo.isDeadOrEscaped()) {
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", mo.hb.cX, mo.hb.cY,
+                        212.0f, 255.0f, 1.0f * Settings.scale, 2, false)));
+            }
+        }
         for (int i = 0; i < this.secondaryM; i++)
             addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
     }

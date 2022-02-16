@@ -1,0 +1,90 @@
+
+Energy 013 Ray Up loop.png
+size: 200,292
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Energy 013 Ray Up loop_00000
+  rotate: false
+  xy: 98, 98
+  size: 90, 46
+  orig: 100, 100
+  offset: 3, 0
+  index: -1
+Energy 013 Ray Up loop_00001
+  rotate: false
+  xy: 99, 146
+  size: 93, 46
+  orig: 100, 100
+  offset: 2, 0
+  index: -1
+Energy 013 Ray Up loop_00002
+  rotate: false
+  xy: 2, 146
+  size: 95, 46
+  orig: 100, 100
+  offset: 2, 0
+  index: -1
+Energy 013 Ray Up loop_00003
+  rotate: false
+  xy: 2, 242
+  size: 96, 46
+  orig: 100, 100
+  offset: 2, 0
+  index: -1
+Energy 013 Ray Up loop_00004
+  rotate: false
+  xy: 2, 194
+  size: 96, 46
+  orig: 100, 100
+  offset: 2, 0
+  index: -1
+Energy 013 Ray Up loop_00005
+  rotate: false
+  xy: 100, 242
+  size: 96, 46
+  orig: 100, 100
+  offset: 2, 0
+  index: -1
+Energy 013 Ray Up loop_00006
+  rotate: false
+  xy: 100, 194
+  size: 95, 46
+  orig: 100, 100
+  offset: 3, 0
+  index: -1
+Energy 013 Ray Up loop_00007
+  rotate: false
+  xy: 2, 98
+  size: 94, 46
+  orig: 100, 100
+  offset: 4, 0
+  index: -1
+Energy 013 Ray Up loop_00008
+  rotate: false
+  xy: 2, 50
+  size: 92, 46
+  orig: 100, 100
+  offset: 5, 0
+  index: -1
+Energy 013 Ray Up loop_00009
+  rotate: false
+  xy: 96, 50
+  size: 79, 46
+  orig: 100, 100
+  offset: 7, 0
+  index: -1
+Energy 013 Ray Up loop_00010
+  rotate: false
+  xy: 90, 2
+  size: 78, 46
+  orig: 100, 100
+  offset: 9, 0
+  index: -1
+Energy 013 Ray Up loop_00011
+  rotate: false
+  xy: 2, 2
+  size: 86, 46
+  orig: 100, 100
+  offset: 5, 0
+  index: -1

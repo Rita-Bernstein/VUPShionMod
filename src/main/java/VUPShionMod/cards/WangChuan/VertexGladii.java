@@ -3,13 +3,16 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.CorGladiiPower;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -36,6 +39,10 @@ public class VertexGladii extends AbstractWCCard {
         this.baseDamage = d;
 
         calculateCardDamage(m);
+
+        if(m != null)
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 105 Ray Left Loop", m.hb.cX, m.hb.cY,
+                    50.0f, 50.0f, 10.0f * Settings.scale, 2, false)));
 
         if (this.upgraded)
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),

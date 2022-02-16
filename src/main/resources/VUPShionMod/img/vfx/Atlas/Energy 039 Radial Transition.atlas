@@ -1,0 +1,83 @@
+
+Energy 039 Radial Transition.png
+size: 1772,112
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Energy 039 Radial Transition_00000
+  rotate: false
+  xy: 1360, 19
+  size: 183, 91
+  orig: 192, 108
+  offset: 6, 0
+  index: -1
+Energy 039 Radial Transition_00001
+  rotate: false
+  xy: 2, 2
+  size: 192, 108
+  orig: 192, 108
+  offset: 0, 0
+  index: -1
+Energy 039 Radial Transition_00002
+  rotate: false
+  xy: 196, 2
+  size: 192, 108
+  orig: 192, 108
+  offset: 0, 0
+  index: -1
+Energy 039 Radial Transition_00003
+  rotate: false
+  xy: 390, 2
+  size: 192, 108
+  orig: 192, 108
+  offset: 0, 0
+  index: -1
+Energy 039 Radial Transition_00004
+  rotate: false
+  xy: 584, 2
+  size: 192, 108
+  orig: 192, 108
+  offset: 0, 0
+  index: -1
+Energy 039 Radial Transition_00005
+  rotate: false
+  xy: 778, 2
+  size: 192, 108
+  orig: 192, 108
+  offset: 0, 0
+  index: -1
+Energy 039 Radial Transition_00006
+  rotate: false
+  xy: 972, 2
+  size: 192, 108
+  orig: 192, 108
+  offset: 0, 0
+  index: -1
+Energy 039 Radial Transition_00007
+  rotate: false
+  xy: 1166, 2
+  size: 192, 108
+  orig: 192, 108
+  offset: 0, 0
+  index: -1
+Energy 039 Radial Transition_00008
+  rotate: false
+  xy: 1545, 22
+  size: 184, 88
+  orig: 192, 108
+  offset: 8, 0
+  index: -1
+Energy 039 Radial Transition_00009
+  rotate: true
+  xy: 1731, 40
+  size: 70, 36
+  orig: 192, 108
+  offset: 122, 51
+  index: -1
+Energy 039 Radial Transition_00010
+  rotate: true
+  xy: 1731, 40
+  size: 70, 36
+  orig: 192, 108
+  offset: 122, 51
+  index: -1

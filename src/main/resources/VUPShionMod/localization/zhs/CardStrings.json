@@ -504,7 +504,7 @@
     ]
   },
   "VUPShionMod:AethereScindo": {
-    "NAME": "燕反",
+    "NAME": "燕返",
     "DESCRIPTION": "造成上次造成的攻击伤害两次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
     "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害三次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [

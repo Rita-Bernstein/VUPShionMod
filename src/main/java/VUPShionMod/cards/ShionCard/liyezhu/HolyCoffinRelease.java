@@ -12,7 +12,7 @@ public class HolyCoffinRelease extends AbstractLiyezhuCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz14.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public HolyCoffinRelease() {

@@ -438,5 +438,11 @@
     "DESCRIPTIONS": [
       "At the start of your turn, gain #b%d #yDexterity."
     ]
+  },
+  "VUPShionMod:GravitoniumOverPower": {
+    "NAME": "Gravity Funnel Overloaded",
+    "DESCRIPTIONS": [
+      "#yShion has overloaded #yGravity #yFunnel to its maximum..."
+    ]
   }
 }

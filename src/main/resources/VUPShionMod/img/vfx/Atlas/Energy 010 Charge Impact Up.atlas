@@ -1,0 +1,111 @@
+
+Energy 010 Charge Impact Up.png
+size: 272,288
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Energy 010 Charge Impact Up_00000
+  rotate: true
+  xy: 94, 2
+  size: 54, 35
+  orig: 100, 100
+  offset: 23, 0
+  index: -1
+Energy 010 Charge Impact Up_00001
+  rotate: false
+  xy: 186, 73
+  size: 66, 41
+  orig: 100, 100
+  offset: 17, 0
+  index: -1
+Energy 010 Charge Impact Up_00002
+  rotate: false
+  xy: 131, 11
+  size: 72, 45
+  orig: 100, 100
+  offset: 14, 0
+  index: -1
+Energy 010 Charge Impact Up_00003
+  rotate: false
+  xy: 2, 2
+  size: 76, 47
+  orig: 100, 100
+  offset: 12, 0
+  index: -1
+Energy 010 Charge Impact Up_00004
+  rotate: false
+  xy: 190, 237
+  size: 80, 49
+  orig: 100, 100
+  offset: 10, 0
+  index: -1
+Energy 010 Charge Impact Up_00005
+  rotate: false
+  xy: 188, 176
+  size: 82, 51
+  orig: 100, 100
+  offset: 9, 0
+  index: -1
+Energy 010 Charge Impact Up_00006
+  rotate: false
+  xy: 186, 116
+  size: 84, 53
+  orig: 100, 100
+  offset: 8, 0
+  index: -1
+Energy 010 Charge Impact Up_00007
+  rotate: false
+  xy: 94, 58
+  size: 86, 54
+  orig: 100, 100
+  offset: 7, 0
+  index: -1
+Energy 010 Charge Impact Up_00008
+  rotate: false
+  xy: 96, 114
+  size: 88, 55
+  orig: 100, 100
+  offset: 6, 0
+  index: -1
+Energy 010 Charge Impact Up_00009
+  rotate: false
+  xy: 96, 171
+  size: 90, 56
+  orig: 100, 100
+  offset: 5, 0
+  index: -1
+Energy 010 Charge Impact Up_00010
+  rotate: false
+  xy: 2, 51
+  size: 90, 56
+  orig: 100, 100
+  offset: 5, 0
+  index: -1
+Energy 010 Charge Impact Up_00011
+  rotate: false
+  xy: 96, 229
+  size: 92, 57
+  orig: 100, 100
+  offset: 4, 0
+  index: -1
+Energy 010 Charge Impact Up_00012
+  rotate: false
+  xy: 2, 228
+  size: 92, 58
+  orig: 100, 100
+  offset: 4, 0
+  index: -1
+Energy 010 Charge Impact Up_00013
+  rotate: false
+  xy: 2, 168
+  size: 92, 58
+  orig: 100, 100
+  offset: 4, 0
+  index: -1
+Energy 010 Charge Impact Up_00014
+  rotate: false
+  xy: 2, 109
+  size: 90, 57
+  orig: 100, 100
+  offset: 5, 0
+  index: -1

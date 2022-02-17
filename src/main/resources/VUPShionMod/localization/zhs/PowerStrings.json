@@ -339,7 +339,7 @@
   "VUPShionMod:WeatherEyePower": {
     "NAME": "警觉",
     "DESCRIPTIONS": [
-      "每当你获得 #y剑意 时，获得 #b%d 点 #y格挡 。"
+      "每当打出攻击牌时，获得 #b%d 点 #y格挡 。"
     ]
   },
   "VUPShionMod:PreTripleDamagePower": {

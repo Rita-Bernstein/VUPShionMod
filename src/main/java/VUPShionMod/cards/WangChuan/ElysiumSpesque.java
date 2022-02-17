@@ -14,7 +14,7 @@ public class ElysiumSpesque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("ElysiumSpesque");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc41.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 0;

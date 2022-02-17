@@ -42,7 +42,7 @@ public class ChaosNimius extends AbstractCodexCard {
                 break;
             case 2:
                 addToBot(new DrawCardAction(p, this.magicNumber));
-                addToBot(new ExhaustAction(3, false, true, true));
+                addToBot(new ExhaustAction(2, false, true, true));
                 break;
         }
     }
@@ -55,8 +55,11 @@ public class ChaosNimius extends AbstractCodexCard {
             if (this.timesUpgraded == 1)
                 this.exhaust = true;
 
-            if (this.timesUpgraded == 2)
+            if (this.timesUpgraded == 2){
                 this.exhaust = false;
+                upgradeMagicNumber(-1);
+            }
+
         }
     }
 }

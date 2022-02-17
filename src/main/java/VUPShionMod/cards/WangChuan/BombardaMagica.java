@@ -5,6 +5,7 @@ import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -36,6 +37,9 @@ public class BombardaMagica extends AbstractWCCard {
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.NONE));
+
+        if (this.timesUpgraded == 2)
+            addToBot(new DrawCardAction(1));
     }
 
     @Override
@@ -43,11 +47,37 @@ public class BombardaMagica extends AbstractWCCard {
         addToBot(new MakeTempCardInHandAction(makeStatEquivalentCopy()));
     }
 
+
+    @Override
+    public boolean canUpgrade() {
+        return timesUpgraded <= 1;
+    }
+
+
+
+
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeDamage(2);
+        if (timesUpgraded <= 1) {
+            this.upgraded = true;
+            this.name = EXTENDED_DESCRIPTION[timesUpgraded];
+            this.initializeTitle();
+            if (timesUpgraded < 1)
+                this.rawDescription = EXTENDED_DESCRIPTION[2];
+            else
+                this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.timesUpgraded++;
+        }
+
+        if (timesUpgraded <= 2) {
+            if (this.timesUpgraded == 1) {
+                upgradeDamage(2);
+            }
+
+//            if (this.timesUpgraded == 2) {
+//                this.exhaust = false;
+//            }
         }
     }
 }

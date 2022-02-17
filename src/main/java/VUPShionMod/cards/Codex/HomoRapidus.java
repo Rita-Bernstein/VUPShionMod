@@ -53,8 +53,11 @@ public class HomoRapidus extends AbstractCodexCard {
             if (this.timesUpgraded == 1)
                 upgradeBaseCost(0);
 
-            if (this.timesUpgraded == 2)
-               upgradeMagicNumber(1);
+            if (this.timesUpgraded == 2){
+                this.isInnate =true;
+                upgradeMagicNumber(1);
+            }
+
         }
     }
 }

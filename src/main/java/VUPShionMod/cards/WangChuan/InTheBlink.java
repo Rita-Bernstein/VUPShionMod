@@ -54,7 +54,7 @@ public class InTheBlink extends AbstractWCCard {
                 calculateCardDamage(m);
 
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                        212.0f, 255.0f, 1.0f * Settings.scale, 2, false)));
+                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
@@ -110,7 +110,7 @@ public class InTheBlink extends AbstractWCCard {
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", mo.hb.cX, mo.hb.cY,
-                        212.0f, 255.0f, 1.0f * Settings.scale, 2, false)));
+                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
             }
         }
         for (int i = 0; i < this.secondaryM; i++)

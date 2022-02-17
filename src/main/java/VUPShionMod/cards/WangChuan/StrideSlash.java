@@ -35,21 +35,52 @@ public class StrideSlash extends AbstractWCCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
+        if (p.hasPower(CorGladiiPower.POWER_ID)) {
+            int temp = this.baseDamage;
+            this.baseDamage = p.getPower(CorGladiiPower.POWER_ID).amount;
+            calculateCardDamage(m);
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            this.baseDamage = temp;
+        }
+
+
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
-        if(StiffnessPower.applyStiffness())
-        addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
+        if (this.timesUpgraded <= 1)
+            if (StiffnessPower.applyStiffness())
+                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
     }
 
     @Override
+    public boolean canUpgrade() {
+        return timesUpgraded <= 1;
+    }
+
+
+    @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeDamage(-3);
-            upgradeMagicNumber(1);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.name = EXTENDED_DESCRIPTION[0];
+        if (timesUpgraded <= 1) {
+            this.upgraded = true;
+            this.name = EXTENDED_DESCRIPTION[timesUpgraded];
             this.initializeTitle();
-            this.initializeDescription();
+            if (timesUpgraded < 1)
+                this.rawDescription = EXTENDED_DESCRIPTION[2];
+            else
+                this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.timesUpgraded++;
+        }
+
+        if (timesUpgraded <= 2) {
+            if (this.timesUpgraded == 1) {
+                upgradeDamage(-3);
+                upgradeMagicNumber(1);
+            }
+
+            if (this.timesUpgraded == 2) {
+                upgradeMagicNumber(4);
+            }
+
         }
     }
 }

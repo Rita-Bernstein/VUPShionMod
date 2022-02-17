@@ -32,7 +32,7 @@ public class MorsLibraque extends AbstractWCCard {
     public MorsLibraque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM = this.baseSecondaryM = 4;
+        this.secondaryM = this.baseSecondaryM = 5;
         this.selfRetain = true;
 
         vupCardSetBanner(CardRarity.RARE, this.type);
@@ -43,6 +43,7 @@ public class MorsLibraque extends AbstractWCCard {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Smoke 037 Radial Transition", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
                 96.0f, 54.0f, 10.0f * Settings.scale, 2, false)));
         addToBot(new CustomWaitAction(1.5f));
+
         addToBot(new ApplyPowerAction(p, p, new EnergyDownPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new NoSkillsPower(p)));
         Supplier<AbstractPower> powerToApply = () -> new MorsLibraquePower(null, this.secondaryM);
@@ -54,7 +55,7 @@ public class MorsLibraque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeSecondM(-1);
+            upgradeSecondM(-2);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

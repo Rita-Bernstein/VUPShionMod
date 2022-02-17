@@ -59,7 +59,8 @@ public class TonitrusConstans extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(0);
-                upgradeMagicNumber(-1);
+                upgradeSecondM(2);
+                this.exhaust = true;
             }
         }
     }

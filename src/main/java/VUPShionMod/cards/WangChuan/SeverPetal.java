@@ -41,19 +41,19 @@ public class SeverPetal extends AbstractWCCard {
 
         calculateCardDamage(m);
 
-        if(m != null)
-            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", m.hb.cX, m.hb.y +700.0f*Settings.scale,
+        if (m != null)
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", m.hb.cX, m.hb.y + 700.0f * Settings.scale,
                     50.0f, 90.0f, 8.0f * Settings.scale, 1, false)));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.NONE));
 
-        this.rawDescription = DESCRIPTION;
+        this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
 
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
-        if(StiffnessPower.applyStiffness())
-        addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 2)));
+        if (StiffnessPower.applyStiffness())
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 2)));
     }
 
 
@@ -64,31 +64,65 @@ public class SeverPetal extends AbstractWCCard {
         this.baseDamage = d;
         super.applyPowers();
 
-        this.rawDescription = DESCRIPTION;
-        this.rawDescription += EXTENDED_DESCRIPTION[0];
+        this.rawDescription = getDescription(timesUpgraded);
+        this.rawDescription += EXTENDED_DESCRIPTION[3];
         initializeDescription();
     }
 
 
     public void onMoveToDiscard() {
-        this.rawDescription = DESCRIPTION;
+        this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
     }
 
 
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = DESCRIPTION;
-        this.rawDescription += EXTENDED_DESCRIPTION[0];
+        this.rawDescription = getDescription(timesUpgraded);
+        this.rawDescription += EXTENDED_DESCRIPTION[3];
         initializeDescription();
     }
 
+    @Override
+    public boolean canUpgrade() {
+        return timesUpgraded <= 1;
+    }
+
+    private String getDescription(int times) {
+        switch (times) {
+            case 1:
+                return UPGRADE_DESCRIPTION;
+            case 2:
+                return EXTENDED_DESCRIPTION[1];
+            default:
+                return DESCRIPTION;
+        }
+    }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeMagicNumber(4);
+        if (timesUpgraded <= 1) {
+            this.upgraded = true;
+            this.name = EXTENDED_DESCRIPTION[timesUpgraded];
+            this.initializeTitle();
+            if (timesUpgraded < 1)
+                this.rawDescription = EXTENDED_DESCRIPTION[2];
+            else
+                this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.timesUpgraded++;
+        }
+
+
+        if (timesUpgraded <= 2) {
+            if (this.timesUpgraded == 1) {
+                upgradeMagicNumber(4);
+            }
+
+            if (this.timesUpgraded == 2) {
+                upgradeSecondM(4);
+            }
+
         }
     }
 }

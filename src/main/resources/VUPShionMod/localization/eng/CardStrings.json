@@ -438,12 +438,12 @@
       "In the Flash",
       "Blur of Steel",
       "Thundersteel",
-      "Duplex Thundersteel",
-      "Triplex Thundersteel",
-      "Quadra Thundersteel",
-      "Penta Thundersteel",
-      "Hexa Thundersteel",
-      "Hepta Thundersteel",
+      "Duplex Steel",
+      "Triplex Steel",
+      "Quadra Steel",
+      "Penta Steel",
+      "Hexa Steel",
+      "Hepta Steel",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL ",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL ",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for !VUPShionSecondM! times to ALL enemies. NL ",
@@ -625,8 +625,8 @@
   },
   "VUPShionMod:DistantiaAbsensque": {
     "NAME": "Viatrix Absens",
-    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! #yPlated #yArmor.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain #yPlated #yArmor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! Plated Armor.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Plated Armor equal to the Block you have. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
   },
   "VUPShionMod:VitaNaturaque": {
     "NAME": "Firmitas Vitae",

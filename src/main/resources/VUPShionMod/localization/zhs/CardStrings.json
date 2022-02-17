@@ -444,7 +444,7 @@
       "霹雳一闪·四连",
       "霹雳一闪·五连",
       "霹雳一闪·六连",
-      "霹雳一闪·七连",
+      "极·霹雳一闪",
       "造成 !M! + vup_shion_mod:剑意 的伤害。 NL ",
       "对所有敌人造成 NL !M! + vup_shion_mod:剑意 的伤害。 NL ",
       "对所有敌人造成 NL vup_shion_mod:剑意 的伤害 !VUPShionSecondM! 次。 NL ",
@@ -465,9 +465,11 @@
   "VUPShionMod:StrideSlash": {
     "NAME": "踏步斩",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害两次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害两次。 NL 造成 vup_shion_mod:剑意 的伤害。 NL 获得 !M! 点 vup_shion_mod:剑意 。",
     "EXTENDED_DESCRIPTION": [
-      "踏步连斩"
+      "踏步连斩",
+      "残月冲",
+      "造成 !D! 点伤害两次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。"
     ]
   },
   "VUPShionMod:OnrushingTip": {
@@ -482,9 +484,11 @@
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斩",
     "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 失去1点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得2点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 25 + vup_shion_mod:剑意 的 格挡 。 NL 获得2点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
+      "极·回天剑舞",
+      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得2点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
       "（造成 !D! 点伤害，获得 !B! 点 格挡 。）"
     ]
   },
@@ -499,7 +503,11 @@
   "VUPShionMod:SeverPetal": {
     "NAME": "雁落斩",
     "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
+      "雁落斩+",
+      "落凤破",
+      "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。",
       " NL （造成 !D! 点伤害）"
     ]
   },
@@ -513,8 +521,8 @@
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
-    "DESCRIPTION": "造成3+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 层 vup_shion_mod:剑意 。 NL 击晕 敌人。",
-    "UPGRADE_DESCRIPTION": "造成5+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 击晕 敌人。",
+    "DESCRIPTION": "保留 。 NL 造成3+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 层 vup_shion_mod:剑意 。 NL 击晕 敌人。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成5+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 击晕 敌人。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害）"
     ]
@@ -533,8 +541,8 @@
   },
   "VUPShionMod:Reflect": {
     "NAME": "反射",
-    "DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 造成 vup_shion_mod:剑意 的伤害。",
-    "UPGRADE_DESCRIPTION": " NL (造成 !D! 点伤害，获得 !B! 点 格挡 )"
+    "DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 你在这个回合每受到一次攻击，都对攻击者造成 !VUPShionSecondM! 点伤害。。",
+    "UPGRADE_DESCRIPTION": " NL (获得 !B! 点 格挡 )"
   },
   "VUPShionMod:Sharpen": {
     "NAME": "锐意",
@@ -563,7 +571,7 @@
   },
   "VUPShionMod:WeatherEye": {
     "NAME": "警觉",
-    "DESCRIPTION": "每当你获得 vup_shion_mod:剑意 时，获得 !M! 点 格挡 。"
+    "DESCRIPTION": "每当打出攻击牌时，获得 !M! 点 格挡 。"
   },
   "VUPShionMod:Focus": {
     "NAME": "蓄气",
@@ -597,7 +605,13 @@
   },
   "VUPShionMod:BombardaMagica": {
     "NAME": "魔连弹",
-    "DESCRIPTION": " 保留 。 NL 造成 !D! 点伤害。 NL 在手牌中回合结束时，将一张复制品加入手牌。 NL 消耗 。"
+    "DESCRIPTION": " 保留 。 NL 造成 !D! 点伤害。 NL 在手牌中回合结束时，将一张复制品加入手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 造成 !D! 点伤害。 NL 抽一张牌。 NL 在手牌中回合结束时，将一张复制品加入手牌。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "魔连弹+",
+      "极·魔连弹",
+      " 保留 。 NL 造成 !D! 点伤害。 NL 在手牌中回合结束时，将一张复制品加入手牌。 NL 消耗 。"
+    ]
   },
   "VUPShionMod:AfflictioBellumque": {
     "NAME": "二之章：战乱",
@@ -669,7 +683,7 @@
   "VUPShionMod:ChaosNimius": {
     "NAME": "通典：混沌",
     "DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 至多 消耗 3张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 至多 消耗 2张牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：混沌（泛滥）",
       "通典：混沌（极意）",
@@ -679,7 +693,7 @@
   "VUPShionMod:ChaosRapidus": {
     "NAME": "通典：混沌",
     "DESCRIPTION": "抽 !M! 张牌。 NL 消耗 一张牌。 NL 丢弃一张牌。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 至多 消耗 3张牌。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 至多 消耗 2张牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：混沌（神速）",
       "通典：混沌（极意）",
@@ -769,7 +783,7 @@
   "VUPShionMod:HomoRapidus": {
     "NAME": "通典：人",
     "DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 下张能力牌打出 !M! 次。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：人（神速）",
       "通典：人（极意）",
@@ -779,7 +793,7 @@
   "VUPShionMod:HomoNimius": {
     "NAME": "通典：人",
     "DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下张能力牌打出 !M! 次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 下张能力牌打出 !M! 次。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：人（泛滥）",
       "通典：人（极意）",
@@ -789,7 +803,7 @@
   "VUPShionMod:AquaConstans": {
     "NAME": "通典：水",
     "DESCRIPTION": "下回合获得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。",
+    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：水（永续）",
       "通典：水（极意）",
@@ -799,17 +813,17 @@
   "VUPShionMod:AquaRapida": {
     "NAME": "通典：水",
     "DESCRIPTION": "下回合获得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。",
+    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：水（神速）",
       "通典：水（极意）",
-      "下回合获得 !M! [E] 。 NL 消耗 。"
+      "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。 NL 消耗 。"
     ]
   },
   "VUPShionMod:IgnisRapidus": {
     "NAME": "通典：火",
     "DESCRIPTION": "下 !M! 张牌耗能为0。 NL 打出后将其 消耗 。",
-    "UPGRADE_DESCRIPTION": "下 !M! 张牌耗能为0。 NL 打出后将其 消耗 。",
+    "UPGRADE_DESCRIPTION": "虚无 。 NL 下 !M! 张牌耗能为0。 NL 打出后将其 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：火（神速）",
       "通典：火（极意）",
@@ -819,7 +833,7 @@
   "VUPShionMod:IgnisNimius": {
     "NAME": "通典：火",
     "DESCRIPTION": "下 !M! 张牌耗能为0。 NL 打出后将其 消耗 。",
-    "UPGRADE_DESCRIPTION": "下 !M! 张牌耗能为0。 NL 打出后将其 消耗 。",
+    "UPGRADE_DESCRIPTION": "虚无 。 NL 下 !M! 张牌耗能为0。 NL 打出后将其 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：火（泛滥）",
       "通典：火（极意）",
@@ -889,7 +903,7 @@
   "VUPShionMod:TonitrusConstans": {
     "NAME": "通典：雷",
     "DESCRIPTION": "获得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! [E] 。 NL 抽 !VUPShionSecondM! 张牌。",
+    "UPGRADE_DESCRIPTION": "获得 !M! [E] 。 NL 抽 !VUPShionSecondM! 张牌。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：雷（永续）",
       "通典：雷（极意）",
@@ -899,7 +913,7 @@
   "VUPShionMod:TonitrusRapidus": {
     "NAME": "通典：雷",
     "DESCRIPTION": "获得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! [E] 。 NL 抽 !VUPShionSecondM! 张牌。",
+    "UPGRADE_DESCRIPTION": "获得 !M! [E] 。 NL 抽 !VUPShionSecondM! 张牌。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：雷（神速）",
       "通典：雷（极意）",

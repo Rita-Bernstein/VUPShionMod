@@ -37,7 +37,7 @@ public class ChaosRapidus extends AbstractCodexCard {
             addToBot(new ExhaustAction(1, false));
             addToBot(new DiscardAction(p, p, 1, false));
         } else
-            addToBot(new ExhaustAction(3, false, true, true));
+            addToBot(new ExhaustAction(2, false, true, true));
 
     }
 
@@ -50,7 +50,7 @@ public class ChaosRapidus extends AbstractCodexCard {
                 upgradeMagicNumber(1);
 
             if (this.timesUpgraded == 2)
-                upgradeMagicNumber(-1);
+                upgradeMagicNumber(-2);
         }
     }
 }

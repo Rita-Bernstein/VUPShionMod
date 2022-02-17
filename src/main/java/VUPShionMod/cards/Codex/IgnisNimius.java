@@ -18,7 +18,7 @@ public class IgnisNimius extends AbstractCodexCard {
 
     public IgnisNimius(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
     }
@@ -38,12 +38,13 @@ public class IgnisNimius extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
-                upgradeMagicNumber(1);
-
+                upgradeMagicNumber(2);
             }
 
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(0);
+                upgradeMagicNumber(-1);
+                this.isEthereal = true;
             }
         }
     }

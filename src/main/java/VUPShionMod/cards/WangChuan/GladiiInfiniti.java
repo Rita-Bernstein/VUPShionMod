@@ -38,6 +38,7 @@ public class GladiiInfiniti extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = 5;
+        this.selfRetain = true;
     }
 
     @Override

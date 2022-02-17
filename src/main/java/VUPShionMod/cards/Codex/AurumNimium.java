@@ -58,7 +58,6 @@ public class AurumNimium extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 this.exhaust = false;
-                upgradeMagicNumber(1);
             }
         }
     }

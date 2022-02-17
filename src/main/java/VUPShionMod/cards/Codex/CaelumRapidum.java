@@ -54,7 +54,6 @@ public class CaelumRapidum extends AbstractCodexCard {
                 upgradeBaseCost(0);
 
             if (this.timesUpgraded == 2){
-                upgradeBaseCost(1);
                 upgradeMagicNumber(1);
             }
 

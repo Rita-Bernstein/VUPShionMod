@@ -18,7 +18,7 @@ public class IgnisRapidus extends AbstractCodexCard {
 
     public IgnisRapidus(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
     }
@@ -29,7 +29,7 @@ public class IgnisRapidus extends AbstractCodexCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new FreeCardPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new FreeCardPower(p, this.magicNumber)));
 
     }
 
@@ -38,12 +38,13 @@ public class IgnisRapidus extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1){
+            if (this.timesUpgraded == 1) {
                 upgradeBaseCost(0);
             }
 
-            if (this.timesUpgraded == 2){
+            if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(1);
+                this.isEthereal = true;
             }
         }
     }

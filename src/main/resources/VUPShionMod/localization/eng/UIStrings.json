@@ -40,10 +40,10 @@
   },
   "VUPShionMod:VictoryScreen": {
     "TEXT": [
-      "A Lone, Victorious",
-      "Victory against Plaga A Mundo without any asisstance.",
+      "Bridge Burned",
+      "Victory against Plaga Mundi without any asisstance.",
       "Reborn",
-      "Defeat Plaga A Mundo."
+      "Defeat Plaga Mundi."
     ]
   },
   "VUPShionMod:ReadAction": {
@@ -51,6 +51,16 @@
       "Add a copy of a card into your hand.",
       "Add copies of ",
       " cards into your hand."
+    ]
+  },
+  "VUPShionMod:CodexCardPatch": {
+    "TEXT": [
+      "Universal Codex"
+    ]
+  },
+  "VUPShionMod:UpgradeAction": {
+    "TEXT": [
+      "Choose a card to upgrade."
     ]
   }
 }

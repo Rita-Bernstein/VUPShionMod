@@ -28,7 +28,7 @@ public class VertexGladii extends AbstractWCCard {
     public VertexGladii() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 10;
-        this.magicNumber =this.baseMagicNumber =5;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class VertexGladii extends AbstractWCCard {
 
         calculateCardDamage(m);
 
-        if(m != null)
+        if (m != null)
             addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 105 Ray Left Loop", m.hb.cX, m.hb.cY,
                     50.0f, 50.0f, 10.0f * Settings.scale, 2, false)));
 
@@ -60,11 +60,11 @@ public class VertexGladii extends AbstractWCCard {
         else
             addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
 
-        if(StiffnessPower.applyStiffness())
-        addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, upgraded ? 1 : 2)));
+        if (StiffnessPower.applyStiffness())
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, upgraded ? 1 : 2)));
 
 
-        this.rawDescription = upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
     }
 
@@ -78,7 +78,7 @@ public class VertexGladii extends AbstractWCCard {
 
         int b = 10;
         if (upgraded) {
-            b = 9;
+            b = timesUpgraded < 2 ? 25 : 9;
             if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
                 b += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
         }
@@ -87,35 +87,65 @@ public class VertexGladii extends AbstractWCCard {
 
         super.applyPowers();
 
-        this.rawDescription = upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
-        this.rawDescription += EXTENDED_DESCRIPTION[1];
+        this.rawDescription = getDescription(timesUpgraded);
+        this.rawDescription += EXTENDED_DESCRIPTION[3];
         initializeDescription();
     }
 
 
     public void onMoveToDiscard() {
-        this.rawDescription = upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
     }
 
 
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
-        this.rawDescription += EXTENDED_DESCRIPTION[1];
+        this.rawDescription = getDescription(timesUpgraded);
+        this.rawDescription += EXTENDED_DESCRIPTION[3];
         initializeDescription();
+    }
+
+
+    @Override
+    public boolean canUpgrade() {
+        return timesUpgraded <= 1;
+    }
+
+    private String getDescription(int times) {
+        switch (times) {
+            case 1:
+                return UPGRADE_DESCRIPTION;
+            case 2:
+                return EXTENDED_DESCRIPTION[1];
+            default:
+                return DESCRIPTION;
+        }
     }
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeMagicNumber(2);
-            upgradeBaseCost(3);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.name = EXTENDED_DESCRIPTION[0];
+        if (timesUpgraded <= 1) {
+            this.upgraded = true;
+            this.name = EXTENDED_DESCRIPTION[timesUpgraded];
             this.initializeTitle();
-            this.initializeDescription();
+            if (timesUpgraded < 1)
+                this.rawDescription = EXTENDED_DESCRIPTION[2];
+            else
+                this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.timesUpgraded++;
+        }
+
+        if (timesUpgraded <= 2) {
+            if (this.timesUpgraded == 1) {
+                upgradeMagicNumber(2);
+                upgradeBaseCost(3);
+            }
+
+            if (this.timesUpgraded == 2) {
+                upgradeBaseCost(2);
+            }
         }
     }
 }

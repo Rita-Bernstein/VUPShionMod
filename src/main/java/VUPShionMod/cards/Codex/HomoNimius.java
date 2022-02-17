@@ -20,7 +20,7 @@ public class HomoNimius extends AbstractCodexCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     public HomoNimius() {
@@ -31,13 +31,13 @@ public class HomoNimius extends AbstractCodexCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
-                addToBot(new ApplyPowerAction(p,p,new TwoPowerPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new TwoPowerPower(p, 1)));
                 break;
             case 1:
-                addToBot(new ApplyPowerAction(p,p,new ThreePowerPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new ThreePowerPower(p, 1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p,p,new ThreePowerPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new ThreePowerPower(p, 1)));
                 break;
         }
 
@@ -51,8 +51,10 @@ public class HomoNimius extends AbstractCodexCard {
             if (this.timesUpgraded == 1)
                 upgradeMagicNumber(1);
 
-            if (this.timesUpgraded == 2)
+            if (this.timesUpgraded == 2) {
+                this.isInnate = true;
                 upgradeBaseCost(0);
+            }
         }
     }
 }

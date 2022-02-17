@@ -43,7 +43,7 @@ public class LignumConstans extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 this.exhaust = true;
-                upgradeMagicNumber(2);
+                upgradeMagicNumber(3);
             }
         }
     }

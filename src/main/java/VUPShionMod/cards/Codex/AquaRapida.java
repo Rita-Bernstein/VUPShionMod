@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class AquaRapida extends AbstractCodexCard {
@@ -18,6 +19,7 @@ public class AquaRapida extends AbstractCodexCard {
     public AquaRapida(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
+        this.secondaryM =this.baseSecondaryM = 0;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
     }
@@ -29,7 +31,7 @@ public class AquaRapida extends AbstractCodexCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new EnergizedPower(p,this.magicNumber)));
-
+        addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.secondaryM)));
     }
 
 
@@ -39,6 +41,7 @@ public class AquaRapida extends AbstractCodexCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1){
                 upgradeBaseCost(0);
+                upgradeSecondM(2);
             }
 
             if (this.timesUpgraded == 2){

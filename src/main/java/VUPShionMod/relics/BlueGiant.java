@@ -1,8 +1,11 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.ShionCard.tempCards.FunnelMatrix;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BlueGiant extends CustomRelic {
     public static final String ID = VUPShionMod.makeID("BlueGiant");
@@ -20,4 +23,19 @@ public class BlueGiant extends CustomRelic {
         return this.DESCRIPTIONS[0];
     }
 
+    @Override
+    public void atTurnStartPostDraw() {
+        flash();
+        addToBot(new MakeTempCardInHandAction(new FunnelMatrix()));
+    }
+
+    @Override
+    public void onEquip() {
+        AbstractDungeon.player.energy.energyMaster--;
+    }
+
+    @Override
+    public void onUnequip() {
+        AbstractDungeon.player.energy.energyMaster++;
+    }
 }

@@ -919,5 +919,9 @@
       "通典：雷（极意）",
       "获得 !M! [E] 。 NL 抽 !VUPShionSecondM! 张牌。 NL 消耗 。"
     ]
+  },
+  "VUPShionMod:FunnelMatrix": {
+    "NAME": "自动浮游炮矩阵",
+    "DESCRIPTION": "对一名敌人触发2次侦查 vup_shion_mod:浮游炮 和重力 vup_shion_mod:浮游炮 及3次追击 vup_shion_mod:浮游炮 的被动效果。 NL 消耗 。"
   }
 }

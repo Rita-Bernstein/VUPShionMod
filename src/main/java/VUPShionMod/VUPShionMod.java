@@ -492,6 +492,8 @@ public class VUPShionMod implements
         cards.add(new GravityFinFunnelUpgrade());
         cards.add(new PursuitFinFunnelUpgrade());
 
+        cards.add(new FunnelMatrix());
+
 
 
 //        忘川
@@ -547,7 +549,7 @@ public class VUPShionMod implements
         cards.add(new Replenish());
         cards.add(new VampireForm());
 
-
+//        通典
         cards.add(new ChaosNimius());
         cards.add(new ChaosRapidus());
         cards.add(new LuxRapida());
@@ -573,6 +575,7 @@ public class VUPShionMod implements
         cards.add(new LignumConstans());
         cards.add(new TonitrusConstans());
         cards.add(new TonitrusRapidus());
+
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);

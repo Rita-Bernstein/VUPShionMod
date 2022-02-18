@@ -443,7 +443,7 @@
       "Quadra Steel",
       "Penta Steel",
       "Hexa Steel",
-      "Hepta Steel",
+      "Ultra Steel",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL ",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL ",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for !VUPShionSecondM! times to ALL enemies. NL ",
@@ -464,9 +464,11 @@
   "VUPShionMod:StrideSlash": {
     "NAME": "Stride Slash",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii.",
     "EXTENDED_DESCRIPTION": [
-      "Forwarding Hew"
+      "Forwarding Hew",
+      "Crescent Hack",
+      "Deal !D! damage twice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness."
     ]
   },
   "VUPShionMod:OnrushingTip": {
@@ -480,11 +482,13 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "Vertex Gladii",
-    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii 2 times. NL Gain !B! Block. NL Lose 1 vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii 3 times. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !B! Block. NL Lose 1 vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 25 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
       "Turbo Gladii",
-      " NL (Deal !D! damage, gain !B! Block.)"
+      "Huracanum Gladii",
+      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+      " NL（Deal !D! damage, gain !B! Block.）"
     ]
   },
   "VUPShionMod:SeverWrist": {
@@ -497,9 +501,13 @@
   },
   "VUPShionMod:SeverPetal": {
     "NAME": "Sever Petal",
-    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM!  vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !D! damage.)"
+      "Sever Petal+",
+      "Sever Clouds",
+      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
+      " NL （Deal !D! damage.）"
     ]
   },
   "VUPShionMod:AethereScindo": {
@@ -596,7 +604,13 @@
   },
   "VUPShionMod:BombardaMagica": {
     "NAME": "Bombarda Magica",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL If left unplayed in your hand at the end of turn, add a copy of this card into your hand. NL Exhaust."
+    "DESCRIPTION": " Retain. NL Deal !D! damage. NL If left unplayed in your hand at the end of turn, add a copy of this card into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": " Retain. NL Deal !D! damage, draw 1 card. NL If left unplayed in your hand at the end of turn, add a copy of this card into your hand. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Bombarda Magica+",
+      "Sagittas Magica",
+      " Retain. NL Deal !D! damage. NL If left unplayed in your hand at the end of turn, add a copy of this card into your hand. NL Exhaust."
+    ]
   },
   "VUPShionMod:AfflictioBellumque": {
     "NAME": "Afflictio Belli",
@@ -725,7 +739,7 @@
     "EXTENDED_DESCRIPTION": [
       "Caligo Rapida",
       "Caligo Intensa",
-      "Next turn, your Attacks deal double damage. NL Next turn, draw 1 Attcak. NL Exhaust."
+      "Next turn, your Attacks deal double damage. NL Next turn, draw 1 Attack. NL Exhaust."
     ]
   },
   "VUPShionMod:CaelumNimium": {
@@ -907,5 +921,9 @@
       "Tonitrus Intensus",
       "Gain !M! [E] . NL Draw !VUPShionSecondM! cards. NL Exhaust."
     ]
+  },
+  "VUPShionMod:FunnelMatrix": {
+    "NAME": "Funnel Automatrix",
+    "DESCRIPTION": "Trigger the passive ability of Scouting vup_shion_mod:Funnel and Gravity vup_shion_mod:Funnel for twice and Pursuing vup_shion_mod:Funnel for thrice to an enemy. NL Exhaust."
   }
 }

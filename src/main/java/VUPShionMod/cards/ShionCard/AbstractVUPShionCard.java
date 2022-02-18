@@ -144,62 +144,61 @@ public abstract class AbstractVUPShionCard extends CustomCard {
 
     @SpireOverride
     protected void renderEnergy(SpriteBatch sb) {
-        if (this.rarity != CardRarity.SPECIAL) {
-            if (this.cost <= -2 || this.isLocked || !this.isSeen) {
-                return;
-            }
 
-            float x = -108.0f;
-            float y = 200.0f;
+        if (this.cost <= -2 || this.isLocked || !this.isSeen) {
+            return;
+        }
 
-            if (VUPShionMod.useSimpleOrb || this.color == CardColorEnum.WangChuan_LIME|| this.color == CardColorEnum.Codex_LIME) {
-                if (this instanceof FinFunnelUpgrade)
-                    darkOrbRenderHelper(sb, orb_g, x, y);
-                else
-                    switch (rarity) {
-                        case RARE:
-                            darkOrbRenderHelper(sb, orb_g, x, y);
-                            break;
-                        case UNCOMMON:
-                            darkOrbRenderHelper(sb, orb_b, x, y);
-                            break;
-                        default:
-                            darkOrbRenderHelper(sb, orb_w, x, y);
-                            break;
-                    }
-            } else {
-                if (this instanceof FinFunnelUpgrade)
-                    darkOrbRenderHelper(sb, orb_ag, x, y);
-                else
-                    switch (rarity) {
-                        case RARE:
-                            darkOrbRenderHelper(sb, orb_ag, x, y);
-                            break;
-                        case UNCOMMON:
-                            darkOrbRenderHelper(sb, orb_ab, x, y);
-                            break;
-                        default:
-                            darkOrbRenderHelper(sb, orb_aw, x, y);
-                            break;
-                    }
-            }
+        float x = -108.0f;
+        float y = 200.0f;
+
+        if (VUPShionMod.useSimpleOrb || this.color == CardColorEnum.WangChuan_LIME || this.color == CardColorEnum.Codex_LIME) {
+            if (this instanceof FinFunnelUpgrade)
+                darkOrbRenderHelper(sb, orb_g, x, y);
+            else
+                switch (rarity) {
+                    case RARE:
+                        darkOrbRenderHelper(sb, orb_g, x, y);
+                        break;
+                    case UNCOMMON:
+                        darkOrbRenderHelper(sb, orb_b, x, y);
+                        break;
+                    default:
+                        darkOrbRenderHelper(sb, orb_w, x, y);
+                        break;
+                }
+        } else {
+            if (this instanceof FinFunnelUpgrade)
+                darkOrbRenderHelper(sb, orb_ag, x, y);
+            else
+                switch (rarity) {
+                    case RARE:
+                        darkOrbRenderHelper(sb, orb_ag, x, y);
+                        break;
+                    case UNCOMMON:
+                        darkOrbRenderHelper(sb, orb_ab, x, y);
+                        break;
+                    default:
+                        darkOrbRenderHelper(sb, orb_aw, x, y);
+                        break;
+                }
+        }
 
 
-            Color costColor = Color.WHITE.cpy();
-            if (AbstractDungeon.player != null && AbstractDungeon.player.hand.contains(this) && !this.hasEnoughEnergy()) {
-                costColor = ENERGY_COST_RESTRICTED_COLOR;
-            } else if (this.isCostModified || this.isCostModifiedForTurn || this.freeToPlay()) {
-                costColor = ENERGY_COST_MODIFIED_COLOR;
-            }
+        Color costColor = Color.WHITE.cpy();
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hand.contains(this) && !this.hasEnoughEnergy()) {
+            costColor = ENERGY_COST_RESTRICTED_COLOR;
+        } else if (this.isCostModified || this.isCostModifiedForTurn || this.freeToPlay()) {
+            costColor = ENERGY_COST_MODIFIED_COLOR;
+        }
 
-            costColor.a = this.transparency;
-            String text = this.getCost();
-            BitmapFont font = this.getEnergyFont();
-            if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
-                FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, -124.0F * this.drawScale * Settings.scale, 190.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
-            }
-        } else
-            SpireSuper.call(sb);
+        costColor.a = this.transparency;
+        String text = this.getCost();
+        BitmapFont font = this.getEnergyFont();
+        if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
+            FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, -124.0F * this.drawScale * Settings.scale, 190.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
+        }
+
 
     }
 

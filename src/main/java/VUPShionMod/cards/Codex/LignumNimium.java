@@ -42,14 +42,12 @@ public class LignumNimium extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
-                this.exhaust = false;
                 upgradeBaseCost(1);
                 upgradeMagicNumber(2);
             }
 
 
             if (this.timesUpgraded == 2) {
-                this.exhaust = true;
                 upgradeMagicNumber(1);
                 upgradeBaseCost(0);
             }

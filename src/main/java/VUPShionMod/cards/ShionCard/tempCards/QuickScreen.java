@@ -24,9 +24,8 @@ public class QuickScreen extends AbstractVUPShionCard {
         this.secondaryM = this.baseSecondaryM = 1;
         this.tags.add(CardTagsEnum.LOADED);
         this.exhaust = true;
-        this.color = CardColor.COLORLESS;
 
-        setDisplayRarity(CardRarity.UNCOMMON);
+        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 
 

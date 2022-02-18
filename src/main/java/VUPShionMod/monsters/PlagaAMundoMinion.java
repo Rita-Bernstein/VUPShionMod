@@ -182,14 +182,11 @@ public class PlagaAMundoMinion extends CustomMonster {
             }
 
             if (AbstractDungeon.player instanceof WangChuan) {
-                if (((WangChuan) AbstractDungeon.player).shionHelper == null)
-                    VUPShionMod.fightSpecialBossWithout = true;
+                if (((WangChuan) AbstractDungeon.player).shionHelper != null)
+                    VUPShionMod.fightSpecialBossWithout = false;
             }
 
-            if (!VUPShionMod.fightSpecialBossWithout) {
-                VUPShionMod.fightSpecialBoss = true;
-            }
-
+            VUPShionMod.fightSpecialBoss = !VUPShionMod.fightSpecialBossWithout;
         }
     }
 

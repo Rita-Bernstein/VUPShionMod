@@ -27,9 +27,9 @@ public class PursuitFinFunnelUpgrade extends AbstractVUPShionCard {
 
     public PursuitFinFunnelUpgrade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.color = CardColor.COLORLESS;
 
-        setDisplayRarity(CardRarity.RARE);
+
+        vupCardSetBanner(CardRarity.RARE,TYPE);
     }
 
     @Override

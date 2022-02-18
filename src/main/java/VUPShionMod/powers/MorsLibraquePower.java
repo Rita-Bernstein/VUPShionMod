@@ -23,6 +23,7 @@ public class MorsLibraquePower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+    private boolean justApplied = true;
 
     public MorsLibraquePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -48,6 +49,10 @@ public class MorsLibraquePower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
+        if (justApplied) {
+            justApplied = false;
+            return;
+        }
         addToBot(new ReducePowerAction(this.owner, this.owner, MorsLibraquePower.POWER_ID, 1));
         if (this.amount == 1) {
             flash();

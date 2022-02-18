@@ -71,7 +71,7 @@
     "NAME": "Blue Giant",
     "FLAVOR": "Potent ranged firepower in exchange of mobility.",
     "DESCRIPTIONS": [
-      "Upgrade your starting #yFunnels by 1. At the start of each turn, add an #yActivate #yFunnel into your hand."
+      "At the start of your turn, lose [E] and add 1 #yFunnel #yAutomatrix into your hand."
     ]
   },
   "VUPShionMod:DarkStar": {

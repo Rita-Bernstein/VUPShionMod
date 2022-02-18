@@ -29,6 +29,7 @@ public class Reflect extends AbstractWCCard {
     public Reflect() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM  = this.baseSecondaryM = 10;
         this.selfRetain = true;
     }
 
@@ -49,7 +50,7 @@ public class Reflect extends AbstractWCCard {
             addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new FlameBarrierPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new FlameBarrierPower(p, this.secondaryM)));
         this.rawDescription = DESCRIPTION;
         initializeDescription();
 

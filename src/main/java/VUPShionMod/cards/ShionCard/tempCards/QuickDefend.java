@@ -30,9 +30,8 @@ public class QuickDefend extends AbstractVUPShionCard {
         this.tags.add(CardTagsEnum.LOADED);
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.exhaust = true;
-        this.color = CardColor.COLORLESS;
 
-        setDisplayRarity(CardRarity.UNCOMMON);
+        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 
     @Override

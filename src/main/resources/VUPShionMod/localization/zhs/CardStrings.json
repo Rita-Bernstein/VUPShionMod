@@ -541,7 +541,7 @@
   },
   "VUPShionMod:Reflect": {
     "NAME": "反射",
-    "DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 你在这个回合每受到一次攻击，都对攻击者造成 !VUPShionSecondM! 点伤害。。",
+    "DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 你在这个回合每受到一次攻击，都对攻击者造成 !VUPShionSecondM! 点伤害。",
     "UPGRADE_DESCRIPTION": " NL (获得 !B! 点 格挡 )"
   },
   "VUPShionMod:Sharpen": {

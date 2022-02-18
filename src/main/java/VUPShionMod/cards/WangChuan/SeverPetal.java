@@ -91,9 +91,9 @@ public class SeverPetal extends AbstractWCCard {
     private String getDescription(int times) {
         switch (times) {
             case 1:
-                return UPGRADE_DESCRIPTION;
+                return EXTENDED_DESCRIPTION[2];
             case 2:
-                return EXTENDED_DESCRIPTION[1];
+                return UPGRADE_DESCRIPTION;
             default:
                 return DESCRIPTION;
         }

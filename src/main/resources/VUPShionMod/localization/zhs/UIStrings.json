@@ -62,5 +62,20 @@
     "TEXT": [
       "选择牌升级"
     ]
+  },
+  "VUPShionMod:BetaArtUnlockEffect": {
+    "TEXT": [
+      "已解锁紫音皮肤！"
+    ]
+  },
+  "VUPShionMod:AbstractShionSkin": {
+    "TEXT": [
+      "咏叹调",
+      "紫音"
+    ],
+    "EXTRA_TEXT": [
+      "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔",
+      "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔"
+    ]
   }
 }

@@ -1,5 +1,6 @@
-package VUPShionMod.util;
+package VUPShionMod.skins;
 
+import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
 public abstract class AbstractSkin {
+    public Texture portraitStatic_IMG;
     public Texture portraitAnimation_IMG;
 
     public TextureAtlas portraitAtlas = null;
@@ -24,6 +26,7 @@ public abstract class AbstractSkin {
 
     public String NAME;
 
+    public int portraitAnimationType = 0;
     public String SHOULDER1;
     public String SHOULDER2;
     public String CORPSE;
@@ -66,18 +69,25 @@ public abstract class AbstractSkin {
 
 
     public void setAnimation() {
-        portraitState.setAnimation(1, "idle", true);
+        portraitState.setAnimation(1, "fade_in", false);
+        portraitState.addAnimation(0, "idle", true, 0.0f);
         InitializeStaticPortraitVar();
     }
 
     public void InitializeStaticPortraitVar() {
     }
 
-    public void update() {
+    public Texture updateBgImg() {
+        VUPShionMod.saveSettings();
+        if (!hasAnimation()) {
+            return portraitStatic_IMG;
+        } else {
+            return portraitAnimation_IMG;
+        }
     }
 
-
     public void render(SpriteBatch sb) {
+        if (hasAnimation()) {
             portraitState.update(Gdx.graphics.getDeltaTime());
             portraitState.apply(portraitSkeleton);
             portraitSkeleton.updateWorldTransform();
@@ -90,6 +100,7 @@ public abstract class AbstractSkin {
             sb.end();
             CardCrawlGame.psb.begin();
             skeletonRender(sb);
+        }
     }
 
     public void setPos() {
@@ -107,6 +118,26 @@ public abstract class AbstractSkin {
         }
     }
 
+    public void update() {
+    }
+
+    public void clearWhenClick() {
+    }
+
+    public void extraHitboxRender(SpriteBatch sb) {
+    }
+
+    public Boolean extraHitboxClickCheck() {
+        return false;
+    }
+
+    public String getNewCharDescription() {
+        if (DESCRIPTION != null)
+            return DESCRIPTION;
+        else {
+            return "";
+        }
+    }
 
     public String getAtlasURL() {
         return atlasURL;

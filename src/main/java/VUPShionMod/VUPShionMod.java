@@ -22,6 +22,7 @@ import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import VUPShionMod.relics.*;
+import VUPShionMod.skins.AbstractSkinCharacter;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -46,6 +47,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import static VUPShionMod.patches.CharacterSelectScreenPatches.characters;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -148,6 +151,12 @@ public class VUPShionMod implements
             config.setBool("useSimpleOrb", useSimpleOrb);
             config.setBool("notReplaceTitle", notReplaceTitle);
 
+
+            for (int i = 0; i <= characters.length - 1; i++) {
+                config.setBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i, characters[i].reskinUnlock);
+                config.setInt(CardCrawlGame.saveSlot + "reskinCount" + i, characters[i].reskinCount);
+            }
+
             System.out.println("==============reskin存入数据");
 
             config.save();
@@ -163,6 +172,15 @@ public class VUPShionMod implements
             useSimpleOrb = config.getBool("useSimpleOrb");
             notReplaceTitle = config.getBool("notReplaceTitle");
 
+            for (int i = 0; i <= characters.length - 1; i++) {
+                characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
+                characters[i].reskinCount = config.getInt(CardCrawlGame.saveSlot + "reskinCount" + i);
+
+                if(characters[i].reskinCount > characters[i].skins.length -1){
+                    characters[i].reskinCount = 0;
+                }
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             clearSettings();
@@ -170,6 +188,14 @@ public class VUPShionMod implements
     }
 
     public static void clearSettings() {
+        saveSettings();
+    }
+
+    public static void unlockAllReskin() {
+
+        for (AbstractSkinCharacter c : characters) {
+            c.reskinUnlock = true;
+        }
         saveSettings();
     }
 
@@ -248,6 +274,7 @@ public class VUPShionMod implements
     @Override
     public void receivePostInitialize() {
         loadSettings();
+        unlockAllReskin();
         Texture badgeTexture = new Texture(assetPath("/img/badge.png"));
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);

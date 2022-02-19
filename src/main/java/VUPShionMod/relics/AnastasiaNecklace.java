@@ -46,7 +46,7 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
     private static final Texture UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/AnastasiaNecklaceUpgrade.png"));
     private static final RelicStrings relicString = CardCrawlGame.languagePack.getRelicStrings(ID);
 
-    private boolean triggered = false;
+    public boolean triggered = false;
     public boolean effectApplied = false;
     private boolean lockHealth = false;
 

@@ -55,8 +55,11 @@ public class UpgradePileAction extends AbstractGameAction {
                     temp.addToTop(c);
                 }
             }
-            if (temp.isEmpty())
+
+            if (temp.isEmpty()) {
+                isDone = true;
                 return;
+            }
 
 
             if (temp.size() <= this.amount) {

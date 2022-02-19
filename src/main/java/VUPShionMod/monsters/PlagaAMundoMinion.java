@@ -2,8 +2,10 @@ package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.CustomWaitAction;
+import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.powers.*;
+import VUPShionMod.relics.TrackingBeacon;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -177,13 +179,17 @@ public class PlagaAMundoMinion extends CustomMonster {
             useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);
             onBossVictoryLogic();
-            if (!AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
+            if (AbstractDungeon.player instanceof Shion && !AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
                 VUPShionMod.fightSpecialBossWithout = true;
             }
 
             if (AbstractDungeon.player instanceof WangChuan) {
                 if (((WangChuan) AbstractDungeon.player).shionHelper != null)
                     VUPShionMod.fightSpecialBossWithout = false;
+
+                if(AbstractDungeon.player.hasRelic(TrackingBeacon.ID)){
+                    VUPShionMod.fightSpecialBossWithout = !((TrackingBeacon)AbstractDungeon.player.getRelic(TrackingBeacon.ID)).triggered;
+                }
             }
 
             VUPShionMod.fightSpecialBoss = !VUPShionMod.fightSpecialBossWithout;

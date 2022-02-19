@@ -46,7 +46,7 @@ public class TrackingBeacon extends CustomRelic implements OnPlayerDeathRelic {
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
-    private boolean triggered = false;
+    public boolean triggered = false;
     public boolean effectApplied = false;
     private boolean lockHealth = false;
 

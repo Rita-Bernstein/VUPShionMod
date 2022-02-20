@@ -1,8 +1,13 @@
 package VUPShionMod.skins.sk.Shion;
 
+import VUPShionMod.relics.BlueGiant;
+import VUPShionMod.relics.DimensionSplitterAria;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.screens.CharSelectInfo;
+
+import java.util.ArrayList;
 
 public class OriShion extends AbstractSkin {
     public OriShion() {
@@ -27,5 +32,19 @@ public class OriShion extends AbstractSkin {
     public void setAnimation() {
         portraitState.setAnimation(0, "idle", true);
         InitializeStaticPortraitVar();
+    }
+
+    @Override
+    public CharSelectInfo updateCharInfo(CharSelectInfo info) {
+        info.relics.clear();
+        info.relics.add(DimensionSplitterAria.ID);
+        return info;
+    }
+
+    @Override
+    public ArrayList<String> getStartingRelic() {
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(DimensionSplitterAria.ID);
+        return retVal;
     }
 }

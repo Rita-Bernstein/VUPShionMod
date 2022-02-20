@@ -1,6 +1,7 @@
 package VUPShionMod.skins;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.relics.DimensionSplitterAria;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -9,6 +10,10 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.relics.BurningBlood;
+import com.megacrit.cardcrawl.screens.CharSelectInfo;
+
+import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
@@ -86,6 +91,10 @@ public abstract class AbstractSkin {
         }
     }
 
+    public CharSelectInfo updateCharInfo(CharSelectInfo info){
+        return info;
+    }
+
     public void render(SpriteBatch sb) {
         if (hasAnimation()) {
             portraitState.update(Gdx.graphics.getDeltaTime());
@@ -161,6 +170,12 @@ public abstract class AbstractSkin {
 
     public void dispose() {
         if (this.portraitAtlas != null) this.portraitAtlas.dispose();
+    }
+
+    public ArrayList<String> getStartingRelic(){
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(BurningBlood.ID);
+        return retVal;
     }
 }
 

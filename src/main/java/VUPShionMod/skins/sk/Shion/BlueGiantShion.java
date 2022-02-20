@@ -1,8 +1,13 @@
 package VUPShionMod.skins.sk.Shion;
 
+import VUPShionMod.relics.BlueGiant;
+import VUPShionMod.relics.DimensionSplitterAria;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.screens.CharSelectInfo;
+
+import java.util.ArrayList;
 
 public class BlueGiantShion extends AbstractSkin {
     public BlueGiantShion() {
@@ -17,8 +22,8 @@ public class BlueGiantShion extends AbstractSkin {
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.SHOULDER2 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.CORPSE = "VUPShionMod/characters/Shion/corpse.png";
-        this.atlasURL = "VUPShionMod/characters/Shion/animation/ShionAnimation.atlas";
-        this.jsonURL = "VUPShionMod/characters/Shion/animation/ShionAnimation.json";
+        this.atlasURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX.atlas";
+        this.jsonURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX.json";
         this.renderscale = 1.0F;
     }
 
@@ -27,5 +32,19 @@ public class BlueGiantShion extends AbstractSkin {
     public void setAnimation() {
         portraitState.setAnimation(0, "idle", true);
         InitializeStaticPortraitVar();
+    }
+
+    @Override
+    public CharSelectInfo updateCharInfo(CharSelectInfo info) {
+        info.relics.clear();
+        info.relics.add(BlueGiant.ID);
+        return info;
+    }
+
+    @Override
+    public ArrayList<String> getStartingRelic() {
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(BlueGiant.ID);
+        return retVal;
     }
 }

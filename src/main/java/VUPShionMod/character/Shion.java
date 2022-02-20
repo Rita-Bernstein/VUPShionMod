@@ -81,17 +81,35 @@ public class Shion extends CustomPlayer {
         this.dialogY = this.drawY + 170.0F * Settings.scale;
 
         initializeClass(null,
-                "VUPShionMod/characters/Shion/shoulder2.png",
-                "VUPShionMod/characters/Shion/shoulder.png",
-                "VUPShionMod/characters/Shion/corpse.png",
+                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].SHOULDER1,
+                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].SHOULDER2,
+                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].CORPSE,
                 getLoadout(), 0.0F, -5.0F, 240.0F, 480.0F, new EnergyManager(ENERGY_PER_TURN));
 
-        loadAnimation(VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.atlas"), VUPShionMod.assetPath("characters/Shion/animation/ShionAnimation.json"), 1.0f);
+        reloadAnimation();
+    }
 
-        this.state.setAnimation(0, "Idle_body", true).setTimeScale(2.0f);
-        this.state.setAnimation(1, "Idle_Weapon1", true).setTimeScale(2.0f);
-        this.state.setAnimation(2, "Idle_Weapon2", true).setTimeScale(2.0f);
-        this.state.setAnimation(3, "Idle_Weapon3", true).setTimeScale(2.0f);
+    public void reloadAnimation() {
+        this.loadAnimation(
+                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].atlasURL,
+                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].jsonURL,
+                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].renderscale);
+
+
+        if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+            this.state.setAnimation(0, "Idle_body", true).setTimeScale(2.0f);
+            this.state.setAnimation(1, "Idle_Weapon1", true).setTimeScale(2.0f);
+            this.state.setAnimation(2, "Idle_Weapon2", true).setTimeScale(2.0f);
+            this.state.setAnimation(3, "Idle_Weapon3", true).setTimeScale(2.0f);
+        }
+
+        if (CharacterSelectScreenPatches.characters[0].reskinCount == 1) {
+            this.state.setAnimation(0, "Idle_body", true);
+            this.state.setAnimation(1, "Idle_Weapon1", true);
+            this.state.setAnimation(2, "Idle_Weapon2", true);
+            this.state.setAnimation(3, "Idle_Weapon3", true);
+            this.state.setAnimation(4, "Idle_Wing", true);
+        }
     }
 
     @Override
@@ -120,9 +138,7 @@ public class Shion extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(DimensionSplitterAria.ID);
-        return retVal;
+        return CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
@@ -263,14 +279,22 @@ public class Shion extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            this.state.setAnimation(0, "Hit_Body", false).setTimeScale(4.0f);
-            this.state.setAnimation(1, "Hit_Weapon1", false).setTimeScale(4.0f);
-            this.state.setAnimation(2, "Hit_Weapon2", false).setTimeScale(4.0f);
-            this.state.setAnimation(3, "Hit_Weapon3", false).setTimeScale(4.0f);
-            this.state.addAnimation(0, "Idle_body", true, 0.0F).setTimeScale(2.0f);
-            this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
-            this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
-            this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
+            if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+                this.state.setAnimation(0, "Hit_Body", false).setTimeScale(4.0f);
+                this.state.addAnimation(0, "Idle_body", true, 0.0F).setTimeScale(2.0f);
+                this.state.setAnimation(1, "Hit_Weapon1", false).setTimeScale(4.0f);
+                this.state.setAnimation(2, "Hit_Weapon2", false).setTimeScale(4.0f);
+                this.state.setAnimation(3, "Hit_Weapon3", false).setTimeScale(4.0f);
+
+                this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
+                this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
+                this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
+            }
+
+            if (CharacterSelectScreenPatches.characters[0].reskinCount == 1) {
+                this.state.setAnimation(0, "Hit_Body", false);
+                this.state.addAnimation(0, "Idle_body", true, 0.0F);
+            }
         }
 
         super.damage(info);
@@ -298,23 +322,42 @@ public class Shion extends CustomPlayer {
     }
 
     public void playFinFunnelAnimation(String id) {
-        switch (id) {
-            case "VUPShionMod:GravityFinFunnel":
-                this.state.setAnimation(1, "Attack_Weapon1", false).setTimeScale(3.0f);
-                this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
-                break;
-            case "VUPShionMod:InvestigationFinFunnel":
-                this.state.setAnimation(2, "Attack_Weapon2", false).setTimeScale(3.0f);
-                this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
-                break;
-            case "VUPShionMod:PursuitFinFunnel":
-                this.state.setAnimation(3, "Attack_Weapon3", false).setTimeScale(3.0f);
-                this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
-                break;
+        if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+            switch (id) {
+                case "VUPShionMod:GravityFinFunnel":
+                    this.state.setAnimation(1, "Attack_Weapon1", false).setTimeScale(3.0f);
+                    this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
+                    break;
+                case "VUPShionMod:InvestigationFinFunnel":
+                    this.state.setAnimation(2, "Attack_Weapon2", false).setTimeScale(3.0f);
+                    this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
+                    break;
+                case "VUPShionMod:PursuitFinFunnel":
+                    this.state.setAnimation(3, "Attack_Weapon3", false).setTimeScale(3.0f);
+                    this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
+                    break;
+            }
+        }else {
+            switch (id) {
+                case "VUPShionMod:GravityFinFunnel":
+                    this.state.setAnimation(1, "Attack_Weapon1", false).setTimeScale(3.0f);
+                    this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F);
+                    break;
+                case "VUPShionMod:InvestigationFinFunnel":
+                    this.state.setAnimation(2, "Attack_Weapon2", false).setTimeScale(3.0f);
+                    this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F);
+                    break;
+                case "VUPShionMod:PursuitFinFunnel":
+                    this.state.setAnimation(3, "Attack_Weapon3", false).setTimeScale(3.0f);
+                    this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F);
+                    break;
+            }
         }
 
-        this.state.setAnimation(0, "Attack_Body", false).setTimeScale(3.0f);
-        this.state.addAnimation(0, "Idle_body", true, 0.0f).setTimeScale(2.0f);
+        if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+            this.state.setAnimation(0, "Attack_Body", false).setTimeScale(3.0f);
+            this.state.addAnimation(0, "Idle_body", true, 0.0f).setTimeScale(2.0f);
+        }
     }
 
     @Override

@@ -43,7 +43,8 @@
       "没有后援的胜利",
       "不依靠吊坠的力量获得胜利",
       "新生",
-      "击败深空孽障"
+      "击败深空孽障",
+      "不依靠信标的力量获得胜利"
     ]
   },
   "VUPShionMod:ReadAction": {
@@ -71,7 +72,7 @@
   "VUPShionMod:AbstractShionSkin": {
     "TEXT": [
       "咏叹调",
-      "紫音"
+      "蓝巨星"
     ],
     "EXTRA_TEXT": [
       "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔",

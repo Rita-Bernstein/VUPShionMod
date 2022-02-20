@@ -264,6 +264,9 @@ public class CharacterSelectScreenPatches {
                             }
                             c.skins[c.reskinCount].loadPortraitAnimation();
                             __instance.bgCharImg = c.skins[c.reskinCount].updateBgImg();
+                            ReflectionHacks.setPrivate(o,CharacterOption.class,"charInfo",
+                                    c.skins[c.reskinCount].updateCharInfo(
+                                            ReflectionHacks.getPrivate(o,CharacterOption.class,"charInfo")));
                         }
 
 
@@ -279,6 +282,9 @@ public class CharacterSelectScreenPatches {
                             }
                             c.skins[c.reskinCount].loadPortraitAnimation();
                             __instance.bgCharImg = c.skins[c.reskinCount].updateBgImg();
+                            ReflectionHacks.setPrivate(o,CharacterOption.class,"charInfo",
+                                    c.skins[c.reskinCount].updateCharInfo(
+                                            ReflectionHacks.getPrivate(o,CharacterOption.class,"charInfo")));
                         }
 
                         c.skins[c.reskinCount].update();

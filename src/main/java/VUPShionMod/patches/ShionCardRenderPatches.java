@@ -34,11 +34,11 @@ public class ShionCardRenderPatches {
     )
     public static class RenderPortraitPatch {
         @SpireInsertPatch(rloc = 3, localvars = {"drawY"})
-        public static void Insert(AbstractCard card, SpriteBatch sb, @ByRef float[] drawY) {
+        public static SpireReturn<Void> Insert(AbstractCard card, SpriteBatch sb, @ByRef float[] drawY) {
             if (card instanceof AbstractVUPShionCard )
                 drawY[0] = card.current_y - 95.0F + drawYFix * card.drawScale * Settings.scale;
 
-            SpireReturn.Continue();
+           return SpireReturn.Continue();
         }
     }
 
@@ -52,11 +52,11 @@ public class ShionCardRenderPatches {
     )
     public static class RenderPortraitPatch2 {
         @SpireInsertPatch(rloc = 12, localvars = {"drawY"})
-        public static void Insert(AbstractCard card, SpriteBatch sb, @ByRef float[] drawY) {
+        public static SpireReturn<Void> Insert(AbstractCard card, SpriteBatch sb, @ByRef float[] drawY) {
             if (card instanceof AbstractVUPShionCard)
                 drawY[0] = card.current_y - card.portrait.packedHeight / 2.0F + drawYFix * card.drawScale * Settings.scale;
 
-            SpireReturn.Continue();
+           return SpireReturn.Continue();
         }
     }
 

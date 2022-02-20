@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public abstract class AbstractSkinCharacter {
     public String id;
 
-    public boolean reskinUnlock = true;
+    public boolean reskinUnlock = false;
     public int reskinCount = 0;
 
     public AbstractSkin[] skins;

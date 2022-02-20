@@ -1,12 +1,12 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.skins.AbstractSkinCharacter;
 import basemod.ReflectionHacks;
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.GameOverScreen;
 import com.megacrit.cardcrawl.screens.GameOverStat;
@@ -26,7 +26,10 @@ public class GameOverScreenPatches {
         public static SpireReturn<Void> Insert(VictoryScreen _instance) {
             ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(_instance, GameOverScreen.class, "stats");
             if (VUPShionMod.fightSpecialBossWithout) {
-                stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[1], Integer.toString(1000)));
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
+                    stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[1], Integer.toString(1000)));
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
+                    stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
             }
 
             if (VUPShionMod.fightSpecialBoss) {
@@ -53,6 +56,25 @@ public class GameOverScreenPatches {
             if (VUPShionMod.fightSpecialBoss) {
                 points[0] += 500;
             }
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch
+            (clz = VictoryScreen.class,
+                    method = "updateAscensionAndBetaArtProgress"
+            )
+    public static class ReskinUnlockPatch {
+        @SpirePrefixPatch
+        public static SpireReturn<Void> Prefix(VictoryScreen _instance) {
+            if (VUPShionMod.fightSpecialBossWithout || VUPShionMod.fightSpecialBoss)
+                if (!Settings.seedSet && !Settings.isTrial) {
+                    for (AbstractSkinCharacter c : CharacterSelectScreenPatches.characters) {
+                        c.checkUnlock();
+                    }
+                    VUPShionMod.saveSettings();
+                }
             return SpireReturn.Continue();
         }
     }

@@ -39,7 +39,7 @@ public class TerraNimia extends AbstractCodexCard {
                 addToBot(new ApplyPowerAction(p,p,new FourSkillPower(p,1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p,p,new ThreeSkillPower(p,1)));
+                addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,1)));
                 break;
         }
     }
@@ -50,14 +50,16 @@ public class TerraNimia extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1){
-                upgradeBaseCost(2);
                 upgradeMagicNumber(2);
+                this.isEthereal =true;
             }
 
 
             if (this.timesUpgraded == 2){
-                upgradeBaseCost(1);
-                upgradeMagicNumber(-1);
+                this.isEthereal =false;
+                this.exhaust =false;
+                upgradeMagicNumber(-2);
+                upgradeBaseCost(0);
             }
 
         }

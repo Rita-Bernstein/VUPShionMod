@@ -7,6 +7,7 @@ public abstract class AbstractSkinCharacter {
 
     public boolean reskinUnlock = false;
     public int reskinCount = 0;
+    public String lockString;
 
     public AbstractSkin[] skins;
 
@@ -17,6 +18,12 @@ public abstract class AbstractSkinCharacter {
 
     public void InitializeReskinCount() {
         if (this.reskinCount < 0)
+            this.reskinCount = 0;
+
+        if (!reskinUnlock)
+            this.reskinCount = 0;
+
+        if(reskinCount > skins.length)
             this.reskinCount = 0;
     }
 

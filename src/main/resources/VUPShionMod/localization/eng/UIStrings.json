@@ -35,15 +35,16 @@
   "VUPShionMod:ChargeHelper": {
     "TEXT": [
       "Charge Bar",
-      "Charge Bar fills whenever you play #yFunnel cards or gain #yHyperdimensional #yLink. NL At full charge, lose all charge and deal #b%d damage as well as fire all #yFunnels to ALL enemies."
+      "Charge Bar fills whenever you play #yFunnel cards or gain #yHyperdimensional #yLink. NL At full charge, release all energy and deal #b%d damage as well as fire all #yFunnels to ALL enemies."
     ]
   },
   "VUPShionMod:VictoryScreen": {
     "TEXT": [
       "Bridge Burned",
-      "Victory against Plaga Mundi without any asisstance.",
+      "Victory against Plaga Mundi without any asisstance from the Droplet.",
       "Reborn",
-      "Defeat Plaga Mundi."
+      "Defeat Plaga Mundi.",
+      "Victory against Plaga Mundi without any asisstance from your comrades."
     ]
   },
   "VUPShionMod:ReadAction": {
@@ -61,6 +62,21 @@
   "VUPShionMod:UpgradeAction": {
     "TEXT": [
       "Choose a card to upgrade."
+    ]
+  },
+  "VUPShionMod:BetaArtUnlockEffect": {
+    "TEXT": [
+      "Shion's new costume unlocked!"
+    ]
+  },
+  "VUPShionMod:AbstractShionSkin": {
+    "TEXT": [
+      "The Aria",
+      "Blue Giant"
+    ],
+    "EXTRA_TEXT": [
+      "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire.",
+      "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire."
     ]
   }
 }

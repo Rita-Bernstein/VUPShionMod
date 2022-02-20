@@ -9,10 +9,13 @@ import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FunnelMatrix extends AbstractVUPShionCard {
@@ -43,6 +46,8 @@ public class FunnelMatrix extends AbstractVUPShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 039 Radial Transition", m.hb.cX, m.hb.cY + 50.0f * Settings.scale,
+                80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
         addToBot(new TriggerFinFunnelAction(m, InvestigationFinFunnel.ID));
         addToBot(new TriggerFinFunnelAction(m, InvestigationFinFunnel.ID));
 

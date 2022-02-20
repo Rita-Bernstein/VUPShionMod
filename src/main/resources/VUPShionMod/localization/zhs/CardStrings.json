@@ -484,11 +484,11 @@
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斩",
     "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 获得3点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 25 + vup_shion_mod:剑意 的 格挡 。 NL 获得5点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 25 + vup_shion_mod:剑意 的 格挡 。 NL 获得8点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
       "极·回天剑舞",
-      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得8点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
+      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得5点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。",
       "（造成 !D! 点伤害，获得 !B! 点 格挡 。）"
     ]
   },
@@ -550,7 +550,7 @@
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "见切",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:缓冲 。"
+    "DESCRIPTION": "造成 !D! 点伤害 。 NL 获得 !M! 层 vup_shion_mod:缓冲 。"
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "月步",
@@ -651,8 +651,8 @@
   },
   "VUPShionMod:AnimaSpiritusque": {
     "NAME": "七之章：复苏",
-    "DESCRIPTION": "下回合获得 !M! [E] 。 NL 获得5层 *再生 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 下回合获得 !M! [E] 。 NL 获得5层 *再生 。"
+    "DESCRIPTION": "下回合获得 !M! [E] 。 NL 获得5层 *再生 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 下回合获得 !M! [E] 。 NL 获得5层 *再生 。 NL 消耗 。"
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：觉醒",
@@ -723,7 +723,7 @@
   "VUPShionMod:CaligoConstans": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合造成三倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（永续）",
       "通典：暗（极意）",
@@ -733,7 +733,7 @@
   "VUPShionMod:CaligoRapida": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合造成三倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（神速）",
       "通典：暗（极意）",
@@ -755,29 +755,29 @@
     "DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。",
     "EXTENDED_DESCRIPTION": [
-      "通典：天（神速）",
+      "通典：天（永续）",
       "通典：天（极意）",
       "下张攻击牌造成 !M! 倍伤害。"
     ]
   },
   "VUPShionMod:TerraNimia": {
     "NAME": "通典：地",
-    "DESCRIPTION": "下张技能牌打出 !M! 次。",
+    "DESCRIPTION": "下张技能牌打出 !M! 次。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "下张技能牌打出 !M! 次。",
     "EXTENDED_DESCRIPTION": [
       "通典：地（泛滥）",
       "通典：地（极意）",
-      "下张技能牌打出 !M! 次。"
+      "下张技能牌打出 !M! 次。 NL 消耗 ，虚无 。"
     ]
   },
   "VUPShionMod:TerraRapida": {
     "NAME": "通典：地",
-    "DESCRIPTION": "下张技能牌打出 !M! 次。",
+    "DESCRIPTION": "下张技能牌打出 !M! 次。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "下张技能牌打出 !M! 次。",
     "EXTENDED_DESCRIPTION": [
-      "通典：地（神速）",
+      "通典：地（永续）",
       "通典：地（极意）",
-      "下张技能牌打出 !M! 次。"
+      "下张技能牌打出 !M! 次。 NL 虚无 。"
     ]
   },
   "VUPShionMod:HomoRapidus": {
@@ -921,7 +921,7 @@
     ]
   },
   "VUPShionMod:FunnelMatrix": {
-    "NAME": "自动浮游炮矩阵",
+    "NAME": "自动浮游矩阵",
     "DESCRIPTION": "对一名敌人触发2次侦查 vup_shion_mod:浮游炮 和重力 vup_shion_mod:浮游炮 及3次追击 vup_shion_mod:浮游炮 的被动效果。 NL 消耗 。"
   }
 }

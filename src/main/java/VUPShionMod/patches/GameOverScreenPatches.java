@@ -28,6 +28,8 @@ public class GameOverScreenPatches {
             if (VUPShionMod.fightSpecialBossWithout) {
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
                     stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[1], Integer.toString(1000)));
+
+
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
                     stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
             }
@@ -35,9 +37,8 @@ public class GameOverScreenPatches {
             if (VUPShionMod.fightSpecialBoss) {
                 stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(500)));
             }
+// 布尔值复位放下面了
 
-            VUPShionMod.fightSpecialBossWithout = false;
-            VUPShionMod.fightSpecialBoss = false;
             return SpireReturn.Continue();
         }
     }
@@ -68,13 +69,19 @@ public class GameOverScreenPatches {
     public static class ReskinUnlockPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(VictoryScreen _instance) {
-            if (VUPShionMod.fightSpecialBossWithout || VUPShionMod.fightSpecialBoss)
-                if (!Settings.seedSet && !Settings.isTrial) {
-                    for (AbstractSkinCharacter c : CharacterSelectScreenPatches.characters) {
-                        c.checkUnlock();
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
+                if (VUPShionMod.fightSpecialBossWithout || VUPShionMod.fightSpecialBoss) {
+                    if (!Settings.seedSet && !Settings.isTrial) {
+                        for (AbstractSkinCharacter c : CharacterSelectScreenPatches.characters) {
+                            c.checkUnlock();
+                        }
+                        VUPShionMod.saveSettings();
                     }
-                    VUPShionMod.saveSettings();
                 }
+            }
+//分数的复位放这里了
+            VUPShionMod.fightSpecialBossWithout = false;
+            VUPShionMod.fightSpecialBoss = false;
             return SpireReturn.Continue();
         }
     }

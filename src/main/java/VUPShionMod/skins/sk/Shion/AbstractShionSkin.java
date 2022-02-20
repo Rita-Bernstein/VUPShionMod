@@ -1,5 +1,6 @@
 package VUPShionMod.skins.sk.Shion;
 
+import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
@@ -16,6 +17,7 @@ public class AbstractShionSkin extends AbstractSkinCharacter {
 
     public AbstractShionSkin() {
         super(ID, SKINS);
+        this.lockString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("SkinPannel")).EXTRA_TEXT[0];
     }
 
     @Override

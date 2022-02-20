@@ -31,7 +31,7 @@ public class InTheBlink extends AbstractWCCard {
         this.timesUpgraded = upgrades;
         this.magicNumber = this.baseMagicNumber = 6;
         this.baseSecondaryM = this.secondaryM = 1;
-        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[9] + EXTENDED_DESCRIPTION[12] + EXTENDED_DESCRIPTION[13];
+        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[9] + EXTENDED_DESCRIPTION[12] + EXTENDED_DESCRIPTION[15];
         initializeDescription();
     }
 
@@ -59,8 +59,8 @@ public class InTheBlink extends AbstractWCCard {
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
-                if(StiffnessPower.applyStiffness())
-                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+                if (StiffnessPower.applyStiffness())
+                    addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
             case 1:
                 calculateCardDamage(m);
@@ -72,8 +72,8 @@ public class InTheBlink extends AbstractWCCard {
 
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
-                if(StiffnessPower.applyStiffness())
-                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+                if (StiffnessPower.applyStiffness())
+                    addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
             case 2:
                 calculateCardDamage(m);
@@ -83,8 +83,8 @@ public class InTheBlink extends AbstractWCCard {
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-                if(StiffnessPower.applyStiffness())
-                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+                if (StiffnessPower.applyStiffness())
+                    addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
         }
 
@@ -93,8 +93,8 @@ public class InTheBlink extends AbstractWCCard {
             addBaseAoeDamage();
             doAoeDamage();
 
-            if(StiffnessPower.applyStiffness())
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+            if (StiffnessPower.applyStiffness())
+                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
 
             if (this.timesUpgraded >= 9)
                 addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
@@ -138,7 +138,6 @@ public class InTheBlink extends AbstractWCCard {
     public void upgrade() {
         if (this.timesUpgraded <= 8) {
             if (this.timesUpgraded == 0) {
-                this.isMultiDamage = true;
                 upgradeMagicNumber(2);
                 upgradeBaseCost(1);
                 this.rarity = CardRarity.COMMON;
@@ -153,6 +152,7 @@ public class InTheBlink extends AbstractWCCard {
 
             if (this.timesUpgraded == 2) {
                 this.target = CardTarget.ALL_ENEMY;
+                this.isMultiDamage = true;
                 this.magicNumber = this.baseMagicNumber = 0;
                 this.rarity = CardRarity.RARE;
                 vupCardSetBanner();

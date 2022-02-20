@@ -9,9 +9,9 @@
   },
   "VUPShionMod:KuroisuDetermination": {
     "NAME": "Cloyce's Determination",
-    "FLAVOR": "Future is a scattering illusion of time that is not ours to foretell. Push through with determination, and this is the most we can do.",
+    "FLAVOR": "Future is a scattering illusion of time that is not ours to foretell. Push through with determination, and this is all we can do.",
     "DESCRIPTIONS": [
-      " #yRight #yClick: Take an extra turn after this turn, end your turn.(works #b%d times)",
+      " #yRight #yClick: Take an extra turn after this turn, end your turn. (works #b%d times)",
       "This relic has been exhausted."
     ]
   },
@@ -71,7 +71,7 @@
     "NAME": "Blue Giant",
     "FLAVOR": "Potent ranged firepower in exchange of mobility.",
     "DESCRIPTIONS": [
-      "At the start of your turn, lose [E] and add 1 #yFunnel #yAutomatrix into your hand."
+      "At the start of your turn, lose [E] and add 1 #yFunnel #yMatrix into your hand."
     ]
   },
   "VUPShionMod:DarkStar": {

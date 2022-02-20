@@ -138,6 +138,7 @@ public class Shion extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
+        CharacterSelectScreenPatches.characters[0].InitializeReskinCount();
         return CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].getStartingRelic();
     }
 

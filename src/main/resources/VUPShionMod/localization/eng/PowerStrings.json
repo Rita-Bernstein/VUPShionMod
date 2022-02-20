@@ -285,7 +285,7 @@
   "VUPShionMod:MensVirtusquePower": {
     "NAME": "Anima Virtutis",
     "DESCRIPTIONS": [
-      "Whenever you trigger #yMagiam #yObruor, gain #b%d #yCor #yGladii instead."
+      "Whenever you trigger #yMagiam #yObruor, you no longer lose energy and gain #b%d #yCor #yGladii instead."
     ]
   },
   "VUPShionMod:HeliumLuxquePower": {
@@ -303,7 +303,7 @@
   "VUPShionMod:MorsLibraquePower": {
     "NAME": "Mors Universi",
     "DESCRIPTIONS": [
-      "Eliminate ALL enemies after #b%d turns."
+      "Eliminated in #b%d turns."
     ]
   },
   "VUPShionMod:PoisePower": {
@@ -339,7 +339,7 @@
   "VUPShionMod:WeatherEyePower": {
     "NAME": "Weather Eye",
     "DESCRIPTIONS": [
-      "Whenever you gain #yCor #yGladii, gain #b%d #yBlock."
+      "Whenever you play an Attack, gain #b%d #yBlock."
     ]
   },
   "VUPShionMod:PreTripleDamagePower": {

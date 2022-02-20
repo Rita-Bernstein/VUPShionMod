@@ -37,7 +37,7 @@ public class TerraRapida extends AbstractCodexCard {
                 addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p,p,new ThreeSkillPower(p,1)));
+                addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,1)));
                 break;
         }
     }
@@ -47,12 +47,14 @@ public class TerraRapida extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1)
-                upgradeBaseCost(0);
+            if (this.timesUpgraded == 1) {
+                this.exhaust =false;
+                this.isEthereal = true;
+            }
 
             if (this.timesUpgraded == 2){
-                upgradeMagicNumber(1);
-                upgradeBaseCost(1);
+                this.isEthereal =false;
+                upgradeBaseCost(0);
             }
 
         }

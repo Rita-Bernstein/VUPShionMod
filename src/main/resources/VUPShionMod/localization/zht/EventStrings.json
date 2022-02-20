@@ -7,6 +7,14 @@
     "OPTIONS": [
     ]
   },
+  "VUPShionMod:SpireHeart_WangChuan": {
+    "NAME": "Spire Heart",
+    "DESCRIPTIONS": [
+      "NL 你將所剩的魔力灌入劍刃並向它刺去……"
+    ],
+    "OPTIONS": [
+    ]
+  },
   "VUPShionMod:CroissantEvent": {
     "NAME": "龍角麵包",
     "DESCRIPTIONS": [
@@ -59,6 +67,19 @@
     "OPTIONS": [
       "[繼續] ……",
       "[前去救援] 進入戰鬥。 #g獲得Anastasia吊墜 。",
+      "[回家]",
+      "[鎖定] 戰鬥仍在製作中……"
+    ]
+  },
+  "VUPShionMod:Contact": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "你突破了尖塔，將要離開時收到了一條消息",
+      "資料收集完畢，追蹤到了建塔者的母星。檢測到大量敵對生物，是否前往"
+    ],
+    "OPTIONS": [
+      "[繼續] ……",
+      "[前去救援] 進入戰鬥。 #g獲得引導信標 。",
       "[回家]",
       "[鎖定] 戰鬥仍在製作中……"
     ]

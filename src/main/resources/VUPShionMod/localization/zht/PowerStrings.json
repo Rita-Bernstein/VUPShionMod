@@ -189,7 +189,7 @@
     "DESCRIPTIONS": [
       "觸發 #y加載完成 時獲得 #b%d 層 #y超維連結 。"
     ]
-  } ,
+  },
   "VUPShionMod:LoseHyperdimensionalLinksPower": {
     "NAME": "失去超維連結",
     "DESCRIPTIONS": [
@@ -199,6 +199,7 @@
   "VUPShionMod:DoubleCardPower": {
     "NAME": "Anastasia計劃",
     "DESCRIPTIONS": [
+      "你的下 #b%d 張牌將打出兩次。",
       "你的下 #b%d 張牌將打出兩次。"
     ]
   },
@@ -254,6 +255,200 @@
     "NAME": "進化推演",
     "DESCRIPTIONS": [
       "每回合開始時， #y深空孽障 將隨機對自己 #y增益 或給予你 #y負面效果 。"
+    ]
+  },
+  "VUPShionMod:StiffnessPower": {
+    "NAME": "硬直",
+    "DESCRIPTIONS": [
+      "在 #y硬直 大於等於 #b4 層時，結束你的回合併移除本效果。"
+    ]
+  },
+  "VUPShionMod:CorGladiiPower": {
+    "NAME": "劍意",
+    "DESCRIPTIONS": [
+      " #y劍意 能提高部分攻擊牌的傷害。"
+    ]
+  },
+  "VUPShionMod:MagiamObruorPower": {
+    "NAME": "魔能過載",
+    "DESCRIPTIONS": [
+      "下回合失去 [E] 。",
+      "下回合失去 #b%d [E] 。"
+    ]
+  },
+  "VUPShionMod:VampireFormPower": {
+    "NAME": "突然想起來自己是個吸血鬼",
+    "DESCRIPTIONS": [
+      "每對敵人造成未被 #y格擋 的傷害時，回復 #b%d 點生命。"
+    ]
+  },
+  "VUPShionMod:MensVirtusquePower": {
+    "NAME": "八之章：覺醒",
+    "DESCRIPTIONS": [
+      "觸發 #y魔能過載 時，變為獲得 #b%d 點 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:HeliumLuxquePower": {
+    "NAME": "九之章：氦閃",
+    "DESCRIPTIONS": [
+      "下回合開始時對所有敵人造成 #b%d 點傷害。"
+    ]
+  },
+  "VUPShionMod:NoSkillsPower": {
+    "NAME": "禁用技能",
+    "DESCRIPTIONS": [
+      "你不能打出 #y技能牌 。"
+    ]
+  },
+  "VUPShionMod:MorsLibraquePower": {
+    "NAME": "終章：熱寂",
+    "DESCRIPTIONS": [
+      " #b%d 回合死亡。"
+    ]
+  },
+  "VUPShionMod:PoisePower": {
+    "NAME": "緘默",
+    "DESCRIPTIONS": [
+      "每當你打出一張 #y攻擊牌 ，抽 #b%d 張牌。 NL 你不會獲得 #y硬直 。"
+    ]
+  },
+  "VUPShionMod:PetalsFallPower": {
+    "NAME": "散華",
+    "DESCRIPTIONS": [
+      "每當你打出一張 #y攻擊牌 ，獲得 #b%d 層 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:GainCorGladiiPower": {
+    "NAME": "蓄氣",
+    "DESCRIPTIONS": [
+      "每回合開始時 NL 獲得 #b%d 層 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:MoonstriderPower": {
+    "NAME": "月步",
+    "DESCRIPTIONS": [
+      "本回合每次受到攻擊時，獲得 #b%d 點 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:DistantiaAbsensquePower": {
+    "NAME": "三之章：遠行",
+    "DESCRIPTIONS": [
+      "每當你獲得 #y魔能過載 時，獲得 #b%d 層 #y多層護甲 。"
+    ]
+  },
+  "VUPShionMod:WeatherEyePower": {
+    "NAME": "警覺",
+    "DESCRIPTIONS": [
+      "每當打出攻擊牌時，獲得 #b%d 點 #y格擋 。"
+    ]
+  },
+  "VUPShionMod:PreTripleDamagePower": {
+    "NAME": "準備三倍傷害",
+    "DESCRIPTIONS": [
+      "下回合造成 #y三倍傷害 。",
+      "下 #b%d 個回合造成 #y三倍傷害 。"
+    ]
+  },
+  "VUPShionMod:TripleDamagePower": {
+    "NAME": "三倍傷害",
+    "DESCRIPTIONS": [
+      "本回合造成 #y三倍傷害 。",
+      "接下來的 #b%d 個回合造成 #y三倍傷害 。"
+    ]
+  },
+  "VUPShionMod:NextTurnAttackPower": {
+    "NAME": "次回攻擊",
+    "DESCRIPTIONS": [
+      "下回合開始時將 #b%d 張 #y攻擊牌 加入手牌。",
+      "下回合開始時將 #b%d 張 #y攻擊牌 加入手牌。"
+    ]
+  },
+  "VUPShionMod:TwoAttackPower": {
+    "NAME": "雙倍攻擊",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y攻擊牌 將造成雙倍傷害。",
+      "你的下 #b%d 張 #y攻擊牌 將造成雙倍傷害。"
+    ]
+  },
+  "VUPShionMod:ThreeAttackPower": {
+    "NAME": "雙倍攻擊",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y攻擊牌 將造成三倍傷害。",
+      "你的下 #b%d 張 #y攻擊牌 將造成三倍傷害。"
+    ]
+  },
+  "VUPShionMod:FourAttackPower": {
+    "NAME": "四倍攻擊",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y攻擊牌 將造成四倍傷害。",
+      "你的下 #b%d 張 #y攻擊牌 將造成四倍傷害。"
+    ]
+  },
+  "VUPShionMod:TwoSkillPower": {
+    "NAME": "兩次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y技能牌 將打出兩次。",
+      "你的下 #b%d 張 #y技能牌 將打出兩次。"
+    ]
+  },
+  "VUPShionMod:ThreeSkillPower": {
+    "NAME": "三次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y技能牌 將打出三次。",
+      "你的下 #b%d 張 #y技能牌 將打出三次。"
+    ]
+  },
+  "VUPShionMod:FourSkillPower": {
+    "NAME": "四次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y技能牌 將打出四次。",
+      "你的下 #b%d 張 #y技能牌 將打出四次。"
+    ]
+  },
+  "VUPShionMod:TwoPowerPower": {
+    "NAME": "兩次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y能力牌 將打出兩次。",
+      "你的下 #b%d 張 #y能力牌 將打出兩次。"
+    ]
+  },
+  "VUPShionMod:ThreePowerPower": {
+    "NAME": "三次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y能力牌 將打出三次。",
+      "你的下 #b%d 張 #y能力牌 將打出三次。"
+    ]
+  },
+  "VUPShionMod:FourPowerPower": {
+    "NAME": "四次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 張 #y能力牌 將打出四次。",
+      "你的下 #b%d 張 #y能力牌 將打出四次。"
+    ]
+  },
+  "VUPShionMod:FreeCardPower": {
+    "NAME": "免費出牌",
+    "DESCRIPTIONS": [
+      "你打出的的下 #b%d 張牌耗能為0。",
+      "你打出的的下 #b%d 張牌耗能為0。"
+    ]
+  },
+  "VUPShionMod:TurnDexPower": {
+    "NAME": "回合敏捷",
+    "DESCRIPTIONS": [
+      "每回合開始時獲得 #b%d 點 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:GravitoniumOverPower": {
+    "NAME": "重力炮極限超載",
+    "DESCRIPTIONS": [
+      " #y紫音 將 #y重力浮游炮 過載到了極限……"
+    ]
+  },
+  "VUPShionMod:TurnObruorPower": {
+    "NAME": "回合過載",
+    "DESCRIPTIONS": [
+      "每回合開始時獲得 #b%d 層 #y魔能過載 。"
     ]
   }
 }

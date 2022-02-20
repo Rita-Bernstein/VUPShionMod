@@ -78,5 +78,13 @@
       "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire.",
       "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire."
     ]
+  },
+  "VUPShionMod:SkinPannel": {
+    "TEXT": [
+      "Locked"
+    ],
+    "EXTRA_TEXT": [
+      "Defeat Plaga Mundi to unlock costume."
+    ]
   }
 }

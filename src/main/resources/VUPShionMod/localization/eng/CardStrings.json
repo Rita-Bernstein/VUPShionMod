@@ -458,7 +458,7 @@
     ]
   },
   "VUPShionMod:GlandesMagicae": {
-    "NAME": "Glandes Magicae",
+    "NAME": "Glans Magica",
     "DESCRIPTION": "Deal !D! damage. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:StrideSlash": {
@@ -485,8 +485,8 @@
     "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !B! Block. NL Gain 3 vup_shion_mod:Stiffness.",
     "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 25 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 5 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "Auster Gladii",
       "Turbo Gladii",
+      "Auster Gladii",
       "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 8 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
       " NL (Deal !D! damage, gain !B! Block.)"
     ]
@@ -757,29 +757,29 @@
     "DESCRIPTION": "Your next Attack deals !M! times of damage. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Your next Attack deals !M! times of damage.",
     "EXTENDED_DESCRIPTION": [
-      "Caelum Rapidum",
+      "Caelum Constans",
       "Caelum Intensum",
       "Your next Attack deals !M! times of damage."
     ]
   },
   "VUPShionMod:TerraNimia": {
     "NAME": "Codex Terrae",
-    "DESCRIPTION": "Your next Skill is played !M! times.",
+    "DESCRIPTION": "Your next Skill is played !M! times. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Your next Skill is played !M! times.",
     "EXTENDED_DESCRIPTION": [
       "Terra Nimia",
       "Terra Intensa",
-      "Your next Skill is played !M! times."
+      "Your next Skill is played !M! times. NL Exhaust. Ethereal."
     ]
   },
   "VUPShionMod:TerraRapida": {
     "NAME": "Codex Terrae",
-    "DESCRIPTION": "Your next Skill is played !M! times.",
+    "DESCRIPTION": "Your next Skill is played !M! times. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Your next Skill is played !M! times.",
     "EXTENDED_DESCRIPTION": [
-      "Terra Rapida",
+      "Terra Constans",
       "Terra Intensa",
-      "Your next Skill is played !M! times."
+      "Your next Skill is played !M! times. NL Ethereal."
     ]
   },
   "VUPShionMod:HomoRapidus": {

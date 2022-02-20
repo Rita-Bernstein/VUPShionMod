@@ -43,7 +43,8 @@
       "沒有後援的勝利",
       "不依靠吊墜的力量獲得勝利",
       "新生",
-      "擊敗深空孽障"
+      "擊敗深空孽障",
+      "不依靠信標的力量獲得勝利"
     ]
   },
   "VUPShionMod:ReadAction": {
@@ -53,9 +54,37 @@
       " 張牌複製到手牌"
     ]
   },
+  "VUPShionMod:CodexCardPatch": {
+    "TEXT": [
+      "通典魔法"
+    ]
+  },
   "VUPShionMod:UpgradeAction": {
     "TEXT": [
       "選擇牌升級"
+    ]
+  },
+  "VUPShionMod:BetaArtUnlockEffect": {
+    "TEXT": [
+      "已解鎖紫音皮膚！"
+    ]
+  },
+  "VUPShionMod:AbstractShionSkin": {
+    "TEXT": [
+      "詠嘆調",
+      "藍巨星"
+    ],
+    "EXTRA_TEXT": [
+      "使用浮游炮作戰的紫音來自於Anastasia宇宙 NL 同步了自身的戰力，前來挑戰高塔",
+      "使用浮游炮作戰的紫音來自於Anastasia宇宙 NL 同步了自身的戰力，前來挑戰高塔"
+    ]
+  },
+  "VUPShionMod:SkinPannel": {
+    "TEXT": [
+      "鎖定"
+    ],
+    "EXTRA_TEXT": [
+      "需要擊敗深空孽障解鎖皮膚功能"
     ]
   }
 }

@@ -903,7 +903,7 @@
   "VUPShionMod:TonitrusConstans": {
     "NAME": "通典：雷",
     "DESCRIPTION": "獲得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：雷（永續）",
       "通典：雷（極意）",

@@ -905,7 +905,7 @@
   "VUPShionMod:TonitrusConstans": {
     "NAME": "Codex Tonitrus",
     "DESCRIPTION": "Gain !M! [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E] . NL Draw !VUPShionSecondM! cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E] . NL Draw !VUPShionSecondM! cards.",
     "EXTENDED_DESCRIPTION": [
       "Tonitrus Constans",
       "Tonitrus Intensus",

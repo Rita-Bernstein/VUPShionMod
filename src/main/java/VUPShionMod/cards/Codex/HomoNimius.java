@@ -48,11 +48,14 @@ public class HomoNimius extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1)
+            if (this.timesUpgraded == 1) {
                 upgradeMagicNumber(1);
+                this.isEthereal =true;
+            }
 
             if (this.timesUpgraded == 2) {
                 this.isInnate = true;
+                this.isEthereal =false;
                 upgradeBaseCost(0);
             }
         }

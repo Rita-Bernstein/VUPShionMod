@@ -49,13 +49,15 @@ public class VentusNimius extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-//            if (this.timesUpgraded == 1) {
-//                upgradeBaseCost(0);
-//            }
+            if (this.timesUpgraded == 1) {
+                upgradeBaseCost(0);
+                this.isEthereal = true;
+            }
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(-1);
                 upgradeBaseCost(0);
+                this.isEthereal = false;
             }
         }
     }

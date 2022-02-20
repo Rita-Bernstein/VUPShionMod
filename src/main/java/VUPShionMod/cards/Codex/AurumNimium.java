@@ -41,7 +41,7 @@ public class AurumNimium extends AbstractCodexCard {
                 addToBot(new ArmamentsAction(true));
                 break;
             case 2:
-                addToBot(new UpgradePileAction(p,this.magicNumber));
+                addToBot(new UpgradePileAction(p, this.magicNumber));
                 break;
         }
 
@@ -52,12 +52,12 @@ public class AurumNimium extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-//            if (this.timesUpgraded == 1) {
-//                upgradeBaseCost(0);
-//            }
+            if (this.timesUpgraded == 1) {
+                this.isEthereal = true;
+            }
 
             if (this.timesUpgraded == 2) {
-                this.exhaust = false;
+                this.isEthereal = false;
             }
         }
     }

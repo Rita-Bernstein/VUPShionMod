@@ -13,13 +13,14 @@ public class LuxConstans extends AbstractCodexCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public LuxConstans(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
+        this.isEthereal =true;
     }
 
     public LuxConstans() {
@@ -47,6 +48,7 @@ public class LuxConstans extends AbstractCodexCard {
             }
 
             if (this.timesUpgraded == 2) {
+                upgradeBaseCost(2);
                 upgradeMagicNumber(1);
                 this.exhaust = true;
             }

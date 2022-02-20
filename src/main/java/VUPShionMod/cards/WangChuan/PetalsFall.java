@@ -22,7 +22,7 @@ public class PetalsFall extends AbstractWCCard {
 
     public PetalsFall() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class PetalsFall extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(1);
         }
     }
 }

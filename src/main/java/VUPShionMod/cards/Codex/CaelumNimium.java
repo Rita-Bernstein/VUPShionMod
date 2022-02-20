@@ -29,6 +29,7 @@ public class CaelumNimium extends AbstractCodexCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
+        this.exhaust = true;
     }
 
     public CaelumNimium() {
@@ -39,13 +40,13 @@ public class CaelumNimium extends AbstractCodexCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
-                addToBot(new ApplyPowerAction(p,p,new TwoAttackPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new TwoAttackPower(p, 1)));
                 break;
             case 1:
-                addToBot(new ApplyPowerAction(p,p,new FourAttackPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new FourAttackPower(p, 1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p,p,new ThreeAttackPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new TwoAttackPower(p, 1)));
                 break;
         }
     }
@@ -55,14 +56,17 @@ public class CaelumNimium extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1){
+            if (this.timesUpgraded == 1) {
                 upgradeMagicNumber(2);
+                this.isEthereal = true;
             }
 
 
-            if (this.timesUpgraded == 2){
+            if (this.timesUpgraded == 2) {
                 upgradeBaseCost(0);
-                upgradeMagicNumber(-1);
+                upgradeMagicNumber(-2);
+                this.exhaust = false;
+                this.isEthereal = false;
             }
 
         }

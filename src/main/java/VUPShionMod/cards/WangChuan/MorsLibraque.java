@@ -6,7 +6,9 @@ import VUPShionMod.actions.CustomWaitAction;
 import VUPShionMod.powers.MorsLibraquePower;
 import VUPShionMod.powers.NoSkillsPower;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.TurnObruorPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -27,7 +29,7 @@ public class MorsLibraque extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public MorsLibraque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -36,6 +38,7 @@ public class MorsLibraque extends AbstractWCCard {
         this.selfRetain = true;
 
         vupCardSetBanner(CardRarity.RARE, this.type);
+        GraveField.grave.set(this,true);
     }
 
     @Override
@@ -44,7 +47,7 @@ public class MorsLibraque extends AbstractWCCard {
                 96.0f, 54.0f, 10.0f * Settings.scale, 2, false)));
         addToBot(new CustomWaitAction(1.5f));
 
-        addToBot(new ApplyPowerAction(p, p, new EnergyDownPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new TurnObruorPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new NoSkillsPower(p)));
         Supplier<AbstractPower> powerToApply = () -> new MorsLibraquePower(null, this.secondaryM);
         addToBot(new ApplyPowerToAllEnemyAction(powerToApply));

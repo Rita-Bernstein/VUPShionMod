@@ -65,8 +65,6 @@ public class FullBloom extends AbstractWCCard {
                 this.rawDescription = UPGRADE_DESCRIPTION;
                 initializeTitle();
                 initializeDescription();
-                this.isInnate = true;
-
                 upgradeMagicNumber(1);
                 upgradeSecondM(-1);
             }

@@ -18,7 +18,7 @@ public class Moonstrider extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Moonstrider() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

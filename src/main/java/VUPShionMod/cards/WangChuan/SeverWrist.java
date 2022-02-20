@@ -22,7 +22,7 @@ public class SeverWrist extends AbstractWCCard {
 
     public SeverWrist() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 8;
+        this.baseDamage = 12;
         this.magicNumber = this.baseMagicNumber = 1;
         this.baseSecondaryM = this.secondaryM = 3;
         this.exhaust = true;
@@ -41,7 +41,6 @@ public class SeverWrist extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
             upgradeBaseCost(0);
         }
     }

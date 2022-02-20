@@ -18,7 +18,7 @@ public class ChaosRapidus extends AbstractCodexCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public ChaosRapidus(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -46,11 +46,12 @@ public class ChaosRapidus extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1)
+            if (this.timesUpgraded == 1) {
                 upgradeMagicNumber(1);
+            }
 
-            if (this.timesUpgraded == 2)
-                upgradeMagicNumber(-2);
+//            if (this.timesUpgraded == 2)
+//                upgradeMagicNumber(-2);
         }
     }
 }

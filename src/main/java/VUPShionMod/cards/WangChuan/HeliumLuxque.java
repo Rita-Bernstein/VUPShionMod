@@ -17,7 +17,7 @@ public class HeliumLuxque extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public HeliumLuxque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -36,7 +36,7 @@ public class HeliumLuxque extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(10);
-            upgradeSecondM(-1);
+//            upgradeSecondM(-1);
         }
     }
 }

@@ -56,12 +56,11 @@ public class VertexGladii extends AbstractWCCard {
         addToBot(new GainBlockAction(p, p, this.block));
 
         if (upgraded)
-            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 2)));
-        else
-            addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
+            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, timesUpgraded >= 2 ? 8 : 5)));
+
 
         if (StiffnessPower.applyStiffness())
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, upgraded ? 1 : 2)));
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
 
 
         this.rawDescription = getDescription(timesUpgraded);

@@ -31,13 +31,7 @@ public class CaligoRapida extends AbstractCodexCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
-        if (this.timesUpgraded < 2) {
-            addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1), 1));
-        } else {
-            addToBot(new ApplyPowerAction(p, p, new PreTripleDamagePower(p, 1), 1));
-        }
+        addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1), 1));
 
         if (this.timesUpgraded >= 1)
             addToBot(new ApplyPowerAction(p, p, new NextTurnAttackPower(p, this.magicNumber)));
@@ -53,7 +47,6 @@ public class CaligoRapida extends AbstractCodexCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeMagicNumber(1);
                 this.exhaust = false;
                 this.shuffleBackIntoDrawPile = true;
             }

@@ -309,7 +309,7 @@
   "VUPShionMod:PoisePower": {
     "NAME": "缄默",
     "DESCRIPTIONS": [
-      "每回合开始时 NL 获得 #b%d 层 #y缓冲 。 NL 你不会获得 #y硬直 。"
+      "每当你打出一张 #y攻击牌 ，抽 #b%d 张牌。 NL 你不会获得 #y硬直 。"
     ]
   },
   "VUPShionMod:PetalsFallPower": {
@@ -443,6 +443,12 @@
     "NAME": "重力炮极限超载",
     "DESCRIPTIONS": [
       " #y紫音 将 #y重力浮游炮 过载到了极限……"
+    ]
+  },
+  "VUPShionMod:TurnObruorPower": {
+    "NAME": "回合过载",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 #b%d 层 #y魔能过载 。"
     ]
   }
 }

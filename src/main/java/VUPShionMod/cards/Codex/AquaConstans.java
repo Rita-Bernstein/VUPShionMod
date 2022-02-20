@@ -43,11 +43,12 @@ public class AquaConstans extends AbstractCodexCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1){
                 this.exhaust =false;
+                this.isEthereal =true;
             }
 
             if (this.timesUpgraded == 2){
+                this.isEthereal =false;
                 upgradeBaseCost(0);
-                upgradeMagicNumber(-1);
                 upgradeSecondM(2);
             }
         }

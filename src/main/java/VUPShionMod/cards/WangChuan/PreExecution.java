@@ -38,7 +38,7 @@ public class PreExecution extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBlock(5);
-            upgradeMagicNumber(8);
+            upgradeMagicNumber(4);
             upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];

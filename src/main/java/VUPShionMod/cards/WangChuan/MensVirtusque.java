@@ -33,7 +33,7 @@ public class MensVirtusque extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
-            this.isInnate = true;
+            upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

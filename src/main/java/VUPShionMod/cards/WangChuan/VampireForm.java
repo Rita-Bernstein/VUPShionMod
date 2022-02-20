@@ -34,7 +34,6 @@ public class VampireForm extends AbstractWCCard {
             this.upgradeName();
             upgradeMagicNumber(1);
             upgradeBaseCost(1);
-            this.isInnate = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

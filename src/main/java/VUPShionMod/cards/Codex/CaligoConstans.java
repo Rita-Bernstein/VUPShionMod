@@ -34,12 +34,11 @@ public class CaligoConstans extends AbstractCodexCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.timesUpgraded < 2)
-            addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1), 1));
-        else{
-            addToBot(new ApplyPowerAction(p, p, new PreTripleDamagePower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1), 1));
+        if (this.timesUpgraded >= 2) {
             addToBot(new ApplyPowerAction(p, p, new NextTurnAttackPower(p, this.magicNumber)));
         }
+
     }
 
 
@@ -49,12 +48,12 @@ public class CaligoConstans extends AbstractCodexCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 this.exhaust = false;
-                upgradeBaseCost(1);
+                this.isEthereal = true;
             }
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(2);
-                upgradeBaseCost(0);
+                this.isEthereal = false;
                 this.shuffleBackIntoDrawPile = true;
             }
         }

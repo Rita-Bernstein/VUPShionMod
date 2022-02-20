@@ -38,13 +38,15 @@ public class IgnisNimius extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
-                upgradeMagicNumber(2);
+                upgradeMagicNumber(3);
+                upgradeBaseCost(2);
+                this.isEthereal = true;
             }
 
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(0);
                 upgradeMagicNumber(-1);
-                this.isEthereal = true;
+                this.isEthereal = false;
             }
         }
     }

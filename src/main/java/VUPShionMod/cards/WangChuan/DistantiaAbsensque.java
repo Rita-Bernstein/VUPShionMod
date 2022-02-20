@@ -18,24 +18,29 @@ public class DistantiaAbsensque extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public DistantiaAbsensque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
+        this.secondaryM =this.baseSecondaryM =1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new DistantiaAbsensquePower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, this.secondaryM)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.rawDescription= UPGRADE_DESCRIPTION;
+            initializeDescription();
             upgradeMagicNumber(1);
             upgradeBaseCost(1);
+            upgradeSecondM(1);
         }
     }
 }

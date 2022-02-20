@@ -22,7 +22,7 @@ public class TonitrusConstans extends AbstractCodexCard {
     public TonitrusConstans(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM =this.baseSecondaryM = 1;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
     }
@@ -42,7 +42,7 @@ public class TonitrusConstans extends AbstractCodexCard {
                 break;
             case 2:
                 addToBot(new GainEnergyAction(this.magicNumber));
-                addToBot(new DrawCardAction(p,this.secondaryM));
+                addToBot(new DrawCardAction(p, this.secondaryM));
                 break;
         }
     }
@@ -53,14 +53,15 @@ public class TonitrusConstans extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
+                upgradeBaseCost(0);
                 this.exhaust = false;
+                this.isEthereal = true;
             }
 
 
             if (this.timesUpgraded == 2) {
-                upgradeBaseCost(0);
-                upgradeSecondM(2);
-                this.exhaust = true;
+                this.exhaust = false;
+                this.isEthereal = false;
             }
         }
     }

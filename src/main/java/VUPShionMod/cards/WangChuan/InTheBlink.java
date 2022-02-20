@@ -29,7 +29,7 @@ public class InTheBlink extends AbstractWCCard {
     public InTheBlink(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.timesUpgraded = upgrades;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 6;
         this.baseSecondaryM = this.secondaryM = 1;
         this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[9] + EXTENDED_DESCRIPTION[12] + EXTENDED_DESCRIPTION[13];
         initializeDescription();
@@ -44,13 +44,13 @@ public class InTheBlink extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int d = this.magicNumber;
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+            d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+        this.baseDamage = d;
+
         switch (this.timesUpgraded) {
             case 0:
-                int d = this.magicNumber;
-                if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                    d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
-                this.baseDamage = d;
-
                 calculateCardDamage(m);
 
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
@@ -60,18 +60,29 @@ public class InTheBlink extends AbstractWCCard {
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
                 if(StiffnessPower.applyStiffness())
-                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));
+                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
             case 1:
-                addBaseAoeDamage();
-                doAoeDamage();
+                calculateCardDamage(m);
+
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
                 if(StiffnessPower.applyStiffness())
                 addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
             case 2:
-                addBaseAoeDamage();
-                doAoeDamage();
+                calculateCardDamage(m);
+
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
                 if(StiffnessPower.applyStiffness())
                 addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
                 break;
@@ -126,12 +137,10 @@ public class InTheBlink extends AbstractWCCard {
     @Override
     public void upgrade() {
         if (this.timesUpgraded <= 8) {
-
             if (this.timesUpgraded == 0) {
-                this.target = CardTarget.ALL_ENEMY;
                 this.isMultiDamage = true;
-                upgradeMagicNumber(1);
-                upgradeBaseCost(2);
+                upgradeMagicNumber(2);
+                upgradeBaseCost(1);
                 this.rarity = CardRarity.COMMON;
                 vupCardSetBanner();
             }
@@ -143,6 +152,7 @@ public class InTheBlink extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
+                this.target = CardTarget.ALL_ENEMY;
                 this.magicNumber = this.baseMagicNumber = 0;
                 this.rarity = CardRarity.RARE;
                 vupCardSetBanner();
@@ -173,7 +183,7 @@ public class InTheBlink extends AbstractWCCard {
     private void setDescription() {
         switch (this.timesUpgraded) {
             case 0:
-                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[9] + EXTENDED_DESCRIPTION[12] + EXTENDED_DESCRIPTION[13];
+                this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[9] + EXTENDED_DESCRIPTION[12] + EXTENDED_DESCRIPTION[15];
                 break;
             case 1:
                 this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[10] + EXTENDED_DESCRIPTION[12] + EXTENDED_DESCRIPTION[15];

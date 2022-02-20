@@ -16,7 +16,7 @@ public class ChaosNimius extends AbstractCodexCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public ChaosNimius(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -52,12 +52,16 @@ public class ChaosNimius extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1)
+            if (this.timesUpgraded == 1) {
+                upgradeBaseCost(2);
                 this.exhaust = true;
+                this.isEthereal = true;
+            }
 
-            if (this.timesUpgraded == 2){
+            if (this.timesUpgraded == 2) {
                 this.exhaust = false;
-                upgradeMagicNumber(-1);
+                this.isEthereal = false;
+                upgradeMagicNumber(1);
             }
 
         }

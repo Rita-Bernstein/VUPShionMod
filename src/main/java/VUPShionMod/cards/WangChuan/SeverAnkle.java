@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,16 +25,18 @@ public class SeverAnkle extends AbstractWCCard {
         this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 1;
         this.baseSecondaryM = this.secondaryM = 3;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            for(int i = 0;i < this.secondaryM ;i++){
-                addToBot(new ApplyPowerAction(m,p,new VulnerablePower(m,this.magicNumber,false)));
-            }
+        for (int i = 0; i < this.secondaryM; i++) {
+            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false)));
+        }
+
+        addToBot(new DrawCardAction(1));
     }
 
     @Override

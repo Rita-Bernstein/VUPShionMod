@@ -3,6 +3,7 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,6 +30,8 @@ public class HiltBash extends AbstractWCCard {
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+        addToBot(new DrawCardAction(1));
     }
 
     @Override

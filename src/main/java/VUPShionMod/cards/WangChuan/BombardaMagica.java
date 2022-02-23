@@ -75,9 +75,9 @@ public class BombardaMagica extends AbstractWCCard {
                 upgradeDamage(2);
             }
 
-//            if (this.timesUpgraded == 2) {
-//                this.exhaust = false;
-//            }
+            if (this.timesUpgraded == 2) {
+                upgradeDamage(2);
+            }
         }
     }
 }

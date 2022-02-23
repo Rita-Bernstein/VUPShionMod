@@ -58,6 +58,7 @@ public class AurumNimium extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 this.isEthereal = false;
+                this.exhaust = false;
             }
         }
     }

@@ -23,6 +23,7 @@ public class TerraNimia extends AbstractCodexCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
+        this.exhaust= true;
     }
 
     public TerraNimia() {

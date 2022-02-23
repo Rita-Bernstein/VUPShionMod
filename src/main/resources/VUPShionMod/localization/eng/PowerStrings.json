@@ -189,7 +189,7 @@
     "DESCRIPTIONS": [
       "Whenever you trigger #yLoading #yComplete, gain #b%d #yHyperdimensional #yLink."
     ]
-  } ,
+  },
   "VUPShionMod:LoseHyperdimensionalLinksPower": {
     "NAME": "Lose Hyperdimensional Link",
     "DESCRIPTIONS": [
@@ -257,7 +257,7 @@
       "At the start of each turn, grab a random number to determine whether to buff themselves or to debuff you."
     ]
   },
-   "VUPShionMod:StiffnessPower": {
+  "VUPShionMod:StiffnessPower": {
     "NAME": "Stiffness",
     "DESCRIPTIONS": [
       "Upon adding up to #b4, remove all #yStiffness and end your turn."
@@ -295,13 +295,13 @@
     ]
   },
   "VUPShionMod:NoSkillsPower": {
-    "NAME": "Mors Inevitabilis",
+    "NAME": "Silentium Mortis",
     "DESCRIPTIONS": [
       "You can no longer play any #ySkill."
     ]
   },
   "VUPShionMod:MorsLibraquePower": {
-    "NAME": "Mors Universi",
+    "NAME": "Mors Inevitabilis",
     "DESCRIPTIONS": [
       "Eliminated in #b%d turns."
     ]
@@ -309,7 +309,7 @@
   "VUPShionMod:PoisePower": {
     "NAME": "Poise",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b%d #yBarrier. NL You no longer gain #yStiffness."
+      "Whenever you play an Attack, draw #b%d cards. NL You no longer gain #yStiffness."
     ]
   },
   "VUPShionMod:PetalsFallPower": {
@@ -443,6 +443,12 @@
     "NAME": "Gravity Funnel Overloaded",
     "DESCRIPTIONS": [
       "#yShion has overloaded #yGravity #yFunnel to its maximum..."
+    ]
+  },
+  "VUPShionMod:TurnObruorPower": {
+    "NAME": "Impotentia Mortis",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%d #yMagiam #yObruor."
     ]
   }
 }

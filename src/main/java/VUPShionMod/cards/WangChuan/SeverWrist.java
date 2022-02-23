@@ -6,6 +6,7 @@ import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -35,6 +36,8 @@ public class SeverWrist extends AbstractWCCard {
         for (int i = 0; i < this.secondaryM; i++) {
             addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false)));
         }
+
+        addToBot(new DrawCardAction(1));
     }
 
     @Override

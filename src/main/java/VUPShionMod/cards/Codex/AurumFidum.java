@@ -54,6 +54,7 @@ public class AurumFidum extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(1);
+                this.exhaust=false;
             }
         }
     }

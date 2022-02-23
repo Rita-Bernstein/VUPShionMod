@@ -6,6 +6,7 @@ import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -49,6 +50,8 @@ public class StrideSlash extends AbstractWCCard {
         if (this.timesUpgraded <= 1)
             if (StiffnessPower.applyStiffness())
                 addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
+
+        addToBot(new DrawCardAction(1));
     }
 
     @Override
@@ -74,11 +77,12 @@ public class StrideSlash extends AbstractWCCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 upgradeDamage(-3);
+                upgradeSecondM(-1);
             }
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(2);
-                upgradeSecondM(-1);
+
             }
 
         }

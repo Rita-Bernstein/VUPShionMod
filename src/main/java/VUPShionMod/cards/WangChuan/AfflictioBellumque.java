@@ -35,7 +35,7 @@ public class AfflictioBellumque extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 17;
         this.isMultiDamage = true;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.isEthereal = true;
     }
 
@@ -59,7 +59,7 @@ public class AfflictioBellumque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
             upgradeDamage(4);
         }
     }

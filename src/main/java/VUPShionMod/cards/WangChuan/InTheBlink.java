@@ -21,7 +21,7 @@ public class InTheBlink extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("InTheBlink");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc05.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
@@ -140,7 +140,7 @@ public class InTheBlink extends AbstractWCCard {
             if (this.timesUpgraded == 0) {
                 upgradeMagicNumber(2);
                 upgradeBaseCost(1);
-                this.rarity = CardRarity.COMMON;
+//                this.rarity = CardRarity.COMMON;
                 vupCardSetBanner();
             }
 

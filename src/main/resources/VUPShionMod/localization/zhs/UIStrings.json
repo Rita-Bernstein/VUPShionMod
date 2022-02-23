@@ -86,5 +86,10 @@
     "EXTRA_TEXT": [
       "需要击败深空孽障解锁皮肤功能"
     ]
+  },
+  "VUPShionMod:PileCostForTurnZeroAction": {
+    "TEXT": [
+      "选择一张牌本回合耗能变为0"
+    ]
   }
 }

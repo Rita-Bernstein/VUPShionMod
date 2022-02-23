@@ -20,7 +20,7 @@ public class MensVirtusque extends AbstractWCCard {
 
     public MensVirtusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class MensVirtusque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
             upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

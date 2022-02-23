@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -18,7 +19,7 @@ public class SeverPetal extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("SeverPetal");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc12.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
@@ -54,6 +55,8 @@ public class SeverPetal extends AbstractWCCard {
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
         if (StiffnessPower.applyStiffness())
             addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 2)));
+
+        addToBot(new DrawCardAction(1));
     }
 
 

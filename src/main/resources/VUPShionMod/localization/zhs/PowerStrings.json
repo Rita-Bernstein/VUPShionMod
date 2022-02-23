@@ -181,7 +181,7 @@
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
     "NAME": "圣棺沉灵",
     "DESCRIPTIONS": [
-      "每当你获得或失去 #y超维链接 时，对一名随机敌人造成 #b%d 点伤害。"
+      "每当你获得或失去 #y超维链接 时，获得 #b%d 点 #y格挡 。"
     ]
   },
   "VUPShionMod:HolyCoffinReleasePower": {

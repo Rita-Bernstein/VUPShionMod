@@ -86,5 +86,10 @@
     "EXTRA_TEXT": [
       "Defeat Plaga Mundi to unlock costume."
     ]
+  },
+  "VUPShionMod:PileCostForTurnZeroAction": {
+    "TEXT": [
+      "Choose a card to set its cost to 0 this turn."
+    ]
   }
 }

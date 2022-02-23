@@ -35,7 +35,7 @@ public class ElysiumSpesque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(7);
         }
     }
 }

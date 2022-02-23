@@ -8,10 +8,12 @@ import VUPShionMod.powers.StiffnessPower;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,6 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 
 import java.util.function.Consumer;
@@ -43,9 +46,12 @@ public class GladiiInfiniti extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.play("POWER_TIME_WARP", 0.05F);
-        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
-        AbstractDungeon.topLevelEffectsQueue.add(new TimeWarpTurnEndEffect());
+//        CardCrawlGame.sound.play("POWER_TIME_WARP", 0.05F);
+//        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
+//        AbstractDungeon.topLevelEffectsQueue.add(new TimeWarpTurnEndEffect());
+
+        addToBot(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));
+        addToBot(new VFXAction(new CollectorCurseEffect(m.hb.cX, m.hb.cY), 2.0F));
 
         int d = upgraded ? 5 : 3;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))

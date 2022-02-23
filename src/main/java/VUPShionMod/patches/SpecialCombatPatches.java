@@ -17,9 +17,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
+import com.megacrit.cardcrawl.helpers.EventHelper;
 import com.megacrit.cardcrawl.map.MapEdge;
 import com.megacrit.cardcrawl.map.MapRoomNode;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.TinyChest;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 
@@ -135,6 +138,25 @@ public class SpecialCombatPatches {
                 _instance.halfDead = true;
                 return SpireReturn.Return(null);
             }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = EventHelper.class,
+            method = "roll",
+            paramtypez = {Random.class}
+    )
+    public static class RollEventPatch {
+        @SpireInsertPatch(rloc = 8)
+        public static SpireReturn<EventHelper.RoomResult> Insert(Random eventRng) {
+            if (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))
+                if ((AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
+                        || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)) {
+                    AbstractRelic r = AbstractDungeon.player.getRelic(TinyChest.ID);
+                    r.counter--;
+                }
+
             return SpireReturn.Continue();
         }
     }

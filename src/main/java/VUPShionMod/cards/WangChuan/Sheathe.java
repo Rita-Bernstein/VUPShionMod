@@ -2,11 +2,19 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.StiffnessPower;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class Sheathe extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("Sheathe");
@@ -20,15 +28,21 @@ public class Sheathe extends AbstractWCCard {
     public Sheathe() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
-        this.secondaryM =this.baseSecondaryM = 3;
+        this.secondaryM = this.baseSecondaryM = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
-        addToBot(new ReducePowerAction(p,p, StiffnessPower.POWER_ID,this.secondaryM));
-        if(this.upgraded)
-            addToBot(new DrawCardAction(1));
+        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.secondaryM));
+
+        Predicate<AbstractCard> predicate = (pr) -> pr.type == CardType.ATTACK;
+        Consumer<List<AbstractCard>> callback = cards -> {
+            for (AbstractCard c : cards)
+                c.setCostForTurn(c.costForTurn - 1);
+        };
+
+        addToBot(new MoveCardsAction(p.hand, p.drawPile, predicate, 1, callback));
     }
 
     @Override

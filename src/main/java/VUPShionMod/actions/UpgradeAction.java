@@ -51,13 +51,12 @@ public class UpgradeAction extends AbstractGameAction {
 
             if (this.p.hand.group.size() - this.cannotDuplicate.size() <= amount) {
                 for (AbstractCard c : this.p.hand.group) {
-                    if (isDualWieldable(c)) {
+                    if (c.canUpgrade()) {
                         c.upgrade();
-                        c.setCostForTurn(0);
-                        this.isDone = true;
-                        return;
                     }
                 }
+                this.isDone = true;
+                return;
             }
 
             this.p.hand.group.removeAll(this.cannotDuplicate);
@@ -70,7 +69,6 @@ public class UpgradeAction extends AbstractGameAction {
 
             if (this.p.hand.group.size() == 1) {
                 this.p.hand.getTopCard().upgrade();
-                this.p.hand.getTopCard().setCostForTurn(0);
                 returnCards();
                 this.isDone = true;
             }
@@ -102,7 +100,7 @@ public class UpgradeAction extends AbstractGameAction {
 
 
     private boolean isDualWieldable(AbstractCard card) {
-        return (card.canUpgrade() || card.costForTurn > 0 || card.cost > 0);
+        return card.canUpgrade();
     }
 }
 

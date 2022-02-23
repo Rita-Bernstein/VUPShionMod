@@ -417,15 +417,15 @@
   "VUPShionMod:PreExecution": {
     "NAME": "Pre-Execution",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 Dexterity.",
     "EXTENDED_DESCRIPTION": [
       "Executioner Stance"
     ]
   },
   "VUPShionMod:Sheathe": {
     "NAME": "Sheathe",
-    "DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Draw 1 card.",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Put an Attack from your draw pile into your hand. It cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Put an Attack from your draw pile into your hand. It cost 0 this turn.",
     "EXTENDED_DESCRIPTION": [
       "Shadowy Edge"
     ]
@@ -540,7 +540,7 @@
   },
   "VUPShionMod:Reflect": {
     "NAME": "Reflect",
-    "DESCRIPTION": " Retain. NL Gain Block equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Whenever attacked this turn, deal !VUPShionSecondM! damage to the attacker.",
+    "DESCRIPTION": " Retain. NL Gain Block equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Whenever attacked this turn, deal !VUPShionSecondM! damage back.",
     "UPGRADE_DESCRIPTION": " NL (Gain !B! Block.)"
   },
   "VUPShionMod:Sharpen": {
@@ -591,7 +591,7 @@
   },
   "VUPShionMod:Poise": {
     "NAME": "Poise",
-    "DESCRIPTION": "At the start of your turn, gain !M! vup_shion_mod:Buffer. NL You no longer gain vup_shion_mod:Stiffness."
+    "DESCRIPTION": "Whenever you play an Attack, draw !M! card. NL You no longer gain vup_shion_mod:Stiffness."
   },
   "VUPShionMod:FullBloom": {
     "NAME": "Bloom",
@@ -623,8 +623,8 @@
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "Mors Universi",
-    "DESCRIPTION": "Retain. Grave. NL At the start of your turn, lose !M! [E] . NL You can no longer play any *Skill. NL Eliminate ALL enemies in !VUPShionSecondM! turns.",
-    "UPGRADE_DESCRIPTION": "Retain. Grave. NL At the start of your turn, lose !M! [E] . NL You can no longer play any *Skill. NL Eliminate ALL enemies in !VUPShionSecondM! turns.",
+    "DESCRIPTION": "Retain. Grave. NL At the start of your turn, gain !M! vup_shion_mod:Magiam\u00a0Obruor. NL You can no longer play any *Skill. NL Eliminate ALL enemies in !VUPShionSecondM! turns.",
+    "UPGRADE_DESCRIPTION": "Retain. Grave. NL At the start of your turn, gain !M! vup_shion_mod:Magiam\u00a0Obruor. NL You can no longer play any *Skill. NL Eliminate ALL enemies in !VUPShionSecondM! turns.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain !B! block)"
     ]
@@ -785,7 +785,7 @@
   "VUPShionMod:HomoRapidus": {
     "NAME": "Codex Hominis",
     "DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. Your next Power is played !M! times. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Homo Rapidus",
       "Homo Intensus",
@@ -795,7 +795,7 @@
   "VUPShionMod:HomoNimius": {
     "NAME": "Codex Hominis",
     "DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next Power is played !M! times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. Your next Power is played !M! times. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Homo Nimius",
       "Homo Intensus",
@@ -805,17 +805,17 @@
   "VUPShionMod:AquaConstans": {
     "NAME": "Codex Aquae",
     "DESCRIPTION": "Next turn, gain !M! [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Next turn, gain !M! [E] .",
+    "UPGRADE_DESCRIPTION": "Next turn, gain !M! [E] and draw !VUPShionSecondM! cards.",
     "EXTENDED_DESCRIPTION": [
       "Aqua Constans",
       "Aqua Intensa",
-      "Next turn, gain !M! [E] ."
+      "Next turn, gain !M! [E] . NL Ethereal."
     ]
   },
   "VUPShionMod:AquaRapida": {
     "NAME": "Codex Aquae",
     "DESCRIPTION": "Next turn, gain !M! [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Next turn, gain !M! [E] .",
+    "UPGRADE_DESCRIPTION": "Next turn, gain !M! [E] and draw !VUPShionSecondM! cards.",
     "EXTENDED_DESCRIPTION": [
       "Aqua Rapida",
       "Aqua Intensa",
@@ -825,7 +825,7 @@
   "VUPShionMod:IgnisRapidus": {
     "NAME": "Codex Ignis",
     "DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust. Ethereal.",
     "EXTENDED_DESCRIPTION": [
       "Ignis Rapidus",
       "Ignis Intensus",
@@ -835,7 +835,7 @@
   "VUPShionMod:IgnisNimius": {
     "NAME": "Codex Ignis",
     "DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust. Ethereal.",
     "EXTENDED_DESCRIPTION": [
       "Ignis Nimius",
       "Ignis Intensus",
@@ -915,7 +915,7 @@
   "VUPShionMod:TonitrusRapidus": {
     "NAME": "Codex Tonitrus",
     "DESCRIPTION": "Gain !M! [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! [E] . NL Draw !VUPShionSecondM! cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! [E] . NL Draw !VUPShionSecondM! cards.",
     "EXTENDED_DESCRIPTION": [
       "Tonitrus Rapidus",
       "Tonitrus Intensus",

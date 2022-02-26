@@ -50,8 +50,8 @@ public class ChaosRapidus extends AbstractCodexCard {
                 upgradeMagicNumber(1);
             }
 
-//            if (this.timesUpgraded == 2)
-//                upgradeMagicNumber(-2);
+            if (this.timesUpgraded == 2)
+                upgradeBaseCost(1);
         }
     }
 }

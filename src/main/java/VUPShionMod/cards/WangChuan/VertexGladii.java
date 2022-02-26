@@ -57,9 +57,9 @@ public class VertexGladii extends AbstractWCCard {
 
 
         if (StiffnessPower.applyStiffness())
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.upgraded ? 1 : 3)));
 
-        addToBot(new DrawCardAction(1));
+        addToBot(new DrawCardAction(2));
 
         this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();

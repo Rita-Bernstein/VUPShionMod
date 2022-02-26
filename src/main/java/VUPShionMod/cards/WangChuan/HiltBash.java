@@ -31,6 +31,7 @@ public class HiltBash extends AbstractWCCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
+        if(this.upgraded)
         addToBot(new DrawCardAction(1));
     }
 

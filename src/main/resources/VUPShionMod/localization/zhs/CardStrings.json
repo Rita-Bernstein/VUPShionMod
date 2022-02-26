@@ -401,7 +401,7 @@
   },
   "VUPShionMod:HiltBash": {
     "NAME": "柄击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽一张牌。",
+    "DESCRIPTION": "造成 !D! 点伤害。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害两次。 NL 抽一张牌。",
     "EXTENDED_DESCRIPTION": [
       "瞬刃"
@@ -483,12 +483,12 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽一张牌。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 25 + vup_shion_mod:剑意 的 格挡 。 NL 获得8点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 25 + vup_shion_mod:剑意 的 格挡 。 NL 获得8点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
       "极·回天剑舞",
-      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得5点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得5点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
       "（造成 !D! 点伤害，获得 !B! 点 格挡 。）"
     ]
   },
@@ -656,8 +656,8 @@
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：觉醒",
-    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。"
+    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL 在本场战斗中 升级 你的所有牌。",
+    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL 在本场战斗中 升级 你的所有牌。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：乐园",

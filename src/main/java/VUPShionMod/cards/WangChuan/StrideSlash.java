@@ -36,6 +36,7 @@ public class StrideSlash extends AbstractWCCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
+        if(this.timesUpgraded>=2)
         if (p.hasPower(CorGladiiPower.POWER_ID)) {
             int temp = this.baseDamage;
             this.baseDamage = p.getPower(CorGladiiPower.POWER_ID).amount;

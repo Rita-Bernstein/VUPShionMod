@@ -62,6 +62,7 @@ public class ChaosNimius extends AbstractCodexCard {
                 this.exhaust = false;
                 this.isEthereal = false;
                 upgradeMagicNumber(1);
+                upgradeBaseCost(1);
             }
 
         }

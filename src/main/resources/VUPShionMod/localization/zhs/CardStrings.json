@@ -550,7 +550,11 @@
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "见切",
-    "DESCRIPTION": "造成 !D! 点伤害 。 NL 获得 !M! 层 vup_shion_mod:缓冲 。 NL 抽一张牌。"
+    "DESCRIPTION": "造成 !D! 点伤害 。 NL 获得 !M! 层 vup_shion_mod:缓冲 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 。 NL 造成 vup_shion_mod:剑意 层数的伤害 。 NL 获得 !M! 层 vup_shion_mod:缓冲 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "气刃大回旋"
+    ]
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "月步",
@@ -757,7 +761,7 @@
     "EXTENDED_DESCRIPTION": [
       "通典：天（永续）",
       "通典：天（极意）",
-      "下张攻击牌造成 !M! 倍伤害。"
+      "下张攻击牌造成 !M! 倍伤害。 NL 消耗 。"
     ]
   },
   "VUPShionMod:TerraNimia": {

@@ -22,7 +22,7 @@ public class Reflect extends AbstractWCCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc17.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
 

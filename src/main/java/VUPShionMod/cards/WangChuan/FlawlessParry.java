@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.CorGladiiPower;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -27,7 +28,11 @@ public class FlawlessParry extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        if (p.hasPower(CorGladiiPower.POWER_ID))
+            addToBot(new DamageAction(m, new DamageInfo(p, p.getPower(CorGladiiPower.POWER_ID).amount, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber)));
+        if (StiffnessPower.applyStiffness())
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));
         addToBot(new DrawCardAction(1));
     }
 
@@ -35,7 +40,10 @@ public class FlawlessParry extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(0);
+            this.name = EXTENDED_DESCRIPTION[0];
+            initializeTitle();
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
             upgradeDamage(3);
         }
     }

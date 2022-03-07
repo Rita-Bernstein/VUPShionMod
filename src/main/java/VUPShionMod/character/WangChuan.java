@@ -276,6 +276,7 @@ public class WangChuan extends CustomPlayer {
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
             this.state.setAnimation(0, "hurt", false).setTimeScale(1.5f);
+            this.state.addAnimation(0, "idle", true,0.0f);
         }
 
         super.damage(info);

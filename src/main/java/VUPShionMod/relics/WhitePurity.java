@@ -29,11 +29,10 @@ public class WhitePurity extends CustomRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        if (c.type == AbstractCard.CardType.ATTACK) {
-            flash();
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                    new CorGladiiPower(AbstractDungeon.player, 5)));
-        }
+
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                new CorGladiiPower(AbstractDungeon.player, 5)));
+        
     }
 
     @Override

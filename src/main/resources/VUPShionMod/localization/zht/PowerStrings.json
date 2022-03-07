@@ -181,7 +181,7 @@
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
     "NAME": "聖棺沉靈",
     "DESCRIPTIONS": [
-      "每當你獲得或失去 #y超維連結 時，對一名隨機敵人造成 #b%d 點傷害。"
+      "每當你獲得或失去 #y超維連結 時，獲得 #b%d 點 #y格擋 。"
     ]
   },
   "VUPShionMod:HolyCoffinReleasePower": {
@@ -449,6 +449,12 @@
     "NAME": "回合過載",
     "DESCRIPTIONS": [
       "每回合開始時獲得 #b%d 層 #y魔能過載 。"
+    ]
+  },
+  "VUPShionMod:PlagaAMundoCounterPower": {
+    "NAME": "增援",
+    "DESCRIPTIONS": [
+      "敵人的增援正在趕來。"
     ]
   }
 }

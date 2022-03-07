@@ -402,7 +402,7 @@
   "VUPShionMod:HiltBash": {
     "NAME": "柄擊",
     "DESCRIPTION": "造成 !D! 點傷害。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       "瞬刃"
     ]
@@ -418,15 +418,15 @@
   "VUPShionMod:PreExecution": {
     "NAME": "擬斬",
     "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍意 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 獲得2點 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       "心眼"
     ]
   },
   "VUPShionMod:Sheathe": {
     "NAME": "納刀",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 減少 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 減少 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 減少 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 抽一張攻擊牌，這張牌本回合耗能降低1。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 減少 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 抽一張攻擊牌，這張牌本回合耗能降低1。",
     "EXTENDED_DESCRIPTION": [
       "藏刀"
     ]
@@ -464,12 +464,12 @@
   },
   "VUPShionMod:StrideSlash": {
     "NAME": "踏步斬",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。 NL 造成 vup_shion_mod:劍意 的傷害。 NL 獲得 !M! 點 vup_shion_mod:劍意 。",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。 NL 造成 vup_shion_mod:劍意 的傷害。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       "踏步連斬",
       "殘月沖",
-      "造成 !D! 點傷害兩次。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。"
+      "造成 !D! 點傷害兩次。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 抽一張牌。"
     ]
   },
   "VUPShionMod:OnrushingTip": {
@@ -483,31 +483,31 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斬",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害兩次。 NL 獲得 !B! 點 格擋 。 NL 獲得3點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害三次。 NL 獲得 25 + vup_shion_mod:劍意 的 格擋 。 NL 獲得8點 vup_shion_mod:劍意 。 NL 獲得1點 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害兩次。 NL 獲得 !B! 點 格擋 。 NL 獲得3點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害三次。 NL 獲得 25 + vup_shion_mod:劍意 的 格擋 。 NL 獲得8點 vup_shion_mod:劍意 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
     "EXTENDED_DESCRIPTION": [
       "回天劍舞",
       "極·回天劍舞",
-      "造成 !M! + vup_shion_mod:劍意 的傷害三次。 NL 獲得 9 + vup_shion_mod:劍意 的 格擋 。 NL 獲得5點 vup_shion_mod:劍意 。 NL 獲得1點 vup_shion_mod:硬直 。",
+      "造成 !M! + vup_shion_mod:劍意 的傷害三次。 NL 獲得 9 + vup_shion_mod:劍意 的 格擋 。 NL 獲得5點 vup_shion_mod:劍意 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
       "（造成 !D! 點傷害，獲得 !B! 點 格擋 。）"
     ]
   },
   "VUPShionMod:SeverWrist": {
     "NAME": "腕切",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 虛弱 !VUPShionSecondM! 次。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 虛弱 !VUPShionSecondM! 次。 NL 抽一張牌。 NL 消耗 。"
   },
   "VUPShionMod:SeverAnkle": {
     "NAME": "足切",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 易傷 !VUPShionSecondM! 次。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 易傷 !VUPShionSecondM! 次。 NL 抽一張牌。 NL 消耗 。"
   },
   "VUPShionMod:SeverPetal": {
     "NAME": "雁落斬",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 獲得2點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害兩次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 獲得2點 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍意 的傷害兩次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       "雁落斬+",
       "落鳳破",
-      "造成 !M! + vup_shion_mod:劍意 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 獲得2點 vup_shion_mod:硬直 。",
+      "造成 !M! + vup_shion_mod:劍意 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
       " NL （造成 !D! 點傷害）"
     ]
   },
@@ -550,7 +550,11 @@
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "見切",
-    "DESCRIPTION": "造成 !D! 點傷害 。 NL 獲得 !M! 層 vup_shion_mod:緩衝 。"
+    "DESCRIPTION": "造成 !D! 點傷害 。 NL 獲得 !M! 層 vup_shion_mod:緩衝 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害 。 NL 造成 vup_shion_mod:劍意 層數的傷害 。 NL 獲得 !M! 層 vup_shion_mod:緩衝 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "EXTENDED_DESCRIPTION": [
+      "氣刃大迴旋"
+    ]
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "月步",
@@ -656,8 +660,8 @@
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：覺醒",
-    "DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。",
-    "UPGRADE_DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。"
+    "DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。 NL 在本場戰鬥中 升級 你的所有牌。",
+    "UPGRADE_DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。 NL 在本場戰鬥中 升級 你的所有牌。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：樂園",
@@ -757,7 +761,7 @@
     "EXTENDED_DESCRIPTION": [
       "通典：天（永續）",
       "通典：天（極意）",
-      "下張攻擊牌造成 !M! 倍傷害。"
+      "下張攻擊牌造成 !M! 倍傷害。 NL 虛無 。"
     ]
   },
   "VUPShionMod:TerraNimia": {
@@ -863,7 +867,7 @@
   "VUPShionMod:AurumNimium": {
     "NAME": "通典：金",
     "DESCRIPTION": " 升級 !M! 張手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "升級 !M! 張牌堆或手牌中的牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "升級 !M! 張牌堆或手牌中的牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：金（泛濫）",
       "通典：金（極意）",
@@ -873,7 +877,7 @@
   "VUPShionMod:AurumFidum": {
     "NAME": "通典：金",
     "DESCRIPTION": " 升級 !M! 張手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "升級 !M! 張牌堆或手牌中的牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "升級 !M! 張牌堆或手牌中的牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：金（如意）",
       "通典：金（極意）",
@@ -913,7 +917,7 @@
   "VUPShionMod:TonitrusRapidus": {
     "NAME": "通典：雷",
     "DESCRIPTION": "獲得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：雷（神速）",
       "通典：雷（極意）",

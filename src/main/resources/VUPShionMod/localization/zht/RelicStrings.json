@@ -80,5 +80,33 @@
     "DESCRIPTIONS": [
       "戰鬥開始時將一張 通典：雷（神速） 加入手牌 （獎勵卡牌中加入通用魔法）"
     ]
+  },
+  "VUPShionMod:StarQuakes": {
+    "NAME": "魔能刃：星震",
+    "FLAVOR": "Anastasia支援裝備，由魔能驅動的太刀型武器",
+    "DESCRIPTIONS": [
+      "每當你打出一張 #y攻擊牌 ，獲得 #b3 點 #y劍意 。 每回合結束時失去 #b33% 的 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:BlueSupergiant": {
+    "NAME": "特化裝備：藍超巨星",
+    "FLAVOR": "在藍巨星的基礎上，提高了核心出力等級",
+    "DESCRIPTIONS": [
+      "#r替換特化裝備：藍巨星。 NL 每回合將一張 #y自動浮游矩陣 加入手牌。"
+    ]
+  },
+  "VUPShionMod:PureHeart": {
+    "NAME": "試作裝備：白之心",
+    "FLAVOR": "Anastasia特化支援裝備，出力更為強大的魔能太刀，由於功率過大導致難以操縱",
+    "DESCRIPTIONS": [
+      "每打出一張牌，獲得 #b5 點 #y劍意 。每回合失去 #b50% 的 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:WhitePurity": {
+    "NAME": "試作裝備：純白之心",
+    "FLAVOR": "在白之心的基礎上升級了能量約束器，降低了魔能耗散",
+    "DESCRIPTIONS": [
+      "#r替換試作裝備：白之心。 NL 每打出一張牌，獲得 #b5 點 #y劍意 。每回合失去 #b33% 的 #y劍意 。"
+    ]
   }
 }

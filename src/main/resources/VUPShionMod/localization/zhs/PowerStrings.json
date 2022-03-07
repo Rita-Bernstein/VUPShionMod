@@ -450,5 +450,11 @@
     "DESCRIPTIONS": [
       "每回合开始时获得 #b%d 层 #y魔能过载 。"
     ]
+  },
+  "VUPShionMod:PlagaAMundoCounterPower": {
+    "NAME": "增援",
+    "DESCRIPTIONS": [
+      "敌人的增援正在赶来。"
+    ]
   }
 }

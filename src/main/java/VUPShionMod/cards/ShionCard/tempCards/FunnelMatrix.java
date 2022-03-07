@@ -30,8 +30,8 @@ public class FunnelMatrix extends AbstractVUPShionCard {
 
     public FunnelMatrix() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.exhaust = true;
-
         vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 

@@ -177,6 +177,7 @@ public abstract class AbstractSkin {
         retVal.add(BurningBlood.ID);
         return retVal;
     }
+
 }
 
 

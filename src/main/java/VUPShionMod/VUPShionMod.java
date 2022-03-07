@@ -192,9 +192,8 @@ public class VUPShionMod implements
     }
 
     public static void unlockAllReskin() {
-
         for (AbstractSkinCharacter c : characters) {
-            c.reskinUnlock = false;
+            c.reskinUnlock = true;
         }
         saveSettings();
     }
@@ -274,7 +273,7 @@ public class VUPShionMod implements
     @Override
     public void receivePostInitialize() {
         loadSettings();
-//        unlockAllReskin();
+        unlockAllReskin();
         Texture badgeTexture = new Texture(assetPath("/img/badge.png"));
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
@@ -638,10 +637,14 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new Sniperscope(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new AnastasiaNecklace(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new BlueGiant(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new TrackingBeacon(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new StarQuakes(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new PureHeart(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new WhitePurity(), CardColorEnum.WangChuan_LIME);
 
     }
 

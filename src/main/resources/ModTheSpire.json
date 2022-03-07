@@ -4,7 +4,7 @@
   "author_list": ["Rita", "Temple9"],
   "credits": "",
   "description": "",
-  "version": "2.0.1",
+  "version": "2.5.1",
   "sts_version": "11-29-2020",
   "mts_version": "3.19.0",
   "dependencies": ["basemod","stslib"]

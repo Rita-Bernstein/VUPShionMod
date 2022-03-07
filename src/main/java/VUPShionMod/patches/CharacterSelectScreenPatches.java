@@ -3,6 +3,7 @@ package VUPShionMod.patches;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.skins.sk.Shion.AbstractShionSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
+import VUPShionMod.skins.sk.WangChuan.AbstractShionWangChuan;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -55,7 +56,8 @@ public class CharacterSelectScreenPatches {
     public static ArrayList<AbstractGameEffect> char_effectsQueue_toRemove = new ArrayList();
 
     public static AbstractSkinCharacter[] characters = new AbstractSkinCharacter[]{
-            new AbstractShionSkin()
+            new AbstractShionSkin(),
+            new AbstractShionWangChuan()
     };
 
     public static Color BLACK_OUTLINE_COLOR = new Color(0.0F, 0.0F, 0.0F, 0.5F);

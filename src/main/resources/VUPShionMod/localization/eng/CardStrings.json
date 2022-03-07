@@ -401,9 +401,9 @@
   "VUPShionMod:HiltBash": {
     "NAME": "Hilt Bash",
     "DESCRIPTION": "Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice, draw 1 card.",
     "EXTENDED_DESCRIPTION": [
-      "Momentary Slash"
+      "Dual Slash"
     ]
   },
   "VUPShionMod:Slide": {
@@ -411,7 +411,7 @@
     "DESCRIPTION": "Gain !B! Block.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block thrice.",
     "EXTENDED_DESCRIPTION": [
-      "Continuous Slide"
+      "Multi Slide"
     ]
   },
   "VUPShionMod:PreExecution": {
@@ -424,8 +424,8 @@
   },
   "VUPShionMod:Sheathe": {
     "NAME": "Sheathe",
-    "DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Put an Attack from your draw pile into your hand. It cost 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Put an Attack from your draw pile into your hand. It cost 0 this turn.",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Put an Attack from your draw pile into your hand. It costs 1 less this turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. NL Put an Attack from your draw pile into your hand. It costs 1 less this turn.",
     "EXTENDED_DESCRIPTION": [
       "Shadowy Edge"
     ]
@@ -463,12 +463,12 @@
   },
   "VUPShionMod:StrideSlash": {
     "NAME": "Stride Slash",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii.",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Draw 1 card.",
     "EXTENDED_DESCRIPTION": [
       "Forwarding Hew",
       "Crescent Hack",
-      "Deal !D! damage twice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness."
+      "Deal !D! damage twice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL Draw 1 card."
     ]
   },
   "VUPShionMod:OnrushingTip": {
@@ -482,31 +482,31 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "Vertex Gladii",
-    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !B! Block. NL Gain 3 vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 25 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 5 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !B! Block. NL Gain 3 vup_shion_mod:Stiffness. NL Draw 2 cards.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 25 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 8 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness. NL Draw 2 cards.",
     "EXTENDED_DESCRIPTION": [
       "Turbo Gladii",
       "Auster Gladii",
-      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 8 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 5 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness. NL Draw 2 cards.",
       " NL (Deal !D! damage, gain !B! Block.)"
     ]
   },
   "VUPShionMod:SeverWrist": {
     "NAME": "Cut Wrist",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak !VUPShionSecondM! times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak !VUPShionSecondM! times. NL Draw 1 card. NL Exhaust."
   },
   "VUPShionMod:SeverAnkle": {
     "NAME": "Cut Ankle",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable !VUPShionSecondM! times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable !VUPShionSecondM! times. NL Draw 1 card. NL Exhaust."
   },
   "VUPShionMod:SeverPetal": {
     "NAME": "Sever Petal",
-    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness. NL Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness. NL Draw 1 card.",
     "EXTENDED_DESCRIPTION": [
       "Sever Petal+",
       "Sever Clouds",
-      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness.",
+      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL Gain 2 vup_shion_mod:Stiffness. NL Draw 1 card.",
       " NL （Deal !D! damage.）"
     ]
   },
@@ -549,7 +549,11 @@
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "Flawless Parry",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Buffer."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Buffer. NL Gain 1 vup_shion_mod:Stiffness. NL Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Buffer. NL Gain 1 vup_shion_mod:Stiffness. NL Draw 1 card.",
+    "EXTENDED_DESCRIPTION": [
+      "Cyclone Parry"
+    ]
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "Moonstrider",
@@ -759,7 +763,7 @@
     "EXTENDED_DESCRIPTION": [
       "Caelum Constans",
       "Caelum Intensum",
-      "Your next Attack deals !M! times of damage."
+      "Your next Attack deals !M! times of damage. NL Exhaust."
     ]
   },
   "VUPShionMod:TerraNimia": {

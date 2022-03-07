@@ -7,16 +7,14 @@ import VUPShionMod.actions.SummonMundoMinionAction;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
-import VUPShionMod.powers.ChaoticPower;
-import VUPShionMod.powers.DefectPower;
-import VUPShionMod.powers.ShockPower;
-import VUPShionMod.powers.StrengthenPower;
+import VUPShionMod.powers.*;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -85,6 +83,9 @@ public class PlagaAMundo extends CustomMonster {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("VUPShionMod:Boss_Phase1");
         (AbstractDungeon.getCurrRoom()).cannotLose = true;
+
+        addToBot(new ApplyPowerAction(this, this, new PlagaAMundoCounterPower(this, 13)));
+
         if (AbstractDungeon.ascensionLevel >= 19)
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 2)));
         else
@@ -153,6 +154,11 @@ public class PlagaAMundo extends CustomMonster {
 
 
     protected void getMove(int num) {
+        if (GameActionManager.turn >= 12) {
+            setMove((byte) 98, Intent.UNKNOWN);
+            return;
+        }
+
         if (this.isFirstMove) {
             setMove((byte) 99, Intent.BUFF);
             this.isFirstMove = false;
@@ -234,6 +240,9 @@ public class PlagaAMundo extends CustomMonster {
         switch (stateName) {
             case "Die":
                 this.halfDead = false;
+                this.currentHealth = 0;
+                updateHealthBar();
+                healthBarUpdatedEvent();
                 this.die(true);
                 break;
             case "Attack1":

@@ -80,5 +80,12 @@
     "DESCRIPTIONS": [
       "At the start of each combat, add 1 #yTonitrus #yRapidus into your hand. Combat reward screens now contain cards from universial #yCodex."
     ]
+  },
+  "VUPShionMod:StarQuakes": {
+    "NAME": "Starquake",
+    "FLAVOR": "Universal type of support equipment of Anastasia, a tachi blade driven by magia.",
+    "DESCRIPTIONS": [
+      "Whenever you play an #yAttack, gain #b3 #yCor #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
+    ]
   }
 }

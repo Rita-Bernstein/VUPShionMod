@@ -18,6 +18,7 @@ import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
 import VUPShionMod.relics.DimensionSplitterAria;
 import VUPShionMod.relics.Nebula;
+import VUPShionMod.relics.StarQuakes;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -86,18 +87,33 @@ public class WangChuan extends CustomPlayer {
         this.dialogY = this.drawY + 170.0F * Settings.scale;
 
         initializeClass(null,
-                "VUPShionMod/characters/Shion/shoulder2.png",
-                "VUPShionMod/characters/Shion/shoulder.png",
-                "VUPShionMod/characters/WangChuan/corpse.png",
+                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].SHOULDER1,
+                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].SHOULDER2,
+                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].CORPSE,
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"),
                 VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json"), 3.0f);
 
 
-        this.state.setAnimation(0, "idle", true);
-        this.state.setAnimation(1, "idle_YOFU", true);
+        reloadAnimation();
+    }
 
+    public void reloadAnimation() {
+        this.loadAnimation(
+                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].atlasURL,
+                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].jsonURL,
+                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].renderscale);
+
+
+        if (CharacterSelectScreenPatches.characters[1].reskinCount == 0) {
+            this.state.setAnimation(0, "idle", true);
+            this.state.setAnimation(1, "idle_YOFU", true);
+        }
+
+        if (CharacterSelectScreenPatches.characters[1].reskinCount == 1) {
+            this.state.setAnimation(0, "idle", true);
+        }
     }
 
 
@@ -106,9 +122,8 @@ public class WangChuan extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Nebula.ID);
-        return retVal;
+        CharacterSelectScreenPatches.characters[1].InitializeReskinCount();
+        return CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
@@ -124,7 +139,12 @@ public class WangChuan extends CustomPlayer {
 //        retVal.add(PreExecution.ID);
         retVal.add(Sheathe.ID);
 //        retVal.add(InTheBlink.ID);
-        retVal.add(GlandesMagicae.ID);
+        if (CharacterSelectScreenPatches.characters[1].reskinCount == 0)
+            retVal.add(GlandesMagicae.ID);
+
+        if (CharacterSelectScreenPatches.characters[1].reskinCount == 1)
+            retVal.add(InTheBlink.ID);
+
         retVal.add(MorsLibraque.ID);
 
 
@@ -281,7 +301,7 @@ public class WangChuan extends CustomPlayer {
     @Override
     public void render(SpriteBatch sb) {
         super.render(sb);
-        if (this.shionHelper != null){
+        if (this.shionHelper != null) {
             shionHelper.renderPlayerBattleUi(sb);
             shionHelper.render(sb);
         }

@@ -62,7 +62,7 @@
     "NAME": "A Message",
     "DESCRIPTIONS": [
 	  "As you are about to depart, a message come to you.",
-      "It's from Anastasia. Again, @total@ @devastation@ is about to be brought to a planet by an atrocious invasion, which just smacks of your past."
+      "It's from Anastasia. Again, @total@ @devastation@ is about to be brought to a planet by an atrocious invasion, which has manifested itself as an echo of your past."
     ],
     "OPTIONS": [
       "[Proceed] ...",
@@ -75,7 +75,7 @@
     "NAME": "",
     "DESCRIPTIONS": [
       "As you are about to depart, a message come to you.",
-      "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures."
+      "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence."
     ],
     "OPTIONS": [
       "[Proceed] ...",

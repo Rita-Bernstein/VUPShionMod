@@ -66,7 +66,8 @@
   },
   "VUPShionMod:BetaArtUnlockEffect": {
     "TEXT": [
-      "已解锁紫音皮肤！"
+      "已解锁紫音皮肤！",
+      "已解锁忘川川皮肤！"
     ]
   },
   "VUPShionMod:AbstractShionSkin": {
@@ -77,6 +78,16 @@
     "EXTRA_TEXT": [
       "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔",
       "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔"
+    ]
+  },
+  "VUPShionMod:AbstractWangChuanSkin": {
+    "TEXT": [
+      "星云系统",
+      "纯白之刃"
+    ],
+    "EXTRA_TEXT": [
+      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹",
+      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹"
     ]
   },
   "VUPShionMod:SkinPannel": {

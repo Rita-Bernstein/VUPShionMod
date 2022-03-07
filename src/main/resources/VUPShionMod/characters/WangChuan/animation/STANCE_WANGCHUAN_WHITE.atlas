@@ -1,0 +1,174 @@
+
+STANCE_WANGCHUAN_WHITE.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+B_hair
+  rotate: false
+  xy: 699, 409
+  size: 392, 613
+  orig: 392, 613
+  offset: 0, 0
+  index: -1
+Blink1
+  rotate: false
+  xy: 711, 176
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+Blink2
+  rotate: true
+  xy: 861, 296
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+F_hair
+  rotate: true
+  xy: 824, 178
+  size: 116, 123
+  orig: 116, 123
+  offset: 0, 0
+  index: -1
+L_arm
+  rotate: false
+  xy: 1499, 378
+  size: 119, 166
+  orig: 119, 166
+  offset: 0, 0
+  index: -1
+L_arm2
+  rotate: false
+  xy: 297, 58
+  size: 223, 85
+  orig: 223, 85
+  offset: 0, 0
+  index: -1
+L_bingjiao
+  rotate: false
+  xy: 522, 22
+  size: 101, 121
+  orig: 101, 121
+  offset: 0, 0
+  index: -1
+L_leg
+  rotate: true
+  xy: 1093, 849
+  size: 173, 616
+  orig: 173, 616
+  offset: 0, 0
+  index: -1
+L_meimao
+  rotate: false
+  xy: 609, 156
+  size: 14, 4
+  orig: 14, 4
+  offset: 0, 0
+  index: -1
+Opai
+  rotate: false
+  xy: 711, 306
+  size: 148, 101
+  orig: 148, 101
+  offset: 0, 0
+  index: -1
+Qunbai
+  rotate: true
+  xy: 1711, 868
+  size: 154, 204
+  orig: 154, 204
+  offset: 0, 0
+  index: -1
+Qunbai2
+  rotate: true
+  xy: 1917, 842
+  size: 180, 124
+  orig: 180, 124
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: true
+  xy: 2, 12
+  size: 131, 293
+  orig: 131, 293
+  offset: 0, 0
+  index: -1
+R_bingjiao
+  rotate: true
+  xy: 1576, 588
+  size: 25, 121
+  orig: 25, 121
+  offset: 0, 0
+  index: -1
+R_finger
+  rotate: false
+  xy: 1499, 338
+  size: 37, 38
+  orig: 37, 38
+  offset: 0, 0
+  index: -1
+R_leg
+  rotate: true
+  xy: 2, 145
+  size: 217, 605
+  orig: 217, 605
+  offset: 0, 0
+  index: -1
+R_meimao
+  rotate: false
+  xy: 2, 2
+  size: 24, 8
+  orig: 24, 8
+  offset: 0, 0
+  index: -1
+Sword
+  rotate: false
+  xy: 2, 364
+  size: 695, 658
+  orig: 695, 658
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 1093, 326
+  size: 218, 404
+  orig: 218, 404
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 625, 32
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+fashi1
+  rotate: false
+  xy: 1711, 851
+  size: 85, 15
+  orig: 85, 15
+  offset: 0, 0
+  index: -1
+fashi4_LK
+  rotate: true
+  xy: 1576, 615
+  size: 232, 122
+  orig: 232, 122
+  offset: 0, 0
+  index: -1
+mawei
+  rotate: true
+  xy: 1093, 546
+  size: 301, 481
+  orig: 301, 481
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 609, 162
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1

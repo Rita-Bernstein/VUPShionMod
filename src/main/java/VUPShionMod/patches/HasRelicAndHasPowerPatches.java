@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PaperFrog;
 
 
-public class HasRelicAndHasPowerPatches {
+public class  HasRelicAndHasPowerPatches {
 
     @SpirePatch(
             clz = AbstractPlayer.class,

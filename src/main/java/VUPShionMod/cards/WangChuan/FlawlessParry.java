@@ -28,8 +28,10 @@ public class FlawlessParry extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-        if (p.hasPower(CorGladiiPower.POWER_ID))
+
+        if (p.hasPower(CorGladiiPower.POWER_ID) && upgraded)
             addToBot(new DamageAction(m, new DamageInfo(p, p.getPower(CorGladiiPower.POWER_ID).amount, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber)));
         if (StiffnessPower.applyStiffness())
             addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));

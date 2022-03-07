@@ -450,5 +450,11 @@
     "DESCRIPTIONS": [
       "At the start of your turn, gain #b%d #yMagiam #yObruor."
     ]
+  },
+  "VUPShionMod:PlagaAMundoCounterPower": {
+    "NAME": "Reinforcement",
+    "DESCRIPTIONS": [
+      "Enemy reinforcement incoming..."
+    ]
   }
 }

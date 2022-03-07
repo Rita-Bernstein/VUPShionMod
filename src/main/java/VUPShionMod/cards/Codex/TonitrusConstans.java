@@ -14,7 +14,7 @@ public class TonitrusConstans extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID("TonitrusConstans");
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/lei.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;

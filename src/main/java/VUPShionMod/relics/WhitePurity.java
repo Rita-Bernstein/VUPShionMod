@@ -19,7 +19,7 @@ public class WhitePurity extends CustomRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
     public WhitePurity() {
-        super(ID, IMG, OUTLINE_IMG, RelicTier.STARTER, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE_IMG, RelicTier.BOSS, LandingSound.CLINK);
     }
 
     @Override

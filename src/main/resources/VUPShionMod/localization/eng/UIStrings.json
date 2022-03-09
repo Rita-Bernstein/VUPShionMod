@@ -66,7 +66,8 @@
   },
   "VUPShionMod:BetaArtUnlockEffect": {
     "TEXT": [
-      "Shion's new costume unlocked!"
+      "Shion's new costume unlocked!",
+	  "Wangchuan's new costume unlocked!"
     ]
   },
   "VUPShionMod:AbstractShionSkin": {
@@ -77,6 +78,16 @@
     "EXTRA_TEXT": [
       "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire.",
       "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire."
+    ]
+  },
+  "VUPShionMod:AbstractWangChuanSkin": {
+    "TEXT": [
+      "Nebula",
+      "Blade of Pure White"
+    ],
+    "EXTRA_TEXT": [
+      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world.",
+      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world."
     ]
   },
   "VUPShionMod:SkinPannel": {

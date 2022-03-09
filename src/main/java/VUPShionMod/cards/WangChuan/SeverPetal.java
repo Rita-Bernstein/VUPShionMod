@@ -49,6 +49,11 @@ public class SeverPetal extends AbstractWCCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.NONE));
 
+        if(this.timesUpgraded >=2)
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    AbstractGameAction.AttackEffect.NONE));
+
+
         this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
 

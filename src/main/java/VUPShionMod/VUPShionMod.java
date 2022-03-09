@@ -273,7 +273,7 @@ public class VUPShionMod implements
     @Override
     public void receivePostInitialize() {
         loadSettings();
-        unlockAllReskin();
+//        unlockAllReskin();
         Texture badgeTexture = new Texture(assetPath("/img/badge.png"));
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);

@@ -69,7 +69,6 @@ public class GameOverScreenPatches {
     public static class ReskinUnlockPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(VictoryScreen _instance) {
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
                 if (VUPShionMod.fightSpecialBossWithout || VUPShionMod.fightSpecialBoss) {
                     if (!Settings.seedSet && !Settings.isTrial) {
                         for (AbstractSkinCharacter c : CharacterSelectScreenPatches.characters) {
@@ -78,7 +77,6 @@ public class GameOverScreenPatches {
                         VUPShionMod.saveSettings();
                     }
                 }
-            }
 //分数的复位放这里了
             VUPShionMod.fightSpecialBossWithout = false;
             VUPShionMod.fightSpecialBoss = false;

@@ -48,7 +48,7 @@
   },
   "VUPShionMod:Nebula": {
     "NAME": "Nebula",
-    "FLAVOR": "Universal type of support equipment of Anastasia, includes elementary thrusters and energy shields.",
+    "FLAVOR": "Universal type of support equipment by Anastasia, includes elementary thrusters and energy shields.",
     "DESCRIPTIONS": [
       "At the start of your turn, gain #b3 #yBlock. Lose #b1 #yStiffness each turn."
     ]
@@ -83,9 +83,30 @@
   },
   "VUPShionMod:StarQuakes": {
     "NAME": "Starquake",
-    "FLAVOR": "Universal type of support equipment of Anastasia, a tachi blade driven by magia.",
+    "FLAVOR": "Universal type of support equipment by Anastasia, tachi blade driven by magia.",
     "DESCRIPTIONS": [
       "Whenever you play an #yAttack, gain #b3 #yCor #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:BlueSupergiant": {
+    "NAME": "Blue Supergiant",
+    "FLAVOR": "Improved model of the Blue Giant that manifests an enhanced level of output.",
+    "DESCRIPTIONS": [
+      "#rReplace Blue Giant. NL At the start of your turn, add a #yFunnel #Matrix into your hand."
+    ]
+  },
+  "VUPShionMod:PureHeart": {
+    "NAME": "Prototype: Pure Heart",
+    "FLAVOR": "Specialized type of support equipment by Anastasia, powerful blade cumbered by excessive magia that surges within.",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, gain #b5 #yCod #yGladii. At the end of your turn, lose #b50% of #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:WhitePurity": {
+    "NAME": "Prototype: White Purity",
+    "FLAVOR": "Improved model of Prototype: Pure Heart that is installed with a modified energy inhibitor.",
+    "DESCRIPTIONS": [
+      "#rReplace Prototype: Pure Heart. NL Whenever you play a card, gain #b5 #yCod #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
     ]
   }
 }

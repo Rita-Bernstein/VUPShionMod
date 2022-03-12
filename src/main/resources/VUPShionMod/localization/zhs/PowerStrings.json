@@ -315,7 +315,7 @@
   "VUPShionMod:PetalsFallPower": {
     "NAME": "散华",
     "DESCRIPTIONS": [
-      "每当你打出一张 #y攻击牌 ，获得 #b%d 层 #y剑意 。"
+      "每当你失去 #y剑意 时，获得失去层数 #b%d 倍的 #y格挡 。 NL 对所有敌人造成失去层数 #b%d 倍的伤害。"
     ]
   },
   "VUPShionMod:GainCorGladiiPower": {

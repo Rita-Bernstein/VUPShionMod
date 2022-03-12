@@ -86,6 +86,8 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
         this.startingDuration = 0.5F;
 
         this.scale = Settings.scale;
+
+        getPower();
     }
 
     @Override
@@ -101,7 +103,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
                 for (AbstractFinFunnel finFunnel : this.finFunnels) {
                     AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
-                    if(m == null)
+                    if (m == null)
                         return;
 
                     FinFunnelSmallLaserData data = new FinFunnelSmallLaserData();

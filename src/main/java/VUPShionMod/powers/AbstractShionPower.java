@@ -24,9 +24,6 @@ public class AbstractShionPower extends AbstractPower {
         this.img = ImageMaster.loadImage(path + imgName);
     }
 
-    public void onReducePower(AbstractPower power, AbstractCreature target, AbstractCreature source){
-    }
-
     public void onTriggerLoaded(){}
 
     public void onShuffle(){}
@@ -37,4 +34,9 @@ public class AbstractShionPower extends AbstractPower {
     public void onStackPower(AbstractPower power){
 
     }
+
+    public void onNumSpecificTrigger(int amount){
+    }
+
+
 }

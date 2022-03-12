@@ -401,7 +401,7 @@
   "VUPShionMod:HiltBash": {
     "NAME": "Hilt Bash",
     "DESCRIPTION": "Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice, draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice.",
     "EXTENDED_DESCRIPTION": [
       "Dual Slash"
     ]

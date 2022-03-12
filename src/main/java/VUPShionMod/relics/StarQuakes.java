@@ -33,7 +33,7 @@ public class StarQuakes extends CustomRelic {
         if (c.type == AbstractCard.CardType.ATTACK) {
             flash();
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                    new CorGladiiPower(AbstractDungeon.player, 3)));
+                    new CorGladiiPower(AbstractDungeon.player, 2)));
         }
     }
 

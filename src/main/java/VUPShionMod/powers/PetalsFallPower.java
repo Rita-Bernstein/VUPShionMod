@@ -2,7 +2,10 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -34,14 +37,14 @@ public class PetalsFallPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount, this.amount);
     }
 
     @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if (card.type == AbstractCard.CardType.ATTACK) {
-            flash();
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new CorGladiiPower(this.owner, this.amount)));
-        }
+    public void onNumSpecificTrigger(int amount) {
+        flash();
+        addToBot(new GainBlockAction(this.owner, this.amount));
+        addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount * amount, true),
+                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
     }
 }

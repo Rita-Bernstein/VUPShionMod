@@ -37,7 +37,7 @@ public class CharacterSelectScreenPatches {
     public static Hitbox reskinLock;
     public static Texture CF_RIGHT_ARROW = ImageMaster.loadImage("VUPShionMod/img/ui/CF_RIGHT_ARROW.png");
     public static Texture CF_LEFT_ARROW = ImageMaster.loadImage("VUPShionMod/img/ui/CF_LEFT_ARROW.png");
-    public static Texture Lock_Icon = ImageMaster.loadImage("images/relics/lock.png");
+    public static Texture Lock_Icon = ImageMaster.loadImage("VUPShionMod/img/ui/SkinLock.png");
 
 
     private static float reskin_Text_W = 50.0f * Settings.scale;  //FontHelper.getSmartWidth(FontHelper.cardTitleFont, TEXT[1], 9999.0F, 0.0F);

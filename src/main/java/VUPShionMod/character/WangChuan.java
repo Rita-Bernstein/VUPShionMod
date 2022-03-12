@@ -225,7 +225,7 @@ public class WangChuan extends CustomPlayer {
     @Override
     public void doCharSelectScreenSelectEffect() {
 
-        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
+//        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 
     @Override

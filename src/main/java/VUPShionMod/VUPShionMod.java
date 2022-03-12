@@ -193,7 +193,7 @@ public class VUPShionMod implements
 
     public static void unlockAllReskin() {
         for (AbstractSkinCharacter c : characters) {
-            c.reskinUnlock = true;
+            c.reskinUnlock = false;
         }
         saveSettings();
     }

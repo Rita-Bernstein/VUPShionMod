@@ -29,7 +29,7 @@ public class PureHeart extends CustomRelic {
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new CorGladiiPower(AbstractDungeon.player, 5)));
+                new CorGladiiPower(AbstractDungeon.player, 3)));
     }
 
     @Override

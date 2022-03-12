@@ -21,7 +21,8 @@ public class Skip extends AbstractWCCard {
 
     public Skip() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.exhaust =true;
     }
 
     @Override

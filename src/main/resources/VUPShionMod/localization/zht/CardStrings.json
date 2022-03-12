@@ -402,7 +402,7 @@
   "VUPShionMod:HiltBash": {
     "NAME": "柄擊",
     "DESCRIPTION": "造成 !D! 點傷害。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。 NL 抽一張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。",
     "EXTENDED_DESCRIPTION": [
       "瞬刃"
     ]

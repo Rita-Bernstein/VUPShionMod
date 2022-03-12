@@ -52,6 +52,24 @@ public class CorGladiiPower extends AbstractShionPower {
     }
 
     @Override
+    public void reducePower(int reduceAmount) {
+        super.reducePower(reduceAmount);
+        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
+            AbstractShionPower p =(AbstractShionPower)AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID);
+            p.onNumSpecificTrigger(reduceAmount);
+        }
+    }
+
+    @Override
+    public void onRemove() {
+        super.onRemove();
+        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
+            AbstractShionPower p =(AbstractShionPower)AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID);
+            p.onNumSpecificTrigger(this.amount);
+        }
+    }
+
+    @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }

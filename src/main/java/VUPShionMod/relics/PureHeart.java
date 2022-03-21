@@ -1,10 +1,14 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.WangChuan.OnrushingTip;
 import VUPShionMod.powers.CorGladiiPower;
 import basemod.abstracts.CustomRelic;
+import basemod.cardmods.EtherealMod;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -39,5 +43,22 @@ public class PureHeart extends CustomRelic {
             int amount = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount / 2;
             addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, CorGladiiPower.POWER_ID, amount));
         }
+    }
+
+    @Override
+    public void atTurnStartPostDraw() {
+        AbstractCard c = new OnrushingTip();
+        CardModifierManager.addModifier(c, new EtherealMod());
+        addToBot(new MakeTempCardInHandAction(c, 1));
+    }
+
+    @Override
+    public void onEquip() {
+        AbstractDungeon.player.energy.energyMaster--;
+    }
+
+    @Override
+    public void onUnequip() {
+        AbstractDungeon.player.energy.energyMaster++;
     }
 }

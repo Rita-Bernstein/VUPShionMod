@@ -927,5 +927,65 @@
   "VUPShionMod:FunnelMatrix": {
     "NAME": "自动浮游矩阵",
     "DESCRIPTION": "对一名敌人触发2次侦查 vup_shion_mod:浮游炮 和重力 vup_shion_mod:浮游炮 及3次追击 vup_shion_mod:浮游炮 的被动效果。 NL 消耗 。"
+  },
+  "VUPShionMod:Alleviator": {
+    "NAME": "缓冲回路",
+    "DESCRIPTION": "每回合第一次触发 vup_shion_mod:魔能过载 时，获得 [E] [E] 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合第一次触发 vup_shion_mod:魔能过载 时，获得 [E] [E] 。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:Recharger": {
+    "NAME": "充能回路",
+    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时，获得 !M! 点 力量 。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:Accelerator": {
+    "NAME": "加速回路",
+    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时，获得 !M! 点 敏捷 。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:Recoiler": {
+    "NAME": "反冲回路",
+    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时，对所有敌人造成 !M! 点伤害。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:Gravitater": {
+    "NAME": "重力回路",
+    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时，获得 !M! 点 格挡 。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:Superloader": {
+    "NAME": "超载回路",
+    "DESCRIPTION": "下 !M! 次获得 vup_shion_mod:魔能过载 时， NL 抽一张牌。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 下 !M! 次获得 vup_shion_mod:魔能过载 时， NL 抽一张牌。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:Antisequencer": {
+    "NAME": "逆时序回路",
+    "DESCRIPTION": "每回合开始获得 vup_shion_mod:魔能过载 ， NL 打出抽牌堆顶部的 !M! 张牌。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "每回合开始获得 vup_shion_mod:魔能过载 2， NL 打出抽牌堆顶部的 !M! 张牌。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:GensBombardae": {
+    "NAME": "魔弹生成",
+    "DESCRIPTION": "将 X+1 张 *魔连弹 加入手牌。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "将 X+1 张 *魔连弹+ 加入手牌。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:MagicProjection": {
+    "NAME": "投影魔术",
+    "DESCRIPTION": "获得 !M! 张带有 消耗 的随机攻击牌。 NL 它们的耗能为0。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "获得一张带有 消耗 的 *无限剑制+ 。 NL 它的耗能为0。 NL vup_shion_mod:魔能过载 。",
+    "EXTENDED_DESCRIPTION": [
+      "投影魔法",
+      "伪·固有结界",
+      "获得 !M! 张 升级 的带有 消耗 的随机攻击牌。 NL 它们的耗能为0。 NL vup_shion_mod:魔能过载 。"
+    ]
+  },
+  "VUPShionMod:NihilImmensum": {
+    "NAME": "伪·无量空处",
+    "DESCRIPTION": "每获得 !M! 次 vup_shion_mod:魔能过载 ，获得一层 无实体 。 NL vup_shion_mod:魔能过载 2。"
+  },
+  "VUPShionMod:ArtificiumMundi": {
+    "NAME": "伪·世界",
+    "DESCRIPTION": "所有手牌本回合耗能为0。 NL 他们打出时获得 vup_shion_mod:魔能过载 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 所有手牌本回合耗能为0。 NL 他们打出时获得 vup_shion_mod:魔能过载 。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:OculusMortis": {
+    "NAME": "伪·直死魔眼",
+    "DESCRIPTION": "每回合开始时给予随机敌人 !M! 层 易伤 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "每回合开始时给予所有敌人 !M! 层 易伤 。 NL vup_shion_mod:魔能过载 。"
   }
 }

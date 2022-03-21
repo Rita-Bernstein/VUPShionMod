@@ -43,7 +43,7 @@ public class PetalsFallPower extends AbstractShionPower {
     @Override
     public void onNumSpecificTrigger(int amount) {
         flash();
-        addToBot(new GainBlockAction(this.owner, this.amount));
+        addToBot(new GainBlockAction(this.owner, this.amount * amount));
         addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount * amount, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
     }

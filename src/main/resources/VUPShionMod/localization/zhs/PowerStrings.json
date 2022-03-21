@@ -456,5 +456,72 @@
     "DESCRIPTIONS": [
       "敌人的增援正在赶来。"
     ]
+  },
+  "VUPShionMod:AlleviatorPower": {
+    "NAME": "缓冲回路",
+    "DESCRIPTIONS": [
+      "每回合第一次触发 vup_shion_mod:魔能过载 时，获得 #b%d [E] 。"
+    ]
+  },
+  "VUPShionMod:RechargerPower": {
+    "NAME": "充能回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，获得 #b%d 点 #y力量 。"
+    ]
+  },
+  "VUPShionMod:AcceleratorPower": {
+    "NAME": "加速回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，获得 #b%d 点 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:RecoilerPower": {
+    "NAME": "反冲回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，对所有敌人造成 b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:GravitaterPower": {
+    "NAME": "重力回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，获得 b%d 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:SuperloaderPower": {
+    "NAME": "重力回路",
+    "DESCRIPTIONS": [
+      "下 b%d 次获得 #y魔能过载 时， NL 抽一张牌。"
+    ]
+  },
+  "VUPShionMod:AntisequencerPower": {
+    "NAME": "重力回路",
+    "DESCRIPTIONS": [
+      "每回合开始时打出抽牌堆顶部的 #b%d 张牌。",
+      "每回合开始时打出抽牌堆顶部的 #b%d 张牌。"
+    ]
+  },
+  "VUPShionMod:NihilImmensumPower": {
+    "NAME": "伪·无量空处",
+    "DESCRIPTIONS": [
+      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y无实体 。(已获得过 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:NihilImmensum2Power": {
+    "NAME": "伪·无量空处+",
+    "DESCRIPTIONS": [
+      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y无实体 。(已获得过 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:OculusMortisPower": {
+    "NAME": "伪·直死魔眼",
+    "DESCRIPTIONS": [
+      "每回合开始时给予随机 #b%d 名敌人 #b1 层 #y易伤 。"
+    ]
+  },
+  "VUPShionMod:OculusMortis2Power": {
+    "NAME": "伪·直死魔眼",
+    "DESCRIPTIONS": [
+      "每回合开始时给予所有敌人 #b%d 层 #y易伤 。"
+    ]
   }
 }

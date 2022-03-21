@@ -58,8 +58,18 @@ public class MagiamObruorPower extends AbstractShionPower {
             AbstractPower p = this.owner.getPower(MensVirtusquePower.POWER_ID);
             p.flash();
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, p.amount * this.amount)));
-        } else
+        } else {
             addToBot(new LoseEnergyAction(this.amount));
+            for(AbstractPower p : AbstractDungeon.player.powers){
+                if(p instanceof AbstractShionPower){
+                    ((AbstractShionPower) p).onTriggerMagiamObruor(this);
+                }
+
+                if(p instanceof  NihilImmensumPower || p instanceof NihilImmensum2Power){
+                    p.onSpecificTrigger();
+                }
+            }
+        }
 
         addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player,MagiamObruorPower.POWER_ID));
     }

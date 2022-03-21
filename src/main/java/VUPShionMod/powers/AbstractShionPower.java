@@ -26,6 +26,9 @@ public class AbstractShionPower extends AbstractPower {
 
     public void onTriggerLoaded(){}
 
+    public void onTriggerMagiamObruor(AbstractPower power){}
+
+
     public void onShuffle(){}
 
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount){

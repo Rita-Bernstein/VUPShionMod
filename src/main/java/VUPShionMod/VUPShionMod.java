@@ -176,7 +176,7 @@ public class VUPShionMod implements
                 characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
                 characters[i].reskinCount = config.getInt(CardCrawlGame.saveSlot + "reskinCount" + i);
 
-                if(characters[i].reskinCount > characters[i].skins.length -1){
+                if (characters[i].reskinCount > characters[i].skins.length - 1) {
                     characters[i].reskinCount = 0;
                 }
             }
@@ -310,7 +310,6 @@ public class VUPShionMod implements
                 .create());
 
 
-
         BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
@@ -321,8 +320,6 @@ public class VUPShionMod implements
                 .playerClass(AbstractPlayerEnum.WangChuan)
                 .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
                 .create());
-
-
 
 
         BaseMod.addEvent(new AddEventParams.Builder(BreakAppointment.ID, BreakAppointment.class) //Event ID//
@@ -521,7 +518,6 @@ public class VUPShionMod implements
         cards.add(new FunnelMatrix());
 
 
-
 //        忘川
         cards.add(new HiltBash());
         cards.add(new Slide());
@@ -575,6 +571,20 @@ public class VUPShionMod implements
         cards.add(new Replenish());
         cards.add(new VampireForm());
 
+//        忘川-魔能过载
+        cards.add(new Alleviator());
+        cards.add(new Recharger());
+        cards.add(new Accelerator());
+        cards.add(new Recoiler());
+        cards.add(new Gravitater());
+        cards.add(new Superloader());
+        cards.add(new Antisequencer());
+        cards.add(new GensBombardae());
+        cards.add(new MagicProjection());
+        cards.add(new NihilImmensum());
+        cards.add(new ArtificiumMundi());
+        cards.add(new OculusMortis());
+
 //        通典
         cards.add(new ChaosNimius());
         cards.add(new ChaosRapidus());
@@ -622,7 +632,7 @@ public class VUPShionMod implements
             if (card instanceof AbstractShionCard)
                 shi_Cards.add(card);
 
-            if (card instanceof AbstractCodexCard)
+            if (card instanceof AbstractCodexCard && !(card instanceof ChaosNimius) && !(card instanceof ChaosRapidus))
                 codex_Cards.add(card);
 
         }

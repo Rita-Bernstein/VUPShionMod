@@ -1,10 +1,14 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.WangChuan.OnrushingTip;
 import VUPShionMod.powers.CorGladiiPower;
 import basemod.abstracts.CustomRelic;
+import basemod.cardmods.EtherealMod;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -44,6 +48,14 @@ public class WhitePurity extends CustomRelic {
         }
     }
 
+
+    @Override
+    public void atTurnStartPostDraw() {
+        AbstractCard c = new OnrushingTip();
+        CardModifierManager.addModifier(c, new EtherealMod());
+        addToBot(new MakeTempCardInHandAction(c, 1));
+    }
+
     @Override
     public void obtain() {
         AbstractPlayer player = AbstractDungeon.player;
@@ -53,6 +65,7 @@ public class WhitePurity extends CustomRelic {
                 .ifPresent(index -> instantObtain(player, index, true));
 
         (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.25F;
+        AbstractDungeon.player.energy.energyMaster++;
     }
 
     @Override

@@ -36,9 +36,13 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
+import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -297,45 +301,57 @@ public class VUPShionMod implements
 
 //        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 
-        BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
-                //Event Character//
-                .playerClass(AbstractPlayerEnum.VUP_Shion)
-                .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
-                .create());
+        ArrayList<AbstractPlayer.PlayerClass> list = new ArrayList<>();
+        list.add(AbstractPlayerEnum.VUP_Shion);
+        list.add(AbstractPlayerEnum.WangChuan);
 
-        BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
-                //Event Character//
-                .playerClass(AbstractPlayerEnum.WangChuan)
-                .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
-                .create());
+//        mod公共事件
+        for(AbstractPlayer.PlayerClass playerClass : list){
+            BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
+                    //Event Character//
+                    .playerClass(playerClass)
+                    .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID))
+                    .create());
 
 
-        BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
-                //Event Character//
-                .playerClass(AbstractPlayerEnum.VUP_Shion)
-                .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
-                .create());
+            BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
+                    //Event Character//
+                    .playerClass(playerClass)
+                    .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID))
+                    .create());
 
-        BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
-                .playerClass(AbstractPlayerEnum.WangChuan)
-                .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
-                .create());
+            BaseMod.addEvent(new AddEventParams.Builder(DaysGoneBy.ID, DaysGoneBy.class) //Event ID//
+                    .playerClass(playerClass)
+                    .create());
+        }
 
 
         BaseMod.addEvent(new AddEventParams.Builder(BreakAppointment.ID, BreakAppointment.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
-                .spawnCondition(() -> !AbstractDungeon.id.equals("TheEnding"))
+                .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID))
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(Newborn.ID, Newborn.class) //Event ID//
                 //Event Character//
-                .spawnCondition(() -> AbstractDungeon.id.equals("TheEnding"))
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(Contact.ID, Contact.class) //Event ID//
                 //Event Character//
-                .spawnCondition(() -> AbstractDungeon.id.equals("TheEnding"))
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
+                .create());
+
+
+        BaseMod.addEvent(new AddEventParams.Builder(LakeAmidst.ID, LakeAmidst.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.WangChuan)
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(BoundaryOfChaos.ID, BoundaryOfChaos.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.WangChuan)
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID)
+                        && (BoundaryOfChaos.hasCodex() || BoundaryOfChaos.hasCodex1() || BoundaryOfChaos.hasCodex2()))
                 .create());
 
 
@@ -655,6 +671,7 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new StarQuakes(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new PureHeart(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new WhitePurity(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new SapphireRoseNecklace(), CardColorEnum.WangChuan_LIME);
 
     }
 

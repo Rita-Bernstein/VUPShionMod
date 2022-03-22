@@ -66,6 +66,10 @@ public class Contact extends AbstractImageEvent {
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new TrackingBeacon());
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+        AbstractDungeon.bossList.clear();
+        AbstractDungeon.bossList.add(PlagaAMundo.ID);
+        AbstractDungeon.bossList.add(PlagaAMundo.ID);
+        AbstractDungeon.bossList.add(PlagaAMundo.ID);
         AbstractDungeon.bossKey = PlagaAMundo.ID;
         MapRoomNode node = new MapRoomNode(-1, 15);
         node.room = new MonsterRoomBoss();

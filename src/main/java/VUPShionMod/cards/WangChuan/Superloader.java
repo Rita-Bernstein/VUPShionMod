@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Superloader extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("Accelerator");
+    public static final String ID = VUPShionMod.makeID("Superloader");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc51.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

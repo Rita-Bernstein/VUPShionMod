@@ -113,7 +113,7 @@
     "NAME": "蓝蔷薇项链",
     "FLAVOR": "UPDATE BODY TEXT",
     "DESCRIPTIONS": [
-      "每场战斗结束是获得 #b2 点最大生命。"
+      "每场战斗结束时获得 #b2 点最大生命。"
     ]
   }
 }

@@ -44,6 +44,7 @@ public class IgnisRapidus extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(1);
+                upgradeBaseCost(0);
             }
         }
     }

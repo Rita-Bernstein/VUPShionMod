@@ -38,6 +38,10 @@ public class MagiamObruorPower extends AbstractShionPower {
             if(p instanceof AbstractShionPower){
                 ((AbstractShionPower) p).onStackPower(this);
             }
+
+            if(p instanceof  NihilImmensumPower || p instanceof NihilImmensum2Power){
+                p.onSpecificTrigger();
+            }
         }
     }
 
@@ -47,6 +51,10 @@ public class MagiamObruorPower extends AbstractShionPower {
         for(AbstractPower p : AbstractDungeon.player.powers){
             if(p instanceof AbstractShionPower){
                 ((AbstractShionPower) p).onStackPower(this);
+            }
+
+            if(p instanceof  NihilImmensumPower || p instanceof NihilImmensum2Power){
+                p.onSpecificTrigger();
             }
         }
     }
@@ -63,10 +71,6 @@ public class MagiamObruorPower extends AbstractShionPower {
             for(AbstractPower p : AbstractDungeon.player.powers){
                 if(p instanceof AbstractShionPower){
                     ((AbstractShionPower) p).onTriggerMagiamObruor(this);
-                }
-
-                if(p instanceof  NihilImmensumPower || p instanceof NihilImmensum2Power){
-                    p.onSpecificTrigger();
                 }
             }
         }

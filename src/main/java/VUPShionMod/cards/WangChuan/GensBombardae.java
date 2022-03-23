@@ -36,7 +36,7 @@ public class GensBombardae extends AbstractWCCard {
         Consumer<Integer> actionConsumer = effect -> {
             AbstractCard c = new BombardaMagica();
             if (upgraded) c.upgrade();
-            addToBot(new MakeTempCardInHandAction(c, effect + 1));
+            addToBot(new MakeTempCardInHandAction(c, effect + 2));
         };
         addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));

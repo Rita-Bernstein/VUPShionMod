@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 
 public class AcceleratorPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("AcceleratorPower");
@@ -38,6 +39,7 @@ public class AcceleratorPower extends AbstractShionPower {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
             addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,this.amount)));
+            addToBot(new ApplyPowerAction(this.owner,this.owner,new LoseDexterityPower(this.owner,this.amount)));
         }
     }
 }

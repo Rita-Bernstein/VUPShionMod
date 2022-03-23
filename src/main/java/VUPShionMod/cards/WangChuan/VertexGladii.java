@@ -25,7 +25,7 @@ public class VertexGladii extends AbstractWCCard {
     public VertexGladii() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 10;
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
@@ -141,7 +141,7 @@ public class VertexGladii extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeBaseCost(2);
+                upgradeBaseCost(4);
             }
         }
     }

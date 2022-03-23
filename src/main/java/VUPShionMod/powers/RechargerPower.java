@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class RechargerPower extends AbstractShionPower {
@@ -38,6 +39,7 @@ public class RechargerPower extends AbstractShionPower {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
             addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,this.amount)));
+            addToBot(new ApplyPowerAction(this.owner,this.owner,new LoseStrengthPower(this.owner,this.amount)));
         }
     }
 }

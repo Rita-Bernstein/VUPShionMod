@@ -38,7 +38,7 @@ public class RosaSpinaque extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Consumer<Integer> actionConsumer = effect -> {
-            Supplier<AbstractPower> powerToApply = () -> new ConstrictedPower(null, AbstractDungeon.player, this.upgraded ? 7 * effect : 5 * effect);
+            Supplier<AbstractPower> powerToApply = () -> new ConstrictedPower(null, AbstractDungeon.player, this.upgraded ? 9 * effect : 6 * effect);
             addToTop(new ApplyPowerToAllEnemyAction(powerToApply));
         };
         addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));

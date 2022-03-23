@@ -523,5 +523,12 @@
     "DESCRIPTIONS": [
       "每回合开始时给予所有敌人 #b%d 层 #y易伤 。"
     ]
+  },
+  "VUPShionMod:FlawlessParryPower": {
+    "NAME": "见切",
+    "DESCRIPTIONS": [
+      "阻止下一次你受到的生命值损伤。",
+      "阻止下 #b%d 次你受到的生命值损伤。"
+    ]
   }
 }

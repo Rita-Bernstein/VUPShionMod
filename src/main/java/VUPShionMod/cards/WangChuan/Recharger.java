@@ -19,7 +19,7 @@ public class Recharger extends AbstractWCCard {
 
     public Recharger() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Recharger extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(2);
         }
     }
 }

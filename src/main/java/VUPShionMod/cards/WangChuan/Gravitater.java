@@ -19,7 +19,7 @@ public class Gravitater extends AbstractWCCard {
 
     public Gravitater() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 6;
     }
 
     @Override

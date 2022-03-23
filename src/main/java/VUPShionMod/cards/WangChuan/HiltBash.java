@@ -19,7 +19,7 @@ public class HiltBash extends AbstractWCCard {
 
     public HiltBash() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
+        this.baseDamage = 5;
         this.magicNumber = this.baseMagicNumber = 1;
     }
 
@@ -36,7 +36,6 @@ public class HiltBash extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(-1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             this.initializeTitle();

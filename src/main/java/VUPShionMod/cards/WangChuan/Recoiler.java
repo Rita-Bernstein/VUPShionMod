@@ -19,7 +19,7 @@ public class Recoiler extends AbstractWCCard {
 
     public Recoiler() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 8;
+        this.magicNumber = this.baseMagicNumber = 7;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Recoiler extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(3);
         }
     }
 }

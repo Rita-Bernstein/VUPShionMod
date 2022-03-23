@@ -22,14 +22,14 @@ public class AnimaSpiritusque extends AbstractWCCard {
     public AnimaSpiritusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM =this.baseSecondaryM = 5;
-        this.exhaust =true;
+        this.secondaryM = this.baseSecondaryM = 4;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new EnergizedBluePower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new RegenPower(p,this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new RegenPower(p, this.secondaryM)));
     }
 
     @Override

@@ -2,6 +2,7 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.CorGladiiPower;
+import VUPShionMod.powers.FlawlessParryPower;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -32,7 +33,7 @@ public class FlawlessParry extends AbstractWCCard {
         if (p.hasPower(CorGladiiPower.POWER_ID) && upgraded)
             addToBot(new DamageAction(m, new DamageInfo(p, p.getPower(CorGladiiPower.POWER_ID).amount, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
 
-        addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new FlawlessParryPower(p, this.magicNumber)));
         if (StiffnessPower.applyStiffness())
             addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));
         addToBot(new DrawCardAction(1));

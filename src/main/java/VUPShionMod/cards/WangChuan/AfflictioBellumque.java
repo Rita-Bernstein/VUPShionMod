@@ -51,7 +51,7 @@ public class AfflictioBellumque extends AbstractWCCard {
         Supplier<AbstractPower> powerToApply = () -> new VulnerablePower(null, this.magicNumber, false);
         addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
 
-        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, this.upgraded?1:2)));
 
     }
 
@@ -59,7 +59,8 @@ public class AfflictioBellumque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-//            upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
             upgradeDamage(4);
         }
     }

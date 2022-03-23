@@ -20,7 +20,7 @@ public class Sharpen extends AbstractWCCard {
 
     public Sharpen() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 9;
+        this.magicNumber = this.baseMagicNumber = 12;
         this.exhaust = true;
     }
 

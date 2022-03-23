@@ -27,7 +27,7 @@ public class SeverPetal extends AbstractWCCard {
     public SeverPetal() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 10;
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.secondaryM = this.baseSecondaryM = 5;
     }
 
@@ -129,7 +129,7 @@ public class SeverPetal extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeMagicNumber(6);
+                upgradeMagicNumber(7);
                 upgradeSecondM(2);
             }
 

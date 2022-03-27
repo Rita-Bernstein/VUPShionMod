@@ -68,6 +68,8 @@ public class BoundaryOfChaos extends AbstractImageEvent {
         }
         else
             this.imageEventText.setDialogOption(OPTIONS[5], true);
+
+        this.imageEventText.setDialogOption(OPTIONS[6]);
     }
 
 
@@ -95,6 +97,9 @@ public class BoundaryOfChaos extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(codex2, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                         logMetricObtainCard(NAME, "Control", codex2);
+                        break;
+                    case 3:
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[4]);
                         break;
                 }
 

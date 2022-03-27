@@ -207,8 +207,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "姿态解放-克洛伊斯",
-    "DESCRIPTION": "效果不能叠加。 NL 每回合结束时，将 !M! 张 *快速筛选 加入抽牌堆顶部。",
-    "UPGRADE_DESCRIPTION": "效果不能叠加。 NL 每回合结束时，将 !M! 张 *快速筛选+ 加入抽牌堆顶部。"
+    "DESCRIPTION": "效果不能叠加。 NL 每回合结束时，将 !M! 张 *快速筛选 加入抽牌堆。",
+    "UPGRADE_DESCRIPTION": "效果不能叠加。 NL 每回合结束时，将 !M! 张 *快速筛选+ 加入抽牌堆。"
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "时空扭曲",

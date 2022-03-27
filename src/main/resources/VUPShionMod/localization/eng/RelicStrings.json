@@ -92,7 +92,7 @@
     "NAME": "Blue Supergiant",
     "FLAVOR": "Improved model of the Blue Giant that manifests an enhanced level of output.",
     "DESCRIPTIONS": [
-      "#rReplace Blue Giant. NL At the start of your turn, add a #yFunnel #Matrix into your hand."
+      "#rReplace Blue Giant. NL At the start of your turn, add a #yFunnel #yMatrix into your hand."
     ]
   },
   "VUPShionMod:PureHeart": {
@@ -107,6 +107,13 @@
     "FLAVOR": "Improved model of Prototype: Pure Heart that is installed with a modified energy inhibitor.",
     "DESCRIPTIONS": [
       "#rReplace Prototype: Pure Heart. NL Whenever you play a card, gain #b5 #yCod #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:SapphireRoseNecklace": {
+    "NAME": "Sapphire Rose Necklace",
+    "FLAVOR": "A simply embellished, discreet pendant. Every passing moment of the past in eyes of the sisters has been recorded and engraved in the soul dwelling within.",
+    "DESCRIPTIONS": [
+      "At the end of combat, gain #b2 Max HP."
     ]
   }
 }

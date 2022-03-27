@@ -456,5 +456,79 @@
     "DESCRIPTIONS": [
       "Enemy reinforcement incoming..."
     ]
+  },
+  "VUPShionMod:AlleviatorPower": {
+    "NAME": "Alleviator",
+    "DESCRIPTIONS": [
+      "Every first time you trigger #yMagiam #yObruor each turn, gain #b%d [E] ."
+    ]
+  },
+  "VUPShionMod:RechargerPower": {
+    "NAME": "Recharger",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yMagiam #yObruor, gain #b%d #yStrength."
+    ]
+  },
+  "VUPShionMod:AcceleratorPower": {
+    "NAME": "Accelerator",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yMagiam #yObruor, gain #b%d #yDexterity."
+    ]
+  },
+  "VUPShionMod:RecoilerPower": {
+    "NAME": "Recoiler",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yMagiam #yObruor, deal b%d damage to ALL enemies."
+    ]
+  },
+  "VUPShionMod:GravitaterPower": {
+    "NAME": "Gravitater",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yMagiam #yObruor, gain b%d #yBlock."
+    ]
+  },
+  "VUPShionMod:SuperloaderPower": {
+    "NAME": "Superloader",
+    "DESCRIPTIONS": [
+      "For the next b%d times you gain #yMagiam #yObruor, draw 1 card."
+    ]
+  },
+  "VUPShionMod:AntisequencerPower": {
+    "NAME": "Anyisequencer",
+    "DESCRIPTIONS": [
+      "At the start of your turn, play the top #b%d cards in your draw pile.",
+      "At the start of your turn, play the top #b%d cards in your draw pile."
+    ]
+  },
+  "VUPShionMod:NihilImmensumPower": {
+    "NAME": "Nihil Immensum",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Gained #b%d times.)"
+    ]
+  },
+  "VUPShionMod:NihilImmensum2Power": {
+    "NAME": "Nihil Immensum+",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Gained #b%d times.)"
+    ]
+  },
+  "VUPShionMod:OculusMortisPower": {
+    "NAME": "Oculus Occidit",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b1 #yVulnerable to #b%d random enemies."
+    ]
+  },
+  "VUPShionMod:OculusMortis2Power": {
+    "NAME": "Oculus Occidit+",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b%d Vulnerable to ALL enemies."
+    ]
+  },
+  "VUPShionMod:FlawlessParryPower": {
+    "NAME": "Flawless Parry",
+    "DESCRIPTIONS": [
+      "Prevent the next time you would lose HP.",
+      "Prevent the next #b%d times you would lose HP."
+    ]
   }
 }

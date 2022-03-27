@@ -488,13 +488,13 @@
     ]
   },
   "VUPShionMod:SuperloaderPower": {
-    "NAME": "重力回路",
+    "NAME": "超载回路",
     "DESCRIPTIONS": [
       "下 b%d 次获得 #y魔能过载 时， NL 抽一张牌。"
     ]
   },
   "VUPShionMod:AntisequencerPower": {
-    "NAME": "重力回路",
+    "NAME": "逆时序回路",
     "DESCRIPTIONS": [
       "每回合开始时打出抽牌堆顶部的 #b%d 张牌。",
       "每回合开始时打出抽牌堆顶部的 #b%d 张牌。"

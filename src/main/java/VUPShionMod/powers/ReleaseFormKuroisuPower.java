@@ -28,7 +28,7 @@ public class ReleaseFormKuroisuPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new MakeLoadedCardAction(new QuickScreen(),this.amount));
+        addToBot(new MakeLoadedCardAction(new QuickScreen(),this.amount,false));
 //        addToBot(new MakeTempCardInDrawPileAction(new QuickScreen(), this.amount, false, true, false));
     }
 

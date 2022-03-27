@@ -141,7 +141,8 @@ public class VertexGladii extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeBaseCost(4);
+                upgradeBaseCost(2);
+                upgradeMagicNumber(2);
             }
         }
     }

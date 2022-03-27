@@ -11,8 +11,11 @@ import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+
+import java.util.ArrayList;
 
 public class LakeAmidst extends AbstractImageEvent {
     public static final String ID = VUPShionMod.makeID("LakeAmidst");
@@ -64,10 +67,19 @@ public class LakeAmidst extends AbstractImageEvent {
                         break;
                     case 2:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
+                        ArrayList<AbstractCard> cardsToRemove = new ArrayList<>();
                         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
                             if (c instanceof Slide)
-                                AbstractDungeon.player.masterDeck.removeCard(c);
+                                cardsToRemove.add(c);
                         }
+
+                        for (AbstractCard card : cardsToRemove) {
+                            AbstractDungeon.effectList.add(new PurgeCardEffect(card));
+                        }
+
+                        AbstractDungeon.player.masterDeck.group.removeAll(cardsToRemove);
+                        cardsToRemove.clear();
+
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH * 0.2f, Settings.HEIGHT / 2.0F));
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH * 0.8f, Settings.HEIGHT / 2.0F));

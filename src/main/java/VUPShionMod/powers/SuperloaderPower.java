@@ -39,7 +39,7 @@ public class SuperloaderPower extends AbstractShionPower {
     public void onStackPower(AbstractPower power) {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
-            addToBot(new DrawCardAction(this.amount));
+            addToBot(new DrawCardAction(1));
             if (this.amount > 1)
                 this.amount--;
             else

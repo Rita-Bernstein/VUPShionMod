@@ -83,5 +83,56 @@
       "[Return Home]",
       "[Locked] Further Update Awaits."
     ]
+  },
+  "VUPShionMod:LakeAmidst": {
+    "NAME": "Lake on the Spire",
+    "DESCRIPTIONS": [
+      "The stroke of moonlight and the susurrus of the breeze has set your mind empty, as your sight returns, a vast mirror of water lays bare in your eyes.",
+      "You decide to avail yourself of this idyllic scenery. A nap at ease, maybe?",
+      "You decide to indulge your curiosity that is readily tickled by its underwater scenery. You segregate the water into two, letting out a gorge with fish schooling aside the crack. ",
+      "You decide to meander about the mid-lake to take a closer inspection. You rove above the water, and by your patter, the reflections of the moon gently fluctuate splintered.",
+      "Maybe next time..."
+    ],
+    "OPTIONS": [
+      "[Camp] #gGain 10 Max HP.",
+      "[View Underwater] #gObtain 1 Sever Current.",
+      "[To the Mid-lake] #rRemove all Slide and Multi Slide, #gObatin 3 Moonstrider.",
+      "[Locked] Slide or Multi Slide is required.",
+      "[Leave]"
+    ]
+  },
+  "VUPShionMod:BoundaryOfChaos": {
+    "NAME": "Boundary of Chaos",
+    "DESCRIPTIONS": [
+      "You trudge into a remnant in an enormous disorder of the elements, where the odor of an antediluvian war still lingers. Peculiar hue condenses in the atomsphere as you contrive to sense its origin.",
+      "As you try to feel it with spiritual power, an indistinguishable element slips into your strength.",
+      "As you try to trap it with spiritual power, an indistinguishable element joins your mind, manifesting great activity.",
+      "As you try to manupulate it with spiritual power, an indistinguishable element stampedes and ultimately abides in you, fueling you with a motley yet immense source of power.",
+      "Maybe next time..."
+    ],
+    "OPTIONS": [
+      "[Feel It] #gObtain 1 Codex Chai.",
+      "[Locked] Any universal Codex is required.",
+      "[Trap It] #gObtain 1 upgraded Codex Chai.",
+      "[Locked] Any upgraded universal Codex is required.",
+      "[Manupulate It] #gObtain 1 Chaos Intensus",
+      "[Locked] Any twiced upgraded universal Codex is required.",
+      "[Leave]"
+    ]
+  },
+  "VUPShionMod:DaysGoneBy": {
+    "NAME": "Sweet Memories",
+    "DESCRIPTIONS": [
+      "You see debris of what seems to be your memory being placed on a stone pedestal. NL ——'It's the time now. Bid farewell to me with some affections, will you?'  NL ——'I only wish for the futility of such farewells. I shall be waiting to welcome your safe return.'",
+      "The memory weighs in with determination. Your face registers a smile in relief, you blade echoes to the pulse of your melted heart.",
+      "The memory kindles strength within you. The necklace sprawls on the pedestal, its owner and her name blazes reminiscently in your memory.",
+      "——'Unless I meet my mortality sooner than you.'  NL NL No, she can not have heard you whispering that one. You smile in relief, lay a necklace by the pedestal out of your sigil, and proceed again."
+    ],
+    "OPTIONS": [
+      "[I am Resolved] #gObtain Ruby Key.",
+      "[I am Empowered] #gObatin Sapphire Rose Necklace.",
+      "[Piece Together] #gIntegrate the shards of memory, gain 10 Sanity.",
+      "[Leave]"
+    ]
   }
 }

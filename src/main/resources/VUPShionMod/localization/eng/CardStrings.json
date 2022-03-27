@@ -56,8 +56,8 @@
   },
   "VUPShionMod:EnduranceInitiation": {
     "NAME": "Endure",
-    "DESCRIPTION": "Create 1 copy of the chosen card and shuffle it into your draw pile. NL Grant it vup_shion_mod:Loading\u00a0Complete. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Create 2 copies of the chosen card and shuffle one each into your draw pile and discard pile. NL Grant both vup_shion_mod:Loading\u00a0Complete. NL Exhaust."
+    "DESCRIPTION": "Create 1 copy of the chosen card and shuffle it into your draw pile. NL Grant it vup_shion_mod:Loading\u00a0Complete and Exhaust. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Create 2 copies of the chosen card and shuffle one each into your draw pile and discard pile. NL Grant both vup_shion_mod:Loading\u00a0Complete and Exhaust. NL Exhaust."
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "Ready Posture",
@@ -622,8 +622,8 @@
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "Spina Rosae",
-    "DESCRIPTION": "Ethereal. NL Apply 7X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
-    "UPGRADE_DESCRIPTION": "Ethereal. NL Apply 10X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
+    "DESCRIPTION": "Ethereal. NL Apply 5X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Apply 7X vup_shion_mod:Constricted and !M! Weak to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "Mors Universi",
@@ -662,8 +662,8 @@
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "Anima Virtutis",
-    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Magiam\u00a0Obruor, you no longer lose energy and gain !M! vup_shion_mod:Cor\u00a0Gladii instead.",
-    "UPGRADE_DESCRIPTION": "Whenever you trigger vup_shion_mod:Magiam\u00a0Obruor, you no longer lose energy and gain !M! vup_shion_mod:Cor\u00a0Gladii instead."
+    "DESCRIPTION": "Whenever you trigger vup_shion_mod:Magiam\u00a0Obruor, you no longer lose energy but gain !M! vup_shion_mod:Cor\u00a0Gladii instead. Upgrade all cards in your deck for the rest of the combat.",
+    "UPGRADE_DESCRIPTION": "Whenever you trigger vup_shion_mod:Magiam\u00a0Obruor, you no longer lose energy but gain !M! vup_shion_mod:Cor\u00a0Gladii instead. Upgrade all cards in your deck for the rest of the combat."
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "Elysium Spei",
@@ -684,7 +684,7 @@
   "VUPShionMod:VampireForm": {
     "NAME": "Vampire Form",
     "DESCRIPTION": "Whenever you deal unblocked damage with Attacks, heal !M! HP.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you deal unblocked damage with Attacks, heal !M! HP."
+    "UPGRADE_DESCRIPTION": "Whenever you deal unblocked damage with Attacks, heal !M! HP."
   },
    "VUPShionMod:ChaosNimius": {
     "NAME": "Codex Chai",
@@ -929,5 +929,65 @@
   "VUPShionMod:FunnelMatrix": {
     "NAME": "Funnel Matrix",
     "DESCRIPTION": "Trigger the passive ability of Scouting vup_shion_mod:Funnel and Gravity vup_shion_mod:Funnel for twice and Pursuing vup_shion_mod:Funnel for thrice to an enemy. NL Exhaust."
+  },
+   "VUPShionMod:Alleviator": {
+    "NAME": "Alleviator",
+    "DESCRIPTION": "For every first time you trigger vup_shion_mod:Magiam\u00a0Obruor each turn, gain [E] [E] . NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Innate. For every first time you trigger vup_shion_mod:Magiam\u00a0Obruor each turn, gain [E] [E] . NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:Recharger": {
+    "NAME": "Recharger",
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! temporary Strength. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:Accelerator": {
+    "NAME": "Accelerator",
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! temporary Dexterity. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:Recoiler": {
+    "NAME": "Recoiler",
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, deal !M! damage to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:Gravitater": {
+    "NAME": "Gravitater",
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! Block. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:Superloader": {
+    "NAME": "Superloader",
+    "DESCRIPTION": "For the next !M! times you gain vup_shion_mod:Magiam\u00a0Obruor, draw 1 card. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Innate. NL For the next !M! times you gain vup_shion_mod:Magiam\u00a0Obruor, draw 1 card. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:Antisequencer": {
+    "NAME": "Antisequencer",
+    "DESCRIPTION": "At the start of your turn, gain 1 vup_shion_mod:Magiam\u00a0Obruor, play the top !M! cards in your draw pile. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 2 vup_shion_mod:Magiam\u00a0Obruor, play the top !M! cards in your draw pile. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:GensBombardae": {
+    "NAME": "Gens Bombardae",
+    "DESCRIPTION": "Add X+2 *Bombarda *Magica into your hand. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Add X+2 *Bombarda *Magica+ into your hand. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:MagicProjection": {
+    "NAME": "Magic Projection",
+    "DESCRIPTION": "Add !M! Attacks that exhaust into your hand. NL They cost 0. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Add 1 *Gladii *Infiniti+ that exhausts into your hand. NL It costs 0. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "EXTENDED_DESCRIPTION": [
+      "Arcane Projection",
+      "Ensem Evoco",
+      "Add !M! upgraded Attacks that exhaust into your hand. NL They cost 0. NL vup_shion_mod:Magiam\u00a0Obruor."
+    ]
+  },
+  "VUPShionMod:NihilImmensum": {
+    "NAME": "Nihil Immensum",
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor !M! times, gain 1 Intangible. NL vup_shion_mod:Magiam\u00a0Obruor 2."
+  },
+  "VUPShionMod:ArtificiumMundi": {
+    "NAME": "Artificium Mundi",
+    "DESCRIPTION": "Reduce all cards in your hand to 0 cost this turn. NL Gain 1 vup_shion_mod:Magiam\u00a0Obruor whenever you paly them. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Then reduce all cards in your hand to 0 cost this turn. NL Gain 1 vup_shion_mod:Magiam\u00a0Obruor whenever you paly them. NL vup_shion_mod:Magiam\u00a0Obruor."
+  },
+  "VUPShionMod:OculusMortis": {
+    "NAME": "Oculus Occidit",
+    "DESCRIPTION": "At the start of your turn, apply !M! Vulnerable to a random enemy. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, apply !M! Vulnerable to all enemies. NL vup_shion_mod:Magiam\u00a0Obruor."
   }
 }

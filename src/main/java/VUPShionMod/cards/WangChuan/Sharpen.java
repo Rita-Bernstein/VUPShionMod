@@ -13,7 +13,7 @@ public class Sharpen extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("Sharpen");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc18.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;

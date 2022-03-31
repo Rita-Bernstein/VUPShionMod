@@ -8,4 +8,6 @@ public class AbstractPlayerEnum {
 	public static AbstractPlayer.PlayerClass VUP_Shion;
 	@SpireEnum
 	public static AbstractPlayer.PlayerClass WangChuan;
+	@SpireEnum
+	public static AbstractPlayer.PlayerClass Liyezhu;
 }

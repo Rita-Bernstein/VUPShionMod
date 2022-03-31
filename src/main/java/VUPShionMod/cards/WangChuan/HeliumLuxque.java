@@ -36,7 +36,7 @@ public class HeliumLuxque extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(10);
-//            upgradeSecondM(-1);
+            upgradeSecondM(-1);
         }
     }
 }

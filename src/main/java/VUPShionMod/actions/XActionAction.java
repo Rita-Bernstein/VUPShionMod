@@ -48,7 +48,7 @@ public class XActionAction extends AbstractGameAction {
             AbstractDungeon.player.getRelic("Chemical X").flash();
         }
 
-        if (effect > 0) {
+        if (effect >= 0) {
             if(actionConsumer != null)
                 actionConsumer.accept(effect);
             if (!this.freeToPlayOnce) {

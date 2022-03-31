@@ -38,8 +38,7 @@ public class RechargerPower extends AbstractShionPower {
     public void onStackPower(AbstractPower power) {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
-            addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,this.amount)));
-            addToBot(new ApplyPowerAction(this.owner,this.owner,new LoseStrengthPower(this.owner,this.amount)));
+            addToBot(new ApplyPowerAction(this.owner,this.owner,new CorGladiiPower(this.owner,this.amount)));
         }
     }
 }

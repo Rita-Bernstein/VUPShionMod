@@ -466,13 +466,13 @@
   "VUPShionMod:RechargerPower": {
     "NAME": "充能回路",
     "DESCRIPTIONS": [
-      "获得 #y魔能过载 时，获得 #b%d 点 #y力量 。"
+      "获得 #y魔能过载 时，获得 #b%d 点 #y剑意 。"
     ]
   },
   "VUPShionMod:AcceleratorPower": {
     "NAME": "加速回路",
     "DESCRIPTIONS": [
-      "获得 #y魔能过载 时，获得 #b%d 点 #y敏捷 。"
+      "获得 #y魔能过载 时，获得 #b%d 点临时 #y敏捷 。"
     ]
   },
   "VUPShionMod:RecoilerPower": {

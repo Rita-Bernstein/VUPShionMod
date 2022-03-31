@@ -1,7 +1,7 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.WangChuan.SeverCurrent;
+import VUPShionMod.cards.WangChuan.Moonstrider;
 import VUPShionMod.cards.WangChuan.Slide;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,7 +34,7 @@ public class LakeAmidst extends AbstractImageEvent {
     public LakeAmidst() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/LakeAmidst.png"));
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], new SeverCurrent());
+        this.imageEventText.setDialogOption(OPTIONS[1], new Moonstrider());
 
         if (CardHelper.hasCardWithID(Slide.ID))
             this.imageEventText.setDialogOption(OPTIONS[2]);
@@ -62,8 +62,8 @@ public class LakeAmidst extends AbstractImageEvent {
 
                     case 1:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                        logMetricObtainCard(NAME, "Look at the bottom", new SeverCurrent());
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Moonstrider(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                        logMetricObtainCard(NAME, "Look at the bottom", new Moonstrider());
                         break;
                     case 2:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
@@ -80,9 +80,9 @@ public class LakeAmidst extends AbstractImageEvent {
                         AbstractDungeon.player.masterDeck.group.removeAll(cardsToRemove);
                         cardsToRemove.clear();
 
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH * 0.2f, Settings.HEIGHT / 2.0F));
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH * 0.8f, Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Moonstrider(), Settings.WIDTH * 0.2f, Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Moonstrider(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Moonstrider(), Settings.WIDTH * 0.8f, Settings.HEIGHT / 2.0F));
                         break;
                     case 3:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[4]);

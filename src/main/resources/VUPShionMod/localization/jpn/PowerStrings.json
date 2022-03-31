@@ -1,0 +1,534 @@
+{
+  "VUPShionMod:HyperdimensionalLinksPower": {
+    "NAME": "超维链接",
+    "DESCRIPTIONS": [
+      "本场战斗结束时，如果层数大于等于 #b10 ，则随机升级牌组中的一张牌。"
+    ]
+  },
+  "VUPShionMod:PursuitPower": {
+    "NAME": "追击",
+    "DESCRIPTIONS": [
+      "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
+      " 点伤害"
+    ]
+  },
+  "VUPShionMod:InvestigationFinFunnelUpgradePower": {
+    "NAME": "侦查浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y侦查浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
+    ]
+  },
+  "VUPShionMod:GravityFinFunnelUpgradePower": {
+    "NAME": "重力浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y重力浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
+    ]
+  },
+  "VUPShionMod:PursuitFinFunnelUpgradePower": {
+    "NAME": "追击浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y追击浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
+    ]
+  },
+  "VUPShionMod:DeploymentOfDefenseSystemPower": {
+    "NAME": "防御系统全展开",
+    "DESCRIPTIONS": [
+      "在这个回合，你每打出一张牌，就获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:AnastasiaCorePower": {
+    "NAME": "Anastasia核心",
+    "DESCRIPTIONS": [
+      "在这个回合，你每打出一张 #y使用浮游炮 牌，就获得 #b",
+      " [E] 并抽一张牌。"
+    ]
+  },
+  "VUPShionMod:AttackInitiationPower": {
+    "NAME": "攻击启动",
+    "DESCRIPTIONS": [
+      "在这个回合，你打出的下 #b%d 张牌附带抽 #b1 张牌的效果。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormKuroisuPower": {
+    "NAME": "姿态解放-克洛伊斯",
+    "DESCRIPTIONS": [
+      "你的回合结束时，将 #b%d 张 #y快速筛选 加入抽牌堆顶部。"
+    ]
+  },
+  "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
+    "NAME": "姿态解放-克洛伊斯+",
+    "DESCRIPTIONS": [
+      "你的回合结束时，将 #b%d 张 #y快速筛选+ 加入抽牌堆顶部。"
+    ]
+  },
+  "VUPShionMod:BleedingPower": {
+    "NAME": "流血",
+    "DESCRIPTIONS": [
+      "受到攻击伤害时额外失去 #b%d 点生命。 NL 每回合结束减半该效果。"
+    ]
+  },
+  "VUPShionMod:DenergizePower": {
+    "NAME": "失能",
+    "DESCRIPTIONS": [
+      "下一回合开始时失去 #b",
+      " [E] 。",
+      " [E] 。"
+    ]
+  },
+  "VUPShionMod:TempFinFunnelUpgradePower": {
+    "NAME": "临时总炮强化（弃用）",
+    "DESCRIPTIONS": [
+      "本回合你的 #y总炮强化 额外提高 #b%d 点。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormMinamiPower": {
+    "NAME": "姿态解放-南小棉",
+    "DESCRIPTIONS": [
+      "使用卡牌触发 #y浮游炮 的被动效果时，额外触发 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:EnhancedWeaponPower": {
+    "NAME": "强化兵装",
+    "DESCRIPTIONS": [
+      "触发 #y加载完成 时抽 #b%d 张牌。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuPower": {
+    "NAME": "姿态解放-黎夜竹",
+    "DESCRIPTIONS": [
+      "你的回合开始时获得 #b%d 层 #y超维链接 。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuBPower": {
+    "NAME": "姿态解放-黎夜竹",
+    "DESCRIPTIONS": [
+      "你的回合结束时，对所有敌人造成你身上 #y超维链接 层数 #b%d 倍的伤害。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormLiyezhuCPower": {
+    "NAME": "姿态解放-黎夜竹",
+    "DESCRIPTIONS": [
+      "你的回合结束时，对所有敌人 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:LockOnPower": {
+    "NAME": "锁定",
+    "DESCRIPTIONS": [
+      "这名敌人受到的攻击伤害提高 #b%d 。"
+    ]
+  },
+  "VUPShionMod:AttackOrderAlphaPower": {
+    "NAME": "攻击指令·壹式",
+    "DESCRIPTIONS": [
+      " #y浮游炮 的每回合攻击造成的伤害提高 #b%d 倍。 NL 不与其他指令共存。"
+    ]
+  },
+  "VUPShionMod:AttackOrderBetaPower": {
+    "NAME": "攻击指令·贰式",
+    "DESCRIPTIONS": [
+      "#y浮游炮 的每回合攻击将对所有敌人造成伤害。 NL 不与其他指令共存。"
+    ]
+  },
+  "VUPShionMod:AttackOrderGammaPower": {
+    "NAME": "攻击指令·叁式",
+    "DESCRIPTIONS": [
+      "受到 #y侦查浮游炮 的每回合攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
+    ]
+  },
+  "VUPShionMod:AttackOrderDeltaPower": {
+    "NAME": "攻击指令·肆式",
+    "DESCRIPTIONS": [
+      "#y浮游炮 的每回合攻击将给予你造成伤害的 #y格挡 。 NL 不与其他指令共存。"
+    ]
+  },
+  "VUPShionMod:AttackOrderSpecialPower": {
+    "NAME": "攻击指令·伍式",
+    "DESCRIPTIONS": [
+      "#y浮游炮 的攻击将对所有敌人造成伤害。"
+    ]
+  },
+  "VUPShionMod:DelayAvatarPower": {
+    "NAME": "延时替身",
+    "DESCRIPTIONS": [
+      "你的一名 #y替身 还剩 #b%d 点生命。 NL 它被击杀时对所有敌人造成 #b%d 点伤害 #b5 次。"
+    ]
+  },
+  "VUPShionMod:CrackOfTimePower": {
+    "NAME": "时之裂隙",
+    "DESCRIPTIONS": [
+      "每触发一次 #y加载完成 ，获得 #b%d 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:AnticoagulationPower": {
+    "NAME": "抗凝",
+    "DESCRIPTIONS": [
+      "在 #b%d 回合内， #y流血 不会在回合结束时减半。"
+    ]
+  },
+  "VUPShionMod:LoseFinFunnelUpgradePower": {
+    "NAME": "火力倾泻",
+    "DESCRIPTIONS": [
+      "在 #b%d 个回合内，你的 #y总炮强化 视为0。"
+    ]
+  },
+  "VUPShionMod:HolyCoffinSinkingSpiritPower": {
+    "NAME": "圣棺沉灵",
+    "DESCRIPTIONS": [
+      "每当你获得或失去 #y超维链接 时，获得 #b%d 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:HolyCoffinReleasePower": {
+    "NAME": "圣棺解放",
+    "DESCRIPTIONS": [
+      "触发 #y加载完成 时获得 #b%d 层 #y超维链接 。"
+    ]
+  },
+  "VUPShionMod:LoseHyperdimensionalLinksPower": {
+    "NAME": "失去超维链接",
+    "DESCRIPTIONS": [
+      "下 #b%d 个回合开始时，失去所有 #y超维链接 。"
+    ]
+  },
+  "VUPShionMod:DoubleCardPower": {
+    "NAME": "Anastasia计划",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张牌将打出两次。",
+      "你的下 #b%d 张牌将打出两次。"
+    ]
+  },
+  "VUPShionMod:DefectPower": {
+    "NAME": "缺损",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将失去 #b%d 点最大生命。"
+    ]
+  },
+  "VUPShionMod:ShockPower": {
+    "NAME": "震荡",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将 #y丢弃 抽牌堆稀有度最高的的 #b%d 张牌。"
+    ]
+  },
+  "VUPShionMod:DestroyPower": {
+    "NAME": "摧毁",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成未被 #y格挡 的伤害时，你将 #y消耗 #b%d 张稀有度最高的牌。"
+    ]
+  },
+  "VUPShionMod:LifeLinkPower": {
+    "NAME": "生命连接",
+    "DESCRIPTIONS": [
+      "如果其他敌人还生存，将在下回合后以满血复活。"
+    ]
+  },
+  "VUPShionMod:GravitoniumPower": {
+    "NAME": "重力鎓",
+    "DESCRIPTIONS": [
+      " #y重力浮游炮 给予的 #y格挡 将变为 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:QuickTriggerPower": {
+    "NAME": "快速触发",
+    "DESCRIPTIONS": [
+      "下 #b%d 次生成 #y加载完成 牌时，直接触发所有生成的牌的效果。"
+    ]
+  },
+  "VUPShionMod:StrengthenPower": {
+    "NAME": "增伤",
+    "DESCRIPTIONS": [
+      "每回合结束时，其获得 #b%d 点 #y力量 。"
+    ]
+  },
+  "VUPShionMod:ChaoticPower": {
+    "NAME": "破序重组",
+    "DESCRIPTIONS": [
+      "每当你洗牌时，将 #b%d 张 #y晕眩 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:IterativePower": {
+    "NAME": "进化推演",
+    "DESCRIPTIONS": [
+      "每回合开始时， #y深空孽障 将随机对自己 #y增益 或给予你 #y负面效果 。"
+    ]
+  },
+  "VUPShionMod:StiffnessPower": {
+    "NAME": "硬直",
+    "DESCRIPTIONS": [
+      "在 #y硬直 大于等于 #b4 层时，结束你的回合并移除本效果。"
+    ]
+  },
+  "VUPShionMod:CorGladiiPower": {
+    "NAME": "剑意",
+    "DESCRIPTIONS": [
+      " #y剑意 能提高部分攻击牌的伤害。"
+    ]
+  },
+  "VUPShionMod:MagiamObruorPower": {
+    "NAME": "魔能过载",
+    "DESCRIPTIONS": [
+      "下回合失去 [E] 。",
+      "下回合失去 #b%d [E] 。"
+    ]
+  },
+  "VUPShionMod:VampireFormPower": {
+    "NAME": "突然想起来自己是个吸血鬼",
+    "DESCRIPTIONS": [
+      "每对敌人造成未被 #y格挡 的伤害时，回复 #b%d 点生命。"
+    ]
+  },
+  "VUPShionMod:MensVirtusquePower": {
+    "NAME": "八之章：觉醒",
+    "DESCRIPTIONS": [
+      "触发 #y魔能过载 时，变为获得 #b%d 点 #y剑意 。"
+    ]
+  },
+  "VUPShionMod:HeliumLuxquePower": {
+    "NAME": "九之章：氦闪",
+    "DESCRIPTIONS": [
+      "下回合开始时对所有敌人造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:NoSkillsPower": {
+    "NAME": "禁用技能",
+    "DESCRIPTIONS": [
+      "你不能打出 #y技能牌 。"
+    ]
+  },
+  "VUPShionMod:MorsLibraquePower": {
+    "NAME": "终章：热寂",
+    "DESCRIPTIONS": [
+      " #b%d 回合死亡。"
+    ]
+  },
+  "VUPShionMod:PoisePower": {
+    "NAME": "缄默",
+    "DESCRIPTIONS": [
+      "每当你打出一张 #y攻击牌 ，抽 #b%d 张牌。 NL 你不会获得 #y硬直 。"
+    ]
+  },
+  "VUPShionMod:PetalsFallPower": {
+    "NAME": "散华",
+    "DESCRIPTIONS": [
+      "每当你失去 #y剑意 时，获得失去层数 #b%d 倍的 #y格挡 。 NL 对所有敌人造成失去层数 #b%d 倍的伤害。"
+    ]
+  },
+  "VUPShionMod:GainCorGladiiPower": {
+    "NAME": "蓄气",
+    "DESCRIPTIONS": [
+      "每回合开始时 NL 获得 #b%d 层 #y剑意 。"
+    ]
+  },
+  "VUPShionMod:MoonstriderPower": {
+    "NAME": "月步",
+    "DESCRIPTIONS": [
+      "本回合每次受到攻击时，获得 #b%d 点 #y剑意 。"
+    ]
+  },
+  "VUPShionMod:DistantiaAbsensquePower": {
+    "NAME": "三之章：远行",
+    "DESCRIPTIONS": [
+      "每当你获得 #y魔能过载 时，获得 #b%d 层 #y多层护甲 。"
+    ]
+  },
+  "VUPShionMod:WeatherEyePower": {
+    "NAME": "警觉",
+    "DESCRIPTIONS": [
+      "每当打出攻击牌时，获得 #b%d 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:PreTripleDamagePower": {
+    "NAME": "准备三倍伤害",
+    "DESCRIPTIONS": [
+      "下回合造成 #y三倍伤害 。",
+      "下 #b%d 个回合造成 #y三倍伤害 。"
+    ]
+  },
+  "VUPShionMod:TripleDamagePower": {
+    "NAME": "三倍伤害",
+    "DESCRIPTIONS": [
+      "本回合造成 #y三倍伤害 。",
+      "接下来的 #b%d 个回合造成 #y三倍伤害 。"
+    ]
+  },
+  "VUPShionMod:NextTurnAttackPower": {
+    "NAME": "次回攻击",
+    "DESCRIPTIONS": [
+      "下回合开始时将 #b%d 张 #y攻击牌 加入手牌。",
+      "下回合开始时将 #b%d 张 #y攻击牌 加入手牌。"
+    ]
+  },
+  "VUPShionMod:TwoAttackPower": {
+    "NAME": "双倍攻击",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y攻击牌 将造成双倍伤害。",
+      "你的下 #b%d 张 #y攻击牌 将造成双倍伤害。"
+    ]
+  },
+  "VUPShionMod:ThreeAttackPower": {
+    "NAME": "双倍攻击",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y攻击牌 将造成三倍伤害。",
+      "你的下 #b%d 张 #y攻击牌 将造成三倍伤害。"
+    ]
+  },
+  "VUPShionMod:FourAttackPower": {
+    "NAME": "四倍攻击",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y攻击牌 将造成四倍伤害。",
+      "你的下 #b%d 张 #y攻击牌 将造成四倍伤害。"
+    ]
+  },
+  "VUPShionMod:TwoSkillPower": {
+    "NAME": "两次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y技能牌 将打出两次。",
+      "你的下 #b%d 张 #y技能牌 将打出两次。"
+    ]
+  },
+  "VUPShionMod:ThreeSkillPower": {
+    "NAME": "三次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y技能牌 将打出三次。",
+      "你的下 #b%d 张 #y技能牌 将打出三次。"
+    ]
+  },
+  "VUPShionMod:FourSkillPower": {
+    "NAME": "四次技能",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y技能牌 将打出四次。",
+      "你的下 #b%d 张 #y技能牌 将打出四次。"
+    ]
+  },
+  "VUPShionMod:TwoPowerPower": {
+    "NAME": "两次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y能力牌 将打出两次。",
+      "你的下 #b%d 张 #y能力牌 将打出两次。"
+    ]
+  },
+  "VUPShionMod:ThreePowerPower": {
+    "NAME": "三次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y能力牌 将打出三次。",
+      "你的下 #b%d 张 #y能力牌 将打出三次。"
+    ]
+  },
+  "VUPShionMod:FourPowerPower": {
+    "NAME": "四次能力",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 张 #y能力牌 将打出四次。",
+      "你的下 #b%d 张 #y能力牌 将打出四次。"
+    ]
+  },
+  "VUPShionMod:FreeCardPower": {
+    "NAME": "免费出牌",
+    "DESCRIPTIONS": [
+      "你打出的的下 #b%d 张牌耗能为0。",
+      "你打出的的下 #b%d 张牌耗能为0。"
+    ]
+  },
+  "VUPShionMod:TurnDexPower": {
+    "NAME": "回合敏捷",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 #b%d 点 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:GravitoniumOverPower": {
+    "NAME": "重力炮极限超载",
+    "DESCRIPTIONS": [
+      " #y紫音 将 #y重力浮游炮 过载到了极限……"
+    ]
+  },
+  "VUPShionMod:TurnObruorPower": {
+    "NAME": "回合过载",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 #b%d 层 #y魔能过载 。"
+    ]
+  },
+  "VUPShionMod:PlagaAMundoCounterPower": {
+    "NAME": "增援",
+    "DESCRIPTIONS": [
+      "敌人的增援正在赶来。"
+    ]
+  },
+  "VUPShionMod:AlleviatorPower": {
+    "NAME": "缓冲回路",
+    "DESCRIPTIONS": [
+      "每回合第一次触发 vup_shion_mod:魔能过载 时，获得 #b%d [E] 。"
+    ]
+  },
+  "VUPShionMod:RechargerPower": {
+    "NAME": "充能回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，获得 #b%d 点 #y力量 。"
+    ]
+  },
+  "VUPShionMod:AcceleratorPower": {
+    "NAME": "加速回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，获得 #b%d 点 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:RecoilerPower": {
+    "NAME": "反冲回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，对所有敌人造成 b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:GravitaterPower": {
+    "NAME": "重力回路",
+    "DESCRIPTIONS": [
+      "获得 #y魔能过载 时，获得 b%d 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:SuperloaderPower": {
+    "NAME": "超载回路",
+    "DESCRIPTIONS": [
+      "下 b%d 次获得 #y魔能过载 时， NL 抽一张牌。"
+    ]
+  },
+  "VUPShionMod:AntisequencerPower": {
+    "NAME": "逆时序回路",
+    "DESCRIPTIONS": [
+      "每回合开始时打出抽牌堆顶部的 #b%d 张牌。",
+      "每回合开始时打出抽牌堆顶部的 #b%d 张牌。"
+    ]
+  },
+  "VUPShionMod:NihilImmensumPower": {
+    "NAME": "伪·无量空处",
+    "DESCRIPTIONS": [
+      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y无实体 。(已获得过 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:NihilImmensum2Power": {
+    "NAME": "伪·无量空处+",
+    "DESCRIPTIONS": [
+      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y无实体 。(已获得过 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:OculusMortisPower": {
+    "NAME": "伪·直死魔眼",
+    "DESCRIPTIONS": [
+      "每回合开始时给予随机 #b%d 名敌人 #b1 层 #y易伤 。"
+    ]
+  },
+  "VUPShionMod:OculusMortis2Power": {
+    "NAME": "伪·直死魔眼",
+    "DESCRIPTIONS": [
+      "每回合开始时给予所有敌人 #b%d 层 #y易伤 。"
+    ]
+  },
+  "VUPShionMod:FlawlessParryPower": {
+    "NAME": "见切",
+    "DESCRIPTIONS": [
+      "阻止下一次你受到的生命值损伤。",
+      "阻止下 #b%d 次你受到的生命值损伤。"
+    ]
+  }
+}

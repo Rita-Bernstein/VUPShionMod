@@ -11,14 +11,14 @@ public class BlockThis extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("BlockThis");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc43.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
 
     public BlockThis() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 25;
+        this.baseBlock = 21;
         this.exhaust = true;
         this.selfRetain = true;
     }

@@ -19,14 +19,14 @@ public class SupportShion extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("SupportShion");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc42.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final int COST = 2;
 
     public SupportShion() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 35;
+        this.baseDamage = 23;
         this.isMultiDamage = true;
         this.exhaust = true;
     }

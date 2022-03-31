@@ -25,7 +25,7 @@ public class StrideSlash extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 10;
         this.magicNumber = this.baseMagicNumber = 5;
-        this.baseSecondaryM = this.secondaryM = 2;
+        this.baseSecondaryM = this.secondaryM = 1;
     }
 
     @Override
@@ -78,7 +78,6 @@ public class StrideSlash extends AbstractWCCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 upgradeDamage(-2);
-                upgradeSecondM(-1);
             }
 
             if (this.timesUpgraded == 2) {

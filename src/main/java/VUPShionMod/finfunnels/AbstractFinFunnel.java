@@ -115,11 +115,11 @@ public abstract class AbstractFinFunnel {
             this.hb.clickStarted = true;
         }
 
-        if (this.hb.clicked && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
-            this.hb.clicked = false;
+        if (this.hb.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
             updateDescription();
             TipHelper.renderGenericTip(this.cX + 96.0F * Settings.scale, this.cY + 64.0F * Settings.scale, this.name, this.description);
-            if (InputHelper.justReleasedClickLeft && AbstractPlayerPatches.AddFields.activatedFinFunnel.get(AbstractDungeon.player) != this) {
+            if (this.hb.clicked && AbstractPlayerPatches.AddFields.activatedFinFunnel.get(AbstractDungeon.player) != this) {
+                this.hb.clicked = false;
                 if (EnergyPanelPatches.energyUsedThisTurn > 0) {
                     EnergyPanelPatches.energyUsedThisTurn--;
                     addToBot(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, this));

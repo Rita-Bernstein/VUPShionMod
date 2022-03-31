@@ -2,7 +2,8 @@
   "VUPShionMod:ModSettings": {
     "TEXT": [
       "Use simple card UI",
-      "Disable title screen replacement."
+      "Disable title screen replacement.",
+      "SFW campfire image."
     ]
   },
   "VUPShionMod:CharacterSelect": {
@@ -67,7 +68,8 @@
   "VUPShionMod:BetaArtUnlockEffect": {
     "TEXT": [
       "Shion's new costume unlocked!",
-	  "Wangchuan's new costume unlocked!"
+	  "Wangchuan's new costume unlocked!",
+	  "Liyezhu's new costume unlocked!"
     ]
   },
   "VUPShionMod:AbstractShionSkin": {
@@ -90,12 +92,23 @@
       "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world."
     ]
   },
+  "VUPShionMod:AbstractLiyezhuSkin": {
+    "TEXT": [
+      "星云系统",
+      "纯白之刃"
+    ],
+    "EXTRA_TEXT": [
+      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹",
+      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹"
+    ]
+  },
   "VUPShionMod:SkinPannel": {
     "TEXT": [
       "Locked"
     ],
     "EXTRA_TEXT": [
-      "Defeat Plaga Mundi to unlock costume."
+      "Defeat Plaga Mundi to unlock costume.",
+      "Costume still work in progress..."
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {

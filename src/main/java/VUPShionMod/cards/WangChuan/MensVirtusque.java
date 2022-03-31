@@ -3,12 +3,21 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.MensVirtusquePower;
 import VUPShionMod.powers.StiffnessPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.unique.ApotheosisAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+
+import java.util.ArrayList;
 
 public class MensVirtusque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("MensVirtusque");
@@ -27,7 +36,30 @@ public class MensVirtusque extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new MensVirtusquePower(p, this.magicNumber)));
-        addToBot(new ApotheosisAction());
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                ArrayList<AbstractCard> possibleCards = new ArrayList<AbstractCard>();
+                AbstractCard theCard = null;
+                for(AbstractCard c : AbstractDungeon.player.masterDeck.group){
+                    if(c.canUpgrade())
+                        possibleCards.add(c);
+                }
+
+            if(!possibleCards.isEmpty()){
+                theCard =possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));
+                AbstractDungeon.player.bottledCardUpgradeCheck(theCard);
+            }
+
+
+            if(theCard != null) {
+                AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(theCard.makeStatEquivalentCopy()));
+                addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+            }
+                isDone =true;
+            }
+        });
     }
 
     @Override

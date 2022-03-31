@@ -1,0 +1,29 @@
+{
+  "VUPShionMod:ShionMinion": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "紫音替身",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:PlagaAMundo": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "深空孽障",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:PlagaAMundoMinion": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "深空孽障",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

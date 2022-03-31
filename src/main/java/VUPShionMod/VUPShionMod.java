@@ -10,6 +10,7 @@ import VUPShionMod.cards.ShionCard.shion.*;
 import VUPShionMod.cards.ShionCard.tempCards.*;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.cards.Codex.*;
+import VUPShionMod.character.Liyezhu;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.*;
@@ -18,6 +19,7 @@ import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.patches.AbstractScenePatches;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
@@ -44,6 +46,7 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -76,6 +79,7 @@ public class VUPShionMod implements
     public static final String DESCRIPTION = "";
     public static final Color Shion_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
     public static final Color WangChuan_Color = new Color(0.203F, 0.176F, 0.168F, 1.0F);
+    public static final Color Liyezhu_Color = new Color(0.250F, 0.286F, 0.541F, 1.0F);
     public static final Logger logger = LogManager.getLogger(VUPShionMod.class.getSimpleName());
     public static String MOD_ID = "VUPShionMod";
     public static Properties VUPShionDefaults = new Properties();
@@ -97,9 +101,11 @@ public class VUPShionMod implements
 
     public static boolean useSimpleOrb = false;
     public static boolean notReplaceTitle = false;
+    public static boolean safeCampfire = false;
 
     public static ModLabeledToggleButton useSimpleOrbSwitch;
     public static ModLabeledToggleButton notReplaceTitleSwitch;
+    public static ModLabeledToggleButton safeCampfireSwitch;
 
     public static Color transparent = Color.WHITE.cpy();
     public static boolean fightSpecialBoss = false;
@@ -145,6 +151,18 @@ public class VUPShionMod implements
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
                 assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
 
+//        BaseMod.addColor(CardColorEnum.Liyezhu_LIME,
+//                Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color,
+//                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
+//                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
+//                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
+//                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
+//                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
+//                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
+//                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
+//                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
+//                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
+
 
     }
 
@@ -154,6 +172,7 @@ public class VUPShionMod implements
             SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
             config.setBool("useSimpleOrb", useSimpleOrb);
             config.setBool("notReplaceTitle", notReplaceTitle);
+            config.setBool("safeCampfire", safeCampfire);
 
 
             for (int i = 0; i <= characters.length - 1; i++) {
@@ -175,6 +194,7 @@ public class VUPShionMod implements
             config.load();
             useSimpleOrb = config.getBool("useSimpleOrb");
             notReplaceTitle = config.getBool("notReplaceTitle");
+            safeCampfire = config.getBool("safeCampfire");
 
             for (int i = 0; i <= characters.length - 1; i++) {
                 characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
@@ -288,6 +308,7 @@ public class VUPShionMod implements
             useSimpleOrb = button.enabled;
             saveSettings();
         });
+
         notReplaceTitleSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[1], 400.0f, 720.0f - 1 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, notReplaceTitle, settingsPanel,
                 (label) -> {
                 }, (button) -> {
@@ -295,9 +316,18 @@ public class VUPShionMod implements
             saveSettings();
         });
 
+        safeCampfireSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[2], 400.0f, 720.0f - 2 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, safeCampfire, settingsPanel,
+                (label) -> {
+                }, (button) -> {
+            safeCampfire = button.enabled;
+            AbstractScenePatches.campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+            saveSettings();
+        });
+
 
         settingsPanel.addUIElement(useSimpleOrbSwitch);
         settingsPanel.addUIElement(notReplaceTitleSwitch);
+        settingsPanel.addUIElement(safeCampfireSwitch);
 
 //        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
 
@@ -422,6 +452,12 @@ public class VUPShionMod implements
                 assetPath("characters/WangChuan/Button.png"),
                 assetPath("characters/WangChuan/portrait.png"),
                 AbstractPlayerEnum.WangChuan);
+//
+//        BaseMod.addCharacter(new Liyezhu(Liyezhu.charStrings.NAMES[1], AbstractPlayerEnum.Liyezhu),
+//                assetPath("characters/Liyezhu/Button.png"),
+//                assetPath("characters/Liyezhu/portrait.png"),
+//                AbstractPlayerEnum.Liyezhu);
+
     }
 
     @Override
@@ -673,6 +709,10 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new WhitePurity(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new SapphireRoseNecklace(), CardColorEnum.WangChuan_LIME);
 
+
+//        BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);
+//        BaseMod.addRelicToCustomPool(new HallowedCase(), CardColorEnum.Liyezhu_LIME);
+
     }
 
 
@@ -682,6 +722,8 @@ public class VUPShionMod implements
                 return Settings.language;
             case DEU:
                 return Settings.language;
+//            case JPN:
+//                return Settings.language;
             case ZHT:
                 return Settings.language;
             default:

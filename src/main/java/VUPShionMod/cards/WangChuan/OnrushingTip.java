@@ -22,7 +22,7 @@ public class OnrushingTip extends AbstractWCCard {
 
     public OnrushingTip() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 7;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.baseSecondaryM = this.secondaryM = 4;
         this.exhaust = true;
     }
@@ -78,7 +78,7 @@ public class OnrushingTip extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(5);
+            upgradeMagicNumber(2);
             upgradeSecondM(-1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];

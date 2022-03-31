@@ -52,6 +52,7 @@ public class WhitePurity extends CustomRelic {
     @Override
     public void atTurnStartPostDraw() {
         AbstractCard c = new OnrushingTip();
+        c.upgrade();
         CardModifierManager.addModifier(c, new EtherealMod());
         addToBot(new MakeTempCardInHandAction(c, 1));
     }

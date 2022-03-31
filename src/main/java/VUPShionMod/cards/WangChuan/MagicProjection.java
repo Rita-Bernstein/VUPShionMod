@@ -31,18 +31,23 @@ public class MagicProjection extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractCard c = new GladiiInfiniti();
         switch (this.timesUpgraded) {
             default:
+                while (c instanceof GladiiInfiniti) {
+                    c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
+                }
                 for (int i = 0; i < this.magicNumber; i++) {
-                    AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
                     c.setCostForTurn(0);
                     CardModifierManager.addModifier(c, new ExhaustMod());
                     addToBot(new MakeTempCardInHandAction(c, true));
                 }
                 break;
             case 1:
+                while (c instanceof GladiiInfiniti) {
+                    c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
+                }
                 for (int i = 0; i < this.magicNumber; i++) {
-                    AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
                     c.upgrade();
                     c.setCostForTurn(0);
                     CardModifierManager.addModifier(c, new ExhaustMod());
@@ -50,7 +55,6 @@ public class MagicProjection extends AbstractWCCard {
                 }
                 break;
             case 2:
-                AbstractCard c = new GladiiInfiniti();
                 c.upgrade();
                 c.setCostForTurn(0);
                 CardModifierManager.addModifier(c, new ExhaustMod());

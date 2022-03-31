@@ -16,7 +16,7 @@ public class SeverWrist extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("SeverWrist");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc10.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;

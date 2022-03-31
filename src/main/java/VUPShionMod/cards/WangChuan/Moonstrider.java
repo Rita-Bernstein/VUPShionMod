@@ -15,7 +15,7 @@ public class Moonstrider extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("Moonstrider");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc20.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 1;
@@ -24,7 +24,7 @@ public class Moonstrider extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 12;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 8;
+        this.secondaryM = this.baseSecondaryM = 5;
     }
 
     @Override

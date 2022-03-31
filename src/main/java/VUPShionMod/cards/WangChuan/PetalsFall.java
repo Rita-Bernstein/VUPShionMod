@@ -18,7 +18,7 @@ public class PetalsFall extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public PetalsFall() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -34,7 +34,7 @@ public class PetalsFall extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(1);
         }
     }
 }

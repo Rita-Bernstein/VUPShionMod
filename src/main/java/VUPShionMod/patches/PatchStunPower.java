@@ -8,6 +8,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.audio.TempMusic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,6 +22,8 @@ public class PatchStunPower {
     public static SpireReturn<Void> Prefix(StunMonsterPower __instance, byte ___moveByte) {
         if (__instance.owner instanceof PlagaAMundo) {
             AbstractMonster m = (AbstractMonster) __instance.owner;
+
+
 
             if (m.hasPower(ShockPower.POWER_ID)) {
                 if (___moveByte == 5) {
@@ -46,6 +49,10 @@ public class PatchStunPower {
                             m.setMove((byte) 0, AbstractMonster.Intent.ATTACK, m.damage.get(0).base, 13, true);
                         break;
                 }
+            }
+
+            if(GameActionManager.turn >= 12){
+                m.setMove((byte) 98, AbstractMonster.Intent.UNKNOWN);
             }
 
             m.createIntent();

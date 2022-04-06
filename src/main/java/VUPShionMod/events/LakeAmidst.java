@@ -2,6 +2,7 @@ package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.Moonstrider;
+import VUPShionMod.cards.WangChuan.SeverCurrent;
 import VUPShionMod.cards.WangChuan.Slide;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,10 +35,10 @@ public class LakeAmidst extends AbstractImageEvent {
     public LakeAmidst() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/LakeAmidst.png"));
         this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], new Moonstrider());
+        this.imageEventText.setDialogOption(OPTIONS[1], new SeverCurrent());
 
         if (CardHelper.hasCardWithID(Slide.ID))
-            this.imageEventText.setDialogOption(OPTIONS[2]);
+            this.imageEventText.setDialogOption(OPTIONS[2], new Moonstrider());
         else
             this.imageEventText.setDialogOption(OPTIONS[3], true);
 
@@ -56,14 +57,14 @@ public class LakeAmidst extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
-                        AbstractDungeon.player.heal(10, true);
+                        AbstractDungeon.player.increaseMaxHp(10, true);
                         AbstractEvent.logMetricHeal(NAME, "Camp", 10);
                         break;
 
                     case 1:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Moonstrider(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                        logMetricObtainCard(NAME, "Look at the bottom", new Moonstrider());
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new SeverCurrent(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                        logMetricObtainCard(NAME, "Look at the bottom", new SeverCurrent());
                         break;
                     case 2:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);

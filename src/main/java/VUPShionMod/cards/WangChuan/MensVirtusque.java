@@ -41,23 +41,24 @@ public class MensVirtusque extends AbstractWCCard {
             public void update() {
                 ArrayList<AbstractCard> possibleCards = new ArrayList<AbstractCard>();
                 AbstractCard theCard = null;
-                for(AbstractCard c : AbstractDungeon.player.masterDeck.group){
-                    if(c.canUpgrade())
+                for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+                    if (c.canUpgrade())
                         possibleCards.add(c);
                 }
 
-            if(!possibleCards.isEmpty()){
-                theCard =possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));
-                AbstractDungeon.player.bottledCardUpgradeCheck(theCard);
-            }
+                if (!possibleCards.isEmpty()) {
+                    theCard = possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));
+                    theCard.upgrade();
+                    AbstractDungeon.player.bottledCardUpgradeCheck(theCard);
+                }
 
 
-            if(theCard != null) {
-                AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(theCard.makeStatEquivalentCopy()));
-                addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-            }
-                isDone =true;
+                if (theCard != null) {
+                    AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(theCard.makeStatEquivalentCopy()));
+                    addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+                }
+                isDone = true;
             }
         });
     }

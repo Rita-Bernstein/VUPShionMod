@@ -12,7 +12,8 @@ public class AbstractSkinShion extends AbstractSkinCharacter {
     public static final String ID = CardCrawlGame.languagePack.getCharacterString("VUPShionMod:Shion").NAMES[0];
     public static final AbstractSkin[] SKINS = new AbstractSkin[]{
             new OriShion(),
-            new BlueGiantShion()
+            new BlueGiantShion(),
+            new AquaShion()
     };
 
     public AbstractSkinShion() {

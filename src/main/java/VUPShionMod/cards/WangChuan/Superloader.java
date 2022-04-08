@@ -19,7 +19,7 @@ public class Superloader extends AbstractWCCard {
 
     public Superloader() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override

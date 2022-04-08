@@ -40,6 +40,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbBlue;
@@ -114,6 +115,11 @@ public class WangChuan extends CustomPlayer {
         if (CharacterSelectScreenPatches.characters[1].reskinCount == 1) {
             this.state.setAnimation(0, "idle", true);
         }
+
+        if (CharacterSelectScreenPatches.characters[1].reskinCount == 2){
+            this.state.setAnimation(0, "idle", true);
+            this.state.setAnimation(1, "idle_wing", true);
+        }
     }
 
 
@@ -132,10 +138,18 @@ public class WangChuan extends CustomPlayer {
         retVal.add(HiltBash.ID);
         retVal.add(HiltBash.ID);
         retVal.add(HiltBash.ID);
-        retVal.add(Slide.ID);
-        retVal.add(Slide.ID);
-        retVal.add(Slide.ID);
-        retVal.add(Slide.ID);
+
+        if (CharacterSelectScreenPatches.characters[1].reskinCount == 2) {
+            retVal.add(Warp.ID);
+            retVal.add(Warp.ID);
+            retVal.add(Warp.ID);
+            retVal.add(Warp.ID);
+        }else {
+            retVal.add(Slide.ID);
+            retVal.add(Slide.ID);
+            retVal.add(Slide.ID);
+            retVal.add(Slide.ID);
+        }
 //        retVal.add(PreExecution.ID);
         retVal.add(Sheathe.ID);
 //        retVal.add(InTheBlink.ID);
@@ -144,6 +158,9 @@ public class WangChuan extends CustomPlayer {
 
         if (CharacterSelectScreenPatches.characters[1].reskinCount == 1)
             retVal.add(InTheBlink.ID);
+
+        if (CharacterSelectScreenPatches.characters[1].reskinCount == 2)
+            retVal.add(BombardaMagica.ID);
 
         retVal.add(MorsLibraque.ID);
 
@@ -298,6 +315,7 @@ public class WangChuan extends CustomPlayer {
         if (this.shionHelper != null)
             shionHelper.update();
     }
+
 
     @Override
     public void render(SpriteBatch sb) {

@@ -75,9 +75,11 @@
   "VUPShionMod:AbstractShionSkin": {
     "TEXT": [
       "The Aria",
-      "Blue Giant"
+      "Blue Giant",
+      "The Ripple"
     ],
     "EXTRA_TEXT": [
+      "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire.",
       "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire.",
       "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire."
     ]
@@ -85,21 +87,23 @@
   "VUPShionMod:AbstractWangChuanSkin": {
     "TEXT": [
       "Nebula",
-      "Blade of Pure White"
+      "Blade of Pure White",
+      "The Ripple"
     ],
     "EXTRA_TEXT": [
+      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world.",
       "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world.",
       "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world."
     ]
   },
   "VUPShionMod:AbstractLiyezhuSkin": {
     "TEXT": [
-      "星云系统",
-      "纯白之刃"
+      "Nebula",
+      "Blade of Pure White"
     ],
     "EXTRA_TEXT": [
-      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹",
-      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹"
+      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world.",
+      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world."
     ]
   },
   "VUPShionMod:SkinPannel": {

@@ -931,8 +931,8 @@
   },
   "VUPShionMod:Alleviator": {
     "NAME": "缓冲回路",
-    "DESCRIPTION": "每回合第一次触发 vup_shion_mod:魔能过载 时，获得 [E] [E] 。 NL vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合第一次触发 vup_shion_mod:魔能过载 时，获得 [E] [E] 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": "每回合第一次触发 vup_shion_mod:魔能过载 时，获得 [E] 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合第一次触发 vup_shion_mod:魔能过载 时，获得 [E] 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:Recharger": {
     "NAME": "充能回路",
@@ -988,5 +988,9 @@
     "NAME": "伪·直死魔眼",
     "DESCRIPTION": "每回合开始时给予随机敌人 !M! 层 易伤 。 NL vup_shion_mod:魔能过载 。",
     "UPGRADE_DESCRIPTION": "每回合开始时给予所有敌人 !M! 层 易伤 。 NL vup_shion_mod:魔能过载 。"
+  },
+  "VUPShionMod:Warp": {
+    "NAME": "瞬移",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 将弃牌堆中的一张攻击牌加入手牌。"
   }
 }

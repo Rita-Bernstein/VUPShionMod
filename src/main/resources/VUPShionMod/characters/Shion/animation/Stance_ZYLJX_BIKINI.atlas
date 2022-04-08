@@ -1,0 +1,216 @@
+
+Stance_ZYLJX_BIKINI.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+YOFU_ZC
+  rotate: true
+  xy: 684, 204
+  size: 279, 60
+  orig: 279, 60
+  offset: 0, 0
+  index: -1
+YOFU_ZC_light
+  rotate: true
+  xy: 746, 266
+  size: 217, 23
+  orig: 217, 23
+  offset: 0, 0
+  index: -1
+YOFU_ZC_penqi
+  rotate: false
+  xy: 1260, 1387
+  size: 323, 110
+  orig: 323, 110
+  offset: 0, 0
+  index: -1
+YOFU_ZJ
+  rotate: true
+  xy: 1053, 652
+  size: 245, 82
+  orig: 245, 82
+  offset: 0, 0
+  index: -1
+YOFU_ZJ_light
+  rotate: true
+  xy: 1532, 1229
+  size: 156, 37
+  orig: 156, 37
+  offset: 0, 0
+  index: -1
+YOFU_ZJ_penqi
+  rotate: false
+  xy: 1947, 1944
+  size: 95, 79
+  orig: 95, 79
+  offset: 0, 0
+  index: -1
+YOFU_ZL
+  rotate: false
+  xy: 1613, 1494
+  size: 186, 56
+  orig: 186, 56
+  offset: 0, 0
+  index: -1
+YOFU_ZL_light
+  rotate: true
+  xy: 684, 54
+  size: 148, 38
+  orig: 148, 38
+  offset: 0, 0
+  index: -1
+YOFU_ZL_penqi
+  rotate: true
+  xy: 1145, 896
+  size: 229, 74
+  orig: 229, 74
+  offset: 0, 0
+  index: -1
+arm_L
+  rotate: false
+  xy: 819, 1368
+  size: 439, 655
+  orig: 439, 655
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: false
+  xy: 904, 621
+  size: 147, 276
+  orig: 147, 276
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1822, 1586
+  size: 153, 339
+  orig: 153, 339
+  offset: 0, 0
+  index: -1
+boots
+  rotate: true
+  xy: 904, 464
+  size: 155, 128
+  orig: 155, 128
+  offset: 0, 0
+  index: -1
+eyes_blink
+  rotate: false
+  xy: 1245, 1144
+  size: 70, 44
+  orig: 70, 44
+  offset: 0, 0
+  index: -1
+eyes_blink2
+  rotate: false
+  xy: 819, 1086
+  size: 70, 39
+  orig: 70, 39
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 1585, 1387
+  size: 105, 116
+  orig: 105, 116
+  offset: 0, 0
+  index: -1
+hair_behind
+  rotate: false
+  xy: 1260, 1499
+  size: 351, 426
+  orig: 351, 426
+  offset: 0, 0
+  index: -1
+hair_frount
+  rotate: true
+  xy: 1613, 1552
+  size: 373, 207
+  orig: 373, 207
+  offset: 0, 0
+  index: -1
+hair_frount_R
+  rotate: true
+  xy: 540, 14
+  size: 33, 106
+  orig: 33, 106
+  offset: 0, 0
+  index: -1
+head_hat
+  rotate: true
+  xy: 771, 272
+  size: 178, 88
+  orig: 178, 88
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: false
+  xy: 771, 452
+  size: 131, 629
+  orig: 131, 629
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: true
+  xy: 819, 1190
+  size: 176, 573
+  orig: 176, 573
+  offset: 0, 0
+  index: -1
+qunbai
+  rotate: true
+  xy: 2, 2
+  size: 481, 536
+  orig: 481, 536
+  offset: 0, 0
+  index: -1
+qunbai_FL
+  rotate: false
+  xy: 540, 49
+  size: 142, 434
+  orig: 142, 434
+  offset: 0, 0
+  index: -1
+qunbai_FR
+  rotate: true
+  xy: 819, 1127
+  size: 61, 424
+  orig: 61, 424
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1260, 1927
+  size: 685, 96
+  orig: 685, 96
+  offset: 0, 0
+  index: -1
+wing_L1
+  rotate: false
+  xy: 2, 1083
+  size: 815, 940
+  orig: 815, 940
+  offset: 0, 0
+  index: -1
+wing_L2
+  rotate: false
+  xy: 904, 899
+  size: 239, 226
+  orig: 239, 226
+  offset: 0, 0
+  index: -1
+wing_R1
+  rotate: false
+  xy: 2, 485
+  size: 767, 596
+  orig: 767, 596
+  offset: 0, 0
+  index: -1
+wing_R2
+  rotate: false
+  xy: 1394, 1186
+  size: 136, 199
+  orig: 136, 199
+  offset: 0, 0
+  index: -1

@@ -2,7 +2,8 @@
   "VUPShionMod:ModSettings": {
     "TEXT": [
       "使用簡潔卡牌界面",
-      "禁用替換主界面"
+      "禁用替換主界面",
+      "和諧篝火立繪"
     ]
   },
   "VUPShionMod:CharacterSelect": {
@@ -67,7 +68,8 @@
   "VUPShionMod:BetaArtUnlockEffect": {
     "TEXT": [
       "已解鎖紫音皮膚！",
-      "已解鎖忘川川皮膚！"
+      "已解鎖忘川川皮膚！",
+      "已解鎖黎夜竹皮膚！"
     ]
   },
   "VUPShionMod:AbstractShionSkin": {
@@ -90,12 +92,23 @@
       "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟"
     ]
   },
+  "VUPShionMod:AbstractLiyezhuSkin": {
+    "TEXT": [
+      "星雲系統",
+      "純白之刃"
+    ],
+    "EXTRA_TEXT": [
+      "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟",
+      "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟"
+    ]
+  },
   "VUPShionMod:SkinPannel": {
     "TEXT": [
       "鎖定"
     ],
     "EXTRA_TEXT": [
-      "需要擊敗深空孽障解鎖皮膚功能"
+      "需要擊敗深空孽障解鎖皮膚功能",
+      "皮膚尚未製作完成，敬請期待……"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {

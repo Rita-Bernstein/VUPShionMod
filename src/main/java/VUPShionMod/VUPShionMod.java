@@ -576,6 +576,7 @@ public class VUPShionMod implements
         cards.add(new PreExecution());
         cards.add(new Sheathe());
         cards.add(new InTheBlink());
+        cards.add(new Warp());
 
 //        忘川-拔刀系
         cards.add(new GlandesMagicae());
@@ -699,7 +700,8 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new Sniperscope(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new AnastasiaNecklace(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new BlueGiant(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new TheRipple(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);
@@ -708,6 +710,8 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new PureHeart(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new WhitePurity(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new SapphireRoseNecklace(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new TheRipple(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.WangChuan_LIME);
 
 
 //        BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);

@@ -1,0 +1,174 @@
+
+STANCE_WANGCHUAN_BIKINI.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+B_hair
+  rotate: false
+  xy: 642, 127
+  size: 392, 613
+  orig: 392, 613
+  offset: 0, 0
+  index: -1
+Blink1
+  rotate: true
+  xy: 1556, 646
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+Blink2
+  rotate: true
+  xy: 760, 14
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+F_hair
+  rotate: false
+  xy: 642, 2
+  size: 116, 123
+  orig: 116, 123
+  offset: 0, 0
+  index: -1
+L_arm
+  rotate: false
+  xy: 1253, 57
+  size: 295, 217
+  orig: 295, 217
+  offset: 0, 0
+  index: -1
+L_arm2
+  rotate: true
+  xy: 1949, 424
+  size: 220, 84
+  orig: 220, 84
+  offset: 0, 0
+  index: -1
+L_bingjiao
+  rotate: true
+  xy: 204, 15
+  size: 101, 121
+  orig: 101, 121
+  offset: 0, 0
+  index: -1
+L_leg
+  rotate: false
+  xy: 1036, 124
+  size: 215, 616
+  orig: 215, 616
+  offset: 0, 0
+  index: -1
+L_meimao
+  rotate: true
+  xy: 1550, 260
+  size: 14, 4
+  orig: 14, 4
+  offset: 0, 0
+  index: -1
+Opai
+  rotate: false
+  xy: 1844, 67
+  size: 148, 144
+  orig: 148, 144
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: true
+  xy: 1550, 82
+  size: 129, 292
+  orig: 129, 292
+  offset: 0, 0
+  index: -1
+R_bingjiao
+  rotate: true
+  xy: 327, 91
+  size: 25, 121
+  orig: 25, 121
+  offset: 0, 0
+  index: -1
+R_finger
+  rotate: false
+  xy: 1910, 377
+  size: 37, 38
+  orig: 37, 38
+  offset: 0, 0
+  index: -1
+R_leg
+  rotate: true
+  xy: 1091, 759
+  size: 263, 611
+  orig: 263, 611
+  offset: 0, 0
+  index: -1
+R_meimao
+  rotate: true
+  xy: 1686, 733
+  size: 24, 8
+  orig: 24, 8
+  offset: 0, 0
+  index: -1
+Sword
+  rotate: false
+  xy: 2, 118
+  size: 638, 622
+  orig: 638, 622
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 1556, 213
+  size: 202, 352
+  orig: 202, 352
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 890, 14
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+fashi1
+  rotate: false
+  xy: 1091, 742
+  size: 85, 15
+  orig: 85, 15
+  offset: 0, 0
+  index: -1
+fashi3
+  rotate: false
+  xy: 1253, 276
+  size: 301, 481
+  orig: 301, 481
+  offset: 0, 0
+  index: -1
+fashi4_LK
+  rotate: false
+  xy: 1704, 646
+  size: 337, 376
+  orig: 337, 376
+  offset: 0, 0
+  index: -1
+mawei
+  rotate: true
+  xy: 1556, 417
+  size: 227, 391
+  orig: 227, 391
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 16
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1
+wing_behind
+  rotate: false
+  xy: 2, 742
+  size: 1087, 280
+  orig: 1087, 280
+  offset: 0, 0
+  index: -1

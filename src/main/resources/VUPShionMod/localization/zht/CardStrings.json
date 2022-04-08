@@ -207,8 +207,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "姿態解放-克洛伊斯",
-    "DESCRIPTION": "效果不能疊加。 NL 每回合結束時，將 !M! 張 *快速篩選 加入抽牌堆頂部。",
-    "UPGRADE_DESCRIPTION": "效果不能疊加。 NL 每回合結束時，將 !M! 張 *快速篩選+ 加入抽牌堆頂部。"
+    "DESCRIPTION": "效果不能疊加。 NL 每回合結束時，將 !M! 張 *快速篩選 加入抽牌堆。",
+    "UPGRADE_DESCRIPTION": "效果不能疊加。 NL 每回合結束時，將 !M! 張 *快速篩選+ 加入抽牌堆。"
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "時空扭曲",
@@ -533,8 +533,8 @@
   },
   "VUPShionMod:LunaMergo": {
     "NAME": "調息",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 失去1點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 獲得2點 vup_shion_mod:劍意 。 NL 失去1點 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 獲得2點 vup_shion_mod:劍意 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "月讀"
     ]
@@ -550,8 +550,8 @@
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "見切",
-    "DESCRIPTION": "造成 !D! 點傷害 。 NL 獲得 !M! 層 vup_shion_mod:緩衝 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽一張牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害 。 NL 造成 vup_shion_mod:劍意 層數的傷害 。 NL 獲得 !M! 層 vup_shion_mod:緩衝 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "DESCRIPTION": "造成 !D! 點傷害 。 NL 獲得 !M! 層 vup_shion_mod:見切 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害 。 NL 造成 vup_shion_mod:劍意 層數的傷害 。 NL 獲得 !M! 層 vup_shion_mod:見切 。 NL 獲得1點 vup_shion_mod:硬直 。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       "氣刃大迴旋"
     ]
@@ -567,7 +567,7 @@
   "VUPShionMod:SubLuna": {
     "NAME": "月隱",
     "DESCRIPTION": "獲得1層 無實體 。 NL 失去 !M! 點 vup_shion_mod:硬直 。 NL 下回合獲得 [E] [E] [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 獲得1層 無實體 。 NL 失去 !M! 點 vup_shion_mod:硬直 。 NL 下回合獲得 [E] [E] [E] 。 NL 消耗 。"
+    "UPGRADE_DESCRIPTION": ""
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "斷水",
@@ -591,8 +591,8 @@
   },
   "VUPShionMod:PetalsFall": {
     "NAME": "散華",
-    "DESCRIPTION": "每當你打出一張攻擊牌，獲得 !M! 點 vup_shion_mod:劍意 。",
-    "UPGRADE_DESCRIPTION": "獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 你的 vup_shion_mod:劍意 不再降低。 NL 每回合開始時 NL 獲得 !M! 層 vup_shion_mod:劍意 。"
+    "DESCRIPTION": "每當你失去 vup_shion_mod:劍意 時，獲得失去層數 !M! 倍的 格擋 。 NL 對所有敵人造成失去層數 !M! 倍的傷害。",
+    "UPGRADE_DESCRIPTION": ""
   },
   "VUPShionMod:Poise": {
     "NAME": "緘默",
@@ -619,12 +619,13 @@
   },
   "VUPShionMod:AfflictioBellumque": {
     "NAME": "二之章：戰亂",
-    "DESCRIPTION": " 虛無 。 NL 對所有敵人造成 !D! 點傷害並給予 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 2。"
+    "DESCRIPTION": " 虛無 。 NL 對所有敵人造成 !D! 點傷害並給予 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 2。",
+    "UPGRADE_DESCRIPTION": " 虛無 。 NL 對所有敵人造成 !D! 點傷害並給予 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "四之章：荊棘",
-    "DESCRIPTION": " 虛無 。 NL 給予對所有敵人5X層 vup_shion_mod:纏繞 和 !M! 層 虛弱 。 NL vup_shion_mod:魔能過載 。",
-    "UPGRADE_DESCRIPTION": " 虛無 。 NL 給予對所有敵人7X層 vup_shion_mod:纏繞 和 !M! 層 虛弱 。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": " 虛無 。 NL 給予對所有敵人6X層 vup_shion_mod:纏繞 和 !M! 層 虛弱 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": " 虛無 。 NL 給予對所有敵人9X層 vup_shion_mod:纏繞 和 !M! 層 虛弱 。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "終章：熱寂",
@@ -637,7 +638,7 @@
   },
   "VUPShionMod:Skip": {
     "NAME": "跳讀",
-    "DESCRIPTION": "抽 !M! 張牌。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": "抽 !M! 張牌。 NL vup_shion_mod:魔能過載 。 NL 消耗 。"
   },
   "VUPShionMod:DistantiaAbsensque": {
     "NAME": "三之章：遠行",
@@ -655,13 +656,13 @@
   },
   "VUPShionMod:AnimaSpiritusque": {
     "NAME": "七之章：復甦",
-    "DESCRIPTION": "下回合獲得 !M! [E] 。 NL 獲得5層 *再生 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 下回合獲得 !M! [E] 。 NL 獲得5層 *再生 。 NL 消耗 。"
+    "DESCRIPTION": "下回合獲得 !M! [E] 。 NL 獲得 !VUPShionSecondM! 層 *再生 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 下回合獲得 !M! [E] 。 NL 獲得 !VUPShionSecondM! 層 *再生 。 NL 消耗 。"
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：覺醒",
-    "DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。 NL 在本場戰鬥中 升級 你的所有牌。",
-    "UPGRADE_DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。 NL 在本場戰鬥中 升級 你的所有牌。"
+    "DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。 NL 永久 升級 隨機一張牌。",
+    "UPGRADE_DESCRIPTION": "觸發 vup_shion_mod:魔能過載 時，變為獲得 !M! 點 vup_shion_mod:劍意 。 NL 永久 升級 隨機一張牌。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：樂園",
@@ -719,9 +720,9 @@
     "DESCRIPTION": "擊暈 所有敵人。 NL 消耗 ， 虛無 。",
     "UPGRADE_DESCRIPTION": "擊暈 所有敵人兩次。 NL 消耗 ， 虛無 。",
     "EXTENDED_DESCRIPTION": [
-      "通典：光（永續）",
+      "通典：光（泛濫）",
       "通典：光（極意）",
-      "擊暈所有敵人。 NL 虛無 。"
+      "擊暈 所有敵人兩次。 NL 消耗 ， 虛無 。"
     ]
   },
   "VUPShionMod:CaligoConstans": {
@@ -867,7 +868,7 @@
   "VUPShionMod:AurumNimium": {
     "NAME": "通典：金",
     "DESCRIPTION": " 升級 !M! 張手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "升級 !M! 張牌堆或手牌中的牌。",
+    "UPGRADE_DESCRIPTION": "在本場戰鬥中 升級 你的所有牌。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：金（泛濫）",
       "通典：金（極意）",
@@ -877,7 +878,7 @@
   "VUPShionMod:AurumFidum": {
     "NAME": "通典：金",
     "DESCRIPTION": " 升級 !M! 張手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "升級 !M! 張牌堆或手牌中的牌。",
+    "UPGRADE_DESCRIPTION": "在本場戰鬥中 升級 你的所有牌。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：金（如意）",
       "通典：金（極意）",
@@ -927,5 +928,65 @@
   "VUPShionMod:FunnelMatrix": {
     "NAME": "自動浮游矩陣",
     "DESCRIPTION": "對一名敵人觸發2次偵查 vup_shion_mod:浮游炮 和重力 vup_shion_mod:浮游炮 及3次追擊 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。"
+  },
+  "VUPShionMod:Alleviator": {
+    "NAME": "緩衝迴路",
+    "DESCRIPTION": "每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 [E] [E] 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 [E] [E] 。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:Recharger": {
+    "NAME": "充能迴路",
+    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，獲得 !M! vup_shion_mod:劍意 。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:Accelerator": {
+    "NAME": "加速迴路",
+    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，獲得 !M! 點臨時 敏捷 。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:Recoiler": {
+    "NAME": "反衝迴路",
+    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，對所有敵人造成 !M! 點傷害。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:Gravitater": {
+    "NAME": "重力迴路",
+    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，獲得 !M! 點 格擋 。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:Superloader": {
+    "NAME": "超載迴路",
+    "DESCRIPTION": "下 !M! 次獲得 vup_shion_mod:魔能過載 時， NL 抽一張牌。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 下 !M! 次獲得 vup_shion_mod:魔能過載 時， NL 抽一張牌。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:Antisequencer": {
+    "NAME": "逆時序迴路",
+    "DESCRIPTION": "每回合開始獲得 vup_shion_mod:魔能過載 ， NL 打出抽牌堆頂部的 !M! 張牌。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "每回合開始獲得 vup_shion_mod:魔能過載 ， NL 打出抽牌堆頂部的 !M! 張牌。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:GensBombardae": {
+    "NAME": "魔彈生成",
+    "DESCRIPTION": "將 X+2 張 *魔連彈 加入手牌。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "將 X+2 張 *魔連彈+ 加入手牌。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:MagicProjection": {
+    "NAME": "投影魔術",
+    "DESCRIPTION": "獲得 !M! 張帶有 消耗 的隨機攻擊牌。 NL 它們的耗能為0。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "獲得一張帶有 消耗 的 *無限劍制+ 。 NL 它的耗能為0。 NL vup_shion_mod:魔能過載 。",
+    "EXTENDED_DESCRIPTION": [
+      "投影魔法",
+      "偽·固有結界",
+      "獲得 !M! 張 升級 的帶有 消耗 的隨機攻擊牌。 NL 它們的耗能為0。 NL vup_shion_mod:魔能過載 。"
+    ]
+  },
+  "VUPShionMod:NihilImmensum": {
+    "NAME": "偽·無量空處",
+    "DESCRIPTION": "每獲得 !M! 次 vup_shion_mod:魔能過載 ，獲得一層 無實體 。 NL vup_shion_mod:魔能過載 2。"
+  },
+  "VUPShionMod:ArtificiumMundi": {
+    "NAME": "偽·世界",
+    "DESCRIPTION": "所有手牌本回合耗能為0。 NL 他們打出時獲得 vup_shion_mod:魔能過載 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 張牌。 NL 所有手牌本回合耗能為0。 NL 他們打出時獲得 vup_shion_mod:魔能過載 。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:OculusMortis": {
+    "NAME": "偽·直死魔眼",
+    "DESCRIPTION": "每回合開始時給予隨機敵人 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "每回合開始時給予所有敵人 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 。"
   }
 }

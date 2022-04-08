@@ -19,7 +19,7 @@ public class Alleviator extends AbstractWCCard {
 
     public Alleviator() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override

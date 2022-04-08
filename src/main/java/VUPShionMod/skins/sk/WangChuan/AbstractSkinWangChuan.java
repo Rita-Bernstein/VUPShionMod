@@ -14,7 +14,8 @@ public class AbstractSkinWangChuan extends AbstractSkinCharacter {
     public static final String ID = CardCrawlGame.languagePack.getCharacterString("VUPShionMod:WangChuan").NAMES[0];
     public static final AbstractSkin[] SKINS = new AbstractSkin[]{
             new OriWangChuan(),
-            new PurityWangChuan()
+            new PurityWangChuan(),
+            new AquaWangChuan()
     };
 
     public AbstractSkinWangChuan() {

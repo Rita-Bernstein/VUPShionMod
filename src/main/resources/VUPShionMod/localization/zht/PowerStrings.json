@@ -315,7 +315,7 @@
   "VUPShionMod:PetalsFallPower": {
     "NAME": "散華",
     "DESCRIPTIONS": [
-      "每當你打出一張 #y攻擊牌 ，獲得 #b%d 層 #y劍意 。"
+      "每當你失去 #y劍意 時，獲得失去層數 #b%d 倍的 #y格擋 。 NL 對所有敵人造成失去層數 #b%d 倍的傷害。"
     ]
   },
   "VUPShionMod:GainCorGladiiPower": {
@@ -455,6 +455,80 @@
     "NAME": "增援",
     "DESCRIPTIONS": [
       "敵人的增援正在趕來。"
+    ]
+  },
+  "VUPShionMod:AlleviatorPower": {
+    "NAME": "緩衝迴路",
+    "DESCRIPTIONS": [
+      "每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 #b%d [E] 。"
+    ]
+  },
+  "VUPShionMod:RechargerPower": {
+    "NAME": "充能迴路",
+    "DESCRIPTIONS": [
+      "獲得 #y魔能過載 時，獲得 #b%d 點 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:AcceleratorPower": {
+    "NAME": "加速迴路",
+    "DESCRIPTIONS": [
+      "獲得 #y魔能過載 時，獲得 #b%d 點臨時 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:RecoilerPower": {
+    "NAME": "反衝迴路",
+    "DESCRIPTIONS": [
+      "獲得 #y魔能過載 時，對所有敵人造成 b%d 點傷害。"
+    ]
+  },
+  "VUPShionMod:GravitaterPower": {
+    "NAME": "重力迴路",
+    "DESCRIPTIONS": [
+      "獲得 #y魔能過載 時，獲得 b%d 點 #y格擋 。"
+    ]
+  },
+  "VUPShionMod:SuperloaderPower": {
+    "NAME": "超載迴路",
+    "DESCRIPTIONS": [
+      "下 b%d 次獲得 #y魔能過載 時， NL 抽一張牌。"
+    ]
+  },
+  "VUPShionMod:AntisequencerPower": {
+    "NAME": "逆時序迴路",
+    "DESCRIPTIONS": [
+      "每回合開始時打出抽牌堆頂部的 #b%d 張牌。",
+      "每回合開始時打出抽牌堆頂部的 #b%d 張牌。"
+    ]
+  },
+  "VUPShionMod:NihilImmensumPower": {
+    "NAME": "偽·無量空處",
+    "DESCRIPTIONS": [
+      "每獲得 #b%d 次 #y魔能過載，獲得 #b%d 層 #y無實體 。(已獲得過 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:NihilImmensum2Power": {
+    "NAME": "偽·無量空處+",
+    "DESCRIPTIONS": [
+      "每獲得 #b%d 次 #y魔能過載，獲得 #b%d 層 #y無實體 。(已獲得過 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:OculusMortisPower": {
+    "NAME": "偽·直死魔眼",
+    "DESCRIPTIONS": [
+      "每回合開始時給予隨機 #b%d 名敵人 #b1 層 #y易傷 。"
+    ]
+  },
+  "VUPShionMod:OculusMortis2Power": {
+    "NAME": "偽·直死魔眼",
+    "DESCRIPTIONS": [
+      "每回合開始時給予所有敵人 #b%d 層 #y易傷 。"
+    ]
+  },
+  "VUPShionMod:FlawlessParryPower": {
+    "NAME": "見切",
+    "DESCRIPTIONS": [
+      "阻止下一次你受到的生命值損傷。",
+      "阻止下 #b%d 次你受到的生命值損傷。"
     ]
   }
 }

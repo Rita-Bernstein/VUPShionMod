@@ -32,8 +32,11 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.potions.FairyPotion;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.LizardTail;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
@@ -184,6 +187,19 @@ public class AnastasiaNecklace extends CustomRelic implements OnPlayerDeathRelic
                 break;
             }
         }
+
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic.relicId.equals(LizardTail.ID) && relic.counter == -2) {
+                canTrigger = false;
+            }
+        }
+
+        if (AbstractDungeon.player.hasRelic(LizardTail.ID))
+            canTrigger = false;
+
+        if (AbstractDungeon.player.hasPotion(FairyPotion.POTION_ID))
+            canTrigger = false;
+
 
         if (!triggered && canTrigger) {
             CardCrawlGame.music.justFadeOutTempBGM();

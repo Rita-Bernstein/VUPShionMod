@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BlackHand extends AbstractKuroisuCard  {
@@ -39,6 +40,14 @@ public class BlackHand extends AbstractKuroisuCard  {
                 }
             }
         }));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if(AbstractDungeon.player.currentHealth <= this.magicNumber)
+            return false;
+
+        return super.canUse(p, m);
     }
 
     public AbstractCard makeCopy() {

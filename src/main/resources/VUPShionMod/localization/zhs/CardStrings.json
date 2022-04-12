@@ -967,12 +967,12 @@
   },
   "VUPShionMod:MagicProjection": {
     "NAME": "投影魔术",
-    "DESCRIPTION": "获得 !M! 张带有 消耗 的随机攻击牌。 NL 它们的耗能为0。 NL vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": "获得一张带有 消耗 的 *无限剑制+ 。 NL 它的耗能为0。 NL vup_shion_mod:魔能过载 。",
+    "DESCRIPTION": "获得 !M! 张带有 消耗 的随机攻击牌。 NL 它们的耗能为0。 NL vup_shion_mod:魔能过载 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得一张带有 消耗 的 *无限剑制+ 。 NL 它的耗能为0。 NL vup_shion_mod:魔能过载 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "投影魔法",
       "伪·固有结界",
-      "获得 !M! 张 升级 的带有 消耗 的随机攻击牌。 NL 它们的耗能为0。 NL vup_shion_mod:魔能过载 。"
+      "获得 !M! 张 升级 的带有 消耗 的随机攻击牌。 NL 它们的耗能为0。 NL vup_shion_mod:魔能过载 。 NL 消耗 。"
     ]
   },
   "VUPShionMod:NihilImmensum": {

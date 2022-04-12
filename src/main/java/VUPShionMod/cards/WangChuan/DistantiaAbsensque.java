@@ -22,7 +22,7 @@ public class DistantiaAbsensque extends AbstractWCCard {
 
     public DistantiaAbsensque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 1;
     }
 
@@ -38,7 +38,7 @@ public class DistantiaAbsensque extends AbstractWCCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(1);
         }
     }
 }

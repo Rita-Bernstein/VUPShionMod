@@ -32,10 +32,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.potions.FairyPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.LizardTail;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
@@ -135,6 +138,18 @@ public class TrackingBeacon extends CustomRelic implements OnPlayerDeathRelic {
                 break;
             }
         }
+
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic.relicId.equals(LizardTail.ID) && relic.counter == -2) {
+                canTrigger = false;
+            }
+        }
+
+        if (AbstractDungeon.player.hasRelic(LizardTail.ID))
+            canTrigger = false;
+
+        if (AbstractDungeon.player.hasPotion(FairyPotion.POTION_ID))
+            canTrigger = false;
 
         if (!triggered && canTrigger) {
             CardCrawlGame.music.justFadeOutTempBGM();

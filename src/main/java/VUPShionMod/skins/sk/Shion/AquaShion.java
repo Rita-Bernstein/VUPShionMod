@@ -24,7 +24,7 @@ public class AquaShion extends AbstractSkin {
         this.CORPSE = "VUPShionMod/characters/Shion/corpse.png";
         this.atlasURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX_BIKINI.atlas";
         this.jsonURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX_BIKINI.json";
-        this.renderscale = 3.0F;
+        this.renderscale = 2.4F;
     }
 
 

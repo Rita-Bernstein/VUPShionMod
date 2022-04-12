@@ -931,8 +931,8 @@
   },
   "VUPShionMod:Alleviator": {
     "NAME": "緩衝迴路",
-    "DESCRIPTION": "每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 [E] [E] 。 NL vup_shion_mod:魔能過載 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 [E] [E] 。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": "每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 [E] 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 [E] 。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:Recharger": {
     "NAME": "充能迴路",
@@ -967,12 +967,12 @@
   },
   "VUPShionMod:MagicProjection": {
     "NAME": "投影魔術",
-    "DESCRIPTION": "獲得 !M! 張帶有 消耗 的隨機攻擊牌。 NL 它們的耗能為0。 NL vup_shion_mod:魔能過載 。",
-    "UPGRADE_DESCRIPTION": "獲得一張帶有 消耗 的 *無限劍制+ 。 NL 它的耗能為0。 NL vup_shion_mod:魔能過載 。",
+    "DESCRIPTION": "獲得 !M! 張帶有 消耗 的隨機攻擊牌。 NL 它們的耗能為0。 NL vup_shion_mod:魔能過載 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "獲得一張帶有 消耗 的 *無限劍制+ 。 NL 它的耗能為0。 NL vup_shion_mod:魔能過載 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "投影魔法",
       "偽·固有結界",
-      "獲得 !M! 張 升級 的帶有 消耗 的隨機攻擊牌。 NL 它們的耗能為0。 NL vup_shion_mod:魔能過載 。"
+      "獲得 !M! 張 升級 的帶有 消耗 的隨機攻擊牌。 NL 它們的耗能為0。 NL vup_shion_mod:魔能過載 。 NL 消耗 。"
     ]
   },
   "VUPShionMod:NihilImmensum": {
@@ -988,5 +988,9 @@
     "NAME": "偽·直死魔眼",
     "DESCRIPTION": "每回合開始時給予隨機敵人 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 。",
     "UPGRADE_DESCRIPTION": "每回合開始時給予所有敵人 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 。"
+  },
+  "VUPShionMod:Warp": {
+    "NAME": "瞬移",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 將棄牌堆中的一張攻擊牌加入手牌。"
   }
 }

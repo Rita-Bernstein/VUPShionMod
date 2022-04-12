@@ -24,7 +24,7 @@ public class BlueGiantShion extends AbstractSkin {
         this.CORPSE = "VUPShionMod/characters/Shion/corpse.png";
         this.atlasURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX.atlas";
         this.jsonURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX.json";
-        this.renderscale = 3.0F;
+        this.renderscale = 2.4F;
     }
 
 

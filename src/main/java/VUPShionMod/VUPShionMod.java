@@ -151,17 +151,17 @@ public class VUPShionMod implements
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
                 assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
 
-//        BaseMod.addColor(CardColorEnum.Liyezhu_LIME,
-//                Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color,
-//                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
-//                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
-//                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
-//                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
-//                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
-//                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
-//                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
-//                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
-//                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
+        BaseMod.addColor(CardColorEnum.Liyezhu_LIME,
+                Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color,
+                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
+                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
+                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
+                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
 
 
     }
@@ -334,6 +334,7 @@ public class VUPShionMod implements
         ArrayList<AbstractPlayer.PlayerClass> list = new ArrayList<>();
         list.add(AbstractPlayerEnum.VUP_Shion);
         list.add(AbstractPlayerEnum.WangChuan);
+        list.add(AbstractPlayerEnum.Liyezhu);
 
 //        mod公共事件
         for(AbstractPlayer.PlayerClass playerClass : list){
@@ -452,11 +453,11 @@ public class VUPShionMod implements
                 assetPath("characters/WangChuan/Button.png"),
                 assetPath("characters/WangChuan/portrait.png"),
                 AbstractPlayerEnum.WangChuan);
-//
-//        BaseMod.addCharacter(new Liyezhu(Liyezhu.charStrings.NAMES[1], AbstractPlayerEnum.Liyezhu),
-//                assetPath("characters/Liyezhu/Button.png"),
-//                assetPath("characters/Liyezhu/portrait.png"),
-//                AbstractPlayerEnum.Liyezhu);
+
+        BaseMod.addCharacter(new Liyezhu(Liyezhu.charStrings.NAMES[1], AbstractPlayerEnum.Liyezhu),
+                assetPath("characters/Liyezhu/Button.png"),
+                assetPath("characters/Liyezhu/portrait.png"),
+                AbstractPlayerEnum.Liyezhu);
 
     }
 
@@ -700,6 +701,7 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new Sniperscope(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new AnastasiaNecklace(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new BlueGiant(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new TheRipple(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.VUP_Shion_LIME);
 

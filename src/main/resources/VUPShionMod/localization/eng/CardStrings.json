@@ -969,12 +969,12 @@
   },
   "VUPShionMod:MagicProjection": {
     "NAME": "Magic Projection",
-    "DESCRIPTION": "Add !M! Attacks that exhaust into your hand. NL They cost 0. NL vup_shion_mod:Magiam\u00a0Obruor.",
-    "UPGRADE_DESCRIPTION": "Add 1 *Gladii *Infiniti+ that exhausts into your hand. NL It costs 0. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "DESCRIPTION": "Add !M! Attacks that exhaust into your hand. NL They cost 0. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add 1 *Gladii *Infiniti+ that exhausts into your hand. NL It costs 0. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Arcane Projection",
       "Ensem Evoco",
-      "Add !M! upgraded Attacks that exhaust into your hand. NL They cost 0. NL vup_shion_mod:Magiam\u00a0Obruor."
+      "Add !M! upgraded Attacks that exhaust into your hand. NL They cost 0. NL vup_shion_mod:Magiam\u00a0Obruor. NL Exhaust."
     ]
   },
   "VUPShionMod:NihilImmensum": {

@@ -1048,7 +1048,7 @@
   },
   "VUPShionMod:FlayTheEvil": {
     "NAME": "邪魔审判",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽一张牌。 NL vup_shion_mod:伐罪 并击杀 vup_shion_mod:罪孽 有至少10层的非首领敌人。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 击杀这个 vup_shion_mod:罪孽 至少有10层的非首领敌人。 NL 抽一张牌。 NL vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:PiousPhrase": {
     "NAME": "敬心祈言",
@@ -1108,11 +1108,11 @@
   },
   "VUPShionMod:CelestialIncarnation": {
     "NAME": "圣躯代行",
-    "DESCRIPTION": "同时处于 vup_shion_mod:祈祷姿态 和 vup_shion_mod:审判姿态 。 NL 免疫 虚弱 。"
+    "DESCRIPTION": "同时处于 vup_shion_mod:祈言姿态 和 vup_shion_mod:审判姿态 。 NL 免疫 虚弱 。"
   },
   "VUPShionMod:Calamity": {
     "NAME": "崩坏",
-    "DESCRIPTION": "固有 。 NL 获得5点 力量 。 NL 每回合开始时获得 [E] [E] ，给予 *所有人 2层 vup_shion_mod:罪孽 ，失去20点生命。敌人回合结束时，他们失去 vup_shion_mod:罪孽层数的 力量 。 NL vup_shion_mod:灵魂破损 。"
+    "DESCRIPTION": "固有 。 NL 获得5点 力量 。 NL 每回合开始时获得 [E] [E] ，给予 *所有人 2层 vup_shion_mod:罪孽 ，失去20点生命。敌人回合结束时，他们失去 vup_shion_mod:罪孽 层数的 力量 。 NL vup_shion_mod:灵魂破损 。"
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "圣棺沉灵",
@@ -1132,9 +1132,21 @@
     "DESCRIPTION": "每当你失去生命时，获得 [E] 。",
     "UPGRADE_DESCRIPTION": "每当你失去生命时，获得 [E] 。 NL 每两次你失去生命时，抽一张牌。"
   },
+  "VUPShionMod:TranscendSoul": {
+    "NAME": "祭灵天途",
+    "DESCRIPTION": "回合结束时，回复 vup_shion_mod:沉灵 两倍的生命。",
+    "UPGRADE_DESCRIPTION": "回合结束时，对所有敌人造成 vup_shion_mod:沉灵 两倍的伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "度灵天途"
+    ]
+  },
   "VUPShionMod:Arbitration": {
     "NAME": "审判开庭",
-    "DESCRIPTION": "每当造成未被 格挡 的伤害时，给予 !M! 层 vup_shion_mod:罪孽 。"
+    "DESCRIPTION": "每当造成未被 格挡 的伤害时，给予 !M! 层 vup_shion_mod:罪孽 。",
+    "UPGRADE_DESCRIPTION": "每当造成未被 格挡 的伤害时，给予 *所有人 !M! 层 vup_shion_mod:罪孽 。",
+    "EXTENDED_DESCRIPTION": [
+      "万物·审判开庭"
+    ]
   },
   "VUPShionMod:ProphecyOfDestruction": {
     "NAME": "破灭预言",
@@ -1154,7 +1166,8 @@
   },
   "VUPShionMod:SavageSeries": {
     "NAME": "连斩",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 抽一张牌。 NL 如果打出的上一张牌是攻击，获得 [E] 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 抽一张牌。 NL 如果打出的上一张牌是攻击，获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 抽一张牌。 NL vup_shion_mod:伐罪 。 NL 如果打出的上一张牌是攻击，获得 [E] 。"
   },
   "VUPShionMod:CruciformPenance": {
     "NAME": "至圣十字斩",
@@ -1173,7 +1186,7 @@
   "VUPShionMod:AnnihilatingChoir": {
     "NAME": "破灭咏唱",
     "DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成10X点伤害，回复10X点生命，获得X [E] 。",
-    "UPGRADE_DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成10X点伤害，获得X层 vup_shion_mod:沉灵 ，获得X [E] 。"
+    "UPGRADE_DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成15X点伤害，获得X层 vup_shion_mod:沉灵 ，获得X [E] 。"
   },
   "VUPShionMod:SpiritImpact": {
     "NAME": "圣灵冲击",

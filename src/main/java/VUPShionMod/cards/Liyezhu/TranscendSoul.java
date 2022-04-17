@@ -1,34 +1,28 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SoothingScripture extends AbstractLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID(SoothingScripture.class.getSimpleName());
+public class TranscendSoul extends AbstractLiyezhuCard {
+    public static final String ID = VUPShionMod.makeID(TranscendSoul.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
-    private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardType TYPE = CardType.POWER;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
 
-    public SoothingScripture() {
+    public TranscendSoul() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
+        this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 3;
-        this.exhaust = true;
-        this.cardsToPreview = new EmanationOfIre();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        addToBot(new GainBlockAction(p,this.block));
     }
 
     @Override
@@ -37,8 +31,8 @@ public class SoothingScripture extends AbstractLiyezhuCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            this.cardsToPreview.upgrade();
-            upgradeSecondM(1);
+            this.name = EXTENDED_DESCRIPTION[0];
+            initializeTitle();
         }
     }
 }

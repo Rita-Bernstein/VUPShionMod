@@ -691,6 +691,31 @@ public class VUPShionMod implements
         cards.add(new AvariciousMotto());
         cards.add(new BurnishedRazor());
 
+        cards.add(new CelestialIncarnation());
+        cards.add(new Calamity());
+        cards.add(new HallowedCasket());
+        cards.add(new EnsanguinedFigure());
+        cards.add(new CrimsonDeluge());
+        cards.add(new Asceticism());
+        cards.add(new TranscendSoul());
+        cards.add(new Arbitration());
+        cards.add(new ProphecyOfDestruction());
+        cards.add(new ProphecyOfSalvation());
+
+        cards.add(new Sentence());
+        cards.add(new SacredChop());
+        cards.add(new SavageSeries());
+        cards.add(new CruciformPenance());
+        cards.add(new ReapTheSinful());
+        cards.add(new Whisk());
+        cards.add(new AnnihilatingChoir());
+        cards.add(new SpiritImpact());
+        cards.add(new CruelSword());
+        cards.add(new Execution());
+        cards.add(new Enchant());
+
+
+
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);

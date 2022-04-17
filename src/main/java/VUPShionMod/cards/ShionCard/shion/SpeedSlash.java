@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SpeedSlash extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("SpeedSlash");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy22.png");
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy22.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

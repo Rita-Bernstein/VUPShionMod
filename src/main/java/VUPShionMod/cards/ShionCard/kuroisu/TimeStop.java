@@ -2,14 +2,14 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.LoadCardDiscardPileToTopOfDeckAction;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TimeStop extends AbstractKuroisuCard {
+public class TimeStop extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeStop");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu03.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu03.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

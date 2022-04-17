@@ -152,22 +152,7 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         float x = -108.0f;
         float y = 200.0f;
 
-        if (VUPShionMod.useSimpleOrb || this.color == CardColorEnum.WangChuan_LIME || this.color == CardColorEnum.Codex_LIME) {
-            if (this instanceof FinFunnelUpgrade)
-                darkOrbRenderHelper(sb, orb_g, x, y);
-            else
-                switch (rarity) {
-                    case RARE:
-                        darkOrbRenderHelper(sb, orb_g, x, y);
-                        break;
-                    case UNCOMMON:
-                        darkOrbRenderHelper(sb, orb_b, x, y);
-                        break;
-                    default:
-                        darkOrbRenderHelper(sb, orb_w, x, y);
-                        break;
-                }
-        } else {
+        if (!VUPShionMod.useSimpleOrb && this.color == CardColorEnum.VUP_Shion_LIME) {
             if (this instanceof FinFunnelUpgrade)
                 darkOrbRenderHelper(sb, orb_ag, x, y);
             else
@@ -180,6 +165,22 @@ public abstract class AbstractVUPShionCard extends CustomCard {
                         break;
                     default:
                         darkOrbRenderHelper(sb, orb_aw, x, y);
+                        break;
+                }
+
+        } else {
+            if (this instanceof FinFunnelUpgrade)
+                darkOrbRenderHelper(sb, orb_g, x, y);
+            else
+                switch (rarity) {
+                    case RARE:
+                        darkOrbRenderHelper(sb, orb_g, x, y);
+                        break;
+                    case UNCOMMON:
+                        darkOrbRenderHelper(sb, orb_b, x, y);
+                        break;
+                    default:
+                        darkOrbRenderHelper(sb, orb_w, x, y);
                         break;
                 }
         }

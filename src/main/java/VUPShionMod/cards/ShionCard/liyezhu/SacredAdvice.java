@@ -2,16 +2,16 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SacredAdvice extends AbstractLiyezhuCard {
+public class SacredAdvice extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("SacredAdvice");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz02.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz02.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

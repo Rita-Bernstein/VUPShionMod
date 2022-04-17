@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
-public class AnestheticReagent extends AbstractMinamiCard {
+public class AnestheticReagent extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("AnestheticReagent");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami10.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami10.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

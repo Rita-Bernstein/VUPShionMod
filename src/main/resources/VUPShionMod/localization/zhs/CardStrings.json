@@ -1009,11 +1009,12 @@
   },
   "VUPShionMod:EmanationOfIre": {
     "NAME": "狂躁之光",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人的意图不是攻击，给予 !M! 层 易伤。 NL vup_shion_mod:沉灵 1:造成 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人的意图不是攻击，给予 !M! 层 易伤 。 NL vup_shion_mod:沉灵 1:造成 !D! 点伤害。"
   },
   "VUPShionMod:TranquilPrayer": {
     "NAME": "静默祈言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：所有敌人失去 !M! 点 力量 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *绝啸速斩 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：所有敌人失去 !M! 点 力量 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *绝啸速斩 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：所有敌人失去 !M! 点 力量 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *绝啸速斩+ 。 NL 消耗 。"
   },
   "VUPShionMod:EdgeOfSquall": {
     "NAME": "绝啸速斩",
@@ -1021,11 +1022,11 @@
   },
   "VUPShionMod:RipsoulShrilling": {
     "NAME": "痛魂尖啸",
-    "DESCRIPTION": " 保留 。 NL 造成 !D! 点伤害。 NL 这名敌人本回合失去 !M! 点 力量 。 NL 消耗 。"
+    "DESCRIPTION": " 保留 。不能被 升级 。 NL 造成 !D! 点伤害。 NL 这名敌人下回合失去 !M! 点 力量 。 NL 消耗 。"
   },
   "VUPShionMod:JudgementOfSins": {
     "NAME": "原罪审判",
-    "DESCRIPTION": " 固有 ， 保留 。 NL 进入 vup_shion_mod:审判姿态 。 NL 获得 !M! 层 vup_shion_mod:沉灵 。 NL 每回合开始时失去 !VUPShionSecondM! 点生命。",
+    "DESCRIPTION": " 固有 ， 保留 。 NL 进入 vup_shion_mod:审判姿态 。 NL 获得 !M! 层 vup_shion_mod:沉灵 。 NL 每回合开始时失去3点生命。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 进入 vup_shion_mod:审判姿态 。 NL 获得 !M! 层 vup_shion_mod:沉灵 。 NL 受到25点伤害并获得5点最大生命。",
     "EXTENDED_DESCRIPTION": [
       "自我审判"
@@ -1047,7 +1048,7 @@
   },
   "VUPShionMod:FlayTheEvil": {
     "NAME": "邪魔审判",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽一张牌。 NL vup_shion_mod:伐罪 并击杀 vup_shion_mod:罪孽 有10层或以上的非首领敌人。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽一张牌。 NL vup_shion_mod:伐罪 并击杀 vup_shion_mod:罪孽 有至少10层的非首领敌人。"
   },
   "VUPShionMod:PiousPhrase": {
     "NAME": "敬心祈言",
@@ -1087,7 +1088,7 @@
     "UPGRADE_DESCRIPTION": "下回合开始时造成打出后本回合受到的伤害并获得 [E] 。"
   },
   "VUPShionMod:AvariciousMotto": {
-    "NAME": "贞洁镜盾",
+    "NAME": "贪婪诫言",
     "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：随机一名敌人失去 !M! 点生命。 NL 给予 vup_shion_mod:罪孽 和 力量 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *溢光之刃 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：随机一名敌人失去 !M! 点生命。 NL 给予 vup_shion_mod:罪孽 和 力量 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *溢光之刃+ 。 NL 消耗 。"
   },

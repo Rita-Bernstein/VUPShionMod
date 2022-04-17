@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BlackHand extends AbstractKuroisuCard  {
+public class BlackHand extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("BlackHand");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu11.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu11.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

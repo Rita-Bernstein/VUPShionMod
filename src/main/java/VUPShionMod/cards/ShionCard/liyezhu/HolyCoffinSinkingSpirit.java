@@ -1,15 +1,15 @@
 package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.powers.HolyCoffinSinkingSpiritPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HolyCoffinSinkingSpirit extends AbstractLiyezhuCard {
+public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("HolyCoffinSinkingSpirit");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz11.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz11.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GravityImpact extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("GravityImpact");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy26.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy26.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

@@ -16,7 +16,7 @@ public class PursuitFinFunnelUpgrade extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("PursuitUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG = VUPShionMod.assetPath("img/cards/colorless/PursuitFinFunnelUpgrade.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/PursuitFinFunnelUpgrade.png");
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;

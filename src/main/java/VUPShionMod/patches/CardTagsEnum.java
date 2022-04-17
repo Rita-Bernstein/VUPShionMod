@@ -17,19 +17,22 @@ public class CardTagsEnum {
     public static AbstractCard.CardTags SHION_CARD;
 
     @SpireEnum
-    public static AbstractCard.CardTags ANASTASIA_CARD;
+    public static AbstractCard.CardTags SHION_ANASTASIA_CARD;
 
     @SpireEnum
-    public static AbstractCard.CardTags KUROISU_CARD;
+    public static AbstractCard.CardTags SHION_KUROISU_CARD;
 
     @SpireEnum
-    public static AbstractCard.CardTags LIYEZHU_CARD;
+    public static AbstractCard.CardTags SHION_LIYEZHU_CARD;
 
     @SpireEnum
-    public static AbstractCard.CardTags MINAMI_CARD;
+    public static AbstractCard.CardTags SHION_MINAMI_CARD;
 
     @SpireEnum
     public static AbstractCard.CardTags WANGCHUAN_CARD;
+
+    @SpireEnum
+    public static AbstractCard.CardTags LIYEZHU_CARD;
 
     @SpireEnum
     public static AbstractCard.CardTags Codex_CARD;

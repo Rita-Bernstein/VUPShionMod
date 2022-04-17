@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractAnastasiaCard;
+import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.cards.ShionCard.optionCards.GravityFinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.optionCards.InvestigationFinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.optionCards.PursuitFinFunnelUpgrade;
@@ -14,9 +14,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class FinFunnelUpgrade extends AbstractAnastasiaCard {
+public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelUpgrade");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia10.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia10.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;

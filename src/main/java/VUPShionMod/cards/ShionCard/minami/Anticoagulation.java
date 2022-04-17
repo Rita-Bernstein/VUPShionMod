@@ -1,16 +1,16 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.powers.AnticoagulationPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Anticoagulation extends AbstractMinamiCard  {
+public class Anticoagulation extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("Anticoagulation");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami06.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami06.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

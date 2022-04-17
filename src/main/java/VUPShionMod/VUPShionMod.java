@@ -1,5 +1,6 @@
 package VUPShionMod;
 
+import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.cards.ShionCard.*;
 import VUPShionMod.cards.ShionCard.anastasia.*;
 import VUPShionMod.cards.ShionCard.kuroisu.*;
@@ -151,17 +152,17 @@ public class VUPShionMod implements
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
                 assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
 
-//        BaseMod.addColor(CardColorEnum.Liyezhu_LIME,
-//                Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color,
-//                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
-//                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
-//                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
-//                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
-//                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
-//                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
-//                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
-//                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
-//                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
+        BaseMod.addColor(CardColorEnum.Liyezhu_LIME,
+                Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color,
+                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
+                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
+                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
+                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
+                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
 
 
     }
@@ -454,10 +455,10 @@ public class VUPShionMod implements
                 assetPath("characters/WangChuan/portrait.png"),
                 AbstractPlayerEnum.WangChuan);
 
-//        BaseMod.addCharacter(new Liyezhu(Liyezhu.charStrings.NAMES[1], AbstractPlayerEnum.Liyezhu),
-//                assetPath("characters/Liyezhu/Button.png"),
-//                assetPath("characters/Liyezhu/portrait.png"),
-//                AbstractPlayerEnum.Liyezhu);
+        BaseMod.addCharacter(new Liyezhu(Liyezhu.charStrings.NAMES[1], AbstractPlayerEnum.Liyezhu),
+                assetPath("characters/Liyezhu/Button.png"),
+                assetPath("characters/Liyezhu/portrait.png"),
+                AbstractPlayerEnum.Liyezhu);
 
     }
 
@@ -504,7 +505,7 @@ public class VUPShionMod implements
         cards.add(new MinuteHand());
         cards.add(new SecondHand());
         cards.add(new CrackOfTime());
-        cards.add(new ReleaseFormKuroisu());
+        cards.add(new ReleaseFormShionKuroisu());
         cards.add(new TimeWarp());
         cards.add(new BlackHand());
         cards.add(new TimeOverload());
@@ -522,7 +523,7 @@ public class VUPShionMod implements
         cards.add(new SuperCharge());
         cards.add(new Anticoagulation());
         cards.add(new Lure());
-        cards.add(new ReleaseFormMinami());
+        cards.add(new ReleaseFormShionMinami());
         cards.add(new AnestheticReagent());
         cards.add(new EnhancedSupport());
         cards.add(new BattlefieldHeritage());
@@ -551,7 +552,7 @@ public class VUPShionMod implements
 
 //        anastasia
         cards.add(new FinFunnelUpgrade());
-        cards.add(new AnastasiaPlan());
+        cards.add(new ShionAnastasiaPlan());
         cards.add(new AttackOrderAlpha());
         cards.add(new AttackOrderBeta());
         cards.add(new AttackOrderDelta());
@@ -666,21 +667,45 @@ public class VUPShionMod implements
         cards.add(new TonitrusConstans());
         cards.add(new TonitrusRapidus());
 
+//        黎夜竹
+        cards.add(new HolyLight());
+        cards.add(new Barrier());
+        cards.add(new SoothingScripture());
+        cards.add(new EmanationOfIre());
+        cards.add(new TranquilPrayer());
+        cards.add(new EdgeOfSquall());
+        cards.add(new RipsoulShrilling());
+        cards.add(new JudgementOfSins());
+        cards.add(new RealizingCanticle());
+        cards.add(new BeinglessMoment());
+        cards.add(new SoleAnthem());
+        cards.add(new FlayTheEvil());
+        cards.add(new PiousPhrase());
+        cards.add(new RavingExcoriation());
+        cards.add(new BlindDevotion());
+        cards.add(new LimpidHeart());
+        cards.add(new SanguinaryPrecept());
+        cards.add(new FlickeringTip());
+        cards.add(new InordinateAdmonition());
+        cards.add(new ChasteReflection());
+        cards.add(new AvariciousMotto());
+        cards.add(new BurnishedRazor());
+
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);
             UnlockTracker.unlockCard(card.cardID);
 
-            if (card instanceof AbstractAnastasiaCard)
+            if (card instanceof AbstractShionAnastasiaCard)
                 an_Cards.add(card);
 
-            if (card instanceof AbstractKuroisuCard)
+            if (card instanceof AbstractShionKuroisuCard)
                 ku_Cards.add(card);
 
-            if (card instanceof AbstractLiyezhuCard)
+            if (card instanceof AbstractShionLiyezhuCard)
                 li_Cards.add(card);
 
-            if (card instanceof AbstractMinamiCard)
+            if (card instanceof AbstractShionMinamiCard)
                 mi_Cards.add(card);
 
             if (card instanceof AbstractShionCard)
@@ -716,8 +741,8 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.WangChuan_LIME);
 
 
-//        BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);
-//        BaseMod.addRelicToCustomPool(new HallowedCase(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new HallowedCase(), CardColorEnum.Liyezhu_LIME);
 
     }
 

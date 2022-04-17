@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class IntroductionSilence extends AbstractLiyezhuCard {
+public class IntroductionSilence extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("IntroductionSilence");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz01.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz01.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

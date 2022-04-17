@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class OverspeedField extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("OverspeedField");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu14.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu14.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FunnelMatrix extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("FunnelMatrix");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/colorless/FunnelMatrix.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/FunnelMatrix.png");
 
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.SPECIAL;

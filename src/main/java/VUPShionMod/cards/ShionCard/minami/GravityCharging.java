@@ -2,15 +2,15 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerFinFunnelAction;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class GravityCharging extends AbstractMinamiCard {
+public class GravityCharging extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("GravityCharging");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami16.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami16.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

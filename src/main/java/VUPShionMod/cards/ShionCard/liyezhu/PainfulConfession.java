@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -14,9 +14,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class PainfulConfession extends AbstractLiyezhuCard {
+public class PainfulConfession extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("PainfulConfession");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz13.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz13.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

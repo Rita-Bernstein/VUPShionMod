@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerFinFunnelAction;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-public class EnhancedSupport extends AbstractMinamiCard {
+public class EnhancedSupport extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("EnhancedSupport");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami11.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami11.png");
     private static final int COST = -1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

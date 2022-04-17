@@ -2,16 +2,16 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.GainHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Pray extends AbstractLiyezhuCard {
+public class Pray extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("Pray");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz07.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz07.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

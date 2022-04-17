@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class AnastasiaCore extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("AnastasiaCore");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy16.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy16.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

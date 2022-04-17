@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.GainHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.powers.DenergizePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TimeOverload extends AbstractKuroisuCard {
+public class TimeOverload extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeOverload");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu12.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu12.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

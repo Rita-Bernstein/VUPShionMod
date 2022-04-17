@@ -1,15 +1,15 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractAnastasiaCard;
+import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.powers.AttackOrderGammaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class AttackOrderGamma extends AbstractAnastasiaCard {
+public class AttackOrderGamma extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("AttackOrderGamma");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia03.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia03.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

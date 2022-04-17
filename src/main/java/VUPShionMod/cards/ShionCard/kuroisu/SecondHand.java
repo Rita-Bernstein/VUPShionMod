@@ -2,15 +2,15 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.SecondHandAction;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SecondHand extends AbstractKuroisuCard {
+public class SecondHand extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("SecondHand");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu07.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu07.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

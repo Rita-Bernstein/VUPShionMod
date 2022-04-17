@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import com.badlogic.gdx.math.MathUtils;
@@ -15,9 +15,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
-public class FirePower extends AbstractMinamiCard {
+public class FirePower extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("FirePower");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami14.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami14.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;

@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Strafe extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Strafe");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy15.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy15.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -25,7 +25,7 @@ public class Strafe extends AbstractShionCard {
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.baseDamage = 0;
         this.baseMagicNumber = this.magicNumber = 1;
-        loadJokeCardImage(VUPShionMod.assetPath("img/cards/joke/zy15.png"));
+        loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy15.png"));
     }
 
     @Override

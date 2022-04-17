@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class QuickDefend extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("QuickDefend");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy09.png");
 
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.SPECIAL;

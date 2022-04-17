@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 
-public class SuperCharge extends AbstractMinamiCard {
+public class SuperCharge extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("SuperCharge");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami08.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami08.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

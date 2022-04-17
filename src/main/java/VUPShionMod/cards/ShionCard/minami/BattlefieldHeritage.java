@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.GainHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class BattlefieldHeritage extends AbstractMinamiCard {
+public class BattlefieldHeritage extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("BattlefieldHeritage");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami12.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami12.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

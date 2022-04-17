@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TimeBomb extends AbstractKuroisuCard {
+public class TimeBomb extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeBomb");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu04.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu04.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

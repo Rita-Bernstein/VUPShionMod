@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class QuickTrigger extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("QuickTrigger");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy25.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy25.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

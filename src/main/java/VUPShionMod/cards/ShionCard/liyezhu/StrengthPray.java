@@ -2,13 +2,13 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.GainHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StrengthPray extends AbstractLiyezhuCard {
+public class StrengthPray extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("StrengthPray");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz06.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz06.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

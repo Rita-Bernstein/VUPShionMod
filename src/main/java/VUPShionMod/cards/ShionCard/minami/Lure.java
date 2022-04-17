@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Lure extends AbstractMinamiCard {
+public class Lure extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("Lure");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami07.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami07.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

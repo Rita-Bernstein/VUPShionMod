@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerFinFunnelAction;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
@@ -15,9 +15,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class GravityLoading extends AbstractMinamiCard {
+public class GravityLoading extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("GravityLoading");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami13.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami13.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

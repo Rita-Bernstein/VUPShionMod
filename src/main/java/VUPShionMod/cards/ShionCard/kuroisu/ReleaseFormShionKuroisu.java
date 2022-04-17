@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
 import VUPShionMod.powers.ReleaseFormKuroisuPower;
 import VUPShionMod.powers.UpgradedReleaseFormKuroisuPower;
@@ -10,15 +10,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ReleaseFormKuroisu extends AbstractKuroisuCard {
+public class ReleaseFormShionKuroisu extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormKuroisu");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu09.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
-    public ReleaseFormKuroisu() {
+    public ReleaseFormShionKuroisu() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.cardsToPreview = new QuickScreen();
@@ -35,7 +35,7 @@ public class ReleaseFormKuroisu extends AbstractKuroisuCard {
     }
 
     public AbstractCard makeCopy() {
-        return new ReleaseFormKuroisu();
+        return new ReleaseFormShionKuroisu();
     }
 
     public void upgrade() {

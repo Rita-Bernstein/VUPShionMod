@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Defend_Shion extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Defend_Shion");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy02.png");
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy02.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -19,7 +19,7 @@ public class Defend_Shion extends AbstractShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
-        loadJokeCardImage(VUPShionMod.assetPath("img/cards/joke/zy02.png"));
+        loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy02.png"));
     }
 
     @Override

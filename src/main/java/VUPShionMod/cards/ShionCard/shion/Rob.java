@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Rob extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Rob");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy23.png");
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy23.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;

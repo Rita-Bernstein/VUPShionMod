@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.TriggerAllFinFunnelAction;
-import VUPShionMod.cards.ShionCard.AbstractMinamiCard;
+import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.character.Shion;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.ReleaseFormMinamiPower;
@@ -14,9 +14,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FinFunnelActive extends AbstractMinamiCard {
+public class FinFunnelActive extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("FinFunnelActive");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/minami/minami01.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami01.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FirstStrike extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("FirstStrike");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy21.png");
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy21.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

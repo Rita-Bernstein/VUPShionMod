@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BlueBlade extends AbstractLiyezhuCard {
+public class BlueBlade extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("BlueBlade");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz04.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz04.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

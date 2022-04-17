@@ -1,16 +1,16 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.powers.CrackOfTimePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CrackOfTime extends AbstractKuroisuCard {
+public class CrackOfTime extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("CrackOfTime");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu08.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu08.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

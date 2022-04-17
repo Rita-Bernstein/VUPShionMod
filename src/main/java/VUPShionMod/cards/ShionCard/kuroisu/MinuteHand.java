@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.MakeLoadedCardAction;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -15,9 +15,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MinuteHand extends AbstractKuroisuCard {
+public class MinuteHand extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("MinuteHand");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu06.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu06.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

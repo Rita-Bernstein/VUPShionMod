@@ -2,15 +2,15 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.GainHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractLiyezhuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.powers.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ReleaseFormLiyezhu extends AbstractLiyezhuCard {
+public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormLiyezhu");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz09.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;

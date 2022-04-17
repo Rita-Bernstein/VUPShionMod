@@ -16,7 +16,7 @@ public class GravityFinFunnelUpgrade extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("GravityUpgrade");
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG = VUPShionMod.assetPath("img/cards/colorless/GravityFinFunnelUpgrade.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/GravityFinFunnelUpgrade.png");
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;

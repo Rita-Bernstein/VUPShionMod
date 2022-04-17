@@ -1,22 +1,22 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractAnastasiaCard;
+import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.powers.DoubleCardPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class AnastasiaPlan extends AbstractAnastasiaCard {
+public class ShionAnastasiaPlan extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("AnastasiaPlan");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia07.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia07.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
-    public AnastasiaPlan() {
+    public ShionAnastasiaPlan() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 0;
         this.magicNumber = this.baseMagicNumber = 1;
@@ -35,6 +35,6 @@ public class AnastasiaPlan extends AbstractAnastasiaCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new AnastasiaPlan();
+        return new ShionAnastasiaPlan();
     }
 }

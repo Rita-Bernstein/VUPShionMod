@@ -19,7 +19,7 @@ import java.util.List;
 
 public class DimensionSplitting extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("DimensionSplitting");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy17.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy17.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

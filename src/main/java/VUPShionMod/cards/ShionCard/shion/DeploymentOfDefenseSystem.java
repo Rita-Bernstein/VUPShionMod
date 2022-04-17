@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 public class DeploymentOfDefenseSystem extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("DeploymentOfDefenseSystem");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/shion/zy04.png");
+    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy04.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

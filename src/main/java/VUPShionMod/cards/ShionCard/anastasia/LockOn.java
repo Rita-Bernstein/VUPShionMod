@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractAnastasiaCard;
+import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.powers.LockOnPower;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class LockOn extends AbstractAnastasiaCard {
+public class LockOn extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("LockOn");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia08.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia08.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

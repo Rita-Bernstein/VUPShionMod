@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class AttackSystemPreload extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("AttackSystemPreload");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy05.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy05.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

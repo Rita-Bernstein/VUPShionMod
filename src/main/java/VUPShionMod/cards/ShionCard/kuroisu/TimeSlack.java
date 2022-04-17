@@ -3,7 +3,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.MakeLoadedCardAction;
 import VUPShionMod.actions.TriggerFinFunnelAction;
-import VUPShionMod.cards.ShionCard.AbstractKuroisuCard;
+import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
@@ -14,9 +14,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TimeSlack extends AbstractKuroisuCard {
+public class TimeSlack extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("TimeSlack");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/kuroisu/kuroisu02.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu02.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

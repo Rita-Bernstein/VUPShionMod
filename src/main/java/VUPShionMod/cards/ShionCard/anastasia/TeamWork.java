@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.SelectCardToHandAction;
-import VUPShionMod.cards.ShionCard.AbstractAnastasiaCard;
+import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.patches.CardTagsEnum;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class TeamWork extends AbstractAnastasiaCard {
+public class TeamWork extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("TeamWork");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia06.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia06.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
@@ -27,10 +27,10 @@ public class TeamWork extends AbstractAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.KUROISU_CARD), true, true));
-        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.ANASTASIA_CARD), true, true));
-        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.MINAMI_CARD), true, true));
-        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.LIYEZHU_CARD), true, true));
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.SHION_KUROISU_CARD), true, true));
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.SHION_ANASTASIA_CARD), true, true));
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.SHION_MINAMI_CARD), true, true));
+        addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.SHION_LIYEZHU_CARD), true, true));
     }
 
     @Override

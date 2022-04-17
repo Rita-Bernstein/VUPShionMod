@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class AttackOrderDelta extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("AttackOrderDelta");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia04.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia04.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

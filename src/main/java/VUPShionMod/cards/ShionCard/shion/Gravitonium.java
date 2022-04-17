@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Gravitonium extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Gravitonium");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy24.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy24.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;

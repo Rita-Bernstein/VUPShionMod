@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractAnastasiaCard;
+import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class OverloadFortress extends AbstractAnastasiaCard {
+public class OverloadFortress extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID("OverloadFortress");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/anastasia/anastasia12.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia12.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

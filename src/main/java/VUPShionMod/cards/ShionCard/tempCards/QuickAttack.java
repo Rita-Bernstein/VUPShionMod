@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class QuickAttack extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("QuickAttack");
-    public static final String IMG = VUPShionMod.assetPath("img/cards/shion/zy08.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy08.png");
 
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.SPECIAL;

@@ -140,13 +140,11 @@ public class TrackingBeacon extends CustomRelic implements OnPlayerDeathRelic {
         }
 
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
-            if (relic.relicId.equals(LizardTail.ID) && relic.counter == -2) {
+            if (relic.relicId.equals(LizardTail.ID) && relic.counter != -2) {
                 canTrigger = false;
+                break;
             }
         }
-
-        if (AbstractDungeon.player.hasRelic(LizardTail.ID))
-            canTrigger = false;
 
         if (AbstractDungeon.player.hasPotion(FairyPotion.POTION_ID))
             canTrigger = false;

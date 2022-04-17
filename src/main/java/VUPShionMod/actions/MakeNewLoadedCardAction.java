@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -45,16 +46,22 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
     @Override
     public void update() {
         if (AbstractDungeon.player.hasPower(QuickTriggerPower.POWER_ID)) {
-            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID, 1));
             for (int i = 0; i < this.amount; i++) {
-                AbstractCard t = card.makeSameInstanceOf();
-                t.tags.add(CardTagsEnum.LOADED);
-                t.exhaust = true;
-                t.rawDescription = t.rawDescription + text;
-                t.initializeDescription();
-                AbstractDungeon.player.useCard(t,
-                        AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
-                AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
+                addToTop(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        AbstractCard t = card.makeSameInstanceOf();
+                        t.tags.add(CardTagsEnum.LOADED);
+                        t.exhaust = true;
+                        t.rawDescription = t.rawDescription + text;
+                        t.initializeDescription();
+                        AbstractDungeon.player.useCard(t,
+                                AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng), 0);
+                        AbstractDungeon.actionManager.cardsPlayedThisTurn.add(t);
+                        isDone = true;
+                    }
+                });
+                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, QuickTriggerPower.POWER_ID, 1));
 
             }
 

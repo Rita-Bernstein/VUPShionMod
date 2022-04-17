@@ -10,6 +10,7 @@ import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -113,31 +114,38 @@ public class AbstractPlayerPatches {
         public static void Insert(AbstractPlayer p, int numCards, @ByRef(type = "cards.AbstractCard") Object[] _c) {
             AbstractCard c = (AbstractCard) _c[0];
             if (c.hasTag(CardTagsEnum.LOADED)) {
-                c.isInAutoplay = true;
-                AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
-                c.applyPowers();
-                p.useCard(c, m, 0);
+                AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        c.isInAutoplay = true;
+                        AbstractMonster m = AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
+                        c.applyPowers();
+                        p.useCard(c, m, 0);
 
-                AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
+                        AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
 
-                for (AbstractPower power : AbstractDungeon.player.powers)
-                    if (power instanceof AbstractShionPower)
-                        ((AbstractShionPower) power).onTriggerLoaded();
+                        for (AbstractPower power : AbstractDungeon.player.powers)
+                            if (power instanceof AbstractShionPower)
+                                ((AbstractShionPower) power).onTriggerLoaded();
 
-                for (AbstractCard card : p.hand.group) {
-                    if (card instanceof AbstractVUPShionCard)
-                        ((AbstractVUPShionCard) card).onTriggerLoaded();
-                }
+                        for (AbstractCard card : p.hand.group) {
+                            if (card instanceof AbstractVUPShionCard)
+                                ((AbstractVUPShionCard) card).onTriggerLoaded();
+                        }
 
-                for (AbstractCard card : p.discardPile.group) {
-                    if (card instanceof AbstractVUPShionCard)
-                        ((AbstractVUPShionCard) card).onTriggerLoaded();
-                }
+                        for (AbstractCard card : p.discardPile.group) {
+                            if (card instanceof AbstractVUPShionCard)
+                                ((AbstractVUPShionCard) card).onTriggerLoaded();
+                        }
 
-                for (AbstractCard card : p.drawPile.group) {
-                    if (card instanceof AbstractVUPShionCard)
-                        ((AbstractVUPShionCard) card).onTriggerLoaded();
-                }
+                        for (AbstractCard card : p.drawPile.group) {
+                            if (card instanceof AbstractVUPShionCard)
+                                ((AbstractVUPShionCard) card).onTriggerLoaded();
+                        }
+                        isDone=true;
+                    }
+                });
+
             }
         }
     }

@@ -22,7 +22,7 @@ public class SpeedSlash extends AbstractShionCard {
     public SpeedSlash() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 2;
-        this.baseMagicNumber = this.magicNumber = 4;
+        this.baseMagicNumber = this.magicNumber = 5;
     }
 
     @Override

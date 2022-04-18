@@ -1048,7 +1048,7 @@
   },
   "VUPShionMod:FlayTheEvil": {
     "NAME": "邪魔审判",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 击杀这个 vup_shion_mod:罪孽 至少有10层的非首领敌人。 NL 抽一张牌。 NL vup_shion_mod:伐罪 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 击杀这个 vup_shion_mod:罪孽 至少10层的非首领敌人。 NL 抽一张牌。 NL vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:PiousPhrase": {
     "NAME": "敬心祈言",
@@ -1079,13 +1079,13 @@
   },
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "姦淫诫言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复等量生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复等量生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复总伤的生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复总伤的生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾+ 。 NL 消耗 。"
   },
   "VUPShionMod:ChasteReflection": {
     "NAME": "贞洁镜盾",
-    "DESCRIPTION": "下回合开始时造成打出后本回合受到的伤害。",
-    "UPGRADE_DESCRIPTION": "下回合开始时造成打出后本回合受到的伤害并获得 [E] 。"
+    "DESCRIPTION": "下回合开始时，对所有敌人造成打出后本回合受到的伤害。",
+    "UPGRADE_DESCRIPTION": "下回合开始时，对所有敌人造成打出后本回合受到的伤害并获得 [E] 。"
   },
   "VUPShionMod:AvariciousMotto": {
     "NAME": "贪婪诫言",
@@ -1108,11 +1108,11 @@
   },
   "VUPShionMod:CelestialIncarnation": {
     "NAME": "圣躯代行",
-    "DESCRIPTION": "同时处于 vup_shion_mod:祈言姿态 和 vup_shion_mod:审判姿态 。 NL 免疫 虚弱 。"
+    "DESCRIPTION": "同时处于 vup_shion_mod:祈言姿态 和 vup_shion_mod:审判姿态 。"
   },
   "VUPShionMod:Calamity": {
     "NAME": "崩坏",
-    "DESCRIPTION": "固有 。 NL 获得5点 力量 。 NL 每回合开始时获得 [E] [E] ，给予 *所有人 2层 vup_shion_mod:罪孽 ，失去20点生命。敌人回合结束时，他们失去 vup_shion_mod:罪孽 层数的 力量 。 NL vup_shion_mod:灵魂破损 。"
+    "DESCRIPTION": "固有 ， vup_shion_mod:灵魂破损 。 NL 获得5点 力量 。 NL 每回合开始时获得 [E] [E] 并失去20点生命；给予 *所有人 2层 vup_shion_mod:罪孽 ；所有敌人失去 vup_shion_mod:罪孽 层数的 力量 。"
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "圣棺沉灵",
@@ -1143,7 +1143,7 @@
   "VUPShionMod:Arbitration": {
     "NAME": "审判开庭",
     "DESCRIPTION": "每当造成未被 格挡 的伤害时，给予 !M! 层 vup_shion_mod:罪孽 。",
-    "UPGRADE_DESCRIPTION": "每当造成未被 格挡 的伤害时，给予 *所有人 !M! 层 vup_shion_mod:罪孽 。",
+    "UPGRADE_DESCRIPTION": "每当触发 vup_shion_mod:伐罪 时，给予 *所有人 !M! 层 vup_shion_mod:罪孽 。",
     "EXTENDED_DESCRIPTION": [
       "万物·审判开庭"
     ]
@@ -1154,7 +1154,7 @@
   },
   "VUPShionMod:ProphecyOfSalvation": {
     "NAME": "救世预言",
-    "DESCRIPTION": "每当生成 vup_shion_mod:祈言 时，回复 !M! 点生命。"
+    "DESCRIPTION": "每当生成 vup_shion_mod:祈言 时， NL 回复 !M! 点生命。"
   },
   "VUPShionMod:Sentence": {
     "NAME": "判罪",
@@ -1190,12 +1190,12 @@
   },
   "VUPShionMod:SpiritImpact": {
     "NAME": "圣灵冲击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每有一层 vup_shion_mod:沉灵 使伤害提高 !M! 。 NL 获得 vup_shion_mod:沉灵 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每有一层 vup_shion_mod:沉灵 使其造成的伤害提高 !M! 。 NL 获得 vup_shion_mod:沉灵 。"
   },
   "VUPShionMod:CruelSword": {
     "NAME": "浸染之剑",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ，再造成一次伤害并给予 !M! 层 虚弱 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ，再造成两次伤害并给予 !M! 层 虚弱 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ， NL 再造成一次伤害并给予 !M! 层 虚弱 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ， NL 再造成两次伤害并给予 !M! 层 虚弱 。"
   },
   "VUPShionMod:Execution": {
     "NAME": "执行",
@@ -1208,7 +1208,7 @@
   },
   "VUPShionMod:March": {
     "NAME": "远征",
-    "DESCRIPTION": "保留 。抽 !M! 张牌。 NL 抽到的牌如果是： NL *攻击 ：随机造成 !D! 点伤害。 NL *技能 ：回复 !VUPShionSecondM! 点生命。 NL *能力：抽一张牌。"
+    "DESCRIPTION": "保留 。抽 !M! 张牌。 NL 抽到的牌如果是： NL *攻击 ：对随机敌人造成 !D! 点伤害。 NL *技能 ：回复 !VUPShionSecondM! 点生命。 NL *能力 ：抽一张牌。"
   },
   "VUPShionMod:CompileSoul": {
     "NAME": "灵引",
@@ -1220,7 +1220,7 @@
   },
   "VUPShionMod:RedEyes": {
     "NAME": "浸染之目",
-    "DESCRIPTION": "吸取敌人的 !M! 点 力量 、 敏捷 和 !VUPShionSecondM! 点生命。 NL 将抽牌堆的一张技能牌加入手牌。 NL 消耗 。"
+    "DESCRIPTION": "吸取敌人的 !M! 点 力量 、 敏捷 和 !VUPShionSecondM! 点生命。 NL 将抽牌堆的一张技能牌加入手牌。 消耗 。"
   },
   "VUPShionMod:Consult": {
     "NAME": "查阅",
@@ -1238,19 +1238,19 @@
   },
   "VUPShionMod:CorCrucis": {
     "NAME": "苦难之心",
-    "DESCRIPTION": "失去 !M! 点生命。 NL 抽 !VUPShionSecondM! 张牌。 NL 将这张牌的复制加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 抽 !VUPShionSecondM! 张牌。 NL 将这张牌的复制加入抽牌堆。"
   },
   "VUPShionMod:VoluntasDoloris": {
     "NAME": "苦难之意",
-    "DESCRIPTION": "失去 !M! 点生命。 NL 获得 [E] 。 NL 将这张牌的复制加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 获得 [E] 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将这张牌的复制加入抽牌堆。"
   },
   "VUPShionMod:ViaAfflictionis": {
     "NAME": "苦难之路",
-    "DESCRIPTION": "失去 !M! 点生命。 NL 获得 !VUPShionSecondM! 点 力量 。 NL 将这张牌的复制加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 获得 !VUPShionSecondM! 点 力量 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将这张牌的复制加入抽牌堆。"
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "苦难之终",
-    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦痛 牌。 NL 失去(100-消耗数量x5)点生命。 NL 抽满手牌。 获得 !M! [E] 和 力量 。"
+    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦难 牌。 NL 失去(100- 消耗 数量x5)点生命。 NL 抽满手牌。 获得 !M! [E] 和 力量 。"
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "一切苦难入棺",
@@ -1258,8 +1258,8 @@
   },
   "VUPShionMod:EvilOnMe": {
     "NAME": "一切罪孽归我",
-    "DESCRIPTION": "*所有人 失去 vup_shion_mod:罪孽 。 NL 获得失去层数的生命。 NL 获得失去层数/5的最大生命。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "*所有人 失去 vup_shion_mod:罪孽 。 NL 获得失去层数 !M! 倍的生命。 NL 获得失去层数/5的最大生命。 NL 消耗 。"
+    "DESCRIPTION": "*所有人 失去 vup_shion_mod:罪孽 。 NL 获得失去层数的生命。 NL 获得失去层数/5的最大生命。 消耗 。",
+    "UPGRADE_DESCRIPTION": "*所有人 失去 vup_shion_mod:罪孽 。 NL 获得失去层数 !M! 倍的生命。 NL 获得失去层数/5的最大生命。 消耗 。"
   },
   "VUPShionMod:VerdictUponHeart": {
     "NAME": "一切审判证心",
@@ -1273,5 +1273,13 @@
   "VUPShionMod:Precasting": {
     "NAME": "预备咏唱",
     "DESCRIPTION": "你的下一个 vup_shion_mod:祈言 将直接获得全部效果。 "
+  },
+  "VUPShionMod:LiReboot": {
+    "NAME": "系统重启",
+    "DESCRIPTION": "丢弃所有手牌。 NL 然后抽相同数量张牌。"
+  },
+  "VUPShionMod:ShionEmbodiment": {
+    "NAME": "人偶代行：紫音",
+    "DESCRIPTION": "召唤一名 !M! 点生命的 *时间替身 。被击杀时对所有敌人造成 !M! 点伤害5次。 消耗 。"
   }
 }

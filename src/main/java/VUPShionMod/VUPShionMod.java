@@ -714,6 +714,24 @@ public class VUPShionMod implements
         cards.add(new Execution());
         cards.add(new Enchant());
 
+        cards.add(new March());
+        cards.add(new CompileSoul());
+        cards.add(new RedEyes());
+        cards.add(new Consult());
+        cards.add(new Identify());
+        cards.add(new MiseriamVoco());
+        cards.add(new CorCrucis());
+        cards.add(new VoluntasDoloris());
+        cards.add(new ViaAfflictionis());
+        cards.add(new ExitiumMaeroris());
+        cards.add(new WoeIntoCasket());
+        cards.add(new EvilOnMe());
+        cards.add(new VerdictUponHeart());
+        cards.add(new BrokenSanctuary());
+        cards.add(new Precasting());
+        cards.add(new LiReboot());
+        cards.add(new ShionEmbodiment());
+
 
 
 

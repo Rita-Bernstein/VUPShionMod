@@ -1,6 +1,7 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -106,24 +107,19 @@ public class Liyezhu extends CustomPlayer {
 
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(HiltBash.ID);
-        retVal.add(HiltBash.ID);
-        retVal.add(HiltBash.ID);
-        retVal.add(HiltBash.ID);
-        retVal.add(Slide.ID);
-        retVal.add(Slide.ID);
-        retVal.add(Slide.ID);
-        retVal.add(Slide.ID);
-//        retVal.add(PreExecution.ID);
-        retVal.add(Sheathe.ID);
-//        retVal.add(InTheBlink.ID);
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 0)
-            retVal.add(GlandesMagicae.ID);
+        retVal.add(HolyLight.ID);
+        retVal.add(HolyLight.ID);
+        retVal.add(HolyLight.ID);
+        retVal.add(HolyLight.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(SoothingScripture.ID);
+        retVal.add(TranquilPrayer.ID);
+        retVal.add(JudgementOfSins.ID);
 
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 1)
-            retVal.add(InTheBlink.ID);
-
-        retVal.add(MorsLibraque.ID);
 
 
         return retVal;

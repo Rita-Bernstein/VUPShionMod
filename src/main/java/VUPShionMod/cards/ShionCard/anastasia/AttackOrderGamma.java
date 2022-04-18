@@ -18,7 +18,7 @@ public class AttackOrderGamma extends AbstractShionAnastasiaCard {
     public AttackOrderGamma() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override

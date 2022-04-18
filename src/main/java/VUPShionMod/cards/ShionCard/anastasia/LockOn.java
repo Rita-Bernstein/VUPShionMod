@@ -19,7 +19,7 @@ public class LockOn extends AbstractShionAnastasiaCard {
 
     public LockOn() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class LockOn extends AbstractShionAnastasiaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(4);
         }
     }
 

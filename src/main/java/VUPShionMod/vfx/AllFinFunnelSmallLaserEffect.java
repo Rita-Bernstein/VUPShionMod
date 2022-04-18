@@ -119,7 +119,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
 
                     if (isDoubleDamage)
-                        m.damage(new DamageInfo(p, finFunnel.getFinalDamage() * 3, DamageInfo.DamageType.THORNS));
+                        m.damage(new DamageInfo(p, finFunnel.getFinalDamage() * 5, DamageInfo.DamageType.THORNS));
                     else
                         m.damage(new DamageInfo(p, finFunnel.getFinalDamage(), DamageInfo.DamageType.THORNS));
 
@@ -140,7 +140,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
                     if (finFunnel instanceof InvestigationFinFunnel && !m.isDeadOrEscaped()) {
                         if (isApplyBleeding)
-                            addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 2)));
+                            addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 4)));
                         addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, finFunnel.getFinalEffect())));
                     }
 

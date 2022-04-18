@@ -32,6 +32,4 @@ public class Reboot extends AbstractShionAnastasiaCard {
             upgradeBaseCost(0);
         }
     }
-
-
 }

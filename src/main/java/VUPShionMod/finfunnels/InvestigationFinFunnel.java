@@ -125,7 +125,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
             if (AbstractDungeon.player.hasPower(AttackOrderAlphaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 3, type)));
+                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage * 5, type)));
             else if (AbstractDungeon.player.hasPower(AttackOrderDeltaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
                 addToBot(new DamageAndGainBlockAction(target, new DamageInfo(AbstractDungeon.player, damage, type), 1.0f));
@@ -134,7 +134,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
             if (AbstractDungeon.player.hasPower(AttackOrderGammaPower.POWER_ID))
                 for (int i = 0; i < loopTimes; i++)
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 2)));
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, 4)));
 
             if (this.level > 0) {
                 for (int i = 0; i < loopTimes; i++)

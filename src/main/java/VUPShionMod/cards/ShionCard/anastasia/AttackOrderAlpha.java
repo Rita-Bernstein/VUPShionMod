@@ -19,7 +19,7 @@ public class AttackOrderAlpha extends AbstractShionAnastasiaCard {
     public AttackOrderAlpha() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isEthereal = true;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override

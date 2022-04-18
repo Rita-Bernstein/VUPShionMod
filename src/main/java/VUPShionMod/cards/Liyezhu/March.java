@@ -5,19 +5,21 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ProphecyOfSalvation extends AbstractLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID(ProphecyOfSalvation.class.getSimpleName());
+public class March extends AbstractLiyezhuCard {
+    public static final String ID = VUPShionMod.makeID(March.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
 
-    public ProphecyOfSalvation() {
+    public March() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 10;
+        this.baseDamage = 5;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 5;
+        this.selfRetain = true;
     }
 
     @Override
@@ -29,7 +31,7 @@ public class ProphecyOfSalvation extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(1);
         }
     }
 }

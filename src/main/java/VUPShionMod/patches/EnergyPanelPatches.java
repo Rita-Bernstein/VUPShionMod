@@ -53,7 +53,7 @@ public class EnergyPanelPatches {
     )
     public static class PatchRender {
         public static void Postfix(EnergyPanel panel, SpriteBatch sb) {
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+            if (isShionModChar()) {
                 sb.setColor(Color.WHITE);
                 sb.setBlendFunction(770, 771);
                 float x = -45.0f;
@@ -110,7 +110,7 @@ public class EnergyPanelPatches {
     public static class PatchUpdate {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(EnergyPanel panel) {
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+            if (isShionModChar()) {
                 if (rolling) {
                     rollingTimmer += Gdx.graphics.getDeltaTime();
                     energyUsed1Angle = Interpolation.fade.apply(-180.0f, 180.0F, rollingTimmer);
@@ -143,7 +143,7 @@ public class EnergyPanelPatches {
     public static class PatchRenderVfx {
         @SpireInsertPatch(rloc = 3)
         public static SpireReturn<Void> Insert(EnergyPanel panel, SpriteBatch sb, Texture ___gainEnergyImg, float ___energyVfxScale) {
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion|| AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+            if (isShionModChar()) {
 
                 sb.draw(___gainEnergyImg,
                         panel.current_x - 221.0F, panel.current_y - 221.0F,
@@ -167,7 +167,7 @@ public class EnergyPanelPatches {
     public static class PatchRenderSetScale {
         @SpireInsertPatch(rloc = 11, localvars = "energyMsg")
         public static SpireReturn<Void> Insert(EnergyPanel panel, SpriteBatch sb, @ByRef String[] energyMsg) {
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion|| AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+            if (isShionModChar()) {
                 AbstractDungeon.player.getEnergyNumFont().getData().setScale(EnergyPanel.fontScale * 1.3f);
 //                energyMsg[0] = EnergyPanel.totalCount + "" + AbstractDungeon.player.energy.energy;
             }
@@ -187,8 +187,8 @@ public class EnergyPanelPatches {
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getClassName().equals(FontHelper.class.getName()) && m.getMethodName().equals("renderFontCentered")) {
                         m.replace("if(" + AbstractDungeon.class.getName() + ".player.chosenClass =="
-                                + AbstractPlayerEnum.class.getName() + ".VUP_Shion || "+ AbstractDungeon.class.getName() + ".player.chosenClass =="
-                                + AbstractPlayerEnum.class.getName() + ".WangChuan"+"){" +
+                                + AbstractPlayerEnum.class.getName() + ".VUP_Shion || " + AbstractDungeon.class.getName() + ".player.chosenClass =="
+                                + AbstractPlayerEnum.class.getName() + ".WangChuan" + "){" +
                                 "$proceed($1,$2,$3,"
                                 + "this.current_x + 12.0f * " + Settings.class.getName() + ".scale,"
                                 + "this.current_y - 12.0f * " + Settings.class.getName() + ".scale,$6);"
@@ -201,5 +201,12 @@ public class EnergyPanelPatches {
                 }
             };
         }
+    }
+
+    public static boolean isShionModChar() {
+        return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
+                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan
+                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu;
+
     }
 }

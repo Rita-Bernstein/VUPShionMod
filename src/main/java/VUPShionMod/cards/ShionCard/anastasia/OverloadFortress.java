@@ -22,7 +22,7 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
     public OverloadFortress() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 5;
+        this.secondaryM = this.baseSecondaryM = 7;
         this.baseBlock = 0;
         this.selfRetain = true;
     }

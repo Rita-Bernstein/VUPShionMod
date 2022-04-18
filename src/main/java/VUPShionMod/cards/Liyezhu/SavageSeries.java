@@ -31,6 +31,7 @@ public class SavageSeries extends AbstractLiyezhuCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeMagicNumber(1);
         }
     }
 }

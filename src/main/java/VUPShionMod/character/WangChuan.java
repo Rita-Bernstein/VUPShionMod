@@ -19,6 +19,8 @@ import VUPShionMod.patches.*;
 import VUPShionMod.relics.DimensionSplitterAria;
 import VUPShionMod.relics.Nebula;
 import VUPShionMod.relics.StarQuakes;
+import VUPShionMod.vfx.ShionVictoryEffect;
+import VUPShionMod.vfx.WangchuanVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -44,6 +46,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbBlue;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -326,5 +329,21 @@ public class WangChuan extends CustomPlayer {
         }
 
     }
+
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        boolean foundEyeVfx = false;
+        for (AbstractGameEffect e : effects) {
+            if (e instanceof WangchuanVictoryEffect) {
+                foundEyeVfx = true;
+                break;
+            }
+        }
+
+        if (!foundEyeVfx)
+            effects.add(new WangchuanVictoryEffect());
+    }
+
 }
 

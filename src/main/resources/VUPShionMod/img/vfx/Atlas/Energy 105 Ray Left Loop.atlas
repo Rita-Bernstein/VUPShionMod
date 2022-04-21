@@ -2,7 +2,7 @@
 Energy 105 Ray Left Loop.png
 size: 1048,108
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 105 Ray Left Loop_00000
   rotate: false

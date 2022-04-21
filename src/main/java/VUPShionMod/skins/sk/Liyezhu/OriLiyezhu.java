@@ -24,8 +24,8 @@ public class OriLiyezhu extends AbstractSkin {
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.SHOULDER2 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.CORPSE = "VUPShionMod/characters/Liyezhu/corpse.png";
-        this.atlasURL = "VUPShionMod/characters/Liyezhu/animation/STANCE_WANGCHUAN_BREAK.atlas";
-        this.jsonURL = "VUPShionMod/characters/Liyezhu/animation/STANCE_WANGCHUAN_BREAK.json";
+        this.atlasURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.atlas";
+        this.jsonURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.json";
         this.renderscale = 3.0F;
     }
 

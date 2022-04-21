@@ -2,7 +2,7 @@
 Explosion 010 Impact Radial MIX.png
 size: 1030,548
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Explosion 010 Impact Radial MIX_00000
   rotate: false

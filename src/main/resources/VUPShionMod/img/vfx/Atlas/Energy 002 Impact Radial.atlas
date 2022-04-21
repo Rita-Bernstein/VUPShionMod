@@ -2,7 +2,7 @@
 Energy 002 Impact Radial.png
 size: 854,549
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 002 Impact Radial_00000
   rotate: false

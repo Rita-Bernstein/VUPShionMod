@@ -2,7 +2,7 @@
 Sparks 041 Shot Right.png
 size: 530,877
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Sparks 041 Shot Right_00000
   rotate: false

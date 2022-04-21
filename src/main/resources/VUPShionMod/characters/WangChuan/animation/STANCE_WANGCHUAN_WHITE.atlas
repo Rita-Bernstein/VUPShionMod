@@ -2,7 +2,7 @@
 STANCE_WANGCHUAN_WHITE.png
 size: 2048,1024
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 B_hair
   rotate: false

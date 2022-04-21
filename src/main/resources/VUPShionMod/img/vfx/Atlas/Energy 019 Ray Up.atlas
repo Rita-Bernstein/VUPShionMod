@@ -2,7 +2,7 @@
 Energy 019 Ray Up.png
 size: 1044,104
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 019 Ray Up_00000
   rotate: false

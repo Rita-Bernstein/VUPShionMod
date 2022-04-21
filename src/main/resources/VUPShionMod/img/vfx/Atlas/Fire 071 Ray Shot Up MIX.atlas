@@ -2,7 +2,7 @@
 Fire 071 Ray Shot Up MIX.png
 size: 871,1045
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Fire 071 Ray Shot Up MIX_00000
   rotate: false

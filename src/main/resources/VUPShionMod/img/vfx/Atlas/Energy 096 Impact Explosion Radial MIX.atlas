@@ -2,7 +2,7 @@
 Energy 096 Impact Explosion Radial MIX.png
 size: 2048,1024
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 096 Impact Explosion Radial MIX_00000
   rotate: false

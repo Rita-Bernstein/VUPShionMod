@@ -2,7 +2,7 @@
 Sparks 097 Explosion Radial MIX.png
 size: 1000,571
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Sparks 097 Explosion Radial MIX_00000
   rotate: false

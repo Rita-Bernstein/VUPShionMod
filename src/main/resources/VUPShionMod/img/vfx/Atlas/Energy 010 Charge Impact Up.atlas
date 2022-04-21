@@ -2,7 +2,7 @@
 Energy 010 Charge Impact Up.png
 size: 1532,104
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 010 Charge Impact Up_00000
   rotate: false

@@ -186,9 +186,7 @@ public class EnergyPanelPatches {
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getClassName().equals(FontHelper.class.getName()) && m.getMethodName().equals("renderFontCentered")) {
-                        m.replace("if(" + AbstractDungeon.class.getName() + ".player.chosenClass =="
-                                + AbstractPlayerEnum.class.getName() + ".VUP_Shion || " + AbstractDungeon.class.getName() + ".player.chosenClass =="
-                                + AbstractPlayerEnum.class.getName() + ".WangChuan" + "){" +
+                        m.replace("if(" + EnergyPanelPatches.class.getName() + ".isShionModChar()){" +
                                 "$proceed($1,$2,$3,"
                                 + "this.current_x + 12.0f * " + Settings.class.getName() + ".scale,"
                                 + "this.current_y - 12.0f * " + Settings.class.getName() + ".scale,$6);"

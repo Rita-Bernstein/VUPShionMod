@@ -2,7 +2,7 @@
 Smoke 037 Radial Transition.png
 size: 392,1012
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Smoke 037 Radial Transition_00000
   rotate: false

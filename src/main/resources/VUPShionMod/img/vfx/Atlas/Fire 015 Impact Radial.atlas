@@ -2,7 +2,7 @@
 Fire 015 Impact Radial.png
 size: 1629,589
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Fire 015 Impact Radial_00000
   rotate: false

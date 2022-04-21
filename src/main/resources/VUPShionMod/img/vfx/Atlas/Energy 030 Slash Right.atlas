@@ -2,7 +2,7 @@
 Energy 030 Slash Right.png
 size: 1904,241
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 030 Slash Right_00000
   rotate: false

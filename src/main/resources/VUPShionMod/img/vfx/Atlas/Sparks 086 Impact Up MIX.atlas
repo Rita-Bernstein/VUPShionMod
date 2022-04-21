@@ -2,7 +2,7 @@
 Sparks 086 Impact Up MIX.png
 size: 395,913
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Sparks 086 Impact Up MIX_00000
   rotate: false

@@ -2,7 +2,7 @@
 Energy 013 Ray Up loop.png
 size: 616,208
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 013 Ray Up loop_00000
   rotate: false

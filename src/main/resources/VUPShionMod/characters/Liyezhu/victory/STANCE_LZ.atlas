@@ -1,0 +1,292 @@
+
+STANCE_LZ.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+Ball_light
+  rotate: false
+  xy: 2, 3109
+  size: 1960, 982
+  orig: 1960, 982
+  offset: 0, 0
+  index: -1
+LOGO
+  rotate: true
+  xy: 3839, 22
+  size: 420, 82
+  orig: 420, 82
+  offset: 0, 0
+  index: -1
+LYZ_hair_frount
+  rotate: false
+  xy: 3923, 115
+  size: 128, 135
+  orig: 128, 135
+  offset: 0, 0
+  index: -1
+LYZ_hand_right
+  rotate: false
+  xy: 3839, 444
+  size: 247, 701
+  orig: 247, 701
+  offset: 0, 0
+  index: -1
+LYZ_head
+  rotate: false
+  xy: 202, 55
+  size: 82, 115
+  orig: 82, 115
+  offset: 0, 0
+  index: -1
+LYZ_neck_armor
+  rotate: true
+  xy: 1882, 2612
+  size: 76, 70
+  orig: 76, 70
+  offset: 0, 0
+  index: -1
+LYZ_qunbai_behind
+  rotate: false
+  xy: 437, 25
+  size: 488, 467
+  orig: 488, 467
+  offset: 0, 0
+  index: -1
+LYZ_toujin
+  rotate: true
+  xy: 3844, 1590
+  size: 539, 245
+  orig: 539, 245
+  offset: 0, 0
+  index: -1
+ZY_back_ring
+  rotate: false
+  xy: 1882, 3004
+  size: 78, 103
+  orig: 78, 103
+  offset: 0, 0
+  index: -1
+ZY_body_back
+  rotate: false
+  xy: 1882, 2522
+  size: 62, 88
+  orig: 62, 88
+  offset: 0, 0
+  index: -1
+ZY_hair_behind_left
+  rotate: false
+  xy: 1882, 2690
+  size: 75, 130
+  orig: 75, 130
+  offset: 0, 0
+  index: -1
+ZY_hair_frount
+  rotate: false
+  xy: 3923, 252
+  size: 132, 190
+  orig: 132, 190
+  offset: 0, 0
+  index: -1
+ZY_head
+  rotate: false
+  xy: 338, 169
+  size: 97, 108
+  orig: 97, 108
+  offset: 0, 0
+  index: -1
+ZY_head_ring
+  rotate: false
+  xy: 2, 83
+  size: 198, 87
+  orig: 198, 87
+  offset: 0, 0
+  index: -1
+ZY_left_arm_behind
+  rotate: false
+  xy: 1882, 2822
+  size: 75, 180
+  orig: 75, 180
+  offset: 0, 0
+  index: -1
+ZY_left_arm_behind2
+  rotate: false
+  xy: 3923, 2
+  size: 132, 111
+  orig: 132, 111
+  offset: 0, 0
+  index: -1
+ZY_left_hand_frount
+  rotate: true
+  xy: 1882, 2452
+  size: 68, 38
+  orig: 68, 38
+  offset: 0, 0
+  index: -1
+ZY_right_arm
+  rotate: true
+  xy: 2, 172
+  size: 105, 334
+  orig: 105, 334
+  offset: 0, 0
+  index: -1
+ZY_wing_frount1
+  rotate: true
+  xy: 2, 279
+  size: 866, 433
+  orig: 866, 433
+  offset: 0, 0
+  index: -1
+ZY_wing_frount2
+  rotate: true
+  xy: 3844, 1155
+  size: 433, 238
+  orig: 433, 238
+  offset: 0, 0
+  index: -1
+background
+  rotate: true
+  xy: 1964, 2131
+  size: 1960, 982
+  orig: 1960, 982
+  offset: 0, 0
+  index: -1
+dark_shadow
+  rotate: true
+  xy: 2, 1147
+  size: 1960, 982
+  orig: 1960, 982
+  offset: 0, 0
+  index: -1
+guan_light
+  rotate: true
+  xy: 437, 494
+  size: 651, 529
+  orig: 651, 529
+  offset: 0, 0
+  index: -1
+jianzhu
+  rotate: false
+  xy: 1882, 1147
+  size: 1960, 982
+  orig: 1960, 982
+  offset: 0, 0
+  index: -1
+lan_light
+  rotate: true
+  xy: 2948, 2131
+  size: 1960, 982
+  orig: 1960, 982
+  offset: 0, 0
+  index: -1
+lizi
+  rotate: false
+  xy: 1877, 163
+  size: 1960, 982
+  orig: 1960, 982
+  offset: 0, 0
+  index: -1
+stella
+  rotate: true
+  xy: 986, 61
+  size: 1519, 889
+  orig: 1519, 889
+  offset: 0, 0
+  index: -1
+stella2
+  rotate: true
+  xy: 986, 1582
+  size: 1525, 894
+  orig: 1525, 894
+  offset: 0, 0
+  index: -1
+
+STANCE_LZ2.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+LYZ_body
+  rotate: false
+  xy: 2, 440
+  size: 695, 800
+  orig: 695, 800
+  offset: 0, 0
+  index: -1
+LYZ_hair_behind
+  rotate: false
+  xy: 2, 2
+  size: 550, 436
+  orig: 550, 436
+  offset: 0, 0
+  index: -1
+LYZ_hand_left
+  rotate: false
+  xy: 699, 650
+  size: 609, 590
+  orig: 609, 590
+  offset: 0, 0
+  index: -1
+ZY_body
+  rotate: true
+  xy: 1953, 2558
+  size: 307, 783
+  orig: 307, 783
+  offset: 0, 0
+  index: -1
+ZY_hair_behind_right
+  rotate: false
+  xy: 2738, 2546
+  size: 395, 319
+  orig: 395, 319
+  offset: 0, 0
+  index: -1
+ZY_wing_behind
+  rotate: true
+  xy: 1953, 2212
+  size: 344, 594
+  orig: 344, 594
+  offset: 0, 0
+  index: -1
+fog
+  rotate: false
+  xy: 1964, 3271
+  size: 1835, 791
+  orig: 1835, 791
+  offset: 0, 0
+  index: -1
+guan
+  rotate: false
+  xy: 1534, 1315
+  size: 408, 779
+  orig: 408, 779
+  offset: 0, 0
+  index: -1
+light_under
+  rotate: false
+  xy: 1964, 2867
+  size: 1960, 402
+  orig: 1960, 402
+  offset: 0, 0
+  index: -1
+lizi_light
+  rotate: false
+  xy: 2, 2096
+  size: 1949, 982
+  orig: 1949, 982
+  offset: 0, 0
+  index: -1
+starsky
+  rotate: false
+  xy: 2, 3080
+  size: 1960, 982
+  orig: 1960, 982
+  offset: 0, 0
+  index: -1
+stella3
+  rotate: false
+  xy: 2, 1242
+  size: 1530, 852
+  orig: 1530, 852
+  offset: 0, 0
+  index: -1

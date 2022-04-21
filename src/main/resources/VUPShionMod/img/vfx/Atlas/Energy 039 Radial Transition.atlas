@@ -2,7 +2,7 @@
 Energy 039 Radial Transition.png
 size: 1772,112
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 039 Radial Transition_00000
   rotate: false

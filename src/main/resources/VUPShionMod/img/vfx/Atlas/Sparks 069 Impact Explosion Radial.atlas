@@ -2,7 +2,7 @@
 Sparks 069 Impact Explosion Radial.png
 size: 1428,483
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Sparks 069 Impact Explosion Radial_00000
   rotate: false

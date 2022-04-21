@@ -2,7 +2,7 @@
 Stance_ZYLJX_BIKINI.png
 size: 2048,2048
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 YOFU_ZC
   rotate: true

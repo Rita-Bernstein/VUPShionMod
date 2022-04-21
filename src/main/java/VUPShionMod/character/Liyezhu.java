@@ -8,6 +8,8 @@ import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.patches.FontHelperPatches;
+import VUPShionMod.vfx.LiyezhuVictoryEffect;
+import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -25,6 +27,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,13 +89,9 @@ public class Liyezhu extends CustomPlayer {
 
 
         if (CharacterSelectScreenPatches.characters[1].reskinCount == 0) {
-            this.state.setAnimation(0, "idle", true);
-            this.state.setAnimation(1, "idle_YOFU", true);
+            this.state.setAnimation(0, "idle_normal", true);
         }
 
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 1) {
-            this.state.setAnimation(0, "idle", true);
-        }
     }
 
 
@@ -249,8 +248,8 @@ public class Liyezhu extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            this.state.setAnimation(0, "hurt", false).setTimeScale(1.5f);
-            this.state.addAnimation(0, "idle", true,0.0f);
+            this.state.setAnimation(0, "hurt", false).setTimeScale(3.0f);
+            this.state.addAnimation(0, "idle_normal", true,0.0f);
         }
 
         super.damage(info);
@@ -262,6 +261,20 @@ public class Liyezhu extends CustomPlayer {
         List<CutscenePanel> panels = new ArrayList();
         panels.add(new CutscenePanel("VUPShionMod/img/scenes/WangChuanCutScene.png"));
         return panels;
+    }
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        boolean foundEyeVfx = false;
+        for (AbstractGameEffect e : effects) {
+            if (e instanceof LiyezhuVictoryEffect) {
+                foundEyeVfx = true;
+                break;
+            }
+        }
+
+        if (!foundEyeVfx)
+            effects.add(new LiyezhuVictoryEffect());
     }
 }
 

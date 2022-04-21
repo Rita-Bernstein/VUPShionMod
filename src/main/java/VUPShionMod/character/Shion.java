@@ -17,6 +17,7 @@ import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.DelayAvatarPower;
 import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -40,6 +41,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,7 +114,7 @@ public class Shion extends CustomPlayer {
             this.state.setAnimation(4, "wing_idle", true);
         }
 
-        if (CharacterSelectScreenPatches.characters[0].reskinCount == 2){
+        if (CharacterSelectScreenPatches.characters[0].reskinCount == 2) {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "weapon1_idle", true);
             this.state.setAnimation(2, "weapon2_idle", true);
@@ -164,7 +166,7 @@ public class Shion extends CustomPlayer {
             retVal.add(Warp.ID);
             retVal.add(Warp.ID);
             retVal.add(Warp.ID);
-        }else {
+        } else {
             retVal.add(Defend_Shion.ID);
             retVal.add(Defend_Shion.ID);
             retVal.add(Defend_Shion.ID);
@@ -362,7 +364,7 @@ public class Shion extends CustomPlayer {
                     this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
                     break;
             }
-        }else {
+        } else {
             switch (id) {
                 case "VUPShionMod:GravityFinFunnel":
                     this.state.setAnimation(1, "weapon1_attack", false).setTimeScale(3.0f);
@@ -438,6 +440,21 @@ public class Shion extends CustomPlayer {
         if (c.hasTag(CardTagsEnum.LOADED)) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(1));
         }
+    }
+
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        boolean foundEyeVfx = false;
+        for (AbstractGameEffect e : effects) {
+            if (e instanceof ShionVictoryEffect) {
+                foundEyeVfx = true;
+                break;
+            }
+        }
+
+        if (!foundEyeVfx)
+            effects.add(new ShionVictoryEffect());
     }
 }
 

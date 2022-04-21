@@ -1,0 +1,96 @@
+
+ShionVictory.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+BG
+  rotate: false
+  xy: 2052, 170
+  size: 1834, 573
+  orig: 1834, 573
+  offset: 0, 0
+  index: -1
+BG02
+  rotate: false
+  xy: 2, 2597
+  size: 2048, 1192
+  orig: 2048, 1192
+  offset: 0, 0
+  index: -1
+chuanci
+  rotate: true
+  xy: 3246, 1741
+  size: 2048, 751
+  orig: 2048, 751
+  offset: 0, 0
+  index: -1
+chuanci03
+  rotate: false
+  xy: 2052, 745
+  size: 1987, 994
+  orig: 1987, 994
+  offset: 0, 0
+  index: -1
+lightBG
+  rotate: false
+  xy: 2, 1403
+  size: 2048, 1192
+  orig: 2048, 1192
+  offset: 0, 0
+  index: -1
+lightBG02
+  rotate: true
+  xy: 2052, 1741
+  size: 2048, 1192
+  orig: 2048, 1192
+  offset: 0, 0
+  index: -1
+line
+  rotate: false
+  xy: 2, 209
+  size: 2048, 1192
+  orig: 2048, 1192
+  offset: 0, 0
+  index: -1
+wenzi
+  rotate: true
+  xy: 3999, 3399
+  size: 390, 34
+  orig: 390, 34
+  offset: 0, 0
+  index: -1
+wenzi02
+  rotate: false
+  xy: 2, 2
+  size: 260, 205
+  orig: 260, 205
+  offset: 0, 0
+  index: -1
+
+ShionVictory2.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+chuanci02
+  rotate: false
+  xy: 2052, 1124
+  size: 1067, 1192
+  orig: 1067, 1192
+  offset: 0, 0
+  index: -1
+light
+  rotate: false
+  xy: 2, 2
+  size: 2048, 1120
+  orig: 2048, 1120
+  offset: 0, 0
+  index: -1
+lizi
+  rotate: false
+  xy: 2, 1124
+  size: 2048, 1192
+  orig: 2048, 1192
+  offset: 0, 0
+  index: -1

@@ -2,7 +2,7 @@
 Shion.png
 size: 2048,2048
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 beijing
   rotate: false
@@ -71,7 +71,7 @@ light_lizi
 Shion2.png
 size: 2048,2048
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 body
   rotate: false

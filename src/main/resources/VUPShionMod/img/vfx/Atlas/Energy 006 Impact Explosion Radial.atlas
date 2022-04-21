@@ -2,7 +2,7 @@
 Energy 006 Impact Explosion Radial.png
 size: 1125,188
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 006 Impact Explosion Radial_00000
   rotate: false

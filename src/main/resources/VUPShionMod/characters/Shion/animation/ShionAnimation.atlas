@@ -2,7 +2,7 @@
 ShionAnimation.png
 size: 1317,525
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 body
   rotate: false

@@ -460,7 +460,7 @@
   "VUPShionMod:AlleviatorPower": {
     "NAME": "缓冲回路",
     "DESCRIPTIONS": [
-      "每回合第一次触发 vup_shion_mod:魔能过载 时，获得 #b%d [E] 。"
+      "每回合第一次触发 #y魔能过载 时，获得 #b%d [E] 。"
     ]
   },
   "VUPShionMod:RechargerPower": {
@@ -490,7 +490,7 @@
   "VUPShionMod:SuperloaderPower": {
     "NAME": "超载回路",
     "DESCRIPTIONS": [
-      "下 b%d 次获得 #y魔能过载 时， NL 抽一张牌。"
+      "下 #b%d 次获得 #y魔能过载 时， NL 抽一张牌。"
     ]
   },
   "VUPShionMod:AntisequencerPower": {

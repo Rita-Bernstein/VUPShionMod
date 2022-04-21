@@ -2,7 +2,7 @@
 Fire 043 Right Transition.png
 size: 1908,444
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Fire 043 Right Transition_00000
   rotate: false

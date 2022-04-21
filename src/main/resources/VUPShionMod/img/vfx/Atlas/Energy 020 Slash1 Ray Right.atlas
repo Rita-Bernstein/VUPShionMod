@@ -2,7 +2,7 @@
 Energy 020 Slash1 Ray Right.png
 size: 525,346
 format: RGBA8888
-filter: Linear,Linear
+filter: MipMapLinearLinear,Linear
 repeat: none
 Energy 020 Slash1 Ray Right_00000
   rotate: false

@@ -253,6 +253,23 @@ public class Liyezhu extends CustomPlayer {
         super.damage(info);
     }
 
+    public void onEnterPrayer(){
+        this.state.setAnimation(0, "idle_qidao", true);
+    }
+
+    public void onExitPrayer(){
+
+    }
+
+    public void onEnterJudge(){
+
+    }
+
+
+    public void onExitJudge(){
+
+    }
+
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {

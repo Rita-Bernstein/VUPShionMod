@@ -826,6 +826,7 @@ public class VUPShionMod implements
         BaseMod.loadCustomStringsFile(RelicStrings.class, assetPath(path + "RelicStrings.json"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class, assetPath(path + "CharacterStrings.json"));
         BaseMod.loadCustomStringsFile(OrbStrings.class, assetPath(path + "OrbStrings.json"));
+        BaseMod.loadCustomStringsFile(StanceStrings.class, assetPath(path + "StanceStrings.json"));
 //        BaseMod.loadCustomStringsFile(TutorialStrings.class,assetPath(path + "TutorialStrings.json"));
     }
 

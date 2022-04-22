@@ -1,0 +1,14 @@
+{
+  "VUPShionMod:Prayer": {
+    "NAME": "祈言姿态",
+    "DESCRIPTION": [
+      "处于这个 #y姿态 时，你造成的伤害减少 #b25% 。 NL 回合结束时获得 #b2 层 #y再生 。"
+    ]
+  },
+  "VUPShionMod:Judge": {
+    "NAME": "审判姿态",
+    "DESCRIPTION": [
+      "进入这个 #y姿态 时，获得 #b1 层 #y自燃 和 #y力量 。"
+    ]
+  }
+}

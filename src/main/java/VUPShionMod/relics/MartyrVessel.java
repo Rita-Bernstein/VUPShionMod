@@ -2,9 +2,12 @@ package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.tempCards.FunnelMatrix;
+import VUPShionMod.stances.PrayerStance;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ChangeStateAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class MartyrVessel extends CustomRelic {
@@ -23,4 +26,9 @@ public class MartyrVessel extends CustomRelic {
         return this.DESCRIPTIONS[0];
     }
 
+    @Override
+    public void atBattleStart() {
+        flash();
+        addToBot(new ChangeStanceAction(PrayerStance.STANCE_ID));
+    }
 }

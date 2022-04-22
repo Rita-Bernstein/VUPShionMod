@@ -4,10 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
-import VUPShionMod.patches.AbstractPlayerEnum;
-import VUPShionMod.patches.CardColorEnum;
-import VUPShionMod.patches.CharacterSelectScreenPatches;
-import VUPShionMod.patches.FontHelperPatches;
+import VUPShionMod.patches.*;
 import VUPShionMod.vfx.LiyezhuVictoryEffect;
 import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
@@ -22,6 +19,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
@@ -275,6 +273,12 @@ public class Liyezhu extends CustomPlayer {
 
         if (!foundEyeVfx)
             effects.add(new LiyezhuVictoryEffect());
+    }
+
+    @Override
+    public void preBattlePrep() {
+        super.preBattlePrep();
+        EnergyPanelPatches.PatchEnergyPanelField.canUseSans.set(AbstractDungeon.overlayMenu.energyPanel, true);
     }
 }
 

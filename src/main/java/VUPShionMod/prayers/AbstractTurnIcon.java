@@ -31,7 +31,7 @@ public class AbstractTurnIcon implements Disposable {
 
     public AbstractTurnIcon(int turns) {
         this.turns = turns;
-        this.img = ImageMaster.loadImage("VUPShionMod/img/prayer/" + this.turns + ".png");
+        this.img = ImageMaster.loadImage("VUPShionMod/img/prayer/Prayer" + this.turns + ".png");
         this.name = NAME;
         this.description = String.format(DESCRIPTIONS[0], this.turns);
     }

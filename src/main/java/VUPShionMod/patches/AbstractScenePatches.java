@@ -50,7 +50,7 @@ public class AbstractScenePatches {
                         Settings.HEIGHT / 2.0f - campfire_Wc.getHeight() / 2.0f + offSet_y * Settings.scale,
                         campfire_Wc.getWidth() / 2.0f, campfire_Wc.getHeight() / 2.0f, campfire_Wc.getWidth(), campfire_Wc.getHeight(),
                         scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Wc.getWidth(), campfire_Wc.getHeight(), false, false);
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();

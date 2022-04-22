@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.util.SansMeter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -33,6 +34,18 @@ public class EnergyPanelPatches {
     public static boolean levelUP = false;
     public static float levelTimer = 3.0f;
     public static Color levelColor = VUPShionMod.transparent.cpy();
+
+
+    @SpirePatch(
+            clz = EnergyPanel.class,
+            method = SpirePatch.CLASS
+    )
+    public static class PatchEnergyPanelField {
+        public static SpireField<Boolean> canUseSans = new SpireField<>(() -> false);
+        public static SpireField<SansMeter> sans = new SpireField<>(() -> new SansMeter());
+
+    }
+
 
     @SpirePatch(
             clz = EnergyPanel.class,
@@ -100,6 +113,14 @@ public class EnergyPanelPatches {
                 }
 
             }
+
+            if (PatchEnergyPanelField.canUseSans.get(panel)) {
+                SansMeter sansMeter = PatchEnergyPanelField.sans.get(panel);
+                sansMeter.render(sb);
+            }
+
+
+
         }
     }
 
@@ -131,6 +152,13 @@ public class EnergyPanelPatches {
                     }
                 }
             }
+
+            if (PatchEnergyPanelField.canUseSans.get(panel)) {
+                SansMeter sansMeter = PatchEnergyPanelField.sans.get(panel);
+                sansMeter.updatePos(panel);
+                sansMeter.update();
+            }
+
 
             return SpireReturn.Continue();
         }

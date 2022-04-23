@@ -1108,7 +1108,7 @@
   },
   "VUPShionMod:CelestialIncarnation": {
     "NAME": "圣躯代行",
-    "DESCRIPTION": "同时处于 vup_shion_mod:祈言姿态 和 vup_shion_mod:审判姿态 。"
+    "DESCRIPTION": "进入 vup_shion_mod:言灵姿态 。"
   },
   "VUPShionMod:Calamity": {
     "NAME": "崩坏",

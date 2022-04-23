@@ -27,7 +27,7 @@ import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
 public class PrayerStance extends AbstractStance {
-    public static final String STANCE_ID = VUPShionMod.makeID("Prayer");
+    public static final String STANCE_ID = "VUPShionMod:Prayer";
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 
 
@@ -75,9 +75,7 @@ public class PrayerStance extends AbstractStance {
 //                new IntenseZoomEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false), 0.05F, true));
 //        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.RED, true));
 
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
-            ((Liyezhu) AbstractDungeon.player).onEnterPrayer();
-        }
+
     }
 
 
@@ -85,9 +83,6 @@ public class PrayerStance extends AbstractStance {
     public void onExitStance() {
         stopIdleSfx();
 
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
-            ((Liyezhu) AbstractDungeon.player).onExitPrayer();
-        }
     }
 
     public void stopIdleSfx() {

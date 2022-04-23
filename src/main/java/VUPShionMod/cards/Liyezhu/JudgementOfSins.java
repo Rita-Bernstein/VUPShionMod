@@ -1,8 +1,16 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.ApplyPsychicAction;
+import VUPShionMod.powers.LoseHPPower;
+import VUPShionMod.stances.JudgeStance;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class JudgementOfSins extends AbstractLiyezhuCard {
@@ -19,12 +27,27 @@ public class JudgementOfSins extends AbstractLiyezhuCard {
         this.isInnate = true;
         this.selfRetain = true;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 3;
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new ChangeStanceAction(JudgeStance.STANCE_ID));
+        addToBot(new ApplyPsychicAction(p, this.magicNumber));
+
+        if (this.upgraded) {
+            addToBot(new LoseHPAction(p, p, 25));
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    AbstractDungeon.player.increaseMaxHp(5, false);
+                    isDone = true;
+                }
+            });
+
+        } else {
+            addToBot(new ApplyPowerAction(p, p, new LoseHPPower(p, 3)));
+        }
     }
 
     @Override

@@ -10,5 +10,11 @@
     "DESCRIPTION": [
       "进入这个 #y姿态 时，获得 #b1 层 #y自燃 和 #y力量 。"
     ]
+  },
+  "VUPShionMod:Spirit": {
+    "NAME": "言灵姿态",
+    "DESCRIPTION": [
+      "进入这个 #y姿态 时，获得 #b1 层 #y自燃 和 #y力量 。 NL 回合结束时获得 #b2 层 #y再生 。"
+    ]
   }
 }

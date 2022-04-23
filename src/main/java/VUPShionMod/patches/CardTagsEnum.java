@@ -36,4 +36,7 @@ public class CardTagsEnum {
 
     @SpireEnum
     public static AbstractCard.CardTags Codex_CARD;
+
+    @SpireEnum
+    public static AbstractCard.CardTags Prayer_CARD;
 }

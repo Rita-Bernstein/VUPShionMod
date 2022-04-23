@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.util.SansMeter;
+import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -46,6 +47,20 @@ public class EnergyPanelPatches {
 
     }
 
+    @SpirePatch(
+            clz = EnergyPanel.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+    public static class PatchEnergyPanelCon {
+        public static void Prefix(EnergyPanel _instance) {
+            if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu){
+                PatchEnergyPanelField.canUseSans.set(_instance, true);
+            }
+
+
+
+        }
+    }
 
     @SpirePatch(
             clz = EnergyPanel.class,

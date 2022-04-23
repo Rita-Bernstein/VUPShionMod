@@ -1,11 +1,15 @@
 package VUPShionMod.util;
 
 import VUPShionMod.VUPShionMod;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,6 +18,11 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.MinionPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
@@ -46,6 +55,7 @@ public class SansMeter {
 
         this.hb = new Hitbox(792.0f * this.scale * Settings.scale, 1158.0f * this.scale * Settings.scale);
 
+        this.amount = SansMeterSave.sansMeterSaveAmount;
         updateDescription();
     }
 
@@ -125,5 +135,72 @@ public class SansMeter {
 
     }
 
+    public boolean willLoseSan(AbstractMonster m) {
+        return m.currentHealth <= 0 && !m.hasPower(MinionPower.POWER_ID);
+    }
+
+    public void onFatal() {
+        if (this.amount <= 30)
+            addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 6));
+        else if (this.amount <= 50)
+            addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 3));
+
+        loseSan(3);
+    }
+
+    public int changeSinApply(AbstractPower power) {
+        if (power.owner.isPlayer)
+            if (this.amount <= 30) {
+                return power.amount + 1;
+            }
+        return power.amount;
+    }
+
+
+    public void loseSan(int amount) {
+        this.amount -= amount;
+        if (this.amount < 0)
+            this.amount = 0;
+
+        SansMeterSave.sansMeterSaveAmount = this.amount;
+    }
+
+    public void addSan(int amount) {
+        this.amount += amount;
+        if (this.amount > 100)
+            this.amount = 100;
+
+        SansMeterSave.sansMeterSaveAmount = this.amount;
+    }
+
+    public void atStartOfTurn() {
+    }
+
+    public void atStartOfCombat() {
+        this.amount = SansMeterSave.sansMeterSaveAmount;
+
+        if (this.amount <= 50)
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 3, false)));
+
+        if (this.amount <= 30)
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 3, false)));
+    }
+
+    public void atEndOfTurn() {
+
+    }
+
+    public void addToBot(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToBottom(action);
+    }
+
+    public void addToTop(AbstractGameAction action) {
+        AbstractDungeon.actionManager.addToTop(action);
+    }
+
+
+    public Integer onSave() {
+        return this.amount;
+    }
 
 }

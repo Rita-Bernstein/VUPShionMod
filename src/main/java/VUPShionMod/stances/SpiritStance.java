@@ -3,26 +3,24 @@ package VUPShionMod.stances;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.character.Liyezhu;
 import VUPShionMod.patches.AbstractPlayerEnum;
-import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.powers.CombustPower;
+import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
 
-public class JudgeStance extends AbstractStance {
-    public static final String STANCE_ID = "VUPShionMod:Judge";
+public class SpiritStance extends AbstractStance {
+    public static final String STANCE_ID = "VUPShionMod:Spirit";
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 
 
     private static long sfxId = -1L;
 
-    public JudgeStance() {
+    public SpiritStance() {
         this.ID = STANCE_ID;// 21
         this.name = stanceString.NAME;
         updateDescription();
@@ -62,7 +60,7 @@ public class JudgeStance extends AbstractStance {
 
 //        AbstractDungeon.actionManager.addToTop(new VFXAction(AbstractDungeon.player,
 //                new IntenseZoomEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false), 0.05F, true));
-//        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLDENROD, true));
+//        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.RED, true));
 
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
@@ -83,6 +81,13 @@ public class JudgeStance extends AbstractStance {
             sfxId = -1L;
         }
     }
+
+
+    @Override
+    public void onEndOfTurn() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new RegenPower(AbstractDungeon.player,2)));
+    }
+
 
     @Override
     public void updateDescription() {

@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
+import VUPShionMod.stances.SpiritStance;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -27,6 +28,9 @@ public class StancePatch {
             }
             if (name.equals(JudgeStance.STANCE_ID)) {
                 return SpireReturn.Return(new JudgeStance());
+            }
+            if (name.equals(SpiritStance.STANCE_ID)) {
+                return SpireReturn.Return(new SpiritStance());
             }
             return SpireReturn.Continue();
         }

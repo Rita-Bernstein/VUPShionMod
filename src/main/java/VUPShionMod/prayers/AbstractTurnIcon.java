@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
@@ -31,7 +32,7 @@ public class AbstractTurnIcon implements Disposable {
 
     public AbstractTurnIcon(int turns) {
         this.turns = turns;
-        this.img = ImageMaster.loadImage("VUPShionMod/img/prayer/Prayer" + this.turns + ".png");
+        this.img = ImageMaster.loadImage("VUPShionMod/img/prayer/Prayer.png");
         this.name = NAME;
         this.description = String.format(DESCRIPTIONS[0], this.turns);
     }
@@ -61,16 +62,17 @@ public class AbstractTurnIcon implements Disposable {
     public void setPosition(float x, float y) {
         this.x = x;
         this.y = y;
-        this.hb.move(x + 24.0f * Settings.scale, y + 24.0f * Settings.scale);
+        this.hb.move(x, y);
     }
 
     public void render(SpriteBatch sb) {
-        sb.setColor(Color.WHITE);
-        sb.draw(this.img, this.x, this.y,
-                36.0F, 16.0F, 36.0F, 36.0F,
+        sb.setColor(Color.WHITE.cpy());
+        sb.draw(this.img, this.x - 24.0f, this.y - 24.0f,
+                24.0F, 24.0F, 48.0F, 48.0F,
                 1.0f * Settings.scale, 1.0f * Settings.scale,
-                0.0f, 0, 0, 36, 36, false, false);
+                0.0f, 0, 0, 48, 48, false, false);
 
+        FontHelper.renderFontCentered(sb, FontHelper.powerAmountFont, Integer.toString(this.turns), this.x, this.y, Color.WHITE.cpy(), 1.8f);
         this.hb.render(sb);
         this.hasThisTurn = false;
     }

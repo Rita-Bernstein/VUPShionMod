@@ -23,5 +23,29 @@
       "在 #b%d 个回合开始时触发的祈祷效果:"
     ],
     "NAME": "祈言"
+  },
+  "VUPShionMod:RegenPrayer": {
+    "DESCRIPTION": [
+      "获得 #b%d 层 #y再生 。"
+    ],
+    "NAME": "再生"
+  },
+  "VUPShionMod:LoseStrengthPrayer": {
+    "DESCRIPTION": [
+      "所有敌人失去 #b%d 点 #y力量 。"
+    ],
+    "NAME": "镣铐"
+  },
+  "VUPShionMod:ArtifactPrayer": {
+    "DESCRIPTION": [
+      "获得 #b%d 层 #y人工制品 。"
+    ],
+    "NAME": "人工制品"
+  },
+  "VUPShionMod:StrengthPrayer": {
+    "DESCRIPTION": [
+      "获得 #b%d 层 #y力量 。"
+    ],
+    "NAME": "力量"
   }
 }

@@ -5,9 +5,13 @@ import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
+import VUPShionMod.stances.JudgeStance;
+import VUPShionMod.stances.PrayerStance;
+import VUPShionMod.stances.SpiritStance;
 import VUPShionMod.vfx.LiyezhuVictoryEffect;
 import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -25,7 +29,9 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import org.lwjgl.Sys;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +64,10 @@ public class Liyezhu extends CustomPlayer {
     };
 
 
+    private static String currentIdle = "Idle";
+    public float stanceSwitchAnimTimer = 0.0F;
+    private ArrayList<String> stanceSwitchQueue = new ArrayList<>();
+
     public Liyezhu(String name, PlayerClass setClass) {
         super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
         this.drawX += 5.0F * Settings.scale;
@@ -75,7 +85,6 @@ public class Liyezhu extends CustomPlayer {
         loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"),
                 VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json"), 3.0f);
 
-
         reloadAnimation();
     }
 
@@ -88,6 +97,9 @@ public class Liyezhu extends CustomPlayer {
 
         if (CharacterSelectScreenPatches.characters[1].reskinCount == 0) {
             this.state.setAnimation(0, "idle_normal", true);
+            this.state.setAnimation(1, "idle_wings", true);
+            this.state.setAnimation(2, "idle_xiaobingpian", true);
+            this.state.setAnimation(3, "change_xiaobingpian_off", false);
         }
 
     }
@@ -116,7 +128,6 @@ public class Liyezhu extends CustomPlayer {
         retVal.add(SoothingScripture.ID);
         retVal.add(TranquilPrayer.ID);
         retVal.add(JudgementOfSins.ID);
-
 
 
         return retVal;
@@ -159,10 +170,6 @@ public class Liyezhu extends CustomPlayer {
 
         if (ModHelper.isModEnabled("Purple Cards")) {
             CardLibrary.addPurpleCards(tmpPool);
-        }
-
-        for (AbstractCard c : VUPShionMod.codex_Cards) {
-            tmpPool.add(c.makeCopy());
         }
 
         return super.getCardPool(tmpPool);
@@ -247,29 +254,170 @@ public class Liyezhu extends CustomPlayer {
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
             this.state.setAnimation(0, "hurt", false).setTimeScale(3.0f);
-            this.state.addAnimation(0, "idle_normal", true,0.0f);
+            this.state.addAnimation(0, "idle_normal", true, 0.0f);
         }
 
         super.damage(info);
     }
 
-    public void onEnterPrayer(){
-        this.state.setAnimation(0, "idle_qidao", true);
+    @Override
+    public void update() {
+        super.update();
+        tickStanceVisualTimer();
     }
 
-    public void onExitPrayer(){
+    @Override
+    public void onStanceChange(String id) {
+        System.out.println("改变姿态"+ id);
+        switch (id) {
+            case PrayerStance.STANCE_ID:
+                stanceSwitchQueue.add("Prayer");
+                break;
+
+            case JudgeStance.STANCE_ID:
+                stanceSwitchQueue.add("Judge");
+                break;
+
+            case SpiritStance.STANCE_ID:
+                stanceSwitchQueue.add("Spirit");
+                break;
+            default:
+                stanceSwitchQueue.add("Idle");
+        }
+    }
+
+
+    private void tickStanceVisualTimer() {
+        if (stanceSwitchQueue.size() > 0) {
+            stanceSwitchAnimTimer = stanceSwitchAnimTimer - Gdx.graphics.getDeltaTime();
+            if (stanceSwitchAnimTimer <= 0F) {
+                switchStanceVisualGo(stanceSwitchQueue.get(0));
+                stanceSwitchQueue.remove(0);
+                if (stanceSwitchQueue.size() > 0) {
+                    stanceSwitchAnimTimer = 0.6F;
+                }
+            }
+        }
+    }
+
+    public void switchStanceVisualGo(String ID) {
+        System.out.println("改变姿态动画===当前id--"+ currentIdle);
+        System.out.println("改变姿态动画===目标id--"+ ID);
+
+        if(currentIdle.equals("Idle")){
+            switch (ID) {
+                case "Prayer": {
+                    this.state.setAnimation(5,"change_shengguan_on",false);
+                    this.state.addAnimation(5,"idle_shengguan",true,0.0f);
+                    currentIdle = "Prayer";
+                    break;
+                }
+                case "Judge": {
+                    this.state.setAnimation(4,"change_bajian",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    currentIdle = "Judge";
+                    break;
+                }
+                case "Spirit": {
+                    this.state.setAnimation(5,"change_shengguan_blue_on",false);
+                    this.state.addAnimation(5,"idle_shengguan_blue",true,0.0f);
+                    this.state.setAnimation(4,"change_bajian",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    currentIdle = "Spirit";
+                    break;
+                }
+            }
+
+            return;
+        }
+
+
+        if(currentIdle.equals("Prayer")){
+            switch (ID) {
+                case "Judge": {
+                    this.state.setAnimation(5,"change_shengguan_off",false);
+                    this.state.setAnimation(4,"change_bajian",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    currentIdle = "Judge";
+                    break;
+                }
+                case "Spirit": {
+                    this.state.setAnimation(5,"change_shengguan_WCB",false);
+                    this.state.addAnimation(5,"idle_shengguan_blue",true,0.0f);
+                    this.state.setAnimation(4,"change_bajian",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    currentIdle = "Spirit";
+                    break;
+                }
+                default:
+                    this.state.setAnimation(5,"change_shengguan_off",false);
+                    currentIdle = "Idle";
+                    break;
+            }
+
+            return;
+        }
+
+
+        if(currentIdle.equals("Judge")){
+            switch (ID) {
+                case "Prayer": {
+                    this.state.setAnimation(5,"change_shengguan_on",false);
+                    this.state.addAnimation(5,"idle_shengguan",true,0.0f);
+                    this.state.setAnimation(4,"change_qidao",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    currentIdle = "Prayer";
+                    break;
+                }
+                case "Spirit": {
+                    this.state.setAnimation(5,"change_shengguan_blue_on",false);
+                    this.state.addAnimation(5,"idle_shengguan_blue",true,0.0f);
+                    currentIdle = "Spirit";
+                    break;
+                }
+                default:
+                    this.state.setAnimation(4,"change_qidao",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    currentIdle = "Idle";
+                    break;
+            }
+            return;
+        }
+
+        if(currentIdle.equals("Spirit")){
+            switch (ID) {
+                case "Prayer": {
+                    this.state.setAnimation(5,"change_shengguan_BCW",false);
+                    this.state.setAnimation(4,"change_qidao",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    currentIdle = "Prayer";
+                    break;
+                }
+                case "Judge": {
+                    this.state.setAnimation(5,"change_shengguan_blue_off",false);
+                    currentIdle = "Judge";
+                    break;
+                }
+                default:
+                    this.state.setAnimation(5,"change_shengguan_blue_off",false);
+                    this.state.setAnimation(4,"change_qidao",false);
+                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    currentIdle = "Idle";
+                    break;
+            }
+
+        }
+
 
     }
 
-    public void onEnterJudge(){
-
+    public static boolean isInPrayer() {
+        return AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID);
     }
 
-
-    public void onExitJudge(){
-
+    public static boolean isInJudge() {
+        return AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID);
     }
-
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {
@@ -295,7 +443,7 @@ public class Liyezhu extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        EnergyPanelPatches.PatchEnergyPanelField.canUseSans.set(AbstractDungeon.overlayMenu.energyPanel, true);
+        switchStanceVisualGo("Idle");
     }
 }
 

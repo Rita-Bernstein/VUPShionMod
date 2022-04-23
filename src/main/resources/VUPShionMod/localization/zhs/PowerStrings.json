@@ -530,5 +530,30 @@
       "阻止下一次你受到的生命值损伤。",
       "阻止下 #b%d 次你受到的生命值损伤。"
     ]
+  },
+  "VUPShionMod:PsychicPower": {
+    "NAME": "沉灵",
+    "DESCRIPTIONS": [
+      "部分卡牌可以使用 #y沉灵 触发额外的效果。"
+    ]
+  },
+  "VUPShionMod:SinPower": {
+    "NAME": "罪孽",
+    "DESCRIPTIONS": [
+      "用于触发特定效果的标记。"
+    ]
+  },
+  "VUPShionMod:LoseHPPower": {
+  "NAME": "失血",
+  "DESCRIPTIONS": [
+    "每回合开始时失去 #b%d 点生命。"
+  ]
+},
+  "VUPShionMod:DoubleDamageReceivePower": {
+    "NAME": "双倍受伤",
+    "DESCRIPTIONS": [
+      "本回合翻倍受到的伤害。",
+      "在 #b%d 回合内翻倍受到的伤害。"
+    ]
   }
 }

@@ -18,14 +18,12 @@ import VUPShionMod.events.*;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.PlagaAMundo;
-import VUPShionMod.patches.AbstractPlayerEnum;
-import VUPShionMod.patches.AbstractPlayerPatches;
-import VUPShionMod.patches.AbstractScenePatches;
-import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.patches.*;
 import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import VUPShionMod.relics.*;
 import VUPShionMod.skins.AbstractSkinCharacter;
+import VUPShionMod.util.SansMeterSave;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -401,7 +399,9 @@ public class VUPShionMod implements
     public void receivePostDungeonInitialize() {
         System.out.println("重开游戏");
 
-
+        if(AbstractDungeon.floorNum == 0){
+            SansMeterSave.sansMeterSaveAmount = 100;
+        }
 //        if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {
 //            AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
 //            relic.flash();
@@ -460,6 +460,7 @@ public class VUPShionMod implements
                 assetPath("characters/Liyezhu/portrait.png"),
                 AbstractPlayerEnum.Liyezhu);
 
+        BaseMod.addSaveField("SansMeterSave",new SansMeterSave());
     }
 
     @Override

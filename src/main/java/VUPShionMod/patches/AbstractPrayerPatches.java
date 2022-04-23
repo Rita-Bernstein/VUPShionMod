@@ -89,7 +89,7 @@ public class AbstractPrayerPatches {
 
             float offsetX = AbstractDungeon.player.drawX - 120.0f * Settings.scale;
             float[] x = new float[5];
-            float y = 200.0F * Settings.scale + AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 2.0F;
+            float y = 20.0F * Settings.scale + AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h;
             if (!prayers.isEmpty()) {
                 int line = -1;
 
@@ -111,7 +111,7 @@ public class AbstractPrayerPatches {
 
                 for (AbstractTurnIcon icon : turns) {
                     if (icon.hasThisTurn) {
-                        icon.setPosition(offsetX - 48.0f * Settings.scale - 32.0F, y + line * 48.0f * Settings.scale - 16.0F);
+                        icon.setPosition(offsetX - 48.0f * Settings.scale, y + line * 48.0f * Settings.scale);
                         icon.render(sb);
                         line++;
                     }

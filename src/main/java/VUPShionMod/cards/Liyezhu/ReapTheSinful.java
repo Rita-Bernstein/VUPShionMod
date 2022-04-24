@@ -1,9 +1,18 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.DuelSinAction;
+import VUPShionMod.powers.PsychicPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class ReapTheSinful extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ReapTheSinful.class.getSimpleName());
@@ -23,7 +32,19 @@ public class ReapTheSinful extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new SFXAction("ATTACK_HEAVY"));
+        addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
+
+        addToBot(new DuelSinAction());
+        if (upgraded) {
+            addToBot(new DuelSinAction());
+            if (p.hasPower(PsychicPower.POWER_ID))
+                if (p.getPower(PsychicPower.POWER_ID).amount >= 2) {
+                    addToBot(new DuelSinAction());
+                    addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 2));
+                }
+        }
     }
 
     @Override

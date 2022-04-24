@@ -1,9 +1,16 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.DuelSinAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 
 public class CruciformPenance extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(CruciformPenance.class.getSimpleName());
@@ -22,7 +29,13 @@ public class CruciformPenance extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        if (m != null)
+        addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
+
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+
+        addToBot(new DuelSinAction());
+        addToBot(new HealAction(p,p,this.magicNumber));
     }
 
     @Override

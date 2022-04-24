@@ -1,6 +1,9 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Asceticism2Power;
+import VUPShionMod.powers.AsceticismPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,13 +19,13 @@ public class Asceticism extends AbstractLiyezhuCard {
 
     public Asceticism() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new ApplyPowerAction(p,p,new AsceticismPower(p,1)));
+        if(this.upgraded)
+        addToBot(new ApplyPowerAction(p,p,new Asceticism2Power(p,1)));
     }
 
     @Override

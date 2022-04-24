@@ -1,7 +1,10 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.BrokenSanctuaryPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -23,7 +26,9 @@ public class BrokenSanctuary extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ApplyPowerAction(p,p,new BrokenSanctuaryPower(p,1)));
+        if(this.upgraded)
+        addToBot(new MakeTempCardInHandAction(new BrokenSanctuary()));
     }
 
     @Override

@@ -604,5 +604,55 @@
     "DESCRIPTIONS": [
       "每 #b2 次当你失去生命时，抽 #b%d 张牌。"
     ]
+  },
+  "VUPShionMod:TranscendSoulPower": {
+    "NAME": "祭灵天途-回复",
+    "DESCRIPTIONS": [
+      "回合结束时，回复 #y沉灵 #b%d 倍的生命。"
+    ]
+  },
+  "VUPShionMod:TranscendSoul2Power": {
+    "NAME": "祭灵天途-进攻",
+    "DESCRIPTIONS": [
+      "回合结束时，对所有敌人造成 #y沉灵 #b%d 倍的伤害。"
+    ]
+  },
+  "VUPShionMod:ArbitrationPower": {
+    "NAME": "审判开庭",
+    "DESCRIPTIONS": [
+      "每当造成未被 格挡 的伤害时，给予 #b%d 层 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:Arbitration2Power": {
+    "NAME": "万物·审判开庭",
+    "DESCRIPTIONS": [
+      "每当触发 #y伐罪 时，给予 *所有人 #b%d 层 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:ProphecyOfDestructionPower": {
+    "NAME": "破灭预言",
+    "DESCRIPTIONS": [
+      "每当生成 #y祈言 时，对随机敌人造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:ProphecyOfSalvationPower": {
+    "NAME": "救世预言",
+    "DESCRIPTIONS": [
+      "每当生成 #y祈言 时，回复 #b%d 点生命。"
+    ]
+  },
+  "VUPShionMod:BrokenSanctuaryPower": {
+    "NAME": "破碎圣堂",
+    "DESCRIPTIONS": [
+      "本回合所有 #y祈言 牌耗能变为0。",
+      "在 #b%d 个回合所有 #y祈言 牌耗能变为0。"
+    ]
+  },
+  "VUPShionMod:PrecastingPower": {
+    "NAME": "预备咏唱",
+    "DESCRIPTIONS": [
+      "你的下一个 #y祈言 将直接获得全部效果。",
+      "你的下 #b%d 个 #y祈言 将直接获得全部效果。"
+    ]
   }
 }

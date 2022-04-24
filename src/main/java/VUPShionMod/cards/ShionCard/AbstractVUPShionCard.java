@@ -3,6 +3,8 @@ package VUPShionMod.cards.ShionCard;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.BrokenSanctuaryPower;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
@@ -21,6 +23,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 
 public abstract class AbstractVUPShionCard extends CustomCard {
@@ -268,5 +271,19 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         }
 
         this.upgradedCost = true;
+    }
+
+    @Override
+    public boolean freeToPlay() {
+        if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&
+                (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT &&
+                AbstractDungeon.player.hasPower(BrokenSanctuaryPower.POWER_ID) && this.hasTag(CardTagsEnum.Prayer_CARD)) {
+            return true;
+        }
+
+        return super.freeToPlay();
+    }
+
+    public void onDuelSin() {
     }
 }

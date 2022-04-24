@@ -1,6 +1,9 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Arbitration2Power;
+import VUPShionMod.powers.ArbitrationPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,7 +25,10 @@ public class Arbitration extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new Arbitration2Power(p, this.magicNumber)));
+        else
+            addToBot(new ApplyPowerAction(p, p, new ArbitrationPower(p, this.magicNumber)));
     }
 
     @Override

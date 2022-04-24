@@ -1200,7 +1200,7 @@
   "VUPShionMod:Execution": {
     "NAME": "执行",
     "DESCRIPTION": "回复 !M! 点生命。 NL 触发 vup_shion_mod:伐罪 时，将这张牌从弃牌堆加入手牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。 NL 触发 vup_shion_mod:伐罪 时，将这张牌从弃牌堆加入手牌。"
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 造成 !D! 点伤害。 NL 触发 vup_shion_mod:伐罪 时，将这张牌从弃牌堆加入手牌。"
   },
   "VUPShionMod:Enchant": {
     "NAME": "附魂",
@@ -1272,7 +1272,7 @@
   },
   "VUPShionMod:Precasting": {
     "NAME": "预备咏唱",
-    "DESCRIPTION": "你的下一个 vup_shion_mod:祈言 将直接获得全部效果。 "
+    "DESCRIPTION": "你的下一个 vup_shion_mod:祈言 将直接获得全部效果。"
   },
   "VUPShionMod:LiReboot": {
     "NAME": "系统重启",

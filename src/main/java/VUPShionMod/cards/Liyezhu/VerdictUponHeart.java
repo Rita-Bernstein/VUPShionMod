@@ -1,8 +1,12 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.DuelSinAction;
+import VUPShionMod.powers.SinPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class VerdictUponHeart extends AbstractLiyezhuCard {
@@ -23,7 +27,17 @@ public class VerdictUponHeart extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        for (int i = 0; i < this.magicNumber; i++)
+            addToBot(new DuelSinAction());
+
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            if(mo != null)
+            addToBot(new RemoveSpecificPowerAction(mo, p, SinPower.POWER_ID));
+        }
+
+        if(!p.isDeadOrEscaped())
+        addToBot(new RemoveSpecificPowerAction(p, p, SinPower.POWER_ID));
+
     }
 
     @Override

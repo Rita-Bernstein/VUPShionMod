@@ -1,10 +1,13 @@
 package VUPShionMod.actions;
 
+import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -29,6 +32,40 @@ public class DuelSinAction extends AbstractGameAction {
 
         if(AbstractDungeon.player.hasPower(SinPower.POWER_ID))
         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player,AbstractDungeon.player.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.HP_LOSS));
+
+        if(!AbstractDungeon.player.isDeadOrEscaped()){
+            for(AbstractPower power : AbstractDungeon.player.powers){
+                if(power instanceof AbstractShionPower)
+                    ((AbstractShionPower) power).onDuelSin();
+            }
+
+            for(AbstractCard card : AbstractDungeon.player.drawPile.group){
+                if(card instanceof AbstractVUPShionCard){
+                    ((AbstractVUPShionCard) card).onDuelSin();
+                }
+            }
+
+            for(AbstractCard card : AbstractDungeon.player.hand.group){
+                if(card instanceof AbstractVUPShionCard){
+                    ((AbstractVUPShionCard) card).onDuelSin();
+                }
+            }
+
+            for(AbstractCard card : AbstractDungeon.player.discardPile.group){
+                if(card instanceof AbstractVUPShionCard){
+                    ((AbstractVUPShionCard) card).onDuelSin();
+                }
+            }
+
+            for(AbstractCard card : AbstractDungeon.player.exhaustPile.group){
+                if(card instanceof AbstractVUPShionCard){
+                    ((AbstractVUPShionCard) card).onDuelSin();
+                }
+            }
+
+        }
+
+
 
         isDone =true;
     }

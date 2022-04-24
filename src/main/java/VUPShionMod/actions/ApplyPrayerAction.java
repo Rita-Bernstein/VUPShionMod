@@ -1,10 +1,14 @@
 package VUPShionMod.actions;
 
 import VUPShionMod.patches.AbstractPrayerPatches;
+import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.powers.PrecastingPower;
 import VUPShionMod.prayers.AbstractPrayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.Collections;
 
@@ -40,11 +44,13 @@ public class ApplyPrayerAction extends AbstractGameAction {
         if (justStart) {
             justStart = false;
 
-//            if (this.source != null) {
-//                for (AbstractPower pow : this.source.powers) {
-//                    pow.onApplyPower(this.prayerToApply, this.target, this.source);
-//                }
-//            }
+
+            if (this.source != null) {
+                for (AbstractPower pow : this.source.powers) {
+                    if (pow instanceof AbstractShionPower)
+                        ((AbstractShionPower) pow).onCreatePrayer(this.prayerToApply);
+                }
+            }
 
 
 //            if (AbstractDungeon.player.hasRelic("Champion Belt") && this.source != null && this.source.isPlayer && this.target != this.source && this.prayerToApply.ID
@@ -118,10 +124,18 @@ public class ApplyPrayerAction extends AbstractGameAction {
 //                this.target.useFastShakeAnimation(0.5F);
 //            }
 
+            if (AbstractDungeon.player.hasPower(PrecastingPower.POWER_ID)) {
+                for (int i = 0; i < prayerToApply.turns; i++)
+                    prayerToApply.use();
+                addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, PrecastingPower.POWER_ID, 1));
+                isDone = true;
+                return;
+            } else {
                 AbstractPrayerPatches.prayers.add(this.prayerToApply);
                 Collections.sort(AbstractPrayerPatches.prayers);
                 this.prayerToApply.onInitialApplication();
                 this.prayerToApply.flash();
+            }
 
 //                if (this.amount < 0 && (this.prayerToApply.ID.equals("Strength") || this.prayerToApply.ID.equals("Dexterity") ||
 //                        this.prayerToApply.ID.equals("Focus"))) {

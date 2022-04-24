@@ -1,6 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.prayers.AbstractPrayer;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -42,5 +43,11 @@ public class AbstractShionPower extends TwoAmountPower {
     public void onNumSpecificTrigger(int amount){
     }
 
+
+    public void onDuelSin(){
+    }
+
+    public void onCreatePrayer(AbstractPrayer prayer){
+    }
 
 }

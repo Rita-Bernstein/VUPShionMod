@@ -555,5 +555,54 @@
       "本回合翻倍受到的伤害。",
       "在 #b%d 回合内翻倍受到的伤害。"
     ]
+  },
+  "VUPShionMod:ChasteReflectionPower": {
+    "NAME": "贞洁镜盾",
+    "DESCRIPTIONS": [
+      "下回合开始时对所有敌人造成本回合受到的伤害。（造成 #b%d 点伤害）",
+      "下 #b%d 个回合开始时对所有敌人造成本回合受到的伤害。（造成 #b%d 点伤害）"
+    ]
+  },
+  "VUPShionMod:CalamityPower": {
+    "NAME": "崩坏-罪孽",
+    "DESCRIPTIONS": [
+      "每回合开始时， #y所有人 获得 #b%d 层 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:Calamity2Power": {
+    "NAME": "崩坏-消力",
+    "DESCRIPTIONS": [
+      "每回合开始时，所有敌人失去 #y罪孽 层数的 力量。"
+    ]
+  },
+  "VUPShionMod:HallowedCasketPower": {
+    "NAME": "圣棺沉灵",
+    "DESCRIPTIONS": [
+      "每回合结束时，将 #b%d 张 #y奇迹 加入手牌并获得 #b%d 点 #y沉灵 。"
+    ]
+  },
+  "VUPShionMod:EnsanguinedFigurePower": {
+    "NAME": "浸染之衣",
+    "DESCRIPTIONS": [
+      "每当你受到伤害时，给予攻击者 #b%d 层 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:CrimsonDelugePower": {
+    "NAME": "浸染之血",
+    "DESCRIPTIONS": [
+      "超出生命上限的 #g回复 将获得 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:AsceticismPower": {
+    "NAME": "苦行天途-能量",
+    "DESCRIPTIONS": [
+      "每当你失去生命时，获得 #b%d [E] 。"
+    ]
+  },
+  "VUPShionMod:Asceticism2Power": {
+    "NAME": "苦行天途-抽牌",
+    "DESCRIPTIONS": [
+      "每 #b2 次当你失去生命时，抽 #b%d 张牌。"
+    ]
   }
 }

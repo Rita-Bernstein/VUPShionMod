@@ -47,5 +47,59 @@
       "获得 #b%d 层 #y力量 。"
     ],
     "NAME": "力量"
+  },
+  "VUPShionMod:MiraclePrayer": {
+    "DESCRIPTION": [
+      "将 #b%d 张 #y奇迹 加入手牌。"
+    ],
+    "NAME": "奇迹"
+  },
+  "VUPShionMod:MiracleUpgradePrayer": {
+    "DESCRIPTION": [
+      "将 #b%d 张 #y奇迹+ 加入手牌。"
+    ],
+    "NAME": "奇迹+"
+  },
+  "VUPShionMod:ThornsPrayer": {
+    "DESCRIPTION": [
+      "获得 #b%d 层 #y临时荆棘 。"
+    ],
+    "NAME": "荆棘"
+  },
+  "VUPShionMod:VampirePrayer": {
+    "DESCRIPTION": [
+      "对所有敌人造成 #b%d 点伤害并回复未被 格挡 伤害的生命。"
+    ],
+    "NAME": "收割"
+  },
+  "VUPShionMod:SelfSinPrayer": {
+    "DESCRIPTION": [
+      "获得 #b%d 层 #y罪孽 。"
+    ],
+    "NAME": "自责"
+  },
+  "VUPShionMod:LoseHPPrayer": {
+    "DESCRIPTION": [
+      " #y所有人 失去 #b%d 点生命。"
+    ],
+    "NAME": "放血"
+  },
+  "VUPShionMod:AvariciousPrayer": {
+    "DESCRIPTION": [
+      "随机一名敌人 失去 #b%d 点生命并给予 #y罪孽 和 #y力量 。"
+    ],
+    "NAME": "贪婪"
+  },
+  "VUPShionMod:SinPrayer": {
+    "DESCRIPTION": [
+      " #y所有人 获得 #b%d 层 #y罪孽 。"
+    ],
+    "NAME": "罪孽"
+  },
+  "VUPShionMod:ThieveryPrayer": {
+    "DESCRIPTION": [
+      "获得敌人数量 #b%d 倍的 #y金币 。"
+    ],
+    "NAME": "窃夺"
   }
 }

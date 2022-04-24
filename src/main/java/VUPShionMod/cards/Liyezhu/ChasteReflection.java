@@ -1,9 +1,12 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.ChasteReflectionPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 
 public class ChasteReflection extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ChasteReflection.class.getSimpleName());
@@ -20,7 +23,10 @@ public class ChasteReflection extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new ApplyPowerAction(p, p, new ChasteReflectionPower(p)));
+
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, 1)));
     }
 
     @Override

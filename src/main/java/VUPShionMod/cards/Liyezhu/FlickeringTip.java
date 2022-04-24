@@ -1,7 +1,9 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.FlickeringTipAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -22,7 +24,7 @@ public class FlickeringTip extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new FlickeringTipAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.magicNumber));
     }
 
     @Override

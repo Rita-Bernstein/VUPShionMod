@@ -1,9 +1,14 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.ApplySinAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class RavingExcoriation extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(RavingExcoriation.class.getSimpleName());
@@ -21,7 +26,14 @@ public class RavingExcoriation extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true));
+            addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true));
+            addToBot(new ApplySinAction(mo, this.magicNumber));
+        }
+
+        addToBot(new ApplySinAction(p, this.magicNumber));
+
     }
 
     @Override

@@ -2,13 +2,14 @@ package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class AbstractShionPower extends AbstractPower {
+public class AbstractShionPower extends TwoAmountPower {
     public void setImage(String bigImageName, String smallImageName) {
         String path = VUPShionMod.assetPath("img/powers/");
 

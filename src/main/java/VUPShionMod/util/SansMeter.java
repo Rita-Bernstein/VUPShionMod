@@ -135,17 +135,16 @@ public class SansMeter {
 
     }
 
-    public boolean willLoseSan(AbstractMonster m) {
-        return m.currentHealth <= 0 && !m.hasPower(MinionPower.POWER_ID);
-    }
 
-    public void onFatal() {
-        if (this.amount <= 30)
-            addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 6));
-        else if (this.amount <= 50)
-            addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 3));
+    public void onFatal(AbstractMonster m) {
+        if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower(MinionPower.POWER_ID)) {
+            if (this.amount <= 30)
+                addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 6));
+            else if (this.amount <= 50)
+                addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 3));
 
-        loseSan(3);
+            loseSan(3);
+        }
     }
 
     public int changeSinApply(AbstractPower power) {

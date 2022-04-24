@@ -1,6 +1,9 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.HallowedCasketPower;
+import VUPShionMod.powers.PsychicPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,7 +26,10 @@ public class HallowedCasket extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new ApplyPowerAction(p, p, new HallowedCasketPower(p, this.magicNumber)));
+
+        if(this.upgraded)
+            addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,1)));
     }
 
     @Override

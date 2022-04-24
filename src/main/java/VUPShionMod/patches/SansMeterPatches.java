@@ -29,9 +29,7 @@ public class SansMeterPatches {
 
             if (!AbstractDungeon.player.isDeadOrEscaped()) {
                 if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
-                    if (EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).willLoseSan(_instance)) {
-                        EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).onFatal();
-                    }
+                    EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).onFatal(_instance);
                 }
             }
 

@@ -27,11 +27,14 @@ public class GainShieldAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (!this.target.isDying && !this.target.isDead && this.duration == this.startDuration) {
-            AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.SHIELD));
-            ShieldPatches.AddFields.shield.get(this.target).addBlock(this.amount);
-        }
-
+        if (amount > 0)
+            if (!this.target.isDying && !this.target.isDead && this.duration == this.startDuration) {
+                AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.SHIELD));
+                ShieldPatches.AddFields.shield.get(this.target).addBlock(this.amount);
+            } else {
+                isDone = true;
+                return;
+            }
         tickDuration();
     }
 }

@@ -1,7 +1,14 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.DuelSinAction;
+import VUPShionMod.powers.SinPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -16,13 +23,33 @@ public class BurnishedRazor extends AbstractLiyezhuCard {
 
     public BurnishedRazor() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.baseDamage = 0;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        boolean hasPower = false;
+
+        if (p.hasPower(SinPower.POWER_ID))
+            hasPower = true;
+
+        if (hasPower)
+            this.baseDamage = p.currentHealth / 3;
+        else
+            this.baseDamage = p.currentBlock / 4;
+
+        calculateCardDamage(m);
+        addToBot(new ExpungeVFXAction(m));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+
+        if (!this.upgraded)
+            addToBot(new DamageAction(p, new DamageInfo(p, this.damage / 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+
+        addToBot(new DuelSinAction());
+
+        if(hasPower)
+            addToBot(new ReducePowerAction(p,p,SinPower.POWER_ID,1));
+
     }
 
     @Override

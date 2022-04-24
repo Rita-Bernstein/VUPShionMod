@@ -1075,12 +1075,12 @@
   },
   "VUPShionMod:FlickeringTip": {
     "NAME": "不弑寒芒",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 击杀时：其残留1点生命。获得 [E] 。你回复 !M! 点生命。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 击杀时：获得 易伤 和 [E] 并回复 !M! 点生命。"
   },
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "姦淫诫言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复总伤的生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复总伤的生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复未被 格挡 伤害的生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：对所有敌人造成 !D! 点伤害并回复未被 格挡 伤害的生命。 NL 获得 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *贞洁镜盾+ 。 NL 消耗 。"
   },
   "VUPShionMod:ChasteReflection": {
     "NAME": "贞洁镜盾",

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
-public class NihilImmensumPower extends TwoAmountPower {
+public class NihilImmensumPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("NihilImmensumPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;

@@ -29,6 +29,8 @@ public class DuelSinAction extends AbstractGameAction {
 
         if(AbstractDungeon.player.hasPower(SinPower.POWER_ID))
         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player,AbstractDungeon.player.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.HP_LOSS));
+
+        isDone =true;
     }
 }
 

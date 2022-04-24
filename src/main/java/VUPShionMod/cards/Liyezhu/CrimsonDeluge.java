@@ -1,6 +1,8 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.CrimsonDelugePower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,13 +18,11 @@ public class CrimsonDeluge extends AbstractLiyezhuCard {
 
     public CrimsonDeluge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new ApplyPowerAction(p,p,new CrimsonDelugePower(p)));
     }
 
     @Override

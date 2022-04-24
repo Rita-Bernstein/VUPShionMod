@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ApplySinAction extends AbstractGameAction {
 
-    public ApplySinAction(int amount, AbstractCreature target) {
+    public ApplySinAction(AbstractCreature target, int amount) {
         this.source = target;
         this.amount = amount;
     }

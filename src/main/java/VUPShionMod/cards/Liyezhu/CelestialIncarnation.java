@@ -1,7 +1,9 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.stances.SpiritStance;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -20,7 +22,7 @@ public class CelestialIncarnation extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new ChangeStanceAction(SpiritStance.STANCE_ID));
     }
 
     @Override

@@ -1,9 +1,18 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.ApplySinAction;
+import VUPShionMod.powers.SinPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class LimpidHeart extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(LimpidHeart.class.getSimpleName());
@@ -22,7 +31,17 @@ public class LimpidHeart extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new HealAction(p, p, this.secondaryM));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                    addToTop(new ApplySinAction(mo, p.hasPower(SinPower.POWER_ID) ? magicNumber + 1 : magicNumber));
+                }
+                addToTop(new ReducePowerAction(p, p, SinPower.POWER_ID, 1));
+                isDone = true;
+            }
+        });
     }
 
     @Override

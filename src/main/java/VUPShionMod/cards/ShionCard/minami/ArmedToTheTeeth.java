@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 public class ArmedToTheTeeth extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("ArmedToTheTeeth");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami15.png");
-    private static final int COST = 3;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -40,7 +40,7 @@ public class ArmedToTheTeeth extends AbstractShionMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.upgradeBaseCost(2);
+            this.upgradeBaseCost(1);
         }
     }
 }

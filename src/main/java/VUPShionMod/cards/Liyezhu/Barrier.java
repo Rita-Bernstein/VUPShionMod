@@ -22,6 +22,7 @@ public class Barrier extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override

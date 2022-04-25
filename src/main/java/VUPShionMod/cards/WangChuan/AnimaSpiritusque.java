@@ -21,7 +21,7 @@ public class AnimaSpiritusque extends AbstractWCCard {
 
     public AnimaSpiritusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 4;
         this.exhaust = true;
     }
@@ -36,7 +36,7 @@ public class AnimaSpiritusque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             this.selfRetain = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

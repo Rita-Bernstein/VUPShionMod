@@ -485,12 +485,12 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 25 + vup_shion_mod:剑意 的 格挡 。 NL 获得8点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得5 + vup_shion_mod:剑意 的 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得5 + vup_shion_mod:剑意 的 格挡 。 NL 获得8点 vup_shion_mod:剑意 。 NL 获得3点 vup_shion_mod:硬直直 。 NL 抽两张牌。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
       "极·回天剑舞",
-      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得5点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得5 + vup_shion_mod:剑意 的 格挡 。 NL 获得5点 vup_shion_mod:剑意 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
       "（造成 !D! 点伤害，获得 !B! 点 格挡 。）"
     ]
   },
@@ -515,16 +515,16 @@
   },
   "VUPShionMod:AethereScindo": {
     "NAME": "燕返",
-    "DESCRIPTION": "造成上次造成的攻击伤害两次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害三次。 NL 抽一张牌。 NL 获得1点 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成上次造成的攻击伤害三次。 NL 抽一张牌。 NL 获得3点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成上次造成的攻击伤害四次。 NL 抽一张牌。 NL 获得3点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !M! 点伤害）"
     ]
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
-    "DESCRIPTION": "保留 。 NL 造成3+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 层 vup_shion_mod:剑意 。 NL 击晕 敌人。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 造成5+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 击晕 敌人。",
+    "DESCRIPTION": "保留 ， 消耗 。 NL 保留 时打出前耗能降低。 NL 造成1+ vup_shion_mod:剑意 的伤害8次。 NL 获得4点 vup_shion_mod:硬直 。 NL 击晕 敌人。 NL 将 *无限剑制 加入手牌。",
+    "UPGRADE_DESCRIPTION": "保留 ， 消耗 。 NL 保留 时打出前耗能降低。 NL 造成1+ vup_shion_mod:剑意 的伤害8次。 NL 获得4点 vup_shion_mod:硬直 。 NL 击晕 敌人。 NL 将 *无限剑制 加入手牌。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害）"
     ]
@@ -568,8 +568,8 @@
   },
   "VUPShionMod:SubLuna": {
     "NAME": "月隐",
-    "DESCRIPTION": "获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": ""
+    "DESCRIPTION": "获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得1层 无实体 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] 。 NL 消耗 。"
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "断水",
@@ -585,7 +585,7 @@
   },
   "VUPShionMod:OffensiveAdvance": {
     "NAME": "攻势",
-    "DESCRIPTION": "获得 !M! 点 力量 。"
+    "DESCRIPTION": "每回合获得 !M! 点 力量 。"
   },
   "VUPShionMod:EbbAndFlow": {
     "NAME": "看破",
@@ -621,13 +621,13 @@
   },
   "VUPShionMod:AfflictioBellumque": {
     "NAME": "二之章：战乱",
-    "DESCRIPTION": " 虚无 。 NL 对所有敌人造成 !D! 点伤害并给予 !M! 层 易伤 。 NL vup_shion_mod:魔能过载 2。",
+    "DESCRIPTION": " 虚无 。 NL 对所有敌人造成 !D! 点伤害并给予 !M! 层 易伤 。 NL vup_shion_mod:魔能过载 。",
     "UPGRADE_DESCRIPTION": " 虚无 。 NL 对所有敌人造成 !D! 点伤害并给予 !M! 层 易伤 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "四之章：荆棘",
-    "DESCRIPTION": " 虚无 。 NL 给予对所有敌人6X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": " 虚无 。 NL 给予对所有敌人9X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": " 虚无 。 NL 获得4X 点 格挡 。 NL 给予对所有敌人6X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": " 虚无 。 NL 获得5X 点 格挡 。 NL 给予对所有敌人9X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "终章：热寂",
@@ -663,8 +663,8 @@
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：觉醒",
-    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL 永久 升级 随机一张牌。",
-    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL 永久 升级 随机一张牌。"
+    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 3。 NL 永久 升级 随机一张牌。",
+    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 3。 NL 永久 升级 随机一张牌。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：乐园",
@@ -964,8 +964,8 @@
   },
   "VUPShionMod:GensBombardae": {
     "NAME": "魔弹生成",
-    "DESCRIPTION": "将 X+2 张 *魔连弹 加入手牌。 NL vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": "将 X+2 张 *魔连弹+ 加入手牌。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": "将 X+2 张 *魔连弹 加入手牌。 NL vup_shion_mod:魔能过载 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将 X+2 张 *魔连弹+ 加入手牌。 NL vup_shion_mod:魔能过载 。 NL 消耗 。"
   },
   "VUPShionMod:MagicProjection": {
     "NAME": "投影魔术",

@@ -57,7 +57,7 @@ public class VertexGladii extends AbstractWCCard {
 
 
         if (StiffnessPower.applyStiffness())
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.upgraded ? 1 : 3)));
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
 
         addToBot(new DrawCardAction(2));
 
@@ -73,12 +73,9 @@ public class VertexGladii extends AbstractWCCard {
         this.baseDamage = d;
 
 
-        int b = 10;
-        if (upgraded) {
-            b = timesUpgraded >= 2 ? 25 : 9;
-            if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                b += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
-        }
+        int b = 5;
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+            b += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
 
         this.baseBlock = b;
 

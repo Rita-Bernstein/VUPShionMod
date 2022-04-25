@@ -29,7 +29,7 @@ public class AfflictioBellumque extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public AfflictioBellumque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -51,7 +51,7 @@ public class AfflictioBellumque extends AbstractWCCard {
         Supplier<AbstractPower> powerToApply = () -> new VulnerablePower(null, this.magicNumber, false);
         addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
 
-        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, this.upgraded?1:2)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p,1)));
 
     }
 

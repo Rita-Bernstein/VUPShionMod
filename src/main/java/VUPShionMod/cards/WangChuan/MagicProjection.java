@@ -21,7 +21,7 @@ public class MagicProjection extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public MagicProjection() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

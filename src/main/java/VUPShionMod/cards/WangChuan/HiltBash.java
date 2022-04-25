@@ -21,6 +21,7 @@ public class HiltBash extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 5;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override

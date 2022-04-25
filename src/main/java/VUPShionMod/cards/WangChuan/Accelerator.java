@@ -19,7 +19,7 @@ public class Accelerator extends AbstractWCCard {
 
     public Accelerator() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override

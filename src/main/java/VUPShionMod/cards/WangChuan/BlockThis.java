@@ -14,11 +14,11 @@ public class BlockThis extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public BlockThis() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 21;
+        this.baseBlock = 14;
         this.exhaust = true;
         this.selfRetain = true;
     }
@@ -32,7 +32,7 @@ public class BlockThis extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(0);
+            upgradeBlock(4);
         }
     }
 }

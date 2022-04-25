@@ -9,10 +9,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -42,6 +39,7 @@ public class GladiiInfiniti extends AbstractWCCard {
         this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = 5;
         this.selfRetain = true;
+        this.exhaust =true;
     }
 
     @Override
@@ -53,7 +51,7 @@ public class GladiiInfiniti extends AbstractWCCard {
         addToBot(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));
         addToBot(new VFXAction(new CollectorCurseEffect(m.hb.cX, m.hb.cY), 2.0F));
 
-        int d = upgraded ? 5 : 3;
+        int d = 1;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
             d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
         this.baseDamage = d;
@@ -67,8 +65,11 @@ public class GladiiInfiniti extends AbstractWCCard {
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         initializeDescription();
 
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+        if(StiffnessPower.applyStiffness())
+            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+
         addToBot(new StunMonsterAction(m, p, 1));
+        addToBot(new MakeTempCardInHandAction(new GladiiInfiniti()));
     }
 
 
@@ -98,6 +99,10 @@ public class GladiiInfiniti extends AbstractWCCard {
         initializeDescription();
     }
 
+    @Override
+    public void onRetained() {
+        updateCost(-1);
+    }
 
     @Override
     public void upgrade() {

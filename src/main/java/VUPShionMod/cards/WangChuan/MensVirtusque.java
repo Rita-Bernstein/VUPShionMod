@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.MensVirtusquePower;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -23,7 +24,7 @@ public class MensVirtusque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("MensVirtusque");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc40.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -31,11 +32,13 @@ public class MensVirtusque extends AbstractWCCard {
     public MensVirtusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 5;
+        vupCardSetBanner(CardRarity.RARE,CardType.POWER);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new MensVirtusquePower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 3)));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
@@ -68,7 +71,7 @@ public class MensVirtusque extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
 //            upgradeMagicNumber(1);
-            upgradeBaseCost(1);
+
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

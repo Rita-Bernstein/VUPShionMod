@@ -32,7 +32,7 @@ public class SubLuna extends AbstractWCCard {
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
         if(StiffnessPower.applyStiffness())
         addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, 3)));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, this.upgraded?2:1)));
     }
 
     @Override

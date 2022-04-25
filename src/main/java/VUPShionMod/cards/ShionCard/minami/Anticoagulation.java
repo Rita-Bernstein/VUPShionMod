@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Anticoagulation extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("Anticoagulation");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami06.png");
-    private static final int COST = 1;
+    private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

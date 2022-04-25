@@ -23,6 +23,7 @@ public class HolyLight extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 6;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.tags.add(CardTags.STARTER_STRIKE);
     }
 
     @Override

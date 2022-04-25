@@ -775,6 +775,8 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new TheRipple(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new Drapery(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new Parocheth(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);

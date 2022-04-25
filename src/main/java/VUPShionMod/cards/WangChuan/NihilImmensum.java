@@ -20,7 +20,7 @@ public class NihilImmensum extends AbstractWCCard {
 
     public NihilImmensum() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 9;
+        this.magicNumber = this.baseMagicNumber = 7;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class NihilImmensum extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(-3);
+            upgradeMagicNumber(-2);
         }
     }
 }

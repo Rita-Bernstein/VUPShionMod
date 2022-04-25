@@ -21,6 +21,7 @@ public class Slide extends AbstractWCCard {
     public Slide() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
+        this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override

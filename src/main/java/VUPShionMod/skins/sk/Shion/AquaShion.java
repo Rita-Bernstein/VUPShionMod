@@ -1,6 +1,7 @@
 package VUPShionMod.skins.sk.Shion;
 
 import VUPShionMod.relics.BlueGiant;
+import VUPShionMod.relics.Drapery;
 import VUPShionMod.relics.TheRipple;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,7 +39,7 @@ public class AquaShion extends AbstractSkin {
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(BlueGiant.ID);
-        info.relics.add(TheRipple.ID);
+        info.relics.add(Drapery.ID);
         return info;
     }
 
@@ -46,7 +47,7 @@ public class AquaShion extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(BlueGiant.ID);
-        retVal.add(TheRipple.ID);
+        retVal.add(Drapery.ID);
         return retVal;
     }
 }

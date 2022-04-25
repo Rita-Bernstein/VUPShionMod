@@ -193,7 +193,7 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Sheathe();
+        return new SoothingScripture();
     }
 
     @Override

@@ -21,7 +21,7 @@ public class SuperCharge extends AbstractShionMinamiCard {
     public SuperCharge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

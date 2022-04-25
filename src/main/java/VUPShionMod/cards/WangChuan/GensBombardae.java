@@ -29,6 +29,7 @@ public class GensBombardae extends AbstractWCCard {
     public GensBombardae() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.cardsToPreview = new BombardaMagica();
+        this.exhaust = true;
     }
 
     @Override

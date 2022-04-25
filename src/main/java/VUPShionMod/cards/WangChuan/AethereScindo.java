@@ -23,7 +23,7 @@ public class AethereScindo extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public AethereScindo() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -44,13 +44,15 @@ public class AethereScindo extends AbstractWCCard {
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new DamageAction(m, new DamageInfo(p, this.magicNumber, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.magicNumber, this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         initializeDescription();
 
         addToBot(new DrawCardAction(1));
         if(StiffnessPower.applyStiffness())
-        addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
     }
 
 

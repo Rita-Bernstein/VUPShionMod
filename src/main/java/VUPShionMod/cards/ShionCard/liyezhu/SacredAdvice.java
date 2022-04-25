@@ -19,7 +19,7 @@ public class SacredAdvice extends AbstractShionLiyezhuCard {
 
     public SacredAdvice() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

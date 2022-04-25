@@ -2,11 +2,13 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.StrengthenPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DemonFormPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class OffensiveAdvance extends AbstractWCCard {
@@ -20,19 +22,19 @@ public class OffensiveAdvance extends AbstractWCCard {
 
     public OffensiveAdvance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p,p,new DemonFormPower(p,this.magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(2);
+            upgradeBaseCost(0);
         }
     }
 }

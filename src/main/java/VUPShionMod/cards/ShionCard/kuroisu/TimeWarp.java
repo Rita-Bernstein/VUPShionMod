@@ -21,7 +21,7 @@ public class TimeWarp extends AbstractShionKuroisuCard {
     public TimeWarp() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.baseDamage = 3;
     }
 

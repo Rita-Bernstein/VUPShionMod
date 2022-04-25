@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class ReleaseFormShionMinami extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormMinami");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami09.png");
-    private static final int COST = 1;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -35,6 +35,7 @@ public class ReleaseFormShionMinami extends AbstractShionMinamiCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
+            upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.isEthereal = false;

@@ -12,7 +12,7 @@ public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz11.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public HolyCoffinSinkingSpirit() {

@@ -38,13 +38,13 @@ public class PiousPhrase extends AbstractLiyezhuCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if (AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID)) {
+                if (isInPrayer()) {
                     if(upgraded)
                     addToTop(new ApplyPrayerAction(new MiracleUpgradePrayer(secondaryM, magicNumber)));
                     else
                         addToTop(new ApplyPrayerAction(new MiraclePrayer(secondaryM, magicNumber)));
                 }
-                if (AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID)) {
+                if (isInJudge() ) {
                     AbstractCard temp = new RavingExcoriation();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

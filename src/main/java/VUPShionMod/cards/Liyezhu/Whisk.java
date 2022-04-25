@@ -22,13 +22,14 @@ public class Whisk extends AbstractLiyezhuCard {
     public Whisk() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DuelSinAction());
         addToBot(new ApplyPowerAction(m,p,new WeakPower(m,this.magicNumber,false)));
-        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,1)));
+        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,this.secondaryM)));
         if(this.upgraded)
             addToBot(new DrawCardAction(1));
     }

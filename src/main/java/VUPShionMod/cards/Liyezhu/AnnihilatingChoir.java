@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
@@ -28,9 +29,13 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int trueBasedamage = this.baseDamage;
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
+
+
+        addToBot(new DamageAction(p, new DamageInfo(p, this.baseDamage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
         if(p.hasPower(PsychicPower.POWER_ID)){
             int powerAmount = p.getPower(PsychicPower.POWER_ID).amount;
@@ -63,7 +68,7 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
             }
         }
 
-        this.baseDamage = 20;
+        this.baseDamage = trueBasedamage;
     }
 
     @Override

@@ -2,10 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -30,7 +27,8 @@ public class ViaAfflictionis extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p,p,this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.secondaryM)));
+        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,1)));
+        addToBot(new DrawCardAction(this.secondaryM));
         addToBot(new MakeTempCardInDrawPileAction(makeStatEquivalentCopy(), 1,true, true, false));
     }
 

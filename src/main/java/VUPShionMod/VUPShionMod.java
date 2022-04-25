@@ -692,6 +692,8 @@ public class VUPShionMod implements
         cards.add(new AvariciousMotto());
         cards.add(new BurnishedRazor());
 
+        cards.add(new PrincipledThievery());
+        cards.add(new HeavenDecree());
         cards.add(new CelestialIncarnation());
         cards.add(new Calamity());
         cards.add(new HallowedCasket());

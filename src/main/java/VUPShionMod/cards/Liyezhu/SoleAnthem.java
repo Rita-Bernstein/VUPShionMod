@@ -37,10 +37,10 @@ public class SoleAnthem extends AbstractLiyezhuCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if (AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID))
+                if (isInPrayer())
                     addToTop(new ApplyPrayerAction(new StrengthPrayer(secondaryM, magicNumber)));
 
-                if (AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID)) {
+                if (isInJudge() ) {
                     AbstractCard temp = new FlayTheEvil();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

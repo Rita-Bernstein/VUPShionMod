@@ -5,6 +5,7 @@ import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
+import VUPShionMod.powers.DelayAvatarPower;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
 import VUPShionMod.stances.SpiritStance;
@@ -13,6 +14,7 @@ import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -26,8 +28,10 @@ import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -44,6 +48,8 @@ public class Liyezhu extends CustomPlayer {
     public static final int ENERGY_PER_TURN = 3;
     public static final int START_HP = 100;
     public static final int START_GOLD = 0;
+
+    private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
@@ -171,6 +177,11 @@ public class Liyezhu extends CustomPlayer {
         if (ModHelper.isModEnabled("Purple Cards")) {
             CardLibrary.addPurpleCards(tmpPool);
         }
+
+        for (AbstractCard c : VUPShionMod.codex_Cards) {
+            tmpPool.add(c.makeCopy());
+        }
+
 
         return super.getCardPool(tmpPool);
     }
@@ -417,6 +428,27 @@ public class Liyezhu extends CustomPlayer {
 
     public static boolean isInJudge() {
         return AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID);
+    }
+
+
+    @Override
+    public void renderPlayerImage(SpriteBatch sb) {
+        super.renderPlayerImage(sb);
+        boolean hasPower = false;
+        for (AbstractPower power : this.powers) {
+            if (power instanceof DelayAvatarPower)
+                hasPower = true;
+        }
+
+        if (hasPower) {
+            sb.setColor(Color.WHITE);
+            sb.setBlendFunction(770, 771);
+            sb.draw(this.avatar, this.hb.x - this.avatar.getWidth() * 0.5f + 300.0F * Settings.scale,
+                    this.hb.y - this.avatar.getHeight() * 0.5f + 120.0F * Settings.scale,
+                    this.avatar.getWidth() * 0.5f, this.avatar.getHeight() * 0.5f, this.avatar.getWidth(), this.avatar.getHeight(),
+                    0.6f * Settings.scale, 0.6f * Settings.scale, 0.0F, 0, 0, this.avatar.getWidth(), this.avatar.getHeight(), false, false);
+
+        }
     }
 
     @Override

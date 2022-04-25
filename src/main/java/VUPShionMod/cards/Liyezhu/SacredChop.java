@@ -2,7 +2,9 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.DuelSinAction;
+import VUPShionMod.powers.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
@@ -29,6 +31,7 @@ public class SacredChop extends AbstractLiyezhuCard {
         addToBot(new ExpungeVFXAction(m));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new DuelSinAction());
+        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,1)));
     }
 
     @Override

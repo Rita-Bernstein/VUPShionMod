@@ -2,6 +2,8 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.util.SheatheModifier;
+import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -27,7 +29,7 @@ public class Sheathe extends AbstractWCCard {
 
     public Sheathe() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
+        this.baseBlock = 3;
         this.secondaryM = this.baseSecondaryM = 3;
     }
 
@@ -38,8 +40,10 @@ public class Sheathe extends AbstractWCCard {
 
         Predicate<AbstractCard> predicate = (pr) -> pr.type == CardType.ATTACK;
         Consumer<List<AbstractCard>> callback = cards -> {
-            for (AbstractCard c : cards)
+            for (AbstractCard c : cards) {
                 c.setCostForTurn(c.costForTurn - 1);
+                CardModifierManager.addModifier(c,new SheatheModifier());
+            }
         };
 
         addToBot(new MoveCardsAction(p.hand, p.drawPile, predicate, 1, callback));

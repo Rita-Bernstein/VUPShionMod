@@ -38,11 +38,11 @@ public class PrincipledThievery extends AbstractLiyezhuCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if (AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID)) {
+                if (isInPrayer()) {
                     addToTop(new ApplyPrayerAction(new ThieveryPrayer(secondaryM, magicNumber)));
                     addToTop(new ApplyPrayerAction(new SinPrayer(secondaryM, 1)));
                 }
-                if (AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID)) {
+                if (isInJudge()) {
                     AbstractCard temp = new BurnishedRazor();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

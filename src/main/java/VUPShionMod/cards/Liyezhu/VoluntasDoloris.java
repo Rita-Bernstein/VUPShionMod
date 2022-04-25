@@ -2,10 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -29,7 +26,8 @@ public class VoluntasDoloris extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p,p,this.magicNumber));
-        addToBot(new GainEnergyAction(this.secondaryM));
+        addToBot(new GainEnergyAction(1));
+        addToBot(new DrawCardAction(this.secondaryM));
         addToBot(new MakeTempCardInDrawPileAction(makeStatEquivalentCopy(), 1,true, true, false));
     }
 

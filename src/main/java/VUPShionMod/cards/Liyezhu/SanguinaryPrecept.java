@@ -38,10 +38,10 @@ public class SanguinaryPrecept extends AbstractLiyezhuCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if (AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID)) {
+                if (isInPrayer()) {
                         addToTop(new ApplyPrayerAction(new LoseHPPrayer(secondaryM, magicNumber)));
                 }
-                if (AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID)) {
+                if (isInJudge() ) {
                     AbstractCard temp = new FlickeringTip();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

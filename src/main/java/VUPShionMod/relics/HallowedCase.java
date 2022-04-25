@@ -1,8 +1,12 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.PsychicPower;
+import VUPShionMod.stances.PrayerStance;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -22,6 +26,17 @@ public class HallowedCase extends CustomRelic {
         return this.DESCRIPTIONS[0];
     }
 
+
+    @Override
+    public void atBattleStart() {
+        flash();
+        addToBot(new ChangeStanceAction(PrayerStance.STANCE_ID));
+    }
+
+    @Override
+    public void onPlayerEndTurn() {
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PsychicPower(AbstractDungeon.player, 1)));
+    }
 
     @Override
     public void obtain() {

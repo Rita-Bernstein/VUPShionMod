@@ -2,6 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.ApplySinAction;
+import VUPShionMod.powers.PsychicPower;
 import VUPShionMod.powers.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -36,9 +37,9 @@ public class LimpidHeart extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                    addToTop(new ApplySinAction(mo, p.hasPower(SinPower.POWER_ID) ? magicNumber + 1 : magicNumber));
+                    addToTop(new ApplySinAction(mo, p.hasPower(PsychicPower.POWER_ID) ? magicNumber + 1 : magicNumber));
                 }
-                addToTop(new ReducePowerAction(p, p, SinPower.POWER_ID, 1));
+                addToTop(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));
                 isDone = true;
             }
         });

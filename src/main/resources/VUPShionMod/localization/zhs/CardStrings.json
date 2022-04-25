@@ -425,10 +425,12 @@
   },
   "VUPShionMod:Sheathe": {
     "NAME": "纳刀",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 减少 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张攻击牌，这张牌本回合耗能降低1。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 减少 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张攻击牌，这张牌本回合耗能降低1。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 减少 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张攻击牌，这张牌本回合耗能降低1且下次打出时额外造成一次 vup_shion_mod:剑意 层数伤害。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 减少 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张攻击牌，这张牌本回合耗能降低1且下次打出时额外造成一次 vup_shion_mod:剑意 层数伤害。",
     "EXTENDED_DESCRIPTION": [
-      "藏刀"
+      "藏刀",
+      " NL 造成 vup_shion_mod:剑意 层数的伤害。",
+      " NL 对所有敌人造成 vup_shion_mod:剑意 层数的伤害。"
     ]
   },
   "VUPShionMod:InTheBlink": {
@@ -1162,7 +1164,7 @@
   },
   "VUPShionMod:SacredChop": {
     "NAME": "至圣斩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL vup_shion_mod:伐罪 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL vup_shion_mod:伐罪 。 NL 获得 vup_shion_mod:沉灵 。 "
   },
   "VUPShionMod:SavageSeries": {
     "NAME": "连斩",
@@ -1180,8 +1182,8 @@
   },
   "VUPShionMod:Whisk": {
     "NAME": "棺击",
-    "DESCRIPTION": "vup_shion_mod:伐罪 。 NL 给予 !M! 层 虚弱 。 NL 获得 vup_shion_mod:沉灵 。",
-    "UPGRADE_DESCRIPTION": "vup_shion_mod:伐罪 。 NL 给予 !M! 层 虚弱 。 NL 获得 vup_shion_mod:沉灵 。 NL 抽一张牌。"
+    "DESCRIPTION": "vup_shion_mod:伐罪 。 NL 给予 !M! 层 虚弱 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:沉灵 。",
+    "UPGRADE_DESCRIPTION": "vup_shion_mod:伐罪 。 NL 给予 !M! 层 虚弱 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:沉灵 。 NL 抽一张牌。"
   },
   "VUPShionMod:AnnihilatingChoir": {
     "NAME": "破灭咏唱",
@@ -1272,7 +1274,7 @@
   },
   "VUPShionMod:Precasting": {
     "NAME": "预备咏唱",
-    "DESCRIPTION": "你的下一个 vup_shion_mod:祈言 将直接获得全部效果。"
+    "DESCRIPTION": "你的下 !M! 个 vup_shion_mod:祈言 将直接获得全部效果。"
   },
   "VUPShionMod:LiReboot": {
     "NAME": "系统重启",

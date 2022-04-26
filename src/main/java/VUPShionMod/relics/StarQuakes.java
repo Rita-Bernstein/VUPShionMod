@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class StarQuakes extends CustomRelic {
+public class StarQuakes extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("StarQuakes");
     public static final String IMG_PATH = "img/relics/StarQuakes.png";
     private static final String OUTLINE_PATH = "img/relics/outline/StarQuakes.png";

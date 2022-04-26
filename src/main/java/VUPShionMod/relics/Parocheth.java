@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class Parocheth extends CustomRelic implements ClickableRelic {
+public class Parocheth extends AbstractShionRelic implements ClickableRelic {
     public static final String ID = VUPShionMod.makeID("Parocheth");
     public static final String IMG_PATH = "img/relics/PlacidAqua.png";
     private static final String OUTLINE_PATH = "img/relics/outline/PlacidAqua.png";

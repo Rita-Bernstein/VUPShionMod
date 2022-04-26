@@ -3,6 +3,8 @@ package VUPShionMod.events;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.SeverCurrent;
 import VUPShionMod.cards.WangChuan.Slide;
+import VUPShionMod.patches.AbstractPlayerEnum;
+import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.SapphireRoseNecklace;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -34,6 +36,8 @@ public class DaysGoneBy extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/DaysGoneBy.png"));
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1], new SapphireRoseNecklace());
+        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
+            this.imageEventText.setDialogOption(OPTIONS[2]);
     }
 
 
@@ -55,6 +59,13 @@ public class DaysGoneBy extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, new SapphireRoseNecklace());
                         logMetricObtainRelic(NAME, "Power", new SapphireRoseNecklace());
+                        break;
+
+
+                    case 2:
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
+                        EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(10);
+                        logMetricObtainRelic(NAME, "Recall", new SapphireRoseNecklace());
                         break;
                 }
 

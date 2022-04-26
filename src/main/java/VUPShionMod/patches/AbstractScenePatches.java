@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.vfx.campfire.CampfireEndingBurningEffect;
 public class AbstractScenePatches {
     public static Texture campfire = ImageMaster.loadImage("VUPShionMod/characters/Shion/Campfire.png");
     public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
-    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/Campfire.png");
     public static final float scale = 2.0f;
     public static final float offSet_x = 0.0f;
     public static final float offSet_y = -100.0f;
@@ -228,7 +228,7 @@ public class AbstractScenePatches {
     public static class CampfireBurningEffectPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(CampfireBurningEffect effect) {
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+            if (EnergyPanelPatches.isShionModChar()) {
                 effect.isDone = true;
             }
 
@@ -243,7 +243,7 @@ public class AbstractScenePatches {
     public static class CampfireEndingBurningEffectPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(CampfireEndingBurningEffect effect) {
-            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+            if (EnergyPanelPatches.isShionModChar()) {
                 effect.isDone = true;
             }
 

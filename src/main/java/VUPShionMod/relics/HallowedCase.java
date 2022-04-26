@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class HallowedCase extends CustomRelic {
+public class HallowedCase extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("HallowedCase");
     public static final String IMG_PATH = "img/relics/HallowedCase.png";
     private static final String OUTLINE_PATH = "img/relics/outline/HallowedCase.png";

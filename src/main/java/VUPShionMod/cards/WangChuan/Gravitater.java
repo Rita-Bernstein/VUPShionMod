@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AcceleratorPower;
 import VUPShionMod.powers.GravitaterPower;
 import VUPShionMod.powers.MagiamObruorPower;
@@ -20,6 +21,7 @@ public class Gravitater extends AbstractWCCard {
     public Gravitater() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 6;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

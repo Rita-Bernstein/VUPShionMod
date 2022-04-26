@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -21,6 +22,7 @@ public class GlandesMagicae extends AbstractWCCard {
     public GlandesMagicae() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 13;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

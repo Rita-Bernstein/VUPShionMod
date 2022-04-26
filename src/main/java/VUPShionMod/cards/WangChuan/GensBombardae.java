@@ -3,6 +3,7 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.XActionAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AcceleratorPower;
 import VUPShionMod.powers.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -30,6 +31,7 @@ public class GensBombardae extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.cardsToPreview = new BombardaMagica();
         this.exhaust = true;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 
-public class PlacidAqua extends CustomRelic {
+public class PlacidAqua extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("PlacidAqua");
     public static final String IMG_PATH = "img/relics/PlacidAqua.png";
     private static final String OUTLINE_PATH = "img/relics/outline/PlacidAqua.png";

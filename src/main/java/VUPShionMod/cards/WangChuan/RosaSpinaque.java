@@ -3,6 +3,7 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.XActionAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -33,6 +34,7 @@ public class RosaSpinaque extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.isEthereal = true;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

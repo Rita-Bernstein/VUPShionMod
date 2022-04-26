@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class BlueSupergiant extends CustomRelic {
+public class BlueSupergiant extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("BlueSupergiant");
     public static final String IMG_PATH = "img/relics/BlueSupergiant.png";
     private static final String OUTLINE_PATH = "img/relics/outline/BlueSupergiant.png";

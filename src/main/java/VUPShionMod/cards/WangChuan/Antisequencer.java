@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AcceleratorPower;
 import VUPShionMod.powers.AntisequencerPower;
 import VUPShionMod.powers.MagiamObruorPower;
@@ -21,6 +22,7 @@ public class Antisequencer extends AbstractWCCard {
     public Antisequencer() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

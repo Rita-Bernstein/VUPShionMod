@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -25,6 +26,7 @@ public class CorLapisque extends AbstractWCCard {
         this.baseBlock = 9;
         this.isInnate = true;
         this.exhaust = true;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

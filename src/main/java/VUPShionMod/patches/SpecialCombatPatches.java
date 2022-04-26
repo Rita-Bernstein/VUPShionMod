@@ -2,11 +2,14 @@ package VUPShionMod.patches;
 
 import VUPShionMod.events.Contact;
 import VUPShionMod.events.Newborn;
+import VUPShionMod.events.Prophesy;
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.powers.GravitoniumOverPower;
 import VUPShionMod.relics.AnastasiaNecklace;
 import VUPShionMod.relics.TrackingBeacon;
+import VUPShionMod.relics.UnknownDust;
 import basemod.CustomEventRoom;
+import basemod.devcommands.energy.Energy;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -46,6 +49,13 @@ public class SpecialCombatPatches {
             if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))) {
                     goToShionEvent(_instance, Contact.ID);
+                    return SpireReturn.Return(null);
+                }
+            }
+
+            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))) {
+                    goToShionEvent(_instance, Prophesy.ID);
                     return SpireReturn.Return(null);
                 }
             }
@@ -103,6 +113,10 @@ public class SpecialCombatPatches {
                 if (r instanceof TrackingBeacon) {
                     ((TrackingBeacon) r).renderAbove(sb);
                 }
+
+                if (r instanceof UnknownDust) {
+                    ((UnknownDust) r).renderAbove(sb);
+                }
             }
         }
     }
@@ -116,8 +130,7 @@ public class SpecialCombatPatches {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(ProceedButton __instance) {
             if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID) && Loader.isModLoaded("actlikeit")) {
-                if ((AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
-                        && AbstractDungeon.actNum >= 4 && Settings.isStandardRun()) {
+                if (EnergyPanelPatches.isShionModChar() && AbstractDungeon.actNum >= 4 && Settings.isStandardRun()) {
 //                    goToShionEvent(__instance);
                     return SpireReturn.Return(null);
                 }
@@ -151,8 +164,7 @@ public class SpecialCombatPatches {
         @SpireInsertPatch(rloc = 8)
         public static SpireReturn<EventHelper.RoomResult> Insert(Random eventRng) {
             if (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))
-                if ((AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
-                        || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)) {
+                if (EnergyPanelPatches.isShionModChar()) {
                     AbstractRelic r = AbstractDungeon.player.getRelic(TinyChest.ID);
                     r.counter--;
                 }

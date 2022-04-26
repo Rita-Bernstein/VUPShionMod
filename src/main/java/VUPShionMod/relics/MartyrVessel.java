@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class MartyrVessel extends CustomRelic {
+public class MartyrVessel extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("MartyrVessel");
     public static final String IMG_PATH = "img/relics/MartyrVessel.png";
     private static final String OUTLINE_PATH = "img/relics/outline/MartyrVessel.png";

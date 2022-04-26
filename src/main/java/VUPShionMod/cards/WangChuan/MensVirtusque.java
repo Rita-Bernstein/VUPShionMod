@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.MensVirtusquePower;
 import VUPShionMod.powers.StiffnessPower;
@@ -33,6 +34,7 @@ public class MensVirtusque extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 5;
         vupCardSetBanner(CardRarity.RARE,CardType.POWER);
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

@@ -53,9 +53,8 @@ public class TonitrusRapidus extends AbstractCodexCard {
                 upgradeBaseCost(0);
             }
 
-
             if (this.timesUpgraded == 2) {
-                this.exhaust=false;
+                this.exhaust = false;
             }
         }
     }

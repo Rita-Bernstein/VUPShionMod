@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -23,6 +24,7 @@ public class VitaNaturaque extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

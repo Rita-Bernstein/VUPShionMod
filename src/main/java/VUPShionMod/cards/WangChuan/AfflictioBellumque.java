@@ -3,6 +3,7 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.CustomWaitAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.StiffnessPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
@@ -37,6 +38,7 @@ public class AfflictioBellumque extends AbstractWCCard {
         this.isMultiDamage = true;
         this.magicNumber = this.baseMagicNumber = 2;
         this.isEthereal = true;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

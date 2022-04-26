@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AcceleratorPower;
 import VUPShionMod.powers.FourAttackPower;
 import VUPShionMod.powers.MagiamObruorPower;
@@ -27,6 +28,7 @@ public class MagicProjection extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

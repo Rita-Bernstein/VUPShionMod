@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Sniperscope extends CustomRelic {
+public class Sniperscope extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("Sniperscope");
     public static final String IMG_PATH = "img/relics/Sniperscope.png";
     private static final String OUTLINE_PATH = "img/relics/outline/Sniperscope.png";

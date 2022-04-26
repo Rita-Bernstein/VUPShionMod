@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
-public class DimensionSplitterAria extends CustomRelic {
+public class DimensionSplitterAria extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("DimensionSplitterAria");
     public static final String IMG_PATH = "img/relics/DimensionSplitterAria.png";
     private static final String OUTLINE_PATH = "img/relics/outline/DimensionSplitterAria.png";

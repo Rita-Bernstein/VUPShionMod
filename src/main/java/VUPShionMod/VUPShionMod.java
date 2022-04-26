@@ -101,6 +101,7 @@ public class VUPShionMod implements
     public static boolean useSimpleOrb = false;
     public static boolean notReplaceTitle = false;
     public static boolean safeCampfire = false;
+    public static boolean liyezhuRelic = false;
 
     public static ModLabeledToggleButton useSimpleOrbSwitch;
     public static ModLabeledToggleButton notReplaceTitleSwitch;
@@ -172,6 +173,7 @@ public class VUPShionMod implements
             config.setBool("useSimpleOrb", useSimpleOrb);
             config.setBool("notReplaceTitle", notReplaceTitle);
             config.setBool("safeCampfire", safeCampfire);
+            config.setBool("liyezhuRelic", liyezhuRelic);
 
 
             for (int i = 0; i <= characters.length - 1; i++) {
@@ -194,6 +196,7 @@ public class VUPShionMod implements
             useSimpleOrb = config.getBool("useSimpleOrb");
             notReplaceTitle = config.getBool("notReplaceTitle");
             safeCampfire = config.getBool("safeCampfire");
+            liyezhuRelic = config.getBool("liyezhuRelic");
 
             for (int i = 0; i <= characters.length - 1; i++) {
                 characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
@@ -378,6 +381,12 @@ public class VUPShionMod implements
                 .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
                 .create());
 
+        BaseMod.addEvent(new AddEventParams.Builder(VacuumRipples.ID, VacuumRipples.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.WangChuan)
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
+                .create());
+
+
         BaseMod.addEvent(new AddEventParams.Builder(BoundaryOfChaos.ID, BoundaryOfChaos.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.WangChuan)
                 .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID)
@@ -386,6 +395,16 @@ public class VUPShionMod implements
 
 
         BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
+
+        BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.Liyezhu)
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID))
+                .create());
+
+
+        BaseMod.addEvent(new AddEventParams.Builder(DistantMemory.ID, DistantMemory.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.Liyezhu)
+                .create());
     }
 
     @Override
@@ -791,6 +810,9 @@ public class VUPShionMod implements
 
         BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new HallowedCase(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new AbyssalCrux(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new Inhibitor(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new UnknownDust(), CardColorEnum.Liyezhu_LIME);
 
     }
 

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
-public class OpticalCamouflage extends CustomRelic {
+public class OpticalCamouflage extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("OpticalCamouflage");
     public static final String IMG_PATH = "img/relics/OpticalCamouflage.png";
     private static final String OUTLINE_PATH = "img/relics/outline/OpticalCamouflage.png";

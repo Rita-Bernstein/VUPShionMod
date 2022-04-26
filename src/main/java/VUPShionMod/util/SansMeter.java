@@ -1,6 +1,7 @@
 package VUPShionMod.util;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.relics.AbstractShionRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -23,6 +24,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
@@ -157,6 +159,13 @@ public class SansMeter {
 
 
     public void loseSan(int amount) {
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if (relic instanceof AbstractShionRelic)
+                amount = ((AbstractShionRelic) relic).onLoseSan(amount);
+        }
+
+        if (amount <= 0) return;
+
         this.amount -= amount;
         if (this.amount < 0)
             this.amount = 0;

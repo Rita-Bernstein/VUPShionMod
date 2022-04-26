@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class BlueGiant extends CustomRelic {
+public class BlueGiant extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("BlueGiant");
     public static final String IMG_PATH = "img/relics/BlueGiant.png";
     private static final String OUTLINE_PATH = "img/relics/outline/BlueGiant.png";

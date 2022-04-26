@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class Drapery extends CustomRelic implements ClickableRelic {
+public class Drapery extends AbstractShionRelic implements ClickableRelic {
     public static final String ID = VUPShionMod.makeID("Drapery");
     public static final String IMG_PATH = "img/relics/TheRipple.png";
     private static final String OUTLINE_PATH = "img/relics/outline/TheRipple.png";

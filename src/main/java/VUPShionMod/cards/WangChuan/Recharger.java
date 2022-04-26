@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AlleviatorPower;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.RechargerPower;
@@ -20,6 +21,7 @@ public class Recharger extends AbstractWCCard {
     public Recharger() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

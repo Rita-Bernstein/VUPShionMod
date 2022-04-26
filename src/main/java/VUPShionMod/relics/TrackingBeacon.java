@@ -42,7 +42,7 @@ import com.megacrit.cardcrawl.relics.LizardTail;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
-public class TrackingBeacon extends CustomRelic implements OnPlayerDeathRelic {
+public class TrackingBeacon extends AbstractShionRelic implements OnPlayerDeathRelic {
     public static final String ID = VUPShionMod.makeID("TrackingBeacon");
     public static final String IMG_PATH = "img/relics/TrackingBeacon.png";
     private static final String OUTLINE_PATH = "img/relics/outline/TrackingBeacon.png";

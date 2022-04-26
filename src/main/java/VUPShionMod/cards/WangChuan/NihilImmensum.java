@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AcceleratorPower;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.NihilImmensum2Power;
@@ -21,6 +22,7 @@ public class NihilImmensum extends AbstractWCCard {
     public NihilImmensum() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 7;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

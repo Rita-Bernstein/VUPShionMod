@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AcceleratorPower;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.RecoilerPower;
@@ -20,6 +21,7 @@ public class Recoiler extends AbstractWCCard {
     public Recoiler() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 6;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

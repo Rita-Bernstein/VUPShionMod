@@ -5,7 +5,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class SapphireRoseNecklace extends CustomRelic {
+public class SapphireRoseNecklace extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("SapphireRoseNecklace");
     public static final String IMG_PATH = "img/relics/SapphireRoseNecklace.png";
     private static final String OUTLINE_PATH = "img/relics/outline/SapphireRoseNecklace.png";

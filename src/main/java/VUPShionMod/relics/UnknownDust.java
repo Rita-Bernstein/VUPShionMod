@@ -12,7 +12,6 @@ import VUPShionMod.powers.AttackOrderSpecialPower;
 import VUPShionMod.powers.BleedingPower;
 import VUPShionMod.powers.LifeLinkPower;
 import VUPShionMod.powers.PursuitPower;
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -40,13 +39,12 @@ import com.megacrit.cardcrawl.relics.LizardTail;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
-public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDeathRelic {
-    public static final String ID = VUPShionMod.makeID("AnastasiaNecklace");
-    public static final String IMG_PATH = "img/relics/AnastasiaNecklace.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/AnastasiaNecklace.png";
+public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathRelic {
+    public static final String ID = VUPShionMod.makeID("UnknownDust");
+    public static final String IMG_PATH = "img/relics/UnknownDust.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/UnknownDust.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
-    private static final Texture UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/AnastasiaNecklaceUpgrade.png"));
     private static final RelicStrings relicString = CardCrawlGame.languagePack.getRelicStrings(ID);
 
     public boolean triggered = false;
@@ -55,9 +53,8 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
 
     private CGlayout cg = new CGlayout();
 
-    public AnastasiaNecklace() {
+    public UnknownDust() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
-        UPGRADE_IMG.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
     }
 
     @Override
@@ -114,7 +111,6 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
         }
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttackOrderSpecialPower(AbstractDungeon.player)));
         addToBot(new GainEnergyAction(1));
-        this.img = UPGRADE_IMG;
 
         AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active = true;
 

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class Protostar extends CustomRelic {
+public class Protostar extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("Protostar");
     public static final String IMG_PATH = "img/relics/Protostar.png";
     private static final String OUTLINE_PATH = "img/relics/outline/Protostar.png";

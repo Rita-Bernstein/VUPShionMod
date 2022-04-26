@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class PureHeart extends CustomRelic {
+public class PureHeart extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID("PureHeart");
     public static final String IMG_PATH = "img/relics/PureHeart.png";
     private static final String OUTLINE_PATH = "img/relics/outline/PureHeart.png";

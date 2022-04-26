@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.HeliumLuxquePower;
 import VUPShionMod.powers.MagiamObruorPower;
 import VUPShionMod.powers.StiffnessPower;
@@ -23,6 +24,7 @@ public class HeliumLuxque extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 40;
         this.secondaryM = this.baseSecondaryM = 3;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

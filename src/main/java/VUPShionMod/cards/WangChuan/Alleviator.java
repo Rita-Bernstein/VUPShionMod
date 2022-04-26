@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.AlleviatorPower;
 import VUPShionMod.powers.GainCorGladiiPower;
 import VUPShionMod.powers.MagiamObruorPower;
@@ -20,6 +21,7 @@ public class Alleviator extends AbstractWCCard {
     public Alleviator() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override

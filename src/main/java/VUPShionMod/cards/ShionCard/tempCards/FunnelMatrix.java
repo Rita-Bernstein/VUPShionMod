@@ -1,19 +1,14 @@
 package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
-import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

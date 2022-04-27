@@ -2,6 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.LoseFinFunnelUpgradePower;
 import com.badlogic.gdx.math.MathUtils;
@@ -46,7 +47,7 @@ public class FirePower extends AbstractShionMinamiCard {
         }
 
 
-        this.baseDamage = VUPShionMod.calculateTotalFinFunnelLevel() * this.magicNumber;
+        this.baseDamage = AbstractFinFunnel.calculateTotalFinFunnelLevel() * this.magicNumber;
         calculateCardDamage(m);
         addToBot(new SFXAction("ATTACK_HEAVY"));
         addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
@@ -58,7 +59,7 @@ public class FirePower extends AbstractShionMinamiCard {
 
     @Override
     public void applyPowers() {
-        this.baseDamage = VUPShionMod.calculateTotalFinFunnelLevel() * this.magicNumber;
+        this.baseDamage = AbstractFinFunnel.calculateTotalFinFunnelLevel() * this.magicNumber;
         super.applyPowers();
         this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         initializeDescription();

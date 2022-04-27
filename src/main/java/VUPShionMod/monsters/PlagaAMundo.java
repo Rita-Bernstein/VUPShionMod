@@ -1,22 +1,19 @@
 package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.CustomWaitAction;
-import VUPShionMod.actions.GachaAction;
-import VUPShionMod.actions.SummonMundoMinionAction;
+import VUPShionMod.actions.Common.CustomWaitAction;
+import VUPShionMod.actions.Unique.GachaAction;
+import VUPShionMod.actions.Unique.SummonMundoMinionAction;
 import VUPShionMod.character.WangChuan;
-import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.powers.*;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,11 +22,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DemonFormPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-import java.util.function.Predicate;
 
 public class PlagaAMundo extends CustomMonster {
     public static final String ID = VUPShionMod.makeID("PlagaAMundo");

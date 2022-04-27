@@ -28,10 +28,6 @@ public class CGlayout implements Disposable {
     private Texture bgImg;
     public boolean isDone = false;
 
-    public CGlayout() {
-        this("Shion");
-    }
-
     public CGlayout(String name) {
         this.bgColor = Color.WHITE.cpy();
         this.screenColor = new Color(0.0F, 0.0F, 0.0F, 0.0F);
@@ -102,6 +98,8 @@ public class CGlayout implements Disposable {
                 p.fadeOut();
 
             this.isDone = true;
+            dispose();
+
         }
     }
 
@@ -170,5 +168,10 @@ public class CGlayout implements Disposable {
     public void dispose() {
         for (CutscenePanel p : this.panels)
             p.dispose();
+
+        if (this.bgImg != null) {
+            this.bgImg.dispose();
+            this.bgImg = null;
+        }
     }
 }

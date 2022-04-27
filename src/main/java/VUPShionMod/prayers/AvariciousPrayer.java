@@ -1,7 +1,7 @@
 package VUPShionMod.prayers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.ApplySinAction;
+import VUPShionMod.actions.Liyezhu.ApplySinAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;

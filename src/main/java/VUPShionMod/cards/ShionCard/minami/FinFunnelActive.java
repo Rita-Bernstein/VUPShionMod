@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.TriggerAllFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.character.Shion;
 import VUPShionMod.patches.CardTagsEnum;

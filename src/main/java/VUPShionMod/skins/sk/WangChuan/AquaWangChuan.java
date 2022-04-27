@@ -1,9 +1,6 @@
 package VUPShionMod.skins.sk.WangChuan;
 
-import VUPShionMod.relics.Nebula;
-import VUPShionMod.relics.PureHeart;
-import VUPShionMod.relics.StarQuakes;
-import VUPShionMod.relics.TheRipple;
+import VUPShionMod.relics.*;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -40,7 +37,7 @@ public class AquaWangChuan extends AbstractSkin {
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(Nebula.ID);
-        info.relics.add(StarQuakes.ID);
+        info.relics.add(WaveSlasher.ID);
         info.relics.add(TheRipple.ID);
         return info;
     }
@@ -49,7 +46,7 @@ public class AquaWangChuan extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(Nebula.ID);
-        retVal.add(StarQuakes.ID);
+        retVal.add(WaveSlasher.ID);
         retVal.add(TheRipple.ID);
         return retVal;
     }

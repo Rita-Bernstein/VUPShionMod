@@ -1,8 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.LoseMaxHPAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import VUPShionMod.actions.Common.LoseMaxHPAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

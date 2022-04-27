@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MakeLoadedCardAction;
+import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MakeLoadedCardAction;
+import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.SelectCardToHandAction;
+import VUPShionMod.actions.Common.SelectCardToHandAction;
 import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.patches.CardTagsEnum;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;

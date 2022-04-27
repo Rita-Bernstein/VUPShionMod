@@ -17,20 +17,10 @@
       " NL vup_shion_mod:Loading_Complete Exhaust."
     ]
   },
-  "VUPShionMod:UpgradeAndZeroCostAction": {
-    "TEXT": [
-      "Select a card to upgrade and set its cost to 0."
-    ]
-  },
   "VUPShionMod:SelectCardToHandAction": {
     "TEXT": [
       " NL Exhaust.",
       " Ethereal."
-    ]
-  },
-  "VUPShionMod:AttackFromDiscardToHandAction": {
-    "TEXT": [
-      "Add 2 Attacks into your hand."
     ]
   },
   "VUPShionMod:ChargeHelper": {

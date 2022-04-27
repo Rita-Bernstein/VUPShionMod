@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
+import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.HealAction;

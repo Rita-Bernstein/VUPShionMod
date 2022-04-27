@@ -1,8 +1,8 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MakeLoadedCardAction;
-import VUPShionMod.actions.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.MakeLoadedCardAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
 import VUPShionMod.finfunnels.GravityFinFunnel;

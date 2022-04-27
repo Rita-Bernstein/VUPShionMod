@@ -94,5 +94,10 @@ public class WangchuanVictoryEffect extends AbstractGameEffect {
 
     public void dispose() {
         Atlas.dispose();
+
+        if(img != null){
+            img.dispose();
+            img = null;
+        }
     }
 }

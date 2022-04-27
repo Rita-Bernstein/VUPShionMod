@@ -1,11 +1,8 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
-import VUPShionMod.actions.XActionAction;
 import VUPShionMod.powers.CorGladiiPower;
 import VUPShionMod.powers.StiffnessPower;
-import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -13,17 +10,9 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ConstrictedPower;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
-import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
-
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class GladiiInfiniti extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("GladiiInfiniti");

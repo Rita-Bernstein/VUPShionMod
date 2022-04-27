@@ -1,16 +1,11 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.UpgradeAction;
-import VUPShionMod.actions.UpgradeAndZeroCostAction;
-import VUPShionMod.actions.UpgradePileAction;
-import VUPShionMod.powers.TurnDexPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import VUPShionMod.actions.Wangchuan.UpgradeAction;
 import com.megacrit.cardcrawl.actions.unique.ApotheosisAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class AurumNimium extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID("AurumNimium");

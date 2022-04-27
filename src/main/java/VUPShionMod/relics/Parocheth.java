@@ -1,12 +1,12 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
-import basemod.abstracts.CustomRelic;
+import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.finfunnels.GravityFinFunnel;
+import VUPShionMod.finfunnels.PursuitFinFunnel;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.FrailPower;
@@ -15,8 +15,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class Parocheth extends AbstractShionRelic implements ClickableRelic {
     public static final String ID = VUPShionMod.makeID("Parocheth");
-    public static final String IMG_PATH = "img/relics/PlacidAqua.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/PlacidAqua.png";
+    public static final String IMG_PATH = "img/relics/Parocheth.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/Parocheth.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
@@ -31,7 +31,6 @@ public class Parocheth extends AbstractShionRelic implements ClickableRelic {
 
     @Override
     public void atBattleStart() {
-        flash();
         this.grayscale = false;
     }
 
@@ -46,6 +45,12 @@ public class Parocheth extends AbstractShionRelic implements ClickableRelic {
             this.grayscale = true;
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1)));
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 2)));
+            for (int i = 0; i < 10; i++)
+                addToBot(new TriggerFinFunnelAction(GravityFinFunnel.ID, true));
+
+            addToBot(new TriggerFinFunnelAction(PursuitFinFunnel.ID, true));
+            addToBot(new TriggerFinFunnelAction(PursuitFinFunnel.ID, true));
+            addToBot(new TriggerFinFunnelAction(PursuitFinFunnel.ID, true));
         }
     }
 

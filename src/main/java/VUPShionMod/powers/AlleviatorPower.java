@@ -1,7 +1,6 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.GainHyperdimensionalLinksAction;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;

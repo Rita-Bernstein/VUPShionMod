@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MakeLoadedCardAction;
+import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;

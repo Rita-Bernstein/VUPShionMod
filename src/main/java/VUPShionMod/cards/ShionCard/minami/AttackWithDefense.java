@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MakeLoadedCardAction;
+import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;

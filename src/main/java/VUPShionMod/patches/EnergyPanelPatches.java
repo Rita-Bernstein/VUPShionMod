@@ -56,9 +56,6 @@ public class EnergyPanelPatches {
             if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu){
                 PatchEnergyPanelField.canUseSans.set(_instance, true);
             }
-
-
-
         }
     }
 
@@ -212,7 +209,6 @@ public class EnergyPanelPatches {
         public static SpireReturn<Void> Insert(EnergyPanel panel, SpriteBatch sb, @ByRef String[] energyMsg) {
             if (isShionModChar()) {
                 AbstractDungeon.player.getEnergyNumFont().getData().setScale(EnergyPanel.fontScale * 1.3f);
-//                energyMsg[0] = EnergyPanel.totalCount + "" + AbstractDungeon.player.energy.energy;
             }
 
             return SpireReturn.Continue();
@@ -248,6 +244,5 @@ public class EnergyPanelPatches {
         return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu;
-
     }
 }

@@ -1,22 +1,16 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
-import VUPShionMod.actions.XActionAction;
+import VUPShionMod.actions.Common.XActionAction;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.AcceleratorPower;
 import VUPShionMod.powers.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ConstrictedPower;
 
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class GensBombardae extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("GensBombardae");

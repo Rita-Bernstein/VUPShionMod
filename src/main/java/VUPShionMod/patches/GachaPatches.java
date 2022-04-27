@@ -1,6 +1,6 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.actions.GachaAction;
+import VUPShionMod.actions.Unique.GachaAction;
 import VUPShionMod.monsters.PlagaAMundoMinion;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;

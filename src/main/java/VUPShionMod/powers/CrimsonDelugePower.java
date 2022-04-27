@@ -1,13 +1,10 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.GainShieldAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import VUPShionMod.actions.Common.GainShieldAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class CrimsonDelugePower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID(CrimsonDelugePower.class.getSimpleName());

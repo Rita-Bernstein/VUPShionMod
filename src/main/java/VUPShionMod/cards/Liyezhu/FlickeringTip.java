@@ -1,8 +1,7 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.FlickeringTipAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import VUPShionMod.actions.Liyezhu.FlickeringTipAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

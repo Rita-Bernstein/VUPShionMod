@@ -30,7 +30,7 @@ public class Strafe extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.baseDamage = VUPShionMod.calculateTotalFinFunnelLevel();
+        this.baseDamage = AbstractFinFunnel.calculateTotalFinFunnelLevel();
         calculateCardDamage(m);
         AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
 
@@ -49,7 +49,7 @@ public class Strafe extends AbstractShionCard {
 
     @Override
     public void applyPowers() {
-        this.baseDamage = VUPShionMod.calculateTotalFinFunnelLevel();
+        this.baseDamage = AbstractFinFunnel.calculateTotalFinFunnelLevel();
         super.applyPowers();
         this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();

@@ -73,18 +73,20 @@ public class VUPShionMod implements
         PostDungeonInitializeSubscriber,
         StartActSubscriber {
 
+
+    public static String MOD_ID = "VUPShionMod";
+    public static Properties VUPShionDefaults = new Properties();
     public static final String MODNAME = "VUPShionMod";
     public static final String AUTHOR = "Rita";
     public static final String DESCRIPTION = "";
+
+
     public static final Color Shion_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
     public static final Color WangChuan_Color = new Color(0.203F, 0.176F, 0.168F, 1.0F);
     public static final Color Liyezhu_Color = new Color(0.250F, 0.286F, 0.541F, 1.0F);
-    public static final Logger logger = LogManager.getLogger(VUPShionMod.class.getSimpleName());
-    public static String MOD_ID = "VUPShionMod";
-    public static Properties VUPShionDefaults = new Properties();
-    public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
-//    public static AbstractFinFunnel.FinFunnelSaver finFunnelSaver;
 
+    public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
+    
     public static int gravityFinFunnelLevel = 1;
     public static int investigationFinFunnelLevel = 1;
     public static int pursuitFinFunnelLevel = 1;
@@ -108,6 +110,7 @@ public class VUPShionMod implements
     public static ModLabeledToggleButton safeCampfireSwitch;
 
     public static Color transparent = Color.WHITE.cpy();
+
     public static boolean fightSpecialBoss = false;
     public static boolean fightSpecialBossWithout = false;
 
@@ -162,8 +165,6 @@ public class VUPShionMod implements
                 assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
                 assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
-
-
     }
 
 
@@ -232,10 +233,6 @@ public class VUPShionMod implements
         return MOD_ID + "/" + path;
     }
 
-    public static String characterAssetPath(String className, String path) {
-        return MOD_ID + "/" + className + "/" + path;
-    }
-
     public static void saveFinFunnels() {
         try {
             SpireConfig config = new SpireConfig("VUPShionMod", "VUPShionMod_settings", VUPShionDefaults);
@@ -266,30 +263,6 @@ public class VUPShionMod implements
 
     public static void clearFinFunnels() {
         saveFinFunnels();
-    }
-
-    public static int calculateTotalFinFunnelLevel() {
-        int ret = 0;
-        if (AbstractDungeon.player != null) {
-            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
-            for (AbstractFinFunnel funnel : funnelList) {
-                ret += funnel.getLevel();
-            }
-            AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
-            if (relic != null) {
-                ret += relic.counter;
-            }
-
-            AbstractPower power = AbstractDungeon.player.getPower(TempFinFunnelUpgradePower.POWER_ID);
-            if (power != null) {
-                ret += power.amount;
-            }
-
-            if (AbstractDungeon.player.hasPower(LoseFinFunnelUpgradePower.POWER_ID))
-                ret = 0;
-        }
-
-        return ret;
     }
 
     public static void initialize() {
@@ -331,7 +304,9 @@ public class VUPShionMod implements
         settingsPanel.addUIElement(notReplaceTitleSwitch);
         settingsPanel.addUIElement(safeCampfireSwitch);
 
-//        finFunnelSaver = new AbstractFinFunnel.FinFunnelSaver();
+
+
+
 
         ArrayList<AbstractPlayer.PlayerClass> list = new ArrayList<>();
         list.add(AbstractPlayerEnum.VUP_Shion);
@@ -359,6 +334,8 @@ public class VUPShionMod implements
         }
 
 
+//        紫音事件
+
         BaseMod.addEvent(new AddEventParams.Builder(BreakAppointment.ID, BreakAppointment.class) //Event ID//
                 //Event Character//
                 .playerClass(AbstractPlayerEnum.VUP_Shion)
@@ -375,6 +352,8 @@ public class VUPShionMod implements
                 .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
                 .create());
 
+
+//        忘川事件
 
         BaseMod.addEvent(new AddEventParams.Builder(LakeAmidst.ID, LakeAmidst.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.WangChuan)
@@ -394,8 +373,8 @@ public class VUPShionMod implements
                 .create());
 
 
-        BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
 
+//      蓝宝事件
         BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.Liyezhu)
                 .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID))
@@ -405,6 +384,12 @@ public class VUPShionMod implements
         BaseMod.addEvent(new AddEventParams.Builder(DistantMemory.ID, DistantMemory.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.Liyezhu)
                 .create());
+
+
+
+
+//      添加boss
+        BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
     }
 
     @Override
@@ -417,16 +402,6 @@ public class VUPShionMod implements
     @Override
     public void receivePostDungeonInitialize() {
         System.out.println("重开游戏");
-
-        if(AbstractDungeon.floorNum == 0){
-            SansMeterSave.sansMeterSaveAmount = 100;
-        }
-//        if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {
-//            AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
-//            relic.flash();
-//            relic.counter++;
-//            ((DimensionSplitterAria) relic).setDescriptionAfterLoading();
-//        }
 
     }
 
@@ -450,6 +425,8 @@ public class VUPShionMod implements
 
             fightSpecialBoss = false;
             fightSpecialBossWithout = false;
+
+            SansMeterSave.sansMeterSaveAmount = 100;
         }
 
         if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {
@@ -458,17 +435,20 @@ public class VUPShionMod implements
             relic.counter++;
             ((DimensionSplitterAria) relic).setDescriptionAfterLoading();
         }
+
+        if (AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID) && AbstractDungeon.actNum == 3) {
+            FragmentsOfFaith relic = (FragmentsOfFaith)AbstractDungeon.player.getRelic(FragmentsOfFaith.ID);
+            relic.upgrade();
+        }
     }
 
     @Override
     public void receiveEditCharacters() {
-        logger.info("========================= 开始加载人物 =========================");
-
-        logger.info(Shion.charStrings.NAMES[1]);
         BaseMod.addCharacter(new Shion(Shion.charStrings.NAMES[1], AbstractPlayerEnum.VUP_Shion),
                 assetPath("characters/Shion/Button.png"),
                 assetPath("characters/Shion/portrait.png"),
                 AbstractPlayerEnum.VUP_Shion);
+
         BaseMod.addCharacter(new WangChuan(WangChuan.charStrings.NAMES[1], AbstractPlayerEnum.WangChuan),
                 assetPath("characters/WangChuan/Button.png"),
                 assetPath("characters/WangChuan/portrait.png"),
@@ -792,10 +772,10 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new AnastasiaNecklace(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new BlueGiant(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.addRelicToCustomPool(new TheRipple(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Drapery(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Parocheth(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new WaveSlasher(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new WaveBreaker(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);

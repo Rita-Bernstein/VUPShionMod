@@ -1,14 +1,15 @@
 package VUPShionMod.finfunnels;
 
-import VUPShionMod.actions.CustomWaitAction;
-import VUPShionMod.actions.MoveFinFunnelAction;
-import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
+import VUPShionMod.actions.Common.CustomWaitAction;
+import VUPShionMod.actions.Shion.MoveFinFunnelAction;
+import VUPShionMod.actions.Shion.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.character.Shion;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
-import basemod.BaseMod;
-import basemod.abstracts.CustomSavable;
+import VUPShionMod.powers.LoseFinFunnelUpgradePower;
+import VUPShionMod.powers.TempFinFunnelUpgradePower;
+import VUPShionMod.relics.DimensionSplitterAria;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Bone;
@@ -24,9 +25,10 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractFinFunnel {
@@ -141,15 +143,16 @@ public abstract class AbstractFinFunnel {
 
 
     protected void renderText(SpriteBatch sb) {
-        if (!AbstractDungeon.player.isDead)
-            if(AbstractDungeon.player.flipHorizontal)
-            FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level),
-                    this.cX + 24.0F * Settings.scale, this.cY - 12.0F * Settings.scale,
-                    new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
-            else
+        if (!AbstractDungeon.player.isDeadOrEscaped())
+            if (AbstractDungeon.player.flipHorizontal) {
+                FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level),
+                        this.cX + 24.0F * Settings.scale, this.cY - 12.0F * Settings.scale,
+                        new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+            } else {
                 FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level),
                         this.cX - 24.0F * Settings.scale, this.cY - 12.0F * Settings.scale,
                         new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+            }
     }
 
     protected void addToBot(AbstractGameAction action) {
@@ -160,28 +163,6 @@ public abstract class AbstractFinFunnel {
         AbstractDungeon.actionManager.addToTop(action);
     }
 
-    public static class FinFunnelSaver implements CustomSavable<List<Integer>> {
-
-        public List<Integer> data;
-
-        public FinFunnelSaver() {
-            BaseMod.addSaveField("finFunnels", this);
-        }
-
-        @Override
-        public List<Integer> onSave() {
-            List<Integer> ret = new ArrayList<>();
-            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
-                ret.add(funnel.getLevel());
-            }
-            return ret;
-        }
-
-        @Override
-        public void onLoad(List<Integer> integerList) {
-            this.data = integerList;
-        }
-    }
 
     public void playFinFunnelAnimation(String id) {
         addToBot(new AbstractGameAction() {
@@ -200,6 +181,31 @@ public abstract class AbstractFinFunnel {
     public abstract int getFinalEffect();
 
     public int getFinalDamage() {
-        return (this.level -1) / 2 +1;
+        return (this.level - 1) / 2 + 1;
+    }
+
+
+    public static int calculateTotalFinFunnelLevel() {
+        int ret = 0;
+        if (AbstractDungeon.player != null) {
+            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
+            for (AbstractFinFunnel funnel : funnelList) {
+                ret += funnel.getLevel();
+            }
+            AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
+            if (relic != null) {
+                ret += relic.counter;
+            }
+
+            AbstractPower power = AbstractDungeon.player.getPower(TempFinFunnelUpgradePower.POWER_ID);
+            if (power != null) {
+                ret += power.amount;
+            }
+
+            if (AbstractDungeon.player.hasPower(LoseFinFunnelUpgradePower.POWER_ID))
+                ret = 0;
+        }
+
+        return ret;
     }
 }

@@ -1,7 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
+import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

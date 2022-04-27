@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar;
 import javassist.CtBehavior;
 
 public class LibraryTypePatches {
-
-
     @SpirePatch(
             cls = "basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix$Render",
             method = "Insert"

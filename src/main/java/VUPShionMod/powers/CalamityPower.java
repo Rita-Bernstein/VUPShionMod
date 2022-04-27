@@ -1,18 +1,14 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.ApplySinAction;
+import VUPShionMod.actions.Liyezhu.ApplySinAction;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class CalamityPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID(CalamityPower.class.getSimpleName());

@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.LoadCardDiscardPileToTopOfDeckAction;
+import VUPShionMod.actions.Shion.LoadCardDiscardPileToTopOfDeckAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -1,6 +1,6 @@
 package VUPShionMod.vfx;
 
-import VUPShionMod.actions.GainShieldAction;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;

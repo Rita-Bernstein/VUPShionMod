@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.SecondHandAction;
+import VUPShionMod.actions.Shion.SecondHandAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;

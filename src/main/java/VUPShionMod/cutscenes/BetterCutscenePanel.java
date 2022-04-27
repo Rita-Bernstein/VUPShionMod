@@ -60,9 +60,9 @@ public class BetterCutscenePanel extends CutscenePanel {
         if (this.img != null) {
             sb.setColor(this.color);
             if (Settings.isSixteenByTen) {
-                sb.draw(this.img, 0.0F, 0.0F, (float)Settings.WIDTH, (float)Settings.HEIGHT);
+                sb.draw(this.img, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT);
             } else {
-                sb.draw(this.img, 0.0F, -50.0F * Settings.scale, (float)Settings.WIDTH, (float)Settings.HEIGHT + 110.0F * Settings.scale);
+                sb.draw(this.img, 0.0F, -50.0F * Settings.scale, Settings.WIDTH, Settings.HEIGHT + 110.0F * Settings.scale);
             }
         }
     }

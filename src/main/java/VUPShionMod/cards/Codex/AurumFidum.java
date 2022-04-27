@@ -1,10 +1,9 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.UpgradeAction;
-import VUPShionMod.actions.UpgradePileAction;
+import VUPShionMod.actions.Wangchuan.UpgradeAction;
+import VUPShionMod.actions.Common.UpgradePileAction;
 import com.megacrit.cardcrawl.actions.unique.ApotheosisAction;
-import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

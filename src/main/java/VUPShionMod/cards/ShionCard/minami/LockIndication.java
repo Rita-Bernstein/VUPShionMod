@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.TriggerDimensionSplitterAction;
+import VUPShionMod.actions.Shion.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;

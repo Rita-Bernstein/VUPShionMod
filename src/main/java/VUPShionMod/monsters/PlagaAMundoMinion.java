@@ -1,8 +1,7 @@
 package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.CustomWaitAction;
-import VUPShionMod.character.Shion;
+import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.powers.*;
@@ -20,7 +19,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DemonFormPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 

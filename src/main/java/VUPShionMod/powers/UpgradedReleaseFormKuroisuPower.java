@@ -1,6 +1,6 @@
 package VUPShionMod.powers;
 
-import VUPShionMod.actions.MakeLoadedCardAction;
+import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;

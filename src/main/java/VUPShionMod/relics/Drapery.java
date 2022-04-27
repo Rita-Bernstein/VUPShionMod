@@ -1,25 +1,23 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.StrengthenPower;
-import basemod.abstracts.CustomRelic;
+import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.finfunnels.GravityFinFunnel;
+import VUPShionMod.finfunnels.PursuitFinFunnel;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.status.Dazed;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class Drapery extends AbstractShionRelic implements ClickableRelic {
     public static final String ID = VUPShionMod.makeID("Drapery");
-    public static final String IMG_PATH = "img/relics/TheRipple.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/TheRipple.png";
+    public static final String IMG_PATH = "img/relics/Drapery.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/Drapery.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
@@ -36,6 +34,7 @@ public class Drapery extends AbstractShionRelic implements ClickableRelic {
     public void atBattleStart() {
         flash();
         addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 2, true, true));
+
         this.grayscale = false;
     }
 
@@ -48,8 +47,14 @@ public class Drapery extends AbstractShionRelic implements ClickableRelic {
     public void onRightClick() {
         if (!this.grayscale) {
             this.grayscale = true;
-            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new IntangiblePlayerPower(AbstractDungeon.player,1)));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,2)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 2)));
+            for (int i = 0; i < 10; i++)
+                addToBot(new TriggerFinFunnelAction(GravityFinFunnel.ID, true));
+
+            addToBot(new TriggerFinFunnelAction(PursuitFinFunnel.ID, true));
+            addToBot(new TriggerFinFunnelAction(PursuitFinFunnel.ID, true));
+            addToBot(new TriggerFinFunnelAction(PursuitFinFunnel.ID, true));
         }
     }
 }

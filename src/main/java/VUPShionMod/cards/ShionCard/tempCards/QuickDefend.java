@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;

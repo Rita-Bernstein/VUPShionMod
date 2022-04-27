@@ -1,13 +1,10 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.DiscardRarityCardAction;
-import VUPShionMod.actions.ExhaustRarityCardAction;
-import VUPShionMod.actions.LoseMaxHPAction;
+import VUPShionMod.actions.Unique.DiscardRarityCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class ShockPower extends AbstractShionPower {

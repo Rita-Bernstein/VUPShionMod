@@ -1,33 +1,14 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
-import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
-import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
-import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
-import VUPShionMod.cards.ShionCard.shion.Strafe;
-import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
 import VUPShionMod.cards.WangChuan.*;
-import VUPShionMod.effects.FinFunnelSelectedEffect;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.finfunnels.GravityFinFunnel;
-import VUPShionMod.finfunnels.InvestigationFinFunnel;
-import VUPShionMod.finfunnels.PursuitFinFunnel;
-import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
-import VUPShionMod.relics.DimensionSplitterAria;
-import VUPShionMod.relics.Nebula;
-import VUPShionMod.relics.StarQuakes;
-import VUPShionMod.vfx.ShionVictoryEffect;
 import VUPShionMod.vfx.WangchuanVictoryEffect;
 import basemod.abstracts.CustomPlayer;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -36,22 +17,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbBlue;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static VUPShionMod.VUPShionMod.Shion_Color;
 import static VUPShionMod.VUPShionMod.WangChuan_Color;
 
 public class WangChuan extends CustomPlayer {
@@ -147,15 +122,18 @@ public class WangChuan extends CustomPlayer {
             retVal.add(Warp.ID);
             retVal.add(Warp.ID);
             retVal.add(Warp.ID);
+            retVal.add(SeverPetal.ID);
         }else {
+
             retVal.add(Slide.ID);
             retVal.add(Slide.ID);
             retVal.add(Slide.ID);
             retVal.add(Slide.ID);
+            retVal.add(Sheathe.ID);
         }
-//        retVal.add(PreExecution.ID);
-        retVal.add(Sheathe.ID);
-//        retVal.add(InTheBlink.ID);
+
+
+
         if (CharacterSelectScreenPatches.characters[1].reskinCount == 0)
             retVal.add(GlandesMagicae.ID);
 

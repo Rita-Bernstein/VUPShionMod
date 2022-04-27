@@ -1,11 +1,10 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.DuelSinAction;
+import VUPShionMod.actions.Liyezhu.DuelSinAction;
 import VUPShionMod.powers.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;

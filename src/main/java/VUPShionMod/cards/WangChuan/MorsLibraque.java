@@ -1,24 +1,19 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.ApplyPowerToAllEnemyAction;
-import VUPShionMod.actions.CustomWaitAction;
+import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
+import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.powers.MorsLibraquePower;
 import VUPShionMod.powers.NoSkillsPower;
-import VUPShionMod.powers.StiffnessPower;
 import VUPShionMod.powers.TurnObruorPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.watcher.EnergyDownPower;
 
 import java.util.function.Supplier;
 

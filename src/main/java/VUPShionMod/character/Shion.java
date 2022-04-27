@@ -1,13 +1,12 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.MoveFinFunnelSelectedEffectAction;
+import VUPShionMod.actions.Shion.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.cards.ShionCard.anastasia.*;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.shion.Strafe;
 import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
 import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
-import VUPShionMod.cards.WangChuan.Warp;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -16,7 +15,6 @@ import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.DelayAvatarPower;
-import VUPShionMod.relics.DimensionSplitterAria;
 import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -160,19 +158,10 @@ public class Shion extends CustomPlayer {
         retVal.add(Strike_Shion.ID);
         retVal.add(Strike_Shion.ID);
         retVal.add(Strike_Shion.ID);
-
-        if (CharacterSelectScreenPatches.characters[0].reskinCount == 2) {
-            retVal.add(Warp.ID);
-            retVal.add(Warp.ID);
-            retVal.add(Warp.ID);
-            retVal.add(Warp.ID);
-        } else {
-            retVal.add(Defend_Shion.ID);
-            retVal.add(Defend_Shion.ID);
-            retVal.add(Defend_Shion.ID);
-            retVal.add(Defend_Shion.ID);
-        }
-
+        retVal.add(Defend_Shion.ID);
+        retVal.add(Defend_Shion.ID);
+        retVal.add(Defend_Shion.ID);
+        retVal.add(Defend_Shion.ID);
         retVal.add(TacticalLayout.ID);
         retVal.add(FinFunnelUpgrade.ID);
         retVal.add(Strafe.ID);

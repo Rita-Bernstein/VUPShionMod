@@ -38,7 +38,6 @@ public class AquaShion extends AbstractSkin {
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
-        info.relics.add(BlueGiant.ID);
         info.relics.add(Drapery.ID);
         return info;
     }
@@ -46,7 +45,6 @@ public class AquaShion extends AbstractSkin {
     @Override
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(BlueGiant.ID);
         retVal.add(Drapery.ID);
         return retVal;
     }

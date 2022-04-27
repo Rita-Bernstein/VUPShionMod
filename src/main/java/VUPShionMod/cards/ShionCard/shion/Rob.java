@@ -1,8 +1,9 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.RobAction;
+import VUPShionMod.actions.Shion.RobAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -56,7 +57,7 @@ public class Rob extends AbstractShionCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
+        this.baseDamage += AbstractFinFunnel.calculateTotalFinFunnelLevel();
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
@@ -65,7 +66,7 @@ public class Rob extends AbstractShionCard {
     @Override
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
+        this.baseDamage += AbstractFinFunnel.calculateTotalFinFunnelLevel();
         super.applyPowers();
         if (this.upgraded) {
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];

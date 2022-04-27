@@ -1,8 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.ApplySinAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import VUPShionMod.actions.Liyezhu.ApplySinAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

@@ -1,8 +1,8 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.LoseHyperdimensionalLinksAction;
-import VUPShionMod.actions.TimeWarpAction;
+import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
+import VUPShionMod.actions.Shion.TimeWarpAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.powers.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;

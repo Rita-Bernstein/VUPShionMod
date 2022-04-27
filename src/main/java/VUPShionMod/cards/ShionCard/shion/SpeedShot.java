@@ -70,7 +70,7 @@ public class SpeedShot extends AbstractShionCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
+        this.baseDamage += AbstractFinFunnel.calculateTotalFinFunnelLevel();
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
@@ -79,7 +79,7 @@ public class SpeedShot extends AbstractShionCard {
     @Override
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseDamage += VUPShionMod.calculateTotalFinFunnelLevel();
+        this.baseDamage += AbstractFinFunnel.calculateTotalFinFunnelLevel();
         super.applyPowers();
         this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();

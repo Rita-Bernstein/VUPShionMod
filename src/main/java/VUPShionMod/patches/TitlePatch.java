@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 
 public class TitlePatch {
+
     @SpirePatch(
             clz = MainMenuScreen.class,
             method = SpirePatch.CONSTRUCTOR,
@@ -20,4 +21,6 @@ public class TitlePatch {
             return SpireReturn.Continue();
         }
     }
+
+
 }

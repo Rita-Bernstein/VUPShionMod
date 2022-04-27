@@ -1,13 +1,12 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.DamageAndApplyPursuitAction;
-import VUPShionMod.actions.DamageAndGainBlockAction;
+import VUPShionMod.actions.Shion.DamageAndApplyPursuitAction;
+import VUPShionMod.actions.Shion.DamageAndGainBlockAction;
 import VUPShionMod.powers.*;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
 import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

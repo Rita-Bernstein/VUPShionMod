@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EnduranceInitiationAction;
+import VUPShionMod.actions.Shion.EnduranceInitiationAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

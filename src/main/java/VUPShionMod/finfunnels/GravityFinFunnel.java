@@ -1,8 +1,8 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.DamageAndGainBlockAction;
-import VUPShionMod.actions.GainShieldAction;
+import VUPShionMod.actions.Shion.DamageAndGainBlockAction;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.powers.*;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
 import VUPShionMod.vfx.FinFunnelSmallLaserEffect;

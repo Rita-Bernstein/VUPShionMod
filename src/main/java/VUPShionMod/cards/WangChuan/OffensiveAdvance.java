@@ -1,15 +1,10 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.StiffnessPower;
-import VUPShionMod.powers.StrengthenPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DemonFormPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class OffensiveAdvance extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("OffensiveAdvance");

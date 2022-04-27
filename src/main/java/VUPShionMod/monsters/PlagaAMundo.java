@@ -6,7 +6,7 @@ import VUPShionMod.actions.Unique.GachaAction;
 import VUPShionMod.actions.Unique.SummonMundoMinionAction;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
-import VUPShionMod.powers.*;
+import VUPShionMod.powers.Unique.*;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;

@@ -4,7 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.LoseFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.LoseFinFunnelUpgradePower;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

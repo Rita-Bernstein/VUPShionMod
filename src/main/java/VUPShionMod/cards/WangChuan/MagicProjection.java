@@ -2,10 +2,7 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.AcceleratorPower;
-import VUPShionMod.powers.FourAttackPower;
-import VUPShionMod.powers.MagiamObruorPower;
-import VUPShionMod.powers.TwoAttackPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import basemod.cardmods.ExhaustMod;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

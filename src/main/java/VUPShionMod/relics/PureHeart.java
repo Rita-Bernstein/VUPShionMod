@@ -2,8 +2,7 @@ package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.OnrushingTip;
-import VUPShionMod.powers.CorGladiiPower;
-import basemod.abstracts.CustomRelic;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import basemod.cardmods.EtherealMod;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Texture;

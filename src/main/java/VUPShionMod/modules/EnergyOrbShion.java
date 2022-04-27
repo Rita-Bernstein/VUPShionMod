@@ -1,9 +1,9 @@
 package VUPShionMod.modules;
 
 import VUPShionMod.patches.EnergyPanelPatches;
-import VUPShionMod.powers.GravityFinFunnelUpgradePower;
-import VUPShionMod.powers.InvestigationFinFunnelUpgradePower;
-import VUPShionMod.powers.PursuitFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.GravityFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.InvestigationFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.PursuitFinFunnelUpgradePower;
 import basemod.abstracts.CustomEnergyOrb;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

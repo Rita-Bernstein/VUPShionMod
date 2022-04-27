@@ -2,7 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.DuelSinAction;
-import VUPShionMod.powers.PsychicPower;
+import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;

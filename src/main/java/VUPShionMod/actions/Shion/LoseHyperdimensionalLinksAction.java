@@ -1,17 +1,13 @@
 package VUPShionMod.actions.Shion;
 
-import VUPShionMod.patches.AbstractPlayerPatches;
-import VUPShionMod.powers.HolyCoffinReleasePower;
-import VUPShionMod.powers.HolyCoffinSinkingSpiritPower;
-import VUPShionMod.powers.HyperdimensionalLinksPower;
-import VUPShionMod.relics.AnastasiaNecklace;
+import VUPShionMod.powers.Shion.HolyCoffinSinkingSpiritPower;
+import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class LoseHyperdimensionalLinksAction extends AbstractGameAction {
     private int amount;

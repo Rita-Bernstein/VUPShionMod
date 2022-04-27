@@ -1,8 +1,7 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.StiffnessPower;
-import basemod.abstracts.CustomRelic;
+import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;

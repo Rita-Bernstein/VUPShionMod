@@ -1,6 +1,6 @@
 package VUPShionMod.actions.Liyezhu;
 
-import VUPShionMod.powers.SinPower;
+import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;

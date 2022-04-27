@@ -14,7 +14,7 @@ import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
-import VUPShionMod.powers.DelayAvatarPower;
+import VUPShionMod.powers.Shion.DelayAvatarPower;
 import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;

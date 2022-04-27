@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
-import VUPShionMod.powers.DelayAvatarPower;
+import VUPShionMod.powers.Shion.DelayAvatarPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

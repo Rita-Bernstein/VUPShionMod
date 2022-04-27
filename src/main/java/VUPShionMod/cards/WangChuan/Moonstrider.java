@@ -1,12 +1,10 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.CorGladiiPower;
-import VUPShionMod.powers.MoonstriderPower;
-import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.MoonstriderPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

@@ -2,9 +2,8 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.AlleviatorPower;
-import VUPShionMod.powers.GainCorGladiiPower;
-import VUPShionMod.powers.MagiamObruorPower;
+import VUPShionMod.powers.Wangchuan.AlleviatorPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

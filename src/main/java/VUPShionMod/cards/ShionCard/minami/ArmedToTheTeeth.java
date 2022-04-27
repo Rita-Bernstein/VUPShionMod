@@ -3,7 +3,7 @@ package VUPShionMod.cards.ShionCard.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
-import VUPShionMod.powers.HyperdimensionalLinksPower;
+import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

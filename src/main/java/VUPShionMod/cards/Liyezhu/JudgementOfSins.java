@@ -2,7 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.ApplyPsychicAction;
-import VUPShionMod.powers.LoseHPPower;
+import VUPShionMod.powers.Common.LoseHPPower;
 import VUPShionMod.stances.JudgeStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

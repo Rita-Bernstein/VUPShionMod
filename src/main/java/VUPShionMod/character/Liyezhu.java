@@ -2,15 +2,13 @@ package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.Liyezhu.*;
-import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
-import VUPShionMod.powers.DelayAvatarPower;
+import VUPShionMod.powers.Shion.DelayAvatarPower;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
 import VUPShionMod.stances.SpiritStance;
 import VUPShionMod.vfx.LiyezhuVictoryEffect;
-import VUPShionMod.vfx.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -33,15 +31,12 @@ import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.stances.NeutralStance;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import org.lwjgl.Sys;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static VUPShionMod.VUPShionMod.Liyezhu_Color;
-import static VUPShionMod.VUPShionMod.WangChuan_Color;
 
 public class Liyezhu extends CustomPlayer {
     public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("Liyezhu"));

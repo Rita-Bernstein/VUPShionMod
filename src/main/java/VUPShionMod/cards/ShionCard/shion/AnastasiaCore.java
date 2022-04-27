@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
-import VUPShionMod.powers.AnastasiaCorePower;
+import VUPShionMod.powers.Shion.AnastasiaCorePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

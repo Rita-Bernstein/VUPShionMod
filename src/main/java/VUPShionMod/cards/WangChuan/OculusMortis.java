@@ -2,10 +2,9 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.AcceleratorPower;
-import VUPShionMod.powers.MagiamObruorPower;
-import VUPShionMod.powers.OculusMortis2Power;
-import VUPShionMod.powers.OculusMortisPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
+import VUPShionMod.powers.Wangchuan.OculusMortis2Power;
+import VUPShionMod.powers.Wangchuan.OculusMortisPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

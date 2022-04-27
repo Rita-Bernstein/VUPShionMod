@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
-import VUPShionMod.powers.HolyCoffinSinkingSpiritPower;
+import VUPShionMod.powers.Shion.HolyCoffinSinkingSpiritPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

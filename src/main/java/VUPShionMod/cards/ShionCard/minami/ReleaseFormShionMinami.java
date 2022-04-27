@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
-import VUPShionMod.powers.ReleaseFormMinamiPower;
+import VUPShionMod.powers.Shion.ReleaseFormMinamiPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

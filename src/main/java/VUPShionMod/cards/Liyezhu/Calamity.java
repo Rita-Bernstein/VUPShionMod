@@ -2,11 +2,10 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.EnergyPanelPatches;
-import VUPShionMod.powers.Calamity2Power;
-import VUPShionMod.powers.CalamityPower;
-import VUPShionMod.powers.LoseHPPower;
+import VUPShionMod.powers.Liyezhu.Calamity2Power;
+import VUPShionMod.powers.Liyezhu.CalamityPower;
+import VUPShionMod.powers.Common.LoseHPPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

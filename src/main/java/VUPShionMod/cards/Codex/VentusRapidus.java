@@ -1,14 +1,11 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.ThreeAttackPower;
-import VUPShionMod.powers.TurnDexPower;
-import VUPShionMod.powers.TwoAttackPower;
+import VUPShionMod.powers.Codex.TurnDexPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class VentusRapidus extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID("VentusRapidus");

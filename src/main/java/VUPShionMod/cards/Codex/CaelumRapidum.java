@@ -1,15 +1,10 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.patches.GameStatsPatch;
-import VUPShionMod.powers.FourAttackPower;
-import VUPShionMod.powers.ThreeAttackPower;
-import VUPShionMod.powers.TwoAttackPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import VUPShionMod.powers.Codex.TwoAttackPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DoubleTapPower;
 
 public class CaelumRapidum extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID("CaelumRapidum");

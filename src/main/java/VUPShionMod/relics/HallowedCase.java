@@ -1,9 +1,8 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.PsychicPower;
+import VUPShionMod.powers.Liyezhu.PsychicPower;
 import VUPShionMod.stances.PrayerStance;
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;

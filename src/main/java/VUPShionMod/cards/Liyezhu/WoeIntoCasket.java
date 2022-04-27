@@ -1,8 +1,7 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.PsychicPower;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -2,9 +2,9 @@ package VUPShionMod.cards.ShionCard.optionCards;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.powers.GravityFinFunnelUpgradePower;
-import VUPShionMod.powers.InvestigationFinFunnelUpgradePower;
-import VUPShionMod.powers.PursuitFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.GravityFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.InvestigationFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.PursuitFinFunnelUpgradePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

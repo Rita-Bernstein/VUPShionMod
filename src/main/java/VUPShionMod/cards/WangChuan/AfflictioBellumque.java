@@ -4,7 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.MagiamObruorPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

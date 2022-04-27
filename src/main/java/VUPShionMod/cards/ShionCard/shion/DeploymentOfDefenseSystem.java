@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
-import VUPShionMod.powers.DeploymentOfDefenseSystemPower;
+import VUPShionMod.powers.Shion.DeploymentOfDefenseSystemPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

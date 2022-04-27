@@ -1,15 +1,14 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.CorGladiiPower;
-import VUPShionMod.powers.FlawlessParryPower;
-import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.FlawlessParryPower;
+import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BufferPower;
 
 public class FlawlessParry extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("FlawlessParry");

@@ -2,7 +2,7 @@ package VUPShionMod.actions.Liyezhu;
 
 import VUPShionMod.patches.AbstractPrayerPatches;
 import VUPShionMod.powers.AbstractShionPower;
-import VUPShionMod.powers.PrecastingPower;
+import VUPShionMod.powers.Liyezhu.PrecastingPower;
 import VUPShionMod.prayers.AbstractPrayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;

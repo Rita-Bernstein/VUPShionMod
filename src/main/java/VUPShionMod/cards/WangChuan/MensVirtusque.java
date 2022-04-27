@@ -2,14 +2,10 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.MagiamObruorPower;
-import VUPShionMod.powers.MensVirtusquePower;
-import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
+import VUPShionMod.powers.Wangchuan.MensVirtusquePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.unique.ApotheosisAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

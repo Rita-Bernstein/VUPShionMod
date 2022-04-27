@@ -175,7 +175,7 @@
   "VUPShionMod:LoseFinFunnelUpgradePower": {
     "NAME": "火力倾泻",
     "DESCRIPTIONS": [
-      "在 #b%d 个回合内，你的 #y总炮强化 视为0。"
+      "在 #b%d 个回合内，你的 #y总炮强化 视为 #b0。"
     ]
   },
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {

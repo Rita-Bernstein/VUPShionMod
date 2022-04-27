@@ -1,14 +1,10 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.ThreePowerPower;
-import VUPShionMod.powers.TwoPowerPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
 public class TonitrusConstans extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID("TonitrusConstans");

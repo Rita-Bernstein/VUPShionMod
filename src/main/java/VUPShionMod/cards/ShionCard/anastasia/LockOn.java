@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
-import VUPShionMod.powers.LockOnPower;
+import VUPShionMod.powers.Shion.LockOnPower;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;

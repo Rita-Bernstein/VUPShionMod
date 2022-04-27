@@ -6,7 +6,7 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
-import VUPShionMod.powers.*;
+import VUPShionMod.powers.Shion.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

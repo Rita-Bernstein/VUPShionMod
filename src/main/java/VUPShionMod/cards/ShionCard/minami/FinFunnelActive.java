@@ -5,7 +5,7 @@ import VUPShionMod.actions.Shion.TriggerAllFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.character.Shion;
 import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.ReleaseFormMinamiPower;
+import VUPShionMod.powers.Shion.ReleaseFormMinamiPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

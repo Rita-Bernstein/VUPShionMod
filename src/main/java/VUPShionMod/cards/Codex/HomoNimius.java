@@ -1,8 +1,8 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.ThreePowerPower;
-import VUPShionMod.powers.TwoPowerPower;
+import VUPShionMod.powers.Codex.ThreePowerPower;
+import VUPShionMod.powers.Codex.TwoPowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

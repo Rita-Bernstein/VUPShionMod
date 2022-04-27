@@ -1,14 +1,11 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.patches.GameStatsPatch;
-import VUPShionMod.powers.*;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import VUPShionMod.powers.Codex.FourSkillPower;
+import VUPShionMod.powers.Codex.TwoSkillPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BurstPower;
-import com.megacrit.cardcrawl.powers.DoubleTapPower;
 
 public class TerraNimia extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID("TerraNimia");

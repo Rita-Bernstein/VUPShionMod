@@ -1,7 +1,7 @@
 package VUPShionMod.helpers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import basemod.ReflectionHacks;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

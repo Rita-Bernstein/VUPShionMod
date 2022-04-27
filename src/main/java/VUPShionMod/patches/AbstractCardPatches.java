@@ -1,7 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.powers.FreeCardPower;
+import VUPShionMod.powers.Common.FreeCardPower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

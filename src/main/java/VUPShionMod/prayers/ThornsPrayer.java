@@ -1,12 +1,11 @@
 package VUPShionMod.prayers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.LoseThornsPower;
+import VUPShionMod.powers.Common.LoseThornsPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 
 public class ThornsPrayer extends AbstractPrayer {

@@ -1,11 +1,10 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.FreeCardPower;
+import VUPShionMod.powers.Common.FreeCardPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class IgnisNimius extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID("IgnisNimius");

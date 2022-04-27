@@ -1,12 +1,9 @@
 package VUPShionMod.actions.Liyezhu;
 
-import VUPShionMod.patches.EnergyPanelPatches;
-import VUPShionMod.powers.PsychicPower;
-import VUPShionMod.powers.SinPower;
+import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ApplyPsychicAction extends AbstractGameAction {

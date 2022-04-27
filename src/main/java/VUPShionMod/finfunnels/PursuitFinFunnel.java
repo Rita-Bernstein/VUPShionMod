@@ -3,7 +3,7 @@ package VUPShionMod.finfunnels;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.DamageAndApplyPursuitAction;
 import VUPShionMod.actions.Shion.DamageAndGainBlockAction;
-import VUPShionMod.powers.*;
+import VUPShionMod.powers.Shion.*;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
 import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;

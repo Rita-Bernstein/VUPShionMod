@@ -7,8 +7,7 @@ import VUPShionMod.character.Shion;
 import VUPShionMod.effects.FinFunnelSelectedEffect;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
-import VUPShionMod.powers.LoseFinFunnelUpgradePower;
-import VUPShionMod.powers.TempFinFunnelUpgradePower;
+import VUPShionMod.powers.Shion.LoseFinFunnelUpgradePower;
 import VUPShionMod.relics.DimensionSplitterAria;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -25,7 +24,6 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -195,11 +193,6 @@ public abstract class AbstractFinFunnel {
             AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
             if (relic != null) {
                 ret += relic.counter;
-            }
-
-            AbstractPower power = AbstractDungeon.player.getPower(TempFinFunnelUpgradePower.POWER_ID);
-            if (power != null) {
-                ret += power.amount;
             }
 
             if (AbstractDungeon.player.hasPower(LoseFinFunnelUpgradePower.POWER_ID))

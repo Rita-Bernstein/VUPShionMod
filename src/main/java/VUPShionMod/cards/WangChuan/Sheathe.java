@@ -1,7 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import VUPShionMod.helpers.SheatheModifier;
 import basemod.helpers.CardModifierManager;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;

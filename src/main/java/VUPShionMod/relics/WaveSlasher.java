@@ -1,17 +1,12 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.WangChuan.OnrushingTip;
-import VUPShionMod.powers.CorGladiiPower;
-import VUPShionMod.powers.StiffnessPower;
-import basemod.cardmods.EtherealMod;
-import basemod.helpers.CardModifierManager;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.FreeAttackPower;

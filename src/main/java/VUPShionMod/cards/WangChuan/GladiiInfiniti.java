@@ -1,8 +1,8 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.CorGladiiPower;
-import VUPShionMod.powers.StiffnessPower;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

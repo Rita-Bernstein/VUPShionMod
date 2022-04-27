@@ -1,13 +1,11 @@
 package VUPShionMod.actions.Shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.powers.QuickTriggerPower;
+import VUPShionMod.powers.Shion.QuickTriggerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

@@ -2,14 +2,13 @@ package VUPShionMod.patches;
 
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.monsters.PlagaAMundoMinion;
-import VUPShionMod.powers.DestroyPower;
-import VUPShionMod.powers.ShockPower;
+import VUPShionMod.powers.Unique.DestroyPower;
+import VUPShionMod.powers.Unique.ShockPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.audio.TempMusic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

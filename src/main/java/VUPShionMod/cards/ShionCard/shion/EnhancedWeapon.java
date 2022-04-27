@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
-import VUPShionMod.powers.EnhancedWeaponPower;
+import VUPShionMod.powers.Shion.EnhancedWeaponPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

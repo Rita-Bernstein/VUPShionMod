@@ -7,7 +7,7 @@ import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
-import VUPShionMod.powers.*;
+import VUPShionMod.powers.Shion.*;
 import VUPShionMod.vfx.AllFinFunnelBeamEffect;
 import VUPShionMod.vfx.AllFinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;

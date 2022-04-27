@@ -2,19 +2,13 @@ package VUPShionMod.actions.Liyezhu;
 
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.powers.AbstractShionPower;
-import VUPShionMod.powers.SinPower;
+import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class DuelSinAction extends AbstractGameAction {
 

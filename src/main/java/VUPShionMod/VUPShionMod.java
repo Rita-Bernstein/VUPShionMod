@@ -15,12 +15,9 @@ import VUPShionMod.character.Liyezhu;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.*;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.patches.*;
-import VUPShionMod.powers.LoseFinFunnelUpgradePower;
-import VUPShionMod.powers.TempFinFunnelUpgradePower;
 import VUPShionMod.relics.*;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.util.SansMeterSave;
@@ -47,12 +44,9 @@ import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import static VUPShionMod.patches.CharacterSelectScreenPatches.characters;
 
@@ -86,7 +80,7 @@ public class VUPShionMod implements
     public static final Color Liyezhu_Color = new Color(0.250F, 0.286F, 0.541F, 1.0F);
 
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
-    
+
     public static int gravityFinFunnelLevel = 1;
     public static int investigationFinFunnelLevel = 1;
     public static int pursuitFinFunnelLevel = 1;

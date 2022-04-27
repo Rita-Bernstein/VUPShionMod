@@ -1,7 +1,7 @@
 package VUPShionMod.actions.Shion;
 
 
-import VUPShionMod.powers.BleedingPower;
+import VUPShionMod.powers.Shion.BleedingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

@@ -1,13 +1,12 @@
 package VUPShionMod.helpers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.MagiamObruorPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 

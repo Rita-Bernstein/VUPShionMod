@@ -3,7 +3,7 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
-import VUPShionMod.powers.LoseHyperdimensionalLinksPower;
+import VUPShionMod.powers.Shion.LoseHyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

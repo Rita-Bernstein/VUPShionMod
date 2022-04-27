@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.powers.DenergizePower;
+import VUPShionMod.powers.Common.DenergizePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.ApplyBulletTimeAction;

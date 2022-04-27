@@ -1,17 +1,12 @@
 package VUPShionMod.modules;
 
 import VUPShionMod.patches.EnergyPanelPatches;
-import VUPShionMod.powers.GravityFinFunnelUpgradePower;
-import VUPShionMod.powers.InvestigationFinFunnelUpgradePower;
-import VUPShionMod.powers.PursuitFinFunnelUpgradePower;
 import basemod.abstracts.CustomEnergyOrb;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class EnergyOrbWangChuan extends CustomEnergyOrb {
     private static final float ORB_IMG_SCALE = 1.15F * Settings.scale;

@@ -2,7 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.DuelSinAction;
-import VUPShionMod.powers.SinPower;
+import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;

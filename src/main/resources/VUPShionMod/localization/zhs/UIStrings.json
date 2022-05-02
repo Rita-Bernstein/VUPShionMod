@@ -55,54 +55,60 @@
       "选择牌升级"
     ]
   },
-  "VUPShionMod:BetaArtUnlockEffect": {
+  "VUPShionMod:OriShion": {
     "TEXT": [
-      "已解锁紫音皮肤！",
-      "已解锁忘川川皮肤！",
-      "已解锁黎夜竹皮肤！"
+      "强袭武装：同时操控单兵武装与天基武器进行战斗",
+      "加成：无",
+      "强度：基础",
+      "获取条件：默认获得"
     ]
   },
-  "VUPShionMod:AbstractShionSkin": {
+  "VUPShionMod:BlueGiantShion": {
     "TEXT": [
-      "咏叹调",
-      "蓝巨星",
-      "水世界"
-    ],
-    "EXTRA_TEXT": [
-      "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔",
-      "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔",
-      "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔"
+      "士官礼装：使用强化的单兵浮游炮装置",
+      "每回合获得自动浮游矩阵",
+      "强度：晋升者",
+      "获取条件：在最终战斗中胜利"
     ]
   },
-  "VUPShionMod:AbstractWangChuanSkin": {
+  "VUPShionMod:AquaShion": {
     "TEXT": [
-      "星云系统",
-      "纯白之刃",
-      "水世界"
-    ],
-    "EXTRA_TEXT": [
-      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹",
-      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹",
-      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹"
+      "盛夏水着：短暂激发所有潜能",
+      "战斗中可激活超新星",
+      "强度：超越者",
+      "获取条件：在第三阶段或以上失败超过3次"
     ]
   },
-  "VUPShionMod:AbstractLiyezhuSkin": {
+  "VUPShionMod:OriWangChuan": {
     "TEXT": [
-      "星云系统",
-      "纯白之刃"
-    ],
-    "EXTRA_TEXT": [
-      "原本为紫音提供支援的伐罪修女 NL 因高塔的呼唤而独自前来一探究竟。",
-      "原本为紫音提供支援的伐罪修女 NL 因高塔的呼唤而独自前来一探究竟。"
+      "血族礼服：使用刀与魔法进行战斗",
+      "初始拥有序言：魔弹",
+      "强度：基础",
+      "获取条件：默认获得"
     ]
   },
-  "VUPShionMod:SkinPannel": {
+  "VUPShionMod:PurityWangChuan": {
     "TEXT": [
-      "锁定"
-    ],
-    "EXTRA_TEXT": [
-      "需要击败深空孽障解锁皮肤功能",
-      "皮肤尚未制作完成，敬请期待……"
+      "士官礼装：集中一点，登峰造极。",
+      "初始拥有拔刀术",
+      "强度：超越者",
+      "获取条件：在第三阶段或以上失败超过3次"
+    ]
+  },
+  "VUPShionMod:AquaWangChuan": {
+    "TEXT": [
+      "盛夏水着：以闪现发动连续攻击",
+      "所有滑步进化为闪现",
+      "强度：晋升者",
+      "获取条件：在最终战斗中胜利"
+    ]
+  },
+  "VUPShionMod:OriLiyezhu": {
+    "TEXT": [
+      "祈神礼装：神意恩赐，加诸此身",
+      "拥有极强的自愈能力",
+      "强度：基础",
+      "获取条件：默认获得"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {

@@ -1,13 +1,13 @@
 package VUPShionMod.skins;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.relics.DimensionSplitterAria;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.esotericsoftware.spine.*;
+import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
@@ -18,8 +18,9 @@ import java.util.ArrayList;
 import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
 public abstract class AbstractSkin {
-    public Texture portraitStatic_IMG;
-    public Texture portraitAnimation_IMG;
+    public String skinId;
+    public Texture portrait_IMG;
+
 
     public TextureAtlas portraitAtlas = null;
     public Skeleton portraitSkeleton;
@@ -29,33 +30,34 @@ public abstract class AbstractSkin {
 
     public String portraitAtlasPath = null;
 
-    public String NAME;
+    public String name;
+    public String flavorText = null;
+    public String level;
+    public String unlockString;
 
-    public int portraitAnimationType = 0;
+    public boolean unlock = false;
+
     public String SHOULDER1;
     public String SHOULDER2;
     public String CORPSE;
 
     public String atlasURL;
     public String jsonURL;
-    public float renderscale;
+    public float renderScale;
 
-    public String DESCRIPTION = null;
+    public SkinCharButton button;
 
-    public AbstractSkin() {
+    public AbstractSkin(String skinId, int index) {
+        this.skinId = skinId;
+        this.button = new SkinCharButton("VUPShionMod/img/ui/Skin/head/" + skinId + ".png", index);
     }
 
-    public void loadPortraitAnimation() {
-        if (hasAnimation()) {
-            loadAnimation();
-            setAnimation();
-            InitializeStaticPortraitVar();
-        }
+    public void onUnlock() {
+        this.unlock = true;
+        this.button.locked = false;
+        VUPShionMod.saveSkins();
     }
 
-    public Boolean hasAnimation() {
-        return this.portraitAtlasPath != null;
-    }
 
     public void loadAnimation() {
         portraitAtlas = new TextureAtlas(Gdx.files.internal(portraitAtlasPath + ".atlas"));
@@ -76,107 +78,79 @@ public abstract class AbstractSkin {
     public void setAnimation() {
         portraitState.setAnimation(1, "fade_in", false);
         portraitState.addAnimation(0, "idle", true, 0.0f);
-        InitializeStaticPortraitVar();
     }
 
-    public void InitializeStaticPortraitVar() {
-    }
 
-    public Texture updateBgImg() {
-        VUPShionMod.saveSettings();
-        if (!hasAnimation()) {
-            return portraitStatic_IMG;
-        } else {
-            return portraitAnimation_IMG;
-        }
-    }
-
-    public CharSelectInfo updateCharInfo(CharSelectInfo info){
-        return info;
-    }
-
-    public void render(SpriteBatch sb) {
-        if (hasAnimation()) {
+    public void renderPortrait(SpriteBatch sb) {
+        if (this.portraitAtlasPath != null) {
             portraitState.update(Gdx.graphics.getDeltaTime());
             portraitState.apply(portraitSkeleton);
             portraitSkeleton.updateWorldTransform();
-
             setPos();
-            skeletonRenderUpdate(sb);
             portraitSkeleton.setColor(Color.WHITE.cpy());
             portraitSkeleton.setFlip(false, false);
 
-            sb.end();
-            CardCrawlGame.psb.begin();
+
             skeletonRender(sb);
+        } else {
+            {
+                if (Settings.isSixteenByTen) {
+                    sb.draw(this.portrait_IMG, Settings.WIDTH / 2.0F - 960.0F, Settings.HEIGHT / 2.0F - 600.0F, 960.0F, 600.0F, 1920.0F, 1200.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 1920, 1200, false, false);
+
+                } else if (Settings.isFourByThree) {
+                    sb.draw(this.portrait_IMG, Settings.WIDTH / 2.0F - 960.0F, Settings.HEIGHT / 2.0F - 600.0F + 0.0f, 960.0F, 600.0F, 1920.0F, 1200.0F, Settings.yScale, Settings.yScale, 0.0F, 0, 0, 1920, 1200, false, false);
+
+                } else if (Settings.isLetterbox) {
+                    sb.draw(this.portrait_IMG, Settings.WIDTH / 2.0F - 960.0F, Settings.HEIGHT / 2.0F - 600.0F + 0.0f, 960.0F, 600.0F, 1920.0F, 1200.0F, Settings.xScale, Settings.xScale, 0.0F, 0, 0, 1920, 1200, false, false);
+
+                } else {
+                    sb.draw(this.portrait_IMG, Settings.WIDTH / 2.0F - 960.0F, Settings.HEIGHT / 2.0F - 600.0F + 0.0f, 960.0F, 600.0F, 1920.0F, 1200.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 1920, 1200, false, false);
+                }
+            }
         }
     }
 
     public void setPos() {
     }
 
-    public void skeletonRenderUpdate(SpriteBatch sb) {
-    }
-
     public void skeletonRender(SpriteBatch sb) {
-        if (hasAnimation()) {
-            sr.draw(CardCrawlGame.psb, portraitSkeleton);
-
-            CardCrawlGame.psb.end();
-            sb.begin();
-        }
+        sb.end();
+        CardCrawlGame.psb.begin();
+        sr.draw(CardCrawlGame.psb, portraitSkeleton);
+        CardCrawlGame.psb.end();
+        sb.begin();
     }
 
-    public void update() {
-    }
-
-    public void clearWhenClick() {
-    }
-
-    public void extraHitboxRender(SpriteBatch sb) {
-    }
-
-    public Boolean extraHitboxClickCheck() {
-        return false;
-    }
-
-    public String getNewCharDescription() {
-        if (DESCRIPTION != null)
-            return DESCRIPTION;
-        else {
-            return "";
-        }
-    }
-
-    public String getAtlasURL() {
-        return atlasURL;
-    }
-
-    public String getJsonURL() {
-        return jsonURL;
-    }
-
-    public String getSHOULDER1() {
-        return SHOULDER1;
-    }
-
-    public String getSHOULDER2() {
-        return SHOULDER2;
-    }
-
-    public String getCORPSE() {
-        return CORPSE;
-    }
 
     public void dispose() {
-        if (this.portraitAtlas != null) this.portraitAtlas.dispose();
+        if (this.portraitAtlas != null) {
+            this.portraitAtlas.dispose();
+            this.portraitAtlas = null;
+        }
+
+        if (portrait_IMG != null) {
+            portrait_IMG.dispose();
+            portrait_IMG = null;
+        }
     }
 
-    public ArrayList<String> getStartingRelic(){
+
+    public CharSelectInfo updateCharInfo(CharSelectInfo info) {
+        return info;
+    }
+
+    public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(BurningBlood.ID);
         return retVal;
     }
+
+    public ArrayList<String> getStartingDeck() {
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(Strike_Red.ID);
+        return retVal;
+    }
+
 
 }
 

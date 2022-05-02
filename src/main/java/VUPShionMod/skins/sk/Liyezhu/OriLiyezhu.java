@@ -1,40 +1,42 @@
 package VUPShionMod.skins.sk.Liyezhu;
 
+import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.relics.DimensionSplitterAria;
 import VUPShionMod.relics.MartyrVessel;
 import VUPShionMod.relics.Nebula;
 import VUPShionMod.relics.StarQuakes;
 import VUPShionMod.skins.AbstractSkin;
+import VUPShionMod.skins.sk.Shion.AquaShion;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
 
 public class OriLiyezhu extends AbstractSkin {
+    public static final String ID = OriLiyezhu.class.getSimpleName();
+    public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
+
     public OriLiyezhu() {
-        this.portraitStatic_IMG = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/portrait.png");
-        this.portraitAnimation_IMG = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/portrait.png");
-
-        this.NAME = CardCrawlGame.languagePack.getUIString("VUPShionMod:AbstractLiyezhuSkin").TEXT[0];
-        this.DESCRIPTION = CardCrawlGame.languagePack.getUIString("VUPShionMod:AbstractLiyezhuSkin").EXTRA_TEXT[0];
-
-//        this.portraitAtlasPath = "VUPShionMod/characters/Shion/portrait_spine/Shion";
+        super(ID,0);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/portrait.png");
+        this.name = uiString.TEXT[0];
+        this.flavorText = uiString.TEXT[1];
+        this.level = uiString.TEXT[2];
+        this.unlockString = uiString.TEXT[3];
 
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.SHOULDER2 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.CORPSE = "VUPShionMod/characters/Liyezhu/corpse.png";
+
         this.atlasURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.atlas";
         this.jsonURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.json";
-        this.renderscale = 3.0F;
+        this.renderScale = 3.0f;
     }
 
 
-//    @Override
-//    public void setAnimation() {
-//        portraitState.setAnimation(0, "idle", true);
-//        InitializeStaticPortraitVar();
-//    }
 
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
@@ -47,6 +49,25 @@ public class OriLiyezhu extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(MartyrVessel.ID);
+        return retVal;
+    }
+
+    @Override
+    public ArrayList<String> getStartingDeck() {
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(HolyLight.ID);
+        retVal.add(HolyLight.ID);
+        retVal.add(HolyLight.ID);
+        retVal.add(HolyLight.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(Barrier.ID);
+        retVal.add(SoothingScripture.ID);
+        retVal.add(TranquilPrayer.ID);
+        retVal.add(JudgementOfSins.ID);
+
         return retVal;
     }
 }

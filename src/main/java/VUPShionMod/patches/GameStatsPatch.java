@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GameStatsPatch {
     public static int lastDamageDeal = 0;
+    public static int shionDeathCount = 0;
+    public static int wangchuanDeathCount = 0;
 
     @SpirePatch(
             clz = AbstractMonster.class,

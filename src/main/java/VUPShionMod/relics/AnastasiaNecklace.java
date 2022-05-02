@@ -8,10 +8,12 @@ import VUPShionMod.monsters.PlagaAMundoMinion;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.AttackOrderSpecialPower;
 import VUPShionMod.powers.Shion.BleedingPower;
 import VUPShionMod.powers.Unique.LifeLinkPower;
 import VUPShionMod.powers.Shion.PursuitPower;
+import VUPShionMod.skins.sk.Shion.BlueGiantShion;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -26,6 +28,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -52,7 +55,7 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
     public boolean effectApplied = false;
     private boolean lockHealth = false;
 
-    private CGlayout cg = new CGlayout();
+    private CGlayout cg = new CGlayout("Shion");
 
     public AnastasiaNecklace() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -92,6 +95,7 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
             ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle1", true);
             ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle2", true);
             ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle3", true);
+
 
         }
     }

@@ -51,7 +51,7 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
     public boolean effectApplied = false;
     private boolean lockHealth = false;
 
-    private CGlayout cg = new CGlayout();
+    private CGlayout cg = new CGlayout("Liyezhu");
 
     public UnknownDust() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);

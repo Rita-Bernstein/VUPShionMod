@@ -19,6 +19,7 @@ import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.PlagaAMundo;
 import VUPShionMod.patches.*;
 import VUPShionMod.relics.*;
+import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.util.SansMeterSave;
 import basemod.BaseMod;
@@ -47,8 +48,6 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
-import static VUPShionMod.patches.CharacterSelectScreenPatches.characters;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -161,6 +160,14 @@ public class VUPShionMod implements
                 assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
     }
 
+    public static String makeID(String id) {
+        return MOD_ID + ":" + id;
+    }
+
+    public static String assetPath(String path) {
+        return MOD_ID + "/" + path;
+    }
+
 
     public static void saveSettings() {
         try {
@@ -171,12 +178,10 @@ public class VUPShionMod implements
             config.setBool("liyezhuRelic", liyezhuRelic);
 
 
-            for (int i = 0; i <= characters.length - 1; i++) {
-                config.setBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i, characters[i].reskinUnlock);
-                config.setInt(CardCrawlGame.saveSlot + "reskinCount" + i, characters[i].reskinCount);
-            }
-
-            System.out.println("==============reskin存入数据");
+//            for (int i = 0; i <= characters.length - 1; i++) {
+//                config.setBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i, characters[i].reskinUnlock);
+//                config.setInt(CardCrawlGame.saveSlot + "reskinCount" + i, characters[i].reskinCount);
+//            }
 
             config.save();
         } catch (Exception e) {
@@ -193,14 +198,14 @@ public class VUPShionMod implements
             safeCampfire = config.getBool("safeCampfire");
             liyezhuRelic = config.getBool("liyezhuRelic");
 
-            for (int i = 0; i <= characters.length - 1; i++) {
-                characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
-                characters[i].reskinCount = config.getInt(CardCrawlGame.saveSlot + "reskinCount" + i);
-
-                if (characters[i].reskinCount > characters[i].skins.length - 1) {
-                    characters[i].reskinCount = 0;
-                }
-            }
+//            for (int i = 0; i <= characters.length - 1; i++) {
+//                characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
+//                characters[i].reskinCount = config.getInt(CardCrawlGame.saveSlot + "reskinCount" + i);
+//
+//                if (characters[i].reskinCount > characters[i].skins.length - 1) {
+//                    characters[i].reskinCount = 0;
+//                }
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -212,20 +217,68 @@ public class VUPShionMod implements
         saveSettings();
     }
 
-    public static void unlockAllReskin() {
-        for (AbstractSkinCharacter c : characters) {
-            c.reskinUnlock = false;
+
+    public static void saveSkins() {
+        try {
+            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
+            for (AbstractSkinCharacter character : CharacterSelectScreenPatches.skinManager.skinCharacters) {
+                config.setInt(CardCrawlGame.saveSlot + character.getClass().getSimpleName(), character.reskinCount);
+
+                for (AbstractSkin skin : character.skins) {
+                    config.setBool(CardCrawlGame.saveSlot + skin.getClass().getSimpleName(), skin.unlock);
+                }
+
+
+                config.setInt(CardCrawlGame.saveSlot + "shionDeathCount", GameStatsPatch.shionDeathCount);
+                config.setInt(CardCrawlGame.saveSlot + "wangchuanDeathCount", GameStatsPatch.wangchuanDeathCount);
+            }
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
+
+    public static void loadSkins() {
+        try {
+            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
+            config.load();
+
+            for (AbstractSkinCharacter character : CharacterSelectScreenPatches.skinManager.skinCharacters) {
+                character.reskinCount = config.getInt(CardCrawlGame.saveSlot + character.getClass().getSimpleName());
+
+                for (AbstractSkin skin : character.skins) {
+                    skin.unlock = config.getBool(CardCrawlGame.saveSlot + skin.getClass().getSimpleName());
+                }
+            }
+
+            GameStatsPatch.shionDeathCount = config.getInt(CardCrawlGame.saveSlot + "shionDeathCount");
+            GameStatsPatch.wangchuanDeathCount = config.getInt(CardCrawlGame.saveSlot + "wangchuanDeathCount");
+
+            if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 0)) {
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock = true;
+            }
+
+            if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 1))
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock = true;
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            clearSkins();
+        }
+    }
+
+    public static void clearSkins() {
+        saveSkins();
+    }
+
+    public static void unlockAllReskin() {
+//        for (AbstractSkinCharacter c : characters) {
+//            c.reskinUnlock = false;
+//        }
         saveSettings();
     }
 
-    public static String makeID(String id) {
-        return MOD_ID + ":" + id;
-    }
-
-    public static String assetPath(String path) {
-        return MOD_ID + "/" + path;
-    }
 
     public static void saveFinFunnels() {
         try {
@@ -299,16 +352,13 @@ public class VUPShionMod implements
         settingsPanel.addUIElement(safeCampfireSwitch);
 
 
-
-
-
         ArrayList<AbstractPlayer.PlayerClass> list = new ArrayList<>();
         list.add(AbstractPlayerEnum.VUP_Shion);
         list.add(AbstractPlayerEnum.WangChuan);
         list.add(AbstractPlayerEnum.Liyezhu);
 
 //        mod公共事件
-        for(AbstractPlayer.PlayerClass playerClass : list){
+        for (AbstractPlayer.PlayerClass playerClass : list) {
             BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
                     //Event Character//
                     .playerClass(playerClass)
@@ -367,7 +417,6 @@ public class VUPShionMod implements
                 .create());
 
 
-
 //      蓝宝事件
         BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.Liyezhu)
@@ -378,8 +427,6 @@ public class VUPShionMod implements
         BaseMod.addEvent(new AddEventParams.Builder(DistantMemory.ID, DistantMemory.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.Liyezhu)
                 .create());
-
-
 
 
 //      添加boss
@@ -402,25 +449,18 @@ public class VUPShionMod implements
     @Override
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
-            try {
-                SpireConfig config = new SpireConfig("VUPShionMod", "VUPShionMod_settings", VUPShionDefaults);
-                gravityFinFunnelLevel = 1;
-                investigationFinFunnelLevel = 1;
-                pursuitFinFunnelLevel = 1;
-                activeFinFunnel = 1;
-                config.setInt("gravityFinFunnelLevel", gravityFinFunnelLevel);
-                config.setInt("investigationFinFunnelLevel", investigationFinFunnelLevel);
-                config.setInt("pursuitFinFunnelLevel", pursuitFinFunnelLevel);
-                config.setInt("activeFinFunnel", activeFinFunnel);
-                config.save();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            gravityFinFunnelLevel = 1;
+            investigationFinFunnelLevel = 1;
+            pursuitFinFunnelLevel = 1;
+            activeFinFunnel = 1;
+            saveFinFunnels();
 
             fightSpecialBoss = false;
             fightSpecialBossWithout = false;
 
             SansMeterSave.sansMeterSaveAmount = 100;
+
+            saveSkins();
         }
 
         if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {
@@ -431,7 +471,7 @@ public class VUPShionMod implements
         }
 
         if (AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID) && AbstractDungeon.actNum == 3) {
-            FragmentsOfFaith relic = (FragmentsOfFaith)AbstractDungeon.player.getRelic(FragmentsOfFaith.ID);
+            FragmentsOfFaith relic = (FragmentsOfFaith) AbstractDungeon.player.getRelic(FragmentsOfFaith.ID);
             relic.upgrade();
         }
     }
@@ -445,15 +485,15 @@ public class VUPShionMod implements
 
         BaseMod.addCharacter(new WangChuan(WangChuan.charStrings.NAMES[1], AbstractPlayerEnum.WangChuan),
                 assetPath("characters/WangChuan/Button.png"),
-                assetPath("characters/WangChuan/portrait.png"),
+                assetPath("characters/Shion/portrait.png"),
                 AbstractPlayerEnum.WangChuan);
 
         BaseMod.addCharacter(new Liyezhu(Liyezhu.charStrings.NAMES[1], AbstractPlayerEnum.Liyezhu),
                 assetPath("characters/Liyezhu/Button.png"),
-                assetPath("characters/Liyezhu/portrait.png"),
+                assetPath("characters/Shion/portrait.png"),
                 AbstractPlayerEnum.Liyezhu);
 
-        BaseMod.addSaveField("SansMeterSave",new SansMeterSave());
+        BaseMod.addSaveField("SansMeterSave", new SansMeterSave());
     }
 
     @Override
@@ -727,8 +767,6 @@ public class VUPShionMod implements
         cards.add(new Precasting());
         cards.add(new LiReboot());
         cards.add(new ShionEmbodiment());
-
-
 
 
         for (CustomCard card : cards) {

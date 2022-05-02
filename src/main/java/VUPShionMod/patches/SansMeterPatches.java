@@ -69,7 +69,6 @@ public class SansMeterPatches {
                 ArrayList<AbstractCard> rewardCards = new ArrayList<AbstractCard>();
 
                 rewardCards.add(returnPrayerCard());
-                System.out.println(rewardCards);
                 AbstractDungeon.cardRewardScreen.open(rewardCards, null, TEXT[0]);
             }
             return SpireReturn.Continue();

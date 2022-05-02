@@ -1,39 +1,39 @@
 package VUPShionMod.skins.sk.WangChuan;
 
+import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.relics.Nebula;
 import VUPShionMod.relics.PureHeart;
 import VUPShionMod.relics.StarQuakes;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
 
 public class PurityWangChuan extends AbstractSkin {
+    public static final String ID = PurityWangChuan.class.getSimpleName();
+    public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
+
     public PurityWangChuan() {
-        this.portraitStatic_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait2.png");
-        this.portraitAnimation_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait2.png");
-
-        this.NAME = CardCrawlGame.languagePack.getUIString("VUPShionMod:AbstractWangChuanSkin").TEXT[1];
-        this.DESCRIPTION = CardCrawlGame.languagePack.getUIString("VUPShionMod:AbstractWangChuanSkin").EXTRA_TEXT[1];
-
-//        this.portraitAtlasPath = "VUPShionMod/characters/Shion/portrait_spine/Shion";
+        super(ID,1);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait2.png");
+        this.name = uiString.TEXT[0];
+        this.flavorText = uiString.TEXT[1];
+        this.level = uiString.TEXT[2];
+        this.unlockString = uiString.TEXT[3];
 
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.SHOULDER2 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.CORPSE = "VUPShionMod/characters/WangChuan/corpse.png";
+
         this.atlasURL = "VUPShionMod/characters/WangChuan/animation/STANCE_WANGCHUAN_WHITE.atlas";
         this.jsonURL = "VUPShionMod/characters/WangChuan/animation/STANCE_WANGCHUAN_WHITE.json";
-        this.renderscale = 3.0F;
+        this.renderScale = 3.0f;
     }
 
-
-//    @Override
-//    public void setAnimation() {
-//        portraitState.setAnimation(0, "idle", true);
-//        InitializeStaticPortraitVar();
-//    }
 
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
@@ -48,4 +48,23 @@ public class PurityWangChuan extends AbstractSkin {
         retVal.add(PureHeart.ID);
         return retVal;
     }
+
+    @Override
+    public ArrayList<String> getStartingDeck() {
+        ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(HiltBash.ID);
+        retVal.add(HiltBash.ID);
+        retVal.add(HiltBash.ID);
+        retVal.add(HiltBash.ID);
+        retVal.add(Slide.ID);
+        retVal.add(Slide.ID);
+        retVal.add(Slide.ID);
+        retVal.add(Slide.ID);
+        retVal.add(Sheathe.ID);
+        retVal.add(InTheBlink.ID);
+        retVal.add(MorsLibraque.ID);
+
+        return retVal;
+    }
+
 }

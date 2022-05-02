@@ -82,9 +82,9 @@ public class Shion extends CustomPlayer {
         this.dialogY = this.drawY + 170.0F * Settings.scale;
 
         initializeClass(null,
-                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].SHOULDER1,
-                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].SHOULDER2,
-                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].CORPSE,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER1,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER2,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).CORPSE,
                 getLoadout(), 0.0F, -5.0F, 240.0F, 480.0F, new EnergyManager(ENERGY_PER_TURN));
 
         reloadAnimation();
@@ -92,19 +92,20 @@ public class Shion extends CustomPlayer {
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].atlasURL,
-                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].jsonURL,
-                CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].renderscale);
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).atlasURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).jsonURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).renderScale);
 
 
-        if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
             this.state.setAnimation(0, "Idle_body", true).setTimeScale(2.0f);
             this.state.setAnimation(1, "Idle_Weapon1", true).setTimeScale(2.0f);
             this.state.setAnimation(2, "Idle_Weapon2", true).setTimeScale(2.0f);
             this.state.setAnimation(3, "Idle_Weapon3", true).setTimeScale(2.0f);
         }
 
-        if (CharacterSelectScreenPatches.characters[0].reskinCount == 1) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 1) {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "weapon1_idle", true);
             this.state.setAnimation(2, "weapon2_idle", true);
@@ -112,7 +113,7 @@ public class Shion extends CustomPlayer {
             this.state.setAnimation(4, "wing_idle", true);
         }
 
-        if (CharacterSelectScreenPatches.characters[0].reskinCount == 2) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 2) {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "weapon1_idle", true);
             this.state.setAnimation(2, "weapon2_idle", true);
@@ -148,26 +149,15 @@ public class Shion extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.characters[0].InitializeReskinCount();
-        return CharacterSelectScreenPatches.characters[0].skins[CharacterSelectScreenPatches.characters[0].reskinCount].getStartingRelic();
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(TacticalLayout.ID);
-        retVal.add(FinFunnelUpgrade.ID);
-        retVal.add(Strafe.ID);
-
-
-        return retVal;
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {
@@ -290,7 +280,7 @@ public class Shion extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+            if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
                 this.state.setAnimation(0, "Hit_Body", false).setTimeScale(4.0f);
                 this.state.addAnimation(0, "Idle_body", true, 0.0F).setTimeScale(2.0f);
                 this.state.setAnimation(1, "Hit_Weapon1", false).setTimeScale(4.0f);
@@ -302,12 +292,12 @@ public class Shion extends CustomPlayer {
                 this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
             }
 
-            if (CharacterSelectScreenPatches.characters[0].reskinCount == 1) {
+            if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 1) {
                 this.state.setAnimation(0, "hurt", false);
                 this.state.addAnimation(0, "idle", true, 0.0F);
             }
 
-            if (CharacterSelectScreenPatches.characters[0].reskinCount == 2) {
+            if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 2) {
                 this.state.setAnimation(0, "hurt", false);
                 this.state.addAnimation(0, "idle", true, 0.0F);
             }
@@ -338,7 +328,7 @@ public class Shion extends CustomPlayer {
     }
 
     public void playFinFunnelAnimation(String id) {
-        if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
             switch (id) {
                 case "VUPShionMod:GravityFinFunnel":
                     this.state.setAnimation(1, "Attack_Weapon1", false).setTimeScale(3.0f);
@@ -370,7 +360,7 @@ public class Shion extends CustomPlayer {
             }
         }
 
-        if (CharacterSelectScreenPatches.characters[0].reskinCount == 0) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
             this.state.setAnimation(0, "Attack_Body", false).setTimeScale(3.0f);
             this.state.addAnimation(0, "Idle_body", true, 0.0f).setTimeScale(2.0f);
         }

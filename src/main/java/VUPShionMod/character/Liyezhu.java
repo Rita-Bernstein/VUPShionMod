@@ -78,9 +78,9 @@ public class Liyezhu extends CustomPlayer {
         this.dialogY = this.drawY + 170.0F * Settings.scale;
 
         initializeClass(null,
-                CharacterSelectScreenPatches.characters[2].skins[CharacterSelectScreenPatches.characters[2].reskinCount].SHOULDER1,
-                CharacterSelectScreenPatches.characters[2].skins[CharacterSelectScreenPatches.characters[2].reskinCount].SHOULDER2,
-                CharacterSelectScreenPatches.characters[2].skins[CharacterSelectScreenPatches.characters[2].reskinCount].CORPSE,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).SHOULDER1,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).SHOULDER2,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).CORPSE,
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"),
@@ -91,12 +91,12 @@ public class Liyezhu extends CustomPlayer {
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.characters[2].skins[CharacterSelectScreenPatches.characters[2].reskinCount].atlasURL,
-                CharacterSelectScreenPatches.characters[2].skins[CharacterSelectScreenPatches.characters[2].reskinCount].jsonURL,
-                CharacterSelectScreenPatches.characters[2].skins[CharacterSelectScreenPatches.characters[2].reskinCount].renderscale);
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).atlasURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).jsonURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).renderScale);
 
 
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 0) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount == 0) {
             this.state.setAnimation(0, "idle_normal", true);
             this.state.setAnimation(1, "idle_wings", true);
             this.state.setAnimation(2, "idle_xiaobingpian", true);
@@ -111,27 +111,15 @@ public class Liyezhu extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.characters[2].InitializeReskinCount();
-        return CharacterSelectScreenPatches.characters[2].skins[CharacterSelectScreenPatches.characters[2].reskinCount].getStartingRelic();
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(HolyLight.ID);
-        retVal.add(HolyLight.ID);
-        retVal.add(HolyLight.ID);
-        retVal.add(HolyLight.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(SoothingScripture.ID);
-        retVal.add(TranquilPrayer.ID);
-        retVal.add(JudgementOfSins.ID);
-
-
-        return retVal;
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {
@@ -274,7 +262,6 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public void onStanceChange(String id) {
-        System.out.println("改变姿态"+ id);
         switch (id) {
             case PrayerStance.STANCE_ID:
                 stanceSwitchQueue.add("Prayer");
@@ -307,28 +294,26 @@ public class Liyezhu extends CustomPlayer {
     }
 
     public void switchStanceVisualGo(String ID) {
-        System.out.println("改变姿态动画===当前id--"+ currentIdle);
-        System.out.println("改变姿态动画===目标id--"+ ID);
 
-        if(currentIdle.equals("Idle")){
+        if (currentIdle.equals("Idle")) {
             switch (ID) {
                 case "Prayer": {
-                    this.state.setAnimation(5,"change_shengguan_on",false);
-                    this.state.addAnimation(5,"idle_shengguan",true,0.0f);
+                    this.state.setAnimation(5, "change_shengguan_on", false);
+                    this.state.addAnimation(5, "idle_shengguan", true, 0.0f);
                     currentIdle = "Prayer";
                     break;
                 }
                 case "Judge": {
-                    this.state.setAnimation(4,"change_bajian",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    this.state.setAnimation(4, "change_bajian", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
                     currentIdle = "Judge";
                     break;
                 }
                 case "Spirit": {
-                    this.state.setAnimation(5,"change_shengguan_blue_on",false);
-                    this.state.addAnimation(5,"idle_shengguan_blue",true,0.0f);
-                    this.state.setAnimation(4,"change_bajian",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    this.state.setAnimation(5, "change_shengguan_blue_on", false);
+                    this.state.addAnimation(5, "idle_shengguan_blue", true, 0.0f);
+                    this.state.setAnimation(4, "change_bajian", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
                     currentIdle = "Spirit";
                     break;
                 }
@@ -338,25 +323,25 @@ public class Liyezhu extends CustomPlayer {
         }
 
 
-        if(currentIdle.equals("Prayer")){
+        if (currentIdle.equals("Prayer")) {
             switch (ID) {
                 case "Judge": {
-                    this.state.setAnimation(5,"change_shengguan_off",false);
-                    this.state.setAnimation(4,"change_bajian",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    this.state.setAnimation(5, "change_shengguan_off", false);
+                    this.state.setAnimation(4, "change_bajian", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
                     currentIdle = "Judge";
                     break;
                 }
                 case "Spirit": {
-                    this.state.setAnimation(5,"change_shengguan_WCB",false);
-                    this.state.addAnimation(5,"idle_shengguan_blue",true,0.0f);
-                    this.state.setAnimation(4,"change_bajian",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_on",false);
+                    this.state.setAnimation(5, "change_shengguan_WCB", false);
+                    this.state.addAnimation(5, "idle_shengguan_blue", true, 0.0f);
+                    this.state.setAnimation(4, "change_bajian", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
                     currentIdle = "Spirit";
                     break;
                 }
                 default:
-                    this.state.setAnimation(5,"change_shengguan_off",false);
+                    this.state.setAnimation(5, "change_shengguan_off", false);
                     currentIdle = "Idle";
                     break;
             }
@@ -365,49 +350,49 @@ public class Liyezhu extends CustomPlayer {
         }
 
 
-        if(currentIdle.equals("Judge")){
+        if (currentIdle.equals("Judge")) {
             switch (ID) {
                 case "Prayer": {
-                    this.state.setAnimation(5,"change_shengguan_on",false);
-                    this.state.addAnimation(5,"idle_shengguan",true,0.0f);
-                    this.state.setAnimation(4,"change_qidao",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    this.state.setAnimation(5, "change_shengguan_on", false);
+                    this.state.addAnimation(5, "idle_shengguan", true, 0.0f);
+                    this.state.setAnimation(4, "change_qidao", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
                     currentIdle = "Prayer";
                     break;
                 }
                 case "Spirit": {
-                    this.state.setAnimation(5,"change_shengguan_blue_on",false);
-                    this.state.addAnimation(5,"idle_shengguan_blue",true,0.0f);
+                    this.state.setAnimation(5, "change_shengguan_blue_on", false);
+                    this.state.addAnimation(5, "idle_shengguan_blue", true, 0.0f);
                     currentIdle = "Spirit";
                     break;
                 }
                 default:
-                    this.state.setAnimation(4,"change_qidao",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    this.state.setAnimation(4, "change_qidao", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
                     currentIdle = "Idle";
                     break;
             }
             return;
         }
 
-        if(currentIdle.equals("Spirit")){
+        if (currentIdle.equals("Spirit")) {
             switch (ID) {
                 case "Prayer": {
-                    this.state.setAnimation(5,"change_shengguan_BCW",false);
-                    this.state.setAnimation(4,"change_qidao",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    this.state.setAnimation(5, "change_shengguan_BCW", false);
+                    this.state.setAnimation(4, "change_qidao", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
                     currentIdle = "Prayer";
                     break;
                 }
                 case "Judge": {
-                    this.state.setAnimation(5,"change_shengguan_blue_off",false);
+                    this.state.setAnimation(5, "change_shengguan_blue_off", false);
                     currentIdle = "Judge";
                     break;
                 }
                 default:
-                    this.state.setAnimation(5,"change_shengguan_blue_off",false);
-                    this.state.setAnimation(4,"change_qidao",false);
-                    this.state.setAnimation(3,"change_xiaobingpian_off",false);
+                    this.state.setAnimation(5, "change_shengguan_blue_off", false);
+                    this.state.setAnimation(4, "change_qidao", false);
+                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
                     currentIdle = "Idle";
                     break;
             }

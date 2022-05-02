@@ -66,9 +66,9 @@ public class WangChuan extends CustomPlayer {
         this.dialogY = this.drawY + 170.0F * Settings.scale;
 
         initializeClass(null,
-                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].SHOULDER1,
-                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].SHOULDER2,
-                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].CORPSE,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).SHOULDER1,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).SHOULDER2,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).CORPSE,
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"),
@@ -80,21 +80,21 @@ public class WangChuan extends CustomPlayer {
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].atlasURL,
-                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].jsonURL,
-                CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].renderscale);
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).atlasURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).jsonURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).renderScale);
 
 
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 0) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 0) {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "idle_YOFU", true);
         }
 
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 1) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 1) {
             this.state.setAnimation(0, "idle", true);
         }
 
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 2){
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 2){
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "idle_wing", true);
         }
@@ -106,47 +106,15 @@ public class WangChuan extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.characters[1].InitializeReskinCount();
-        return CharacterSelectScreenPatches.characters[1].skins[CharacterSelectScreenPatches.characters[1].reskinCount].getStartingRelic();
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(HiltBash.ID);
-        retVal.add(HiltBash.ID);
-        retVal.add(HiltBash.ID);
-        retVal.add(HiltBash.ID);
-
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 2) {
-            retVal.add(Warp.ID);
-            retVal.add(Warp.ID);
-            retVal.add(Warp.ID);
-            retVal.add(Warp.ID);
-            retVal.add(SeverPetal.ID);
-        }else {
-
-            retVal.add(Slide.ID);
-            retVal.add(Slide.ID);
-            retVal.add(Slide.ID);
-            retVal.add(Slide.ID);
-            retVal.add(Sheathe.ID);
-        }
-
-
-
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 0)
-            retVal.add(GlandesMagicae.ID);
-
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 1)
-            retVal.add(InTheBlink.ID);
-
-        if (CharacterSelectScreenPatches.characters[1].reskinCount == 2)
-            retVal.add(BombardaMagica.ID);
-
-        retVal.add(MorsLibraque.ID);
-
-
-        return retVal;
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {

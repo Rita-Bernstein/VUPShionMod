@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
@@ -11,9 +12,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.DreamCatcher;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.campfire.CampfireSleepEffect;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
@@ -43,12 +46,11 @@ public class SansMeterPatches {
             method = "update"
     )
     public static class SleepWithCatcherPatch {
-        @SpireInsertPatch(rloc = 24)
-        public static SpireReturn<Void> Insert(CampfireSleepEffect _instance) {
+        @SpireInsertPatch(rloc = 24,localvars = {"rewardCards"})
+        public static SpireReturn<Void> Insert(CampfireSleepEffect _instance, List<AbstractCard> rewardCards) {
             if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
-                ArrayList<AbstractCard> rewardCards = (ArrayList<AbstractCard>) ReflectionHacks.getPrivate(_instance, CampfireSleepEffect.class, "rewardCards");
-                rewardCards.add(returnPrayerCard());
-                EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(20);
+                rewardCards.addAll(returnPrayerCard());
+                EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(40);
             }
             return SpireReturn.Continue();
         }
@@ -65,19 +67,17 @@ public class SansMeterPatches {
         @SpireInsertPatch(rloc = 28)
         public static SpireReturn<Void> Insert(CampfireSleepEffect _instance) {
             if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel) && !AbstractDungeon.player.hasRelic(DreamCatcher.ID)) {
-                EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(20);
-                ArrayList<AbstractCard> rewardCards = new ArrayList<AbstractCard>();
+                EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(40);
 
-                rewardCards.add(returnPrayerCard());
-                AbstractDungeon.cardRewardScreen.open(rewardCards, null, TEXT[0]);
+                AbstractDungeon.cardRewardScreen.open(returnPrayerCard(), null, TEXT[0]);
             }
             return SpireReturn.Continue();
         }
     }
 
-    public static AbstractCard returnPrayerCard() {
+    public static ArrayList<AbstractCard> returnPrayerCard() {
         ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
-        ArrayList<AbstractCard> returnCard = new ArrayList<AbstractCard>();
+        ArrayList<AbstractCard> returnList = new ArrayList<AbstractCard>();
         for (AbstractCard c : AbstractDungeon.srcCommonCardPool.group) {
             if (c.hasTag(CardTagsEnum.Prayer_CARD)) {
                 list.add(c);
@@ -94,9 +94,17 @@ public class SansMeterPatches {
             }
         }
 
-        if (list.size() > 0)
-            return list.get(cardRandomRng.random(list.size() - 1));
-        else
-            return new Madness();
+        for (int i = 0; i < 3; i++) {
+            if (!list.isEmpty()) {
+                int index = AbstractDungeon.miscRng.random(list.size() - 1);
+                returnList.add(list.get(index).makeCopy());
+                list.remove(index);
+            } else {
+                returnList.add(new Madness());
+                break;
+            }
+        }
+
+        return returnList;
     }
 }

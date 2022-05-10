@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class SpeedShot extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("SpeedShot");
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy11.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy11.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -49,17 +49,20 @@ public class SpeedShot extends AbstractShionCard {
             p.getRelic(ChemicalX.ID).flash();
         }
         if (this.upgraded) {
+            effect += 2;
+        } else
             effect++;
-        }
+
+
         if (effect > 0) {
             AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
 
-                if (funnel != null) {
-                    funnel.activeFire(m, this.damage, this.damageTypeForTurn,effect);
-                } else {
-                    for(int i = 0; i < effect; i++)
+            if (funnel != null) {
+                funnel.activeFire(m, this.damage, this.damageTypeForTurn, effect);
+            } else {
+                for (int i = 0; i < effect; i++)
                     this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                }
+            }
 
             if (!this.freeToPlayOnce) {
                 p.energy.use(EnergyPanel.totalCount);

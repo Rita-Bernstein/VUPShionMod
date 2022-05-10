@@ -4,6 +4,8 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.SecondHandAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 
+import VUPShionMod.patches.CardTagsEnum;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,6 +23,8 @@ public class SecondHand extends AbstractShionKuroisuCard {
         this.baseDamage = 2;
         this.magicNumber = this.baseMagicNumber = 2;
         this.shuffleBackIntoDrawPile = true;
+        this.tags.add(CardTagsEnum.LOADED);
+        ExhaustiveVariable.setBaseValue(this,6);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

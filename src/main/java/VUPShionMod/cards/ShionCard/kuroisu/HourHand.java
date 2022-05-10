@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickScreen;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class HourHand extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("HourHand");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu05.png");
-    private static final int COST = 2;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -22,6 +23,7 @@ public class HourHand extends AbstractShionKuroisuCard {
         this.baseBlock = 12;
         this.selfRetain = true;
         this.cardsToPreview = new QuickScreen();
+        ExhaustiveVariable.setBaseValue(this,2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

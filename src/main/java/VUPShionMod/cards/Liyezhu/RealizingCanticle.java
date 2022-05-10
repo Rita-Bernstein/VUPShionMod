@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RealizingCanticle extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(RealizingCanticle.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/RealizingCanticle.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

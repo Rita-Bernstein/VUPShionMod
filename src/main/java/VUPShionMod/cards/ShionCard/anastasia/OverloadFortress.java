@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -29,7 +30,9 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        for (int i = 0; i < this.secondaryM; i++)
+            addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
+
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
@@ -40,22 +43,9 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
                 this.isDone = true;
             }
         });
-        this.rawDescription = DESCRIPTION;
-        initializeDescription();
+
     }
 
-    @Override
-    public void applyPowers() {
-        for (AbstractFinFunnel finFunnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
-            if (finFunnel.id.equals(GravityFinFunnel.ID))
-                this.baseBlock = finFunnel.getLevel() * this.secondaryM;
-        }
-
-        super.applyPowers();
-
-        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        initializeDescription();
-    }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -72,7 +62,7 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(-1);
+            upgradeSecondM(5);
         }
     }
 

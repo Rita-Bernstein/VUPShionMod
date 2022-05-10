@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class FragmentsOfFaith extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(FragmentsOfFaith.class.getSimpleName());
@@ -21,7 +22,7 @@ public class FragmentsOfFaith extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
     private static final Texture UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/FragmentsOfFaith2.png"));
     private static final Texture OUTLINE_UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/outline/FragmentsOfFaith2.png"));
-    private static final String UPGRADED_NAME = CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS[3];
+    private static final String UPGRADED_NAME = CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS[1];
 
 
     public FragmentsOfFaith() {
@@ -30,7 +31,7 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     @Override
     public String getUpdatedDescription() {
-        if (this.upgraded) {
+        if (this.counter == -2) {
             ReflectionHacks.setPrivateFinal(this, AbstractRelic.class, "name", UPGRADED_NAME);
             this.flavorText = DESCRIPTIONS[2];
             return this.DESCRIPTIONS[3];
@@ -49,7 +50,7 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     @Override
     public void onPlayerEndTurn() {
-        if (upgraded) {
+        if (this.counter == -2) {
             AbstractPlayer p = AbstractDungeon.player;
             addToBot(new HealAction(p, p, p.maxHealth - p.currentHealth));
         }
@@ -57,7 +58,8 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     @Override
     public int onPlayerHeal(int healAmount) {
-        if (upgraded)
+        if (this.counter == -2 && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+            if(!(AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(healAmount,
                     true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         return super.onPlayerHeal(healAmount);
@@ -65,14 +67,14 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (upgraded)
+        if (this.counter == -2)
             AbstractDungeon.player.increaseMaxHp(3, true);
         return super.onAttackedToChangeDamage(info, damageAmount);
     }
 
     @Override
     public void onVictory() {
-        if (!this.upgraded) {
+        if (this.counter != -2) {
             flash();
             AbstractDungeon.player.increaseMaxHp(5, true);
         }
@@ -80,7 +82,7 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     @Override
     public void upgrade() {
-        this.upgraded = true;
+        setCounter(-2);
         this.img = UPGRADE_IMG;
         this.outlineImg = OUTLINE_UPGRADE_IMG;
         setDescriptionAfterLoading();

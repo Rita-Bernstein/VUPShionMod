@@ -29,18 +29,18 @@ public class ReadAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
 
-            if (this.player.drawPile.isEmpty() || this.numberOfCards <= 0) {
+            if (this.player.exhaustPile.isEmpty() || this.numberOfCards <= 0) {
                 this.isDone = true;
                 return;
             }
-            if (this.player.drawPile.size() <= this.numberOfCards) {
+            if (this.player.exhaustPile.size() <= this.numberOfCards) {
                 ArrayList<AbstractCard> cardsToCopy = new ArrayList<AbstractCard>();
-                for (AbstractCard c : this.player.drawPile.group) {
+                for (AbstractCard c : this.player.exhaustPile.group) {
                     if (c.hasTag(CardTagsEnum.LOADED))
                         cardsToCopy.add(c);
                 }
                 for (AbstractCard c : cardsToCopy) {
-                    addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                    addToTop(new MakeLoadedCardAction(c.makeStatEquivalentCopy()));
                 }
 
                 this.isDone = true;
@@ -49,7 +49,7 @@ public class ReadAction extends AbstractGameAction {
 
 
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (AbstractCard c : this.player.drawPile.group) {
+            for (AbstractCard c : this.player.exhaustPile.group) {
                 if (c.hasTag(CardTagsEnum.LOADED))
                     temp.addToTop(c);
             }
@@ -66,7 +66,7 @@ public class ReadAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                addToTop(new MakeLoadedCardAction(c.makeStatEquivalentCopy()));
             }
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

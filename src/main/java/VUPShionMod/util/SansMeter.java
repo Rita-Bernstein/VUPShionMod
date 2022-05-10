@@ -1,6 +1,7 @@
 package VUPShionMod.util;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.LoseMaxHPAction;
 import VUPShionMod.relics.AbstractShionRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.Gdx;
@@ -34,6 +35,7 @@ public class SansMeter {
     private Texture light;
 
     public int amount = 100;
+    public int amount_MAX = 100;
     private Hitbox hb;
 
     private float cX = 0.0f;
@@ -68,7 +70,7 @@ public class SansMeter {
     }
 
     public void updateDescription() {
-        this.description = TEXT[1] + TEXT[2] + TEXT[3];
+        this.description = TEXT[1] + TEXT[2] + TEXT[3] + TEXT[4];
     }
 
     public void update() {
@@ -141,9 +143,9 @@ public class SansMeter {
     public void onFatal(AbstractMonster m) {
         if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower(MinionPower.POWER_ID)) {
             if (this.amount <= 30)
-                addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 6));
+                addToBot(new LoseMaxHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
             else if (this.amount <= 50)
-                addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 3));
+                addToBot(new LoseMaxHPAction(AbstractDungeon.player, AbstractDungeon.player, 4));
 
             loseSan(3);
         }
@@ -175,8 +177,8 @@ public class SansMeter {
 
     public void addSan(int amount) {
         this.amount += amount;
-        if (this.amount > 100)
-            this.amount = 100;
+        if (this.amount > this.amount_MAX)
+            this.amount = this.amount_MAX;
 
         SansMeterSave.sansMeterSaveAmount = this.amount;
     }
@@ -186,6 +188,24 @@ public class SansMeter {
 
     public void atStartOfCombat() {
         this.amount = SansMeterSave.sansMeterSaveAmount;
+
+        if (this.amount >= this.amount_MAX)
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    AbstractDungeon.player.increaseMaxHp(10, false);
+                    isDone = true;
+                }
+            });
+
+        if(this.amount < this.amount_MAX && this.amount > 50)
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    AbstractDungeon.player.increaseMaxHp(1, false);
+                    isDone = true;
+                }
+            });
 
         if (this.amount <= 50)
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 3, false)));

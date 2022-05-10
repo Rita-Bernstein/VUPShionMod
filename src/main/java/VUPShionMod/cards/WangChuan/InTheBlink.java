@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
@@ -56,8 +57,7 @@ public class InTheBlink extends AbstractWCCard {
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
-                if (StiffnessPower.applyStiffness())
-                    addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+                addToBot(new ApplyStiffnessAction(3));
                 break;
             case 1:
                 calculateCardDamage(m);
@@ -69,8 +69,7 @@ public class InTheBlink extends AbstractWCCard {
 
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
-                if (StiffnessPower.applyStiffness())
-                    addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+                addToBot(new ApplyStiffnessAction(3));
                 break;
             case 2:
                 calculateCardDamage(m);
@@ -80,8 +79,7 @@ public class InTheBlink extends AbstractWCCard {
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-                if (StiffnessPower.applyStiffness())
-                    addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+                addToBot(new ApplyStiffnessAction(3));
                 break;
         }
 
@@ -90,8 +88,7 @@ public class InTheBlink extends AbstractWCCard {
             addBaseAoeDamage();
             doAoeDamage();
 
-            if (StiffnessPower.applyStiffness())
-                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+            addToBot(new ApplyStiffnessAction(3));
 
             if (this.timesUpgraded >= 9)
                 addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));

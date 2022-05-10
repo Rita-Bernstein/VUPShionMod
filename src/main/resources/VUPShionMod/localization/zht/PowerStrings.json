@@ -139,7 +139,7 @@
   "VUPShionMod:AttackOrderGammaPower": {
     "NAME": "攻擊指令·叄式",
     "DESCRIPTIONS": [
-      "受到 #y偵查浮游炮 的每回合攻擊的敵人再給予 #b2 層 #y流血 。 NL 不與其他指令共存。"
+      "每回合浮游炮額外觸發一次 NL 不與其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderDeltaPower": {
@@ -175,7 +175,7 @@
   "VUPShionMod:LoseFinFunnelUpgradePower": {
     "NAME": "火力傾瀉",
     "DESCRIPTIONS": [
-      "在 #b%d 個回合內，你的 #y總炮強化 視為0。"
+      "在 #b%d 個回合內，你的 #y總炮強化 視為 #b0。"
     ]
   },
   "VUPShionMod:HolyCoffinSinkingSpiritPower": {
@@ -460,7 +460,7 @@
   "VUPShionMod:AlleviatorPower": {
     "NAME": "緩衝迴路",
     "DESCRIPTIONS": [
-      "每回合第一次觸發 vup_shion_mod:魔能過載 時，獲得 #b%d [E] 。"
+      "每回合第一次觸發 #y魔能過載 時，獲得 #b%d [E] 。"
     ]
   },
   "VUPShionMod:RechargerPower": {
@@ -490,7 +490,7 @@
   "VUPShionMod:SuperloaderPower": {
     "NAME": "超載迴路",
     "DESCRIPTIONS": [
-      "下 b%d 次獲得 #y魔能過載 時， NL 抽一張牌。"
+      "下 #b%d 次獲得 #y魔能過載 時， NL 抽一張牌。"
     ]
   },
   "VUPShionMod:AntisequencerPower": {
@@ -529,6 +529,130 @@
     "DESCRIPTIONS": [
       "阻止下一次你受到的生命值損傷。",
       "阻止下 #b%d 次你受到的生命值損傷。"
+    ]
+  },
+  "VUPShionMod:PsychicPower": {
+    "NAME": "沉靈",
+    "DESCRIPTIONS": [
+      "部分卡牌可以使用 #y沉靈 觸發額外的效果。"
+    ]
+  },
+  "VUPShionMod:SinPower": {
+    "NAME": "罪孽",
+    "DESCRIPTIONS": [
+      "用於觸發特定效果的標記。"
+    ]
+  },
+  "VUPShionMod:LoseHPPower": {
+    "NAME": "失血",
+    "DESCRIPTIONS": [
+      "每回合開始時失去 #b%d 點生命。"
+    ]
+  },
+  "VUPShionMod:DoubleDamageReceivePower": {
+    "NAME": "雙倍受傷",
+    "DESCRIPTIONS": [
+      "本回合翻倍受到的傷害。",
+      "在 #b%d 回合內翻倍受到的傷害。"
+    ]
+  },
+  "VUPShionMod:ChasteReflectionPower": {
+    "NAME": "貞潔鏡盾",
+    "DESCRIPTIONS": [
+      "下回合開始時對所有敵人造成本回合受到的傷害。（造成 #b%d 點傷害）",
+      "下 #b%d 個回合開始時對所有敵人造成本回合受到的傷害。（造成 #b%d 點傷害）"
+    ]
+  },
+  "VUPShionMod:CalamityPower": {
+    "NAME": "崩壞-罪孽",
+    "DESCRIPTIONS": [
+      "每回合開始時， #y所有人 獲得 #b%d 層 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:Calamity2Power": {
+    "NAME": "崩壞-消力",
+    "DESCRIPTIONS": [
+      "每回合開始時，所有敵人失去 #y罪孽 層數的 力量。"
+    ]
+  },
+  "VUPShionMod:HallowedCasketPower": {
+    "NAME": "聖棺沉靈",
+    "DESCRIPTIONS": [
+      "每回合結束時，將 #b%d 張 #y奇蹟 加入手牌並獲得 #b%d 點 #y沉靈 。"
+    ]
+  },
+  "VUPShionMod:EnsanguinedFigurePower": {
+    "NAME": "浸染之衣",
+    "DESCRIPTIONS": [
+      "每當你受到傷害時，給予攻擊者 #b%d 層 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:CrimsonDelugePower": {
+    "NAME": "浸染之血",
+    "DESCRIPTIONS": [
+      "超出生命上限的 #g回復 將獲得 #y護盾 。"
+    ]
+  },
+  "VUPShionMod:AsceticismPower": {
+    "NAME": "苦行天途-能量",
+    "DESCRIPTIONS": [
+      "每當你失去生命時，獲得 #b%d [E] 。"
+    ]
+  },
+  "VUPShionMod:Asceticism2Power": {
+    "NAME": "苦行天途-抽牌",
+    "DESCRIPTIONS": [
+      "每 #b2 次當你失去生命時，抽 #b%d 張牌。"
+    ]
+  },
+  "VUPShionMod:TranscendSoulPower": {
+    "NAME": "祭靈天途-回復",
+    "DESCRIPTIONS": [
+      "回合結束時，回復 #y沉靈 #b%d 倍的生命。"
+    ]
+  },
+  "VUPShionMod:TranscendSoul2Power": {
+    "NAME": "祭靈天途-進攻",
+    "DESCRIPTIONS": [
+      "回合結束時，對所有敵人造成 #y沉靈 #b%d 倍的傷害。"
+    ]
+  },
+  "VUPShionMod:ArbitrationPower": {
+    "NAME": "審判開庭",
+    "DESCRIPTIONS": [
+      "每當造成未被 格擋 的傷害時，給予 #b%d 層 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:Arbitration2Power": {
+    "NAME": "萬物·審判開庭",
+    "DESCRIPTIONS": [
+      "每當觸發 #y伐罪 時，給予 *所有人 #b%d 層 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:ProphecyOfDestructionPower": {
+    "NAME": "破滅預言",
+    "DESCRIPTIONS": [
+      "每當生成 #y祈言 時，對隨機敵人造成 #b%d 點傷害。"
+    ]
+  },
+  "VUPShionMod:ProphecyOfSalvationPower": {
+    "NAME": "救世預言",
+    "DESCRIPTIONS": [
+      "每當生成 #y祈言 時，回復 #b%d 點生命。"
+    ]
+  },
+  "VUPShionMod:BrokenSanctuaryPower": {
+    "NAME": "破碎聖堂",
+    "DESCRIPTIONS": [
+      "本回合所有 #y祈言 牌耗能變為0。",
+      "在 #b%d 個回合所有 #y祈言 牌耗能變為0。"
+    ]
+  },
+  "VUPShionMod:PrecastingPower": {
+    "NAME": "預備詠唱",
+    "DESCRIPTIONS": [
+      "你的下一個 #y祈言 將直接獲得全部效果。",
+      "你的下 #b%d 個 #y祈言 將直接獲得全部效果。"
     ]
   }
 }

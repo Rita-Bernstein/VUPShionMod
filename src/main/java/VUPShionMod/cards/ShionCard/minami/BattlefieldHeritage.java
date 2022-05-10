@@ -15,7 +15,7 @@ import java.util.function.Predicate;
 public class BattlefieldHeritage extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("BattlefieldHeritage");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami12.png");
-    private static final int COST = 2;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

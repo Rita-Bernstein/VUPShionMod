@@ -23,8 +23,9 @@ public class AbyssalCrux extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
     private static final Texture UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/AbyssalCrux2.png"));
     private static final Texture OUTLINE_UPGRADE_IMG = new Texture(VUPShionMod.assetPath("img/relics/outline/AbyssalCrux2.png"));
-    private static final String UPGRADED_NAME = CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS[3];
+    private static final String UPGRADED_NAME = CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS[1];
 
+    public boolean dontHeal = false;
 
     public AbyssalCrux() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -37,7 +38,7 @@ public class AbyssalCrux extends AbstractShionRelic {
             this.flavorText = DESCRIPTIONS[2];
             return this.DESCRIPTIONS[3];
         }
-        ReflectionHacks.setPrivateFinal(this, AbstractRelic.class, "name", CardCrawlGame.languagePack.getRelicStrings(ID).NAME);
+        ReflectionHacks.setPrivateFinal(this, AbstractRelic.class, "name", CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS);
         this.flavorText = CardCrawlGame.languagePack.getRelicStrings(ID).FLAVOR;
         return this.DESCRIPTIONS[0];
     }
@@ -59,30 +60,37 @@ public class AbyssalCrux extends AbstractShionRelic {
     }
 
 
+    @Override
     public void wasHPLost(int damageAmount) {
-        if (!upgraded)
-            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && damageAmount > 0) {
+        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && damageAmount > 0) {
+            if (!upgraded) {
+                if (!this.dontHeal) {
+                    flash();
+                    addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount * 2));
+                    addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                }
+            } else {
                 flash();
-                addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount * 2));
-                addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            }else {
-                flash();
-                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damageAmount,
+                addToTop(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damageAmount,
                         true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
             }
+        }
     }
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        addToTop(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount));
-        return 0;
+        if (upgraded && info.type != DamageInfo.DamageType.HP_LOSS) {
+            addToTop(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount));
+            return 0;
+        }
+        return damageAmount;
     }
 
     @Override
     public void onPlayerEndTurn() {
-        if(upgraded) {
+        if (upgraded) {
             addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 500));
-            addToBot(new LoseMaxHPAction(AbstractDungeon.player,AbstractDungeon.player,500));
+            addToBot(new LoseMaxHPAction(AbstractDungeon.player, AbstractDungeon.player, 500));
         }
     }
 

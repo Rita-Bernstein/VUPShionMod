@@ -23,7 +23,7 @@ public class HolyCharge extends AbstractShionLiyezhuCard {
     public HolyCharge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 15;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.selfRetain = true;
     }
 
@@ -55,6 +55,7 @@ public class HolyCharge extends AbstractShionLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            upgradeDamage(6);
         }
     }
 }

@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -30,8 +31,7 @@ public class PreExecution extends AbstractWCCard {
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
         if (!this.upgraded)
-            if (StiffnessPower.applyStiffness())
-                addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
+            addToBot(new ApplyStiffnessAction(this.secondaryM));
 
         if (this.upgraded)
             addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));

@@ -27,6 +27,7 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.abstracts.CustomCard;
 import basemod.eventUtil.AddEventParams;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -64,7 +65,8 @@ public class VUPShionMod implements
         EditKeywordsSubscriber,
         EditStringsSubscriber,
         PostDungeonInitializeSubscriber,
-        StartActSubscriber {
+        StartActSubscriber,
+        PostCreateStartingRelicsSubscriber {
 
 
     public static String MOD_ID = "VUPShionMod";
@@ -317,6 +319,13 @@ public class VUPShionMod implements
     }
 
     @Override
+    public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
+            if (VUPShionMod.liyezhuRelic) {
+                arrayList.add(FragmentsOfFaith.ID);
+            }
+    }
+
+    @Override
     public void receivePostInitialize() {
         loadSettings();
 //        unlockAllReskin();
@@ -396,6 +405,11 @@ public class VUPShionMod implements
                 .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
                 .create());
 
+        BaseMod.addEvent(new AddEventParams.Builder(Prophesy.ID, Prophesy.class) //Event ID//
+                //Event Character//
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
+                .create());
+
 
 //        忘川事件
 
@@ -461,6 +475,17 @@ public class VUPShionMod implements
             SansMeterSave.sansMeterSaveAmount = 100;
 
             saveSkins();
+
+            VUPShionMod.liyezhuRelic = false;
+            saveSettings();
+        }
+
+        if (AbstractDungeon.actNum == 3) {
+            for (AbstractRelic relic : AbstractDungeon.player.relics) {
+                if (relic instanceof FragmentsOfFaith) {
+                    ((FragmentsOfFaith) relic).upgrade();
+                }
+            }
         }
 
         if (AbstractDungeon.player.hasRelic(DimensionSplitterAria.ID)) {
@@ -813,11 +838,14 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new TrackingBeacon(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new StarQuakes(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new StarBreaker(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new PureHeart(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new WhitePurity(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new SapphireRoseNecklace(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new TheRipple(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new WhiteRose(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new PurityWhiteRose(), CardColorEnum.WangChuan_LIME);
 
 
         BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);
@@ -825,6 +853,7 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new AbyssalCrux(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new Inhibitor(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new UnknownDust(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelic(new FragmentsOfFaith(), RelicType.SHARED);
 
     }
 

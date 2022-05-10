@@ -8,6 +8,7 @@ import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -29,6 +30,8 @@ public class TimeSlack extends AbstractShionKuroisuCard {
         this.secondaryM = this.baseSecondaryM = 1;
         this.cardsToPreview = new QuickDefend();
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
+        this.tags.add(CardTagsEnum.LOADED);
+        ExhaustiveVariable.setBaseValue(this,6);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -39,8 +39,9 @@ public class EnhancedSupport extends AbstractShionMinamiCard {
             p.getRelic(ChemicalX.ID).flash();
         }
         if (this.upgraded) {
+            effect+=2;
+        }else
             effect++;
-        }
 
         effect *= 1;
 

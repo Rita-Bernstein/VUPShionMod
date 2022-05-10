@@ -25,7 +25,7 @@ public class VoluntasDoloris extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseHPAction(p,p,this.magicNumber));
+        addToBot(new LoseHPAction(p,p,this.baseMagicNumber));
         addToBot(new GainEnergyAction(1));
         addToBot(new DrawCardAction(this.secondaryM));
         addToBot(new MakeTempCardInDrawPileAction(makeStatEquivalentCopy(), 1,true, true, false));

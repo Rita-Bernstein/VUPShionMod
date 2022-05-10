@@ -108,7 +108,7 @@ public class GameOverScreenPatches {
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
                     GameStatsPatch.shionDeathCount++;
 
-                    if (GameStatsPatch.shionDeathCount > 3)
+                    if (GameStatsPatch.shionDeathCount >= 2)
                         CharacterSelectScreenPatches.skinManager.unlockSkin(AquaShion.ID);
 
                     VUPShionMod.saveSkins();
@@ -119,7 +119,7 @@ public class GameOverScreenPatches {
 
                     GameStatsPatch.wangchuanDeathCount++;
 
-                    if (GameStatsPatch.shionDeathCount > 3)
+                    if (GameStatsPatch.wangchuanDeathCount >= 2)
                         CharacterSelectScreenPatches.skinManager.unlockSkin(PurityWangChuan.ID);
                     VUPShionMod.saveSkins();
                 }

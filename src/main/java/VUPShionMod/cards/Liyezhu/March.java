@@ -17,10 +17,11 @@ public class March extends AbstractLiyezhuCard {
 
     public March() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 5;
+        this.baseDamage = 10;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 5;
+        this.secondaryM = this.baseSecondaryM = 10;
         this.selfRetain = true;
+        this.exhaust =true;
     }
 
     @Override

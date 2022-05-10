@@ -139,7 +139,7 @@
   "VUPShionMod:AttackOrderGammaPower": {
     "NAME": "攻击指令·叁式",
     "DESCRIPTIONS": [
-      "受到 #y侦查浮游炮 的每回合攻击的敌人再给予 #b2 层 #y流血 。 NL 不与其他指令共存。"
+      "每回合浮游炮额外触发一次 NL 不与其他指令共存。"
     ]
   },
   "VUPShionMod:AttackOrderDeltaPower": {

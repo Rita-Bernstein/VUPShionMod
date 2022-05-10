@@ -48,10 +48,10 @@ public class PlagaAMundo extends CustomMonster {
 
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 3));
-            this.damage.add(new DamageInfo(this, 300));
+            this.damage.add(new DamageInfo(this, 233));
         } else {
             this.damage.add(new DamageInfo(this, 3));
-            this.damage.add(new DamageInfo(this, 300));
+            this.damage.add(new DamageInfo(this, 233));
         }
 
         if (AbstractDungeon.ascensionLevel >= 4)

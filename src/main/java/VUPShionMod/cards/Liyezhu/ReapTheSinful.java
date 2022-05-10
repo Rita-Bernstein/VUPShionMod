@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class ReapTheSinful extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ReapTheSinful.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/ReapTheSinful.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

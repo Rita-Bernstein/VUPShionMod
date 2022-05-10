@@ -5,6 +5,7 @@ import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.relics.Nebula;
 import VUPShionMod.relics.PureHeart;
 import VUPShionMod.relics.StarQuakes;
+import VUPShionMod.relics.WhiteRose;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -38,6 +39,7 @@ public class PurityWangChuan extends AbstractSkin {
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
+        info.relics.add(WhiteRose.ID);
         info.relics.add(PureHeart.ID);
         return info;
     }
@@ -45,6 +47,7 @@ public class PurityWangChuan extends AbstractSkin {
     @Override
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(WhiteRose.ID);
         retVal.add(PureHeart.ID);
         return retVal;
     }

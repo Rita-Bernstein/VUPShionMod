@@ -434,7 +434,7 @@ public class Liyezhu extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/WangChuanCutScene.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/LiyezhuCutScene.png"));
         return panels;
     }
 

@@ -53,8 +53,8 @@ public class MentalBreakdown extends AbstractImageEvent {
             case INTRO:
                 if (buttonPressed == 0) {
                     this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
-                    this.imageEventText.removeDialogOption(1);
-                    this.imageEventText.updateDialogOption(0, OPTIONS[4]);
+                    this.imageEventText.clearRemainingOptions();
+                    this.imageEventText.updateDialogOption(0, OPTIONS[3]);
 
                     if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
                         EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).loseSan(100);
@@ -66,8 +66,8 @@ public class MentalBreakdown extends AbstractImageEvent {
 
                 if (buttonPressed == 1) {
                     this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
-                    this.imageEventText.removeDialogOption(1);
-                    this.imageEventText.updateDialogOption(0, OPTIONS[4]);
+                    this.imageEventText.clearRemainingOptions();
+                    this.imageEventText.updateDialogOption(0, OPTIONS[3]);
 
                     for (int i = AbstractDungeon.player.masterDeck.group.size() - 1; i >= 0; i--) {
                         AbstractCard card = AbstractDungeon.player.masterDeck.group.get(i);
@@ -83,8 +83,8 @@ public class MentalBreakdown extends AbstractImageEvent {
 
                 if (buttonPressed == 2) {
                     this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
-                    this.imageEventText.removeDialogOption(1);
-                    this.imageEventText.updateDialogOption(0, OPTIONS[4]);
+                    this.imageEventText.clearRemainingOptions();
+                    this.imageEventText.updateDialogOption(0, OPTIONS[3]);
 
                     if (CardHelper.hasCardWithType(AbstractCard.CardType.POWER)) {
                         AbstractCard card = CardHelper.returnCardOfType(AbstractCard.CardType.POWER, AbstractDungeon.miscRng);

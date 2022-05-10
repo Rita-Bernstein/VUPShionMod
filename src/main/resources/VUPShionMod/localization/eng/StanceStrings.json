@@ -1,14 +1,20 @@
 {
   "VUPShionMod:Prayer": {
-    "NAME": "祈言姿态",
+    "NAME": "Praying Stance",
     "DESCRIPTION": [
-      "处于这个 #y姿态 时，你造成的伤害减少 #b25% 。 NL 回合结束时获得 #b2 层 #y再生 。"
+      "While in this #yStance, you deal #b25% less damage. NL At the end of your turn, gain #b2 #yRegen."
     ]
   },
   "VUPShionMod:Judge": {
-    "NAME": "审判姿态",
+    "NAME": "Judging Stance",
     "DESCRIPTION": [
-      "进入这个 #y姿态 时，获得 #b1 层 #y自燃 和 #y力量 。"
+      "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength."
+    ]
+  },
+  "VUPShionMod:Spirit": {
+    "NAME": "Wordpower Stance",
+    "DESCRIPTION": [
+      "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength. NL At the end of your turn, gain #b2 #yRegen."
     ]
   }
 }

@@ -26,8 +26,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.SaveHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,11 +38,12 @@ import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.LizardTail;
+import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 
 public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathRelic {
-    public static final String ID = VUPShionMod.makeID("UnknownDust");
+    public static final String ID = VUPShionMod.makeID(UnknownDust.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/UnknownDust.png";
     private static final String OUTLINE_PATH = "img/relics/outline/UnknownDust.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
@@ -51,19 +54,26 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
     public boolean effectApplied = false;
     private boolean lockHealth = false;
 
-    private CGlayout cg = new CGlayout("Liyezhu");
+
+    private CGlayout cg;
 
     public UnknownDust() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
+        this.cg = new CGlayout("Liyezhu_TE");
+        this.cg.switchTimerMax = 4.0f;
+
+        if (AbstractDungeon.player != null) {
+            if (AbstractDungeon.player.hasRelic(AbyssalCrux.ID)) {
+                this.cg.dispose();
+                this.cg = new CGlayout("Liyezhu_BE");
+                this.cg.switchTimerMax = 4.0f;
+            }
+        }
     }
 
     @Override
     public String getUpdatedDescription() {
-        if (this.triggered) {
-            return this.DESCRIPTIONS[1] + DESCRIPTIONS[2];
-        } else {
-            return this.DESCRIPTIONS[0];
-        }
+        return this.DESCRIPTIONS[0];
     }
 
     public void setDescriptionAfterLoading() {
@@ -84,93 +94,69 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
             GameCursor.hidden = true;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NO_INTERACT;
 
-            ShionBossBackgroundEffect.instance.loadAnimation(
-                    "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.atlas",
-                    "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.json", 1.0f);
-            ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle1", true);
-            ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle2", true);
-            ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle3", true);
+            if (AbstractDungeon.player.hasRelic(AbyssalCrux.ID)) {
+                ShionBossBackgroundEffect.instance.loadAnimation(
+                        "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.atlas",
+                        "VUPShionMod/img/monsters/PlagaAMundo/Background_idle.json", 1.0f);
+                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle1", true);
+                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle2", true);
+                ShionBossBackgroundEffect.instance.setAnimation(0, "Background_idle3", true);
+            }
+        }
+    }
 
+    private void endGame() {
+        SaveAndContinue.deleteSave(AbstractDungeon.player);
+        if (AbstractDungeon.unlocks.isEmpty() || Settings.isDemo) {
+            CardCrawlGame.playCreditsBgm = true;
+            CardCrawlGame.startOverButShowCredits();
+        } else {
+            AbstractDungeon.unlocks.clear();
+            Settings.isTrial = false;
+            Settings.isDailyRun = false;
+            Settings.isEndless = false;
+            CardCrawlGame.trial = null;
+
+            if (Settings.isDailyRun) {
+                CardCrawlGame.startOver();
+            } else {
+                CardCrawlGame.playCreditsBgm = true;
+                CardCrawlGame.startOverButShowCredits();
+            }
         }
     }
 
     public void applyEffect() {
-        setDescriptionAfterLoading();
+        if (!AbstractDungeon.player.hasRelic(AbyssalCrux.ID)) {
+            VUPShionMod.liyezhuRelic = true;
+            VUPShionMod.saveSettings();
+            System.out.println("真结局--liyezhuRelic");
+            endGame();
+        }  else {
+            CardCrawlGame.music.playTempBGM("VUPShionMod:Boss_Phase2");
 
-        CardCrawlGame.music.playTempBGM("VUPShionMod:Boss_Phase2");
-
-        AbstractDungeon.player.increaseMaxHp(200, true);
-        AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
-        AbstractDungeon.player.energy.energyMaster++;
-        AbstractDungeon.player.energy.energy++;
-
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
-            for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
-                f.upgradeLevel(9);
-            }
-        }
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttackOrderSpecialPower(AbstractDungeon.player)));
-        addToBot(new GainEnergyAction(1));
-
-        AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active = true;
-
-        addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
-        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-        addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
-        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!monster.isDeadOrEscaped()) {
-                addToBot(new RemoveSpecificPowerAction(monster, AbstractDungeon.player, LifeLinkPower.POWER_ID));
-                addToBot(new RemoveSpecificPowerAction(monster, AbstractDungeon.player, StrengthPower.POWER_ID));
-                addToBot(new LoseHPAction(monster, AbstractDungeon.player, 500));
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        monster.decreaseMaxHealth(500);
-                        isDone = true;
-                    }
-                });
-
+            AbstractDungeon.player.increaseMaxHp(5000 - AbstractDungeon.player.maxHealth, true);
+            AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
+            for (AbstractRelic relic : AbstractDungeon.player.relics) {
+                if (relic instanceof AbyssalCrux) {
+                    ((AbyssalCrux) relic).upgrade();
+                }
             }
         }
 
     }
 
     @Override
-    public void atBattleStartPreDraw() {
-        super.atBattleStartPreDraw();
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BarricadePower(AbstractDungeon.player)));
+    public void onVictory() {
+        if (AbstractDungeon.player.hasRelic(AbyssalCrux.ID))
+            endGame();
     }
-
 
     @Override
     public void atTurnStart() {
         super.atTurnStart();
         if (this.lockHealth) {
             triggerRelic();
-        }
-
-        if (this.triggered)
-            addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 200));
-    }
-
-    @Override
-    public void onMonsterDeath(AbstractMonster m) {
-        if (triggered && m.hasPower(PursuitPower.POWER_ID)) {
-            int amount = (m.getPower(PursuitPower.POWER_ID)).amount;
-            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                flash();
-                addToBot(new RelicAboveCreatureAction(m, this));
-                addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new PursuitPower(null, amount), amount, false, AbstractGameAction.AttackEffect.NONE));
-            }
-
-            if (triggered && m.hasPower(BleedingPower.POWER_ID)) {
-                int amount2 = (m.getPower(BleedingPower.POWER_ID)).amount;
-                if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    flash();
-                    addToBot(new RelicAboveCreatureAction(m, this));
-                    addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new BleedingPower(null, AbstractDungeon.player, amount2), amount2, false, AbstractGameAction.AttackEffect.NONE));
-                }
-            }
         }
     }
 
@@ -196,6 +182,12 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
 
 
         if (!triggered && canTrigger) {
+            for(AbstractRelic relic : AbstractDungeon.player.relics){
+                if(relic instanceof AbyssalCrux){
+                    ((AbyssalCrux) relic).dontHeal = true;
+                }
+            }
+
             CardCrawlGame.music.justFadeOutTempBGM();
             this.lockHealth = true;
             AbstractDungeon.player.hideHealthBar();
@@ -206,14 +198,6 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
         }
     }
 
-    @Override
-    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
-        super.onUseCard(targetCard, useCardAction);
-        if (AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active)
-            if (targetCard.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL) || targetCard.hasTag(CardTagsEnum.FIN_FUNNEL)) {
-                AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).addCount(1);
-            }
-    }
 
     @Override
     public void render(SpriteBatch sb) {

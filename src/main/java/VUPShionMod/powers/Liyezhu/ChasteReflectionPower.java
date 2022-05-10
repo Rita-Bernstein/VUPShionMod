@@ -29,8 +29,10 @@ public class ChasteReflectionPower extends AbstractShionPower {
 
 
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        this.amount2 += damageAmount;
-        updateDescription();
+        if(info.type != DamageInfo.DamageType.HP_LOSS) {
+            this.amount2 += damageAmount;
+            updateDescription();
+        }
         return damageAmount;
     }
 

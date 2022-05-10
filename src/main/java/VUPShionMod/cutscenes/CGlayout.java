@@ -5,11 +5,14 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 
 import java.util.ArrayList;
 
@@ -20,6 +23,7 @@ public class CGlayout implements Disposable {
     private float darkenTimer = 1.0F;
     private float fadeTimer = 1.0F;
     private float switchTimer = 1.0F;
+    public float switchTimerMax = 2.0f;
 
     private int currentScene = 0;
 
@@ -32,10 +36,27 @@ public class CGlayout implements Disposable {
         this.bgColor = Color.WHITE.cpy();
         this.screenColor = new Color(0.0F, 0.0F, 0.0F, 0.0F);
 //        this.bgImg = ImageMaster.loadImage("images/scenes/redBg.jpg");
-        String lang = Settings.language == Settings.GameLanguage.ZHS ? "zhs" : "eng";
+        String lang;
+
+        if(Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT){
+            lang = "zhs";
+        }else if(Settings.language == Settings.GameLanguage.JPN){
+            lang = "jpn";
+        }else {
+            lang = "eng";
+        }
+
 
 
         switch (name) {
+            case "Liyezhu_BE":
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG04.png"));
+                break;
+            case "Liyezhu_TE":
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG01.png"));
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG02.png"));
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG03.png"));
+                break;
             case "WangChuan":
                 for (int i = 1; i < 6; i++) {
                     this.panels.add(new CutscenePanel("VUPShionMod/img/cg/WangChuan/" + lang + "/CG0" + i + ".png"));
@@ -89,7 +110,7 @@ public class CGlayout implements Disposable {
             for (CutscenePanel p : this.panels) {
                 if (!p.activated) {
                     p.activate();
-                    this.switchTimer = 2.0F;
+                    this.switchTimer = this.switchTimerMax;
                     return;
                 }
             }

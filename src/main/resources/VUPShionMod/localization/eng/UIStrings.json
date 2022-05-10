@@ -55,59 +55,74 @@
       "Choose a card to upgrade."
     ]
   },
-  "VUPShionMod:BetaArtUnlockEffect": {
+  "VUPShionMod:OriShion": {
     "TEXT": [
-      "Shion's new costume unlocked!",
-	  "Wangchuan's new costume unlocked!",
-	  "Liyezhu's new costume unlocked!"
+      "Aggressive Armament: Maneuver\nsky-based weaponary and your funnels\nto crush your enemies.",
+      "Bonus: None",
+      "Difficulty: Standard",
+      "Acquisition requirements:None"
     ]
   },
-  "VUPShionMod:AbstractShionSkin": {
+  "VUPShionMod:BlueGiantShion": {
     "TEXT": [
-      "The Aria",
-      "Blue Giant",
-      "The Ripple"
-    ],
-    "EXTRA_TEXT": [
-      "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire.",
-      "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire.",
-      "Came from Anastasia Universe, Shion fights with her Funnels. NL She synchronized her capability, with an intention to slay the Spire."
+      "Conqueror's Attire: Specialize in\nfunnels and win by versatility.",
+      "At the start of your turn,\nadd 1 Funnel Matrix\ninto your hand.",
+      "Difficulty: Advance",
+      "Acquisition requirements:\nVictory in the final battle."
     ]
   },
-  "VUPShionMod:AbstractWangChuanSkin": {
+  "VUPShionMod:AquaShion": {
     "TEXT": [
-      "Nebula",
-      "Blade of Pure White",
-      "The Ripple"
-    ],
-    "EXTRA_TEXT": [
-      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world.",
-      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world.",
-      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world."
+      "Midsummer Swimsuit: Stretch your\npotential to its limit,\nfor a short time.",
+      "You can activate\nSupernova Outburst\nonce per combat.",
+      "Difficulty: Transcendent",
+      "Acquisition requirements:\nFail in Act 3 or further for twice."
     ]
   },
-  "VUPShionMod:AbstractLiyezhuSkin": {
+  "VUPShionMod:OriWangChuan": {
     "TEXT": [
-      "Nebula",
-      "Blade of Pure White"
-    ],
-    "EXTRA_TEXT": [
-      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world.",
-      "Girl of vampire descent from other sphere, NL here to investigate this towering remain of a broken world."
+      "Vampire's Shroud: Right hand\nfor sword and left hand for magic.",
+      "Glans Magica in starter deck.",
+      "Difficulty: Standard",
+      "Acquisition requirements: None"
     ]
   },
-  "VUPShionMod:SkinPannel": {
+  "VUPShionMod:PurityWangChuan": {
     "TEXT": [
-      "Locked"
-    ],
-    "EXTRA_TEXT": [
-      "Defeat Plaga Mundi to unlock costume.",
-      "Costume still work in progress..."
+      "Spectre Dance: Mastery over one\nsingle technique is enough to\ntake them all.",
+      "In the Blink in starter deck.",
+      "Difficulty: Transcendent",
+      "Acquisition requirements:\nFail in Act 3 or further for twice."
+    ]
+  },
+  "VUPShionMod:AquaWangChuan": {
+    "TEXT": [
+      "Midsummer Swimsuit: Warp the time\naround you to rain daggers\non your foes.",
+      "Replace all Slide with Warp.",
+      "Difficulty: Advance",
+      "Acquisition requirements:\nVictory in the final battle."
+    ]
+  },
+  "VUPShionMod:OriLiyezhu": {
+    "TEXT": [
+      "Priestess Duty: Bless the container,\nnot the soul in it.",
+      "Heals your body, not your mind.",
+      "Difficulty: Standard",
+      "Acquisition requirements: None"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {
     "TEXT": [
       "Choose a card to set its cost to 0 this turn."
+    ]
+  },
+  "VUPShionMod:SansMeter": {
+    "TEXT": [
+      "Sanity",
+      "Whenever you slay a non-minion enemy, lose #b3 #ySanity. Whenever you #yrest at Restsites, gain #b40 #ySanity and choose to obtain 1 #yPrayer card.",
+      " NL NL While #ySanity is full, gain #b10 Max HP at the start of each combat. Else, gain #b1 Max HP instead if #ySanity is above #b50.",
+      " NL NL While #ySanity is below #b50, gain #b3 #yVulnerable at the start of combat. NL Whenever you slay a non-minion enemy, lose #b1 Max HP.",
+      " NL NL While #ySanity is below #b30, gain #b3 #yWeak at the start of combat. NL Whenever you slay a non-minion enemy, lose #b4 more Max HP. Whenever you gain #ySinful, gain #b1 more."
     ]
   }
 }

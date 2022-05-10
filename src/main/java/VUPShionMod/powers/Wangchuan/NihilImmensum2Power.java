@@ -42,7 +42,7 @@ public class NihilImmensum2Power extends AbstractShionPower {
         this.amount2++;
         if (this.amount2 >= triggerAmount) {
             flash();
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new IntangiblePlayerPower(this.owner, this.amount)));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new ImmuneDamagePower(this.owner)));
             this.amount2 = 0;
         }
         updateDescription();

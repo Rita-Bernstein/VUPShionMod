@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class EmanationOfIre extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(EmanationOfIre.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/EmanationOfIre.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -22,7 +22,7 @@ public class EmanationOfIre extends AbstractLiyezhuCard {
 
     public EmanationOfIre() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
+        this.baseDamage = 10;
         this.magicNumber = this.baseMagicNumber = 2;
 
     }

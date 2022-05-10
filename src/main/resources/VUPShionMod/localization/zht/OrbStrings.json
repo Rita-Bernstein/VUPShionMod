@@ -16,5 +16,90 @@
     "DESCRIPTION": [
       "當前強化等級： #b%d 。 NL #y主動： 造成傷害，如果造成了未被格擋的傷害，觸發被動效果。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害。如果造成了未被格擋的傷害，觸發被動效果。 NL #y被動： 給予 #b%d 層 #y追擊 。 NL （除 #y初始等級 外，每 #b2 級提升被動效果。）"
     ]
+  },
+  "VUPShionMod:AbstractTurnIcon": {
+    "DESCRIPTION": [
+      "在 #b%d 個回合開始時觸發的祈禱效果:",
+      "在 #b%d 個回合開始時觸發的祈禱效果:"
+    ],
+    "NAME": "祈言"
+  },
+  "VUPShionMod:RegenPrayer": {
+    "DESCRIPTION": [
+      "獲得 #b%d 層 #y再生 。"
+    ],
+    "NAME": "再生"
+  },
+  "VUPShionMod:LoseStrengthPrayer": {
+    "DESCRIPTION": [
+      "所有敵人失去 #b%d 點 #y力量 。"
+    ],
+    "NAME": "鐐銬"
+  },
+  "VUPShionMod:ArtifactPrayer": {
+    "DESCRIPTION": [
+      "獲得 #b%d 層 #y人工製品 。"
+    ],
+    "NAME": "人工製品"
+  },
+  "VUPShionMod:StrengthPrayer": {
+    "DESCRIPTION": [
+      "獲得 #b%d 層 #y力量 。"
+    ],
+    "NAME": "力量"
+  },
+  "VUPShionMod:MiraclePrayer": {
+    "DESCRIPTION": [
+      "將 #b%d 張 #y奇蹟 加入手牌。"
+    ],
+    "NAME": "奇蹟"
+  },
+  "VUPShionMod:MiracleUpgradePrayer": {
+    "DESCRIPTION": [
+      "將 #b%d 張 #y奇蹟+ 加入手牌。"
+    ],
+    "NAME": "奇蹟+"
+  },
+  "VUPShionMod:ThornsPrayer": {
+    "DESCRIPTION": [
+      "獲得 #b%d 層 #y臨時荊棘 。"
+    ],
+    "NAME": "荊棘"
+  },
+  "VUPShionMod:VampirePrayer": {
+    "DESCRIPTION": [
+      "對所有敵人造成 #b%d 點傷害並回復未被 格擋 傷害的生命。"
+    ],
+    "NAME": "收割"
+  },
+  "VUPShionMod:SelfSinPrayer": {
+    "DESCRIPTION": [
+      "獲得 #b%d 層 #y罪孽 。"
+    ],
+    "NAME": "自責"
+  },
+  "VUPShionMod:LoseHPPrayer": {
+    "DESCRIPTION": [
+      " #y所有人 失去 #b%d 點生命。"
+    ],
+    "NAME": "放血"
+  },
+  "VUPShionMod:AvariciousPrayer": {
+    "DESCRIPTION": [
+      "隨機一名敵人 失去 #b%d 點生命並給予 #y罪孽 和 #y力量 。"
+    ],
+    "NAME": "貪婪"
+  },
+  "VUPShionMod:SinPrayer": {
+    "DESCRIPTION": [
+      " #y所有人 獲得 #b%d 層 #y罪孽 。"
+    ],
+    "NAME": "罪孽"
+  },
+  "VUPShionMod:ThieveryPrayer": {
+    "DESCRIPTION": [
+      "獲得敵人數量 #b%d 倍的 #y金幣 。"
+    ],
+    "NAME": "竊奪"
   }
 }

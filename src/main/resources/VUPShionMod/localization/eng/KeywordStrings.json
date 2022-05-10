@@ -78,7 +78,7 @@
   },
   {
     "NAMES": [
-      "buffer"
+      "parry"
     ],
     "DESCRIPTION": "Prevents the next time you would lose HP."
   },
@@ -94,41 +94,62 @@
     ],
     "DESCRIPTION": "Receive damage each turn."
   },
-
   {
     "NAMES": [
-      "祈言"
+      "prayer"
     ],
-    "DESCRIPTION": "只能持续几个回合的效果。"
+    "DESCRIPTION": "Whenever played while in #yPraying #yStance, trigger its effect at the start of the next several turns."
   },
   {
     "NAMES": [
-      "沉灵"
+      "psychic"
     ],
-    "DESCRIPTION": "部分卡的消耗素材，X为消耗量，满足消耗需求时自动消耗。若消耗需求为X，则消耗尽可能多素材。"
+    "DESCRIPTION": "Some cards cost #yPsychic to activate additional effects."
   },
   {
     "NAMES": [
-      "罪孽"
+      "sinful"
     ],
-    "DESCRIPTION": "触发特定词条效果。"
+    "DESCRIPTION": "Marker that activates some particular effects."
   },
   {
     "NAMES": [
-      "伐罪"
+      "punitive"
     ],
-    "DESCRIPTION": "带有此词条的卡在效果发动时，全场所有单位失去其自身【罪孽】层数的生命值。"
+    "DESCRIPTION": "ALL ENTITIES lose HP equal to their #ySinful."
   },
   {
     "NAMES": [
-      "审判姿态"
+      "judging\u00a0stance"
     ],
-    "DESCRIPTION": "永续状态，该状态下所有带有【审判模式】的卡牌发动审判效果。"
+	"PROPER_NAME": "Judging Stance",
+    "DESCRIPTION": "Upon entering this #yStance, gain #b1 #yCombustion and #yStrength."
   },
   {
     "NAMES": [
-      "祈言姿态"
+      "praying\u00a0stance"
     ],
-    "DESCRIPTION": "永续状态，该状态下所有带有【祈言】的卡牌发动祈言效果。"
+	"PROPER_NAME": "Praying Stance",
+    "DESCRIPTION": "While in this #yStance, deal #b25% less damage. NL At the end of your turn, gain #b2 #yRegen."
+  },
+  {
+    "NAMES": [
+      "wordpower\u00a0stance"
+    ],
+	"PROPER_NAME": "Wordpower Stance",
+    "DESCRIPTION": "Regarded as in both #yJudging #yStance and #yPraying #yStance. NL Upon entering this #yStance, gain #b1 #yCombustion and #yStrength. NL At the end of your turn, gain #b2 #yRegen."
+  },
+  {
+    "NAMES": [
+      "unfold"
+    ],
+    "DESCRIPTION": "Add a card into your hand. NL It costs #b0 this turn."
+  },
+  {
+    "NAMES": [
+      "soul\u00a0wearing"
+    ],
+	"PROPER_NAME": "Soul Wearing",
+    "DESCRIPTION": "If you end your turn with this card in your hand, it is #yExhausted and costs you #b10 Sanity."
   }
 ]

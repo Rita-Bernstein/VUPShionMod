@@ -69,6 +69,11 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.isDone = true;
+            return;
+        }
+
         if (!(AbstractDungeon.player instanceof Shion)) {
             this.isDone = true;
             return;

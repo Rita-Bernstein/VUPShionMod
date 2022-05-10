@@ -24,6 +24,11 @@ public class LoseMaxHPAction extends AbstractGameAction {
 
 
     public void update() {
+        if(this.target.maxHealth <=1){
+            this.isDone =true;
+            return;
+        }
+
         if (this.duration == Settings.ACTION_DUR_XFAST && this.target.currentHealth > 0) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
         }

@@ -29,7 +29,6 @@ public class IgnisRapidus extends AbstractCodexCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new FreeCardPower(p, this.magicNumber)));
-
     }
 
 

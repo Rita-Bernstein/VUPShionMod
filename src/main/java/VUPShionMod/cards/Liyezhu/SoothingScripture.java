@@ -3,6 +3,7 @@ package VUPShionMod.cards.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.ApplyPrayerAction;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.prayers.HealPrayer;
 import VUPShionMod.prayers.RegenPrayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -12,9 +13,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SoothingScripture extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(SoothingScripture.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/SoothingScripture.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -22,7 +23,7 @@ public class SoothingScripture extends AbstractLiyezhuCard {
     public SoothingScripture() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 6;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 10;
         this.secondaryM = this.baseSecondaryM = 3;
         this.exhaust = true;
         this.cardsToPreview = new EmanationOfIre();
@@ -35,7 +36,7 @@ public class SoothingScripture extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 if (isInPrayer())
-                    addToTop(new ApplyPrayerAction(new RegenPrayer(secondaryM, magicNumber)));
+                    addToTop(new ApplyPrayerAction(new HealPrayer(secondaryM, magicNumber)));
 
                 if (isInJudge() ) {
                     AbstractCard temp = new EmanationOfIre();

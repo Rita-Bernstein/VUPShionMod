@@ -64,7 +64,7 @@ public class OriLiyezhu extends AbstractSkin {
         retVal.add(Barrier.ID);
         retVal.add(Barrier.ID);
         retVal.add(Barrier.ID);
-        retVal.add(SoothingScripture.ID);
+        retVal.add(SoleAnthem.ID);
         retVal.add(TranquilPrayer.ID);
         retVal.add(JudgementOfSins.ID);
 

@@ -101,5 +101,11 @@
       "获得敌人数量 #b%d 倍的 #y金币 。"
     ],
     "NAME": "窃夺"
+  },
+  "VUPShionMod:HealPrayer": {
+    "DESCRIPTION": [
+      "回复 #b%d 点生命。"
+    ],
+    "NAME": "回复"
   }
 }

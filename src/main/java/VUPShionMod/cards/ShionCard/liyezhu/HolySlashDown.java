@@ -64,7 +64,7 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
         this.baseDamage = 7;
         int amount = 0;
         if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID))
-            amount = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount * this.magicNumber;
+            amount = AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount;
         this.baseDamage += amount;
         super.applyPowers();
 

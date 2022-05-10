@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.actions.Shion.TurnTriggerAllFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.ShionCard.anastasia.AttackOrderGamma;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.powers.AbstractShionPower;
@@ -45,8 +46,11 @@ public class AbstractPlayerPatches {
 //            for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
 //                funnel.atTurnStart();
 //            }
-            if (AbstractDungeon.player instanceof Shion)
+            if (AbstractDungeon.player instanceof Shion) {
                 AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
+                if(AbstractDungeon.player.hasPower(AttackOrderGamma.ID))
+                    AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
+            }
             EnergyPanelPatches.energyUsedThisTurn = 1;
         }
     }

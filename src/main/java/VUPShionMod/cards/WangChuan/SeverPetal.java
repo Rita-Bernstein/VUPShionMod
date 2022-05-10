@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
@@ -58,8 +59,7 @@ public class SeverPetal extends AbstractWCCard {
         initializeDescription();
 
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
-        if (StiffnessPower.applyStiffness())
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 2)));
+        addToBot(new ApplyStiffnessAction(2));
 
         addToBot(new DrawCardAction(1));
     }

@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class WhitePurity extends AbstractShionRelic {
-    public static final String ID = VUPShionMod.makeID("WhitePurity");
+    public static final String ID = VUPShionMod.makeID(WhitePurity.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/WhitePurity.png";
     private static final String OUTLINE_PATH = "img/relics/outline/WhitePurity.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

@@ -55,59 +55,74 @@
       "選擇牌升級"
     ]
   },
-  "VUPShionMod:BetaArtUnlockEffect": {
+  "VUPShionMod:OriShion": {
     "TEXT": [
-      "已解鎖紫音皮膚！",
-      "已解鎖忘川川皮膚！",
-      "已解鎖黎夜竹皮膚！"
+      "強襲武裝：同時操控單兵武裝與天基武器進行戰鬥",
+      "加成：無",
+      "強度：基礎",
+      "獲取條件：默認獲得"
     ]
   },
-  "VUPShionMod:AbstractShionSkin": {
+  "VUPShionMod:BlueGiantShion": {
     "TEXT": [
-      "詠嘆調",
-      "藍巨星",
-      "水世界"
-    ],
-    "EXTRA_TEXT": [
-      "使用浮游炮作戰的紫音來自於Anastasia宇宙 NL 同步了自身的戰力，前來挑戰高塔",
-      "使用浮游炮作戰的紫音來自於Anastasia宇宙 NL 同步了自身的戰力，前來挑戰高塔",
-      "使用浮游炮作戰的紫音來自於Anastasia宇宙 NL 同步了自身的戰力，前來挑戰高塔"
+      "士官禮裝：使用強化的單兵浮游炮裝置",
+      "每回合獲得自動浮游矩陣",
+      "強度：晉升者",
+      "獲取條件：在最終戰鬥中勝利"
     ]
   },
-  "VUPShionMod:AbstractWangChuanSkin": {
+  "VUPShionMod:AquaShion": {
     "TEXT": [
-      "星雲系統",
-      "純白之刃",
-      "水世界"
-    ],
-    "EXTRA_TEXT": [
-      "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟",
-      "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟",
-      "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟"
+      "盛夏水著：短暫激發所有潛能",
+      "戰鬥中可激活超新星",
+      "強度：超越者",
+      "獲取條件：在第三階段或以上失敗2次"
     ]
   },
-  "VUPShionMod:AbstractLiyezhuSkin": {
+  "VUPShionMod:OriWangChuan": {
     "TEXT": [
-      "星雲系統",
-      "純白之刃"
-    ],
-    "EXTRA_TEXT": [
-      "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟",
-      "來自異世界的血族少女 NL 前來調查這座通天之塔的遺蹟"
+      "血族禮服：使用刀與魔法進行戰鬥",
+      "初始擁有序言：魔彈",
+      "強度：基礎",
+      "獲取條件：默認獲得"
     ]
   },
-  "VUPShionMod:SkinPannel": {
+  "VUPShionMod:PurityWangChuan": {
     "TEXT": [
-      "鎖定"
-    ],
-    "EXTRA_TEXT": [
-      "需要擊敗深空孽障解鎖皮膚功能",
-      "皮膚尚未製作完成，敬請期待……"
+      "士官禮裝：集中一點，登峰造極。",
+      "初始擁有拔刀術",
+      "強度：超越者",
+      "獲取條件：在第三階段或以上失敗2次"
+    ]
+  },
+  "VUPShionMod:AquaWangChuan": {
+    "TEXT": [
+      "盛夏水著：以閃現發動連續攻擊",
+      "所有滑步進化為閃現",
+      "強度：晉升者",
+      "獲取條件：在最終戰鬥中勝利"
+    ]
+  },
+  "VUPShionMod:OriLiyezhu": {
+    "TEXT": [
+      "祈神禮裝：神意恩賜，加諸此身",
+      "擁有極強的自愈能力",
+      "強度：基礎",
+      "獲取條件：默認獲得"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {
     "TEXT": [
       "選擇一張牌本回合耗能變為0"
+    ]
+  },
+  "VUPShionMod:SansMeter": {
+    "TEXT": [
+      "San值",
+      "每當你 #y斬殺 敵人時，失去 #b3 點 #ySan值 。每當你 #y休息 時，恢復 #b40 點 #ySan值 並選擇獲得一張 #y祈言 牌。",
+      " NL NL 當 #ySan值 為滿時，每場戰鬥開始時獲得 #b10 點最大生命，否則當 #ySan值 大於 #b50 時，獲得 #b1 點最大生命。",
+      " NL NL 當 #ySan值 少於 #b50 時，每場戰鬥開始時獲得 #b3 層 #y易傷 。 NL #y斬殺 時，失去 #b1 點最大生命。 ",
+      " NL NL 當 #ySan值 少於 #b30 時，每場戰鬥開始時獲得 #b3 層 #y虛弱 。 NL #y斬殺 時，再失去 #b4 點最大生命。獲得 #y罪孽 時，額外獲得 #b1 層。 "
     ]
   }
 }

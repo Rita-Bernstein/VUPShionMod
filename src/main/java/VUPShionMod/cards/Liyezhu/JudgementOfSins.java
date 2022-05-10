@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.RegenPower;
 
 public class JudgementOfSins extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(JudgementOfSins.class.getSimpleName());
@@ -26,6 +27,7 @@ public class JudgementOfSins extends AbstractLiyezhuCard {
         this.isInnate = true;
         this.selfRetain = true;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 4;
 
     }
 
@@ -33,6 +35,7 @@ public class JudgementOfSins extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ChangeStanceAction(JudgeStance.STANCE_ID));
         addToBot(new ApplyPsychicAction(p, this.magicNumber));
+        addToBot(new ApplyPowerAction(p,p,new RegenPower(p,this.secondaryM)));
 
         if (this.upgraded) {
             addToBot(new LoseHPAction(p, p, 25));

@@ -51,7 +51,7 @@ public class Rob extends AbstractShionCard {
                 break;
         }
 
-        addToBot(new RobAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), 20));
+        addToBot(new RobAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.magicNumber));
     }
 
     @Override

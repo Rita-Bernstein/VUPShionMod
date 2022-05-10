@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ChangeCostAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -28,6 +29,7 @@ public class FirstStrike extends AbstractShionCard {
         this.baseDamage = 10;
         this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(CardTags.STRIKE);
+        ExhaustiveVariable.setBaseValue(this,2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

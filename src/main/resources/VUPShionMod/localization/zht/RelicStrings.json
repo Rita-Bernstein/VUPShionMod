@@ -50,14 +50,14 @@
     "NAME": "支援系統：星雲",
     "FLAVOR": "Anastasia通用型支援裝備，裝備了基本的能量護盾和推進裝置。",
     "DESCRIPTIONS": [
-      "每回合開始時獲得獲得 #b3 點 #y格擋 並失去 #b1 點 #y硬直 。"
+      "每回合開始時獲得獲得 #b3 點 #y格擋 並失去 #b3 點 #y硬直 。"
     ]
   },
   "VUPShionMod:Protostar": {
     "NAME": "支援系統：星核",
     "FLAVOR": "在星雲型的基礎上加裝了靈能護盾發生器，並增強了推進器功率。",
     "DESCRIPTIONS": [
-      "每場戰鬥開始時獲得 #b2 層 #y緩衝 和 #y敏捷 。 NL 每回合開始時失去 #b2 點 #y硬直 。"
+      "每場戰鬥開始時獲得 #b2 層 #y緩衝 和 #y敏捷 。 NL 每回合開始時失去 #b3 點 #y硬直 。"
     ]
   },
   "VUPShionMod:TrackingBeacon": {
@@ -88,6 +88,13 @@
       "每當你打出一張 #y攻擊牌 ，獲得 #b2 點 #y劍意 。 每回合結束時失去 #b33% 的 #y劍意 。"
     ]
   },
+  "VUPShionMod:StarBreaker": {
+    "NAME": "魔能刃：星爆",
+    "FLAVOR": "在星震的基礎上升級了能量約束器，大幅降低了魔能耗散",
+    "DESCRIPTIONS": [
+      "每當你打出一張 #y攻擊牌 ，獲得 #b4 點 #y劍意 。 每回合結束時失去 #b15% 的 #y劍意 。"
+    ]
+  },
   "VUPShionMod:BlueSupergiant": {
     "NAME": "特化裝備：藍超巨星",
     "FLAVOR": "在藍巨星的基礎上，提高了核心出力等級",
@@ -96,17 +103,17 @@
     ]
   },
   "VUPShionMod:PureHeart": {
-    "NAME": "試作裝備：白之心",
-    "FLAVOR": "Anastasia特化支援裝備，出力更為強大的魔能太刀，由於功率過大導致難以操縱",
+    "NAME": "超越武裝：白之心",
+    "FLAVOR": "出力極為強大的魔能太刀。擁有斬裂蒼穹的潛力。",
     "DESCRIPTIONS": [
       "每回合失去 [E] 並獲得一張 #y虛無 的 #y突進斬 。每打出一張牌，獲得 #b2 點 #y劍意 。每回合失去 #b50% 的 #y劍意 。"
     ]
   },
   "VUPShionMod:WhitePurity": {
-    "NAME": "試作裝備：純白之心",
+    "NAME": "超越武裝：純白之心",
     "FLAVOR": "在白之心的基礎上升級了能量約束器，降低了魔能耗散",
     "DESCRIPTIONS": [
-      "#r替換試作裝備：白之心。 NL 每回合獲得一張 #y虛無 的 #y突進斬+ 。 NL 每打出一張牌，獲得 #b5 點 #y劍意 。每回合失去 #b33% 的 #y劍意 。"
+      "#r替換超越武裝：白之心。 NL 每回合獲得一張 #y虛無 的 #y突進斬+ 。 NL 每打出一張牌，獲得 #b5 點 #y劍意 。每回合失去 #b33% 的 #y劍意 。"
     ]
   },
   "VUPShionMod:SapphireRoseNecklace": {
@@ -120,14 +127,14 @@
     "NAME": "苦難黑棺",
     "FLAVOR": "陪伴少女一生的武器和信標，其中蘊含著常人無法擔負的重量。",
     "DESCRIPTIONS": [
-      " #y祈言姿態 :每回合結束回復 #b2 點生命，獲得 #b2 層 #y虛弱 。進入 #y審判姿態 時清空 #y虛弱 。獲得 #y自燃 和 #b2 點 #y力量 。"
+      "每場戰鬥開始時進入 #y祈言姿態 。"
     ]
   },
   "VUPShionMod:HallowedCase": {
     "NAME": "沉靈聖棺",
     "FLAVOR": "在更為強大的苦難面前，其散發出真正的光芒。",
     "DESCRIPTIONS": [
-      "#r替換苦難黑棺。 NL #y祈言姿態 :每回合結束獲得 #b2 層 #y再生 和 #y虛弱 。 NL 進入 #y審判姿態 時清空 #y虛弱 ， NL 且之後每回合開始時獲得 #b1 層 #y沉靈 。"
+      "#r替換苦難黑棺。 NL 每場戰鬥開始時進入 #y祈言姿態 。 NL 每回合結束時獲得 #b1 層 #y沉靈 。"
     ]
   },
   "VUPShionMod:TheRipple": {
@@ -142,6 +149,84 @@
     "FLAVOR": "由於收集了本地化數據，規避了空間裝置的使用風險。",
     "DESCRIPTIONS": [
       "#r替換支援系統：水世界（不穩定）。 NL 每場戰鬥開始時獲得 #b3 點 #y敏捷。 NL 每回合開始時獲得 #y脆弱 。"
+    ]
+  },
+  "VUPShionMod:Drapery": {
+    "NAME": "極限武裝：超新星（超負荷）",
+    "FLAVOR": "實驗性過載保護系統，可在短時間內超載所有裝備。不知為何做成了泳裝外形。（由於會抽取大量能量，存在一定風險。）",
+    "DESCRIPTIONS": [
+      "每場戰鬥開始時將 #b2 張 #y暈眩 加入抽牌堆。每回合獲得 #y脆弱 。每場戰鬥一次右鍵觸發： #b超新星爆發 。",
+      " NL NL #b超新星爆發 ： NL 獲得 #b1 層 #y無實體 。 NL 觸發所有 #y浮游炮 回合開始的效果 #b2 次。 NL 隨機強化 #b2 種 #y浮游炮 。 NL 結束你的回合。"
+    ]
+  },
+  "VUPShionMod:Parocheth": {
+    "NAME": "極限武裝：超新星",
+    "FLAVOR": "上加裝了零點能電容，顯著降低了使用者的負擔",
+    "DESCRIPTIONS": [
+      "#r替換極限武裝：超新星（超負荷）。 NL 每場戰鬥一次，右鍵觸發： #b超新星爆發 。",
+      " NL NL #b超新星爆發 ： NL 獲得 #b1 層 #y無實體 。 NL 觸發所有 #y浮游炮 回合開始的效果 #b2 次。 NL 隨機強化 #b2 種 #y浮游炮 。 NL 結束你的回合。"
+    ]
+  },
+  "VUPShionMod:AbyssalCrux": {
+    "NAME": "深淵十字",
+    "FLAVOR": "在她面前站定的人，已不再是她。",
+    "DESCRIPTIONS": [
+      "你無法在休息處 #y休息 。 NL 每當你戰鬥中失去生命時，回復失去量兩倍的生命。",
+      "深淵逆十字",
+      "這是阿碧絲（abyss）最喜歡的軀殼，喜歡到願意讓她保持清醒。\n而代價則是，給予少女周圍的一切以永恆的痛苦。",
+      "你受到的所有傷害變為失去生命。 NL 每回合結束失去 #b500 點生命和最大生命。 NL 每當你失去生命時，對所有敵人造成等量傷害。"
+    ]
+  },
+  "VUPShionMod:Inhibitor": {
+    "NAME": "原型抑制裝備03",
+    "FLAVOR": "在無盡深暗的長廊中，這抹光芒是唯一的起點。",
+    "DESCRIPTIONS": [
+      "每當你失去San值時，減少失去San值 #b1 點。"
+    ]
+  },
+  "VUPShionMod:UnknownDust": {
+    "NAME": "未知塵埃",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      ""
+    ]
+  },
+  "VUPShionMod:FragmentsOfFaith": {
+    "NAME": "信念碎片",
+    "FLAVOR": "逆轉因果，祈願勝利。\n願你抵達真實之境。",
+    "DESCRIPTIONS": [
+      "每場戰鬥結束獲得 #b5 點最大生命。 NL 進入第三階段時，升級為 #y信念光環 。",
+      "信念光環",
+      "聖靈哀歌，已為幻夢。 NL 誓於此世，斬斷輪迴。",
+      "每回合結束回復當前損失的生命值。 NL 回復生命時，對所有敵人造成等量的傷害。 NL 受到攻擊傷害時，獲得 #b3 點最大生命。"
+    ]
+  },
+  "VUPShionMod:WaveSlasher": {
+    "NAME": "魔能刃：斬浪",
+    "FLAVOR": "利用空間滑流進行加速的魔能太刀",
+    "DESCRIPTIONS": [
+      "每打出一張 #y技能牌 失去 #b1 點 #y硬直 。 NL 每回合打出的第一張 #y攻擊牌 耗能變為 #b0 。 NL 每回合失去 #b50% 的 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:WaveBreaker": {
+    "NAME": "魔能刃：斷浪",
+    "FLAVOR": "在斬浪的基礎上升級了加裝了亞空間穩定器",
+    "DESCRIPTIONS": [
+      "每打出一張 #y技能牌 失去 #b2 點 #y硬直 。 NL 每回合打出的第一張 #y攻擊牌 耗能變為 #b0 。 NL 每回合失去 #b15% 的 #y劍意 。"
+    ]
+  },
+  "VUPShionMod:WhiteRose": {
+    "NAME": "支援系統：白薔薇",
+    "FLAVOR": "Anastasia通用型支援裝備，裝備了輔助分析模塊以應對威脅",
+    "DESCRIPTIONS": [
+      "受到 #y攻擊 傷害時，獲得 #b1 層 #y多層護甲 。"
+    ]
+  },
+  "VUPShionMod:PurityWhiteRose": {
+    "NAME": "支援系統：湛白薔薇",
+    "FLAVOR": "加裝了強人工智慧模塊，增強了動態分析能力",
+    "DESCRIPTIONS": [
+      "#r替換支援系統：白薔薇。 NL 受到 #y攻擊 傷害時，獲得 #b2 層 #y多層護甲 。"
     ]
   }
 }

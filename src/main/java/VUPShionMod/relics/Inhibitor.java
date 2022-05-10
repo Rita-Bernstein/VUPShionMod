@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.ui.campfire.RestOption;
 
 public class Inhibitor extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(Inhibitor.class.getSimpleName());
-    public static final String IMG_PATH = "img/relics/AbyssalCrux.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/AbyssalCrux.png";
+    public static final String IMG_PATH = "img/relics/Inhibitor.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/Inhibitor.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 

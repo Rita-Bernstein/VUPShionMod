@@ -18,7 +18,7 @@
   "VUPShionMod:SpireHeart_Liyezhu": {
     "NAME": "Spire Heart",
     "DESCRIPTIONS": [
-      "NL 感受着喜悦的鼓动，你维持着最后一丝理智念诵祈言……"
+      "NL To the ecstatic pulse, you hold the last trace of sanity to say the prayer..."
     ],
     "OPTIONS": [
     ]
@@ -29,7 +29,7 @@
       "Something resembling a dragon's horn catches your attention. NL No...no dragon's horn, upon closer inspection it is a croissant on the floors.",
       "Just when you pick it up, you hear a voice laughing “Fus Roh Dah！” full of playful implication. Before you could think, you are carried away by a sudden thrust of wind and lose consciousness...",
       "You just obtained a croissant to replenish energy and serve as food reserve. (It has a name #yCloyce written on it. Seems you may have left someone hungry, much probably...)",
-      "You are more of a rice person who hates the crumbs you may left about while eating breads, so goodbye."
+      "You are more of a rice person who hates the crumbs you may leave about while eating breads, so goodbye."
     ],
     "OPTIONS": [
       "[Pick It Up] #r25%: Lose 15 HP, #g75%: Obtain Croissant.",
@@ -80,7 +80,7 @@
     ]
   },
    "VUPShionMod:Contact": {
-    "NAME": "",
+    "NAME": "Unexpected Contact",
     "DESCRIPTIONS": [
       "As you are about to depart, a message come to you.",
       "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence."
@@ -104,7 +104,7 @@
     "OPTIONS": [
       "[Camp] #gGain 10 Max HP.",
       "[View Underwater] #gObtain 1 Sever Current.",
-      "[To the Mid-lake] #rRemove all Slide and Multi Slide, #gObatin 3 Moonstrider.",
+      "[To the Mid-lake] #rRemove all Slide and Multislide, #gObatin 3 Moonstrider.",
       "[Locked] Slide or Multi Slide is required.",
       "[Leave]"
     ]
@@ -140,6 +140,60 @@
       "[I am Resolved] #gObtain Ruby Key.",
       "[I am Empowered] #gObatin Sapphire Rose Necklace.",
       "[Piece Together] #gIntegrate the shards of memory, gain 10 Sanity.",
+      "[Leave]"
+    ]
+  },
+  "VUPShionMod:MentalBreakdown": {
+    "NAME": "Mental Breakdown",
+    "DESCRIPTIONS": [
+      "“Bang...bang...bang...” NL Under a tall, looming dome that seems to hem you in, a sudden bump develops and shoots through your mind, and it is growing to full stretch to your groan... NL Frost starts to permeate the chest as your find its implication of an awakening existence... she who was rejected and frozen long ago.",
+      "You acquiesce in her attempt to wake up...  NL Soberness follows a trance. The bump is gone, nothing is agitating any longer, and memories are dead. NL “Why...bother...to reject...her? And...who am...I?” NL “You are the abyss, my precious container.” NL The strings of sanity snap to her gentle voice.",
+      "You destroy your sigil to stop her advent... NL “No, no way...Shut up! You!” NL Your mind is boiling, almost vaporized by the relentless whispering instigations...But those are not enough to force you out of her way. NL You raise you sword, point the tip against your chest...",
+      "You suppress her awakening... NL “————” NL In the vortex of spiritual unrest, you murmur, you whisper prayer, you bear the anguish. NL All of a sudden, a shaft of light filters through, the chaos and agitation is cleansed at touch... NL She is asleep again, so that you may stagger on with your weak body."
+    ],
+    "OPTIONS": [
+      "[Acquiesce] #rLose all Sanity. #gObtain Abyssal Crux.",
+      "[Destroy the Sigil] #rRemove all Prayer cards. #gObtain Calamity.",
+      "[Suppress] #rRemove a random power card, lose 20 Max HP. #gGain 50 Sanity.",
+      "[Leave]"
+    ]
+  },
+  "VUPShionMod:DistantMemory": {
+    "NAME": "Distant Memory",
+    "DESCRIPTIONS": [
+      "A fragment of memory emerges from the bottom... NL ——“Apart from other modifications, you now have this, in case you lose control again.” Shion said as she pointed the ring-shaped...object around your ankle. NL ——“Inhibitor Prototype 03, my own creation, and the name, too. It can help you to chill out should any abnormal fluctuation of your emotion is detected...Or more likely, it compels...?” NL ——“Sounds great. But why anklets?” NL ——“Well...a part of my...sick interest?”Shion laughed. “It is sick.” You murmured, eyes averted to the empty hall “You fool...You don't need to do this to keep me at your side.”",
+      "You drop your head, soothed by the aureole dancing on your ankle, and the light emenating from it.",
+      "You stretch out your hand, but the aureole is giving nothing. “Just now, please...something to keep me going...”"
+    ],
+    "OPTIONS": [
+      "[Activate Program] #gObtain Inhibitor Prototype 03.",
+      "[Modify Program] #gReplace starter relic as Hallowed Case.",
+      "[Leave]"
+    ]
+  },
+  "VUPShionMod:Prophesy": {
+    "NAME": "Omens of Unknown",
+    "DESCRIPTIONS": [
+      "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
+      "You have seen it once, and you know where the target is."
+    ],
+    "OPTIONS": [
+      "[Proceed] ...",
+      "[Engage!] Battle Ahead. #gObtain Unknown Dust.",
+      "The body is too exhausted to go on...",
+      "[Locked] Further Update Awaits."
+    ]
+  },
+  "VUPShionMod:VacuumRipples": {
+    "NAME": "Ripples of Vacuum",
+    "DESCRIPTIONS": [
+      "The magia circulates, the vacuum ripples. You can sense that sea of energy on the other side of the timeline...",
+      "You have seen it once, and you know where the target is."
+    ],
+    "OPTIONS": [
+      "[Commune] #gObtain Anima Virtutis.",
+      "[Strengthen] #gGain 20 Max HP.",
+      "[Locked] At least 3 Magiam Obruor cards are required.",
       "[Leave]"
     ]
   }

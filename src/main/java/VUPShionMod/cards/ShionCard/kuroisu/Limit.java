@@ -3,6 +3,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -24,9 +25,10 @@ public class Limit extends AbstractShionKuroisuCard {
     public Limit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.baseDamage = 9;
+        this.baseDamage = 12;
 
         this.isMultiDamage = true;
+        ExhaustiveVariable.setBaseValue(this,2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -55,8 +57,7 @@ public class Limit extends AbstractShionKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(3);
-
+            upgradeBaseCost(0);
         }
     }
 }

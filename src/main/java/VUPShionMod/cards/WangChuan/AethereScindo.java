@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
@@ -49,8 +50,8 @@ public class AethereScindo extends AbstractWCCard {
         initializeDescription();
 
         addToBot(new DrawCardAction(1));
-        if(StiffnessPower.applyStiffness())
-        addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+
+        addToBot(new ApplyStiffnessAction(3));
     }
 
 

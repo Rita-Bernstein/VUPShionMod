@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
@@ -56,8 +57,7 @@ public class VertexGladii extends AbstractWCCard {
             addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, timesUpgraded >= 2 ? 8 : 5)));
 
 
-        if (StiffnessPower.applyStiffness())
-            addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, 3)));
+        addToBot(new ApplyStiffnessAction(3));
 
         addToBot(new DrawCardAction(2));
 

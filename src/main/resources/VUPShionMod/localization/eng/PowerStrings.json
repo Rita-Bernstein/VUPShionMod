@@ -494,7 +494,7 @@
     ]
   },
   "VUPShionMod:AntisequencerPower": {
-    "NAME": "Anyisequencer",
+    "NAME": "Antisequencer",
     "DESCRIPTIONS": [
       "At the start of your turn, play the top #b%d cards in your draw pile.",
       "At the start of your turn, play the top #b%d cards in your draw pile."
@@ -503,13 +503,13 @@
   "VUPShionMod:NihilImmensumPower": {
     "NAME": "Nihil Immensum",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Gained #b%d times.)"
+      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Have gained #b%d times.)"
     ]
   },
   "VUPShionMod:NihilImmensum2Power": {
     "NAME": "Nihil Immensum+",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Gained #b%d times.)"
+      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Have gained #b%d times.)"
     ]
   },
   "VUPShionMod:OculusMortisPower": {
@@ -525,10 +525,134 @@
     ]
   },
   "VUPShionMod:FlawlessParryPower": {
-    "NAME": "Flawless Parry",
+    "NAME": "Parry",
     "DESCRIPTIONS": [
       "Prevent the next time you would lose HP.",
       "Prevent the next #b%d times you would lose HP."
+    ]
+  },
+  "VUPShionMod:PsychicPower": {
+    "NAME": "Psychic",
+    "DESCRIPTIONS": [
+      "Some cards cost #yPsychic to activate additional effects."
+    ]
+  },
+  "VUPShionMod:SinPower": {
+    "NAME": "Sinful",
+    "DESCRIPTIONS": [
+      "Marker that activates some particular effects."
+    ]
+  },
+  "VUPShionMod:LoseHPPower": {
+  "NAME": "Lose HP",
+  "DESCRIPTIONS": [
+    "At the start of your turn, lose #b%d HP."
+  ]
+},
+  "VUPShionMod:DoubleDamageReceivePower": {
+    "NAME": "Receive Double Damage",
+    "DESCRIPTIONS": [
+      "Damage receive is doubled this turn.",
+      "Damage receive is doubled for #b%d turns."
+    ]
+  },
+  "VUPShionMod:ChasteReflectionPower": {
+    "NAME": "Chaste Reflection",
+    "DESCRIPTIONS": [
+      "At the start of next turn, deal damage equal to that received this turn to ALL enemies. (deal #b%d damage.)",
+      "At the start of next #b%d turns, deal damage equal to that received this turn to ALL enemies. (deal #b%d damage.)"
+    ]
+  },
+  "VUPShionMod:CalamityPower": {
+    "NAME": "Calamitously Sinful",
+    "DESCRIPTIONS": [
+      "At the the start of your turn, apply #b%d #ySinful to ALL ENTITIES."
+    ]
+  },
+  "VUPShionMod:Calamity2Power": {
+    "NAME": "Clamitously Enfeebled",
+    "DESCRIPTIONS": [
+      "At the the start of your turn, ALL enemies lose Strength equal to their #ySinful."
+    ]
+  },
+  "VUPShionMod:HallowedCasketPower": {
+    "NAME": "Hallowed Casket",
+    "DESCRIPTIONS": [
+      "At the end of your turn, add #b%d #yMiracle into your hand and gain #b%d #yPsychic."
+    ]
+  },
+  "VUPShionMod:EnsanguinedFigurePower": {
+    "NAME": "Ensanguined Figure",
+    "DESCRIPTIONS": [
+      "Whenever you receive damage, apply #b%d #ySinful to the attacker."
+    ]
+  },
+  "VUPShionMod:CrimsonDelugePower": {
+    "NAME": "Crimson Deluge",
+    "DESCRIPTIONS": [
+      "HP regen beyond Max HP is converted into #yShield."
+    ]
+  },
+  "VUPShionMod:AsceticismPower": {
+    "NAME": "Ecstasy of Asceticism",
+    "DESCRIPTIONS": [
+      "Every time you lose HP, gain #b%d [E] ."
+    ]
+  },
+  "VUPShionMod:Asceticism2Power": {
+    "NAME": "Frenzy of Asceticism",
+    "DESCRIPTIONS": [
+      "Every #b2 times you lose HP, draw #b%d cards."
+    ]
+  },
+  "VUPShionMod:TranscendSoulPower": {
+    "NAME": "Mend Soul",
+    "DESCRIPTIONS": [
+      "At the end of your turn, heal HP #b%d times of #yPsychic."
+    ]
+  },
+  "VUPShionMod:TranscendSoul2Power": {
+    "NAME": "Scorch Soul",
+    "DESCRIPTIONS": [
+      "t the end of your turn, deal damage #b%d times of #yPsychic to ALL enemies."
+    ]
+  },
+  "VUPShionMod:ArbitrationPower": {
+    "NAME": "Arbitratus",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked damage, apply #b%d #ySinful."
+    ]
+  },
+  "VUPShionMod:Arbitration2Power": {
+    "NAME": "Arbitratus Omnes",
+    "DESCRIPTIONS": [
+      "Whenever you trigger #yPunitive, apply #b%d #ySinful to ALL ENTITIES."
+    ]
+  },
+  "VUPShionMod:ProphecyOfDestructionPower": {
+    "NAME": "Prophecy of Demise",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yPrayer effect, deal #b%d damage to a random enemy."
+    ]
+  },
+  "VUPShionMod:ProphecyOfSalvationPower": {
+    "NAME": "Prophecy of Salvation",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yPrayer effect, heal #b%d HP."
+    ]
+  },
+  "VUPShionMod:BrokenSanctuaryPower": {
+    "NAME": "Broken Sanctuary",
+    "DESCRIPTIONS": [
+      "This turn, #yPrayer cards cost 0.",
+      "In #b%d turns, #yPrayer cards cost 0."
+    ]
+  },
+  "VUPShionMod:PrecastingPower": {
+    "NAME": "Precasting",
+    "DESCRIPTIONS": [
+      "Your next #yPrayer takes effect all at once immediately.",
+      "Your next #b%d #yPrayers take effect all at once immediately."
     ]
   }
 }

@@ -46,7 +46,6 @@ public class HallowedCase extends AbstractShionRelic {
                 .ifPresent(index -> instantObtain(player, index, true));
 
         (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.25F;
-        AbstractDungeon.player.energy.energyMaster++;
     }
 
     @Override

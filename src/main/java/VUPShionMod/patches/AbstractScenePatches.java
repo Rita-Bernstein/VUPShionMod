@@ -58,7 +58,7 @@ public class AbstractScenePatches {
                 sb.setColor(Color.WHITE);
                 sb.setBlendFunction(770, 771);
                 sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
+                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
                         campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
                         scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
                 return SpireReturn.Return();
@@ -99,7 +99,7 @@ public class AbstractScenePatches {
                 sb.setColor(Color.WHITE);
                 sb.setBlendFunction(770, 771);
                 sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
+                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
                         campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
                         scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
                 return SpireReturn.Return();
@@ -139,7 +139,7 @@ public class AbstractScenePatches {
                 sb.setColor(Color.WHITE);
                 sb.setBlendFunction(770, 771);
                 sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
+                        Settings.HEIGHT / 2.0f- campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
                         campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
                         scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
                 return SpireReturn.Return();
@@ -180,7 +180,7 @@ public class AbstractScenePatches {
                 sb.setColor(Color.WHITE);
                 sb.setBlendFunction(770, 771);
                 sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
+                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
                         campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
                         scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
                 return SpireReturn.Return();

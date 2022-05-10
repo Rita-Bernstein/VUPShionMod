@@ -48,12 +48,12 @@ public class PlagaAMundoMinion extends CustomMonster {
             this.damage.add(new DamageInfo(this, 10));
             this.damage.add(new DamageInfo(this, 11));
             this.damage.add(new DamageInfo(this, 12));
-            this.damage.add(new DamageInfo(this, 300));
+            this.damage.add(new DamageInfo(this, 233));
         } else {
             this.damage.add(new DamageInfo(this, 10));
             this.damage.add(new DamageInfo(this, 11));
             this.damage.add(new DamageInfo(this, 12));
-            this.damage.add(new DamageInfo(this, 300));
+            this.damage.add(new DamageInfo(this, 233));
         }
 
 //        if (AbstractDungeon.ascensionLevel >= 4)

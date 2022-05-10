@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -43,8 +44,7 @@ public class OnrushingTip extends AbstractWCCard {
         initializeDescription();
 
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 6)));
-        if(StiffnessPower.applyStiffness())
-        addToBot(new ApplyPowerAction(p, p, new StiffnessPower(p, this.secondaryM)));
+        addToBot(new ApplyStiffnessAction(this.secondaryM));
     }
 
 

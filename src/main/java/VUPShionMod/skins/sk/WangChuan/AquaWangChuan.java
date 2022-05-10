@@ -37,18 +37,16 @@ public class AquaWangChuan extends AbstractSkin {
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
-        info.relics.add(Nebula.ID);
-        info.relics.add(WaveSlasher.ID);
         info.relics.add(TheRipple.ID);
+        info.relics.add(WaveSlasher.ID);
         return info;
     }
 
     @Override
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Nebula.ID);
-        retVal.add(WaveSlasher.ID);
         retVal.add(TheRipple.ID);
+        retVal.add(WaveSlasher.ID);
         return retVal;
     }
 

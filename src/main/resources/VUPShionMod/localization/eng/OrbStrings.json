@@ -16,5 +16,97 @@
     "DESCRIPTION": [
       "Current Upgrade: #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued."
     ]
+  },
+
+  "VUPShionMod:AbstractTurnIcon": {
+    "DESCRIPTION": [
+      "在 #b%d 个回合开始时触发的祈祷效果:",
+      "在 #b%d 个回合开始时触发的祈祷效果:"
+    ],
+    "NAME": "Prayer"
+  },
+  "VUPShionMod:RegenPrayer": {
+    "DESCRIPTION": [
+      "Gain #b%d #yRegen ."
+    ],
+    "NAME": "Regen"
+  },
+  "VUPShionMod:LoseStrengthPrayer": {
+    "DESCRIPTION": [
+      "All enemies lose #b%d #yStrength."
+    ],
+    "NAME": "Shackled"
+  },
+  "VUPShionMod:ArtifactPrayer": {
+    "DESCRIPTION": [
+      "Gain #b%d #yArtifact."
+    ],
+    "NAME": "Artifact"
+  },
+  "VUPShionMod:StrengthPrayer": {
+    "DESCRIPTION": [
+      "Gain #b%d #yStrength."
+    ],
+    "NAME": "Strength"
+  },
+  "VUPShionMod:MiraclePrayer": {
+    "DESCRIPTION": [
+      "Add #b%d #yMiracle to your hand."
+    ],
+    "NAME": "Miracle"
+  },
+  "VUPShionMod:MiracleUpgradePrayer": {
+    "DESCRIPTION": [
+      "Add #b%d #yMiracle+ to your hand."
+    ],
+    "NAME": "Miracle+"
+  },
+  "VUPShionMod:ThornsPrayer": {
+    "DESCRIPTION": [
+      "Gain #b%d #yTemporary #yThorns."
+    ],
+    "NAME": "Thorns"
+  },
+  "VUPShionMod:VampirePrayer": {
+    "DESCRIPTION": [
+      "Deal #b%d damage to All enemies.Heal HP equal to unblocked damage."
+    ],
+    "NAME": "Reaper"
+  },
+  "VUPShionMod:SelfSinPrayer": {
+    "DESCRIPTION": [
+      "Gain #b%d #ySin."
+    ],
+    "NAME": "SelfSin"
+  },
+  "VUPShionMod:LoseHPPrayer": {
+    "DESCRIPTION": [
+      " #yALL #yENTITIES lose #b%d HP。"
+    ],
+    "NAME": "Lose HP"
+  },
+  "VUPShionMod:AvariciousPrayer": {
+    "DESCRIPTION": [
+      "Random enemy a lose #b%d HP and apply #ySin and #yStrength."
+    ],
+    "NAME": "Avaricious"
+  },
+  "VUPShionMod:SinPrayer": {
+    "DESCRIPTION": [
+      " #yALL #yENTITIES gain #b%d #ySin."
+    ],
+    "NAME": "Sin"
+  },
+  "VUPShionMod:ThieveryPrayer": {
+    "DESCRIPTION": [
+      "Gain Gold equals #b%d times of number of enemies."
+    ],
+    "NAME": "Thievery"
+  },
+  "VUPShionMod:HealPrayer": {
+    "DESCRIPTION": [
+      "Heal #b%d HP."
+    ],
+    "NAME": "Heal"
   }
 }

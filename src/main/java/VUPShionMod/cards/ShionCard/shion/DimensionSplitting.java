@@ -30,6 +30,7 @@ public class DimensionSplitting extends AbstractShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.baseMagicNumber = 8;
+        this.selfRetain  =true;
     }
 
     @Override

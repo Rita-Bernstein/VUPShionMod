@@ -92,9 +92,15 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if (duration == 0.8F)
+        if(this.finFunnels.isEmpty()){
+            this.isDone = true;
+            return;
+        }
+
+        if (duration == 0.8F) {
             for (AbstractFinFunnel f : finFunnels)
-                ((Shion) p).playFinFunnelAnimation(f.id);
+                f.playFinFunnelAnimation(f.id);
+        }
 
 
         if (this.duration < this.startingDuration) {
@@ -126,23 +132,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
                     if (m.lastDamageTaken > 0 && isGainBlock) {
                         addToBot(new GainBlockAction(p, (int) Math.floor(m.lastDamageTaken)));
                     }
-
-                    if (finFunnel instanceof PursuitFinFunnel && !m.isDeadOrEscaped()) {
-                        addToBot(new ApplyPowerAction(m, p, new PursuitPower(m, finFunnel.getFinalEffect())));
-                    }
-
-                    if (finFunnel instanceof GravityFinFunnel) {
-                        if (p.hasPower(GravitoniumPower.POWER_ID))
-                            addToBot(new GainShieldAction(p, finFunnel.getFinalEffect(), true));
-                        else
-                            addToBot(new GainBlockAction(p, finFunnel.getFinalEffect(), true));
-                    }
-
-                    if (finFunnel instanceof InvestigationFinFunnel && !m.isDeadOrEscaped()) {
-                        if (isApplyBleeding)
-                            addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, 4)));
-                        addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, finFunnel.getFinalEffect())));
-                    }
+                    finFunnel.powerToApply(m);
 
                     CardCrawlGame.sound.play("ATTACK_FIRE");
                     CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT", 0.5f);

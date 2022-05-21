@@ -110,11 +110,11 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
         AbstractDungeon.player.energy.energyMaster++;
         AbstractDungeon.player.energy.energy++;
 
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
-            for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
+        if(!AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList.isEmpty())
+            for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList) {
                 f.upgradeLevel(9);
             }
-        }
+
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AttackOrderSpecialPower(AbstractDungeon.player)));
         addToBot(new GainEnergyAction(1));
         this.img = UPGRADE_IMG;

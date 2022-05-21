@@ -33,14 +33,21 @@ public class ReadAction extends AbstractGameAction {
                 this.isDone = true;
                 return;
             }
-            if (this.player.exhaustPile.size() <= this.numberOfCards) {
-                ArrayList<AbstractCard> cardsToCopy = new ArrayList<AbstractCard>();
-                for (AbstractCard c : this.player.exhaustPile.group) {
-                    if (c.hasTag(CardTagsEnum.LOADED))
-                        cardsToCopy.add(c);
-                }
+
+            ArrayList<AbstractCard> cardsToCopy = new ArrayList<AbstractCard>();
+            for (AbstractCard c : this.player.exhaustPile.group) {
+                if (c.hasTag(CardTagsEnum.LOADED))
+                    cardsToCopy.add(c);
+            }
+
+            if(cardsToCopy.isEmpty()) {
+                this.isDone = true;
+                return;
+            }
+
+            if (cardsToCopy.size() <= this.numberOfCards) {
                 for (AbstractCard c : cardsToCopy) {
-                    addToTop(new MakeLoadedCardAction(c.makeStatEquivalentCopy()));
+                    addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
                 }
 
                 this.isDone = true;
@@ -49,7 +56,7 @@ public class ReadAction extends AbstractGameAction {
 
 
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (AbstractCard c : this.player.exhaustPile.group) {
+            for (AbstractCard c : cardsToCopy) {
                 if (c.hasTag(CardTagsEnum.LOADED))
                     temp.addToTop(c);
             }
@@ -66,7 +73,7 @@ public class ReadAction extends AbstractGameAction {
         }
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-                addToTop(new MakeLoadedCardAction(c.makeStatEquivalentCopy()));
+                addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
             }
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

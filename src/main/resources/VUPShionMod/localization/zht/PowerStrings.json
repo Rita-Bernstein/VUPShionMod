@@ -36,6 +36,14 @@
       "任務完成！"
     ]
   },
+  "VUPShionMod:DissectingFinFunnelUpgradePower": {
+    "NAME": "解析浮游炮升級計劃",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 張帶有 #y浮游炮 詞條的牌，將 #y解析浮游炮 的強化等級提升 #b1 。",
+      "任務完成！"
+    ]
+  },
   "VUPShionMod:DeploymentOfDefenseSystemPower": {
     "NAME": "防禦系統全展開",
     "DESCRIPTIONS": [
@@ -484,7 +492,7 @@
   "VUPShionMod:GravitaterPower": {
     "NAME": "重力迴路",
     "DESCRIPTIONS": [
-      "獲得 #y魔能過載 時，獲得 b%d 點 #y格擋 。"
+      "獲得 #y魔能過載 時，獲得 #b%d 點 #y格擋 。"
     ]
   },
   "VUPShionMod:SuperloaderPower": {
@@ -510,6 +518,12 @@
     "NAME": "偽·無量空處+",
     "DESCRIPTIONS": [
       "每獲得 #b%d 次 #y魔能過載，獲得 #b%d 層 #y無實體 。(已獲得過 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:ImmuneDamagePower": {
+    "NAME": "咫尺天涯",
+    "DESCRIPTIONS": [
+      "本回合受到的傷害為 #b0 。"
     ]
   },
   "VUPShionMod:OculusMortisPower": {
@@ -653,6 +667,36 @@
     "DESCRIPTIONS": [
       "你的下一個 #y祈言 將直接獲得全部效果。",
       "你的下 #b%d 個 #y祈言 將直接獲得全部效果。"
+    ]
+  },
+  "VUPShionMod:StructureDissectionPower": {
+    "NAME": "構造解析",
+    "DESCRIPTIONS": [
+      "達到層數時觸發效果：",
+      " NL #b%d :給予 #b5 層 #y易傷 。",
+      " NL #b%d :給予 #b5 層 #y虛弱 。",
+      " NL #b%d :本回合失去 #b9 點 #y力量 。",
+      " NL #b%d :給予 #y緩慢 。",
+      " NL #b%d :失去 #b1 點 #y力量 。",
+      " NL #b%d :失去 #b2 點 #y力量 。",
+      " NL #b%d :受到 #b10%% 最大生命的傷害。",
+      " NL #b%d :失去 #b5%% 最大生命。",
+      " NL #b%d :失去 #b5%% 最大生命。",
+      " NL #b%d :給予 #b99 層 易傷 。",
+      " NL #b%d :擊暈並失去本效果。"
+    ]
+  },
+  "VUPShionMod:ReinsOfWarPower": {
+    "NAME": "戰場操控",
+    "DESCRIPTIONS": [
+      "每回合開始時，根據你的 #y解析浮游炮 等級獲得效果：",
+      " NL #b1-3 :給予 #b1 點 #y敏捷 。",
+      " NL #b4-5 :給予 #b1 點 #y力量 和 #y敏捷 。",
+      " NL #b6-10 :給予 #b2 點 #y力量 和 #y敏捷 。",
+      " NL #b11-15 :給予 #b3 點 #y力量 、 #y敏捷 和 #y超維連結 。",
+      " NL #b16-20 :給予 #b4 點 #y力量 、 #y超維連結 和 [E] 。",
+      " NL #b21-25 :給予 #b5 點 #y力量 、 #y超維連結 和 [E] 。",
+      " NL #b26及以上 :給予 #b5 點 #y力量 、 #y超維連結 和 [E] [E] 。"
     ]
   }
 }

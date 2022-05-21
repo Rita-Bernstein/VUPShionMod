@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TranquilPrayer extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(TranquilPrayer.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/TranquilPrayer.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/AnnihilatingChoir.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -26,6 +26,8 @@ public class TranquilPrayer extends AbstractLiyezhuCard {
         this.exhaust = true;
         this.cardsToPreview = new EdgeOfSquall();
         this.tags.add(CardTagsEnum.Prayer_CARD);
+
+        loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/TranquilPrayer.png");
     }
 
     @Override

@@ -23,8 +23,9 @@ public class Lure extends AbstractShionMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(!AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList.isEmpty())
         for (AbstractMonster mo : (AbstractDungeon.getMonsters()).monsters)
-            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
+            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList) {
                 if (!mo.isDeadOrEscaped())
                     funnel.onPursuitEnemy(mo,this.magicNumber);
             }

@@ -23,7 +23,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
     public CruciformPenance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 21;
-        this.magicNumber = this.baseMagicNumber = 6;
+        this.magicNumber = this.baseMagicNumber = 10;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(5);
         }
     }
 }

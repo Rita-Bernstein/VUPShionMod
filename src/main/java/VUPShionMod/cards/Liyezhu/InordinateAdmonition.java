@@ -22,12 +22,14 @@ public class InordinateAdmonition extends AbstractLiyezhuCard {
 
     public InordinateAdmonition() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 3;
+        this.baseDamage = 6;
         this.isMultiDamage = true;
         this.secondaryM = this.baseSecondaryM = 2;
         this.exhaust = true;
         this.cardsToPreview = new ChasteReflection();
         this.tags.add(CardTagsEnum.Prayer_CARD);
+
+        loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/InordinateAdmonition.png");
     }
 
     @Override
@@ -57,7 +59,7 @@ public class InordinateAdmonition extends AbstractLiyezhuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
-            upgradeDamage(1);
+            upgradeDamage(4);
         }
     }
 }

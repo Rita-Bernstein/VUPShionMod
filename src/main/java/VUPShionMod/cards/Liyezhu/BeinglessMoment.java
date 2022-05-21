@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BeinglessMoment extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(BeinglessMoment.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/BeinglessMoment.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -22,7 +22,7 @@ public class BeinglessMoment extends AbstractLiyezhuCard {
     public BeinglessMoment() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 6;
-        this.baseBlock = 15;
+        this.baseBlock = 30;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class BeinglessMoment extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(10);
+            upgradeBlock(20);
         }
     }
 }

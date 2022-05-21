@@ -14,7 +14,13 @@
   "VUPShionMod:PursuitFinFunnel": {
     "NAME": "追擊浮游炮",
     "DESCRIPTION": [
-      "當前強化等級： #b%d 。 NL #y主動： 造成傷害，如果造成了未被格擋的傷害，觸發被動效果。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害。如果造成了未被格擋的傷害，觸發被動效果。 NL #y被動： 給予 #b%d 層 #y追擊 。 NL （除 #y初始等級 外，每 #b2 級提升被動效果。）"
+      "當前強化等級： #b%d 。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害並觸發被動效果。 NL #y被動： 給予 #b%d 層 #y追擊 。 NL （除 #y初始等級 外，每 #b2 級提升被動效果。）"
+    ]
+  },
+  "VUPShionMod:DissectingFinFunnel": {
+    "NAME": "解析浮游炮",
+    "DESCRIPTION": [
+      "當前強化等級： #b%d 。 NL 每場戰鬥開始時獲得 #y戰場操控 。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害並觸發被動效果。 NL #y被動： 給予 #b%d 層 #y構造解析 。 NL （除 #y初始等級 外，每 #b2 級提升被動效果。）"
     ]
   },
   "VUPShionMod:AbstractTurnIcon": {
@@ -101,5 +107,11 @@
       "獲得敵人數量 #b%d 倍的 #y金幣 。"
     ],
     "NAME": "竊奪"
+  },
+  "VUPShionMod:HealPrayer": {
+    "DESCRIPTION": [
+      "回復 #b%d 點生命。"
+    ],
+    "NAME": "回復"
   }
 }

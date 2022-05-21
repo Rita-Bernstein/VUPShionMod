@@ -85,7 +85,8 @@ public class VUPShionMod implements
     public static int gravityFinFunnelLevel = 1;
     public static int investigationFinFunnelLevel = 1;
     public static int pursuitFinFunnelLevel = 1;
-    public static int activeFinFunnel = 1;
+    public static int dissectingFinFunnelLevel = 1;
+    public static String activeFinFunnel = "GravityFinFunnel";
 
     public static List<CustomCard> an_Cards = new ArrayList<>();
     public static List<CustomCard> ku_Cards = new ArrayList<>();
@@ -151,15 +152,15 @@ public class VUPShionMod implements
 
         BaseMod.addColor(CardColorEnum.Liyezhu_LIME,
                 Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color,
-                assetPath("img/cardui/WangChuan/512/bg_attack_lime.png"),
-                assetPath("img/cardui/WangChuan/512/bg_skill_lime.png"),
-                assetPath("img/cardui/WangChuan/512/bg_power_lime.png"),
-                assetPath("img/cardui/WangChuan/512/card_lime_orb.png"),
-                assetPath("img/cardui/WangChuan/1024/bg_attack_lime.png"),
-                assetPath("img/cardui/WangChuan/1024/bg_skill_lime.png"),
-                assetPath("img/cardui/WangChuan/1024/bg_power_lime.png"),
+                assetPath("img/cardui/Liyezhu/512/bg_attack_lime.png"),
+                assetPath("img/cardui/Liyezhu/512/bg_skill_lime.png"),
+                assetPath("img/cardui/Liyezhu/512/bg_power_lime.png"),
+                assetPath("img/cardui/Liyezhu/512/card_lime_orb.png"),
+                assetPath("img/cardui/Liyezhu/1024/bg_attack_lime.png"),
+                assetPath("img/cardui/Liyezhu/1024/bg_skill_lime.png"),
+                assetPath("img/cardui/Liyezhu/1024/bg_power_lime.png"),
                 assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
-                assetPath("img/cardui/WangChuan/512/card_lime_small_orb.png"));
+                assetPath("img/cardui/Liyezhu/512/card_lime_small_orb.png"));
     }
 
     public static String makeID(String id) {
@@ -288,7 +289,8 @@ public class VUPShionMod implements
             config.setInt("gravityFinFunnelLevel", gravityFinFunnelLevel);
             config.setInt("investigationFinFunnelLevel", investigationFinFunnelLevel);
             config.setInt("pursuitFinFunnelLevel", pursuitFinFunnelLevel);
-            config.setInt("activeFinFunnel", activeFinFunnel);
+            config.setInt("dissectingFinFunnelLevel", dissectingFinFunnelLevel);
+            config.setString("activeFinFunnel", activeFinFunnel);
             config.save();
         } catch (Exception e) {
             e.printStackTrace();
@@ -302,7 +304,11 @@ public class VUPShionMod implements
             gravityFinFunnelLevel = config.getInt("gravityFinFunnelLevel");
             investigationFinFunnelLevel = config.getInt("investigationFinFunnelLevel");
             pursuitFinFunnelLevel = config.getInt("pursuitFinFunnelLevel");
-            activeFinFunnel = config.getInt("activeFinFunnel");
+            dissectingFinFunnelLevel = config.getInt("dissectingFinFunnelLevel");
+            String tmp = config.getString("activeFinFunnel");
+
+            if(tmp.length()>3)
+                activeFinFunnel = tmp;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -466,7 +472,8 @@ public class VUPShionMod implements
             gravityFinFunnelLevel = 1;
             investigationFinFunnelLevel = 1;
             pursuitFinFunnelLevel = 1;
-            activeFinFunnel = 1;
+            dissectingFinFunnelLevel = 1;
+            activeFinFunnel = "GravityFinFunnel";
             saveFinFunnels();
 
             fightSpecialBoss = false;
@@ -627,6 +634,7 @@ public class VUPShionMod implements
         cards.add(new InvestigationFinFunnelUpgrade());
         cards.add(new GravityFinFunnelUpgrade());
         cards.add(new PursuitFinFunnelUpgrade());
+        cards.add(new DissectingFinFunnelUpgrade());
 
         cards.add(new FunnelMatrix());
 
@@ -831,8 +839,6 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Drapery(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Parocheth(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.addRelicToCustomPool(new WaveSlasher(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.addRelicToCustomPool(new WaveBreaker(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);
@@ -846,6 +852,8 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new PlacidAqua(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new WhiteRose(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new PurityWhiteRose(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new WaveSlasher(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new WaveBreaker(), CardColorEnum.WangChuan_LIME);
 
 
         BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);

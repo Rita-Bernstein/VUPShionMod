@@ -8,12 +8,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ProphecyOfSalvation extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ProphecyOfSalvation.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/ProphecyOfSalvation.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public ProphecyOfSalvation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -30,7 +30,7 @@ public class ProphecyOfSalvation extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(5);
         }
     }
 }

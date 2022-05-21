@@ -36,10 +36,10 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                for (AbstractFinFunnel finFunnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
-                    if (finFunnel.id.equals(GravityFinFunnel.ID))
-                        finFunnel.loseLevel(magicNumber);
-                }
+                AbstractFinFunnel finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(GravityFinFunnel.ID);
+                if(finFunnel !=null)
+                    finFunnel.loseLevel(magicNumber);
+
                 this.isDone = true;
             }
         });
@@ -49,13 +49,12 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractFinFunnel finFunnel : AbstractPlayerPatches.AddFields.finFunnelList.get(p)) {
-            if (finFunnel.id.equals(GravityFinFunnel.ID))
-                if (finFunnel.getLevel() < this.magicNumber) {
-                    return false;
-                }
-        }
-        return super.canUse(p, m);
+        AbstractFinFunnel finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(GravityFinFunnel.ID);
+        if(finFunnel != null)
+            if(finFunnel.getLevel() >= this.magicNumber)
+                return super.canUse(p,m);
+
+            return  false;
     }
 
     @Override

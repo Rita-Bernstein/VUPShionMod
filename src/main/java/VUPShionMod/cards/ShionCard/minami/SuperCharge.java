@@ -38,10 +38,10 @@ public class SuperCharge extends AbstractShionMinamiCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         AbstractPower power = p.getPower(HyperdimensionalLinksPower.POWER_ID);
-        if (power == null) return false;
-        if (power.amount < this.secondaryM) return false;
-        else
-            return super.canUse(p, m);
+        if (power == null) return (this.secondaryM <= 0) && super.canUse(p, m);
+
+        return (power.amount >= this.secondaryM) && super.canUse(p, m);
+
 
     }
 

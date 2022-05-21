@@ -1,0 +1,20 @@
+
+STANCE_ZY_YTD_weapon2.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+YOFU_ZL
+  rotate: false
+  xy: 2, 2
+  size: 215, 78
+  orig: 215, 78
+  offset: 0, 0
+  index: -1
+YOFU_ZL_light
+  rotate: false
+  xy: 219, 2
+  size: 95, 78
+  orig: 95, 78
+  offset: 0, 0
+  index: -1

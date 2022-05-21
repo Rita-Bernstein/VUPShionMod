@@ -43,7 +43,7 @@ public class QuickAttack extends AbstractVUPShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
-            AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
+            AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
             if (funnel != null) {
                 funnel.activeFire(m, this.damage, this.damageTypeForTurn);
             } else {

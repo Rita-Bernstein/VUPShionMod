@@ -29,7 +29,7 @@ public class ViaAfflictionis extends AbstractLiyezhuCard {
         addToBot(new LoseHPAction(p,p,this.baseMagicNumber));
         addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,1)));
         addToBot(new DrawCardAction(this.secondaryM));
-        addToBot(new MakeTempCardInDrawPileAction(makeStatEquivalentCopy(), 1,true, true, false));
+        addToBot(new MakeTempCardInDrawPileAction(new ViaAfflictionis(), 1,true, true, false));
     }
 
     @Override

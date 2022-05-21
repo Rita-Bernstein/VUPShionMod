@@ -55,7 +55,7 @@ public class SpeedShot extends AbstractShionCard {
 
 
         if (effect > 0) {
-            AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
+            AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
 
             if (funnel != null) {
                 funnel.activeFire(m, this.damage, this.damageTypeForTurn, effect);

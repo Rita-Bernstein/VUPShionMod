@@ -30,7 +30,7 @@ public class CorCrucis extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p,p,this.baseMagicNumber));
         addToBot(new DrawCardAction(p,this.secondaryM));
-        addToBot(new MakeTempCardInDrawPileAction(makeStatEquivalentCopy(), 1,true, true, false));
+        addToBot(new MakeTempCardInDrawPileAction(new CorCrucis(), 1,true, true, false));
     }
 
     @Override

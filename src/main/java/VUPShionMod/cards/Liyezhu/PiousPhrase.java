@@ -27,6 +27,8 @@ public class PiousPhrase extends AbstractLiyezhuCard {
         this.exhaust = true;
         this.cardsToPreview = new RavingExcoriation();
         this.tags.add(CardTagsEnum.Prayer_CARD);
+        
+        loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/PiousPhrase.png");
     }
 
     @Override

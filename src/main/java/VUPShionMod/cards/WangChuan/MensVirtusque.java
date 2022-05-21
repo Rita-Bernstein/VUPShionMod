@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import java.util.ArrayList;
 
 public class MensVirtusque extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("MensVirtusque");
+    public static final String ID = VUPShionMod.makeID(MensVirtusque.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc40.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
@@ -28,7 +28,7 @@ public class MensVirtusque extends AbstractWCCard {
 
     public MensVirtusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 3;
         vupCardSetBanner(CardRarity.RARE,CardType.POWER);
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
@@ -68,8 +68,7 @@ public class MensVirtusque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-//            upgradeMagicNumber(1);
-
+            upgradeMagicNumber(2);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

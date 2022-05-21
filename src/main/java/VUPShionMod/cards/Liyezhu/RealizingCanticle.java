@@ -14,7 +14,7 @@ public class RealizingCanticle extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(RealizingCanticle.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/RealizingCanticle.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -26,6 +26,8 @@ public class RealizingCanticle extends AbstractLiyezhuCard {
         this.exhaust = true;
         this.cardsToPreview = new BeinglessMoment();
         this.tags.add(CardTagsEnum.Prayer_CARD);
+
+        loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/RealizingCanticle.png");
     }
 
     @Override

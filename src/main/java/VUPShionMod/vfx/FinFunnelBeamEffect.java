@@ -2,6 +2,7 @@ package VUPShionMod.vfx;
 
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -53,8 +54,15 @@ public class FinFunnelBeamEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if (duration == 0.9F)
-            ((Shion) AbstractDungeon.player).playFinFunnelAnimation(finFunnel.id);
+        if(this.finFunnel ==null){
+            this.isDone = true;
+            return;
+        }
+
+        if (duration == 0.9F) {
+            finFunnel.playFinFunnelAnimation(finFunnel.id);
+        }
+
 
 
         if (this.duration < this.startingDuration) {

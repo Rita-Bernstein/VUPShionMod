@@ -66,7 +66,8 @@ public class Drapery extends AbstractShionRelic implements ClickableRelic {
                     addToBot(new AbstractGameAction() {
                         @Override
                         public void update() {
-                            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
+                            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
+                            if(!funnelList.isEmpty())
                             funnelList.get(AbstractDungeon.miscRng.random(funnelList.size() - 1)).upgradeLevel(1);
                             isDone = true;
                         }

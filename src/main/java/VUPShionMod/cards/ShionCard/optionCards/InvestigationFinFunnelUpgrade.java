@@ -2,6 +2,7 @@ package VUPShionMod.cards.ShionCard.optionCards;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.powers.Shion.DissectingFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.GravityFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.InvestigationFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.PursuitFinFunnelUpgradePower;
@@ -42,6 +43,7 @@ public class InvestigationFinFunnelUpgrade extends AbstractVUPShionCard {
         AbstractPlayer p = AbstractDungeon.player;
         if (!p.hasPower(InvestigationFinFunnelUpgradePower.POWER_ID) &&
                 !p.hasPower(GravityFinFunnelUpgradePower.POWER_ID) &&
+                !p.hasPower(DissectingFinFunnelUpgradePower.POWER_ID) &&
                 !p.hasPower(PursuitFinFunnelUpgradePower.POWER_ID)
         )
             addToBot(new ApplyPowerAction(p, p, new InvestigationFinFunnelUpgradePower(p, 5)));

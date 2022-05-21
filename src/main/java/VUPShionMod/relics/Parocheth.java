@@ -42,10 +42,6 @@ public class Parocheth extends AbstractShionRelic implements ClickableRelic {
         this.grayscale = false;
     }
 
-    @Override
-    public void atTurnStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, 1, false)));
-    }
 
     @Override
     public void onRightClick() {
@@ -62,7 +58,8 @@ public class Parocheth extends AbstractShionRelic implements ClickableRelic {
                     addToBot(new AbstractGameAction() {
                         @Override
                         public void update() {
-                            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
+                            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
+                            if(!funnelList.isEmpty())
                             funnelList.get(AbstractDungeon.miscRng.random(funnelList.size() - 1)).upgradeLevel(1);
                             isDone = true;
                         }

@@ -54,10 +54,15 @@ public class AllFinFunnelBeamEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if (duration == 0.9F)
-            for (AbstractFinFunnel f : finFunnels)
-                ((Shion) AbstractDungeon.player).playFinFunnelAnimation(f.id);
+        if(this.finFunnels.isEmpty()){
+            this.isDone = true;
+            return;
+        }
 
+        if (duration == 0.9F) {
+            for (AbstractFinFunnel f : finFunnels)
+                f.playFinFunnelAnimation(f.id);
+        }
 
         if (this.duration < this.startingDuration) {
             if (!posUpdated) {

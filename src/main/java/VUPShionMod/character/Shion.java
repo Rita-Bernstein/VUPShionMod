@@ -1,17 +1,7 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.MoveFinFunnelSelectedEffectAction;
-import VUPShionMod.cards.ShionCard.anastasia.*;
-import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
-import VUPShionMod.cards.ShionCard.shion.Strafe;
-import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
 import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
-import VUPShionMod.effects.FinFunnelSelectedEffect;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.finfunnels.GravityFinFunnel;
-import VUPShionMod.finfunnels.InvestigationFinFunnel;
-import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
@@ -98,51 +88,11 @@ public class Shion extends CustomPlayer {
 
 
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
-            this.state.setAnimation(0, "Idle_body", true).setTimeScale(2.0f);
-            this.state.setAnimation(1, "Idle_Weapon1", true).setTimeScale(2.0f);
-            this.state.setAnimation(2, "Idle_Weapon2", true).setTimeScale(2.0f);
-            this.state.setAnimation(3, "Idle_Weapon3", true).setTimeScale(2.0f);
-        }
-
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 1) {
-            this.state.setAnimation(0, "idle", true);
-            this.state.setAnimation(1, "weapon1_idle", true);
-            this.state.setAnimation(2, "weapon2_idle", true);
-            this.state.setAnimation(3, "weapon3_idle", true);
-            this.state.setAnimation(4, "wing_idle", true);
-        }
-
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 2) {
-            this.state.setAnimation(0, "idle", true);
-            this.state.setAnimation(1, "weapon1_idle", true);
-            this.state.setAnimation(2, "weapon2_idle", true);
-            this.state.setAnimation(3, "weapon3_idle", true);
-            this.state.setAnimation(4, "wing_idle", true);
-        }
+        this.state.setAnimation(0, "idle", true);
+        this.state.setAnimation(4, "wing_idle", true);
 
     }
 
-    @Override
-    public void preBattlePrep() {
-        super.preBattlePrep();
-        VUPShionMod.loadFinFunnels();
-
-        List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(this);
-        if (funnelList.isEmpty()) {
-            funnelList.add(new InvestigationFinFunnel(VUPShionMod.investigationFinFunnelLevel));
-            funnelList.add(new PursuitFinFunnel(VUPShionMod.pursuitFinFunnelLevel));
-            funnelList.add(new GravityFinFunnel(VUPShionMod.gravityFinFunnelLevel));
-        }
-        AbstractDungeon.effectList.add(new FinFunnelSelectedEffect());
-        AbstractDungeon.actionManager.addToBottom(new MoveFinFunnelSelectedEffectAction(FinFunnelSelectedEffect.instance, funnelList.get(VUPShionMod.activeFinFunnel)));
-    }
-
-    @Override
-    public void onVictory() {
-        VUPShionMod.saveFinFunnels();
-        super.onVictory();
-    }
 
     public String getPortraitImageName() {
         return null;
@@ -280,27 +230,8 @@ public class Shion extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
-                this.state.setAnimation(0, "Hit_Body", false).setTimeScale(4.0f);
-                this.state.addAnimation(0, "Idle_body", true, 0.0F).setTimeScale(2.0f);
-                this.state.setAnimation(1, "Hit_Weapon1", false).setTimeScale(4.0f);
-                this.state.setAnimation(2, "Hit_Weapon2", false).setTimeScale(4.0f);
-                this.state.setAnimation(3, "Hit_Weapon3", false).setTimeScale(4.0f);
-
-                this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
-                this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
-                this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
-            }
-
-            if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 1) {
-                this.state.setAnimation(0, "hurt", false);
-                this.state.addAnimation(0, "idle", true, 0.0F);
-            }
-
-            if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 2) {
-                this.state.setAnimation(0, "hurt", false);
-                this.state.addAnimation(0, "idle", true, 0.0F);
-            }
+            this.state.setAnimation(0, "hurt", false);
+            this.state.addAnimation(0, "idle", true, 0.0F);
         }
 
         super.damage(info);
@@ -327,44 +258,6 @@ public class Shion extends CustomPlayer {
         }
     }
 
-    public void playFinFunnelAnimation(String id) {
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
-            switch (id) {
-                case "VUPShionMod:GravityFinFunnel":
-                    this.state.setAnimation(1, "Attack_Weapon1", false).setTimeScale(3.0f);
-                    this.state.addAnimation(1, "Idle_Weapon1", true, 0.0F).setTimeScale(2.0f);
-                    break;
-                case "VUPShionMod:InvestigationFinFunnel":
-                    this.state.setAnimation(2, "Attack_Weapon2", false).setTimeScale(3.0f);
-                    this.state.addAnimation(2, "Idle_Weapon2", true, 0.0F).setTimeScale(2.0f);
-                    break;
-                case "VUPShionMod:PursuitFinFunnel":
-                    this.state.setAnimation(3, "Attack_Weapon3", false).setTimeScale(3.0f);
-                    this.state.addAnimation(3, "Idle_Weapon3", true, 0.0F).setTimeScale(2.0f);
-                    break;
-            }
-        } else {
-            switch (id) {
-                case "VUPShionMod:GravityFinFunnel":
-                    this.state.setAnimation(1, "weapon1_attack", false).setTimeScale(3.0f);
-                    this.state.addAnimation(1, "weapon1_idle", true, 0.0F);
-                    break;
-                case "VUPShionMod:InvestigationFinFunnel":
-                    this.state.setAnimation(2, "weapon2_attack", false).setTimeScale(3.0f);
-                    this.state.addAnimation(2, "weapon2_idle", true, 0.0F);
-                    break;
-                case "VUPShionMod:PursuitFinFunnel":
-                    this.state.setAnimation(3, "weapon3_attack", false).setTimeScale(3.0f);
-                    this.state.addAnimation(3, "weapon3_idle", true, 0.0F);
-                    break;
-            }
-        }
-
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
-            this.state.setAnimation(0, "Attack_Body", false).setTimeScale(3.0f);
-            this.state.addAnimation(0, "Idle_body", true, 0.0f).setTimeScale(2.0f);
-        }
-    }
 
     @Override
     public void playDeathAnimation() {

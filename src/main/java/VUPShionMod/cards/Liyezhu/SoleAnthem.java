@@ -26,6 +26,8 @@ public class SoleAnthem extends AbstractLiyezhuCard {
         this.exhaust = true;
         this.cardsToPreview = new FlayTheEvil();
         this.tags.add(CardTagsEnum.Prayer_CARD);
+
+        loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/SoleAnthem.png");
     }
 
     @Override

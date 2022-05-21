@@ -14,7 +14,7 @@ public class BlindDevotion extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(BlindDevotion.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/BlindDevotion.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -27,6 +27,8 @@ public class BlindDevotion extends AbstractLiyezhuCard {
         this.exhaust = true;
         this.cardsToPreview = new LimpidHeart();
         this.tags.add(CardTagsEnum.Prayer_CARD);
+
+        loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/BlindDevotion.png");
     }
 
     @Override

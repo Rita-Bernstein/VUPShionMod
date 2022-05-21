@@ -52,9 +52,14 @@ public class FinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if (duration == 0.8F)
-            ((Shion) AbstractDungeon.player).playFinFunnelAnimation(finFunnel.id);
+        if(finFunnel == null){
+            this.isDone = true;
+            return;
+        }
 
+        if (duration == 0.8F) {
+            finFunnel.playFinFunnelAnimation(finFunnel.id);
+        }
         if (this.duration < this.startingDuration) {
             if (!posUpdated) {
                 this.dX = finFunnel.muzzle_X;

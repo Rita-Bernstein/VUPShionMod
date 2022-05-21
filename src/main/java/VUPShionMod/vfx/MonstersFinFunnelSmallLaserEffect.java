@@ -60,8 +60,14 @@ public class MonstersFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if ((duration == 0.8F && !isFast) || (this.duration == 0.55f && isFast))
-            ((Shion) AbstractDungeon.player).playFinFunnelAnimation(finFunnel.id);
+        if(this.finFunnel == null){
+            this.isDone = true;
+            return;
+        }
+
+        if ((duration == 0.8F && !isFast) || (this.duration == 0.55f && isFast)) {
+               finFunnel.playFinFunnelAnimation(finFunnel.id);
+        }
 
 
         if (this.duration < this.startingDuration) {

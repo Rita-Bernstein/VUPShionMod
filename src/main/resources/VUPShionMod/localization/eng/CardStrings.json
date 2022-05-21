@@ -155,8 +155,8 @@
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "Funnel Upgrade",
-    "DESCRIPTION": "Choose 1 from 3 *Funnel *Upgrade. Purge.",
-    "UPGRADE_DESCRIPTION": " Innate. Choose 1 from 3 *Funnel *Upgrade. Purge."
+    "DESCRIPTION": "Choose 1 from 4 *Funnel *Upgrade. Purge.",
+    "UPGRADE_DESCRIPTION": " Innate. Choose 1 from 4 *Funnel *Upgrade. Purge."
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "Scouting Upgrade",
@@ -169,6 +169,10 @@
   "VUPShionMod:PursuitUpgrade": {
     "NAME": "Pursuing Upgrade",
     "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Pursuing Funnel is upgraded by 1."
+  },
+   "VUPShionMod:DissectingUpgrade": {
+    "NAME": "Dissecting Upgrade",
+    "DESCRIPTION": "vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Dissecting Funnel is upgraded by 1."
   },
   "VUPShionMod:TimeBacktracking": {
     "NAME": "Reverse Time",
@@ -1242,15 +1246,15 @@
   },
   "VUPShionMod:CorCrucis": {
     "NAME": "Cor Crucis",
-    "DESCRIPTION": "Can not be Upgraded. NL Lose !M! HP. NL Draw !VUPShionSecondM! cards. NL Shuffle 1 copy of this card into your draw pile."
+    "DESCRIPTION": "Can not be Upgraded. NL Lose !M! HP. NL Draw !VUPShionSecondM! cards. NL Shuffle *Cor *Crucis into your draw pile."
   },
   "VUPShionMod:VoluntasDoloris": {
     "NAME": "Voluntas Doloris",
-    "DESCRIPTION": "Can not be Upgraded. NL Lose !M! HP. NL Gain [E] . NL Draw !VUPShionSecondM! cards. NL Shuffle 1 copy of this card into your draw pile."
+    "DESCRIPTION": "Can not be Upgraded. NL Lose !M! HP. NL Gain [E] . NL Draw !VUPShionSecondM! cards. NL Shuffle *Voluntas *Doloris into your draw pile."
   },
   "VUPShionMod:ViaAfflictionis": {
     "NAME": "Via Afflictionis",
-    "DESCRIPTION": "Can not be Upgraded. NL Lose !M! HP. NL Gain !VUPShionSecondM! Strength. NL Draw !VUPShionSecondM! cards. NL Shuffle 1 copy of this card into your draw pile."
+    "DESCRIPTION": "Can not be Upgraded. NL Lose !M! HP. NL Gain !VUPShionSecondM! Strength. NL Draw !VUPShionSecondM! cards. NL Shuffle *Via *Afflictionis into your draw pile."
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "Exitium Maeroris",

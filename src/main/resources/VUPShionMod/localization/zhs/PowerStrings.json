@@ -36,6 +36,14 @@
       "任务完成！"
     ]
   },
+  "VUPShionMod:DissectingFinFunnelUpgradePower": {
+    "NAME": "解析浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y解析浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
+    ]
+  },
   "VUPShionMod:DeploymentOfDefenseSystemPower": {
     "NAME": "防御系统全展开",
     "DESCRIPTIONS": [
@@ -484,7 +492,7 @@
   "VUPShionMod:GravitaterPower": {
     "NAME": "重力回路",
     "DESCRIPTIONS": [
-      "获得 #y魔能过载 时，获得 b%d 点 #y格挡 。"
+      "获得 #y魔能过载 时，获得 #b%d 点 #y格挡 。"
     ]
   },
   "VUPShionMod:SuperloaderPower": {
@@ -510,6 +518,12 @@
     "NAME": "伪·无量空处+",
     "DESCRIPTIONS": [
       "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y无实体 。(已获得过 #b%d 次)"
+    ]
+  },
+  "VUPShionMod:ImmuneDamagePower": {
+    "NAME": "咫尺天涯",
+    "DESCRIPTIONS": [
+      "本回合受到的伤害为 #b0 。"
     ]
   },
   "VUPShionMod:OculusMortisPower": {
@@ -544,11 +558,11 @@
     ]
   },
   "VUPShionMod:LoseHPPower": {
-  "NAME": "失血",
-  "DESCRIPTIONS": [
-    "每回合开始时失去 #b%d 点生命。"
-  ]
-},
+    "NAME": "失血",
+    "DESCRIPTIONS": [
+      "每回合开始时失去 #b%d 点生命。"
+    ]
+  },
   "VUPShionMod:DoubleDamageReceivePower": {
     "NAME": "双倍受伤",
     "DESCRIPTIONS": [
@@ -653,6 +667,36 @@
     "DESCRIPTIONS": [
       "你的下一个 #y祈言 将直接获得全部效果。",
       "你的下 #b%d 个 #y祈言 将直接获得全部效果。"
+    ]
+  },
+  "VUPShionMod:StructureDissectionPower": {
+    "NAME": "构造解析",
+    "DESCRIPTIONS": [
+      "达到层数时触发效果：",
+      " NL #b%d :给予 #b5 层 #y易伤 。",
+      " NL #b%d :给予 #b5 层 #y虚弱 。",
+      " NL #b%d :本回合失去 #b9 点 #y力量 。",
+      " NL #b%d :给予 #y缓慢 。",
+      " NL #b%d :失去 #b1 点 #y力量 。",
+      " NL #b%d :失去 #b2 点 #y力量 。",
+      " NL #b%d :受到 #b10%% 最大生命的伤害。",
+      " NL #b%d :失去 #b5%% 最大生命。",
+      " NL #b%d :失去 #b5%% 最大生命。",
+      " NL #b%d :给予 #b99 层 易伤 。",
+      " NL #b%d :击晕并失去本效果。"
+    ]
+  },
+  "VUPShionMod:ReinsOfWarPower": {
+    "NAME": "战场操控",
+    "DESCRIPTIONS": [
+      "每回合开始时，根据你的 #y解析浮游炮 等级获得效果：",
+      " NL #b1-3 :给予 #b1 点 #y敏捷 。",
+      " NL #b4-5 :给予 #b1 点 #y力量 和 #y敏捷 。",
+      " NL #b6-10 :给予 #b2 点 #y力量 和 #y敏捷 。",
+      " NL #b11-15 :给予 #b3 点 #y力量 、 #y敏捷 和 #y超维链接 。",
+      " NL #b16-20 :给予 #b4 点 #y力量 、 #y超维链接 和 [E] 。",
+      " NL #b21-25 :给予 #b5 点 #y力量 、 #y超维链接 和 [E] 。",
+      " NL #b26及以上 :给予 #b5 点 #y力量 、 #y超维链接 和 [E] [E] 。"
     ]
   }
 }

@@ -34,9 +34,9 @@ public class OriShion extends AbstractSkin {
         this.SHOULDER2 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.CORPSE = "VUPShionMod/characters/Shion/corpse.png";
 
-        this.atlasURL = "VUPShionMod/characters/Shion/animation/ShionAnimation.atlas";
-        this.jsonURL = "VUPShionMod/characters/Shion/animation/ShionAnimation.json";
-        this.renderScale = 1.0f;
+        this.atlasURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.atlas";
+        this.jsonURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.json";
+        this.renderScale = 2.4f;
 
         loadAnimation();
         setAnimation();

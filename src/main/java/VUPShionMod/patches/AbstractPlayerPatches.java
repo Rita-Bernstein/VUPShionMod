@@ -5,6 +5,7 @@ import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.cards.ShionCard.anastasia.AttackOrderGamma;
 import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.helpers.ChargeHelper;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -31,9 +32,8 @@ public class AbstractPlayerPatches {
             method = SpirePatch.CLASS
     )
     public static class AddFields {
-        public static SpireField<List<AbstractFinFunnel>> finFunnelList = new SpireField<>(ArrayList::new);
-        public static SpireField<AbstractFinFunnel> activatedFinFunnel = new SpireField<>(() -> null);
         public static SpireField<ChargeHelper> chargeHelper = new SpireField<>(() -> new ChargeHelper());
+        public static SpireField<FinFunnelManager> finFunnelManager = new SpireField<>(() -> new FinFunnelManager());
     }
 
 
@@ -43,15 +43,7 @@ public class AbstractPlayerPatches {
     )
     public static class PatchApplyStartOfTurnRelics {
         public static void Postfix(AbstractPlayer player) {
-//            for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
-//                funnel.atTurnStart();
-//            }
-            if (AbstractDungeon.player instanceof Shion) {
-                AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
-                if(AbstractDungeon.player.hasPower(AttackOrderGamma.ID))
-                    AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
-            }
-            EnergyPanelPatches.energyUsedThisTurn = 1;
+            AddFields.finFunnelManager.get(player).atStartOfTurn();
         }
     }
 
@@ -66,16 +58,10 @@ public class AbstractPlayerPatches {
                 stateDataField.setAccessible(true);
                 Skeleton sk = ((Skeleton) stateDataField.get(player));
                 if (sk != null) {
-                    for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
-                        funnel.updatePosition(sk);
-                    }
+                    AddFields.finFunnelManager.get(player).update(sk);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-            }
-
-            for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
-                funnel.update();
             }
 
             if (AddFields.chargeHelper.get(player).active) {
@@ -91,13 +77,36 @@ public class AbstractPlayerPatches {
     public static class PatchRender {
         public static void Postfix(AbstractPlayer player, SpriteBatch sb) {
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-                for (AbstractFinFunnel funnel : AddFields.finFunnelList.get(player)) {
-                    funnel.render(sb);
-                }
+                AddFields.finFunnelManager.get(player).render(sb);
 
                 if (AddFields.chargeHelper.get(player).active) {
                     AddFields.chargeHelper.get(player).render(sb);
                 }
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "preBattlePrep"
+    )
+    public static class PatchPreBattlePrep {
+        public static void Postfix(AbstractPlayer player) {
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                AddFields.finFunnelManager.get(player).preBattlePrep();
+            }
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "onVictory"
+    )
+    public static class PatchOnVictory {
+        public static void Postfix(AbstractPlayer player) {
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                AddFields.finFunnelManager.get(player).onVictory();
             }
         }
     }
@@ -142,7 +151,7 @@ public class AbstractPlayerPatches {
                             if (card instanceof AbstractVUPShionCard)
                                 ((AbstractVUPShionCard) card).onTriggerLoaded();
                         }
-                        isDone=true;
+                        isDone = true;
                     }
                 });
 
@@ -164,48 +173,9 @@ public class AbstractPlayerPatches {
                 }
             }
 
-//            for(AbstractCard card : AbstractDungeon.player.hand.group){
-//                if(card instanceof AbstractVUPShionCard){
-//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
-//                }
-//            }
-//
-//            for(AbstractCard card : AbstractDungeon.player.discardPile.group){
-//                if(card instanceof AbstractVUPShionCard){
-//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
-//                }
-//            }
-//
-//            for(AbstractCard card : AbstractDungeon.player.drawPile.group){
-//                if(card instanceof AbstractVUPShionCard){
-//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
-//                }
-//            }
-//
-//            for(AbstractCard card : AbstractDungeon.player.exhaustPile.group){
-//                if(card instanceof AbstractVUPShionCard){
-//                    ((AbstractVUPShionCard) card).monsterAfterOnAttack(info, _instance,damageAmount);
-//                }
-//            }
-
-
             return SpireReturn.Continue();
         }
     }
 
 
-//    @SpirePatch(
-//            clz = AbstractDungeon.class,
-//            method = "getEvent"
-//    )
-//    public static class NoGhostsPatch {
-//        @SpireInsertPatch(rloc = 40)
-//        public static SpireReturn<AbstractEvent> Insert(Random rng) {
-//            ArrayList<String> tmp = ReflectionHacks.getPrivate(CardCrawlGame.dungeon, AbstractDungeon.class, "tmp");
-//            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
-//                tmp.removeIf(e ->e.equals("Ghosts"));
-//            }
-//            return SpireReturn.Continue();
-//        }
-//    }
 }

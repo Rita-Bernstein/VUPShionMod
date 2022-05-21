@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 
 public class JudgementOfSins extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(JudgementOfSins.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/JudgementOfSins.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;

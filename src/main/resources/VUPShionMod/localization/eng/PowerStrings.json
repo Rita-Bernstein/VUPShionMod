@@ -654,5 +654,35 @@
       "Your next #yPrayer takes effect all at once immediately.",
       "Your next #b%d #yPrayers take effect all at once immediately."
     ]
+  },
+  "VUPShionMod:StructureDissectionPower": {
+    "NAME": "StructureDissection",
+    "DESCRIPTIONS": [
+      "Trigger effect when the number of layers is reached：",
+      " NL #b%d :Apply #b5 #yVulnerable .",
+      " NL #b%d :Apply #b5 #yFrail .",
+      " NL #b%d :At whis turn lose #b9 #yStrength .",
+      " NL #b%d :Apply #yslow .",
+      " NL #b%d :Lose #b1 #yStrength .",
+      " NL #b%d :Lose #b2 #yStrength .",
+      " NL #b%d :Receive #b10%% Maxhp Damage.",
+      " NL #b%d :Lose #b5%% Maxhp.",
+      " NL #b%d :Lose #b5%% Maxhp.",
+      " NL #b%d :Apply #b99 Vulnerable .",
+      " NL #b%d :Stun and lose this effect."
+    ]
+  },
+  "VUPShionMod:ReinsOfWarPower": {
+    "NAME": "ReinsOfWarPower",
+    "DESCRIPTIONS": [
+      "At the start of each turn,gain effect based on your #yDissecting Funnel upgrade level：",
+      " NL #b1-3 :Gain #b1 #yDexterity .",
+      " NL #b4-5 :Gain #b1 #yStrength and #yDexterity .",
+      " NL #b6-10 :Gain #b2 #yStrength and #yDexterity .",
+      " NL #b11-15 :Gain #b3 #yStrength , #yDexterity and #yHyperdimensional .",
+      " NL #b16-20 :Gain #b4 #yStrength , #yHyperdimensional and [E] .",
+      " NL #b21-25 :Gain #b5 #yStrength , #yHyperdimensional and [E] .",
+      " NL #b26 and above :Gain #b5 #yStrength , #yHyperdimensional and [E] [E] 。"
+    ]
   }
 }

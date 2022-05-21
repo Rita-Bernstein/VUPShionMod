@@ -37,7 +37,8 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
     @Override
     public void atStartOfTurn() {
         this.flash();
-        for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player)) {
+        if(!AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList.isEmpty())
+        for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList) {
             if (!this.owner.isDeadOrEscaped()) {
                 funnel.onPursuitEnemy(this.owner);
             }

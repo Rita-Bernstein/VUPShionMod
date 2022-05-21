@@ -2,6 +2,7 @@ package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
+import VUPShionMod.cards.ShionCard.optionCards.DissectingFinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.optionCards.GravityFinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.optionCards.InvestigationFinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.optionCards.PursuitFinFunnelUpgrade;
@@ -54,6 +55,7 @@ public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
         list.add(new InvestigationFinFunnelUpgrade());
         list.add(new GravityFinFunnelUpgrade());
         list.add(new PursuitFinFunnelUpgrade());
+        list.add(new DissectingFinFunnelUpgrade());
         addToBot(new ChooseOneAction(list));
     }
 

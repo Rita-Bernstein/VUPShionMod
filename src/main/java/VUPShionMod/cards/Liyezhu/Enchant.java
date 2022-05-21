@@ -30,7 +30,7 @@ public class Enchant extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         if (p.hasPower(PsychicPower.POWER_ID)) {
-            addToBot(new MakeTempCardInHandAction(makeStatEquivalentCopy()));
+            addToBot(new MakeTempCardInHandAction(new Enchant()));
             addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));
         }
     }

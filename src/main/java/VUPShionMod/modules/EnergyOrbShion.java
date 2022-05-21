@@ -1,6 +1,7 @@
 package VUPShionMod.modules;
 
 import VUPShionMod.patches.EnergyPanelPatches;
+import VUPShionMod.powers.Shion.DissectingFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.GravityFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.InvestigationFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.PursuitFinFunnelUpgradePower;
@@ -99,6 +100,10 @@ public class EnergyOrbShion extends CustomEnergyOrb {
             amount = 5 - p.amount;
 
         p = AbstractDungeon.player.getPower(PursuitFinFunnelUpgradePower.POWER_ID);
+        if (p != null)
+            amount = 5 - p.amount;
+
+        p = AbstractDungeon.player.getPower(DissectingFinFunnelUpgradePower.POWER_ID);
         if (p != null)
             amount = 5 - p.amount;
 

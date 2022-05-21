@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LimpidHeart extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(LimpidHeart.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/LimpidHeart.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -21,7 +21,7 @@ public class LimpidHeart extends AbstractLiyezhuCard {
 
     public LimpidHeart() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 10;
     }
 
@@ -32,7 +32,7 @@ public class LimpidHeart extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                    addToTop(new ApplySinAction(mo, p.hasPower(PsychicPower.POWER_ID) ? magicNumber + 1 : magicNumber));
+                    addToTop(new ApplySinAction(mo, p.hasPower(PsychicPower.POWER_ID) ? magicNumber + 3 : magicNumber));
                 }
                 addToTop(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));
                 isDone = true;

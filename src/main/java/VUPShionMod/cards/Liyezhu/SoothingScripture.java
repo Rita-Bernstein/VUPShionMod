@@ -28,6 +28,8 @@ public class SoothingScripture extends AbstractLiyezhuCard {
         this.exhaust = true;
         this.cardsToPreview = new EmanationOfIre();
         this.tags.add(CardTagsEnum.Prayer_CARD);
+
+        loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/SoothingScripture.png");
     }
 
     @Override

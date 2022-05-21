@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 
 public class ChasteReflection extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ChasteReflection.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/ChasteReflection.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;

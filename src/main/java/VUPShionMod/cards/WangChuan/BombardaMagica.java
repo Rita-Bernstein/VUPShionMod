@@ -44,7 +44,7 @@ public class BombardaMagica extends AbstractWCCard {
 
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
-        addToBot(new MakeTempCardInHandAction(makeStatEquivalentCopy()));
+        addToBot(new MakeTempCardInHandAction(new BombardaMagica()));
     }
 
 

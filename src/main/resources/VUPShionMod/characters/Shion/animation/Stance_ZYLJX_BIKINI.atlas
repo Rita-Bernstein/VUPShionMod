@@ -4,69 +4,6 @@ size: 2048,2048
 format: RGBA8888
 filter: MipMapLinearLinear,Linear
 repeat: none
-YOFU_ZC
-  rotate: true
-  xy: 684, 204
-  size: 279, 60
-  orig: 279, 60
-  offset: 0, 0
-  index: -1
-YOFU_ZC_light
-  rotate: true
-  xy: 746, 266
-  size: 217, 23
-  orig: 217, 23
-  offset: 0, 0
-  index: -1
-YOFU_ZC_penqi
-  rotate: false
-  xy: 1260, 1387
-  size: 323, 110
-  orig: 323, 110
-  offset: 0, 0
-  index: -1
-YOFU_ZJ
-  rotate: true
-  xy: 1053, 652
-  size: 245, 82
-  orig: 245, 82
-  offset: 0, 0
-  index: -1
-YOFU_ZJ_light
-  rotate: true
-  xy: 1532, 1229
-  size: 156, 37
-  orig: 156, 37
-  offset: 0, 0
-  index: -1
-YOFU_ZJ_penqi
-  rotate: false
-  xy: 1947, 1944
-  size: 95, 79
-  orig: 95, 79
-  offset: 0, 0
-  index: -1
-YOFU_ZL
-  rotate: false
-  xy: 1613, 1494
-  size: 186, 56
-  orig: 186, 56
-  offset: 0, 0
-  index: -1
-YOFU_ZL_light
-  rotate: true
-  xy: 684, 54
-  size: 148, 38
-  orig: 148, 38
-  offset: 0, 0
-  index: -1
-YOFU_ZL_penqi
-  rotate: true
-  xy: 1145, 896
-  size: 229, 74
-  orig: 229, 74
-  offset: 0, 0
-  index: -1
 arm_L
   rotate: false
   xy: 819, 1368
@@ -89,29 +26,29 @@ body
   offset: 0, 0
   index: -1
 boots
-  rotate: true
-  xy: 904, 464
+  rotate: false
+  xy: 1260, 1369
   size: 155, 128
   orig: 155, 128
   offset: 0, 0
   index: -1
 eyes_blink
   rotate: false
-  xy: 1245, 1144
+  xy: 540, 3
   size: 70, 44
   orig: 70, 44
   offset: 0, 0
   index: -1
 eyes_blink2
   rotate: false
-  xy: 819, 1086
+  xy: 684, 444
   size: 70, 39
   orig: 70, 39
   offset: 0, 0
   index: -1
 face
-  rotate: true
-  xy: 1585, 1387
+  rotate: false
+  xy: 1417, 1381
   size: 105, 116
   orig: 105, 116
   offset: 0, 0
@@ -132,14 +69,14 @@ hair_frount
   index: -1
 hair_frount_R
   rotate: true
-  xy: 540, 14
+  xy: 1613, 1517
   size: 33, 106
   orig: 33, 106
   offset: 0, 0
   index: -1
 head_hat
   rotate: true
-  xy: 771, 272
+  xy: 1145, 947
   size: 178, 88
   orig: 178, 88
   offset: 0, 0
@@ -209,7 +146,7 @@ wing_R1
   index: -1
 wing_R2
   rotate: false
-  xy: 1394, 1186
+  xy: 904, 420
   size: 136, 199
   orig: 136, 199
   offset: 0, 0

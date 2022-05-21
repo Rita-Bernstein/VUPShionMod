@@ -39,6 +39,7 @@ public class CompileSoul extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeMagicNumber(1);
             this.name = EXTENDED_DESCRIPTION[0];
             initializeTitle();
             this.rawDescription = UPGRADE_DESCRIPTION;

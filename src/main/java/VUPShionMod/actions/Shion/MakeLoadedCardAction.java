@@ -84,9 +84,9 @@ public class MakeLoadedCardAction extends AbstractGameAction {
             }
         } else {
             if (!inDiscardPile)
-                addToBot(new MakeTempCardInDrawPileAction(this.card, this.amount, this.top, true, false));
+                addToTop(new MakeTempCardInDrawPileAction(this.card, this.amount, this.top, true, false));
             else
-                addToBot(new MakeTempCardInDiscardAction(this.card, this.amount));
+                addToTop(new MakeTempCardInDiscardAction(this.card, this.amount));
         }
 
         isDone = true;

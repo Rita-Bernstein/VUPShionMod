@@ -56,7 +56,7 @@ public class VacuumRipples extends AbstractImageEvent {
         switch (this.curScreen) {
             case INTRO:
                 if (buttonPressed == 0) {
-                    this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
+//                    this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                     this.imageEventText.removeDialogOption(1);
                     this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                     AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new MensVirtusque(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
@@ -64,7 +64,7 @@ public class VacuumRipples extends AbstractImageEvent {
                     this.curScreen = CurrentScreen.COMPLETE;
 
                 } else {
-                    this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
+//                    this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                     this.imageEventText.removeDialogOption(1);
                     this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                     AbstractDungeon.player.increaseMaxHp(20, true);

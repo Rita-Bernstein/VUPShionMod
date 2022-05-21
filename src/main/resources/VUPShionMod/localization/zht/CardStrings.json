@@ -156,8 +156,8 @@
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升級計劃",
-    "DESCRIPTION": "從三張 *浮游炮升級計劃 中選擇一張。 NL 其效果不能累加。 抹除 。",
-    "UPGRADE_DESCRIPTION": "固有 。從三張 *浮游炮升級計劃 中選擇一張。 NL 其效果不能累加。 抹除 。"
+    "DESCRIPTION": "從四張 *浮游炮升級計劃 中選擇一張。 NL 其效果不能累加。 抹除 。",
+    "UPGRADE_DESCRIPTION": "固有 。從四張 *浮游炮升級計劃 中選擇一張。 NL 其效果不能累加。 抹除 。"
   },
   "VUPShionMod:InvestigationUpgrade": {
     "NAME": "偵查浮游炮升級計劃",
@@ -171,6 +171,10 @@
     "NAME": "追擊浮游炮升級計劃",
     "DESCRIPTION": "vup_shion_mod:任務 ： NL 打出5張使用 vup_shion_mod:浮游炮 的牌。 NL 獎勵：追擊浮游炮強化等級加1。"
   },
+  "VUPShionMod:DissectingUpgrade": {
+    "NAME": "解析浮游炮升級計劃",
+    "DESCRIPTION": "vup_shion_mod:任務 ： NL 打出5張使用 vup_shion_mod:浮游炮 的牌。 NL 獎勵：解析浮游炮強化等級加1。"
+  },
   "VUPShionMod:TimeBacktracking": {
     "NAME": "時之回溯",
     "DESCRIPTION": "抽 !M! 張牌。 NL 下回合額外獲得 [E] 。",
@@ -178,7 +182,7 @@
   },
   "VUPShionMod:TimeSlack": {
     "NAME": "緩時",
-    "DESCRIPTION": " vup_shion_mod:加載完成 。 NL 獲得 !B! 點 格擋 。 NL 觸發 *重力 vup_shion_mod:浮游炮 的被動效果 。 NL 將 !M! 張 *快速防禦 加入棄牌堆。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": " vup_shion_mod:加載完成 。 NL 獲得 !B! 點 格擋 。 NL 觸發 *重力 vup_shion_mod:浮游炮 的被動效果。 NL 將 !M! 張 *快速防禦 加入棄牌堆。 NL 消耗性 !stslib:ex! 。"
   },
   "VUPShionMod:TimeStop": {
     "NAME": "時間停止",
@@ -238,8 +242,8 @@
   },
   "VUPShionMod:FinFunnelActive": {
     "NAME": "浮游炮激活",
-    "DESCRIPTION": "對一名敵人觸發三種 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "對一名敵人觸發三種 vup_shion_mod:浮游炮 的被動效果。"
+    "DESCRIPTION": "對一名敵人觸發所有 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "對一名敵人觸發所有 vup_shion_mod:浮游炮 的被動效果。"
   },
   "VUPShionMod:AttackWithDefense": {
     "NAME": "攻防一體",
@@ -1065,7 +1069,7 @@
   },
   "VUPShionMod:LimpidHeart": {
     "NAME": "守聖澄心",
-    "DESCRIPTION": "回復 !VUPShionSecondM! 點生命。 NL 給予所有敵人 !M! 層 vup_shion_mod:罪孽 。 NL vup_shion_mod:沉靈 ：額外給予1層。"
+    "DESCRIPTION": "回復 !VUPShionSecondM! 點生命。 NL 給予所有敵人 !M! 層 vup_shion_mod:罪孽 。 NL vup_shion_mod:沉靈 ：額外給予3層。"
   },
   "VUPShionMod:SanguinaryPrecept": {
     "NAME": "屠戮誡言",
@@ -1237,15 +1241,15 @@
   },
   "VUPShionMod:CorCrucis": {
     "NAME": "苦難之心",
-    "DESCRIPTION": "不能被 升級 。 NL 失去 !M! 點生命。 NL 抽 !VUPShionSecondM! 張牌。 NL 將這張牌的複製加入抽牌堆。"
+    "DESCRIPTION": "不能被 升級 。 NL 失去 !M! 點生命。 NL 抽 !VUPShionSecondM! 張牌。 NL 將 *苦難之心 加入抽牌堆。"
   },
   "VUPShionMod:VoluntasDoloris": {
     "NAME": "苦難之意",
-    "DESCRIPTION": "不能被 升級 。 NL 失去 !M! 點生命。 NL 獲得 [E] 。 NL 抽 !VUPShionSecondM! 張牌。 NL 將這張牌的複製加入抽牌堆。"
+    "DESCRIPTION": "不能被 升級 。 NL 失去 !M! 點生命。 NL 獲得 [E] 。 NL 抽 !VUPShionSecondM! 張牌。 NL 將 *苦難之意 加入抽牌堆。"
   },
   "VUPShionMod:ViaAfflictionis": {
     "NAME": "苦難之路",
-    "DESCRIPTION": "不能被 升級 。 NL 失去 !M! 點生命。 NL 獲得 !VUPShionSecondM! 點 力量 。 NL 抽 !VUPShionSecondM! 張牌。 NL 將這張牌的複製加入抽牌堆。"
+    "DESCRIPTION": "不能被 升級 。 NL 失去 !M! 點生命。 NL 獲得 !VUPShionSecondM! 點 力量 。 NL 抽 !VUPShionSecondM! 張牌。 NL 將這 *苦難之路 加入抽牌堆。"
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "苦難之終",

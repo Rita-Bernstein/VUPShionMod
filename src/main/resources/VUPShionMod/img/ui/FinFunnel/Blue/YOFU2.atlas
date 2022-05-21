@@ -1,0 +1,27 @@
+
+YOFU2.png
+size: 1024,128
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+YOFU_ZC
+  rotate: false
+  xy: 327, 52
+  size: 279, 60
+  orig: 279, 60
+  offset: 0, 0
+  index: -1
+YOFU_ZC_light
+  rotate: false
+  xy: 327, 27
+  size: 217, 23
+  orig: 217, 23
+  offset: 0, 0
+  index: -1
+YOFU_ZC_penqi
+  rotate: false
+  xy: 2, 2
+  size: 323, 110
+  orig: 323, 110
+  offset: 0, 0
+  index: -1

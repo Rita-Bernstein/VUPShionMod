@@ -36,6 +36,5 @@ public class AttackSystemPreload extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new MakeLoadedCardAction(upgraded,new QuickAttack(),this.magicNumber));
-//        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(), this.magicNumber, true, true, false));
     }
 }

@@ -74,22 +74,18 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
             return;
         }
 
-        if (!(AbstractDungeon.player instanceof Shion)) {
-            this.isDone = true;
-            return;
-        }
 
 //        初始化敌人数组， 初始化浮游炮数组并获取。一些玩家power情况
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractFinFunnel f = AbstractPlayerPatches.AddFields.activatedFinFunnel.get(p);
+        AbstractFinFunnel f = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
 
 //        强制转换浮游炮
 
         if (!forceFinFunnel.equals("None")) {
-            for (AbstractFinFunnel finFunnel : AbstractPlayerPatches.AddFields.finFunnelList.get(p)) {
-                if (finFunnel.id.equals(forceFinFunnel))
-                    f = finFunnel;
-            }
+            if(!AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList.isEmpty())
+                for(AbstractFinFunnel finFunnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList)
+                    if(finFunnel.id.equals(forceFinFunnel))
+                        f = finFunnel;
         }
 
 //        计算循环
@@ -114,19 +110,7 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
         for (int i = 0; i < this.loops; i++) {
             if (f.level >= 0 && this.target != null) {
                 if (!this.target.isDeadOrEscaped()) {
-                    if (f instanceof GravityFinFunnel){
-                        if (p.hasPower(GravitoniumPower.POWER_ID))
-                            addToBot(new GainShieldAction(p, f.getFinalEffect(), true));
-                        else
-                            addToBot(new GainBlockAction(p, f.getFinalEffect(), true));
-                    }
-
-
-                    if (f instanceof InvestigationFinFunnel)
-                        addToBot(new ApplyPowerAction(target, p, new BleedingPower(target, p, f.getFinalEffect())));
-
-                    if (f instanceof PursuitFinFunnel)
-                        addToBot(new ApplyPowerAction(target, p, new PursuitPower(target, f.getFinalEffect())));
+                    f.powerToApply(this.target);
                 }
             } else {
                 this.isDone = true;

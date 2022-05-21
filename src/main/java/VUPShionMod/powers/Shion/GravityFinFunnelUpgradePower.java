@@ -52,7 +52,7 @@ public class GravityFinFunnelUpgradePower extends AbstractShionPower {
             if (this.amount <= 0 && !used) {
                 this.used = true;
                 this.amount = -1;
-                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelList.get(AbstractDungeon.player);
+                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
                 for (AbstractFinFunnel funnel : funnelList) {
                     if (funnel instanceof GravityFinFunnel) {
                         this.flash();

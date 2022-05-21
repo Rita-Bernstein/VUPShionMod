@@ -34,9 +34,6 @@ public class GladiiInfiniti extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-//        CardCrawlGame.sound.play("POWER_TIME_WARP", 0.05F);
-//        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
-//        AbstractDungeon.topLevelEffectsQueue.add(new TimeWarpTurnEndEffect());
 
         addToBot(new SFXAction("MONSTER_COLLECTOR_DEBUFF"));
         addToBot(new VFXAction(new CollectorCurseEffect(m.hb.cX, m.hb.cY), 2.0F));
@@ -63,7 +60,7 @@ public class GladiiInfiniti extends AbstractWCCard {
 
 
     public void applyPowers() {
-        int d = upgraded ? 5 : 3;
+        int d = 1;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
             d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
         this.baseDamage = d;
@@ -97,10 +94,9 @@ public class GladiiInfiniti extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(2);
             upgradeBaseCost(5);
             this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            initializeDescription();
         }
     }
 }

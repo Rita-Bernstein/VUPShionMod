@@ -1,0 +1,132 @@
+
+STANCE_ZY_YTD_without_weapon.png
+size: 1024,1024
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+arm_left
+  rotate: true
+  xy: 689, 376
+  size: 100, 201
+  orig: 100, 201
+  offset: 0, 0
+  index: -1
+arm_right
+  rotate: false
+  xy: 878, 516
+  size: 128, 227
+  orig: 128, 227
+  offset: 0, 0
+  index: -1
+arm_right_armor
+  rotate: false
+  xy: 704, 141
+  size: 147, 123
+  orig: 147, 123
+  offset: 0, 0
+  index: -1
+blink
+  rotate: true
+  xy: 634, 2
+  size: 58, 36
+  orig: 58, 36
+  offset: 0, 0
+  index: -1
+blink2
+  rotate: true
+  xy: 672, 2
+  size: 58, 36
+  orig: 58, 36
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 878, 745
+  size: 127, 277
+  orig: 127, 277
+  offset: 0, 0
+  index: -1
+body_armor
+  rotate: false
+  xy: 704, 266
+  size: 170, 108
+  orig: 170, 108
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 892, 418
+  size: 86, 96
+  orig: 86, 96
+  offset: 0, 0
+  index: -1
+hair_behind
+  rotate: false
+  xy: 2, 18
+  size: 291, 353
+  orig: 291, 353
+  offset: 0, 0
+  index: -1
+hair_frount
+  rotate: true
+  xy: 546, 62
+  size: 309, 156
+  orig: 309, 156
+  offset: 0, 0
+  index: -1
+hair_frount_left
+  rotate: true
+  xy: 546, 33
+  size: 27, 86
+  orig: 27, 86
+  offset: 0, 0
+  index: -1
+head_ring
+  rotate: false
+  xy: 739, 478
+  size: 129, 70
+  orig: 129, 70
+  offset: 0, 0
+  index: -1
+knife
+  rotate: false
+  xy: 295, 24
+  size: 249, 347
+  orig: 249, 347
+  offset: 0, 0
+  index: -1
+leg_left
+  rotate: false
+  xy: 739, 550
+  size: 137, 472
+  orig: 137, 472
+  offset: 0, 0
+  index: -1
+leg_right
+  rotate: false
+  xy: 630, 513
+  size: 107, 509
+  orig: 107, 509
+  offset: 0, 0
+  index: -1
+opai
+  rotate: false
+  xy: 704, 72
+  size: 112, 67
+  orig: 112, 67
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 373
+  size: 685, 96
+  orig: 685, 96
+  offset: 0, 0
+  index: -1
+wing
+  rotate: false
+  xy: 2, 471
+  size: 626, 551
+  orig: 626, 551
+  offset: 0, 0
+  index: -1

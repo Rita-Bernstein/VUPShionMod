@@ -33,9 +33,9 @@ public class BurnishedRazor extends AbstractLiyezhuCard {
             hasPower = true;
 
         if (hasPower)
-            this.baseDamage = p.currentHealth / 3;
+            this.baseDamage = p.maxHealth / 3;
         else
-            this.baseDamage = p.currentHealth / 4;
+            this.baseDamage = p.maxHealth / 4;
 
         calculateCardDamage(m);
         addToBot(new ExpungeVFXAction(m));

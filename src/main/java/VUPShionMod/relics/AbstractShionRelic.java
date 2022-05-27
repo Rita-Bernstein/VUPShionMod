@@ -2,6 +2,8 @@ package VUPShionMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public abstract class AbstractShionRelic extends CustomRelic {
     public boolean upgraded = false;
@@ -14,5 +16,9 @@ public abstract class AbstractShionRelic extends CustomRelic {
         return amount;
     }
 
-    public void upgrade(){}
+    public void upgrade() {
+    }
+
+    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
+    }
 }

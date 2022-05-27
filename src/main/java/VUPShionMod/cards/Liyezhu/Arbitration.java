@@ -2,6 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Liyezhu.Arbitration2Power;
+import VUPShionMod.powers.Liyezhu.Arbitration3Power;
 import VUPShionMod.powers.Liyezhu.ArbitrationPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +15,7 @@ public class Arbitration extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Arbitration() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -24,9 +25,10 @@ public class Arbitration extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.upgraded)
+        if (this.upgraded) {
             addToBot(new ApplyPowerAction(p, p, new Arbitration2Power(p, this.magicNumber)));
-        else
+            addToBot(new ApplyPowerAction(p, p, new Arbitration3Power(p, 10)));
+        } else
             addToBot(new ApplyPowerAction(p, p, new ArbitrationPower(p, this.magicNumber)));
     }
 
@@ -36,6 +38,7 @@ public class Arbitration extends AbstractLiyezhuCard {
             this.upgradeName();
             this.name = EXTENDED_DESCRIPTION[0];
             initializeTitle();
+            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

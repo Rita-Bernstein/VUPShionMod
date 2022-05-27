@@ -175,7 +175,6 @@ public class SkinCharButton {
                 this.color.r = Color.LIGHT_GRAY.r;
                 this.color.g = Color.LIGHT_GRAY.g;
                 this.color.b = Color.LIGHT_GRAY.b;
-
             }
         }
 

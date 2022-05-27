@@ -19,7 +19,7 @@ public class HallowedCasket extends AbstractLiyezhuCard {
 
     public HallowedCasket() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.cardsToPreview = new Miracle();
     }
 

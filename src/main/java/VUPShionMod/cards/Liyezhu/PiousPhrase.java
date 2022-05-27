@@ -27,7 +27,7 @@ public class PiousPhrase extends AbstractLiyezhuCard {
         this.exhaust = true;
         this.cardsToPreview = new RavingExcoriation();
         this.tags.add(CardTagsEnum.Prayer_CARD);
-        
+
         loadJokeCardImage("VUPShionMod/img/cards/Liyezhu/joke/PiousPhrase.png");
     }
 
@@ -37,12 +37,12 @@ public class PiousPhrase extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 if (isInPrayer()) {
-                    if(upgraded)
-                    addToTop(new ApplyPrayerAction(new MiracleUpgradePrayer(secondaryM, magicNumber)));
+                    if (upgraded)
+                        addToTop(new ApplyPrayerAction(new MiracleUpgradePrayer(secondaryM, magicNumber)));
                     else
                         addToTop(new ApplyPrayerAction(new MiraclePrayer(secondaryM, magicNumber)));
                 }
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new RavingExcoriation();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

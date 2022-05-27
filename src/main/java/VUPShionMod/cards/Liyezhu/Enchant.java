@@ -3,12 +3,15 @@ package VUPShionMod.cards.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class Enchant extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(Enchant.class.getSimpleName());
@@ -29,6 +32,9 @@ public class Enchant extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p,p,new LoseStrengthPower(p,this.magicNumber)));
+
         if (p.hasPower(PsychicPower.POWER_ID)) {
             addToBot(new MakeTempCardInHandAction(new Enchant()));
             addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));

@@ -12,14 +12,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Pray extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("Pray");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz07.png");
-    private static final int COST = 1;
+    private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public Pray() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 3;
+        this.baseMagicNumber = this.magicNumber = 2;
         this.baseSecondaryM = this.secondaryM = 1;
         this.exhaust = true;
     }

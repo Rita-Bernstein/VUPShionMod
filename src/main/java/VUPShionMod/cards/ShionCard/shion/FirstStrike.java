@@ -19,14 +19,14 @@ public class FirstStrike extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("FirstStrike");
     public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy21.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public FirstStrike() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 10;
+        this.baseDamage = 14;
         this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(CardTags.STRIKE);
         ExhaustiveVariable.setBaseValue(this,2);

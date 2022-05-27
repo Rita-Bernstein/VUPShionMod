@@ -64,7 +64,7 @@ public class DaysGoneBy extends AbstractImageEvent {
 
                     case 2:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
-                        EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(10);
+                        EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(30);
                         logMetricObtainRelic(NAME, "Recall", new SapphireRoseNecklace());
                         break;
                 }

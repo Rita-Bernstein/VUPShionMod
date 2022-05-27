@@ -1,10 +1,12 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,13 +23,15 @@ public class Execution extends AbstractLiyezhuCard {
 
     public Execution() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 3;
+        this.baseDamage = 2;
         this.magicNumber = this.baseMagicNumber = 3;
+        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new HealAction(p,p,this.magicNumber));
+        addToBot(new ReducePowerAction(p,p, SinPower.POWER_ID,this.secondaryM));
 
         if(this.upgraded){
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
@@ -43,6 +47,7 @@ public class Execution extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeMagicNumber(2);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.target = CardTarget.ENEMY;

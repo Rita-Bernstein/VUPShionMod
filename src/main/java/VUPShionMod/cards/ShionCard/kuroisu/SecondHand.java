@@ -24,7 +24,7 @@ public class SecondHand extends AbstractShionKuroisuCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.shuffleBackIntoDrawPile = true;
         this.tags.add(CardTagsEnum.LOADED);
-        ExhaustiveVariable.setBaseValue(this,6);
+        ExhaustiveVariable.setBaseValue(this,3);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

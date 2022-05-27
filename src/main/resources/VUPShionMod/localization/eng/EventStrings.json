@@ -60,10 +60,11 @@
       "Hmmm...Coming soon, no rush!"
     ],
     "OPTIONS": [
-      "[Feed] #rLose 50 gold. #g75%:Obtain a #yCloyce card.",
+      "[Feed] #rLose 50 gold. #g50%:Choose and obtain a #yCloyce card.",
       "[Locked] No less than 50 gold is required.",
       "[Gu!]",
-      "[Leave]"
+      "[Leave]",
+      "Chose a card add into your deck"
     ]
   },
   "VUPShionMod:Newborn": {
@@ -104,7 +105,7 @@
     "OPTIONS": [
       "[Camp] #gGain 10 Max HP.",
       "[View Underwater] #gObtain 1 Sever Current.",
-      "[To the Mid-lake] #rRemove all Slide and Multislide, #gObatin 3 Moonstrider.",
+      "[To the Mid-lake] #rRemove all Slide and Multi Slide, #gObatin 3 Moonstrider.",
       "[Locked] Slide or Multi Slide is required.",
       "[Leave]"
     ]
@@ -132,14 +133,14 @@
     "NAME": "Sweet Memories",
     "DESCRIPTIONS": [
       "You see debris of what seems to be your memory being placed on a stone pedestal. NL ——'It's the time now. Bid farewell to me with some affections, will you?'  NL ——'I only wish for the futility of such farewells. I shall be waiting to welcome your safe return.'",
-      "The memory weighs in with determination. Your face registers a smile in relief, you blade echoes to the pulse of your melted heart.",
+      "The memory weighs in with determination. Your face registers a smile in relief, your blade echoes to the pulse of your melted heart.",
       "The memory kindles strength within you. The necklace sprawls on the pedestal, its owner and her name blazes reminiscently in your memory.",
       "——'Unless I meet my mortality sooner than you.'  NL NL No, she can not have heard you whispering that one. You smile in relief, lay a necklace by the pedestal out of your sigil, and proceed again."
     ],
     "OPTIONS": [
       "[I am Resolved] #gObtain Ruby Key.",
       "[I am Empowered] #gObatin Sapphire Rose Necklace.",
-      "[Piece Together] #gIntegrate the shards of memory, gain 10 Sanity.",
+      "[Piece Together] #gIntegrate the shards of memory, gain 30 Sanity.",
       "[Leave]"
     ]
   },
@@ -187,8 +188,9 @@
   "VUPShionMod:VacuumRipples": {
     "NAME": "Ripples of Vacuum",
     "DESCRIPTIONS": [
-      "The magia circulates, the vacuum ripples. You can sense that sea of energy on the other side of the timeline...",
-      "You have seen it once, and you know where the target is."
+      "The magia circulates, the vacuum ripples, you can sense that sea of energy on the other side of the timeline...",
+      "Infinite...power.",
+	  "An enormous flow of magia baptizes your body..."
     ],
     "OPTIONS": [
       "[Commune] #gObtain Anima Virtutis.",

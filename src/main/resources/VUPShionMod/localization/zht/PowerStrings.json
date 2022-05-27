@@ -604,7 +604,7 @@
   "VUPShionMod:CrimsonDelugePower": {
     "NAME": "浸染之血",
     "DESCRIPTIONS": [
-      "超出生命上限的 #g回復 將獲得 #y護盾 。"
+      "超出生命上限的 #g回復 將獲得 #y護盾 。  NL 每當打出 #y攻擊牌 時，回復 #b%d 點生命。"
     ]
   },
   "VUPShionMod:AsceticismPower": {
@@ -640,19 +640,25 @@
   "VUPShionMod:Arbitration2Power": {
     "NAME": "萬物·審判開庭",
     "DESCRIPTIONS": [
-      "每當觸發 #y伐罪 時，給予 *所有人 #b%d 層 #y罪孽 。"
+      "每當觸發 #y伐罪 時，給予 #y所有人 #b%d 層 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:Arbitration3Power": {
+    "NAME": "萬物·審判開庭-回復",
+    "DESCRIPTIONS": [
+      "每當觸發 #y伐罪 時，回復 #b%d 點生命。"
     ]
   },
   "VUPShionMod:ProphecyOfDestructionPower": {
     "NAME": "破滅預言",
     "DESCRIPTIONS": [
-      "每當生成 #y祈言 時，對隨機敵人造成 #b%d 點傷害。"
+      "每當打出 #y祈言 牌時，對隨機敵人造成 #b%d 點傷害。"
     ]
   },
   "VUPShionMod:ProphecyOfSalvationPower": {
     "NAME": "救世預言",
     "DESCRIPTIONS": [
-      "每當生成 #y祈言 時，回復 #b%d 點生命。"
+      "每當打出 #y祈言 時，回復 #b%d 點生命。"
     ]
   },
   "VUPShionMod:BrokenSanctuaryPower": {
@@ -660,6 +666,13 @@
     "DESCRIPTIONS": [
       "本回合所有 #y祈言 牌耗能變為0。",
       "在 #b%d 個回合所有 #y祈言 牌耗能變為0。"
+    ]
+  },
+  "VUPShionMod:BrokenSanctuary2Power": {
+    "NAME": "破碎聖堂-抽牌",
+    "DESCRIPTIONS": [
+      "你每打出一張 #y祈言 牌，抽 #b%d 張牌。",
+      "你每打出一張 #y祈言 牌，抽 #b%d 張牌。"
     ]
   },
   "VUPShionMod:PrecastingPower": {

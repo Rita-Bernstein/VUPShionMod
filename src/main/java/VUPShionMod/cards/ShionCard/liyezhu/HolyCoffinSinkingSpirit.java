@@ -17,7 +17,7 @@ public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
 
     public HolyCoffinSinkingSpirit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override

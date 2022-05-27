@@ -17,7 +17,7 @@ public class HolyCharge extends AbstractShionLiyezhuCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz05.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public HolyCharge() {

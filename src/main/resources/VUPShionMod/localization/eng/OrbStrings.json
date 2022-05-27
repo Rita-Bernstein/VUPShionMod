@@ -68,7 +68,7 @@
   },
   "VUPShionMod:ThornsPrayer": {
     "DESCRIPTION": [
-      "Gain #b%d #yTemporary #yThorns."
+      "Gain #b%d #yThorns."
     ],
     "NAME": "Thorns"
   },

@@ -21,10 +21,10 @@ import com.megacrit.cardcrawl.vfx.campfire.CampfireEndingBurningEffect;
 public class AbstractScenePatches {
     public static Texture campfire = ImageMaster.loadImage("VUPShionMod/characters/Shion/Campfire.png");
     public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
-    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/Campfire.png");
-    public static final float scale = 2.0f;
+    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+    public static final float scale = 1.0f;
     public static final float offSet_x = 0.0f;
-    public static final float offSet_y = -100.0f;
+    public static final float offSet_y = 0.0f;
 
 
     @SpirePatch(
@@ -139,7 +139,7 @@ public class AbstractScenePatches {
                 sb.setColor(Color.WHITE);
                 sb.setBlendFunction(770, 771);
                 sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f- campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
+                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
                         campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
                         scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
                 return SpireReturn.Return();

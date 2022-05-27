@@ -21,7 +21,8 @@ public class Read extends AbstractShionAnastasiaCard {
 
     public Read() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.exhaust = true;
     }
 
     @Override
@@ -33,9 +34,7 @@ public class Read extends AbstractShionAnastasiaCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
-
-
 }

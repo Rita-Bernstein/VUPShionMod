@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class ReleaseFormShionKuroisu extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID("ReleaseFormKuroisu");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu09.png");
-    private static final int COST = 3;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -45,7 +45,7 @@ public class ReleaseFormShionKuroisu extends AbstractShionKuroisuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.cardsToPreview.upgrade();
             initializeDescription();
-            this.upgradeMagicNumber(1);
+            upgradeMagicNumber(1);
         }
     }
 }

@@ -36,6 +36,14 @@
       "Task Completed!"
     ]
   },
+    "VUPShionMod:DissectingFinFunnelUpgradePower": {
+    "NAME": "Dissecting Upgrade",
+    "DESCRIPTIONS": [
+      "After playing #b",
+      "  #yFunnel cards, upgrade #yPursuing #yFunnel by #b1.",
+      "Task Completed!"
+    ]
+  },
   "VUPShionMod:DeploymentOfDefenseSystemPower": {
     "NAME": "Defense Unfold",
     "DESCRIPTIONS": [
@@ -478,13 +486,13 @@
   "VUPShionMod:RecoilerPower": {
     "NAME": "Recoiler",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor, deal b%d damage to ALL enemies."
+      "Whenever you gain #yMagiam #yObruor, deal #b%d damage to ALL enemies."
     ]
   },
   "VUPShionMod:GravitaterPower": {
     "NAME": "Gravitater",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor, gain b%d #yBlock."
+      "Whenever you gain #yMagiam #yObruor, gain #b%d #yBlock."
     ]
   },
   "VUPShionMod:SuperloaderPower": {
@@ -503,13 +511,19 @@
   "VUPShionMod:NihilImmensumPower": {
     "NAME": "Nihil Immensum",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Have gained #b%d times.)"
+      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yNihil. (Have gained #b%d times.)"
     ]
   },
   "VUPShionMod:NihilImmensum2Power": {
     "NAME": "Nihil Immensum+",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yIntangible. (Have gained #b%d times.)"
+      "Whenever you gain #yMagiam #yObruor for #b%d times, gain #b%d #yNihil. (Have gained #b%d times.)"
+    ]
+  },
+  "VUPShionMod:ImmuneDamagePower": {
+    "NAME": "Nihil",
+    "DESCRIPTIONS": [
+      "Any damage taken is reduced to #b0 this turn. This power cannot be stacked."
     ]
   },
   "VUPShionMod:OculusMortisPower": {
@@ -656,9 +670,9 @@
     ]
   },
   "VUPShionMod:StructureDissectionPower": {
-    "NAME": "StructureDissection",
+    "NAME": "Structure Dissection",
     "DESCRIPTIONS": [
-      "Trigger effect when the number of layers is reached：",
+      "Trigger effect when the number of stack is reached：",
       " NL #b%d :Apply #b5 #yVulnerable .",
       " NL #b%d :Apply #b5 #yFrail .",
       " NL #b%d :At whis turn lose #b9 #yStrength .",
@@ -673,7 +687,7 @@
     ]
   },
   "VUPShionMod:ReinsOfWarPower": {
-    "NAME": "ReinsOfWarPower",
+    "NAME": "Reins of War",
     "DESCRIPTIONS": [
       "At the start of each turn,gain effect based on your #yDissecting Funnel upgrade level：",
       " NL #b1-3 :Gain #b1 #yDexterity .",

@@ -2,7 +2,7 @@
   "VUPShionMod:Prayer": {
     "NAME": "Praying Stance",
     "DESCRIPTION": [
-      "While in this #yStance, you deal #b25% less damage. NL At the end of your turn, gain #b2 #yRegen."
+      "While in this #yStance, you deal #b25% less damage. NL At the end of your turn, heal #b2 HP."
     ]
   },
   "VUPShionMod:Judge": {
@@ -14,7 +14,7 @@
   "VUPShionMod:Spirit": {
     "NAME": "Wordpower Stance",
     "DESCRIPTION": [
-      "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength. NL At the end of your turn, gain #b2 #yRegen."
+      "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength. NL At the end of your turn, heal #b2 HP."
     ]
   }
 }

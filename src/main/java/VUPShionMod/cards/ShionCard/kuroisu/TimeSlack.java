@@ -31,7 +31,7 @@ public class TimeSlack extends AbstractShionKuroisuCard {
         this.cardsToPreview = new QuickDefend();
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.tags.add(CardTagsEnum.LOADED);
-        ExhaustiveVariable.setBaseValue(this,6);
+        ExhaustiveVariable.setBaseValue(this,3);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

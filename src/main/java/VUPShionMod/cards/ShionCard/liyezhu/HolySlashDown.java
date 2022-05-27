@@ -21,7 +21,7 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz12.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public HolySlashDown(int upgrades) {

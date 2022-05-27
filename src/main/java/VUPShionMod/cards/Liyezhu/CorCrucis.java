@@ -2,10 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -30,7 +27,7 @@ public class CorCrucis extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p,p,this.baseMagicNumber));
         addToBot(new DrawCardAction(p,this.secondaryM));
-        addToBot(new MakeTempCardInDrawPileAction(new CorCrucis(), 1,true, true, false));
+        addToBot(new MakeTempCardInDiscardAction(new CorCrucis(),1));
     }
 
     @Override

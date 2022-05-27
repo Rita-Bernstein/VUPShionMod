@@ -35,6 +35,7 @@ public class JudgementOfSins extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ChangeStanceAction(JudgeStance.STANCE_ID));
         addToBot(new ApplyPsychicAction(p, this.magicNumber));
+        if(this.upgraded)
         addToBot(new ApplyPowerAction(p,p,new RegenPower(p,this.secondaryM)));
 
         if (this.upgraded) {

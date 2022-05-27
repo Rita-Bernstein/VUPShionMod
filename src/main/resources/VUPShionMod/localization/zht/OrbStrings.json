@@ -92,7 +92,7 @@
   },
   "VUPShionMod:AvariciousPrayer": {
     "DESCRIPTION": [
-      "隨機一名敵人 失去 #b%d 點生命並給予 #y罪孽 和 #y力量 。"
+      "所有敵人 失去 #b%d 點生命並給予 #y罪孽 。"
     ],
     "NAME": "貪婪"
   },

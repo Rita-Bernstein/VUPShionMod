@@ -18,7 +18,7 @@ public class Defend_Shion extends AbstractShionCard {
     public Defend_Shion() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.baseBlock = 5;
+        this.baseBlock = 4;
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy02.png"));
         this.tags.add(CardTags.STARTER_DEFEND);
     }

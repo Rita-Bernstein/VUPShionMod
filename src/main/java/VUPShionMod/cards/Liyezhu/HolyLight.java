@@ -27,14 +27,15 @@ public class HolyLight extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        if(upgraded)
-            addToBot(new HealAction(p,p,this.magicNumber));
+        addToBot(new HealAction(p, p, this.magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeDamage(2);
+            upgradeMagicNumber(2);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

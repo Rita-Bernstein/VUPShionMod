@@ -24,7 +24,7 @@ public class Strike_Shion extends AbstractShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTags.STARTER_STRIKE);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
-        this.baseDamage = 6;
+        this.baseDamage = 4;
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy01.png"));
         this.tags.add(CardTags.STARTER_STRIKE);
     }

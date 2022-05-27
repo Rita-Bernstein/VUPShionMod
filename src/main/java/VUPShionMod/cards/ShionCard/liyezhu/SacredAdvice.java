@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class SacredAdvice extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("SacredAdvice");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz02.png");
-    private static final int COST = 0;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -24,10 +24,8 @@ public class SacredAdvice extends AbstractShionLiyezhuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHyperdimensionalLinksAction(this.magicNumber));
-        if (upgraded)
-            addToBot(new GainEnergyAction(2));
-        else
-            addToBot(new GainEnergyAction(1));
+        addToBot(new GainEnergyAction(this.upgraded ? 4 : 3));
+
     }
 
     public AbstractCard makeCopy() {

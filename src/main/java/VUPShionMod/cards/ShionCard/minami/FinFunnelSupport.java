@@ -23,7 +23,7 @@ public class FinFunnelSupport extends AbstractShionMinamiCard {
     public FinFunnelSupport() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

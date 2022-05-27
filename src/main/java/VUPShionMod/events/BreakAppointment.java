@@ -2,11 +2,13 @@ package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class BreakAppointment extends AbstractImageEvent {
@@ -17,6 +19,7 @@ public class BreakAppointment extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
 
     private CurrentScreen curScreen = CurrentScreen.INTRO;
+    private boolean pickCard = false;
 
     private enum CurrentScreen {
         INTRO, COMPLETE,
@@ -39,12 +42,26 @@ public class BreakAppointment extends AbstractImageEvent {
 
     }
 
+
+    @Override
+    public void update() {
+        super.update();
+        if (this.pickCard &&
+                !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0).makeCopy();
+            logMetricObtainCard("The Library", "Read", c);
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+        }
+    }
+
     @Override
     protected void buttonEffect(int buttonPressed) {
         switch (this.curScreen) {
             case INTRO:
                 if (buttonPressed == 0) {
-                    if (AbstractDungeon.eventRng.randomBoolean(0.25f)) {
+                    if (AbstractDungeon.eventRng.randomBoolean(0.5f)) {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
                         this.imageEventText.removeDialogOption(1);
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
@@ -53,8 +70,19 @@ public class BreakAppointment extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.removeDialogOption(1);
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
-                        AbstractCard c = VUPShionMod.mi_Cards.get(AbstractDungeon.eventRng.random(VUPShionMod.mi_Cards.size() - 1)).makeCopy();
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+//                        AbstractCard c = VUPShionMod.mi_Cards.get(AbstractDungeon.eventRng.random(VUPShionMod.mi_Cards.size() - 1)).makeCopy();
+//                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+
+                        this.pickCard = true;
+                        CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+                        for (AbstractCard card : VUPShionMod.mi_Cards) {
+                            group.addToTop(card);
+                            UnlockTracker.markCardAsSeen(card.cardID);
+                        }
+
+                        AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[4], false);
+
                     }
                     this.curScreen = CurrentScreen.COMPLETE;
 

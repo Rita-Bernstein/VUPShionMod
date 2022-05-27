@@ -14,7 +14,7 @@ public class LockIndication extends AbstractShionMinamiCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami03.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public LockIndication() {

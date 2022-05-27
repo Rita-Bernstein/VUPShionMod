@@ -25,7 +25,7 @@ public class ArbitrationPower extends AbstractShionPower {
 
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
+        if (damageAmount > 0 && target != this.owner) {
             flash();
             addToTop(new ApplySinAction(target,this.amount));
         }

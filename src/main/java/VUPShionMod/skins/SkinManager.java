@@ -77,6 +77,7 @@ public class SkinManager {
     public void update(CharacterSelectScreen screen) {
         SkinManager.screen = screen;
         CharacterOption selectedOption = null;
+        boolean hasChar = false;
 
         for (CharacterOption o : screen.options) {
             if (o.selected)
@@ -89,17 +90,22 @@ public class SkinManager {
                     currentSkinCharacter = c;
                     currentSkin = currentSkinCharacter.skins.get(currentSkinCharacter.selectedCount);
                     this.panel_x = MathHelper.uiLerpSnap(this.panel_x, this.panel_ShowFinalX);
+                    hasChar = true;
                     break;
                 }
             }
 
-        } else {
+
+
+
+        }
+
+        if(!hasChar){
             currentSkin = null;
             currentSkinCharacter = null;
             this.panel_x = MathHelper.uiLerpSnap(this.panel_x, this.panel_HideFinalX);
             return;
         }
-
 
         if (currentSkinCharacter != null) {
             currentSkinCharacter.update(selectedOption);

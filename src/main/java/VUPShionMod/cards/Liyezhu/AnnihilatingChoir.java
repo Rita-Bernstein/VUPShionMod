@@ -13,12 +13,12 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class AnnihilatingChoir extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(AnnihilatingChoir.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/AnnihilatingChoir.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public AnnihilatingChoir() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -47,8 +47,6 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
                 addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
                 addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
 
-                addToBot(new GainEnergyAction(powerAmount));
-
                 addToBot(new RemoveSpecificPowerAction(p, p, PsychicPower.POWER_ID));
 
                 addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,powerAmount)));
@@ -62,7 +60,6 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
                 addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
 
                 addToBot(new HealAction(p, p, powerAmount *10));
-                addToBot(new GainEnergyAction(powerAmount));
 
                 addToBot(new RemoveSpecificPowerAction(p, p, PsychicPower.POWER_ID));
             }

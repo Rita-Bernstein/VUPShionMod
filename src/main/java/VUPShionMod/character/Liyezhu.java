@@ -1,6 +1,7 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.Codex.*;
 import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
@@ -161,9 +162,15 @@ public class Liyezhu extends CustomPlayer {
             CardLibrary.addPurpleCards(tmpPool);
         }
 
-        for (AbstractCard c : VUPShionMod.codex_Cards) {
-            tmpPool.add(c.makeCopy());
-        }
+
+        tmpPool.add(new LuxRapida());
+        tmpPool.add(new LuxConstans());
+        tmpPool.add(new CaligoConstans());
+        tmpPool.add(new CaligoRapida());
+        tmpPool.add(new AquaConstans());
+        tmpPool.add(new AquaRapida());
+        tmpPool.add(new IgnisRapidus());
+        tmpPool.add(new IgnisNimius());
 
 
         return super.getCardPool(tmpPool);

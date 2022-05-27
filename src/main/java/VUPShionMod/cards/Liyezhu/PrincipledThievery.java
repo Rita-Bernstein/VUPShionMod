@@ -38,7 +38,7 @@ public class PrincipledThievery extends AbstractLiyezhuCard {
             public void update() {
                 if (isInPrayer()) {
                     addToTop(new ApplyPrayerAction(new ThieveryPrayer(secondaryM, magicNumber)));
-                    addToTop(new ApplyPrayerAction(new SinPrayer(secondaryM, 1)));
+                    addToTop(new ApplyPrayerAction(new SinPrayer(secondaryM, 2)));
                 }
                 if (isInJudge()) {
                     AbstractCard temp = new HeavenDecree();

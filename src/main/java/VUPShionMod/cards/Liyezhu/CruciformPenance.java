@@ -2,8 +2,10 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.DuelSinAction;
+import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -32,7 +34,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
         addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-
+        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,1)));
         addToBot(new DuelSinAction());
         addToBot(new HealAction(p,p,this.magicNumber));
     }

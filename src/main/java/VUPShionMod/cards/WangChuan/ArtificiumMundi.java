@@ -25,7 +25,7 @@ public class ArtificiumMundi extends AbstractWCCard {
 
     public ArtificiumMundi() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 

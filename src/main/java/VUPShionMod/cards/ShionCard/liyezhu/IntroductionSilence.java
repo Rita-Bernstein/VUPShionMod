@@ -21,7 +21,7 @@ public class IntroductionSilence extends AbstractShionLiyezhuCard {
 
     public IntroductionSilence() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 7;
+        this.baseDamage = 9;
         this.magicNumber = this.baseMagicNumber = 1;
     }
 
@@ -38,7 +38,7 @@ public class IntroductionSilence extends AbstractShionLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(4);
             upgradeMagicNumber(1);
         }
     }

@@ -76,7 +76,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
                 }
             }
 
-            if (statusCount > 0 && statusCount <= 20) {
+            if (statusCount <= 20) {
                 addToTop(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 100 - statusCount * 5));
             }
         }

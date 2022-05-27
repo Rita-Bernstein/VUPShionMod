@@ -80,7 +80,7 @@
   },
   "VUPShionMod:DimensionSplitting": {
     "NAME": "维度裂解启动",
-    "DESCRIPTION": "保留 。 NL 造成你本回合内打出的使用 vup_shion_mod:浮游炮 的牌的数量 !M! 倍的伤害。",
+    "DESCRIPTION": "保留 。 NL 对所有敌人造成你本场战斗打出的使用 vup_shion_mod:浮游炮 的牌的数量 !M! 倍的伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL (造成 !D! 点伤害)"
     ]
@@ -225,8 +225,8 @@
   },
   "VUPShionMod:TimeOverload": {
     "NAME": "时之过载",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] 。 NL 下回合失去 [E] [E] 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] 。 NL 下回合失去 [E] 。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] [E] 。 NL 下回合失去 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] [E] 。 NL 下回合失去 [E] 。"
   },
   "VUPShionMod:Limit": {
     "NAME": "十二刻时",
@@ -313,8 +313,8 @@
   },
   "VUPShionMod:SacredAdvice": {
     "NAME": "神圣建言",
-    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] 。",
-    "UPGRADE_DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] 。"
+    "DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "失去 !M! 层 vup_shion_mod:超维链接 。 NL 获得 [E] [E] [E] [E] 。"
   },
   "VUPShionMod:DivineRedemption": {
     "NAME": "圣耀救赎",
@@ -349,7 +349,7 @@
   },
   "VUPShionMod:Awaken": {
     "NAME": "唤醒",
-    "DESCRIPTION": "回复 vup_shion_mod:超维链接 !M! 倍的生命。失去所有 vup_shion_mod:超维链接 。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 NL 回复 vup_shion_mod:超维链接 !M! 倍的生命。失去所有 vup_shion_mod:超维链接 。 NL 消耗 。"
   },
   "VUPShionMod:HolyCoffinSinkingSpirit": {
     "NAME": "圣棺沉灵",
@@ -382,7 +382,7 @@
   },
   "VUPShionMod:Read": {
     "NAME": "读取",
-    "DESCRIPTION": "将消耗堆中的 !M! 张 vup_shion_mod:加载完成 牌的复制品加入手牌。"
+    "DESCRIPTION": "将消耗堆中的 !M! 张 vup_shion_mod:加载完成 牌的复制品加入手牌。 NL 消耗 。"
   },
   "VUPShionMod:GravityCharging": {
     "NAME": "重力充能",
@@ -731,7 +731,7 @@
   "VUPShionMod:CaligoConstans": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "虚无 。 NL 下回合造成双倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（永续）",
       "通典：暗（极意）",
@@ -741,7 +741,7 @@
   "VUPShionMod:CaligoRapida": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成双倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合造成双倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "虚无 。 NL 下回合造成双倍伤害。 NL 下回合抽 !M! 张攻击牌。 NL 将这张牌放入你的抽牌堆。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（神速）",
       "通典：暗（极意）",
@@ -751,7 +751,7 @@
   "VUPShionMod:CaelumNimium": {
     "NAME": "通典：天",
     "DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。",
+    "UPGRADE_DESCRIPTION": "下两张攻击牌造成 !M! 倍伤害。",
     "EXTENDED_DESCRIPTION": [
       "通典：天（泛滥）",
       "通典：天（极意）",
@@ -761,7 +761,7 @@
   "VUPShionMod:CaelumRapidum": {
     "NAME": "通典：天",
     "DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下张攻击牌造成 !M! 倍伤害。",
+    "UPGRADE_DESCRIPTION": "下两张攻击牌造成 !M! 倍伤害。",
     "EXTENDED_DESCRIPTION": [
       "通典：天（永续）",
       "通典：天（极意）",
@@ -811,21 +811,21 @@
   "VUPShionMod:AquaConstans": {
     "NAME": "通典：水",
     "DESCRIPTION": "下回合获得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。",
+    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。 NL 抽一张牌",
     "EXTENDED_DESCRIPTION": [
       "通典：水（永续）",
       "通典：水（极意）",
-      "下回合获得 !M! [E] 。 NL 虚无 。"
+      "下回合获得 !M! [E] 。 NL 抽一张牌 NL 虚无 。"
     ]
   },
   "VUPShionMod:AquaRapida": {
     "NAME": "通典：水",
     "DESCRIPTION": "下回合获得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。",
+    "UPGRADE_DESCRIPTION": "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。 NL 抽一张牌",
     "EXTENDED_DESCRIPTION": [
       "通典：水（神速）",
       "通典：水（极意）",
-      "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。 NL 消耗 。"
+      "下回合获得 !M! [E] 。 NL 下回合抽 !VUPShionSecondM! 张牌。 NL 抽一张牌 NL 消耗 。"
     ]
   },
   "VUPShionMod:IgnisRapidus": {
@@ -998,7 +998,7 @@
   },
   "VUPShionMod:HolyLight": {
     "NAME": "圣光",
-    "DESCRIPTION": "造成 !D! 点伤害。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。"
   },
   "VUPShionMod:Barrier": {
@@ -1064,12 +1064,12 @@
   },
   "VUPShionMod:BlindDevotion": {
     "NAME": "愚信诫言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得 !M! 层临时 荆棘 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *守圣澄心 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得 !M! 层临时 荆棘 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *守圣澄心+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得 !M! 层 荆棘 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *守圣澄心 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得 !M! 层 荆棘 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *守圣澄心+ 。 NL 消耗 。"
   },
   "VUPShionMod:LimpidHeart": {
     "NAME": "守圣澄心",
-    "DESCRIPTION": "回复 !VUPShionSecondM! 点生命。 NL 给予所有敌人 !M! 层 vup_shion_mod:罪孽 。 NL vup_shion_mod:沉灵 ：额外给予3层。"
+    "DESCRIPTION": "回复 !VUPShionSecondM! 点生命。 NL 给予所有敌人 !M! 层 vup_shion_mod:罪孽 。 NL vup_shion_mod:伐罪 。 NL vup_shion_mod:沉灵 ：额外给予3层。"
   },
   "VUPShionMod:SanguinaryPrecept": {
     "NAME": "屠戮诫言",
@@ -1092,18 +1092,18 @@
   },
   "VUPShionMod:AvariciousMotto": {
     "NAME": "贪婪诫言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：随机一名敌人失去 !M! 点生命。 NL 给予 vup_shion_mod:罪孽 和 力量 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *溢光之刃 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：随机一名敌人失去 !M! 点生命。 NL 给予 vup_shion_mod:罪孽 和 力量 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *溢光之刃+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：所有敌人失去 !M! 点生命。 NL 给予 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *溢光之刃 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：所有敌人失去 !M! 点生命。 NL 给予 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *溢光之刃+ 。 NL 消耗 。"
   },
   "VUPShionMod:BurnishedRazor": {
     "NAME": "溢光之刃",
-    "DESCRIPTION": "造成当前生命1/4的伤害。 NL 受到该伤害一半的伤害。 NL vup_shion_mod:伐罪 。 NL vup_shion_mod:沉灵 ：为1/3。",
-    "UPGRADE_DESCRIPTION": "造成当前生命1/4的伤害。 NL vup_shion_mod:伐罪 。 NL vup_shion_mod:沉灵 ：为1/3。"
+    "DESCRIPTION": "造成最大生命1/4的伤害。 NL 受到该伤害一半的伤害。 NL vup_shion_mod:伐罪 。 NL vup_shion_mod:沉灵 ：为1/3。",
+    "UPGRADE_DESCRIPTION": "造成最大生命1/4的伤害。 NL vup_shion_mod:伐罪 。 NL vup_shion_mod:沉灵 ：为1/3。"
   },
   "VUPShionMod:PrincipledThievery": {
     "NAME": "窃夺诫言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量两倍的金币。 NL 给予 *所有人 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量三倍的金币。 NL 给予 *所有人 vup_shion_mod:罪孽 。  NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量两倍的金币。 NL 给予 *所有人 2层 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量三倍的金币。 NL 给予 *所有人 2层 vup_shion_mod:罪孽 。  NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予+ 。 NL 消耗 。"
   },
   "VUPShionMod:HeavenDecree": {
     "NAME": "神意赋予",
@@ -1119,8 +1119,8 @@
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "圣棺沉灵",
-    "DESCRIPTION": "每回合结束时将 *奇迹 加入手牌并获得 vup_shion_mod:沉灵 。",
-    "UPGRADE_DESCRIPTION": "获得 vup_shion_mod:沉灵 。 NL 每回合结束时将 *奇迹 加入手牌并获得 vup_shion_mod:沉灵 。"
+    "DESCRIPTION": "每回合结束时将 *奇迹 加入手牌并获得 !M! 点 vup_shion_mod:沉灵 。",
+    "UPGRADE_DESCRIPTION": "获得 vup_shion_mod:沉灵 。 NL 每回合结束时将 *奇迹 加入手牌并获得 !M! 点 vup_shion_mod:沉灵 。"
   },
   "VUPShionMod:EnsanguinedFigure": {
     "NAME": "浸染之衣",
@@ -1128,7 +1128,7 @@
   },
   "VUPShionMod:CrimsonDeluge": {
     "NAME": "浸染之血",
-    "DESCRIPTION": "超出生命上限的回复将获得 vup_shion_mod:护盾 。"
+    "DESCRIPTION": "超出生命上限的回复将获得 vup_shion_mod:护盾 。 NL 每当打出攻击牌时，回复 !M! 点生命。"
   },
   "VUPShionMod:Asceticism": {
     "NAME": "苦行天途",
@@ -1137,8 +1137,8 @@
   },
   "VUPShionMod:TranscendSoul": {
     "NAME": "祭灵天途",
-    "DESCRIPTION": "回合结束时，回复 vup_shion_mod:沉灵 两倍的生命。",
-    "UPGRADE_DESCRIPTION": "回合结束时，对所有敌人造成 vup_shion_mod:沉灵 两倍的伤害。",
+    "DESCRIPTION": "回合结束时，回复 vup_shion_mod:沉灵 !M! 倍的生命。",
+    "UPGRADE_DESCRIPTION": "回合结束时，对所有敌人造成 vup_shion_mod:沉灵 !M! 倍的伤害。",
     "EXTENDED_DESCRIPTION": [
       "度灵天途"
     ]
@@ -1146,22 +1146,22 @@
   "VUPShionMod:Arbitration": {
     "NAME": "审判开庭",
     "DESCRIPTION": "每当造成未被 格挡 的伤害时，给予 !M! 层 vup_shion_mod:罪孽 。",
-    "UPGRADE_DESCRIPTION": "每当触发 vup_shion_mod:伐罪 时，给予 *所有人 !M! 层 vup_shion_mod:罪孽 。",
+    "UPGRADE_DESCRIPTION": "每当触发 vup_shion_mod:伐罪 时，给予 *所有人 !M! 层 vup_shion_mod:罪孽 并回复5点生命。",
     "EXTENDED_DESCRIPTION": [
       "万物·审判开庭"
     ]
   },
   "VUPShionMod:ProphecyOfDestruction": {
     "NAME": "破灭预言",
-    "DESCRIPTION": "每当生成 vup_shion_mod:祈言 时，对随机敌人造成 !M! 点伤害。"
+    "DESCRIPTION": "每当打出 vup_shion_mod:祈言 牌时，对随机敌人造成 !M! 点伤害。"
   },
   "VUPShionMod:ProphecyOfSalvation": {
     "NAME": "救世预言",
-    "DESCRIPTION": "每当生成 vup_shion_mod:祈言 时， NL 回复 !M! 点生命。"
+    "DESCRIPTION": "每当打出 vup_shion_mod:祈言 牌时， NL 回复 !M! 点生命。"
   },
   "VUPShionMod:Sentence": {
     "NAME": "判罪",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 vup_shion_mod:罪孽 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 vup_shion_mod:罪孽 。"
   },
   "VUPShionMod:SacredChop": {
     "NAME": "至圣斩",
@@ -1169,12 +1169,12 @@
   },
   "VUPShionMod:SavageSeries": {
     "NAME": "连斩",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 抽一张牌。 NL 如果打出的上一张牌是攻击，获得 [E] 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 抽一张牌。 NL vup_shion_mod:伐罪 。 NL 如果打出的上一张牌是攻击，获得 [E] 。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 vup_shion_mod:沉灵 。 NL 抽一张牌。 NL 如果打出的上一张牌是攻击，获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 获得 vup_shion_mod:沉灵 。 NL 抽一张牌。 NL vup_shion_mod:伐罪 。 NL 如果打出的上一张牌是攻击，获得 [E] 。"
   },
   "VUPShionMod:CruciformPenance": {
     "NAME": "至圣十字斩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL vup_shion_mod:伐罪 。 NL 回复 !M! 点生命。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 vup_shion_mod:沉灵 。 NL vup_shion_mod:伐罪 。 NL 回复 !M! 点生命。"
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "罪孽收割",
@@ -1188,8 +1188,8 @@
   },
   "VUPShionMod:AnnihilatingChoir": {
     "NAME": "破灭咏唱",
-    "DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成10X点伤害，回复10X点生命，获得X [E] 。",
-    "UPGRADE_DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成15X点伤害，获得X层 vup_shion_mod:沉灵 ，获得X [E] 。"
+    "DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成10X点伤害，回复10X点生命。",
+    "UPGRADE_DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成15X点伤害，获得X层 vup_shion_mod:沉灵 。"
   },
   "VUPShionMod:SpiritImpact": {
     "NAME": "圣灵冲击",
@@ -1197,17 +1197,17 @@
   },
   "VUPShionMod:CruelSword": {
     "NAME": "浸染之剑",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ， NL 再造成一次伤害并给予 !M! 层 虚弱 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ， NL 再造成两次伤害并给予 !M! 层 虚弱 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ， NL 再造成一次伤害并给予 !M! 层 虚弱 和 vup_shion_mod:罪孽 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果敌人有 格挡 ， NL 再造成两次伤害并给予 !M! 层 虚弱 和 vup_shion_mod:罪孽 。"
   },
   "VUPShionMod:Execution": {
     "NAME": "执行",
-    "DESCRIPTION": "回复 !M! 点生命。 NL 触发 vup_shion_mod:伐罪 时，将这张牌从弃牌堆加入手牌。",
-    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 造成 !D! 点伤害。 NL 触发 vup_shion_mod:伐罪 时，将这张牌从弃牌堆加入手牌。"
+    "DESCRIPTION": "回复 !M! 点生命。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:罪孽 。 NL 触发 vup_shion_mod:伐罪 时，将这张牌从弃牌堆加入手牌。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:罪孽 。 NL 造成 !D! 点伤害。 NL 触发 vup_shion_mod:伐罪 时，将这张牌从弃牌堆加入手牌。"
   },
   "VUPShionMod:Enchant": {
     "NAME": "附魂",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL vup_shion_mod:沉灵 :将这张牌的复制加入手牌。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点临时 力量 。 NL vup_shion_mod:沉灵 :将这张牌的复制加入手牌。 NL 消耗 。"
   },
   "VUPShionMod:March": {
     "NAME": "远征",
@@ -1241,15 +1241,15 @@
   },
   "VUPShionMod:CorCrucis": {
     "NAME": "苦难之心",
-    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 抽 !VUPShionSecondM! 张牌。 NL 将 *苦难之心 加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 抽 !VUPShionSecondM! 张牌。 NL 将 *苦难之心 加入弃牌堆。"
   },
   "VUPShionMod:VoluntasDoloris": {
     "NAME": "苦难之意",
-    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 获得 [E] 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将 *苦难之意 加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 获得 [E] 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将 *苦难之意 加入弃牌堆。"
   },
   "VUPShionMod:ViaAfflictionis": {
     "NAME": "苦难之路",
-    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 获得 !VUPShionSecondM! 点 力量 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将这 *苦难之路 加入抽牌堆。"
+    "DESCRIPTION": "不能被 升级 。 NL 失去 !M! 点生命。 NL 获得 !VUPShionSecondM! 点 力量 。 NL 抽 !VUPShionSecondM! 张牌。 NL 将这 *苦难之路 加入弃牌堆。"
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "苦难之终",
@@ -1270,8 +1270,8 @@
   },
   "VUPShionMod:BrokenSanctuary": {
     "NAME": "破碎圣堂",
-    "DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。 NL 将 *破碎圣堂 加入手牌。"
+    "DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。 NL 每打出一张 vup_shion_mod:祈言 牌 ，抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "固有 ， 保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。 NL 每打出一张 vup_shion_mod:祈言 牌 ，抽 !M! 张牌。"
   },
   "VUPShionMod:Precasting": {
     "NAME": "预备咏唱",

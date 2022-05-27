@@ -24,7 +24,6 @@ public class Arbitration2Power extends AbstractShionPower {
         updateDescription();
     }
 
-
     @Override
     public void updateDescription() {
         this.description = String.format(DESCRIPTIONS[0], this.amount);

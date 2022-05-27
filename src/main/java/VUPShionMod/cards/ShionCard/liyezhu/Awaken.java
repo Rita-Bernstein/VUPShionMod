@@ -21,6 +21,7 @@ public class Awaken extends AbstractShionLiyezhuCard {
         this.baseMagicNumber = this.magicNumber = 3;
         this.exhaust = true;
         this.tags.add(CardTags.HEALING);
+        this.selfRetain = true;
     }
 
     @Override

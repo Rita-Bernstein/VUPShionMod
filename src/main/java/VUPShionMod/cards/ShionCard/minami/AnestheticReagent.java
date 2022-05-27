@@ -14,15 +14,15 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 public class AnestheticReagent extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID("AnestheticReagent");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami10.png");
-    private static final int COST = 1;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public AnestheticReagent() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 10;
+        this.secondaryM = this.baseSecondaryM = 7;
         ExhaustiveVariable.setBaseValue(this, 1);
     }
 

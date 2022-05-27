@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
@@ -61,10 +62,10 @@ public class AbyssalCrux extends AbstractShionRelic {
 
 
     @Override
-    public void wasHPLost(int damageAmount) {
+    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && damageAmount > 0) {
             if (!upgraded) {
-                if (!this.dontHeal) {
+                if (!this.dontHeal && info.type == DamageInfo.DamageType.HP_LOSS) {
                     flash();
                     addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, damageAmount * 2));
                     addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
@@ -76,6 +77,7 @@ public class AbyssalCrux extends AbstractShionRelic {
             }
         }
     }
+
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {

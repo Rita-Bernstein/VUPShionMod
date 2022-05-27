@@ -18,7 +18,7 @@ public class AttackOrderAlphaPower extends AbstractShionPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = 3;
+        this.amount = -1;
         this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
     }
@@ -35,8 +35,9 @@ public class AttackOrderAlphaPower extends AbstractShionPower {
             addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, AttackOrderDeltaPower.POWER_ID));
     }
 
+
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],this.amount) ;
+        this.description = String.format(DESCRIPTIONS[0],5) ;
     }
 }

@@ -1,6 +1,7 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -31,11 +32,12 @@ public class CruelSword extends AbstractLiyezhuCard {
         if (m.currentBlock > 0) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
-            if (this.upgraded)
+            if (this.upgraded) {
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
-            addToBot(new ApplyPowerAction(m,p,new WeakPower(m,this.magicNumber,false)));
-
+                addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false)));
+                addToBot(new ApplyPowerAction(m, p, new SinPower(m, this.magicNumber)));
+            }
         }
     }
 

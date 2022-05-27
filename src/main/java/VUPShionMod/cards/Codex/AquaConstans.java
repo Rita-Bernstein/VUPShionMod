@@ -2,6 +2,7 @@ package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
@@ -32,6 +33,8 @@ public class AquaConstans extends AbstractCodexCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new EnergizedPower(p,this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.secondaryM)));
+        if(this.timesUpgraded>0)
+            addToBot(new DrawCardAction(1));
     }
 
 

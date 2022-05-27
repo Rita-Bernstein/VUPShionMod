@@ -37,7 +37,7 @@ public class CaelumNimium extends AbstractCodexCard {
                 addToBot(new ApplyPowerAction(p, p, new FourAttackPower(p, 1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p, p, new TwoAttackPower(p, 1)));
+                addToBot(new ApplyPowerAction(p, p, new TwoAttackPower(p, 2)));
                 break;
         }
     }

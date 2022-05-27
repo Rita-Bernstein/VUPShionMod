@@ -11,10 +11,10 @@ public class Gravitonium extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID("Gravitonium");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy24.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public Gravitonium() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

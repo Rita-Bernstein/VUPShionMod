@@ -27,6 +27,10 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     public FragmentsOfFaith() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
+
+        if (AbstractDungeon.player != null)
+            if (AbstractDungeon.actNum >= 3)
+                upgrade();
     }
 
     @Override
@@ -59,9 +63,9 @@ public class FragmentsOfFaith extends AbstractShionRelic {
     @Override
     public int onPlayerHeal(int healAmount) {
         if (this.counter == -2 && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
-            if(!(AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
-            addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(healAmount,
-                    true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+            if (!(AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
+                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(healAmount,
+                        true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         return super.onPlayerHeal(healAmount);
     }
 

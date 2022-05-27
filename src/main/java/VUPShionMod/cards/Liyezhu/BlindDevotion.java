@@ -14,10 +14,10 @@ public class BlindDevotion extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(BlindDevotion.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/BlindDevotion.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public BlindDevotion() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -57,7 +57,7 @@ public class BlindDevotion extends AbstractLiyezhuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
         }
     }
 }

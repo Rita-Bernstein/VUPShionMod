@@ -19,7 +19,7 @@ public class TranscendSoul extends AbstractLiyezhuCard {
     public TranscendSoul() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override

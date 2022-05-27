@@ -17,11 +17,12 @@ public class CrimsonDeluge extends AbstractLiyezhuCard {
 
     public CrimsonDeluge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new CrimsonDelugePower(p)));
+        addToBot(new ApplyPowerAction(p,p,new CrimsonDelugePower(p,this.magicNumber)));
     }
 
     @Override

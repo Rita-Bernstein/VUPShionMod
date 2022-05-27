@@ -20,7 +20,7 @@ public class AttackWithDefense extends AbstractShionMinamiCard {
     public AttackWithDefense() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.baseBlock = 9;
+        this.baseBlock = 12;
         this.cardsToPreview = new QuickAttack();
     }
 
@@ -39,7 +39,7 @@ public class AttackWithDefense extends AbstractShionMinamiCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(1);
-            upgradeBlock(4);
+            upgradeBlock(6);
         }
     }
 }

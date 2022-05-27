@@ -85,11 +85,11 @@
     "NAME": "Starquake",
     "FLAVOR": "Universal type of support equipment from Anastasia, tachi blade driven by magia.",
     "DESCRIPTIONS": [
-      "Whenever you play an #yAttack, gain #b3 #yCor #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
+      "Whenever you play an #yAttack, gain #b2 #yCor #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
     ]
   },
   "VUPShionMod:StarBreaker": {
-    "NAME": "StarBreaker",
+    "NAME": "Star Breaker",
     "FLAVOR": "Based on the Starquake, the energy constraint is upgraded, which greatly reduces the magic energy dissipation",
     "DESCRIPTIONS": [
       "Whenever you play an #yAttack, gain #b4 #yCor #yGladii. At the end of your turn, lose #b15% of #yCor #yGladii."
@@ -205,21 +205,21 @@
     "NAME": "Wave Slasher",
     "FLAVOR": "Blade motivated by spacial currents.",
     "DESCRIPTIONS": [
-      "Whenever you play a #ySkill, lose #b1 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b50% #yCor #Gladii each turn."
+      "Whenever you play a #ySkill, lose #b1 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b50% #yCor #yGladii each turn."
     ]
   },
   "VUPShionMod:WaveBreaker": {
     "NAME": "Wave Breaker",
     "FLAVOR": "Subspace stabilizer is implanted to add stability.",
     "DESCRIPTIONS": [
-      "Whenever you play a #ySkill, lose #b2 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b15% #yCor #Gladii each turn."
+      "Whenever you play a #ySkill, lose #b2 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b15% #yCor #yGladii each turn."
     ]
   },
   "VUPShionMod:WhiteRose": {
     "NAME": "White Rose",
     "FLAVOR": "Universal support equipment from Anastasia, analyzing module is implanted to tackle threats.",
     "DESCRIPTIONS": [
-      "Whenever you receive damage from enemy #yattacks, gain #b1 #yPlated #yArmor."
+      "Whenever attacked, gain #b1 #yPlated #yArmor."
     ]
   },
   "VUPShionMod:PurityWhiteRose": {

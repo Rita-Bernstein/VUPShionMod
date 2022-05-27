@@ -24,7 +24,7 @@ public class TimeOverload extends AbstractShionKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(2));
+        addToBot(new GainEnergyAction(3));
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
 //        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         if(upgraded)

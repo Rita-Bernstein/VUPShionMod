@@ -48,7 +48,7 @@ public class CaligoConstans extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(2);
-                this.isEthereal = false;
+                this.isEthereal = true;
                 this.shuffleBackIntoDrawPile = true;
             }
         }

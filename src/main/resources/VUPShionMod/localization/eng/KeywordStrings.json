@@ -17,7 +17,7 @@
       "total\u00a0upgrade"
     ],
 	"PROPER_NAME": "Total Upgrade",
-    "DESCRIPTION": "Sum of the upgrades of #yDimension #ySplitter: #yAria and the three #yFunnels."
+    "DESCRIPTION": "Sum of the upgrades of #yDimension #ySplitter: #yAria and the four #yFunnels."
   },
   {
     "NAMES": [
@@ -35,7 +35,7 @@
     "NAMES": [
       "bleeding"
     ],
-    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding from Attacks. NL Its stack halves at the end of turn."
+    "DESCRIPTION": "Bleeding creatures take additional damage equal to #yBleeding from Attacks. NL It halves at the end of turn."
   },
   {
     "NAMES": [
@@ -130,14 +130,14 @@
       "praying\u00a0stance"
     ],
 	"PROPER_NAME": "Praying Stance",
-    "DESCRIPTION": "While in this #yStance, deal #b25% less damage. NL At the end of your turn, gain #b2 #yRegen."
+    "DESCRIPTION": "While in this #yStance, deal #b25% less damage. NL At the end of your turn,heal #b2 HP."
   },
   {
     "NAMES": [
       "wordpower\u00a0stance"
     ],
 	"PROPER_NAME": "Wordpower Stance",
-    "DESCRIPTION": "Regarded as in both #yJudging #yStance and #yPraying #yStance. NL Upon entering this #yStance, gain #b1 #yCombustion and #yStrength. NL At the end of your turn, gain #b2 #yRegen."
+    "DESCRIPTION": "Regarded as in both #yJudging #yStance and #yPraying #yStance. NL Upon entering this #yStance, gain #b1 #yCombustion and #yStrength. NL At the end of your turn,heal #b2 HP."
   },
   {
     "NAMES": [

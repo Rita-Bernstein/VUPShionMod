@@ -2,7 +2,9 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.DuelSinAction;
+import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
@@ -33,6 +35,8 @@ public class SavageSeries extends AbstractLiyezhuCard {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.NONE));
         }
+
+        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,1)));
         addToBot(new DrawCardAction(1));
 
         if (this.upgraded)

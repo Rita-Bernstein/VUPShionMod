@@ -39,7 +39,7 @@ public class HourHand extends AbstractShionKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBlock(4);
+            upgradeBlock(6);
         }
     }
 }

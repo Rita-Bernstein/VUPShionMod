@@ -307,7 +307,7 @@ public class VUPShionMod implements
             dissectingFinFunnelLevel = config.getInt("dissectingFinFunnelLevel");
             String tmp = config.getString("activeFinFunnel");
 
-            if(tmp.length()>3)
+            if (tmp.length() > 3)
                 activeFinFunnel = tmp;
 
         } catch (Exception e) {
@@ -326,9 +326,9 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
-            if (VUPShionMod.liyezhuRelic) {
-                arrayList.add(FragmentsOfFaith.ID);
-            }
+        if (VUPShionMod.liyezhuRelic) {
+            arrayList.add(FragmentsOfFaith.ID);
+        }
     }
 
     @Override
@@ -358,6 +358,7 @@ public class VUPShionMod implements
                 }, (button) -> {
             safeCampfire = button.enabled;
             AbstractScenePatches.campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+            AbstractScenePatches.campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
             saveSettings();
         });
 
@@ -463,7 +464,10 @@ public class VUPShionMod implements
     @Override
     public void receivePostDungeonInitialize() {
         System.out.println("重开游戏");
-
+        if (AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID) && AbstractDungeon.actNum == 3) {
+            FragmentsOfFaith relic = (FragmentsOfFaith) AbstractDungeon.player.getRelic(FragmentsOfFaith.ID);
+            relic.upgrade();
+        }
     }
 
     @Override

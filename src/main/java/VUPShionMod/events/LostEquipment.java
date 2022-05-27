@@ -6,6 +6,7 @@ import VUPShionMod.relics.OpticalCamouflage;
 import VUPShionMod.relics.Sniperscope;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -67,7 +68,9 @@ public class LostEquipment extends AbstractImageEvent {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(OPTIONS[4]);
-                        AbstractCard card = AbstractDungeon.player.masterDeck.getRandomCard(AbstractDungeon.eventRng);CardCrawlGame.sound.play("CARD_EXHAUST");
+                        CardGroup cardGroup = CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards());
+                        AbstractCard card = cardGroup.getRandomCard(AbstractDungeon.eventRng);
+                        CardCrawlGame.sound.play("CARD_EXHAUST");
                         AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, Settings.WIDTH *0.5f, Settings.HEIGHT *0.5f));
                         AbstractDungeon.player.masterDeck.removeCard(card);
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new Sniperscope());

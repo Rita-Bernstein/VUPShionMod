@@ -81,12 +81,9 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
 
 //        强制转换浮游炮
 
-        if (!forceFinFunnel.equals("None")) {
-            if(!AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList.isEmpty())
-                for(AbstractFinFunnel finFunnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList)
-                    if(finFunnel.id.equals(forceFinFunnel))
-                        f = finFunnel;
-        }
+        if (!forceFinFunnel.equals("None"))
+            f = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(forceFinFunnel);
+
 
 //        计算循环
         if (p.hasPower(ReleaseFormMinamiPower.POWER_ID))

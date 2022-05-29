@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class VerdictUponHeart extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(VerdictUponHeart.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/VerdictUponHeart.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

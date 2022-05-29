@@ -85,7 +85,7 @@ public class DimensionSplitting extends AbstractShionCard {
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                 if (!monster.isDeadOrEscaped()) {
                     addToBot(new SFXAction("ATTACK_IRON_2", -0.5F, true));
-                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Fire 071 Ray Shot Up MIX", m.hb.cX, m.hb.y + 550.f * Settings.scale,
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Fire 071 Ray Shot Up MIX", monster.hb.cX, monster.hb.y + 550.f * Settings.scale,
                             130.0f, 213.0f, 3.0f * Settings.scale, 2, false)));
                 }
             }

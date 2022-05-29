@@ -1,6 +1,7 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
 import VUPShionMod.cards.WangChuan.OnrushingTip;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import basemod.cardmods.EtherealMod;
@@ -31,8 +32,7 @@ public class PureHeart extends AbstractShionRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new CorGladiiPower(AbstractDungeon.player, 2)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, 2)));
     }
 
     @Override
@@ -40,7 +40,7 @@ public class PureHeart extends AbstractShionRelic {
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID)) {
             flash();
             int amount = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount / 2;
-            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, CorGladiiPower.POWER_ID, amount));
+            addToBot(new LoseCorGladiiAction(amount));
         }
     }
 

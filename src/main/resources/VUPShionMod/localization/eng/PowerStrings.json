@@ -693,7 +693,7 @@
       " NL #b1-3 :Gain #b1 #yDexterity .",
       " NL #b4-5 :Gain #b1 #yStrength and #yDexterity .",
       " NL #b6-10 :Gain #b2 #yStrength and #yDexterity .",
-      " NL #b11-15 :Gain #b3 #yStrength , #yDexterity and #yHyperdimensional .",
+      " NL #b11-15 :Gain #b3 #yStrength and #yHyperdimensional .",
       " NL #b16-20 :Gain #b4 #yStrength , #yHyperdimensional and [E] .",
       " NL #b21-25 :Gain #b5 #yStrength , #yHyperdimensional and [E] .",
       " NL #b26 and above :Gain #b5 #yStrength , #yHyperdimensional and [E] [E] 。"

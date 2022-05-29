@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ExitiumMaeroris extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ExitiumMaeroris.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/ExitiumMaeroris.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;

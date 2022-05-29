@@ -38,9 +38,10 @@ public class AnestheticReagent extends AbstractShionMinamiCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(AbstractDungeon.player.currentHealth <= this.secondaryM)
+        if(AbstractDungeon.player.currentHealth <= this.secondaryM) {
+            this.cantUseMessage = EXTENDED_DESCRIPTION[0];
             return false;
-
+        }
         return super.canUse(p, m);
     }
 

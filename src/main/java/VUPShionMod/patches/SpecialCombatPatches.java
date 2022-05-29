@@ -1,9 +1,12 @@
 package VUPShionMod.patches;
 
+import VUPShionMod.VUPShionMod;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.Contact;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.events.Prophesy;
 import VUPShionMod.monsters.PlagaAMundo;
+import VUPShionMod.powers.Shion.AttackOrderSpecialPower;
 import VUPShionMod.powers.Unique.GravitoniumOverPower;
 import VUPShionMod.relics.AnastasiaNecklace;
 import VUPShionMod.relics.TrackingBeacon;
@@ -30,6 +33,30 @@ import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import java.util.ArrayList;
 
 public class SpecialCombatPatches {
+
+    public static void victoryFightSpecialBoss(){
+
+        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && !AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
+            VUPShionMod.fightSpecialBossWithout = true;
+        }
+
+        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+            if (((WangChuan) AbstractDungeon.player).shionHelper != null)
+                VUPShionMod.fightSpecialBossWithout = false;
+
+            if(AbstractDungeon.player.hasRelic(TrackingBeacon.ID)){
+                VUPShionMod.fightSpecialBossWithout = !((TrackingBeacon)AbstractDungeon.player.getRelic(TrackingBeacon.ID)).triggered;
+            }
+        }
+
+        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu && !AbstractDungeon.player.hasRelic(UnknownDust.ID)) {
+            VUPShionMod.fightSpecialBossWithout = true;
+        }
+
+
+        VUPShionMod.fightSpecialBoss = !VUPShionMod.fightSpecialBossWithout;
+    }
+
     @SpirePatch(
             clz = ProceedButton.class,
             method = "goToTrueVictoryRoom"

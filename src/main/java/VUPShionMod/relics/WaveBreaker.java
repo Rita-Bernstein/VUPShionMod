@@ -1,6 +1,7 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.badlogic.gdx.graphics.Texture;
@@ -48,7 +49,7 @@ public class WaveBreaker extends AbstractShionRelic {
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID)) {
             flash();
             int amount = (int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.15f);
-            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, CorGladiiPower.POWER_ID, amount));
+            addToBot(new LoseCorGladiiAction(amount));
         }
     }
 

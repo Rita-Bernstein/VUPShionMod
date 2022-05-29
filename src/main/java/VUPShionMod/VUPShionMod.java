@@ -110,6 +110,9 @@ public class VUPShionMod implements
     public static boolean fightSpecialBoss = false;
     public static boolean fightSpecialBossWithout = false;
 
+    public static boolean liyezhuVictory = false;
+    public static boolean isHardMod = false;
+
 
     public VUPShionMod() {
         BaseMod.subscribe(this);
@@ -179,6 +182,7 @@ public class VUPShionMod implements
             config.setBool("notReplaceTitle", notReplaceTitle);
             config.setBool("safeCampfire", safeCampfire);
             config.setBool("liyezhuRelic", liyezhuRelic);
+            config.setBool("isHardMod", isHardMod);
 
 
 //            for (int i = 0; i <= characters.length - 1; i++) {
@@ -200,6 +204,7 @@ public class VUPShionMod implements
             notReplaceTitle = config.getBool("notReplaceTitle");
             safeCampfire = config.getBool("safeCampfire");
             liyezhuRelic = config.getBool("liyezhuRelic");
+            isHardMod = config.getBool("isHardMod");
 
 //            for (int i = 0; i <= characters.length - 1; i++) {
 //                characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
@@ -234,6 +239,8 @@ public class VUPShionMod implements
 
                 config.setInt(CardCrawlGame.saveSlot + "shionDeathCount", GameStatsPatch.shionDeathCount);
                 config.setInt(CardCrawlGame.saveSlot + "wangchuanDeathCount", GameStatsPatch.wangchuanDeathCount);
+
+                config.setBool(CardCrawlGame.saveSlot + "liyezhuVictory", liyezhuVictory);
             }
             config.save();
         } catch (Exception e) {
@@ -251,6 +258,7 @@ public class VUPShionMod implements
 
                 for (AbstractSkin skin : character.skins) {
                     skin.unlock = config.getBool(CardCrawlGame.saveSlot + skin.getClass().getSimpleName());
+                    skin.button.locked = !skin.unlock;
                 }
             }
 
@@ -259,10 +267,15 @@ public class VUPShionMod implements
 
             if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 0)) {
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock = true;
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).button.locked = false;
             }
 
-            if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 1))
+            if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 1)) {
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock = true;
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).button.locked = false;
+            }
+
+            liyezhuVictory = config.getBool(CardCrawlGame.saveSlot + "liyezhuVictory");
 
 
         } catch (Exception e) {
@@ -711,6 +724,18 @@ public class VUPShionMod implements
         cards.add(new ArtificiumMundi());
         cards.add(new OculusMortis());
 
+        //        忘川-攻击牌补充
+        cards.add(new SpaceSlice());
+        cards.add(new Exile());
+        cards.add(new PhantomChop());
+        cards.add(new MentalMotivationChop());
+        cards.add(new MeltDowner());
+        cards.add(new CirrocumulusChop());
+        cards.add(new CoronaChop());
+        cards.add(new MotherRosario());
+        cards.add(new BreakChop());
+        cards.add(new OppressiveSword());
+
 //        通典
         cards.add(new ChaosNimius());
         cards.add(new ChaosRapidus());
@@ -843,6 +868,7 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Drapery(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Parocheth(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new Concord(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);

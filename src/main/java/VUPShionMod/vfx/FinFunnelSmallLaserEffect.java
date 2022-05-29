@@ -52,7 +52,7 @@ public class FinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if(finFunnel == null){
+        if(finFunnel == null || this.target == null){
             this.isDone = true;
             return;
         }

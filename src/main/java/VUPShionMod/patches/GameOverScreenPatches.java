@@ -41,6 +41,9 @@ public class GameOverScreenPatches {
 
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
                     stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
+
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
+                    stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
             }
 
             if (VUPShionMod.fightSpecialBoss) {
@@ -86,7 +89,11 @@ public class GameOverScreenPatches {
 
                     if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
                         CharacterSelectScreenPatches.skinManager.unlockSkin(AquaWangChuan.ID);
-                    VUPShionMod.saveSettings();
+
+                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
+                        VUPShionMod.liyezhuVictory = true;
+
+                    VUPShionMod.saveSkins();
                 }
             }
 //分数的复位放这里了

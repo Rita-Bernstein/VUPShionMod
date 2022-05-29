@@ -78,6 +78,7 @@ public class GachaAction extends AbstractGameAction {
                 break;
         }
 
+        if (amount > 0)
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             if (!mo.isDeadOrEscaped() && mo.id.equals(PlagaAMundoMinion.ID)) {
                 addToBot(new GainBlockAction(mo, mo, amount));
@@ -100,6 +101,7 @@ public class GachaAction extends AbstractGameAction {
                 break;
         }
 
+        if (amount > 0)
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             if (!mo.isDeadOrEscaped() && mo.id.equals(PlagaAMundoMinion.ID)) {
                 addToBot(new HealAction(mo, mo, amount));

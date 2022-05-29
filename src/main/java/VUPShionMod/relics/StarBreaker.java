@@ -1,6 +1,7 @@
 package VUPShionMod.relics;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -30,8 +31,7 @@ public class StarBreaker extends AbstractShionRelic {
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (c.type == AbstractCard.CardType.ATTACK) {
             flash();
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                    new CorGladiiPower(AbstractDungeon.player, 4)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, 4)));
         }
     }
 
@@ -40,7 +40,7 @@ public class StarBreaker extends AbstractShionRelic {
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID)) {
             flash();
             int amount = (int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.15f);
-            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, CorGladiiPower.POWER_ID, amount));
+            addToBot(new LoseCorGladiiAction(amount));
         }
     }
     @Override

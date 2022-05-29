@@ -7,6 +7,7 @@ import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.cards.ShionCard.shion.Strafe;
 import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
 import VUPShionMod.relics.BlueGiant;
+import VUPShionMod.relics.Concord;
 import VUPShionMod.relics.Drapery;
 import VUPShionMod.relics.TheRipple;
 import VUPShionMod.skins.AbstractSkin;
@@ -49,6 +50,7 @@ public class AquaShion extends AbstractSkin {
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(Drapery.ID);
+        info.relics.add(Concord.ID);
         return info;
     }
 
@@ -56,6 +58,7 @@ public class AquaShion extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(Drapery.ID);
+        retVal.add(Concord.ID);
         return retVal;
     }
 

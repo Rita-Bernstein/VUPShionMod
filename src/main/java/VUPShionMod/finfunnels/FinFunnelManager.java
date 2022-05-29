@@ -68,9 +68,6 @@ public class FinFunnelManager {
 
         if (!finFunnelList.isEmpty())
             for (AbstractFinFunnel finFunnel : finFunnelList) {
-                System.out.println("查询浮游炮---" + finFunnel.id);
-                System.out.println("目标浮游炮---" + id);
-
                 if (finFunnel.id.equals(id))
                     return finFunnel;
             }

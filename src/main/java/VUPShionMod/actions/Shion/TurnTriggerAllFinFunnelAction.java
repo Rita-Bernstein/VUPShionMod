@@ -96,7 +96,9 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                         }
                 }
 
-            this.isDone = true;
+
         }
+
+        this.isDone = true;
     }
 }

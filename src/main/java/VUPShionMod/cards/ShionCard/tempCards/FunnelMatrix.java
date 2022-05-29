@@ -3,9 +3,11 @@ package VUPShionMod.cards.ShionCard.tempCards;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -43,14 +45,10 @@ public class FunnelMatrix extends AbstractVUPShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 039 Radial Transition", m.hb.cX, m.hb.cY + 50.0f * Settings.scale,
                 80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
-        addToBot(new TriggerFinFunnelAction(m, InvestigationFinFunnel.ID));
-        addToBot(new TriggerFinFunnelAction(m, InvestigationFinFunnel.ID));
 
-        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
-        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
-
-        addToBot(new TriggerFinFunnelAction(m, PursuitFinFunnel.ID));
-        addToBot(new TriggerFinFunnelAction(m, PursuitFinFunnel.ID));
-        addToBot(new TriggerFinFunnelAction(m, PursuitFinFunnel.ID));
+        for(AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList){
+            addToBot(new TriggerFinFunnelAction(m, funnel.id));
+            addToBot(new TriggerFinFunnelAction(m, funnel.id));
+        }
     }
 }

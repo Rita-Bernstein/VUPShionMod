@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class Calamity extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(Calamity.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/lyz09.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/Calamity.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

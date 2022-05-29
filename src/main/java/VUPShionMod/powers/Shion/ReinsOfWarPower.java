@@ -74,7 +74,6 @@ public class ReinsOfWarPower extends AbstractShionPower {
 
             if(finFunnel.level >= 11){
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,3)));
                 addToBot(new GainHyperdimensionalLinksAction(3));
                 return;
             }

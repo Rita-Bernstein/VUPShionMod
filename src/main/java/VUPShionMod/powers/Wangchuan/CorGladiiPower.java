@@ -1,8 +1,10 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,6 +39,12 @@ public class CorGladiiPower extends AbstractShionPower {
                 ((AbstractShionPower) p).onStackPower(this);
             }
         }
+
+        for(AbstractCard card: AbstractDungeon.player.discardPile.group){
+            if(card instanceof AbstractShionCard){
+                ((AbstractShionCard) card).onApplyCor();
+            }
+        }
     }
 
     @Override
@@ -45,6 +53,13 @@ public class CorGladiiPower extends AbstractShionPower {
         for(AbstractPower p : AbstractDungeon.player.powers){
             if(p instanceof AbstractShionPower){
                 ((AbstractShionPower) p).onStackPower(this);
+            }
+        }
+
+
+        for(AbstractCard card: AbstractDungeon.player.discardPile.group){
+            if(card instanceof AbstractShionCard){
+                ((AbstractShionCard) card).onApplyCor();
             }
         }
     }

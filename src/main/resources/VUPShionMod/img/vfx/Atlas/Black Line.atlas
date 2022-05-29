@@ -1,0 +1,237 @@
+
+Black Line.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Black Line_00000
+  rotate: false
+  xy: 207, 410
+  size: 2, 3
+  orig: 100, 100
+  offset: 47, 8
+  index: -1
+Black Line_00001
+  rotate: false
+  xy: 6, 9
+  size: 2, 18
+  orig: 100, 100
+  offset: 47, 7
+  index: -1
+Black Line_00002
+  rotate: false
+  xy: 461, 464
+  size: 4, 38
+  orig: 100, 100
+  offset: 46, 7
+  index: -1
+Black Line_00003
+  rotate: false
+  xy: 447, 446
+  size: 4, 56
+  orig: 100, 100
+  offset: 46, 7
+  index: -1
+Black Line_00004
+  rotate: false
+  xy: 386, 428
+  size: 21, 74
+  orig: 100, 100
+  offset: 37, 0
+  index: -1
+Black Line_00005
+  rotate: false
+  xy: 358, 425
+  size: 26, 77
+  orig: 100, 100
+  offset: 35, 0
+  index: -1
+Black Line_00006
+  rotate: false
+  xy: 2, 29
+  size: 28, 90
+  orig: 100, 100
+  offset: 34, 0
+  index: -1
+Black Line_00007
+  rotate: false
+  xy: 103, 411
+  size: 33, 91
+  orig: 100, 100
+  offset: 33, 0
+  index: -1
+Black Line_00008
+  rotate: false
+  xy: 207, 415
+  size: 32, 87
+  orig: 100, 100
+  offset: 33, 0
+  index: -1
+Black Line_00009
+  rotate: false
+  xy: 273, 419
+  size: 32, 83
+  orig: 100, 100
+  offset: 33, 0
+  index: -1
+Black Line_00010
+  rotate: false
+  xy: 241, 416
+  size: 30, 86
+  orig: 100, 100
+  offset: 34, 0
+  index: -1
+Black Line_00011
+  rotate: false
+  xy: 138, 411
+  size: 33, 91
+  orig: 100, 100
+  offset: 32, 0
+  index: -1
+Black Line_00012
+  rotate: false
+  xy: 2, 311
+  size: 30, 93
+  orig: 100, 100
+  offset: 34, 0
+  index: -1
+Black Line_00013
+  rotate: false
+  xy: 2, 406
+  size: 31, 96
+  orig: 100, 100
+  offset: 33, 0
+  index: -1
+Black Line_00014
+  rotate: false
+  xy: 35, 408
+  size: 32, 94
+  orig: 100, 100
+  offset: 33, 0
+  index: -1
+Black Line_00015
+  rotate: false
+  xy: 173, 410
+  size: 32, 92
+  orig: 100, 100
+  offset: 33, 0
+  index: -1
+Black Line_00016
+  rotate: false
+  xy: 69, 409
+  size: 32, 93
+  orig: 100, 100
+  offset: 33, 0
+  index: -1
+Black Line_00017
+  rotate: false
+  xy: 2, 216
+  size: 30, 93
+  orig: 100, 100
+  offset: 34, 0
+  index: -1
+Black Line_00018
+  rotate: false
+  xy: 2, 121
+  size: 28, 93
+  orig: 100, 100
+  offset: 35, 0
+  index: -1
+Black Line_00019
+  rotate: false
+  xy: 307, 410
+  size: 24, 92
+  orig: 100, 100
+  offset: 37, 0
+  index: -1
+Black Line_00020
+  rotate: false
+  xy: 333, 409
+  size: 23, 93
+  orig: 100, 100
+  offset: 37, 0
+  index: -1
+Black Line_00021
+  rotate: false
+  xy: 409, 423
+  size: 6, 79
+  orig: 100, 100
+  offset: 46, 8
+  index: -1
+Black Line_00022
+  rotate: false
+  xy: 417, 425
+  size: 4, 77
+  orig: 100, 100
+  offset: 47, 8
+  index: -1
+Black Line_00023
+  rotate: false
+  xy: 423, 425
+  size: 2, 77
+  orig: 100, 100
+  offset: 48, 8
+  index: -1
+Black Line_00024
+  rotate: false
+  xy: 427, 425
+  size: 2, 77
+  orig: 100, 100
+  offset: 48, 8
+  index: -1
+Black Line_00025
+  rotate: false
+  xy: 431, 429
+  size: 2, 73
+  orig: 100, 100
+  offset: 48, 8
+  index: -1
+Black Line_00026
+  rotate: false
+  xy: 435, 430
+  size: 2, 72
+  orig: 100, 100
+  offset: 48, 9
+  index: -1
+Black Line_00027
+  rotate: false
+  xy: 439, 430
+  size: 2, 72
+  orig: 100, 100
+  offset: 48, 9
+  index: -1
+Black Line_00028
+  rotate: false
+  xy: 443, 431
+  size: 2, 71
+  orig: 100, 100
+  offset: 48, 9
+  index: -1
+Black Line_00029
+  rotate: false
+  xy: 453, 455
+  size: 2, 47
+  orig: 100, 100
+  offset: 48, 9
+  index: -1
+Black Line_00030
+  rotate: false
+  xy: 457, 455
+  size: 2, 47
+  orig: 100, 100
+  offset: 48, 9
+  index: -1
+Black Line_00031
+  rotate: false
+  xy: 2, 2
+  size: 2, 25
+  orig: 100, 100
+  offset: 48, 9
+  index: -1
+Black Line_00032
+  rotate: false
+  xy: 467, 483
+  size: 2, 19
+  orig: 100, 100
+  offset: 48, 15
+  index: -1

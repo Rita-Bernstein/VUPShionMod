@@ -696,7 +696,7 @@
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :给予 #b99 层 易伤 。",
-      " NL #b%d :击晕并失去本效果。"
+      " NL #b%d :移除本效果并： NL 首领-解析敌人能力或失去 #b3 点 #y力量。 NL 非首领- #y击晕 。"
     ]
   },
   "VUPShionMod:ReinsOfWarPower": {
@@ -706,10 +706,23 @@
       " NL #b1-3 :给予 #b1 点 #y敏捷 。",
       " NL #b4-5 :给予 #b1 点 #y力量 和 #y敏捷 。",
       " NL #b6-10 :给予 #b2 点 #y力量 和 #y敏捷 。",
-      " NL #b11-15 :给予 #b3 点 #y力量 、 #y敏捷 和 #y超维链接 。",
+      " NL #b11-15 :给予 #b3 点 #y力量 和 #y超维链接 。",
       " NL #b16-20 :给予 #b4 点 #y力量 、 #y超维链接 和 [E] 。",
       " NL #b21-25 :给予 #b5 点 #y力量 、 #y超维链接 和 [E] 。",
       " NL #b26及以上 :给予 #b5 点 #y力量 、 #y超维链接 和 [E] [E] 。"
+    ]
+  },
+  "VUPShionMod:SpatialTearPower": {
+    "NAME": "空间断层",
+    "DESCRIPTIONS": [
+      "到达 #b18 层时，将 #y放逐 加入手牌并移除本效果。"
+    ]
+  },
+  "VUPShionMod:OppressiveSwordPower": {
+    "NAME": "月牙天冲",
+    "DESCRIPTIONS": [
+      "本回合 #y剑意 不会下降。",
+      "在 #b%d 个回合内 #y剑意 不会下降。"
     ]
   }
 }

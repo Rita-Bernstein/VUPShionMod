@@ -285,4 +285,8 @@ public abstract class AbstractVUPShionCard extends CustomCard {
 
     public void onDuelSin() {
     }
+
+    public void onApplyCor(){
+
+    }
 }

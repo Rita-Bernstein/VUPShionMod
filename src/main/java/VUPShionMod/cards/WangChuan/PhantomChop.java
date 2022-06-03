@@ -145,7 +145,7 @@ public class PhantomChop extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                updateCost(-1);
+                upgradeBaseCost(-1);
                 this.selfRetain = true;
             }
         }

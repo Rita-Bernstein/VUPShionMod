@@ -38,14 +38,13 @@ public class CGlayout implements Disposable {
 //        this.bgImg = ImageMaster.loadImage("images/scenes/redBg.jpg");
         String lang;
 
-        if(Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT){
+        if (Settings.language == Settings.GameLanguage.ZHS || Settings.language == Settings.GameLanguage.ZHT) {
             lang = "zhs";
-        }else if(Settings.language == Settings.GameLanguage.JPN){
+        } else if (Settings.language == Settings.GameLanguage.JPN) {
             lang = "jpn";
-        }else {
+        } else {
             lang = "eng";
         }
-
 
 
         switch (name) {
@@ -60,6 +59,16 @@ public class CGlayout implements Disposable {
             case "WangChuan":
                 for (int i = 1; i < 6; i++) {
                     this.panels.add(new CutscenePanel("VUPShionMod/img/cg/WangChuan/" + lang + "/CG0" + i + ".png"));
+                }
+                break;
+            case "StoryBE":
+                for (int i = 1; i < 4; i++) {
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/StoryBE/" + lang + "/CG0" + i + ".png"));
+                }
+                break;
+            case "StoryTE":
+                for (int i = 1; i < 3; i++) {
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/StoryTE/" + lang + "/CG0" + i + ".png"));
                 }
                 break;
             default:

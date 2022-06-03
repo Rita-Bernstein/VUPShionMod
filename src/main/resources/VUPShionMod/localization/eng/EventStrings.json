@@ -198,5 +198,33 @@
       "[Locked] At least 3 Magiam Obruor cards are required.",
       "[Leave]"
     ]
+  },
+  "VUPShionMod:FruitStall": {
+    "NAME": "Fruit Stand?",
+    "DESCRIPTIONS": [
+      "Not translate yet",
+      "Not translate yet",
+      " Not translate yet",
+      "Not translate yet ",
+      "Not translate yet",
+      "Not translate yet",
+      "“Not translate yet",
+      "Not translate yet"
+    ],
+    "OPTIONS": [
+      "[Not translate yet]",
+      "[Not translate yet]",
+      "[Not translate yet] Not translate yet ",
+      "[Not translate yet] Not translate yet ",
+      "[Not translate yet] Not translate yet",
+      "[Not translate yet] Not translate yet",
+      "[Not translate yet ]  Not translate yet",
+      "[Not translate yet] Not translate yet",
+      "[Not translate yet] Not translate yet",
+      "[Not translate yet] Not translate yet",
+      "[Not translate yet]",
+      "[Not translate yet]",
+      "[Not translate yet]"
+    ]
   }
 }

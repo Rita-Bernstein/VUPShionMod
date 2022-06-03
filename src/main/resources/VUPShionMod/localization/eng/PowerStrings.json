@@ -683,7 +683,7 @@
       " NL #b%d :Lose #b5%% Maxhp.",
       " NL #b%d :Lose #b5%% Maxhp.",
       " NL #b%d :Apply #b99 Vulnerable .",
-      " NL #b%d :Stun and lose this effect."
+      " NL #b%d :Lose this effect and: NL Boss enemy-Analysis power or lose #b3 #ystrength. NL None Boss enemy- #ystun."
     ]
   },
   "VUPShionMod:ReinsOfWarPower": {
@@ -697,6 +697,19 @@
       " NL #b16-20 :Gain #b4 #yStrength , #yHyperdimensional and [E] .",
       " NL #b21-25 :Gain #b5 #yStrength , #yHyperdimensional and [E] .",
       " NL #b26 and above :Gain #b5 #yStrength , #yHyperdimensional and [E] [E] 。"
+    ]
+  },
+  "VUPShionMod:SpatialTearPower": {
+    "NAME": "Not translate yet",
+    "DESCRIPTIONS": [
+      "Not translate yet"
+    ]
+  },
+  "VUPShionMod:OppressiveSwordPower": {
+    "NAME": "Not translate yet",
+    "DESCRIPTIONS": [
+      "Not translate yet",
+      "Not translate yet"
     ]
   }
 }

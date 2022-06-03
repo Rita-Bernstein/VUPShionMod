@@ -63,7 +63,7 @@ public class OppressiveSword extends AbstractWCCard {
 
                 Consumer<Integer> actionConsumer = effect -> {
                     addToTop(new ApplyPowerAction(p, p, new MagiamObruorPower(p, effect)));
-                    addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber * effect)));
+                    addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, 12* effect)));
                     baseDamage = this.magicNumber * effect;
                     calculateCardDamage(m);
                     addToTop(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
@@ -115,9 +115,9 @@ public class OppressiveSword extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                updateCost(-1);
+                upgradeBaseCost(-1);
                 upgradeMagicNumber(3);
-                this.exhaust = true;
+                this.exhaust = false;
             }
         }
     }

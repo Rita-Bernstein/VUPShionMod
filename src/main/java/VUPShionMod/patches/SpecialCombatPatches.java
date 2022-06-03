@@ -5,12 +5,15 @@ import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.Contact;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.events.Prophesy;
-import VUPShionMod.monsters.PlagaAMundo;
+import VUPShionMod.monsters.Story.Ouroboros;
+import VUPShionMod.monsters.Story.PlagaAMundo;
+import VUPShionMod.monsters.Story.PlagaAMundoMinion;
+import VUPShionMod.monsters.Story.TimePortal;
 import VUPShionMod.powers.Shion.AttackOrderSpecialPower;
 import VUPShionMod.powers.Unique.GravitoniumOverPower;
-import VUPShionMod.relics.AnastasiaNecklace;
-import VUPShionMod.relics.TrackingBeacon;
-import VUPShionMod.relics.UnknownDust;
+import VUPShionMod.relics.Event.AnastasiaNecklace;
+import VUPShionMod.relics.Event.TrackingBeacon;
+import VUPShionMod.relics.Event.UnknownDust;
 import basemod.CustomEventRoom;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
@@ -24,6 +27,8 @@ import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.helpers.EventHelper;
 import com.megacrit.cardcrawl.map.MapEdge;
 import com.megacrit.cardcrawl.map.MapRoomNode;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.TinyChest;
@@ -34,7 +39,7 @@ import java.util.ArrayList;
 
 public class SpecialCombatPatches {
 
-    public static void victoryFightSpecialBoss(){
+    public static void victoryFightSpecialBoss() {
 
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && !AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
             VUPShionMod.fightSpecialBossWithout = true;
@@ -44,8 +49,8 @@ public class SpecialCombatPatches {
             if (((WangChuan) AbstractDungeon.player).shionHelper != null)
                 VUPShionMod.fightSpecialBossWithout = false;
 
-            if(AbstractDungeon.player.hasRelic(TrackingBeacon.ID)){
-                VUPShionMod.fightSpecialBossWithout = !((TrackingBeacon)AbstractDungeon.player.getRelic(TrackingBeacon.ID)).triggered;
+            if (AbstractDungeon.player.hasRelic(TrackingBeacon.ID)) {
+                VUPShionMod.fightSpecialBossWithout = !((TrackingBeacon) AbstractDungeon.player.getRelic(TrackingBeacon.ID)).triggered;
             }
         }
 
@@ -55,6 +60,37 @@ public class SpecialCombatPatches {
 
 
         VUPShionMod.fightSpecialBoss = !VUPShionMod.fightSpecialBossWithout;
+    }
+
+    public static boolean shouldHardMod() {
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock
+                && CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock
+                && VUPShionMod.liyezhuVictory;
+    }
+
+    @SpirePatch(
+            clz = MonsterGroup.class,
+            method = "update"
+    )
+    public static class TimePortalIntentPatch {
+        @SpireInsertPatch(rloc = 20)
+        public static void Postfix(MonsterGroup _instance) {
+            _instance.hoveredMonster = null;
+            for (AbstractMonster m : _instance.monsters) {
+                if (!m.isDying && !m.isEscaping) {
+                    m.hb.update();
+                    m.intentHb.update();
+                    m.healthHb.update();
+                    if ((m.hb.hovered || m.intentHb.hovered || m.healthHb.hovered) && !AbstractDungeon.player.isDraggingCard) {
+                        if (m.id.equals(TimePortal.ID) && m.halfDead)
+                            continue;
+
+                        _instance.hoveredMonster = m;
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     @SpirePatch(
@@ -143,6 +179,21 @@ public class SpecialCombatPatches {
                     ((UnknownDust) r).renderAbove(sb);
                 }
             }
+
+
+            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+
+                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                    if (monster instanceof Ouroboros) {
+                        ((Ouroboros) monster).renderAbove(sb);
+                    }
+
+                    if (monster instanceof PlagaAMundoMinion)
+                        ((PlagaAMundoMinion) monster).renderAbove(sb);
+
+                }
+
+
         }
     }
 

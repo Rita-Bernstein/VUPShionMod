@@ -103,7 +103,7 @@ public class ChargeHelper implements Disposable {
     }
 
     public void update() {
-        this.drawX = Settings.WIDTH / 2.0f;
+        this.drawX = Settings.WIDTH / 2.0f - 160.0f * Settings.scale;
         this.drawY = Settings.HEIGHT - 192.0f * Settings.scale;
 
         this.hb.update();

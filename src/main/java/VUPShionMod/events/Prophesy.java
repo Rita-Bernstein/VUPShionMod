@@ -1,9 +1,9 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.monsters.PlagaAMundo;
-import VUPShionMod.relics.TrackingBeacon;
-import VUPShionMod.relics.UnknownDust;
+import VUPShionMod.monsters.Story.PlagaAMundo;
+import VUPShionMod.patches.SpecialCombatPatches;
+import VUPShionMod.relics.Event.UnknownDust;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,7 +25,7 @@ public class Prophesy extends AbstractImageEvent {
     private CurrentScreen curScreen = CurrentScreen.INTRO;
 
     private enum CurrentScreen {
-        INTRO, COMPLETE
+        INTRO, SELECT, HARD
     }
 
 
@@ -38,23 +38,65 @@ public class Prophesy extends AbstractImageEvent {
     public void onEnterRoom() {
     }
 
+
     @Override
     protected void buttonEffect(int buttonPressed) {
         switch (this.curScreen) {
             case INTRO:
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                 this.imageEventText.clearAllDialogs();
+
                 this.imageEventText.setDialogOption(OPTIONS[1], new UnknownDust());
                 this.imageEventText.setDialogOption(OPTIONS[2]);
+
+                if (SpecialCombatPatches.shouldHardMod()) {
+                    this.imageEventText.setDialogOption(OPTIONS[4]);
+                } else {
+                    this.imageEventText.setDialogOption(OPTIONS[3], true);
+                }
+
                 this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BossEvent2.png"));
-                this.curScreen = CurrentScreen.COMPLETE;
+                this.curScreen = CurrentScreen.SELECT;
                 break;
-            case COMPLETE:
+            case SELECT:
+                switch (buttonPressed) {
+                    case 0:
+                        AbstractDungeon.player.loseRelic(MarkOfTheBloom.ID);
+                        fightBoss();
+                        break;
+                    case 1:
+                        leave();
+                        break;
+                    case 2:
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
+                        this.imageEventText.clearAllDialogs();
+                        this.imageEventText.setDialogOption(OPTIONS[5]);
+                        this.imageEventText.setDialogOption(OPTIONS[6]);
+                        this.curScreen = CurrentScreen.HARD;
+                        break;
+
+                }
+                break;
+            case HARD:
                 if (buttonPressed == 0) {
                     AbstractDungeon.player.loseRelic(MarkOfTheBloom.ID);
+                    VUPShionMod.isHardMod = true;
+                    VUPShionMod.saveSettings();
                     fightBoss();
                 } else {
-                    leave();
+                    this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
+                    this.imageEventText.clearAllDialogs();
+
+                    this.imageEventText.setDialogOption(OPTIONS[1], new UnknownDust());
+                    this.imageEventText.setDialogOption(OPTIONS[2]);
+
+                    if (SpecialCombatPatches.shouldHardMod()) {
+                        this.imageEventText.setDialogOption(OPTIONS[4]);
+                    } else {
+                        this.imageEventText.setDialogOption(OPTIONS[3], true);
+                    }
+
+                    this.curScreen = CurrentScreen.SELECT;
                 }
                 break;
         }

@@ -50,4 +50,6 @@ public class AbstractShionPower extends TwoAmountPower {
     public void onCreatePrayer(AbstractPrayer prayer){
     }
 
+    public void preEndOfRound(){}
+
 }

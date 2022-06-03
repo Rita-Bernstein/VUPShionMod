@@ -6,7 +6,7 @@ public class CustomWaitAction extends AbstractGameAction {
     public CustomWaitAction(float setDur) {
         this.duration = setDur;
 
-        this.actionType = ActionType.WAIT;
+        this.actionType = ActionType.DAMAGE;
     }
 
     public void update() {

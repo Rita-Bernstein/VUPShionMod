@@ -48,7 +48,7 @@ public class BreakChop extends AbstractWCCard {
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 if (m.getIntentBaseDmg() >= 0)
-                    addToBot(new GainEnergyAction(2));
+                    addToBot(new GainEnergyAction(1));
                 addToBot(new LoseCorGladiiAction(1));
                 break;
         }
@@ -84,11 +84,6 @@ public class BreakChop extends AbstractWCCard {
                 }
             }
         }else return super.canUse(p, m);
-    }
-
-    @Override
-    public boolean canPlay(AbstractCard card) {
-        return super.canPlay(card);
     }
 
     @Override

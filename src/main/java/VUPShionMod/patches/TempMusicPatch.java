@@ -23,6 +23,14 @@ public class TempMusicPatch {
             return SpireReturn.Return(MainMusic.newMusic("VUPShionMod/audio/bgm/Boss_Phase2.ogg"));
         }
 
+
+        if (key.equals("VUPShionMod:RitaFight1")) {
+            return SpireReturn.Return(MainMusic.newMusic("VUPShionMod/audio/bgm/Bernstein-Fight_Phase_1.ogg"));
+        }
+        if (key.equals("VUPShionMod:RitaFight2")) {
+            return SpireReturn.Return(MainMusic.newMusic("VUPShionMod/audio/bgm/Bernstein-Fight_Phase_2.ogg"));
+        }
+
         return SpireReturn.Continue();
     }
 }

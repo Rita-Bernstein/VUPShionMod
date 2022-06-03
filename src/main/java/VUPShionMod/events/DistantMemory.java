@@ -1,18 +1,13 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.WangChuan.MensVirtusque;
-import VUPShionMod.patches.CardTagsEnum;
-import VUPShionMod.relics.AbyssalCrux;
-import VUPShionMod.relics.HallowedCase;
-import VUPShionMod.relics.Inhibitor;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import VUPShionMod.relics.Liyezhu.HallowedCase;
+import VUPShionMod.relics.Liyezhu.Inhibitor;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class DistantMemory extends AbstractImageEvent {
     public static final String ID = VUPShionMod.makeID(DistantMemory.class.getSimpleName());

@@ -80,7 +80,7 @@
   },
   "VUPShionMod:DimensionSplitting": {
     "NAME": "Dimension Split",
-    "DESCRIPTION": "Retain. NL Deal damage !M! times of the number of vup_shion_mod:Funnel cards played this turn.",
+    "DESCRIPTION": "Retain. NL Deal damage !M! times of the number of vup_shion_mod:Funnel cards played this battle to all enemies.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
     ]
@@ -935,7 +935,7 @@
   },
   "VUPShionMod:FunnelMatrix": {
     "NAME": "Funnel Matrix",
-    "DESCRIPTION": "Trigger the passive ability of Scouting vup_shion_mod:Funnel and Gravity vup_shion_mod:Funnel for twice and Pursuing vup_shion_mod:Funnel for thrice to an enemy. NL Exhaust."
+    "DESCRIPTION": "Trigger the passive ability of all vup_shion_mod:Funnel for twice to an enemy. NL Exhaust."
   },
    "VUPShionMod:Alleviator": {
     "NAME": "Alleviator",
@@ -1289,5 +1289,101 @@
   "VUPShionMod:ShionEmbodiment": {
     "NAME": "Shion Doll",
     "DESCRIPTION": "Deploy a *Lure with !M! HP. It deals !M! damage 5 times to ALL enemies upon being destroyed. Exhaust."
+  },
+  "VUPShionMod:SpaceSlice": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:Exile": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet"
+  },
+  "VUPShionMod:PhantomChop": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:MentalMotivationChop": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:MeltDowner": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:CirrocumulusChop": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:CoronaChop": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:MotherRosario": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:BreakChop": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet",
+      "No translation yet"
+    ]
+  },
+  "VUPShionMod:OppressiveSword": {
+    "NAME": "No translation yet",
+    "DESCRIPTION": "No translation yet ",
+    "UPGRADE_DESCRIPTION": "No translation yet",
+    "EXTENDED_DESCRIPTION": [
+      "No translation yet",
+      "No translation yet",
+      "No translation yet "
+    ]
   }
 }

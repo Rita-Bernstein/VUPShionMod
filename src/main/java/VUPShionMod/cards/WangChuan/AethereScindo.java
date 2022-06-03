@@ -51,7 +51,7 @@ public class AethereScindo extends AbstractWCCard {
 
         addToBot(new DrawCardAction(1));
 
-        addToBot(new ApplyStiffnessAction(3));
+        addToBot(new ApplyStiffnessAction(2));
     }
 
 

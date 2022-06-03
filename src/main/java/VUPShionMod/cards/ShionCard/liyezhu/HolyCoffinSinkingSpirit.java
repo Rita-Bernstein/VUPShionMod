@@ -10,14 +10,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("HolyCoffinSinkingSpirit");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz11.png");
-    private static final int COST = 1;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public HolyCoffinSinkingSpirit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 10;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(5);
         }
     }
 

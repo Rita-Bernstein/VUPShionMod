@@ -1,15 +1,12 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Common.CustomWaitAction;
-import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Shion.DamageAndGainBlockAction;
 import VUPShionMod.actions.Shion.MoveFinFunnelSelectedEffectAction;
-import VUPShionMod.character.Shion;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Shion.*;
-import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.relics.Shion.DimensionSplitterAria;
 import VUPShionMod.vfx.FinFunnelBeamEffect;
 import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.Gdx;
@@ -21,7 +18,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

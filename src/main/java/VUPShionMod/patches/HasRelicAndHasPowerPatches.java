@@ -1,6 +1,6 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.relics.Sniperscope;
+import VUPShionMod.relics.Event.Sniperscope;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.relics.AbstractRelic;

@@ -3,7 +3,13 @@ package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.LoseMaxHPAction;
+import VUPShionMod.monsters.RitaShop;
+import VUPShionMod.monsters.Story.Ouroboros;
+import VUPShionMod.monsters.Story.TimePortal;
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.powers.Monster.RitaShop.DefenceMonsterPower;
+import VUPShionMod.powers.Monster.TimePortal.ContortTimePower;
+import VUPShionMod.powers.Monster.TimePortal.SubspacePursuerPower;
 import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
@@ -216,7 +222,6 @@ public class StructureDissectionPower extends AbstractShionPower {
                         }
                     }
 
-
                     if (m.id.equals(Donu.ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
                                 96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
@@ -232,11 +237,30 @@ public class StructureDissectionPower extends AbstractShionPower {
                     }
 
 
-                    if(m.id.equals(CorruptHeart.ID) && m.hasPower(InvinciblePower.POWER_ID)){
+                    if (m.id.equals(CorruptHeart.ID) && m.hasPower(InvinciblePower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
                                 96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
-                        addToTop(new RemoveSpecificPowerAction(this.owner,this.owner,InvinciblePower.POWER_ID));
+                        addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, InvinciblePower.POWER_ID));
                         return;
+                    }
+
+
+                    if (m.id.equals(RitaShop.ID) && m.hasPower(DefenceMonsterPower.POWER_ID)) {
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
+                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, DefenceMonsterPower.POWER_ID));
+                    }
+
+                    if (m.id.equals(TimePortal.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
+                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
+                    }
+
+                    if (m.id.equals(Ouroboros.ID) && m.hasPower(SubspacePursuerPower.POWER_ID)) {
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
+                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, SubspacePursuerPower.POWER_ID));
                     }
 
 

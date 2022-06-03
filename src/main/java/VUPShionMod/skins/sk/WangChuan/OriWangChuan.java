@@ -2,9 +2,8 @@ package VUPShionMod.skins.sk.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
-import VUPShionMod.relics.DimensionSplitterAria;
-import VUPShionMod.relics.Nebula;
-import VUPShionMod.relics.StarQuakes;
+import VUPShionMod.relics.Wangchuan.Nebula;
+import VUPShionMod.relics.Wangchuan.StarQuakes;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -64,7 +63,6 @@ public class OriWangChuan extends AbstractSkin {
         retVal.add(Slide.ID);
         retVal.add(Sheathe.ID);
         retVal.add(GlandesMagicae.ID);
-        retVal.add(MorsLibraque.ID);
 
         return retVal;
     }

@@ -69,7 +69,7 @@ public class CoronaChop extends AbstractWCCard {
                         50.0f, 90.0f, 10.0f * Settings.scale, 2, false)));
 
                 addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, amount)));
-                addToBot(new ExhaustAction(1, false, true, true));
+                addToBot(new ExhaustAction(2, false, true, true));
                 addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
                 addToBot(new ApplyStiffnessAction(this.secondaryM));
                 addToBot(new ApplyPowerAction(p,p,new MagiamObruorPower(p,1)));

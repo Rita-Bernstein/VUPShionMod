@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class HolyCoffinRelease extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID("HolyCoffinRelease");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz14.png");
-    private static final int COST = 1;
+    private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -18,7 +18,7 @@ public class HolyCoffinRelease extends AbstractShionLiyezhuCard {
     public HolyCoffinRelease() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class HolyCoffinRelease extends AbstractShionLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(2);
         }
     }
 }

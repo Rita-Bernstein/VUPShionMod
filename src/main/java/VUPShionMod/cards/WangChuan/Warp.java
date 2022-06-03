@@ -1,7 +1,9 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,11 +23,14 @@ public class Warp extends AbstractWCCard {
     public Warp() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 7;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+
         Predicate<AbstractCard> predicate = (pr) -> pr.type == CardType.ATTACK;
         addToBot(new MoveCardsAction(p.hand, p.discardPile, predicate, 1));
     }

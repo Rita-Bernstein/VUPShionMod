@@ -6,9 +6,8 @@ import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.cards.ShionCard.shion.Strafe;
 import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
-import VUPShionMod.relics.BlueGiant;
-import VUPShionMod.relics.Concord;
-import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.relics.Shion.ConcordSnipe;
+import VUPShionMod.relics.Shion.DimensionSplitterAria;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -53,7 +52,7 @@ public class OriShion extends AbstractSkin {
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(DimensionSplitterAria.ID);
-        info.relics.add(Concord.ID);
+        info.relics.add(ConcordSnipe.ID);
         return info;
     }
 
@@ -61,7 +60,7 @@ public class OriShion extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(DimensionSplitterAria.ID);
-        retVal.add(Concord.ID);
+        retVal.add(ConcordSnipe.ID);
         return retVal;
     }
 

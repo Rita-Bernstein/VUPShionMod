@@ -112,7 +112,6 @@ public class SpaceSlice extends AbstractWCCard {
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(2);
                 upgradeMagicNumber(1);
-                this.exhaust = true;
             }
         }
     }

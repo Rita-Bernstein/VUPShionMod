@@ -1,22 +1,19 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.monsters.PlagaAMundo;
-import VUPShionMod.relics.AnastasiaNecklace;
-import VUPShionMod.relics.Croissant;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import VUPShionMod.monsters.Story.PlagaAMundo;
+import VUPShionMod.patches.SpecialCombatPatches;
+import VUPShionMod.relics.Event.AnastasiaNecklace;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.map.MapRoomNode;
-import com.megacrit.cardcrawl.monsters.city.Champ;
 import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.TrueVictoryRoom;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class Newborn extends AbstractImageEvent {
     public static final String ID = VUPShionMod.makeID("Newborn");
@@ -28,7 +25,7 @@ public class Newborn extends AbstractImageEvent {
     private CurrentScreen curScreen = CurrentScreen.INTRO;
 
     private enum CurrentScreen {
-        INTRO, COMPLETE
+        INTRO, SELECT, HARD
     }
 
 
@@ -47,17 +44,58 @@ public class Newborn extends AbstractImageEvent {
             case INTRO:
                 this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.setDialogOption(OPTIONS[1],new AnastasiaNecklace());
+
+                this.imageEventText.setDialogOption(OPTIONS[1], new AnastasiaNecklace());
                 this.imageEventText.setDialogOption(OPTIONS[2]);
+
+                if (SpecialCombatPatches.shouldHardMod()) {
+                    this.imageEventText.setDialogOption(OPTIONS[4]);
+                } else {
+                    this.imageEventText.setDialogOption(OPTIONS[3], true);
+                }
+
                 this.imageEventText.loadImage(VUPShionMod.assetPath("img/events/BossEvent2.png"));
-                this.curScreen = CurrentScreen.COMPLETE;
+                this.curScreen = CurrentScreen.SELECT;
                 break;
-            case COMPLETE:
-                if (buttonPressed == 0){
+            case SELECT:
+                switch (buttonPressed) {
+                    case 0:
+                        AbstractDungeon.player.loseRelic(MarkOfTheBloom.ID);
+                        fightBoss();
+                        break;
+                    case 1:
+                        leave();
+                        break;
+                    case 2:
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
+                        this.imageEventText.clearAllDialogs();
+                        this.imageEventText.setDialogOption(OPTIONS[5]);
+                        this.imageEventText.setDialogOption(OPTIONS[6]);
+                        this.curScreen = CurrentScreen.HARD;
+                        break;
+
+                }
+                break;
+            case HARD:
+                if (buttonPressed == 0) {
                     AbstractDungeon.player.loseRelic(MarkOfTheBloom.ID);
+                    VUPShionMod.isHardMod = true;
+                    VUPShionMod.saveSettings();
                     fightBoss();
-                } else{
-                    leave();
+                } else {
+                    this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
+                    this.imageEventText.clearAllDialogs();
+
+                    this.imageEventText.setDialogOption(OPTIONS[1], new AnastasiaNecklace());
+                    this.imageEventText.setDialogOption(OPTIONS[2]);
+
+                    if (SpecialCombatPatches.shouldHardMod()) {
+                        this.imageEventText.setDialogOption(OPTIONS[4]);
+                    } else {
+                        this.imageEventText.setDialogOption(OPTIONS[3], true);
+                    }
+
+                    this.curScreen = CurrentScreen.SELECT;
                 }
                 break;
         }

@@ -21,7 +21,7 @@ public class MorsLibraque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("MorsLibraque");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc33.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 0;
@@ -32,7 +32,6 @@ public class MorsLibraque extends AbstractWCCard {
         this.secondaryM = this.baseSecondaryM = 4;
         this.selfRetain = true;
 
-        vupCardSetBanner(CardRarity.RARE, this.type);
         GraveField.grave.set(this,true);
     }
 

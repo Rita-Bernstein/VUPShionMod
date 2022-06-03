@@ -2,7 +2,8 @@ package VUPShionMod.skins.sk.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
-import VUPShionMod.relics.*;
+import VUPShionMod.relics.Wangchuan.TheRipple;
+import VUPShionMod.relics.Wangchuan.WaveSlasher;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -61,9 +62,8 @@ public class AquaWangChuan extends AbstractSkin {
         retVal.add(Warp.ID);
         retVal.add(Warp.ID);
         retVal.add(Warp.ID);
-        retVal.add(SeverPetal.ID);
+        retVal.add(CirrocumulusChop.ID);
         retVal.add(BombardaMagica.ID);
-        retVal.add(MorsLibraque.ID);
 
         return retVal;
     }

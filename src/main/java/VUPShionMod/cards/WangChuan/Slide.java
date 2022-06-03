@@ -1,7 +1,9 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -22,6 +24,7 @@ public class Slide extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
         this.tags.add(CardTags.STARTER_DEFEND);
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
@@ -32,6 +35,7 @@ public class Slide extends AbstractWCCard {
         }
 
         addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
     }
 
     @Override

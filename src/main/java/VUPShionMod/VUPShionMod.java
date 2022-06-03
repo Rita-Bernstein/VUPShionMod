@@ -16,9 +16,15 @@ import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.*;
 import VUPShionMod.helpers.SecondaryMagicVariable;
-import VUPShionMod.monsters.PlagaAMundo;
+import VUPShionMod.monsters.Story.PlagaAMundo;
+import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.patches.*;
-import VUPShionMod.relics.*;
+import VUPShionMod.relics.Event.*;
+import VUPShionMod.relics.Liyezhu.HallowedCase;
+import VUPShionMod.relics.Liyezhu.Inhibitor;
+import VUPShionMod.relics.Liyezhu.MartyrVessel;
+import VUPShionMod.relics.Shion.*;
+import VUPShionMod.relics.Wangchuan.*;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.util.SansMeterSave;
@@ -404,6 +410,11 @@ public class VUPShionMod implements
             BaseMod.addEvent(new AddEventParams.Builder(DaysGoneBy.ID, DaysGoneBy.class) //Event ID//
                     .playerClass(playerClass)
                     .create());
+
+//            BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
+//                    .playerClass(playerClass)
+//                    .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
+//                    .create());
         }
 
 
@@ -465,6 +476,7 @@ public class VUPShionMod implements
 
 //      添加boss
         BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
+        BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
     }
 
     @Override
@@ -472,11 +484,29 @@ public class VUPShionMod implements
         for (int i = 1; i <= 18; i++) {
             BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion" + i + ".ogg"));
         }
+
+        BaseMod.addAudio(makeID("VO_Rita_Intimidate"), assetPath("/audio/sound/Rita/VO/嘲讽2.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_KaiserPhoenix"), assetPath("/audio/sound/Rita/VO/凯撒凤凰1.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Repuuken"), assetPath("/audio/sound/Rita/VO/烈风拳.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Heaven"), assetPath("/audio/sound/Rita/VO/这就是最后一击1.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Barrier"), assetPath("/audio/sound/Rita/VO/黑暗屏障.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Kaiser"), assetPath("/audio/sound/Rita/VO/凯撒波.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Execution"), assetPath("/audio/sound/Rita/VO/丽塔处刑1.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Cutter"), assetPath("/audio/sound/Rita/VO/灭族切割.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Pressure"), assetPath("/audio/sound/Rita/VO/死吧1.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Destruction"), assetPath("/audio/sound/Rita/VO/无处可逃 哈哈哈.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Judgement"), assetPath("/audio/sound/Rita/VO/真有趣2.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Hit0"), assetPath("/audio/sound/Rita/VO/受击1.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Hit1"), assetPath("/audio/sound/Rita/VO/受击2.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Form1A"), assetPath("/audio/sound/Rita/VO/转状态1A.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Form1B"), assetPath("/audio/sound/Rita/VO/转状态1C.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Form2A"), assetPath("/audio/sound/Rita/VO/转状态2A.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Form2B"), assetPath("/audio/sound/Rita/VO/转状态2D.wav"));
+        BaseMod.addAudio(makeID("VO_Rita_Form3A"), assetPath("/audio/sound/Rita/VO/转状态3A.wav"));
     }
 
     @Override
     public void receivePostDungeonInitialize() {
-        System.out.println("重开游戏");
         if (AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID) && AbstractDungeon.actNum == 3) {
             FragmentsOfFaith relic = (FragmentsOfFaith) AbstractDungeon.player.getRelic(FragmentsOfFaith.ID);
             relic.upgrade();
@@ -486,15 +516,23 @@ public class VUPShionMod implements
     @Override
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
-            gravityFinFunnelLevel = 1;
-            investigationFinFunnelLevel = 1;
-            pursuitFinFunnelLevel = 1;
-            dissectingFinFunnelLevel = 1;
+            if(AbstractDungeon.player.hasRelic(ConcordArray.ID)) {
+                gravityFinFunnelLevel = 2;
+                investigationFinFunnelLevel = 2;
+                pursuitFinFunnelLevel = 2;
+                dissectingFinFunnelLevel = 2;
+            }else {
+                gravityFinFunnelLevel = 1;
+                investigationFinFunnelLevel = 1;
+                pursuitFinFunnelLevel = 1;
+                dissectingFinFunnelLevel = 1;
+            }
             activeFinFunnel = "GravityFinFunnel";
             saveFinFunnels();
 
             fightSpecialBoss = false;
             fightSpecialBossWithout = false;
+            isHardMod = false;
 
             SansMeterSave.sansMeterSaveAmount = 100;
 
@@ -868,7 +906,9 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new BlueSupergiant(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Drapery(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new Parocheth(), CardColorEnum.VUP_Shion_LIME);
-        BaseMod.addRelicToCustomPool(new Concord(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new ConcordSnipe(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new ConcordArray(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new ConcordCharge(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);
@@ -891,7 +931,9 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new AbyssalCrux(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new Inhibitor(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new UnknownDust(), CardColorEnum.Liyezhu_LIME);
+
         BaseMod.addRelic(new FragmentsOfFaith(), RelicType.SHARED);
+        BaseMod.addRelic(new FruitCake(), RelicType.SHARED);
 
     }
 

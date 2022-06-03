@@ -1,0 +1,336 @@
+
+background_break.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+HX_arm_right_toe
+  rotate: false
+  xy: 1968, 1920
+  size: 52, 29
+  orig: 52, 29
+  offset: 0, 0
+  index: -1
+HX_hair_frount
+  rotate: false
+  xy: 1775, 311
+  size: 255, 307
+  orig: 255, 307
+  offset: 0, 0
+  index: -1
+HX_hairbehind
+  rotate: true
+  xy: 901, 12
+  size: 949, 872
+  orig: 949, 872
+  offset: 0, 0
+  index: -1
+HX_head_ring
+  rotate: true
+  xy: 1775, 620
+  size: 169, 256
+  orig: 169, 256
+  offset: 0, 0
+  index: -1
+HX_wings_behind
+  rotate: true
+  xy: 1968, 2006
+  size: 17, 78
+  orig: 17, 78
+  offset: 0, 0
+  index: -1
+arm_right_toe
+  rotate: false
+  xy: 1968, 1889
+  size: 52, 29
+  orig: 52, 29
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 2, 963
+  size: 1964, 1080
+  orig: 1964, 1080
+  offset: 0, 0
+  index: -1
+hair_behind
+  rotate: true
+  xy: 2, 12
+  size: 949, 897
+  orig: 949, 897
+  offset: 0, 0
+  index: -1
+hair_frount
+  rotate: false
+  xy: 1775, 2
+  size: 255, 307
+  orig: 255, 307
+  offset: 0, 0
+  index: -1
+head_ring
+  rotate: true
+  xy: 1775, 791
+  size: 170, 256
+  orig: 170, 256
+  offset: 0, 0
+  index: -1
+meimao
+  rotate: false
+  xy: 1968, 1951
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+sword_light
+  rotate: true
+  xy: 1968, 1802
+  size: 85, 36
+  orig: 85, 36
+  offset: 0, 0
+  index: -1
+wings_behind
+  rotate: true
+  xy: 1968, 2025
+  size: 18, 78
+  orig: 18, 78
+  offset: 0, 0
+  index: -1
+
+background_break2.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+HX_arm_right
+  rotate: true
+  xy: 1611, 319
+  size: 223, 353
+  orig: 223, 353
+  offset: 0, 0
+  index: -1
+arm_right
+  rotate: true
+  xy: 1611, 103
+  size: 214, 353
+  orig: 214, 353
+  offset: 0, 0
+  index: -1
+bond2
+  rotate: true
+  xy: 1968, 77
+  size: 1964, 31
+  orig: 1964, 31
+  offset: 0, 0
+  index: -1
+light_lizi
+  rotate: false
+  xy: 2, 103
+  size: 1607, 892
+  orig: 1607, 892
+  offset: 0, 0
+  index: -1
+lizi_break
+  rotate: false
+  xy: 2, 997
+  size: 1964, 1044
+  orig: 1964, 1044
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 1611, 544
+  size: 250, 451
+  orig: 250, 451
+  offset: 0, 0
+  index: -1
+zhezhao
+  rotate: false
+  xy: 2, 2
+  size: 1964, 99
+  orig: 1964, 99
+  offset: 0, 0
+  index: -1
+
+background_break3.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+bond
+  rotate: false
+  xy: 2, 2
+  size: 1964, 96
+  orig: 1964, 96
+  offset: 0, 0
+  index: -1
+knife
+  rotate: false
+  xy: 1631, 100
+  size: 380, 905
+  orig: 380, 905
+  offset: 0, 0
+  index: -1
+light
+  rotate: false
+  xy: 2, 159
+  size: 1627, 846
+  orig: 1627, 846
+  offset: 0, 0
+  index: -1
+lizi
+  rotate: false
+  xy: 2, 1007
+  size: 1964, 1033
+  orig: 1964, 1033
+  offset: 0, 0
+  index: -1
+
+background_break4.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+HX_arm_left
+  rotate: false
+  xy: 1454, 250
+  size: 473, 500
+  orig: 473, 500
+  offset: 0, 0
+  index: -1
+HX_body_with_leg
+  rotate: true
+  xy: 1454, 752
+  size: 820, 528
+  orig: 820, 528
+  offset: 0, 0
+  index: -1
+arm_left
+  rotate: true
+  xy: 784, 26
+  size: 473, 500
+  orig: 473, 500
+  offset: 0, 0
+  index: -1
+body_light_shadow
+  rotate: false
+  xy: 2, 501
+  size: 1450, 1071
+  orig: 1450, 1071
+  offset: 0, 0
+  index: -1
+led_light_head_ring
+  rotate: true
+  xy: 1286, 2
+  size: 246, 287
+  orig: 246, 287
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 2
+  size: 780, 497
+  orig: 780, 497
+  offset: 0, 0
+  index: -1
+shadow_light
+  rotate: false
+  xy: 2, 1574
+  size: 1964, 464
+  orig: 1964, 464
+  offset: 0, 0
+  index: -1
+
+background_break5.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+HX_body_with_head
+  rotate: true
+  xy: 1410, 1380
+  size: 662, 606
+  orig: 662, 606
+  offset: 0, 0
+  index: -1
+HX_wings
+  rotate: false
+  xy: 2, 2
+  size: 878, 714
+  orig: 878, 714
+  offset: 0, 0
+  index: -1
+body_with_head
+  rotate: true
+  xy: 1410, 718
+  size: 660, 604
+  orig: 660, 604
+  offset: 0, 0
+  index: -1
+led_light3
+  rotate: false
+  xy: 2, 995
+  size: 1406, 1047
+  orig: 1406, 1047
+  offset: 0, 0
+  index: -1
+wings
+  rotate: false
+  xy: 882, 2
+  size: 878, 714
+  orig: 878, 714
+  offset: 0, 0
+  index: -1
+
+background_break6.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+HX_knife
+  rotate: false
+  xy: 2, 2
+  size: 379, 905
+  orig: 379, 905
+  offset: 0, 0
+  index: -1
+body_behind_light_shadow
+  rotate: true
+  xy: 383, 43
+  size: 864, 863
+  orig: 864, 863
+  offset: 0, 0
+  index: -1
+body_with_leg
+  rotate: true
+  xy: 1371, 965
+  size: 821, 520
+  orig: 821, 520
+  offset: 0, 0
+  index: -1
+led_light
+  rotate: false
+  xy: 2, 909
+  size: 1367, 877
+  orig: 1367, 877
+  offset: 0, 0
+  index: -1
+led_light_L_wing
+  rotate: true
+  xy: 1248, 44
+  size: 863, 752
+  orig: 863, 752
+  offset: 0, 0
+  index: -1
+
+background_break7.png
+size: 2048,1024
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+led_light2
+  rotate: false
+  xy: 2, 2
+  size: 1281, 798
+  orig: 1281, 798
+  offset: 0, 0
+  index: -1

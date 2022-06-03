@@ -1,9 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.monsters.PlagaAMundo;
-import VUPShionMod.monsters.PlagaAMundoMinion;
-import VUPShionMod.skins.AbstractSkinCharacter;
+import VUPShionMod.relics.Event.FragmentsOfFaith;
 import VUPShionMod.skins.sk.Shion.AquaShion;
 import VUPShionMod.skins.sk.Shion.BlueGiantShion;
 import VUPShionMod.skins.sk.WangChuan.AquaWangChuan;
@@ -14,7 +12,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.screens.DeathScreen;
 import com.megacrit.cardcrawl.screens.GameOverScreen;
@@ -34,21 +31,31 @@ public class GameOverScreenPatches {
         @SpireInsertPatch(rloc = 197)
         public static SpireReturn<Void> Insert(VictoryScreen _instance) {
             ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(_instance, GameOverScreen.class, "stats");
-            if (VUPShionMod.fightSpecialBossWithout) {
-                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
-                    stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[1], Integer.toString(1000)));
+            if (VUPShionMod.isHardMod) {
+                stats.add(new GameOverStat(specialBossStatString.TEXT[5], specialBossStatString.TEXT[5], Integer.toString(500)));
+
+                if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID))
+                    stats.add(new GameOverStat(specialBossStatString.TEXT[6], specialBossStatString.TEXT[6], Integer.toString(1000)));
+
+            } else {
+                if (VUPShionMod.fightSpecialBossWithout) {
+                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
+                        stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[1], Integer.toString(1000)));
 
 
-                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
-                    stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
+                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
+                        stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
 
-                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
-                    stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
+                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
+                        stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
+                }
+
+                if (VUPShionMod.fightSpecialBoss) {
+                    stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(500)));
+                }
+
             }
 
-            if (VUPShionMod.fightSpecialBoss) {
-                stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(500)));
-            }
 // 布尔值复位放下面了
 
             return SpireReturn.Continue();
@@ -62,13 +69,22 @@ public class GameOverScreenPatches {
     public static class PatchGameOverScreen {
         @SpireInsertPatch(rloc = 91, localvars = {"points"})
         public static SpireReturn<Void> Insert(boolean victory, @ByRef int[] points) {
-            if (VUPShionMod.fightSpecialBossWithout) {
-                points[0] += 1000;
+            if (VUPShionMod.isHardMod) {
+                points[0] += 500;
+
+                if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID))
+                    points[0] += 1000;
+
+            } else {
+                if (VUPShionMod.fightSpecialBossWithout) {
+                    points[0] += 1000;
+                }
+
+                if (VUPShionMod.fightSpecialBoss) {
+                    points[0] += 500;
+                }
             }
 
-            if (VUPShionMod.fightSpecialBoss) {
-                points[0] += 500;
-            }
             return SpireReturn.Continue();
         }
     }
@@ -99,6 +115,7 @@ public class GameOverScreenPatches {
 //分数的复位放这里了
             VUPShionMod.fightSpecialBossWithout = false;
             VUPShionMod.fightSpecialBoss = false;
+            VUPShionMod.isHardMod = false;
             return SpireReturn.Continue();
         }
     }

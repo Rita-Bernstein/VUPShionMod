@@ -6,11 +6,11 @@ import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.cards.ShionCard.shion.Strafe;
 import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
-import VUPShionMod.relics.BlueGiant;
-import VUPShionMod.relics.Concord;
-import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.relics.Shion.BlueGiant;
+import VUPShionMod.relics.Shion.ConcordArray;
+import VUPShionMod.relics.Shion.ConcordCharge;
+import VUPShionMod.relics.Shion.ConcordSnipe;
 import VUPShionMod.skins.AbstractSkin;
-import VUPShionMod.skins.sk.WangChuan.AquaWangChuan;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -44,7 +44,7 @@ public class BlueGiantShion extends AbstractSkin {
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(BlueGiant.ID);
-        info.relics.add(Concord.ID);
+        info.relics.add(ConcordCharge.ID);
         return info;
     }
 
@@ -52,7 +52,7 @@ public class BlueGiantShion extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(BlueGiant.ID);
-        retVal.add(Concord.ID);
+        retVal.add(ConcordCharge.ID);
         return retVal;
     }
 

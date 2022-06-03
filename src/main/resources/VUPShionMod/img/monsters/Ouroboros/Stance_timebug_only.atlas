@@ -1,0 +1,307 @@
+
+Stance_timebug_only.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+Attack_ball
+  rotate: false
+  xy: 1920, 1672
+  size: 100, 105
+  orig: 100, 105
+  offset: 0, 0
+  index: -1
+Attack_ball2
+  rotate: false
+  xy: 1314, 1041
+  size: 100, 105
+  orig: 100, 105
+  offset: 0, 0
+  index: -1
+Attack_ball3
+  rotate: false
+  xy: 1314, 934
+  size: 100, 105
+  orig: 100, 105
+  offset: 0, 0
+  index: -1
+Attack_ball4
+  rotate: false
+  xy: 1272, 827
+  size: 100, 105
+  orig: 100, 105
+  offset: 0, 0
+  index: -1
+Attack_ball_shadow
+  rotate: false
+  xy: 2, 966
+  size: 1241, 1080
+  orig: 1241, 1080
+  offset: 0, 0
+  index: -1
+Attack_lightshadow
+  rotate: false
+  xy: 1569, 1502
+  size: 95, 129
+  orig: 95, 129
+  offset: 0, 0
+  index: -1
+I_claw1
+  rotate: false
+  xy: 1245, 992
+  size: 67, 321
+  orig: 67, 321
+  offset: 0, 0
+  index: -1
+I_claw1_1
+  rotate: true
+  xy: 1788, 1881
+  size: 165, 258
+  orig: 165, 258
+  offset: 0, 0
+  index: -1
+I_claw2
+  rotate: false
+  xy: 1314, 1148
+  size: 34, 165
+  orig: 34, 165
+  offset: 0, 0
+  index: -1
+I_claw2_1
+  rotate: true
+  xy: 2, 15
+  size: 162, 318
+  orig: 162, 318
+  offset: 0, 0
+  index: -1
+I_claw3
+  rotate: false
+  xy: 914, 529
+  size: 50, 154
+  orig: 50, 154
+  offset: 0, 0
+  index: -1
+I_claw3_1
+  rotate: false
+  xy: 1494, 1376
+  size: 73, 259
+  orig: 73, 259
+  offset: 0, 0
+  index: -1
+I_wing
+  rotate: true
+  xy: 1110, 563
+  size: 107, 94
+  orig: 107, 94
+  offset: 0, 0
+  index: -1
+I_wing2
+  rotate: true
+  xy: 1788, 1779
+  size: 100, 170
+  orig: 100, 170
+  offset: 0, 0
+  index: -1
+O_claw1
+  rotate: false
+  xy: 966, 552
+  size: 142, 118
+  orig: 142, 118
+  offset: 0, 0
+  index: -1
+O_claw1_1
+  rotate: true
+  xy: 1721, 1633
+  size: 51, 15
+  orig: 51, 15
+  offset: 0, 0
+  index: -1
+O_claw2
+  rotate: false
+  xy: 680, 685
+  size: 304, 279
+  orig: 304, 279
+  offset: 0, 0
+  index: -1
+O_claw2_1
+  rotate: false
+  xy: 644, 306
+  size: 70, 52
+  orig: 70, 52
+  offset: 0, 0
+  index: -1
+O_claw2_2
+  rotate: true
+  xy: 1581, 1633
+  size: 51, 138
+  orig: 51, 138
+  offset: 0, 0
+  index: -1
+O_claw2_3
+  rotate: true
+  xy: 986, 672
+  size: 111, 172
+  orig: 111, 172
+  offset: 0, 0
+  index: -1
+O_claw3
+  rotate: false
+  xy: 1356, 1343
+  size: 136, 292
+  orig: 136, 292
+  offset: 0, 0
+  index: -1
+O_claw3_1
+  rotate: false
+  xy: 680, 467
+  size: 232, 216
+  orig: 232, 216
+  offset: 0, 0
+  index: -1
+O_claw4
+  rotate: false
+  xy: 1245, 1315
+  size: 109, 320
+  orig: 109, 320
+  offset: 0, 0
+  index: -1
+O_claw4_1
+  rotate: false
+  xy: 502, 25
+  size: 41, 152
+  orig: 41, 152
+  offset: 0, 0
+  index: -1
+O_claw5
+  rotate: false
+  xy: 545, 196
+  size: 97, 242
+  orig: 97, 242
+  offset: 0, 0
+  index: -1
+O_wing1
+  rotate: true
+  xy: 1666, 1517
+  size: 114, 57
+  orig: 114, 57
+  offset: 0, 0
+  index: -1
+O_wing2
+  rotate: false
+  xy: 1581, 1686
+  size: 192, 99
+  orig: 192, 99
+  offset: 0, 0
+  index: -1
+O_wing3
+  rotate: true
+  xy: 644, 360
+  size: 78, 75
+  orig: 78, 75
+  offset: 0, 0
+  index: -1
+O_wing4
+  rotate: false
+  xy: 1245, 1637
+  size: 334, 148
+  orig: 334, 148
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 440
+  size: 676, 524
+  orig: 676, 524
+  offset: 0, 0
+  index: -1
+eyes_light
+  rotate: false
+  xy: 1162, 816
+  size: 108, 148
+  orig: 108, 148
+  offset: 0, 0
+  index: -1
+eyes_light1
+  rotate: false
+  xy: 1960, 1786
+  size: 86, 93
+  orig: 86, 93
+  offset: 0, 0
+  index: -1
+eyes_light2
+  rotate: true
+  xy: 1569, 1373
+  size: 127, 91
+  orig: 127, 91
+  offset: 0, 0
+  index: -1
+eyes_light3
+  rotate: false
+  xy: 1374, 835
+  size: 85, 97
+  orig: 85, 97
+  offset: 0, 0
+  index: -1
+eyes_redfog
+  rotate: false
+  xy: 914, 504
+  size: 19, 23
+  orig: 19, 23
+  offset: 0, 0
+  index: -1
+eyes_redfog2
+  rotate: false
+  xy: 2, 2
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 1775, 1664
+  size: 113, 143
+  orig: 113, 143
+  offset: 0, 0
+  index: -1
+lightwing_L
+  rotate: false
+  xy: 1245, 1787
+  size: 541, 259
+  orig: 541, 259
+  offset: 0, 0
+  index: -1
+lightwing_R
+  rotate: false
+  xy: 986, 785
+  size: 174, 179
+  orig: 174, 179
+  offset: 0, 0
+  index: -1
+lightwing_T
+  rotate: false
+  xy: 545, 51
+  size: 115, 143
+  orig: 115, 143
+  offset: 0, 0
+  index: -1
+lightwing_attack_T
+  rotate: false
+  xy: 545, 51
+  size: 115, 143
+  orig: 115, 143
+  offset: 0, 0
+  index: -1
+lightwing_attack_L
+  rotate: false
+  xy: 2, 179
+  size: 541, 259
+  orig: 541, 259
+  offset: 0, 0
+  index: -1
+lightwing_attack_R
+  rotate: true
+  xy: 322, 3
+  size: 174, 178
+  orig: 174, 178
+  offset: 0, 0
+  index: -1

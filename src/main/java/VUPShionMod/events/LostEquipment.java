@@ -1,20 +1,16 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.relics.Croissant;
-import VUPShionMod.relics.OpticalCamouflage;
-import VUPShionMod.relics.Sniperscope;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import VUPShionMod.relics.Event.OpticalCamouflage;
+import VUPShionMod.relics.Event.Sniperscope;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class LostEquipment extends AbstractImageEvent {
     public static final String ID = VUPShionMod.makeID("LostEquipment");

@@ -30,7 +30,6 @@ public class SpatialTearPower extends AbstractShionPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
         updateDescription();
         this.isTurnBased = true;
-        this.type = PowerType.DEBUFF;
     }
 
     @Override
@@ -41,7 +40,7 @@ public class SpatialTearPower extends AbstractShionPower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        if (this.amount > 18) {
+        if (this.amount >= 18) {
             flash();
             addToBot(new MakeTempCardInHandAction(new Exile()));
             addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
@@ -51,7 +50,7 @@ public class SpatialTearPower extends AbstractShionPower {
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        if (this.amount > 18) {
+        if (this.amount >= 18) {
             flash();
             addToBot(new MakeTempCardInHandAction(new Exile()));
             addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));

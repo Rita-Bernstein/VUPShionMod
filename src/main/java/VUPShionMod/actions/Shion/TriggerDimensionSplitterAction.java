@@ -1,6 +1,6 @@
 package VUPShionMod.actions.Shion;
 
-import VUPShionMod.relics.DimensionSplitterAria;
+import VUPShionMod.relics.Shion.DimensionSplitterAria;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

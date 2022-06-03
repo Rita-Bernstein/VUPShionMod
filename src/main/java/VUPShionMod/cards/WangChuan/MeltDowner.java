@@ -26,13 +26,13 @@ public class MeltDowner extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public MeltDowner() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = 4;
-        this.secondaryM = this.baseSecondaryM = 7;
+        this.secondaryM = this.baseSecondaryM = 10;
         this.isMultiDamage = true;
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
@@ -116,7 +116,6 @@ public class MeltDowner extends AbstractWCCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 upgradeMagicNumber(2);
-                upgradeSecondM(3);
             }
 
             if (this.timesUpgraded == 2) {

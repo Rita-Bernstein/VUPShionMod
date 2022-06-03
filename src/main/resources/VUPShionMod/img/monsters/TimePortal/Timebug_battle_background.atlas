@@ -1,0 +1,223 @@
+
+Timebug_battle_background.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+back_ground
+  rotate: false
+  xy: 2, 486
+  size: 1995, 1080
+  orig: 1995, 1080
+  offset: 0, 0
+  index: -1
+flower
+  rotate: false
+  xy: 813, 470
+  size: 27, 14
+  orig: 27, 14
+  offset: 0, 0
+  index: -1
+flower1
+  rotate: false
+  xy: 199, 201
+  size: 57, 28
+  orig: 57, 28
+  offset: 0, 0
+  index: -1
+flower10
+  rotate: false
+  xy: 734, 428
+  size: 34, 11
+  orig: 34, 11
+  offset: 0, 0
+  index: -1
+flower11
+  rotate: false
+  xy: 770, 430
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+flower12
+  rotate: false
+  xy: 152, 156
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
+flower13
+  rotate: false
+  xy: 1999, 1463
+  size: 19, 8
+  orig: 19, 8
+  offset: 0, 0
+  index: -1
+flower14
+  rotate: false
+  xy: 111, 152
+  size: 39, 16
+  orig: 39, 16
+  offset: 0, 0
+  index: -1
+flower15
+  rotate: false
+  xy: 734, 441
+  size: 77, 43
+  orig: 77, 43
+  offset: 0, 0
+  index: -1
+flower16
+  rotate: false
+  xy: 1999, 1473
+  size: 38, 15
+  orig: 38, 15
+  offset: 0, 0
+  index: -1
+flower17
+  rotate: false
+  xy: 695, 298
+  size: 18, 12
+  orig: 18, 12
+  offset: 0, 0
+  index: -1
+flower18
+  rotate: false
+  xy: 2039, 1483
+  size: 6, 5
+  orig: 6, 5
+  offset: 0, 0
+  index: -1
+flower19
+  rotate: false
+  xy: 734, 418
+  size: 17, 8
+  orig: 17, 8
+  offset: 0, 0
+  index: -1
+flower2
+  rotate: false
+  xy: 2, 18
+  size: 53, 52
+  orig: 53, 52
+  offset: 0, 0
+  index: -1
+flower20
+  rotate: false
+  xy: 2, 2
+  size: 27, 14
+  orig: 27, 14
+  offset: 0, 0
+  index: -1
+flower21
+  rotate: false
+  xy: 94, 107
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+flower22
+  rotate: false
+  xy: 199, 187
+  size: 25, 12
+  orig: 25, 12
+  offset: 0, 0
+  index: -1
+flower23
+  rotate: false
+  xy: 658, 271
+  size: 35, 39
+  orig: 35, 39
+  offset: 0, 0
+  index: -1
+flower3
+  rotate: false
+  xy: 658, 383
+  size: 74, 101
+  orig: 74, 101
+  offset: 0, 0
+  index: -1
+flower4
+  rotate: true
+  xy: 1999, 1490
+  size: 76, 46
+  orig: 76, 46
+  offset: 0, 0
+  index: -1
+flower5
+  rotate: false
+  xy: 57, 56
+  size: 23, 14
+  orig: 23, 14
+  offset: 0, 0
+  index: -1
+flower6
+  rotate: false
+  xy: 123, 137
+  size: 14, 13
+  orig: 14, 13
+  offset: 0, 0
+  index: -1
+flower7
+  rotate: false
+  xy: 658, 254
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+flower8
+  rotate: false
+  xy: 258, 218
+  size: 23, 11
+  orig: 23, 11
+  offset: 0, 0
+  index: -1
+flower9
+  rotate: true
+  xy: 724, 348
+  size: 33, 8
+  orig: 33, 8
+  offset: 0, 0
+  index: -1
+fog
+  rotate: false
+  xy: 2, 231
+  size: 654, 253
+  orig: 654, 253
+  offset: 0, 0
+  index: -1
+rock1
+  rotate: false
+  xy: 2, 152
+  size: 107, 77
+  orig: 107, 77
+  offset: 0, 0
+  index: -1
+rock2
+  rotate: false
+  xy: 2, 72
+  size: 90, 78
+  orig: 90, 78
+  offset: 0, 0
+  index: -1
+rock3
+  rotate: false
+  xy: 94, 122
+  size: 27, 28
+  orig: 27, 28
+  offset: 0, 0
+  index: -1
+rock4
+  rotate: false
+  xy: 658, 312
+  size: 64, 69
+  orig: 64, 69
+  offset: 0, 0
+  index: -1
+rock5
+  rotate: true
+  xy: 111, 170
+  size: 59, 86
+  orig: 59, 86
+  offset: 0, 0
+  index: -1

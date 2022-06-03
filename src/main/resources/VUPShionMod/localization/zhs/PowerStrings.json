@@ -713,7 +713,7 @@
     ]
   },
   "VUPShionMod:SpatialTearPower": {
-    "NAME": "空间断层",
+    "NAME": "空间撕裂",
     "DESCRIPTIONS": [
       "到达 #b18 层时，将 #y放逐 加入手牌并移除本效果。"
     ]
@@ -723,6 +723,96 @@
     "DESCRIPTIONS": [
       "本回合 #y剑意 不会下降。",
       "在 #b%d 个回合内 #y剑意 不会下降。"
+    ]
+  },
+  "VUPShionMod:DefenceMonsterPower": {
+    "NAME": "防御力",
+    "DESCRIPTIONS": [
+      " #y丽塔・伯恩斯坦 受到的 #y攻击 伤害减少到 #b%d/255 。 NL #y丽塔・伯恩斯坦 受到的 #y攻击 伤害为 #b10 的倍数。"
+    ]
+  },
+  "VUPShionMod:ProbePower": {
+    "NAME": "试探",
+    "DESCRIPTIONS": [
+      " #y丽塔・伯恩斯坦 将在本回合回合后进入下一阶段。",
+      " #y丽塔・伯恩斯坦 将在 #b%d 回合后进入下一阶段。"
+    ]
+  },
+  "VUPShionMod:ReflectionPower": {
+    "NAME": "反射",
+    "DESCRIPTIONS": [
+      "当攻击未击穿格挡时， 对攻击者造成 #y等量 伤害。"
+    ]
+  },
+  "VUPShionMod:FlyPower": {
+    "NAME": "飞行",
+    "DESCRIPTIONS": [
+      "每回合受到的前 #b%d 次 #y攻击 伤害降低 #b50%% 。 ",
+      "每回合受到的前 #b%d 次 #y攻击 伤害降低 #b50%% 。 "
+    ]
+  },
+  "VUPShionMod:SiegePower": {
+    "NAME": "深陷重围",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 #b%d 层 #y易伤 、 #y脆弱 、 #y虚弱 。"
+    ]
+  },
+  "VUPShionMod:ContortTimePower": {
+    "NAME": "时空扭曲",
+    "DESCRIPTIONS": [
+      "#r整片星空都在颤栗。 NL 你每打出一张牌，受到 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:MalignBenevolencePower": {
+    "NAME": "无尽（爱）恨意",
+    "DESCRIPTIONS": [
+      "#r时之虫以爱吻我。 NL 每次洗牌时将 #b%d 张 #y腐朽 加入抽牌堆。",
+      "#r时之虫以爱吻我。 NL 每次洗牌时将 #b%d 张 #y腐朽 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:LoomingPower": {
+    "NAME": "涌现",
+    "DESCRIPTIONS": [
+      "#r有什么……要出来了。 NL #b%d 回合后进入下一阶段。",
+      "#r有什么……要出来了。 NL #b%d 回合后进入下一阶段。"
+    ]
+  },
+  "VUPShionMod:HulkingPower": {
+    "NAME": "庞然大物",
+    "DESCRIPTIONS": [
+      "#r星球级别的大小。 NL 每回合最多受到 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:StainTheMindPower": {
+    "NAME": "精神污染",
+    "DESCRIPTIONS": [
+      "#r广域精神操控。 NL 每次洗牌时将 #b%d 张 #y腐朽 加入抽牌堆。",
+      "#r广域精神操控。 NL 每次洗牌时将 #b%d 张 #y腐朽 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:DemonOfTimePower": {
+    "NAME": "时之妖魔",
+    "DESCRIPTIONS": [
+      "#r本体游离于时间之外。 NL 每回合回复 #b%d 生命。"
+    ]
+  },
+  "VUPShionMod:LabyrinthOfTimelinePower": {
+    "NAME": "时间迷宫",
+    "DESCRIPTIONS": [
+      "#r时空错乱。 NL 每回合每打出 #b%d 张牌，随机移除你的一个 #y增益效果 。"
+    ]
+  },
+  "VUPShionMod:SubspacePursuerPower": {
+    "NAME": "亚空间追击",
+    "DESCRIPTIONS": [
+      "#r神出鬼没的触手。 NL 每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。",
+      "#r神出鬼没的触手。 NL 每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:AnnihilatingCanonPower": {
+    "NAME": "湮灭重炮",
+    "DESCRIPTIONS": [
+      "#r回避！回避！。 NL 本回合每打出一张 #y技能牌 ，本次 #y湮灭重炮 的伤害降低 #b%d 点。"
     ]
   }
 }

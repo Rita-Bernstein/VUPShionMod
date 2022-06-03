@@ -1,13 +1,14 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.powers.AbstractShionPower;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.defect.ShuffleAllAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class AbstractPowerPatches {
@@ -21,6 +22,17 @@ public class AbstractPowerPatches {
             for(AbstractPower p : AbstractDungeon.player.powers){
                 if(p instanceof AbstractShionPower)
                     ((AbstractShionPower) p).onShuffle();
+            }
+
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                    if (!monster.isDeadOrEscaped()) {
+                        for(AbstractPower p : monster.powers){
+                            if(p instanceof AbstractShionPower)
+                                ((AbstractShionPower) p).onShuffle();
+                        }
+                    }
+                }
             }
         }
     }
@@ -36,6 +48,18 @@ public class AbstractPowerPatches {
                 if(p instanceof AbstractShionPower)
                     ((AbstractShionPower) p).onShuffle();
             }
+
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                    if (!monster.isDeadOrEscaped()) {
+                        for(AbstractPower p : monster.powers){
+                            if(p instanceof AbstractShionPower)
+                                ((AbstractShionPower) p).onShuffle();
+                        }
+                    }
+                }
+            }
+
         }
     }
 
@@ -50,6 +74,48 @@ public class AbstractPowerPatches {
                 if(p instanceof AbstractShionPower)
                     ((AbstractShionPower) p).onShuffle();
             }
+
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                    if (!monster.isDeadOrEscaped()) {
+                        for(AbstractPower p : monster.powers){
+                            if(p instanceof AbstractShionPower)
+                                ((AbstractShionPower) p).onShuffle();
+                        }
+                    }
+                }
+            }
+
         }
     }
+
+
+    @SpirePatch(
+            clz = GameActionManager.class,
+            method = "getNextAction"
+    )
+    public static class PreEndOfRoundPatch {
+        @SpireInsertPatch(rloc = 215)
+        public static SpireReturn<Void> Insert(GameActionManager _instance) {
+            for (AbstractPower power : AbstractDungeon.player.powers) {
+                if (power instanceof AbstractShionPower)
+                    ((AbstractShionPower) power).preEndOfRound();
+            }
+
+
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                    if (!monster.isDeadOrEscaped()) {
+                        for(AbstractPower p : monster.powers){
+                            if (p instanceof AbstractShionPower)
+                                ((AbstractShionPower) p).preEndOfRound();
+                        }
+                    }
+                }
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+
 }

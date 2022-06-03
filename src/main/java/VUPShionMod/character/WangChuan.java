@@ -62,8 +62,8 @@ public class WangChuan extends CustomPlayer {
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
 
-        this.dialogX = this.drawX + 0.0F * Settings.scale;
-        this.dialogY = this.drawY + 170.0F * Settings.scale;
+        this.dialogX = this.drawX + 20.0F * Settings.scale;
+        this.dialogY = this.drawY + 270.0F * Settings.scale;
 
         initializeClass(null,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).SHOULDER1,

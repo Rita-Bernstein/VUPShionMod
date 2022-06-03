@@ -2,10 +2,8 @@ package VUPShionMod.skins.sk.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
-import VUPShionMod.relics.Nebula;
-import VUPShionMod.relics.PureHeart;
-import VUPShionMod.relics.StarQuakes;
-import VUPShionMod.relics.WhiteRose;
+import VUPShionMod.relics.Wangchuan.PureHeart;
+import VUPShionMod.relics.Wangchuan.WhiteRose;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -65,7 +63,6 @@ public class PurityWangChuan extends AbstractSkin {
         retVal.add(Slide.ID);
         retVal.add(Sheathe.ID);
         retVal.add(InTheBlink.ID);
-        retVal.add(MorsLibraque.ID);
 
         return retVal;
     }

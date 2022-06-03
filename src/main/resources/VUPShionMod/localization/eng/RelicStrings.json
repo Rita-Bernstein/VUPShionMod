@@ -228,5 +228,20 @@
     "DESCRIPTIONS": [
       "#rReplace White Rose. NL Whenever you receive damage from enemy #yattacks, gain #b2 #yPlated #yArmor."
     ]
+  },
+  "VUPShionMod:Concord": {
+    "NAME": "Concord",
+    "FLAVOR": "Not translate yet",
+    "DESCRIPTIONS": [
+      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% 。",
+      "Your damage increase #b%d%% , NL Injury suffered decrease #b%d%% 。 NL Decrease this effect for each layer passed by NL （#b50%% Maximum）"
+    ]
+  },
+  "VUPShionMod:FruitCake": {
+    "NAME": "FruitCake",
+    "FLAVOR": "Not translate yet",
+    "DESCRIPTIONS": [
+      "Not translate yet"
+    ]
   }
 }

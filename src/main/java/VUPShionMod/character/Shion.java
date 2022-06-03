@@ -5,7 +5,8 @@ import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
-import VUPShionMod.vfx.ShionVictoryEffect;
+import VUPShionMod.vfx.victory.ShionGoldVictoryEffect;
+import VUPShionMod.vfx.victory.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -68,14 +69,14 @@ public class Shion extends CustomPlayer {
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
 
-        this.dialogX = this.drawX + 0.0F * Settings.scale;
-        this.dialogY = this.drawY + 170.0F * Settings.scale;
+        this.dialogX = this.drawX + 20.0F * Settings.scale;
+        this.dialogY = this.drawY + 270.0F * Settings.scale;
 
         initializeClass(null,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER1,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER2,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).CORPSE,
-                getLoadout(), 0.0F, -5.0F, 240.0F, 480.0F, new EnergyManager(ENERGY_PER_TURN));
+                getLoadout(), 0.0F, -5.0F, 240.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         reloadAnimation();
     }
@@ -85,7 +86,6 @@ public class Shion extends CustomPlayer {
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).atlasURL,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).jsonURL,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).renderScale);
-
 
 
         this.state.setAnimation(0, "idle", true);
@@ -318,15 +318,30 @@ public class Shion extends CustomPlayer {
     @Override
     public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
         boolean foundEyeVfx = false;
-        for (AbstractGameEffect e : effects) {
-            if (e instanceof ShionVictoryEffect) {
-                foundEyeVfx = true;
-                break;
+
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 2) {
+            for (AbstractGameEffect e : effects) {
+                if (e instanceof ShionVictoryEffect) {
+                    foundEyeVfx = true;
+                    break;
+                }
             }
+
+            if (!foundEyeVfx)
+                effects.add(new ShionVictoryEffect());
+        } else {
+            for (AbstractGameEffect e : effects) {
+                if (e instanceof ShionGoldVictoryEffect) {
+                    foundEyeVfx = true;
+                    break;
+                }
+            }
+
+            if (!foundEyeVfx)
+                effects.add(new ShionGoldVictoryEffect());
         }
 
-        if (!foundEyeVfx)
-            effects.add(new ShionVictoryEffect());
+
     }
 }
 

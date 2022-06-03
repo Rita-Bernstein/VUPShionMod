@@ -1,15 +1,13 @@
 package VUPShionMod.skins.sk.Shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.cards.ShionCard.shion.Strafe;
 import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
-import VUPShionMod.relics.BlueGiant;
-import VUPShionMod.relics.Concord;
-import VUPShionMod.relics.Drapery;
-import VUPShionMod.relics.TheRipple;
+import VUPShionMod.relics.Shion.ConcordArray;
+import VUPShionMod.relics.Shion.ConcordSnipe;
+import VUPShionMod.relics.Shion.Drapery;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -50,7 +48,7 @@ public class AquaShion extends AbstractSkin {
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(Drapery.ID);
-        info.relics.add(Concord.ID);
+        info.relics.add(ConcordArray.ID);
         return info;
     }
 
@@ -58,7 +56,7 @@ public class AquaShion extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(Drapery.ID);
-        retVal.add(Concord.ID);
+        retVal.add(ConcordArray.ID);
         return retVal;
     }
 

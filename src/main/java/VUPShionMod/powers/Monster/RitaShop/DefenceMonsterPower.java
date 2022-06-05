@@ -19,6 +19,8 @@ public class DefenceMonsterPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        if (this.amount < 15)
+            this.amount = 15;
         updateDescription();
         loadRegion("armor");
         this.priority = 10;
@@ -29,6 +31,7 @@ public class DefenceMonsterPower extends AbstractShionPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         return (int) Math.ceil(damageAmount * this.amount / 2550.0f) * 10;
     }
+
 
     @Override
     public int onLoseHp(int damageAmount) {

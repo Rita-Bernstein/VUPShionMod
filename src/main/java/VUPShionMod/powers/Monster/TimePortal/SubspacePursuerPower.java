@@ -3,6 +3,7 @@ package VUPShionMod.powers.Monster.TimePortal;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.powers.AbstractShionPower;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class SubspacePursuerPower extends AbstractShionPower {
@@ -30,7 +32,8 @@ public class SubspacePursuerPower extends AbstractShionPower {
         this.amount2 = 15;
         updateDescription();
         this.isTurnBased = false;
-        loadRegion("beat");
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower128.png")), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower32.png")), 0, 0, 32, 32);
 
     }
 

@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class ConcordCharge extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(ConcordCharge.class.getSimpleName());
-    public static final String IMG_PATH = "img/relics/Inhibitor.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/Inhibitor.png";
+    public static final String IMG_PATH = "img/relics/ConcordCharge.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/ConcordCharge.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 

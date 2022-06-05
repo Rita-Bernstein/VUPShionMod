@@ -221,7 +221,10 @@
   "VUPShionMod:BlackHand": {
     "NAME": "黑色指針",
     "DESCRIPTION": "失去 !M! 點生命。 NL 抽 !VUPShionSecondM! 張牌 。 NL 抽到的牌本回合耗能變為0。 消耗 。",
-    "UPGRADE_DESCRIPTION": "失去 !M! 點生命。 NL 抽 !VUPShionSecondM! 張牌 。 NL 抽到的牌本回合耗能變為0。 消耗 。"
+    "UPGRADE_DESCRIPTION": "失去 !M! 點生命。 NL 抽 !VUPShionSecondM! 張牌 。 NL 抽到的牌本回合耗能變為0。 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "生命不足"
+    ]
   },
   "VUPShionMod:TimeOverload": {
     "NAME": "時之過載",
@@ -281,7 +284,10 @@
   },
   "VUPShionMod:AnestheticReagent": {
     "NAME": "麻醉試劑",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 點生命。 NL 獲得 !M! 層 無實體 。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 點生命。 NL 獲得 !M! 層 無實體 。 NL 消耗性 !stslib:ex! 。",
+    "EXTENDED_DESCRIPTION": [
+      "生命不足"
+    ]
   },
   "VUPShionMod:EnhancedSupport": {
     "NAME": "強化支援",
@@ -410,8 +416,8 @@
   },
   "VUPShionMod:Slide": {
     "NAME": "滑步",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 三次。",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍意 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 三次。 NL 獲得 !M! 點 vup_shion_mod:劍意 。",
     "EXTENDED_DESCRIPTION": [
       "九宮步"
     ]
@@ -516,8 +522,8 @@
   },
   "VUPShionMod:AethereScindo": {
     "NAME": "燕返",
-    "DESCRIPTION": "造成上次造成的攻擊傷害三次。 NL 抽一張牌。 NL 獲得3點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "造成上次造成的攻擊傷害四次。 NL 抽一張牌。 NL 獲得3點 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "造成上次造成的攻擊傷害三次。 NL 抽一張牌。 NL 獲得2點 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成上次造成的攻擊傷害四次。 NL 抽一張牌。 NL 獲得2點 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !M! 點傷害）"
     ]
@@ -532,7 +538,7 @@
   },
   "VUPShionMod:Guard": {
     "NAME": "守勢",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 失去 !M! 點 vup_shion_mod:硬直 。"
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL 失去 !M! 點 vup_shion_mod:硬直 。"
   },
   "VUPShionMod:LunaMergo": {
     "NAME": "調息",
@@ -574,7 +580,7 @@
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "斷水",
-    "DESCRIPTION": "抽 !M! 張牌。 NL 消耗 。"
+    "DESCRIPTION": "抽 !M! 張牌。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 消耗 。"
   },
   "VUPShionMod:WeatherEye": {
     "NAME": "警覺",
@@ -930,7 +936,7 @@
   },
   "VUPShionMod:FunnelMatrix": {
     "NAME": "自動浮游矩陣",
-    "DESCRIPTION": "對一名敵人觸發2次偵查 vup_shion_mod:浮游炮 和重力 vup_shion_mod:浮游炮 及3次追擊 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。"
+    "DESCRIPTION": "對一名敵人觸發2次所有 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。"
   },
   "VUPShionMod:Alleviator": {
     "NAME": "緩衝迴路",
@@ -994,7 +1000,7 @@
   },
   "VUPShionMod:Warp": {
     "NAME": "瞬移",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 將棄牌堆中的一張攻擊牌加入手牌。"
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍意 。 NL 將棄牌堆中的一張攻擊牌加入手牌。"
   },
   "VUPShionMod:HolyLight": {
     "NAME": "聖光",
@@ -1284,5 +1290,101 @@
   "VUPShionMod:ShionEmbodiment": {
     "NAME": "人偶代行：紫音",
     "DESCRIPTION": "召喚一名 !M! 點生命的 *時間替身 。被擊殺時對所有敵人造成 !M! 點傷害5次。 消耗 。"
+  },
+  "VUPShionMod:SpaceSlice": {
+    "NAME": "空間切割",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 vup_shion_mod:空間撕裂 。 NL vup_shion_mod:硬直 !VUPShionSecondM! 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "造成4+ vup_shion_mod:劍意 層數的傷害4次。 NL 給予 !M! 層 vup_shion_mod:空間撕裂 。 NL vup_shion_mod:硬直 !VUPShionSecondM! 。 NL vup_shion_mod:魔能過載 。",
+    "EXTENDED_DESCRIPTION": [
+      "空間切割+",
+      "四向封絕",
+      "造成 !D! 點傷害。 NL 給予 !M! 層 vup_shion_mod:空間撕裂 。 NL vup_shion_mod:硬直 !VUPShionSecondM! 。 NL vup_shion_mod:魔能過載 。"
+    ]
+  },
+  "VUPShionMod:Exile": {
+    "NAME": "放逐",
+    "DESCRIPTION": "虛無 。 NL 斬殺一名敵人。 NL 消耗 。"
+  },
+  "VUPShionMod:PhantomChop": {
+    "NAME": "影斬",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成 vup_shion_mod:劍意 層數的傷害X次。 NL 本回合每打出過一張牌，額外造成一次傷害。 NL vup_shion_mod:硬直 2。",
+    "EXTENDED_DESCRIPTION": [
+      "影斬+",
+      "千幻影斬",
+      "保留 。 NL 造成 !D! 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。"
+    ]
+  },
+  "VUPShionMod:MentalMotivationChop": {
+    "NAME": "斬念",
+    "DESCRIPTION": "造成1+ vup_shion_mod:劍意 層數的傷害4次。 NL 失去所有 vup_shion_mod:劍意 和 vup_shion_mod:魔能過載 。 NL vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成1+ vup_shion_mod:劍意 層數的傷害 vup_shion_mod:魔能過載 次。 NL 失去所有 vup_shion_mod:魔能過載 。 NL vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "斬念+",
+      "無相無念",
+      "保留 。 NL 造成1+ vup_shion_mod:劍意 層數的傷害4次。 NL 失去所有 vup_shion_mod:劍意 和 vup_shion_mod:魔能過載 。 NL vup_shion_mod:硬直 。"
+    ]
+  },
+  "VUPShionMod:MeltDowner": {
+    "NAME": "原子崩壞",
+    "DESCRIPTION": "對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 減少 !VUPShionSecondM! 點生命值。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 減少1/4的生命值。 NL 抽滿手牌。 NL vup_shion_mod:魔能過載 。",
+    "EXTENDED_DESCRIPTION": [
+      "原子崩壞+",
+      "夸克重組",
+      "對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 減少 !VUPShionSecondM! 點生命值。 NL vup_shion_mod:魔能過載 。",
+      "生命不足"
+    ]
+  },
+  "VUPShionMod:CirrocumulusChop": {
+    "NAME": "流雲斬",
+    "DESCRIPTION": "造成8+ 敏捷 點傷害。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:魔能過載 和 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "給予3+ 敏捷 + vup_shion_mod:劍意 點 纏繞 。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:魔能過載 和 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "流雲斬+",
+      "生生流轉",
+      "造成12+ 敏捷 點傷害。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:魔能過載 和 vup_shion_mod:硬直 。"
+    ]
+  },
+  "VUPShionMod:CoronaChop": {
+    "NAME": "炎陽斬",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 隨機 消耗 一張牌。 NL 下回合再造成 vup_shion_mod:劍意 點傷害。 NL 獲得 !M! 層 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "給予15+ vup_shion_mod:劍意 的 vup_shion_mod:流血 。 NL 至多 消耗 兩張牌。 NL 獲得 !M! 層 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。",
+    "EXTENDED_DESCRIPTION": [
+      "炎陽斬+",
+      "灼骨炎陽",
+      "造成 !D! 點傷害。 NL 消耗 一張牌。 NL 下回合再造成 vup_shion_mod:劍意 點傷害。 NL 獲得 !M! 層 vup_shion_mod:劍意 。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:硬直 。"
+    ]
+  },
+  "VUPShionMod:MotherRosario": {
+    "NAME": "水平四方斬",
+    "DESCRIPTION": "對隨機敵人造成4+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "對隨機敵人造成2+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 對所有敵人造成 vup_shion_mod:劍意 點傷害。  NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。",
+    "EXTENDED_DESCRIPTION": [
+      "星屑飛濺",
+      "聖母詠嘆",
+      "對隨機敵人造成3+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。"
+    ]
+  },
+  "VUPShionMod:BreakChop": {
+    "NAME": "破勢斬",
+    "DESCRIPTION": "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 如果敵人的意圖為攻擊，獲得 !B! 點 格擋 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌。",
+    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:劍意 點傷害。 NL 如果敵人的意圖為攻擊，獲得 [E] 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌並失去1層 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "破勢斬+",
+      "流光劍勢",
+      "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 獲得 !B! 點 格擋 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌。",
+      "敵人的意圖不是攻擊"
+    ]
+  },
+  "VUPShionMod:OppressiveSword": {
+    "NAME": "劍壓",
+    "DESCRIPTION": "造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍意 。 NL 獲得1層 vup_shion_mod:硬直 ",
+    "UPGRADE_DESCRIPTION": "造成 vup_shion_mod:劍意 層數 !M! X倍的傷害。 NL 獲得12X 層 vup_shion_mod:劍意 。 NL 獲得一半的 vup_shion_mod:劍意 。 NL vup_shion_mod:魔能過載 X。",
+    "EXTENDED_DESCRIPTION": [
+      "劍壓+",
+      "月牙天沖",
+      "造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍意 。 NL 獲得1層 vup_shion_mod:硬直 "
+    ]
   }
 }

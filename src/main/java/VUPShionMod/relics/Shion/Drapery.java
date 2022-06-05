@@ -33,14 +33,21 @@ public class Drapery extends AbstractShionRelic implements ClickableRelic {
 
     public Drapery() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.STARTER, LandingSound.CLINK);
+        setDescriptionAfterLoading();
     }
 
     @Override
     public String getUpdatedDescription() {
+        return this.DESCRIPTIONS[0];
+    }
+
+    public void setDescriptionAfterLoading() {
+        this.description = getUpdatedDescription();
         this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
         this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
 
-        return this.DESCRIPTIONS[0];
+        this.initializeTips();
     }
 
     @Override
@@ -72,8 +79,8 @@ public class Drapery extends AbstractShionRelic implements ClickableRelic {
                         @Override
                         public void update() {
                             List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
-                            if(!funnelList.isEmpty())
-                            funnelList.get(AbstractDungeon.miscRng.random(funnelList.size() - 1)).upgradeLevel(1);
+                            if (!funnelList.isEmpty())
+                                funnelList.get(AbstractDungeon.miscRng.random(funnelList.size() - 1)).upgradeLevel(1);
                             isDone = true;
                         }
                     });

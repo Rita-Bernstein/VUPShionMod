@@ -92,4 +92,7 @@ public class FragmentsOfFaith extends AbstractShionRelic {
         this.outlineImg = OUTLINE_UPGRADE_IMG;
         setDescriptionAfterLoading();
     }
+
+
+
 }

@@ -1,10 +1,13 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.Contact;
+import VUPShionMod.events.FruitStall;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.events.Prophesy;
+import VUPShionMod.helpers.CardTypeHelper;
 import VUPShionMod.monsters.Story.Ouroboros;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
@@ -18,13 +21,16 @@ import basemod.CustomEventRoom;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
+import com.megacrit.cardcrawl.events.exordium.Mushrooms;
 import com.megacrit.cardcrawl.helpers.EventHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.map.MapEdge;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -34,6 +40,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.TinyChest;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
+import javassist.CannotCompileException;
+import javassist.NotFoundException;
+import javassist.expr.ExprEditor;
+import javassist.expr.Instanceof;
+import javassist.expr.MethodCall;
 
 import java.util.ArrayList;
 
@@ -63,6 +74,7 @@ public class SpecialCombatPatches {
     }
 
     public static boolean shouldHardMod() {
+//        return true;
         return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock
                 && CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock
                 && VUPShionMod.liyezhuVictory;
@@ -183,6 +195,7 @@ public class SpecialCombatPatches {
 
             if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
 
+                if(!(AbstractDungeon.getMonsters()).monsters.isEmpty())
                 for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                     if (monster instanceof Ouroboros) {
                         ((Ouroboros) monster).renderAbove(sb);
@@ -246,6 +259,30 @@ public class SpecialCombatPatches {
                 }
 
             return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = ProceedButton.class,
+            method = "update"
+    )
+    public static class OpenMap {
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
+                @Override
+                public void edit(Instanceof i) throws CannotCompileException {
+                    try {
+                        if (i.getType().getName().equals(Mushrooms.class.getName())) {
+                            i.replace(" $_ = $proceed($$) || " +
+                                    "currentRoom.event instanceof VUPShionMod.events.FruitStall; "
+                            );
+                        }
+                    } catch (NotFoundException ignored) {
+
+                    }
+                }
+            };
+
         }
     }
 }

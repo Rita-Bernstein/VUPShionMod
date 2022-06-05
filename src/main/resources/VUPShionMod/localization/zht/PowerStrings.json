@@ -696,7 +696,7 @@
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :給予 #b99 層 易傷 。",
-      " NL #b%d :擊暈並失去本效果。"
+      " NL #b%d :移除本效果並： NL 首領-解析敵人能力或失去 #b3 點 #y力量。 NL 非首領- #y擊暈 。"
     ]
   },
   "VUPShionMod:ReinsOfWarPower": {
@@ -710,6 +710,109 @@
       " NL #b16-20 :給予 #b4 點 #y力量 、 #y超維連結 和 [E] 。",
       " NL #b21-25 :給予 #b5 點 #y力量 、 #y超維連結 和 [E] 。",
       " NL #b26及以上 :給予 #b5 點 #y力量 、 #y超維連結 和 [E] [E] 。"
+    ]
+  },
+  "VUPShionMod:SpatialTearPower": {
+    "NAME": "空間撕裂",
+    "DESCRIPTIONS": [
+      "到達 #b18 層時，將 #y放逐 加入手牌並移除本效果。"
+    ]
+  },
+  "VUPShionMod:OppressiveSwordPower": {
+    "NAME": "月牙天沖",
+    "DESCRIPTIONS": [
+      "本回合 #y劍意 不會下降。",
+      "在 #b%d 個回合內 #y劍意 不會下降。"
+    ]
+  },
+  "VUPShionMod:DefenceMonsterPower": {
+    "NAME": "防禦力",
+    "DESCRIPTIONS": [
+      " #y麗塔・伯恩斯坦 受到的 #y攻擊 傷害減少到 #b%d/255 。 NL #y麗塔・伯恩斯坦 受到生命損失為 #b10 的倍數。"
+    ]
+  },
+  "VUPShionMod:ProbePower": {
+    "NAME": "試探",
+    "DESCRIPTIONS": [
+      " #y麗塔・伯恩斯坦 將在本回合回合後進入下一階段。",
+      " #y麗塔・伯恩斯坦 將在 #b%d 回合後進入下一階段。"
+    ]
+  },
+  "VUPShionMod:ReflectionPower": {
+    "NAME": "反射",
+    "DESCRIPTIONS": [
+      "當攻擊未擊穿格擋時， 對攻擊者造成 #y等量 傷害。"
+    ]
+  },
+  "VUPShionMod:FlyPower": {
+    "NAME": "飛行",
+    "DESCRIPTIONS": [
+      "每回合受到的前 #b%d 次 #y攻擊 傷害降低 #b50%% 。 ",
+      "每回合受到的前 #b%d 次 #y攻擊 傷害降低 #b50%% 。 "
+    ]
+  },
+  "VUPShionMod:SiegePower": {
+    "NAME": "深陷重圍",
+    "DESCRIPTIONS": [
+      "每回合開始時獲得 #b%d 層 #y易傷 、 #y脆弱 、 #y虛弱 。"
+    ]
+  },
+  "VUPShionMod:ContortTimePower": {
+    "NAME": "時空扭曲",
+    "DESCRIPTIONS": [
+      "#r整片星空都在顫慄。 NL 你每打出一張牌，受到 #b%d 點傷害。"
+    ]
+  },
+  "VUPShionMod:MalignBenevolencePower": {
+    "NAME": "無盡（愛）恨意",
+    "DESCRIPTIONS": [
+      "#r時之蟲以愛吻我。 NL 每次洗牌時將 #b%d 張 #y腐朽 加入抽牌堆。",
+      "#r時之蟲以愛吻我。 NL 每次洗牌時將 #b%d 張 #y腐朽 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:LoomingPower": {
+    "NAME": "湧現",
+    "DESCRIPTIONS": [
+      "#r有什麼……要出來了。 NL #b%d 回合後進入下一階段。",
+      "#r有什麼……要出來了。 NL #b%d 回合後進入下一階段。"
+    ]
+  },
+  "VUPShionMod:HulkingPower": {
+    "NAME": "龐然大物",
+    "DESCRIPTIONS": [
+      "#r星球級別的大小。 NL 每回合最多受到 #b%d 點傷害。"
+    ]
+  },
+  "VUPShionMod:StainTheMindPower": {
+    "NAME": "精神污染",
+    "DESCRIPTIONS": [
+      "#r廣域精神操控。 NL 每次洗牌時將 #b%d 張 #y腐朽 加入抽牌堆。",
+      "#r廣域精神操控。 NL 每次洗牌時將 #b%d 張 #y腐朽 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:DemonOfTimePower": {
+    "NAME": "時之妖魔",
+    "DESCRIPTIONS": [
+      "#r本體游離於時間之外。 NL 每回合回復 #b%d 生命。"
+    ]
+  },
+  "VUPShionMod:LabyrinthOfTimelinePower": {
+    "NAME": "時間迷宮",
+    "DESCRIPTIONS": [
+      "#r時空錯亂。 NL 每回合每打出 #b%d 張牌，隨機移除你的一個 #y增益效果 。"
+    ]
+  },
+  "VUPShionMod:SubspacePursuerPower": {
+    "NAME": "亞空間追擊",
+    "DESCRIPTIONS": [
+      "#r神出鬼沒的觸手。 NL 每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。",
+      "#r神出鬼沒的觸手。 NL 每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:AnnihilatingCanonPower": {
+    "NAME": "湮滅重炮",
+    "DESCRIPTIONS": [
+      "#r迴避！迴避！。 NL 本回合每打出一張 #y技能牌 ，本次 #y湮滅重炮 的傷害降低 #b%d 點。"
     ]
   }
 }

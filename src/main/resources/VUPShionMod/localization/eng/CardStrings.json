@@ -412,8 +412,8 @@
   },
   "VUPShionMod:Slide": {
     "NAME": "Slide",
-    "DESCRIPTION": "Gain !B! Block.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block thrice.",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii .",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block thrice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii .",
     "EXTENDED_DESCRIPTION": [
       "Multi Slide"
     ]
@@ -534,7 +534,7 @@
   },
   "VUPShionMod:Guard": {
     "NAME": "Guard",
-    "DESCRIPTION": "Gain !B! Block. NL Lose !M! vup_shion_mod:Stiffness."
+    "DESCRIPTION": "Gain !B! Block. NL Lose !M! vup_shion_mod:Stiffness. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. "
   },
   "VUPShionMod:LunaMergo": {
     "NAME": "Wind Susurrates",
@@ -576,7 +576,7 @@
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "Sever Current",
-    "DESCRIPTION": "Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Exhaust."
   },
   "VUPShionMod:WeatherEye": {
     "NAME": "Weather Eye",
@@ -999,7 +999,7 @@
   },
   "VUPShionMod:Warp": {
     "NAME": "Warp",
-    "DESCRIPTION": "Gain !B! Block. NL Put an Attack from discard pile into your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii . NL Put an Attack from discard pile into your hand."
   },
   "VUPShionMod:HolyLight": {
     "NAME": "Holy Light",

@@ -3,9 +3,11 @@ package VUPShionMod.powers.Shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.powers.AbstractShionPower;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class LoseHyperdimensionalLinksPower extends AbstractShionPower {
@@ -19,7 +21,9 @@ public class LoseHyperdimensionalLinksPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.setImage("Clock84.png", "Clock32.png");
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/LoseHyperdimensionalLinksPower128.png"), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/LoseHyperdimensionalLinksPower48.png"), 0, 0, 48, 48);
+
         updateDescription();
         this.isTurnBased = true;
     }

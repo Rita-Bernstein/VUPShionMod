@@ -71,26 +71,34 @@
     "NAME": "A Message",
     "DESCRIPTIONS": [
 	  "As you are about to depart, a message come to you.",
-      "It's from Anastasia. Again, @total@ @devastation@ is about to be brought to a planet by an atrocious invasion, which has manifested itself as an echo of your past."
+      "It's from Anastasia. Again, @total@ @devastation@ is about to be brought to a planet by an atrocious invasion, which has manifested itself as an echo of your past.",
+      "No Translation Yet"
     ],
     "OPTIONS": [
       "[Proceed] ...",
       "[Not This Time!] Battle Ahead. #gObtain Anastasia Droplet.",
       "[Return Home]",
-      "[Locked] Further Update Awaits."
+      "[LOCKED] No Translation Yet",
+      "[Final Ballte]No Translation Yet",
+      "[Final Battle] No Translation Yet",
+      "[No Translation Yet] No Translation Yet"
     ]
   },
    "VUPShionMod:Contact": {
     "NAME": "Unexpected Contact",
     "DESCRIPTIONS": [
       "As you are about to depart, a message come to you.",
-      "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence."
+      "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence.",
+      " Not translate yet"
     ],
     "OPTIONS": [
       "[Proceed] ...",
       "[Fists Can Talk!] Battle Ahead. #gObtain Tracking Beacon.",
       "[Return Home]",
-      "[Locked] Further Update Awaits."
+      "[LOCKED] No Translation Yet",
+      "[Final Battle]No Translation Yet",
+      "[Final Battle] No Translation Yet",
+      "[No Translation Yet] No Translation Yet"
     ]
   },
   "VUPShionMod:LakeAmidst": {
@@ -176,13 +184,17 @@
     "NAME": "Omens of Unknown",
     "DESCRIPTIONS": [
       "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
-      "You have seen it once, and you know where the target is."
+      "You have seen it once, and you know where the target is.",
+      "Not translate yet "
     ],
     "OPTIONS": [
       "[Proceed] ...",
       "[Engage!] Battle Ahead. #gObtain Unknown Dust.",
       "The body is too exhausted to go on...",
-      "[Locked] Further Update Awaits."
+      "[LOCKED] No Translation Yet",
+      "[Final Battle]No Translation Yet",
+      "[Final Battle] No Translation Yet",
+      "[No Translation Yet] No Translation Yet"
     ]
   },
   "VUPShionMod:VacuumRipples": {
@@ -200,31 +212,31 @@
     ]
   },
   "VUPShionMod:FruitStall": {
-    "NAME": "Fruit Stand?",
+    "NAME": "FruitStall?",
     "DESCRIPTIONS": [
-      "Not translate yet",
-      "Not translate yet",
-      " Not translate yet",
-      "Not translate yet ",
-      "Not translate yet",
-      "Not translate yet",
-      "“Not translate yet",
-      "Not translate yet"
+      "You walk on the city street with dim vision... NL Just as you pace forward, a shop completely out of proportion to the environment inside the tower emerges in the view ahead... NL You're curious about what other stores sell besides that Merchants.",
+      "\"Welcome!\" Said a maid who seemed to be the owner. NL \"There are all kinds of food that can't be seen in the spire, but because the sales are so good, now there are only some leftovers\"。 NL At this time, you can see that there is an attractive #y~Fruit~ #y~Cake~ hidden under the shelf. NL It seems that the maid is celebrating for someone. But the sweet smell it gives off is too tempting.",
+      " #yDelicious！@ NL When you are proud of your theft technology, you suddenly feel something terrible behind you. Looking back, I found nothing.",
+      "\"Thank you for your patronage. Welcome to visit next time\"",
+      "\"Really? If you can Do you have #ystrawberries or #yother #yfruits .\"",
+      "\"Ah! It's my favorite strawberry\" She seemed exceedingly happy.",
+      "\"Thank you very much!\"",
+      "“Caution is the parent of safety.”"
     ],
     "OPTIONS": [
-      "[Not translate yet]",
-      "[Not translate yet]",
-      "[Not translate yet] Not translate yet ",
-      "[Not translate yet] Not translate yet ",
-      "[Not translate yet] Not translate yet",
-      "[Not translate yet] Not translate yet",
-      "[Not translate yet ]  Not translate yet",
-      "[Not translate yet] Not translate yet",
-      "[Not translate yet] Not translate yet",
-      "[Not translate yet] Not translate yet",
-      "[Not translate yet]",
-      "[Not translate yet]",
-      "[Not translate yet]"
+      "[Approach]",
+      "[Ignore]",
+      "[Steal] #gHeal #gto #gfull #gHP， #rEncounter #rA #rSpecial #rFight.",
+      "[Buy] #rLose #r%d #rgold. #gGain #g10 #yMax #gHP.",
+      "[Locked] Require %d gold.",
+      "[Sell] Selling fruit to maid",
+      "[Pear] Gain #b%d gold.",
+      "[Mango] Gain #b%d gold.",
+      "[Strawberry] Gain #b%d gold.",
+      "[Locked] Need Fruit relic.",
+      "[Leave]",
+      "[Back]",
+      "[Fight]"
     ]
   }
 }

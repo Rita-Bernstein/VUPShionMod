@@ -69,7 +69,15 @@ public class OppressiveSword extends AbstractWCCard {
                     addToTop(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 };
                 addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
-                addToBot(new ApplyPowerAction(p, p, new OppressiveSwordPower(p, 1)));
+//                addToBot(new ApplyPowerAction(p, p, new OppressiveSwordPower(p, 1)));
+                addToBot(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        if(AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+                        addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount/2)));
+                        isDone = true;
+                    }
+                });
                 break;
         }
 

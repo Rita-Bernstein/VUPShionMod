@@ -1380,7 +1380,7 @@
   "VUPShionMod:OppressiveSword": {
     "NAME": "剑压",
     "DESCRIPTION": "造成 vup_shion_mod:剑意 层数 !M! 倍的伤害。 NL 每点 vup_shion_mod:硬直 转化成4层 vup_shion_mod:剑意 。 NL 获得1层 vup_shion_mod:硬直 ",
-    "UPGRADE_DESCRIPTION": "造成 vup_shion_mod:剑意 层数 !M! X倍的伤害。 NL 获得12X 层 vup_shion_mod:剑意 。 NL 本回合 vup_shion_mod:剑意 不会减少。 NL vup_shion_mod:魔能过载 X。",
+    "UPGRADE_DESCRIPTION": "造成 vup_shion_mod:剑意 层数 !M! X倍的伤害。 NL 获得12X 层 vup_shion_mod:剑意 。 NL 获得一半的 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 X。",
     "EXTENDED_DESCRIPTION": [
       "剑压+",
       "月牙天冲",

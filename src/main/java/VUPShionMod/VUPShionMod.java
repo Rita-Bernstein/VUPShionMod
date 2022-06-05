@@ -19,6 +19,7 @@ import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.patches.*;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.relics.Event.*;
 import VUPShionMod.relics.Liyezhu.HallowedCase;
 import VUPShionMod.relics.Liyezhu.Inhibitor;
@@ -42,6 +43,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -52,6 +54,7 @@ import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -72,7 +75,7 @@ public class VUPShionMod implements
         EditStringsSubscriber,
         PostDungeonInitializeSubscriber,
         StartActSubscriber,
-        PostCreateStartingRelicsSubscriber {
+        PostCreateStartingRelicsSubscriber{
 
 
     public static String MOD_ID = "VUPShionMod";
@@ -411,10 +414,10 @@ public class VUPShionMod implements
                     .playerClass(playerClass)
                     .create());
 
-//            BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
-//                    .playerClass(playerClass)
-//                    .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
-//                    .create());
+            BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
+                    .playerClass(playerClass)
+                    .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
+                    .create());
         }
 
 
@@ -485,24 +488,41 @@ public class VUPShionMod implements
             BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion" + i + ".ogg"));
         }
 
-        BaseMod.addAudio(makeID("VO_Rita_Intimidate"), assetPath("/audio/sound/Rita/VO/嘲讽2.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_KaiserPhoenix"), assetPath("/audio/sound/Rita/VO/凯撒凤凰1.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Repuuken"), assetPath("/audio/sound/Rita/VO/烈风拳.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Heaven"), assetPath("/audio/sound/Rita/VO/这就是最后一击1.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Barrier"), assetPath("/audio/sound/Rita/VO/黑暗屏障.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Kaiser"), assetPath("/audio/sound/Rita/VO/凯撒波.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Execution"), assetPath("/audio/sound/Rita/VO/丽塔处刑1.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Cutter"), assetPath("/audio/sound/Rita/VO/灭族切割.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Pressure"), assetPath("/audio/sound/Rita/VO/死吧1.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Destruction"), assetPath("/audio/sound/Rita/VO/无处可逃 哈哈哈.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Judgement"), assetPath("/audio/sound/Rita/VO/真有趣2.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Hit0"), assetPath("/audio/sound/Rita/VO/受击1.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Hit1"), assetPath("/audio/sound/Rita/VO/受击2.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Form1A"), assetPath("/audio/sound/Rita/VO/转状态1A.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Form1B"), assetPath("/audio/sound/Rita/VO/转状态1C.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Form2A"), assetPath("/audio/sound/Rita/VO/转状态2A.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Form2B"), assetPath("/audio/sound/Rita/VO/转状态2D.wav"));
-        BaseMod.addAudio(makeID("VO_Rita_Form3A"), assetPath("/audio/sound/Rita/VO/转状态3A.wav"));
+        BaseMod.addAudio(makeID("RitaB_Attack0"), assetPath("/audio/sound/Rita/VO/RitaB_Attack0.wav"));
+        BaseMod.addAudio(makeID("RitaB_Carnage"), assetPath("/audio/sound/Rita/VO/RitaB_Carnage.wav"));
+        BaseMod.addAudio(makeID("RitaB_CharacterSelect"), assetPath("/audio/sound/Rita/VO/RitaB_CharacterSelect.wav"));
+        BaseMod.addAudio(makeID("RitaB_CombatStart0"), assetPath("/audio/sound/Rita/VO/RitaB_CombatStart0.wav"));
+        BaseMod.addAudio(makeID("RitaB_CombatStart1"), assetPath("/audio/sound/Rita/VO/RitaB_CombatStart1.wav"));
+        BaseMod.addAudio(makeID("RitaB_CombatStart2"), assetPath("/audio/sound/Rita/VO/RitaB_CombatStart2.wav"));
+        BaseMod.addAudio(makeID("RitaB_CombatStart3"), assetPath("/audio/sound/Rita/VO/RitaB_CombatStart3.wav"));
+        BaseMod.addAudio(makeID("RitaB_DarkBarrier0"), assetPath("/audio/sound/Rita/VO/RitaB_DarkBarrier0.wav"));
+        BaseMod.addAudio(makeID("RitaB_DarkBarrier1"), assetPath("/audio/sound/Rita/VO/RitaB_DarkBarrier1.wav"));
+        BaseMod.addAudio(makeID("RitaB_Die"), assetPath("/audio/sound/Rita/VO/RitaB_Die.wav"));
+        BaseMod.addAudio(makeID("RitaB_Expunger"), assetPath("/audio/sound/Rita/VO/RitaB_Expunger.wav"));
+        BaseMod.addAudio(makeID("RitaB_FiendFire0"), assetPath("/audio/sound/Rita/VO/RitaB_FiendFire0.wav"));
+        BaseMod.addAudio(makeID("RitaB_FiendFire1"), assetPath("/audio/sound/Rita/VO/RitaB_FiendFire1.wav"));
+        BaseMod.addAudio(makeID("RitaB_GenocideCutter0"), assetPath("/audio/sound/Rita/VO/RitaB_GenocideCutter0.wav"));
+        BaseMod.addAudio(makeID("RitaB_GenocideCutter1"), assetPath("/audio/sound/Rita/VO/RitaB_GenocideCutter1.wav"));
+        BaseMod.addAudio(makeID("RitaB_HellPress"), assetPath("/audio/sound/Rita/VO/RitaB_HellPress.wav"));
+        BaseMod.addAudio(makeID("RitaB_Hit0"), assetPath("/audio/sound/Rita/VO/RitaB_Hit0.wav"));
+        BaseMod.addAudio(makeID("RitaB_Hit1"), assetPath("/audio/sound/Rita/VO/RitaB_Hit1.wav"));
+        BaseMod.addAudio(makeID("RitaB_Hit2"), assetPath("/audio/sound/Rita/VO/RitaB_Hit2.wav"));
+        BaseMod.addAudio(makeID("RitaB_Hit3"), assetPath("/audio/sound/Rita/VO/RitaB_Hit3.wav"));
+        BaseMod.addAudio(makeID("RitaB_Hit4"), assetPath("/audio/sound/Rita/VO/RitaB_Hit4.wav"));
+        BaseMod.addAudio(makeID("RitaB_Hit5"), assetPath("/audio/sound/Rita/VO/RitaB_Hit5.wav"));
+        BaseMod.addAudio(makeID("RitaB_MeteorStrike"), assetPath("/audio/sound/Rita/VO/RitaB_MeteorStrike.wav"));
+        BaseMod.addAudio(makeID("RitaB_Ragnarok"), assetPath("/audio/sound/Rita/VO/RitaB_Ragnarok.wav"));
+        BaseMod.addAudio(makeID("RitaB_Recover0"), assetPath("/audio/sound/Rita/VO/RitaB_Recover0.wav"));
+        BaseMod.addAudio(makeID("RitaB_Recover1"), assetPath("/audio/sound/Rita/VO/RitaB_Recover1.wav"));
+        BaseMod.addAudio(makeID("RitaB_Recover2"), assetPath("/audio/sound/Rita/VO/RitaB_Recover2.wav"));
+        BaseMod.addAudio(makeID("RitaB_Recover3"), assetPath("/audio/sound/Rita/VO/RitaB_Recover3.wav"));
+        BaseMod.addAudio(makeID("RitaB_Recover4"), assetPath("/audio/sound/Rita/VO/RitaB_Recover4.wav"));
+        BaseMod.addAudio(makeID("RitaB_Shockwave"), assetPath("/audio/sound/Rita/VO/RitaB_Shockwave.wav"));
+        BaseMod.addAudio(makeID("RitaB_Skill0"), assetPath("/audio/sound/Rita/VO/RitaB_Skill0.wav"));
+        BaseMod.addAudio(makeID("RitaB_TrueMod"), assetPath("/audio/sound/Rita/VO/RitaB_TrueMod.wav"));
+        BaseMod.addAudio(makeID("RitaB_Victory0"), assetPath("/audio/sound/Rita/VO/RitaB_Victory0.wav"));
+        BaseMod.addAudio(makeID("RitaB_Victory1"), assetPath("/audio/sound/Rita/VO/RitaB_Victory1.wav"));
+
     }
 
     @Override
@@ -516,12 +536,12 @@ public class VUPShionMod implements
     @Override
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
-            if(AbstractDungeon.player.hasRelic(ConcordArray.ID)) {
+            if (AbstractDungeon.player.hasRelic(ConcordArray.ID)) {
                 gravityFinFunnelLevel = 2;
                 investigationFinFunnelLevel = 2;
                 pursuitFinFunnelLevel = 2;
                 dissectingFinFunnelLevel = 2;
-            }else {
+            } else {
                 gravityFinFunnelLevel = 1;
                 investigationFinFunnelLevel = 1;
                 pursuitFinFunnelLevel = 1;
@@ -1003,4 +1023,6 @@ public class VUPShionMod implements
             loadLocKeywords(language);
         }
     }
+
+
 }

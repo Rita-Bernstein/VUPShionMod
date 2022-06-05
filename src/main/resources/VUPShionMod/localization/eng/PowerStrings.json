@@ -711,5 +711,95 @@
       "Not translate yet",
       "Not translate yet"
     ]
+  },
+  "VUPShionMod:DefenceMonsterPower": {
+    "NAME": "Defence",
+    "DESCRIPTIONS": [
+      "Reduce #yAttack damage #yRita #yBernstein relieved to #b%d/255. NL #yRita #yBernstein loss of HP is a multiple of #b10."
+    ]
+  },
+  "VUPShionMod:ProbePower": {
+    "NAME": "Probe",
+    "DESCRIPTIONS": [
+      " #yRita #yBernstein will enter next phase in this turn.",
+      " #yRita #yBernstein will enter next phase at the end of #b%d turns."
+    ]
+  },
+  "VUPShionMod:ReflectionPower": {
+    "NAME": "Reflection",
+    "DESCRIPTIONS": [
+      "Whenever she take blocked damage,deal that damage back."
+    ]
+  },
+  "VUPShionMod:FlyPower": {
+    "NAME": "No Translation Yet",
+    "DESCRIPTIONS": [
+      "No Translation Yet ",
+      "No Translation Yet "
+    ]
+  },
+  "VUPShionMod:SiegePower": {
+    "NAME": "No Translation Yet",
+    "DESCRIPTIONS": [
+      "No Translation Yet"
+    ]
+  },
+  "VUPShionMod:ContortTimePower": {
+    "NAME": "Contort the Time",
+    "DESCRIPTIONS": [
+      "#rThe #rstars #rtremble #rto #rits #reach #rand #revery #rmove. NL Whenever you play a card， receive #b%d damage. "
+    ]
+  },
+  "VUPShionMod:MalignBenevolencePower": {
+    "NAME": "Malign Benevolence",
+    "DESCRIPTIONS": [
+      "#rThe #rworm #rof #rthe #rtime #rbasiates #rgently. NL The worm of the time basiates gently, shuffle #b%d #yDecay into it.",
+      "#rThe #rworm #rof #rthe #rtime #rbasiates #rgently. NL The worm of the time basiates gently, shuffle #b%d #yDecay into it."
+    ]
+  },
+  "VUPShionMod:LoomingPower": {
+    "NAME": "Looming",
+    "DESCRIPTIONS": [
+      "#rSomething...is #rcoming.  NL The #b%d turns count down has begun...",
+      "#rSomething...is #rcoming.  NL The #b%d turns count down has begun..."
+    ]
+  },
+  "VUPShionMod:HulkingPower": {
+    "NAME": "Hulking",
+    "DESCRIPTIONS": [
+      "#rIt #ris #rin #ra #rsize #rmatched #rby #rplanets... NL It recieves #b%d damage for most each turn"
+    ]
+  },
+  "VUPShionMod:StainTheMindPower": {
+    "NAME": "Stain the Mind",
+    "DESCRIPTIONS": [
+      "#rIt #rchannels #rspiritual #rcontroling #rwave #rin #ra #rwide #rrange. NL Every time you shuffle your draw pile, shuffle #b%d #yDecay into it. ",
+      "#rIt #rchannels #rspiritual #rcontroling #rwave #rin #ra #rwide #rrange. NL Every time you shuffle your draw pile, shuffle #b%d #yDecay into it. "
+    ]
+  },
+  "VUPShionMod:DemonOfTimePower": {
+    "NAME": "Demon of Time",
+    "DESCRIPTIONS": [
+      "#rIt #rroams #routside #rof #rthe #rtime. NL Heals #b%d HP each tuen. "
+    ]
+  },
+  "VUPShionMod:LabyrinthOfTimelinePower": {
+    "NAME": "Labyrinth of Timeline",
+    "DESCRIPTIONS": [
+      "#rThe #rlines #rof #rtime #ris #rdisordered. NL Whenever you play #b%d cards in a single turn，lose 1 #yBuff ."
+    ]
+  },
+  "VUPShionMod:SubspacePursuerPower": {
+    "NAME": "Subspace Pursuer",
+    "DESCRIPTIONS": [
+      "#rThe #rtentacles #rare #runpredictable. NL At the end of turn, it deals #b%d #ynon-Attack damage #b%d times. ",
+      "#rThe #rtentacles #rare #runpredictable. NL At the end of turn, it deals #b%d #ynon-Attack damage #b%d times "
+    ]
+  },
+  "VUPShionMod:AnnihilatingCanonPower": {
+    "NAME": "Annihilating Canon",
+    "DESCRIPTIONS": [
+      "#rStep #raside! #rAside! NL Whenever you play a #ySkill，this turn #yAnnihilating Canon damage decause #b%d ."
+    ]
   }
 }

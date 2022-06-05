@@ -728,7 +728,7 @@
   "VUPShionMod:DefenceMonsterPower": {
     "NAME": "防御力",
     "DESCRIPTIONS": [
-      " #y丽塔・伯恩斯坦 受到的 #y攻击 伤害减少到 #b%d/255 。 NL #y丽塔・伯恩斯坦 受到的 #y攻击 伤害为 #b10 的倍数。"
+      " #y丽塔・伯恩斯坦 受到的 #y攻击 伤害减少到 #b%d/255 。 NL #y丽塔・伯恩斯坦 受到生命损失为 #b10 的倍数。"
     ]
   },
   "VUPShionMod:ProbePower": {

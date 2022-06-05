@@ -10,6 +10,7 @@ import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -62,22 +63,22 @@ public class RitaShop extends CustomMonster {
 
 
     public RitaShop() {
-        super(NAME, ID, 160, 0.0F, -10.0F, 300.0F, 350.0F, null, 0.0F, 0.0F);
-        if (AbstractDungeon.ascensionLevel >= 7) {
+        super(NAME, ID, 160, 0.0F, -10.0F, 300.0F, 380.0F, null, 0.0F, 0.0F);
+        if (AbstractDungeon.ascensionLevel >= 8) {
             setHp(180);
         } else {
             setHp(160);
         }
 
 
-        if (AbstractDungeon.ascensionLevel >= 19) {
+        if (AbstractDungeon.ascensionLevel >= 18) {
             this.timeLimit = 3;
         } else {
             this.timeLimit = 4;
         }
 
 //进阶4加伤害
-        if (AbstractDungeon.ascensionLevel >= 4) {
+        if (AbstractDungeon.ascensionLevel >= 3) {
             this.damage.add(new DamageInfo(this, 28));
             this.damage.add(new DamageInfo(this, 10));
             this.damage.add(new DamageInfo(this, 30));
@@ -107,7 +108,7 @@ public class RitaShop extends CustomMonster {
         this.dialogY = 50.0F * Settings.scale;
 
 
-        loadAnimation("VUPShionMod/img/monsters/Rita/Rita.atlas", "VUPShionMod/img/monsters/Rita/Rita.json", 1.0F);
+        loadAnimation("VUPShionMod/img/monsters/Rita/Rita.atlas", "VUPShionMod/img/monsters/Rita/Rita.json", 0.9F);
 
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -124,24 +125,20 @@ public class RitaShop extends CustomMonster {
         CardCrawlGame.music.silenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
 
-//        AbstractDungeon.isScreenUp = true;
-//        GameCursor.hidden = true;
-//        AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NO_INTERACT;
-
         CardCrawlGame.music.playTempBGM(VUPShionMod.makeID("RitaFight1"));
 
 
         (AbstractDungeon.getCurrRoom()).cannotLose = true;
         addToBot(new ApplyPowerAction(this, this, new ProbePower(this, this.timeLimit + 1)));
 
-        addToBot(new ApplyPowerAction(this, this, new DefenceMonsterPower(this, 15)));
+        addToBot(new ApplyPowerAction(this, this, new DefenceMonsterPower(this, 135 - AbstractDungeon.ascensionLevel * 7)));
 
         addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth));
 
         addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true, false, Settings.WIDTH * 0.2F, Settings.HEIGHT / 2.0F));
         addToBot(new MakeTempCardInDrawPileAction(new Slimed(), 1, true, true, false, Settings.WIDTH * 0.2F, Settings.HEIGHT / 2.0F));
 
-        if (AbstractDungeon.ascensionLevel >= 19) {
+        if (AbstractDungeon.ascensionLevel >= 18) {
             addToBot(new MakeTempCardInDrawPileAction(new Burn(), 1, true, true, false, Settings.WIDTH * 0.2F, Settings.HEIGHT / 2.0F));
         }
 
@@ -154,16 +151,18 @@ public class RitaShop extends CustomMonster {
 //第一阶段------------------------------------------------------
         switch (this.nextMove) {
             case 2://震荡波
-                CardCrawlGame.sound.play(VUPShionMod.makeID("VO_Rita_Intimidate"));
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Shockwave")));
+
                 addToTop(new ChangeStateAction(this, "Intimidate"));
 
                 addToBot(new VFXAction(this, new ShockWaveEffect(this.hb.cX, this.hb.cY, Settings.RED_TEXT_COLOR, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.2F));
 
-                addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, AbstractDungeon.ascensionLevel >= 19 ? 5 : 3, true)));
-                addToBot(new ApplyPowerAction(p, this, new WeakPower(p, AbstractDungeon.ascensionLevel >= 19 ? 5 : 3, true)));
+                addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, AbstractDungeon.ascensionLevel >= 18 ? 5 : 3, true)));
+                addToBot(new ApplyPowerAction(p, this, new WeakPower(p, AbstractDungeon.ascensionLevel >= 18 ? 5 : 3, true)));
                 break;
 
             case 1://残杀
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Carnage")));
                 addToBot(new VFXAction(new ViolentAttackEffect(p.hb.cX, p.hb.cY, Color.RED)));
                 for (int i = 0; i < 5; i++) {
                     addToBot(new VFXAction(new StarBounceEffect(p.hb.cX, p.hb.cY)));
@@ -173,6 +172,7 @@ public class RitaShop extends CustomMonster {
 
 
             case 0://恶魔之焰
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_FiendFire") + MathUtils.random(1)));
                 for (temp = 0; temp < this.repuukenHitCount; temp++) {
                     addToBot(new DamageAction(p, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
                 }
@@ -182,23 +182,26 @@ public class RitaShop extends CustomMonster {
 
 //第二阶段------------------------------------------------------
             case 10://黑暗屏障
-                CardCrawlGame.sound.play(VUPShionMod.makeID("VO_Rita_Barrier"));
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_DarkBarrier") + MathUtils.random(1)));
                 addToBot(new VFXAction(this, new FlameBarrierEffect(this.hb.cX, this.hb.cY), 0.5F));
                 addToBot(new GainBlockAction(this, this, 50));
                 addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, 2)));
-                addToBot(new ApplyPowerAction(this, this, new ReflectionPower(this, AbstractDungeon.ascensionLevel >= 19 ? 3 : 2)));
+                addToBot(new ApplyPowerAction(this, this, new ReflectionPower(this, AbstractDungeon.ascensionLevel >= 18 ? 3 : 2)));
                 addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5)));
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 2)));
                 break;
 
             case 11://陨石打击
+
                 addToBot(new VFXAction(new WeightyImpactEffect(p.hb.cX, p.hb.cY)));
                 addToBot(new WaitAction(0.8F));
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_MeteorStrike")));
                 addToBot(new DamageAction(p, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
                 break;
 
             case 12://诸神之黄昏
-                CardCrawlGame.sound.play(VUPShionMod.makeID("VO_Rita_Execution"));
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Ragnarok")));
+                addToBot(new AnimateFastAttackAction(this));
                 for (temp = 0; temp < this.ExecutionHitCount; temp++) {
                     addToBot(new SFXAction("THUNDERCLAP", 0.05F));
                     addToBot(new VFXAction(new LightningEffect(p.drawX, p.drawY), 0.05F));
@@ -208,9 +211,9 @@ public class RitaShop extends CustomMonster {
                 break;
             //第三阶段------------------------------------------------------
             case 20://灭族切割
-                CardCrawlGame.sound.play(VUPShionMod.makeID("VO_Rita_Cutter"));
                 addToBot(new VFXAction(new GoldenSlashEffect(p.hb.cX - 60.0F * Settings.scale, AbstractDungeon.player.hb.cY,
                         true), 0.0f));
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_GenocideCutter") + MathUtils.random(1)));
                 addToBot(new AnimateJumpAction(this));
                 addToBot(new DamageAction(p, this.damage.get(4), AbstractGameAction.AttackEffect.NONE));
                 addToBot(new VFXAction(new GoldenSlashEffect(p.hb.cX + 60.0F * Settings.scale, AbstractDungeon.player.hb.cY,
@@ -222,13 +225,15 @@ public class RitaShop extends CustomMonster {
 
                 break;
 
-            case 21://地狱压杀
-                CardCrawlGame.sound.play(VUPShionMod.makeID("VO_Rita_Pressure"));
-                addToBot(new DamageAction(p, this.damage.get(5), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            case 21://烈风燕破
+                addToBot(new AnimateFastAttackAction(this));
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_HellPress")));
+                addToBot(new DamageAction(p, this.damage.get(5), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 break;
 
             case 22://灭除之刃
-                CardCrawlGame.sound.play(VUPShionMod.makeID("VO_Rita_Destruction"));
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Expunger")));
+                addToBot(new AnimateFastAttackAction(this));
                 for (temp = 0; temp < this.DestructionHitCount; temp++) {
                     addToBot(new AbstractGameAction() {
                         @Override
@@ -250,7 +255,7 @@ public class RitaShop extends CustomMonster {
                     addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50)));
                     this.timeLimit = 3;
                 } else {
-                    if (AbstractDungeon.ascensionLevel >= 19) {
+                    if (AbstractDungeon.ascensionLevel >= 18) {
                         addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 10)));
                     } else {
                         addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 8)));
@@ -262,16 +267,18 @@ public class RitaShop extends CustomMonster {
 
 //------------------------------------------------------复活
             case 99:
+                this.halfDead = false;
                 switch (this.formAmount) {
                     case 1:
 
 //复活：第二形态
-                        if (AbstractDungeon.ascensionLevel >= 9) {
+                        if (AbstractDungeon.ascensionLevel >= 8) {
                             this.maxHealth = 340 + currentHealth;
                         } else {
                             this.maxHealth = 270 + currentHealth;
                         }
 
+                        addToBot(new SFXAction(VUPShionMod.makeID("RitaB_CombatStart") + MathUtils.random(4)));
 
                         addToBot(new RemoveSpecificPowerAction(this, this, ProbePower.POWER_ID));
                         addToBot(new ApplyPowerAction(this, this, new UnawakenedPower(this)));
@@ -287,9 +294,9 @@ public class RitaShop extends CustomMonster {
                         CardCrawlGame.music.playTempBGM(VUPShionMod.makeID("RitaFight2"));
 
                         (AbstractDungeon.getCurrRoom()).cannotLose = false;
+
+                        addToBot(new SFXAction(VUPShionMod.makeID("RitaB_TrueMod")));
                         addToBot(new RemoveSpecificPowerAction(this, this, UnawakenedPower.POWER_ID));
-
-
                         break;
                 }
 
@@ -299,14 +306,19 @@ public class RitaShop extends CustomMonster {
                 if (formAmount >= 3) {
                     (AbstractDungeon.getCurrRoom()).cannotLose = false;
                 }
-
-                addToBot(new ChangeStateAction(this, "Revive"));
                 break;
 
 
         }
-        this.timeLimit--;
-        this.isFormChanged = false;
+
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                timeLimit--;
+                isFormChanged = false;
+                isDone = true;
+            }
+        });
         addToBot(new RollMoveAction(this));
     }
 
@@ -323,6 +335,7 @@ public class RitaShop extends CustomMonster {
             CardCrawlGame.screenShake.rumble(4.0F);
 
             this.deathTimer += 1.5f;
+            CardCrawlGame.sound.play(VUPShionMod.makeID("RitaB_Die"));
         }
     }
 
@@ -336,9 +349,6 @@ public class RitaShop extends CustomMonster {
             case "Form2":
                 this.state.setAnimation(0, "Idle", false);
                 this.state.addAnimation(0, "Idle_3", true, 0.0F);
-                break;
-            case "Revive":
-                this.halfDead = false;
                 break;
         }
     }
@@ -458,20 +468,20 @@ public class RitaShop extends CustomMonster {
 //结算伤害
         super.damage(info);
 
-//        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > 0) {
-//            this.state.setAnimation(0, "Hit", false);
-//
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > 0) {
+            this.state.setAnimation(0, "Hit", false);
+
 //            if (this.formAmount >= 1 && nextMove != 99) {
 //                this.state.addAnimation(0, "Idle_3", true, 0.0F);
 //            } else {
 //                this.state.addAnimation(0, "Idle", true, 0.0F);
 //            }
-//
-//
-//            if (MathUtils.random(3) == 0) {
-//                CardCrawlGame.sound.play(VUPShionMod.makeID("VO_Rita_Hit" + MathUtils.random(1)));
-//            }
-//        }
+
+
+            if (MathUtils.random(3) == 0) {
+                CardCrawlGame.sound.play(VUPShionMod.makeID("RitaB_Hit" + MathUtils.random(6)));
+            }
+        }
 
 //击杀濒死
         if (this.currentHealth <= 0 && !this.halfDead) {

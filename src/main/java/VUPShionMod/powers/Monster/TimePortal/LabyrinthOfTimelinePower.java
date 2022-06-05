@@ -3,6 +3,7 @@ package VUPShionMod.powers.Monster.TimePortal;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Shion.ReinsOfWarPower;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.cards.curses.Decay;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -30,7 +32,8 @@ public class LabyrinthOfTimelinePower extends AbstractShionPower {
         this.amount2 = 0;
         updateDescription();
         this.isTurnBased = false;
-        loadRegion("beat");
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower128.png")), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower32.png")), 0, 0, 32, 32);
 
     }
 

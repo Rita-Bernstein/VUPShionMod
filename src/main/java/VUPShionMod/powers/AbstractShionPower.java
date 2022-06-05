@@ -52,4 +52,6 @@ public class AbstractShionPower extends TwoAmountPower {
 
     public void preEndOfRound(){}
 
+
+
 }

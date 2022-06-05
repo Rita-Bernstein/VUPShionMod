@@ -255,7 +255,7 @@ public class PlagaAMundoMinion extends CustomMonster {
                         die();
 
                         if(AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                            addToBot(new TalkAction(true, DIALOG[0], 2.0f, 3.0f));
+                            addToBot(new TalkAction(true, DIALOG[0], 2.0f, 5.0f));
                             addToBot(new CustomWaitAction(1.0f));
 
                             createBoss();

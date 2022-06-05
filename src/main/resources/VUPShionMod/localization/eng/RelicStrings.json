@@ -156,6 +156,7 @@
     "FLAVOR": "Experimental overload protector that can overload all equipments for a short period of time, somehow fabricated in a shape of swimming costume.（Incidence of risks occur due to excessive energy draining.）",
     "DESCRIPTIONS": [
       "At the start of each combat, shuffle #b2 #yDazed into draw pile. At the start of each turn ,gain 1 #yFrail. Right Click: #bSupernova #bOutburst. (once per combat)",
+      "Supernova",
       " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b2 times. NL Enhance random #b2 #yFunnels. NL End your turn."
     ]
   },
@@ -164,6 +165,7 @@
     "FLAVOR": "Zero point energy capacitor is implanted to alleviate burden of the equiper.",
     "DESCRIPTIONS": [
       "#rReplace Overloaded Supernova. NL Right Click: #bSupernova #bOutburst. (once per combat)",
+      "Supernova",
       " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b2 times. NL Enhance random #b2 #yFunnels. NL End your turn."
     ]
   },
@@ -229,19 +231,41 @@
       "#rReplace White Rose. NL Whenever you receive damage from enemy #yattacks, gain #b2 #yPlated #yArmor."
     ]
   },
-  "VUPShionMod:Concord": {
-    "NAME": "Concord",
-    "FLAVOR": "Not translate yet",
+  "VUPShionMod:ConcordSnipe": {
+    "NAME": "Concord·Snipe",
+    "FLAVOR": "No Translation Yet",
     "DESCRIPTIONS": [
-      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% 。",
+      "Every turn your first #yAttack deals twice damage. NL #bNo Translation Yet .",
+      "No Translation Yet",
+      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% .",
+      "Your damage increase #b%d%% , NL Injury suffered decrease #b%d%% 。 NL Decrease this effect for each layer passed by NL （#b50%% Maximum）"
+    ]
+  },
+  "VUPShionMod:ConcordArray": {
+    "NAME": "Concord·Array",
+    "FLAVOR": "No Translation Yet",
+    "DESCRIPTIONS": [
+      "All #yfunnel level increase #b1 。 NL #bNo Translation Yet .",
+      "No Translation Yet",
+      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% .",
+      "Your damage increase #b%d%% , NL Injury suffered decrease #b%d%% 。 NL Decrease this effect for each layer passed by NL （#b50%% Maximum）"
+    ]
+  },
+  "VUPShionMod:ConcordCharge": {
+    "NAME": "Concord·Charge",
+    "FLAVOR": "No Translation Yet",
+    "DESCRIPTIONS": [
+      "Every start of battle gain [E] [E] . NL #bNo Translation Yet .",
+      "No Translation Yet",
+      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% .",
       "Your damage increase #b%d%% , NL Injury suffered decrease #b%d%% 。 NL Decrease this effect for each layer passed by NL （#b50%% Maximum）"
     ]
   },
   "VUPShionMod:FruitCake": {
-    "NAME": "FruitCake",
-    "FLAVOR": "Not translate yet",
+    "NAME": "Fruit Cake",
+    "FLAVOR": "This Stall... What's going on?",
     "DESCRIPTIONS": [
-      "Not translate yet"
+      "At the start of your turn,if you，if your HP is at or above 50%,gain [E] . NL Otherwise,longer works in this combat."
     ]
   }
 }

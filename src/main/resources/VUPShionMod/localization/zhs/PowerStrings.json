@@ -696,7 +696,10 @@
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :给予 #b99 层 易伤 。",
-      " NL #b%d :移除本效果并： NL 首领-解析敌人能力或失去 #b3 点 #y力量。 NL 非首领- #y击晕 。"
+      " NL #b%d :移除本效果并： NL 首领-解析敌人能力或失去 #b3 点 #y力量。 NL 非首领- #y击晕 。",
+      " NL NL #r首领-%s NL 失去 #y%s。",
+      " NL NL #r首領-%s NL 将 #y%s 的生命降到 #b1 。",
+      " NL NL #r首领-%s NL 失去 #b3 点 #y力量。"
     ]
   },
   "VUPShionMod:ReinsOfWarPower": {
@@ -706,10 +709,10 @@
       " NL #b1-3 :给予 #b1 点 #y敏捷 。",
       " NL #b4-5 :给予 #b1 点 #y力量 和 #y敏捷 。",
       " NL #b6-10 :给予 #b2 点 #y力量 和 #y敏捷 。",
-      " NL #b11-15 :给予 #b3 点 #y力量 和 #y超维链接 。",
-      " NL #b16-20 :给予 #b4 点 #y力量 、 #y超维链接 和 [E] 。",
-      " NL #b21-25 :给予 #b5 点 #y力量 、 #y超维链接 和 [E] 。",
-      " NL #b26及以上 :给予 #b5 点 #y力量 、 #y超维链接 和 [E] [E] 。"
+      " NL #b11-15 :给予 #b2 点 #y力量 和 #y超维链接 。",
+      " NL #b16-20 :给予 #b2 点 #y力量 、 #y超维链接 和 [E] 。",
+      " NL #b21-25 :给予 #b3 点 #y力量 、 #y超维链接 和 [E] 。",
+      " NL #b26及以上 :给予 #b3 点 #y力量 、 #y超维链接 和 [E] [E] 。"
     ]
   },
   "VUPShionMod:SpatialTearPower": {
@@ -728,7 +731,7 @@
   "VUPShionMod:DefenceMonsterPower": {
     "NAME": "防御力",
     "DESCRIPTIONS": [
-      " #y丽塔・伯恩斯坦 受到的 #y攻击 伤害减少到 #b%d/255 。 NL #y丽塔・伯恩斯坦 受到生命损失为 #b10 的倍数。"
+      " #y丽塔・伯恩斯坦 受到的伤害减少到 #b%d/255 。 NL #y丽塔・伯恩斯坦 受到 #y攻击伤害 为 #b10 的倍数。"
     ]
   },
   "VUPShionMod:ProbePower": {
@@ -812,7 +815,20 @@
   "VUPShionMod:AnnihilatingCanonPower": {
     "NAME": "湮灭重炮",
     "DESCRIPTIONS": [
-      "#r回避！回避！。 NL 本回合每打出一张 #y技能牌 ，本次 #y湮灭重炮 的伤害降低 #b%d 点。"
+      "#r回避！回避！ NL 本回合每打出一张 #y技能牌 ，本次 #y湮灭重炮 的伤害降低 #b%d 点。"
+    ]
+  },
+  "VUPShionMod:ConcordPower": {
+    "NAME": "时空同调",
+    "DESCRIPTIONS": [
+      "造成的伤害减少 #b%d%% ， NL 受到的伤害提高 #b%d%% 。",
+      "造成的伤害提高 #b%d%% ， NL 受到的伤害减少 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:ClaymoreSet": {
+    "NAME": "阔剑地雷设置",
+    "DESCRIPTIONS": [
+      "下次受到攻击伤害时，对攻击者造成 #b%d 点伤害。"
     ]
   }
 }

@@ -31,9 +31,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.*;
 
 import java.util.ArrayList;
 
@@ -53,6 +51,7 @@ public class Ouroboros extends CustomMonster {
     protected Bone fireBone;
     private float waitingDeath = 6.0f;
     private boolean npc = false;
+    private boolean charging = false;
 
     public Ouroboros() {
         this(false);
@@ -134,11 +133,17 @@ public class Ouroboros extends CustomMonster {
                 isDone = true;
             }
         });
+
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new WeakPower(AbstractDungeon.player,99,true)));
+
+        if(!this.isDefect)
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new VulnerablePower(AbstractDungeon.player,99,true)));
+
     }
 
 
     public void takeTurn() {
-        if(this.npc)
+        if (this.npc)
             return;
 
         AbstractPlayer trueTarget = AbstractDungeon.player;
@@ -161,6 +166,7 @@ public class Ouroboros extends CustomMonster {
                 addToBot(new DamageAction(trueTarget, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
                 addToBot(new ChangeStateAction(this, "Fire_Attack2"));
                 addToBot(new RemoveSpecificPowerAction(this, this, AnnihilatingCanonPower.POWER_ID));
+
                 break;
             case 2:
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 100)));
@@ -177,7 +183,7 @@ public class Ouroboros extends CustomMonster {
 
 
     protected void getMove(int num) {
-        if(this.npc){
+        if (this.npc) {
             setMove((byte) 3, Intent.NONE);
             return;
         }
@@ -229,6 +235,8 @@ public class Ouroboros extends CustomMonster {
 
             this.state.setAnimation(0, "timebug_dead", false);
             this.state.addAnimation(0, "timebug_dead_disapper", false, 0.0f);
+            if (this.charging)
+                this.state.setAnimation(3, "attack_fire_cold_down", false);
 
             hideHealthBar();
             this.npc = true;
@@ -255,7 +263,7 @@ public class Ouroboros extends CustomMonster {
                     this.state.addAnimation(1, "lightwing_idle", true, 0.0f);
                 }
 
-
+                this.charging = true;
                 this.state.setAnimation(3, "attack_ready", false);
                 this.state.addAnimation(3, "attack_fire_wait", true, 0.0f);
                 break;
@@ -264,6 +272,7 @@ public class Ouroboros extends CustomMonster {
                 this.state.setAnimation(0, "attack_fire", false);
                 this.state.addAnimation(0, "timebug_idle", true, 0.0f);
 
+                this.charging = false;
 //                if (!this.isDefect)
 //                    this.state.setAnimation(2, "lightwing_attack_ready", false);
                 break;

@@ -22,6 +22,8 @@ import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.CannotLoseAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -109,6 +111,7 @@ public class TimePortal extends CustomMonster {
             switch (this.nextMove) {
                 case 0:
                     addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, 5)));
+                    addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 2, true, true, false));
                     break;
                 case 1:
 
@@ -138,7 +141,7 @@ public class TimePortal extends CustomMonster {
         if (this.moveCount >= 6) {
             setMove((byte) 1, Intent.UNKNOWN);
         } else {
-            setMove((byte) 0, Intent.BUFF);
+            setMove((byte) 0, Intent.DEBUFF);
         }
         this.moveCount++;
     }

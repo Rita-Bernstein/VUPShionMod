@@ -21,7 +21,7 @@ public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
     public ReleaseFormLiyezhu() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM = this.baseSecondaryM = 14;
+        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeSecondM(4);
+            this.upgradeSecondM(9);
         }
     }
 

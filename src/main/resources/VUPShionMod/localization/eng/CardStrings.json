@@ -1012,12 +1012,12 @@
   },
   "VUPShionMod:SoothingScripture": {
     "NAME": "Soothing Scripture",
-    "DESCRIPTION": "vup_shion_mod:Prayer !VUPShionSecondM! :Heal !M! HP. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold : *Emanation *of *Ire. NL Exhaust.",
+    "DESCRIPTION": "vup_shion_mod:Prayer !VUPShionSecondM! :Heal !M! HP. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Emanation *of *Ire. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "vup_shion_mod:Prayer !VUPShionSecondM! :Heal !M! HP. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Emanation *of *Ire+. NL Exhaust."
   },
   "VUPShionMod:EmanationOfIre": {
     "NAME": "Emanation of Ire",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy do not intend to attack, apply !M! Vulnerable. NL vup_shion_mod:Psychic 1: Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy does not intend to attack, apply !M! Vulnerable. NL vup_shion_mod:Psychic 1: Deal !D! damage."
   },
   "VUPShionMod:TranquilPrayer": {
     "NAME": "Tranquil Prayer",
@@ -1042,12 +1042,12 @@
   },
   "VUPShionMod:RealizingCanticle": {
     "NAME": "Realizing Canticle",
-    "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : gain 1 Artificial. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Beingless *Moment. NL Exhaust.",
+    "DESCRIPTION": "Gain 1 Artificial. vup_shion_mod:Prayer !VUPShionSecondM! : gain 1 Artificial. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Beingless *Moment. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain 1 Artificial. NL vup_shion_mod:Prayer !VUPShionSecondM! : gain 1 Artificial. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Beingless *Moment+. NL Exhaust."
   },
   "VUPShionMod:BeinglessMoment": {
     "NAME": "Beingless Moment",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Damage taken is doubled this turn."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Vulnerable."
   },
   "VUPShionMod:SoleAnthem": {
     "NAME": "Sole Anthem",
@@ -1103,7 +1103,7 @@
   "VUPShionMod:BurnishedRazor": {
     "NAME": "Burnished Razor",
     "DESCRIPTION": "Deal damage equal to 25% of max HP. NL Receive damage half of that. NL vup_shion_mod:Punitive. NL vup_shion_mod:Psychic: Damage increases to 33% of max HP.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to 25% of max HP. NL vup_shion_mod:Punitive. NL vup_shion_mod:Psychic: Damage up to 33% of max HP."
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 25% of max HP. NL vup_shion_mod:Punitive. NL vup_shion_mod:Psychic: Damage increases to 33% of max HP."
   },
   "VUPShionMod:PrincipledThievery": {
     "NAME": "Principled Thievery",
@@ -1212,7 +1212,7 @@
   },
   "VUPShionMod:Enchant": {
     "NAME": "Enchant",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! temporary Strength. NL vup_shion_mod:Psychic : Create 1 copy of this card in your hand. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! temporary Strength. NL vup_shion_mod:Psychic: Add 1 copy of this card into your hand. NL Exhaust."
   },
   "VUPShionMod:March": {
     "NAME": "March",
@@ -1258,7 +1258,7 @@
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "Exitium Maeroris",
-    "DESCRIPTION": "Retain. NL Exhaust all cards created from *Miseriam *Voco. NL Lose HP equal to 100-5x(number of cards exhausted). NL Draw cards until your hand is full. Gain !M! [E] and Strength."
+    "DESCRIPTION": "Retain. NL Exhaust all cards created from *Miseriam *Voco. NL Lose HP equal to 100-5x(number of cards exhausted). NL Draw cards until your hand is full. Gain !M! [E] and Strength. NL Exhaust."
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "Woe into Casket",
@@ -1291,99 +1291,99 @@
     "DESCRIPTION": "Deploy a *Lure with !M! HP. It deals !M! damage 5 times to ALL enemies upon being destroyed. Exhaust."
   },
   "VUPShionMod:SpaceSlice": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Rip Space",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! vup_shion_mod:Rupture. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 4+ vup_shion_mod:Cor\u00a0Gladii for 4 times. NL Apply !M! vup_shion_mod:Rupture. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL vup_shion_mod:Magiam\u00a0Obruor.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Rip Space+",
+      "Shatter Space",
+      "Deal !D! damage. NL Apply !M! vup_shion_mod:Rupture. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL vup_shion_mod:Magiam\u00a0Obruor."
     ]
   },
   "VUPShionMod:Exile": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet"
+    "NAME": "Exile",
+    "DESCRIPTION": "Ethereal. NL Set an enemy's HP to 0. NL Exhaust."
   },
   "VUPShionMod:PhantomChop": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Phantom Slash",
+    "DESCRIPTION": "Deal damage equal to 1+ vup_shion_mod:Cor\u00a0Gladii. NL While in hand, whenever you play an Attack, play 1 copy of this card.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii for X times. NL For each card played this turn, it deals damage 1 additional time. NL Gain 2 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Phantom Slash+",
+      "Dazzling Phantom",
+      "Retain. NL Deal damage equal to 1+ vup_shion_mod:Cor\u00a0Gladii. NL While in hand, whenever you play an Attack, play 1 copy of this card."
     ]
   },
   "VUPShionMod:MentalMotivationChop": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Mental Cutlass",
+    "DESCRIPTION": "Deal damage equal to 1+ vup_shion_mod:Cor\u00a0Gladii for 4 times. NL Lose all vup_shion_mod:Cor\u00a0Gladii and vup_shion_mod:Magiam\u00a0Obruor. NL Gain 1 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Deal damage equal to 1+ vup_shion_mod:Cor\u00a0Gladii for times equal to vup_shion_mod:Magiam\u00a0Obruor. NL Lose all vup_shion_mod:Magiam\u00a0Obruor. NL Gain 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Mental Cutlass+",
+      "Formless Cutlass",
+      "Retain. NL Deal damage equal to 1+ vup_shion_mod:Cor\u00a0Gladii for 4 times. NL Lose all vup_shion_mod:Cor\u00a0Gladii and vup_shion_mod:Magiam\u00a0Obruor. NL vup_shion_mod:Stiffness."
     ]
   },
   "VUPShionMod:MeltDowner": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Melt Downer",
+    "DESCRIPTION": "Lose !VUPShionSecondM! HP. NL Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
+    "UPGRADE_DESCRIPTION": "Lose 25% of HP. NL Draw cards until your hand is full. NL Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Melt Downer+",
+      "Quark Recombine",
+      "Lose !VUPShionSecondM! HP. NL Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL vup_shion_mod:Magiam\u00a0Obruor.",
+      "Your HP is not enough."
     ]
   },
   "VUPShionMod:CirrocumulusChop": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Cirrocumulus Sway",
+    "DESCRIPTION": "Deal damage equal to 8+ Dexterity. NL Draw !M! cards. NL Lose !VUPShionSecondM! vup_shion_mod:Magiam\u00a0Obruor and vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Apply Constricted equal to 3+ Dexterity + vup_shion_mod:Cor\u00a0Gladii. NL Draw !M! cards. NL Lose !VUPShionSecondM! vup_shion_mod:Magiam\u00a0Obruor and vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Cirrocumulus Sway+",
+      "Circuitus Venti",
+      "Deal damage equal to 12+ Dexterity. NL Draw !M! cards. NL Lose !VUPShionSecondM! vup_shion_mod:Magiam\u00a0Obruor and vup_shion_mod:Stiffness."
     ]
   },
   "VUPShionMod:CoronaChop": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Corona Solis",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust 1 random card. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii next turn. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Apply vup_shion_mod:Bleeding equal to 15+ vup_shion_mod:Cor\u00a0Gladii. NL Exhaust up to 2 cards. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL vup_shion_mod:Magiam\u00a0Obruor.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Corona Solis+",
+      "Spiritum Aduro",
+      "Deal !D! damage. NL Exhaust 1 card. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii next turn. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness."
     ]
   },
   "VUPShionMod:MotherRosario": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Mother Rosario",
+    "DESCRIPTION": "Deal damage equal to 4+ Dexterity for !VUPShionSecondM! times to random enemies. NL Gain !M! vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 2+ Dexterity for !VUPShionSecondM! times to random enemies. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL Gain !M! vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Mother Rosario+",
+      "Hymnus Deae",
+      "Deal damage equal to 3+ Dexterity for !VUPShionSecondM! times to random enemies. NL Gain !M! vup_shion_mod:Stiffness."
     ]
   },
   "VUPShionMod:BreakChop": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Break Formation",
+    "DESCRIPTION": "Can only be played if the enemy intends to attack. NL Deal !D! damage. NL Gain !B! Block. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 7+ vup_shion_mod:Cor\u00a0Gladii. NL If the enemy intends to attack, gain 15 vup_shion_mod:Cor\u00a0Gladii. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand and lose 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet",
-      "No translation yet"
+      "Break Formation+",
+      "Flaring Momentum",
+      "Can only be played if the enemy intends to attack. NL Deal !D! damage. NL Gain !B! Block. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand.",
+      "The enemy does not intend to attack!"
     ]
   },
   "VUPShionMod:OppressiveSword": {
-    "NAME": "No translation yet",
-    "DESCRIPTION": "No translation yet ",
-    "UPGRADE_DESCRIPTION": "No translation yet",
+    "NAME": "Suppressing Blade",
+    "DESCRIPTION": "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Can only be played while X>0. NL Deal damage equal to !M! X times of vup_shion_mod:Cor\u00a0Gladii. NL Gain 12X vup_shion_mod:Cor\u00a0Gladii. NL Increase your vup_shion_mod:Cor\u00a0Gladii for 50%. NL vup_shion_mod:Magiam\u00a0Obruor X.",
     "EXTENDED_DESCRIPTION": [
-      "No translation yet",
-      "No translation yet",
-      "No translation yet "
+      "Suppressing Blade+",
+      "Crescent Dash",
+      "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness."
     ]
   }
 }

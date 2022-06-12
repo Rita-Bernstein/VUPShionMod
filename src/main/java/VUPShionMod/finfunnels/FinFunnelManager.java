@@ -5,6 +5,7 @@ import VUPShionMod.actions.Shion.TurnTriggerAllFinFunnelAction;
 import VUPShionMod.cards.ShionCard.anastasia.AttackOrderGamma;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.EnergyPanelPatches;
+import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -45,8 +46,8 @@ public class FinFunnelManager {
     }
 
     public void preBattlePrep() {
-        VUPShionMod.loadFinFunnels();
-        selectedFinFunnel = getFinFunnel(VUPShionMod.activeFinFunnel);
+        SaveHelper.loadFinFunnels();
+        selectedFinFunnel = getFinFunnel(SaveHelper.activeFinFunnel);
         if (selectedFinFunnel != null) {
             this.cX = selectedFinFunnel.cX;
             this.cY = selectedFinFunnel.cY;
@@ -59,7 +60,7 @@ public class FinFunnelManager {
     }
 
     public void onVictory() {
-        VUPShionMod.saveFinFunnels();
+        SaveHelper.saveFinFunnels();
     }
 
     public AbstractFinFunnel getFinFunnel(String id) {
@@ -77,10 +78,10 @@ public class FinFunnelManager {
 
     public void initializeFinFunnelShion() {
         if (finFunnelList.isEmpty()) {
-            finFunnelList.add(new InvestigationFinFunnel(VUPShionMod.investigationFinFunnelLevel));
-            finFunnelList.add(new PursuitFinFunnel(VUPShionMod.pursuitFinFunnelLevel));
-            finFunnelList.add(new GravityFinFunnel(VUPShionMod.gravityFinFunnelLevel));
-            finFunnelList.add(new DissectingFinFunnel(VUPShionMod.dissectingFinFunnelLevel));
+            finFunnelList.add(new InvestigationFinFunnel(SaveHelper.investigationFinFunnelLevel));
+            finFunnelList.add(new PursuitFinFunnel(SaveHelper.pursuitFinFunnelLevel));
+            finFunnelList.add(new GravityFinFunnel(SaveHelper.gravityFinFunnelLevel));
+            finFunnelList.add(new DissectingFinFunnel(SaveHelper.dissectingFinFunnelLevel));
         }
     }
 

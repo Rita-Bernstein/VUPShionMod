@@ -120,28 +120,26 @@ public abstract class AbstractFinFunnel {
     public void onPursuitEnemy(AbstractCreature target, int loop) {
     }
 
-    public void fire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
-        this.fire(target, damage, type, 1);
+
+    public void activeFire(AbstractCreature target, DamageInfo info) {
+        this.activeFire(target, info, true, 1);
     }
 
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type) {
-        this.activeFire(target, damage, type, true, 1);
+    public void activeFire(AbstractCreature target, DamageInfo info, boolean triggerPassive) {
+        this.activeFire(target, info, triggerPassive, 1);
     }
 
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive) {
-        this.activeFire(target, damage, type, triggerPassive, 1);
-    }
-
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, int loopTimes) {
-        this.activeFire(target, damage, type, true, loopTimes);
+    public void activeFire(AbstractCreature target, DamageInfo info, int loopTimes) {
+        this.activeFire(target, info, true, loopTimes);
     }
 
 
-    public void activeFire(AbstractCreature target, int damage, DamageInfo.DamageType type, boolean triggerPassive, int loopTimes) {
+    public void activeFire(AbstractCreature target, DamageInfo info, boolean triggerPassive, int loopTimes) {
         if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
             addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
             for (int i = 0; i < loopTimes; i++)
-                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(info.base,
+                        false), info.type, AbstractGameAction.AttackEffect.FIRE));
 
             if (triggerPassive) {
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
@@ -156,7 +154,7 @@ public abstract class AbstractFinFunnel {
             addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
             addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
             for (int i = 0; i < loopTimes; i++) {
-                addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type), AbstractGameAction.AttackEffect.FIRE));
+                addToBot(new DamageAction(target, info, AbstractGameAction.AttackEffect.FIRE));
             }
 
             if (triggerPassive) {

@@ -696,7 +696,10 @@
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :給予 #b99 層 易傷 。",
-      " NL #b%d :移除本效果並： NL 首領-解析敵人能力或失去 #b3 點 #y力量。 NL 非首領- #y擊暈 。"
+      " NL #b%d :移除本效果並： NL 首領-解析敵人能力或失去 #b3 點 #y力量。 NL 非首領- #y擊暈 。",
+      " NL NL #r首領-%s NL 失去 #y%s。",
+      " NL NL #r首領-%s NL 將 #y%s 的生命降到 #b1 。",
+      " NL NL #r首領-%s NL 失去 #b3 點 #y力量。"
     ]
   },
   "VUPShionMod:ReinsOfWarPower": {
@@ -728,7 +731,7 @@
   "VUPShionMod:DefenceMonsterPower": {
     "NAME": "防禦力",
     "DESCRIPTIONS": [
-      " #y麗塔・伯恩斯坦 受到的 #y攻擊 傷害減少到 #b%d/255 。 NL #y麗塔・伯恩斯坦 受到生命損失為 #b10 的倍數。"
+      " #y麗塔・伯恩斯坦 受到的傷害減少到 #b%d/255 。 NL #y麗塔・伯恩斯坦 受到 #y攻擊傷害 為 #b10 的倍數。"
     ]
   },
   "VUPShionMod:ProbePower": {
@@ -812,7 +815,14 @@
   "VUPShionMod:AnnihilatingCanonPower": {
     "NAME": "湮滅重炮",
     "DESCRIPTIONS": [
-      "#r迴避！迴避！。 NL 本回合每打出一張 #y技能牌 ，本次 #y湮滅重炮 的傷害降低 #b%d 點。"
+      "#r迴避！迴避！ NL 本回合每打出一張 #y技能牌 ，本次 #y湮滅重炮 的傷害降低 #b%d 點。"
+    ]
+  },
+  "VUPShionMod:ConcordPower": {
+    "NAME": "時空同調",
+    "DESCRIPTIONS": [
+      "造成的傷害減少 #b%d%% ， NL 受到的傷害提高 #b%d%% 。",
+      "造成的傷害提高 #b%d%% ， NL 受到的傷害減少 #b%d%% 。"
     ]
   }
 }

@@ -1,6 +1,6 @@
 package VUPShionMod.skins;
 
-import VUPShionMod.VUPShionMod;
+import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -55,14 +55,14 @@ public abstract class AbstractSkin {
     public void onUnlock() {
         this.unlock = true;
         this.button.locked = false;
-        VUPShionMod.saveSkins();
+        SaveHelper.saveSkins();
     }
 
 
-    public void loadAnimation() {
+    public void loadAnimation(float scale) {
         portraitAtlas = new TextureAtlas(Gdx.files.internal(portraitAtlasPath + ".atlas"));
         SkeletonJson json = new SkeletonJson(portraitAtlas);
-        json.setScale(Settings.scale / 1.0F);
+        json.setScale(Settings.scale * scale);
         portraitData = json.readSkeletonData(Gdx.files.internal(portraitAtlasPath + ".json"));
 
         portraitSkeleton = new Skeleton(portraitData);
@@ -112,6 +112,8 @@ public abstract class AbstractSkin {
 
     public void setPos() {
     }
+
+    public void safeSwitch(){}
 
     public void skeletonRender(SpriteBatch sb) {
         sb.end();

@@ -85,7 +85,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 //攻击Action
             if (isMultiDamage)
                 for (AbstractFinFunnel f : availableFinFunnel) {
-                    addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(f.getFinalDamage(), true),
+                    addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(f.getFinalDamage(), true),
                             DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
 
 //            结算被动效果

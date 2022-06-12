@@ -108,16 +108,17 @@ public class AbstractPowerPatches {
             }
 
 
-            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                    if (!monster.isDeadOrEscaped()) {
-                        for (AbstractPower p : monster.powers) {
-                            if (p instanceof AbstractShionPower)
-                                ((AbstractShionPower) p).preEndOfRound();
+            if (AbstractDungeon.getMonsters() != null)
+                if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                    for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                        if (!monster.isDeadOrEscaped()) {
+                            for (AbstractPower p : monster.powers) {
+                                if (p instanceof AbstractShionPower)
+                                    ((AbstractShionPower) p).preEndOfRound();
+                            }
                         }
                     }
                 }
-            }
             return SpireReturn.Continue();
         }
     }

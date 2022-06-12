@@ -9,7 +9,9 @@ import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
 import VUPShionMod.relics.Shion.ConcordSnipe;
 import VUPShionMod.relics.Shion.DimensionSplitterAria;
 import VUPShionMod.skins.AbstractSkin;
+import VUPShionMod.util.SaveHelper;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -28,7 +30,9 @@ public class OriShion extends AbstractSkin {
         this.level = uiString.TEXT[2];
         this.unlockString = uiString.TEXT[3];
 
-        this.portraitAtlasPath = "VUPShionMod/characters/Shion/portrait_spine/Shion";
+        this.portraitAtlasPath = "VUPShionMod/characters/Shion/victory/background_break";
+        loadAnimation(1.16f);
+        setAnimation();
 
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.SHOULDER2 = "VUPShionMod/characters/Shion/shoulder2.png";
@@ -37,15 +41,26 @@ public class OriShion extends AbstractSkin {
         this.atlasURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.atlas";
         this.jsonURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.json";
         this.renderScale = 2.4f;
-
-        loadAnimation();
-        setAnimation();
     }
 
 
     @Override
+    public void setPos() {
+        portraitSkeleton.setPosition(-40.0f * Settings.scale, -140.0f * Settings.scale);
+    }
+
+    @Override
     public void setAnimation() {
-        portraitState.setAnimation(0, "idle", true);
+        if (SaveHelper.safeCampfire)
+            portraitState.setAnimation(0, "idle_HX", true);
+        else
+            portraitState.setAnimation(0, "idle", true);
+    }
+
+    @Override
+    public void safeSwitch() {
+        loadAnimation(1.16f);
+        setAnimation();
     }
 
     @Override

@@ -17,7 +17,7 @@ public class PetalsFall extends AbstractWCCard {
 
     public PetalsFall() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override

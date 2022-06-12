@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.util.SaveHelper;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -9,7 +10,6 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
-import javassist.CtBehavior;
 
 @SuppressWarnings("unused")
 public class CharacterSelectScreenPatches {
@@ -25,7 +25,7 @@ public class CharacterSelectScreenPatches {
     public static class CharacterSelectScreenPatch_Initialize {
         @SpirePostfixPatch
         public static void Postfix(CharacterSelectScreen __instance) {
-            VUPShionMod.loadSkins();
+            SaveHelper.loadSkins();
             skinManager.initialize();
         }
     }

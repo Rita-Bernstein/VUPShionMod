@@ -232,40 +232,69 @@
     ]
   },
   "VUPShionMod:ConcordSnipe": {
-    "NAME": "Concord·Snipe",
-    "FLAVOR": "No Translation Yet",
+    "NAME": "Concord: Snipe",
+    "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "Every turn your first #yAttack deals twice damage. NL #bNo Translation Yet .",
-      "No Translation Yet",
-      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% .",
-      "Your damage increase #b%d%% , NL Injury suffered decrease #b%d%% 。 NL Decrease this effect for each layer passed by NL （#b50%% Maximum）"
+      "Each turn your first #yAttack deals twice damage. NL #bConcord.",
+      "Concord",
+      "Your damage decreases #b%d%%, NL Damage received increase by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
+      "Your damage increases #b%d%%, NL Damage received decrease by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）"
     ]
   },
   "VUPShionMod:ConcordArray": {
-    "NAME": "Concord·Array",
-    "FLAVOR": "No Translation Yet",
+    "NAME": "Concord: Array",
+    "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "All #yfunnel level increase #b1 。 NL #bNo Translation Yet .",
-      "No Translation Yet",
-      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% .",
-      "Your damage increase #b%d%% , NL Injury suffered decrease #b%d%% 。 NL Decrease this effect for each layer passed by NL （#b50%% Maximum）"
+      "All #yfunnel upgrades by #b1. NL #bConcord.",
+      "Concord",
+      "Your damage decreases by #b%d%%, NL Damage received increases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
+      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）"
     ]
   },
   "VUPShionMod:ConcordCharge": {
-    "NAME": "Concord·Charge",
-    "FLAVOR": "No Translation Yet",
+    "NAME": "Concord: Recharge",
+    "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "Every start of battle gain [E] [E] . NL #bNo Translation Yet .",
-      "No Translation Yet",
-      "Your damage decrease #b%d%% , NL Injury suffered increase #b%d%% 。 NL Decrease this effect for each layer passed by #b1%% .",
-      "Your damage increase #b%d%% , NL Injury suffered decrease #b%d%% 。 NL Decrease this effect for each layer passed by NL （#b50%% Maximum）"
+      "At the start of each combat, gain [E] [E]. NL #bConcord.",
+      "Concord",
+      "Your damage decreases by #b%d%%, NL Damage received increases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
+      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）"
     ]
   },
   "VUPShionMod:FruitCake": {
     "NAME": "Fruit Cake",
-    "FLAVOR": "This Stall... What's going on?",
+    "FLAVOR": "The stall... What on earth is wrong with it?",
     "DESCRIPTIONS": [
-      "At the start of your turn,if you，if your HP is at or above 50%,gain [E] . NL Otherwise,longer works in this combat."
+      "At the start of your turn,if your HP is at or above 50%,gain [E] . NL Otherwise,no longer works in this combat."
+    ]
+  },
+
+  "VUPShionMod:PrototypeCup": {
+    "NAME": "Prototype: Empty Goblet",
+    "FLAVOR": "Semi-permanent energy source that linked to your inner Magia circuit. It damages acting faculty in exchange of enormous output of Magia.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose [E]. NL At the end of your turn, lose #b5 #yMagiam #yObruor."
+    ]
+  },
+  "VUPShionMod:MagiaCup": {
+    "NAME": "Vacuum Goblet",
+    "FLAVOR": "The structure of peripheral Magia circuit has been optimized for the body to suit.",
+    "DESCRIPTIONS": [
+      "#rReplace Prototype: Empty Goblet. NL At the end of your turn, lose #b5 #yMagiam #Obruor."
+    ]
+  },
+  "VUPShionMod:MagiaSwordRed": {
+    "NAME": "Magia Sword: Danyingke",
+    "FLAVOR": "Magia-driven armament in the form of a flying sword that demands massive magia to motivate, but it frees your hand of the hilt.",
+    "DESCRIPTIONS": [
+      "You no longer gain #yStiffness. NL Whenever you play an #yAttack, gain 1 #yMagiam #yObruor. NL Whenever you deal damage with #yAttacks, deal #b4 #yNon-attack damage to a random enemy. NL Lose half of your #yCor #yGladii each turn."
+    ]
+  },
+  "VUPShionMod:MagiaSwordRuby": {
+    "NAME": "Magia Sword: Zhushazhui",
+    "FLAVOR": "Improved model of Magia Sword: Danyingke to specialize in dealing damage at the cost of more Magia consumption.",
+    "DESCRIPTIONS": [
+      "#rReplace Magia Sword: Danyingke. NL You no longer gain #yStiffness. NL Whenever you play an #yAttack, gain 1 #yMagiam #yObruor and play it for 1 additional time. NL Lose half of your #yCor #yGladii each turn."
     ]
   }
 }

@@ -52,29 +52,29 @@ public class ReinsOfWarPower extends AbstractShionPower {
 
         if (finFunnel != null) {
             if(finFunnel.level >= 26){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,5)));
-                addToBot(new GainHyperdimensionalLinksAction(5));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
+                addToBot(new GainHyperdimensionalLinksAction(3));
                 addToBot(new GainEnergyAction(2));
                 return;
             }
 
             if(finFunnel.level >= 21){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,5)));
-                addToBot(new GainHyperdimensionalLinksAction(5));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
+                addToBot(new GainHyperdimensionalLinksAction(3));
                 addToBot(new GainEnergyAction(1));
                 return;
             }
 
             if(finFunnel.level >= 16){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,4)));
-                addToBot(new GainHyperdimensionalLinksAction(4));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
+                addToBot(new GainHyperdimensionalLinksAction(2));
                 addToBot(new GainEnergyAction(1));
                 return;
             }
 
             if(finFunnel.level >= 11){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
-                addToBot(new GainHyperdimensionalLinksAction(3));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
+                addToBot(new GainHyperdimensionalLinksAction(2));
                 return;
             }
 

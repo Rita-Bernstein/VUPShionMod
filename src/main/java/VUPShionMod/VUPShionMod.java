@@ -19,7 +19,6 @@ import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.patches.*;
-import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.relics.Event.*;
 import VUPShionMod.relics.Liyezhu.HallowedCase;
 import VUPShionMod.relics.Liyezhu.Inhibitor;
@@ -29,6 +28,7 @@ import VUPShionMod.relics.Wangchuan.*;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.util.SansMeterSave;
+import VUPShionMod.util.SaveHelper;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -40,10 +40,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -54,7 +52,6 @@ import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -75,7 +72,7 @@ public class VUPShionMod implements
         EditStringsSubscriber,
         PostDungeonInitializeSubscriber,
         StartActSubscriber,
-        PostCreateStartingRelicsSubscriber{
+        PostCreateStartingRelicsSubscriber {
 
 
     public static String MOD_ID = "VUPShionMod";
@@ -91,12 +88,6 @@ public class VUPShionMod implements
 
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
 
-    public static int gravityFinFunnelLevel = 1;
-    public static int investigationFinFunnelLevel = 1;
-    public static int pursuitFinFunnelLevel = 1;
-    public static int dissectingFinFunnelLevel = 1;
-    public static String activeFinFunnel = "GravityFinFunnel";
-
     public static List<CustomCard> an_Cards = new ArrayList<>();
     public static List<CustomCard> ku_Cards = new ArrayList<>();
     public static List<CustomCard> li_Cards = new ArrayList<>();
@@ -105,22 +96,11 @@ public class VUPShionMod implements
     public static List<CustomCard> chuan_Cards = new ArrayList<>();
     public static List<CustomCard> codex_Cards = new ArrayList<>();
 
-    public static boolean useSimpleOrb = false;
-    public static boolean notReplaceTitle = false;
-    public static boolean safeCampfire = false;
-    public static boolean liyezhuRelic = false;
-
     public static ModLabeledToggleButton useSimpleOrbSwitch;
     public static ModLabeledToggleButton notReplaceTitleSwitch;
     public static ModLabeledToggleButton safeCampfireSwitch;
 
     public static Color transparent = Color.WHITE.cpy();
-
-    public static boolean fightSpecialBoss = false;
-    public static boolean fightSpecialBossWithout = false;
-
-    public static boolean liyezhuVictory = false;
-    public static boolean isHardMod = false;
 
 
     public VUPShionMod() {
@@ -184,163 +164,10 @@ public class VUPShionMod implements
     }
 
 
-    public static void saveSettings() {
-        try {
-            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
-            config.setBool("useSimpleOrb", useSimpleOrb);
-            config.setBool("notReplaceTitle", notReplaceTitle);
-            config.setBool("safeCampfire", safeCampfire);
-            config.setBool("liyezhuRelic", liyezhuRelic);
-            config.setBool("isHardMod", isHardMod);
-
-
-//            for (int i = 0; i <= characters.length - 1; i++) {
-//                config.setBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i, characters[i].reskinUnlock);
-//                config.setInt(CardCrawlGame.saveSlot + "reskinCount" + i, characters[i].reskinCount);
-//            }
-
-            config.save();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void loadSettings() {
-        try {
-            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
-            config.load();
-            useSimpleOrb = config.getBool("useSimpleOrb");
-            notReplaceTitle = config.getBool("notReplaceTitle");
-            safeCampfire = config.getBool("safeCampfire");
-            liyezhuRelic = config.getBool("liyezhuRelic");
-            isHardMod = config.getBool("isHardMod");
-
-//            for (int i = 0; i <= characters.length - 1; i++) {
-//                characters[i].reskinUnlock = config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + i);
-//                characters[i].reskinCount = config.getInt(CardCrawlGame.saveSlot + "reskinCount" + i);
-//
-//                if (characters[i].reskinCount > characters[i].skins.length - 1) {
-//                    characters[i].reskinCount = 0;
-//                }
-//            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            clearSettings();
-        }
-    }
-
-    public static void clearSettings() {
-        saveSettings();
-    }
-
-
-    public static void saveSkins() {
-        try {
-            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
-            for (AbstractSkinCharacter character : CharacterSelectScreenPatches.skinManager.skinCharacters) {
-                config.setInt(CardCrawlGame.saveSlot + character.getClass().getSimpleName(), character.reskinCount);
-
-                for (AbstractSkin skin : character.skins) {
-                    config.setBool(CardCrawlGame.saveSlot + skin.getClass().getSimpleName(), skin.unlock);
-                }
-
-
-                config.setInt(CardCrawlGame.saveSlot + "shionDeathCount", GameStatsPatch.shionDeathCount);
-                config.setInt(CardCrawlGame.saveSlot + "wangchuanDeathCount", GameStatsPatch.wangchuanDeathCount);
-
-                config.setBool(CardCrawlGame.saveSlot + "liyezhuVictory", liyezhuVictory);
-            }
-            config.save();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void loadSkins() {
-        try {
-            SpireConfig config = new SpireConfig("VUPShionMod", "settings", VUPShionDefaults);
-            config.load();
-
-            for (AbstractSkinCharacter character : CharacterSelectScreenPatches.skinManager.skinCharacters) {
-                character.reskinCount = config.getInt(CardCrawlGame.saveSlot + character.getClass().getSimpleName());
-
-                for (AbstractSkin skin : character.skins) {
-                    skin.unlock = config.getBool(CardCrawlGame.saveSlot + skin.getClass().getSimpleName());
-                    skin.button.locked = !skin.unlock;
-                }
-            }
-
-            GameStatsPatch.shionDeathCount = config.getInt(CardCrawlGame.saveSlot + "shionDeathCount");
-            GameStatsPatch.wangchuanDeathCount = config.getInt(CardCrawlGame.saveSlot + "wangchuanDeathCount");
-
-            if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 0)) {
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock = true;
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).button.locked = false;
-            }
-
-            if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 1)) {
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock = true;
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).button.locked = false;
-            }
-
-            liyezhuVictory = config.getBool(CardCrawlGame.saveSlot + "liyezhuVictory");
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            clearSkins();
-        }
-    }
-
-    public static void clearSkins() {
-        saveSkins();
-    }
-
     public static void unlockAllReskin() {
-//        for (AbstractSkinCharacter c : characters) {
-//            c.reskinUnlock = false;
-//        }
-        saveSettings();
+        CharacterSelectScreenPatches.skinManager.unlockAllSkin();
     }
 
-
-    public static void saveFinFunnels() {
-        try {
-            SpireConfig config = new SpireConfig("VUPShionMod", "VUPShionMod_settings", VUPShionDefaults);
-            config.setInt("gravityFinFunnelLevel", gravityFinFunnelLevel);
-            config.setInt("investigationFinFunnelLevel", investigationFinFunnelLevel);
-            config.setInt("pursuitFinFunnelLevel", pursuitFinFunnelLevel);
-            config.setInt("dissectingFinFunnelLevel", dissectingFinFunnelLevel);
-            config.setString("activeFinFunnel", activeFinFunnel);
-            config.save();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void loadFinFunnels() {
-        try {
-            SpireConfig config = new SpireConfig("VUPShionMod", "VUPShionMod_settings", VUPShionDefaults);
-            config.load();
-            gravityFinFunnelLevel = config.getInt("gravityFinFunnelLevel");
-            investigationFinFunnelLevel = config.getInt("investigationFinFunnelLevel");
-            pursuitFinFunnelLevel = config.getInt("pursuitFinFunnelLevel");
-            dissectingFinFunnelLevel = config.getInt("dissectingFinFunnelLevel");
-            String tmp = config.getString("activeFinFunnel");
-
-            if (tmp.length() > 3)
-                activeFinFunnel = tmp;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            clearFinFunnels();
-        }
-    }
-
-    public static void clearFinFunnels() {
-        saveFinFunnels();
-    }
 
     public static void initialize() {
         new VUPShionMod();
@@ -348,40 +175,39 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
-        if (VUPShionMod.liyezhuRelic) {
+        if (SaveHelper.liyezhuRelic) {
             arrayList.add(FragmentsOfFaith.ID);
         }
     }
 
     @Override
     public void receivePostInitialize() {
-        loadSettings();
+        SaveHelper.loadSettings();
 //        unlockAllReskin();
         Texture badgeTexture = new Texture(assetPath("/img/badge.png"));
         ModPanel settingsPanel = new ModPanel();
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
-        useSimpleOrbSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[0], 400.0f, 720.0f - 0 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, useSimpleOrb, settingsPanel,
+        useSimpleOrbSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[0], 400.0f, 720.0f - 0 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, SaveHelper.useSimpleOrb, settingsPanel,
                 (label) -> {
                 }, (button) -> {
-            useSimpleOrb = button.enabled;
-            saveSettings();
+            SaveHelper.useSimpleOrb = button.enabled;
+            SaveHelper.saveSettings();
         });
 
-        notReplaceTitleSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[1], 400.0f, 720.0f - 1 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, notReplaceTitle, settingsPanel,
+        notReplaceTitleSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[1], 400.0f, 720.0f - 1 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, SaveHelper.notReplaceTitle, settingsPanel,
                 (label) -> {
                 }, (button) -> {
-            notReplaceTitle = button.enabled;
-            saveSettings();
+            SaveHelper.notReplaceTitle = button.enabled;
+            SaveHelper.saveSettings();
         });
 
-        safeCampfireSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[2], 400.0f, 720.0f - 2 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, safeCampfire, settingsPanel,
+        safeCampfireSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[2], 400.0f, 720.0f - 2 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, SaveHelper.safeCampfire, settingsPanel,
                 (label) -> {
                 }, (button) -> {
-            safeCampfire = button.enabled;
-            AbstractScenePatches.campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
-            AbstractScenePatches.campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
-            saveSettings();
+            SaveHelper.safeCampfire = button.enabled;
+            safeSwitch();
+            SaveHelper.saveSettings();
         });
 
 
@@ -482,6 +308,17 @@ public class VUPShionMod implements
         BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
     }
 
+    public static void safeSwitch() {
+        AbstractScenePatches.campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+        AbstractScenePatches.campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/" + (SaveHelper.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+
+        for (AbstractSkinCharacter character : CharacterSelectScreenPatches.skinManager.skinCharacters) {
+            for (AbstractSkin skin : character.skins)
+                skin.safeSwitch();
+        }
+
+    }
+
     @Override
     public void receiveAddAudio() {
         for (int i = 1; i <= 18; i++) {
@@ -527,39 +364,35 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostDungeonInitialize() {
-        if (AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID) && AbstractDungeon.actNum == 3) {
-            FragmentsOfFaith relic = (FragmentsOfFaith) AbstractDungeon.player.getRelic(FragmentsOfFaith.ID);
-            relic.upgrade();
-        }
     }
 
     @Override
     public void receiveStartAct() {
         if (AbstractDungeon.floorNum == 0) {
             if (AbstractDungeon.player.hasRelic(ConcordArray.ID)) {
-                gravityFinFunnelLevel = 2;
-                investigationFinFunnelLevel = 2;
-                pursuitFinFunnelLevel = 2;
-                dissectingFinFunnelLevel = 2;
+                SaveHelper.gravityFinFunnelLevel = 2;
+                SaveHelper.investigationFinFunnelLevel = 2;
+                SaveHelper.pursuitFinFunnelLevel = 2;
+                SaveHelper.dissectingFinFunnelLevel = 2;
             } else {
-                gravityFinFunnelLevel = 1;
-                investigationFinFunnelLevel = 1;
-                pursuitFinFunnelLevel = 1;
-                dissectingFinFunnelLevel = 1;
+                SaveHelper.gravityFinFunnelLevel = 1;
+                SaveHelper.investigationFinFunnelLevel = 1;
+                SaveHelper.pursuitFinFunnelLevel = 1;
+                SaveHelper.dissectingFinFunnelLevel = 1;
             }
-            activeFinFunnel = "GravityFinFunnel";
-            saveFinFunnels();
+            SaveHelper.activeFinFunnel = "GravityFinFunnel";
+            SaveHelper.saveFinFunnels();
 
-            fightSpecialBoss = false;
-            fightSpecialBossWithout = false;
-            isHardMod = false;
+            SaveHelper.fightSpecialBoss = false;
+            SaveHelper.fightSpecialBossWithout = false;
+            SaveHelper.isHardMod = false;
 
             SansMeterSave.sansMeterSaveAmount = 100;
 
-            saveSkins();
+            SaveHelper.saveSkins();
 
-            VUPShionMod.liyezhuRelic = false;
-            saveSettings();
+            SaveHelper.liyezhuRelic = false;
+            SaveHelper.saveSettings();
         }
 
         if (AbstractDungeon.actNum == 3) {
@@ -944,6 +777,10 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new PurityWhiteRose(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new WaveSlasher(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new WaveBreaker(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new PrototypeCup(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new MagiaCup(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new MagiaSwordRed(), CardColorEnum.WangChuan_LIME);
+        BaseMod.addRelicToCustomPool(new MagiaSwordRuby(), CardColorEnum.WangChuan_LIME);
 
 
         BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);
@@ -985,6 +822,7 @@ public class VUPShionMod implements
     private void loadLocStrings(Settings.GameLanguage language) {
         String path = "localization/" + language.toString().toLowerCase() + "/";
 
+        BaseMod.loadCustomStringsFile(AchievementStrings.class, assetPath(path + "AchievementStrings.json"));
         BaseMod.loadCustomStringsFile(EventStrings.class, assetPath(path + "EventStrings.json"));
         BaseMod.loadCustomStringsFile(UIStrings.class, assetPath(path + "UIStrings.json"));
 //        BaseMod.loadCustomStringsFile(PotionStrings.class, assetPath(path + "PotionStrings.json"));

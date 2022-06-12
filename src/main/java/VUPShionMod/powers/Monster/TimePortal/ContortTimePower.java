@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Monster.TimePortal;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -35,7 +37,15 @@ public class ContortTimePower extends AbstractShionPower {
 
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         flash();
-        addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
+        AbstractPlayer trueTarget = AbstractDungeon.player;
+        if (AbstractDungeon.player instanceof WangChuan) {
+            if (((WangChuan) AbstractDungeon.player).shionHelper != null)
+                if (!((WangChuan) AbstractDungeon.player).shionHelper.halfDead)
+                    trueTarget = ((WangChuan) AbstractDungeon.player).shionHelper;
+        }
+
+        addToBot(new DamageAction(trueTarget, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
     }
 

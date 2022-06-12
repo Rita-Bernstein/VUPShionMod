@@ -1043,12 +1043,12 @@
   },
   "VUPShionMod:RealizingCanticle": {
     "NAME": "真實祈言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：獲得 人工製品 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *虛像剎那 。 NL 消耗 。",
+    "DESCRIPTION": "獲得 人工製品 。 vup_shion_mod:祈言 !VUPShionSecondM! ：獲得 人工製品 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *虛像剎那 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "獲得 人工製品 。 NL vup_shion_mod:祈言 !VUPShionSecondM! ：獲得 人工製品 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *虛像剎那+ 。 NL 消耗 。"
   },
   "VUPShionMod:BeinglessMoment": {
     "NAME": "虛像剎那",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !B! 點 格擋 。 NL 本回合受到的傷害翻倍。"
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 層 易傷 。"
   },
   "VUPShionMod:SoleAnthem": {
     "NAME": "唯一祈言",
@@ -1259,7 +1259,7 @@
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "苦難之終",
-    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦難 牌。 NL 失去(100- 消耗 數量x5)點生命。 NL 抽滿手牌。 獲得 !M! [E] 和 力量 。"
+    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦難 牌。 NL 失去(100- 消耗 數量x5)點生命。 NL 抽滿手牌。 獲得 !M! [E] 和 力量 。 NL 消耗。"
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "一切苦難入棺",
@@ -1380,7 +1380,7 @@
   "VUPShionMod:OppressiveSword": {
     "NAME": "劍壓",
     "DESCRIPTION": "造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍意 。 NL 獲得1層 vup_shion_mod:硬直 ",
-    "UPGRADE_DESCRIPTION": "造成 vup_shion_mod:劍意 層數 !M! X倍的傷害。 NL 獲得12X 層 vup_shion_mod:劍意 。 NL 獲得一半的 vup_shion_mod:劍意 。 NL vup_shion_mod:魔能過載 X。",
+    "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:劍意 層數 !M! X倍的傷害。 NL 獲得12X 層 vup_shion_mod:劍意 。 NL 獲得一半的 vup_shion_mod:劍意 。 NL vup_shion_mod:魔能過載 X。",
     "EXTENDED_DESCRIPTION": [
       "劍壓+",
       "月牙天沖",

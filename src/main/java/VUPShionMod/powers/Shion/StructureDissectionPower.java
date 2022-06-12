@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.EnemyData;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -33,6 +34,7 @@ import com.megacrit.cardcrawl.monsters.beyond.Deca;
 import com.megacrit.cardcrawl.monsters.beyond.Donu;
 import com.megacrit.cardcrawl.monsters.beyond.TimeEater;
 import com.megacrit.cardcrawl.monsters.city.BronzeAutomaton;
+import com.megacrit.cardcrawl.monsters.city.BronzeOrb;
 import com.megacrit.cardcrawl.monsters.city.Champ;
 import com.megacrit.cardcrawl.monsters.city.TheCollector;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
@@ -86,6 +88,87 @@ public class StructureDissectionPower extends AbstractShionPower {
                 78,
                 94
         );
+
+        if (!this.owner.isPlayer) {
+            AbstractMonster m = (AbstractMonster) this.owner;
+            if (m.type == AbstractMonster.EnemyType.BOSS) {
+
+                if (m.id.equals(BronzeAutomaton.ID) || m.id.equals(TheCollector.ID) || m.id.equals(Deca.ID)) {
+                    int alive = 0;
+
+                    if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                        for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                            if (!monster.isDeadOrEscaped()) {
+                                alive++;
+                            }
+                        }
+
+                        if (alive > 1) {
+                            switch (m.id) {
+                                case BronzeAutomaton.ID:
+                                    this.description += String.format(DESCRIPTIONS[13], m.name, CardCrawlGame.languagePack.getMonsterStrings("BronzeOrb").NAME);
+                                    return;
+                                case TheCollector.ID:
+                                    this.description += String.format(DESCRIPTIONS[13], m.name, CardCrawlGame.languagePack.getMonsterStrings("TorchHead").NAME);
+                                    return;
+                                case Deca.ID:
+                                    this.description += String.format(DESCRIPTIONS[13], m.name, CardCrawlGame.languagePack.getMonsterStrings("Donu").NAME);
+                                    return;
+                            }
+
+
+                        }
+                    }
+                }
+
+
+                if (m.id.equals(Champ.ID) && m.hasPower(MetallicizePower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, MetallicizePower.NAME);
+                    return;
+                }
+
+                if (m.id.equals(AwakenedOne.ID) && m.hasPower(CuriosityPower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, CuriosityPower.NAME);
+                    return;
+                }
+
+                if (m.id.equals(TimeEater.ID) && m.hasPower(TimeWarpPower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, TimeWarpPower.NAME);
+                    return;
+                }
+
+                if (m.id.equals(Donu.ID)) {
+                    this.description += String.format(DESCRIPTIONS[13], m.name, CardCrawlGame.languagePack.getMonsterStrings("Donu").NAME);
+                    return;
+                }
+
+
+                if (m.id.equals(CorruptHeart.ID) && m.hasPower(InvinciblePower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, InvinciblePower.NAME);
+                    return;
+                }
+
+
+                if (m.id.equals(RitaShop.ID) && m.hasPower(DefenceMonsterPower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, DefenceMonsterPower.NAME);
+                    return;
+                }
+
+                if (m.id.equals(TimePortal.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, ContortTimePower.NAME);
+                    return;
+                }
+
+                if (m.id.equals(Ouroboros.ID) && m.hasPower(SubspacePursuerPower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, SubspacePursuerPower.NAME);
+                    return;
+                }
+            }
+            this.description += String.format(DESCRIPTIONS[14], m.name);
+
+
+        }
+
     }
 
     @Override

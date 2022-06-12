@@ -103,6 +103,14 @@
       "Acquisition requirements:\nVictory in the final battle."
     ]
   },
+  "VUPShionMod:ChinaWangChuan": {
+    "TEXT": [
+      "Sapor Sinicus: Wield telekinetic sword with your magia\nand launch relentless attacks.",
+      "Peripheral circuit is planted to avert Magiam Obruor.",
+      "Difficulty: Advance",
+      "Acquisition requirements:\nDefeat Corrupt Heart with Mors Universi."
+    ]
+  },
   "VUPShionMod:OriLiyezhu": {
     "TEXT": [
       "Priestess Duty: Bless the container,\nnot the soul in it.",

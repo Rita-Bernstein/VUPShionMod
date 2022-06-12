@@ -9,34 +9,34 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class BeinglessMoment extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(BeinglessMoment.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/BeinglessMoment.png");
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST =0;
 
     public BeinglessMoment() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
-        this.baseBlock = 30;
+        this.baseBlock = 20;
+        this.magicNumber = this.baseMagicNumber  =2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         addToBot(new GainBlockAction(p,this.block));
-        addToBot(new ApplyPowerAction(p,p,new DoubleDamageReceivePower(p,1)));
+        addToBot(new ApplyPowerAction(p,p,new VulnerablePower(p,this.magicNumber,false)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(20);
+            upgradeBlock(10);
         }
     }
 }

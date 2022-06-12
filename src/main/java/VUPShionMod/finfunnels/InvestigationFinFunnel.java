@@ -1,27 +1,16 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.DamageAndGainBlockAction;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.*;
-import VUPShionMod.vfx.FinFunnelBeamEffect;
-import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
-import com.badlogic.gdx.graphics.Color;
+import VUPShionMod.util.SaveHelper;
 import com.esotericsoftware.spine.Skeleton;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
 public class InvestigationFinFunnel extends AbstractFinFunnel {
     public static final String ID = InvestigationFinFunnel.class.getSimpleName();
@@ -53,7 +42,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     @Override
     public void upgradeLevel(int amount) {
         this.level += amount;
-        VUPShionMod.investigationFinFunnelLevel = level;
+        SaveHelper.investigationFinFunnelLevel = level;
     }
 
     @Override
@@ -61,7 +50,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         this.level -= amount;
         if (this.level < 0)
             this.level = 0;
-        VUPShionMod.investigationFinFunnelLevel = level;
+        SaveHelper.investigationFinFunnelLevel = level;
     }
 
     @Override

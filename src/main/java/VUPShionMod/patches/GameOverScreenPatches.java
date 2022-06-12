@@ -6,6 +6,7 @@ import VUPShionMod.skins.sk.Shion.AquaShion;
 import VUPShionMod.skins.sk.Shion.BlueGiantShion;
 import VUPShionMod.skins.sk.WangChuan.AquaWangChuan;
 import VUPShionMod.skins.sk.WangChuan.PurityWangChuan;
+import VUPShionMod.util.SaveHelper;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,14 +32,14 @@ public class GameOverScreenPatches {
         @SpireInsertPatch(rloc = 197)
         public static SpireReturn<Void> Insert(VictoryScreen _instance) {
             ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(_instance, GameOverScreen.class, "stats");
-            if (VUPShionMod.isHardMod) {
+            if (SaveHelper.isHardMod) {
                 stats.add(new GameOverStat(specialBossStatString.TEXT[5], specialBossStatString.TEXT[5], Integer.toString(500)));
 
                 if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID))
                     stats.add(new GameOverStat(specialBossStatString.TEXT[6], specialBossStatString.TEXT[6], Integer.toString(1000)));
 
             } else {
-                if (VUPShionMod.fightSpecialBossWithout) {
+                if (SaveHelper.fightSpecialBossWithout) {
                     if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
                         stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[1], Integer.toString(1000)));
 
@@ -50,7 +51,7 @@ public class GameOverScreenPatches {
                         stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
                 }
 
-                if (VUPShionMod.fightSpecialBoss) {
+                if (SaveHelper.fightSpecialBoss) {
                     stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(500)));
                 }
 
@@ -69,18 +70,18 @@ public class GameOverScreenPatches {
     public static class PatchGameOverScreen {
         @SpireInsertPatch(rloc = 91, localvars = {"points"})
         public static SpireReturn<Void> Insert(boolean victory, @ByRef int[] points) {
-            if (VUPShionMod.isHardMod) {
+            if (SaveHelper.isHardMod) {
                 points[0] += 500;
 
                 if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID))
                     points[0] += 1000;
 
             } else {
-                if (VUPShionMod.fightSpecialBossWithout) {
+                if (SaveHelper.fightSpecialBossWithout) {
                     points[0] += 1000;
                 }
 
-                if (VUPShionMod.fightSpecialBoss) {
+                if (SaveHelper.fightSpecialBoss) {
                     points[0] += 500;
                 }
             }
@@ -97,7 +98,7 @@ public class GameOverScreenPatches {
     public static class ReskinUnlockPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(VictoryScreen _instance) {
-            if (VUPShionMod.fightSpecialBossWithout || VUPShionMod.fightSpecialBoss) {
+            if (SaveHelper.fightSpecialBossWithout || SaveHelper.fightSpecialBoss) {
                 if (!Settings.seedSet && !Settings.isTrial) {
                     //深空战斗胜利
                     if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
@@ -107,15 +108,15 @@ public class GameOverScreenPatches {
                         CharacterSelectScreenPatches.skinManager.unlockSkin(AquaWangChuan.ID);
 
                     if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
-                        VUPShionMod.liyezhuVictory = true;
+                        SaveHelper.liyezhuVictory = true;
 
-                    VUPShionMod.saveSkins();
+                    SaveHelper.saveSkins();
                 }
             }
 //分数的复位放这里了
-            VUPShionMod.fightSpecialBossWithout = false;
-            VUPShionMod.fightSpecialBoss = false;
-            VUPShionMod.isHardMod = false;
+            SaveHelper.fightSpecialBossWithout = false;
+            SaveHelper.fightSpecialBoss = false;
+            SaveHelper.isHardMod = false;
             return SpireReturn.Continue();
         }
     }
@@ -128,14 +129,14 @@ public class GameOverScreenPatches {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(DeathScreen _instance, MonsterGroup monsters) {
             if (AbstractDungeon.actNum >= 3) {
-                VUPShionMod.loadSkins();
+                SaveHelper.loadSkins();
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
                     GameStatsPatch.shionDeathCount++;
 
                     if (GameStatsPatch.shionDeathCount >= 2)
                         CharacterSelectScreenPatches.skinManager.unlockSkin(AquaShion.ID);
 
-                    VUPShionMod.saveSkins();
+                    SaveHelper.saveSkins();
 
                 }
 
@@ -145,7 +146,7 @@ public class GameOverScreenPatches {
 
                     if (GameStatsPatch.wangchuanDeathCount >= 2)
                         CharacterSelectScreenPatches.skinManager.unlockSkin(PurityWangChuan.ID);
-                    VUPShionMod.saveSkins();
+                    SaveHelper.saveSkins();
                 }
             }
 
@@ -153,4 +154,38 @@ public class GameOverScreenPatches {
             return SpireReturn.Continue();
         }
     }
+
+
+//    别显示那万恶的banner了
+
+
+    @SpirePatch(
+            clz = VictoryScreen.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
+    public static class BannerPatch {
+        @SpireInsertPatch(rloc = 36)
+        public static SpireReturn<Void> Insert(VictoryScreen _instance) {
+            if (EnergyPanelPatches.isShionModChar()) {
+                AbstractDungeon.dynamicBanner.hide();
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = VictoryScreen.class,
+            method = "reopen",
+            paramtypez = {boolean.class}
+    )
+    public static class BannerPatch2 {
+        @SpireInsertPatch(rloc = 4)
+        public static SpireReturn<Void> Insert(VictoryScreen _instance, boolean fromVictoryUnlock) {
+            if (EnergyPanelPatches.isShionModChar()) {
+                AbstractDungeon.dynamicBanner.hide();
+            }
+            return SpireReturn.Continue();
+        }
+    }
+
 }

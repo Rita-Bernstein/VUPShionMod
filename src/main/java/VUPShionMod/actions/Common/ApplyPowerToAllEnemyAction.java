@@ -19,7 +19,7 @@ public class ApplyPowerToAllEnemyAction extends AbstractGameAction {
     public void update() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                if (!monster.isDeadOrEscaped()) {
+                if (monster != null && !monster.isDeadOrEscaped()) {
                     AbstractPower power = powerToApply.get();
                     power.owner = monster;
                     addToTop(new ApplyPowerAction(monster, AbstractDungeon.player, power));

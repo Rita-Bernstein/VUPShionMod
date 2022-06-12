@@ -25,6 +25,7 @@ public class ExitiumMaeroris extends AbstractLiyezhuCard {
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 5;
         this.selfRetain = true;
+        this.exhaust= true;
         this.tags.add(CardTagsEnum.Suffering_CARD);
     }
 

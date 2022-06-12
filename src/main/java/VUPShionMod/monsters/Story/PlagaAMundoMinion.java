@@ -7,6 +7,7 @@ import VUPShionMod.character.WangChuan;
 import VUPShionMod.patches.SpecialCombatPatches;
 import VUPShionMod.powers.Monster.PlagaAMundo.*;
 import VUPShionMod.powers.Unique.*;
+import VUPShionMod.util.SaveHelper;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -49,7 +50,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     public PlagaAMundoMinion(float x, float y, float scale) {
         super(NAME, ID, 88, -15.0F, 160.0F / scale, 300.0F / scale, 280.0F / scale, null, x, y);
 
-        if (AbstractDungeon.ascensionLevel >= 7) {
+        if (AbstractDungeon.ascensionLevel >= 9) {
             setHp(3000);
         } else {
             setHp(2500);
@@ -96,7 +97,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         else
             addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
 
-        if (VUPShionMod.isHardMod) {
+        if (SaveHelper.isHardMod) {
             addToBot(new ApplyPowerAction(this, this, new FlyPower(this, 50)));
             addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, 10)));
             addToBot(new ApplyPowerAction(this, this, new RegenerateMonsterPower(this, 500)));
@@ -192,7 +193,7 @@ public class PlagaAMundoMinion extends CustomMonster {
         if (!(AbstractDungeon.getCurrRoom()).cannotLose || this.forceDie)
             super.die();
 
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !VUPShionMod.isHardMod) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() && !SaveHelper.isHardMod) {
             useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);
             onBossVictoryLogic();
@@ -203,7 +204,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     public void damage(DamageInfo info) {
         super.damage(info);
 
-        if ((this.currentHealth < 1500 || this.currentHealth < 2000 && AbstractDungeon.ascensionLevel >= 7) && !isGunMode) {
+        if ((this.currentHealth < 1500 || this.currentHealth < 2000 && AbstractDungeon.ascensionLevel >= 9) && !isGunMode) {
             this.isGunMode = true;
             if (isFirstGunMode) {
                 setMove((byte) 99, Intent.UNKNOWN);
@@ -249,14 +250,13 @@ public class PlagaAMundoMinion extends CustomMonster {
                     createIntent();
                     addToBot(new SetMoveAction(this, (byte) 98, AbstractMonster.Intent.UNKNOWN));
                 } else {
-                    if (VUPShionMod.isHardMod) {
+                    if (SaveHelper.isHardMod) {
                         AbstractDungeon.getCurrRoom().cannotLose = true;
                         this.forceDie = true;
                         die();
 
                         if(AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                            addToBot(new TalkAction(true, DIALOG[0], 2.0f, 5.0f));
-                            addToBot(new CustomWaitAction(1.0f));
+
 
                             createBoss();
                         }
@@ -267,7 +267,7 @@ public class PlagaAMundoMinion extends CustomMonster {
 
                 }
             } else {
-                if (VUPShionMod.isHardMod) {
+                if (SaveHelper.isHardMod) {
                     AbstractDungeon.getCurrRoom().cannotLose = true;
                     addToBot(new AbstractGameAction() {
                         @Override
@@ -282,8 +282,6 @@ public class PlagaAMundoMinion extends CustomMonster {
                             isDone = true;
                         }
                     });
-                    addToBot(new TalkAction(true, DIALOG[0], 2.0f, 3.0f));
-                    addToBot(new CustomWaitAction(1.0f));
 
                     createBoss();
 
@@ -302,6 +300,8 @@ public class PlagaAMundoMinion extends CustomMonster {
     }
 
     private void createBoss() {
+        addToBot(new TalkAction(true, DIALOG[0], 1.0f, 5.0f));
+        addToBot(new CustomWaitAction(6.0f));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {

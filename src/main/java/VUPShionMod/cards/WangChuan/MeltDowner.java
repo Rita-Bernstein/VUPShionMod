@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.DecreaseHPAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
@@ -39,6 +40,13 @@ public class MeltDowner extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (this.timesUpgraded == 2) {
+            addToBot(new DecreaseHPAction(p, p.currentHealth / 4));
+            addToBot(new ExpertiseAction(p, BaseMod.MAX_HAND_SIZE));
+        } else {
+            addToBot(new DecreaseHPAction(p, this.secondaryM));
+        }
+
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 010 Charge Impact Up", mo.hb.cX, mo.hb.cY + 720.0f * Settings.scale,
@@ -46,30 +54,6 @@ public class MeltDowner extends AbstractWCCard {
             }
         }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
-        switch (this.timesUpgraded) {
-            default:
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        p.currentHealth -= secondaryM;
-                        p.healthBarUpdatedEvent();
-                        isDone = true;
-                    }
-                });
-                break;
-            case 2:
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        p.currentHealth -= p.currentHealth / 4;
-                        p.healthBarUpdatedEvent();
-                        isDone = true;
-                    }
-                });
-                addToBot(new ExpertiseAction(p, BaseMod.MAX_HAND_SIZE));
-                break;
-        }
-
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 

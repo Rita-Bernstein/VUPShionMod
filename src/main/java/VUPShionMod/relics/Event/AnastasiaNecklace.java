@@ -34,6 +34,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.FairyPotion;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -145,13 +146,25 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
 
         AbstractPlayerPatches.AddFields.chargeHelper.get(AbstractDungeon.player).active = true;
 
+        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            ArrayList<AbstractPower> powerToRemove = new ArrayList<>();
+            if (monster != null) {
+                for(AbstractPower p : monster.powers){
+                    if(p.ID.equals(LifeLinkPower.POWER_ID)|| p.ID.equals(StrengthPower.POWER_ID))
+                        powerToRemove.add(p);
+                }
+                monster.powers.remove(powerToRemove);
+
+            }
+        }
+
         addToBot(new VFXAction(new BorderLongFlashEffect(Color.LIGHT_GRAY)));
         addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
         addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
+
+        if(AbstractDungeon.getCurrRoom().monsters != null)
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!monster.isDeadOrEscaped()) {
-                addToBot(new RemoveSpecificPowerAction(monster, AbstractDungeon.player, LifeLinkPower.POWER_ID));
-                addToBot(new RemoveSpecificPowerAction(monster, AbstractDungeon.player, StrengthPower.POWER_ID));
+            if(!monster.isDeadOrEscaped()) {
                 addToBot(new LoseHPAction(monster, AbstractDungeon.player, 500));
                 addToBot(new AbstractGameAction() {
                     @Override
@@ -160,9 +173,10 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
                         isDone = true;
                     }
                 });
-
             }
         }
+
+
 
     }
 

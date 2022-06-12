@@ -1,7 +1,9 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.skins.sk.WangChuan.ChinaWangChuan;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
@@ -10,6 +12,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.vfx.combat.GiantTextEffect;
 
 public class MorsLibraquePower extends AbstractShionPower {
@@ -53,6 +56,10 @@ public class MorsLibraquePower extends AbstractShionPower {
             flash();
             addToBot(new VFXAction(new GiantTextEffect(this.owner.hb.cX, this.owner.hb.cY)));
             addToBot(new InstantKillAction(this.owner));
+
+            if(this.owner.id.equals(CorruptHeart.ID))
+                CharacterSelectScreenPatches.skinManager.unlockSkin(ChinaWangChuan.ID);
+
         }
     }
 }

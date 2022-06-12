@@ -7,6 +7,7 @@ import VUPShionMod.actions.Unique.SummonMinionAction;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.powers.Monster.PlagaAMundo.*;
+import VUPShionMod.util.SaveHelper;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -40,7 +41,7 @@ public class PlagaAMundo extends CustomMonster {
     public PlagaAMundo() {
         super(NAME, ID, 88, -15.0F, 160.0F, 420.0F, 320.0F, null, 0.0F, -20.0F);
 
-        if (AbstractDungeon.ascensionLevel >= 7) {
+        if (AbstractDungeon.ascensionLevel >= 9) {
             setHp(2500);
         } else {
             setHp(2000);
@@ -92,7 +93,7 @@ public class PlagaAMundo extends CustomMonster {
             addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth));
 
 
-        if (VUPShionMod.isHardMod) {
+        if (SaveHelper.isHardMod) {
             addToBot(new ApplyPowerAction(this, this, new FlyPower(this, 50)));
             addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, 10)));
         }
@@ -130,7 +131,7 @@ public class PlagaAMundo extends CustomMonster {
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50), 50));
                 break;
             case 98:
-                if(VUPShionMod.isHardMod)
+                if(SaveHelper.isHardMod)
                 addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new SiegePower(AbstractDungeon.player,1)));
 
 
@@ -199,7 +200,7 @@ public class PlagaAMundo extends CustomMonster {
 //            this.state.addAnimation(0, "Idle", true, 0.0F);
 //        }
 
-        if ((this.currentHealth < 1000 || this.currentHealth < 1500 && AbstractDungeon.ascensionLevel >= 7) && !isGunMode) {
+        if ((this.currentHealth < 1000 || this.currentHealth < 1500 && AbstractDungeon.ascensionLevel >= 9) && !isGunMode) {
             this.isGunMode = true;
             if (isFirstGunMode) {
                 setMove((byte) 97, Intent.UNKNOWN);

@@ -12,6 +12,7 @@ public class AbstractSkinWangChuan extends AbstractSkinCharacter {
             skins.add(new OriWangChuan());
             skins.add(new PurityWangChuan());
             skins.add(new AquaWangChuan());
+            skins.add(new ChinaWangChuan());
         }
 
     }

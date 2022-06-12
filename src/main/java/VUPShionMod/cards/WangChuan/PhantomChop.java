@@ -36,17 +36,17 @@ public class PhantomChop extends AbstractWCCard {
 
     public PhantomChop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 7;
+        this.baseDamage = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
-                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 break;
             case 1:
-                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 break;
             case 2:
                 Consumer<Integer> actionConsumer = effect -> {
@@ -109,10 +109,12 @@ public class PhantomChop extends AbstractWCCard {
 
         if (this.timesUpgraded >= 2) {
             this.baseDamage = 0;
-
-            if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                this.baseDamage += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+        } else {
+            this.baseDamage = 1;
         }
+
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+            this.baseDamage += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
 
         super.calculateCardDamage(mo);
 

@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.patches.SpecialCombatPatches;
 import VUPShionMod.relics.Event.AnastasiaNecklace;
+import VUPShionMod.util.SaveHelper;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -79,8 +80,8 @@ public class Newborn extends AbstractImageEvent {
             case HARD:
                 if (buttonPressed == 0) {
                     AbstractDungeon.player.loseRelic(MarkOfTheBloom.ID);
-                    VUPShionMod.isHardMod = true;
-                    VUPShionMod.saveSettings();
+                    SaveHelper.isHardMod = true;
+                    SaveHelper.saveSettings();
                     fightBoss();
                 } else {
                     this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
@@ -102,8 +103,8 @@ public class Newborn extends AbstractImageEvent {
     }
 
     private void fightBoss() {
-        VUPShionMod.fightSpecialBoss = false;
-        VUPShionMod.fightSpecialBossWithout = false;
+        SaveHelper.fightSpecialBoss = false;
+        SaveHelper.fightSpecialBossWithout = false;
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new AnastasiaNecklace());
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;

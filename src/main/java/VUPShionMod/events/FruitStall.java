@@ -44,7 +44,7 @@ public class FruitStall extends AbstractImageEvent {
     }
 
     public FruitStall() {
-        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/FruitStall.jpg"));
+        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/FruitStall.png"));
 
         getPlayerFruit();
 
@@ -154,7 +154,7 @@ public class FruitStall extends AbstractImageEvent {
                                 imageEventText.clearRemainingOptions();
                                 imageEventText.updateDialogOption(0, OPTIONS[10]);
 
-
+                                this.imageEventText.loadImage("VUPShionMod/img/events/FruitStall2.png");
                                 break;
 
                             case 1:

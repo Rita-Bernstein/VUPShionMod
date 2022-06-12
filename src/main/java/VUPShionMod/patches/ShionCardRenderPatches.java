@@ -1,9 +1,9 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.helpers.CardTypeHelper;
+import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -211,7 +211,7 @@ public class ShionCardRenderPatches {
                 }
 
                 if (c.cost > -2) {
-                    if (!VUPShionMod.useSimpleOrb && c.color == CardColorEnum.VUP_Shion_LIME) {
+                    if (!SaveHelper.useSimpleOrb && c.color == CardColorEnum.VUP_Shion_LIME) {
                         if (c instanceof FinFunnelUpgrade)
                             renderHelper(sb, Settings.WIDTH / 2.0F - 270.0F * Settings.scale, Settings.HEIGHT / 2.0F + 380.0F * Settings.scale, orb_ag);
                         else

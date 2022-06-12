@@ -71,17 +71,17 @@
     "NAME": "A Message",
     "DESCRIPTIONS": [
 	  "As you are about to depart, a message come to you.",
-      "It's from Anastasia. Again, @total@ @devastation@ is about to be brought to a planet by an atrocious invasion, which has manifested itself as an echo of your past.",
-      "No Translation Yet"
+      "Finally, the last spot where Liyezhu's traces end is located. Will it turn out to be another echo of your futile fantasy?",
+      "#r@The voice of yourself eeriely worms into your head out of the complete void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
     ],
     "OPTIONS": [
       "[Proceed] ...",
       "[Not This Time!] Battle Ahead. #gObtain Anastasia Droplet.",
       "[Return Home]",
-      "[LOCKED] No Translation Yet",
-      "[Final Ballte]No Translation Yet",
-      "[Final Battle] No Translation Yet",
-      "[No Translation Yet] No Translation Yet"
+      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
+      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
+      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
+      "[To the former stage] I seem to have hallucination..."
     ]
   },
    "VUPShionMod:Contact": {
@@ -89,16 +89,16 @@
     "DESCRIPTIONS": [
       "As you are about to depart, a message come to you.",
       "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence.",
-      " Not translate yet"
+      "#r@The voice of yourself eeriely worms into your head out of the complete void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
     ],
     "OPTIONS": [
       "[Proceed] ...",
       "[Fists Can Talk!] Battle Ahead. #gObtain Tracking Beacon.",
       "[Return Home]",
-      "[LOCKED] No Translation Yet",
-      "[Final Battle]No Translation Yet",
-      "[Final Battle] No Translation Yet",
-      "[No Translation Yet] No Translation Yet"
+      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
+      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
+      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
+      "[To the former stage] I seem to have hallucination..."
     ]
   },
   "VUPShionMod:LakeAmidst": {
@@ -185,16 +185,16 @@
     "DESCRIPTIONS": [
       "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
       "You have seen it once, and you know where the target is.",
-      "Not translate yet "
+      "#r@The voice of yourself eeriely worms into your head out of the complete void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
     ],
     "OPTIONS": [
       "[Proceed] ...",
       "[Engage!] Battle Ahead. #gObtain Unknown Dust.",
       "The body is too exhausted to go on...",
-      "[LOCKED] No Translation Yet",
-      "[Final Battle]No Translation Yet",
-      "[Final Battle] No Translation Yet",
-      "[No Translation Yet] No Translation Yet"
+      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
+      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
+      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
+      "[To the former stage] I seem to have hallucination..."
     ]
   },
   "VUPShionMod:VacuumRipples": {
@@ -214,26 +214,26 @@
   "VUPShionMod:FruitStall": {
     "NAME": "FruitStall?",
     "DESCRIPTIONS": [
-      "You walk on the city street with dim vision... NL Just as you pace forward, a shop completely out of proportion to the environment inside the tower emerges in the view ahead... NL You're curious about what other stores sell besides that Merchants.",
-      "\"Welcome!\" Said a maid who seemed to be the owner. NL \"There are all kinds of food that can't be seen in the spire, but because the sales are so good, now there are only some leftovers\"。 NL At this time, you can see that there is an attractive #y~Fruit~ #y~Cake~ hidden under the shelf. NL It seems that the maid is celebrating for someone. But the sweet smell it gives off is too tempting.",
+      "You walk on the city street with dim vision... NL Just as you pace forward, a shop completely out of proportion to the environment inside the tower emerges in the view ahead... NL You're curious about what other stores sell besides that very shop.",
+      "\"Welcome!\" Says a maid who seems to be the owner. NL \"There are all kinds of food that can't be seen in the spire, but because the sales are so good, now there are only some leftovers\"。 NL At this time, you can see that there is an attractive #y~Fruit~ #y~Cake~ hidden under the shelf. NL It seems that the maid is celebrating for someone. But the sweet smell it gives off is too tempting.",
       " #yDelicious！@ NL When you are proud of your theft technology, you suddenly feel something terrible behind you. Looking back, I found nothing.",
       "\"Thank you for your patronage. Welcome to visit next time\"",
-      "\"Really? If you can Do you have #ystrawberries or #yother #yfruits .\"",
-      "\"Ah! It's my favorite strawberry\" She seemed exceedingly happy.",
+      "\"Really? That would be bravo! Do you have #ystrawberries or any #yother #yfruits? \"",
+      "\"Ah! It's my favorite strawberry.\" She seems exceedingly happy.",
       "\"Thank you very much!\"",
-      "“Caution is the parent of safety.”"
+      "“Caution is the mother of safety.”"
     ],
     "OPTIONS": [
       "[Approach]",
       "[Ignore]",
-      "[Steal] #gHeal #gto #gfull #gHP， #rEncounter #rA #rSpecial #rFight.",
+      "[Steal] #gHeal #gto #gfull #gHP， #rEncounter #ra #rSpecial #rCombat.",
       "[Buy] #rLose #r%d #rgold. #gGain #g10 #yMax #gHP.",
       "[Locked] Require %d gold.",
-      "[Sell] Selling fruit to maid",
+      "[Sell] Sell your fruit to the maid",
       "[Pear] Gain #b%d gold.",
       "[Mango] Gain #b%d gold.",
       "[Strawberry] Gain #b%d gold.",
-      "[Locked] Need Fruit relic.",
+      "[Locked] Any fruit relic is required.",
       "[Leave]",
       "[Back]",
       "[Fight]"

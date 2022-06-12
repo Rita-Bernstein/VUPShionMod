@@ -1,0 +1,202 @@
+
+Wangchuan_ChinaTaoist.png
+size: 4096,1024
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+arm_L
+  rotate: false
+  xy: 498, 383
+  size: 431, 633
+  orig: 431, 633
+  offset: 0, 0
+  index: -1
+arm_L_daizi
+  rotate: false
+  xy: 1325, 450
+  size: 406, 566
+  orig: 406, 566
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: true
+  xy: 1733, 313
+  size: 341, 435
+  orig: 341, 435
+  offset: 0, 0
+  index: -1
+arm_R_daizi
+  rotate: true
+  xy: 2836, 726
+  size: 290, 491
+  orig: 290, 491
+  offset: 0, 0
+  index: -1
+blink1
+  rotate: false
+  xy: 2687, 492
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+blink2
+  rotate: false
+  xy: 2687, 362
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2170, 305
+  size: 164, 349
+  orig: 164, 349
+  offset: 0, 0
+  index: -1
+body_opai
+  rotate: true
+  xy: 395, 94
+  size: 148, 89
+  orig: 148, 89
+  offset: 0, 0
+  index: -1
+eyes_meimao
+  rotate: false
+  xy: 2, 2
+  size: 61, 11
+  orig: 61, 11
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 3038, 613
+  size: 111, 128
+  orig: 111, 128
+  offset: 0, 0
+  index: -1
+hair_F
+  rotate: true
+  xy: 3168, 608
+  size: 116, 123
+  orig: 116, 123
+  offset: 0, 0
+  index: -1
+hair_behind
+  rotate: false
+  xy: 931, 403
+  size: 392, 613
+  orig: 392, 613
+  offset: 0, 0
+  index: -1
+hair_binjiao_L
+  rotate: true
+  xy: 1733, 276
+  size: 35, 101
+  orig: 35, 101
+  offset: 0, 0
+  index: -1
+hair_binjiao_R
+  rotate: true
+  xy: 3329, 731
+  size: 25, 121
+  orig: 25, 121
+  offset: 0, 0
+  index: -1
+hair_fashi1
+  rotate: true
+  xy: 2336, 347
+  size: 273, 349
+  orig: 273, 349
+  offset: 0, 0
+  index: -1
+hair_fashi2
+  rotate: true
+  xy: 498, 193
+  size: 188, 396
+  orig: 188, 396
+  offset: 0, 0
+  index: -1
+hair_fashi3
+  rotate: false
+  xy: 4048, 938
+  size: 43, 78
+  orig: 43, 78
+  offset: 0, 0
+  index: -1
+hair_fashi4
+  rotate: false
+  xy: 931, 385
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+hair_fashi5
+  rotate: false
+  xy: 3952, 763
+  size: 91, 70
+  orig: 91, 70
+  offset: 0, 0
+  index: -1
+hair_fashi_B
+  rotate: true
+  xy: 3952, 835
+  size: 181, 94
+  orig: 181, 94
+  offset: 0, 0
+  index: -1
+hair_mawei_F
+  rotate: true
+  xy: 2, 15
+  size: 227, 391
+  orig: 227, 391
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 3329, 758
+  size: 119, 621
+  orig: 119, 621
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: true
+  xy: 3329, 879
+  size: 137, 621
+  orig: 137, 621
+  offset: 0, 0
+  index: -1
+qunbai_B
+  rotate: true
+  xy: 1733, 656
+  size: 360, 610
+  orig: 360, 610
+  offset: 0, 0
+  index: -1
+qunbai_F
+  rotate: false
+  xy: 2, 244
+  size: 494, 772
+  orig: 494, 772
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2836, 624
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1
+weapon1
+  rotate: true
+  xy: 1325, 267
+  size: 181, 406
+  orig: 181, 406
+  offset: 0, 0
+  index: -1
+weapon2
+  rotate: false
+  xy: 2345, 622
+  size: 489, 394
+  orig: 489, 394
+  offset: 0, 0
+  index: -1

@@ -143,11 +143,12 @@ public class SansMeter {
     public void onFatal(AbstractMonster m) {
         if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower(MinionPower.POWER_ID)) {
             if (this.amount <= 30)
-                addToBot(new LoseMaxHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
-            else if (this.amount <= 50)
                 addToBot(new LoseMaxHPAction(AbstractDungeon.player, AbstractDungeon.player, 4));
+            else if (this.amount <= 50)
+                addToBot(new LoseMaxHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
 
             loseSan(3);
+
         }
     }
 

@@ -1,6 +1,6 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.VUPShionMod;
+import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -20,8 +20,8 @@ import com.megacrit.cardcrawl.vfx.campfire.CampfireEndingBurningEffect;
 @SuppressWarnings("unused")
 public class AbstractScenePatches {
     public static Texture campfire = ImageMaster.loadImage("VUPShionMod/characters/Shion/Campfire.png");
-    public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
-    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/" + (VUPShionMod.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+    public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/Campfire2.png");
     public static final float scale = 1.0f;
     public static final float offSet_x = 0.0f;
     public static final float offSet_y = 0.0f;

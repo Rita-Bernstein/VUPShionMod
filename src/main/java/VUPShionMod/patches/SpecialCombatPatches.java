@@ -1,13 +1,9 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.Contact;
-import VUPShionMod.events.FruitStall;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.events.Prophesy;
-import VUPShionMod.helpers.CardTypeHelper;
 import VUPShionMod.monsters.Story.Ouroboros;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
@@ -17,11 +13,11 @@ import VUPShionMod.powers.Unique.GravitoniumOverPower;
 import VUPShionMod.relics.Event.AnastasiaNecklace;
 import VUPShionMod.relics.Event.TrackingBeacon;
 import VUPShionMod.relics.Event.UnknownDust;
+import VUPShionMod.util.SaveHelper;
 import basemod.CustomEventRoom;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -30,7 +26,6 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.events.exordium.Mushrooms;
 import com.megacrit.cardcrawl.helpers.EventHelper;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.map.MapEdge;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -44,7 +39,6 @@ import javassist.CannotCompileException;
 import javassist.NotFoundException;
 import javassist.expr.ExprEditor;
 import javassist.expr.Instanceof;
-import javassist.expr.MethodCall;
 
 import java.util.ArrayList;
 
@@ -53,31 +47,31 @@ public class SpecialCombatPatches {
     public static void victoryFightSpecialBoss() {
 
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && !AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
-            VUPShionMod.fightSpecialBossWithout = true;
+            SaveHelper.fightSpecialBossWithout = true;
         }
 
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
             if (((WangChuan) AbstractDungeon.player).shionHelper != null)
-                VUPShionMod.fightSpecialBossWithout = false;
+                SaveHelper.fightSpecialBossWithout = false;
 
             if (AbstractDungeon.player.hasRelic(TrackingBeacon.ID)) {
-                VUPShionMod.fightSpecialBossWithout = !((TrackingBeacon) AbstractDungeon.player.getRelic(TrackingBeacon.ID)).triggered;
+                SaveHelper.fightSpecialBossWithout = !((TrackingBeacon) AbstractDungeon.player.getRelic(TrackingBeacon.ID)).triggered;
             }
         }
 
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu && !AbstractDungeon.player.hasRelic(UnknownDust.ID)) {
-            VUPShionMod.fightSpecialBossWithout = true;
+            SaveHelper.fightSpecialBossWithout = true;
         }
 
 
-        VUPShionMod.fightSpecialBoss = !VUPShionMod.fightSpecialBossWithout;
+        SaveHelper.fightSpecialBoss = !SaveHelper.fightSpecialBossWithout;
     }
 
     public static boolean shouldHardMod() {
-//        return true;
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock
-                && CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock
-                && VUPShionMod.liyezhuVictory;
+        return true;
+//        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock
+//                && CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock
+//                && VUPShionMod.liyezhuVictory;
     }
 
     @SpirePatch(

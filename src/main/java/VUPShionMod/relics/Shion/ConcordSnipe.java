@@ -3,6 +3,7 @@ package VUPShionMod.relics.Shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Codex.TwoAttackPower;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
+import VUPShionMod.powers.Shion.ConcordPower;
 import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.stances.PrayerStance;
 import com.badlogic.gdx.graphics.Texture;
@@ -53,6 +54,13 @@ public class ConcordSnipe extends AbstractShionRelic {
     }
 
     @Override
+    public void atBattleStart() {
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ConcordPower(AbstractDungeon.player,this.counter)));
+    }
+
+
+
+    @Override
     public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
         if (info.type == DamageInfo.DamageType.NORMAL) {
             if (50 - this.counter > 0)
@@ -73,6 +81,8 @@ public class ConcordSnipe extends AbstractShionRelic {
         }
         return damageAmount;
     }
+
+
 
     @Override
     public void onEnterRoom(AbstractRoom room) {

@@ -1,10 +1,10 @@
 package VUPShionMod.cards.ShionCard;
 
-import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Liyezhu.BrokenSanctuaryPower;
+import VUPShionMod.util.SaveHelper;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
@@ -154,7 +154,7 @@ public abstract class AbstractVUPShionCard extends CustomCard {
         float x = -108.0f;
         float y = 200.0f;
 
-        if (!VUPShionMod.useSimpleOrb && this.color == CardColorEnum.VUP_Shion_LIME) {
+        if (!SaveHelper.useSimpleOrb && this.color == CardColorEnum.VUP_Shion_LIME) {
             if (this instanceof FinFunnelUpgrade)
                 darkOrbRenderHelper(sb, orb_ag, x, y);
             else

@@ -683,39 +683,42 @@
       " NL #b%d :Lose #b5%% Maxhp.",
       " NL #b%d :Lose #b5%% Maxhp.",
       " NL #b%d :Apply #b99 Vulnerable .",
-      " NL #b%d :Lose this effect and: NL Boss enemy-Analysis power or lose #b3 #ystrength. NL None Boss enemy- #ystun."
+      " NL #b%d :Lose this effect and: NL Boss enemy-Analysis power or lose #b3 #ystrength. NL None Boss enemy- #ystun.",
+      " NL NL #rBoss-%s NL Lose #y%s。",
+      " NL NL #rBoss-%s NL Reduce HP of #y%s to 1.",
+      " NL NL #rBoss-%s NL Lose #b3 #yStrength."
     ]
   },
   "VUPShionMod:ReinsOfWarPower": {
     "NAME": "Reins of War",
     "DESCRIPTIONS": [
-      "At the start of each turn,gain effect based on your #yDissecting Funnel upgrade level：",
+      "At the start of each turn, gain effect based on your #yDissecting Funnel upgrade level：",
       " NL #b1-3 :Gain #b1 #yDexterity .",
       " NL #b4-5 :Gain #b1 #yStrength and #yDexterity .",
       " NL #b6-10 :Gain #b2 #yStrength and #yDexterity .",
-      " NL #b11-15 :Gain #b3 #yStrength and #yHyperdimensional .",
-      " NL #b16-20 :Gain #b4 #yStrength , #yHyperdimensional and [E] .",
-      " NL #b21-25 :Gain #b5 #yStrength , #yHyperdimensional and [E] .",
-      " NL #b26 and above :Gain #b5 #yStrength , #yHyperdimensional and [E] [E] 。"
+      " NL #b11-15 :Gain #b2 #yStrength and #yHyperdimensional .",
+      " NL #b16-20 :Gain #b2 #yStrength , #yHyperdimensional and [E] .",
+      " NL #b21-25 :Gain #b3 #yStrength , #yHyperdimensional and [E] .",
+      " NL #b26 and above :Gain #b3 #yStrength , #yHyperdimensional and [E] [E] 。"
     ]
   },
   "VUPShionMod:SpatialTearPower": {
-    "NAME": "Not translate yet",
+    "NAME": "Rupture",
     "DESCRIPTIONS": [
-      "Not translate yet"
+      "Upon reaching #b18, add 1 #yExile into your hand and remove this effect."
     ]
   },
   "VUPShionMod:OppressiveSwordPower": {
-    "NAME": "Not translate yet",
+    "NAME": "Suppressing Blade",
     "DESCRIPTIONS": [
-      "Not translate yet",
-      "Not translate yet"
+      "You will not lose #yCor #yGladii this turn.",
+      "You will not lose #yCor #yGladii for #b%d turns."
     ]
   },
   "VUPShionMod:DefenceMonsterPower": {
     "NAME": "Defence",
     "DESCRIPTIONS": [
-      "Reduce #yAttack damage #yRita #yBernstein relieved to #b%d/255. NL #yRita #yBernstein loss of HP is a multiple of #b10."
+      "Reduce damage received by #yRita #yBernstein to #b%d/255. NL Attack damage received by #yRita #yBernstein is a multiple of #b10."
     ]
   },
   "VUPShionMod:ProbePower": {
@@ -728,20 +731,20 @@
   "VUPShionMod:ReflectionPower": {
     "NAME": "Reflection",
     "DESCRIPTIONS": [
-      "Whenever she take blocked damage,deal that damage back."
+      "Whenever you take blocked damage, deal that damage back."
     ]
   },
   "VUPShionMod:FlyPower": {
-    "NAME": "No Translation Yet",
+    "NAME": "Flying",
     "DESCRIPTIONS": [
-      "No Translation Yet ",
-      "No Translation Yet "
+      "The first #b%d #yattacks received each turn deal #b50% less damage.",
+      "The first #b%d #yattacks received each turn deal #b50% less damage."
     ]
   },
   "VUPShionMod:SiegePower": {
-    "NAME": "No Translation Yet",
+    "NAME": "Sieged",
     "DESCRIPTIONS": [
-      "No Translation Yet"
+      "At the start of your turn, gain #b%d #yVulnerable, #yFrail and #yWeak."
     ]
   },
   "VUPShionMod:ContortTimePower": {
@@ -753,8 +756,8 @@
   "VUPShionMod:MalignBenevolencePower": {
     "NAME": "Malign Benevolence",
     "DESCRIPTIONS": [
-      "#rThe #rworm #rof #rthe #rtime #rbasiates #rgently. NL The worm of the time basiates gently, shuffle #b%d #yDecay into it.",
-      "#rThe #rworm #rof #rthe #rtime #rbasiates #rgently. NL The worm of the time basiates gently, shuffle #b%d #yDecay into it."
+      "#rThe #rWorm #rof #rthe #rTime #rbasiates #rgently. NL The worm of the time basiates gently, shuffle #b%d #yDecay into it.",
+      "#rThe #rWorm #rof #rthe #rTime #rbasiates #rgently. NL The worm of the time basiates gently, shuffle #b%d #yDecay into it."
     ]
   },
   "VUPShionMod:LoomingPower": {
@@ -800,6 +803,13 @@
     "NAME": "Annihilating Canon",
     "DESCRIPTIONS": [
       "#rStep #raside! #rAside! NL Whenever you play a #ySkill，this turn #yAnnihilating Canon damage decause #b%d ."
+    ]
+  },
+  "VUPShionMod:ConcordPower": {
+    "NAME": "Concord",
+    "DESCRIPTIONS": [
+      "Your Attacks deal #b%d%% less damage. NL You take #b%d%% more damage from attacks.",
+      "Your Attacks deal #b%d%% more damage. NL You take #b%d%% less damage from attacks.(up to #b50%.)"
     ]
   }
 }

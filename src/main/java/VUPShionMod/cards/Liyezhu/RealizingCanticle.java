@@ -5,10 +5,12 @@ import VUPShionMod.actions.Liyezhu.ApplyPrayerAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.prayers.ArtifactPrayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 public class RealizingCanticle extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(RealizingCanticle.class.getSimpleName());
@@ -17,11 +19,11 @@ public class RealizingCanticle extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public RealizingCanticle() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
         this.cardsToPreview = new BeinglessMoment();
@@ -32,6 +34,7 @@ public class RealizingCanticle extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p,p,new ArtifactPower(p,1)));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
@@ -56,6 +59,7 @@ public class RealizingCanticle extends AbstractLiyezhuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
+            upgradeSecondM(1);
         }
     }
 }

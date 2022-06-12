@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.ReinsOfWarPower;
 import VUPShionMod.powers.Shion.StructureDissectionPower;
+import VUPShionMod.util.SaveHelper;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -41,7 +42,7 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
     @Override
     public void upgradeLevel(int amount) {
         this.level += amount;
-        VUPShionMod.dissectingFinFunnelLevel = level;
+        SaveHelper.dissectingFinFunnelLevel = level;
     }
 
     @Override
@@ -49,7 +50,7 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
         this.level -= amount;
         if (this.level < 0)
             this.level = 0;
-        VUPShionMod.dissectingFinFunnelLevel = level;
+        SaveHelper.dissectingFinFunnelLevel = level;
     }
 
     @Override

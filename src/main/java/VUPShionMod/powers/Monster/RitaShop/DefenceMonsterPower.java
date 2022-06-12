@@ -26,17 +26,15 @@ public class DefenceMonsterPower extends AbstractShionPower {
         this.priority = 10;
     }
 
-
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        return (int) Math.ceil(damageAmount * this.amount / 2550.0f) * 10;
+    public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
+        float damageFinal = (float) Math.ceil(damage * this.amount / 255.0f);
+        if (damageType == DamageInfo.DamageType.NORMAL) {
+            return (float) Math.ceil(damageFinal / 10.0f) * 10.0f;
+        }
+        return damageFinal;
     }
 
-
-    @Override
-    public int onLoseHp(int damageAmount) {
-        return (int) Math.ceil(damageAmount * this.amount / 2550.0f) * 10;
-    }
 
     public void updateDescription() {
         this.description = String.format(DESCRIPTIONS[0], this.amount);

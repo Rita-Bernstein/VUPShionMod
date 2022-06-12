@@ -28,7 +28,10 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     public FragmentsOfFaith() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
+    }
 
+    @Override
+    public void justEnteredRoom(AbstractRoom room) {
         if (AbstractDungeon.player != null)
             if (AbstractDungeon.actNum >= 3)
                 upgrade();

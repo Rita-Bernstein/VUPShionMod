@@ -51,11 +51,8 @@ public class RitaShop extends CustomMonster {
     private boolean isFirstMove = true;
 
     private int repuukenHitCount = 4;
-    private int ExecutionHitCount = 6;
+    private int ExecutionHitCount = 5;
     private int DestructionHitCount = 4;
-    private int HeavenHitCount = 3;
-    private int PhoenixHitCount = 5;
-    private int JudgementHitCount = 15;
     private int CutterHitCount = 2;
 
 
@@ -64,25 +61,25 @@ public class RitaShop extends CustomMonster {
 
     public RitaShop() {
         super(NAME, ID, 160, 0.0F, -10.0F, 300.0F, 380.0F, null, 0.0F, 0.0F);
-        if (AbstractDungeon.ascensionLevel >= 8) {
+        if (AbstractDungeon.ascensionLevel >= 9) {
             setHp(180);
         } else {
             setHp(160);
         }
 
 
-        if (AbstractDungeon.ascensionLevel >= 18) {
+        if (AbstractDungeon.ascensionLevel >= 19) {
             this.timeLimit = 3;
         } else {
             this.timeLimit = 4;
         }
 
 //进阶4加伤害
-        if (AbstractDungeon.ascensionLevel >= 3) {
+        if (AbstractDungeon.ascensionLevel >= 4) {
             this.damage.add(new DamageInfo(this, 28));
             this.damage.add(new DamageInfo(this, 10));
             this.damage.add(new DamageInfo(this, 30));
-            this.damage.add(new DamageInfo(this, 6));
+            this.damage.add(new DamageInfo(this, 5));
             this.damage.add(new DamageInfo(this, 25));
             this.damage.add(new DamageInfo(this, 67)); //5
             this.damage.add(new DamageInfo(this, 3));
@@ -138,7 +135,7 @@ public class RitaShop extends CustomMonster {
         addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true, false, Settings.WIDTH * 0.2F, Settings.HEIGHT / 2.0F));
         addToBot(new MakeTempCardInDrawPileAction(new Slimed(), 1, true, true, false, Settings.WIDTH * 0.2F, Settings.HEIGHT / 2.0F));
 
-        if (AbstractDungeon.ascensionLevel >= 18) {
+        if (AbstractDungeon.ascensionLevel >= 19) {
             addToBot(new MakeTempCardInDrawPileAction(new Burn(), 1, true, true, false, Settings.WIDTH * 0.2F, Settings.HEIGHT / 2.0F));
         }
 
@@ -157,8 +154,8 @@ public class RitaShop extends CustomMonster {
 
                 addToBot(new VFXAction(this, new ShockWaveEffect(this.hb.cX, this.hb.cY, Settings.RED_TEXT_COLOR, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.2F));
 
-                addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, AbstractDungeon.ascensionLevel >= 18 ? 5 : 3, true)));
-                addToBot(new ApplyPowerAction(p, this, new WeakPower(p, AbstractDungeon.ascensionLevel >= 18 ? 5 : 3, true)));
+                addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, AbstractDungeon.ascensionLevel >= 19 ? 5 : 3, true)));
+                addToBot(new ApplyPowerAction(p, this, new WeakPower(p, AbstractDungeon.ascensionLevel >= 19 ? 5 : 3, true)));
                 break;
 
             case 1://残杀
@@ -186,7 +183,7 @@ public class RitaShop extends CustomMonster {
                 addToBot(new VFXAction(this, new FlameBarrierEffect(this.hb.cX, this.hb.cY), 0.5F));
                 addToBot(new GainBlockAction(this, this, 50));
                 addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, 2)));
-                addToBot(new ApplyPowerAction(this, this, new ReflectionPower(this, AbstractDungeon.ascensionLevel >= 18 ? 3 : 2)));
+                addToBot(new ApplyPowerAction(this, this, new ReflectionPower(this, AbstractDungeon.ascensionLevel >= 19 ? 3 : 2)));
                 addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 5)));
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 2)));
                 break;
@@ -255,7 +252,7 @@ public class RitaShop extends CustomMonster {
                     addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50)));
                     this.timeLimit = 3;
                 } else {
-                    if (AbstractDungeon.ascensionLevel >= 18) {
+                    if (AbstractDungeon.ascensionLevel >= 19) {
                         addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 10)));
                     } else {
                         addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 8)));
@@ -268,17 +265,18 @@ public class RitaShop extends CustomMonster {
 //------------------------------------------------------复活
             case 99:
                 this.halfDead = false;
+
                 switch (this.formAmount) {
                     case 1:
 
 //复活：第二形态
-                        if (AbstractDungeon.ascensionLevel >= 8) {
+                        if (AbstractDungeon.ascensionLevel >= 9) {
                             this.maxHealth = 340 + currentHealth;
                         } else {
                             this.maxHealth = 270 + currentHealth;
                         }
 
-                        addToBot(new SFXAction(VUPShionMod.makeID("RitaB_CombatStart") + MathUtils.random(4)));
+                        addToBot(new SFXAction(VUPShionMod.makeID("RitaB_CombatStart") + MathUtils.random(3)));
 
                         addToBot(new RemoveSpecificPowerAction(this, this, ProbePower.POWER_ID));
                         addToBot(new ApplyPowerAction(this, this, new UnawakenedPower(this)));
@@ -298,9 +296,18 @@ public class RitaShop extends CustomMonster {
                         addToBot(new SFXAction(VUPShionMod.makeID("RitaB_TrueMod")));
                         addToBot(new RemoveSpecificPowerAction(this, this, UnawakenedPower.POWER_ID));
                         break;
+
+
                 }
 
                 addToBot(new HealAction(this, this, this.maxHealth));
+                addToBot(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        isFirstMove = true;
+                        isDone = true;
+                    }
+                });
 
 
                 if (formAmount >= 3) {
@@ -316,6 +323,7 @@ public class RitaShop extends CustomMonster {
             public void update() {
                 timeLimit--;
                 isFormChanged = false;
+
                 isDone = true;
             }
         });
@@ -419,6 +427,11 @@ public class RitaShop extends CustomMonster {
 
 
                     default:
+                        if (lastMove((byte) 12)) {
+                            setMove(MOVES[4], (byte) 10, Intent.DEFEND_BUFF);
+                            this.moveCount = 0;
+                            break;
+                        }
                         setMove(MOVES[6], (byte) 12, AbstractMonster.Intent.ATTACK, this.damage.get(3).base, this.ExecutionHitCount, true);
                         break;
                 }
@@ -443,11 +456,16 @@ public class RitaShop extends CustomMonster {
                         break;
 
                     case 1:
-                        setMove(MOVES[10], (byte) 22, AbstractMonster.Intent.ATTACK, this.damage.get(6).base, DestructionHitCount, true);
+                        setMove(MOVES[10], (byte) 22, Intent.ATTACK_BUFF, this.damage.get(6).base, DestructionHitCount, true);
                         break;
 
 
                     default:
+                        if (lastMove((byte) 20)) {
+                            setMove(MOVES[9], (byte) 21, AbstractMonster.Intent.ATTACK, this.damage.get(5).base);
+                            this.moveCount = 0;
+                            break;
+                        }
                         setMove(MOVES[8], (byte) 20, AbstractMonster.Intent.ATTACK, this.damage.get(4).base, CutterHitCount, true);
                         break;
                 }
@@ -479,7 +497,7 @@ public class RitaShop extends CustomMonster {
 
 
             if (MathUtils.random(3) == 0) {
-                CardCrawlGame.sound.play(VUPShionMod.makeID("RitaB_Hit" + MathUtils.random(6)));
+                CardCrawlGame.sound.play(VUPShionMod.makeID("RitaB_Hit" + MathUtils.random(5)));
             }
         }
 
@@ -515,11 +533,8 @@ public class RitaShop extends CustomMonster {
                 addToBot(new SetMoveAction(this, (byte) 99, AbstractMonster.Intent.UNKNOWN));
                 applyPowers();
 
-                this.isFirstMove = true;
-
-                this.formAmount += 1;
+                this.formAmount++;
                 this.isFormChanged = true;
-
                 this.moveCount = 0;
             }
         }

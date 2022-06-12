@@ -6,6 +6,7 @@ import VUPShionMod.monsters.Story.Ouroboros;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
 import VUPShionMod.monsters.Story.TimePortal;
 import VUPShionMod.relics.AbstractShionRelic;
+import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnPlayerDeathRelic;
@@ -118,8 +119,8 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
 
     public void applyEffect() {
         if (!AbstractDungeon.player.hasRelic(AbyssalCrux.ID)) {
-            VUPShionMod.liyezhuRelic = true;
-            VUPShionMod.saveSettings();
+            SaveHelper.liyezhuRelic = true;
+            SaveHelper.saveSettings();
             System.out.println("真结局--liyezhuRelic");
             endGame();
         } else {

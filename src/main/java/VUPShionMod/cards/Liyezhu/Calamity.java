@@ -5,7 +5,9 @@ import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Liyezhu.Calamity2Power;
 import VUPShionMod.powers.Liyezhu.CalamityPower;
 import VUPShionMod.powers.Common.LoseHPPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -37,11 +39,17 @@ public class Calamity extends AbstractLiyezhuCard {
     }
 
     @Override
-    public void triggerOnEndOfPlayerTurn() {
-        super.triggerOnEndOfPlayerTurn();
-        if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
-            EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).loseSan(10);
-        }
+    public void triggerOnEndOfTurnForPlayingCard() {
+        addToBot(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
+                    EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).loseSan(10);
+                }
+                isDone = true;
+            }
+        });
     }
 
     @Override

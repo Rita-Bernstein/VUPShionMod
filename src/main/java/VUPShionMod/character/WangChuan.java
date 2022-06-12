@@ -98,6 +98,11 @@ public class WangChuan extends CustomPlayer {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "idle_wing", true);
         }
+
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 3){
+            this.state.setAnimation(0, "idle", true);
+            this.state.setAnimation(1, "weapon_idle", true);
+        }
     }
 
 

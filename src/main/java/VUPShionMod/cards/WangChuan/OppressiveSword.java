@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.function.Consumer;
 
@@ -63,7 +64,7 @@ public class OppressiveSword extends AbstractWCCard {
 
                 Consumer<Integer> actionConsumer = effect -> {
                     addToTop(new ApplyPowerAction(p, p, new MagiamObruorPower(p, effect)));
-                    addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, 12* effect)));
+                    addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, 12 * effect)));
                     baseDamage = this.magicNumber * effect;
                     calculateCardDamage(m);
                     addToTop(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
@@ -73,8 +74,8 @@ public class OppressiveSword extends AbstractWCCard {
                 addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {
-                        if(AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                        addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount/2)));
+                        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+                            addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount / 2)));
                         isDone = true;
                     }
                 });
@@ -97,6 +98,16 @@ public class OppressiveSword extends AbstractWCCard {
 
         this.baseDamage = trueDamage;
     }
+
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (this.timesUpgraded >= 2)
+            return super.canUse(p, m) && EnergyPanel.totalCount > 0;
+        else
+            return super.canUse(p, m);
+    }
+
 
     @Override
     public boolean canUpgrade() {

@@ -1,0 +1,26 @@
+
+achievements.png
+size: 256,256
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+locked/RitaShop
+  rotate: false
+  xy: 2, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+
+achievements2.png
+size: 256,256
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+unlocked/RitaShop
+  rotate: false
+  xy: 2, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1

@@ -2,6 +2,7 @@ package VUPShionMod.relics.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Codex.TwoAttackPower;
+import VUPShionMod.powers.Shion.ConcordPower;
 import VUPShionMod.relics.AbstractShionRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -40,27 +41,10 @@ public class ConcordArray extends AbstractShionRelic {
         this.initializeTips();
     }
 
-
     @Override
-    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
-        if (info.type == DamageInfo.DamageType.NORMAL) {
-            if (50 - this.counter > 0)
-                return (int) Math.floor(damageAmount * ((100 - (50 - this.counter)) * 0.01f));
-            else
-                return (int) Math.floor(damageAmount * ((100 + (this.counter - 50))) * 0.01f);
-        }
-        return damageAmount;
-    }
-
-    @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.type == DamageInfo.DamageType.NORMAL) {
-            if (50 - this.counter > 0)
-                return (int) Math.floor(damageAmount * ((100 + (50 - this.counter)) * 0.01f));
-            else
-                return (int) Math.floor(damageAmount * ((100 - (this.counter - 50))) * 0.01f);
-        }
-        return damageAmount;
+    public void atBattleStart() {
+        flash();
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ConcordPower(AbstractDungeon.player,this.counter)));
     }
 
     @Override

@@ -59,7 +59,14 @@ public class SkinManager {
                     skin.onUnlock();
             }
         }
+    }
 
+    public void unlockAllSkin() {
+        for (AbstractSkinCharacter character : skinCharacters) {
+            for (AbstractSkin skin : character.skins) {
+                    skin.onUnlock();
+            }
+        }
     }
 
 

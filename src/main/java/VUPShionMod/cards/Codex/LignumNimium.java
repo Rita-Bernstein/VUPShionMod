@@ -43,13 +43,13 @@ public class LignumNimium extends AbstractCodexCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 upgradeBaseCost(1);
-                upgradeMagicNumber(3);
+                upgradeMagicNumber(4);
                 this.isEthereal =true;
             }
 
 
             if (this.timesUpgraded == 2) {
-                upgradeMagicNumber(1);
+                upgradeMagicNumber(5);
                 upgradeBaseCost(0);
                 this.isEthereal =false;
             }

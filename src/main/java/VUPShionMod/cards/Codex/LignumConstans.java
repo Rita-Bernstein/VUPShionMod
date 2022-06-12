@@ -39,13 +39,14 @@ public class LignumConstans extends AbstractCodexCard {
             if (this.timesUpgraded == 1) {
                 this.exhaust = false;
                 this.isEthereal =true;
+                upgradeMagicNumber(1);
             }
 
 
             if (this.timesUpgraded == 2) {
                 this.exhaust = true;
                 this.isEthereal =false;
-                upgradeMagicNumber(4);
+                upgradeMagicNumber(8);
             }
         }
     }

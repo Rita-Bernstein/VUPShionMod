@@ -1,6 +1,6 @@
 package VUPShionMod.vfx.victory;
 
-import VUPShionMod.VUPShionMod;
+import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -34,10 +34,10 @@ public class ShionGoldVictoryEffect extends AbstractGameEffect {
     }
 
     private static void loadanimation(float timeScale) {
-        Atlas = new TextureAtlas(Gdx.files.internal("VUPShionMod/characters/Shion/victory/background_break.atlas"));
+        Atlas = new TextureAtlas(Gdx.files.internal("VUPShionMod/characters/Shion/portrait_spine/Shion.atlas"));
         SkeletonJson json = new SkeletonJson(Atlas);
-        json.setScale(Settings.scale * 1.16f);
-        Data = json.readSkeletonData(Gdx.files.internal("VUPShionMod/characters/Shion/victory/background_break.json"));
+        json.setScale(Settings.scale * 1.0f);
+        Data = json.readSkeletonData(Gdx.files.internal("VUPShionMod/characters/Shion/portrait_spine/Shion.json"));
 
 
         Skeleton = new Skeleton(Data);
@@ -47,12 +47,9 @@ public class ShionGoldVictoryEffect extends AbstractGameEffect {
         StateData.setDefaultMix(0.2F);
 
         State.setTimeScale(1.0f * timeScale);
-        Skeleton.setPosition(-360.0f * Settings.scale, -160.0f * Settings.scale);
+        Skeleton.setPosition(0.0f * Settings.scale, -40.0f * Settings.scale);
 
-        if (VUPShionMod.safeCampfire)
-            State.setAnimation(0, "idle_HX", true);
-        else
-            State.setAnimation(0, "idle", true);
+        State.setAnimation(0, "idle", true);
     }
 
 

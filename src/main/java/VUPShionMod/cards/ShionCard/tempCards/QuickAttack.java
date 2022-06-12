@@ -45,7 +45,7 @@ public class QuickAttack extends AbstractVUPShionCard {
         if (m != null) {
             AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
             if (funnel != null) {
-                funnel.activeFire(m, this.damage, this.damageTypeForTurn);
+                funnel.activeFire(m,  new DamageInfo(p, this.damage, this.damageTypeForTurn));
             } else {
                 this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             }

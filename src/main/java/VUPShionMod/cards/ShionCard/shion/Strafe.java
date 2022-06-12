@@ -35,7 +35,7 @@ public class Strafe extends AbstractShionCard {
         AbstractFinFunnel funnel =AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
 
             if (funnel != null) {
-                funnel.activeFire(m, this.damage, this.damageTypeForTurn,this.magicNumber);
+                funnel.activeFire(m,  new DamageInfo(p, this.damage, this.damageTypeForTurn),this.magicNumber);
             } else {
                 for (int i = 0; i < this.magicNumber; i++)
                 this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));

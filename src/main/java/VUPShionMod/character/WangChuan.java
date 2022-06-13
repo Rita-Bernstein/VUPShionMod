@@ -4,7 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
-import VUPShionMod.vfx.WangchuanVictoryEffect;
+import VUPShionMod.vfx.victory.WangchuanVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;

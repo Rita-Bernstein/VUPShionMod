@@ -1,8 +1,99 @@
 {
-  "VUPShionMod:Hiroji": {
-    "NAME": "嗯哼哼啊啊啊啊啊啊啊",
+  "VUPShionMod:PlanedModify": {
+    "NAME": "計劃改裝",
     "DESCRIPTIONS": [
-      "大聲吶喊，本回合獲得 #b%d 點 #y力量 。"
+      "當前 #y浮游炮 等級提高 #b%d 。"
+    ]
+  },
+  "VUPShionMod:EXPFragment": {
+    "NAME": "經驗碎片",
+    "DESCRIPTIONS": [
+      "選擇 #y升級 牌組中的 #b%d 張 #y攻擊牌 。"
+    ]
+  },
+  "VUPShionMod:WordFragment": {
+    "NAME": "聖言碎片",
+    "DESCRIPTIONS": [
+      "選擇 #y升級 牌組中的 #b%d 張 #y祈言牌 。"
+    ]
+  },
+  "VUPShionMod:TimeFragment": {
+    "NAME": "時光碎片",
+    "DESCRIPTIONS": [
+      "本回合結束時額外獲得一個回合。 NL 結束你的回合。"
+    ]
+  },
+  "VUPShionMod:FlashBang": {
+    "NAME": "A1高閃",
+    "DESCRIPTIONS": [
+      " #y擊暈 所有敵人。"
+    ]
+  },
+  "VUPShionMod:MinamiHand": {
+    "NAME": "小棉的底牌",
+    "DESCRIPTIONS": [
+      "從當前角色的 #y能力牌 中選擇一張。 NL 將它的 #b%d 張複製加入手牌。",
+      "從當前角色的 #y能力牌 中選擇一張。 NL 將它的 #b%d 張複製加入手牌。"
+    ]
+  },
+  "VUPShionMod:MinamiReserve": {
+    "NAME": "小棉的庫存",
+    "DESCRIPTIONS": [
+      "隨機獲得 #b%d 張技能牌。 NL 它們在本場戰鬥中耗能為 #b0 且 #y消耗 。"
+    ]
+  },
+  "VUPShionMod:ShoppingVoucher": {
+    "NAME": "0元購憑證",
+    "DESCRIPTIONS": [
+      "下次在商店中消費時免費並丟棄這瓶藥水。"
+    ]
+  },
+  "VUPShionMod:WorldLeaf": {
+    "NAME": "世界樹葉片",
+    "DESCRIPTIONS": [
+      "回復 #b%d%% 的生命。"
+    ]
+  },
+  "VUPShionMod:Bento": {
+    "NAME": "龍龍的便當",
+    "DESCRIPTIONS": [
+      "回復 #b%d 點生命。 NL 獲得 #b%d 瓶藥水。"
+    ]
+  },
+  "VUPShionMod:HolyWater": {
+    "NAME": "聖水",
+    "DESCRIPTIONS": [
+      " #y消耗 所有詛咒牌。 NL 回復 #b%d 點生命。"
+    ]
+  },
+  "VUPShionMod:Claymore": {
+    "NAME": "闊劍地雷",
+    "DESCRIPTIONS": [
+      "下次受到攻擊傷害時，對攻擊者造成 #b%d 點傷害。"
+    ]
+  },
+  "VUPShionMod:MagiaMagazine": {
+    "NAME": "魔能彈夾",
+    "DESCRIPTIONS": [
+      "獲得 #b%d [E] 。 NL 抽 #b%d 張牌。"
+    ]
+  },
+  "VUPShionMod:Cola": {
+    "NAME": "可樂",
+    "DESCRIPTIONS": [
+      "獲得 #b%d #y力量 、 #y敏捷 和 [E] 。"
+    ]
+  },
+  "VUPShionMod:UAV": {
+    "NAME": "偵察無人機",
+    "DESCRIPTIONS": [
+      "給予所有敵人 #b%d 層 #y虛弱 和 #y易傷。"
+    ]
+  },
+  "VUPShionMod:TransitionGenerator": {
+    "NAME": "躍遷發生器",
+    "DESCRIPTIONS": [
+      "你在選擇下一層的房間時可以無視當前的路線。 NL 無視路線時，丟棄這瓶藥水。"
     ]
   }
 }

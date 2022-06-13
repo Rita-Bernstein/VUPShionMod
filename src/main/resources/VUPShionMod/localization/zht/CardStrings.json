@@ -457,10 +457,10 @@
       "造成 !M! + vup_shion_mod:劍意 的傷害。 NL ",
       "對所有敵人造成 NL !M! + vup_shion_mod:劍意 的傷害。 NL ",
       "對所有敵人造成 NL vup_shion_mod:劍意 的傷害 !VUPShionSecondM! 次。 NL ",
-      " NL 失去一點 vup_shion_mod:劍意 。",
-      " NL 獲得一點 vup_shion_mod:硬直 。",
-      " NL 獲得兩點 vup_shion_mod:硬直 。",
-      " NL 獲得三點 vup_shion_mod:硬直 。",
+      " NL 失去1點 vup_shion_mod:劍意 。",
+      " NL 獲得1點 vup_shion_mod:硬直 。",
+      " NL 獲得2點 vup_shion_mod:硬直 。",
+      " NL 獲得3點 vup_shion_mod:硬直 。",
       "獲得 !VUPShionSecondM! 點 vup_shion_mod:劍意 。 NL ",
       "獲得10點 vup_shion_mod:劍意 。 NL ",
       " NL 獲得1層 無實體 。",
@@ -1307,12 +1307,12 @@
   },
   "VUPShionMod:PhantomChop": {
     "NAME": "影斬",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。",
+    "DESCRIPTION": "造成1+ vup_shion_mod:劍意 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。",
     "UPGRADE_DESCRIPTION": "保留 。 NL 造成 vup_shion_mod:劍意 層數的傷害X次。 NL 本回合每打出過一張牌，額外造成一次傷害。 NL vup_shion_mod:硬直 2。",
     "EXTENDED_DESCRIPTION": [
       "影斬+",
       "千幻影斬",
-      "保留 。 NL 造成 !D! 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。"
+      "保留 。 NL 造成1+ vup_shion_mod:劍意 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。"
     ]
   },
   "VUPShionMod:MentalMotivationChop": {
@@ -1327,12 +1327,12 @@
   },
   "VUPShionMod:MeltDowner": {
     "NAME": "原子崩壞",
-    "DESCRIPTION": "對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 減少 !VUPShionSecondM! 點生命值。 NL vup_shion_mod:魔能過載 。",
-    "UPGRADE_DESCRIPTION": "對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 減少1/4的生命值。 NL 抽滿手牌。 NL vup_shion_mod:魔能過載 。",
+    "DESCRIPTION": "減少 !VUPShionSecondM! 點生命值。 NL 對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "減少1/4的生命值。 NL 抽滿手牌。 NL 對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "原子崩壞+",
       "夸克重組",
-      "對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 減少 !VUPShionSecondM! 點生命值。 NL vup_shion_mod:魔能過載 。",
+      "減少 !VUPShionSecondM! 點生命值。 NL 對所有敵人造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。NL vup_shion_mod:魔能過載 。",
       "生命不足"
     ]
   },
@@ -1369,7 +1369,7 @@
   "VUPShionMod:BreakChop": {
     "NAME": "破勢斬",
     "DESCRIPTION": "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 如果敵人的意圖為攻擊，獲得 !B! 點 格擋 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌。",
-    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:劍意 點傷害。 NL 如果敵人的意圖為攻擊，獲得 [E] 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌並失去1層 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:劍意 點傷害。 NL 如果敵人的意圖為攻擊，獲得15層 vup_shion_mod:劍意 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌並失去1層 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "破勢斬+",
       "流光劍勢",

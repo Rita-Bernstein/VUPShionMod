@@ -187,18 +187,20 @@ public class SpecialCombatPatches {
             }
 
 
-            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
 
-                if(!(AbstractDungeon.getMonsters()).monsters.isEmpty())
-                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                    if (monster instanceof Ouroboros) {
-                        ((Ouroboros) monster).renderAbove(sb);
+                if ((AbstractDungeon.getMonsters()).monsters != null)
+                    if (!(AbstractDungeon.getMonsters()).monsters.isEmpty())
+                    for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                        if (monster instanceof Ouroboros) {
+                            ((Ouroboros) monster).renderAbove(sb);
+                        }
+
+                        if (monster instanceof PlagaAMundoMinion)
+                            ((PlagaAMundoMinion) monster).renderAbove(sb);
+
                     }
-
-                    if (monster instanceof PlagaAMundoMinion)
-                        ((PlagaAMundoMinion) monster).renderAbove(sb);
-
-                }
+            }
 
 
         }

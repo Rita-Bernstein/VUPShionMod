@@ -35,7 +35,7 @@ public class OppressiveSword extends AbstractWCCard {
 
     public OppressiveSword() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 12;
+        this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = 2;
     }
 
@@ -67,7 +67,7 @@ public class OppressiveSword extends AbstractWCCard {
                     addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, 12 * effect)));
                     baseDamage = this.magicNumber * effect;
                     calculateCardDamage(m);
-                    addToTop(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+                    addToTop(new DamageAction(m, new DamageInfo(p, this.damage * effect, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 };
                 addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
 //                addToBot(new ApplyPowerAction(p, p, new OppressiveSwordPower(p, 1)));
@@ -89,10 +89,8 @@ public class OppressiveSword extends AbstractWCCard {
     public void calculateCardDamage(AbstractMonster mo) {
         int trueDamage = this.baseDamage;
 
-        if (this.timesUpgraded <= 1) {
-            if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                this.baseDamage = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * this.magicNumber;
-        }
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+            this.baseDamage = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * this.magicNumber;
 
         super.calculateCardDamage(mo);
 

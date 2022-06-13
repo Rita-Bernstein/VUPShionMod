@@ -1,0 +1,438 @@
+
+Background_ZYLJX_idle.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+Opai
+  rotate: true
+  xy: 2831, 4
+  size: 260, 117
+  orig: 260, 117
+  offset: 0, 0
+  index: -1
+Opai_HX
+  rotate: true
+  xy: 3929, 1422
+  size: 257, 161
+  orig: 257, 161
+  offset: 0, 0
+  index: -1
+arm_L_sidai1
+  rotate: true
+  xy: 4059, 174
+  size: 66, 31
+  orig: 66, 31
+  offset: 0, 0
+  index: -1
+arm_L_sidai2
+  rotate: true
+  xy: 4030, 594
+  size: 182, 62
+  orig: 182, 62
+  offset: 0, 0
+  index: -1
+arm_R_sidai1
+  rotate: true
+  xy: 4059, 242
+  size: 90, 33
+  orig: 90, 33
+  offset: 0, 0
+  index: -1
+arm_R_sidai2
+  rotate: false
+  xy: 1806, 277
+  size: 208, 68
+  orig: 208, 68
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 2, 2031
+  size: 2550, 2063
+  orig: 2550, 2063
+  offset: 0, 0
+  index: -1
+background_zhuangshi2
+  rotate: true
+  xy: 2554, 1681
+  size: 2413, 1510
+  orig: 2413, 1510
+  offset: 0, 0
+  index: -1
+background_zhuangshi3
+  rotate: false
+  xy: 2, 347
+  size: 2550, 1682
+  orig: 2550, 1682
+  offset: 0, 0
+  index: -1
+body_armor
+  rotate: true
+  xy: 3929, 505
+  size: 271, 99
+  orig: 271, 99
+  offset: 0, 0
+  index: -1
+body_armor_DL
+  rotate: true
+  xy: 1025, 9
+  size: 74, 100
+  orig: 74, 100
+  offset: 0, 0
+  index: -1
+body_armor_DL2
+  rotate: true
+  xy: 317, 6
+  size: 72, 285
+  orig: 72, 285
+  offset: 0, 0
+  index: -1
+body_armor_DL3
+  rotate: true
+  xy: 2950, 16
+  size: 94, 126
+  orig: 94, 126
+  offset: 0, 0
+  index: -1
+body_armor_DR
+  rotate: true
+  xy: 921, 2
+  size: 81, 102
+  orig: 81, 102
+  offset: 0, 0
+  index: -1
+body_armor_DR2
+  rotate: true
+  xy: 3929, 1148
+  size: 272, 157
+  orig: 272, 157
+  offset: 0, 0
+  index: -1
+body_lightwings_main_BC
+  rotate: false
+  xy: 2016, 280
+  size: 104, 65
+  orig: 104, 65
+  offset: 0, 0
+  index: -1
+body_lightwings_main_BLD
+  rotate: false
+  xy: 1557, 276
+  size: 247, 69
+  orig: 247, 69
+  offset: 0, 0
+  index: -1
+body_lightwings_main_BLU
+  rotate: false
+  xy: 631, 5
+  size: 288, 78
+  orig: 288, 78
+  offset: 0, 0
+  index: -1
+body_lightwings_main_BRD
+  rotate: false
+  xy: 2571, 4
+  size: 235, 65
+  orig: 235, 65
+  offset: 0, 0
+  index: -1
+body_lightwings_main_BRU
+  rotate: false
+  xy: 1199, 2
+  size: 288, 103
+  orig: 288, 103
+  offset: 0, 0
+  index: -1
+body_main_armor
+  rotate: false
+  xy: 3853, 5
+  size: 204, 327
+  orig: 204, 327
+  offset: 0, 0
+  index: -1
+body_main_armor_HX
+  rotate: true
+  xy: 1199, 107
+  size: 238, 356
+  orig: 238, 356
+  offset: 0, 0
+  index: -1
+body_qunbai_BC
+  rotate: true
+  xy: 3084, 44
+  size: 288, 767
+  orig: 288, 767
+  offset: 0, 0
+  index: -1
+eyes_meimao_L
+  rotate: true
+  xy: 4085, 453
+  size: 44, 9
+  orig: 44, 9
+  offset: 0, 0
+  index: -1
+eyes_meimao_R
+  rotate: false
+  xy: 3929, 495
+  size: 41, 8
+  orig: 41, 8
+  offset: 0, 0
+  index: -1
+eyes_yanjiao
+  rotate: true
+  xy: 4059, 27
+  size: 145, 10
+  orig: 145, 10
+  offset: 0, 0
+  index: -1
+hair_B
+  rotate: true
+  xy: 3084, 495
+  size: 1184, 843
+  orig: 1184, 843
+  offset: 0, 0
+  index: -1
+hair_F
+  rotate: false
+  xy: 317, 80
+  size: 312, 265
+  orig: 312, 265
+  offset: 0, 0
+  index: -1
+hair_F_shadow
+  rotate: true
+  xy: 2950, 112
+  size: 152, 126
+  orig: 152, 126
+  offset: 0, 0
+  index: -1
+hair_binjiao_R
+  rotate: true
+  xy: 3929, 778
+  size: 178, 142
+  orig: 178, 142
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1557, 57
+  size: 207, 1012
+  orig: 207, 1012
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: true
+  xy: 3084, 334
+  size: 159, 999
+  orig: 159, 999
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 2122, 284
+  size: 61, 117
+  orig: 61, 117
+  offset: 0, 0
+  index: -1
+neck_armor
+  rotate: true
+  xy: 4030, 499
+  size: 93, 62
+  orig: 93, 62
+  offset: 0, 0
+  index: -1
+wings_F
+  rotate: true
+  xy: 2554, 266
+  size: 1413, 528
+  orig: 1413, 528
+  offset: 0, 0
+  index: -1
+wings_L
+  rotate: true
+  xy: 2, 63
+  size: 282, 313
+  orig: 282, 313
+  offset: 0, 0
+  index: -1
+wings_R
+  rotate: false
+  xy: 631, 85
+  size: 566, 260
+  orig: 566, 260
+  offset: 0, 0
+  index: -1
+wings_penqi_L
+  rotate: true
+  xy: 2571, 71
+  size: 193, 258
+  orig: 193, 258
+  offset: 0, 0
+  index: -1
+wings_penqi_R
+  rotate: true
+  xy: 3929, 958
+  size: 188, 146
+  orig: 188, 146
+  offset: 0, 0
+  index: -1
+
+Background_ZYLJX_idle2.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+LOGO
+  rotate: true
+  xy: 3971, 3199
+  size: 407, 93
+  orig: 407, 93
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: false
+  xy: 3450, 330
+  size: 534, 395
+  orig: 534, 395
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2554, 827
+  size: 914, 741
+  orig: 914, 741
+  offset: 0, 0
+  index: -1
+body_armor_DR3
+  rotate: false
+  xy: 3836, 3491
+  size: 133, 115
+  orig: 133, 115
+  offset: 0, 0
+  index: -1
+body_armor_light
+  rotate: false
+  xy: 3836, 3822
+  size: 222, 93
+  orig: 222, 93
+  offset: 0, 0
+  index: -1
+body_qunbai_BL
+  rotate: false
+  xy: 2975, 8
+  size: 473, 717
+  orig: 473, 717
+  offset: 0, 0
+  index: -1
+body_qunbai_BR
+  rotate: false
+  xy: 2554, 38
+  size: 419, 787
+  orig: 419, 787
+  offset: 0, 0
+  index: -1
+body_qunbai_LB
+  rotate: true
+  xy: 3470, 727
+  size: 841, 550
+  orig: 841, 550
+  offset: 0, 0
+  index: -1
+hair_binjiao_L
+  rotate: false
+  xy: 3836, 3608
+  size: 184, 121
+  orig: 184, 121
+  offset: 0, 0
+  index: -1
+hair_fashi
+  rotate: false
+  xy: 3836, 3731
+  size: 192, 89
+  orig: 192, 89
+  offset: 0, 0
+  index: -1
+hair_fashi2
+  rotate: true
+  xy: 2, 2
+  size: 360, 168
+  orig: 360, 168
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 3836, 3917
+  size: 173, 249
+  orig: 173, 249
+  offset: 0, 0
+  index: -1
+light_line2
+  rotate: false
+  xy: 2, 364
+  size: 2550, 1661
+  orig: 2550, 1661
+  offset: 0, 0
+  index: -1
+wings_C
+  rotate: true
+  xy: 2554, 1570
+  size: 2520, 1280
+  orig: 2520, 1280
+  offset: 0, 0
+  index: -1
+zhezhao
+  rotate: false
+  xy: 2, 2027
+  size: 2550, 2063
+  orig: 2550, 2063
+  offset: 0, 0
+  index: -1
+
+Background_ZYLJX_idle3.png
+size: 4096,4096
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+arm_L
+  rotate: false
+  xy: 2554, 83
+  size: 455, 399
+  orig: 455, 399
+  offset: 0, 0
+  index: -1
+background_shadow
+  rotate: true
+  xy: 2554, 484
+  size: 2550, 780
+  orig: 2550, 780
+  offset: 0, 0
+  index: -1
+background_shadow2
+  rotate: false
+  xy: 2, 2
+  size: 2550, 377
+  orig: 2550, 377
+  offset: 0, 0
+  index: -1
+background_zhuangshi
+  rotate: false
+  xy: 2, 381
+  size: 2550, 991
+  orig: 2550, 991
+  offset: 0, 0
+  index: -1
+body_qunbai_RB
+  rotate: true
+  xy: 3336, 2179
+  size: 855, 437
+  orig: 855, 437
+  offset: 0, 0
+  index: -1
+light_line
+  rotate: false
+  xy: 2, 1374
+  size: 2550, 1660
+  orig: 2550, 1660
+  offset: 0, 0
+  index: -1

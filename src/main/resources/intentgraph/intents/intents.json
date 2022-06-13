@@ -430,5 +430,70 @@
         }
       ]
     }
+  },
+  "VUPShionMod:Ouroboros":  {
+    "width": 5,
+    "height": 3,
+    "a0": {
+      "damages": [
+        {
+          "min": 1300
+        }
+      ],
+      "icons": [
+        {
+          "x": 4,
+          "y": 0,
+          "type": "ATTACK",
+          "damageIndex": 0
+        },
+        {
+          "x": 0.5,
+          "y": 0,
+          "type": "DEBUFF"
+        },
+        {
+          "x": 2,
+          "y": 1.5,
+          "type": "UNKNOWN"
+        },
+        {
+          "x": 0.5,
+          "y": 1.5,
+          "type": "BUFF"
+        }
+      ],
+      "iconGroups": [
+        {
+          "x": 0,
+          "y": 1.6,
+          "w": 3.5,
+          "h": 1.2
+        }
+      ],
+      "arrows": [
+        {
+          "path": [ 0, 1.5, 0.5, 4 ]
+        },
+        {
+          "path": [ 1, 4.5, 1, 2.3,3.5 ]
+        },
+        {
+          "path": [ 1, 1, 1.6, 1 ]
+        }
+      ],
+      "labels": [
+        {
+          "x": 2.5,
+          "y": 2.5,
+          "label": "Defect"
+        },
+        {
+          "x": 1,
+          "y": 2.5,
+          "label": "No Defect"
+        }
+      ]
+    }
   }
 }

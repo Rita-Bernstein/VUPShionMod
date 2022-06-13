@@ -47,4 +47,9 @@ public class MagiaCup extends AbstractShionRelic {
         AbstractDungeon.player.energy.energyMaster++;
         (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.25F;
     }
+
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic(PrototypeCup.ID);
+    }
 }

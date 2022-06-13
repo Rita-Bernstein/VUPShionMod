@@ -226,7 +226,7 @@
     "OPTIONS": [
       "[Approach]",
       "[Ignore]",
-      "[Steal] #gHeal #gto #gfull #gHP， #rEncounter #ra #rSpecial #rCombat.",
+      "[Steal] #rEncounter #ra #rSpecial #rCombat. #gObtain #gFruit #gCake.",
       "[Buy] #rLose #r%d #rgold. #gGain #g10 #yMax #gHP.",
       "[Locked] Require %d gold.",
       "[Sell] Sell your fruit to the maid",

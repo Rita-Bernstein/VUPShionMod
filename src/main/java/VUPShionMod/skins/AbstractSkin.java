@@ -60,7 +60,8 @@ public abstract class AbstractSkin {
 
 
     public void loadAnimation(float scale) {
-        portraitAtlas = new TextureAtlas(Gdx.files.internal(portraitAtlasPath + ".atlas"));
+        if (portraitAtlas == null)
+            portraitAtlas = new TextureAtlas(Gdx.files.internal(portraitAtlasPath + ".atlas"));
         SkeletonJson json = new SkeletonJson(portraitAtlas);
         json.setScale(Settings.scale * scale);
         portraitData = json.readSkeletonData(Gdx.files.internal(portraitAtlasPath + ".json"));
@@ -76,8 +77,7 @@ public abstract class AbstractSkin {
 
 
     public void setAnimation() {
-        portraitState.setAnimation(1, "fade_in", false);
-        portraitState.addAnimation(0, "idle", true, 0.0f);
+        SaveHelper.loadSettings();
     }
 
 
@@ -113,7 +113,8 @@ public abstract class AbstractSkin {
     public void setPos() {
     }
 
-    public void safeSwitch(){}
+    public void safeSwitch() {
+    }
 
     public void skeletonRender(SpriteBatch sb) {
         sb.end();

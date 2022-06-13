@@ -51,6 +51,7 @@ public class OriShion extends AbstractSkin {
 
     @Override
     public void setAnimation() {
+        super.setAnimation();
         if (SaveHelper.safeCampfire)
             portraitState.setAnimation(0, "idle_HX", true);
         else

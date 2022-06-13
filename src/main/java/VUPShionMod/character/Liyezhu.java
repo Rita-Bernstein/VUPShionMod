@@ -9,7 +9,7 @@ import VUPShionMod.powers.Shion.DelayAvatarPower;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
 import VUPShionMod.stances.SpiritStance;
-import VUPShionMod.vfx.LiyezhuVictoryEffect;
+import VUPShionMod.vfx.victory.LiyezhuVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

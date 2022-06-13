@@ -295,5 +295,124 @@
     "DESCRIPTIONS": [
       "#r替換魔能刃：丹楹刻。 NL 不再獲得 #y硬直。 NL 打出 #y攻擊牌 將獲得 #y魔能過載 並額外打出一次。 NL 每回合失去一半的 #y劍意 。"
     ]
+  },
+  "VUPShionMod:TrainingScabbard": {
+    "NAME": "訓練用劍鞘",
+    "FLAVOR": "Anastasia訓練場的裝備，為什麼會在這裡？",
+    "DESCRIPTIONS": [
+      " #y精英 或 #y首領 戰後，隨機 #y升級 牌組中的一張攻擊牌。"
+    ]
+  },
+  "VUPShionMod:TrainingLightsaber": {
+    "NAME": "訓練用光劍",
+    "FLAVOR": "Anastasia訓練場的裝備，為什麼會在這裡？",
+    "DESCRIPTIONS": [
+      "每場戰鬥開始時, #y力量 #b%s 。 #y精英 或 #y首領 戰後，將效果 #b+1 。"
+    ]
+  },
+  "VUPShionMod:FishingRod": {
+    "NAME": "釣魚佬的竿",
+    "FLAVOR": "似乎是某人的釣魚竿，但年代看上去很久遠了。",
+    "DESCRIPTIONS": [
+      "進入 #y休息處 時，隨機獲得 #b0-2 瓶藥水。"
+    ]
+  },
+  "VUPShionMod:PodBot": {
+    "NAME": "pod機器人",
+    "FLAVOR": "Anastasia仿製的微型輔助機器人，為什麼會在這裡？",
+    "DESCRIPTIONS": [
+      "每回合開始時給予隨機一名敵人 #b1 層 #y虛弱 。"
+    ]
+  },
+  "VUPShionMod:OldFinFunnel": {
+    "NAME": "老舊的浮游炮",
+    "FLAVOR": "應該是紫音的浮游炮，但看上去似乎很舊了。",
+    "DESCRIPTIONS": [
+      "每回合開始時，對隨機敵人造成 #b4 ，獲得 #b4 點 #y格擋 。"
+    ]
+  },
+  "VUPShionMod:DragonScales": {
+    "NAME": "龍龍的舊鱗",
+    "FLAVOR": "似乎是龍龍的鱗片，但年代看上去很久遠了。",
+    "DESCRIPTIONS": [
+      "每當你在戰鬥中失去生命，獲得 #b3 點 #y格擋 。"
+    ]
+  },
+  "VUPShionMod:WingsClergy": {
+    "NAME": "聖職者的殘翼",
+    "FLAVOR": "似乎是藍藍的翅膀的一部分，但看上去似乎很舊了。",
+    "DESCRIPTIONS": [
+      "每場戰鬥開始時，獲得 #b3 層 #y再生 。"
+    ]
+  },
+  "VUPShionMod:OldOmamori": {
+    "NAME": "老舊的全新御守",
+    "FLAVOR": "背面寫著：「這次不會卡二了，大概」。似乎是龍龍的筆跡。",
+    "DESCRIPTIONS": [
+      "拾起時，移除 #b2 張初始攻擊牌。"
+    ]
+  },
+  "VUPShionMod:BlankMap": {
+    "NAME": "老舊的空白地圖",
+    "FLAVOR": "背面寫著：「我們需要更多的，變數」。似乎是龍龍的筆跡。",
+    "DESCRIPTIONS": [
+      "進入問號房時，獲得 #b18 金幣。"
+    ]
+  },
+  "VUPShionMod:CombatNotes": {
+    "NAME": "小棉的戰鬥筆記",
+    "FLAVOR": "似乎是小棉的筆跡，記錄了各種常見怪物。但看上去似乎很舊了 。",
+    "DESCRIPTIONS": [
+      "在普通戰鬥中，每回合開始時獲得 [E] 。"
+    ]
+  },
+  "VUPShionMod:AttackCircuit": {
+    "NAME": "植入型攻擊迴路",
+    "FLAVOR": "Anastasia特化改造組件，為什麼會在這裡？",
+    "DESCRIPTIONS": [
+      "拾起時，選擇移除一張 #y攻擊牌 。 NL 在每場戰鬥開始時，打出這張牌的複製。"
+    ]
+  },
+  "VUPShionMod:TotipotentCircuit": {
+    "NAME": "植入型全能迴路",
+    "FLAVOR": "Anastasia進階改造組件，為什麼會在這裡？",
+    "DESCRIPTIONS": [
+      "拾起時，選擇移除一張牌。 NL 在每場戰鬥開始時，打出這張牌的複製。"
+    ]
+  },
+  "VUPShionMod:MedicalCollar": {
+    "NAME": "應急醫療項圈",
+    "FLAVOR": "Anastasia訓練場的裝備，為什麼會在這裡？",
+    "DESCRIPTIONS": [
+      "每場抽到 #y狀態 或 #y詛咒 牌時，抽一張牌。"
+    ]
+  },
+  "VUPShionMod:CardRecorder": {
+    "NAME": "懷表型記牌器",
+    "FLAVOR": "指針似乎在亂動，應該是壞掉了。",
+    "DESCRIPTIONS": [
+      "若你在某個回合打出的牌大於等於 #b6 張，則在你的下個回合開始時額外抽 #b3 張牌。"
+    ]
+  },
+  "VUPShionMod:Memento": {
+    "NAME": "扭曲的記憶碎片",
+    "FLAVOR": "似乎是祈言凝結的實體，但是被某種意志扭曲成了難以理解的結構。",
+    "DESCRIPTIONS": [
+      "每回合開始時獲得 [E] , 失去 #b2 點生命。"
+    ]
+  },
+  "VUPShionMod:TimeConfetti": {
+    "NAME": "扭曲的時間碎片",
+    "FLAVOR": "似乎包含了龍龍的力量，但是被某種意志扭曲成了難以理解的結構。",
+    "DESCRIPTIONS": [
+      "每回合開始時失去 [E] 。 每場戰鬥開始時獲得 #y迴響形態 。"
+    ]
+  },
+  "VUPShionMod:BladeFragment": {
+    "NAME": "扭曲的劍刃碎片",
+    "FLAVOR": "似乎在散發著劍意力量，但是被某種意志扭曲成了難以理解的結構。",
+    "DESCRIPTIONS": [
+      "每回合開始時失去 [E] 。 每場戰鬥開始時打出並 #y消耗 你牌組中的所有基礎攻擊和防禦牌。"
+    ]
   }
 }

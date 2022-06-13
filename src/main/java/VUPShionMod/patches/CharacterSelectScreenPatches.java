@@ -26,6 +26,7 @@ public class CharacterSelectScreenPatches {
         @SpirePostfixPatch
         public static void Postfix(CharacterSelectScreen __instance) {
             SaveHelper.loadSkins();
+
             skinManager.initialize();
         }
     }

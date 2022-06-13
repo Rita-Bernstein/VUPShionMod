@@ -80,4 +80,9 @@ public class MagiaSwordRuby extends AbstractShionRelic {
         (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.25F;
     }
 
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic(MagiaSwordRed.ID);
+    }
+
 }

@@ -2,8 +2,8 @@ package VUPShionMod.prayers;
 
 
 import VUPShionMod.actions.Liyezhu.RemoveSpecificPrayerAction;
-import VUPShionMod.vfx.FlashPrayerEffect;
-import VUPShionMod.vfx.GainPrayerEffect;
+import VUPShionMod.vfx.Liyezhu.FlashPrayerEffect;
+import VUPShionMod.vfx.Liyezhu.GainPrayerEffect;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;

@@ -4,7 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

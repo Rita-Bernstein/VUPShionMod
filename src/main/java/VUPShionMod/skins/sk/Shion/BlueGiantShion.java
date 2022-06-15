@@ -3,8 +3,10 @@ package VUPShionMod.skins.sk.Shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
+import VUPShionMod.cards.ShionCard.minami.TacticalLink;
 import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.cards.ShionCard.shion.Strafe;
+import VUPShionMod.cards.ShionCard.shion.Strafe2;
 import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
 import VUPShionMod.relics.Shion.BlueGiant;
 import VUPShionMod.relics.Shion.ConcordArray;
@@ -94,9 +96,9 @@ public class BlueGiantShion extends AbstractSkin {
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
         retVal.add(Defend_Shion.ID);
-        retVal.add(TacticalLayout.ID);
+        retVal.add(TacticalLink.ID);
         retVal.add(FinFunnelUpgrade.ID);
-        retVal.add(Strafe.ID);
+        retVal.add(Strafe2.ID);
 
         return retVal;
     }

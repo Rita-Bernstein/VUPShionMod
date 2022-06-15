@@ -1,6 +1,6 @@
 package VUPShionMod.actions.Shion;
 
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

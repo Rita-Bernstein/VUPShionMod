@@ -310,6 +310,13 @@
       "每场战斗开始时, #y力量 #b%s 。 #y精英 或 #y首领 战后，将效果 #b+1 。"
     ]
   },
+  "VUPShionMod:TrainingPropeller": {
+    "NAME": "训练用推进器",
+    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "DESCRIPTIONS": [
+      "每场战斗开始时, #y敏捷 #b%s 。 #y精英 或 #y首领 战后，将效果 #b+1 。"
+    ]
+  },
   "VUPShionMod:FishingRod": {
     "NAME": "钓鱼佬的竿",
     "FLAVOR": "似乎是某人的钓鱼竿，但年代看上去很久远了。",
@@ -318,7 +325,7 @@
     ]
   },
   "VUPShionMod:PodBot": {
-    "NAME": "pod机器人",
+    "NAME": "快乐的pod机器人",
     "FLAVOR": "Anastasia仿制的微型辅助机器人，为什么会在这里？",
     "DESCRIPTIONS": [
       "每回合开始时给予随机一名敌人 #b1 层 #y虚弱 。"
@@ -370,21 +377,25 @@
     "NAME": "植入型攻击回路",
     "FLAVOR": "Anastasia特化改造组件，为什么会在这里？",
     "DESCRIPTIONS": [
-      "拾起时，选择移除一张 #y攻击牌 。 NL 在每场战斗开始时，打出这张牌的复制。"
+      "拾起时，选择移除一张 #y攻击牌 。 NL 在每场战斗开始时，打出这张牌的复制。",
+      "每场战斗开始时将 #y%s 打出。",
+      "选择一张攻击牌在战斗开始时打出"
     ]
   },
   "VUPShionMod:TotipotentCircuit": {
     "NAME": "植入型全能回路",
     "FLAVOR": "Anastasia进阶改造组件，为什么会在这里？",
     "DESCRIPTIONS": [
-      "拾起时，选择移除一张牌。 NL 在每场战斗开始时，打出这张牌的复制。"
+      "拾起时，选择移除一张牌。 NL 在每场战斗开始时，打出这张牌的复制。",
+      "每场战斗开始时将 #y%s 打出。",
+      "选择一张牌在战斗开始时打出"
     ]
   },
   "VUPShionMod:MedicalCollar": {
     "NAME": "应急医疗项圈",
     "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
     "DESCRIPTIONS": [
-      "每场抽到 #y状态 或 #y诅咒 牌时，抽一张牌。"
+      "每当抽到 #y状态 或 #y诅咒 牌时，抽一张牌。"
     ]
   },
   "VUPShionMod:CardRecorder": {
@@ -412,7 +423,7 @@
     "NAME": "扭曲的剑刃碎片",
     "FLAVOR": "似乎在散发着剑意力量，但是被某种意志扭曲成了难以理解的结构。",
     "DESCRIPTIONS": [
-      "每回合开始时失去 [E] 。 每场战斗开始时打出并 #y消耗 你牌组中的所有基础攻击和防御牌。"
+      "每场战斗开始时失去 [E] [E] [E] 。 NL 每场战斗开始时打出并 #y消耗 你牌组中的所有基础攻击和防御牌。"
     ]
   }
 }

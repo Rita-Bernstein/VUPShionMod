@@ -1385,5 +1385,14 @@
       "Crescent Dash",
       "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness."
     ]
+  },
+  "VUPShionMod:Strafe2": {
+    "NAME": "Strafe",
+    "DESCRIPTION": "vup_shion_mod:Fire vup_shion_mod:Funnel. NL Deal !D! damage to ALL enemies."
+  },
+  "VUPShionMod:TacticalLink": {
+    "NAME": "Tactical Link",
+    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Add *Quick *Attack to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Add *Quick *Attack and *Quick *Defense to your draw pile."
   }
 }

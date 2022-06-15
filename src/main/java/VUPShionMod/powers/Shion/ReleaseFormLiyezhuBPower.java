@@ -2,8 +2,7 @@ package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
-import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

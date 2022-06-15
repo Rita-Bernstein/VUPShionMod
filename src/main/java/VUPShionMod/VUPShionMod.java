@@ -23,6 +23,7 @@ import VUPShionMod.relics.Event.*;
 import VUPShionMod.relics.Liyezhu.HallowedCase;
 import VUPShionMod.relics.Liyezhu.Inhibitor;
 import VUPShionMod.relics.Liyezhu.MartyrVessel;
+import VUPShionMod.relics.Share.*;
 import VUPShionMod.relics.Shion.*;
 import VUPShionMod.relics.Wangchuan.*;
 import VUPShionMod.skins.AbstractSkin;
@@ -459,7 +460,8 @@ public class VUPShionMod implements
         cards.add(new EnduranceInitiation());
         cards.add(new AttackPreparation());
         cards.add(new SpeedShot());
-        cards.add(new Strafe());
+//        cards.add(new Strafe());
+        cards.add(new Strafe2());
         cards.add(new EnhancedWeapon());
         cards.add(new Boot());
         cards.add(new FirstStrike());
@@ -493,6 +495,7 @@ public class VUPShionMod implements
         cards.add(new AttackWithDefense());
         cards.add(new LockIndication());
         cards.add(new TacticalLayout());
+        cards.add(new TacticalLink());
         cards.add(new FinFunnelSupport());
         cards.add(new SuperCharge());
         cards.add(new Anticoagulation());
@@ -789,8 +792,31 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new Inhibitor(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new UnknownDust(), CardColorEnum.Liyezhu_LIME);
 
+//共享遗物
+        BaseMod.addRelic(new TrainingScabbard(), RelicType.SHARED);
+        BaseMod.addRelic(new TrainingLightsaber(), RelicType.SHARED);
+        BaseMod.addRelic(new TrainingPropeller(), RelicType.SHARED);
+        BaseMod.addRelic(new FishingRod(), RelicType.SHARED);
+        BaseMod.addRelic(new PodBot(), RelicType.SHARED);
+        BaseMod.addRelic(new OldFinFunnel(), RelicType.SHARED);
+        BaseMod.addRelic(new DragonScales(), RelicType.SHARED);
+        BaseMod.addRelic(new WingsClergy(), RelicType.SHARED);
+        BaseMod.addRelic(new OldOmamori(), RelicType.SHARED);
+        BaseMod.addRelic(new BlankMap(), RelicType.SHARED);
+        BaseMod.addRelic(new CombatNotes(), RelicType.SHARED);
+        BaseMod.addRelic(new AttackCircuit(), RelicType.SHARED);
+        BaseMod.addRelic(new TotipotentCircuit(), RelicType.SHARED);
+        BaseMod.addRelic(new MedicalCollar(), RelicType.SHARED);
+        BaseMod.addRelic(new CardRecorder(), RelicType.SHARED);
+        BaseMod.addRelic(new Memento(), RelicType.SHARED);
+        BaseMod.addRelic(new TimeConfetti(), RelicType.SHARED);
+        BaseMod.addRelic(new BladeFragment(), RelicType.SHARED);
+
+//       事件遗物
         BaseMod.addRelic(new FragmentsOfFaith(), RelicType.SHARED);
         BaseMod.addRelic(new FruitCake(), RelicType.SHARED);
+
+
 
     }
 

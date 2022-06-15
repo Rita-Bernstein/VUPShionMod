@@ -1386,5 +1386,30 @@
       "月牙天冲",
       "造成 vup_shion_mod:剑意 层数 !M! 倍的伤害。 NL 每点 vup_shion_mod:硬直 转化成4层 vup_shion_mod:剑意 。 NL 获得1层 vup_shion_mod:硬直 "
     ]
+  },
+  "VUPShionMod:CommandAlpha": {
+    "NAME": "指令：查打一体",
+    "DESCRIPTION": " 虚无 。 NL vup_shion_mod:流血 效果将额外触发一次。 NL 不与其他指令共存。"
+  },
+  "VUPShionMod:CommandBeta": {
+    "NAME": "指令：连锁追击",
+    "DESCRIPTION": " 虚无 。 NL 每当给予 vup_shion_mod:追击 时，抽一张牌。 NL 不与其他指令共存。"
+  },
+  "VUPShionMod:CommandGamma": {
+    "NAME": "指令：广域解析",
+    "DESCRIPTION": " 虚无 。 NL *构造解析 将给予所有敌人。 NL 不与其他指令共存。"
+  },
+  "VUPShionMod:CommandDelta": {
+    "NAME": "指令：重力漩涡",
+    "DESCRIPTION": " 虚无 。 NL 触发 *重力 vup_shion_mod:浮游炮 被动效果时，本回合所有敌人失去2点 #y力量 。 NL 不与其他指令共存。"
+  },
+  "VUPShionMod:Strafe2": {
+    "NAME": "扫射",
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:点射 。 NL 对所有敌人造成 !D! 点伤害。"
+  },
+  "VUPShionMod:TacticalLink": {
+    "NAME": "战术链接",
+    "DESCRIPTION": "触发 vup_shion_mod:浮游炮 的被动效果 NL 获得 !M! 层 vup_shion_mod:超维链接 。 NL 将 *快速攻击 加入抽牌堆。",
+    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:浮游炮 的被动效果 NL 获得 !M! 层 vup_shion_mod:超维链接 。 NL 将 *快速攻击 和 *快速防御 加入抽牌堆。"
   }
 }

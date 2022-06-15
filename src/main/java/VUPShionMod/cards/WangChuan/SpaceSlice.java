@@ -1,32 +1,21 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.powers.Wangchuan.SpatialTearPower;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
-import basemod.cardmods.ExhaustMod;
-import basemod.helpers.CardModifierManager;
-import com.badlogic.gdx.math.MathUtils;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 public class SpaceSlice extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(SpaceSlice.class.getSimpleName());
@@ -111,7 +100,7 @@ public class SpaceSlice extends AbstractWCCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(2);
-                upgradeMagicNumber(1);
+                upgradeMagicNumber(2);
             }
         }
     }

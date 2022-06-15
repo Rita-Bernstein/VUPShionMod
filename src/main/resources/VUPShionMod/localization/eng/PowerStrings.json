@@ -317,7 +317,7 @@
   "VUPShionMod:PoisePower": {
     "NAME": "Poise",
     "DESCRIPTIONS": [
-      "Whenever you play an Attack, draw #b%d cards. NL You no longer gain #yStiffness."
+      "Whenever you play an Attack, draw #b%d cards. NL Whenever you gain #yStiffness,gain #b1 stack less."
     ]
   },
   "VUPShionMod:PetalsFallPower": {
@@ -737,8 +737,8 @@
   "VUPShionMod:FlyPower": {
     "NAME": "Flying",
     "DESCRIPTIONS": [
-      "The first #b%d #yattacks received each turn deal #b50% less damage.",
-      "The first #b%d #yattacks received each turn deal #b50% less damage."
+      "The first #b%d #yattacks received each turn deal #b50%% less damage.",
+      "The first #b%d #yattacks received each turn deal #b50%% less damage."
     ]
   },
   "VUPShionMod:SiegePower": {

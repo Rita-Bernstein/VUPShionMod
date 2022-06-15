@@ -6,7 +6,7 @@ import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.powers.Wangchuan.MorsLibraquePower;
 import VUPShionMod.powers.Common.NoSkillsPower;
 import VUPShionMod.powers.Wangchuan.TurnObruorPower;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

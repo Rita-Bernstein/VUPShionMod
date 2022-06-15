@@ -7,8 +7,8 @@ import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Shion.*;
 import VUPShionMod.relics.Shion.DimensionSplitterAria;
-import VUPShionMod.vfx.FinFunnelBeamEffect;
-import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
+import VUPShionMod.vfx.Shion.FinFunnelBeamEffect;
+import VUPShionMod.vfx.Shion.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -160,6 +160,22 @@ public abstract class AbstractFinFunnel {
             if (triggerPassive) {
                 powerToApply(target);
             }
+        }
+    }
+
+
+    public void activeFire(AbstractCreature target, int[] multiDamage, boolean triggerPassive, int loopTimes) {
+        addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
+        for (int i = 0; i < loopTimes; i++)
+            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+
+        if (triggerPassive) {
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
+                for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                    if (!mo.isDeadOrEscaped()) {
+                        powerToApply(mo);
+                    }
+                }
         }
     }
 

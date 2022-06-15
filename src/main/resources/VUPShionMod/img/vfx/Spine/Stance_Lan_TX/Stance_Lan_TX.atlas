@@ -1,0 +1,55 @@
+
+Stance_Lan_TX.png
+size: 4096,512
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+TX_R_I
+  rotate: false
+  xy: 2, 40
+  size: 658, 76
+  orig: 658, 76
+  offset: 0, 0
+  index: -1
+TX_R_O
+  rotate: false
+  xy: 1511, 335
+  size: 1173, 122
+  orig: 1173, 122
+  offset: 0, 0
+  index: -1
+TX_SZJ_CT
+  rotate: false
+  xy: 2, 286
+  size: 1507, 171
+  orig: 1507, 171
+  offset: 0, 0
+  index: -1
+TX_SZJ_D
+  rotate: false
+  xy: 2, 118
+  size: 1505, 166
+  orig: 1505, 166
+  offset: 0, 0
+  index: -1
+TX_lizi1
+  rotate: false
+  xy: 2686, 270
+  size: 966, 187
+  orig: 966, 187
+  offset: 0, 0
+  index: -1
+TX_lizi2
+  rotate: false
+  xy: 1511, 239
+  size: 482, 94
+  orig: 482, 94
+  offset: 0, 0
+  index: -1
+TX_lizi3
+  rotate: false
+  xy: 662, 2
+  size: 588, 114
+  orig: 588, 114
+  offset: 0, 0
+  index: -1

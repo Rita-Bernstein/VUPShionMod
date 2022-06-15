@@ -1,21 +1,14 @@
 package VUPShionMod.actions.Shion;
 
-import VUPShionMod.actions.Common.GainShieldAction;
-import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.finfunnels.GravityFinFunnel;
-import VUPShionMod.finfunnels.InvestigationFinFunnel;
-import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.Shion.*;
-import VUPShionMod.vfx.AllFinFunnelBeamEffect;
-import VUPShionMod.vfx.AllFinFunnelSmallLaserEffect;
+import VUPShionMod.vfx.Shion.AllFinFunnelBeamEffect;
+import VUPShionMod.vfx.Shion.AllFinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

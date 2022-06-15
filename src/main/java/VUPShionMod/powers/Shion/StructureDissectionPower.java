@@ -10,22 +10,19 @@ import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Monster.RitaShop.DefenceMonsterPower;
 import VUPShionMod.powers.Monster.TimePortal.ContortTimePower;
 import VUPShionMod.powers.Monster.TimePortal.SubspacePursuerPower;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.EnemyData;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -34,12 +31,10 @@ import com.megacrit.cardcrawl.monsters.beyond.Deca;
 import com.megacrit.cardcrawl.monsters.beyond.Donu;
 import com.megacrit.cardcrawl.monsters.beyond.TimeEater;
 import com.megacrit.cardcrawl.monsters.city.BronzeAutomaton;
-import com.megacrit.cardcrawl.monsters.city.BronzeOrb;
 import com.megacrit.cardcrawl.monsters.city.Champ;
 import com.megacrit.cardcrawl.monsters.city.TheCollector;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.vfx.combat.HealEffect;
 
 public class StructureDissectionPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("StructureDissectionPower");
@@ -163,9 +158,9 @@ public class StructureDissectionPower extends AbstractShionPower {
                     this.description += String.format(DESCRIPTIONS[12], m.name, SubspacePursuerPower.NAME);
                     return;
                 }
-            }
-            this.description += String.format(DESCRIPTIONS[14], m.name);
 
+                this.description += String.format(DESCRIPTIONS[14], m.name);
+            }
 
         }
 

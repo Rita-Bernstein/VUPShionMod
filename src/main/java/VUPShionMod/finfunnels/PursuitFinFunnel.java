@@ -5,7 +5,7 @@ import VUPShionMod.actions.Shion.DamageAndApplyPursuitAction;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.*;
 import VUPShionMod.util.SaveHelper;
-import VUPShionMod.vfx.FinFunnelSmallLaserEffect;
+import VUPShionMod.vfx.Shion.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

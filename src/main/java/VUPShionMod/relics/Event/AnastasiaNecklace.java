@@ -201,7 +201,6 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
             int amount = (m.getPower(PursuitPower.POWER_ID)).amount;
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 flash();
-                addToBot(new RelicAboveCreatureAction(m, this));
                 addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new PursuitPower(null, amount), amount, false, AbstractGameAction.AttackEffect.NONE));
             }
 
@@ -209,7 +208,6 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
                 int amount2 = (m.getPower(BleedingPower.POWER_ID)).amount;
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     flash();
-                    addToBot(new RelicAboveCreatureAction(m, this));
                     addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new BleedingPower(null, AbstractDungeon.player, amount2), amount2, false, AbstractGameAction.AttackEffect.NONE));
                 }
             }

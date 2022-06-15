@@ -26,9 +26,9 @@ public class FruitCake extends AbstractShionRelic {
     }
 
     @Override
-    public void obtain() {
-        super.obtain();
-//        AchievementPatches.unlockAchievement("RitaShop");
+    public void onEquip() {
+        super.onEquip();
+        //        AchievementPatches.unlockAchievement("RitaShop");
     }
 
     @Override

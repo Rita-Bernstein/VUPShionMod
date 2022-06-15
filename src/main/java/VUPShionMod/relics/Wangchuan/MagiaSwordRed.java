@@ -1,6 +1,7 @@
 package VUPShionMod.relics.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.BetterDamageRandomEnemyAction;
 import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
@@ -44,8 +45,8 @@ public class MagiaSwordRed extends AbstractShionRelic {
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (info.type == DamageInfo.DamageType.NORMAL)
-            addToBot(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, 4, DamageInfo.DamageType.THORNS),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            addToBot(new BetterDamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, 4, DamageInfo.DamageType.THORNS),
+                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL,true));
     }
 
     @Override

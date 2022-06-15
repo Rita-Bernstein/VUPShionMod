@@ -2,17 +2,13 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
-import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
-import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
-import VUPShionMod.powers.Wangchuan.SpatialTearPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;

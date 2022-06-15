@@ -2,7 +2,7 @@ package VUPShionMod.helpers;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerAllFinFunnelAction;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

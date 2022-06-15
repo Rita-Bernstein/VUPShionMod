@@ -1,5 +1,6 @@
 package VUPShionMod.patches;
 
+import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
 import VUPShionMod.powers.Monster.PlagaAMundo.DestroyPower;
@@ -91,6 +92,20 @@ public class PatchStunPower {
             m.createIntent();
             m.applyPowers();
             return SpireReturn.Return(null);
+        }
+
+
+        if(__instance.owner instanceof RitaShop){
+            AbstractMonster m = (AbstractMonster)__instance.owner;
+
+            if(___moveByte == 99){
+                m.setMove((byte) 99, AbstractMonster.Intent.UNKNOWN);
+                m.createIntent();
+                m.applyPowers();
+                return SpireReturn.Return(null);
+            }
+
+
         }
 
         return SpireReturn.Continue();

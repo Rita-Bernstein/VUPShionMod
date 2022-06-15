@@ -8,6 +8,7 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.helpers.ChargeHelper;
+import VUPShionMod.vfx.Common.AbstractSpineEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -108,7 +110,22 @@ public class AbstractPlayerPatches {
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                 AddFields.finFunnelManager.get(player).onVictory();
             }
+
+            for(AbstractGameEffect effect : AbstractDungeon.effectList){
+                if(effect instanceof AbstractSpineEffect){
+                    effect.isDone = true;
+                }
+            }
+
+            for(AbstractGameEffect effect : AbstractDungeon.topLevelEffects){
+                if(effect instanceof AbstractSpineEffect){
+                    effect.isDone = true;
+                }
+            }
+
+
         }
+
     }
 
     @SpirePatch(

@@ -8,7 +8,7 @@ import VUPShionMod.patches.SpecialCombatPatches;
 import VUPShionMod.powers.Monster.TimePortal.*;
 import VUPShionMod.powers.Shion.ReinsOfWarPower;
 import VUPShionMod.relics.Event.FragmentsOfFaith;
-import VUPShionMod.vfx.OuroborosLaserBeamEffect;
+import VUPShionMod.vfx.Monster.OuroborosLaserBeamEffect;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.Gdx;
@@ -99,6 +99,11 @@ public class Ouroboros extends CustomMonster {
 
         this.state.setAnimation(0, "timebug_out", false);
         this.state.addAnimation(0, "timebug_idle", true, 0.0f);
+
+        if (!this.isDefect) {
+            this.state.setAnimation(1, "lightwing_open", false);
+            this.state.addAnimation(1, "lightwing_idle", true, 0.0f);
+        }
 
         this.fireBone = this.skeleton.findBone("weapon1_bone");
 
@@ -249,6 +254,7 @@ public class Ouroboros extends CustomMonster {
 
             GameCursor.hidden = true;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NO_INTERACT;
+            AbstractDungeon.isScreenUp = true;
         }
 
 
@@ -258,7 +264,7 @@ public class Ouroboros extends CustomMonster {
     public void changeState(String stateName) {
         switch (stateName) {
             case "Fire_Ready":
-                if (!this.isDefect) {
+                if (this.isDefect) {
                     this.state.setAnimation(1, "lightwing_open", false);
                     this.state.addAnimation(1, "lightwing_idle", true, 0.0f);
                 }
@@ -273,14 +279,12 @@ public class Ouroboros extends CustomMonster {
                 this.state.addAnimation(0, "timebug_idle", true, 0.0f);
 
                 this.charging = false;
-//                if (!this.isDefect)
-//                    this.state.setAnimation(2, "lightwing_attack_ready", false);
                 break;
             case "Fire_Attack2":
                 this.state.setAnimation(3, "attack_fire_cold_down", false);
 
 
-                if (!this.isDefect)
+                if (this.isDefect)
                     this.state.setAnimation(1, "lightwing_drop", false);
                 break;
 
@@ -362,6 +366,7 @@ public class Ouroboros extends CustomMonster {
 
             GameCursor.hidden = false;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NONE;
+            AbstractDungeon.isScreenUp = false;
 
             (AbstractDungeon.getCurrRoom()).cannotLose = false;
             die();

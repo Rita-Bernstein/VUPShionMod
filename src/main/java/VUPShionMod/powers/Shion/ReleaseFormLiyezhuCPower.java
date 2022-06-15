@@ -2,19 +2,14 @@ package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ReleaseFormLiyezhuCPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID("ReleaseFormLiyezhuCPower");

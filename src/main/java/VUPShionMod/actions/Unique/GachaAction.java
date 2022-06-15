@@ -1,7 +1,7 @@
 package VUPShionMod.actions.Unique;
 
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
-import VUPShionMod.vfx.GachaEffect;
+import VUPShionMod.vfx.Monster.GachaEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;

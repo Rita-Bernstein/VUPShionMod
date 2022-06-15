@@ -3,7 +3,7 @@ package VUPShionMod.cards.ShionCard.shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ChangeCostAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
-import VUPShionMod.vfx.AbstractAtlasGameEffect;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

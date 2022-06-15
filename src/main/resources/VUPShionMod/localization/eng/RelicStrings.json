@@ -296,5 +296,136 @@
     "DESCRIPTIONS": [
       "#rReplace Magia Sword: Danyingke. NL You no longer gain #yStiffness. NL Whenever you play an #yAttack, gain 1 #yMagiam #yObruor and play it for 1 additional time. NL Lose half of your #yCor #yGladii each turn."
     ]
+  },
+
+  "VUPShionMod:TrainingScabbard": {
+    "NAME": "训练用剑鞘",
+    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "DESCRIPTIONS": [
+      " #y精英 或 #y首领 战后，随机 #y升级 牌组中的一张攻击牌。"
+    ]
+  },
+  "VUPShionMod:TrainingLightsaber": {
+    "NAME": "训练用光剑",
+    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "DESCRIPTIONS": [
+      "每场战斗开始时, #y力量 #b%s 。 #y精英 或 #y首领 战后，将效果 #b+1 。"
+    ]
+  },
+  "VUPShionMod:TrainingPropeller": {
+    "NAME": "训练用推进器",
+    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "DESCRIPTIONS": [
+      "每场战斗开始时, #y敏捷 #b%s 。 #y精英 或 #y首领 战后，将效果 #b+1 。"
+    ]
+  },
+  "VUPShionMod:FishingRod": {
+    "NAME": "钓鱼佬的竿",
+    "FLAVOR": "似乎是某人的钓鱼竿，但年代看上去很久远了。",
+    "DESCRIPTIONS": [
+      "进入 #y休息处 时，随机获得 #b0-2 瓶药水。"
+    ]
+  },
+  "VUPShionMod:PodBot": {
+    "NAME": "快乐的pod机器人",
+    "FLAVOR": "Anastasia仿制的微型辅助机器人，为什么会在这里？",
+    "DESCRIPTIONS": [
+      "每回合开始时给予随机一名敌人 #b1 层 #y虚弱 。"
+    ]
+  },
+  "VUPShionMod:OldFinFunnel": {
+    "NAME": "老旧的浮游炮",
+    "FLAVOR": "应该是紫音的浮游炮，但看上去似乎很旧了。",
+    "DESCRIPTIONS": [
+      "每回合开始时，对随机敌人造成 #b4 ，获得 #b4 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:DragonScales": {
+    "NAME": "龙龙的旧鳞",
+    "FLAVOR": "似乎是龙龙的鳞片，但年代看上去很久远了。",
+    "DESCRIPTIONS": [
+      "每当你在战斗中失去生命，获得 #b3 点 #y格挡 。"
+    ]
+  },
+  "VUPShionMod:WingsClergy": {
+    "NAME": "圣职者的残翼",
+    "FLAVOR": "似乎是蓝蓝的翅膀的一部分，但看上去似乎很旧了。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，获得 #b3 层 #y再生 。"
+    ]
+  },
+  "VUPShionMod:OldOmamori": {
+    "NAME": "老旧的全新御守",
+    "FLAVOR": "背面写着：“这次不会卡二了，大概”。似乎是龙龙的笔迹。",
+    "DESCRIPTIONS": [
+      "拾起时，移除 #b2 张初始攻击牌。"
+    ]
+  },
+  "VUPShionMod:BlankMap": {
+    "NAME": "老旧的空白地图",
+    "FLAVOR": "背面写着：“我们需要更多的，变数”。似乎是龙龙的笔迹。",
+    "DESCRIPTIONS": [
+      "进入问号房时，获得 #b18 金币。"
+    ]
+  },
+  "VUPShionMod:CombatNotes": {
+    "NAME": "小棉的战斗笔记",
+    "FLAVOR": "似乎是小棉的笔迹，记录了各种常见怪物。但看上去似乎很旧了 。",
+    "DESCRIPTIONS": [
+      "在普通战斗中，每回合开始时获得 [E] 。"
+    ]
+  },
+  "VUPShionMod:AttackCircuit": {
+    "NAME": "植入型攻击回路",
+    "FLAVOR": "Anastasia特化改造组件，为什么会在这里？",
+    "DESCRIPTIONS": [
+      "拾起时，选择移除一张 #y攻击牌 。 NL 在每场战斗开始时，打出这张牌的复制。",
+      "每场战斗开始时将 #y%s 打出。",
+      "选择一张攻击牌在战斗开始时打出"
+    ]
+  },
+  "VUPShionMod:TotipotentCircuit": {
+    "NAME": "植入型全能回路",
+    "FLAVOR": "Anastasia进阶改造组件，为什么会在这里？",
+    "DESCRIPTIONS": [
+      "拾起时，选择移除一张牌。 NL 在每场战斗开始时，打出这张牌的复制。",
+      "每场战斗开始时将 #y%s 打出。",
+      "选择一张牌在战斗开始时打出"
+    ]
+  },
+  "VUPShionMod:MedicalCollar": {
+    "NAME": "应急医疗项圈",
+    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "DESCRIPTIONS": [
+      "每当抽到 #y状态 或 #y诅咒 牌时，抽一张牌。"
+    ]
+  },
+  "VUPShionMod:CardRecorder": {
+    "NAME": "怀表型记牌器",
+    "FLAVOR": "指针似乎在乱动，应该是坏掉了。",
+    "DESCRIPTIONS": [
+      "若你在某个回合打出的牌大于等于 #b6 张，则在你的下个回合开始时额外抽 #b3 张牌。"
+    ]
+  },
+  "VUPShionMod:Memento": {
+    "NAME": "扭曲的记忆碎片",
+    "FLAVOR": "似乎是祈言凝结的实体，但是被某种意志扭曲成了难以理解的结构。",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 [E] , 失去 #b2 点生命。"
+    ]
+  },
+  "VUPShionMod:TimeConfetti": {
+    "NAME": "扭曲的时间碎片",
+    "FLAVOR": "似乎包含了龙龙的力量，但是被某种意志扭曲成了难以理解的结构。",
+    "DESCRIPTIONS": [
+      "每回合开始时失去 [E] 。 每场战斗开始时获得 #y回响形态 。"
+    ]
+  },
+  "VUPShionMod:BladeFragment": {
+    "NAME": "扭曲的剑刃碎片",
+    "FLAVOR": "似乎在散发着剑意力量，但是被某种意志扭曲成了难以理解的结构。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时失去 [E] [E] [E] 。 NL 每场战斗开始时打出并 #y消耗 你牌组中的所有基础攻击和防御牌。"
+    ]
   }
 }

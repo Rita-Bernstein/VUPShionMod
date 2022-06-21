@@ -5,13 +5,18 @@ import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.*;
 import VUPShionMod.util.SaveHelper;
+import VUPShionMod.vfx.Common.AbstractSpineEffect;
+import com.esotericsoftware.spine.AnimationState;
 import com.esotericsoftware.spine.Skeleton;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+
+import java.util.function.Consumer;
 
 public class GravityFinFunnel extends AbstractFinFunnel {
     public static final String ID = GravityFinFunnel.class.getSimpleName();
@@ -66,6 +71,14 @@ public class GravityFinFunnel extends AbstractFinFunnel {
             addToBot(new GainShieldAction(AbstractDungeon.player, getFinalEffect(), true));
         else
             addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+
+        Consumer<AnimationState> stateConsumer = state -> {
+            state.setAnimation(0, "ZL2_GH5", false);
+        };
+
+        addToBot(new VFXAction(new AbstractSpineEffect(true,
+                "VUPShionMod/img/vfx/Spine/ZL_GH2/ZL_GH2", AbstractDungeon.player.hb.cX,  AbstractDungeon.player.hb.y, 3.0f * Settings.scale,
+                3.0f, 10.0f, stateConsumer)));
 
         super.powerToApply(target);
     }

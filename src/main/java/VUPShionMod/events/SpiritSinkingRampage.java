@@ -4,6 +4,9 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.Event.SapphireRoseNecklace;
+import VUPShionMod.relics.Liyezhu.DemonSword;
+import VUPShionMod.relics.Liyezhu.QueenShield;
+import VUPShionMod.relics.Liyezhu.TimeReversalBullet;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,8 +14,8 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.ObtainKeyEffect;
 
-public class DaysGoneBy extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID(DaysGoneBy.class.getSimpleName());
+public class SpiritSinkingRampage extends AbstractImageEvent {
+    public static final String ID = VUPShionMod.makeID(SpiritSinkingRampage.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
@@ -25,12 +28,11 @@ public class DaysGoneBy extends AbstractImageEvent {
     }
 
 
-    public DaysGoneBy() {
-        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/DaysGoneBy.png"));
-        this.imageEventText.setDialogOption(OPTIONS[0]);
-        this.imageEventText.setDialogOption(OPTIONS[1], new SapphireRoseNecklace());
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
-            this.imageEventText.setDialogOption(OPTIONS[2]);
+    public SpiritSinkingRampage() {
+        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/SpiritSinkingRampage.png"));
+        this.imageEventText.setDialogOption(OPTIONS[0], new TimeReversalBullet());
+        this.imageEventText.setDialogOption(OPTIONS[1], new DemonSword());
+        this.imageEventText.setDialogOption(OPTIONS[2], new QueenShield());
     }
 
 
@@ -45,20 +47,24 @@ public class DaysGoneBy extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
-                        AbstractDungeon.topLevelEffects.add(new ObtainKeyEffect(ObtainKeyEffect.KeyColor.RED));
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, new TimeReversalBullet());
+                        logMetricObtainRelic(NAME, "Power", new SapphireRoseNecklace());
+                        this.imageEventText.loadImage("VUPShionMod/img/events/SpiritSinkingRampage1.png");
                         break;
 
                     case 1:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, new SapphireRoseNecklace());
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, new DemonSword());
                         logMetricObtainRelic(NAME, "Power", new SapphireRoseNecklace());
+                        this.imageEventText.loadImage("VUPShionMod/img/events/LostEquipment.png");
                         break;
 
 
                     case 2:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[3]);
-                        EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(30);
-                        logMetricObtainRelic(NAME, "Recall", new SapphireRoseNecklace());
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, new QueenShield());
+                        logMetricObtainRelic(NAME, "Power", new SapphireRoseNecklace());
+                        this.imageEventText.loadImage("VUPShionMod/img/events/LostEquipment.png");
                         break;
                 }
 

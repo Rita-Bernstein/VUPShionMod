@@ -431,5 +431,26 @@
     "DESCRIPTIONS": [
       "每场战斗开始时失去 [E] [E] [E] 。 NL 每场战斗开始时打出并 #y消耗 你牌组中的所有基础攻击和防御牌。"
     ]
+  },
+  "VUPShionMod:TimeReversalBullet": {
+    "NAME": "时间逆回之弹",
+    "FLAVOR": "这是一息尚存的她，能为自己善良的妹妹提供的最后一次反击。",
+    "DESCRIPTIONS": [
+      "下次将要死亡时免死并回复 #b1 点生命。 NL 击杀所有非首领敌人。 NL 仅能生效一次。"
+    ]
+  },
+  "VUPShionMod:DemonSword": {
+    "NAME": "魔王佩剑之影",
+    "FLAVOR": "这是背道而驰的她，能为自己无助的姐姐提供的最后一份帮助。",
+    "DESCRIPTIONS": [
+      "每当你造成 #y攻击伤害 时，获得 #b1 点 #y临时力量 。"
+    ]
+  },
+  "VUPShionMod:QueenShield": {
+    "NAME": "深海女神之盾",
+    "FLAVOR": "这是自认卑微的她，能为自己天真的姐姐提供的最后一层保护。",
+    "DESCRIPTIONS": [
+      "每当你受到伤害时，立刻获得 #b6 点 #y格挡。"
+    ]
   }
 }

@@ -150,26 +150,7 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
 
     @Override
     public boolean onPlayerDeath(AbstractPlayer abstractPlayer, DamageInfo damageInfo) {
-        boolean canTrigger = false;
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (m.id.equals(PlagaAMundoMinion.ID) || m.id.equals(TimePortal.ID) || m.id.equals(Ouroboros.ID)) {
-                canTrigger = true;
-                break;
-            }
-        }
-
-        for (AbstractRelic relic : AbstractDungeon.player.relics) {
-            if (relic.relicId.equals(LizardTail.ID) && relic.counter != -2) {
-                canTrigger = false;
-                break;
-            }
-        }
-
-        if (AbstractDungeon.player.hasPotion(FairyPotion.POTION_ID))
-            canTrigger = false;
-
-
-        if (!triggered && canTrigger) {
+        if (!triggered && AnastasiaNecklace.eventRelicCanTrigger()) {
             for (AbstractRelic relic : AbstractDungeon.player.relics) {
                 if (relic instanceof AbyssalCrux) {
                     ((AbyssalCrux) relic).dontHeal = true;

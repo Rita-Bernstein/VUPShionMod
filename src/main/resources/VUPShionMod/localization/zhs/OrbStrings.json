@@ -102,7 +102,7 @@
   },
   "VUPShionMod:SinPrayer": {
     "DESCRIPTION": [
-      " #y所有人 获得 #b%d 层 #y罪孽 。"
+      "所有敌人获得 #b%d 层 #y罪孽 。"
     ],
     "NAME": "罪孽"
   },

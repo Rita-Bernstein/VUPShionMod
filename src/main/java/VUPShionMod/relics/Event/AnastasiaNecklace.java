@@ -15,6 +15,7 @@ import VUPShionMod.powers.Shion.BleedingPower;
 import VUPShionMod.powers.Monster.PlagaAMundo.LifeLinkPower;
 import VUPShionMod.powers.Shion.PursuitPower;
 import VUPShionMod.relics.AbstractShionRelic;
+import VUPShionMod.relics.Liyezhu.TimeReversalBullet;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -215,8 +216,7 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
         }
     }
 
-    @Override
-    public boolean onPlayerDeath(AbstractPlayer abstractPlayer, DamageInfo damageInfo) {
+    public static boolean eventRelicCanTrigger(){
         boolean canTrigger = false;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (m.id.equals(PlagaAMundoMinion.ID) || m.id.equals(TimePortal.ID) || m.id.equals(Ouroboros.ID)) {
@@ -230,13 +230,23 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
                 canTrigger = false;
                 break;
             }
+
+            if (relic.relicId.equals(TimeReversalBullet.ID) && relic.counter != -2) {
+                canTrigger = false;
+                break;
+            }
+
         }
 
         if (AbstractDungeon.player.hasPotion(FairyPotion.POTION_ID))
             canTrigger = false;
 
+        return canTrigger;
+    }
 
-        if (!triggered && canTrigger) {
+    @Override
+    public boolean onPlayerDeath(AbstractPlayer abstractPlayer, DamageInfo damageInfo) {
+        if (!triggered && eventRelicCanTrigger()) {
             CardCrawlGame.music.justFadeOutTempBGM();
             triggerRelic();
 

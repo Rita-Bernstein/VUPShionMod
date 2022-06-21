@@ -20,14 +20,14 @@ public class Arbitration extends AbstractLiyezhuCard {
     public Arbitration() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
             addToBot(new ApplyPowerAction(p, p, new Arbitration2Power(p, this.magicNumber)));
-            addToBot(new ApplyPowerAction(p, p, new Arbitration3Power(p, 10)));
+            addToBot(new ApplyPowerAction(p, p, new Arbitration3Power(p, 8)));
         } else
             addToBot(new ApplyPowerAction(p, p, new ArbitrationPower(p, this.magicNumber)));
     }

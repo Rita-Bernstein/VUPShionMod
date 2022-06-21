@@ -1,0 +1,13 @@
+
+ZL_GH2.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ZL_lightring1
+  rotate: false
+  xy: 2, 2
+  size: 884, 316
+  orig: 884, 316
+  offset: 0, 0
+  index: -1

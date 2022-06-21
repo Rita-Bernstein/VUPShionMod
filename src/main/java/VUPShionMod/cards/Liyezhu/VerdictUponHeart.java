@@ -15,7 +15,7 @@ public class VerdictUponHeart extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public VerdictUponHeart() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -29,13 +29,6 @@ public class VerdictUponHeart extends AbstractLiyezhuCard {
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new DuelSinAction());
 
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if(mo != null)
-            addToBot(new RemoveSpecificPowerAction(mo, p, SinPower.POWER_ID));
-        }
-
-        if(!p.isDeadOrEscaped())
-        addToBot(new RemoveSpecificPowerAction(p, p, SinPower.POWER_ID));
 
     }
 

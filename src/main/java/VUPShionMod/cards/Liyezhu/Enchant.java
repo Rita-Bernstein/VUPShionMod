@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,18 +23,22 @@ public class Enchant extends AbstractLiyezhuCard {
 
     private static final int COST = 0;
 
-    public Enchant() {
+    public Enchant(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 6;
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
     }
 
+    public Enchant() {
+        this(0);
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new LoseStrengthPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber)));
 
         if (p.hasPower(PsychicPower.POWER_ID)) {
             addToBot(new MakeTempCardInHandAction(new Enchant()));
@@ -43,9 +48,16 @@ public class Enchant extends AbstractLiyezhuCard {
 
     @Override
     public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeDamage(4);
-        }
+        upgradeDamage(4);
+        upgradeMagicNumber(1);
+        this.timesUpgraded++;
+        this.upgraded = true;
+        this.name = cardStrings.NAME + "+" + this.timesUpgraded;
+        initializeTitle();
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new Enchant(this.timesUpgraded);
     }
 }

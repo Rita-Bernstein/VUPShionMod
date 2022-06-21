@@ -20,9 +20,7 @@ import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.patches.*;
 import VUPShionMod.relics.Event.*;
-import VUPShionMod.relics.Liyezhu.HallowedCase;
-import VUPShionMod.relics.Liyezhu.Inhibitor;
-import VUPShionMod.relics.Liyezhu.MartyrVessel;
+import VUPShionMod.relics.Liyezhu.*;
 import VUPShionMod.relics.Share.*;
 import VUPShionMod.relics.Shion.*;
 import VUPShionMod.relics.Wangchuan.*;
@@ -46,10 +44,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import com.megacrit.cardcrawl.dungeons.TheCity;
-import com.megacrit.cardcrawl.dungeons.TheEnding;
+import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
@@ -291,6 +286,11 @@ public class VUPShionMod implements
 
         BaseMod.addEvent(new AddEventParams.Builder(DistantMemory.ID, DistantMemory.class) //Event ID//
                 .playerClass(AbstractPlayerEnum.Liyezhu)
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(SpiritSinkingRampage.ID, SpiritSinkingRampage.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.Liyezhu)
+                .spawnCondition(() -> !AbstractDungeon.id.equals(Exordium.ID))
                 .create());
 
 
@@ -740,6 +740,12 @@ public class VUPShionMod implements
         cards.add(new ShionEmbodiment());
 
 
+        cards.add(new LiXiaoNan());
+        cards.add(new LiYueSheng());
+        cards.add(new LiXiaoYa());
+        cards.add(new LiyezhuUpgradeCard());
+
+
         for (CustomCard card : cards) {
             BaseMod.addCard(card);
             UnlockTracker.unlockCard(card.cardID);
@@ -806,6 +812,9 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new AbyssalCrux(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new Inhibitor(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new UnknownDust(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new TimeReversalBullet(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new DemonSword(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new QueenShield(), CardColorEnum.Liyezhu_LIME);
 
 //共享遗物
         BaseMod.addRelic(new TrainingScabbard(), RelicType.SHARED);

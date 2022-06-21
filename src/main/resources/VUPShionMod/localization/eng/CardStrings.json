@@ -1434,5 +1434,28 @@
     "NAME": "防御指示",
     "DESCRIPTION": "本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。",
     "UPGRADE_DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。"
+  },
+
+  "VUPShionMod:LiXiaoNan": {
+    "NAME": "绝命·黎晓楠",
+    "DESCRIPTION": "失去最大生命一半的伤害。 NL 造成失去生命 NL X ( vup_shion_mod:沉灵 + vup_shion_mod:罪孽 ) NL X0.1的伤害。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "失去最大生命一半的伤害。 NL 造成失去生命 NL X ( vup_shion_mod:沉灵 + vup_shion_mod:罪孽 ) NL X0.2的伤害。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害）"
+    ]
+  },
+  "VUPShionMod:LiYueSheng": {
+    "NAME": "刻心·黎月笙",
+    "DESCRIPTION": "失去所有负面效果。 NL 每失去一个效果，你失去 !M! 点生命并获得 !VUPShionSecondM! 点 力量 。 NL 消耗 。"
+  },
+  "VUPShionMod:LiXiaoYa": {
+    "NAME": "愿景·黎晓雅",
+    "DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 进入 vup_shion_mod:祈言姿态 。 NL 将 *自我审判 加入手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 进入 vup_shion_mod:祈言姿态 。 NL 将 *圣躯代行 加入手牌。 NL 消耗 。"
+  },
+  "VUPShionMod:LiyezhuUpgradeCard": {
+    "NAME": "武装·升阶具现",
+    "DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 选择 升级 牌组中的一张牌 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 至多选择 升级 牌组中的两张牌。 NL 消耗 。"
   }
 }

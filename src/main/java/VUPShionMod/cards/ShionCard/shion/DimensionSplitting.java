@@ -28,55 +28,25 @@ public class DimensionSplitting extends AbstractShionCard {
     public DimensionSplitting() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
-        this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.selfRetain = true;
         this.isMultiDamage = true;
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = this.baseDamage;
-        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisCombat;
-        int ctr = 0;
-        for (AbstractCard card : cardList) {
-            if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
-                ctr++;
-            }
-        }
-        this.baseDamage += ctr * this.baseMagicNumber;
-        super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    @Override
-    public void applyPowers() {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         int realBaseDamage = this.baseDamage;
         List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         int ctr = 0;
         for (AbstractCard card : cardList) {
-            if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
+            if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
                 ctr++;
             }
         }
-        this.baseDamage += ctr * this.baseMagicNumber;
-        super.applyPowers();
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
+        this.baseDamage += ctr * this.magicNumber;
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+        calculateCardDamage(null);
+
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                 if (!monster.isDeadOrEscaped()) {
@@ -87,5 +57,51 @@ public class DimensionSplitting extends AbstractShionCard {
             }
         }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+
+        this.baseDamage = realBaseDamage;
+        this.rawDescription = DESCRIPTION;
+        initializeDescription();
+    }
+
+
+    @Override
+    public void applyPowers() {
+        int realBaseDamage = this.baseDamage;
+        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+        int ctr = 0;
+        for (AbstractCard card : cardList) {
+            if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
+                ctr++;
+            }
+        }
+        this.baseDamage += ctr * this.magicNumber;
+        super.applyPowers();
+        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        this.initializeDescription();
+
+        this.baseDamage = realBaseDamage;
+    }
+
+
+    public void onMoveToDiscard() {
+        this.rawDescription = DESCRIPTION;
+        initializeDescription();
+    }
+
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        this.rawDescription = DESCRIPTION;
+        this.rawDescription += EXTENDED_DESCRIPTION[0];
+        initializeDescription();
+    }
+
+
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeMagicNumber(1);
+        }
     }
 }

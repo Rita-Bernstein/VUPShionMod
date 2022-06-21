@@ -54,6 +54,7 @@ public class OldFinFunnel extends AbstractShionRelic {
 
         addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 4));
 
+        if(m != null)
         addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, 4,
                 DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 

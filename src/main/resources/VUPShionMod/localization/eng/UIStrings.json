@@ -132,5 +132,10 @@
       " NL NL While #ySanity is below #b50, gain #b3 #yVulnerable at the start of combat. NL Whenever you slay a non-minion enemy, lose #b1 Max HP.",
       " NL NL While #ySanity is below #b30, gain #b3 #yWeak at the start of combat. NL Whenever you slay a non-minion enemy, lose #b4 more Max HP. Whenever you gain #ySinful, gain #b1 more."
     ]
+  },
+  "VUPShionMod:UpgradeDeckAction": {
+    "TEXT": [
+      "Choose a card to upgrade."
+    ]
   }
 }

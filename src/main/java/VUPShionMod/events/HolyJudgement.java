@@ -56,7 +56,7 @@ public class HolyJudgement extends AbstractImageEvent {
                 }
 
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.setDialogOption(OPTIONS[3]);
+                this.imageEventText.setDialogOption(OPTIONS[2]);
                 this.curScreen = CurrentScreen.COMPLETE;
                 return;
             case COMPLETE:

@@ -5,7 +5,7 @@
   },
   "VUPShionMod:Defend_Shion": {
     "NAME": "防護",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。"
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 。 NL 獲得 !B! 點 格擋 。"
   },
   "VUPShionMod:DefenseSystemCharging": {
     "NAME": "防禦系統充能",
@@ -503,7 +503,7 @@
   },
   "VUPShionMod:SeverWrist": {
     "NAME": "腕切",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 虛弱 !VUPShionSecondM! 次。 NL 抽一張牌。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 其本回合失去1點 力量 !M! 次。 NL 抽一張牌。 NL 消耗 。"
   },
   "VUPShionMod:SeverAnkle": {
     "NAME": "足切",
@@ -665,8 +665,8 @@
   },
   "VUPShionMod:AnimaSpiritusque": {
     "NAME": "七之章：復甦",
-    "DESCRIPTION": "下回合獲得 !M! [E] 。 NL 獲得 !VUPShionSecondM! 層 *再生 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 下回合獲得 !M! [E] 。 NL 獲得 !VUPShionSecondM! 層 *再生 。 NL 消耗 。"
+    "DESCRIPTION": "失去所有負面效果。 NL 獲得 !VUPShionSecondM! 層 *再生 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 失去所有負面效果。 NL 獲得 !VUPShionSecondM! 層 *再生 。 NL 消耗 。"
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：覺醒",
@@ -1368,12 +1368,12 @@
   },
   "VUPShionMod:BreakChop": {
     "NAME": "破勢斬",
-    "DESCRIPTION": "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 如果敵人的意圖為攻擊，獲得 !B! 點 格擋 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌。",
-    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:劍意 點傷害。 NL 如果敵人的意圖為攻擊，獲得15層 vup_shion_mod:劍意 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌並失去1層 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 給予 虛弱 !M! 次 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌。",
+    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:劍意 點傷害。 NL 如果敵人的意圖為攻擊，給予 易傷 和 虛弱 !M! 次。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌並失去1層 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "破勢斬+",
       "流光劍勢",
-      "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 獲得 !B! 點 格擋 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌。",
+      "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 給予 虛弱 !M! 次 。 NL 獲得 vup_shion_mod:劍意 時，從棄牌堆返回手牌。",
       "敵人的意圖不是攻擊"
     ]
   },
@@ -1387,22 +1387,6 @@
       "造成 vup_shion_mod:劍意 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍意 。 NL 獲得1層 vup_shion_mod:硬直 "
     ]
   },
-  "VUPShionMod:CommandAlpha": {
-    "NAME": "指令：查打一體",
-    "DESCRIPTION": " 虛無 。 NL vup_shion_mod:流血 效果將額外觸發一次。 NL 不與其他指令共存。"
-  },
-  "VUPShionMod:CommandBeta": {
-    "NAME": "指令：連鎖追擊",
-    "DESCRIPTION": " 虛無 。 NL 每當給予 vup_shion_mod:追擊 時，抽一張牌。 NL 不與其他指令共存。"
-  },
-  "VUPShionMod:CommandGamma": {
-    "NAME": "指令：廣域解析",
-    "DESCRIPTION": " 虛無 。 NL *構造解析 將給予所有敵人。 NL 不與其他指令共存。"
-  },
-  "VUPShionMod:CommandDelta": {
-    "NAME": "指令：重力漩渦",
-    "DESCRIPTION": " 虛無 。 NL 觸發 *重力 vup_shion_mod:浮游炮 被動效果時，本回合所有敵人失去2點 #y力量 。 NL 不與其他指令共存。"
-  },
   "VUPShionMod:Strafe2": {
     "NAME": "掃射",
     "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:點射 。 NL 對所有敵人造成 !D! 點傷害。"
@@ -1411,5 +1395,40 @@
     "NAME": "戰術連結",
     "DESCRIPTION": "觸發 vup_shion_mod:浮游炮 的被動效果 NL 獲得 !M! 層 vup_shion_mod:超維連結 。 NL 將 *快速攻擊 加入抽牌堆。",
     "UPGRADE_DESCRIPTION": "觸發 vup_shion_mod:浮游炮 的被動效果 NL 獲得 !M! 層 vup_shion_mod:超維連結 。 NL 將 *快速攻擊 和 *快速防禦 加入抽牌堆。"
+  },
+  "VUPShionMod:StrikeIntegrated": {
+    "NAME": "指令：查打一體",
+    "DESCRIPTION": "觸發 *偵察 vup_shion_mod:浮游炮 的被動效果時，觸發一次 vup_shion_mod:流血 傷害。 NL 不與其他指令共存。 NL 不能疊加。"
+  },
+  "VUPShionMod:ChainPursuit": {
+    "NAME": "指令：連鎖追擊",
+    "DESCRIPTION": "觸發 *追擊 vup_shion_mod:浮游炮 的被動效果時，抽一張牌。 NL 不與其他指令共存。 NL 不能疊加。"
+  },
+  "VUPShionMod:AoeAnalysis": {
+    "NAME": "指令：廣域解析",
+    "DESCRIPTION": " *解析 vup_shion_mod:浮游炮 的被動效果對所有敵人生效。 NL 不與其他指令共存。 NL 不能疊加。"
+  },
+  "VUPShionMod:GravityVortex": {
+    "NAME": "指令：重力漩渦",
+    "DESCRIPTION": "觸發 *重力 vup_shion_mod:浮游炮 的被動效果時，所有敵人失去2點 *臨時 力量 。 NL 不與其他指令共存。 NL 不能疊加。"
+  },
+  "VUPShionMod:GravityRepression": {
+    "NAME": "連攜：重力壓制",
+    "DESCRIPTION": "觸發 *重力 vup_shion_mod:浮游炮 的被動效果時，觸發一次 *追擊 vup_shion_mod:浮游炮 的被動。 NL 不能疊加。"
+  },
+  "VUPShionMod:TrackingAnalysis": {
+    "NAME": "連攜：追蹤解析",
+    "DESCRIPTION": "觸發 *追擊 vup_shion_mod:浮游炮 的被動效果時，觸發一次 *解析 vup_shion_mod:浮游炮 的被動。 NL 不能疊加。"
+  },
+  "VUPShionMod:CollaborativeInvestigation": {
+    "NAME": "連攜：協同偵察",
+    "DESCRIPTION": "觸發除 *偵查 以外的 vup_shion_mod:浮游炮 被動效果時，觸發一次 *偵查 vup_shion_mod:浮游炮 的被動。 NL 不能疊加。"
+  },
+  "VUPShionMod:HyperDimensionalMatrix": {
+    "NAME": "激活：超維矩陣",
+    "DESCRIPTION": "保留 。 NL 失去所有 vup_shion_mod:超維連結 。 NL 每失去 !M! 層，本場戰鬥所有浮游炮的等級提高1。（至多15）",
+    "EXTENDED_DESCRIPTION": [
+      "超維連結層數不足"
+    ]
   }
 }

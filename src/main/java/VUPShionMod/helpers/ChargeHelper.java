@@ -1,7 +1,7 @@
 package VUPShionMod.helpers;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerAllFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerAllFinFunnelPassiveAction;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -144,7 +144,7 @@ public class ChargeHelper implements Disposable {
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-        AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelAction(true));
+        AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelPassiveAction(true));
     }
 
     @Override

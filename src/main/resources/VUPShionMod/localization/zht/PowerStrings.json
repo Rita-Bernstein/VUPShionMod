@@ -317,7 +317,7 @@
   "VUPShionMod:PoisePower": {
     "NAME": "緘默",
     "DESCRIPTIONS": [
-      "每當你打出一張 #y攻擊牌 ，抽 #b%d 張牌。 NL 你不會獲得 #y硬直 。"
+      "每當你打出一張 #y攻擊牌 ，抽 #b%d 張牌。 NL 減少 #b%d 層獲得的 #y硬直 。"
     ]
   },
   "VUPShionMod:PetalsFallPower": {
@@ -708,11 +708,11 @@
       "每回合開始時，根據你的 #y解析浮游炮 等級獲得效果：",
       " NL #b1-3 :給予 #b1 點 #y敏捷 。",
       " NL #b4-5 :給予 #b1 點 #y力量 和 #y敏捷 。",
-      " NL #b6-10 :給予 #b2 點 #y力量 和 #y敏捷 。",
-      " NL #b11-15 :給予 #b2 點 #y力量 和 #y超維連結 。",
-      " NL #b16-20 :給予 #b2 點 #y力量 、 #y超維連結 和 [E] 。",
-      " NL #b21-25 :給予 #b3 點 #y力量 、 #y超維連結 和 [E] 。",
-      " NL #b26及以上 :給予 #b3 點 #y力量 、 #y超維連結 和 [E] [E] 。"
+      " NL #b6-10 :給予 #b2 點 #y力量 和 #b1 點 #y敏捷 。",
+      " NL #b11-15 :給予 #b2 點 #y力量 和 #b2 點 #y敏捷 。",
+      " NL #b16-20 :給予 #b2 點 #y力量 、 #b2 點 #y敏捷 和 [E] 。",
+      " NL #b21-25 :給予 #b3 點 #y力量 、 #b2 點 #y敏捷 和 [E] 。",
+      " NL #b26及以上 :給予 #b3 點 #y力量 、 #b2 點 #y敏捷 和 [E] [E] 。"
     ]
   },
   "VUPShionMod:SpatialTearPower": {
@@ -829,6 +829,48 @@
     "NAME": "闊劍地雷設置",
     "DESCRIPTIONS": [
       "下次受到攻擊傷害時，對攻擊者造成 #b%d 點傷害。"
+    ]
+  },
+  "VUPShionMod:StrikeIntegratedPower": {
+    "NAME": "指令：查打一體",
+    "DESCRIPTIONS": [
+      "觸發 #y偵察浮游炮 的被動效果時，觸發一次 #y流血 傷害。 NL 不與其他指令共存。 NL 不能疊加。"
+    ]
+  },
+  "VUPShionMod:ChainPursuitPower": {
+    "NAME": "指令：連鎖追擊",
+    "DESCRIPTIONS": [
+      "觸發 #y追擊浮游炮 的被動效果時，抽一張牌。 NL 不與其他指令共存。 NL 不能疊加。"
+    ]
+  },
+  "VUPShionMod:AoeAnalysisPower": {
+    "NAME": "指令：廣域解析",
+    "DESCRIPTIONS": [
+      " #y解析浮游炮 的被動效果對所有敵人生效。 NL 不與其他指令共存。 NL 不能疊加。"
+    ]
+  },
+  "VUPShionMod:GravityVortexPower": {
+    "NAME": "指令：重力漩渦",
+    "DESCRIPTIONS": [
+      "觸發 #y重力浮游炮 的被動效果時，所有敵人失去 #b2 點 #y臨時力量 。 NL 不與其他指令共存。 NL 不能疊加。"
+    ]
+  },
+  "VUPShionMod:GravityRepressionPower": {
+    "NAME": "連攜：重力壓制",
+    "DESCRIPTIONS": [
+      "觸發 #y重力浮游炮 的被動效果時，觸發一次 #y追擊浮游炮 的被動。 NL 不能疊加。"
+    ]
+  },
+  "VUPShionMod:TrackingAnalysisPower": {
+    "NAME": "連攜：追蹤解析",
+    "DESCRIPTIONS": [
+      "觸發 #y追擊浮游炮 的被動效果時，觸發一次 #y解析浮游炮 的被動。 NL 不能疊加。"
+    ]
+  },
+  "VUPShionMod:CollaborativeInvestigationPower": {
+    "NAME": "連攜：協同偵察",
+    "DESCRIPTIONS": [
+      "觸發除 #y偵查 以外的 #y浮游炮 被動效果時，觸發一次 #y偵查浮游炮 的被動。 NL 不能疊加。"
     ]
   }
 }

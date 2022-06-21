@@ -1,11 +1,12 @@
 package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -13,12 +14,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@NoPools
 public class QuickDefend extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("QuickDefend");
+    public static final String ID = VUPShionMod.makeID(QuickDefend.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy09.png");
 
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 0;
@@ -31,7 +33,7 @@ public class QuickDefend extends AbstractVUPShionCard {
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.exhaust = true;
 
-        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
+//        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 
     @Override
@@ -49,6 +51,6 @@ public class QuickDefend extends AbstractVUPShionCard {
         addToBot(new SFXAction("SHION_9"));
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID));
     }
 }

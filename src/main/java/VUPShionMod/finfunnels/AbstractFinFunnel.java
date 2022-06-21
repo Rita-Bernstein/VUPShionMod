@@ -1,10 +1,12 @@
 package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Shion.DamageAndGainBlockAction;
 import VUPShionMod.actions.Shion.MoveFinFunnelSelectedEffectAction;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Shion.*;
 import VUPShionMod.relics.Shion.DimensionSplitterAria;
 import VUPShionMod.vfx.Shion.FinFunnelBeamEffect;
@@ -18,6 +20,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -28,7 +31,9 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
@@ -51,12 +56,14 @@ public abstract class AbstractFinFunnel {
     public float muzzle_Y = 0.0F;
     public Hitbox hb;
     protected float fontScale;
+    public Color renderColor = Settings.CREAM_COLOR.cpy();
 
 
     protected Bone body;
     protected Bone muzzle;
 
     public int level;
+    public int levelForCombat;
     public int effect;
 
     protected TextureAtlas atlas;
@@ -91,7 +98,15 @@ public abstract class AbstractFinFunnel {
     }
 
 
-    public abstract void updateDescription();
+    public void updateDescription() {
+        if (this.levelForCombat != this.level) {
+            this.description = String.format(CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(this.id)).DESCRIPTION[1],
+                    getLevel(), this.level, getFinalDamage(), getFinalEffect());
+        } else {
+            this.description = String.format(CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(this.id)).DESCRIPTION[0],
+                    getLevel(), getFinalDamage(), getFinalEffect());
+        }
+    }
 
     public void atTurnStart() {
     }
@@ -100,9 +115,19 @@ public abstract class AbstractFinFunnel {
     }
 
     public void upgradeLevel(int amount) {
+        this.level += amount;
+        this.levelForCombat += amount;
     }
 
     public void loseLevel(int amount) {
+        this.level -= amount;
+        if (this.level < 0)
+            this.level = 0;
+
+        this.levelForCombat -= amount;
+
+        if (this.levelForCombat < 0)
+            this.levelForCombat = 0;
     }
 
     public void setLevel(int amount) {
@@ -110,7 +135,7 @@ public abstract class AbstractFinFunnel {
     }
 
     public int getLevel() {
-        return this.level;
+        return this.levelForCombat;
     }
 
     public void onPursuitEnemy(AbstractCreature target) {
@@ -136,11 +161,19 @@ public abstract class AbstractFinFunnel {
 
     public void activeFire(AbstractCreature target, DamageInfo info, boolean triggerPassive, int loopTimes) {
         if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
-            addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
-            for (int i = 0; i < loopTimes; i++)
-                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(info.base,
-                        false), info.type, AbstractGameAction.AttackEffect.FIRE));
+            if (AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
+                int block = 0;
+                int[] damageInfo = DamageInfo.createDamageMatrix(info.base, false);
+                for (int i = 0; i <= damageInfo.length; i++)
+                    block += damageInfo[i];
 
+                addToBot(new GainShieldAction(AbstractDungeon.player, block * loopTimes));
+            } else {
+                addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
+                for (int i = 0; i < loopTimes; i++)
+                    addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(info.base,
+                            false), info.type, AbstractGameAction.AttackEffect.FIRE));
+            }
             if (triggerPassive) {
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
@@ -150,11 +183,16 @@ public abstract class AbstractFinFunnel {
                     }
             }
 
+
         } else {
-            addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
-            addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-            for (int i = 0; i < loopTimes; i++) {
-                addToBot(new DamageAction(target, info, AbstractGameAction.AttackEffect.FIRE));
+            if (AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
+                addToBot(new GainShieldAction(AbstractDungeon.player, info.output));
+            } else {
+                addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
+                addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
+                for (int i = 0; i < loopTimes; i++) {
+                    addToBot(new DamageAction(target, info, AbstractGameAction.AttackEffect.FIRE));
+                }
             }
 
             if (triggerPassive) {
@@ -186,7 +224,7 @@ public abstract class AbstractFinFunnel {
             addToBot(new VFXAction(AbstractDungeon.player, new FinFunnelBeamEffect(this, AbstractDungeon.player.flipHorizontal), 0.4F));
             for (int i = 0; i < loopTimes; i++)
                 addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), type, AbstractGameAction.AttackEffect.FIRE));
-            if (this.level > 0) {
+            if (getLevel() > 0) {
                 for (int i = 0; i < loopTimes; i++)
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                         powerToApply(mo);
@@ -206,7 +244,7 @@ public abstract class AbstractFinFunnel {
                     addToBot(new DamageAction(target, new DamageInfo(AbstractDungeon.player, damage, type)));
 
 
-            if (this.level > 0) {
+            if (getLevel() > 0) {
                 for (int i = 0; i < loopTimes; i++)
                     powerToApply(target);
             }
@@ -238,6 +276,7 @@ public abstract class AbstractFinFunnel {
     public void updatePosition(Skeleton skeleton) {
     }
 
+
     public void render(SpriteBatch sb) {
         if (this.atlas != null) {
             sb.setColor(Color.WHITE);
@@ -262,16 +301,17 @@ public abstract class AbstractFinFunnel {
 
 
     protected void renderText(SpriteBatch sb) {
-        if (!AbstractDungeon.player.isDeadOrEscaped())
+        if (!AbstractDungeon.player.isDeadOrEscaped()) {
             if (AbstractDungeon.player.flipHorizontal) {
-                FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level),
+                FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(getLevel()),
                         this.cX + 24.0F * Settings.scale, this.cY - 12.0F * Settings.scale,
-                        new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+                        this.level == this.levelForCombat ? this.renderColor : new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
             } else {
-                FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(this.level),
+                FontHelper.renderFontCentered(sb, FontHelper.cardEnergyFont_L, Integer.toString(getLevel()),
                         this.cX - 24.0F * Settings.scale, this.cY - 12.0F * Settings.scale,
-                        new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
+                        this.level == this.levelForCombat ? this.renderColor : new Color(0.2F, 1.0F, 1.0F, 1.0F), this.fontScale);
             }
+        }
     }
 
     protected void addToBot(AbstractGameAction action) {
@@ -288,18 +328,24 @@ public abstract class AbstractFinFunnel {
 
     public abstract int getFinalEffect();
 
-    public abstract void powerToApply(AbstractCreature target);
+    public void powerToApply(AbstractCreature target) {
+        for (AbstractPower power : AbstractDungeon.player.powers) {
+            if (power instanceof AbstractShionPower) {
+                ((AbstractShionPower) power).onTriggerFinFunnel(this, target);
+            }
+        }
+    }
 
     public int getFinalDamage() {
-        return (this.level - 1) / 2 + 1;
+        return (getLevel() - 1) / 2 + 1;
     }
 
 
     public static int calculateTotalFinFunnelLevel() {
         int ret = 0;
         if (AbstractDungeon.player != null) {
-            if (!AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList.isEmpty()) {
-                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
+            if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
+                List<AbstractFinFunnel> funnelList = FinFunnelManager.getFinFunnelList();
                 for (AbstractFinFunnel funnel : funnelList) {
                     ret += funnel.getLevel();
                 }

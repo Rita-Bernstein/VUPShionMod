@@ -708,11 +708,11 @@
       "每回合开始时，根据你的 #y解析浮游炮 等级获得效果：",
       " NL #b1-3 :给予 #b1 点 #y敏捷 。",
       " NL #b4-5 :给予 #b1 点 #y力量 和 #y敏捷 。",
-      " NL #b6-10 :给予 #b2 点 #y力量 和 #y敏捷 。",
-      " NL #b11-15 :给予 #b2 点 #y力量 和 #y超维链接 。",
-      " NL #b16-20 :给予 #b2 点 #y力量 、 #y超维链接 和 [E] 。",
-      " NL #b21-25 :给予 #b3 点 #y力量 、 #y超维链接 和 [E] 。",
-      " NL #b26及以上 :给予 #b3 点 #y力量 、 #y超维链接 和 [E] [E] 。"
+      " NL #b6-10 :给予 #b2 点 #y力量 和 #b1 点 #y敏捷 。",
+      " NL #b11-15 :给予 #b2 点 #y力量 和 #b2 点 #y敏捷 。",
+      " NL #b16-20 :给予 #b2 点 #y力量 、 #b2 点 #y敏捷 和 [E] 。",
+      " NL #b21-25 :给予 #b3 点 #y力量 、 #b2 点 #y敏捷 和 [E] 。",
+      " NL #b26及以上 :给予 #b3 点 #y力量 、 #b2 点 #y敏捷 和 [E] [E] 。"
     ]
   },
   "VUPShionMod:SpatialTearPower": {
@@ -829,6 +829,55 @@
     "NAME": "阔剑地雷设置",
     "DESCRIPTIONS": [
       "下次受到攻击伤害时，对攻击者造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:StrikeIntegratedPower": {
+    "NAME": "指令：查打一体",
+    "DESCRIPTIONS": [
+      "触发 #y侦察浮游炮 的被动效果时，触发一次 #y流血 伤害。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:ChainPursuitPower": {
+    "NAME": "指令：连锁追击",
+    "DESCRIPTIONS": [
+      "触发 #y追击浮游炮 的被动效果时，抽一张牌。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:AoeAnalysisPower": {
+    "NAME": "指令：广域解析",
+    "DESCRIPTIONS": [
+      " #y解析浮游炮 的被动效果对所有敌人生效。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:GravityVortexPower": {
+    "NAME": "指令：重力漩涡",
+    "DESCRIPTIONS": [
+      "触发 #y重力浮游炮 的被动效果时，所有敌人失去 #b2 点 #y临时力量 。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:GravityRepressionPower": {
+    "NAME": "连携：重力压制",
+    "DESCRIPTIONS": [
+      "触发 #y重力浮游炮 的被动效果时，触发一次 #y追击浮游炮 的被动。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:TrackingAnalysisPower": {
+    "NAME": "连携：追踪解析",
+    "DESCRIPTIONS": [
+      "触发 #y追击浮游炮 的被动效果时，触发一次 #y解析浮游炮 的被动。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:CollaborativeInvestigationPower": {
+    "NAME": "连携：协同侦察",
+    "DESCRIPTIONS": [
+      "触发除 #y侦查 以外的 #y浮游炮 被动效果时，触发一次 #y侦查浮游炮 的被动。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:DefensiveOrderPower": {
+    "NAME": "防御指示",
+    "DESCRIPTIONS": [
+      "本回合所有 #y流血 、 #y追击 伤害变为获得等量 #y格挡 ， NL #y浮游炮 主动造成的伤害替换为获得等量 #y护盾 。",
+      "接下来的 #b%d 个回合所有 #y流血 、 #y追击 伤害变为获得等量 #y格挡 ， NL #y浮游炮 主动造成的伤害替换为获得等量 #y护盾 。"
     ]
   }
 }

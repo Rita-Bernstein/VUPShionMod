@@ -1,9 +1,14 @@
 package VUPShionMod.relics.Shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.Codex.TwoAttackPower;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
 import VUPShionMod.powers.Shion.ConcordPower;
+import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.stances.PrayerStance;
 import com.badlogic.gdx.graphics.Texture;
@@ -44,6 +49,7 @@ public class ConcordSnipe extends AbstractShionRelic {
         else
             this.tips.add(new PowerTip(DESCRIPTIONS[1], String.format(DESCRIPTIONS[3], this.counter - 50, this.counter - 50)));
 
+        this.tips.add(new PowerTip(DESCRIPTIONS[4],DESCRIPTIONS[5]));
         this.initializeTips();
     }
 
@@ -54,34 +60,24 @@ public class ConcordSnipe extends AbstractShionRelic {
     }
 
     @Override
+    public void atTurnStartPostDraw() {
+        flash();
+        int amount =0;
+        if(!FinFunnelManager.getFinFunnelList().isEmpty()){
+            for(AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()){
+                if(funnel.getLevel() >=5)
+                    amount++;
+            }
+        }
+
+        if(amount>0)
+            addToBot(new GainHyperdimensionalLinksAction(amount));
+    }
+
+    @Override
     public void atBattleStart() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ConcordPower(AbstractDungeon.player,this.counter)));
     }
-
-
-
-    @Override
-    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
-        if (info.type == DamageInfo.DamageType.NORMAL) {
-            if (50 - this.counter > 0)
-                return (int) Math.floor(damageAmount * ((100 - (50 - this.counter)) * 0.01f));
-            else
-                return (int) Math.floor(damageAmount * ((100 + (this.counter - 50))) * 0.01f);
-        }
-        return damageAmount;
-    }
-
-    @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.type == DamageInfo.DamageType.NORMAL) {
-            if (50 - this.counter > 0)
-                return (int) Math.floor(damageAmount * ((100 + (50 - this.counter)) * 0.01f));
-            else
-                return (int) Math.floor(damageAmount * ((100 - (this.counter - 50))) * 0.01f);
-        }
-        return damageAmount;
-    }
-
 
 
     @Override

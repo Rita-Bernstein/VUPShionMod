@@ -3,6 +3,7 @@ package VUPShionMod.powers.Shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.DissectingFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.patches.EnergyPanelPatches;
@@ -19,7 +20,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import java.util.List;
 
 public class DissectingFinFunnelUpgradePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("DissectingFinFunnelUpgradePower");
+    public static final String POWER_ID = VUPShionMod.makeID(DissectingFinFunnelUpgradePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -35,10 +36,6 @@ public class DissectingFinFunnelUpgradePower extends AbstractShionPower {
         updateDescription();
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-    }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
@@ -49,7 +46,7 @@ public class DissectingFinFunnelUpgradePower extends AbstractShionPower {
             if (this.amount <= 0 && !used) {
                 this.used = true;
                 this.amount = -1;
-                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
+                List<AbstractFinFunnel> funnelList = FinFunnelManager.getFinFunnelList();
                 for (AbstractFinFunnel funnel : funnelList) {
                     if (funnel instanceof DissectingFinFunnel) {
                         this.flash();

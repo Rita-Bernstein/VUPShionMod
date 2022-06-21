@@ -1,12 +1,9 @@
 package VUPShionMod.relics.Shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
 import VUPShionMod.actions.Shion.TurnTriggerAllFinFunnelAction;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.finfunnels.GravityFinFunnel;
-import VUPShionMod.finfunnels.PursuitFinFunnel;
-import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.relics.AbstractShionRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
@@ -19,7 +16,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.List;
@@ -78,7 +74,7 @@ public class Drapery extends AbstractShionRelic implements ClickableRelic {
                     addToBot(new AbstractGameAction() {
                         @Override
                         public void update() {
-                            List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
+                            List<AbstractFinFunnel> funnelList = FinFunnelManager.getFinFunnelList();
                             if (!funnelList.isEmpty())
                                 funnelList.get(AbstractDungeon.miscRng.random(funnelList.size() - 1)).upgradeLevel(1);
                             isDone = true;

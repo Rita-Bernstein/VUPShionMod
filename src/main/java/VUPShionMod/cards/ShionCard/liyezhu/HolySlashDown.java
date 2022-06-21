@@ -5,6 +5,7 @@ import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -16,8 +17,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@NoPools
 public class HolySlashDown extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("HolySlashDown");
+    public static final String ID = VUPShionMod.makeID(HolySlashDown.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz12.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
@@ -29,6 +31,8 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
         this.baseDamage = 7;
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 1;
+
+//        vupCardSetBanner(CardRarity.RARE,CardType.ATTACK);
     }
 
     public HolySlashDown() {

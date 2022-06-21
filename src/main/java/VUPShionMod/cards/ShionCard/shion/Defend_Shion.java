@@ -2,6 +2,7 @@ package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
+import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,6 +22,7 @@ public class Defend_Shion extends AbstractShionCard {
         this.baseBlock = 4;
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy02.png"));
         this.tags.add(CardTags.STARTER_DEFEND);
+        this.tags.add(CardTagsEnum.FIN_FUNNEL);
     }
 
     @Override

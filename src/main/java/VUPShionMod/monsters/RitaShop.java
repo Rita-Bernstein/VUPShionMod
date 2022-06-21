@@ -128,7 +128,7 @@ public class RitaShop extends CustomMonster {
         (AbstractDungeon.getCurrRoom()).cannotLose = true;
         addToBot(new ApplyPowerAction(this, this, new ProbePower(this, this.timeLimit + 1)));
 
-        addToBot(new ApplyPowerAction(this, this, new DefenceMonsterPower(this, 135 - AbstractDungeon.ascensionLevel * 7)));
+        addToBot(new ApplyPowerAction(this, this, new DefenceMonsterPower(this, 135 - AbstractDungeon.ascensionLevel * 6)));
 
         addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.maxHealth));
 

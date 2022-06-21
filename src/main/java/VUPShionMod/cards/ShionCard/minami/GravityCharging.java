@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +23,7 @@ public class GravityCharging extends AbstractShionMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID, this.magicNumber));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID, this.magicNumber));
     }
 
     @Override

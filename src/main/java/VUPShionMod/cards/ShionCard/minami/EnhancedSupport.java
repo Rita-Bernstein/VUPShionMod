@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
@@ -47,7 +47,7 @@ public class EnhancedSupport extends AbstractShionMinamiCard {
 
         if (effect > 0) {
 
-            addToBot(new TriggerFinFunnelAction(m, effect));
+            addToBot(new TriggerFinFunnelPassiveAction(m, effect));
 
 
             if (!this.freeToPlayOnce) {

@@ -1,15 +1,13 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class OverloadFortress extends AbstractShionAnastasiaCard {
@@ -31,7 +29,7 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.secondaryM; i++)
-            addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
+            addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID));
 
         addToBot(new AbstractGameAction() {
             @Override

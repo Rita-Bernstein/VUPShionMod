@@ -1,6 +1,9 @@
 package VUPShionMod.relics.Shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.powers.Codex.TwoAttackPower;
 import VUPShionMod.powers.Shion.ConcordPower;
 import VUPShionMod.relics.AbstractShionRelic;
@@ -38,6 +41,7 @@ public class ConcordArray extends AbstractShionRelic {
         else
             this.tips.add(new PowerTip(DESCRIPTIONS[1], String.format(DESCRIPTIONS[3], this.counter - 50, this.counter - 50)));
 
+        this.tips.add(new PowerTip(DESCRIPTIONS[4],DESCRIPTIONS[5]));
         this.initializeTips();
     }
 
@@ -45,6 +49,21 @@ public class ConcordArray extends AbstractShionRelic {
     public void atBattleStart() {
         flash();
         addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ConcordPower(AbstractDungeon.player,this.counter)));
+    }
+
+    @Override
+    public void atTurnStartPostDraw() {
+        flash();
+        int amount =0;
+        if(!FinFunnelManager.getFinFunnelList().isEmpty()){
+            for(AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()){
+                if(funnel.getLevel() >=5)
+                    amount++;
+            }
+        }
+
+        if(amount>0)
+            addToBot(new GainHyperdimensionalLinksAction(amount));
     }
 
     @Override

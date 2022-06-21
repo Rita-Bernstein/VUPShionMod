@@ -2,6 +2,7 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedBluePower;
@@ -25,7 +26,7 @@ public class AnimaSpiritusque extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, this.magicNumber)));
+        addToBot(new RemoveDebuffsAction(p));
         addToBot(new ApplyPowerAction(p, p, new RegenPower(p, this.secondaryM)));
     }
 

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class SeverWrist extends AbstractWCCard {
@@ -22,8 +23,7 @@ public class SeverWrist extends AbstractWCCard {
     public SeverWrist() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 12;
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.baseSecondaryM = this.secondaryM = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.exhaust = true;
     }
 
@@ -31,8 +31,8 @@ public class SeverWrist extends AbstractWCCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        for (int i = 0; i < this.secondaryM; i++) {
-            addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false)));
+        for (int i = 0; i < this.magicNumber; i++) {
+            addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -1)));
         }
 
         addToBot(new DrawCardAction(1));

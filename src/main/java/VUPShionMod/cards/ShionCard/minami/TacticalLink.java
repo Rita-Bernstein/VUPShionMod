@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
 import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
@@ -32,7 +32,7 @@ public class TacticalLink extends AbstractShionMinamiCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
-        addToBot(new TriggerFinFunnelAction(m, this.magicNumber));
+        addToBot(new TriggerFinFunnelPassiveAction(m));
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
 
         addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(),1, true, true, false));

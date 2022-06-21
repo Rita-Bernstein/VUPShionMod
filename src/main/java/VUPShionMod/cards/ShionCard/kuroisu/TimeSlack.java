@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.MakeLoadedCardAction;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickDefend;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -38,7 +38,7 @@ public class TimeSlack extends AbstractShionKuroisuCard {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
         addToBot(new GainBlockAction(p, p, this.block));
-        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID));
         addToBot(new MakeLoadedCardAction(new QuickDefend(),this.magicNumber,true));
 //        addToBot(new MakeTempCardInDiscardAction(new QuickDefend(),this.magicNumber));
     }

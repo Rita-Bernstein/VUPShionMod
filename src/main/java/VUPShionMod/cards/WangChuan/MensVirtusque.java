@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.powers.Wangchuan.MensVirtusquePower;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -17,11 +18,12 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
 
+@NoPools
 public class MensVirtusque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(MensVirtusque.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc40.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -29,7 +31,7 @@ public class MensVirtusque extends AbstractWCCard {
     public MensVirtusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        vupCardSetBanner(CardRarity.RARE,CardType.POWER);
+//        vupCardSetBanner(CardRarity.RARE,CardType.POWER);
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 

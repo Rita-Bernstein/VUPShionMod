@@ -1,23 +1,25 @@
 package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@NoPools
 public class FunnelMatrix extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("FunnelMatrix");
+    public static final String ID = VUPShionMod.makeID(FunnelMatrix.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/FunnelMatrix.png");
 
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 0;
@@ -26,7 +28,7 @@ public class FunnelMatrix extends AbstractVUPShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.exhaust = true;
-        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
+//        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 
     @Override
@@ -44,8 +46,8 @@ public class FunnelMatrix extends AbstractVUPShionCard {
                 80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
 
         for(AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList){
-            addToBot(new TriggerFinFunnelAction(m, funnel.id));
-            addToBot(new TriggerFinFunnelAction(m, funnel.id));
+            addToBot(new TriggerFinFunnelPassiveAction(m, funnel.id));
+            addToBot(new TriggerFinFunnelPassiveAction(m, funnel.id));
         }
     }
 }

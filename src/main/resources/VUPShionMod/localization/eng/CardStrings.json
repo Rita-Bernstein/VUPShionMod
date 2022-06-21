@@ -321,7 +321,7 @@
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "Azure Blade",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deal additional damage !M! times as much as vup_shion_mod:Hyperdimensional\u00a0Link."
+    "DESCRIPTION": "Deal !D! damage. NL Deal additional damage !M! times as much as vup_shion_mod:Hyperdimensional\u00a0Link."
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "Sacred Lunge",
@@ -499,7 +499,7 @@
   },
   "VUPShionMod:SeverWrist": {
     "NAME": "Cut Wrist",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak !VUPShionSecondM! times. NL Draw 1 card. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL It lose 1 Strength !M! times. NL Draw 1 card. NL Exhaust."
   },
   "VUPShionMod:SeverAnkle": {
     "NAME": "Cut Ankle",
@@ -664,8 +664,8 @@
   },
   "VUPShionMod:AnimaSpiritusque": {
     "NAME": "Solacium Aurae",
-    "DESCRIPTION": "Gain !M! [E] next turn. NL Gain 5 *Regen. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! [E] next turn. NL Gain 5 *Regen. NL Exhaust."
+    "DESCRIPTION": "Remove ALL Debuffs. NL Gain 5 *Regen. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Remove ALL Debuffs. NL Gain 5 *Regen. NL Exhaust."
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "Anima Virtutis",
@@ -1367,12 +1367,12 @@
   },
   "VUPShionMod:BreakChop": {
     "NAME": "Break Formation",
-    "DESCRIPTION": "Can only be played if the enemy intends to attack. NL Deal !D! damage. NL Gain !B! Block. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to 7+ vup_shion_mod:Cor\u00a0Gladii. NL If the enemy intends to attack, gain 15 vup_shion_mod:Cor\u00a0Gladii. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand and lose 1 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Can only be played if the enemy intends to attack. NL Deal !D! damage. NL Apply Weak !M! time. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 7+ vup_shion_mod:Cor\u00a0Gladii. NL If the enemy intends to attack,apply Vulnerable and Weak !M! times. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand and lose 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
       "Break Formation+",
       "Flaring Momentum",
-      "Can only be played if the enemy intends to attack. NL Deal !D! damage. NL Gain !B! Block. NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand.",
+      "Can only be played if the enemy intends to attack. NL Deal !D! damage. NL Apply Weak !M! times NL Whenever you gain vup_shion_mod:Cor\u00a0Gladii, put this card from discard pile into your hand.",
       "The enemy does not intend to attack!"
     ]
   },
@@ -1394,5 +1394,45 @@
     "NAME": "Tactical Link",
     "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Add *Quick *Attack to your draw pile.",
     "UPGRADE_DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy. NL Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Add *Quick *Attack and *Quick *Defense to your draw pile."
+  },
+  "VUPShionMod:StrikeIntegrated": {
+    "NAME": "指令：查打一体",
+    "DESCRIPTION": "触发 *侦察 vup_shion_mod:浮游炮 的被动效果时，触发一次 vup_shion_mod:流血 伤害。 NL 不与其他指令共存。 NL 不能叠加。"
+  },
+  "VUPShionMod:ChainPursuit": {
+    "NAME": "指令：连锁追击",
+    "DESCRIPTION": "触发 *追击 vup_shion_mod:浮游炮 的被动效果时，抽一张牌。 NL 不与其他指令共存。 NL 不能叠加。"
+  },
+  "VUPShionMod:AoeAnalysis": {
+    "NAME": "指令：广域解析",
+    "DESCRIPTION": " *解析 vup_shion_mod:浮游炮 的被动效果对所有敌人生效。 NL 不与其他指令共存。 NL 不能叠加。"
+  },
+  "VUPShionMod:GravityVortex": {
+    "NAME": "指令：重力漩涡",
+    "DESCRIPTION": "触发 *重力 vup_shion_mod:浮游炮 的被动效果时，所有敌人失去2点 *临时 力量 。 NL 不与其他指令共存。 NL 不能叠加。"
+  },
+  "VUPShionMod:GravityRepression": {
+    "NAME": "连携：重力压制",
+    "DESCRIPTION": "触发 *重力 vup_shion_mod:浮游炮 的被动效果时，触发一次 *追击 vup_shion_mod:浮游炮 的被动。 NL 不能叠加。"
+  },
+  "VUPShionMod:TrackingAnalysis": {
+    "NAME": "连携：追踪解析",
+    "DESCRIPTION": "触发 *追击 vup_shion_mod:浮游炮 的被动效果时，触发一次 *解析 vup_shion_mod:浮游炮 的被动。 NL 不能叠加。"
+  },
+  "VUPShionMod:CollaborativeInvestigation": {
+    "NAME": "连携：协同侦察",
+    "DESCRIPTION": "触发除 *侦查 以外的 vup_shion_mod:浮游炮 被动效果时，触发一次 *侦查 vup_shion_mod:浮游炮 的被动。 NL 不能叠加。"
+  },
+  "VUPShionMod:HyperDimensionalMatrix": {
+    "NAME": "激活：超维矩阵",
+    "DESCRIPTION": "保留 。 NL 失去所有 vup_shion_mod:超维链接 。 NL 每失去 !M! 层，本场战斗所有浮游炮的等级提高1。（至多15）",
+    "EXTENDED_DESCRIPTION": [
+      "超维链接层数不足"
+    ]
+  },
+  "VUPShionMod:DefensiveOrder": {
+    "NAME": "防御指示",
+    "DESCRIPTION": "本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。"
   }
 }

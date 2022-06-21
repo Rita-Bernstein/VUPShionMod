@@ -51,7 +51,7 @@ public class BlueGiantShion extends AbstractSkin {
 
     @Override
     public void setPos() {
-        portraitSkeleton.setPosition(-20.0f * Settings.scale, -360.0f * Settings.scale);
+        portraitSkeleton.setPosition(-18.0f * Settings.scale, -360.0f * Settings.scale);
     }
 
     @Override

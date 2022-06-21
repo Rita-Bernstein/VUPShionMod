@@ -15,11 +15,13 @@ import VUPShionMod.relics.Event.TrackingBeacon;
 import VUPShionMod.relics.Event.UnknownDust;
 import VUPShionMod.util.SaveHelper;
 import basemod.CustomEventRoom;
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
@@ -164,44 +166,91 @@ public class SpecialCombatPatches {
         AbstractDungeon.rs = node.room.event instanceof AbstractImageEvent ? AbstractDungeon.RenderScene.EVENT : AbstractDungeon.RenderScene.NORMAL;
     }
 
+//
+//    @SpirePatch(
+//            clz = AbstractDungeon.class,
+//            method = "render"
+//    )
+//    public static class CGRenderPatch {
+//        @SpirePostfixPatch
+//        public static void Postfix(AbstractDungeon _instance, SpriteBatch sb) {
+//            for (AbstractRelic r : AbstractDungeon.player.relics) {
+//                if (r instanceof AnastasiaNecklace) {
+//                    ((AnastasiaNecklace) r).renderAbove(sb);
+//                }
+//
+//                if (r instanceof TrackingBeacon) {
+//                    ((TrackingBeacon) r).renderAbove(sb);
+//                }
+//
+//                if (r instanceof UnknownDust) {
+//                    ((UnknownDust) r).renderAbove(sb);
+//                }
+//            }
+//
+//
+//            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+//
+//                if ((AbstractDungeon.getMonsters()).monsters != null)
+//                    if (!(AbstractDungeon.getMonsters()).monsters.isEmpty())
+//                    for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+//                        if (monster instanceof Ouroboros) {
+//                            ((Ouroboros) monster).renderAbove(sb);
+//                        }
+//
+//                        if (monster instanceof PlagaAMundoMinion)
+//                            ((PlagaAMundoMinion) monster).renderAbove(sb);
+//
+//                    }
+//            }
+//
+//
+//        }
+//    }
+
+
+
+
 
     @SpirePatch(
-            clz = AbstractDungeon.class,
+            clz = CardCrawlGame.class,
             method = "render"
     )
     public static class CGRenderPatch {
-        @SpirePostfixPatch
-        public static void Postfix(AbstractDungeon _instance, SpriteBatch sb) {
-            for (AbstractRelic r : AbstractDungeon.player.relics) {
-                if (r instanceof AnastasiaNecklace) {
-                    ((AnastasiaNecklace) r).renderAbove(sb);
-                }
-
-                if (r instanceof TrackingBeacon) {
-                    ((TrackingBeacon) r).renderAbove(sb);
-                }
-
-                if (r instanceof UnknownDust) {
-                    ((UnknownDust) r).renderAbove(sb);
-                }
-            }
-
-
-            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
-
-                if ((AbstractDungeon.getMonsters()).monsters != null)
-                    if (!(AbstractDungeon.getMonsters()).monsters.isEmpty())
-                    for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                        if (monster instanceof Ouroboros) {
-                            ((Ouroboros) monster).renderAbove(sb);
-                        }
-
-                        if (monster instanceof PlagaAMundoMinion)
-                            ((PlagaAMundoMinion) monster).renderAbove(sb);
-
+        @SpireInsertPatch(rloc = 64)
+        public static void Insert(CardCrawlGame _instance) {
+            if(CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null) {
+                SpriteBatch sb = ReflectionHacks.getPrivate(_instance,CardCrawlGame.class,"sb");
+                for (AbstractRelic r : AbstractDungeon.player.relics) {
+                    if (r instanceof AnastasiaNecklace) {
+                        ((AnastasiaNecklace) r).renderAbove(sb);
                     }
-            }
 
+                    if (r instanceof TrackingBeacon) {
+                        ((TrackingBeacon) r).renderAbove(sb);
+                    }
+
+                    if (r instanceof UnknownDust) {
+                        ((UnknownDust) r).renderAbove(sb);
+                    }
+                }
+
+
+                if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+
+                    if ((AbstractDungeon.getMonsters()).monsters != null)
+                        if (!(AbstractDungeon.getMonsters()).monsters.isEmpty())
+                            for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                                if (monster instanceof Ouroboros) {
+                                    ((Ouroboros) monster).renderAbove(sb);
+                                }
+
+                                if (monster instanceof PlagaAMundoMinion)
+                                    ((PlagaAMundoMinion) monster).renderAbove(sb);
+
+                            }
+                }
+            }
 
         }
     }

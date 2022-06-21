@@ -5,6 +5,7 @@ import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Liyezhu.Calamity2Power;
 import VUPShionMod.powers.Liyezhu.CalamityPower;
 import VUPShionMod.powers.Common.LoseHPPower;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -14,11 +15,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BerserkPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
+@NoPools
 public class Calamity extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(Calamity.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/Calamity.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final int COST = 1;
@@ -26,7 +28,7 @@ public class Calamity extends AbstractLiyezhuCard {
     public Calamity() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isInnate = true;
-        vupCardSetBanner(CardRarity.RARE, CardType.POWER);
+//        vupCardSetBanner(CardRarity.RARE, CardType.POWER);
     }
 
     @Override

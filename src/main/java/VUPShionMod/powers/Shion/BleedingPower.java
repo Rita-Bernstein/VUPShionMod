@@ -6,6 +6,7 @@ import VUPShionMod.powers.Shion.AnticoagulationPower;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -41,7 +42,7 @@ public class BleedingPower extends AbstractShionPower implements HealthBarRender
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type == DamageInfo.DamageType.NORMAL) {
-            addToTop(new LoseHPAction(this.owner, null, this.amount));
+            onSpecificTrigger();
         }
         return super.onAttacked(info, damageAmount);
     }
@@ -55,6 +56,15 @@ public class BleedingPower extends AbstractShionPower implements HealthBarRender
         }
     }
 
+    @Override
+    public void onSpecificTrigger() {
+        flash();
+        if(AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
+            addToBot(new GainBlockAction(AbstractDungeon.player,this.amount));
+        }else {
+            addToTop(new LoseHPAction(this.owner, null, this.amount));
+        }
+    }
 
     @Override
     public void playApplyPowerSfx() {

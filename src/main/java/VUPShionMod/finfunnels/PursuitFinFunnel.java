@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -51,38 +52,36 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void upgradeLevel(int amount) {
-        this.level += amount;
+        super.upgradeLevel(amount);
         SaveHelper.pursuitFinFunnelLevel = level;
     }
 
     @Override
     public void loseLevel(int amount) {
-        this.level -= amount;
-        if (this.level < 0)
-            this.level = 0;
+        super.loseLevel(amount);
         SaveHelper.pursuitFinFunnelLevel = level;
     }
 
     @Override
     public int getFinalEffect() {
-        return this.effect * (this.level - 1) / 2 + 1;
+        return this.effect * (getLevel() - 1) / 2 + 1;
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, getFinalDamage(), getFinalEffect());
-    }
 
 
     @Override
     public void onPursuitEnemy(AbstractCreature target, int loop) {
-        if (this.level <= 0) return;
+        if (getLevel() <= 0) return;
         if (!target.isDeadOrEscaped())
             if (target.hasPower(PursuitPower.POWER_ID)) {
-                addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
-                addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-                addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, target.getPower(PursuitPower.POWER_ID).amount,
-                        DamageInfo.DamageType.THORNS), loop, false, getFinalEffect()));
+                if(AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
+                    addToBot(new GainBlockAction(AbstractDungeon.player,target.getPower(PursuitPower.POWER_ID).amount));
+                }else {
+                    addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
+                    addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
+                    addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, target.getPower(PursuitPower.POWER_ID).amount,
+                            DamageInfo.DamageType.THORNS), loop, false, getFinalEffect()));
+                }
             }
 
     }
@@ -92,6 +91,8 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void powerToApply(AbstractCreature target) {
         if(target != null)
         addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, getFinalEffect())));
+
+        super.powerToApply(target);
     }
 
     @Override

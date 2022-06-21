@@ -2,6 +2,7 @@ package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
@@ -22,7 +23,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("PursuitFinFunnelUpgradePower");
+    public static final String POWER_ID = VUPShionMod.makeID(PursuitFinFunnelUpgradePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -52,7 +53,7 @@ public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
             if (this.amount <= 0 && !used) {
                 this.used = true;
                 this.amount = -1;
-                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
+                List<AbstractFinFunnel> funnelList = FinFunnelManager.getFinFunnelList();
                 for (AbstractFinFunnel funnel : funnelList) {
                     if (funnel instanceof PursuitFinFunnel) {
                         this.flash();

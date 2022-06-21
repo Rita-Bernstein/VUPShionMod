@@ -1,6 +1,7 @@
 package VUPShionMod.relics.Share;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.AbstractShionRelic;
 import com.badlogic.gdx.graphics.Texture;
@@ -8,9 +9,13 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.ObtainPotionEffect;
+
+import java.util.function.Supplier;
 
 public class PodBot extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(PodBot.class.getSimpleName());
@@ -33,8 +38,9 @@ public class PodBot extends AbstractShionRelic {
     @Override
     public void atTurnStart() {
         flash();
-        AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.relicRng);
-        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, 1, false)));
+        Supplier<AbstractPower> powerToApply = () -> new WeakPower(null,1,false);
+        addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
+
     }
 
     @Override

@@ -41,26 +41,24 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void upgradeLevel(int amount) {
-        this.level += amount;
+        super.upgradeLevel(amount);
         SaveHelper.dissectingFinFunnelLevel = level;
     }
 
     @Override
     public void loseLevel(int amount) {
-        this.level -= amount;
-        if (this.level < 0)
-            this.level = 0;
+        super.loseLevel(amount);
         SaveHelper.dissectingFinFunnelLevel = level;
     }
 
     @Override
     public int getFinalEffect() {
-        return this.effect * (this.level - 1) / 2 + 1;
+        return this.effect * (getLevel() - 1) / 2 + 1;
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, getFinalDamage(), getFinalEffect());
+        this.description = String.format(orbStrings.DESCRIPTION[0], getLevel(), getFinalDamage(), getFinalEffect());
     }
 
     @Override
@@ -76,8 +74,11 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void powerToApply(AbstractCreature target) {
-        if(target != null)
-        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new StructureDissectionPower(target, getFinalEffect())));
+        if(target != null) {
+            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new StructureDissectionPower(target, getFinalEffect())));
+        }
+
+        super.powerToApply(target);
     }
 
     @Override

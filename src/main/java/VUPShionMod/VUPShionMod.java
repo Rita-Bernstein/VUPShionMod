@@ -223,29 +223,27 @@ public class VUPShionMod implements
         list.add(AbstractPlayerEnum.Liyezhu);
 
 //        mod公共事件
-        for (AbstractPlayer.PlayerClass playerClass : list) {
-            BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
-                    //Event Character//
-                    .playerClass(playerClass)
-                    .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID))
-                    .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(CroissantEvent.ID, CroissantEvent.class) //Event ID//
+                //Event Character//
+                .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID) && EnergyPanelPatches.isShionModChar())
+                .create());
 
 
-            BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
-                    //Event Character//
-                    .playerClass(playerClass)
-                    .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID))
-                    .create());
+        BaseMod.addEvent(new AddEventParams.Builder(LostEquipment.ID, LostEquipment.class) //Event ID//
+                //Event Character//
 
-            BaseMod.addEvent(new AddEventParams.Builder(DaysGoneBy.ID, DaysGoneBy.class) //Event ID//
-                    .playerClass(playerClass)
-                    .create());
+                .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID) && EnergyPanelPatches.isShionModChar())
+                .create());
 
-            BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
-                    .playerClass(playerClass)
-                    .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
-                    .create());
-        }
+        BaseMod.addEvent(new AddEventParams.Builder(DaysGoneBy.ID, DaysGoneBy.class) //Event ID//
+                .spawnCondition(() -> EnergyPanelPatches.isShionModChar())
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID) && EnergyPanelPatches.isShionModChar())
+                .create());
+
 
 
 //        紫音事件
@@ -256,19 +254,11 @@ public class VUPShionMod implements
                 .spawnCondition(() -> !AbstractDungeon.id.equals(TheEnding.ID))
                 .create());
 
-        BaseMod.addEvent(new AddEventParams.Builder(Newborn.ID, Newborn.class) //Event ID//
-                //Event Character//
-                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
-                .create());
 
-        BaseMod.addEvent(new AddEventParams.Builder(Contact.ID, Contact.class) //Event ID//
+        BaseMod.addEvent(new AddEventParams.Builder(HolyJudgement.ID, HolyJudgement.class) //Event ID//
                 //Event Character//
-                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
-                .create());
-
-        BaseMod.addEvent(new AddEventParams.Builder(Prophesy.ID, Prophesy.class) //Event ID//
-                //Event Character//
-                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
+                .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
                 .create());
 
 
@@ -303,6 +293,22 @@ public class VUPShionMod implements
                 .playerClass(AbstractPlayerEnum.Liyezhu)
                 .create());
 
+
+//      深空
+        BaseMod.addEvent(new AddEventParams.Builder(Newborn.ID, Newborn.class) //Event ID//
+                //Event Character//
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(Contact.ID, Contact.class) //Event ID//
+                //Event Character//
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(Prophesy.ID, Prophesy.class) //Event ID//
+                //Event Character//
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheEnding.ID))
+                .create());
 
 //      添加boss
         BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
@@ -470,9 +476,10 @@ public class VUPShionMod implements
         cards.add(new Gravitonium());
         cards.add(new QuickTrigger());
         cards.add(new GravityImpact());
+        cards.add(new DefensiveOrder());
 
 
-//        克洛伊斯
+//        紫音-克洛伊斯
         cards.add(new TimeBacktracking());
         cards.add(new TimeSlack());
         cards.add(new TimeStop());
@@ -490,7 +497,7 @@ public class VUPShionMod implements
         cards.add(new DelayAvatar());
 
 
-//        南小棉
+//        紫音-南小棉
         cards.add(new FinFunnelActive());
         cards.add(new AttackWithDefense());
         cards.add(new LockIndication());
@@ -510,7 +517,7 @@ public class VUPShionMod implements
         cards.add(new GravityCharging());
 
 
-//      黎夜竹
+//      紫音-黎夜竹
         cards.add(new IntroductionSilence());
         cards.add(new SacredAdvice());
         cards.add(new DivineRedemption());
@@ -527,13 +534,13 @@ public class VUPShionMod implements
         cards.add(new HolyCoffinRelease());
         cards.add(new BlueRose());
 
-//        anastasia
+//        紫音-anastasia
         cards.add(new FinFunnelUpgrade());
         cards.add(new ShionAnastasiaPlan());
-        cards.add(new AttackOrderAlpha());
-        cards.add(new AttackOrderBeta());
-        cards.add(new AttackOrderDelta());
-        cards.add(new AttackOrderGamma());
+//        cards.add(new AttackOrderAlpha());
+//        cards.add(new AttackOrderBeta());
+//        cards.add(new AttackOrderDelta());
+//        cards.add(new AttackOrderGamma());
         cards.add(new EnergyReserve());
         cards.add(new LockOn());
         cards.add(new Reboot());
@@ -549,6 +556,14 @@ public class VUPShionMod implements
 
         cards.add(new FunnelMatrix());
 
+        cards.add(new StrikeIntegrated());
+        cards.add(new ChainPursuit());
+        cards.add(new AoeAnalysis());
+        cards.add(new GravityVortex());
+        cards.add(new GravityRepression());
+        cards.add(new TrackingAnalysis());
+        cards.add(new CollaborativeInvestigation());
+        cards.add(new HyperDimensionalMatrix());
 
 //        忘川
         cards.add(new HiltBash());
@@ -815,7 +830,6 @@ public class VUPShionMod implements
 //       事件遗物
         BaseMod.addRelic(new FragmentsOfFaith(), RelicType.SHARED);
         BaseMod.addRelic(new FruitCake(), RelicType.SHARED);
-
 
 
     }

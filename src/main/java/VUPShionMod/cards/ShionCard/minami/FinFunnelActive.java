@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerAllFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerAllFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.character.Shion;
 import VUPShionMod.patches.CardTagsEnum;
@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FinFunnelActive extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("FinFunnelActive");
+    public static final String ID = VUPShionMod.makeID(FinFunnelActive.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami01.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
@@ -33,11 +33,11 @@ public class FinFunnelActive extends AbstractShionMinamiCard {
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
 
         if (AbstractDungeon.player instanceof Shion) {
-            addToBot(new TriggerAllFinFunnelAction(m));
+            addToBot(new TriggerAllFinFunnelPassiveAction(m));
 
             if (p.hasPower(ReleaseFormMinamiPower.POWER_ID)) {
                 for (int i = 0; i < p.getPower(ReleaseFormMinamiPower.POWER_ID).amount; i++)
-                    addToBot(new TriggerAllFinFunnelAction(m));
+                    addToBot(new TriggerAllFinFunnelPassiveAction(m));
             }
 
         }

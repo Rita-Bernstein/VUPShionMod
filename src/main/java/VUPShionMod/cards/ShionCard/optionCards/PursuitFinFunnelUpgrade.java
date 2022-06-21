@@ -6,6 +6,7 @@ import VUPShionMod.powers.Shion.DissectingFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.GravityFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.InvestigationFinFunnelUpgradePower;
 import VUPShionMod.powers.Shion.PursuitFinFunnelUpgradePower;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@NoPools
 public class PursuitFinFunnelUpgrade extends AbstractVUPShionCard {
     public static final String ID = VUPShionMod.makeID("PursuitUpgrade");
     public static final String NAME;
@@ -21,7 +23,7 @@ public class PursuitFinFunnelUpgrade extends AbstractVUPShionCard {
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = -2;
@@ -30,7 +32,7 @@ public class PursuitFinFunnelUpgrade extends AbstractVUPShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
 
 
-        vupCardSetBanner(CardRarity.RARE,TYPE);
+//        vupCardSetBanner(CardRarity.RARE,TYPE);
     }
 
     @Override

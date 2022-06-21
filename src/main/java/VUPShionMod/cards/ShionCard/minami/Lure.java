@@ -3,6 +3,7 @@ package VUPShionMod.cards.ShionCard.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +26,7 @@ public class Lure extends AbstractShionMinamiCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(!AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList.isEmpty())
         for (AbstractMonster mo : (AbstractDungeon.getMonsters()).monsters)
-            for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList) {
+            for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
                 if (!mo.isDeadOrEscaped())
                     funnel.onPursuitEnemy(mo,this.magicNumber);
             }

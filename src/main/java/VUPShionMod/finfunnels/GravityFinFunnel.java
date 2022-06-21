@@ -45,28 +45,20 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void upgradeLevel(int amount) {
-        this.level += amount;
+        super.upgradeLevel(amount);
         SaveHelper.gravityFinFunnelLevel = level;
     }
 
     @Override
     public void loseLevel(int amount) {
-        this.level -= amount;
-        if (this.level < 0)
-            this.level = 0;
+        super.loseLevel(amount);
         SaveHelper.gravityFinFunnelLevel = level;
     }
 
     @Override
     public int getFinalEffect() {
-        return this.effect * (this.level - 1) / 2 + 2;
+        return this.effect * (getLevel() - 1) / 2 + 2;
     }
-
-    @Override
-    public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, getFinalDamage(), getFinalEffect());
-    }
-
 
     @Override
     public void powerToApply(AbstractCreature target) {
@@ -74,6 +66,8 @@ public class GravityFinFunnel extends AbstractFinFunnel {
             addToBot(new GainShieldAction(AbstractDungeon.player, getFinalEffect(), true));
         else
             addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+
+        super.powerToApply(target);
     }
 
     @Override

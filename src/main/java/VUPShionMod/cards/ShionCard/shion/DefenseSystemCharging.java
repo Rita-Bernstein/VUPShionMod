@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
@@ -50,7 +50,7 @@ public class DefenseSystemCharging extends AbstractShionCard {
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
 
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new TriggerFinFunnelAction(m, GravityFinFunnel.ID));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID));
         List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         if (cardList.size() >= 2) {
             AbstractCard card = cardList.get(cardList.size() - 2);

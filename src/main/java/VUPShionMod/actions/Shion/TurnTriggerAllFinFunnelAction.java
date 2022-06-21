@@ -60,7 +60,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 
 //        获取敌人数组，浮游炮数组的具体信息
         for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList) {
-            if (f.level > 0) {
+            if (f.getLevel() > 0) {
                 availableFinFunnel.add(f);
             }
         }

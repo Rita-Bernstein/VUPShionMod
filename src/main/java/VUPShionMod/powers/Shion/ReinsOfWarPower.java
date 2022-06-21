@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ReinsOfWarPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("ReinsOfWarPower");
+    public static final String POWER_ID = VUPShionMod.makeID(ReinsOfWarPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -51,40 +51,40 @@ public class ReinsOfWarPower extends AbstractShionPower {
         AbstractFinFunnel finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).getFinFunnel(DissectingFinFunnel.ID);
 
         if (finFunnel != null) {
-            if(finFunnel.level >= 26){
+            if(finFunnel.getLevel() >= 26){
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
-                addToBot(new GainHyperdimensionalLinksAction(3));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
                 addToBot(new GainEnergyAction(2));
                 return;
             }
 
-            if(finFunnel.level >= 21){
+            if(finFunnel.getLevel() >= 21){
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
-                addToBot(new GainHyperdimensionalLinksAction(3));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
                 addToBot(new GainEnergyAction(1));
                 return;
             }
 
-            if(finFunnel.level >= 16){
+            if(finFunnel.getLevel() >= 16){
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
-                addToBot(new GainHyperdimensionalLinksAction(2));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
                 addToBot(new GainEnergyAction(1));
                 return;
             }
 
-            if(finFunnel.level >= 11){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
-                addToBot(new GainHyperdimensionalLinksAction(2));
-                return;
-            }
-
-            if(finFunnel.level >= 6){
+            if(finFunnel.getLevel() >= 11){
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
                 return;
             }
 
-            if(finFunnel.level >= 4){
+            if(finFunnel.getLevel() >= 6){
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
+                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,1)));
+                return;
+            }
+
+            if(finFunnel.getLevel() >= 4){
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,1)));
                 addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,1)));
                 return;

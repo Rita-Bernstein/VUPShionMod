@@ -9,7 +9,6 @@ import VUPShionMod.monsters.Story.TimePortal;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Monster.RitaShop.DefenceMonsterPower;
 import VUPShionMod.powers.Monster.TimePortal.ContortTimePower;
-import VUPShionMod.powers.Monster.TimePortal.SubspacePursuerPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
@@ -154,8 +153,8 @@ public class StructureDissectionPower extends AbstractShionPower {
                     return;
                 }
 
-                if (m.id.equals(Ouroboros.ID) && m.hasPower(SubspacePursuerPower.POWER_ID)) {
-                    this.description += String.format(DESCRIPTIONS[12], m.name, SubspacePursuerPower.NAME);
+                if (m.id.equals(Ouroboros.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
+                    this.description += String.format(DESCRIPTIONS[12], m.name, ContortTimePower.NAME);
                     return;
                 }
 
@@ -335,10 +334,10 @@ public class StructureDissectionPower extends AbstractShionPower {
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
                     }
 
-                    if (m.id.equals(Ouroboros.ID) && m.hasPower(SubspacePursuerPower.POWER_ID)) {
+                    if (m.id.equals(Ouroboros.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
                                 96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
-                        addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, SubspacePursuerPower.POWER_ID));
+                        addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
                     }
 
 

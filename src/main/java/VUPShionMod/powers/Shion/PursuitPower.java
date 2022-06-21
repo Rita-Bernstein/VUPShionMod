@@ -2,6 +2,7 @@ package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.Color;
@@ -41,8 +42,8 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
     @Override
     public void atStartOfTurn() {
         this.flash();
-        if(!AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList.isEmpty())
-        for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList) {
+        if(!FinFunnelManager.getFinFunnelList().isEmpty())
+        for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
             if (!this.owner.isDeadOrEscaped()) {
                 funnel.onPursuitEnemy(this.owner);
             }

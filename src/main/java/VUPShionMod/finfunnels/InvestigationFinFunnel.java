@@ -2,6 +2,7 @@ package VUPShionMod.finfunnels;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Shion.*;
 import VUPShionMod.util.SaveHelper;
 import com.esotericsoftware.spine.Skeleton;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class InvestigationFinFunnel extends AbstractFinFunnel {
     public static final String ID = InvestigationFinFunnel.class.getSimpleName();
@@ -41,32 +43,30 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void upgradeLevel(int amount) {
-        this.level += amount;
+        super.upgradeLevel(amount);
         SaveHelper.investigationFinFunnelLevel = level;
     }
 
     @Override
     public void loseLevel(int amount) {
-        this.level -= amount;
-        if (this.level < 0)
-            this.level = 0;
+        super.loseLevel(amount);
         SaveHelper.investigationFinFunnelLevel = level;
     }
 
     @Override
     public int getFinalEffect() {
-        return this.effect * (this.level - 1) / 3 + 2;
+        return this.effect * (getLevel() - 1) / 3 + 2;
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0], this.level, getFinalDamage(), getFinalEffect());
-    }
 
     @Override
     public void powerToApply(AbstractCreature target) {
-        if(target != null)
-        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, getFinalEffect())));
+        if(target != null) {
+            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BleedingPower(target, AbstractDungeon.player, getFinalEffect())));
+        }
+
+        super.powerToApply(target);
+
     }
 
     @Override

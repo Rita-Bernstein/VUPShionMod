@@ -696,10 +696,10 @@
       " NL #b1-3 :Gain #b1 #yDexterity .",
       " NL #b4-5 :Gain #b1 #yStrength and #yDexterity .",
       " NL #b6-10 :Gain #b2 #yStrength and #yDexterity .",
-      " NL #b11-15 :Gain #b2 #yStrength and #yHyperdimensional .",
-      " NL #b16-20 :Gain #b2 #yStrength , #yHyperdimensional and [E] .",
-      " NL #b21-25 :Gain #b3 #yStrength , #yHyperdimensional and [E] .",
-      " NL #b26 and above :Gain #b3 #yStrength , #yHyperdimensional and [E] [E] 。"
+      " NL #b11-15 :Gain #b2 #yStrength and 2 #yDexterity .",
+      " NL #b16-20 :Gain #b2 #yStrength , #yDexterity and [E] .",
+      " NL #b21-25 :Gain #b3 #yStrength , 2 #yDexterity and [E] .",
+      " NL #b26 and above :Gain #b3 #yStrength , 2 #yDexterity and [E] [E] 。"
     ]
   },
   "VUPShionMod:SpatialTearPower": {
@@ -737,7 +737,7 @@
   "VUPShionMod:FlyPower": {
     "NAME": "Flying",
     "DESCRIPTIONS": [
-      "The first #b%d #yattacks received each turn deal #b50%% less damage.",
+      "The first #b%d #yattack received each turn deal #b50%% less damage.",
       "The first #b%d #yattacks received each turn deal #b50%% less damage."
     ]
   },
@@ -810,6 +810,61 @@
     "DESCRIPTIONS": [
       "Your Attacks deal #b%d%% less damage. NL You take #b%d%% more damage from attacks.",
       "Your Attacks deal #b%d%% more damage. NL You take #b%d%% less damage from attacks.(up to #b50%%.)"
+    ]
+  },
+  "VUPShionMod:ClaymoreSet": {
+    "NAME": "阔剑地雷设置",
+    "DESCRIPTIONS": [
+      "下次受到攻击伤害时，对攻击者造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:StrikeIntegratedPower": {
+    "NAME": "指令：查打一体",
+    "DESCRIPTIONS": [
+      "触发 #y侦察浮游炮 的被动效果时，触发一次 #y流血 伤害。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:ChainPursuitPower": {
+    "NAME": "指令：连锁追击",
+    "DESCRIPTIONS": [
+      "触发 #y追击浮游炮 的被动效果时，抽一张牌。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:AoeAnalysisPower": {
+    "NAME": "指令：广域解析",
+    "DESCRIPTIONS": [
+      " #y解析浮游炮 的被动效果对所有敌人生效。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:GravityVortexPower": {
+    "NAME": "指令：重力漩涡",
+    "DESCRIPTIONS": [
+      "触发 #y重力浮游炮 的被动效果时，所有敌人失去2点 #y临时力量 。 NL 不与其他指令共存。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:GravityRepressionPower": {
+    "NAME": "连携：重力压制",
+    "DESCRIPTIONS": [
+      "触发 #y重力浮游炮 的被动效果时，触发一次 #y追击浮游炮 的被动。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:TrackingAnalysisPower": {
+    "NAME": "连携：追踪解析",
+    "DESCRIPTIONS": [
+      "触发 #y追击浮游炮 的被动效果时，触发一次 #y解析浮游炮 的被动。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:CollaborativeInvestigationPower": {
+    "NAME": "连携：协同侦察",
+    "DESCRIPTIONS": [
+      "触发除 #y侦查 以外的 #y浮游炮 被动效果时，触发一次 #y侦查浮游炮 的被动。 NL 不能叠加。"
+    ]
+  },
+  "VUPShionMod:DefensiveOrderPower": {
+    "NAME": "防御指示",
+    "DESCRIPTIONS": [
+      "本回合所有 #y流血 、 #y追击 伤害变为获得等量 #y格挡 ， NL #y浮游炮 主动造成的伤害替换为获得等量 #y护盾 。",
+      "接下来的 #b%d 个回合所有 #y流血 、 #y追击 伤害变为获得等量 #y格挡 ， NL #y浮游炮 主动造成的伤害替换为获得等量 #y护盾 。"
     ]
   }
 }

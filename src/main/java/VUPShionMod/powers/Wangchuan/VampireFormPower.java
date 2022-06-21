@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.BetterHealAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -41,7 +42,7 @@ public class VampireFormPower extends AbstractShionPower {
         if (m != null)
             if (m.lastDamageTaken > 0) {
                 flash();
-                addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+                AbstractDungeon.player.heal(this.amount);
             }
 
     }

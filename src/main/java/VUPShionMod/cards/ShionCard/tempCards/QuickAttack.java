@@ -5,18 +5,20 @@ import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
+import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@NoPools
 public class QuickAttack extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("QuickAttack");
+    public static final String ID = VUPShionMod.makeID(QuickDefend.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy08.png");
 
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 0;
@@ -28,7 +30,7 @@ public class QuickAttack extends AbstractVUPShionCard {
         this.tags.add(CardTagsEnum.LOADED);
         this.exhaust = true;
 
-        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
+//        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 
 

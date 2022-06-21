@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class BreakChop extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(BreakChop.class.getSimpleName());
@@ -26,8 +28,9 @@ public class BreakChop extends AbstractWCCard {
 
     public BreakChop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 9;
+        this.baseDamage = 14;
         this.baseBlock = 6;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
@@ -37,15 +40,21 @@ public class BreakChop extends AbstractWCCard {
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-                addToBot(new GainBlockAction(p, this.block));
+
+                for(int i = 0;i<this.magicNumber;i++)
+                addToBot(new ApplyPowerAction(m,p,new WeakPower(m,1,false)));
                 break;
             case 2:
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-                if (m.getIntentBaseDmg() >= 0)
-                    addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p,15)));
-                addToBot(new LoseCorGladiiAction(1));
+                if (m.getIntentBaseDmg() >= 0) {
+                    for(int i = 0;i<this.magicNumber;i++) {
+                        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false)));
+                        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false)));
+                    }
+                }
+                addToBot(new ReducePowerAction(p,p,StiffnessPower.POWER_ID,1));
                 break;
         }
     }
@@ -113,9 +122,11 @@ public class BreakChop extends AbstractWCCard {
             if (this.timesUpgraded == 1) {
                 upgradeDamage(5);
                 upgradeBlock(3);
+                upgradeMagicNumber(1);
             }
 
             if (this.timesUpgraded == 2) {
+                upgradeBaseCost(0);
             }
         }
     }

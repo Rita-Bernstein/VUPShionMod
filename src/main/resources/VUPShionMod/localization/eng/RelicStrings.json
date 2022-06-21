@@ -235,30 +235,36 @@
     "NAME": "Concord: Snipe",
     "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "Each turn your first #yAttack deals twice damage. NL #bConcord.",
-      "Concord",
+      "Each turn your first #yAttack deals twice damage. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
+      "Time&Space Synchro",
       "Your damage decreases #b%d%%, NL Damage received increase by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
-      "Your damage increases #b%d%%, NL Damage received decrease by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）"
+      "Your damage increases #b%d%%, NL Damage received decrease by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
+      "Matrix Synchro",
+      "For every funnel level at #b5 , gain #b1 #y HyperdimentionalLink at each of your turn."
     ]
   },
   "VUPShionMod:ConcordArray": {
     "NAME": "Concord: Array",
     "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "All #yfunnel upgrades by #b1. NL #bConcord.",
-      "Concord",
+      "All #yfunnel upgrades by #b1. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
+      "Time&Space Synchro",
       "Your damage decreases by #b%d%%, NL Damage received increases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
-      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）"
+      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
+      "Matrix Synchro",
+      "For every funnel level at #b5 , gain #b1 #y HyperdimentionalLink at each of your turn."
     ]
   },
   "VUPShionMod:ConcordCharge": {
     "NAME": "Concord: Recharge",
     "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain [E] [E]. NL #bConcord.",
-      "Concord",
+      "At the start of each combat, gain [E] [E]. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
+      "Time&Space Synchro",
       "Your damage decreases by #b%d%%, NL Damage received increases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
-      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）"
+      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
+      "Matrix Synchro",
+      "For every funnel level at #b5 , gain #b1 #y HyperdimentionalLink at each of your turn."
     ]
   },
   "VUPShionMod:FruitCake": {

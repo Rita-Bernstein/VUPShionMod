@@ -6,8 +6,10 @@ import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,13 +21,12 @@ public class BlueBlade extends AbstractShionLiyezhuCard {
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public BlueBlade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 6;
         this.magicNumber = this.baseMagicNumber = 2;
-        this.isMultiDamage = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -36,16 +37,10 @@ public class BlueBlade extends AbstractShionLiyezhuCard {
         this.baseDamage += amount;
 
         calculateCardDamage(m);
-
-        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!monster.isDeadOrEscaped()) {
-                addToBot(new SFXAction("BLUNT_FAST"));
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 016 Impact Explosion Radial", monster.hb.cX, monster.hb.cY + 0.0f * Settings.scale,
-                        125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
-            }
-        }
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
-//        addToBot(new LoseHyperdimensionalLinksAction(true));
+        addToBot(new SFXAction("BLUNT_FAST"));
+        addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 016 Impact Explosion Radial", m.hb.cX, m.hb.cY + 0.0f * Settings.scale,
+                125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
+        addToBot(new DamageAction(m,new DamageInfo(p,this.damage,this.damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
@@ -62,7 +57,7 @@ public class BlueBlade extends AbstractShionLiyezhuCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(2);
-            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 }

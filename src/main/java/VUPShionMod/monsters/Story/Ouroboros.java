@@ -254,7 +254,7 @@ public class Ouroboros extends CustomMonster {
 
             GameCursor.hidden = true;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NO_INTERACT;
-            AbstractDungeon.isScreenUp = true;
+
         }
 
 
@@ -351,7 +351,7 @@ public class Ouroboros extends CustomMonster {
     public void update() {
         super.update();
 
-        if (this.halfDead) {
+        if (this.npc) {
             this.waitingDeath -= Gdx.graphics.getDeltaTime();
 
             if (this.waitingDeath > 0.0f)
@@ -366,7 +366,6 @@ public class Ouroboros extends CustomMonster {
 
             GameCursor.hidden = false;
             AbstractDungeon.screen = AbstractDungeon.CurrentScreen.NONE;
-            AbstractDungeon.isScreenUp = false;
 
             (AbstractDungeon.getCurrRoom()).cannotLose = false;
             die();
@@ -401,7 +400,7 @@ public class Ouroboros extends CustomMonster {
 
 
     public void renderAbove(SpriteBatch sb) {
-        if (this.halfDead && this.waitingDeath <= 0.0f) {
+        if (this.npc && this.halfDead && this.waitingDeath <= 0.0f) {
             this.cg.renderAbove(sb);
         }
     }

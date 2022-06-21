@@ -1,5 +1,7 @@
 package VUPShionMod.patches;
 
+import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -35,6 +37,11 @@ public class GameStatsPatch {
 
     public static void combatBaseReset() {
         lastDamageDeal = 0;
+
+        for(AbstractFinFunnel finFunnel : FinFunnelManager.getFinFunnelList()){
+            finFunnel.levelForCombat = finFunnel.level;
+        }
+
     }
 
     @SpirePatch(

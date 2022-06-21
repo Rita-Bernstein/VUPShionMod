@@ -1,26 +1,16 @@
 package VUPShionMod.actions.Shion;
 
-import VUPShionMod.actions.Common.GainShieldAction;
-import VUPShionMod.character.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.finfunnels.GravityFinFunnel;
-import VUPShionMod.finfunnels.InvestigationFinFunnel;
-import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
-import VUPShionMod.powers.Shion.BleedingPower;
-import VUPShionMod.powers.Shion.GravitoniumPower;
-import VUPShionMod.powers.Shion.PursuitPower;
 import VUPShionMod.powers.Shion.ReleaseFormMinamiPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class TriggerFinFunnelAction extends AbstractGameAction {
+public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
     private AbstractMonster target;
     private boolean random;
     private String forceFinFunnel = "None";
@@ -31,38 +21,38 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
     private boolean isApplyBleeding = false;
     private boolean isGainBlock = false;
 
-    public TriggerFinFunnelAction(AbstractMonster target) {
+    public TriggerFinFunnelPassiveAction(AbstractMonster target) {
         this.target = target;
         this.random = false;
     }
 
-    public TriggerFinFunnelAction(AbstractMonster target, int loops) {
+    public TriggerFinFunnelPassiveAction(AbstractMonster target, int loops) {
         this(target);
         this.loops = loops;
     }
 
-    public TriggerFinFunnelAction(boolean random) {
+    public TriggerFinFunnelPassiveAction(boolean random) {
         this.random = random;
 
     }
 
-    public TriggerFinFunnelAction(boolean random, int loops) {
+    public TriggerFinFunnelPassiveAction(boolean random, int loops) {
         this(random);
         this.loops = loops;
     }
 
-    public TriggerFinFunnelAction(AbstractMonster target, String forceFinFunnel) {
+    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel) {
         this.target = target;
         this.random = false;
         this.forceFinFunnel = forceFinFunnel;
     }
 
-    public TriggerFinFunnelAction(AbstractMonster target, String forceFinFunnel, int loops) {
+    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel, int loops) {
         this(target, forceFinFunnel);
         this.loops = loops;
     }
 
-    public TriggerFinFunnelAction(String forceFinFunnel, boolean random) {
+    public TriggerFinFunnelPassiveAction(String forceFinFunnel, boolean random) {
         this.random = random;
         this.forceFinFunnel = forceFinFunnel;
     }
@@ -105,10 +95,8 @@ public class TriggerFinFunnelAction extends AbstractGameAction {
 
 
         for (int i = 0; i < this.loops; i++) {
-            if (f.level >= 0 && this.target != null) {
-                if (!this.target.isDeadOrEscaped()) {
-                    f.powerToApply(this.target);
-                }
+            if (f.getLevel() >= 0) {
+                f.powerToApply(this.target);
             } else {
                 this.isDone = true;
                 return;

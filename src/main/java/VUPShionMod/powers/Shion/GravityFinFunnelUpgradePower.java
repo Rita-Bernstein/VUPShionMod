@@ -2,6 +2,7 @@ package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
@@ -52,7 +53,7 @@ public class GravityFinFunnelUpgradePower extends AbstractShionPower {
             if (this.amount <= 0 && !used) {
                 this.used = true;
                 this.amount = -1;
-                List<AbstractFinFunnel> funnelList = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
+                List<AbstractFinFunnel> funnelList = FinFunnelManager.getFinFunnelList();
                 for (AbstractFinFunnel funnel : funnelList) {
                     if (funnel instanceof GravityFinFunnel) {
                         this.flash();

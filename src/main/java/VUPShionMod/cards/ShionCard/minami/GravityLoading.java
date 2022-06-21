@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
@@ -38,7 +38,7 @@ public class GravityLoading extends AbstractShionMinamiCard {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                 if (!mo.isDeadOrEscaped()) {
-                    addToBot(new TriggerFinFunnelAction(mo, GravityFinFunnel.ID));
+                    addToBot(new TriggerFinFunnelPassiveAction(mo, GravityFinFunnel.ID));
                     addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
                 }
             }

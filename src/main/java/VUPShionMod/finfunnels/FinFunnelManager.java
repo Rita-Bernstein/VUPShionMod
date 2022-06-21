@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TurnTriggerAllFinFunnelAction;
 import VUPShionMod.cards.ShionCard.anastasia.AttackOrderGamma;
 import VUPShionMod.patches.AbstractPlayerEnum;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.graphics.Color;
@@ -32,15 +33,15 @@ public class FinFunnelManager {
 
     }
 
-    public void atStartOfTurn(){
+    public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
         if (AbstractDungeon.player.hasPower(AttackOrderGamma.ID))
             AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
 
         EnergyPanelPatches.energyUsedThisTurn = 1;
 
-        if(!finFunnelList.isEmpty())
-            for(AbstractFinFunnel finFunnel: finFunnelList){
+        if (!finFunnelList.isEmpty())
+            for (AbstractFinFunnel finFunnel : finFunnelList) {
                 finFunnel.atTurnStart();
             }
     }
@@ -53,8 +54,8 @@ public class FinFunnelManager {
             this.cY = selectedFinFunnel.cY;
         }
 
-        if(!finFunnelList.isEmpty())
-            for(AbstractFinFunnel finFunnel: finFunnelList){
+        if (!finFunnelList.isEmpty())
+            for (AbstractFinFunnel finFunnel : finFunnelList) {
                 finFunnel.preBattlePrep();
             }
     }
@@ -74,6 +75,10 @@ public class FinFunnelManager {
             }
 
         return null;
+    }
+
+    public static ArrayList<AbstractFinFunnel> getFinFunnelList() {
+        return AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
     }
 
     public void initializeFinFunnelShion() {

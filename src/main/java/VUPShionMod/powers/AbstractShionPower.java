@@ -1,6 +1,7 @@
 package VUPShionMod.powers;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.prayers.AbstractPrayer;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
@@ -53,5 +54,6 @@ public class AbstractShionPower extends TwoAmountPower {
     public void preEndOfRound(){}
 
 
+    public void onTriggerFinFunnel(AbstractFinFunnel finFunnel,AbstractCreature target){}
 
 }

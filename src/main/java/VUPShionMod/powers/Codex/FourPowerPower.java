@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FourPowerPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("FourPowerPower");
+    public static final String POWER_ID = VUPShionMod.makeID(FourPowerPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

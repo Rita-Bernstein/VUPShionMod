@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cutscenes.CGlayout;
 import VUPShionMod.effects.ShionBossBackgroundEffect;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.monsters.Story.Ouroboros;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
 import VUPShionMod.monsters.Story.TimePortal;
@@ -135,8 +136,8 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
         AbstractDungeon.player.energy.energyMaster++;
         AbstractDungeon.player.energy.energy++;
 
-        if (!AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList.isEmpty())
-            for (AbstractFinFunnel f : AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList) {
+        if (!FinFunnelManager.getFinFunnelList().isEmpty())
+            for (AbstractFinFunnel f : FinFunnelManager.getFinFunnelList()) {
                 f.upgradeLevel(9);
             }
 

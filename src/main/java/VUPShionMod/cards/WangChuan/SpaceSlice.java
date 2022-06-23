@@ -44,6 +44,7 @@ public class SpaceSlice extends AbstractWCCard {
                 this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 break;
             case 2:
+                if(m != null)
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 039 Radial Transition", m.hb.cX, m.hb.cY + 50.0f * Settings.scale,
                         80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
                 for (int i = 0; i < 4; i++) {

@@ -35,6 +35,7 @@ public class TimeSlack extends AbstractShionKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
         addToBot(new GainBlockAction(p, p, this.block));

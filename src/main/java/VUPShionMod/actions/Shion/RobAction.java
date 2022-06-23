@@ -29,6 +29,7 @@ public class RobAction extends AbstractGameAction {
 //            AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_HEAVY));
             CardCrawlGame.sound.play("ATTACK_HEAVY");
 
+            if (this.target != null)
             AbstractDungeon.effectList.add(new AbstractAtlasGameEffect("Sparks 041 Shot Right", this.target.hb.cX, this.target.hb.cY,
                     212.0f, 255.0f, 1.0f * Settings.scale, 2, false));
 

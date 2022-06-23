@@ -30,7 +30,7 @@ public class AethereScindo extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastDamageDeal;
-
+        if (m != null)
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                 212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
 

@@ -41,7 +41,7 @@ public class Enchant extends AbstractLiyezhuCard {
         addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, this.magicNumber)));
 
         if (p.hasPower(PsychicPower.POWER_ID)) {
-            addToBot(new MakeTempCardInHandAction(new Enchant()));
+            addToBot(new MakeTempCardInHandAction(makeStatEquivalentCopy()));
             addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));
         }
     }

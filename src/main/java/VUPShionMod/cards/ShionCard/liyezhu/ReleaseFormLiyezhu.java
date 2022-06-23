@@ -7,6 +7,7 @@ import VUPShionMod.powers.Shion.ReleaseFormLiyezhuBPower;
 import VUPShionMod.powers.Shion.ReleaseFormLiyezhuCPower;
 import VUPShionMod.powers.Shion.ReleaseFormLiyezhuPower;
 import VUPShionMod.vfx.Common.AbstractSpineEffect;
+import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -33,6 +34,8 @@ public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
+
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("Liyezhu"),1.0f));
 
         Consumer<AnimationState> stateConsumer = state -> {
             state.setAnimation(0, "FZ_Open", false);

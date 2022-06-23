@@ -23,7 +23,7 @@ public class MensVirtusque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(MensVirtusque.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc40.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -31,8 +31,10 @@ public class MensVirtusque extends AbstractWCCard {
     public MensVirtusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-//        vupCardSetBanner(CardRarity.RARE,CardType.POWER);
+
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
+
+        vupCardSetBanner(CardRarity.RARE, CardType.POWER);
     }
 
     @Override

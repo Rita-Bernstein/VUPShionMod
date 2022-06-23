@@ -34,7 +34,7 @@ public class FirstStrike extends AbstractShionCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));
-
+        if (m != null)
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                 212.0f, 255.0f, 1.0f * Settings.scale, 2,false)));
 

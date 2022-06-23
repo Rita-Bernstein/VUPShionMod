@@ -107,19 +107,20 @@ public class FinFunnelManager {
     public void render(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
         if (AbstractDungeon.rs != AbstractDungeon.RenderScene.EVENT && !AbstractDungeon.isScreenUp) {
-            if (!finFunnelList.isEmpty())
+            if (!finFunnelList.isEmpty()) {
                 for (AbstractFinFunnel funnel : finFunnelList) {
                     funnel.render(sb);
                 }
 
-            sb.draw(this.box, this.cX - 48.0F + 24.0f * Settings.scale, this.cY - 48.0F + 48.0f * Settings.scale,
-                    48.0f, 48.0f,
-                    48.0f, 48.0f,
-                    2.0f * Settings.scale, 2.0f * Settings.scale,
-                    0.0f, 0, 0,
-                    96, 96,
-                    false, false
-            );
+                sb.draw(this.box, this.cX - 48.0F + 24.0f * Settings.scale, this.cY - 48.0F + 48.0f * Settings.scale,
+                        48.0f, 48.0f,
+                        48.0f, 48.0f,
+                        2.0f * Settings.scale, 2.0f * Settings.scale,
+                        0.0f, 0, 0,
+                        96, 96,
+                        false, false
+                );
+            }
         }
     }
 

@@ -38,6 +38,7 @@ public class BlueBlade extends AbstractShionLiyezhuCard {
 
         calculateCardDamage(m);
         addToBot(new SFXAction("BLUNT_FAST"));
+        if (m != null)
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 016 Impact Explosion Radial", m.hb.cX, m.hb.cY + 0.0f * Settings.scale,
                 125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
         addToBot(new DamageAction(m,new DamageInfo(p,this.damage,this.damageTypeForTurn),AbstractGameAction.AttackEffect.NONE));

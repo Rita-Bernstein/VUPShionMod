@@ -37,6 +37,7 @@ public class BreakChop extends AbstractWCCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
+                if(m != null)
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
@@ -45,6 +46,7 @@ public class BreakChop extends AbstractWCCard {
                 addToBot(new ApplyPowerAction(m,p,new WeakPower(m,1,false)));
                 break;
             case 2:
+                if(m != null)
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));

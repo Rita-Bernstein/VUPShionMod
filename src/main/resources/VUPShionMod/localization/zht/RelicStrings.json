@@ -334,7 +334,7 @@
     "NAME": "快樂的pod機器人",
     "FLAVOR": "Anastasia仿製的微型輔助機器人，為什麼會在這裡？",
     "DESCRIPTIONS": [
-      "每回合開始時給予隨機一名敵人 #b1 層 #y虛弱 。"
+      "每回合開始時給予所有敵人 #b1 層 #y虛弱 。"
     ]
   },
   "VUPShionMod:OldFinFunnel": {
@@ -430,6 +430,27 @@
     "FLAVOR": "似乎在散發著劍意力量，但是被某種意志扭曲成了難以理解的結構。",
     "DESCRIPTIONS": [
       "每場戰鬥開始時失去 [E] [E] [E] 。 NL 每場戰鬥開始時打出並 #y消耗 你牌組中的所有基礎攻擊和防禦牌。"
+    ]
+  },
+  "VUPShionMod:TimeReversalBullet": {
+    "NAME": "時間逆回之彈",
+    "FLAVOR": "這是一息尚存的她，能為自己善良的妹妹提供的最後一次反擊。",
+    "DESCRIPTIONS": [
+      "下次將要死亡時免死並回復 #b1 點生命。 NL 擊殺所有非首領敵人。 NL 僅能生效一次。"
+    ]
+  },
+  "VUPShionMod:DemonSword": {
+    "NAME": "魔王佩劍之影",
+    "FLAVOR": "這是背道而馳的她，能為自己無助的姐姐提供的最後一份幫助。",
+    "DESCRIPTIONS": [
+      "每當你造成 #y攻擊傷害 時，獲得 #b1 點 #y臨時力量 。"
+    ]
+  },
+  "VUPShionMod:QueenShield": {
+    "NAME": "深海女神之盾",
+    "FLAVOR": "這是自認卑微的她，能為自己天真的姐姐提供的最後一層保護。",
+    "DESCRIPTIONS": [
+      "每當你受到傷害時，立刻獲得 #b6 點 #y格擋。"
     ]
   }
 }

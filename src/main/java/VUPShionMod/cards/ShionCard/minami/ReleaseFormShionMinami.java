@@ -3,6 +3,8 @@ package VUPShionMod.cards.ShionCard.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.powers.Shion.ReleaseFormMinamiPower;
+import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,7 +25,7 @@ public class ReleaseFormShionMinami extends AbstractShionMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("Minami"),1.0f));
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormMinamiPower(p, this.magicNumber), 0));
     }
 

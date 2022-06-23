@@ -33,6 +33,7 @@ public class MinuteHand extends AbstractShionKuroisuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));
+        if (m != null)
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 030 Slash Right", m.hb.cX, m.hb.cY + 480.0f * Settings.scale,
                 128.0f, 232.0f, 2.5f * Settings.scale, 2, false)));
 

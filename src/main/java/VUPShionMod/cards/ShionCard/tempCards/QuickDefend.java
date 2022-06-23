@@ -20,7 +20,7 @@ public class QuickDefend extends AbstractVUPShionCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy09.png");
 
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final int COST = 0;
@@ -33,7 +33,7 @@ public class QuickDefend extends AbstractVUPShionCard {
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.exhaust = true;
 
-//        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
+        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 
     @Override

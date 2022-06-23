@@ -140,5 +140,11 @@
       "紫音畫廊",
       ""
     ]
+  },
+  "VUPShionMod:UpgradeDeckAction": {
+    "TEXT": [
+      "選擇牌組中的牌升級",
+      "選擇牌組中的%d張牌升級"
+    ]
   }
 }

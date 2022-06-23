@@ -73,11 +73,11 @@ public class GravityFinFunnel extends AbstractFinFunnel {
             addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
 
         Consumer<AnimationState> stateConsumer = state -> {
-            state.setAnimation(0, "ZL2_GH5", false);
+            state.setAnimation(0, "ZL2_GH7", false);
         };
 
         addToBot(new VFXAction(new AbstractSpineEffect(true,
-                "VUPShionMod/img/vfx/Spine/ZL_GH2/ZL_GH2", AbstractDungeon.player.hb.cX,  AbstractDungeon.player.hb.y, 3.0f * Settings.scale,
+                "VUPShionMod/img/vfx/Spine/ZL_GH3/ZL_GH3", AbstractDungeon.player.hb.cX,  AbstractDungeon.player.hb.y, 3.0f * Settings.scale,
                 3.0f, 10.0f, stateConsumer)));
 
         super.powerToApply(target);

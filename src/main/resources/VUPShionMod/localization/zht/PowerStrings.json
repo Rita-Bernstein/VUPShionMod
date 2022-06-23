@@ -872,5 +872,19 @@
     "DESCRIPTIONS": [
       "觸發除 #y偵查 以外的 #y浮游炮 被動效果時，觸發一次 #y偵查浮游炮 的被動。 NL 不能疊加。"
     ]
+  },
+  "VUPShionMod:DefensiveOrderPower": {
+    "NAME": "防禦指示",
+    "DESCRIPTIONS": [
+      "本回合所有 #y流血 、 #y追擊 傷害變為獲得等量 #y格擋 ， NL #y浮游炮 主動造成的傷害替換為獲得等量 #y護盾 。",
+      "接下來的 #b%d 個回合所有 #y流血 、 #y追擊 傷害變為獲得等量 #y格擋 ， NL #y浮游炮 主動造成的傷害替換為獲得等量 #y護盾 。"
+    ]
+  },
+  "VUPShionMod:AntiAirPower": {
+    "NAME": "對空彈幕",
+    "DESCRIPTIONS": [
+      "每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。",
+      "每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。"
+    ]
   }
 }

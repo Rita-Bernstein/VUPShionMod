@@ -328,7 +328,7 @@
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "蒼藍之刃",
-    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 額外造成 vup_shion_mod:超維連結 層數 !M! 倍的傷害。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 額外造成 vup_shion_mod:超維連結 層數 !M! 倍的傷害。"
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神聖衝鋒",
@@ -503,7 +503,7 @@
   },
   "VUPShionMod:SeverWrist": {
     "NAME": "腕切",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 其本回合失去1點 力量 !M! 次。 NL 抽一張牌。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 其失去1點 力量 !M! 次。 NL 抽一張牌。 NL 消耗 。"
   },
   "VUPShionMod:SeverAnkle": {
     "NAME": "足切",
@@ -1108,8 +1108,8 @@
   },
   "VUPShionMod:PrincipledThievery": {
     "NAME": "竊奪誡言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：獲得敵人數量兩倍的金幣。 NL 給予 *所有人 2層 vup_shion_mod:罪孽 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *神意賦予 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：獲得敵人數量三倍的金幣。 NL 給予 *所有人 2層 vup_shion_mod:罪孽 。  NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *神意賦予+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：獲得敵人數量兩倍的金幣。 NL 給予所有敵人4層 vup_shion_mod:罪孽 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *神意賦予 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：獲得敵人數量三倍的金幣。 NL 給予所有敵人4層 vup_shion_mod:罪孽 。  NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *神意賦予+ 。 NL 消耗 。"
   },
   "VUPShionMod:HeavenDecree": {
     "NAME": "神意賦予",
@@ -1144,7 +1144,7 @@
   "VUPShionMod:TranscendSoul": {
     "NAME": "祭靈天途",
     "DESCRIPTION": "回合結束時，回復 vup_shion_mod:沉靈 !M! 倍的生命。",
-    "UPGRADE_DESCRIPTION": "回合結束時，對所有敵人造成 vup_shion_mod:沉靈 !M! 倍的傷害。",
+    "UPGRADE_DESCRIPTION": "回合結束時，回復 vup_shion_mod:沉靈 !M! 倍的生命並對所有敵人造成等量傷害。",
     "EXTENDED_DESCRIPTION": [
       "度靈天途"
     ]
@@ -1152,7 +1152,7 @@
   "VUPShionMod:Arbitration": {
     "NAME": "審判開庭",
     "DESCRIPTION": "每當造成未被 格擋 的傷害時，給予 !M! 層 vup_shion_mod:罪孽 。",
-    "UPGRADE_DESCRIPTION": "每當觸發 vup_shion_mod:伐罪 時，給予 *所有人 !M! 層 vup_shion_mod:罪孽 並回復5點生命。",
+    "UPGRADE_DESCRIPTION": "每當觸發 vup_shion_mod:伐罪 時，給予 *所有人 !M! 層 vup_shion_mod:罪孽 並回復8點生命。",
     "EXTENDED_DESCRIPTION": [
       "萬物·審判開庭"
     ]
@@ -1184,8 +1184,8 @@
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "罪孽收割",
-    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 。",
-    "UPGRADE_DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 2。 NL vup_shion_mod:沉靈 2： vup_shion_mod:伐罪 。"
+    "DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL  NL vup_shion_mod:伐罪 。",
+    "UPGRADE_DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 2。 NL vup_shion_mod:沉靈 2： vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:Whisk": {
     "NAME": "棺擊",
@@ -1213,7 +1213,7 @@
   },
   "VUPShionMod:Enchant": {
     "NAME": "附魂",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !M! 點臨時 力量 。 NL vup_shion_mod:沉靈 :將這張牌的複製加入手牌。 NL 消耗 。"
+    "DESCRIPTION": "能被多次 升級 。 NL 造成 !D! 點傷害。 NL 獲得 !M! 點臨時 力量 。 NL vup_shion_mod:沉靈 :將這張牌的複製加入手牌。 NL 消耗 。"
   },
   "VUPShionMod:March": {
     "NAME": "遠征",
@@ -1272,7 +1272,7 @@
   },
   "VUPShionMod:VerdictUponHeart": {
     "NAME": "一切審判證心",
-    "DESCRIPTION": " vup_shion_mod:伐罪 !M! 。 NL 清空 *所有人 的 vup_shion_mod:罪孽 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:伐罪 !M! 。 NL 消耗 。"
   },
   "VUPShionMod:BrokenSanctuary": {
     "NAME": "破碎聖堂",
@@ -1430,5 +1430,32 @@
     "EXTENDED_DESCRIPTION": [
       "超維連結層數不足"
     ]
+  },
+  "VUPShionMod:DefensiveOrder": {
+    "NAME": "防禦指示",
+    "DESCRIPTION": "本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追擊 傷害變為獲得等量 格擋 。 NL vup_shion_mod:浮游炮 主動造成的傷害替換為獲得等量 vup_shion_mod:護盾 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追擊 傷害變為獲得等量 格擋 。 NL vup_shion_mod:浮游炮 主動造成的傷害替換為獲得等量 vup_shion_mod:護盾 。"
+  },
+  "VUPShionMod:LiXiaoNan": {
+    "NAME": "絕命·黎曉楠",
+    "DESCRIPTION": "失去最大生命一半的生命。造成失去生命 NL X ( vup_shion_mod:沉靈 + vup_shion_mod:罪孽 ) NL X0.1的傷害。 消耗 。",
+    "UPGRADE_DESCRIPTION": "失去最大生命一半的生命。造成失去生命 NL X ( vup_shion_mod:沉靈 + vup_shion_mod:罪孽 ) NL X0.2的傷害。 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 點傷害）"
+    ]
+  },
+  "VUPShionMod:LiYueSheng": {
+    "NAME": "刻心·黎月笙",
+    "DESCRIPTION": "失去所有負面效果。 NL 每失去一個效果， NL 你失去 !M! 點生命並獲得 !VUPShionSecondM! 點 力量 。 消耗 。"
+  },
+  "VUPShionMod:LiXiaoYa": {
+    "NAME": "願景·黎曉雅",
+    "DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 進入 vup_shion_mod:祈言姿態 。 NL 將 *自我審判 加入手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 進入 vup_shion_mod:祈言姿態 。 NL 將 *聖軀代行 加入手牌。 NL 消耗 。"
+  },
+  "VUPShionMod:LiyezhuUpgradeCard": {
+    "NAME": "武裝·升階具現",
+    "DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 選擇 升級 牌組中的一張牌。 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 至多選擇 升級 牌組中的兩張牌。 消耗 。"
   }
 }

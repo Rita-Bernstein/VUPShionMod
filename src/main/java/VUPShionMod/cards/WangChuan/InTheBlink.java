@@ -49,7 +49,7 @@ public class InTheBlink extends AbstractWCCard {
         switch (this.timesUpgraded) {
             case 0:
                 calculateCardDamage(m);
-
+                if(m != null)
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
@@ -60,7 +60,7 @@ public class InTheBlink extends AbstractWCCard {
                 break;
             case 1:
                 calculateCardDamage(m);
-
+                if(m != null)
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
@@ -72,7 +72,7 @@ public class InTheBlink extends AbstractWCCard {
                 break;
             case 2:
                 calculateCardDamage(m);
-
+                if(m != null)
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                         212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),

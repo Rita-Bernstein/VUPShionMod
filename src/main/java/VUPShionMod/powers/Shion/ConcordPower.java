@@ -30,7 +30,7 @@ public class ConcordPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount > 0)
+        if (50 - this.amount > 0)
             this.description = String.format(DESCRIPTIONS[1], 50 - this.amount, 50 - this.amount);
         else
             this.description = String.format(DESCRIPTIONS[0], this.amount - 50, this.amount - 50);

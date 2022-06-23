@@ -23,7 +23,7 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz12.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public HolySlashDown(int upgrades) {
@@ -32,7 +32,7 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 1;
 
-//        vupCardSetBanner(CardRarity.RARE,CardType.ATTACK);
+        vupCardSetBanner(CardRarity.RARE,CardType.ATTACK);
     }
 
     public HolySlashDown() {
@@ -51,6 +51,7 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
 
         for (int i = 0; i < this.magicNumber; i++) {
             addToBot(new SFXAction("ATTACK_FAST"));
+            if (m != null)
             addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 020 Slash1 Ray Right", m.hb.cX, m.hb.cY,
                     125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));

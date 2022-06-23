@@ -44,6 +44,7 @@ public class HolyCharge extends AbstractShionLiyezhuCard {
             }
         });
 
+        if (m != null)
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 005 Impact Radial", m.hb.cX, m.hb.cY,
                 125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
 

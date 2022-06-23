@@ -1108,8 +1108,8 @@
   },
   "VUPShionMod:PrincipledThievery": {
     "NAME": "窃夺诫言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量两倍的金币。 NL 给予所有敌人 2层 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量三倍的金币。 NL 给予所有敌人 2层 vup_shion_mod:罪孽 。  NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量两倍的金币。 NL 给予所有敌人4层 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量三倍的金币。 NL 给予所有敌人4层 vup_shion_mod:罪孽 。  NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予+ 。 NL 消耗 。"
   },
   "VUPShionMod:HeavenDecree": {
     "NAME": "神意赋予",

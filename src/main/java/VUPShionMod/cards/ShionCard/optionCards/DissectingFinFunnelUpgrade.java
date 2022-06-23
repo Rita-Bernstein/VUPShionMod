@@ -23,7 +23,7 @@ public class DissectingFinFunnelUpgrade extends AbstractVUPShionCard {
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = -2;
@@ -32,7 +32,7 @@ public class DissectingFinFunnelUpgrade extends AbstractVUPShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
 
 
-//        vupCardSetBanner(CardRarity.RARE,TYPE);
+        vupCardSetBanner(CardRarity.RARE,TYPE);
     }
 
     @Override

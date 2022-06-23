@@ -43,6 +43,7 @@ public class Goodbye extends AbstractShionCard {
             public void update() {
                 for(int i = 0; i < p.hand.size(); i++) {
                     addToTop(new DamageAction(m, new DamageInfo(p, Goodbye.this.damage, Goodbye.this.damageTypeForTurn), AttackEffect.NONE));
+                    if (m != null)
                     addToTop(new VFXAction(new AbstractAtlasGameEffect("Sparks 069 Impact Explosion Radial", m.hb.cX, m.hb.cY + 0.0f * Settings.scale,
                             125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
                     addToTop(new SFXAction("BLUNT_FAST"));

@@ -24,6 +24,7 @@ public class MotherRosarioAction extends AbstractGameAction {
 
             addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, this.card.damage, this.card.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
+            if (this.target != null)
             addToTop(new VFXAction(new AbstractAtlasGameEffect("Energy 105 Ray Left Loop", this.target.hb.cX, this.target.hb.cY,
                     50.0f, 50.0f, 10.0f * Settings.scale, 2, false)));
 

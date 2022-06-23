@@ -135,7 +135,8 @@
   },
   "VUPShionMod:UpgradeDeckAction": {
     "TEXT": [
-      "Choose a card to upgrade."
+      "选择牌组中的牌升级",
+      "选择牌组中的%d张牌升级"
     ]
   }
 }

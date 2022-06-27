@@ -66,7 +66,7 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     @Override
     public int onPlayerHeal(int healAmount) {
-        if (this.counter == -2 && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+        if (this.counter == -2 && AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&(AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
             if (!(AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
                 addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(healAmount,
                         true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));

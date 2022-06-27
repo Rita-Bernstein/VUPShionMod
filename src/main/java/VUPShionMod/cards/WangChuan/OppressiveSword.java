@@ -95,8 +95,13 @@ public class OppressiveSword extends AbstractWCCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (this.timesUpgraded >= 2)
-            return super.canUse(p, m) && EnergyPanel.totalCount > 0;
+        if (this.timesUpgraded >= 2) {
+            if(!(super.canUse(p, m) && EnergyPanel.totalCount > 0)) {
+                this.cantUseMessage = EXTENDED_DESCRIPTION[3];
+                return false;
+            }
+            return true;
+        }
         else
             return super.canUse(p, m);
     }

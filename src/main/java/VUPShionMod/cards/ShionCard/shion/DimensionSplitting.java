@@ -36,7 +36,7 @@ public class DimensionSplitting extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int realBaseDamage = this.baseDamage;
-        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisCombat;
         int ctr = 0;
         for (AbstractCard card : cardList) {
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
@@ -67,7 +67,7 @@ public class DimensionSplitting extends AbstractShionCard {
     @Override
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisCombat;
         int ctr = 0;
         for (AbstractCard card : cardList) {
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {

@@ -486,7 +486,7 @@
   "VUPShionMod:RecoilerPower": {
     "NAME": "反冲回路",
     "DESCRIPTIONS": [
-      "获得 #y魔能过载 时，对所有敌人造成 b%d 点伤害。"
+      "获得 #y魔能过载 时，对所有敌人造成 #b%d 点伤害。"
     ]
   },
   "VUPShionMod:GravitaterPower": {
@@ -825,7 +825,7 @@
       "造成的伤害提高 #b%d%% ， NL 受到的伤害减少 #b%d%% 。"
     ]
   },
-  "VUPShionMod:ClaymoreSet": {
+  "VUPShionMod:ClaymoreSetPower": {
     "NAME": "阔剑地雷设置",
     "DESCRIPTIONS": [
       "下次受到攻击伤害时，对攻击者造成 #b%d 点伤害。"

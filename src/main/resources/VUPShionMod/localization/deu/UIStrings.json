@@ -43,5 +43,10 @@
       "Add copies of ",
       " cards to your hand."
     ]
+  },
+  "VUPShionMod:SelectSrcCardToHandAction": {
+    "TEXT": [
+      "选择一张能力牌加入手牌"
+    ]
   }
 }

@@ -134,7 +134,7 @@ public class SansMeter {
 
         if (this.hb.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
             TipHelper.renderGenericTip(this.hb.cX + this.hb.width * 0.5f,
-                    this.hb.cY + this.hb.height * 0.3f, name, description);
+                    0.75f * Settings.HEIGHT, name, description);
         }
 
     }
@@ -199,7 +199,7 @@ public class SansMeter {
                 }
             });
 
-        if(this.amount < this.amount_MAX && this.amount > 50)
+        if (this.amount < this.amount_MAX && this.amount > 50)
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {

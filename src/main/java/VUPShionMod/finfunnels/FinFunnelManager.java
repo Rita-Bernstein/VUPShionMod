@@ -81,6 +81,10 @@ public class FinFunnelManager {
         return AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
     }
 
+    public static AbstractFinFunnel getSelectedFinFunnel() {
+        return AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).selectedFinFunnel;
+    }
+
     public void initializeFinFunnelShion() {
         if (finFunnelList.isEmpty()) {
             finFunnelList.add(new InvestigationFinFunnel(SaveHelper.investigationFinFunnelLevel));

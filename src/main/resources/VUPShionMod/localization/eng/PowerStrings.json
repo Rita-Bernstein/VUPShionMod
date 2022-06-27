@@ -812,7 +812,7 @@
       "Your Attacks deal #b%d%% more damage. NL You take #b%d%% less damage from attacks.(up to #b50%%.)"
     ]
   },
-  "VUPShionMod:ClaymoreSet": {
+  "VUPShionMod:ClaymoreSetPower": {
     "NAME": "阔剑地雷设置",
     "DESCRIPTIONS": [
       "下次受到攻击伤害时，对攻击者造成 #b%d 点伤害。"
@@ -868,10 +868,10 @@
     ]
   },
   "VUPShionMod:AntiAirPower": {
-    "NAME": "对空弹幕",
+    "NAME": "Anti Air",
     "DESCRIPTIONS": [
-      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。",
-      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。"
+      "At the end of turn, it deals #b%d #ynon-Attack damage #b%d times. ",
+      "At the end of turn, it deals #b%d #ynon-Attack damage #b%d times "
     ]
   }
 }

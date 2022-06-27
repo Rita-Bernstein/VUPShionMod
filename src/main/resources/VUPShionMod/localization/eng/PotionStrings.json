@@ -1,32 +1,113 @@
 {
-  "VUPShionMod:PoisonGrenadeBag": {
-    "NAME": "Poison Grenade",
+  "VUPShionMod:PlanedModify": {
+    "NAME": "计划改装",
     "DESCRIPTIONS": [
-      "Add #b%d #yPoison #yGrenade into your hand."
+      "提高 #b%d 级当前 #y浮游炮 的等级。"
     ]
   },
-  "VUPShionMod:FragGrenadeBag": {
-    "NAME": "Frag Grenade",
+  "VUPShionMod:CorGladiiFragment": {
+    "NAME": "剑意碎片",
     "DESCRIPTIONS": [
-      "Add #b%d #yFrag #yGrenade into your hand."
+      "选择 #y升级 牌组中的 #b%d 张 #y攻击牌 。"
     ]
   },
-  "VUPShionMod:ShockGrenadeBag": {
-    "NAME": "Shock Grenade",
+  "VUPShionMod:WordFragment": {
+    "NAME": "圣言碎片",
     "DESCRIPTIONS": [
-      "Add #b%d #yShock #yGrenade into your hand."
+      "选择 #y升级 牌组中的 #b%d 张 #y祈言牌 。"
     ]
   },
-  "VUPShionMod:BouncingGrenadeBag": {
-    "NAME": "Bouncing Grenade",
+  "VUPShionMod:EnergeticFragment": {
+    "NAME": "高能碎片",
     "DESCRIPTIONS": [
-      "Add #b%d #yBouncing #yGrenade into your hand."
+      ""
     ]
   },
-  "VUPShionMod:Hiroji": {
-    "NAME": "Leave This ALONE!",
+  "VUPShionMod:TimeFragment": {
+    "NAME": "时光碎片",
     "DESCRIPTIONS": [
-      "Gain #b%d #yStrength this turn from its killing smell."
+      "本回合结束时额外获得一个回合。 NL 结束你的回合。"
+    ]
+  },
+  "VUPShionMod:FlashBang": {
+    "NAME": "A1高闪",
+    "DESCRIPTIONS": [
+      " #y击晕 所有敌人。",
+      " #y击晕 所有敌人 %d 回合。"
+    ]
+  },
+  "VUPShionMod:MinamiDepository": {
+    "NAME": "小棉的仓库",
+    "DESCRIPTIONS": [
+      "获得 #b%d 个药水栏位。 NL 随机获得 #b%d 瓶药水。",
+      "获得 #b%d 个药水栏位。 NL 随机获得 #b%d 瓶药水。"
+    ]
+  },
+  "VUPShionMod:MinamiHand": {
+    "NAME": "小棉的底牌",
+    "DESCRIPTIONS": [
+      "从当前角色的 #y能力牌 中选择一张。 NL 将它的 #b%d 张复制加入手牌。",
+      "从当前角色的 #y能力牌 中选择一张。 NL 将它的 #b%d 张复制加入手牌。"
+    ]
+  },
+  "VUPShionMod:MinamiReserve": {
+    "NAME": "小棉的库存",
+    "DESCRIPTIONS": [
+      "随机获得 #b%d 张技能牌。 NL 它们在本场战斗中耗能为 #b0 且 #y消耗 。"
+    ]
+  },
+  "VUPShionMod:ShoppingVoucher": {
+    "NAME": "0元购凭证",
+    "DESCRIPTIONS": [
+      "下次在商店中消费时免费并丢弃这瓶药水。"
+    ]
+  },
+  "VUPShionMod:WorldLeaf": {
+    "NAME": "世界树叶片",
+    "DESCRIPTIONS": [
+      "回复到 #b%d%% 的生命。"
+    ]
+  },
+  "VUPShionMod:Bento": {
+    "NAME": "龙龙的便当",
+    "DESCRIPTIONS": [
+      "回复 #b%d 点生命。 NL 获得 #b%d 瓶药水。"
+    ]
+  },
+  "VUPShionMod:HolyWater": {
+    "NAME": "圣水",
+    "DESCRIPTIONS": [
+      "移除牌组中的 #y所有 诅咒牌。 NL 回复 #b%d 点生命。"
+    ]
+  },
+  "VUPShionMod:Claymore": {
+    "NAME": "阔剑地雷",
+    "DESCRIPTIONS": [
+      "下次受到攻击伤害时，对攻击者造成 #b%d 点伤害。"
+    ]
+  },
+  "VUPShionMod:MagiaMagazine": {
+    "NAME": "魔能弹夹",
+    "DESCRIPTIONS": [
+      "获得 #b%d [E] 。 抽 #b%d 张牌。"
+    ]
+  },
+  "VUPShionMod:Cola": {
+    "NAME": "可乐",
+    "DESCRIPTIONS": [
+      "获得 #b%d #y力量 、 #y敏捷 和 [E] 。"
+    ]
+  },
+  "VUPShionMod:UAV": {
+    "NAME": "侦察无人机",
+    "DESCRIPTIONS": [
+      "给予所有敌人 #b%d 层 #y虚弱 和 #y易伤。"
+    ]
+  },
+  "VUPShionMod:TransitionGenerator": {
+    "NAME": "跃迁发生器",
+    "DESCRIPTIONS": [
+      "你在选择下一层的房间时可以无视当前的路线。 NL 无视路线时，丢弃这瓶药水。"
     ]
   }
 }

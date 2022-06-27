@@ -121,7 +121,6 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
         if (!AbstractDungeon.player.hasRelic(AbyssalCrux.ID)) {
             SaveHelper.liyezhuRelic = true;
             SaveHelper.saveSettings();
-            System.out.println("真结局--liyezhuRelic");
             endGame();
         } else {
             CardCrawlGame.music.playTempBGM("VUPShionMod:Boss_Phase2");

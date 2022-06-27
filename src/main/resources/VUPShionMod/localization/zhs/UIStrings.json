@@ -146,5 +146,10 @@
       "选择牌组中的牌升级",
       "选择牌组中的%d张牌升级"
     ]
+  },
+  "VUPShionMod:SelectSrcCardToHandAction": {
+    "TEXT": [
+      "选择一张能力牌加入手牌"
+    ]
   }
 }

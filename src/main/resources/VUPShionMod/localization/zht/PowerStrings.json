@@ -486,7 +486,7 @@
   "VUPShionMod:RecoilerPower": {
     "NAME": "反衝迴路",
     "DESCRIPTIONS": [
-      "獲得 #y魔能過載 時，對所有敵人造成 b%d 點傷害。"
+      "獲得 #y魔能過載 時，對所有敵人造成 #b%d 點傷害。"
     ]
   },
   "VUPShionMod:GravitaterPower": {
@@ -825,7 +825,7 @@
       "造成的傷害提高 #b%d%% ， NL 受到的傷害減少 #b%d%% 。"
     ]
   },
-  "VUPShionMod:ClaymoreSet": {
+  "VUPShionMod:ClaymoreSetPower": {
     "NAME": "闊劍地雷設置",
     "DESCRIPTIONS": [
       "下次受到攻擊傷害時，對攻擊者造成 #b%d 點傷害。"

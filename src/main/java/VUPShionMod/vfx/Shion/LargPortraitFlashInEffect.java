@@ -28,7 +28,6 @@ public class LargPortraitFlashInEffect extends AbstractGameEffect {
     @Override
     public void update() {
         if (this.img == null) {
-            System.out.println("PortraitWindyPetalEffect立绘为空");
             this.isDone = true;
             return;
         }

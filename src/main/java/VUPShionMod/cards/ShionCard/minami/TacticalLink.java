@@ -2,6 +2,7 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
+import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
@@ -35,9 +36,9 @@ public class TacticalLink extends AbstractShionMinamiCard {
         addToBot(new TriggerFinFunnelPassiveAction(m));
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
 
-        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(),1, true, true, false));
+        addToBot(new MakeLoadedCardAction(new QuickAttack(),1));
         if(this.upgraded)
-        addToBot(new MakeTempCardInDrawPileAction(new QuickDefend(),1, true, true, false));
+        addToBot(new MakeLoadedCardAction(new QuickDefend(),1));
     }
 
     public AbstractCard makeCopy() {

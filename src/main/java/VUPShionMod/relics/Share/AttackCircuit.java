@@ -104,6 +104,7 @@ public class AttackCircuit extends AbstractShionRelic implements CustomBottleRel
             if (c.type == AbstractCard.CardType.ATTACK)
                 tmp.addToTop(c);
         }
+        if(!tmp.isEmpty())
         AbstractDungeon.gridSelectScreen.open(tmp,
                 1, DESCRIPTIONS[2],
                 false, false, false, false);

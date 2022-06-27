@@ -170,7 +170,7 @@
     "NAME": "Pursuing Upgrade",
     "DESCRIPTION": " vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Pursuing Funnel is upgraded by 1."
   },
-   "VUPShionMod:DissectingUpgrade": {
+  "VUPShionMod:DissectingUpgrade": {
     "NAME": "Dissecting Upgrade",
     "DESCRIPTION": "vup_shion_mod:Task ： NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Dissecting Funnel is upgraded by 1."
   },
@@ -460,7 +460,7 @@
       "Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL ",
       "Gain 10 vup_shion_mod:Cor\u00a0Gladii. NL ",
       " NL Gain 1 Intangible.",
-	  "Deal damage equal to vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL "
+      "Deal damage equal to vup_shion_mod:Cor\u00a0Gladii to ALL enemies. NL "
     ]
   },
   "VUPShionMod:GlandesMagicae": {
@@ -522,7 +522,7 @@
     "UPGRADE_DESCRIPTION": "Deal damage equal to the damage dealt last time for 3 times. NL Draw 1 card. NL Gain 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
-      ]
+    ]
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "Gladii Infiniti",
@@ -534,7 +534,10 @@
   },
   "VUPShionMod:Guard": {
     "NAME": "Guard",
-    "DESCRIPTION": "Gain !B! Block. NL Lose !M! vup_shion_mod:Stiffness. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. "
+    "DESCRIPTION": "Gain !B! Block. NL Lose !M! vup_shion_mod:Stiffness. NL Lose !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. ",
+    "EXTENDED_DESCRIPTION": [
+      "Not enough Cor Gladii."
+    ]
   },
   "VUPShionMod:LunaMergo": {
     "NAME": "Wind Susurrates",
@@ -693,7 +696,7 @@
     "DESCRIPTION": "Whenever you deal unblocked damage with Attacks, heal !M! HP.",
     "UPGRADE_DESCRIPTION": "Whenever you deal unblocked damage with Attacks, heal !M! HP."
   },
-   "VUPShionMod:ChaosNimius": {
+  "VUPShionMod:ChaosNimius": {
     "NAME": "Codex Chai",
     "DESCRIPTION": "Draw !M! cards. NL Exhaust 1 card. NL Discard 1 card.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Exhaust up to 2 cards.",
@@ -937,7 +940,7 @@
     "NAME": "Funnel Matrix",
     "DESCRIPTION": "Trigger the passive ability of all vup_shion_mod:Funnel for twice to an enemy. NL Exhaust."
   },
-   "VUPShionMod:Alleviator": {
+  "VUPShionMod:Alleviator": {
     "NAME": "Alleviator",
     "DESCRIPTION": "For every first time you trigger vup_shion_mod:Magiam\u00a0Obruor each turn, gain [E] . NL vup_shion_mod:Magiam\u00a0Obruor.",
     "UPGRADE_DESCRIPTION": "Innate. For every first time you trigger vup_shion_mod:Magiam\u00a0Obruor each turn, gain [E] . NL vup_shion_mod:Magiam\u00a0Obruor."
@@ -1124,8 +1127,8 @@
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "Hallowed Case",
-    "DESCRIPTION": "At the end of your turn, add 1 *Miracle into your hand and gain 1 vup_shion_mod:Psychic.",
-    "UPGRADE_DESCRIPTION": "Gain 1 vup_shion_mod:Psychic. NL At the end of your turn, add 1 *Miracle into your hand and gain 1 vup_shion_mod:Psychic."
+    "DESCRIPTION": "At the end of your turn, add a *Miracle into your hand and gain !M! vup_shion_mod:Psychic.",
+    "UPGRADE_DESCRIPTION": "Gain 1 vup_shion_mod:Psychic. NL At the end of your turn, add a *Miracle into your hand and gain !M! vup_shion_mod:Psychic."
   },
   "VUPShionMod:EnsanguinedFigure": {
     "NAME": "Ensanguined Figure",
@@ -1383,7 +1386,8 @@
     "EXTENDED_DESCRIPTION": [
       "Suppressing Blade+",
       "Crescent Dash",
-      "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness."
+      "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+      "X is 0"
     ]
   },
   "VUPShionMod:Strafe2": {
@@ -1435,7 +1439,6 @@
     "DESCRIPTION": "本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。",
     "UPGRADE_DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。"
   },
-
   "VUPShionMod:LiXiaoNan": {
     "NAME": "绝命·黎晓楠",
     "DESCRIPTION": "失去最大生命一半的伤害。 NL 造成失去生命 NL X ( vup_shion_mod:沉灵 + vup_shion_mod:罪孽 ) NL X0.1的伤害。 NL 消耗 。",

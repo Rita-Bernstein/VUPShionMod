@@ -89,7 +89,7 @@
     "DESCRIPTIONS": [
       "As you are about to depart, a message come to you.",
       "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence.",
-      "#r@The voice of yourself eeriely worms into your head out of the complete void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
     ],
     "OPTIONS": [
       "[Proceed] ...",
@@ -185,7 +185,7 @@
     "DESCRIPTIONS": [
       "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
       "You have seen it once, and you know where the target is.",
-      "#r@The voice of yourself eeriely worms into your head out of the complete void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
     ],
     "OPTIONS": [
       "[Proceed] ...",

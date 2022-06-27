@@ -75,7 +75,8 @@ public class OldOmamori extends AbstractShionRelic {
         CardCrawlGame.sound.play("CARD_EXHAUST");
 
         for (int i = 0; i < 2; i++) {
-            AbstractCard card = possibleCards.get(AbstractDungeon.relicRng.random(possibleCards.size() - 1));
+            AbstractCard card = possibleCards.get(AbstractDungeon.miscRng.random(possibleCards.size() - 1));
+            possibleCards.remove(card);
             AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, Settings.WIDTH / 3.0F + displayCount, Settings.HEIGHT / 2.0F));
             displayCount += Settings.WIDTH / 6.0F;
             AbstractDungeon.player.masterDeck.removeCard(card);

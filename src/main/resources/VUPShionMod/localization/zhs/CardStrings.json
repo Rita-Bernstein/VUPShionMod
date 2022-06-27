@@ -530,15 +530,18 @@
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
-    "DESCRIPTION": "保留 ， 消耗 。 NL 保留 时打出前耗能降低。 NL 造成1+ vup_shion_mod:剑意 的伤害8次。 NL 获得4点 vup_shion_mod:硬直 。 NL 击晕 敌人。",
-    "UPGRADE_DESCRIPTION": "保留 ， 消耗 。 NL 保留 时打出前耗能降低。 NL 造成1+ vup_shion_mod:剑意 的伤害8次。 NL 获得4点 vup_shion_mod:硬直 。 NL 击晕 敌人。",
+    "DESCRIPTION": "保留 ， 消耗 。 NL 保留 时打出前耗能降低 NL 造成1+ vup_shion_mod:剑意 的伤害8次。 NL 获得4点 vup_shion_mod:硬直 。 NL 击晕 敌人。",
+    "UPGRADE_DESCRIPTION": "保留 ， 消耗 。 NL 保留 时打出前耗能降低 NL 造成1+ vup_shion_mod:剑意 的伤害8次。 NL 获得4点 vup_shion_mod:硬直 。 NL 击晕 敌人。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害）"
     ]
   },
   "VUPShionMod:Guard": {
     "NAME": "守势",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 失去 !M! 点 vup_shion_mod:硬直 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 失去 !M! 点 vup_shion_mod:硬直 。",
+    "EXTENDED_DESCRIPTION": [
+      "剑意不足"
+    ]
   },
   "VUPShionMod:LunaMergo": {
     "NAME": "调息",
@@ -605,7 +608,7 @@
   },
   "VUPShionMod:Poise": {
     "NAME": "缄默",
-    "DESCRIPTION": "每当你打出一张攻击牌，抽 !M! 张牌。 NL 获得 vup_shion_mod:硬直 时，减少一层。"
+    "DESCRIPTION": "每当你打出一张攻击牌时，抽 !M! 张牌。 NL 获得 vup_shion_mod:硬直 时，减少一层。"
   },
   "VUPShionMod:FullBloom": {
     "NAME": "满开",
@@ -633,8 +636,8 @@
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "四之章：荆棘",
-    "DESCRIPTION": " 虚无 。 NL 获得4X 点 格挡 。 NL 给予对所有敌人6X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": " 虚无 。 NL 获得5X 点 格挡 。 NL 给予对所有敌人9X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": " 虚无 。 NL 获得4X 点 格挡 。 NL 给予所有敌人6X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": " 虚无 。 NL 获得5X 点 格挡 。 NL 给予所有敌人9X层 vup_shion_mod:缠绕 和 !M! 层 虚弱 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:MorsLibraque": {
     "NAME": "终章：热寂",
@@ -670,8 +673,8 @@
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：觉醒",
-    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 3。 NL 永久 升级 随机一张牌。",
-    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 3。 NL 永久 升级 随机一张牌。"
+    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 3。 NL 随机 升级 牌组中的一张牌。",
+    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 3。 NL 随机 升级 牌组中的一张牌。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：乐园",
@@ -961,8 +964,8 @@
   },
   "VUPShionMod:Superloader": {
     "NAME": "超载回路",
-    "DESCRIPTION": "下 !M! 次获得 vup_shion_mod:魔能过载 时， NL 抽一张牌。 NL vup_shion_mod:魔能过载 。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 下 !M! 次获得 vup_shion_mod:魔能过载 时， NL 抽一张牌。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": "下 !M! 次获得 vup_shion_mod:魔能过载 时 NL 抽一张牌。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 下 !M! 次获得 vup_shion_mod:魔能过载 时 NL 抽一张牌。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:Antisequencer": {
     "NAME": "逆时序回路",
@@ -1109,7 +1112,7 @@
   "VUPShionMod:PrincipledThievery": {
     "NAME": "窃夺诫言",
     "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量两倍的金币。 NL 给予所有敌人4层 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量三倍的金币。 NL 给予所有敌人4层 vup_shion_mod:罪孽 。  NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予+ 。 NL 消耗 。"
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：获得敌人数量三倍的金币。 NL 给予所有敌人4层 vup_shion_mod:罪孽 。 NL vup_shion_mod:审判姿态 ： vup_shion_mod:启封 ： *神意赋予+ 。 NL 消耗 。"
   },
   "VUPShionMod:HeavenDecree": {
     "NAME": "神意赋予",
@@ -1184,7 +1187,7 @@
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "罪孽收割",
-    "DESCRIPTION": "给予所有敌人你当前层数的 vup_shion_mod:罪孽 。 NL 对所有敌人造成 !D! 点伤害。 NL  NL vup_shion_mod:伐罪 。",
+    "DESCRIPTION": "给予所有敌人你当前层数的 vup_shion_mod:罪孽 。 NL 对所有敌人造成 !D! 点伤害。 NLNL vup_shion_mod:伐罪 。",
     "UPGRADE_DESCRIPTION": "给予所有敌人你当前层数的 vup_shion_mod:罪孽 。 NL 对所有敌人造成 !D! 点伤害。 NL vup_shion_mod:伐罪 2。 NL vup_shion_mod:沉灵 2： vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:Whisk": {
@@ -1276,8 +1279,8 @@
   },
   "VUPShionMod:BrokenSanctuary": {
     "NAME": "破碎圣堂",
-    "DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。 NL 每打出一张 vup_shion_mod:祈言 牌 ，抽 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": "固有 ， 保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。 NL 每打出一张 vup_shion_mod:祈言 牌 ，抽 !M! 张牌。"
+    "DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。 NL 本回合每打出一张 vup_shion_mod:祈言 牌 ，抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "固有 ， 保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能变为0。 NL 本回合每打出一张 vup_shion_mod:祈言 牌 ，抽 !M! 张牌。"
   },
   "VUPShionMod:Precasting": {
     "NAME": "预备咏唱",
@@ -1359,7 +1362,7 @@
   "VUPShionMod:MotherRosario": {
     "NAME": "水平四方斩",
     "DESCRIPTION": "对随机敌人造成4+ 敏捷 点伤害 !VUPShionSecondM! 次。 NL 获得 !M! 层 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "对随机敌人造成2+ 敏捷 点伤害 !VUPShionSecondM! 次。 NL 对所有敌人造成 vup_shion_mod:剑意 点伤害。  NL 获得 !M! 层 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能过载 。",
+    "UPGRADE_DESCRIPTION": "对随机敌人造成2+ 敏捷 点伤害 !VUPShionSecondM! 次。 NL 对所有敌人造成 vup_shion_mod:剑意 点伤害。 NL 获得 !M! 层 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能过载 。",
     "EXTENDED_DESCRIPTION": [
       "星屑飞溅",
       "圣母咏叹",
@@ -1384,7 +1387,8 @@
     "EXTENDED_DESCRIPTION": [
       "剑压+",
       "月牙天冲",
-      "造成 vup_shion_mod:剑意 层数 !M! 倍的伤害。 NL 每点 vup_shion_mod:硬直 转化成4层 vup_shion_mod:剑意 。 NL 获得1层 vup_shion_mod:硬直 "
+      "造成 vup_shion_mod:剑意 层数 !M! 倍的伤害。 NL 每点 vup_shion_mod:硬直 转化成4层 vup_shion_mod:剑意 。 NL 获得1层 vup_shion_mod:硬直 ",
+      "X为0"
     ]
   },
   "VUPShionMod:Strafe2": {

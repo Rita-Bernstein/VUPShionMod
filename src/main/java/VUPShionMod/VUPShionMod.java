@@ -19,6 +19,7 @@ import VUPShionMod.helpers.SecondaryMagicVariable;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.patches.*;
+import VUPShionMod.potions.*;
 import VUPShionMod.relics.Event.*;
 import VUPShionMod.relics.Liyezhu.*;
 import VUPShionMod.relics.Share.*;
@@ -81,6 +82,13 @@ public class VUPShionMod implements
     public static final Color Shion_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
     public static final Color WangChuan_Color = new Color(0.203F, 0.176F, 0.168F, 1.0F);
     public static final Color Liyezhu_Color = new Color(0.250F, 0.286F, 0.541F, 1.0F);
+
+
+    public static final Color PotionPlaceHolderColor = new Color(0.250F, 0.286F, 0.541F, 1.0F);
+    public static final Color ShionPotion_Color = new Color(0.360F, 0.780F, 0.760F, 1.0F);
+    public static final Color WangChuanPotion_Color = new Color(1.0F, 1.0F, 0.210F, 1.0F);
+    public static final Color LiyezhuPotion_Color = new Color(0.5F, 0.5F, 1.0F, 1.0F);
+
 
     public static ArrayList<AbstractGameEffect> effectsQueue = new ArrayList<>();
 
@@ -240,7 +248,6 @@ public class VUPShionMod implements
                 .create());
 
 
-
 //        紫音事件
 
         BaseMod.addEvent(new AddEventParams.Builder(BreakAppointment.ID, BreakAppointment.class) //Event ID//
@@ -313,6 +320,32 @@ public class VUPShionMod implements
 //      添加boss
         BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
         BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
+
+
+//        加药水
+        BaseMod.addPotion(PlanedModify.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, PlanedModify.POTION_ID, AbstractPlayerEnum.VUP_Shion);
+        BaseMod.addPotion(CorGladiiFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, CorGladiiFragment.POTION_ID,AbstractPlayerEnum.WangChuan);
+        BaseMod.addPotion(WordFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, WordFragment.POTION_ID,AbstractPlayerEnum.Liyezhu);
+//        BaseMod.addPotion(TimeFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TimeFragment.POTION_ID);
+        BaseMod.addPotion(FlashBang.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, FlashBang.POTION_ID);
+
+        BaseMod.addPotion(MinamiDepository.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, MinamiDepository.POTION_ID);
+        BaseMod.addPotion(MinamiHand.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, MinamiHand.POTION_ID);
+        BaseMod.addPotion(MinamiReserve.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, MinamiReserve.POTION_ID);
+
+//        BaseMod.addPotion(ShoppingVoucher.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, ShoppingVoucher.POTION_ID);
+
+        BaseMod.addPotion(WorldLeaf.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, WorldLeaf.POTION_ID);
+        BaseMod.addPotion(Bento.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, Bento.POTION_ID);
+        BaseMod.addPotion(HolyWater.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, HolyWater.POTION_ID);
+        BaseMod.addPotion(MagiaMagazine.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, MagiaMagazine.POTION_ID);
+        BaseMod.addPotion(Cola.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, Cola.POTION_ID);
+        BaseMod.addPotion(Claymore.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, Claymore.POTION_ID);
+        BaseMod.addPotion(UAV.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, UAV.POTION_ID);
+        BaseMod.addPotion(TransitionGenerator.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TransitionGenerator.POTION_ID);
+
+
+
     }
 
     public static void safeSwitch() {
@@ -874,7 +907,7 @@ public class VUPShionMod implements
         BaseMod.loadCustomStringsFile(AchievementStrings.class, assetPath(path + "AchievementStrings.json"));
         BaseMod.loadCustomStringsFile(EventStrings.class, assetPath(path + "EventStrings.json"));
         BaseMod.loadCustomStringsFile(UIStrings.class, assetPath(path + "UIStrings.json"));
-//        BaseMod.loadCustomStringsFile(PotionStrings.class, assetPath(path + "PotionStrings.json"));
+        BaseMod.loadCustomStringsFile(PotionStrings.class, assetPath(path + "PotionStrings.json"));
         BaseMod.loadCustomStringsFile(CardStrings.class, assetPath(path + "CardStrings.json"));
         BaseMod.loadCustomStringsFile(MonsterStrings.class, assetPath(path + "MonsterStrings.json"));
         BaseMod.loadCustomStringsFile(PowerStrings.class, assetPath(path + "PowerStrings.json"));

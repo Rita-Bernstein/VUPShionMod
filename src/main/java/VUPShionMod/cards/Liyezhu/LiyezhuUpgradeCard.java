@@ -34,11 +34,11 @@ public class LiyezhuUpgradeCard extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHPAction(p,p,this.magicNumber));
         if (this.upgraded) {
-            addToBot(new UpgradeDeckAction(p, 1, true));
-            addToBot(new UpgradeDeckAction(p, 1, true));
+            addToBot(new UpgradeDeckAction( 1, true));
+            addToBot(new UpgradeDeckAction( 1, true));
         }
         else {
-            addToBot(new UpgradeDeckAction(p, 1, false));
+            addToBot(new UpgradeDeckAction(1, false));
         }
     }
 

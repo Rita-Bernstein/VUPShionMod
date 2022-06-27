@@ -42,7 +42,7 @@ public class CroissantEvent extends AbstractImageEvent {
         switch (this.curScreen) {
             case INTRO:
                 if (buttonPressed == 0) {
-                    if (AbstractDungeon.eventRng.randomBoolean(0.25f)) {
+                    if (AbstractDungeon.miscRng.randomBoolean(0.25f)) {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.removeDialogOption(1);
                         this.imageEventText.updateDialogOption(0, OPTIONS[2]);

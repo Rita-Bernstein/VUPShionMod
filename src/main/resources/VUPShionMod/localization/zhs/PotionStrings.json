@@ -2,11 +2,11 @@
   "VUPShionMod:PlanedModify": {
     "NAME": "计划改装",
     "DESCRIPTIONS": [
-      "当前 #y浮游炮 等级提高 #b%d 。"
+      "提高 #b%d 级当前 #y浮游炮 的等级。"
     ]
   },
-  "VUPShionMod:EXPFragment": {
-    "NAME": "经验碎片",
+  "VUPShionMod:CorGladiiFragment": {
+    "NAME": "剑意碎片",
     "DESCRIPTIONS": [
       "选择 #y升级 牌组中的 #b%d 张 #y攻击牌 。"
     ]
@@ -15,6 +15,12 @@
     "NAME": "圣言碎片",
     "DESCRIPTIONS": [
       "选择 #y升级 牌组中的 #b%d 张 #y祈言牌 。"
+    ]
+  },
+  "VUPShionMod:EnergeticFragment": {
+    "NAME": "高能碎片",
+    "DESCRIPTIONS": [
+      ""
     ]
   },
   "VUPShionMod:TimeFragment": {
@@ -26,7 +32,15 @@
   "VUPShionMod:FlashBang": {
     "NAME": "A1高闪",
     "DESCRIPTIONS": [
-      " #y击晕 所有敌人。"
+      " #y击晕 所有敌人。",
+      " #y击晕 所有敌人 %d 回合。"
+    ]
+  },
+  "VUPShionMod:MinamiDepository": {
+    "NAME": "小棉的仓库",
+    "DESCRIPTIONS": [
+      "获得 #b%d 个药水栏位。 NL 随机获得 #b%d 瓶药水。",
+      "获得 #b%d 个药水栏位。 NL 随机获得 #b%d 瓶药水。"
     ]
   },
   "VUPShionMod:MinamiHand": {
@@ -51,7 +65,7 @@
   "VUPShionMod:WorldLeaf": {
     "NAME": "世界树叶片",
     "DESCRIPTIONS": [
-      "回复 #b%d%% 的生命。"
+      "回复到 #b%d%% 的生命。"
     ]
   },
   "VUPShionMod:Bento": {
@@ -63,7 +77,7 @@
   "VUPShionMod:HolyWater": {
     "NAME": "圣水",
     "DESCRIPTIONS": [
-      " #y消耗 所有诅咒牌。 NL 回复 #b%d 点生命。"
+      "移除牌组中的 #y所有 诅咒牌。 NL 回复 #b%d 点生命。"
     ]
   },
   "VUPShionMod:Claymore": {
@@ -75,7 +89,7 @@
   "VUPShionMod:MagiaMagazine": {
     "NAME": "魔能弹夹",
     "DESCRIPTIONS": [
-      "获得 #b%d [E] 。 NL 抽 #b%d 张牌。"
+      "获得 #b%d [E] 。 抽 #b%d 张牌。"
     ]
   },
   "VUPShionMod:Cola": {

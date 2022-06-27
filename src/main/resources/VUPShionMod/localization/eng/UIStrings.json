@@ -35,7 +35,9 @@
       "Victory against Plaga Mundi without any asisstance from the Droplet.",
       "Reborn",
       "Defeat Plaga Mundi.",
-      "Victory against Plaga Mundi without any asisstance from your comrades."
+      "Victory against Plaga Mundi without any asisstance from your comrades.",
+      "Defeat Ouroboros",
+      "True Ending"
     ]
   },
   "VUPShionMod:ReadAction": {
@@ -137,6 +139,11 @@
     "TEXT": [
       "选择牌组中的牌升级",
       "选择牌组中的%d张牌升级"
+    ]
+  },
+  "VUPShionMod:SelectSrcCardToHandAction": {
+    "TEXT": [
+      "选择一张能力牌加入手牌"
     ]
   }
 }

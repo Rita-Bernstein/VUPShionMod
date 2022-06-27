@@ -128,7 +128,7 @@ public class BreakChop extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeBaseCost(0);
+
             }
         }
     }

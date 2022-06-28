@@ -1335,7 +1335,7 @@
     "EXTENDED_DESCRIPTION": [
       "原子崩坏+",
       "夸克重组",
-      "减少 !VUPShionSecondM! 点生命值。 NL 对所有敌人造成 vup_shion_mod:剑意 层数 !M! 倍的伤害。NL vup_shion_mod:魔能过载 。",
+      "减少 !VUPShionSecondM! 点生命值。 NL 对所有敌人造成 vup_shion_mod:剑意 层数 !M! 倍的伤害。 NL vup_shion_mod:魔能过载 。",
       "生命不足"
     ]
   },

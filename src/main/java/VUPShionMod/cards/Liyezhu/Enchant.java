@@ -47,6 +47,11 @@ public class Enchant extends AbstractLiyezhuCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return true;
+    }
+
+    @Override
     public void upgrade() {
         upgradeDamage(4);
         upgradeMagicNumber(1);

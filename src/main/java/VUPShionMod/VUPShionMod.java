@@ -210,8 +210,8 @@ public class VUPShionMod implements
                 (label) -> {
                 }, (button) -> {
             SaveHelper.safeCampfire = button.enabled;
-            safeSwitch();
             SaveHelper.saveSettings();
+            safeSwitch();
         });
 
 
@@ -414,11 +414,13 @@ public class VUPShionMod implements
                 SaveHelper.investigationFinFunnelLevel = 2;
                 SaveHelper.pursuitFinFunnelLevel = 2;
                 SaveHelper.dissectingFinFunnelLevel = 2;
+                SaveHelper.matrixFinFunnelLevel = 2;
             } else {
                 SaveHelper.gravityFinFunnelLevel = 1;
                 SaveHelper.investigationFinFunnelLevel = 1;
                 SaveHelper.pursuitFinFunnelLevel = 1;
                 SaveHelper.dissectingFinFunnelLevel = 1;
+                SaveHelper.matrixFinFunnelLevel = 1;
             }
             SaveHelper.activeFinFunnel = "GravityFinFunnel";
             SaveHelper.saveFinFunnels();
@@ -482,8 +484,10 @@ public class VUPShionMod implements
         List<CustomCard> cards = new ArrayList<>();
 
 //        紫音
-        cards.add(new Strike_Shion());
-        cards.add(new Defend_Shion());
+//        cards.add(new Strike_Shion());
+        cards.add(new Strike_Shion2());
+//        cards.add(new Defend_Shion());
+        cards.add(new Defend_Shion2());
         cards.add(new DefenseSystemCharging());
         cards.add(new DeploymentOfDefenseSystem());
         cards.add(new AttackSystemPreload());
@@ -538,7 +542,7 @@ public class VUPShionMod implements
         cards.add(new TacticalLink());
         cards.add(new FinFunnelSupport());
         cards.add(new SuperCharge());
-        cards.add(new Anticoagulation());
+//        cards.add(new Anticoagulation());
         cards.add(new Lure());
         cards.add(new ReleaseFormShionMinami());
         cards.add(new AnestheticReagent());
@@ -582,21 +586,25 @@ public class VUPShionMod implements
         cards.add(new OverloadFortress());
 
 
-        cards.add(new InvestigationFinFunnelUpgrade());
+//        cards.add(new InvestigationFinFunnelUpgrade());
         cards.add(new GravityFinFunnelUpgrade());
         cards.add(new PursuitFinFunnelUpgrade());
         cards.add(new DissectingFinFunnelUpgrade());
+        cards.add(new MatrixUpgrade());
 
         cards.add(new FunnelMatrix());
 
-        cards.add(new StrikeIntegrated());
+//        cards.add(new StrikeIntegrated());
         cards.add(new ChainPursuit());
         cards.add(new AoeAnalysis());
         cards.add(new GravityVortex());
         cards.add(new GravityRepression());
         cards.add(new TrackingAnalysis());
-        cards.add(new CollaborativeInvestigation());
+        cards.add(new MatrixAmplify());
+//        cards.add(new CollaborativeInvestigation());
         cards.add(new HyperDimensionalMatrix());
+
+        cards.add(new WideAreaLocking());
 
 //        忘川
         cards.add(new HiltBash());

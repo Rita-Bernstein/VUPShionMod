@@ -35,7 +35,6 @@ public class Defend_Shion extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyPowers();
         addToBot(new GainBlockAction(p, this.block));
     }
 }

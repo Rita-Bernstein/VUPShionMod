@@ -13,6 +13,7 @@ public class SaveHelper {
     public static int investigationFinFunnelLevel = 1;
     public static int pursuitFinFunnelLevel = 1;
     public static int dissectingFinFunnelLevel = 1;
+    public static int matrixFinFunnelLevel = 1;
     public static String activeFinFunnel = "GravityFinFunnel";
 
 
@@ -132,6 +133,7 @@ public class SaveHelper {
             config.setInt(CardCrawlGame.saveSlot + "investigationFinFunnelLevel", investigationFinFunnelLevel);
             config.setInt(CardCrawlGame.saveSlot + "pursuitFinFunnelLevel", pursuitFinFunnelLevel);
             config.setInt(CardCrawlGame.saveSlot + "dissectingFinFunnelLevel", dissectingFinFunnelLevel);
+            config.setInt(CardCrawlGame.saveSlot + "matrixFinFunnelLevel", matrixFinFunnelLevel);
             config.setString(CardCrawlGame.saveSlot + "activeFinFunnel", activeFinFunnel);
             config.save();
         } catch (Exception e) {
@@ -147,6 +149,7 @@ public class SaveHelper {
             investigationFinFunnelLevel = config.getInt(CardCrawlGame.saveSlot + "investigationFinFunnelLevel");
             pursuitFinFunnelLevel = config.getInt(CardCrawlGame.saveSlot + "pursuitFinFunnelLevel");
             dissectingFinFunnelLevel = config.getInt(CardCrawlGame.saveSlot + "dissectingFinFunnelLevel");
+            matrixFinFunnelLevel = config.getInt(CardCrawlGame.saveSlot + "matrixFinFunnelLevel");
             String tmp = config.getString(CardCrawlGame.saveSlot + "activeFinFunnel");
 
             if (tmp.length() > 3)

@@ -27,6 +27,8 @@ public class FinFunnelBeamEffect extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion img;
     private boolean posUpdated = false;
 
+    private float scaleY = 1.0f;
+
     public FinFunnelBeamEffect(AbstractFinFunnel finFunnel, boolean isFlipped) {
         super();
         this.finFunnel = finFunnel;
@@ -47,6 +49,12 @@ public class FinFunnelBeamEffect extends AbstractGameEffect {
         this.duration = 0.9F;
         this.startingDuration = 0.5F;
     }
+
+    public FinFunnelBeamEffect(AbstractFinFunnel finFunnel, boolean isFlipped,float scaleY) {
+        this(finFunnel,isFlipped);
+        this.scaleY = scaleY;
+    }
+
 
     public FinFunnelBeamEffect(AbstractFinFunnel finFunnel) {
         this(finFunnel, false);

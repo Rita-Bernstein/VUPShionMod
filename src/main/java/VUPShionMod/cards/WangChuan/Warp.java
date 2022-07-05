@@ -23,7 +23,7 @@ public class Warp extends AbstractWCCard {
     public Warp() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 7;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
@@ -40,6 +40,7 @@ public class Warp extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBlock(4);
+            upgradeMagicNumber(1);
         }
     }
 }

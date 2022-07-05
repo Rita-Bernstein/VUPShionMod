@@ -1,0 +1,27 @@
+
+YOFU5.png
+size: 1024,256
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+YOFU_JX
+  rotate: false
+  xy: 2, 2
+  size: 281, 135
+  orig: 281, 135
+  offset: 0, 0
+  index: -1
+YOFU_JX_lightring
+  rotate: false
+  xy: 285, 2
+  size: 281, 135
+  orig: 281, 135
+  offset: 0, 0
+  index: -1
+YOFU_JX_penqi
+  rotate: false
+  xy: 568, 2
+  size: 281, 135
+  orig: 281, 135
+  offset: 0, 0
+  index: -1

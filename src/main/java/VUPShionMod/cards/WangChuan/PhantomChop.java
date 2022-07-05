@@ -52,12 +52,11 @@ public class PhantomChop extends AbstractWCCard {
 
 
                     amount += effect;
-
+                    amount += 3;
                     for (int i = 0; i < amount; i++)
                         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 };
                 addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
-                addToBot(new ApplyStiffnessAction(2));
                 break;
         }
 

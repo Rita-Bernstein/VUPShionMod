@@ -1,5 +1,6 @@
 package VUPShionMod.vfx.Common;
 
+import VUPShionMod.util.SaveHelper;
 import VUPShionMod.vfx.Shion.LargPortraitFlashInEffect;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -30,7 +31,7 @@ public class PortraitWindyPetalEffect extends AbstractGameEffect {
     public void update() {
         if (this.justStart) {
             this.justStart = false;
-            if (!this.name.equals("")) {
+            if (!this.name.equals("") && !SaveHelper.safeCampfire) {
                 AbstractDungeon.topLevelEffects.add(new LargPortraitFlashInEffect(this.name));
             }
         }

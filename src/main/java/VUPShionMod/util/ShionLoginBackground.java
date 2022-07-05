@@ -5,9 +5,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Disposable;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.scenes.TitleBackground;
+import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 
 import java.util.ArrayList;
 
@@ -23,7 +25,7 @@ public class ShionLoginBackground extends TitleBackground implements Disposable 
     private float scale = 0.36f;
 
     public ShionLoginBackground() {
-        this.fix_y = 230.0f *this.scale * Settings.scale;
+        this.fix_y = 230.0f * this.scale * Settings.scale;
         if (this.buttons.isEmpty()) {
             buttons.add(new WebButton("https://afdian.net/@AnastasiaShion",
                     Settings.WIDTH - 552.0f * this.scale * Settings.scale - 40.0f * Settings.scale,
@@ -40,6 +42,7 @@ public class ShionLoginBackground extends TitleBackground implements Disposable 
     @Override
     public void render(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
+
         sb.draw(bg_account, display_Cx - 1198.0F,
                 display_Cy - 600.0F - 0.0f * Settings.scale,
                 1198.0F, 600.0F,
@@ -58,9 +61,13 @@ public class ShionLoginBackground extends TitleBackground implements Disposable 
     public void update() {
         super.update();
 
-        if (!this.buttons.isEmpty()) {
-            for (WebButton button : this.buttons) {
-                button.update();
+        if (CardCrawlGame.mainMenuScreen != null) {
+            if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.MAIN_MENU) {
+                if (!this.buttons.isEmpty()) {
+                    for (WebButton button : this.buttons) {
+                        button.update();
+                    }
+                }
             }
         }
     }
@@ -77,4 +84,6 @@ public class ShionLoginBackground extends TitleBackground implements Disposable 
             this.buttons.clear();
         }
     }
+
+
 }

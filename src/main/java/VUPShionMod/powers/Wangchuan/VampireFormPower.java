@@ -39,7 +39,7 @@ public class VampireFormPower extends AbstractShionPower {
 
     @Override
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount) {
-        if (m != null)
+        if (m != null && info.type == DamageInfo.DamageType.NORMAL)
             if (m.lastDamageTaken > 0) {
                 flash();
                 AbstractDungeon.player.heal(this.amount);

@@ -45,6 +45,7 @@ public class SaveDataPatches {
                 config.setInt(slot + "investigationFinFunnelLevel", 1);
                 config.setInt(slot + "pursuitFinFunnelLevel", 1);
                 config.setInt(slot + "dissectingFinFunnelLevel", 1);
+                config.setInt(slot + "matrixFinFunnelLevel", 1);
                 config.setString(slot + "activeFinFunnel", "GravityFinFunnel");
                 config.save();
 

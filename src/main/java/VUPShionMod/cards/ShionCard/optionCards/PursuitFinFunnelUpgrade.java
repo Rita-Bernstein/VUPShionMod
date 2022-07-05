@@ -2,10 +2,8 @@ package VUPShionMod.cards.ShionCard.optionCards;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.powers.Shion.DissectingFinFunnelUpgradePower;
-import VUPShionMod.powers.Shion.GravityFinFunnelUpgradePower;
-import VUPShionMod.powers.Shion.InvestigationFinFunnelUpgradePower;
-import VUPShionMod.powers.Shion.PursuitFinFunnelUpgradePower;
+import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
+import VUPShionMod.powers.Shion.*;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -43,11 +41,7 @@ public class PursuitFinFunnelUpgrade extends AbstractVUPShionCard {
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (!p.hasPower(InvestigationFinFunnelUpgradePower.POWER_ID) &&
-                !p.hasPower(GravityFinFunnelUpgradePower.POWER_ID) &&
-                !p.hasPower(DissectingFinFunnelUpgradePower.POWER_ID) &&
-                !p.hasPower(PursuitFinFunnelUpgradePower.POWER_ID)
-        )
+        if (FinFunnelUpgrade.checkUpgradePower())
         addToBot(new ApplyPowerAction(p, p, new PursuitFinFunnelUpgradePower(p, 5)));
     }
 

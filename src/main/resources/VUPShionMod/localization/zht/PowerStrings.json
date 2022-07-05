@@ -287,7 +287,7 @@
   "VUPShionMod:VampireFormPower": {
     "NAME": "突然想起來自己是個吸血鬼",
     "DESCRIPTIONS": [
-      "每對敵人造成未被 #y格擋 的傷害時，回復 #b%d 點生命。"
+      "每對敵人造成未被 #y格擋 的攻擊傷害時，回復 #b%d 點生命。"
     ]
   },
   "VUPShionMod:MensVirtusquePower": {
@@ -885,6 +885,27 @@
     "DESCRIPTIONS": [
       "每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。",
       "每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:MatrixFinFunnelUpgradePower": {
+    "NAME": "矩陣浮游炮升級計劃",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 張帶有 #y浮游炮 詞條的牌，將 #y矩陣浮游炮 的強化等級提升 #b1 。",
+      "任務完成！"
+    ]
+  },
+  "VUPShionMod:MatrixAmplifyPower": {
+    "NAME": "指令：矩陣增幅",
+    "DESCRIPTIONS": [
+      "翻倍 #y自動浮游炮 的效果。"
+    ]
+  },
+  "VUPShionMod:WideAreaLockingPower": {
+    "NAME": "廣域鎖定",
+    "DESCRIPTIONS": [
+      "下次 #y矩陣充能 滿充能的 #y自動浮游炮 將對所有敵人觸發效果。",
+      "下 #b%d 次 #y矩陣充能 滿充能的 #y自動浮游炮 將對所有敵人觸發效果。"
     ]
   }
 }

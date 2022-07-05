@@ -106,10 +106,11 @@ public class CirrocumulusChop extends AbstractWCCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 upgradeDamage(6);
+                upgradeMagicNumber(1);
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeMagicNumber(2);
+                upgradeMagicNumber(1);
                 upgradeSecondM(2);
             }
         }

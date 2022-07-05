@@ -95,7 +95,7 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
 
 
         for (int i = 0; i < this.loops; i++) {
-            if (f.getLevel() >= 0) {
+            if (f != null && f.getLevel() >= 0) {
                 f.powerToApply(this.target);
             } else {
                 this.isDone = true;

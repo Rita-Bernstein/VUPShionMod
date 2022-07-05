@@ -43,7 +43,7 @@ public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
         };
 
         addToBot(new VFXAction(new AbstractSpineEffect(true,
-                "VUPShionMod/img/vfx/Spine/Stance_Lan_TX/Stance_Lan_TX", p.hb.cX, p.hb.y, 0.33f * Settings.scale,
+                "VUPShionMod/img/vfx/Spine/Stance_Lan_TX/Stance_Lan_TX", p.hb.cX, p.hb.y, 0.2f,
                 1.0f, -0.1f, stateConsumer)));
 
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormLiyezhuPower(p, this.magicNumber), 0));

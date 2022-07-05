@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class TacticalLink extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID(TacticalLink.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami04.png");
-    private static final int COST = 1;
+    private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;

@@ -155,7 +155,7 @@
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "Funnel Upgrade",
-    "DESCRIPTION": "Choose 1 from 4 *Funnel *Upgrade. Purge.",
+    "DESCRIPTION": " Innate. Choose 1 from 4 *Funnel *Upgrade. Purge.",
     "UPGRADE_DESCRIPTION": " Innate. Choose 1 from 4 *Funnel *Upgrade. Purge."
   },
   "VUPShionMod:InvestigationUpgrade": {
@@ -304,7 +304,7 @@
   },
   "VUPShionMod:ArmedToTheTeeth": {
     "NAME": "Bellicosity",
-    "DESCRIPTION": "Gain Strength equal to vup_shion_mod:Hyperdimensional\u00a0Link. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link."
+    "DESCRIPTION": "Gain Strength equal to 2 times of vup_shion_mod:Hyperdimensional\u00a0Link. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link."
   },
   "VUPShionMod:IntroductionSilence": {
     "NAME": "Silencing Allegory",
@@ -469,12 +469,12 @@
   },
   "VUPShionMod:StrideSlash": {
     "NAME": "Stride Slash",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL Draw 1 card.",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Draw 1 card.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Draw 1 card.",
     "EXTENDED_DESCRIPTION": [
       "Forwarding Hew",
       "Crescent Hack",
-      "Deal !D! damage twice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Gain !VUPShionSecondM! vup_shion_mod:Stiffness. NL Draw 1 card."
+      "Deal !D! damage twice. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Draw 1 card."
     ]
   },
   "VUPShionMod:OnrushingTip": {
@@ -542,7 +542,7 @@
   "VUPShionMod:LunaMergo": {
     "NAME": "Wind Susurrates",
     "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Lose 1 vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Gain 2 vup_shion_mod:Cor\u00a0Gladii. NL Lose 1 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Gain 5 vup_shion_mod:Cor\u00a0Gladii. NL Lose 1 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
       "Luna Mergo"
     ]
@@ -1310,7 +1310,7 @@
   "VUPShionMod:PhantomChop": {
     "NAME": "Phantom Slash",
     "DESCRIPTION": "Deal damage equal to 1+ vup_shion_mod:Cor\u00a0Gladii. NL While in hand, whenever you play an Attack, play 1 copy of this card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii for X times. NL For each card played this turn, it deals damage 1 additional time. NL Gain 2 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Deal damage equal to vup_shion_mod:Cor\u00a0Gladii for X+3 times. NL For each card played this turn, it deals damage 1 additional time.",
     "EXTENDED_DESCRIPTION": [
       "Phantom Slash+",
       "Dazzling Phantom",
@@ -1382,7 +1382,7 @@
   "VUPShionMod:OppressiveSword": {
     "NAME": "Suppressing Blade",
     "DESCRIPTION": "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Can only be played while X>0. NL Deal damage equal to !M! X times of vup_shion_mod:Cor\u00a0Gladii. NL Gain 12X vup_shion_mod:Cor\u00a0Gladii. NL Increase your vup_shion_mod:Cor\u00a0Gladii for 50%. NL vup_shion_mod:Magiam\u00a0Obruor X.",
+    "UPGRADE_DESCRIPTION": "Can only be played while X>0. NL Deal damage equal to !M! X times of vup_shion_mod:Cor\u00a0Gladii. NL Gain 10X vup_shion_mod:Cor\u00a0Gladii. NL Increase your vup_shion_mod:Cor\u00a0Gladii for 40%. NL vup_shion_mod:Magiam\u00a0Obruor X.",
     "EXTENDED_DESCRIPTION": [
       "Suppressing Blade+",
       "Crescent Dash",
@@ -1460,5 +1460,25 @@
     "NAME": "武装·升阶具现",
     "DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 选择 升级 牌组中的一张牌 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 至多选择 升级 牌组中的两张牌。 NL 消耗 。"
+  },
+  "VUPShionMod:MatrixUpgrade": {
+    "NAME": "矩阵浮游炮升级计划",
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张使用 vup_shion_mod:浮游炮 的牌。 NL 奖励：矩阵浮游炮强化等级加1。"
+  },
+  "VUPShionMod:MatrixAmplify": {
+    "NAME": "指令：矩阵增幅",
+    "DESCRIPTION": "翻倍 vup_shion_mod:自动浮游炮 的效果。 NL 不与其他指令共存。 NL 不能叠加。"
+  },
+  "VUPShionMod:WideAreaLocking": {
+    "NAME": "广域锁定",
+    "DESCRIPTION": "下次 vup_shion_mod:矩阵充能 满充能的 vup_shion_mod:自动浮游炮 将对所有敌人触发效果。"
+  },
+  "VUPShionMod:Strike_Shion2": {
+    "NAME": "狙擊",
+    "DESCRIPTION": "對一名敵人觸發 *追擊 使用 vup_shion_mod:浮游炮 回合開始時的效果 !M! 次。"
+  },
+  "VUPShionMod:Defend_Shion2": {
+    "NAME": "力場盾",
+    "DESCRIPTION": "對一名敵人觸發 *重力 使用 vup_shion_mod:浮游炮 回合開始時的效果 !M! 次。"
   }
 }

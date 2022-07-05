@@ -85,12 +85,36 @@ public class FinFunnelManager {
         return AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).selectedFinFunnel;
     }
 
+    public static AbstractFinFunnel getFinFunnelMini() {
+        if(getFinFunnelList().isEmpty()){
+            System.out.println("浮游炮列表为空");
+            return null;
+        }
+
+
+        ArrayList<AbstractFinFunnel> tmp = new ArrayList<>();
+        for (AbstractFinFunnel finFunnel : getFinFunnelList()) {
+            if (!finFunnel.id.equals(MatrixFinFunnel.ID))
+                tmp.add(finFunnel);
+
+        }
+
+        if (!tmp.isEmpty())
+            return tmp.get(AbstractDungeon.miscRng.random(tmp.size() - 1));
+        else {
+            System.out.println("浮游炮列表为空");
+            return null;
+        }
+    }
+
     public void initializeFinFunnelShion() {
         if (finFunnelList.isEmpty()) {
-            finFunnelList.add(new InvestigationFinFunnel(SaveHelper.investigationFinFunnelLevel));
+            finFunnelList.add(new MatrixFinFunnel(SaveHelper.matrixFinFunnelLevel));
+//            finFunnelList.add(new InvestigationFinFunnel(SaveHelper.investigationFinFunnelLevel));
             finFunnelList.add(new PursuitFinFunnel(SaveHelper.pursuitFinFunnelLevel));
             finFunnelList.add(new GravityFinFunnel(SaveHelper.gravityFinFunnelLevel));
             finFunnelList.add(new DissectingFinFunnel(SaveHelper.dissectingFinFunnelLevel));
+
         }
     }
 

@@ -42,6 +42,7 @@ public class CombatNotes extends AbstractShionRelic {
 
     }
 
+
     @Override
     public void atTurnStartPostDraw() {
         if(!this.isEliteOrBoss){

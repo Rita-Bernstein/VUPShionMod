@@ -4,6 +4,8 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.powers.Shion.GravityRepressionPower;
 import VUPShionMod.powers.Shion.StrikeIntegratedPower;
+import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,6 +25,7 @@ public class GravityRepression extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("TeamWork"),1.0f));
         addToBot(new ApplyPowerAction(p,p,new GravityRepressionPower(p)));
     }
 

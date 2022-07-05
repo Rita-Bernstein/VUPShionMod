@@ -36,6 +36,10 @@ public class DissectingFinFunnelUpgradePower extends AbstractShionPower {
         updateDescription();
     }
 
+    @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+    }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {

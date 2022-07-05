@@ -156,7 +156,7 @@
   },
   "VUPShionMod:FinFunnelUpgrade": {
     "NAME": "浮游炮升级计划",
-    "DESCRIPTION": "从四张 *浮游炮升级计划 中选择一张。 NL 其效果不能累加。 抹除 。",
+    "DESCRIPTION": "固有 。 NL 从四张 *浮游炮升级计划 中选择一张。 NL 其效果不能累加。 抹除 。",
     "UPGRADE_DESCRIPTION": "固有 。从四张 *浮游炮升级计划 中选择一张。 NL 其效果不能累加。 抹除 。"
   },
   "VUPShionMod:InvestigationUpgrade": {
@@ -311,7 +311,7 @@
   },
   "VUPShionMod:ArmedToTheTeeth": {
     "NAME": "全副武装",
-    "DESCRIPTION": "获得 vup_shion_mod:超维链接 层数的 力量 。 NL 失去所有 vup_shion_mod:超维链接 。"
+    "DESCRIPTION": "获得 vup_shion_mod:超维链接 层数2倍的 力量 。 NL 失去所有 vup_shion_mod:超维链接 。"
   },
   "VUPShionMod:IntroductionSilence": {
     "NAME": "静默导言",
@@ -436,8 +436,8 @@
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 减少 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张攻击牌，这张牌本回合耗能降低1且下次打出时额外造成一次 vup_shion_mod:剑意 层数伤害。",
     "EXTENDED_DESCRIPTION": [
       "藏刀",
-      " NL 造成 vup_shion_mod:剑意 层数的伤害。",
-      " NL 对所有敌人造成 vup_shion_mod:剑意 层数的伤害。"
+      "造成 vup_shion_mod:剑意 层数的伤害。 NL ",
+      "对所有敌人造成 vup_shion_mod:剑意 层数的伤害。 NL "
     ]
   },
   "VUPShionMod:InTheBlink": {
@@ -473,12 +473,12 @@
   },
   "VUPShionMod:StrideSlash": {
     "NAME": "踏步斩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 抽一张牌。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害两次。 NL 造成 vup_shion_mod:剑意 的伤害。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 抽一张牌。",
     "EXTENDED_DESCRIPTION": [
       "踏步连斩",
       "残月冲",
-      "造成 !D! 点伤害两次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张牌。"
+      "造成 !D! 点伤害两次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 抽一张牌。"
     ]
   },
   "VUPShionMod:OnrushingTip": {
@@ -546,7 +546,7 @@
   "VUPShionMod:LunaMergo": {
     "NAME": "调息",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 获得2点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 获得5点 vup_shion_mod:剑意 。 NL 失去 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "月读"
     ]
@@ -694,8 +694,8 @@
   },
   "VUPShionMod:VampireForm": {
     "NAME": "突然想起来自己是个吸血鬼",
-    "DESCRIPTION": "每对敌人造成未被 格挡 的伤害时，回复 !M! 点生命。",
-    "UPGRADE_DESCRIPTION": "每对敌人造成未被 格挡 的伤害时，回复 !M! 点生命。"
+    "DESCRIPTION": "每对敌人造成未被 格挡 的攻击伤害时，回复 !M! 点生命。",
+    "UPGRADE_DESCRIPTION": "每对敌人造成未被 格挡 的攻击伤害时，回复 !M! 点生命。"
   },
   "VUPShionMod:ChaosNimius": {
     "NAME": "通典：混沌",
@@ -1311,7 +1311,7 @@
   "VUPShionMod:PhantomChop": {
     "NAME": "影斩",
     "DESCRIPTION": "造成1+ vup_shion_mod:剑意 点伤害。 NL 在手牌中：每当你打出攻击牌时，打出这张牌的复制。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 造成 vup_shion_mod:剑意 层数的伤害X次。 NL 本回合每打出过一张牌，额外造成一次伤害。 NL vup_shion_mod:硬直 2。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成 vup_shion_mod:剑意 层数的伤害X+3次。 NL 本回合每打出过一张牌，额外造成一次伤害。",
     "EXTENDED_DESCRIPTION": [
       "影斩+",
       "千幻影斩",
@@ -1383,7 +1383,7 @@
   "VUPShionMod:OppressiveSword": {
     "NAME": "剑压",
     "DESCRIPTION": "造成 vup_shion_mod:剑意 层数 !M! 倍的伤害。 NL 每点 vup_shion_mod:硬直 转化成4层 vup_shion_mod:剑意 。 NL 获得1层 vup_shion_mod:硬直 ",
-    "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:剑意 层数 !M! X倍的伤害。 NL 获得12X 层 vup_shion_mod:剑意 。 NL 获得一半的 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 X。",
+    "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:剑意 层数 !M! X倍的伤害。 NL 获得10X 层 vup_shion_mod:剑意 。 NL 获得40%的 vup_shion_mod:剑意 。 NL vup_shion_mod:魔能过载 X。",
     "EXTENDED_DESCRIPTION": [
       "剑压+",
       "月牙天冲",
@@ -1461,5 +1461,25 @@
     "NAME": "武装·升阶具现",
     "DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 选择 升级 牌组中的一张牌。 消耗 。",
     "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 点生命。 NL 至多选择 升级 牌组中的两张牌。 消耗 。"
+  },
+  "VUPShionMod:MatrixUpgrade": {
+    "NAME": "矩阵浮游炮升级计划",
+    "DESCRIPTION": "vup_shion_mod:任务 ： NL 打出5张使用 vup_shion_mod:浮游炮 的牌。 NL 奖励：矩阵浮游炮强化等级加1。"
+  },
+  "VUPShionMod:MatrixAmplify": {
+    "NAME": "指令：矩阵增幅",
+    "DESCRIPTION": "翻倍 vup_shion_mod:自动浮游炮 的效果。 NL 不与其他指令共存。 NL 不能叠加。"
+  },
+  "VUPShionMod:WideAreaLocking": {
+    "NAME": "广域锁定",
+    "DESCRIPTION": "本回合 vup_shion_mod:自动浮游炮 的 *追击 vup_shion_mod:浮游炮 将对所有敌人触发效果。"
+  },
+  "VUPShionMod:Strike_Shion2": {
+    "NAME": "狙击",
+    "DESCRIPTION": "对一名敌人触发 *追击 vup_shion_mod:浮游炮 回合开始时的效果 !M! 次。"
+  },
+  "VUPShionMod:Defend_Shion2": {
+    "NAME": "力场盾",
+    "DESCRIPTION": "对一名敌人触发 *重力 vup_shion_mod:浮游炮 回合开始时的效果 !M! 次。"
   }
 }

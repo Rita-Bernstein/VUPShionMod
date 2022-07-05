@@ -4,10 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.minami.TacticalLink;
-import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
-import VUPShionMod.cards.ShionCard.shion.Strafe;
-import VUPShionMod.cards.ShionCard.shion.Strafe2;
-import VUPShionMod.cards.ShionCard.shion.Strike_Shion;
+import VUPShionMod.cards.ShionCard.shion.*;
 import VUPShionMod.relics.Shion.BlueGiant;
 import VUPShionMod.relics.Shion.ConcordArray;
 import VUPShionMod.relics.Shion.ConcordCharge;
@@ -88,14 +85,14 @@ public class BlueGiantShion extends AbstractSkin {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Strike_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
-        retVal.add(Defend_Shion.ID);
+        retVal.add(Strike_Shion2.ID);
+        retVal.add(Strike_Shion2.ID);
+        retVal.add(Strike_Shion2.ID);
+        retVal.add(Strike_Shion2.ID);
+        retVal.add(Defend_Shion2.ID);
+        retVal.add(Defend_Shion2.ID);
+        retVal.add(Defend_Shion2.ID);
+        retVal.add(Defend_Shion2.ID);
         retVal.add(TacticalLink.ID);
         retVal.add(FinFunnelUpgrade.ID);
         retVal.add(Strafe2.ID);

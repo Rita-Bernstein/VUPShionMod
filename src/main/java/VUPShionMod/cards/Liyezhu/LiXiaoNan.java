@@ -32,19 +32,7 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int tureBaseDamage = this.baseDamage;
 
-        int psy = 0;
-        int sin = 0;
-        if (AbstractDungeon.player.hasPower(PsychicPower.POWER_ID))
-            psy = AbstractDungeon.player.getPower(PsychicPower.POWER_ID).amount;
-
-
-        if (AbstractDungeon.player.hasPower(SinPower.POWER_ID))
-            sin = AbstractDungeon.player.getPower(SinPower.POWER_ID).amount;
-
-        this.baseDamage = (int) Math.floor(Math.max(AbstractDungeon.player.maxHealth / 2, AbstractDungeon.player.currentHealth)
-                * (psy + sin) * this.magicNumber * 0.1f);
 
         calculateCardDamage(m);
 
@@ -52,7 +40,7 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
         addToBot(new LoseHPAction(p, p, p.maxHealth / 2));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
-        this.baseDamage = tureBaseDamage;
+
     }
 
 
@@ -86,10 +74,26 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
 
 
     public void calculateCardDamage(AbstractMonster mo) {
+        int tureBaseDamage = this.baseDamage;
+
+        int psy = 0;
+        int sin = 0;
+        if (AbstractDungeon.player.hasPower(PsychicPower.POWER_ID))
+            psy = AbstractDungeon.player.getPower(PsychicPower.POWER_ID).amount;
+
+
+        if (AbstractDungeon.player.hasPower(SinPower.POWER_ID))
+            sin = AbstractDungeon.player.getPower(SinPower.POWER_ID).amount;
+
+        this.baseDamage = (int) Math.floor(Math.max(AbstractDungeon.player.maxHealth / 2, AbstractDungeon.player.currentHealth)
+                * (psy + sin) * this.magicNumber * 0.1f);
         super.calculateCardDamage(mo);
+
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
+
+        this.baseDamage = tureBaseDamage;
     }
 
     @Override

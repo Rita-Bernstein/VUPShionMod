@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 
 public class PursuitFinFunnel extends AbstractFinFunnel {
     public static final String ID = PursuitFinFunnel.class.getSimpleName();
-    private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(PursuitFinFunnel.class.getSimpleName()) );
+    private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(PursuitFinFunnel.class.getSimpleName()));
 
     public PursuitFinFunnel(int level) {
         super(ID);
@@ -32,8 +32,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.atlas",
                     "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.json", 2.4f);
-        }
-        else {
+        } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.atlas",
                     "VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.json", 2.4f);
         }
@@ -68,15 +67,14 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     }
 
 
-
     @Override
     public void onPursuitEnemy(AbstractCreature target, int loop) {
         if (getLevel() <= 0) return;
         if (!target.isDeadOrEscaped())
             if (target.hasPower(PursuitPower.POWER_ID)) {
-                if(AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
-                    addToBot(new GainBlockAction(AbstractDungeon.player,target.getPower(PursuitPower.POWER_ID).amount));
-                }else {
+                if (AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
+                    addToBot(new GainBlockAction(AbstractDungeon.player, target.getPower(PursuitPower.POWER_ID).amount));
+                } else {
                     addToBot(new VFXAction(new FinFunnelSmallLaserEffect(this, target), 0.3F));
                     addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
                     addToBot(new DamageAndApplyPursuitAction(target, new DamageInfo(AbstractDungeon.player, target.getPower(PursuitPower.POWER_ID).amount,
@@ -88,11 +86,14 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
 
 
     @Override
-    public void powerToApply(AbstractCreature target) {
-        if(target != null)
-        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, getFinalEffect())));
-
-        super.powerToApply(target);
+    public void powerToApply(AbstractCreature target, float amountScale, boolean top) {
+        if (target != null && (int) Math.floor(getFinalEffect() * amountScale) > 0) {
+            if (top)
+                addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, (int) Math.floor(getFinalEffect() * amountScale))));
+            else
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, (int) Math.floor(getFinalEffect() * amountScale))));
+        }
+        super.powerToApply(target, amountScale, top);
     }
 
     @Override
@@ -115,7 +116,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void playFinFunnelAnimation(String id) {
-        if(id.equals(this.id)){
+        if (id.equals(this.id)) {
             this.state.setAnimation(0, "weapon3_attack", false).setTimeScale(3.0f);
             this.state.addAnimation(0, "weapon3_idle", true, 0.0F);
         }

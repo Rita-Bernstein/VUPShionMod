@@ -287,7 +287,7 @@
   "VUPShionMod:VampireFormPower": {
     "NAME": "突然想起来自己是个吸血鬼",
     "DESCRIPTIONS": [
-      "每对敌人造成未被 #y格挡 的伤害时，回复 #b%d 点生命。"
+      "每对敌人造成未被 #y格挡 的攻击伤害时，回复 #b%d 点生命。"
     ]
   },
   "VUPShionMod:MensVirtusquePower": {
@@ -885,6 +885,27 @@
     "DESCRIPTIONS": [
       "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。",
       "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:MatrixFinFunnelUpgradePower": {
+    "NAME": "矩阵浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y矩阵浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
+    ]
+  },
+  "VUPShionMod:MatrixAmplifyPower": {
+    "NAME": "指令：矩阵增幅",
+    "DESCRIPTIONS": [
+      "翻倍 #y自动浮游炮 的效果。"
+    ]
+  },
+  "VUPShionMod:WideAreaLockingPower": {
+    "NAME": "广域锁定",
+    "DESCRIPTIONS": [
+      "本回合 #y自动浮游炮 的 #y追击浮游炮 将对所有敌人触发效果。",
+      "下 #b%d 个回合 #y自动浮游炮 的 #y追击浮游炮 将对所有敌人触发效果。"
     ]
   }
 }

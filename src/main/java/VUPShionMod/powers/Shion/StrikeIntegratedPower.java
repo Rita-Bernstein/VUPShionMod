@@ -43,6 +43,9 @@ public class StrikeIntegratedPower extends AbstractShionPower {
 
         if (this.owner.hasPower(GravityVortexPower.POWER_ID))
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, GravityVortexPower.POWER_ID));
+
+        if (this.owner.hasPower(MatrixAmplifyPower.POWER_ID))
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, MatrixAmplifyPower.POWER_ID));
     }
 
     @Override

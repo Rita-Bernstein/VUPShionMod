@@ -1,6 +1,7 @@
 package VUPShionMod.actions.Shion;
 
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.Shion.*;
 import VUPShionMod.vfx.Shion.AllFinFunnelBeamEffect;
@@ -48,7 +49,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList.isEmpty()) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || FinFunnelManager.getFinFunnelList().isEmpty()) {
             this.isDone = true;
             return;
         }

@@ -117,6 +117,8 @@ public abstract class AbstractFinFunnel {
     public void upgradeLevel(int amount) {
         this.level += amount;
         this.levelForCombat += amount;
+
+        updateDescription();
     }
 
     public void loseLevel(int amount) {
@@ -128,6 +130,8 @@ public abstract class AbstractFinFunnel {
 
         if (this.levelForCombat < 0)
             this.levelForCombat = 0;
+
+        updateDescription();
     }
 
     public void setLevel(int amount) {
@@ -328,7 +332,7 @@ public abstract class AbstractFinFunnel {
 
     public abstract int getFinalEffect();
 
-    public void powerToApply(AbstractCreature target) {
+    public void powerToApply(AbstractCreature target, float amountScale,boolean top) {
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof AbstractShionPower) {
                 ((AbstractShionPower) power).onTriggerFinFunnel(this, target);
@@ -336,7 +340,12 @@ public abstract class AbstractFinFunnel {
         }
     }
 
+    public void powerToApply(AbstractCreature target) {
+        powerToApply(target,1.0f,false);
+    }
+
     public int getFinalDamage() {
+
         return (getLevel() - 1) / 2 + 1;
     }
 
@@ -360,6 +369,11 @@ public abstract class AbstractFinFunnel {
         }
 
         return ret;
+    }
+
+    public void resetLevelCombat(){
+        this.levelForCombat = this.level;
+        this.updateDescription();
     }
 
 }

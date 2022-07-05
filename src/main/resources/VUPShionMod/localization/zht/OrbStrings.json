@@ -27,6 +27,13 @@
       "當前強化等級： #g%d / #b%d 。 NL 每場戰鬥開始時獲得 #y戰場操控 。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害並觸發被動效果。 NL #y被動： 給予 #b%d 層 #y構造解析 。 NL （除 #y初始等級 外，每 #b2 級提升被動效果。）"
     ]
   },
+  "VUPShionMod:MatrixFinFunnel": {
+    "NAME": "矩陣浮游炮",
+    "DESCRIPTION": [
+      "當前強化等級： #b%d 。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害並觸發被動效果。 NL #y被動： 獲得 #b%d 層 #y矩陣充能 。 NL 被動效果最高 #b8 層。 NL （除 #y初始等級 外，每 #b3 級提升被動效果。）",
+      "當前強化等級： #g%d / #b%d 。 NL 每回合開始時，對隨機一名敵人造成 #b%d 點傷害並觸發被動效果。 NL #y被動： 獲得 #b%d 層 #y矩陣充能 。 NL 被動效果最高 #b8 層。 NL （除 #y初始等級 外，每 #b3 級提升被動效果。）"
+    ]
+  },
   "VUPShionMod:AbstractTurnIcon": {
     "DESCRIPTION": [
       "在 #b%d 個回合開始時觸發的祈禱效果:",
@@ -102,7 +109,7 @@
   },
   "VUPShionMod:SinPrayer": {
     "DESCRIPTION": [
-      " #y所有人 獲得 #b%d 層 #y罪孽 。"
+      "所有敵人獲得 #b%d 層 #y罪孽 。"
     ],
     "NAME": "罪孽"
   },

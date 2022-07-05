@@ -34,6 +34,8 @@ public class HyperDimensionalMatrixAction extends AbstractGameAction {
                     finFunnel.levelForCombat += HyperDimensionalMatrixAction.this.amount;
                     if (finFunnel.levelForCombat - 15 > finFunnel.level)
                         finFunnel.levelForCombat = finFunnel.level + 15;
+
+                    finFunnel.updateDescription();
                 }
 
                 isDone = true;

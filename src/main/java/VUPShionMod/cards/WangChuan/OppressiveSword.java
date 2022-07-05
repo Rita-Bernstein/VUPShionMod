@@ -133,7 +133,7 @@ public class OppressiveSword extends AbstractWCCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(-1);
-                upgradeMagicNumber(3);
+                upgradeMagicNumber(2);
                 this.exhaust = false;
             }
         }

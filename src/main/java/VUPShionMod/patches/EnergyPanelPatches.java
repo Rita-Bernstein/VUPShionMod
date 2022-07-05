@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.util.FinFunnelCharge;
 import VUPShionMod.util.SansMeter;
 import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
@@ -45,6 +46,9 @@ public class EnergyPanelPatches {
         public static SpireField<Boolean> canUseSans = new SpireField<>(() -> false);
         public static SpireField<SansMeter> sans = new SpireField<>(() -> new SansMeter());
 
+        public static SpireField<Boolean> canUseFunnelCharger = new SpireField<>(() -> false);
+        public static SpireField<FinFunnelCharge> finFunnelCharger = new SpireField<>(() -> new FinFunnelCharge());
+
     }
 
     @SpirePatch(
@@ -56,6 +60,11 @@ public class EnergyPanelPatches {
             if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu){
                 PatchEnergyPanelField.canUseSans.set(_instance, true);
             }
+
+            if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion){
+                PatchEnergyPanelField.canUseFunnelCharger.set(_instance, true);
+            }
+
         }
     }
 
@@ -131,7 +140,10 @@ public class EnergyPanelPatches {
                 sansMeter.render(sb);
             }
 
-
+            if (PatchEnergyPanelField.canUseFunnelCharger.get(panel)) {
+                FinFunnelCharge charge = PatchEnergyPanelField.finFunnelCharger.get(panel);
+                charge.render(sb);
+            }
 
         }
     }
@@ -169,6 +181,12 @@ public class EnergyPanelPatches {
                 SansMeter sansMeter = PatchEnergyPanelField.sans.get(panel);
                 sansMeter.updatePos(panel);
                 sansMeter.update();
+            }
+
+            if (PatchEnergyPanelField.canUseFunnelCharger.get(panel)) {
+                FinFunnelCharge charge = PatchEnergyPanelField.finFunnelCharger.get(panel);
+                charge.updatePos(panel);
+                charge.update();
             }
 
 

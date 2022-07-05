@@ -66,21 +66,39 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
-    public void powerToApply(AbstractCreature target) {
-        if (AbstractDungeon.player.hasPower(GravitoniumPower.POWER_ID))
-            addToBot(new GainShieldAction(AbstractDungeon.player, getFinalEffect(), true));
-        else
-            addToBot(new GainBlockAction(AbstractDungeon.player, getFinalEffect(), true));
+    public void powerToApply(AbstractCreature target, float amountScale, boolean top) {
+        if ((int) Math.floor(getFinalEffect() * amountScale) > 0) {
+            if (top) {
+                Consumer<AnimationState> stateConsumer = state -> {
+                    state.setAnimation(0, "ZL2_GH7", false);
+                };
 
-        Consumer<AnimationState> stateConsumer = state -> {
-            state.setAnimation(0, "ZL2_GH7", false);
-        };
+                addToTop(new VFXAction(new AbstractSpineEffect(true,
+                        "VUPShionMod/img/vfx/Spine/ZL_GH3/ZL_GH3", AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.y, 2.0f,
+                        3.0f, 10.0f, stateConsumer)));
 
-        addToBot(new VFXAction(new AbstractSpineEffect(true,
-                "VUPShionMod/img/vfx/Spine/ZL_GH3/ZL_GH3", AbstractDungeon.player.hb.cX,  AbstractDungeon.player.hb.y, 3.0f * Settings.scale,
-                3.0f, 10.0f, stateConsumer)));
+                if (AbstractDungeon.player.hasPower(GravitoniumPower.POWER_ID))
+                    addToTop(new GainShieldAction(AbstractDungeon.player, (int) Math.floor(getFinalEffect() * amountScale), true));
+                else
+                    addToTop(new GainBlockAction(AbstractDungeon.player, (int) Math.floor(getFinalEffect() * amountScale), true));
 
-        super.powerToApply(target);
+            } else {
+                if (AbstractDungeon.player.hasPower(GravitoniumPower.POWER_ID))
+                    addToBot(new GainShieldAction(AbstractDungeon.player, (int) Math.floor(getFinalEffect() * amountScale), true));
+                else
+                    addToBot(new GainBlockAction(AbstractDungeon.player, (int) Math.floor(getFinalEffect() * amountScale), true));
+
+                Consumer<AnimationState> stateConsumer = state -> {
+                    state.setAnimation(0, "ZL2_GH7", false);
+                };
+
+                addToBot(new VFXAction(new AbstractSpineEffect(true,
+                        "VUPShionMod/img/vfx/Spine/ZL_GH3/ZL_GH3", AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.y, 2.0f,
+                        3.0f, 10.0f, stateConsumer)));
+            }
+
+        }
+        super.powerToApply(target, amountScale, top);
     }
 
     @Override

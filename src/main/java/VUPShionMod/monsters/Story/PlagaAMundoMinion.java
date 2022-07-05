@@ -151,9 +151,14 @@ public class PlagaAMundoMinion extends CustomMonster {
                 else
                     addToBot(new ApplyPowerAction(this, this, new DefectPower(this, 1)));
 
+
                 addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 3)));
-                addToBot(new ApplyPowerAction(this, this, new RegenerateMonsterPower(this, 300)));
-                addToBot(new ApplyPowerAction(this, this, new AntiAirPower(this, 2)));;
+                if (SaveHelper.isHardMod) {
+                    addToBot(new ApplyPowerAction(this, this, new FlyPower(this, 50)));
+                    addToBot(new ApplyPowerAction(this, this, new RegenerateMonsterPower(this, 300)));
+                    addToBot(new ApplyPowerAction(this, this, new AntiAirPower(this, 2)));
+                }
+
                 for (AbstractRelic r : AbstractDungeon.player.relics) {
                     r.onSpawnMonster(this);
                 }

@@ -48,9 +48,6 @@ public class StrideSlash extends AbstractWCCard {
 
 
         addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
-        if (this.timesUpgraded <= 1)
-            addToBot(new ApplyStiffnessAction(this.secondaryM));
-
         addToBot(new DrawCardAction(1));
     }
 

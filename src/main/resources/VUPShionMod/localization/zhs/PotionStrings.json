@@ -71,6 +71,7 @@
   "VUPShionMod:Bento": {
     "NAME": "龙龙的便当",
     "DESCRIPTIONS": [
+      "回复 #b%d 点生命。 NL 获得 #b%d 瓶药水。",
       "回复 #b%d 点生命。 NL 获得 #b%d 瓶药水。"
     ]
   },

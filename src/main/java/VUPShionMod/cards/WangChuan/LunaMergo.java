@@ -22,7 +22,7 @@ public class LunaMergo extends AbstractWCCard {
     public LunaMergo() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 9;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -32,14 +32,13 @@ public class LunaMergo extends AbstractWCCard {
         addToBot(new DrawCardAction(this.magicNumber));
         addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.secondaryM));
         if (this.upgraded)
-            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 2)));
+            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 5)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
             upgradeBlock(3);
             upgradeSecondM(1);
             this.rawDescription = UPGRADE_DESCRIPTION;

@@ -873,5 +873,27 @@
       "At the end of turn, it deals #b%d #ynon-Attack damage #b%d times. ",
       "At the end of turn, it deals #b%d #ynon-Attack damage #b%d times "
     ]
+  },
+
+  "VUPShionMod:MatrixFinFunnelUpgradePower": {
+    "NAME": "矩阵浮游炮升级计划",
+    "DESCRIPTIONS": [
+      "再打出 #b",
+      " 张带有 #y浮游炮 词条的牌，将 #y矩阵浮游炮 的强化等级提升 #b1 。",
+      "任务完成！"
+    ]
+  },
+  "VUPShionMod:MatrixAmplifyPower": {
+    "NAME": "指令：矩阵增幅",
+    "DESCRIPTIONS": [
+      "翻倍 #y自动浮游炮 的效果。"
+    ]
+  },
+  "VUPShionMod:WideAreaLockingPower": {
+    "NAME": "广域锁定",
+    "DESCRIPTIONS": [
+      "下次 #y矩阵充能 满充能的 #y自动浮游炮 将对所有敌人触发效果。",
+      "下 #b%d 次 #y矩阵充能 满充能的 #y自动浮游炮 将对所有敌人触发效果。"
+    ]
   }
 }

@@ -12,7 +12,7 @@ public class AnimaSpiritusque extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID("AnimaSpiritusque");
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc39.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 0;
@@ -20,7 +20,7 @@ public class AnimaSpiritusque extends AbstractWCCard {
     public AnimaSpiritusque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 4;
+        this.secondaryM = this.baseSecondaryM = 3;
         this.exhaust = true;
     }
 
@@ -34,7 +34,6 @@ public class AnimaSpiritusque extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
             this.selfRetain = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

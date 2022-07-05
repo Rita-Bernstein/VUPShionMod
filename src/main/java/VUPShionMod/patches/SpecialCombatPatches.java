@@ -70,10 +70,9 @@ public class SpecialCombatPatches {
     }
 
     public static boolean shouldHardMod() {
-        return true;
-//        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock
-//                && CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock
-//                && VUPShionMod.liyezhuVictory;
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock
+                && CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock
+                && SaveHelper.liyezhuVictory;
     }
 
     @SpirePatch(

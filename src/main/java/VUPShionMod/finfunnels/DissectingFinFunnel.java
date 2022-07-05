@@ -73,12 +73,16 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
 
 
     @Override
-    public void powerToApply(AbstractCreature target) {
-        if(target != null) {
-            addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new StructureDissectionPower(target, getFinalEffect())));
+    public void powerToApply(AbstractCreature target, float amountScale, boolean top) {
+        if (target != null && (int) Math.floor(getFinalEffect() * amountScale) > 0) {
+            if (top) {
+                addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new StructureDissectionPower(target, (int) Math.floor(getFinalEffect() * amountScale))));
+            } else {
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new StructureDissectionPower(target, (int) Math.floor(getFinalEffect() * amountScale))));
+            }
         }
 
-        super.powerToApply(target);
+        super.powerToApply(target, amountScale, top);
     }
 
     @Override

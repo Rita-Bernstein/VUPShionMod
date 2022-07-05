@@ -106,7 +106,7 @@
     "NAME": "Prototype: Pure Heart",
     "FLAVOR": "Specialized type of support equipment from Anastasia, powerful blade cumbered by excessive magia that surges within.",
     "DESCRIPTIONS": [
-      "Whenever you play a card, gain #b5 #yCod #yGladii. At the end of your turn, lose #b50% of #yCor #yGladii."
+      "Whenever you play a card, gain #b2 #yCod #yGladii. At the end of your turn, lose #b50% of #yCor #yGladii."
     ]
   },
   "VUPShionMod:WhitePurity": {

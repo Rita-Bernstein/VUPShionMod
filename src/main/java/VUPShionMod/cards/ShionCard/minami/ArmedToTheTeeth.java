@@ -4,6 +4,8 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
+import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -25,9 +27,9 @@ public class ArmedToTheTeeth extends AbstractShionMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("SHION_16"));
-
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("ArmedToTheTeeth"),1.0f));
         if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
-            int amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount;
+            int amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount*2;
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
             addToBot(new LoseHyperdimensionalLinksAction(true));
         }

@@ -23,7 +23,7 @@ public class FlawlessParry extends AbstractWCCard {
     public FlawlessParry() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.baseDamage = 6;
+        this.baseDamage = 9;
     }
 
     @Override
@@ -46,7 +46,6 @@ public class FlawlessParry extends AbstractWCCard {
             initializeTitle();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            upgradeDamage(3);
         }
     }
 }

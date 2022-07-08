@@ -5,6 +5,7 @@ import VUPShionMod.util.FinFunnelCharge;
 import VUPShionMod.util.SansMeter;
 import VUPShionMod.util.SwardCharge;
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,11 +13,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
@@ -38,6 +44,8 @@ public class EnergyPanelPatches {
     public static float levelTimer = 3.0f;
     public static Color levelColor = VUPShionMod.transparent.cpy();
 
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ShionFinFunnelSwitch"));
+    public static Hitbox hb = new Hitbox(120.0f * Settings.scale, 120.0f * Settings.scale);
 
     @SpirePatch(
             clz = EnergyPanel.class,
@@ -51,7 +59,7 @@ public class EnergyPanelPatches {
         public static SpireField<FinFunnelCharge> finFunnelCharger = new SpireField<>(() -> new FinFunnelCharge());
 
         public static SpireField<Boolean> canUseSwardCharge = new SpireField<>(() -> false);
-        public static SpireField<SwardCharge>  swardCharge = new SpireField<>(() -> new SwardCharge());
+        public static SpireField<SwardCharge> swardCharge = new SpireField<>(() -> new SwardCharge());
 
     }
 
@@ -61,15 +69,16 @@ public class EnergyPanelPatches {
     )
     public static class PatchEnergyPanelCon {
         public static void Prefix(EnergyPanel _instance) {
-            if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu){
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
                 PatchEnergyPanelField.canUseSans.set(_instance, true);
             }
 
-            if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion){
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
                 PatchEnergyPanelField.canUseFunnelCharger.set(_instance, true);
+
             }
 
-            if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan){
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
                 PatchEnergyPanelField.canUseSwardCharge.set(_instance, true);
             }
 
@@ -139,6 +148,16 @@ public class EnergyPanelPatches {
                             Integer.toString(energyUsedThisTurn),
                             panel.current_x + 10.0f * Settings.scale + x * Settings.scale, panel.current_y + 25.0f * Settings.scale - 32.0F * Settings.scale + y * Settings.scale,
                             ENERGY_TEXT_COLOR);
+
+
+                    hb.render(sb);
+
+                    if (hb.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
+                        TipHelper.renderGenericTip(hb.cX + hb.width * 0.5f,
+                                0.5f * Settings.HEIGHT, uiStrings.TEXT[0], uiStrings.TEXT[1]);
+                    }
+
+
                 }
 
             }
@@ -207,6 +226,11 @@ public class EnergyPanelPatches {
                 charge.updatePos(panel);
                 charge.update();
             }
+
+            hb.move(panel.current_x + 10.0f * Settings.scale + -45.0f * Settings.scale,
+                    panel.current_y + 25.0f * Settings.scale - 32.0F * Settings.scale + 35.0f * Settings.scale);
+
+            hb.update();
 
 
             return SpireReturn.Continue();

@@ -37,6 +37,10 @@ public class WebButton implements Disposable {
         this.hb = new Hitbox(x, y,
                 552.0f * this.scale, 192.0f * this.scale);
 
+        SteamApps apps = new SteamApps();
+        if (!apps.isSubscribedApp(646570)){
+            throw new NullApiException();
+        }
 
         this.url = url;
     }
@@ -62,10 +66,7 @@ public class WebButton implements Disposable {
             sb.setColor(this.inactiveColor);
         }
 
-        SteamApps apps = new SteamApps();
-        if (!apps.isSubscribedApp(646570)){
-            throw new NullApiException();
-        }
+
 
         sb.draw(this.img, this.x, this.y, 0.0F, 0.0F, 552.0F, 192.0F, this.scale, this.scale,
                 0.0f, 0, 0, 552, 192, false, false);

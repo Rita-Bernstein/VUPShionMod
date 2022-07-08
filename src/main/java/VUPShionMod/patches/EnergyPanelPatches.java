@@ -3,6 +3,7 @@ package VUPShionMod.patches;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.util.FinFunnelCharge;
 import VUPShionMod.util.SansMeter;
+import VUPShionMod.util.SwardCharge;
 import basemod.BaseMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -49,6 +50,9 @@ public class EnergyPanelPatches {
         public static SpireField<Boolean> canUseFunnelCharger = new SpireField<>(() -> false);
         public static SpireField<FinFunnelCharge> finFunnelCharger = new SpireField<>(() -> new FinFunnelCharge());
 
+        public static SpireField<Boolean> canUseSwardCharge = new SpireField<>(() -> false);
+        public static SpireField<SwardCharge>  swardCharge = new SpireField<>(() -> new SwardCharge());
+
     }
 
     @SpirePatch(
@@ -63,6 +67,10 @@ public class EnergyPanelPatches {
 
             if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion){
                 PatchEnergyPanelField.canUseFunnelCharger.set(_instance, true);
+            }
+
+            if(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan){
+                PatchEnergyPanelField.canUseSwardCharge.set(_instance, true);
             }
 
         }
@@ -145,6 +153,11 @@ public class EnergyPanelPatches {
                 charge.render(sb);
             }
 
+            if (PatchEnergyPanelField.canUseSwardCharge.get(panel)) {
+                SwardCharge charge = PatchEnergyPanelField.swardCharge.get(panel);
+                charge.render(sb);
+            }
+
         }
     }
 
@@ -185,6 +198,12 @@ public class EnergyPanelPatches {
 
             if (PatchEnergyPanelField.canUseFunnelCharger.get(panel)) {
                 FinFunnelCharge charge = PatchEnergyPanelField.finFunnelCharger.get(panel);
+                charge.updatePos(panel);
+                charge.update();
+            }
+
+            if (PatchEnergyPanelField.canUseSwardCharge.get(panel)) {
+                SwardCharge charge = PatchEnergyPanelField.swardCharge.get(panel);
                 charge.updatePos(panel);
                 charge.update();
             }

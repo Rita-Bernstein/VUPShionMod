@@ -9,6 +9,7 @@ import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -55,18 +56,22 @@ public class GravityVortexPower extends AbstractShionPower {
 
     @Override
     public void onTriggerFinFunnel(AbstractFinFunnel finFunnel, AbstractCreature target) {
+        int count = 0;
         if (finFunnel.id.equals(GravityFinFunnel.ID)) {
             flash();
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                     if (monster != null && !monster.isDeadOrEscaped()) {
-                        addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new StrengthPower(monster, -2)));
-                        if (!monster.hasPower(ArtifactPower.POWER_ID))
-                            addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new GainStrengthPower(monster, 2)));
+                        count++;
                     }
                 }
             }
 
+        }
+
+        if (count > 0) {
+            flash();
+            addToBot(new GainBlockAction(this.owner, count * 6));
         }
     }
 

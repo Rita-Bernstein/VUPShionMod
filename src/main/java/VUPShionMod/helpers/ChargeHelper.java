@@ -144,7 +144,7 @@ public class ChargeHelper implements Disposable {
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-        AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelPassiveAction(true));
+        AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelPassiveAction(true,false));
     }
 
     @Override

@@ -214,7 +214,7 @@ public class StructureDissectionPower extends AbstractShionPower {
 
 
         if (previous < 78 && this.amount >= 78)
-            addToTop(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 99, false)));
+            addToTop(new ApplyPowerAction(this.owner, this.owner, new FireCalibrationPower(this.owner, 3)));
 
         if (previous < 94 && this.amount >= 94) {
             if (this.owner instanceof AbstractMonster) {

@@ -3,6 +3,7 @@ package VUPShionMod.monsters;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.CustomWaitAction;
+import VUPShionMod.actions.Unique.JumpBothAction;
 import VUPShionMod.powers.Monster.RitaShop.DefenceMonsterPower;
 import VUPShionMod.powers.Monster.RitaShop.ProbePower;
 import VUPShionMod.powers.Monster.RitaShop.ReflectionPower;
@@ -10,6 +11,7 @@ import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
+import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -37,6 +39,8 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 import com.megacrit.cardcrawl.vfx.combat.*;
+
+import java.util.Iterator;
 
 public class RitaShop extends CustomMonster {
     public static final String ID = VUPShionMod.makeID("RitaShop");
@@ -211,7 +215,7 @@ public class RitaShop extends CustomMonster {
                 addToBot(new VFXAction(new GoldenSlashEffect(p.hb.cX - 60.0F * Settings.scale, AbstractDungeon.player.hb.cY,
                         true), 0.0f));
                 addToBot(new SFXAction(VUPShionMod.makeID("RitaB_GenocideCutter") + MathUtils.random(1)));
-                addToBot(new AnimateJumpAction(this));
+                addToBot(new JumpBothAction(this));
                 addToBot(new DamageAction(p, this.damage.get(4), AbstractGameAction.AttackEffect.NONE));
                 addToBot(new VFXAction(new GoldenSlashEffect(p.hb.cX + 60.0F * Settings.scale, AbstractDungeon.player.hb.cY,
                         true), 0.0f));
@@ -515,9 +519,15 @@ public class RitaShop extends CustomMonster {
 
             addToTop(new ClearCardQueueAction());
 
-            addToBot(new RemoveDebuffsAction(this));
-            addToBot(new RemoveSpecificPowerAction(this, this, ReflectionPower.POWER_ID));
-            addToBot(new RemoveSpecificPowerAction(this, this, "IntangiblePlayer"));
+            for (Iterator<AbstractPower> s = this.powers.iterator(); s.hasNext(); ) {
+                AbstractPower p = (AbstractPower) s.next();
+
+                if (p.type == AbstractPower.PowerType.DEBUFF
+                        || p.ID.equals(StunMonsterPower.POWER_ID) || p.ID.equals(ReflectionPower.POWER_ID) || p.ID.equals(IntangiblePlayerPower.POWER_ID)
+                ) {
+                    s.remove();
+                }
+            }
 
 
 //切阶段相关

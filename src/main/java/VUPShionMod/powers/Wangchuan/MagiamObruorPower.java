@@ -2,6 +2,7 @@ package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.util.SwardCharge;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -44,10 +45,12 @@ public class MagiamObruorPower extends AbstractShionPower {
                 p.onSpecificTrigger();
             }
         }
+        SwardCharge.getSwardCharge().onApplyMagiamObruor(this.amount);
     }
 
     @Override
     public void stackPower(int stackAmount) {
+        int before = this.amount;
         super.stackPower(stackAmount);
         for(AbstractPower p : AbstractDungeon.player.powers){
             if(p instanceof AbstractShionPower){
@@ -58,6 +61,8 @@ public class MagiamObruorPower extends AbstractShionPower {
                 p.onSpecificTrigger();
             }
         }
+
+        SwardCharge.getSwardCharge().onApplyMagiamObruor(this.amount-before);
     }
 
     @Override

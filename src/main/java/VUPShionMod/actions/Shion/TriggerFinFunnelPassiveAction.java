@@ -15,6 +15,7 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
     private boolean random;
     private String forceFinFunnel = "None";
     private int loops = 1;
+    private boolean isCard = true;
 
     private boolean isDoubleDamage = false;
     private boolean isMultiDamage = false;
@@ -47,8 +48,15 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
         this.forceFinFunnel = forceFinFunnel;
     }
 
-    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel, int loops) {
-        this(target, forceFinFunnel);
+    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel,boolean isCard) {
+        this.target = target;
+        this.random = false;
+        this.forceFinFunnel = forceFinFunnel;
+        this.isCard = isCard;
+    }
+
+    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel, int loops,boolean isCard) {
+        this(target, forceFinFunnel,isCard);
         this.loops = loops;
     }
 
@@ -76,8 +84,12 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
 
 
 //        计算循环
-        if (p.hasPower(ReleaseFormMinamiPower.POWER_ID))
-            this.loops *= p.getPower(ReleaseFormMinamiPower.POWER_ID).amount + 1;
+//        if (p.hasPower(ReleaseFormMinamiPower.POWER_ID))
+//            this.loops *= p.getPower(ReleaseFormMinamiPower.POWER_ID).amount + 1;
+        float effect = 1.0f;
+        if (AbstractDungeon.player.hasPower(ReleaseFormMinamiPower.POWER_ID) && this.isCard) {
+            effect += AbstractDungeon.player.getPower(ReleaseFormMinamiPower.POWER_ID).amount * 0.5f;
+        }
 
         ArrayList<AbstractMonster> monsters = new ArrayList<>();
 
@@ -96,7 +108,7 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
 
         for (int i = 0; i < this.loops; i++) {
             if (f != null && f.getLevel() >= 0) {
-                f.powerToApply(this.target);
+                f.powerToApply(this.target,effect,false);
             } else {
                 this.isDone = true;
                 return;

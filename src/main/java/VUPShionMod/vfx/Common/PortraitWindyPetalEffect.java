@@ -29,9 +29,13 @@ public class PortraitWindyPetalEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
+        if (!SaveHelper.safeCampfire) {
+            isDone = true;
+            return;
+        }
         if (this.justStart) {
             this.justStart = false;
-            if (!this.name.equals("") && !SaveHelper.safeCampfire) {
+            if (!this.name.equals("")) {
                 AbstractDungeon.topLevelEffects.add(new LargPortraitFlashInEffect(this.name));
             }
         }

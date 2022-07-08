@@ -418,8 +418,8 @@
   },
   "VUPShionMod:PreExecution": {
     "NAME": "拟斩",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得2点 敏捷 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:剑势 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:剑势 。 NL 获得2点 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       "心眼"
     ]
@@ -446,17 +446,17 @@
       "霹雳一闪·五连",
       "霹雳一闪·六连",
       "极·霹雳一闪",
-      "造成 !M! + vup_shion_mod:剑意 的伤害。 NL ",
-      "对所有敌人造成 NL !M! + vup_shion_mod:剑意 的伤害。 NL ",
-      "对所有敌人造成 NL vup_shion_mod:剑意 的伤害 !VUPShionSecondM! 次。 NL ",
-      " NL 失去一点 vup_shion_mod:剑意 。",
+      "造成 !M! + vup_shion_mod:剑势 的伤害。 NL ",
+      "对所有敌人造成 NL !M! + vup_shion_mod:剑势 的伤害。 NL ",
+      "对所有敌人造成 NL vup_shion_mod:剑势 的伤害 !VUPShionSecondM! 次。 NL ",
+      " NL 失去一点 vup_shion_mod:剑势 。",
       " NL 获得一点 vup_shion_mod:硬直 。",
       " NL 获得两点 vup_shion_mod:硬直 。",
       " NL 获得三点 vup_shion_mod:硬直 。",
-      "获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL ",
-      "获得10点 vup_shion_mod:剑意 。 NL ",
+      "获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。 NL ",
+      "获得10点 vup_shion_mod:剑势 。 NL ",
       " NL 获得1层 无实体 。",
-      "对所有敌人造成 NL vup_shion_mod:剑意 的伤害。 NL "
+      "对所有敌人造成 NL vup_shion_mod:剑势 的伤害。 NL "
     ]
   },
   "VUPShionMod:GlandesMagicae": {
@@ -465,18 +465,18 @@
   },
   "VUPShionMod:StrideSlash": {
     "NAME": "踏步斩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害两次。 NL 造成 vup_shion_mod:剑意 的伤害。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 抽一张牌。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 vup_shion_mod:剑势 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害两次。 NL 造成 vup_shion_mod:剑势 的伤害。 NL 获得 !M! 点 vup_shion_mod:剑势 。 NL 抽一张牌。",
     "EXTENDED_DESCRIPTION": [
       "踏步连斩",
       "残月冲",
-      "造成 !D! 点伤害两次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张牌。"
+      "造成 !D! 点伤害两次。 NL 获得 !M! 点 vup_shion_mod:剑势 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 抽一张牌。"
     ]
   },
   "VUPShionMod:OnrushingTip": {
     "NAME": "突进斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得6点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得6点 vup_shion_mod:剑意 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 消耗 。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害。 NL 获得6点 vup_shion_mod:剑势 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害。 NL 获得6点 vup_shion_mod:剑势 。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:硬直 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "舍身斩",
       " NL （造成 !D! 点伤害）"
@@ -484,12 +484,12 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 25 + vup_shion_mod:剑意 的 格挡 。 NL 获得8点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害两次。 NL 获得 !B! 点 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害三次。 NL 获得 25 + vup_shion_mod:剑势 的 格挡 。 NL 获得8点 vup_shion_mod:剑势 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
       "极·回天剑舞",
-      "造成 !M! + vup_shion_mod:剑意 的伤害三次。 NL 获得 9 + vup_shion_mod:剑意 的 格挡 。 NL 获得5点 vup_shion_mod:剑意 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+      "造成 !M! + vup_shion_mod:剑势 的伤害三次。 NL 获得 9 + vup_shion_mod:剑势 的 格挡 。 NL 获得5点 vup_shion_mod:剑势 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽两张牌。",
       "（造成 !D! 点伤害，获得 !B! 点 格挡 。）"
     ]
   },
@@ -503,12 +503,12 @@
   },
   "VUPShionMod:SeverPetal": {
     "NAME": "雁落斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。 NL 抽一张牌。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑意 的伤害两次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。 NL 获得2点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害两次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。 NL 获得2点 vup_shion_mod:硬直 。 NL 抽一张牌。",
     "EXTENDED_DESCRIPTION": [
       "雁落斩+",
       "落凤破",
-      "造成 !M! + vup_shion_mod:剑意 的伤害。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 获得2点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+      "造成 !M! + vup_shion_mod:剑势 的伤害。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。 NL 获得2点 vup_shion_mod:硬直 。 NL 抽一张牌。",
       " NL （造成 !D! 点伤害）"
     ]
   },
@@ -522,8 +522,8 @@
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "无限剑制",
-    "DESCRIPTION": "保留 。 NL 造成3+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 层 vup_shion_mod:剑意 。 NL 击晕 敌人。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 造成5+ vup_shion_mod:剑意 的伤害8次。 NL 获得 !M! 点 vup_shion_mod:剑意 。 击晕 敌人。",
+    "DESCRIPTION": "保留 。 NL 造成3+ vup_shion_mod:剑势 的伤害8次。 NL 获得 !M! 层 vup_shion_mod:剑势 。 NL 击晕 敌人。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成5+ vup_shion_mod:剑势 的伤害8次。 NL 获得 !M! 点 vup_shion_mod:剑势 。 击晕 敌人。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害）"
     ]
@@ -535,32 +535,32 @@
   "VUPShionMod:LunaMergo": {
     "NAME": "调息",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 失去1点 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 获得2点 vup_shion_mod:剑意 。 NL 失去1点 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌。 NL 获得2点 vup_shion_mod:剑势 。 NL 失去1点 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "月读"
     ]
   },
   "VUPShionMod:Reflect": {
     "NAME": "反射",
-    "DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑意 的 格挡 。 NL 你在这个回合每受到一次攻击，都对攻击者造成 !VUPShionSecondM! 点伤害。",
+    "DESCRIPTION": " 保留 。 NL 获得 !M! + vup_shion_mod:剑势 的 格挡 。 NL 你在这个回合每受到一次攻击，都对攻击者造成 !VUPShionSecondM! 点伤害。",
     "UPGRADE_DESCRIPTION": " NL (获得 !B! 点 格挡 )"
   },
   "VUPShionMod:Sharpen": {
     "NAME": "锐意",
-    "DESCRIPTION": "获得 !M! 点 vup_shion_mod:剑意 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !M! 点 vup_shion_mod:剑势 。 NL 消耗 。"
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "见切",
     "DESCRIPTION": "造成 !D! 点伤害 。 NL 获得 !M! 层 vup_shion_mod:见切 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽一张牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 。 NL 造成 vup_shion_mod:剑意 层数的伤害 。 NL 获得 !M! 层 vup_shion_mod:见切 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽一张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 。 NL 造成 vup_shion_mod:剑势 层数的伤害 。 NL 获得 !M! 层 vup_shion_mod:见切 。 NL 获得1点 vup_shion_mod:硬直 。 NL 抽一张牌。",
     "EXTENDED_DESCRIPTION": [
       "气刃大回旋"
     ]
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "月步",
-    "DESCRIPTION": "获得 !VUPShionSecondM! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !VUPShionSecondM! + vup_shion_mod:剑意 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑意 。",
+    "DESCRIPTION": "获得 !VUPShionSecondM! + vup_shion_mod:剑势 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑势 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !VUPShionSecondM! + vup_shion_mod:剑势 的 格挡 。 NL 本回合每次受到攻击时，获得 !M! 点 vup_shion_mod:剑势 。",
     "EXTENDED_DESCRIPTION": [
       " NL （获得 !B! 点 格挡 ）"
     ]
@@ -580,7 +580,7 @@
   },
   "VUPShionMod:Focus": {
     "NAME": "蓄气",
-    "DESCRIPTION": "每回合开始时 NL 获得 !M! 层 vup_shion_mod:剑意 。"
+    "DESCRIPTION": "每回合开始时 NL 获得 !M! 层 vup_shion_mod:剑势 。"
   },
   "VUPShionMod:OffensiveAdvance": {
     "NAME": "攻势",
@@ -592,8 +592,8 @@
   },
   "VUPShionMod:PetalsFall": {
     "NAME": "散华",
-    "DESCRIPTION": "每当你失去 vup_shion_mod:剑意 时，获得失去层数两倍的 格挡 。 NL 对所有敌人造成失去层数两倍的伤害。",
-    "UPGRADE_DESCRIPTION": "获得 !VUPShionSecondM! 点 vup_shion_mod:剑意 。 NL 你的 vup_shion_mod:剑意 不再降低。 NL 每回合开始时 NL 获得 !M! 层 vup_shion_mod:剑意 。"
+    "DESCRIPTION": "每当你失去 vup_shion_mod:剑势 时，获得失去层数两倍的 格挡 。 NL 对所有敌人造成失去层数两倍的伤害。",
+    "UPGRADE_DESCRIPTION": "获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。 NL 你的 vup_shion_mod:剑势 不再降低。 NL 每回合开始时 NL 获得 !M! 层 vup_shion_mod:剑势 。"
   },
   "VUPShionMod:Poise": {
     "NAME": "缄默",
@@ -662,8 +662,8 @@
   },
   "VUPShionMod:MensVirtusque": {
     "NAME": "八之章：觉醒",
-    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL 在本场战斗中 升级 你的所有牌。",
-    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑意 。 NL 在本场战斗中 升级 你的所有牌。"
+    "DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑势 。 NL 在本场战斗中 升级 你的所有牌。",
+    "UPGRADE_DESCRIPTION": "触发 vup_shion_mod:魔能过载 时，变为获得 !M! 点 vup_shion_mod:剑势 。 NL 在本场战斗中 升级 你的所有牌。"
   },
   "VUPShionMod:ElysiumSpesque": {
     "NAME": "一之章：乐园",
@@ -873,7 +873,7 @@
     "EXTENDED_DESCRIPTION": [
       "通典：金（泛滥）",
       "通典：金（极意）",
-      "升级所有手牌。 NL 消耗 ，虚无 。"
+      " 升级 所有手牌。 NL 消耗 ， 虚无 。"
     ]
   },
   "VUPShionMod:AurumFidum": {
@@ -883,7 +883,7 @@
     "EXTENDED_DESCRIPTION": [
       "通典：金（如意）",
       "通典：金（极意）",
-      "升级 !M! 张牌堆或手牌中的牌。 消耗 。"
+      " 升级 !M! 张牌堆或手牌中的牌。 消耗 。"
     ]
   },
   "VUPShionMod:LignumNimium": {

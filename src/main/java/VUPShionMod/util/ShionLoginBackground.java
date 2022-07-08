@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Disposable;
+import com.codedisaster.steamworks.SteamApps;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -26,6 +27,7 @@ public class ShionLoginBackground extends TitleBackground implements Disposable 
 
     public ShionLoginBackground() {
         this.fix_y = 230.0f * this.scale * Settings.scale;
+
         if (this.buttons.isEmpty()) {
             buttons.add(new WebButton("https://afdian.net/@AnastasiaShion",
                     Settings.WIDTH - 552.0f * this.scale * Settings.scale - 40.0f * Settings.scale,
@@ -37,6 +39,8 @@ public class ShionLoginBackground extends TitleBackground implements Disposable 
                     Settings.HEIGHT - 24.0f * Settings.scale - 192.0f * this.scale * Settings.scale - fix_y, this.scale,
                     ImageMaster.loadImage("VUPShionMod/img/ui/MainMenuButton/Patreon.png")));
         }
+
+
     }
 
     @Override

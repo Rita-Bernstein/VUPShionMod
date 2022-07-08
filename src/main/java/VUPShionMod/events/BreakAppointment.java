@@ -61,6 +61,7 @@ public class BreakAppointment extends AbstractImageEvent {
         switch (this.curScreen) {
             case INTRO:
                 if (buttonPressed == 0) {
+                    AbstractDungeon.player.loseGold(50);
                     if (AbstractDungeon.eventRng.randomBoolean(0.5f)) {
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
                         this.imageEventText.removeDialogOption(1);

@@ -50,7 +50,7 @@ public class DefenseSystemCharging extends AbstractShionCard {
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
 
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
         List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         if (cardList.size() >= 2) {
             AbstractCard card = cardList.get(cardList.size() - 2);

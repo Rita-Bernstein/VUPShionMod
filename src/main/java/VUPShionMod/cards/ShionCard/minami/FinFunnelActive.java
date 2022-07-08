@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerAllFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.character.Shion;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Shion.ReleaseFormMinamiPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
@@ -32,14 +33,8 @@ public class FinFunnelActive extends AbstractShionMinamiCard {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
 
-        if (AbstractDungeon.player instanceof Shion) {
+        if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
             addToBot(new TriggerAllFinFunnelPassiveAction(m));
-
-            if (p.hasPower(ReleaseFormMinamiPower.POWER_ID)) {
-                for (int i = 0; i < p.getPower(ReleaseFormMinamiPower.POWER_ID).amount; i++)
-                    addToBot(new TriggerAllFinFunnelPassiveAction(m));
-            }
-
         }
 
     }

@@ -3,6 +3,7 @@ package VUPShionMod.patches;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.util.FinFunnelCharge;
+import VUPShionMod.util.SwardCharge;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -33,7 +34,7 @@ public class GameStatsPatch {
 
     //    ========================================重置
     public static void turnBaseReset() {
-
+        SwardCharge.getSwardCharge().resetCount();
     }
 
     public static void combatBaseReset() {
@@ -44,6 +45,8 @@ public class GameStatsPatch {
         }
 
         FinFunnelCharge.getFinFunnelCharge().resetCount();
+
+        SwardCharge.getSwardCharge().resetUpgrade();
 
     }
 

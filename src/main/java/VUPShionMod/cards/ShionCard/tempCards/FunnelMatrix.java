@@ -47,8 +47,8 @@ public class FunnelMatrix extends AbstractVUPShionCard {
                     80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
 
         for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList) {
-            addToBot(new TriggerFinFunnelPassiveAction(m, funnel.id));
-            addToBot(new TriggerFinFunnelPassiveAction(m, funnel.id));
+            addToBot(new TriggerFinFunnelPassiveAction(m, funnel.id,true));
+            addToBot(new TriggerFinFunnelPassiveAction(m, funnel.id,true));
         }
     }
 }

@@ -35,7 +35,7 @@ public class GravityRepressionPower extends AbstractShionPower {
     public void onTriggerFinFunnel(AbstractFinFunnel finFunnel, AbstractCreature target) {
         if (finFunnel.id.equals(GravityFinFunnel.ID)) {
             flash();
-            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, PursuitFinFunnel.ID));
+            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, PursuitFinFunnel.ID,false));
         }
     }
 

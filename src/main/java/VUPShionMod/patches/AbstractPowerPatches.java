@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.util.SwardCharge;
 import basemod.BaseMod;
 import basemod.patches.com.megacrit.cardcrawl.characters.AbstractPlayer.OnPlayerDamagedHook;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -9,6 +10,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.defect.ShuffleAllAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -119,6 +122,32 @@ public class AbstractPowerPatches {
                         }
                     }
                 }
+            return SpireReturn.Continue();
+        }
+    }
+
+//    @SpirePatch(
+//            clz = UseCardAction.class,
+//            method = SpirePatch.CONSTRUCTOR
+//    )
+//    public static class OnUseCardPatch {
+//        @SpireInsertPatch(rloc = 15, localvars = {"targetCard"})
+//        public static SpireReturn<Void> Insert(UseCardAction _instance, @ByRef AbstractCard[] targetCard) {
+//            SwardCharge.getSwardCharge().onUseCard(targetCard[0],_instance);
+//
+//            return SpireReturn.Continue();
+//        }
+//    }
+
+    @SpirePatch(
+            clz = UseCardAction.class,
+            method = "update"
+    )
+    public static class OnAfterUseCardPatch {
+        @SpireInsertPatch(rloc = 1, localvars = {"targetCard"})
+        public static SpireReturn<Void> Insert(UseCardAction _instance, @ByRef AbstractCard[] targetCard) {
+            SwardCharge.getSwardCharge().onAfterUseCard(targetCard[0],_instance);
+
             return SpireReturn.Continue();
         }
     }

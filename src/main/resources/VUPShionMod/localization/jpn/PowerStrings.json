@@ -264,9 +264,9 @@
     ]
   },
   "VUPShionMod:CorGladiiPower": {
-    "NAME": "剑意",
+    "NAME": "剑势",
     "DESCRIPTIONS": [
-      " #y剑意 能提高部分攻击牌的伤害。"
+      " #y剑势 能提高部分攻击牌的伤害。"
     ]
   },
   "VUPShionMod:MagiamObruorPower": {
@@ -285,7 +285,7 @@
   "VUPShionMod:MensVirtusquePower": {
     "NAME": "八之章：觉醒",
     "DESCRIPTIONS": [
-      "触发 #y魔能过载 时，变为获得 #b%d 点 #y剑意 。"
+      "触发 #y魔能过载 时，变为获得 #b%d 点 #y剑势 。"
     ]
   },
   "VUPShionMod:HeliumLuxquePower": {
@@ -315,19 +315,19 @@
   "VUPShionMod:PetalsFallPower": {
     "NAME": "散华",
     "DESCRIPTIONS": [
-      "每当你失去 #y剑意 时，获得失去层数 #b%d 倍的 #y格挡 。 NL 对所有敌人造成失去层数 #b%d 倍的伤害。"
+      "每当你失去 #y剑势 时，获得失去层数 #b%d 倍的 #y格挡 。 NL 对所有敌人造成失去层数 #b%d 倍的伤害。"
     ]
   },
   "VUPShionMod:GainCorGladiiPower": {
     "NAME": "蓄气",
     "DESCRIPTIONS": [
-      "每回合开始时 NL 获得 #b%d 层 #y剑意 。"
+      "每回合开始时 NL 获得 #b%d 层 #y剑势 。"
     ]
   },
   "VUPShionMod:MoonstriderPower": {
     "NAME": "月步",
     "DESCRIPTIONS": [
-      "本回合每次受到攻击时，获得 #b%d 点 #y剑意 。"
+      "本回合每次受到攻击时，获得 #b%d 点 #y剑势 。"
     ]
   },
   "VUPShionMod:DistantiaAbsensquePower": {

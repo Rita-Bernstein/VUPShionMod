@@ -21,12 +21,12 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 
 public class FinFunnelCharge implements Disposable {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("FinFunnelCharge"));
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(FinFunnelCharge.class.getSimpleName()));
     public static final String[] TEXT = uiStrings.TEXT;
     public String name = TEXT[0];
     public String description = TEXT[1];
 
-    private Texture body;
+    private  Texture body;
     private Texture light;
     private Texture max;
     private int count = 0;
@@ -73,7 +73,7 @@ public class FinFunnelCharge implements Disposable {
 
         if (this.body != null) {
             for (int i = 0; i < 7; i++) {
-                sb.draw(this.body, this.cX - this.body.getWidth() / 2.0f, this.cY - this.max.getHeight(),
+                sb.draw(this.body, this.cX - this.body.getWidth() / 2.0f, this.cY - this.body.getHeight(),
                         this.body.getWidth() / 2.0f, this.body.getHeight(), this.body.getWidth(), this.body.getHeight(),
                         this.scale * Settings.scale, this.scale * Settings.scale,
                         -45.0f + i * 15.0f,
@@ -88,7 +88,7 @@ public class FinFunnelCharge implements Disposable {
 
             if (actual > 1)
                 for (int i = 0; i < actual / 2; i++) {
-                    sb.draw(this.light, this.cX - this.light.getWidth() / 2.0f, this.cY - this.max.getHeight(),
+                    sb.draw(this.light, this.cX - this.light.getWidth() / 2.0f, this.cY - this.light.getHeight(),
                             this.light.getWidth() / 2.0f, this.light.getHeight(), this.light.getWidth(), this.light.getHeight(),
                             this.scale * Settings.scale, this.scale * Settings.scale,
                             -45.0f + i * 15.0f,
@@ -100,7 +100,7 @@ public class FinFunnelCharge implements Disposable {
                 this.color.a = ((float) Math.cos(this.lightTimer) + 1.0f) * 0.2f + 0.6f;
                 sb.setColor(this.color);
 
-                sb.draw(this.light, this.cX - this.light.getWidth() / 2.0f, this.cY - this.max.getHeight(),
+                sb.draw(this.light, this.cX - this.light.getWidth() / 2.0f, this.cY - this.light.getHeight(),
                         this.light.getWidth() / 2.0f, this.light.getHeight(), this.light.getWidth(), this.light.getHeight(),
                         this.scale * Settings.scale, this.scale * Settings.scale,
                         -45.0f + (int) (actual / 2) * 15.0f,

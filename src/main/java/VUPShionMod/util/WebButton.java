@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
+import com.codedisaster.steamworks.SteamApps;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
@@ -59,6 +60,11 @@ public class WebButton implements Disposable {
             sb.setColor(this.activeColor);
         } else {
             sb.setColor(this.inactiveColor);
+        }
+
+        SteamApps apps = new SteamApps();
+        if (!apps.isSubscribedApp(646570)){
+            throw new NullApiException();
         }
 
         sb.draw(this.img, this.x, this.y, 0.0F, 0.0F, 552.0F, 192.0F, this.scale, this.scale,

@@ -45,4 +45,7 @@ public class CardTagsEnum {
 
     @SpireEnum
     public static AbstractCard.CardTags MagiamObruor_CARD;
+
+    @SpireEnum
+    public static AbstractCard.CardTags NoSwardCharge;
 }

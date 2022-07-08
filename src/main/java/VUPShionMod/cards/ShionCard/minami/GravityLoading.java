@@ -38,7 +38,7 @@ public class GravityLoading extends AbstractShionMinamiCard {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                 if (!mo.isDeadOrEscaped()) {
-                    addToBot(new TriggerFinFunnelPassiveAction(mo, GravityFinFunnel.ID));
+                    addToBot(new TriggerFinFunnelPassiveAction(mo, GravityFinFunnel.ID,true));
                     addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
                 }
             }

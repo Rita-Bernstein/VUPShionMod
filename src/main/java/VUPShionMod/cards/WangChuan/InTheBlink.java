@@ -2,7 +2,9 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.util.SwardCharge;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -56,6 +58,7 @@ public class InTheBlink extends AbstractWCCard {
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
+                if(!this.hasTag(CardTagsEnum.NoSwardCharge))
                 addToBot(new ApplyStiffnessAction(3));
                 break;
             case 1:
@@ -68,6 +71,7 @@ public class InTheBlink extends AbstractWCCard {
 
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
+                if(!this.hasTag(CardTagsEnum.NoSwardCharge))
                 addToBot(new ApplyStiffnessAction(3));
                 break;
             case 2:
@@ -78,6 +82,7 @@ public class InTheBlink extends AbstractWCCard {
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
+                if(!this.hasTag(CardTagsEnum.NoSwardCharge))
                 addToBot(new ApplyStiffnessAction(3));
                 break;
         }
@@ -87,11 +92,24 @@ public class InTheBlink extends AbstractWCCard {
             addBaseAoeDamage();
             doAoeDamage();
 
+            if(!this.hasTag(CardTagsEnum.NoSwardCharge))
             addToBot(new ApplyStiffnessAction(3));
 
             if (this.timesUpgraded >= 9)
                 addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
         }
+
+        if(this.hasTag(CardTagsEnum.NoSwardCharge)){
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    SwardCharge.getSwardCharge().resetCount();
+                    SwardCharge.getSwardCharge().resetUpgrade();
+                    isDone = true;
+                }
+            });
+        }
+
     }
 
     private void addBaseAoeDamage() {

@@ -51,6 +51,6 @@ public class QuickDefend extends AbstractVUPShionCard {
         addToBot(new SFXAction("SHION_9"));
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
     }
 }

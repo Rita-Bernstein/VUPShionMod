@@ -35,7 +35,7 @@ public class TrackingAnalysisPower extends AbstractShionPower {
     public void onTriggerFinFunnel(AbstractFinFunnel finFunnel, AbstractCreature target) {
         if (finFunnel.id.equals(PursuitFinFunnel.ID)) {
             flash();
-            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, DissectingFinFunnel.ID));
+            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, DissectingFinFunnel.ID,false));
         }
     }
 

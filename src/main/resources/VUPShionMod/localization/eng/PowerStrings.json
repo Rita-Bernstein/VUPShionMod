@@ -99,7 +99,7 @@
   "VUPShionMod:ReleaseFormMinamiPower": {
     "NAME": "Liberated Form: Minami",
     "DESCRIPTIONS": [
-      "Whenever you trigger the passive ability of #yFunnel by cards, trigger #b%d additional times."
+      "Increase #b%d%% additional effect of #yFunnel trigger by cards."
     ]
   },
   "VUPShionMod:EnhancedWeaponPower": {
@@ -894,6 +894,12 @@
     "DESCRIPTIONS": [
       "下次 #y矩阵充能 满充能的 #y自动浮游炮 将对所有敌人触发效果。",
       "下 #b%d 次 #y矩阵充能 满充能的 #y自动浮游炮 将对所有敌人触发效果。"
+    ]
+  },
+  "VUPShionMod:FireCalibrationPower": {
+    "NAME": "火力校准",
+    "DESCRIPTIONS": [
+      "其受到的伤害提高 #b%d 。"
     ]
   }
 }

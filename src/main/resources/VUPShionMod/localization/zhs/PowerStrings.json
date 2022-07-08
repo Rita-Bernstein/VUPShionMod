@@ -99,7 +99,7 @@
   "VUPShionMod:ReleaseFormMinamiPower": {
     "NAME": "姿态解放-南小棉",
     "DESCRIPTIONS": [
-      "使用卡牌触发 #y浮游炮 的被动效果时，额外触发 #b%d 次。"
+      "使用卡牌触发 #y浮游炮 的被动效果时，效果提升 #b%d%% 。"
     ]
   },
   "VUPShionMod:EnhancedWeaponPower": {
@@ -272,9 +272,9 @@
     ]
   },
   "VUPShionMod:CorGladiiPower": {
-    "NAME": "剑意",
+    "NAME": "剑势",
     "DESCRIPTIONS": [
-      " #y剑意 能提高部分攻击牌的伤害。"
+      " #y剑势 能提高部分攻击牌的伤害。"
     ]
   },
   "VUPShionMod:MagiamObruorPower": {
@@ -293,7 +293,7 @@
   "VUPShionMod:MensVirtusquePower": {
     "NAME": "八之章：觉醒",
     "DESCRIPTIONS": [
-      "触发 #y魔能过载 时，变为获得 #b%d 点 #y剑意 。"
+      "触发 #y魔能过载 时，变为获得 #b%d 点 #y剑势 。"
     ]
   },
   "VUPShionMod:HeliumLuxquePower": {
@@ -323,19 +323,19 @@
   "VUPShionMod:PetalsFallPower": {
     "NAME": "散华",
     "DESCRIPTIONS": [
-      "每当你失去 #y剑意 时，获得失去层数 #b%d 倍的 #y格挡 。 NL 对所有敌人造成失去层数 #b%d 倍的伤害。"
+      "每当你失去 #y剑势 时，获得失去层数 #b%d 倍的 #y格挡 。 NL 对所有敌人造成失去层数 #b%d 倍的伤害。"
     ]
   },
   "VUPShionMod:GainCorGladiiPower": {
     "NAME": "蓄气",
     "DESCRIPTIONS": [
-      "每回合开始时 NL 获得 #b%d 层 #y剑意 。"
+      "每回合开始时 NL 获得 #b%d 层 #y剑势 。"
     ]
   },
   "VUPShionMod:MoonstriderPower": {
     "NAME": "月步",
     "DESCRIPTIONS": [
-      "本回合每次受到攻击时，获得 #b%d 点 #y剑意 。"
+      "本回合每次受到攻击时，获得 #b%d 点 #y剑势 。"
     ]
   },
   "VUPShionMod:DistantiaAbsensquePower": {
@@ -474,7 +474,7 @@
   "VUPShionMod:RechargerPower": {
     "NAME": "充能回路",
     "DESCRIPTIONS": [
-      "获得 #y魔能过载 时，获得 #b%d 点 #y剑意 。"
+      "获得 #y魔能过载 时，获得 #b%d 点 #y剑势 。"
     ]
   },
   "VUPShionMod:AcceleratorPower": {
@@ -695,7 +695,7 @@
       " NL #b%d :受到 #b10%% 最大生命的伤害。",
       " NL #b%d :失去 #b5%% 最大生命。",
       " NL #b%d :失去 #b5%% 最大生命。",
-      " NL #b%d :给予 #b99 层 易伤 。",
+      " NL #b%d :受到的伤害提高 #b3 。",
       " NL #b%d :移除本效果并： NL 首领-解析敌人能力或失去 #b3 点 #y力量。 NL 非首领- #y击晕 。",
       " NL NL #r首领-%s NL 失去 #y%s。",
       " NL NL #r首領-%s NL 将 #y%s 的生命降到 #b1 。",
@@ -724,8 +724,8 @@
   "VUPShionMod:OppressiveSwordPower": {
     "NAME": "月牙天冲",
     "DESCRIPTIONS": [
-      "本回合 #y剑意 不会下降。",
-      "在 #b%d 个回合内 #y剑意 不会下降。"
+      "本回合 #y剑势 不会下降。",
+      "在 #b%d 个回合内 #y剑势 不会下降。"
     ]
   },
   "VUPShionMod:DefenceMonsterPower": {
@@ -852,7 +852,7 @@
   "VUPShionMod:GravityVortexPower": {
     "NAME": "指令：重力漩涡",
     "DESCRIPTIONS": [
-      "触发 #y重力浮游炮 的被动效果时，所有敌人失去 #b2 点 #y临时力量 。 NL 不与其他指令共存。 NL 不能叠加。"
+      "触发 #y重力浮游炮 的被动效果时，获得敌人数量 #b6 倍的 #y格挡 。 NL 不与其他指令共存。 NL 不能叠加。"
     ]
   },
   "VUPShionMod:GravityRepressionPower": {
@@ -906,6 +906,12 @@
     "DESCRIPTIONS": [
       "本回合 #y自动浮游炮 的 #y追击浮游炮 将对所有敌人触发效果。",
       "下 #b%d 个回合 #y自动浮游炮 的 #y追击浮游炮 将对所有敌人触发效果。"
+    ]
+  },
+  "VUPShionMod:FireCalibrationPower": {
+    "NAME": "火力校准",
+    "DESCRIPTIONS": [
+      "其受到的伤害提高 #b%d 。"
     ]
   }
 }

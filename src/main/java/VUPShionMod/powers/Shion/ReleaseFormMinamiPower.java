@@ -29,6 +29,6 @@ public class ReleaseFormMinamiPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount * 50);
     }
 }

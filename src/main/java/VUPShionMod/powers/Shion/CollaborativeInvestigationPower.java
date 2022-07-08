@@ -35,7 +35,7 @@ public class CollaborativeInvestigationPower extends AbstractShionPower {
     public void onTriggerFinFunnel(AbstractFinFunnel finFunnel, AbstractCreature target) {
         if (!finFunnel.id.equals(InvestigationFinFunnel.ID)) {
             flash();
-            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, InvestigationFinFunnel.ID));
+            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, InvestigationFinFunnel.ID,false));
         }
     }
 

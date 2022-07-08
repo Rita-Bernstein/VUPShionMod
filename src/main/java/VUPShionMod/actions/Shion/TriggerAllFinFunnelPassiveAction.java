@@ -10,6 +10,7 @@ import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.Shion.BleedingPower;
 import VUPShionMod.powers.Shion.GravitoniumPower;
 import VUPShionMod.powers.Shion.PursuitPower;
+import VUPShionMod.powers.Shion.ReleaseFormMinamiPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 public class TriggerAllFinFunnelPassiveAction extends AbstractGameAction {
     private AbstractMonster target;
     private boolean random;
+    private boolean isCard = true;
     private AbstractPlayer p = AbstractDungeon.player;
 
 
@@ -31,8 +33,9 @@ public class TriggerAllFinFunnelPassiveAction extends AbstractGameAction {
         this.duration = 1.0f;
     }
 
-    public TriggerAllFinFunnelPassiveAction(boolean random) {
+    public TriggerAllFinFunnelPassiveAction(boolean random,boolean isCard) {
         this.random = random;
+        this.isCard = isCard;
     }
 
 
@@ -67,10 +70,15 @@ public class TriggerAllFinFunnelPassiveAction extends AbstractGameAction {
         }
 
 
+        float effect = 1.0f;
+        if (AbstractDungeon.player.hasPower(ReleaseFormMinamiPower.POWER_ID) && this.isCard) {
+            effect += AbstractDungeon.player.getPower(ReleaseFormMinamiPower.POWER_ID).amount * 0.5f;
+        }
+
         if (!availableFinFunnel.isEmpty() && !monsters.isEmpty()) {
 //            结算被动效果
             for (int i = 0; i < availableFinFunnel.size(); i++) {
-                availableFinFunnel.get(i).powerToApply(monsters.get(i));
+                availableFinFunnel.get(i).powerToApply(monsters.get(i), effect, false);
 
             }
         }

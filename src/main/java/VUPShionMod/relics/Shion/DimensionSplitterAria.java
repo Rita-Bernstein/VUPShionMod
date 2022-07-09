@@ -1,9 +1,11 @@
 package VUPShionMod.relics.Shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.TriggerDimensionSplitterAction;
 import VUPShionMod.relics.AbstractShionRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -19,7 +21,7 @@ import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
-public class DimensionSplitterAria extends AbstractShionRelic {
+public class DimensionSplitterAria extends AbstractShionRelic implements ClickableRelic {
     public static final String ID = VUPShionMod.makeID("DimensionSplitterAria");
     public static final String IMG_PATH = "img/relics/DimensionSplitterAria.png";
     private static final String OUTLINE_PATH = "img/relics/outline/DimensionSplitterAria.png";
@@ -33,61 +35,79 @@ public class DimensionSplitterAria extends AbstractShionRelic {
     }
 
     @Override
+    public void onRightClick() {
+        if(this.counter >=3){
+            this.pulse = true;
+            addToBot(new TriggerDimensionSplitterAction());
+            this.counter = 0;
+
+
+        }
+    }
+
+    @Override
+    public void atBattleStart() {
+        this.counter = 0;
+    }
+
+    @Override
     public String getUpdatedDescription() {
-        if (this.counter <= 1)
-            return String.format(DESCRIPTIONS[1] + DESCRIPTIONS[0], this.counter * 3 + 2, this.counter);
-        else
-            return String.format(this.DESCRIPTIONS[0], this.counter * 3 + 2, this.counter);
+        return String.format(DESCRIPTIONS[0], this.counter);
     }
 
     public void setDescriptionAfterLoading() {
         this.description = getUpdatedDescription();
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
         this.initializeTips();
     }
 
     @Override
     public void atTurnStart() {
+        if (this.counter < 3)
+            this.counter++;
+
+
+        this.pulse = this.counter >= 3;
+
         setDescriptionAfterLoading();
-        if (this.counter > 1)
-            doDamage();
     }
 
-    public void doDamage(AbstractMonster m, int extraDamage, boolean isLoseHP) {
-        if (m != null) {
-            this.flash();
-            addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
-            addToBot(new VFXAction(new BorderFlashEffect(Color.RED)));
-            addToBot(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, this.hb.cX, this.hb.cY), 0.3F));
-
-            if (isLoseHP)
-                addToBot(new LoseHPAction(m, AbstractDungeon.player, this.counter * 3 + 2 + extraDamage));
-            else
-                addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter * 3 + 2 + extraDamage,
-                        DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
-
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    if (m.isDying && !m.hasPower(MinionPower.POWER_ID)) {
-                        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, DimensionSplitterAria.this));
-                        addToBot(new GainEnergyAction(1));
-                        doDamage(extraDamage, isLoseHP);
-                    }
-                    isDone = true;
-                }
-            });
-        }
-    }
-
-    public void doDamage() {
-        doDamage(0, false);
-    }
-
-    public void doDamage(int extraDamage, boolean isLoseHP) {
-        AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
-        if (abstractMonster != null)
-            doDamage(abstractMonster, extraDamage, isLoseHP);
-    }
+//    public void doDamage(AbstractMonster m, int extraDamage, boolean isLoseHP) {
+//        if (m != null) {
+//            this.flash();
+//            addToBot(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+//            addToBot(new VFXAction(new BorderFlashEffect(Color.RED)));
+//            addToBot(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, this.hb.cX, this.hb.cY), 0.3F));
+//
+//            if (isLoseHP)
+//                addToBot(new LoseHPAction(m, AbstractDungeon.player, this.counter * 3 + 2 + extraDamage));
+//            else
+//                addToBot(new DamageAction(m, new DamageInfo(AbstractDungeon.player, this.counter * 3 + 2 + extraDamage,
+//                        DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+//
+//            addToBot(new AbstractGameAction() {
+//                @Override
+//                public void update() {
+//                    if (m.isDying && !m.hasPower(MinionPower.POWER_ID)) {
+//                        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, DimensionSplitterAria.this));
+//                        addToBot(new GainEnergyAction(1));
+//                        doDamage(extraDamage, isLoseHP);
+//                    }
+//                    isDone = true;
+//                }
+//            });
+//        }
+//    }
+//
+//    public void doDamage() {
+//        doDamage(0, false);
+//    }
+//
+//    public void doDamage(int extraDamage, boolean isLoseHP) {
+//        AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
+//        if (abstractMonster != null)
+//            doDamage(abstractMonster, extraDamage, isLoseHP);
+//    }
 }

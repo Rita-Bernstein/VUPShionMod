@@ -136,7 +136,7 @@
   },
   "VUPShionMod:TeamWork": {
     "NAME": "连携",
-    "DESCRIPTION": "分别从三张 *克洛伊斯 、 *Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "分别从三张 *克洛伊斯 、 *Anastasia 、 *南小棉 和 *黎夜竹 牌中选择一张牌加入手牌。这张牌在本回合耗能为0且获得 消耗 。 NL 消耗 。"
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia计划",
@@ -254,7 +254,7 @@
   },
   "VUPShionMod:LockIndication": {
     "NAME": "锁定指示",
-    "DESCRIPTION": "对一名敌人触发 *咏叹调型维度裂解者 。这次的伤害额外增加 !M! 点。 NL 该伤害无视 格挡 。"
+    "DESCRIPTION": "触发 vup_shion_mod:轨道打击 。"
   },
   "VUPShionMod:TacticalLayout": {
     "NAME": "战术布局",
@@ -1187,7 +1187,7 @@
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "罪孽收割",
-    "DESCRIPTION": "给予所有敌人你当前层数的 vup_shion_mod:罪孽 。 NL 对所有敌人造成 !D! 点伤害。 NLNL vup_shion_mod:伐罪 。",
+    "DESCRIPTION": "给予所有敌人你当前层数的 vup_shion_mod:罪孽 。 NL 对所有敌人造成 !D! 点伤害。 NL vup_shion_mod:伐罪 。",
     "UPGRADE_DESCRIPTION": "给予所有敌人你当前层数的 vup_shion_mod:罪孽 。 NL 对所有敌人造成 !D! 点伤害。 NL vup_shion_mod:伐罪 2。 NL vup_shion_mod:沉灵 2： vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:Whisk": {
@@ -1262,7 +1262,7 @@
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "苦难之终",
-    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦难 牌。 NL 失去(100- 消耗 数量x5)点生命。 NL 抽满手牌。 获得 !M! [E] 和 力量 。 NL 消耗。"
+    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦难 牌。 NL 失去(100- 消耗 数量x5)点生命。 NL 抽满手牌。 获得 !M! [E] 和 力量 。 NL 消耗 。"
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "一切苦难入棺",
@@ -1476,10 +1476,11 @@
   },
   "VUPShionMod:Strike_Shion2": {
     "NAME": "狙击",
-    "DESCRIPTION": "对一名敌人触发 *追击 vup_shion_mod:浮游炮 回合开始时的效果 !M! 次。"
+    "DESCRIPTION": "对一名敌人触发 *追击 vup_shion_mod:浮游炮 回合开始时的效果 !M! 次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:矩阵充能 。"
   },
   "VUPShionMod:Defend_Shion2": {
     "NAME": "力场盾",
-    "DESCRIPTION": "对一名敌人触发 *重力 vup_shion_mod:浮游炮 回合开始时的效果 !M! 次。"
+    "DESCRIPTION": "触发 *重力 vup_shion_mod:浮游炮 的被动效果 !M! 次。",
+    "UPGRADE_DESCRIPTION": "触发 *重力 vup_shion_mod:浮游炮 的被动效果 !M! 次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:矩阵充能 。"
   }
 }

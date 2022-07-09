@@ -59,7 +59,7 @@ public class MinamiReserve extends AbstractShionImagePotion {
 
 
     public int getPotency(int ascensionLevel) {
-        return 1;
+        return 3;
     }
 
     @Override

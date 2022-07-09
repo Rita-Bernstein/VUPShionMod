@@ -22,7 +22,7 @@ public class TeamWork extends AbstractShionAnastasiaCard {
 
     public TeamWork() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        ExhaustiveVariable.setBaseValue(this, 2);
+        this.exhaust = true;
     }
 
     @Override

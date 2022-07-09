@@ -4,6 +4,7 @@
     "FLAVOR": "“Your existence is futile.” says the otherworldly light portends impending destruction.",
     "DESCRIPTIONS": [
       "At the start of your turn, deal #b%d ( #b2 + #yUpgrade x3) damage to a random enemy. If #yFatal, repeats and gain [E] . NL It is upgraded whenever you enter the next Act. NL Current Upgrade: #b%d.",
+      "Space-based Weapon Preloading in Act 1... NL ",
       "Space-based Weapon Preloading in Act 1... NL "
     ]
   },

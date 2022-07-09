@@ -332,7 +332,7 @@ public abstract class AbstractFinFunnel {
 
     public abstract int getFinalEffect();
 
-    public void powerToApply(AbstractCreature target, float amountScale,boolean top) {
+    public void powerToApply(AbstractCreature target, float amountScale, boolean top) {
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof AbstractShionPower) {
                 ((AbstractShionPower) power).onTriggerFinFunnel(this, target);
@@ -341,7 +341,7 @@ public abstract class AbstractFinFunnel {
     }
 
     public void powerToApply(AbstractCreature target) {
-        powerToApply(target,1.0f,false);
+        powerToApply(target, 1.0f, false);
     }
 
     public int getFinalDamage() {
@@ -358,10 +358,6 @@ public abstract class AbstractFinFunnel {
                 for (AbstractFinFunnel funnel : funnelList) {
                     ret += funnel.getLevel();
                 }
-                AbstractRelic relic = AbstractDungeon.player.getRelic(DimensionSplitterAria.ID);
-                if (relic != null) {
-                    ret += relic.counter;
-                }
 
                 if (AbstractDungeon.player.hasPower(LoseFinFunnelUpgradePower.POWER_ID))
                     ret = 0;
@@ -371,7 +367,7 @@ public abstract class AbstractFinFunnel {
         return ret;
     }
 
-    public void resetLevelCombat(){
+    public void resetLevelCombat() {
         this.levelForCombat = this.level;
         this.updateDescription();
     }

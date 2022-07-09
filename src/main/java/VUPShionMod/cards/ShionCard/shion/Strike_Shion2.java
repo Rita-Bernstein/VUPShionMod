@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainFinFunnelChargeAction;
 import VUPShionMod.actions.Shion.TurnTriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
@@ -30,6 +31,16 @@ public class Strike_Shion2 extends AbstractShionCard {
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy01.png"));
         this.tags.add(CardTags.STARTER_STRIKE);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 2;
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (int i = 0; i < this.magicNumber; i++)
+            addToBot(new TurnTriggerFinFunnelAction(m, PursuitFinFunnel.ID));
+
+        addToBot(new GainFinFunnelChargeAction(this.secondaryM));
+
     }
 
     @Override
@@ -40,11 +51,6 @@ public class Strike_Shion2 extends AbstractShionCard {
         }
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new TurnTriggerFinFunnelAction(m, PursuitFinFunnel.ID));
 
-    }
 }
 

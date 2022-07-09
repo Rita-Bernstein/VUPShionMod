@@ -3,13 +3,17 @@ package VUPShionMod.cards.ShionCard.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
+import VUPShionMod.patches.CharacterSelectScreenPatches;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class LockIndication extends AbstractShionMinamiCard {
+import java.util.ArrayList;
+
+public class LockIndication extends AbstractShionMinamiCard  {
     public static final String ID = VUPShionMod.makeID("LockIndication");
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami03.png");
     private static final int COST = 0;
@@ -32,7 +36,7 @@ public class LockIndication extends AbstractShionMinamiCard {
                 addToBot(new SFXAction("SHION_11"));
                 break;
         }
-        addToBot(new TriggerDimensionSplitterAction(m, this.magicNumber, true));
+        addToBot(new TriggerDimensionSplitterAction());
     }
 
     public AbstractCard makeCopy() {
@@ -45,5 +49,10 @@ public class LockIndication extends AbstractShionMinamiCard {
             upgradeName();
             upgradeMagicNumber(5);
         }
+    }
+
+    @Override
+    public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards) {
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0;
     }
 }

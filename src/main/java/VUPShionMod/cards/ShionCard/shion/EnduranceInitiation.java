@@ -13,7 +13,7 @@ public class EnduranceInitiation extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public EnduranceInitiation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

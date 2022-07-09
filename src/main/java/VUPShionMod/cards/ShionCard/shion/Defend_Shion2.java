@@ -1,6 +1,8 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainFinFunnelChargeAction;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.actions.Shion.TurnTriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
@@ -30,20 +32,27 @@ public class Defend_Shion2 extends AbstractShionCard {
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy02.png"));
         this.tags.add(CardTags.STARTER_DEFEND);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (int i = 0; i < this.magicNumber; i++)
+            addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
+
+        if (this.upgraded)
+            addToBot(new GainFinFunnelChargeAction(this.secondaryM));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new TurnTriggerFinFunnelAction(m, GravityFinFunnel.ID));
-    }
+
 }

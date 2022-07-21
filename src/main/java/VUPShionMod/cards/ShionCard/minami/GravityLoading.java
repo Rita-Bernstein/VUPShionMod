@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class GravityLoading extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("GravityLoading");
+    public static final String ID = VUPShionMod.makeID(GravityLoading.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami13.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;

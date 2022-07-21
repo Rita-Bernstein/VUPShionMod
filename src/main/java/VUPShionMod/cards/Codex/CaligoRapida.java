@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PhantasmalPower;
 
 public class CaligoRapida extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("CaligoRapida");
+    public static final String ID = VUPShionMod.makeID(CaligoRapida.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/an.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

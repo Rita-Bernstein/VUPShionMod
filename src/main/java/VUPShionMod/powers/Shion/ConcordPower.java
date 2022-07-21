@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ConcordPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("ConcordPower");
+    public static final String POWER_ID = VUPShionMod.makeID(ConcordPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -31,9 +31,9 @@ public class ConcordPower extends AbstractShionPower {
     @Override
     public void updateDescription() {
         if (50 - this.amount > 0)
-            this.description = String.format(DESCRIPTIONS[1], 50 - this.amount, 50 - this.amount);
+            this.description = String.format(DESCRIPTIONS[0], 50 - this.amount, 50 - this.amount);
         else
-            this.description = String.format(DESCRIPTIONS[0], this.amount - 50, this.amount - 50);
+            this.description = String.format(DESCRIPTIONS[1], this.amount - 50, this.amount - 50);
     }
 
     @Override

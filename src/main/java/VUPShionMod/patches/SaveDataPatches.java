@@ -3,11 +3,8 @@ package VUPShionMod.patches;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
-import VUPShionMod.util.ShionLoginBackground;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.SaveHelper;
-import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 
 public class SaveDataPatches {
     @SpirePatch(

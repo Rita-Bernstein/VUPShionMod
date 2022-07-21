@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import java.util.List;
 
 public class Drapery extends AbstractShionRelic implements ClickableRelic {
-    public static final String ID = VUPShionMod.makeID("Drapery");
+    public static final String ID = VUPShionMod.makeID(Drapery.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/Drapery.png";
     private static final String OUTLINE_PATH = "img/relics/outline/Drapery.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

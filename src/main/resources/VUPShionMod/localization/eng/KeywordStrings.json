@@ -17,7 +17,7 @@
       "total\u00a0upgrade"
     ],
 	"PROPER_NAME": "Total Upgrade",
-    "DESCRIPTION": "Sum of the upgrades of #yDimension #ySplitter: #yAria and the four #yFunnels."
+    "DESCRIPTION": "Sum of the upgrades of all your #yFunnels."
   },
   {
     "NAMES": [
@@ -78,9 +78,15 @@
   },
   {
     "NAMES": [
-      "parry"
+      "buffer"
     ],
     "DESCRIPTION": "Prevents the next time you would lose HP."
+  },
+  {
+    "NAMES": [
+      "parry"
+    ],
+    "DESCRIPTION": "Prevents the next time you would lose HP in this turn."
   },
   {
     "NAMES": [
@@ -160,14 +166,24 @@
   },
   {
     "NAMES": [
-      "矩阵充能"
+      "matrix\u00a0charge"
     ],
-    "DESCRIPTION": "当充能达到 #b16 层 时，将失去 #b16 层充能并召唤 #b8 门 #y自动浮游炮 进行一次攻击并触发被动效果。"
+	"PROPER_NAME": "Matrix Charge",
+    "DESCRIPTION": "Upon reaching #b16, lose #b16 charge and summon #b8 #yAuto #yFunnels to launch an attack and trigger their passive ability."
   },
   {
     "NAMES": [
-      "自动浮游炮"
+      "auto\u00a0funnel"
     ],
-    "DESCRIPTION": "为随机你拥有的 #r非矩阵浮游炮 的复制品。"
+	"PROPER_NAME": "Auto Funnel",
+    "DESCRIPTION": "Random replica of your #rNon-Matrix #yFunnels."
+  },
+  {
+    "NAMES": [
+      "orbital\u00a0strike"
+    ],
+	"PROPER_NAME": "Orbital Strike",
+    "DESCRIPTION": "Deal damage equal to #yTotal #yUpgrade + #b10% of its max HP to ALL enemies."
   }
 ]
+

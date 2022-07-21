@@ -8,6 +8,7 @@ import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.Codex.TwoAttackPower;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
 import VUPShionMod.powers.Shion.ConcordPower;
+import VUPShionMod.powers.Shion.FireCalibrationPower;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.stances.PrayerStance;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class ConcordSnipe extends AbstractShionRelic {
@@ -56,7 +58,8 @@ public class ConcordSnipe extends AbstractShionRelic {
     @Override
     public void atTurnStart() {
         flash();
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TwoAttackPower(AbstractDungeon.player, 1)));
+        AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
+        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new FireCalibrationPower(m, 1),0));
     }
 
     @Override

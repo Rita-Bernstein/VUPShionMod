@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class SiegePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("SiegePower");
+    public static final String POWER_ID = VUPShionMod.makeID(SiegePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

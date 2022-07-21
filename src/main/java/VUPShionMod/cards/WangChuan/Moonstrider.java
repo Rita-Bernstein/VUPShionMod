@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.MoonstriderPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,6 +32,9 @@ public class Moonstrider extends AbstractWCCard {
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyPowerAction(p, p, new MoonstriderPower(p, this.magicNumber)));
 
+        if(this.upgraded){
+            addToBot(new DrawCardAction(1));
+        }
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         initializeDescription();
     }
@@ -55,7 +59,6 @@ public class Moonstrider extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.selfRetain = true;
             upgradeBaseCost(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

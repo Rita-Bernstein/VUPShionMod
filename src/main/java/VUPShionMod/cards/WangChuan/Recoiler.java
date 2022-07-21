@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Recoiler extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("Recoiler");
+    public static final String ID = VUPShionMod.makeID(Recoiler.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc49.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Exile extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(Exile.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/Exile.png");
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 

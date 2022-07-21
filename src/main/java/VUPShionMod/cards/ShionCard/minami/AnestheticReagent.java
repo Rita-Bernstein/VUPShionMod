@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 public class AnestheticReagent extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("AnestheticReagent");
+    public static final String ID = VUPShionMod.makeID(AnestheticReagent.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami10.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;

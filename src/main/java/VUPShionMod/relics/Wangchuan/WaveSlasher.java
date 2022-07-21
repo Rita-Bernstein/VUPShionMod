@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.FreeAttackPower;
 
 public class WaveSlasher extends AbstractShionRelic {
-    public static final String ID = VUPShionMod.makeID("WaveSlasher");
+    public static final String ID = VUPShionMod.makeID(WaveSlasher.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/WaveSlasher.png";
     private static final String OUTLINE_PATH = "img/relics/outline/WaveSlasher.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class AttackWithDefense extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("AttackWithDefense");
+    public static final String ID = VUPShionMod.makeID(AttackWithDefense.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami02.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;

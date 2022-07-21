@@ -215,7 +215,7 @@ public class ShionCardRenderPatches {
                         if (c instanceof FinFunnelUpgrade)
                             renderHelper(sb, Settings.WIDTH / 2.0F - 270.0F * Settings.scale, Settings.HEIGHT / 2.0F + 380.0F * Settings.scale, orb_ag);
                         else
-                            switch (c.rarity) {
+                            switch (c.displayRarity) {
                                 case RARE:
                                     renderHelper(sb, Settings.WIDTH / 2.0F - 270.0F * Settings.scale, Settings.HEIGHT / 2.0F + 380.0F * Settings.scale, orb_ag);
                                     break;
@@ -233,7 +233,7 @@ public class ShionCardRenderPatches {
                         if (c instanceof FinFunnelUpgrade)
                             renderHelper(sb, Settings.WIDTH / 2.0F - 270.0F * Settings.scale, Settings.HEIGHT / 2.0F + 380.0F * Settings.scale, orb_g);
                         else
-                            switch (c.rarity) {
+                            switch (c.displayRarity) {
                                 case RARE:
                                     renderHelper(sb, Settings.WIDTH / 2.0F - 270.0F * Settings.scale, Settings.HEIGHT / 2.0F + 380.0F * Settings.scale, orb_g);
                                     break;

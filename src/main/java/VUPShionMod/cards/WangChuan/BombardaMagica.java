@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BombardaMagica extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("BombardaMagica");
+    public static final String ID = VUPShionMod.makeID(BombardaMagica.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc30.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

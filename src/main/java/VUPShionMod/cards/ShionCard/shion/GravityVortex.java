@@ -21,6 +21,7 @@ public class GravityVortex extends AbstractShionCard {
 
     public GravityVortex() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.magicNumber = this.baseMagicNumber = 6;
     }
 
     @Override

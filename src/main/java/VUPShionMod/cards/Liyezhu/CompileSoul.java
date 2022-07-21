@@ -28,7 +28,7 @@ public class CompileSoul extends AbstractLiyezhuCard {
 
         if (p.hasPower(PsychicPower.POWER_ID)) {
             if (this.upgraded)
-                addToBot(new DrawCardAction(this.magicNumber + 2));
+                addToBot(new DrawCardAction( 2));
             else
                 addToBot(new GainEnergyAction(1));
             addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class Nebula extends AbstractShionRelic {
-    public static final String ID = VUPShionMod.makeID("Nebula");
+    public static final String ID = VUPShionMod.makeID(Nebula.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/Nebula.png";
     private static final String OUTLINE_PATH = "img/relics/outline/Nebula.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

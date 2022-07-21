@@ -116,8 +116,9 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
 
 
     public void update() {
-        if (this.finFunnel == null) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || this.target == null || this.finFunnel == null) {
             isDone = true;
+            dispose();
             return;
         }
 

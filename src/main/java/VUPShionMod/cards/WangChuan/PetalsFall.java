@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class PetalsFall extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("PetalsFall");
+    public static final String ID = VUPShionMod.makeID(PetalsFall.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc27.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;

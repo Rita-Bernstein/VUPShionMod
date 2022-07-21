@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DemonFormPower;
 
 public class OffensiveAdvance extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("OffensiveAdvance");
+    public static final String ID = VUPShionMod.makeID(OffensiveAdvance.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc25.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

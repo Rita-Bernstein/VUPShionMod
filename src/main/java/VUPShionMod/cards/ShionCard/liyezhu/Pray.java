@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Pray extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("Pray");
+    public static final String ID = VUPShionMod.makeID(Pray.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz07.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;

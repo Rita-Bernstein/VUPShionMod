@@ -14,10 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @NoPools
 public class MatrixUpgrade extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("MatrixUpgrade");
+    public static final String ID = VUPShionMod.makeID(MatrixUpgrade.class.getSimpleName());
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/DissectingFinFunnelUpgrade.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/InvestigationFinFunnelUpgrade.png");
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;

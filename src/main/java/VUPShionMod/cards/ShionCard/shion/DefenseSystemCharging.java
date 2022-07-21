@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.List;
 
 public class DefenseSystemCharging extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("DefenseSystemCharging");
+    public static final String ID = VUPShionMod.makeID(DefenseSystemCharging.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy03.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

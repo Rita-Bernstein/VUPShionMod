@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class NextTurnAttackPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("NextTurnAttackPower");
+    public static final String POWER_ID = VUPShionMod.makeID(NextTurnAttackPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

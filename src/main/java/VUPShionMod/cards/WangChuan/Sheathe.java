@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Sheathe extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("Sheathe");
+    public static final String ID = VUPShionMod.makeID(Sheathe.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc04.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;

@@ -1,8 +1,11 @@
 package VUPShionMod.actions.Shion;
 
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.powers.Shion.AttackOrderSpecialPower;
 import VUPShionMod.powers.Shion.ReleaseFormMinamiPower;
+import VUPShionMod.powers.Shion.WideAreaLockingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -83,6 +86,7 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
             f = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(forceFinFunnel);
 
 
+
 //        计算循环
 //        if (p.hasPower(ReleaseFormMinamiPower.POWER_ID))
 //            this.loops *= p.getPower(ReleaseFormMinamiPower.POWER_ID).amount + 1;
@@ -95,23 +99,32 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
 
 
 //            获取敌人
-        for (int i = 0; i < this.loops; i++) {
 
-            if (random || this.target == null) {
-                AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
-                if (abstractMonster != null)
-                    this.target = abstractMonster;
+        if ((AbstractDungeon.player.hasPower(WideAreaLockingPower.POWER_ID) && f.id.equals(PursuitFinFunnel.ID))){
+            for (int i = 0; i < this.loops; i++){
+                for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                    f.powerToApply(mo);
+                }
             }
-            monsters.add(target);
-        }
+        }else {
+            for (int i = 0; i < this.loops; i++) {
+
+                if (random || this.target == null) {
+                    AbstractMonster abstractMonster = AbstractDungeon.getRandomMonster();
+                    if (abstractMonster != null)
+                        this.target = abstractMonster;
+                }
+                monsters.add(target);
+            }
 
 
-        for (int i = 0; i < this.loops; i++) {
-            if (f != null && f.getLevel() >= 0) {
-                f.powerToApply(this.target,effect,false);
-            } else {
-                this.isDone = true;
-                return;
+            for (int i = 0; i < this.loops; i++) {
+                if (f != null && f.getLevel() >= 0) {
+                    f.powerToApply(this.target, effect, false);
+                } else {
+                    this.isDone = true;
+                    return;
+                }
             }
         }
 

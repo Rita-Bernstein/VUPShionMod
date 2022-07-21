@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class AquaConstans extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("AquaConstans");
+    public static final String ID = VUPShionMod.makeID(AquaConstans.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/shui.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

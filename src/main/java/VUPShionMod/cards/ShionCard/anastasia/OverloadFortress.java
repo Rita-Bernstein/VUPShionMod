@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class OverloadFortress extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID("OverloadFortress");
+    public static final String ID = VUPShionMod.makeID(OverloadFortress.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia12.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
@@ -35,8 +35,8 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
             @Override
             public void update() {
                 AbstractFinFunnel finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(GravityFinFunnel.ID);
-                if(finFunnel !=null)
-                    finFunnel.loseLevel(magicNumber);
+                if (finFunnel != null)
+                    finFunnel.loseTempLevel(magicNumber);
 
                 this.isDone = true;
             }
@@ -48,11 +48,11 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         AbstractFinFunnel finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(GravityFinFunnel.ID);
-        if(finFunnel != null)
-            if(finFunnel.getLevel() >= this.magicNumber)
-                return super.canUse(p,m);
+        if (finFunnel != null)
+            if (finFunnel.getLevel() >= this.magicNumber)
+                return super.canUse(p, m);
 
-            return  false;
+        return false;
     }
 
     @Override

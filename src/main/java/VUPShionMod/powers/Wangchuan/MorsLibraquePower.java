@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.vfx.combat.GiantTextEffect;
 
 public class MorsLibraquePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("MorsLibraquePower");
+    public static final String POWER_ID = VUPShionMod.makeID(MorsLibraquePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

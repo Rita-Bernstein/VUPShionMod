@@ -1,11 +1,10 @@
-package VUPShionMod.util;
+package VUPShionMod.ui;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Wangchuan.SwardChargeMaxAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -21,8 +20,6 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 

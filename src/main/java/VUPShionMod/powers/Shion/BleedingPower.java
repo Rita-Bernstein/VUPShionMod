@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class BleedingPower extends AbstractShionPower implements HealthBarRenderPower {
-    public static final String POWER_ID = VUPShionMod.makeID("BleedingPower");
+    public static final String POWER_ID = VUPShionMod.makeID(BleedingPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -2,6 +2,7 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LunaMergo extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("LunaMergo");
+    public static final String ID = VUPShionMod.makeID(LunaMergo.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc16.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -31,6 +32,7 @@ public class LunaMergo extends AbstractWCCard {
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new DrawCardAction(this.magicNumber));
         addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.secondaryM));
+        addToBot(new ReducePowerAction(p, p, MagiamObruorPower.POWER_ID,this.secondaryM));
         if (this.upgraded)
             addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 5)));
     }
@@ -40,7 +42,6 @@ public class LunaMergo extends AbstractWCCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBlock(3);
-            upgradeSecondM(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

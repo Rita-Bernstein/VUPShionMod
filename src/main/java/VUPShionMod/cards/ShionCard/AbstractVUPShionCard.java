@@ -41,7 +41,7 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
 
     private static final Color ENERGY_COST_RESTRICTED_COLOR = new Color(1.0F, 0.3F, 0.3F, 1.0F);
     private static final Color ENERGY_COST_MODIFIED_COLOR = new Color(0.4F, 1.0F, 0.4F, 1.0F);
-    protected static final Color drakOrbRenderColor = Color.WHITE.cpy();
+    public CardRarity displayRarity ;
 
     private static final Texture orb_b = ImageMaster.loadImage("VUPShionMod/img/cardui/Shion/512/card_lime_orb_b.png");
     private static final Texture orb_g = ImageMaster.loadImage("VUPShionMod/img/cardui/Shion/512/card_lime_orb_g.png");
@@ -64,7 +64,6 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
         EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
         initializeTitle();
         initializeDescription();
-
         vupCardSetBanner();
     }
 
@@ -76,6 +75,8 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
     public void vupCardSetBanner(CardRarity rarity, CardType type) {
         String rarityString;
         String typeString;
+
+        this.displayRarity = rarity;
 
         switch (rarity) {
             case RARE:
@@ -159,7 +160,7 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
             if (this instanceof FinFunnelUpgrade)
                 darkOrbRenderHelper(sb, orb_ag, x, y);
             else
-                switch (rarity) {
+                switch (displayRarity) {
                     case RARE:
                         darkOrbRenderHelper(sb, orb_ag, x, y);
                         break;
@@ -175,7 +176,7 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
             if (this instanceof FinFunnelUpgrade)
                 darkOrbRenderHelper(sb, orb_g, x, y);
             else
-                switch (rarity) {
+                switch (displayRarity) {
                     case RARE:
                         darkOrbRenderHelper(sb, orb_g, x, y);
                         break;
@@ -221,7 +222,7 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
     }
 
     protected void darkOrbRenderHelper(SpriteBatch sb, Texture img, float posX, float posY) {
-        sb.setColor(drakOrbRenderColor);
+        sb.setColor(ReflectionHacks.getPrivate(this,AbstractCard.class,"renderColor"));
         float length = (float) Math.sqrt(posX * posX + posY * posY);
         float angleFinal = (float) Math.toRadians(this.angle + 180.0f - (float) Math.toDegrees(Math.sinh(posY / length)));
         float drawX = this.current_x + length * (float) Math.cos(angleFinal) * this.drawScale * Settings.scale * 1.0f;

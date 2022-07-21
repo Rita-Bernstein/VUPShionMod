@@ -65,6 +65,7 @@ public class WangChuan extends CustomPlayer {
         this.dialogX = this.drawX + 20.0F * Settings.scale;
         this.dialogY = this.drawY + 270.0F * Settings.scale;
 
+        CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(2);
         initializeClass(null,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).SHOULDER1,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).SHOULDER2,

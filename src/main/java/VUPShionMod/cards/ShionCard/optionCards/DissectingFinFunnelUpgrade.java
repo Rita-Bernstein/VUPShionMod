@@ -14,10 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @NoPools
 public class DissectingFinFunnelUpgrade extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("DissectingUpgrade");
+    public static final String ID = VUPShionMod.makeID(DissectingFinFunnelUpgrade.class.getSimpleName());
     public static final String NAME;
     public static final String DESCRIPTION;
-    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/InvestigationFinFunnelUpgrade.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/DissectingFinFunnelUpgrade.png");
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;

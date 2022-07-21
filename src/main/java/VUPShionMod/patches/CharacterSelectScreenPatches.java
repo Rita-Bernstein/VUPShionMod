@@ -1,15 +1,20 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.msic.CharacterPriority;
 import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
+import basemod.CustomCharacterSelectScreen;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
+
+import java.util.Comparator;
 
 @SuppressWarnings("unused")
 public class CharacterSelectScreenPatches {
@@ -132,4 +137,45 @@ public class CharacterSelectScreenPatches {
             return SpireReturn.Continue();
         }
     }
+
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = SpirePatch.CLASS
+    )
+    public static class AddFields {
+        public static SpireField<CharacterPriority> characterPriority = new SpireField<>(() -> new CharacterPriority());
+    }
+
+    @SpirePatch(
+            clz = CustomCharacterSelectScreen.class,
+            method = "initialize"
+    )
+    public static class CharacterSelectScreenPatch_BasemodInitialize {
+        @SpireInsertPatch(rloc = 5)
+        public static SpireReturn<Void> Insert(CustomCharacterSelectScreen __instance) {
+            for (CharacterOption option : __instance.options) {
+                if (option.c instanceof Watcher) {
+                    AddFields.characterPriority.get(option.c).setCharacterPriority(-1);
+                }
+
+                if (option.c instanceof Defect) {
+                    AddFields.characterPriority.get(option.c).setCharacterPriority(-2);
+                }
+
+                if (option.c instanceof TheSilent) {
+                    AddFields.characterPriority.get(option.c).setCharacterPriority(-3);
+                }
+
+                if (option.c instanceof Ironclad) {
+                    AddFields.characterPriority.get(option.c).setCharacterPriority(-4);
+                }
+            }
+
+            __instance.options.sort(Comparator.comparing(o -> AddFields.characterPriority.get(o.c).getCharacterPriority()));
+
+            return SpireReturn.Continue();
+        }
+    }
+
 }

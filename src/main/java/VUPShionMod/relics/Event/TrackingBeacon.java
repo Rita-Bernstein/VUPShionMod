@@ -33,7 +33,7 @@ import com.megacrit.cardcrawl.relics.LizardTail;
 import java.util.ArrayList;
 
 public class TrackingBeacon extends AbstractShionRelic implements OnPlayerDeathRelic {
-    public static final String ID = VUPShionMod.makeID("TrackingBeacon");
+    public static final String ID = VUPShionMod.makeID(TrackingBeacon.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/TrackingBeacon.png";
     private static final String OUTLINE_PATH = "img/relics/outline/TrackingBeacon.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
@@ -107,7 +107,6 @@ public class TrackingBeacon extends AbstractShionRelic implements OnPlayerDeathR
         }
 
         AbstractCard card = new MorsLibraque();
-        card.upgrade();
         addToBot(new MakeTempCardInHandAction(card));
 
     }

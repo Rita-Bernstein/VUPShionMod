@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.List;
 
 public class DimensionSplitting extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("DimensionSplitting");
+    public static final String ID = VUPShionMod.makeID(DimensionSplitting.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy17.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

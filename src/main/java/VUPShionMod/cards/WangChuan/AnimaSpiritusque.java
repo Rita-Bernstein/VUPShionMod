@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 import com.megacrit.cardcrawl.powers.RegenPower;
 
 public class AnimaSpiritusque extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("AnimaSpiritusque");
+    public static final String ID = VUPShionMod.makeID(AnimaSpiritusque.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc39.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

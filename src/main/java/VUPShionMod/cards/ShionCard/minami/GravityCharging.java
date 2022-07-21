@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GravityCharging extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("GravityCharging");
+    public static final String ID = VUPShionMod.makeID(GravityCharging.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami16.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;

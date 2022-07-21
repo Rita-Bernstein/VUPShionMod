@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class GravityFinFunnelUpgradePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("GravityFinFunnelUpgradePower");
+    public static final String POWER_ID = VUPShionMod.makeID(GravityFinFunnelUpgradePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

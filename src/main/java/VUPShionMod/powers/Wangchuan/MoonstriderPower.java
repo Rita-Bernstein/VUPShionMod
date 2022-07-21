@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class MoonstriderPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("MoonstriderPower");
+    public static final String POWER_ID = VUPShionMod.makeID(MoonstriderPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.function.Predicate;
 
 public class Read extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID("Read");
+    public static final String ID = VUPShionMod.makeID(Read.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia11.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

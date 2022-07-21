@@ -72,6 +72,8 @@ public class Shion extends CustomPlayer {
         this.dialogX = this.drawX + 20.0F * Settings.scale;
         this.dialogY = this.drawY + 270.0F * Settings.scale;
 
+        CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(1);
+
         initializeClass(null,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER1,
                 CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER2,

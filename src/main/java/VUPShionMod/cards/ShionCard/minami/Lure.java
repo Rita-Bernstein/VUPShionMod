@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Lure extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("Lure");
+    public static final String ID = VUPShionMod.makeID(Lure.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami07.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

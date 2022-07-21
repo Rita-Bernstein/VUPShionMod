@@ -25,7 +25,7 @@ public class TimeSlack extends AbstractShionKuroisuCard {
 
     public TimeSlack() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
+        this.baseBlock = 2;
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 1;
         this.cardsToPreview = new QuickDefend();
@@ -47,7 +47,7 @@ public class TimeSlack extends AbstractShionKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBlock(2);
+            upgradeBlock(1);
         }
     }
 }

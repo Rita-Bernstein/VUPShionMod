@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 
 public class TimeBacktracking extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("TimeBacktracking");
+    public static final String ID = VUPShionMod.makeID(TimeBacktracking.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu01.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;

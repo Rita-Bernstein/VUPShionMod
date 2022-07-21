@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainFinFunnelChargeAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
@@ -14,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Strafe2 extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("Strafe2");
+    public static final String ID = VUPShionMod.makeID(Strafe2.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy15.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.BASIC;
@@ -25,7 +26,8 @@ public class Strafe2 extends AbstractShionCard {
     public Strafe2() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
-        this.baseDamage = 4;
+        this.baseDamage = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.isMultiDamage = true;
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy15.png"));
     }
@@ -34,11 +36,13 @@ public class Strafe2 extends AbstractShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
         if (funnel != null) {
-            funnel.activeFire(m, this.multiDamage,true,1);
+            funnel.activeFire(m, this.baseDamage,true,1);
         } else {
             addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage,
                     this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         }
+
+        addToBot(new GainFinFunnelChargeAction(this.magicNumber));
 
     }
 

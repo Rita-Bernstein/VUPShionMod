@@ -1,12 +1,10 @@
 package VUPShionMod.actions.Shion;
 
-import VUPShionMod.cards.ShionCard.shion.MatrixAmplify;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
-import VUPShionMod.finfunnels.PursuitFinFunnel;
 import VUPShionMod.powers.Shion.MatrixAmplifyPower;
 import VUPShionMod.powers.Shion.WideAreaLockingPower;
-import VUPShionMod.util.FinFunnelCharge;
+import VUPShionMod.ui.FinFunnelCharge;
 import VUPShionMod.vfx.Shion.FinFunnelMinionEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -33,19 +31,20 @@ public class FinFunnelMinionAction extends AbstractGameAction {
             finFunnels.add(FinFunnelManager.getFinFunnelMini());
 
         this.fullPower = AbstractDungeon.player.hasPower(MatrixAmplifyPower.POWER_ID);
+        this.isAoe = AbstractDungeon.player.hasPower(WideAreaLockingPower.POWER_ID);
     }
 
     private boolean isAoe(AbstractFinFunnel finFunnel) {
-        if (finFunnel != null && finFunnel.id.equals(PursuitFinFunnel.ID)) {
-            return AbstractDungeon.player.hasPower(WideAreaLockingPower.POWER_ID);
-        }
+//        if (finFunnel != null && finFunnel.id.equals(PursuitFinFunnel.ID)) {
+//            return AbstractDungeon.player.hasPower(WideAreaLockingPower.POWER_ID);
+//        }
 
-        return false;
+        return this.isAoe;
     }
 
     @Override
     public void update() {
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || this.target == null) {
             isDone = true;
             return;
         }

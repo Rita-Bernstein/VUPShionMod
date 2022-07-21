@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ArmedToTheTeeth extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("ArmedToTheTeeth");
+    public static final String ID = VUPShionMod.makeID(ArmedToTheTeeth.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami15.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.POWER;

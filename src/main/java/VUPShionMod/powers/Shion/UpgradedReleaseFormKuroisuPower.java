@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import VUPShionMod.VUPShionMod;
 
 public class UpgradedReleaseFormKuroisuPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("UpgradedReleaseFormKuroisuPower");
+    public static final String POWER_ID = VUPShionMod.makeID(UpgradedReleaseFormKuroisuPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

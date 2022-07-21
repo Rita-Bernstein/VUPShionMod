@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawPower;
 
 public class EbbAndFlow extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("EbbAndFlow");
+    public static final String ID = VUPShionMod.makeID(EbbAndFlow.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc26.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

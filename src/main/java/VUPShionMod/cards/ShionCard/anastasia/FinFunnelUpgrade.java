@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID("FinFunnelUpgrade");
+    public static final String ID = VUPShionMod.makeID(FinFunnelUpgrade.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia10.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;

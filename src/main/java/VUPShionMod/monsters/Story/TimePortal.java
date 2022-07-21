@@ -39,7 +39,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import java.util.ArrayList;
 
 public class TimePortal extends CustomMonster {
-    public static final String ID = VUPShionMod.makeID("TimePortal");
+    public static final String ID = VUPShionMod.makeID(TimePortal.class.getSimpleName());
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;

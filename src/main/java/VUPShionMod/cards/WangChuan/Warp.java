@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.function.Predicate;
 
 public class Warp extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("Warp");
+    public static final String ID = VUPShionMod.makeID(Warp.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/Warp.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.BASIC;

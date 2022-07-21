@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class EnhancedSupport extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("EnhancedSupport");
+    public static final String ID = VUPShionMod.makeID(EnhancedSupport.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami11.png");
     private static final int COST = -1;
     public static final CardType TYPE = CardType.SKILL;

@@ -38,10 +38,9 @@ public abstract class AbstractSkinCharacter {
         }
 
 
-
         for (AbstractSkin skin : this.skins) {
             skin.button.update(option);
-            skin.button.setPos(this.selectedCount);
+            skin.button.setPos(this.selectedCount, this.skins.size());
         }
     }
 
@@ -66,7 +65,7 @@ public abstract class AbstractSkinCharacter {
     public void initialize() {
         this.selectedCount = this.reskinCount;
 
-        if(this.labels.isEmpty()) {
+        if (this.labels.isEmpty()) {
             this.labels.add(new SkinInfoLabel(skins.get(selectedCount).unlockString, 0));
             this.labels.add(new SkinInfoLabel(skins.get(selectedCount).name, 1));
             this.labels.add(new SkinInfoLabel(skins.get(selectedCount).flavorText, 2));
@@ -80,38 +79,59 @@ public abstract class AbstractSkinCharacter {
 
 
 //        皮肤按钮
-        this.skins.get(0).unlock = true;
-
         for (AbstractSkin skin : this.skins) {
             skin.button.locked = !skin.unlock;
 
-            if (Math.abs(skin.button.index - selectedCount) > 3) {
+            boolean display = false;
+            int distance = 0;
+
+            if (Math.abs(skin.button.index - selectedCount) < 3) {
+                display = true;
+                distance = skin.button.index - selectedCount;
+            }
+
+            if (!display && this.skins.size() >= 5 && selectedCount < 2 && selectedCount + this.skins.size() - skin.button.index < 3) {
+                display = true;
+                distance = -Math.abs(this.skins.size() - skin.button.index + selectedCount);
+            }
+
+            if (!display && this.skins.size() >= 5 && selectedCount > this.skins.size() - 2 && this.skins.size() - selectedCount + skin.button.index < 3) {
+                display = true;
+                distance = Math.abs(this.skins.size() - selectedCount + skin.button.index);
+            }
+
+
+            if (!display) {
                 skin.button.scale = 0.0f;
                 skin.button.current_x = 0.0f;
                 skin.button.current_y = 0.0f;
-            } else {
-                skin.button.scale = (1.0f - 0.3f * Math.abs(skin.button.index - selectedCount))
-                        * CharacterSelectScreenPatches.skinManager.scale ;
-
-
-                if (skin.button.index - selectedCount > 0) {
-                    skin.button.current_x = 1.5f * -Math.abs(skin.button.index - selectedCount)
-                            * 120.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
-
-
-                    skin.button.current_y = 1.5f * (skin.button.index - selectedCount)
-                            * 40.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
-                } else {
-                    skin.button.current_x = 1.5f * -Math.abs(skin.button.index - selectedCount)
-                            * 100.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
-
-
-                    skin.button.current_y = 1.5f * (skin.button.index - selectedCount)
-                            * 120.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
-                }
+                skin.button.color.a = 0.0f;
+                return;
             }
 
-            if (skin.button.index - selectedCount == 0) {
+
+            skin.button.scale = (1.0f - 0.3f * Math.abs(distance))
+                    * CharacterSelectScreenPatches.skinManager.scale;
+
+
+            if (skin.button.index - selectedCount > 0) {
+                skin.button.current_x = 1.5f * -Math.abs(distance)
+                        * 120.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+
+
+                skin.button.current_y = 1.5f * (distance)
+                        * 40.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+            } else {
+                skin.button.current_x = 1.5f * -Math.abs(distance)
+                        * 100.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+
+
+                skin.button.current_y = 1.5f * (distance)
+                        * 120.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+            }
+
+
+            if (distance == 0) {
                 skin.button.outlineFix_x = 0.0f;
                 skin.button.outlineFix_y = 0.0f;
                 skin.button.outlineFix_Xscale = 1.0f;
@@ -123,7 +143,7 @@ public abstract class AbstractSkinCharacter {
                 skin.button.outlineFix_Yscale = 0.85f;
             }
 
-            if (Math.abs(skin.button.index - selectedCount) >= 2) {
+            if (Math.abs(distance) >= 2) {
                 skin.button.color.a = 0.0f;
             } else {
                 skin.button.color.a = 1.0f;

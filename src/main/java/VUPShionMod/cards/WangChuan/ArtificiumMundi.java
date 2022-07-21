@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ArtificiumMundi extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("ArtificiumMundi");
+    public static final String ID = VUPShionMod.makeID(ArtificiumMundi.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc56.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

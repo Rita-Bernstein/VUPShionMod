@@ -154,6 +154,10 @@ public abstract class AbstractSkin {
         return retVal;
     }
 
+    public void unlock() {
+        this.unlock = true;
+        this.button.locked = false;
+    }
 
 }
 

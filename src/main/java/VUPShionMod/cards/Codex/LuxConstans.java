@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LuxConstans extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("LuxConstans");
+    public static final String ID = VUPShionMod.makeID(LuxConstans.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/guang.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

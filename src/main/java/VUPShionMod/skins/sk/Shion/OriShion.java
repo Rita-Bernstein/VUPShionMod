@@ -40,6 +40,8 @@ public class OriShion extends AbstractSkin {
         this.atlasURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.atlas";
         this.jsonURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.json";
         this.renderScale = 2.4f;
+
+        unlock();
     }
 
 

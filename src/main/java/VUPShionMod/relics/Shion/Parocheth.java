@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import java.util.List;
 
 public class Parocheth extends AbstractShionRelic implements ClickableRelic {
-    public static final String ID = VUPShionMod.makeID("Parocheth");
+    public static final String ID = VUPShionMod.makeID(Parocheth.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/Parocheth.png";
     private static final String OUTLINE_PATH = "img/relics/outline/Parocheth.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

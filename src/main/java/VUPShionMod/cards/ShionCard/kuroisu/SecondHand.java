@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SecondHand extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("SecondHand");
+    public static final String ID = VUPShionMod.makeID(SecondHand.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu07.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.ATTACK;

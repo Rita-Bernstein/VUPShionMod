@@ -30,6 +30,8 @@ public class OriLiyezhu extends AbstractSkin {
         this.atlasURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.atlas";
         this.jsonURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.json";
         this.renderScale = 3.0f;
+
+        unlock();
     }
 
 

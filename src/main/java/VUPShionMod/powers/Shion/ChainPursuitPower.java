@@ -2,6 +2,7 @@ package VUPShionMod.powers.Shion;
 
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.InvestigationFinFunnel;
 import VUPShionMod.finfunnels.PursuitFinFunnel;
@@ -53,6 +54,7 @@ public class ChainPursuitPower extends AbstractShionPower {
         if (finFunnel.id.equals(PursuitFinFunnel.ID)) {
             flash();
             addToBot(new DrawCardAction(1));
+            addToBot(new GainHyperdimensionalLinksAction(1));
         }
     }
 

@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BlueBlade extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("BlueBlade");
+    public static final String ID = VUPShionMod.makeID(BlueBlade.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz04.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;

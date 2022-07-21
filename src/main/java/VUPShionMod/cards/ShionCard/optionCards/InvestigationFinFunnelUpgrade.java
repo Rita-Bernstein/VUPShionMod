@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @NoPools
 public class InvestigationFinFunnelUpgrade extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("InvestigationUpgrade");
+    public static final String ID = VUPShionMod.makeID(InvestigationFinFunnelUpgrade.class.getSimpleName());
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/InvestigationFinFunnelUpgrade.png");

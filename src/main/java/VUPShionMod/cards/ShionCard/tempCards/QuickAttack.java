@@ -25,7 +25,7 @@ public class QuickAttack extends AbstractVUPShionCard {
 
     public QuickAttack() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 3;
+        this.baseDamage = 2;
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.tags.add(CardTagsEnum.LOADED);
         this.exhaust = true;
@@ -34,13 +34,6 @@ public class QuickAttack extends AbstractVUPShionCard {
     }
 
 
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(2);
-        }
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -51,6 +44,15 @@ public class QuickAttack extends AbstractVUPShionCard {
             } else {
                 this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             }
+        }
+    }
+
+
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            upgradeDamage(1);
         }
     }
 }

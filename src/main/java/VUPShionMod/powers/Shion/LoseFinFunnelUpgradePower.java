@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import VUPShionMod.VUPShionMod;
 
 public class LoseFinFunnelUpgradePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("LoseFinFunnelUpgradePower");
+    public static final String POWER_ID = VUPShionMod.makeID(LoseFinFunnelUpgradePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -185,7 +185,7 @@
     "DESCRIPTIONS": [
       "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
       "You have seen it once, and you know where the target is.",
-      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, I am and I will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
     ],
     "OPTIONS": [
       "[Proceed] ...",
@@ -212,12 +212,12 @@
     ]
   },
   "VUPShionMod:FruitStall": {
-    "NAME": "FruitStall?",
+    "NAME": "Fruit Stall?",
     "DESCRIPTIONS": [
-      "You walk on the city street with dim vision... NL Just as you pace forward, a shop completely out of proportion to the environment inside the tower emerges in the view ahead... NL You're curious about what other stores sell besides that very shop.",
-      "\"Welcome!\" Says a maid who seems to be the owner. NL \"There are all kinds of food that can't be seen in the spire, but because the sales are so good, now there are only some leftovers\"。 NL At this time, you can see that there is an attractive #y~Fruit~ #y~Cake~ hidden under the shelf. NL It seems that the maid is celebrating for someone. But the sweet smell it gives off is too tempting.",
-      " #yDelicious！@ NL When you are proud of your theft technology, you suddenly feel something terrible behind you. Looking back, I found nothing.",
-      "\"Thank you for your patronage. Welcome to visit next time\"",
+      "You walk in the city street and see everything in a dim vision... NL Just as you pace forward, a shop completely out of proportion to the environment inside the Spire emerges in the view ahead... NL You're curious about what other stores sell besides that very shop.",
+      "\"Welcome!\" Says a maid who seems to be the owner. NL \"There are all kinds of fruits that can't be seen in the Spire, but the sales are so good, now there are only some leftovers...I can manage to improvise some fruit juice if you'd like? \" NL At this time, you can see that there is an attractive #y~Fruit~ #y~Cake~ hidden under the shelf. NL It seems that the maid is not telling hte truth, or the cake is just another Not-For-Sale? Anyway, the sweet smell it gives off is too tempting...",
+      " #yDelicious！@ NL When you take your time to feel proud of your skills at stealing, you suddenly feel something terrible behind you. As you turn around...",
+      "\"Thank you for your patronage. You are always welcomed here.\"",
       "\"Really? That would be bravo! Do you have #ystrawberries or any #yother #yfruits? \"",
       "\"Ah! It's my favorite strawberry.\" She seems exceedingly happy.",
       "\"Thank you very much!\"",
@@ -226,10 +226,10 @@
     "OPTIONS": [
       "[Approach]",
       "[Ignore]",
-      "[Steal] #rEncounter #ra #rSpecial #rCombat. #gObtain #gFruit #gCake.",
-      "[Buy] #rLose #r%d #rgold. #gGain #g10 #yMax #gHP.",
-      "[Locked] Require %d gold.",
-      "[Sell] Sell your fruit to the maid",
+      "[Steal the Cake] #rEncounter #ra #rSpecial #rCombat. #gObtain #gFruit #gCake.",
+      "[Drink for the Thirsty!] #rLose #r%d #rgold. #gGain #g10 #yMax #gHP.",
+      "[Locked] No less than %d gold is required.",
+      "[Sell] Sell your fruit to the maid.",
       "[Pear] Gain #b%d gold.",
       "[Mango] Gain #b%d gold.",
       "[Strawberry] Gain #b%d gold.",
@@ -240,31 +240,31 @@
     ]
   },
   "VUPShionMod:HolyJudgement": {
-    "NAME": "圣耀审判",
+    "NAME": "Judgement",
     "DESCRIPTIONS": [
-      "“愿神明宽恕你们的恶行” NL 你看到了她祈祷的身影，两名盗贼狞笑着向她挥动了利刃。 NL 利刃刺入她的手臂，她面不改色，仍在低声祈祷着 “愿神明宽恕我们的恶行” NL 她用淌血的右手，缓缓拔出了耀眼的光刃…… NL 影像戛然而止",
-      "这只是高塔留下的记忆，但你和她之间的联系似乎变得更加清晰了",
-      "这只是高塔留下的记忆，这一次你一定会改变她的结局。"
+      "“May the gods have mercy on your villiany.” NL You see her figure, piously bent forth, and the two bandits in the front, brandishing flickering daggers. NL The tip easily submerges into her arm, blood starts to escape its flesh-made prison, but still, she does not bat an eyelid, and repeats “May the gods have mercy on your villiany.” NL She draws her blade... NL And the vision disappears.",
+      "It is a remnant of the memories in the Spire, but this time, you are determined to change what happened next...",
+      "It is a remnant of the memories in the Spire, but with it you find clearer connections between you and she."
     ],
     "OPTIONS": [
-      "[触摸影像] #g获得圣耀十字斩。",
-      "[加速前进] #g获得蓝宝石钥匙。",
-      "[离开]"
+      "[Touch the Figure] #gObtain Crucifixion.",
+      "[Press Ahead] #gObtain Sapphire Key.",
+      "[Leave]"
     ]
   },
   "VUPShionMod:SpiritSinkingRampage": {
-    "NAME": "沉灵暴走",
+    "NAME": "Psychic Rampage",
     "DESCRIPTIONS": [
-      "在你踏入这个空间的一瞬间，手边的圣棺开始疯狂地颤抖，无尽的白光从中散射，覆盖了眼前的一切。 NL 你睁开眼，却发现自己站在熟悉的小屋中，眼前是自己已然死去的至亲。 NL “夜竹，欢迎回来。新年快乐。”“夜竹姐！快坐快坐，我今天可是全力发挥了哦！” NL 你的瞳孔骤然收缩。",
-      "眼泪不自觉的滑落，你颤抖着回答了她，而当你向前一步时，眼前的景色已然消失，她残破不堪的尸体躺在高楼的废墟中，手中紧紧攥着着一枚破损的弹壳。 NL 圣棺轻闭，弹壳掉落在地上发出清脆的响声。",
-      "你强装出扭曲的笑容，努力平静地夸赞着她，而当你向前一步时，眼前的景色已然消失，她化为飞灰的躯体揉进那紫色的血液浸透你的瞳孔，她凝固的微笑宛如利刃穿透你的心灵。 NL 圣棺轻闭，干涸的血液如影子般倒流，凝聚成一把血红的大剑。",
-      "在你张嘴说出第一句话之前，一个平静的声音从左侧传来。 NL “是夜竹啊。晓雅没跟你一起吗？” NL 你状若癫狂地回过头，却只看到空荡荡的走廊，再看向眼前时，刚才的一切都宛若梦境。 NL 圣棺轻闭，一面熟悉的盾牌悄然融入你的胸膛。"
+      "In your path through this...space, the casket starts to shake violently as to open by itself, and a sudden emanation of white light from the gap blinds you... NL When you open your eyes again, you find yourself in this familiar room, and find your deceased families alive and well, standing in your front... NL “Welcome back! Happy new year!”“Come on sister, sit here and listen! You will never guess how hard I tried this time!” NL Is this another hallucination? But the vision, the smell, everything is so real...",
+      "Your answer quivers as tears trace a path. The dreamlike vision in your eyes is then peeled off by the tears, revealing her body, that mass of bruise and wound lying in the ruins of steel and concrete, with her hand griping a shell case. NL The casket closes gently, the sharp and clear sound of a dropped shell case pulls your vision back to the reality.",
+      "You force a smile to praise her, try your best to recall the way you used to pat on her head, and as you take a step forward, the vision of comfort rips apart like paper, only silence and dimness ahead. Her body vanishes into the blood that soaks your eyes, her smile carves a scar into your heart that mocks all the happiness. NL The casket closes gently, in front of your, the blood forms the congeals into a crimson sword.",
+      "Before you could say anything, you hear a gentle voice from your left. NL “Oh, isn't your sister with you?” NL You turn your head to the left, only to see the emptiness of this dim corridor, as if it was a dream. NL The casket closes gently, a familiar shield integrates into your chest."
     ],
     "OPTIONS": [
-      "[我回来了…] #g获得时间逆回之弹。",
-      "[我很期待…] #g获得魔王佩剑之影。",
-      "[她去哪了？！] #g获得深海女神之盾。",
-      "[离开]"
+      "[I am Back...] #gObtain Reversed Bullet.",
+      "[I Can't Wait to...] #gObtain Umbra of the Sword.",
+      "[Where is She?!] #gObtain Thetis Shield.",
+      "[Leave]"
     ]
   }
 }

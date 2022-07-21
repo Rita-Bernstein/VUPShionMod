@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.TrueVictoryRoom;
 
 public class Prophesy extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID("Prophesy");
+    public static final String ID = VUPShionMod.makeID(Prophesy.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

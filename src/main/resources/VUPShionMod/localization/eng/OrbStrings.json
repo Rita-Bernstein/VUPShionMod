@@ -2,36 +2,36 @@
   "VUPShionMod:InvestigationFinFunnel": {
     "NAME": "Scouting Funnel",
     "DESCRIPTION": [
-      "Current Upgrade: #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding.",
-      "Current Upgrade: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding."
+      "Current Upgrade: #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding. NL Passive upgrade ervey 2 level. ",
+      "Current Upgrade: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding. NL Passive upgrade ervey 2 level. "
     ]
   },
   "VUPShionMod:GravityFinFunnel": {
     "NAME": "Gravity Funnel",
     "DESCRIPTION": [
-      "Current Upgrade: #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock.",
-      "Current Upgrade: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock."
+      "Current Upgrade: #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock. NL Passive upgrade ervey 2 level. ",
+      "Current Upgrade: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock. NL Passive upgrade ervey 2 level. "
     ]
   },
   "VUPShionMod:PursuitFinFunnel": {
     "NAME": "Pursuing Funnel",
     "DESCRIPTION": [
-      "Current Upgrade: #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued.",
-      "Current Upgrade: #g%d / #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued."
+      "Current Upgrade: #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued. NL Passive upgrade ervey 2 level. ",
+      "Current Upgrade: #g%d / #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued. NL Passive upgrade ervey 2 level. "
     ]
   },
  "VUPShionMod:DissectingFinFunnel": {
     "NAME": "Dissecting Funnel",
     "DESCRIPTION": [
-      "Current Upgrade： #b%d. NL At the start of each combat,get #yReinsOfWar . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive： Apply #b%d #yStructureDissection.",
-      "Current Upgrade： #g%d / #b%d. NL At the start of each combat,get #yReinsOfWar . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive： Apply #b%d #yStructureDissection."
+      "Current Upgrade： #b%d. NL At the start of each combat,get #yReinsOfWar . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive： Apply #b%d #yStructureDissection. NL Passive upgrade ervey 2 level. ",
+      "Current Upgrade： #g%d / #b%d. NL At the start of each combat,get #yReinsOfWar . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive： Apply #b%d #yStructureDissection. NL Passive upgrade ervey 2 level. "
     ]
   },
   "VUPShionMod:MatrixFinFunnel": {
-    "NAME": "矩阵浮游炮",
+    "NAME": "Matrix Funnel",
     "DESCRIPTION": [
-      "当前强化等级： #b%d 。 NL 每回合开始时，对随机一名敌人造成 #b%d 点伤害并触发被动效果。 NL #y被动： 获得 #b%d 层 #y矩阵充能 。 NL 被动效果最高 #b5 层。 NL （除 #y初始等级 外，每 #b3 级提升被动效果。）",
-      "当前强化等级： #g%d / #b%d 。 NL 每回合开始时，对随机一名敌人造成 #b%d 点伤害并触发被动效果。 NL #y被动： 获得 #b%d 层 #y矩阵充能 。 NL 被动效果最高 #b5 层。 NL （除 #y初始等级 外，每 #b3 级提升被动效果。）"
+      "Current Upgrade： #b%d 。 NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive： Gain #b%d #yMatrixCharge . NL Max passive #b8 . NL Passive upgrade ervey 3 level. ",
+      "Current Upgrade： #g%d / #b%d 。 At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive： Gain #b%d #yMatrixCharge . NL Max passive #b8 . NL Passive upgrade ervey 3 level. "
     ]
   },
   "VUPShionMod:AbstractTurnIcon": {

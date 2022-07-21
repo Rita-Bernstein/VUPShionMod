@@ -1,4 +1,4 @@
-package VUPShionMod.util;
+package VUPShionMod.ui;
 
 import VUPShionMod.patches.EnergyPanelPatches;
 import basemod.abstracts.CustomSavable;

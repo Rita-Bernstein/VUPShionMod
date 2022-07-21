@@ -1,18 +1,15 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.util.FinFunnelCharge;
-import VUPShionMod.util.SansMeter;
-import VUPShionMod.util.SwardCharge;
-import basemod.BaseMod;
-import basemod.ReflectionHacks;
+import VUPShionMod.ui.FinFunnelCharge;
+import VUPShionMod.ui.SansMeter;
+import VUPShionMod.ui.SwardCharge;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,7 +18,6 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CannotCompileException;
@@ -46,6 +42,8 @@ public class EnergyPanelPatches {
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ShionFinFunnelSwitch"));
     public static Hitbox hb = new Hitbox(120.0f * Settings.scale, 120.0f * Settings.scale);
+
+
 
     @SpirePatch(
             clz = EnergyPanel.class,
@@ -306,4 +304,5 @@ public class EnergyPanelPatches {
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu;
     }
+
 }

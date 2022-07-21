@@ -43,7 +43,7 @@ import com.megacrit.cardcrawl.vfx.combat.*;
 import java.util.Iterator;
 
 public class RitaShop extends CustomMonster {
-    public static final String ID = VUPShionMod.makeID("RitaShop");
+    public static final String ID = VUPShionMod.makeID(RitaShop.class.getSimpleName());
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;

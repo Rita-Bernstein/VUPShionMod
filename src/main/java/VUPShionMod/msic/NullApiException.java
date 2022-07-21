@@ -1,4 +1,4 @@
-package VUPShionMod.util;
+package VUPShionMod.msic;
 
 public class NullApiException extends RuntimeException {
     public NullApiException(){}

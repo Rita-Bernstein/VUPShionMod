@@ -29,7 +29,7 @@ public class PortraitWindyPetalEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if (!SaveHelper.safeCampfire) {
+        if (SaveHelper.safePortrait) {
             isDone = true;
             return;
         }

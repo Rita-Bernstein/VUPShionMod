@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TimeOverload extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("TimeOverload");
+    public static final String ID = VUPShionMod.makeID(TimeOverload.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu12.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;

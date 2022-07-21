@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HeliumLuxque extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("HeliumLuxque");
+    public static final String ID = VUPShionMod.makeID(HeliumLuxque.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc34.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class HallowedCase extends AbstractShionRelic {
-    public static final String ID = VUPShionMod.makeID("HallowedCase");
+    public static final String ID = VUPShionMod.makeID(HallowedCase.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/HallowedCase.png";
     private static final String OUTLINE_PATH = "img/relics/outline/HallowedCase.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

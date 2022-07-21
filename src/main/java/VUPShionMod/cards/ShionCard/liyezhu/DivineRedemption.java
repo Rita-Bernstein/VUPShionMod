@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class DivineRedemption extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("DivineRedemption");
+    public static final String ID = VUPShionMod.makeID(DivineRedemption.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz03.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 public class LostEquipment extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID("LostEquipment");
+    public static final String ID = VUPShionMod.makeID(LostEquipment.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

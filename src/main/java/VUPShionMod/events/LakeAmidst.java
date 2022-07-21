@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import java.util.ArrayList;
 
 public class LakeAmidst extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID("LakeAmidst");
+    public static final String ID = VUPShionMod.makeID(LakeAmidst.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

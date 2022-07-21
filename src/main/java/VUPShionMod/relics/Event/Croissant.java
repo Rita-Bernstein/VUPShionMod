@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class Croissant extends AbstractShionRelic {
-    public static final String ID = VUPShionMod.makeID("Croissant");
+    public static final String ID = VUPShionMod.makeID(Croissant.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/Croissant.png";
     private static final String OUTLINE_PATH = "img/relics/outline/Croissant.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

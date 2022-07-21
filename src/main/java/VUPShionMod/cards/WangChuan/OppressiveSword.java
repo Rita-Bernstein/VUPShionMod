@@ -59,7 +59,7 @@ public class OppressiveSword extends AbstractWCCard {
 
                 Consumer<Integer> actionConsumer = effect -> {
                     addToTop(new ApplyPowerAction(p, p, new MagiamObruorPower(p, effect)));
-                    addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, 12 * effect)));
+                    addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, 5 * effect)));
                     baseDamage = this.magicNumber * effect;
                     calculateCardDamage(m);
                     addToTop(new DamageAction(m, new DamageInfo(p, this.damage * effect, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
@@ -70,7 +70,7 @@ public class OppressiveSword extends AbstractWCCard {
                     @Override
                     public void update() {
                         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                            addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount / 2)));
+                            addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, (int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.4))));
                         isDone = true;
                     }
                 });
@@ -96,13 +96,12 @@ public class OppressiveSword extends AbstractWCCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (this.timesUpgraded >= 2) {
-            if(!(super.canUse(p, m) && EnergyPanel.totalCount > 0)) {
+            if (!(super.canUse(p, m) && EnergyPanel.totalCount > 0)) {
                 this.cantUseMessage = EXTENDED_DESCRIPTION[3];
                 return false;
             }
             return true;
-        }
-        else
+        } else
             return super.canUse(p, m);
     }
 
@@ -133,7 +132,7 @@ public class OppressiveSword extends AbstractWCCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(-1);
-                upgradeMagicNumber(2);
+
                 this.exhaust = false;
             }
         }

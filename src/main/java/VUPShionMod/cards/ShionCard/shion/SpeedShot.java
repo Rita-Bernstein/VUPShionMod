@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class SpeedShot extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("SpeedShot");
+    public static final String ID = VUPShionMod.makeID(SpeedShot.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy11.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

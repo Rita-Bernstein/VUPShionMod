@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class SeverWrist extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("SeverWrist");
+    public static final String ID = VUPShionMod.makeID(SeverWrist.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc10.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class EnergyReserve extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID("EnergyReserve");
+    public static final String ID = VUPShionMod.makeID(EnergyReserve.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia09.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;

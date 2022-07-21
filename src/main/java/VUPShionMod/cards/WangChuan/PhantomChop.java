@@ -29,42 +29,18 @@ public class PhantomChop extends AbstractWCCard {
 
     public PhantomChop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 1;
+        this.baseDamage = 3;
+        this.selfRetain = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        switch (this.timesUpgraded) {
-            default:
-                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                break;
-            case 1:
-                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                break;
-            case 2:
-                Consumer<Integer> actionConsumer = effect -> {
-                    int amount = 0;
-
-                    if (!AbstractDungeon.actionManager.cardsPlayedThisTurn.isEmpty())
-                        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                            if (c.type == CardType.ATTACK) amount++;
-                        }
-
-
-                    amount += effect;
-                    amount += 3;
-                    for (int i = 0; i < amount; i++)
-                        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                };
-                addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
-                break;
-        }
-
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if (!c.purgeOnUse && this.timesUpgraded <= 1 && c.type == CardType.ATTACK) {
+        if (!c.purgeOnUse && c.type == CardType.ATTACK) {
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {
@@ -100,8 +76,6 @@ public class PhantomChop extends AbstractWCCard {
         int trueDamage = this.baseDamage;
 
         if (this.timesUpgraded >= 2) {
-            this.baseDamage = 0;
-        } else {
             this.baseDamage = 1;
         }
 
@@ -135,12 +109,11 @@ public class PhantomChop extends AbstractWCCard {
 
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
-                this.selfRetain = true;
+                upgradeDamage(2);
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeBaseCost(-1);
-                this.selfRetain = true;
+
             }
         }
     }

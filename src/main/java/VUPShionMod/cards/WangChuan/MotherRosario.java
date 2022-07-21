@@ -21,7 +21,7 @@ public class MotherRosario extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public MotherRosario() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -39,15 +39,27 @@ public class MotherRosario extends AbstractWCCard {
             default:
                 break;
             case 2:
-                if (p.hasPower(CorGladiiPower.POWER_ID))
-                    addToBot(new DamageAllEnemiesAction(null,
-                            DamageInfo.createDamageMatrix(p.getPower(CorGladiiPower.POWER_ID).amount, false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                int cor = 0;
+                int dex = 0;
+                if (p.hasPower(CorGladiiPower.POWER_ID)) {
+                    cor = p.getPower(CorGladiiPower.POWER_ID).amount;
+                }
+                if (p.hasPower(DexterityPower.POWER_ID)) {
+                    dex = p.getPower(DexterityPower.POWER_ID).amount;
+                }
 
-                addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
+                if (cor + dex > 0) {
+                    for (int i = 0; i < 3; i++)
+                        addToBot(new DamageAllEnemiesAction(null,
+                                DamageInfo.createDamageMatrix(cor + dex, false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                }
+
                 break;
         }
 
         addToBot(new ApplyStiffnessAction(this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
+
     }
 
     @Override
@@ -100,8 +112,7 @@ public class MotherRosario extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeSecondM(2);
-                upgradeBaseCost(1);
+
             }
         }
     }

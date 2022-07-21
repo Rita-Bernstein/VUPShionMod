@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import VUPShionMod.VUPShionMod;
 
 public class LockOnPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("LockOnPower");
+    public static final String POWER_ID = VUPShionMod.makeID(LockOnPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -26,7 +26,9 @@ public class LockOnPower extends AbstractShionPower {
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        return damageAmount + this.amount;
+        if (info.type == DamageInfo.DamageType.NORMAL)
+            return damageAmount + this.amount;
+        else return damageAmount;
     }
 
     @Override

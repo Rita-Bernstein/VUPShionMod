@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class PlagaAMundoCounterPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("PlagaAMundoCounterPower");
+    public static final String POWER_ID = VUPShionMod.makeID(PlagaAMundoCounterPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -27,7 +27,8 @@ public class PlagaAMundoCounterPower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
 
-        loadRegion("fading");
+        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower128.png")), 0, 0, 128, 128);
+        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower32.png")), 0, 0, 32, 32);
     }
 
 

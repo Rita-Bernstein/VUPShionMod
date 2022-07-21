@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class TurnDexPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("TurnDexPower");
+    public static final String POWER_ID = VUPShionMod.makeID(TurnDexPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -21,7 +21,6 @@ public class TurnDexPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.type = PowerType.DEBUFF;
         updateDescription();
         this.loadRegion("demonForm");
     }

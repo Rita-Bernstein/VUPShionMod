@@ -2,10 +2,7 @@ package VUPShionMod.actions.Shion;
 
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.character.Shion;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.finfunnels.GravityFinFunnel;
-import VUPShionMod.finfunnels.InvestigationFinFunnel;
-import VUPShionMod.finfunnels.PursuitFinFunnel;
+import VUPShionMod.finfunnels.*;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.Shion.BleedingPower;
 import VUPShionMod.powers.Shion.GravitoniumPower;
@@ -41,7 +38,7 @@ public class TriggerAllFinFunnelPassiveAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList.isEmpty()) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || FinFunnelManager.getFinFunnelList().isEmpty()) {
             this.isDone = true;
             return;
         }

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SantaCroce extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("SantaCroce");
+    public static final String ID = VUPShionMod.makeID(SantaCroce.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz08.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

@@ -88,6 +88,9 @@ public class Liyezhu extends CustomPlayer {
                 VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json"), 3.0f);
 
         reloadAnimation();
+
+
+         CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(3);
     }
 
     public void reloadAnimation() {

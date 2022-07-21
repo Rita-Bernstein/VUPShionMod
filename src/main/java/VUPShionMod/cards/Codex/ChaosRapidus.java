@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChaosRapidus extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("ChaosRapidus");
+    public static final String ID = VUPShionMod.makeID(ChaosRapidus.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/hundun.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

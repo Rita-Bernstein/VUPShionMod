@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 
 public class TheRipple extends AbstractShionRelic {
-    public static final String ID = VUPShionMod.makeID("TheRipple");
+    public static final String ID = VUPShionMod.makeID(TheRipple.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/TheRipple.png";
     private static final String OUTLINE_PATH = "img/relics/outline/TheRipple.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

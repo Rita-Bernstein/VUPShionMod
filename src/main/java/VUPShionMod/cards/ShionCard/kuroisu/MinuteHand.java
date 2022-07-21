@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class MinuteHand extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("MinuteHand");
+    public static final String ID = VUPShionMod.makeID(MinuteHand.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu06.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.ATTACK;

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class BreakAppointment extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID("BreakAppointment");
+    public static final String ID = VUPShionMod.makeID(BreakAppointment.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

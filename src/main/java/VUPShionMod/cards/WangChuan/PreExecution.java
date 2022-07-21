@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class PreExecution extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("PreExecution");
+    public static final String ID = VUPShionMod.makeID(PreExecution.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc03.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -34,16 +34,15 @@ public class PreExecution extends AbstractWCCard {
             addToBot(new ApplyStiffnessAction(this.secondaryM));
 
         if (this.upgraded)
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 2)));
+            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(5);
-            upgradeMagicNumber(4);
-            upgradeBaseCost(1);
+            upgradeBlock(2);
+            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             this.initializeTitle();

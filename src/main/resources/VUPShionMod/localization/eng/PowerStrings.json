@@ -51,6 +51,14 @@
       " #yBlock whenever you play a card."
     ]
   },
+    "VUPShionMod:DeploymentOfDefenseSystemPower2": {
+    "NAME": "Defense Unfold",
+    "DESCRIPTIONS": [
+      "This turn, gain #b",
+      " #yBlock whenever you play a card.",
+	  " #yHyperdimensionalLink"
+    ]
+  },
   "VUPShionMod:AnastasiaCorePower": {
     "NAME": "Anastasia Core",
     "DESCRIPTIONS": [
@@ -67,7 +75,7 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "Liberated Form: Cloyce",
     "DESCRIPTIONS": [
-      "At the end of your turn, put #b%d #yQuick #ySkim on the top of your draw pile."
+      "Every card you played, gain #b%d #HyperdimensionalLinks ."
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
@@ -682,7 +690,7 @@
       " NL #b%d :Receive #b10%% Maxhp Damage.",
       " NL #b%d :Lose #b5%% Maxhp.",
       " NL #b%d :Lose #b5%% Maxhp.",
-      " NL #b%d :Apply #b99 Vulnerable .",
+      " NL #b%d :Damage received increase #b3 .",
       " NL #b%d :Lose this effect and: NL Boss enemy-Analysis power or lose #b3 #ystrength. NL None Boss enemy- #ystun.",
       " NL NL #rBoss-%s NL Lose #y%s。",
       " NL NL #rBoss-%s NL Reduce HP of #y%s to 1.",
@@ -813,62 +821,62 @@
     ]
   },
   "VUPShionMod:ClaymoreSetPower": {
-    "NAME": "阔剑地雷设置",
+    "NAME": "Claymore Mine",
     "DESCRIPTIONS": [
-      "下次受到攻击伤害时，对攻击者造成 #b%d 点伤害。"
+      "The next time you receive damage from enemy attacks, deal #b%d damage back."
     ]
   },
   "VUPShionMod:StrikeIntegratedPower": {
-    "NAME": "指令：查打一体",
+    "NAME": "Order: Bloodletting",
     "DESCRIPTIONS": [
-      "触发 #y侦察浮游炮 的被动效果时，触发一次 #y流血 伤害。 NL 不与其他指令共存。 NL 不能叠加。"
+      "Whenever you trigger the passive ability of #yScouting #yFunnel, trigger #yBleeding damage as well. NL Incompatible with other Orders. NL Unstackable."
     ]
   },
   "VUPShionMod:ChainPursuitPower": {
-    "NAME": "指令：连锁追击",
+    "NAME": "Order: Chain Pursuit",
     "DESCRIPTIONS": [
-      "触发 #y追击浮游炮 的被动效果时，抽一张牌。 NL 不与其他指令共存。 NL 不能叠加。"
+      "Whenever you trigger the passive ability of #yPursuing #yFunnel, draw 1 card and gain #b1 #yHyperdimensionalLink. NL Incompatible with other Orders. NL Unstackable."
     ]
   },
   "VUPShionMod:AoeAnalysisPower": {
-    "NAME": "指令：广域解析",
+    "NAME": "Order: AoE Analysis",
     "DESCRIPTIONS": [
-      " #y解析浮游炮 的被动效果对所有敌人生效。 NL 不与其他指令共存。 NL 不能叠加。"
+      "#yDissecting Funnel now affects ALL enemies. NL Incompatible with other Orders. NL Unstackable."
     ]
   },
   "VUPShionMod:GravityVortexPower": {
-    "NAME": "指令：重力漩涡",
+    "NAME": "Order: Gravity Vortex",
     "DESCRIPTIONS": [
-      "触发 #y重力浮游炮 的被动效果时，所有敌人失去2点 #y临时力量 。 NL 不与其他指令共存。 NL 不能叠加。"
+      "Whenever you trigger the passive ability of #yGravity #yFunnel, gain #b6 enemies number of #yBlock. NL Incompatible with other Orders. NL Unstackable."
     ]
   },
   "VUPShionMod:GravityRepressionPower": {
-    "NAME": "连携：重力压制",
+    "NAME": "Gravity Repercussion",
     "DESCRIPTIONS": [
-      "触发 #y重力浮游炮 的被动效果时，触发一次 #y追击浮游炮 的被动。 NL 不能叠加。"
+      "Whenever you trigger the passive ability of #yGravity #yFunnel, trigger that of #yPursuing #yFunnel as well. NL Unstackable."
     ]
   },
   "VUPShionMod:TrackingAnalysisPower": {
-    "NAME": "连携：追踪解析",
+    "NAME": "Tracking Analysis",
     "DESCRIPTIONS": [
-      "触发 #y追击浮游炮 的被动效果时，触发一次 #y解析浮游炮 的被动。 NL 不能叠加。"
+      "Whenever you trigger the passive ability of #yPursuing #yFunnel, trigger that of #yDissecting #yFunnel as well. NL Unstackable."
     ]
   },
   "VUPShionMod:CollaborativeInvestigationPower": {
-    "NAME": "连携：协同侦察",
+    "NAME": "Auxiliary Scouting",
     "DESCRIPTIONS": [
-      "触发除 #y侦查 以外的 #y浮游炮 被动效果时，触发一次 #y侦查浮游炮 的被动。 NL 不能叠加。"
+      "Whenever you trigger the passive ability of any other #yFunnel, trigger that of #yScouting #yFunnel as well. NL Unstackable."
     ]
   },
   "VUPShionMod:DefensiveOrderPower": {
-    "NAME": "防御指示",
+    "NAME": "Defensive Command",
     "DESCRIPTIONS": [
-      "本回合所有 #y流血 、 #y追击 伤害变为获得等量 #y格挡 ， NL #y浮游炮 主动造成的伤害替换为获得等量 #y护盾 。",
-      "接下来的 #b%d 个回合所有 #y流血 、 #y追击 伤害变为获得等量 #y格挡 ， NL #y浮游炮 主动造成的伤害替换为获得等量 #y护盾 。"
+      "This turn, any #yBleeding, #yPursued damage to deal is converted into Block, any active damage dealt by #yFunnel is converted into #yShield.",
+      "For the next #b%d turns, any #yBleeding, #yPursued damage to deal is converted into Block, any active damage dealt by #yFunnel is converted into #yShield."
     ]
   },
   "VUPShionMod:AntiAirPower": {
-    "NAME": "Anti Air",
+    "NAME": "Antiair Barrage",
     "DESCRIPTIONS": [
       "At the end of turn, it deals #b%d #ynon-Attack damage #b%d times. ",
       "At the end of turn, it deals #b%d #ynon-Attack damage #b%d times "
@@ -876,30 +884,43 @@
   },
 
   "VUPShionMod:MatrixFinFunnelUpgradePower": {
-    "NAME": "矩阵浮游炮升级计划",
+    "NAME": "Matrix Upgrade",
     "DESCRIPTIONS": [
-      "再打出 #b",
-      " 张带有 #y浮游炮 词条的牌，将 #y矩阵浮游炮 的强化等级提升 #b1 。",
-      "任务完成！"
+      "After playing #b",
+      " #yFunnel cards, upgrade #yMatrix #yFunnel by #b1.",
+      "Task Completed!"
     ]
   },
   "VUPShionMod:MatrixAmplifyPower": {
-    "NAME": "指令：矩阵增幅",
+    "NAME": "Order: Amplifying",
     "DESCRIPTIONS": [
-      "翻倍 #y自动浮游炮 的效果。"
+      "Double the effect of #yAuto #yFunnel. NL Incompatible with other Orders. NL Unstackable."
     ]
   },
   "VUPShionMod:WideAreaLockingPower": {
-    "NAME": "广域锁定",
+    "NAME": "AoE Targeting",
     "DESCRIPTIONS": [
-      "下次 #y矩阵充能 满充能的 #y自动浮游炮 将对所有敌人触发效果。",
-      "下 #b%d 次 #y矩阵充能 满充能的 #y自动浮游炮 将对所有敌人触发效果。"
+      "The next #yAuto #yFunnel attack from full #yMatrix #yCharge hits ALL enemies.",
+      "The next #b%d #yAuto #yFunnel attacks from full #yMatrix #yCharge hits ALL enemies."
     ]
   },
   "VUPShionMod:FireCalibrationPower": {
-    "NAME": "火力校准",
+    "NAME": "Firepower Calibration",
     "DESCRIPTIONS": [
-      "其受到的伤害提高 #b%d 。"
+      "Damage received is increased by #b%d."
+    ]
+  },
+   "VUPShionMod:DespairPower": {
+    "NAME": "Aproaching Despair",
+    "DESCRIPTIONS": [
+      "#rSomething bad is about to happen. NL #rWe must hurry. NL Confront the Worm of the Time at the end of this turn.",
+      "#rSomething bad is about to happen. NL #rWe must hurry. NL Confront the Worm of the Time in #b%d turns."
+    ]
+  },
+  "VUPShionMod:ReleaseFormEisluRenPower": {
+    "NAME": "Eislu Ren Form",
+    "DESCRIPTIONS": [
+      "Whenever you trigger #yLoading #yComplete #b5 times,gain #b%d [E]."
     ]
   }
 }

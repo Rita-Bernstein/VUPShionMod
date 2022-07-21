@@ -21,6 +21,7 @@ public class WideAreaLocking extends AbstractShionCard {
 
     public WideAreaLocking() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.selfRetain = true;
     }
 
     @Override

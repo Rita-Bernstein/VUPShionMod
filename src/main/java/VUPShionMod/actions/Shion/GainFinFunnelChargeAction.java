@@ -1,7 +1,7 @@
 package VUPShionMod.actions.Shion;
 
 import VUPShionMod.patches.EnergyPanelPatches;
-import VUPShionMod.util.FinFunnelCharge;
+import VUPShionMod.ui.FinFunnelCharge;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 

@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class OnrushingTip extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("OnrushingTip");
+    public static final String ID = VUPShionMod.makeID(OnrushingTip.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc08.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -30,9 +30,11 @@ public class OnrushingTip extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 8)));
+
         int d = this.magicNumber;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-            d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+            d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount + 8;
         this.baseDamage = d;
 
         calculateCardDamage(m);
@@ -43,7 +45,7 @@ public class OnrushingTip extends AbstractWCCard {
         this.rawDescription = DESCRIPTION;
         initializeDescription();
 
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 6)));
+
         addToBot(new ApplyStiffnessAction(this.secondaryM));
     }
 

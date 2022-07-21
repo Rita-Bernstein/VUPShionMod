@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.function.Consumer;
 
 public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("ReleaseFormLiyezhu");
+    public static final String ID = VUPShionMod.makeID(ReleaseFormLiyezhu.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz09.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.POWER;
@@ -27,7 +27,7 @@ public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
 
     public ReleaseFormLiyezhu() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 1;
     }
 

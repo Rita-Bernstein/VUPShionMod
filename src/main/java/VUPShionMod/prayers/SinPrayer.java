@@ -35,7 +35,6 @@ public class SinPrayer extends AbstractPrayer {
             addToBot(new ApplySinAction(mo, this.amount));
         }
 
-        addToBot(new ApplySinAction(AbstractDungeon.player,this.amount));
     }
 
     @Override

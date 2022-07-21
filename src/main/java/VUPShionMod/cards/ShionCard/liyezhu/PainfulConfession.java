@@ -6,16 +6,19 @@ import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class PainfulConfession extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("PainfulConfession");
+    public static final String ID = VUPShionMod.makeID(PainfulConfession.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz13.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
@@ -26,6 +29,7 @@ public class PainfulConfession extends AbstractShionLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 5;
         this.baseMagicNumber = this.magicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 3;
         this.isMultiDamage = true;
     }
 
@@ -38,20 +42,26 @@ public class PainfulConfession extends AbstractShionLiyezhuCard {
                         125.0f, 125.0f, 2.5f * Settings.scale, 2, false)));
             }
         }
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+
+        addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
+        addToBot(new DamageAction(p, new DamageInfo(p, this.baseDamage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+
+
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!monster.isDeadOrEscaped()) {
                 addToBot(new ApplyPowerAction(monster, p, new VulnerablePower(monster, this.baseMagicNumber, false)));
             }
         }
+
+        addToBot(new ApplyPowerAction(p,p,new RegenPower(p,this.secondaryM)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(3);
-            this.upgradeMagicNumber(1);
+            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 

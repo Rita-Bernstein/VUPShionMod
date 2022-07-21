@@ -12,8 +12,7 @@ import com.megacrit.cardcrawl.potions.FruitJuice;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
 public class FruitStall extends AbstractImageEvent {
-
-    public static final String ID = VUPShionMod.makeID("FruitStall");
+    public static final String ID = VUPShionMod.makeID(FruitStall.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

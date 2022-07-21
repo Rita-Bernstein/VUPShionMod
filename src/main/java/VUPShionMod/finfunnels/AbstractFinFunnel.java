@@ -134,6 +134,14 @@ public abstract class AbstractFinFunnel {
         updateDescription();
     }
 
+    public void loseTempLevel(int amount) {
+        this.levelForCombat -= amount;
+        if (this.levelForCombat < 0)
+            this.levelForCombat = 0;
+
+        updateDescription();
+    }
+
     public void setLevel(int amount) {
         this.level = amount;
     }
@@ -164,11 +172,12 @@ public abstract class AbstractFinFunnel {
 
 
     public void activeFire(AbstractCreature target, DamageInfo info, boolean triggerPassive, int loopTimes) {
-        if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(AttackOrderSpecialPower.POWER_ID)
+                || (AbstractDungeon.player.hasPower(WideAreaLockingPower.POWER_ID) && this.id.equals(PursuitFinFunnel.ID))) {
             if (AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
                 int block = 0;
                 int[] damageInfo = DamageInfo.createDamageMatrix(info.base, false);
-                for (int i = 0; i <= damageInfo.length; i++)
+                for (int i = 0; i < damageInfo.length; i++)
                     block += damageInfo[i];
 
                 addToBot(new GainShieldAction(AbstractDungeon.player, block * loopTimes));
@@ -206,10 +215,20 @@ public abstract class AbstractFinFunnel {
     }
 
 
-    public void activeFire(AbstractCreature target, int[] multiDamage, boolean triggerPassive, int loopTimes) {
-        addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
-        for (int i = 0; i < loopTimes; i++)
-            addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+    public void activeFire(AbstractCreature target, int multiDamage, boolean triggerPassive, int loopTimes) {
+        if (AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
+            int block = 0;
+            int[] damageInfo = DamageInfo.createDamageMatrix(multiDamage, false);
+            for (int i = 0; i < damageInfo.length; i++)
+                block += damageInfo[i];
+
+            addToBot(new GainShieldAction(AbstractDungeon.player, block * loopTimes));
+        } else {
+            addToBot(new VFXAction(new FinFunnelBeamEffect(this), 0.4f));
+            for (int i = 0; i < loopTimes; i++)
+                addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(multiDamage, false),
+                        DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+        }
 
         if (triggerPassive) {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())

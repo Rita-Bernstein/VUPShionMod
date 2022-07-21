@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HomoRapidus extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("HomoRapidus");
+    public static final String ID = VUPShionMod.makeID(HomoRapidus.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/ren.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

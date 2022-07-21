@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TimeWarp extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("TimeWarp");
+    public static final String ID = VUPShionMod.makeID(TimeWarp.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu10.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;

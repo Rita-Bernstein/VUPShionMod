@@ -1,15 +1,12 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.util.Shield;
-import com.badlogic.gdx.graphics.Color;
+import VUPShionMod.msic.Shield;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.lang.reflect.Field;
 
 public class ShieldPatches {
     @SpirePatch(

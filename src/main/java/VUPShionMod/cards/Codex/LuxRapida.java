@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 
 public class LuxRapida extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("LuxRapida");
+    public static final String ID = VUPShionMod.makeID(LuxRapida.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/guang.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;

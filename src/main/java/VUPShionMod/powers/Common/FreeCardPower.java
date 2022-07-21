@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class FreeCardPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("FreeCardPower");
+    public static final String POWER_ID = VUPShionMod.makeID(FreeCardPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

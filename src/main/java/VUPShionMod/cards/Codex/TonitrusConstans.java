@@ -1,13 +1,15 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TonitrusConstans extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("TonitrusConstans");
+    public static final String ID = VUPShionMod.makeID(TonitrusConstans.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/lei.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
@@ -39,6 +41,7 @@ public class TonitrusConstans extends AbstractCodexCard {
             case 2:
                 addToBot(new GainEnergyAction(this.magicNumber));
                 addToBot(new DrawCardAction(p, this.secondaryM));
+                addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
                 break;
         }
     }

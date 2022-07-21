@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 
 public class GladiiInfiniti extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("GladiiInfiniti");
+    public static final String ID = VUPShionMod.makeID(GladiiInfiniti.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc14.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;

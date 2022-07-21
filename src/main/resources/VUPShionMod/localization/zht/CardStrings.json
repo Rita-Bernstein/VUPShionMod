@@ -13,7 +13,7 @@
   },
   "VUPShionMod:DeploymentOfDefenseSystem": {
     "NAME": "Anastasia防禦系統全展開",
-    "DESCRIPTION": "本回合內，你每打出一張牌就獲得 !M! 點 格擋 。"
+    "DESCRIPTION": "本回合內，你每打出一張牌就獲得 !M! 點 格擋 並獲得 !VUPShionSecondM! 層 vup_shion_mod:超維連結 。"
   },
   "VUPShionMod:AttackSystemPreload": {
     "NAME": "攻擊系統預加載",
@@ -61,8 +61,8 @@
   },
   "VUPShionMod:AttackPreparation": {
     "NAME": "進攻準備",
-    "DESCRIPTION": "保留 當前手牌。 NL 下回合獲得 [E] 。",
-    "UPGRADE_DESCRIPTION": "保留 當前手牌。 NL 下回合獲得 [E] [E] 。"
+    "DESCRIPTION": "保留 當前手牌。 NL 下回合獲得 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "保留 當前手牌。 NL 下回合獲得 [E] [E] [E] 。"
   },
   "VUPShionMod:Strafe": {
     "NAME": "掃射",
@@ -104,7 +104,7 @@
   },
   "VUPShionMod:SpeedSlash": {
     "NAME": "高速斬擊",
-    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。"
+    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:超維連結 。"
   },
   "VUPShionMod:Rob": {
     "NAME": "掠奪",
@@ -136,7 +136,7 @@
   },
   "VUPShionMod:TeamWork": {
     "NAME": "連攜",
-    "DESCRIPTION": "分別從三張 *克洛伊斯 、 *Anastasia 、 *南小棉 和 *黎夜竹 牌中選擇一張牌加入手牌。這張牌在本回合耗能為0且獲得 消耗 。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "分別從三張 *克洛伊斯 、 *Anastasia 、 *南小棉 和 *黎夜竹 牌中選擇一張牌加入手牌。這張牌在本回合耗能為0且獲得 消耗 。 NL 消耗 。"
   },
   "VUPShionMod:AnastasiaPlan": {
     "NAME": "Anastasia計劃",
@@ -148,7 +148,7 @@
   },
   "VUPShionMod:LockOn": {
     "NAME": "鎖定",
-    "DESCRIPTION": "使一名敵人本回合受到的傷害提高 !M! 。"
+    "DESCRIPTION": "使一名敵人本回合受到的傷害提高 !M! 。 NL 其受到傷害時，你獲得 !VUPShionSecondM! 層 vup_shion_mod:超維連結 。"
   },
   "VUPShionMod:EnergyReserve": {
     "NAME": "能量儲備",
@@ -159,19 +159,19 @@
     "DESCRIPTION": "固有 。 NL 從四張 *浮游炮升級計劃 中選擇一張。 NL 其效果不能累加。 抹除 。",
     "UPGRADE_DESCRIPTION": "固有 。從四張 *浮游炮升級計劃 中選擇一張。 NL 其效果不能累加。 抹除 。"
   },
-  "VUPShionMod:InvestigationUpgrade": {
+  "VUPShionMod:InvestigationFinFunnelUpgrade": {
     "NAME": "偵查浮游炮升級計劃",
     "DESCRIPTION": "vup_shion_mod:任務 ： NL 打出5張使用 vup_shion_mod:浮游炮 的牌。 NL 獎勵：偵查浮游炮強化等級加1。"
   },
-  "VUPShionMod:GravityUpgrade": {
+  "VUPShionMod:GravityFinFunnelUpgrade": {
     "NAME": "重力浮游炮升級計劃",
     "DESCRIPTION": "vup_shion_mod:任務 ： NL 打出5張使用 vup_shion_mod:浮游炮 的牌。 NL 獎勵：重力浮游炮強化等級加1。"
   },
-  "VUPShionMod:PursuitUpgrade": {
+  "VUPShionMod:PursuitFinFunnelUpgrade": {
     "NAME": "追擊浮游炮升級計劃",
     "DESCRIPTION": "vup_shion_mod:任務 ： NL 打出5張使用 vup_shion_mod:浮游炮 的牌。 NL 獎勵：追擊浮游炮強化等級加1。"
   },
-  "VUPShionMod:DissectingUpgrade": {
+  "VUPShionMod:DissectingFinFunnelUpgrade": {
     "NAME": "解析浮游炮升級計劃",
     "DESCRIPTION": "vup_shion_mod:任務 ： NL 打出5張使用 vup_shion_mod:浮游炮 的牌。 NL 獎勵：解析浮游炮強化等級加1。"
   },
@@ -211,8 +211,8 @@
   },
   "VUPShionMod:ReleaseFormKuroisu": {
     "NAME": "姿態解放-克洛伊斯",
-    "DESCRIPTION": "效果不能疊加。 NL 每回合結束時，將 !M! 張 *快速篩選 加入抽牌堆。",
-    "UPGRADE_DESCRIPTION": "效果不能疊加。 NL 每回合結束時，將 !M! 張 *快速篩選+ 加入抽牌堆。"
+    "DESCRIPTION": "效果不能疊加。 NL 每打出一張牌，獲得 !M! 層 vup_shion_mod:超維連結 。",
+    "UPGRADE_DESCRIPTION": ""
   },
   "VUPShionMod:TimeWarp": {
     "NAME": "時空扭曲",
@@ -233,7 +233,7 @@
   },
   "VUPShionMod:Limit": {
     "NAME": "十二刻時",
-    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 獲得 !M! 點 vup_shion_mod:超維連結 。 NL 消耗性 !stslib:ex! 。"
   },
   "VUPShionMod:OverspeedField": {
     "NAME": "超速領域",
@@ -245,8 +245,8 @@
   },
   "VUPShionMod:FinFunnelActive": {
     "NAME": "浮游炮激活",
-    "DESCRIPTION": "對一名敵人觸發所有 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "對一名敵人觸發所有 vup_shion_mod:浮游炮 的被動效果。"
+    "DESCRIPTION": "對一名敵人觸發所有 vup_shion_mod:浮游炮 的被動效果。 NL 獲得 !M! 層 vup_shion_mod:矩陣充能 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "對一名敵人觸發所有 vup_shion_mod:浮游炮 的被動效果。 NL 獲得 !M! 層 vup_shion_mod:矩陣充能 。"
   },
   "VUPShionMod:AttackWithDefense": {
     "NAME": "攻防一體",
@@ -254,7 +254,7 @@
   },
   "VUPShionMod:LockIndication": {
     "NAME": "鎖定指示",
-    "DESCRIPTION": "對一名敵人觸發 *詠嘆調型維度裂解者 。這次的傷害額外增加 !M! 點。 NL 該傷害無視 格擋 。"
+    "DESCRIPTION": "觸發 vup_shion_mod:軌道打擊 。"
   },
   "VUPShionMod:TacticalLayout": {
     "NAME": "戰術布局",
@@ -315,7 +315,7 @@
   },
   "VUPShionMod:IntroductionSilence": {
     "NAME": "靜默導言",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 虛弱 。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 給予 !M! 層 虛弱 。 NL 所有敵人本回合失去 !VUPShionSecondM! 點 力量 。 NL 獲得2層 vup_shion_mod:超維連結 。"
   },
   "VUPShionMod:SacredAdvice": {
     "NAME": "神聖建言",
@@ -332,11 +332,12 @@
   },
   "VUPShionMod:HolyCharge": {
     "NAME": "神聖衝鋒",
-    "DESCRIPTION": "保留 。 NL 獲得 !M! 層 vup_shion_mod:超維連結 。 NL 將這個效果提高1點。被保留時，減少1點耗費。 NL 造成 !D! 點傷害。"
+    "DESCRIPTION": "保留 。 NL 獲得 !M! 層 vup_shion_mod:超維連結 。 NL 將這個效果提高1點。被 保留 時，減少1點耗能。 NL 造成3+ vup_shion_mod:超維連結 點傷害。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 獲得 !M! 層 vup_shion_mod:超維連結 。 NL 將這個效果提高1點。被 保留 時，減少1點耗能。 NL 造成9+ vup_shion_mod:超維連結 點傷害。"
   },
   "VUPShionMod:StrengthPray": {
     "NAME": "力量祈禱",
-    "DESCRIPTION": "保留 。 NL 獲得 !M! 層 vup_shion_mod:超維連結 。"
+    "DESCRIPTION": "保留 。 NL 獲得 !M! 層 vup_shion_mod:超維連結 。 NL 獲得 !VUPShionSecondM! 點 力量 。"
   },
   "VUPShionMod:Pray": {
     "NAME": "祈禱",
@@ -370,7 +371,7 @@
   },
   "VUPShionMod:PainfulConfession": {
     "NAME": "沉痛懺悔",
-    "DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 給予所有敵人 !M! 層 易傷 。"
+    "DESCRIPTION": "對 *所有人 造成5點固定傷害。 NL 給予所有敵人 !M! 層 易傷 。 NL 獲得 !VUPShionSecondM! 層 再生 。"
   },
   "VUPShionMod:HolyCoffinRelease": {
     "NAME": "聖棺解放",
@@ -400,7 +401,7 @@
   },
   "VUPShionMod:OverloadFortress": {
     "NAME": "過載堡壘",
-    "DESCRIPTION": "保留 。 NL 觸發 *重力 vup_shion_mod:浮游炮 的被動效果 !VUPShionSecondM! 次。 NL 失去 !M! 層 *重力 vup_shion_mod:浮游炮 強化。"
+    "DESCRIPTION": "保留 。 NL 觸發 *重力 vup_shion_mod:浮游炮 的被動效果 !VUPShionSecondM! 次。 NL 本場戰鬥失去 !M! 層 *重力 vup_shion_mod:浮游炮 強化。"
   },
   "VUPShionMod:GravityImpact": {
     "NAME": "重力衝擊",
@@ -425,7 +426,7 @@
   "VUPShionMod:PreExecution": {
     "NAME": "擬斬",
     "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 獲得2點 敏捷 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 獲得1點 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       "心眼"
     ]
@@ -474,7 +475,7 @@
   "VUPShionMod:StrideSlash": {
     "NAME": "踏步斬",
     "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 抽一張牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。 NL 造成 vup_shion_mod:劍勢 的傷害。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 抽一張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害兩次。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 造成 vup_shion_mod:劍勢 的傷害。 NL 抽一張牌。 NL vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "踏步連斬",
       "殘月沖",
@@ -483,8 +484,8 @@
   },
   "VUPShionMod:OnrushingTip": {
     "NAME": "突進斬",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得6點 vup_shion_mod:劍勢 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得6點 vup_shion_mod:劍勢 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 消耗 。",
+    "DESCRIPTION": "獲得8點 vup_shion_mod:劍勢 。 NL 造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "獲得8點 vup_shion_mod:劍勢 。 NL 造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "捨身斬",
       " NL （造成 !D! 點傷害）"
@@ -493,11 +494,11 @@
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斬",
     "DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害兩次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得3點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害三次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得8點 vup_shion_mod:劍勢 。 NL 獲得3點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害三次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽兩張牌。 NL vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "回天劍舞",
       "極·回天劍舞",
-      "造成 !M! + vup_shion_mod:劍勢 的傷害三次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得5點 vup_shion_mod:劍勢 。 NL 獲得3點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
+      "造成 !M! + vup_shion_mod:劍勢 的傷害三次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得3點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
       "（造成 !D! 點傷害，獲得 !B! 點 格擋 。）"
     ]
   },
@@ -511,12 +512,12 @@
   },
   "VUPShionMod:SeverPetal": {
     "NAME": "雁落斬",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害兩次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "DESCRIPTION": "獲得 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+    "UPGRADE_DESCRIPTION": "獲得 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 造成 !M! + vup_shion_mod:劍勢 的傷害兩次。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       "雁落斬+",
       "落鳳破",
-      "造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
+      "獲得 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 造成 !M! + vup_shion_mod:劍勢 的傷害。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽一張牌。",
       " NL （造成 !D! 點傷害）"
     ]
   },
@@ -539,14 +540,15 @@
   "VUPShionMod:Guard": {
     "NAME": "守勢",
     "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 失去 !M! 點 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 獲得 !B! 點 格擋 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:劍勢 。 NL 失去 !M! 點 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "劍勢不足"
     ]
   },
   "VUPShionMod:LunaMergo": {
     "NAME": "調息",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 獲得5點 vup_shion_mod:劍勢 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 和 vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 獲得5點 vup_shion_mod:劍勢 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 和 vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "月讀"
     ]
@@ -571,7 +573,7 @@
   "VUPShionMod:Moonstrider": {
     "NAME": "月步",
     "DESCRIPTION": "獲得 !VUPShionSecondM! + vup_shion_mod:劍勢 的 格擋 。 NL 本回合每次受到攻擊時，獲得 !M! 點 vup_shion_mod:劍勢 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 獲得 !VUPShionSecondM! + vup_shion_mod:劍勢 的 格擋 。 NL 本回合每次受到攻擊時，獲得 !M! 點 vup_shion_mod:劍勢 。",
+    "UPGRADE_DESCRIPTION": " 獲得 !VUPShionSecondM! + vup_shion_mod:劍勢 的 格擋 。 NL 本回合每次受到攻擊時，獲得 !M! 點 vup_shion_mod:劍勢 。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       " NL （獲得 !B! 點 格擋 ）"
     ]
@@ -920,7 +922,7 @@
   "VUPShionMod:TonitrusConstans": {
     "NAME": "通典：雷",
     "DESCRIPTION": "獲得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。 NL vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "通典：雷（永續）",
       "通典：雷（極意）",
@@ -930,7 +932,7 @@
   "VUPShionMod:TonitrusRapidus": {
     "NAME": "通典：雷",
     "DESCRIPTION": "獲得 !M! [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! [E] 。 NL 抽 !VUPShionSecondM! 張牌。 NL vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "通典：雷（神速）",
       "通典：雷（極意）",
@@ -1187,7 +1189,7 @@
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "罪孽收割",
-    "DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NLNL vup_shion_mod:伐罪 。",
+    "DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 。",
     "UPGRADE_DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 2。 NL vup_shion_mod:沉靈 2： vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:Whisk": {
@@ -1262,7 +1264,7 @@
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "苦難之終",
-    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦難 牌。 NL 失去(100- 消耗 數量x5)點生命。 NL 抽滿手牌。 獲得 !M! [E] 和 力量 。 NL 消耗。"
+    "DESCRIPTION": "保留 。 NL 消耗 所有的 *苦難 牌。 NL 失去(100- 消耗 數量x5)點生命。 NL 抽滿手牌。 獲得 !M! [E] 和 力量 。 NL 消耗 。"
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "一切苦難入棺",
@@ -1306,16 +1308,16 @@
   },
   "VUPShionMod:Exile": {
     "NAME": "放逐",
-    "DESCRIPTION": "虛無 。 NL 斬殺一名敵人。 NL 消耗 。"
+    "DESCRIPTION": "虛無 。 NL 擊殺一名敵人。 NL 消耗 。"
   },
   "VUPShionMod:PhantomChop": {
     "NAME": "影斬",
-    "DESCRIPTION": "造成1+ vup_shion_mod:劍勢 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 造成 vup_shion_mod:劍勢 層數的傷害X+3次。 NL 本回合每打出過一張牌，額外造成一次傷害。",
+    "DESCRIPTION": "保留 。 NL 造成 !D! 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成1+ vup_shion_mod:劍勢 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。",
     "EXTENDED_DESCRIPTION": [
       "影斬+",
       "千幻影斬",
-      "保留 。 NL 造成1+ vup_shion_mod:劍勢 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。"
+      "保留 。 NL 造成 !D! 點傷害。 NL 在手牌中：每當你打出攻擊牌時，打出這張牌的複製。"
     ]
   },
   "VUPShionMod:MentalMotivationChop": {
@@ -1361,18 +1363,18 @@
   },
   "VUPShionMod:MotherRosario": {
     "NAME": "水平四方斬",
-    "DESCRIPTION": "對隨機敵人造成4+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "對隨機敵人造成2+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 對所有敵人造成 vup_shion_mod:劍勢 點傷害。 NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。",
+    "DESCRIPTION": "對隨機敵人造成4+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "對隨機敵人造成2+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 對所有敵人造成 vup_shion_mod:劍勢 + 敏捷 點傷害3次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "星屑飛濺",
       "聖母詠嘆",
-      "對隨機敵人造成3+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。"
+      "對隨機敵人造成3+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。"
     ]
   },
   "VUPShionMod:BreakChop": {
     "NAME": "破勢斬",
     "DESCRIPTION": "敵人的意圖為攻擊才能打出 NL 造成 !D! 點傷害。 NL 給予 虛弱 !M! 次 。 NL 獲得 vup_shion_mod:劍勢 時，從棄牌堆返回手牌。",
-    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:劍勢 點傷害。 NL 如果敵人的意圖為攻擊，給予 易傷 和 虛弱 !M! 次。 NL 獲得 vup_shion_mod:劍勢 時，從棄牌堆返回手牌並失去1層 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "造成7+ vup_shion_mod:劍勢 點傷害。 NL 給予 易傷 和 虛弱 !M! 次。 NL 獲得 vup_shion_mod:劍勢 時，從棄牌堆返回手牌並失去1層 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "破勢斬+",
       "流光劍勢",
@@ -1383,7 +1385,7 @@
   "VUPShionMod:OppressiveSword": {
     "NAME": "劍壓",
     "DESCRIPTION": "造成 vup_shion_mod:劍勢 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍勢 。 NL 獲得1層 vup_shion_mod:硬直 ",
-    "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:劍勢 層數 !M! X倍的傷害。 NL 獲得10X 層 vup_shion_mod:劍勢 。 NL 獲得40%的 vup_shion_mod:劍勢 。 NL vup_shion_mod:魔能過載 X。",
+    "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:劍勢 層數 !M! X倍的傷害。 NL 獲得5X 層 vup_shion_mod:劍勢 。 NL 獲得40%的 vup_shion_mod:劍勢 。 NL vup_shion_mod:魔能過載 X。",
     "EXTENDED_DESCRIPTION": [
       "劍壓+",
       "月牙天沖",
@@ -1393,7 +1395,7 @@
   },
   "VUPShionMod:Strafe2": {
     "NAME": "掃射",
-    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:點射 。 NL 對所有敵人造成 !D! 點傷害。"
+    "DESCRIPTION": "使用 vup_shion_mod:浮游炮 vup_shion_mod:點射 。 NL 對所有敵人造成 !D! 點傷害。 NL 獲得 !M! 層 vup_shion_mod:矩陣充能 。"
   },
   "VUPShionMod:TacticalLink": {
     "NAME": "戰術連結",
@@ -1406,7 +1408,7 @@
   },
   "VUPShionMod:ChainPursuit": {
     "NAME": "指令：連鎖追擊",
-    "DESCRIPTION": "觸發 *追擊 vup_shion_mod:浮游炮 的被動效果時，抽一張牌。 NL 不與其他指令共存。 NL 不能疊加。"
+    "DESCRIPTION": "觸發 *追擊 vup_shion_mod:浮游炮 的被動效果時，抽一張牌並獲得1點 vup_shion_mod:超維連結 。 NL 不與其他指令共存。 NL 不能疊加。"
   },
   "VUPShionMod:AoeAnalysis": {
     "NAME": "指令：廣域解析",
@@ -1472,14 +1474,20 @@
   },
   "VUPShionMod:WideAreaLocking": {
     "NAME": "廣域鎖定",
-    "DESCRIPTION": "本回合 vup_shion_mod:自動浮游炮 的 *追擊 vup_shion_mod:浮游炮 將對所有敵人觸發效果。"
+    "DESCRIPTION": "保留 。 NL 本回合 vup_shion_mod:自動浮游炮 和主動觸發的 *追擊 vup_shion_mod:浮游炮 將對所有敵人觸發效果。"
   },
   "VUPShionMod:Strike_Shion2": {
     "NAME": "狙擊",
-    "DESCRIPTION": "對一名敵人觸發 *追擊 vup_shion_mod:浮游炮 回合開始時的效果 !M! 次。"
+    "DESCRIPTION": "對一名敵人觸發 *追擊 vup_shion_mod:浮游炮 回合開始時的效果 !M! 次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:矩陣充能 。",
+    "UPGRADE_DESCRIPTION": "對一名敵人觸發 *追擊 vup_shion_mod:浮游炮 回合開始時的效果 !M! 次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:矩陣充能 。"
   },
   "VUPShionMod:Defend_Shion2": {
     "NAME": "力場盾",
-    "DESCRIPTION": "對一名敵人觸發 *重力 vup_shion_mod:浮游炮 回合開始時的效果 !M! 次。"
+    "DESCRIPTION": "觸發 *重力 vup_shion_mod:浮游炮 的被動效果 !M! 次。",
+    "UPGRADE_DESCRIPTION": "觸發 *重力 vup_shion_mod:浮游炮 的被動效果 !M! 次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:矩陣充能 。"
+  },
+  "VUPShionMod:ReleaseFormEisluRen": {
+    "NAME": "姿態解放：伊詩露菍",
+    "DESCRIPTION": "能力效果不可疊加。 NL 每觸發5次 vup_shion_mod:加載完成 時，獲得 [E] 。"
   }
 }

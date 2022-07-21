@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 public class DistantiaAbsensquePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("DistantiaAbsensquePower");
+    public static final String POWER_ID = VUPShionMod.makeID(DistantiaAbsensquePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 public class FirePower extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("FirePower");
+    public static final String ID = VUPShionMod.makeID(FirePower.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami14.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;

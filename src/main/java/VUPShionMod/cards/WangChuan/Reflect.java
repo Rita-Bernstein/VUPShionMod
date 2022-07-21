@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.FlameBarrierPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 public class Reflect extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("Reflect");
+    public static final String ID = VUPShionMod.makeID(Reflect.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc17.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;

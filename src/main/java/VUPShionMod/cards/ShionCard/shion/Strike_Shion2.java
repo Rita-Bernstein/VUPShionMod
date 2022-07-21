@@ -48,6 +48,8 @@ public class Strike_Shion2 extends AbstractShionCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

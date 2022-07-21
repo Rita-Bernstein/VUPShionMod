@@ -1,7 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.util.AchievementShionItem;
+import VUPShionMod.msic.AchievementShionItem;
 import VUPShionMod.util.SaveHelper;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
@@ -11,8 +11,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.AchievementStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.screens.GameOverScreen;
 import com.megacrit.cardcrawl.screens.stats.AchievementGrid;
 import com.megacrit.cardcrawl.screens.stats.AchievementItem;
 import com.megacrit.cardcrawl.screens.stats.StatsScreen;

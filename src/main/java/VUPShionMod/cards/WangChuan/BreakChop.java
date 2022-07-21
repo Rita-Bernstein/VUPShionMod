@@ -37,26 +37,26 @@ public class BreakChop extends AbstractWCCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
-                if(m != null)
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                if (m != null)
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                            212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
-                for(int i = 0;i<this.magicNumber;i++)
-                addToBot(new ApplyPowerAction(m,p,new WeakPower(m,1,false)));
+                for (int i = 0; i < this.magicNumber; i++)
+                    addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false)));
                 break;
             case 2:
-                if(m != null)
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                if (m != null)
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                            212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-                if (m.getIntentBaseDmg() >= 0) {
-                    for(int i = 0;i<this.magicNumber;i++) {
-                        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false)));
-                        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false)));
-                    }
+
+                for (int i = 0; i < this.magicNumber; i++) {
+                    addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false)));
+                    addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false)));
                 }
-                addToBot(new ReducePowerAction(p,p,StiffnessPower.POWER_ID,1));
+
+                addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, 1));
                 break;
         }
     }
@@ -79,7 +79,7 @@ public class BreakChop extends AbstractWCCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(m != null) {
+        if (m != null) {
             if (m.getIntentBaseDmg() >= 0)
                 return super.canUse(p, m);
             else {
@@ -90,15 +90,15 @@ public class BreakChop extends AbstractWCCard {
                     return false;
                 }
             }
-        }else return super.canUse(p, m);
+        } else return super.canUse(p, m);
     }
 
     @Override
     public void onApplyCor() {
         addToBot(new DiscardToHandAction(this));
 
-        if(this.timesUpgraded>=2)
-            addToBot(new ReducePowerAction(AbstractDungeon.player,AbstractDungeon.player, StiffnessPower.POWER_ID,1));
+        if (this.timesUpgraded >= 2)
+            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, StiffnessPower.POWER_ID, 1));
     }
 
     @Override

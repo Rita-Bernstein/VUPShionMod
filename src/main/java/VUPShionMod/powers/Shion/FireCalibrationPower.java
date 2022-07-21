@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class FireCalibrationPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("LockOnPower");
+    public static final String POWER_ID = VUPShionMod.makeID(FireCalibrationPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

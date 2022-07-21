@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class ChaoticPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("ChaoticPower");
+    public static final String POWER_ID = VUPShionMod.makeID(ChaoticPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

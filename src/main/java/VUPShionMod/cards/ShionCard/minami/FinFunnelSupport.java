@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FinFunnelSupport extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("FinFunnelSupport");
+    public static final String ID = VUPShionMod.makeID(FinFunnelSupport.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami05.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

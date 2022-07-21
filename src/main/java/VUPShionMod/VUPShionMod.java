@@ -27,8 +27,7 @@ import VUPShionMod.relics.Shion.*;
 import VUPShionMod.relics.Wangchuan.*;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
-import VUPShionMod.util.NullApiException;
-import VUPShionMod.util.SansMeterSave;
+import VUPShionMod.ui.SansMeterSave;
 import VUPShionMod.util.SaveHelper;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
@@ -40,7 +39,6 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.codedisaster.steamworks.SteamApps;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -105,6 +103,7 @@ public class VUPShionMod implements
     public static ModLabeledToggleButton useSimpleOrbSwitch;
     public static ModLabeledToggleButton notReplaceTitleSwitch;
     public static ModLabeledToggleButton safeCampfireSwitch;
+    public static ModLabeledToggleButton safePortraitSwitch;
 
     public static Color transparent = Color.WHITE.cpy();
 
@@ -179,6 +178,7 @@ public class VUPShionMod implements
         new VUPShionMod();
     }
 
+
     @Override
     public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
         if (SaveHelper.liyezhuRelic) {
@@ -216,10 +216,18 @@ public class VUPShionMod implements
             safeSwitch();
         });
 
+        safePortraitSwitch = new ModLabeledToggleButton(CardCrawlGame.languagePack.getUIString(makeID("ModSettings")).TEXT[3], 400.0f, 720.0f - 3 * 50.0f, Settings.CREAM_COLOR, FontHelper.charDescFont, SaveHelper.safePortrait, settingsPanel,
+                (label) -> {
+                }, (button) -> {
+            SaveHelper.safePortrait = button.enabled;
+            SaveHelper.saveSettings();
+        });
+
 
         settingsPanel.addUIElement(useSimpleOrbSwitch);
         settingsPanel.addUIElement(notReplaceTitleSwitch);
         settingsPanel.addUIElement(safeCampfireSwitch);
+        settingsPanel.addUIElement(safePortraitSwitch);
 
 
         ArrayList<AbstractPlayer.PlayerClass> list = new ArrayList<>();
@@ -326,8 +334,8 @@ public class VUPShionMod implements
 
 //        加药水
         BaseMod.addPotion(PlanedModify.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, PlanedModify.POTION_ID, AbstractPlayerEnum.VUP_Shion);
-        BaseMod.addPotion(CorGladiiFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, CorGladiiFragment.POTION_ID,AbstractPlayerEnum.WangChuan);
-        BaseMod.addPotion(WordFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, WordFragment.POTION_ID,AbstractPlayerEnum.Liyezhu);
+        BaseMod.addPotion(CorGladiiFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, CorGladiiFragment.POTION_ID, AbstractPlayerEnum.WangChuan);
+        BaseMod.addPotion(WordFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, WordFragment.POTION_ID, AbstractPlayerEnum.Liyezhu);
 //        BaseMod.addPotion(TimeFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TimeFragment.POTION_ID);
         BaseMod.addPotion(FlashBang.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, FlashBang.POTION_ID);
 
@@ -345,7 +353,6 @@ public class VUPShionMod implements
         BaseMod.addPotion(Claymore.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, Claymore.POTION_ID);
         BaseMod.addPotion(UAV.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, UAV.POTION_ID);
         BaseMod.addPotion(TransitionGenerator.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TransitionGenerator.POTION_ID);
-
 
 
     }
@@ -459,6 +466,7 @@ public class VUPShionMod implements
             relic.upgrade();
         }
     }
+
 
     @Override
     public void receiveEditCharacters() {
@@ -607,6 +615,7 @@ public class VUPShionMod implements
         cards.add(new HyperDimensionalMatrix());
 
         cards.add(new WideAreaLocking());
+        cards.add(new ReleaseFormEisluRen());
 
 //        忘川
         cards.add(new HiltBash());

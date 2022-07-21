@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class CroissantEvent extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID("CroissantEvent");
+    public static final String ID = VUPShionMod.makeID(CroissantEvent.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

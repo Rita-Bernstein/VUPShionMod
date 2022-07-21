@@ -3,9 +3,9 @@
     "NAME": "Dimension Splitter: Aria",
     "FLAVOR": "“Your existence is futile.” says the otherworldly light portends impending destruction.",
     "DESCRIPTIONS": [
-      "At the start of your turn, deal #b%d ( #b2 + #yUpgrade x3) damage to a random enemy. If #yFatal, repeats and gain [E] . NL It is upgraded whenever you enter the next Act. NL Current Upgrade: #b%d.",
-      "Space-based Weapon Preloading in Act 1... NL ",
-      "Space-based Weapon Preloading in Act 1... NL "
+      "Current charge #b%d/3 。 NL You can #yRightClick to act #yOrbitalStrike . If #yFatal, repeats and gain [E] . NL Gain #b1 charge each turn. ",
+      "Orbital Strike ",
+      "Deal #yTotalUpgrade + target #b10% Maxhp damage. "
     ]
   },
   "VUPShionMod:KuroisuDetermination": {
@@ -236,7 +236,7 @@
     "NAME": "Concord: Snipe",
     "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "Each turn your first #yAttack deals twice damage. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
+      "At each start of turn, make one enemy damage received increase #b1 ,unstackable. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
       "Time&Space Synchro",
       "Your damage decreases #b%d%%, NL Damage received increase by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
       "Your damage increases #b%d%%, NL Damage received decrease by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
@@ -260,19 +260,19 @@
     "NAME": "Concord: Recharge",
     "FLAVOR": "Leg-wearing gear that corrdinates parameters among universes to promote environmental adaptability.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain [E] [E]. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
+      "At the start of each combat, gain [E] [E] . NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
       "Time&Space Synchro",
       "Your damage decreases by #b%d%%, NL Damage received increases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
       "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
       "Matrix Synchro",
-      "For every funnel level at #b5 , gain #b1 #y HyperdimentionalLink at each of your turn."
+      "For every funnel level at #b5 , gain #b1 #yHyperdimentional #yLink at each of your turn."
     ]
   },
   "VUPShionMod:FruitCake": {
     "NAME": "Fruit Cake",
     "FLAVOR": "The stall... What on earth is wrong with it?",
     "DESCRIPTIONS": [
-      "At the start of your turn,if your HP is at or above 50%,gain [E] . NL Otherwise,no longer works in this combat."
+      "At the start of your turn,if your HP is at or above 50%, gain [E] . NL Otherwise,no longer works in this combat."
     ]
   },
 
@@ -280,7 +280,7 @@
     "NAME": "Prototype: Empty Goblet",
     "FLAVOR": "Semi-permanent energy source that linked to your inner Magia circuit. It damages acting faculty in exchange of enormous output of Magia.",
     "DESCRIPTIONS": [
-      "At the start of your turn, lose [E]. NL At the end of your turn, lose #b5 #yMagiam #yObruor."
+      "At the start of your turn, lose [E] . NL At the end of your turn, lose #b5 #yMagiam #yObruor."
     ]
   },
   "VUPShionMod:MagiaCup": {
@@ -306,154 +306,154 @@
   },
 
   "VUPShionMod:TrainingScabbard": {
-    "NAME": "训练用剑鞘",
-    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "NAME": "Training Scabbard",
+    "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
-      " #y精英 或 #y首领 战后，随机 #y升级 牌组中的一张攻击牌。"
+      "After any #yElite or #yBoss fight, #yUpgrade 1 random Attack in your deck."
     ]
   },
   "VUPShionMod:TrainingLightsaber": {
-    "NAME": "训练用光剑",
-    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "NAME": "Trainging Saber",
+    "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
-      "每场战斗开始时, #y力量 #b%s 。 #y精英 或 #y首领 战后，将效果 #b+1 。"
+      "Start each combat with #b%s #Strength. After any #yElite or #yBoss fight, increase the effect by #b1."
     ]
   },
   "VUPShionMod:TrainingPropeller": {
-    "NAME": "训练用推进器",
-    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "NAME": "Training Propeller",
+    "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
-      "每场战斗开始时, #y敏捷 #b%s 。 #y精英 或 #y首领 战后，将效果 #b+1 。"
+      "Start each combat with #b%s #Dexterity. After any #yElite or #yBoss fight, increase the effect by #b1."
     ]
   },
   "VUPShionMod:FishingRod": {
-    "NAME": "钓鱼佬的竿",
-    "FLAVOR": "似乎是某人的钓鱼竿，但年代看上去很久远了。",
+    "NAME": "Fishing Rod",
+    "FLAVOR": "Someone's fishing rod, but the hook does not seem to mean for fishing.",
     "DESCRIPTIONS": [
-      "进入 #y休息处 时，随机获得 #b0-2 瓶药水。"
+      "Whenever you enter a #yRestsite, obtain #b0-2 random potion."
     ]
   },
   "VUPShionMod:PodBot": {
-    "NAME": "快乐的pod机器人",
-    "FLAVOR": "Anastasia仿制的微型辅助机器人，为什么会在这里？",
+    "NAME": "Happy Pod Bot",
+    "FLAVOR": "A micro supporting robot made by Anastasia, but why is it here?",
     "DESCRIPTIONS": [
-      "每回合开始时给予随机一名敌人 #b1 层 #y虚弱 。"
+      "At the start of each turn, apply #b1 #yWeak to a random enemy."
     ]
   },
   "VUPShionMod:OldFinFunnel": {
-    "NAME": "老旧的浮游炮",
-    "FLAVOR": "应该是紫音的浮游炮，但看上去似乎很旧了。",
+    "NAME": "Worn Funnel",
+    "FLAVOR": "Should be one from Shion's collection, pretty old but unpredictably functional.",
     "DESCRIPTIONS": [
-      "每回合开始时，对随机敌人造成 #b4 ，获得 #b4 点 #y格挡 。"
+      "At the start of each turn, deal #b4 damage to a random enemy and gain #b4 #yBlock."
     ]
   },
   "VUPShionMod:DragonScales": {
-    "NAME": "龙龙的旧鳞",
-    "FLAVOR": "似乎是龙龙的鳞片，但年代看上去很久远了。",
+    "NAME": "Dragon Scales",
+    "FLAVOR": "A torn-off scale from a...dragon? Haven't expected the planes are so much intertwined...",
     "DESCRIPTIONS": [
-      "每当你在战斗中失去生命，获得 #b3 点 #y格挡 。"
+      "Whenever you lose HP during combat, gain #b3 #yBlock."
     ]
   },
   "VUPShionMod:WingsClergy": {
-    "NAME": "圣职者的残翼",
-    "FLAVOR": "似乎是蓝蓝的翅膀的一部分，但看上去似乎很旧了。",
+    "NAME": "Clergy's Wing",
+    "FLAVOR": "It has never flied, for those walking on earth should not covet the sky.",
     "DESCRIPTIONS": [
-      "每场战斗开始时，获得 #b3 层 #y再生 。"
+      "Start each combat with #b3 #yRegen."
     ]
   },
   "VUPShionMod:OldOmamori": {
-    "NAME": "老旧的全新御守",
-    "FLAVOR": "背面写着：“这次不会卡二了，大概”。似乎是龙龙的笔迹。",
+    "NAME": "Old New Omamori",
+    "FLAVOR": "You find the following on the back side: Now it may not be as disappointing as its kin.",
     "DESCRIPTIONS": [
-      "拾起时，移除 #b2 张初始攻击牌。"
+      "Upon pickup, remove #b2 starter Attacks."
     ]
   },
   "VUPShionMod:BlankMap": {
-    "NAME": "老旧的空白地图",
-    "FLAVOR": "背面写着：“我们需要更多的，变数”。似乎是龙龙的笔迹。",
+    "NAME": "Blank Map",
+    "FLAVOR": "The legend says: Embrace the unknown, for the variables are the only thing we can count on.",
     "DESCRIPTIONS": [
-      "进入问号房时，获得 #b18 金币。"
+      "Whenever you enter a ? room, gain #b18 gold."
     ]
   },
   "VUPShionMod:CombatNotes": {
-    "NAME": "小棉的战斗笔记",
-    "FLAVOR": "似乎是小棉的笔迹，记录了各种常见怪物。但看上去似乎很旧了 。",
+    "NAME": "Minami's Notes",
+    "FLAVOR": "A bestiary on all kinds of the enemies in the Spire, written in someone's own hands.",
     "DESCRIPTIONS": [
-      "在普通战斗中，每回合开始时获得 [E] 。"
+      "In normal combat, gain [E] at the start of your turn."
     ]
   },
   "VUPShionMod:AttackCircuit": {
-    "NAME": "植入型攻击回路",
-    "FLAVOR": "Anastasia特化改造组件，为什么会在这里？",
+    "NAME": "Offensive Circuit",
+    "FLAVOR": "Modifying module from Anastasia, but why is it here?",
     "DESCRIPTIONS": [
-      "拾起时，选择移除一张 #y攻击牌 。 NL 在每场战斗开始时，打出这张牌的复制。",
-      "每场战斗开始时将 #y%s 打出。",
-      "选择一张攻击牌在战斗开始时打出"
+      "Upon pickup, remove an #yAttack. NL At the start of each combat, play 1 copy of this Attack.",
+      "At the start of each combat, play #y%s.",
+      "Choose an Attack to play at the start of each combat."
     ]
   },
   "VUPShionMod:TotipotentCircuit": {
-    "NAME": "植入型全能回路",
-    "FLAVOR": "Anastasia进阶改造组件，为什么会在这里？",
+    "NAME": "Versatile Circuit",
+    "FLAVOR": "Advanced modifying module from Anastasia, but why is it here?",
     "DESCRIPTIONS": [
-      "拾起时，选择移除一张牌。 NL 在每场战斗开始时，打出这张牌的复制。",
-      "每场战斗开始时将 #y%s 打出。",
-      "选择一张牌在战斗开始时打出"
+      "Upon pickup, remove a card. NL At the start of each combat, play 1 copy of this card.",
+      "At the start of each combat, play #y%s.",
+      "Choose a card to play at the start of each combat."
     ]
   },
   "VUPShionMod:MedicalCollar": {
-    "NAME": "应急医疗项圈",
-    "FLAVOR": "Anastasia训练场的装备，为什么会在这里？",
+    "NAME": "Emergency Medical Collar",
+    "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
-      "每当抽到 #y状态 或 #y诅咒 牌时，抽一张牌。"
+      "Whenever you draw 1 #yStatus or #yCurse card, draw 1 card."
     ]
   },
   "VUPShionMod:CardRecorder": {
-    "NAME": "怀表型记牌器",
-    "FLAVOR": "指针似乎在乱动，应该是坏掉了。",
+    "NAME": "Deck Tracker",
+    "FLAVOR": "The pointer is trembling and twirling.",
     "DESCRIPTIONS": [
-      "若你在某个回合打出的牌大于等于 #b6 张，则在你的下个回合开始时额外抽 #b3 张牌。"
+      "If you play no less than #b6 cards in a single turn, draw #b3 additional cards at the start of the next turn."
     ]
   },
   "VUPShionMod:Memento": {
-    "NAME": "扭曲的记忆碎片",
-    "FLAVOR": "似乎是祈言凝结的实体，但是被某种意志扭曲成了难以理解的结构。",
+    "NAME": "Momento Mori",
+    "FLAVOR": "It seems to be real, this realized prayer...but still too contorted to be understood.",
     "DESCRIPTIONS": [
-      "每回合开始时获得 [E] , 失去 #b2 点生命。"
+      "At the start of your turn, gain [E] and lose #b2 HP."
     ]
   },
   "VUPShionMod:TimeConfetti": {
-    "NAME": "扭曲的时间碎片",
-    "FLAVOR": "似乎包含了龙龙的力量，但是被某种意志扭曲成了难以理解的结构。",
+    "NAME": "Confetti of the Time",
+    "FLAVOR": "Isn't it comical to call it such a name? We try our best to gloss over the cruelty of the time.",
     "DESCRIPTIONS": [
-      "每回合开始时失去 [E] 。 每场战斗开始时获得 #y回响形态 。"
+      "At the start of your turn, lose [E] . Start each combat with the effect of #yEcho #yForm."
     ]
   },
   "VUPShionMod:BladeFragment": {
-    "NAME": "扭曲的剑刃碎片",
-    "FLAVOR": "似乎在散发着剑势力量，但是被某种意志扭曲成了难以理解的结构。",
+    "NAME": "Shredded Blade.",
+    "FLAVOR": "It was an edge to cut the whirlwind into two, it is now a heap of powder to be sent away by the breeze.",
     "DESCRIPTIONS": [
-      "每场战斗开始时失去 [E] [E] [E] 。 NL 每场战斗开始时打出并 #y消耗 你牌组中的所有基础攻击和防御牌。"
+      "At the start of each combat, lose [E] [E] [E] and play to #yExhaust all starter cards equivalent to Strike and Defend."
     ]
   },
   "VUPShionMod:TimeReversalBullet": {
-    "NAME": "时间逆回之弹",
-    "FLAVOR": "这是一息尚存的她，能为自己善良的妹妹提供的最后一次反击。",
+    "NAME": "Reversed Bullet",
+    "FLAVOR": "This is all that she can provide her little good sister to put up the last fight back.",
     "DESCRIPTIONS": [
-      "下次将要死亡时免死并回复 #b1 点生命。 NL 击杀所有非首领敌人。 NL 仅能生效一次。"
+      "Prevent the next time you would die and heal #b1 HP. NL Kill ALL non-Boss enemies. NL It works only once."
     ]
   },
   "VUPShionMod:DemonSword": {
-    "NAME": "魔王佩剑之影",
-    "FLAVOR": "这是背道而驰的她，能为自己无助的姐姐提供的最后一份帮助。",
+    "NAME": "Umbra of the Sword",
+    "FLAVOR": "This is all the assistance she can offer to her helpless sister to...",
     "DESCRIPTIONS": [
-      "每当你造成 #y攻击伤害 时，获得 #b1 点 #y临时力量 。"
+      "Whenever you deal damage with #yAttacks, gain #b1 temporary #yStrength."
     ]
   },
   "VUPShionMod:QueenShield": {
-    "NAME": "深海女神之盾",
-    "FLAVOR": "这是自认卑微的她，能为自己天真的姐姐提供的最后一层保护。",
+    "NAME": "Thetis Shield",
+    "FLAVOR": "This is all the protection she can offer to her naive sister to stave off those to come.",
     "DESCRIPTIONS": [
-      "每当你受到伤害时，立刻获得 #b6 点 #y格挡。"
+      "Whenever you receive damage, gain #b6 #yBlock."
     ]
   }
 }

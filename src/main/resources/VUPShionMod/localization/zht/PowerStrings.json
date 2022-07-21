@@ -51,6 +51,13 @@
       " 點 #y格擋 。"
     ]
   },
+  "VUPShionMod:DeploymentOfDefenseSystemPower2": {
+    "NAME": "防禦系統全展開",
+    "DESCRIPTIONS": [
+      "在這個回合，你每打出一張牌，就獲得 #b",
+      " 層 #y超維連結 。"
+    ]
+  },
   "VUPShionMod:AnastasiaCorePower": {
     "NAME": "Anastasia核心",
     "DESCRIPTIONS": [
@@ -67,7 +74,7 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "姿態解放-克洛伊斯",
     "DESCRIPTIONS": [
-      "你的回合結束時，將 #b%d 張 #y快速篩選 加入抽牌堆頂部。"
+      "每打出一張牌，獲得 #b%d 點 #y超維連結 。"
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
@@ -129,7 +136,13 @@
   "VUPShionMod:LockOnPower": {
     "NAME": "鎖定",
     "DESCRIPTIONS": [
-      "這名敵人受到的攻擊傷害提高 #b%d 。"
+      "這名敵人受到的 #y攻擊 傷害提高 #b%d 。"
+    ]
+  },
+  "VUPShionMod:LockOnPower2": {
+    "NAME": "鎖定",
+    "DESCRIPTIONS": [
+      "這名敵人受到傷害時，你獲得 #b%d 層 #y超維連結 。"
     ]
   },
   "VUPShionMod:AttackOrderAlphaPower": {
@@ -840,7 +853,7 @@
   "VUPShionMod:ChainPursuitPower": {
     "NAME": "指令：連鎖追擊",
     "DESCRIPTIONS": [
-      "觸發 #y追擊浮游炮 的被動效果時，抽一張牌。 NL 不與其他指令共存。 NL 不能疊加。"
+      "觸發 #y追擊浮游炮 的被動效果時，抽一張牌並獲得 #b1 點 #y超維連結。 NL 不與其他指令共存。 NL 不能疊加。"
     ]
   },
   "VUPShionMod:AoeAnalysisPower": {
@@ -904,14 +917,27 @@
   "VUPShionMod:WideAreaLockingPower": {
     "NAME": "廣域鎖定",
     "DESCRIPTIONS": [
-      "本回合 #y自動浮游炮 的 #y追擊浮游炮 將對所有敵人觸發效果。",
-      "下 #b%d 個回合 #y自動浮游炮 的 #y追擊浮游炮 將對所有敵人觸發效果。"
+      "本回合 #y自動浮游炮 和主動觸發的 #y追擊浮游炮 將對所有敵人觸發效果。",
+      "下 #b%d 個回合 #y自動浮游炮 和主動觸發的 #y追擊浮游炮 將對所有敵人觸發效果。"
     ]
   },
   "VUPShionMod:FireCalibrationPower": {
     "NAME": "火力校準",
     "DESCRIPTIONS": [
       "其受到的傷害提高 #b%d 。"
+    ]
+  },
+  "VUPShionMod:DespairPower": {
+    "NAME": "逐步靠近的絕望",
+    "DESCRIPTIONS": [
+      "#r有什麼要發生了 NL #r必須抓緊時間 NL 本回合後將進入時之蟲戰鬥。",
+      "#r有什麼要發生了 NL #r必須抓緊時間 NL #b%d 回合後將進入時之蟲戰鬥。"
+    ]
+  },
+  "VUPShionMod:ReleaseFormEisluRenPower": {
+    "NAME": "姿態解放：伊詩露菍",
+    "DESCRIPTIONS": [
+      "每觸發 #b5 次 #y加載完成 時，獲得 #b%d [E] 。"
     ]
   }
 }

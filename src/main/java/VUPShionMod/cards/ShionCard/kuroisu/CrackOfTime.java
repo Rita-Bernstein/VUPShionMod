@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class CrackOfTime extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("CrackOfTime");
+    public static final String ID = VUPShionMod.makeID(CrackOfTime.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu08.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;

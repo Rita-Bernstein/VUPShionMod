@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class BoundaryOfChaos extends AbstractImageEvent {
-    public static final String ID = VUPShionMod.makeID("BoundaryOfChaos");
+    public static final String ID = VUPShionMod.makeID(BoundaryOfChaos.class.getSimpleName());
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;

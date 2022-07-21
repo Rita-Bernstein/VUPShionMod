@@ -1,4 +1,4 @@
-package VUPShionMod.util;
+package VUPShionMod.msic;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;

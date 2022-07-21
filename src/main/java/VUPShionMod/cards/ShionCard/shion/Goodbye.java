@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Goodbye extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("Goodbye");
+    public static final String ID = VUPShionMod.makeID(Goodbye.class.getSimpleName());
     public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy18.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;

@@ -36,7 +36,7 @@ import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.powers.*;
 
 public class StructureDissectionPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("StructureDissectionPower");
+    public static final String POWER_ID = VUPShionMod.makeID(StructureDissectionPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -18,11 +18,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MinionPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 public class DimensionSplitterAria extends AbstractShionRelic implements ClickableRelic {
-    public static final String ID = VUPShionMod.makeID("DimensionSplitterAria");
+    public static final String ID = VUPShionMod.makeID(DimensionSplitterAria.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/DimensionSplitterAria.png";
     private static final String OUTLINE_PATH = "img/relics/outline/DimensionSplitterAria.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
@@ -36,18 +37,20 @@ public class DimensionSplitterAria extends AbstractShionRelic implements Clickab
 
     @Override
     public void onRightClick() {
-        if(this.counter >=3){
-            this.pulse = true;
-            addToBot(new TriggerDimensionSplitterAction());
-            this.counter = 0;
-
-
-        }
+        if (!AbstractDungeon.actionManager.turnHasEnded && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
+            if (this.counter >= 3) {
+                this.pulse = true;
+                addToBot(new TriggerDimensionSplitterAction());
+                this.counter = 0;
+                setDescriptionAfterLoading();
+            }
     }
 
     @Override
     public void atBattleStart() {
         this.counter = 0;
+        this.pulse = false;
+        setDescriptionAfterLoading();
     }
 
     @Override
@@ -68,9 +71,7 @@ public class DimensionSplitterAria extends AbstractShionRelic implements Clickab
         if (this.counter < 3)
             this.counter++;
 
-
         this.pulse = this.counter >= 3;
-
         setDescriptionAfterLoading();
     }
 

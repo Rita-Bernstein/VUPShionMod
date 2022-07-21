@@ -18,7 +18,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class RosaSpinaque extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("RosaSpinaque");
+    public static final String ID = VUPShionMod.makeID(RosaSpinaque.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc32.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

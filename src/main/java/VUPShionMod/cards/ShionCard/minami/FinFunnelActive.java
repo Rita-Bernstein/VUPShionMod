@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainFinFunnelChargeAction;
 import VUPShionMod.actions.Shion.TriggerAllFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.character.Shion;
@@ -27,16 +28,14 @@ public class FinFunnelActive extends AbstractShionMinamiCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
-                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
-
-        if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
-            addToBot(new TriggerAllFinFunnelPassiveAction(m));
-        }
-
+                125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
+        addToBot(new TriggerAllFinFunnelPassiveAction(m));
+        addToBot(new GainFinFunnelChargeAction(this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

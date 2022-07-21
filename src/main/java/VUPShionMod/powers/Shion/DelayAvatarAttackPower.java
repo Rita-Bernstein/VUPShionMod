@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class DelayAvatarAttackPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("DelayAvatarAttackPower");
+    public static final String POWER_ID = VUPShionMod.makeID(DelayAvatarAttackPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

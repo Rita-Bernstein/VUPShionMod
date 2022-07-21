@@ -47,7 +47,7 @@ import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import java.util.ArrayList;
 
 public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDeathRelic {
-    public static final String ID = VUPShionMod.makeID("AnastasiaNecklace");
+    public static final String ID = VUPShionMod.makeID(AnastasiaNecklace.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/AnastasiaNecklace.png";
     private static final String OUTLINE_PATH = "img/relics/outline/AnastasiaNecklace.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

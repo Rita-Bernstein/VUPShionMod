@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BlackHand extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("BlackHand");
+    public static final String ID = VUPShionMod.makeID(BlackHand.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu11.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

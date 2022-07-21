@@ -6,6 +6,7 @@ import VUPShionMod.actions.Unique.SummonMinionAction;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.patches.SpecialCombatPatches;
 import VUPShionMod.powers.Monster.PlagaAMundo.*;
+import VUPShionMod.powers.Monster.TimePortal.DespairPower;
 import VUPShionMod.powers.Unique.*;
 import VUPShionMod.util.SaveHelper;
 import basemod.abstracts.CustomMonster;
@@ -33,7 +34,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class PlagaAMundoMinion extends CustomMonster {
-    public static final String ID = VUPShionMod.makeID("PlagaAMundoMinion");
+    public static final String ID = VUPShionMod.makeID(PlagaAMundoMinion.class.getSimpleName());
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
@@ -308,6 +309,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     }
 
     private void createBoss() {
+        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player, DespairPower.POWER_ID));
         addToBot(new TalkAction(true, DIALOG[0], 1.0f, 5.0f));
         addToBot(new CustomWaitAction(6.0f));
         addToBot(new AbstractGameAction() {

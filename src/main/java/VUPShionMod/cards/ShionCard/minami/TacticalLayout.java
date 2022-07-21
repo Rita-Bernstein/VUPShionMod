@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TacticalLayout extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("TacticalLayout");
+    public static final String ID = VUPShionMod.makeID(TacticalLayout.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami04.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

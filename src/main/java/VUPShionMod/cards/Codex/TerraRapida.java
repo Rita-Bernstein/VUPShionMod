@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TerraRapida extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("TerraRapida");
+    public static final String ID = VUPShionMod.makeID(TerraRapida.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/di.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

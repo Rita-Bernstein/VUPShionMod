@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 public class OpticalCamouflage extends AbstractShionRelic {
-    public static final String ID = VUPShionMod.makeID("OpticalCamouflage");
+    public static final String ID = VUPShionMod.makeID(OpticalCamouflage.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/OpticalCamouflage.png";
     private static final String OUTLINE_PATH = "img/relics/outline/OpticalCamouflage.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

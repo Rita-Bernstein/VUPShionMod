@@ -23,7 +23,7 @@ import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 import java.util.ArrayList;
 
 public class KuroisuDetermination extends AbstractShionRelic implements ClickableRelic {
-    public static final String ID = VUPShionMod.makeID("KuroisuDetermination");
+    public static final String ID = VUPShionMod.makeID(KuroisuDetermination.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/KuroisuDetermination.png";
     private static final String OUTLINE_PATH = "img/relics/outline/KuroisuDetermination.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));

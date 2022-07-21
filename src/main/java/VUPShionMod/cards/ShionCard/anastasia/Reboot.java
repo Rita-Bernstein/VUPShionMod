@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Reboot extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID("Reboot");
+    public static final String ID = VUPShionMod.makeID(Reboot.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia05.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 @NoPools
 public class GravityFinFunnelUpgrade extends AbstractVUPShionCard {
-    public static final String ID = VUPShionMod.makeID("GravityUpgrade");
+    public static final String ID = VUPShionMod.makeID(GravityFinFunnelUpgrade.class.getSimpleName());
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/colorless/GravityFinFunnelUpgrade.png");

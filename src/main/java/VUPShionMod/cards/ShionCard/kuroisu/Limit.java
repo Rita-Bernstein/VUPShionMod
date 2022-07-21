@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 
 public class Limit extends AbstractShionKuroisuCard {
-    public static final String ID = VUPShionMod.makeID("Limit");
+    public static final String ID = VUPShionMod.makeID(Limit.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu13.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.ATTACK;
@@ -24,7 +25,7 @@ public class Limit extends AbstractShionKuroisuCard {
 
     public Limit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.baseDamage = 12;
 
         this.isMultiDamage = true;
@@ -39,6 +40,7 @@ public class Limit extends AbstractShionKuroisuCard {
             }
         }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
+        addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
     }
 
     public AbstractCard makeCopy() {

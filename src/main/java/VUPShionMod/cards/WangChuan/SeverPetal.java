@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SeverPetal extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("SeverPetal");
+    public static final String ID = VUPShionMod.makeID(SeverPetal.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc12.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -28,16 +28,17 @@ public class SeverPetal extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 10;
         this.magicNumber = this.baseMagicNumber = 4;
-        this.secondaryM = this.baseSecondaryM = 5;
+        this.secondaryM = this.baseSecondaryM = 8;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
 
         int d = this.magicNumber;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-            d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+            d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount + this.secondaryM;
         this.baseDamage = d;
 
         calculateCardDamage(m);
@@ -57,9 +58,8 @@ public class SeverPetal extends AbstractWCCard {
         this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
 
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
-        addToBot(new ApplyStiffnessAction(2));
 
+        addToBot(new ApplyStiffnessAction(2));
         addToBot(new DrawCardAction(1));
     }
 
@@ -129,7 +129,7 @@ public class SeverPetal extends AbstractWCCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(7);
-                upgradeSecondM(2);
+                upgradeSecondM(8);
             }
 
         }

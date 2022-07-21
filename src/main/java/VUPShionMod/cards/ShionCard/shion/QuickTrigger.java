@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class QuickTrigger extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("QuickTrigger");
+    public static final String ID = VUPShionMod.makeID(QuickTrigger.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy25.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -18,7 +18,7 @@ public class QuickTrigger extends AbstractShionCard {
 
     public QuickTrigger() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

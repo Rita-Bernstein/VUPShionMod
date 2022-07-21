@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 public class TeamWork extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID("TeamWork");
+    public static final String ID = VUPShionMod.makeID(TeamWork.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia06.png");
     private static final int COST = 3;
     public static final CardType TYPE = CardType.SKILL;

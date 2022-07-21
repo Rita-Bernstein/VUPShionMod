@@ -4,14 +4,8 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.AbstractShionRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-
-import java.util.ArrayList;
 
 public class BlankMap extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(BlankMap.class.getSimpleName());

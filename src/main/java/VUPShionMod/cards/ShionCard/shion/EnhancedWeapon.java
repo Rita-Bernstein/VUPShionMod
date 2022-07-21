@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class EnhancedWeapon extends AbstractShionCard {
-    public static final String ID = VUPShionMod.makeID("EnhancedWeapon");
+    public static final String ID = VUPShionMod.makeID(EnhancedWeapon.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy19.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;

@@ -1,4 +1,4 @@
-package VUPShionMod.util;
+package VUPShionMod.ui;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.FinFunnelMinionAction;

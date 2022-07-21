@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import VUPShionMod.VUPShionMod;
 
 public class CrackOfTimePower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("CrackOfTimePower");
+    public static final String POWER_ID = VUPShionMod.makeID(CrackOfTimePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

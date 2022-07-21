@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BlueRose extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("BlueRose");
+    public static final String ID = VUPShionMod.makeID(BlueRose.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz15.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.SKILL;

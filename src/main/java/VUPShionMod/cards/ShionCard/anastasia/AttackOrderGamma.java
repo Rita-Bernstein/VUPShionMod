@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class AttackOrderGamma extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID("AttackOrderGamma");
+    public static final String ID = VUPShionMod.makeID(AttackOrderGamma.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia03.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;

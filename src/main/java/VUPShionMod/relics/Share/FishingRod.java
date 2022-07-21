@@ -4,19 +4,9 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.AbstractShionRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.ObtainPotionEffect;
-import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
-
-import java.util.ArrayList;
 
 public class FishingRod extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(FishingRod.class.getSimpleName());
@@ -39,8 +29,8 @@ public class FishingRod extends AbstractShionRelic {
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        flash();
         if (room instanceof com.megacrit.cardcrawl.rooms.RestRoom) {
+            flash();
             if (AbstractDungeon.player.hasRelic("Sozu")) {
                 AbstractDungeon.player.getRelic("Sozu").flash();
             } else {

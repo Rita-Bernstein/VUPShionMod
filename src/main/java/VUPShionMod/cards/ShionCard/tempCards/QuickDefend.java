@@ -36,13 +36,7 @@ public class QuickDefend extends AbstractVUPShionCard {
         vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
 
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(2);
-        }
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -52,5 +46,13 @@ public class QuickDefend extends AbstractVUPShionCard {
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
+    }
+
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            upgradeBlock(1);
+        }
     }
 }

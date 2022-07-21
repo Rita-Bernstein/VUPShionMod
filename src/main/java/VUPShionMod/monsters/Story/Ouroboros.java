@@ -36,7 +36,7 @@ import com.megacrit.cardcrawl.powers.*;
 import java.util.ArrayList;
 
 public class Ouroboros extends CustomMonster {
-    public static final String ID = VUPShionMod.makeID("Ouroboros");
+    public static final String ID = VUPShionMod.makeID(Ouroboros.class.getSimpleName());
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;

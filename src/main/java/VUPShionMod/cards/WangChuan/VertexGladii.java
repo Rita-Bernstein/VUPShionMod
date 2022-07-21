@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class VertexGladii extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("VertexGladii");
+    public static final String ID = VUPShionMod.makeID(VertexGladii.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc09.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -52,11 +52,8 @@ public class VertexGladii extends AbstractWCCard {
 
         addToBot(new GainBlockAction(p, p, this.block));
 
-        if (upgraded)
-            addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, timesUpgraded >= 2 ? 8 : 5)));
 
-
-        addToBot(new ApplyStiffnessAction(3));
+        addToBot(new ApplyStiffnessAction(timesUpgraded >= 2 ? 2 : 3));
 
         addToBot(new DrawCardAction(2));
 
@@ -137,7 +134,7 @@ public class VertexGladii extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeBaseCost(2);
+                upgradeBaseCost(1);
                 upgradeMagicNumber(2);
             }
         }

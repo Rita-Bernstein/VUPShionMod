@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.function.Supplier;
 
 public class MorsLibraque extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("MorsLibraque");
+    public static final String ID = VUPShionMod.makeID(MorsLibraque.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc33.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;

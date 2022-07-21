@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.function.Consumer;
 
 public class GensBombardae extends AbstractWCCard {
-    public static final String ID = VUPShionMod.makeID("GensBombardae");
+    public static final String ID = VUPShionMod.makeID(GensBombardae.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc53.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

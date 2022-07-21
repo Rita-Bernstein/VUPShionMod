@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 
 public class SuperCharge extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("SuperCharge");
+    public static final String ID = VUPShionMod.makeID(SuperCharge.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami08.png");
     private static final int COST = 0;
     public static final CardType TYPE = CardType.SKILL;
@@ -20,8 +20,8 @@ public class SuperCharge extends AbstractShionMinamiCard {
 
     public SuperCharge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

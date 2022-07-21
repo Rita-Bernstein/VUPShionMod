@@ -20,6 +20,7 @@ public class SaveHelper {
     public static boolean useSimpleOrb = false;
     public static boolean notReplaceTitle = false;
     public static boolean safeCampfire = false;
+    public static boolean safePortrait = false;
 
     public static boolean liyezhuRelic = false;
     public static boolean fightSpecialBoss = false;
@@ -34,6 +35,7 @@ public class SaveHelper {
             config.setBool(CardCrawlGame.saveSlot + "useSimpleOrb", useSimpleOrb);
             config.setBool(CardCrawlGame.saveSlot + "notReplaceTitle", notReplaceTitle);
             config.setBool(CardCrawlGame.saveSlot + "safeCampfire", safeCampfire);
+            config.setBool(CardCrawlGame.saveSlot + "safePortrait", safePortrait);
             config.setBool(CardCrawlGame.saveSlot + "liyezhuRelic", liyezhuRelic);
             config.setBool(CardCrawlGame.saveSlot + "isHardMod", isHardMod);
 
@@ -51,6 +53,7 @@ public class SaveHelper {
             useSimpleOrb = config.getBool(CardCrawlGame.saveSlot + "useSimpleOrb");
             notReplaceTitle = config.getBool(CardCrawlGame.saveSlot + "notReplaceTitle");
             safeCampfire = config.getBool(CardCrawlGame.saveSlot + "safeCampfire");
+            safePortrait = config.getBool(CardCrawlGame.saveSlot + "safePortrait");
             liyezhuRelic = config.getBool(CardCrawlGame.saveSlot + "liyezhuRelic");
             isHardMod = config.getBool(CardCrawlGame.saveSlot + "isHardMod");
 

@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import java.util.ArrayList;
 
 public class HyperdimensionalLinksPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("HyperdimensionalLinksPower");
+    public static final String POWER_ID = VUPShionMod.makeID(HyperdimensionalLinksPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

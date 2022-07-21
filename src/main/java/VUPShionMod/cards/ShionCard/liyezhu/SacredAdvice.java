@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SacredAdvice extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("SacredAdvice");
+    public static final String ID = VUPShionMod.makeID(SacredAdvice.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz02.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
@@ -19,7 +19,7 @@ public class SacredAdvice extends AbstractShionLiyezhuCard {
 
     public SacredAdvice() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -46,6 +46,7 @@ public class SacredAdvice extends AbstractShionLiyezhuCard {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeMagicNumber(-1);
         }
     }
 }

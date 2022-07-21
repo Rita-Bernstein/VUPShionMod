@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import VUPShionMod.VUPShionMod;
 
 public class AttackOrderDeltaPower extends AbstractShionPower {
-    public static final String POWER_ID = VUPShionMod.makeID("AttackOrderDeltaPower");
+    public static final String POWER_ID = VUPShionMod.makeID(AttackOrderDeltaPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

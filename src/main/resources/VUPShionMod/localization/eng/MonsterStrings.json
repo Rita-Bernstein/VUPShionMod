@@ -37,10 +37,10 @@
   },
   "VUPShionMod:Ouroboros": {
     "MOVES": [
-      "Ouroboros（Defective）",
+      "Worm of the Time（Defective）",
       "Annihilating Canon"
     ],
-    "NAME": "Ouroboros",
+    "NAME": "Worm of the Time",
     "DIALOG": [
       ""
     ]
@@ -61,7 +61,7 @@
     ],
     "NAME": "Rita Bernstein",
     "DIALOG": [
-      "……YOU JERKS……"
+      "...YOU JERKS..."
     ]
   }
 }

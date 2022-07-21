@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class BattlefieldHeritage extends AbstractShionMinamiCard {
-    public static final String ID = VUPShionMod.makeID("BattlefieldHeritage");
+    public static final String ID = VUPShionMod.makeID(BattlefieldHeritage.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami12.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;

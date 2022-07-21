@@ -56,8 +56,27 @@ public class SkinCharButton {
 
     }
 
-    public void setPos(int index) {
-        if (Math.abs(this.index - index) > 3) {
+    public void setPos(int selectedCount, int listSize) {
+        boolean display = false;
+        int distance = 0;
+
+        if (Math.abs(this.index - selectedCount) < 3) {
+            display = true;
+            distance = this.index - selectedCount;
+        }
+
+        if (!display && listSize >= 5 && selectedCount < 2 && selectedCount + listSize - this.index < 3) {
+            display = true;
+            distance = -Math.abs(listSize - this.index + selectedCount);
+        }
+
+        if (!display && listSize >= 5 && selectedCount > listSize - 2 && listSize - selectedCount + this.index < 3) {
+            display = true;
+            distance = Math.abs(listSize - selectedCount + this.index);
+        }
+
+
+        if (!display) {
             this.scale = 0.0f;
             this.current_x = 0.0f;
             this.current_y = 0.0f;
@@ -66,26 +85,26 @@ public class SkinCharButton {
         }
 
 
-        this.scale = MathHelper.uiLerpSnap(this.scale, (1.0f - 0.3f * Math.abs(this.index - index))
+        this.scale = MathHelper.uiLerpSnap(this.scale, (1.0f - 0.3f * Math.abs(distance))
                 * CharacterSelectScreenPatches.skinManager.scale);
 
-        if (this.index - index > 0) {
-            this.current_x = MathHelper.uiLerpSnap(this.current_x, 1.5f * -Math.abs(this.index - index)
+        if (distance > 0) {
+            this.current_x = MathHelper.uiLerpSnap(this.current_x, 1.5f * -Math.abs(distance)
                     * 120.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale);
 
 
-            this.current_y = MathHelper.uiLerpSnap(this.current_y, 1.5f * (this.index - index)
+            this.current_y = MathHelper.uiLerpSnap(this.current_y, 1.5f * (distance)
                     * 40.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale);
         } else {
-            this.current_x = MathHelper.uiLerpSnap(this.current_x, 1.5f * -Math.abs(this.index - index)
+            this.current_x = MathHelper.uiLerpSnap(this.current_x, 1.5f * -Math.abs(distance)
                     * 100.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale);
 
 
-            this.current_y = MathHelper.uiLerpSnap(this.current_y, 1.5f * (this.index - index)
+            this.current_y = MathHelper.uiLerpSnap(this.current_y, 1.5f * (distance)
                     * 120.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale);
         }
 
-        if (this.index - index == 0) {
+        if (distance == 0) {
             this.outlineFix_x = MathHelper.uiLerpSnap(this.outlineFix_x, 0.0f);
             this.outlineFix_y = MathHelper.uiLerpSnap(this.outlineFix_y, 0.0f);
             this.outlineFix_Xscale = MathHelper.uiLerpSnap(this.outlineFix_Xscale, 1.0f);
@@ -98,7 +117,7 @@ public class SkinCharButton {
         }
 
 
-        if (Math.abs(this.index - index) >= 2) {
+        if (Math.abs(distance) >= 2) {
             this.color.a = MathHelper.uiLerpSnap(this.color.a, 0.0f);
         } else {
             this.color.a = MathHelper.uiLerpSnap(this.color.a, 1.0f);
@@ -147,8 +166,8 @@ public class SkinCharButton {
                                 ).updateCharInfo(ReflectionHacks.getPrivate(option, CharacterOption.class, "charInfo")));
                     }
 
-                    if(SkinManager.screen != null){
-                        if(this.locked)
+                    if (SkinManager.screen != null) {
+                        if (this.locked)
                             SkinManager.screen.confirmButton.hide();
                         else
                             SkinManager.screen.confirmButton.show();

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class VentusNimius extends AbstractCodexCard {
-    public static final String ID = VUPShionMod.makeID("VentusNimius");
+    public static final String ID = VUPShionMod.makeID(VentusNimius.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/feng.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.COMMON;

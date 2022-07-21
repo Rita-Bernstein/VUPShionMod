@@ -3,6 +3,8 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
+import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -10,10 +12,11 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HolyCharge extends AbstractShionLiyezhuCard {
-    public static final String ID = VUPShionMod.makeID("HolyCharge");
+    public static final String ID = VUPShionMod.makeID(HolyCharge.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz05.png");
     private static final int COST = 2;
     public static final CardType TYPE = CardType.ATTACK;
@@ -45,10 +48,27 @@ public class HolyCharge extends AbstractShionLiyezhuCard {
         });
 
         if (m != null)
-        addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 005 Impact Radial", m.hb.cX, m.hb.cY,
-                125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 005 Impact Radial", m.hb.cX, m.hb.cY,
+                    125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
+
+        int d = this.upgraded ? 3 : 9;
+        if (AbstractDungeon.player.hasPower(HyperdimensionalLinksPower.POWER_ID))
+            d += AbstractDungeon.player.getPower(HyperdimensionalLinksPower.POWER_ID).amount + this.magicNumber;
+        this.baseDamage = d;
+
+        calculateCardDamage(m);
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+    }
+
+    public void applyPowers() {
+        int d = this.magicNumber;
+        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+            d += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+        this.baseDamage = d;
+
+        super.applyPowers();
+
     }
 
     @Override

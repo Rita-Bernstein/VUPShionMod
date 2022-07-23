@@ -2,9 +2,12 @@ package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.Codex.*;
-import VUPShionMod.cards.Liyezhu.*;
+import VUPShionMod.cards.Liyezhu.SoothingScripture;
 import VUPShionMod.modules.EnergyOrbWangChuan;
-import VUPShionMod.patches.*;
+import VUPShionMod.patches.AbstractPlayerEnum;
+import VUPShionMod.patches.CardColorEnum;
+import VUPShionMod.patches.CharacterSelectScreenPatches;
+import VUPShionMod.patches.FontHelperPatches;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
@@ -37,15 +40,14 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 import java.util.List;
 
+import static VUPShionMod.VUPShionMod.EisluRen_Color;
 import static VUPShionMod.VUPShionMod.Liyezhu_Color;
 
-public class Liyezhu extends CustomPlayer {
-    public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID(Liyezhu.class.getSimpleName()));
+public class EisluRen extends CustomPlayer {
+    public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID(EisluRen.class.getSimpleName()));
     public static final int ENERGY_PER_TURN = 3;
-    public static final int START_HP = 100;
-    public static final int START_GOLD = 0;
-
-    private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
+    public static final int START_HP = 35;
+    public static final int START_GOLD = 1;
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
@@ -65,12 +67,12 @@ public class Liyezhu extends CustomPlayer {
             "VUPShionMod/img/ui/topPanel/Shion/levelMax.png"
     };
 
-
     private static String currentIdle = "Idle";
     public float stanceSwitchAnimTimer = 0.0F;
     private ArrayList<String> stanceSwitchQueue = new ArrayList<>();
 
-    public Liyezhu(String name, PlayerClass setClass) {
+
+    public EisluRen(String name, PlayerClass setClass) {
         super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
@@ -79,24 +81,25 @@ public class Liyezhu extends CustomPlayer {
         this.dialogY = this.drawY + 270.0F * Settings.scale;
 
         initializeClass(null,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).SHOULDER1,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).SHOULDER2,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).CORPSE,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).SHOULDER1,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).SHOULDER2,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).CORPSE,
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         reloadAnimation();
 
-         CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(3);
+
+         CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(4);
     }
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).atlasURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).jsonURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).renderScale);
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).atlasURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).jsonURL,
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).renderScale);
 
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount == 0) {
+        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount == 0) {
             this.state.setAnimation(0, "idle_normal", true);
             this.state.setAnimation(1, "idle_wings", true);
             this.state.setAnimation(2, "idle_xiaobingpian", true);
@@ -111,15 +114,15 @@ public class Liyezhu extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).getStartingRelic();
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).getStartingDeck();
+        CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).InitializeReskinCount();
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(
+                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {
@@ -162,14 +165,15 @@ public class Liyezhu extends CustomPlayer {
         }
 
 
-        tmpPool.add(new LuxRapida());
-        tmpPool.add(new LuxConstans());
-        tmpPool.add(new CaligoConstans());
-        tmpPool.add(new CaligoRapida());
+        tmpPool.add(new TerraRapida());
+        tmpPool.add(new TerraNimia());
         tmpPool.add(new AquaConstans());
         tmpPool.add(new AquaRapida());
-        tmpPool.add(new IgnisRapidus());
-        tmpPool.add(new IgnisNimius());
+        tmpPool.add(new VentusRapidus());
+        tmpPool.add(new VentusNimius());
+        tmpPool.add(new LignumNimium());
+        tmpPool.add(new LignumConstans());
+
 
 
         return super.getCardPool(tmpPool);
@@ -177,7 +181,7 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return CardColorEnum.Liyezhu_LIME;
+        return CardColorEnum.EisluRen_LIME;
     }
 
     @Override
@@ -187,7 +191,7 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public Color getCardTrailColor() {
-        return Liyezhu_Color.cpy();
+        return EisluRen_Color.cpy();
     }
 
     @Override
@@ -218,12 +222,12 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public AbstractPlayer newInstance() {
-        return new Liyezhu(this.name, AbstractPlayerEnum.Liyezhu);
+        return new EisluRen(this.name, AbstractPlayerEnum.EisluRen);
     }
 
     @Override
     public String getSpireHeartText() {
-        return CardCrawlGame.languagePack.getEventString(VUPShionMod.makeID("SpireHeart_Liyezhu")).DESCRIPTIONS[0];
+        return CardCrawlGame.languagePack.getEventString(VUPShionMod.makeID("SpireHeart_EisluRen")).DESCRIPTIONS[0];
     }
 
 
@@ -417,25 +421,6 @@ public class Liyezhu extends CustomPlayer {
     }
 
 
-    @Override
-    public void renderPlayerImage(SpriteBatch sb) {
-        super.renderPlayerImage(sb);
-        boolean hasPower = false;
-        for (AbstractPower power : this.powers) {
-            if (power instanceof DelayAvatarPower)
-                hasPower = true;
-        }
-
-        if (hasPower) {
-            sb.setColor(Color.WHITE);
-            sb.setBlendFunction(770, 771);
-            sb.draw(this.avatar, this.hb.x - this.avatar.getWidth() * 0.5f + 300.0F * Settings.scale,
-                    this.hb.y - this.avatar.getHeight() * 0.5f + 120.0F * Settings.scale,
-                    this.avatar.getWidth() * 0.5f, this.avatar.getHeight() * 0.5f, this.avatar.getWidth(), this.avatar.getHeight(),
-                    0.6f * Settings.scale, 0.6f * Settings.scale, 0.0F, 0, 0, this.avatar.getWidth(), this.avatar.getHeight(), false, false);
-
-        }
-    }
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {

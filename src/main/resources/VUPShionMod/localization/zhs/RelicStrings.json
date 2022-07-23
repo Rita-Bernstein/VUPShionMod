@@ -453,5 +453,19 @@
     "DESCRIPTIONS": [
       "每当你受到伤害时，立刻获得 #b6 点 #y格挡。"
     ]
+  },
+  "VUPShionMod:ShieldHRzy1": {
+    "NAME": "人理之盾zy-1型",
+    "FLAVOR": "为了弥补精灵族脆弱的防御，配备的可变形能量盾。",
+    "DESCRIPTIONS": [
+      "维持 #y构装翼盾 的 #y充能 。战斗外失去生命效果减少 #b50% 。"
+    ]
+  },
+  "VUPShionMod:ShieldHRzy2": {
+    "NAME": "人理之盾zy-2型",
+    "FLAVOR": "在人理之盾zy-1型的基础上，加装了动能回收装置。增加了续航。",
+    "DESCRIPTIONS": [
+      "维持 #y构装翼盾 的 #y充能 。 NL 战斗外失去生命效果减少 #b50% 。 NL #y构装翼盾 失去 #y充能 时，获得 #y能量回收 。"
+    ]
   }
 }

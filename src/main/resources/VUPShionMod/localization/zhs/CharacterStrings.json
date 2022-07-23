@@ -1,29 +1,38 @@
-  {
-    "VUPShionMod:Shion": {
-      "NAMES": [
-        "紫音",
-        "紫音"
-      ],
-      "TEXT": [
-        "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔"
-      ]
-    },
-    "VUPShionMod:WangChuan": {
-      "NAMES": [
-        "忘川川",
-        "忘川川"
-      ],
-      "TEXT": [
-        "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹"
-      ]
-    },
-    "VUPShionMod:Liyezhu": {
-      "NAMES": [
-        "黎夜竹",
-        "黎夜竹"
-      ],
-      "TEXT": [
-        "原本为紫音提供支援的伐罪修女 NL 因高塔的呼唤而独自前来一探究竟。"
-      ]
-    }
+{
+  "VUPShionMod:Shion": {
+    "NAMES": [
+      "紫音",
+      "紫音"
+    ],
+    "TEXT": [
+      "使用浮游炮作战的紫音来自于Anastasia宇宙 NL 同步了自身的战力，前来挑战高塔"
+    ]
+  },
+  "VUPShionMod:WangChuan": {
+    "NAMES": [
+      "忘川川",
+      "忘川川"
+    ],
+    "TEXT": [
+      "来自异世界的血族少女 NL 前来调查这座通天之塔的遗迹"
+    ]
+  },
+  "VUPShionMod:Liyezhu": {
+    "NAMES": [
+      "黎夜竹",
+      "黎夜竹"
+    ],
+    "TEXT": [
+      "原本为紫音提供支援的伐罪修女 NL 因高塔的呼唤而独自前来一探究竟。"
+    ]
+  },
+  "VUPShionMod:EisluRen": {
+    "NAMES": [
+      "伊诗露菍",
+      "伊诗露菍"
+    ],
+    "TEXT": [
+      "时之虫事件结束后，解救出来的精灵祭司 NL 为了提升战斗力，进行战场拟真训练。精通地木属性魔法"
+    ]
   }
+}

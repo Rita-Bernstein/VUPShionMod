@@ -8,15 +8,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ShionAnastasiaPlan extends AbstractShionAnastasiaCard {
-    public static final String ID = VUPShionMod.makeID(ShionAnastasiaPlan.class.getSimpleName());
+public class AnastasiaPlan extends AbstractShionAnastasiaCard {
+    public static final String ID = VUPShionMod.makeID(AnastasiaPlan.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia07.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
-    public ShionAnastasiaPlan() {
+    public AnastasiaPlan() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 0;
         this.magicNumber = this.baseMagicNumber = 1;
@@ -35,6 +35,6 @@ public class ShionAnastasiaPlan extends AbstractShionAnastasiaCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new ShionAnastasiaPlan();
+        return new AnastasiaPlan();
     }
 }

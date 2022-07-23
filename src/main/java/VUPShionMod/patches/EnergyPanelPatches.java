@@ -302,7 +302,8 @@ public class EnergyPanelPatches {
     public static boolean isShionModChar() {
         return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan
-                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu;
+                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu
+                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen;
     }
 
 }

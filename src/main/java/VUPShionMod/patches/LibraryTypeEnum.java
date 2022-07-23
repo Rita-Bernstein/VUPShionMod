@@ -15,4 +15,7 @@ public class LibraryTypeEnum {
 
 	@SpireEnum
 	public static CardLibrary.LibraryType Liyezhu_LIME;
+
+	@SpireEnum
+	public static CardLibrary.LibraryType EisluRen_LIME;
 }

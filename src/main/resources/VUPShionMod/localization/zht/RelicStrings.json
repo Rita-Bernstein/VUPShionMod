@@ -453,5 +453,19 @@
     "DESCRIPTIONS": [
       "每當你受到傷害時，立刻獲得 #b6 點 #y格擋。"
     ]
+  },
+  "VUPShionMod:ShieldHRzy1": {
+    "NAME": "人理之盾zy-1型",
+    "FLAVOR": "為了彌補精靈族脆弱的防禦，配備的可變形能量盾。",
+    "DESCRIPTIONS": [
+      "維持 #y構裝翼盾 的 #y充能 。戰鬥外失去生命效果減少 #b50% 。"
+    ]
+  },
+  "VUPShionMod:ShieldHRzy2": {
+    "NAME": "人理之盾zy-2型",
+    "FLAVOR": "在人理之盾zy-1型的基礎上，加裝了動能回收裝置。增加了續航。",
+    "DESCRIPTIONS": [
+      "維持 #y構裝翼盾 的 #y充能 。 NL 戰鬥外失去生命效果減少 #b50% 。 NL #y構裝翼盾 失去 #y充能 時，獲得 #y能量回收 。"
+    ]
   }
 }

@@ -4,7 +4,7 @@
       "Use simple card UI",
       "Disable title screen replacement.",
       "SFW switch",
-      "Card animation effects"
+      "Disable some card animation effects"
     ]
   },
   "VUPShionMod:CharacterSelect": {
@@ -120,6 +120,14 @@
       "Heals your body, not your mind.",
       "Difficulty: Standard",
       "Acquisition requirements: None"
+    ]
+  },
+  "VUPShionMod:OriEisluRen": {
+    "TEXT": [
+      "Biyuki Gift: Equipped with the Wing\nComposite Shield developed by Shion",
+      "Greatly improved defensive\ncapabilities",
+      "Difficulty: Standard",
+      "Acquisition requirements: Work in progress"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {

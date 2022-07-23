@@ -1,6 +1,6 @@
 package VUPShionMod.skins;
 
-import VUPShionMod.patches.CharacterSelectScreenPatches;
+import VUPShionMod.skins.sk.EisluRen.AbstractSkinEisluRen;
 import VUPShionMod.skins.sk.Liyezhu.AbstractSkinLiyezhu;
 import VUPShionMod.skins.sk.Shion.AbstractSkinShion;
 import VUPShionMod.skins.sk.WangChuan.AbstractSkinWangChuan;
@@ -40,6 +40,7 @@ public class SkinManager {
             skinCharacters.add(new AbstractSkinShion());
             skinCharacters.add(new AbstractSkinWangChuan());
             skinCharacters.add(new AbstractSkinLiyezhu());
+            skinCharacters.add(new AbstractSkinEisluRen());
         }
 
         this.body = ImageMaster.loadImage("VUPShionMod/img/ui/Skin/dark.png");

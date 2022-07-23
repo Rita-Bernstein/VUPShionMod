@@ -852,11 +852,11 @@
   "VUPShionMod:IgnisNimius": {
     "NAME": "通典：火",
     "DESCRIPTION": "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "虛無 。 NL 下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "通典：火（泛濫）",
       "通典：火（極意）",
-      "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 ， 虛無 。"
+      "虛無 。 NL 下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 ， 虛無 。"
     ]
   },
   "VUPShionMod:VentusRapidus": {
@@ -950,11 +950,11 @@
   },
   "VUPShionMod:Recharger": {
     "NAME": "充能迴路",
-    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，獲得 !M! vup_shion_mod:劍勢 。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時， NL 獲得 !M! vup_shion_mod:劍勢 。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:Accelerator": {
     "NAME": "加速迴路",
-    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，獲得 !M! 點臨時 敏捷 。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時， NL 獲得 !M! 點臨時 敏捷 。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:Recoiler": {
     "NAME": "反衝迴路",

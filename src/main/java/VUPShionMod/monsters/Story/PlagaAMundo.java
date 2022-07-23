@@ -132,11 +132,10 @@ public class PlagaAMundo extends CustomMonster {
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 50), 50));
                 break;
             case 98:
-                if(SaveHelper.isHardMod)
-                addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new SiegePower(AbstractDungeon.player,1)));
-
-                addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new DespairPower(AbstractDungeon.player,13)));
-
+                if(SaveHelper.isHardMod) {
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new SiegePower(AbstractDungeon.player, 1)));
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new DespairPower(AbstractDungeon.player, 13)));
+                }
 
                 addToBot(new SummonMinionAction(this, new PlagaAMundoMinion(-400, -20, 1.0f), 1));
                 addToBot(new SummonMinionAction(this, new PlagaAMundoMinion(-60, 30, 1.3f), 2));

@@ -950,11 +950,11 @@
   },
   "VUPShionMod:Recharger": {
     "NAME": "充能回路",
-    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时，获得 !M! vup_shion_mod:剑势 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时， NL 获得 !M! vup_shion_mod:剑势 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:Accelerator": {
     "NAME": "加速回路",
-    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时，获得 !M! 点临时 敏捷 。 NL vup_shion_mod:魔能过载 。"
+    "DESCRIPTION": "获得 vup_shion_mod:魔能过载 时， NL 获得 !M! 点临时 敏捷 。 NL vup_shion_mod:魔能过载 。"
   },
   "VUPShionMod:Recoiler": {
     "NAME": "反冲回路",

@@ -4,10 +4,8 @@ import VUPShionMod.patches.CharacterSelectScreenPatches;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
-import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public abstract class AbstractSkinCharacter {
     public String id;
@@ -80,6 +78,7 @@ public abstract class AbstractSkinCharacter {
 
 //        皮肤按钮
         for (AbstractSkin skin : this.skins) {
+            skin.initialize();
             skin.button.locked = !skin.unlock;
 
             boolean display = false;

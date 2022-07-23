@@ -32,6 +32,10 @@ public class OriWangChuan extends AbstractSkin {
         this.jsonURL = "VUPShionMod/characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.json";
         this.renderScale = 3.0F;
 
+    }
+
+    @Override
+    public void initialize() {
         unlock();
     }
 

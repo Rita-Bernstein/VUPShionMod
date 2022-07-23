@@ -30,7 +30,7 @@ import java.util.List;
 import static VUPShionMod.VUPShionMod.WangChuan_Color;
 
 public class WangChuan extends CustomPlayer {
-    public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("WangChuan"));
+    public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID(WangChuan.class.getSimpleName()));
     public static final int ENERGY_PER_TURN = 3;
     public static final int START_HP = 50;
     public static final int START_GOLD = 1;
@@ -186,7 +186,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return 8;
+        return START_HP/10;
     }
 
     @Override

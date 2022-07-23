@@ -4,7 +4,7 @@
       "使用简洁卡牌界面",
       "禁用替换主界面",
       "和谐开关",
-      "部分卡牌特效"
+      "关闭部分卡牌特效"
     ]
   },
   "VUPShionMod:CharacterSelect": {
@@ -120,6 +120,14 @@
       "拥有极强的自愈能力",
       "强度：基础",
       "获取条件：默认获得"
+    ]
+  },
+  "VUPShionMod:OriEisluRen": {
+    "TEXT": [
+      "碧月礼装：装备了紫音研发的飞翼组合盾",
+      "大大的提高了防御能力",
+      "强度：基础",
+      "解锁条件：制作中"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {

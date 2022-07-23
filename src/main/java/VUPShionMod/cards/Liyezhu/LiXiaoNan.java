@@ -56,8 +56,7 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
         if (AbstractDungeon.player.hasPower(SinPower.POWER_ID))
             sin = AbstractDungeon.player.getPower(SinPower.POWER_ID).amount;
 
-        this.baseDamage = (int) Math.floor(Math.max(AbstractDungeon.player.maxHealth / 2, AbstractDungeon.player.currentHealth)
-                * (psy + sin) * this.magicNumber * 0.1f);
+        this.baseDamage = (int) Math.floor(AbstractDungeon.player.maxHealth * (psy + sin) * this.magicNumber * 0.05f);
 
         super.applyPowers();
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
@@ -85,8 +84,7 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
         if (AbstractDungeon.player.hasPower(SinPower.POWER_ID))
             sin = AbstractDungeon.player.getPower(SinPower.POWER_ID).amount;
 
-        this.baseDamage = (int) Math.floor(Math.max(AbstractDungeon.player.maxHealth / 2, AbstractDungeon.player.currentHealth)
-                * (psy + sin) * this.magicNumber * 0.1f);
+        this.baseDamage = (int) Math.floor(AbstractDungeon.player.maxHealth * (psy + sin) * this.magicNumber * 0.05f);
         super.calculateCardDamage(mo);
 
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;

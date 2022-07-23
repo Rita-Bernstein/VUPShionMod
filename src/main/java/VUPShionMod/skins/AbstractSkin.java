@@ -58,6 +58,10 @@ public abstract class AbstractSkin {
         SaveHelper.saveSkins();
     }
 
+    public void initialize(){
+
+    }
+
 
     public void loadAnimation(float scale) {
         if (portraitAtlas == null)

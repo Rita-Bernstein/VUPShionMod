@@ -524,13 +524,13 @@
   "VUPShionMod:NihilImmensumPower": {
     "NAME": "伪·无量空处",
     "DESCRIPTIONS": [
-      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y无实体 。(已获得过 #b%d 次)"
+      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y咫尺天涯 。(已获得过 #b%d 次)"
     ]
   },
   "VUPShionMod:NihilImmensum2Power": {
     "NAME": "伪·无量空处+",
     "DESCRIPTIONS": [
-      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y无实体 。(已获得过 #b%d 次)"
+      "每获得 #b%d 次 #y魔能过载，获得 #b%d 层 #y咫尺天涯 。(已获得过 #b%d 次)"
     ]
   },
   "VUPShionMod:ImmuneDamagePower": {

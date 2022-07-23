@@ -35,7 +35,18 @@ public class PhantomChop extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int trueDamage = this.baseDamage;
+        if(this.timesUpgraded >=2){
+            this.baseDamage =1;
+
+            if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
+                this.baseDamage += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+
+            calculateCardDamage(m);
+        }
+
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.baseDamage = trueDamage;
     }
 
     @Override
@@ -68,23 +79,6 @@ public class PhantomChop extends AbstractWCCard {
 
         }
         super.triggerOnOtherCardPlayed(c);
-    }
-
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        int trueDamage = this.baseDamage;
-
-        if (this.timesUpgraded >= 2) {
-            this.baseDamage = 1;
-        }
-
-        if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-            this.baseDamage += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
-
-        super.calculateCardDamage(mo);
-
-        this.baseDamage = trueDamage;
     }
 
 

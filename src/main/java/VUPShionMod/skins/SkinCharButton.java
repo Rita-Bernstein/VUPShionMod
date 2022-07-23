@@ -124,6 +124,22 @@ public class SkinCharButton {
         }
     }
 
+    private boolean selectAble() {
+        boolean selectAble = false;
+        int selectCount = CharacterSelectScreenPatches.skinManager.currentSkinCharacter.selectedCount;
+
+        if (Math.abs(selectCount - this.index) == 1)
+            selectAble = true;
+
+        if (selectCount == 0 && this.index == CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.size())
+            selectAble = true;
+
+        if (selectCount == CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.size() && this.index == 0)
+            selectAble = true;
+
+        return selectAble;
+    }
+
     public void update(CharacterOption option) {
         this.cX = CharacterSelectScreenPatches.skinManager.panel_x + 504.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
         this.cY = 513.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
@@ -133,7 +149,7 @@ public class SkinCharButton {
 
 
         if (CharacterSelectScreenPatches.skinManager.currentSkinCharacter != null) {
-            if (Math.abs(CharacterSelectScreenPatches.skinManager.currentSkinCharacter.selectedCount - this.index) == 1) {
+            if (selectAble()) {
                 if (InputHelper.justClickedLeft && this.hb.hovered) {
                     this.hb.clickStarted = true;
                     CardCrawlGame.sound.play("UI_CLICK_1");

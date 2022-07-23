@@ -455,5 +455,19 @@
     "DESCRIPTIONS": [
       "Whenever you receive damage, gain #b6 #yBlock."
     ]
+  },
+  "VUPShionMod:ShieldHRzy1": {
+    "NAME": "Shield HR Type: ZY-1",
+    "FLAVOR": "In order to compensate for the fragile defense of the elves, equipped with a shape-shifting energy shield.",
+    "DESCRIPTIONS": [
+      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%."
+    ]
+  },
+  "VUPShionMod:ShieldHRzy2": {
+    "NAME": "Shield HR Type: ZY-2",
+    "FLAVOR": "Based on the Shield HR Type: ZY-1,the kinetic energy recovery device has been added. Increased range.",
+    "DESCRIPTIONS": [
+      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycling."
+    ]
   }
 }

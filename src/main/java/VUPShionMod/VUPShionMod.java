@@ -11,6 +11,7 @@ import VUPShionMod.cards.ShionCard.shion.*;
 import VUPShionMod.cards.ShionCard.tempCards.*;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.cards.Codex.*;
+import VUPShionMod.character.EisluRen;
 import VUPShionMod.character.Liyezhu;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
@@ -20,6 +21,7 @@ import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.patches.*;
 import VUPShionMod.potions.*;
+import VUPShionMod.relics.EisluRen.*;
 import VUPShionMod.relics.Event.*;
 import VUPShionMod.relics.Liyezhu.*;
 import VUPShionMod.relics.Share.*;
@@ -82,6 +84,7 @@ public class VUPShionMod implements
     public static final Color Shion_Color = new Color(0.418F, 0.230F, 0.566F, 1.0F);
     public static final Color WangChuan_Color = new Color(0.203F, 0.176F, 0.168F, 1.0F);
     public static final Color Liyezhu_Color = new Color(0.250F, 0.286F, 0.541F, 1.0F);
+    public static final Color EisluRen_Color = new Color(0.043F, 0.875F, 0.195F, 1.0F);
 
 
     public static final Color PotionPlaceHolderColor = new Color(0.250F, 0.286F, 0.541F, 1.0F);
@@ -149,6 +152,18 @@ public class VUPShionMod implements
 
         BaseMod.addColor(CardColorEnum.Liyezhu_LIME,
                 Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color, Liyezhu_Color,
+                assetPath("img/cardui/Liyezhu/512/bg_attack_lime.png"),
+                assetPath("img/cardui/Liyezhu/512/bg_skill_lime.png"),
+                assetPath("img/cardui/Liyezhu/512/bg_power_lime.png"),
+                assetPath("img/cardui/Liyezhu/512/card_lime_orb.png"),
+                assetPath("img/cardui/Liyezhu/1024/bg_attack_lime.png"),
+                assetPath("img/cardui/Liyezhu/1024/bg_skill_lime.png"),
+                assetPath("img/cardui/Liyezhu/1024/bg_power_lime.png"),
+                assetPath("img/cardui/Shion/1024/card_lime_orb_w.png"),
+                assetPath("img/cardui/Liyezhu/512/card_lime_small_orb.png"));
+
+        BaseMod.addColor(CardColorEnum.EisluRen_LIME,
+                EisluRen_Color, EisluRen_Color, EisluRen_Color, EisluRen_Color, EisluRen_Color, EisluRen_Color, EisluRen_Color,
                 assetPath("img/cardui/Liyezhu/512/bg_attack_lime.png"),
                 assetPath("img/cardui/Liyezhu/512/bg_skill_lime.png"),
                 assetPath("img/cardui/Liyezhu/512/bg_power_lime.png"),
@@ -485,6 +500,11 @@ public class VUPShionMod implements
                 assetPath("characters/Shion/portrait.png"),
                 AbstractPlayerEnum.Liyezhu);
 
+        BaseMod.addCharacter(new EisluRen(EisluRen.charStrings.NAMES[1], AbstractPlayerEnum.EisluRen),
+                assetPath("characters/EisluRen/Button.png"),
+                assetPath("characters/EisluRen/portrait.png"),
+                AbstractPlayerEnum.EisluRen);
+
         BaseMod.addSaveField("SansMeterSave", new SansMeterSave());
     }
 
@@ -535,7 +555,7 @@ public class VUPShionMod implements
         cards.add(new MinuteHand());
         cards.add(new SecondHand());
         cards.add(new CrackOfTime());
-        cards.add(new ReleaseFormShionKuroisu());
+        cards.add(new ReleaseFormKuroisu());
         cards.add(new TimeWarp());
         cards.add(new BlackHand());
         cards.add(new TimeOverload());
@@ -554,7 +574,7 @@ public class VUPShionMod implements
         cards.add(new SuperCharge());
 //        cards.add(new Anticoagulation());
         cards.add(new Lure());
-        cards.add(new ReleaseFormShionMinami());
+        cards.add(new ReleaseFormMinami());
         cards.add(new AnestheticReagent());
         cards.add(new EnhancedSupport());
         cards.add(new BattlefieldHeritage());
@@ -583,7 +603,7 @@ public class VUPShionMod implements
 
 //        紫音-anastasia
         cards.add(new FinFunnelUpgrade());
-        cards.add(new ShionAnastasiaPlan());
+        cards.add(new AnastasiaPlan());
 //        cards.add(new AttackOrderAlpha());
 //        cards.add(new AttackOrderBeta());
 //        cards.add(new AttackOrderDelta());
@@ -867,6 +887,8 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new TimeReversalBullet(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new DemonSword(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new QueenShield(), CardColorEnum.Liyezhu_LIME);
+
+        BaseMod.addRelicToCustomPool(new ShieldHRzy1(), CardColorEnum.EisluRen_LIME);
 
 //共享遗物
         BaseMod.addRelic(new TrainingScabbard(), RelicType.SHARED);

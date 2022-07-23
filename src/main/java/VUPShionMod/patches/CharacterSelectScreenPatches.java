@@ -1,9 +1,11 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.character.EisluRen;
 import VUPShionMod.msic.CharacterPriority;
 import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
+import basemod.BaseMod;
 import basemod.CustomCharacterSelectScreen;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
@@ -11,10 +13,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
+import com.megacrit.cardcrawl.screens.custom.CustomModeCharacterButton;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 
 @SuppressWarnings("unused")
 public class CharacterSelectScreenPatches {
@@ -134,6 +142,18 @@ public class CharacterSelectScreenPatches {
                 }
 
             }
+
+            if (__instance.c.name.equals(CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("EisluRen")).NAMES[0])) {
+                if (__instance.selected) {
+                    glowColor.r = 0.0f;
+                    glowColor.g = 1.0f;
+                    glowColor.b = 0.0f;
+                    sb.setColor(glowColor);
+                } else {
+                    sb.setColor(BLACK_OUTLINE_COLOR);
+                }
+
+            }
             return SpireReturn.Continue();
         }
     }
@@ -172,9 +192,23 @@ public class CharacterSelectScreenPatches {
                 }
             }
 
+
             __instance.options.sort(Comparator.comparing(o -> AddFields.characterPriority.get(o.c).getCharacterPriority()));
 
             return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = BaseMod.class,
+            method = "generateCustomCharacterOptions"
+    )
+    public static class CharacterSelectScreenPatch_BasemodGenerateCustomCharacterOptions{
+        @SpireInsertPatch(rloc = 4,localvars = {"options"})
+        public static void Insert(ArrayList<CustomModeCharacterButton> options) {
+            options.removeIf(b -> b.c instanceof EisluRen);
+
         }
     }
 

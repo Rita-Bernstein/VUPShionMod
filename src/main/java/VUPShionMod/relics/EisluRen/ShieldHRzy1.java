@@ -3,14 +3,17 @@ package VUPShionMod.relics.EisluRen;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.tempCards.FunnelMatrix;
 import VUPShionMod.relics.AbstractShionRelic;
+import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class ShieldHRzy1 extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(ShieldHRzy1.class.getSimpleName());
-    public static final String IMG_PATH = "img/relics/BlueGiant.png";
-    private static final String OUTLINE_PATH = "img/relics/outline/BlueGiant.png";
+    public static final String IMG_PATH = "img/relics/ShieldHRzy1.png";
+    private static final String OUTLINE_PATH = "img/relics/outline/ShieldHRzy1.png";
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
@@ -22,5 +25,22 @@ public class ShieldHRzy1 extends AbstractShionRelic {
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
+
+    @Override
+    public void onUnequip() {
+        WingShield.getWingShield().reset();
+    }
+
+    @Override
+    public int onLoseHpLast(int damageAmount) {
+        if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&
+                (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT) {
+            flash();
+            return damageAmount / 2;
+        }
+
+        return super.onLoseHpLast(damageAmount);
+    }
+
 
 }

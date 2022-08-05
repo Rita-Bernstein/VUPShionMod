@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.PlayTmpCardAction;
 import VUPShionMod.actions.Common.XActionAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
@@ -52,30 +53,7 @@ public class PhantomChop extends AbstractWCCard {
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         if (!c.purgeOnUse && c.type == CardType.ATTACK) {
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    AbstractCard card = makeStatEquivalentCopy();
-                    card.purgeOnUse = true;
-                    AbstractDungeon.player.limbo.group.add(card);
-                    card.current_y = -200.0F * Settings.scale;
-                    card.target_x = Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
-                    card.target_y = Settings.HEIGHT / 2.0F;
-                    card.targetAngle = 0.0F;
-                    card.lighten(false);
-                    card.drawScale = 0.12F;
-                    card.targetDrawScale = 0.75F;
-                    card.applyPowers();
-                    addToTop(new NewQueueCardAction(card, (AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false, true));
-                    addToTop(new UnlimboAction(card));
-                    if (!Settings.FAST_MODE) {
-                        addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-                    } else {
-                        addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
-                    }
-                    isDone = true;
-                }
-            });
+            addToBot(new PlayTmpCardAction(this));
 
         }
         super.triggerOnOtherCardPlayed(c);

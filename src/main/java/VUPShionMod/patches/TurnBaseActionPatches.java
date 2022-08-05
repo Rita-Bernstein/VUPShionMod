@@ -49,6 +49,12 @@ public class TurnBaseActionPatches {
                 EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).atStartOfCombat();
             }
 
+            if (EnergyPanelPatches.PatchEnergyPanelField.canUseWingShield.get(AbstractDungeon.overlayMenu.energyPanel)) {
+                EnergyPanelPatches.PatchEnergyPanelField.wingShield.get(AbstractDungeon.overlayMenu.energyPanel).atStartOfCombat();
+            }else {
+                EnergyPanelPatches.PatchEnergyPanelField.wingShield.get(AbstractDungeon.overlayMenu.energyPanel).reset();
+            }
+
 
             return SpireReturn.Continue();
         }

@@ -171,7 +171,7 @@
   "VUPShionMod:SwardCharge": {
     "TEXT": [
       "Magia Blade",
-      " #yMagia #yCombo: #b%d/#b4. NL Whenever the counter is filled, play a NL #yThundersteel with no #yStiffness. NL Clear all #yCombo and #pMagia #yLoad. NL For #reach different #yAttack you play, NL gain #b1 #yCombo. NL Lose all #yCombo at the end of your turn.",
+      " #yMagia #yCombo: #b%d/#b4. NL Whenever the counter is filled, play a NL #yThundersteel with no #yStiffness. NL Clear all #yCombo and #pMagia #yLoad. NL For #reach different #yAttack you play, NL gain #b1 #yCombo. NL Lose all #yCombo at the end of your turn. NL When reach to #b3 stack of charge,gain #b1 #yCor #yCorGladii .",
       " NL NL #pMagia #pLoad: #b%d(%d)/#b3: NL Each #yLoad you have #yupgrades the #yThundersteel played by #yMagia #yCombo for #yonce. NL For every #b3 #yMagiam #yObruor you gain, gain #b1 #pMagia #pLoad."
     ]
   },
@@ -179,6 +179,23 @@
     "TEXT": [
       "Switch Funnel",
       "You can manually select #yFunnel to be activated for its passive ability. NL For each energy cost, you may switch #yFunnel."
+    ]
+  },
+  "VUPShionMod:SingleCardViewPopup": {
+    "TEXT": [
+      "Summon"
+    ]
+  },
+  "VUPShionMod:WingShield": {
+    "TEXT": [
+      "构装翼盾",
+      "能量回收: #b%d/3 。 NL 满层时将获得 #b1 层 #y充能。 NL NL 当前充能： #b%d/%d 。 NL 每层充能阻挡 #b7 点伤害。 NL 每次受到伤害至多失去 #b7 层 #y充能 。",
+      "充能不足"
+    ]
+  },
+  "VUPShionMod:BetterDiscardAction": {
+    "TEXT": [
+      "Discard any cards"
     ]
   }
 }

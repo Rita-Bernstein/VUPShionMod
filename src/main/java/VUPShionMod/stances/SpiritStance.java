@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
 public class SpiritStance extends AbstractStance {
-    public static final String STANCE_ID = "VUPShionMod:Spirit";
+    public static final String STANCE_ID =  VUPShionMod.makeID(SpiritStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 
 

@@ -1,6 +1,9 @@
 package VUPShionMod.skins.sk.Shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.ShionCard.anastasia.OverloadFortress;
+import VUPShionMod.cards.ShionCard.kuroisu.BlackHand;
+import VUPShionMod.cards.ShionCard.minami.FinFunnelActive;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.minami.TacticalLink;
 import VUPShionMod.cards.ShionCard.shion.*;
@@ -8,6 +11,8 @@ import VUPShionMod.relics.Shion.ConcordArray;
 import VUPShionMod.relics.Shion.ConcordSnipe;
 import VUPShionMod.relics.Shion.Drapery;
 import VUPShionMod.skins.AbstractSkin;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -70,10 +75,19 @@ public class AquaShion extends AbstractSkin {
         retVal.add(Defend_Shion2.ID);
         retVal.add(Defend_Shion2.ID);
         retVal.add(Defend_Shion2.ID);
-        retVal.add(TacticalLink.ID);
-        retVal.add(Strafe2.ID);
+        retVal.add(OverloadFortress.ID);
+        retVal.add(BlackHand.ID);
 
         return retVal;
+    }
+
+    @Override
+    public void postCreateStartingDeck(CardGroup cardGroup) {
+        for (AbstractCard card : cardGroup.group) {
+            if (card.cardID.equals(OverloadFortress.ID)) {
+                card.upgrade();
+            }
+        }
     }
 
 }

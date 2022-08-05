@@ -27,7 +27,6 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
     protected TintEffect tint = new TintEffect();
 
     private AbstractCreature target;
-    private AbstractFinFunnel finFunnel;
     private int index;
 
     private boolean isFinFunnelIn = false;
@@ -45,9 +44,8 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
     private boolean isAoe = false;
 
 
-    public FinFunnelMinionEffect(AbstractFinFunnel finFunnel, AbstractCreature target, int index, boolean isAoe) {
+    public FinFunnelMinionEffect(AbstractCreature target, int index, boolean isAoe) {
         this.index = index + 1;
-        this.finFunnel = finFunnel;
 
         this.duration = 2.0f + (7 - index) * 0.15f + index * 0.15f;
         this.fireTimer += index * 0.15f;
@@ -114,9 +112,8 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
     }
 
 
-
     public void update() {
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || this.target == null || this.finFunnel == null) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             isDone = true;
             dispose();
             return;

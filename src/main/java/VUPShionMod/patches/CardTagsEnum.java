@@ -48,4 +48,7 @@ public class CardTagsEnum {
 
     @SpireEnum
     public static AbstractCard.CardTags NoSwardCharge;
+
+    @SpireEnum
+    public static AbstractCard.CardTags SummonCard;
 }

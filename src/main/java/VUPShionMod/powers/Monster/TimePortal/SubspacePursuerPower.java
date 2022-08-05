@@ -22,7 +22,7 @@ public class SubspacePursuerPower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private boolean justApplied = true;
+
 
     public SubspacePursuerPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -40,11 +40,6 @@ public class SubspacePursuerPower extends AbstractShionPower {
 
     @Override
     public void preEndOfRound() {
-        if (justApplied) {
-            justApplied = false;
-            return;
-        }
-
         AbstractPlayer trueTarget = AbstractDungeon.player;
         if (AbstractDungeon.player instanceof WangChuan) {
             if (((WangChuan) AbstractDungeon.player).shionHelper != null)

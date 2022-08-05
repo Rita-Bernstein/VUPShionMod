@@ -54,7 +54,7 @@ public class FinFunnelMinionAction extends AbstractGameAction {
 
 
             for (int i = 0; i < 8; i++) {
-                AbstractDungeon.effectList.add(new FinFunnelMinionEffect(finFunnels.get(i), this.target, i, isAoe(finFunnels.get(i))));
+                AbstractDungeon.effectList.add(new FinFunnelMinionEffect( this.target, i, isAoe(finFunnels.get(i))));
             }
         }
 

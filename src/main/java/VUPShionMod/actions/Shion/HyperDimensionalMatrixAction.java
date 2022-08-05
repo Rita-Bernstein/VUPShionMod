@@ -30,14 +30,14 @@ public class HyperDimensionalMatrixAction extends AbstractGameAction {
         addToTop(new AbstractGameAction() {
             @Override
             public void update() {
-                for (AbstractFinFunnel finFunnel : FinFunnelManager.getFinFunnelList()) {
+                AbstractFinFunnel finFunnel = FinFunnelManager.getSelectedFinFunnel();
+                if (finFunnel != null) {
                     finFunnel.levelForCombat += HyperDimensionalMatrixAction.this.amount;
                     if (finFunnel.levelForCombat - 15 > finFunnel.level)
                         finFunnel.levelForCombat = finFunnel.level + 15;
 
                     finFunnel.updateDescription();
                 }
-
                 isDone = true;
             }
         });

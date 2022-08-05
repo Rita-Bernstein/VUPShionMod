@@ -169,7 +169,7 @@ public class SwardCharge implements Disposable {
         }
 
         if(this.count ==3){
-            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new CorGladiiPower(AbstractDungeon.player,3)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new CorGladiiPower(AbstractDungeon.player,1)));
         }
 
         if (this.count >= 4 && !this.comboTrigger) {

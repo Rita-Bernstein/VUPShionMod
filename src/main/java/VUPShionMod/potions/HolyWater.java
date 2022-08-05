@@ -52,9 +52,9 @@ public class HolyWater extends AbstractShionImagePotion {
 
 
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
-            addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.potency ));
+            addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.potency));
         } else {
-            AbstractDungeon.player.heal(this.potency );
+            AbstractDungeon.player.heal(this.potency);
         }
 
     }

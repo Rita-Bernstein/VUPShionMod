@@ -3,12 +3,16 @@ package VUPShionMod.events;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.relics.Event.FruitCake;
+import VUPShionMod.relics.Event.TrackingBeacon;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.potions.FruitJuice;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.ui.buttons.LargeDialogOptionButton;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
 public class FruitStall extends AbstractImageEvent {
@@ -28,6 +32,8 @@ public class FruitStall extends AbstractImageEvent {
     private int PEARGold = 36;
 
     private int goldLoss = 100;
+
+    private AbstractRelic cake = new FruitCake();
 
 
     private enum CurrentScreen {
@@ -108,7 +114,8 @@ public class FruitStall extends AbstractImageEvent {
                                     case 0:
                                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                                         imageEventText.clearRemainingOptions();
-                                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                                        imageEventText.optionList.set(0,new LargeDialogOptionButton(0,OPTIONS[2],cake));
+//                                        imageEventText.updateDialogOption(0, OPTIONS[2]);
 
                                         if (AbstractDungeon.player.gold >= this.goldLoss) {
                                             imageEventText.updateDialogOption(1, String.format(OPTIONS[3], this.goldLoss));
@@ -253,12 +260,13 @@ public class FruitStall extends AbstractImageEvent {
                                 break;
                             case 3:
                                 imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                                imageEventText.updateDialogOption(0, OPTIONS[2]);
+                                imageEventText.optionList.set(0,new LargeDialogOptionButton(0,OPTIONS[2],cake));
+//                                imageEventText.updateDialogOption(0, OPTIONS[2]);
 
                                 if (AbstractDungeon.player.gold >= this.goldLoss) {
                                     imageEventText.updateDialogOption(1, String.format(OPTIONS[3], goldLoss));
                                 } else {
-                                    imageEventText.updateDialogOption(1, String.format(OPTIONS[4], goldLoss));
+                                    imageEventText.updateDialogOption(1, String.format(OPTIONS[4], goldLoss), true);
                                 }
 
                                 if (Fruit[3]) {
@@ -291,7 +299,8 @@ public class FruitStall extends AbstractImageEvent {
         AbstractDungeon.getCurrRoom().addPotionToRewards(new FruitJuice());
         AbstractDungeon.getCurrRoom().addPotionToRewards(new FruitJuice());
         AbstractDungeon.getCurrRoom().addGoldToRewards(100);
-        AbstractDungeon.getCurrRoom().addRelicToRewards(new FruitCake());
+//        AbstractDungeon.getCurrRoom().addRelicToRewards(new FruitCake());
+        AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, cake);
         enterCombatFromImage();
 
     }

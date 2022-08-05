@@ -1,17 +1,17 @@
 {
-  "VUPShionMod:Prayer": {
+  "VUPShionMod:PrayerStance": {
     "NAME": "Praying Stance",
     "DESCRIPTION": [
       "While in this #yStance, you deal #b25% less damage. NL At the end of your turn, heal #b2 HP."
     ]
   },
-  "VUPShionMod:Judge": {
+  "VUPShionMod:JudgeStance": {
     "NAME": "Judging Stance",
     "DESCRIPTION": [
       "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength."
     ]
   },
-  "VUPShionMod:Spirit": {
+  "VUPShionMod:SpiritStance": {
     "NAME": "Wordpower Stance",
     "DESCRIPTION": [
       "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength. NL At the end of your turn, heal #b2 HP."

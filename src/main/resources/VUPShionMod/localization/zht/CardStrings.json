@@ -87,7 +87,7 @@
   },
   "VUPShionMod:Goodbye": {
     "NAME": "mmd不陪你玩了",
-    "DESCRIPTION": "消耗 所有手牌 。 NL 每 消耗 一張牌，造成 !D! 點傷害。"
+    "DESCRIPTION": "消耗 所有手牌 。 NL 打出 !M! 張隨機攻擊牌。 NL 消耗 。"
   },
   "VUPShionMod:EnhancedWeapon": {
     "NAME": "強化兵裝",
@@ -258,7 +258,7 @@
   },
   "VUPShionMod:TacticalLayout": {
     "NAME": "戰術布局",
-    "DESCRIPTION": "對隨機敵人觸發 vup_shion_mod:浮游炮 的被動效果 !M! 次。"
+    "DESCRIPTION": "消耗 抽牌堆至多一張牌。 NL 對隨機敵人觸發 vup_shion_mod:浮游炮 的被動效果 !M! 次。"
   },
   "VUPShionMod:FinFunnelSupport": {
     "NAME": "浮游支援",
@@ -324,7 +324,7 @@
   },
   "VUPShionMod:DivineRedemption": {
     "NAME": "聖耀救贖",
-    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:超維連結 。 NL 獲得 !B! 點 格擋 。"
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:超維連結 。 NL 獲得 !B! 點 格擋 。 NL 隨機 消耗 !VUPShionSecondM! 張詛咒或狀態牌。"
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "蒼藍之刃",
@@ -560,7 +560,8 @@
   },
   "VUPShionMod:Sharpen": {
     "NAME": "銳意",
-    "DESCRIPTION": "獲得 !M! 點 vup_shion_mod:劍勢 。 NL 消耗 。"
+    "DESCRIPTION": "獲得 !M! 點 vup_shion_mod:劍勢 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 消耗 。"
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "見切",
@@ -941,7 +942,7 @@
   },
   "VUPShionMod:FunnelMatrix": {
     "NAME": "自動浮游矩陣",
-    "DESCRIPTION": "對一名敵人觸發2次所有 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。"
+    "DESCRIPTION": "對一名敵人觸發所有 vup_shion_mod:浮游炮 的被動效果。 NL 消耗 。"
   },
   "VUPShionMod:Alleviator": {
     "NAME": "緩衝迴路",
@@ -991,7 +992,7 @@
   },
   "VUPShionMod:NihilImmensum": {
     "NAME": "偽·無量空處",
-    "DESCRIPTION": "每獲得 !M! 次 vup_shion_mod:魔能過載 ，本回合內受到的傷害為0。 NL vup_shion_mod:魔能過載 2。"
+    "DESCRIPTION": "每獲得 !M! 次 vup_shion_mod:魔能過載 ，本回合內受到的傷害為0。 NL vup_shion_mod:魔能過載 5。"
   },
   "VUPShionMod:ArtificiumMundi": {
     "NAME": "偽·世界",
@@ -1344,7 +1345,7 @@
   "VUPShionMod:CirrocumulusChop": {
     "NAME": "流雲斬",
     "DESCRIPTION": "造成8+ 敏捷 點傷害。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:魔能過載 和 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "給予3+ 敏捷 + vup_shion_mod:劍勢 點 纏繞 。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:魔能過載 和 vup_shion_mod:硬直 。",
+    "UPGRADE_DESCRIPTION": "給予3+ 敏捷 + vup_shion_mod:劍勢 點 vup_shion_mod:纏繞 。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:魔能過載 和 vup_shion_mod:硬直 。",
     "EXTENDED_DESCRIPTION": [
       "流雲斬+",
       "生生流轉",
@@ -1384,12 +1385,12 @@
   },
   "VUPShionMod:OppressiveSword": {
     "NAME": "劍壓",
-    "DESCRIPTION": "造成 vup_shion_mod:劍勢 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍勢 。 NL 獲得1層 vup_shion_mod:硬直 ",
+    "DESCRIPTION": "造成 vup_shion_mod:劍勢 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍勢 。",
     "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:劍勢 層數 !M! X倍的傷害。 NL 獲得5X 層 vup_shion_mod:劍勢 。 NL 獲得40%的 vup_shion_mod:劍勢 。 NL vup_shion_mod:魔能過載 X。",
     "EXTENDED_DESCRIPTION": [
       "劍壓+",
       "月牙天沖",
-      "造成 vup_shion_mod:劍勢 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍勢 。 NL 獲得1層 vup_shion_mod:硬直 ",
+      "造成 vup_shion_mod:劍勢 層數 !M! 倍的傷害。 NL 每點 vup_shion_mod:硬直 轉化成4層 vup_shion_mod:劍勢 。",
       "X為0"
     ]
   },
@@ -1432,7 +1433,7 @@
   },
   "VUPShionMod:HyperDimensionalMatrix": {
     "NAME": "激活：超維矩陣",
-    "DESCRIPTION": "保留 。 NL 失去所有 vup_shion_mod:超維連結 。 NL 每失去 !M! 層，本場戰鬥所有浮游炮的等級提高1。（至多15）",
+    "DESCRIPTION": "保留 。 NL 失去所有 vup_shion_mod:超維連結 。 NL 每失去 !M! 層，本場戰鬥當前浮游炮的等級提高1。（至多15）",
     "EXTENDED_DESCRIPTION": [
       "超維連結層數不足"
     ]
@@ -1483,11 +1484,296 @@
   },
   "VUPShionMod:Defend_Shion2": {
     "NAME": "力場盾",
-    "DESCRIPTION": "觸發 *重力 vup_shion_mod:浮游炮 的被動效果 !M! 次。",
+    "DESCRIPTION": "觸發 *重力 vup_shion_mod:浮游炮 的被動效果 !M! 次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:矩陣充能 。",
     "UPGRADE_DESCRIPTION": "觸發 *重力 vup_shion_mod:浮游炮 的被動效果 !M! 次。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:矩陣充能 。"
   },
   "VUPShionMod:ReleaseFormEisluRen": {
     "NAME": "姿態解放：伊詩露菍",
     "DESCRIPTION": "能力效果不可疊加。 NL 每觸發5次 vup_shion_mod:加載完成 時，獲得 [E] 。"
+  },
+  "VUPShionMod:Totsugeki": {
+    "NAME": "突擊",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !M! 層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:Station": {
+    "NAME": "駐紮",
+    "DESCRIPTION": "本回合受到的傷害 NL 降低6%。 NL 獲得 !M! 層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:ShieldCharge": {
+    "NAME": "激活·巨盾衝鋒",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 造成 !D! 點傷害。 NL 獲得 !B! 點 格擋 。"
+  },
+  "VUPShionMod:VineCatapult": {
+    "NAME": "藤蔓催生",
+    "DESCRIPTION": "給予 !M! 層 虛弱 和 vup_shion_mod:纏繞 。",
+    "UPGRADE_DESCRIPTION": "給予所有敵人 !M! 層 虛弱 和 vup_shion_mod:纏繞 。"
+  },
+  "VUPShionMod:SummonElf": {
+    "NAME": "精靈召喚",
+    "DESCRIPTION": "固有 。 NL 召喚 vup_shion_mod:下位精靈 。"
+  },
+  "VUPShionMod:ShieldAttack": {
+    "NAME": "盾襲",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 抽 !M! 張牌。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:CounterCannon": {
+    "NAME": "激活·反擊重炮",
+    "DESCRIPTION": "對所有敵人造成本場戰鬥 vup_shion_mod:構裝翼盾充能 吸收傷害的傷害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 點傷害）"
+    ]
+  },
+  "VUPShionMod:BladeOfFan": {
+    "NAME": "激活·飛刃散射",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 對所有敵人造成 !D! 點傷害 !M! 次。"
+  },
+  "VUPShionMod:RotorCutter": {
+    "NAME": "激活·旋翼切割",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 造成 !D! 點傷害 !M! 次。 NL 給予 易傷 !M! 次。"
+  },
+  "VUPShionMod:DragonGun": {
+    "NAME": "激活·龍槍",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 消耗 一張牌。 NL 給予2層 vup_shion_mod:流血 。 NL 造成 !D! 點傷害 !M! 次。",
+    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 至多   消耗 一張牌。 NL 給予2層 vup_shion_mod:流血 。 NL 造成 !D! 點傷害 !M! 次。"
+  },
+  "VUPShionMod:MoonlightButterfly": {
+    "NAME": "激活：月光蝶",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 對所有敵人造成 !D! 點傷害 !M! 次。 NL 獲得 [E] [E] [E] 。"
+  },
+  "VUPShionMod:SwordOfDalmos": {
+    "NAME": "激活：達爾摩斯之劍",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 造成 !D! 點傷害。 NL 保留 時，獲得 !M! 點 力量 。",
+    "UPGRADE_DESCRIPTION": "保留 。失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 造成 !D! 點傷害。 NL 保留 時，獲得 !M! 點 力量 。"
+  },
+  "VUPShionMod:ShieldCrush": {
+    "NAME": "激活·巨盾碾壓",
+    "DESCRIPTION": "造成 vup_shion_mod:護盾 + 格擋 的傷害。 NL 獲得 !M! 層 vup_shion_mod:能量回收 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 點傷害）"
+    ]
+  },
+  "VUPShionMod:FinalFlash": {
+    "NAME": "激活·終末閃光",
+    "DESCRIPTION": "vup_shion_mod:構裝翼盾充能 大於10層才能打出。 NL 失去所有 vup_shion_mod:構裝翼盾充能 ，每失去一層，對所有敵人造成 !D! 點傷害。"
+  },
+  "VUPShionMod:Chopper": {
+    "NAME": "激活·斬艦刀",
+    "DESCRIPTION": "能被多次 升級 。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 對所有敵人造成 !D! 點傷害 !M! 次。"
+  },
+  "VUPShionMod:Pandora": {
+    "NAME": "激活·潘多拉",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 給予所有敵人X+1層 vup_shion_mod:追擊 !M! 次。",
+    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 給予所有敵人X+2層 vup_shion_mod:追擊 !M! 次。"
+  },
+  "VUPShionMod:WarmUp": {
+    "NAME": "預熱",
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 下一張攻擊牌造成的傷害提高50%。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 下一張攻擊牌造成的傷害提高50%。 NL 抽一張牌。"
+  },
+  "VUPShionMod:RingOfThorns": {
+    "NAME": "荊棘之環",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 !M! 點 荊棘 。 NL 給予所有敵人 虛弱 !M! 次。"
+  },
+  "VUPShionMod:Entrench": {
+    "NAME": "固守",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 將所有 格擋 轉化為雙倍的  vup_shion_mod:護盾 。"
+  },
+  "VUPShionMod:Reactivation": {
+    "NAME": "再動",
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 獲得 [E] [E] 。"
+  },
+  "VUPShionMod:HotRestart": {
+    "NAME": "熱重啟",
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 抽 !VUPShionSecondM! 張牌。"
+  },
+  "VUPShionMod:IronWall": {
+    "NAME": "鐵壁",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 vup_shion_mod:鐵壁 。"
+  },
+  "VUPShionMod:RoyalGuardian": {
+    "NAME": "皇家守衛",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 本回合每受到7點攻擊傷害獲得 !M! 層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:ExtremeOverload": {
+    "NAME": "極限過載",
+    "DESCRIPTION": "充滿 vup_shion_mod:構裝翼盾充能 。 NL 獲得 vup_shion_mod:超負荷 。 NL 消耗 。"
+  },
+  "VUPShionMod:Soul": {
+    "NAME": "魂",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 下一張攻擊牌造成的傷害提高 !M! %。"
+  },
+  "VUPShionMod:MagicTransform": {
+    "NAME": "魔力轉化",
+    "DESCRIPTION": "獲得2X+1層 vup_shion_mod:能量回收 。",
+    "UPGRADE_DESCRIPTION": "獲得2X+3層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:SpiralBlade": {
+    "NAME": "形態·螺旋刃",
+    "DESCRIPTION": "保留 。 NL 構裝翼盾變形為 vup_shion_mod:螺旋刃 。"
+  },
+  "VUPShionMod:ThousandsOfBlade": {
+    "NAME": "形態·千重刃",
+    "DESCRIPTION": "保留 。 NL 構裝翼盾變形為 vup_shion_mod:千重刃 。"
+  },
+  "VUPShionMod:LotusOfWar": {
+    "NAME": "形態·戰爭之蓮",
+    "DESCRIPTION": "保留 。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 構裝翼盾變形為 vup_shion_mod:戰爭之蓮 。"
+  },
+  "VUPShionMod:RuinGuardian": {
+    "NAME": "形態·遺蹟守衛",
+    "DESCRIPTION": "保留 。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 構裝翼盾變形為 vup_shion_mod:遺蹟守衛 。"
+  },
+  "VUPShionMod:LightArmor": {
+    "NAME": "形態·明光鎧",
+    "DESCRIPTION": "保留 。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 構裝翼盾變形為 vup_shion_mod:明光鎧 。"
+  },
+  "VUPShionMod:WingsOfDaedalus": {
+    "NAME": "代達羅斯之翼",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 !B! 點 格擋 。 NL 獲得 !M! 層 *飛行 。 NL 獲得 vup_shion_mod:代達羅斯之翼 。"
+  },
+  "VUPShionMod:YonggukCityTroy": {
+    "NAME": "永固城邦特洛伊",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 !B! 點 格擋 。 NL 獲得 *壁壘 。 NL 獲得 !M! 層 *堅不可摧 。"
+  },
+  "VUPShionMod:Avalon": {
+    "NAME": "遙遠的理想鄉",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 !B! 點 格擋 。 NL 獲得 !M! 層 無實體 。 NL 回復所有生命。"
+  },
+  "VUPShionMod:RhoAias": {
+    "NAME": "熾天覆七重圓環",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 !B! 點 格擋 。 NL 獲得 !M! 層 *緩衝 。"
+  },
+  "VUPShionMod:Stonehenge": {
+    "NAME": "蒼穹巨石陣列",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 !B! 點 格擋 。 NL 每回合獲得 !M! 層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:PhysicalMagic": {
+    "NAME": "拳擊魔法但是物理",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 5%概率 擊暈 目標。 NL 如果目標敵人的意圖不是攻擊，抽一張牌並獲得 [E] 。"
+  },
+  "VUPShionMod:WindArrow": {
+    "NAME": "風之矢",
+    "DESCRIPTION": "50%概率造成12+ 敏捷 點傷害。 NL 造成傷害時50%概率使其失去 !M! 點 力量 。",
+    "UPGRADE_DESCRIPTION": "60%概率造成12+ 敏捷 點傷害。 NL 造成傷害時60%概率使其失去 !M! 點 力量 。"
+  },
+  "VUPShionMod:HurricaneVortex": {
+    "NAME": "颶風漩渦",
+    "DESCRIPTION": "接下來的 !M! 回合開始時對所有敵人造成7+ 敏捷 點傷害並給予 虛弱 。"
+  },
+  "VUPShionMod:WoodBombardment": {
+    "NAME": "巨木轟擊",
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 25%概率 擊暈 目標。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害。 NL 50%概率 擊暈 目標。 NL 消耗 。"
+  },
+  "VUPShionMod:SoilNB": {
+    "NAME": "土流壁",
+    "DESCRIPTION": "獲得 !B! X點 格擋 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! X點 格擋 。 NL 對所有意圖為攻擊的敵人造成 !D! X點傷害。",
+    "EXTENDED_DESCRIPTION": [
+      "土流弊流壁"
+    ]
+  },
+  "VUPShionMod:GaiaRevelation": {
+    "NAME": "蓋亞啟示",
+    "DESCRIPTION": "將抽牌堆中的一張牌加入手牌。 NL 預見1- !M! 張牌。"
+  },
+  "VUPShionMod:SeaOfThorns": {
+    "NAME": "荊棘海",
+    "DESCRIPTION": "給予所有敵人 !M! 層 vup_shion_mod:纏繞 !VUPShionSecondM! 次。 NL 獲得 人工製品 。"
+  },
+  "VUPShionMod:ForestStalking": {
+    "NAME": "林海潛行",
+    "DESCRIPTION": "抽一張牌。 NL 抽到的牌打出前耗能降低2。 NL 5%概率獲得 無實體 。 NL 消耗性 !stslib:ex! 。"
+  },
+  "VUPShionMod:FertileSoil": {
+    "NAME": "沃土",
+    "DESCRIPTION": " 消耗 棄牌堆中的一張牌。 NL 獲得 !M! 層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:FaithLeap": {
+    "NAME": "信仰之躍",
+    "DESCRIPTION": "額外獲得一個回合併結束你的回合。 NL 35%概率受到15點攻擊傷害。 NL 2%概率生命變為1點。",
+    "UPGRADE_DESCRIPTION": "額外獲得一個回合併結束你的回合。 NL 25%概率受到15點攻擊傷害。 NL 1%概率生命變為1點。"
+  },
+  "VUPShionMod:BackToEarth": {
+    "NAME": "歸於大地",
+    "DESCRIPTION": "移除牌組中所有詛咒牌。 NL 消耗 所有詛咒和狀態牌。 NL 移除所有負面效果。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 移除牌組中所有詛咒牌。 NL 消耗 所有詛咒和狀態牌。 NL 移除所有負面效果。 NL 消耗 。"
+  },
+  "VUPShionMod:EarthBless": {
+    "NAME": "大地祝福",
+    "DESCRIPTION": "獲得 !M! 點 力量 、 敏捷 和最大生命。"
+  },
+  "VUPShionMod:LifeLink": {
+    "NAME": "生命連結",
+    "DESCRIPTION": "獲得 vup_shion_mod:精靈迴廊 。"
+  },
+  "VUPShionMod:ElfEnhance": {
+    "NAME": "精靈強化",
+    "DESCRIPTION": "*精靈 獲得 !M! 點最大生命。 NL 其進化為 vup_shion_mod:上位精靈 。",
+    "UPGRADE_DESCRIPTION": "*精靈 獲得 !M! 點最大生命和 *緩衝 。 NL 其進化為 vup_shion_mod:上位精靈 。"
+  },
+  "VUPShionMod:ElfSublimation": {
+    "NAME": "精靈升華",
+    "DESCRIPTION": "*精靈 獲得 !M! 點最大生命和 無實體 。 NL 其進化為 vup_shion_mod:精靈騎士 。 NL 打出 *精靈強化 時，這張牌的耗能降低2。",
+    "UPGRADE_DESCRIPTION": "*精靈 獲得 !M! 點最大生命、 無實體 和 *緩衝 。 NL 其進化為 vup_shion_mod:精靈騎士 。 NL 打出 *精靈強化 時，這張牌的耗能降低2。"
+  },
+  "VUPShionMod:SynchroSummon": {
+    "NAME": "同調召喚",
+    "DESCRIPTION": "獲得 vup_shion_mod:同調召喚 。"
+  },
+  "VUPShionMod:HeartOfNature": {
+    "NAME": "自然之心",
+    "DESCRIPTION": "每回合獲得 [E] 。"
+  },
+  "VUPShionMod:GaiaBreath": {
+    "NAME": "蓋亞之息",
+    "DESCRIPTION": "你與 *精靈 回復 !M! 點生命。"
+  },
+  "VUPShionMod:ForestBarrier": {
+    "NAME": "林海屏障",
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:林海屏障 。"
+  },
+  "VUPShionMod:WorldTreeLink": {
+    "NAME": "世界樹連結",
+    "DESCRIPTION": "獲得 !M! 點 vup_shion_mod:護盾 。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:世界樹連結 。"
+  },
+  "VUPShionMod:ConsciousnessStripping": {
+    "NAME": "意識剝離",
+    "DESCRIPTION": "造成 !D! 點傷害 !M! 次並給予 虛弱 、 易傷 和 vup_shion_mod:流血 。 NL 其失去 !VUPShionSecondM! 點 力量 。"
+  },
+  "VUPShionMod:RemnantsOfTime": {
+    "NAME": "時之殘響",
+    "DESCRIPTION": "保留 。 NL 造成1-3點傷害 !M! 次。 NL 保留 時，其本場戰鬥耗能降低1並將傷害次數提高1。",
+    "UPGRADE_DESCRIPTION": "固有 ， 保留 。 NL 造成1-3點傷害 !M! 次。 NL 保留 時，其本場戰鬥耗能降低1並將傷害次數提高1。"
+  },
+  "VUPShionMod:SealResidue": {
+    "NAME": "封印殘留",
+    "DESCRIPTION": "50%概率獲得 !M! 點 vup_shion_mod:護盾 ， NL 獲得 vup_shion_mod:護盾 時有50%概率獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。",
+    "UPGRADE_DESCRIPTION": "70%概率獲得 !M! 點 vup_shion_mod:護盾 。 NL 獲得 vup_shion_mod:護盾 時有70%概率獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。"
+  },
+  "VUPShionMod:SpaceTimeMetric": {
+    "NAME": "時空度規",
+    "DESCRIPTION": "丟棄 !M! 張牌。 NL 抽牌直到 !M! 張牌。",
+    "UPGRADE_DESCRIPTION": "至多丟棄 !M! 張牌。 NL 抽牌直到 !M! 張牌。"
+  },
+  "VUPShionMod:EternalEcho": {
+    "NAME": "亙古迴響",
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:亙古迴響 。"
+  },
+  "VUPShionMod:SupportTargetedSniping": {
+    "NAME": "支援：定向狙擊",
+    "DESCRIPTION": "斬殺 !M! 點生命以下的敵人。 NL 造成 !D! 點傷害。 NL 消耗 。"
+  },
+  "VUPShionMod:SupportShieldPrayer": {
+    "NAME": "支援：聖盾禱告",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:能量回收 。 NL 消耗 。"
+  },
+  "VUPShionMod:SupportTimeDriven": {
+    "NAME": "支援：時流驅動",
+    "DESCRIPTION": "獲得 !M! 點 vup_shion_mod:時流驅動 。"
+  },
+  "VUPShionMod:SupportGravitater": {
+    "NAME": "支援：重力迴路",
+    "DESCRIPTION": "獲得 !M! 點 vup_shion_mod:重力增幅 。"
   }
 }

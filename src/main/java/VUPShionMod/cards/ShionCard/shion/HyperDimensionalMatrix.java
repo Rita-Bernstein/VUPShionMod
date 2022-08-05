@@ -24,7 +24,7 @@ public class HyperDimensionalMatrix extends AbstractShionCard {
     public HyperDimensionalMatrix() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.selfRetain = true;
-        this.magicNumber = this.baseMagicNumber = 20;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class HyperDimensionalMatrix extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(-5);
+            upgradeMagicNumber(-1);
         }
     }
 }

@@ -1,7 +1,8 @@
 package VUPShionMod.skins.sk.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.Liyezhu.*;
+import VUPShionMod.cards.EisluRen.*;
+import VUPShionMod.relics.EisluRen.ElfCore;
 import VUPShionMod.relics.EisluRen.ShieldHRzy1;
 import VUPShionMod.relics.Liyezhu.MartyrVessel;
 import VUPShionMod.skins.AbstractSkin;
@@ -18,7 +19,7 @@ public class OriEisluRen extends AbstractSkin {
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
     public OriEisluRen() {
-        super(ID,0);
+        super(ID, 0);
         this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/EisluRen/portrait.png");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
@@ -35,12 +36,17 @@ public class OriEisluRen extends AbstractSkin {
 
     }
 
-
+    @Override
+    public void initialize() {
+        if (VUPShionMod.isTestMod)
+            unlock();
+    }
 
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(ShieldHRzy1.ID);
+        info.relics.add(ElfCore.ID);
         return info;
     }
 
@@ -48,24 +54,26 @@ public class OriEisluRen extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(ShieldHRzy1.ID);
+        retVal.add(ElfCore.ID);
         return retVal;
     }
 
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(HolyLight.ID);
-        retVal.add(HolyLight.ID);
-        retVal.add(HolyLight.ID);
-        retVal.add(HolyLight.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(Barrier.ID);
-        retVal.add(SoleAnthem.ID);
-        retVal.add(TranquilPrayer.ID);
-        retVal.add(JudgementOfSins.ID);
+        retVal.add(Totsugeki.ID);
+        retVal.add(Totsugeki.ID);
+        retVal.add(Totsugeki.ID);
+        retVal.add(Totsugeki.ID);
+        retVal.add(Totsugeki.ID);
+        retVal.add(Station.ID);
+        retVal.add(Station.ID);
+        retVal.add(Station.ID);
+        retVal.add(Station.ID);
+        retVal.add(Station.ID);
+        retVal.add(ShieldCharge.ID);
+        retVal.add(VineCatapult.ID);
+        retVal.add(SummonElf.ID);
 
         return retVal;
     }

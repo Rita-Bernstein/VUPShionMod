@@ -129,8 +129,8 @@ public class CharacterSelectScreenPatches {
                 } else {
                     sb.setColor(BLACK_OUTLINE_COLOR);
                 }
-
             }
+
             if (__instance.c.name.equals(CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("Liyezhu")).NAMES[0])) {
                 if (__instance.selected) {
                     glowColor.r = 1.0f;
@@ -140,7 +140,6 @@ public class CharacterSelectScreenPatches {
                 } else {
                     sb.setColor(BLACK_OUTLINE_COLOR);
                 }
-
             }
 
             if (__instance.c.name.equals(CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("EisluRen")).NAMES[0])) {
@@ -152,8 +151,8 @@ public class CharacterSelectScreenPatches {
                 } else {
                     sb.setColor(BLACK_OUTLINE_COLOR);
                 }
-
             }
+
             return SpireReturn.Continue();
         }
     }

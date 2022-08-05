@@ -1,6 +1,7 @@
 package VUPShionMod.relics.Share;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.PlayTmpCardAction;
 import VUPShionMod.patches.BottledStasisPatch;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.AbstractShionRelic;
@@ -139,33 +140,8 @@ public class AttackCircuit extends AbstractShionRelic implements CustomBottleRel
 
     @Override
     public void atBattleStart() {
-        if (this.card != null) {
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    AbstractMonster m = (AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.relicRng);
-                    if (m == null) return;
-
-                    AbstractCard card = AttackCircuit.this.card.makeStatEquivalentCopy();
-
-                    card.exhaustOnUseOnce = true;
-                    AbstractDungeon.player.limbo.group.add(card);
-                    card.current_y = -200.0F * Settings.scale;
-                    card.target_x = Settings.WIDTH / 2.0F + 200.0F * Settings.xScale;
-                    card.target_y = Settings.HEIGHT / 2.0F;
-                    card.targetAngle = 0.0F;
-                    card.lighten(false);
-                    card.drawScale = 0.12F;
-                    card.targetDrawScale = 0.75F;
-
-                    card.applyPowers();
-                    addToTop(new NewQueueCardAction(card, m, false, true));
-                    addToTop(new UnlimboAction(card));
-                    isDone = true;
-                }
-            });
-
-        }
+        if (this.card != null)
+            addToBot(new PlayTmpCardAction(this.card));
     }
 
     @Override

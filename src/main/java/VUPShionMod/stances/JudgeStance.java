@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
 
 public class JudgeStance extends AbstractStance {
-    public static final String STANCE_ID = "VUPShionMod:Judge";
+    public static final String STANCE_ID = VUPShionMod.makeID(JudgeStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 
 

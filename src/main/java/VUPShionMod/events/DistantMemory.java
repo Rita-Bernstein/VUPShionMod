@@ -24,7 +24,7 @@ public class DistantMemory extends AbstractImageEvent {
 
 
     public DistantMemory() {
-        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/VacuumRipples.png"));
+        super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/DistantMemory.png"));
 
         this.imageEventText.setDialogOption(OPTIONS[0], new Inhibitor());
         this.imageEventText.setDialogOption(OPTIONS[1], new HallowedCase());

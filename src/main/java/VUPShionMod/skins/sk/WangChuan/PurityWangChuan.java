@@ -61,7 +61,7 @@ public class PurityWangChuan extends AbstractSkin {
         retVal.add(Slide.ID);
         retVal.add(Slide.ID);
         retVal.add(Slide.ID);
-        retVal.add(Sheathe.ID);
+        retVal.add(OppressiveSword.ID);
         retVal.add(InTheBlink.ID);
 
         return retVal;

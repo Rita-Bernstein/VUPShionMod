@@ -171,7 +171,7 @@
   "VUPShionMod:SwardCharge": {
     "TEXT": [
       "魔能刃",
-      " #y魔刃連擊 ： #b%d / #b4 。 NL 充滿時將打出一張 NL 無 #y硬直 的 #y霹靂一閃 ， NL 清空所有 #y連擊 和 #p魔能裝填 。 NL 每打出 #r一種 #y攻擊牌 ， NL 獲得 #b1 點 #y充能 。 NL 每回合結束時失去所有 #y連擊 。",
+      " #y魔刃連擊 ： #b%d / #b4 。 NL 充滿時將打出一張 NL 無 #y硬直 的 #y霹靂一閃 ， NL 清空所有 #y連擊 和 #p魔能裝填 。 NL 每打出 #r一種 #y攻擊牌 ， NL 獲得 #b1 點 #y充能 。 NL 每回合結束時失去所有 #y連擊 。 NL 達到 #b3 層 #y連擊 時，獲得 #b1 點 #y劍勢 。",
       " NL NL #p魔能裝填 ： #b%d ( %d ) / #b3 : NL 每層可使 #y魔刃連擊 打出的 #y霹靂一閃 被 #y升級 一次。 NL 每獲得 #b3 層 #y魔能過載 ，獲得 #b1 層 #p魔能裝填 。"
     ]
   },
@@ -179,6 +179,23 @@
     "TEXT": [
       "浮游炮切換",
       "每回合你能手動切換一次當前選擇的 #y浮游炮 。 NL 使用卡牌耗能時，消耗的能量將能增加切換的次數。"
+    ]
+  },
+  "VUPShionMod:SingleCardViewPopup": {
+    "TEXT": [
+      "召喚"
+    ]
+  },
+  "VUPShionMod:WingShield": {
+    "TEXT": [
+      "構裝翼盾",
+      "能量回收: #b%d/3 。 NL 滿層時將獲得 #b1 層 #y充能。 NL NL 當前充能： #b%d/%d 。 NL 每層充能阻擋 #b7 點傷害。 NL 每次受到傷害至多失去 #b7 層 #y充能 。",
+      "充能不足"
+    ]
+  },
+  "VUPShionMod:BetterDiscardAction": {
+    "TEXT": [
+      "丟棄任意手牌"
     ]
   }
 }

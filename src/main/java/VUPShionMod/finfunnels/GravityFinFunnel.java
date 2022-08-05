@@ -62,7 +62,7 @@ public class GravityFinFunnel extends AbstractFinFunnel {
 
     @Override
     public int getFinalEffect() {
-        return this.effect * (getLevel() - 1) / 2 + 2;
+        return this.effect * (getLevel() - 1) / 3 + 2;
     }
 
     @Override

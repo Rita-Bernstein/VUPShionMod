@@ -60,7 +60,7 @@ public class Parocheth extends AbstractShionRelic implements ClickableRelic {
             if (!this.grayscale) {
                 this.grayscale = true;
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1)));
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 1; i++)
                     addToBot(new TurnTriggerAllFinFunnelAction(true));
 
                 for (int i = 0; i < 2; i++)

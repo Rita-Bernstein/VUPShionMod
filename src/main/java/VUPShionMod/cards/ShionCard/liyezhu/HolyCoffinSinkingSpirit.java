@@ -17,7 +17,7 @@ public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
 
     public HolyCoffinSinkingSpirit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 10;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(5);
+            upgradeMagicNumber(2);
         }
     }
 

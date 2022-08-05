@@ -3,11 +3,15 @@ package VUPShionMod.cards.Codex;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Codex.FourSkillPower;
 import VUPShionMod.powers.Codex.TwoSkillPower;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TerraNimia extends AbstractCodexCard {
+import java.util.ArrayList;
+
+public class TerraNimia extends AbstractCodexCard implements SpawnModificationCard {
     public static final String ID = VUPShionMod.makeID(TerraNimia.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/codex/di.png");
     private static final CardType TYPE = CardType.SKILL;
@@ -21,6 +25,8 @@ public class TerraNimia extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
         this.exhaust= true;
+
+
     }
 
     public TerraNimia() {
@@ -61,5 +67,10 @@ public class TerraNimia extends AbstractCodexCard {
             }
 
         }
+    }
+
+    @Override
+    public void onRewardListCreated(ArrayList<AbstractCard> rewardCards) {
+
     }
 }

@@ -2,6 +2,7 @@ package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.Codex.*;
+import VUPShionMod.cards.EisluRen.ShieldCharge;
 import VUPShionMod.cards.Liyezhu.SoothingScripture;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -41,7 +42,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static VUPShionMod.VUPShionMod.EisluRen_Color;
-import static VUPShionMod.VUPShionMod.Liyezhu_Color;
 
 public class EisluRen extends CustomPlayer {
     public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID(EisluRen.class.getSimpleName()));
@@ -89,7 +89,7 @@ public class EisluRen extends CustomPlayer {
         reloadAnimation();
 
 
-         CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(4);
+        CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(4);
     }
 
     public void reloadAnimation() {
@@ -175,7 +175,6 @@ public class EisluRen extends CustomPlayer {
         tmpPool.add(new LignumConstans());
 
 
-
         return super.getCardPool(tmpPool);
     }
 
@@ -186,7 +185,7 @@ public class EisluRen extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new SoothingScripture();
+        return new ShieldCharge();
     }
 
     @Override
@@ -196,7 +195,7 @@ public class EisluRen extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return START_HP/10;
+        return START_HP / 10;
     }
 
     @Override
@@ -272,21 +271,23 @@ public class EisluRen extends CustomPlayer {
 
     @Override
     public void onStanceChange(String id) {
-        switch (id) {
-            case PrayerStance.STANCE_ID:
-                stanceSwitchQueue.add("Prayer");
-                break;
-
-            case JudgeStance.STANCE_ID:
-                stanceSwitchQueue.add("Judge");
-                break;
-
-            case SpiritStance.STANCE_ID:
-                stanceSwitchQueue.add("Spirit");
-                break;
-            default:
-                stanceSwitchQueue.add("Idle");
+        if (id.equals(PrayerStance.STANCE_ID)) {
+            stanceSwitchQueue.add("Prayer");
+            return;
         }
+
+        if (id.equals(JudgeStance.STANCE_ID)) {
+            stanceSwitchQueue.add("JudgeStance");
+            return;
+        }
+
+        if (id.equals(SpiritStance.STANCE_ID)) {
+            stanceSwitchQueue.add("SpiritStance");
+            return;
+        }
+
+        stanceSwitchQueue.add("Idle");
+
     }
 
 
@@ -421,7 +422,6 @@ public class EisluRen extends CustomPlayer {
     }
 
 
-
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
@@ -448,5 +448,6 @@ public class EisluRen extends CustomPlayer {
         super.preBattlePrep();
         switchStanceVisualGo("Idle");
     }
+
 }
 

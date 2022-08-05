@@ -23,6 +23,8 @@ public class FullBloom extends AbstractWCCard {
         this.timesUpgraded = upgrades;
         this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 3;
+
+        this.timesUpgraded = upgrades;
     }
 
     public FullBloom() {

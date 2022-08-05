@@ -1,6 +1,8 @@
 package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -40,6 +42,7 @@ public class TonitrusRapidus extends AbstractCodexCard {
             case 2:
                 addToBot(new GainEnergyAction(this.magicNumber));
                 addToBot(new DrawCardAction(p, this.secondaryM));
+                addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
                 break;
         }
     }

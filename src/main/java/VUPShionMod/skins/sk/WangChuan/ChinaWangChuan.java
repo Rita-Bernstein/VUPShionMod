@@ -7,6 +7,8 @@ import VUPShionMod.relics.Wangchuan.PrototypeCup;
 import VUPShionMod.relics.Wangchuan.TheRipple;
 import VUPShionMod.relics.Wangchuan.WaveSlasher;
 import VUPShionMod.skins.AbstractSkin;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -65,8 +67,17 @@ public class ChinaWangChuan extends AbstractSkin {
         retVal.add(Slide.ID);
         retVal.add(Slide.ID);
         retVal.add(MentalMotivationChop.ID);
-        retVal.add(AfflictioBellumque.ID);
+        retVal.add(PreExecution.ID);
 
         return retVal;
+    }
+
+    @Override
+    public void postCreateStartingDeck(CardGroup cardGroup) {
+        for(AbstractCard card : cardGroup.group){
+            if(card.cardID.equals(PreExecution.ID)){
+                card.upgrade();
+            }
+        }
     }
 }

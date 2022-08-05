@@ -13,7 +13,7 @@ public class Sharpen extends AbstractWCCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public Sharpen() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -30,7 +30,9 @@ public class Sharpen extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(0);
+            this.selfRetain = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

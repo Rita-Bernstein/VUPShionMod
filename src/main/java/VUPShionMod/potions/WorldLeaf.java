@@ -1,8 +1,10 @@
 package VUPShionMod.potions;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.relics.EisluRen.ElfCore;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.ObtainPotionEffect;
 
@@ -42,6 +45,10 @@ public class WorldLeaf extends AbstractShionImagePotion {
         if (AbstractDungeon.player.currentHealth < (int) (AbstractDungeon.player.maxHealth * this.potency / 100.0F)) {
             if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
                 addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, (int) (AbstractDungeon.player.maxHealth * this.potency / 100.0F - AbstractDungeon.player.currentHealth)));
+                if (AbstractDungeon.player.hasRelic(ElfCore.ID)) {
+                    AbstractDungeon.player.getRelic(ElfCore.ID).flash();
+                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 9)));
+                }
             } else {
                 AbstractDungeon.player.heal((int) (AbstractDungeon.player.maxHealth * this.potency / 100.0F - AbstractDungeon.player.currentHealth));
             }

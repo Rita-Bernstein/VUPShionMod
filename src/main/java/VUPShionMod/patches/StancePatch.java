@@ -1,18 +1,12 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.stances.JudgeStance;
-import VUPShionMod.stances.PrayerStance;
-import VUPShionMod.stances.SpiritStance;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.MathUtils;
+
+import VUPShionMod.stances.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.stances.AbstractStance;
-import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
-import java.lang.reflect.Field;
 
 public class StancePatch {
 
@@ -32,6 +26,28 @@ public class StancePatch {
             if (name.equals(SpiritStance.STANCE_ID)) {
                 return SpireReturn.Return(new SpiritStance());
             }
+
+            if (name.equals(SpiralBladeStance.STANCE_ID)) {
+                return SpireReturn.Return(new SpiralBladeStance());
+            }
+
+            if (name.equals(ThousandsOfBladeStance.STANCE_ID)) {
+                return SpireReturn.Return(new ThousandsOfBladeStance());
+            }
+
+            if (name.equals(LotusOfWarStance.STANCE_ID)) {
+                return SpireReturn.Return(new LotusOfWarStance());
+            }
+
+            if (name.equals(RuinGuardianStance.STANCE_ID)) {
+                return SpireReturn.Return(new RuinGuardianStance());
+            }
+
+            if (name.equals(LightArmorStance.STANCE_ID)) {
+                return SpireReturn.Return(new LightArmorStance());
+            }
+
+
             return SpireReturn.Continue();
         }
     }

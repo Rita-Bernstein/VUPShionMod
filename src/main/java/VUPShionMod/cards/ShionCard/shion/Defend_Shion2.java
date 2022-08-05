@@ -32,8 +32,8 @@ public class Defend_Shion2 extends AbstractShionCard {
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy02.png"));
         this.tags.add(CardTags.STARTER_DEFEND);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
@@ -41,7 +41,6 @@ public class Defend_Shion2 extends AbstractShionCard {
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
 
-        if (this.upgraded)
             addToBot(new GainFinFunnelChargeAction(this.secondaryM));
     }
 
@@ -51,6 +50,7 @@ public class Defend_Shion2 extends AbstractShionCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeMagicNumber(1);
         }
     }
 

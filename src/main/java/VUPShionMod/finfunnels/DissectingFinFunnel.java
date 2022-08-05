@@ -53,7 +53,7 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
 
     @Override
     public int getFinalEffect() {
-        return this.effect * (getLevel() - 1) / 2 + 1;
+        return this.effect * (getLevel() - 1) / 3 + 1;
     }
 
     @Override

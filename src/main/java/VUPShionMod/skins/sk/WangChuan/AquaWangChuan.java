@@ -63,7 +63,7 @@ public class AquaWangChuan extends AbstractSkin {
         retVal.add(Warp.ID);
         retVal.add(Warp.ID);
         retVal.add(CirrocumulusChop.ID);
-        retVal.add(BombardaMagica.ID);
+        retVal.add(SpaceSlice.ID);
 
         return retVal;
     }

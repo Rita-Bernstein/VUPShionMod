@@ -22,7 +22,7 @@ public class FirstStrike extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public FirstStrike() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

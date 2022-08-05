@@ -140,6 +140,12 @@
       "This enemy takes #b%d additional damage from Attacks."
     ]
   },
+  "VUPShionMod:LockOnPower2": {
+    "NAME": "锁定",
+    "DESCRIPTIONS": [
+      "Whenever this creature get injured,you gain #b%d #yHyperdimensional #yLink."
+    ]
+  },
   "VUPShionMod:AttackOrderAlphaPower": {
     "NAME": "Order: Aggressive",
     "DESCRIPTIONS": [
@@ -636,7 +642,7 @@
   "VUPShionMod:TranscendSoul2Power": {
     "NAME": "Scorch Soul",
     "DESCRIPTIONS": [
-      "t the end of your turn, deal damage #b%d times of #yPsychic to ALL enemies."
+      "At the end of your turn, deal damage #b%d times of #yPsychic to ALL enemies."
     ]
   },
   "VUPShionMod:ArbitrationPower": {

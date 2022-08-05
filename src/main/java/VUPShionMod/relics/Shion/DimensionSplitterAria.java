@@ -38,7 +38,7 @@ public class DimensionSplitterAria extends AbstractShionRelic implements Clickab
     @Override
     public void onRightClick() {
         if (!AbstractDungeon.actionManager.turnHasEnded && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
-            if (this.counter >= 3) {
+            if (this.counter >= 4) {
                 this.pulse = true;
                 addToBot(new TriggerDimensionSplitterAction());
                 this.counter = 0;
@@ -68,10 +68,10 @@ public class DimensionSplitterAria extends AbstractShionRelic implements Clickab
 
     @Override
     public void atTurnStart() {
-        if (this.counter < 3)
+        if (this.counter < 4)
             this.counter++;
 
-        this.pulse = this.counter >= 3;
+        this.pulse = this.counter >= 4;
         setDescriptionAfterLoading();
     }
 

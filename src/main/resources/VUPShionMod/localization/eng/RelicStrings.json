@@ -3,7 +3,7 @@
     "NAME": "Dimension Splitter: Aria",
     "FLAVOR": "“Your existence is futile.” says the otherworldly light portends impending destruction.",
     "DESCRIPTIONS": [
-      "Current charge #b%d/3 。 NL You can #yRightClick to act #yOrbitalStrike . If #yFatal, repeats and gain [E] . NL Gain #b1 charge each turn. ",
+      "Current charge #b%d/4 。 NL You can #yRightClick to act #yOrbitalStrike . If #yFatal, repeats and gain [E] . NL Gain #b1 charge each turn. ",
       "Orbital Strike ",
       "Deal #yTotalUpgrade + target #b10% Maxhp damage. "
     ]
@@ -158,7 +158,7 @@
     "DESCRIPTIONS": [
       "At the start of each combat, shuffle #b2 #yDazed into draw pile. At the start of each turn ,gain 1 #yFrail. Right Click: #bSupernova #bOutburst. (once per combat)",
       "Supernova",
-      " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b2 times. NL Enhance random #b2 #yFunnels. NL End your turn."
+      " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b1 time. NL Enhance random #b2 #yFunnels. NL End your turn."
     ]
   },
   "VUPShionMod:Parocheth": {
@@ -167,7 +167,7 @@
     "DESCRIPTIONS": [
       "#rReplace Overloaded Supernova. NL Right Click: #bSupernova #bOutburst. (once per combat)",
       "Supernova",
-      " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b2 times. NL Enhance random #b2 #yFunnels. NL End your turn."
+      " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b1 time. NL Enhance random #b2 #yFunnels. NL End your turn."
     ]
   },
   "VUPShionMod:AbyssalCrux": {
@@ -467,7 +467,7 @@
     "NAME": "Shield HR Type: ZY-2",
     "FLAVOR": "Based on the Shield HR Type: ZY-1,the kinetic energy recovery device has been added. Increased range.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycling."
+      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycling."
     ]
   }
 }

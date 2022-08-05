@@ -50,7 +50,6 @@ public class OppressiveSword extends AbstractWCCard {
                         isDone = true;
                     }
                 });
-                addToBot(new ApplyStiffnessAction(1));
                 break;
             case 2:
                 if (m != null)
@@ -82,14 +81,14 @@ public class OppressiveSword extends AbstractWCCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int trueDamage = this.baseDamage;
+        this.baseDamage = 0;
 
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
             this.baseDamage = AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * this.magicNumber;
 
         super.calculateCardDamage(mo);
 
-        this.baseDamage = trueDamage;
+
     }
 
 

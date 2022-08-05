@@ -55,7 +55,7 @@
       "陨石打击",
       "诸神之黄昏",
       "",
-      "灭族切割",
+      "灭绝扫腿",
       "烈风燕破",
       "灭除之刃"
     ],
@@ -63,5 +63,23 @@
     "DIALOG": [
       "……再会了……"
     ]
+  },
+  "VUPShionMod:ElfMinion": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "下位精灵"
+  },
+  "VUPShionMod:AltmerMinion": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "上位精灵"
+  },
+  "VUPShionMod:ElvenKnight": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "精灵骑士"
   }
 }

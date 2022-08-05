@@ -268,22 +268,25 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public void onStanceChange(String id) {
-        switch (id) {
-            case PrayerStance.STANCE_ID:
-                stanceSwitchQueue.add("Prayer");
-                break;
-
-            case JudgeStance.STANCE_ID:
-                stanceSwitchQueue.add("Judge");
-                break;
-
-            case SpiritStance.STANCE_ID:
-                stanceSwitchQueue.add("Spirit");
-                break;
-            default:
-                stanceSwitchQueue.add("Idle");
+        if (id.equals(PrayerStance.STANCE_ID)) {
+            stanceSwitchQueue.add("Prayer");
+            return;
         }
+
+        if (id.equals(JudgeStance.STANCE_ID)) {
+            stanceSwitchQueue.add("JudgeStance");
+            return;
+        }
+
+        if (id.equals(SpiritStance.STANCE_ID)) {
+            stanceSwitchQueue.add("SpiritStance");
+            return;
+        }
+
+        stanceSwitchQueue.add("Idle");
+
     }
+
 
 
     private void tickStanceVisualTimer() {

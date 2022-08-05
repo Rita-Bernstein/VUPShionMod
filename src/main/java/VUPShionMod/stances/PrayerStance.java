@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
 public class PrayerStance extends AbstractStance {
-    public static final String STANCE_ID = "VUPShionMod:Prayer";
+    public static final String STANCE_ID = VUPShionMod.makeID(PrayerStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 
 
@@ -91,13 +91,13 @@ public class PrayerStance extends AbstractStance {
 
     @Override
     public void onEndOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player,AbstractDungeon.player,
+        AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player,
                 2));
     }
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        if (type == DamageInfo.DamageType.NORMAL){
+        if (type == DamageInfo.DamageType.NORMAL) {
             return damage * 0.75f;
         }
 

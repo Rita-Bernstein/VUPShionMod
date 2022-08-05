@@ -56,4 +56,11 @@ public class AbstractShionPower extends TwoAmountPower {
 
     public void onTriggerFinFunnel(AbstractFinFunnel finFunnel,AbstractCreature target){}
 
+    public void onAddShieldCharge(int amount){}
+
+    public void onAddShieldRefund(int amount){}
+
+    public void onLoseEnergy(int e){}
+
+    public void onPlayerMinionDeath(){}
 }

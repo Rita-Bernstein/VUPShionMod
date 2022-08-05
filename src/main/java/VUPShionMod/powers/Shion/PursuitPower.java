@@ -5,15 +5,23 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.vfx.Shion.FinFunnelMinionEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class PursuitPower extends AbstractShionPower implements HealthBarRenderPower {
@@ -42,11 +50,16 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
     @Override
     public void atStartOfTurn() {
         this.flash();
-        if(!FinFunnelManager.getFinFunnelList().isEmpty())
-        for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
-            if (!this.owner.isDeadOrEscaped()) {
-                funnel.onPursuitEnemy(this.owner);
+        if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
+            for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
+                if (!this.owner.isDeadOrEscaped()) {
+                    funnel.onPursuitEnemy(this.owner);
+                }
             }
+        } else {
+            addToBot(new VFXAction(new FinFunnelMinionEffect(this.owner, 0, false)));
+            addToBot(new DamageAction(this.owner,
+                    new DamageInfo(null, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
 

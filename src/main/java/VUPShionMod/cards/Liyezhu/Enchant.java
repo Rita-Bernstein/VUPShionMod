@@ -28,6 +28,7 @@ public class Enchant extends AbstractLiyezhuCard {
         this.baseDamage = 6;
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
+        this.timesUpgraded = upgrades;
     }
 
     public Enchant() {

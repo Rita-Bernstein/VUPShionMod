@@ -4,6 +4,7 @@ import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.Contact;
 import VUPShionMod.events.Newborn;
 import VUPShionMod.events.Prophesy;
+import VUPShionMod.events.TrainingTest;
 import VUPShionMod.monsters.Story.Ouroboros;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
@@ -127,6 +128,13 @@ public class SpecialCombatPatches {
                     return SpireReturn.Return(null);
                 }
             }
+
+            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen    && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))) {
+                    goToShionEvent(_instance, TrainingTest.ID);
+                    return SpireReturn.Return(null);
+                }
+            }
             return SpireReturn.Continue();
         }
     }
@@ -164,51 +172,6 @@ public class SpecialCombatPatches {
         AbstractDungeon.scene.nextRoom(node.room);
         AbstractDungeon.rs = node.room.event instanceof AbstractImageEvent ? AbstractDungeon.RenderScene.EVENT : AbstractDungeon.RenderScene.NORMAL;
     }
-
-//
-//    @SpirePatch(
-//            clz = AbstractDungeon.class,
-//            method = "render"
-//    )
-//    public static class CGRenderPatch {
-//        @SpirePostfixPatch
-//        public static void Postfix(AbstractDungeon _instance, SpriteBatch sb) {
-//            for (AbstractRelic r : AbstractDungeon.player.relics) {
-//                if (r instanceof AnastasiaNecklace) {
-//                    ((AnastasiaNecklace) r).renderAbove(sb);
-//                }
-//
-//                if (r instanceof TrackingBeacon) {
-//                    ((TrackingBeacon) r).renderAbove(sb);
-//                }
-//
-//                if (r instanceof UnknownDust) {
-//                    ((UnknownDust) r).renderAbove(sb);
-//                }
-//            }
-//
-//
-//            if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
-//
-//                if ((AbstractDungeon.getMonsters()).monsters != null)
-//                    if (!(AbstractDungeon.getMonsters()).monsters.isEmpty())
-//                    for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-//                        if (monster instanceof Ouroboros) {
-//                            ((Ouroboros) monster).renderAbove(sb);
-//                        }
-//
-//                        if (monster instanceof PlagaAMundoMinion)
-//                            ((PlagaAMundoMinion) monster).renderAbove(sb);
-//
-//                    }
-//            }
-//
-//
-//        }
-//    }
-
-
-
 
 
     @SpirePatch(
@@ -306,27 +269,4 @@ public class SpecialCombatPatches {
         }
     }
 
-    @SpirePatch(
-            clz = ProceedButton.class,
-            method = "update"
-    )
-    public static class OpenMap {
-        public static ExprEditor Instrument() {
-            return new ExprEditor() {
-                @Override
-                public void edit(Instanceof i) throws CannotCompileException {
-                    try {
-                        if (i.getType().getName().equals(Mushrooms.class.getName())) {
-                            i.replace(" $_ = $proceed($$) || " +
-                                    "currentRoom.event instanceof VUPShionMod.events.FruitStall; "
-                            );
-                        }
-                    } catch (NotFoundException ignored) {
-
-                    }
-                }
-            };
-
-        }
-    }
 }

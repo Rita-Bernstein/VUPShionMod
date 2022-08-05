@@ -32,6 +32,7 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 1;
 
+        this.timesUpgraded = upgrades;
         vupCardSetBanner(CardRarity.RARE,CardType.ATTACK);
     }
 

@@ -5,7 +5,7 @@ import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class SansMeterSave implements CustomSavable<Integer> {
-    public static int sansMeterSaveAmount = 100;
+    public static int sansMeterSaveAmount = 0;
 
     @Override
     public Integer onSave() {

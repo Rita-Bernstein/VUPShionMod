@@ -939,5 +939,66 @@
     "DESCRIPTIONS": [
       "每觸發 #b5 次 #y加載完成 時，獲得 #b%d [E] 。"
     ]
+  },
+  "VUPShionMod:ReduceDamagePower": {
+    "NAME": "減傷",
+    "DESCRIPTIONS": [
+      "本回合受到的攻擊傷害減少 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:AttackIncreasePower": {
+    "NAME": "攻擊提升",
+    "DESCRIPTIONS": [
+      "下一張 #y攻擊牌 造成的傷害提高 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:IronWallPower": {
+    "NAME": "鐵壁",
+    "DESCRIPTIONS": [
+      "本回合受到的攻擊傷害減少 #b20% 。"
+    ]
+  },
+  "VUPShionMod:RoyalGuardianPower": {
+    "NAME": "皇家守衛",
+    "DESCRIPTIONS": [
+      "本回合每受到7點攻擊傷害獲得 #b%d 層 #y能量回收 。"
+    ]
+  },
+  "VUPShionMod:ExtremeOverloadPower": {
+    "NAME": "超負荷",
+    "DESCRIPTIONS": [
+      "下回合開始失去所有 #y構裝翼盾充能 "
+    ]
+  },
+  "VUPShionMod:WingsOfDaedalusPower": {
+    "NAME": "代達羅斯之翼",
+    "DESCRIPTIONS": [
+      "每當獲得 #y敏捷 時，獲得 #b%d 倍的 #y力量 。"
+    ]
+  },
+  "VUPShionMod:StonehengePower": {
+    "NAME": "蒼穹巨石陣列",
+    "DESCRIPTIONS": [
+      "每回合獲得 #b%d 層 #y能量回收 。"
+    ]
+  },
+  "VUPShionMod:EternalEchoPower": {
+    "NAME": "亙古迴響",
+    "DESCRIPTIONS": [
+      "每當失去能量時，獲得 #b%d 層 #y能量回收 。"
+    ]
+  },
+  "VUPShionMod:SupportTimeDrivenPower": {
+    "NAME": "時流驅動",
+    "DESCRIPTIONS": [
+      "本回合內不會失去 #y構裝翼盾充能 。",
+      "在 #b%d 回合內不會失去 #y構裝翼盾充能 。"
+    ]
+  },
+  "VUPShionMod:SupportGravitaterPower": {
+    "NAME": "重力迴路",
+    "DESCRIPTIONS": [
+      "每當失去 #b3 層 #y構裝翼盾充能 時，獲得 #b%d 點 #y力量 。"
+    ]
   }
 }

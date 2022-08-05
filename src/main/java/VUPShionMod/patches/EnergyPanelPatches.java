@@ -1,9 +1,11 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.ui.FinFunnelCharge;
 import VUPShionMod.ui.SansMeter;
 import VUPShionMod.ui.SwardCharge;
+import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -18,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CannotCompileException;
@@ -44,7 +47,6 @@ public class EnergyPanelPatches {
     public static Hitbox hb = new Hitbox(120.0f * Settings.scale, 120.0f * Settings.scale);
 
 
-
     @SpirePatch(
             clz = EnergyPanel.class,
             method = SpirePatch.CLASS
@@ -58,6 +60,9 @@ public class EnergyPanelPatches {
 
         public static SpireField<Boolean> canUseSwardCharge = new SpireField<>(() -> false);
         public static SpireField<SwardCharge> swardCharge = new SpireField<>(() -> new SwardCharge());
+
+        public static SpireField<Boolean> canUseWingShield = new SpireField<>(() -> false);
+        public static SpireField<WingShield> wingShield = new SpireField<>(() -> new WingShield());
 
     }
 
@@ -80,6 +85,12 @@ public class EnergyPanelPatches {
                 PatchEnergyPanelField.canUseSwardCharge.set(_instance, true);
             }
 
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
+                PatchEnergyPanelField.canUseWingShield.set(_instance, true);
+            }else {
+                PatchEnergyPanelField.wingShield.get(_instance).reset();
+            }
+
         }
     }
 
@@ -93,6 +104,11 @@ public class EnergyPanelPatches {
             rolling = true;
             rollingTimmer = 0.0f;
             energyUsed1Angle = -180.0f;
+
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof AbstractShionPower)
+                    ((AbstractShionPower) p).onLoseEnergy(Math.min(e, EnergyPanel.totalCount));
+            }
         }
     }
 
@@ -175,6 +191,11 @@ public class EnergyPanelPatches {
                 charge.render(sb);
             }
 
+            if (PatchEnergyPanelField.canUseWingShield.get(panel)) {
+                WingShield wingShield = PatchEnergyPanelField.wingShield.get(panel);
+                wingShield.render(sb);
+            }
+
         }
     }
 
@@ -221,6 +242,12 @@ public class EnergyPanelPatches {
 
             if (PatchEnergyPanelField.canUseSwardCharge.get(panel)) {
                 SwardCharge charge = PatchEnergyPanelField.swardCharge.get(panel);
+                charge.updatePos(panel);
+                charge.update();
+            }
+
+            if (PatchEnergyPanelField.canUseWingShield.get(panel)) {
+                WingShield charge = PatchEnergyPanelField.wingShield.get(panel);
                 charge.updatePos(panel);
                 charge.update();
             }

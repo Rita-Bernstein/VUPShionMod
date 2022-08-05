@@ -1,0 +1,125 @@
+
+break_zhaohuanjingling.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+L_leg_qishi
+  rotate: true
+  xy: 1396, 776
+  size: 152, 433
+  orig: 152, 433
+  offset: 0, 0
+  index: -1
+L_leg_shangweijingling
+  rotate: false
+  xy: 1440, 420
+  size: 179, 354
+  orig: 179, 354
+  offset: 0, 0
+  index: -1
+R_leg_qishi
+  rotate: false
+  xy: 1177, 918
+  size: 217, 511
+  orig: 217, 511
+  offset: 0, 0
+  index: -1
+R_leg_shangweijingling
+  rotate: false
+  xy: 613, 122
+  size: 234, 477
+  orig: 234, 477
+  offset: 0, 0
+  index: -1
+body_qishi
+  rotate: false
+  xy: 2, 671
+  size: 640, 664
+  orig: 640, 664
+  offset: 0, 0
+  index: -1
+body_shangweijingling
+  rotate: false
+  xy: 2, 2
+  size: 609, 667
+  orig: 609, 667
+  offset: 0, 0
+  index: -1
+ear
+  rotate: false
+  xy: 1243, 149
+  size: 175, 152
+  orig: 175, 152
+  offset: 0, 0
+  index: -1
+hair_qishi
+  rotate: false
+  xy: 2, 1337
+  size: 745, 650
+  orig: 745, 650
+  offset: 0, 0
+  index: -1
+hair_shanwgeijingling
+  rotate: false
+  xy: 749, 1431
+  size: 746, 556
+  orig: 746, 556
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 1396, 930
+  size: 369, 412
+  orig: 369, 412
+  offset: 0, 0
+  index: -1
+wings_qishi_C
+  rotate: false
+  xy: 1767, 936
+  size: 245, 406
+  orig: 245, 406
+  offset: 0, 0
+  index: -1
+wings_qishi_L
+  rotate: false
+  xy: 1243, 303
+  size: 195, 471
+  orig: 195, 471
+  offset: 0, 0
+  index: -1
+wings_qishi_R
+  rotate: true
+  xy: 644, 769
+  size: 566, 531
+  orig: 566, 531
+  offset: 0, 0
+  index: -1
+wings_qishi_R2
+  rotate: false
+  xy: 644, 601
+  size: 538, 166
+  orig: 538, 166
+  offset: 0, 0
+  index: -1
+wings_shangweijingling_L
+  rotate: false
+  xy: 849, 120
+  size: 223, 479
+  orig: 223, 479
+  offset: 0, 0
+  index: -1
+wings_shangweijingling_R
+  rotate: true
+  xy: 1497, 1344
+  size: 643, 540
+  orig: 643, 540
+  offset: 0, 0
+  index: -1
+wings_shangweijingling_R2
+  rotate: true
+  xy: 1074, 81
+  size: 518, 167
+  orig: 518, 167
+  offset: 0, 0
+  index: -1

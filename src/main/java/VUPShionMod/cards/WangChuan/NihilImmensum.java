@@ -30,7 +30,7 @@ public class NihilImmensum extends AbstractWCCard {
             addToBot(new ApplyPowerAction(p, p, new NihilImmensum2Power(p, 1)));
         else
             addToBot(new ApplyPowerAction(p, p, new NihilImmensumPower(p, 1)));
-        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 5)));
     }
 
     @Override

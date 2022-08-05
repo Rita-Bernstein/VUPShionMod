@@ -21,4 +21,6 @@ public abstract class AbstractShionRelic extends CustomRelic {
 
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
     }
+
+    public void onAddShieldCharge(int amount){}
 }

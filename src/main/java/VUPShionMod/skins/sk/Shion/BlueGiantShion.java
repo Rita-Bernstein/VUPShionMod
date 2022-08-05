@@ -2,6 +2,7 @@ package VUPShionMod.skins.sk.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
+import VUPShionMod.cards.ShionCard.minami.FinFunnelActive;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.minami.TacticalLink;
 import VUPShionMod.cards.ShionCard.shion.*;
@@ -11,6 +12,8 @@ import VUPShionMod.relics.Shion.ConcordCharge;
 import VUPShionMod.relics.Shion.ConcordSnipe;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.util.SaveHelper;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -24,7 +27,7 @@ public class BlueGiantShion extends AbstractSkin {
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
     public BlueGiantShion() {
-        super(ID,1);
+        super(ID, 1);
         this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Shion/portrait2.png");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
@@ -93,10 +96,19 @@ public class BlueGiantShion extends AbstractSkin {
         retVal.add(Defend_Shion2.ID);
         retVal.add(Defend_Shion2.ID);
         retVal.add(Defend_Shion2.ID);
-        retVal.add(TacticalLink.ID);
+        retVal.add(WideAreaLocking.ID);
         retVal.add(FinFunnelUpgrade.ID);
-        retVal.add(Strafe2.ID);
+        retVal.add(FinFunnelActive.ID);
 
         return retVal;
+    }
+
+    @Override
+    public void postCreateStartingDeck(CardGroup cardGroup) {
+        for (AbstractCard card : cardGroup.group) {
+            if (card.cardID.equals(WideAreaLocking.ID) || card.cardID.equals(FinFunnelActive.ID)) {
+                card.upgrade();
+            }
+        }
     }
 }

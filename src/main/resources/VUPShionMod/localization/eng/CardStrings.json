@@ -87,7 +87,7 @@
   },
   "VUPShionMod:Goodbye": {
     "NAME": "Enough!",
-    "DESCRIPTION": " Exhaust your hand. NL For each card Exhausted, deal !D! damage."
+    "DESCRIPTION": " Exhaust your hand. NL Play !M! copies of random Attacks. NL Exhaust."
   },
   "VUPShionMod:EnhancedWeapon": {
     "NAME": "Accelerate",
@@ -147,7 +147,7 @@
   },
   "VUPShionMod:LockOn": {
     "NAME": "Lock On",
-    "DESCRIPTION": "Target takes !M! additional damage from Attacks this turn. NL When target injured, gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link."
+    "DESCRIPTION": "Target takes !M! additional damage from Attacks this turn. NL When target injured,gain !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link."
   },
   "VUPShionMod:EnergyReserve": {
     "NAME": "Energy Reserve",
@@ -224,8 +224,8 @@
   },
   "VUPShionMod:TimeOverload": {
     "NAME": "Overload",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional Link. NL Gain [E] [E]. NL Lose [E] [E] next turn.",
-    "UPGRADE_DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional Link. NL Gain [E] [E]. NL Lose [E] next turn."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E] [E] [E]. NL Lose [E] [E] next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E] [E] [E]. NL Lose [E] next turn."
   },
   "VUPShionMod:Limit": {
     "NAME": "Close",
@@ -254,7 +254,7 @@
   },
   "VUPShionMod:TacticalLayout": {
     "NAME": "Tactical Layout",
-    "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to a random enemy !M! times."
+    "DESCRIPTION": "Exhaust up to a card in your draw pile. NL Trigger the passive ability of your vup_shion_mod:Funnel to a random enemy !M! times."
   },
   "VUPShionMod:FinFunnelSupport": {
     "NAME": "Reinforcement",
@@ -312,12 +312,12 @@
   },
   "VUPShionMod:SacredAdvice": {
     "NAME": "Revelation",
-    "DESCRIPTION": "Lose !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E].",
-    "UPGRADE_DESCRIPTION": "Lose !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E] [E]."
+    "DESCRIPTION": "Lose !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E] [E] [E] .",
+    "UPGRADE_DESCRIPTION": "Lose !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E] [E] [E] [E] ."
   },
   "VUPShionMod:DivineRedemption": {
     "NAME": "Divine Redemption",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain !B! Block. NL Exhuast !VUPShionSecondM! random Status or Curse."
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "Azure Blade",
@@ -553,7 +553,8 @@
   },
   "VUPShionMod:Sharpen": {
     "NAME": "Sharpen",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Exhaust."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii. NL Exhaust."
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "Flawless Parry",
@@ -878,7 +879,7 @@
   "VUPShionMod:AurumNimium": {
     "NAME": "Codex Auri",
     "DESCRIPTION": "Upgrade !M! cards in your hand for the rest of the combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Upgrade !M! cards in your hand and discard pile and draw pile for the rest of the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upgrades ALL your cards once for the rest of combat. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Aurum Nimium",
       "Aurum Intensum",
@@ -888,7 +889,7 @@
   "VUPShionMod:AurumFidum": {
     "NAME": "Codex Auri",
     "DESCRIPTION": "Upgrade !M! cards in your hand for the rest of the combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Upgrade !M! cards in your hand and discard pile and draw pile for the rest of the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Upgrades ALL your cards once for the rest of combat. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Aurum Fidum",
       "Aurum Intensum",
@@ -937,7 +938,7 @@
   },
   "VUPShionMod:FunnelMatrix": {
     "NAME": "Funnel Matrix",
-    "DESCRIPTION": "Trigger the passive ability of all vup_shion_mod:Funnel for twice to an enemy. NL Exhaust."
+    "DESCRIPTION": "Trigger the passive ability of all vup_shion_mod:Funnel to an enemy. NL Exhaust."
   },
   "VUPShionMod:Alleviator": {
     "NAME": "Alleviator",
@@ -987,7 +988,7 @@
   },
   "VUPShionMod:NihilImmensum": {
     "NAME": "Nihil Immensum",
-    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor !M! times, gain 1 Nihil. NL vup_shion_mod:Magiam\u00a0Obruor 2."
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor !M! times, gain 1 Nihil. NL vup_shion_mod:Magiam\u00a0Obruor 5."
   },
   "VUPShionMod:ArtificiumMundi": {
     "NAME": "Artificium Mundi",
@@ -1144,8 +1145,8 @@
   },
   "VUPShionMod:TranscendSoul": {
     "NAME": "Transcend Soul",
-    "DESCRIPTION": "At the end of your turn, heal HP twice of your vup_shion_mod:Psychic.",
-    "UPGRADE_DESCRIPTION": "At the end of your turn, deal damage twice of your vup_shion_mod:Psychic to ALL enemies.",
+    "DESCRIPTION": "At the end of your turn, heal HP !M! times of your vup_shion_mod:Psychic.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn,heal HP !M! times of your vup_shion_mod:Psychic and deal that much damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "Overwhelm Soul"
     ]
@@ -1168,7 +1169,7 @@
   },
   "VUPShionMod:Sentence": {
     "NAME": "Sentence",
-    "DESCRIPTION": "Deal !D! damage. NL Apply 1 vup_shion_mod:Sinful."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! vup_shion_mod:Sinful."
   },
   "VUPShionMod:SacredChop": {
     "NAME": "Sacred Chop",
@@ -1260,7 +1261,7 @@
   },
   "VUPShionMod:ExitiumMaeroris": {
     "NAME": "Exitium Maeroris",
-    "DESCRIPTION": "Retain. NL Exhaust all cards created from *Miseriam *Voco. NL Lose HP equal to 100-5x(number of cards exhausted). NL Draw cards until your hand is full. Gain !M! [E] and Strength. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Exhaust *Miseriam *Voco and all cards it can create. NL Lose HP equal to 100-5x(number of cards exhausted). NL Draw cards until your hand is full. Gain !M! [E] and Strength. NL Exhaust."
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "Woe into Casket",
@@ -1285,7 +1286,7 @@
     "DESCRIPTION": "Innate. NL Your next !M! vup_shion_mod:Prayer takes effect all at once immediately. NL Exhaust."
   },
   "VUPShionMod:LiReboot": {
-    "NAME": "LiReboot()",
+    "NAME": "LiReboot",
     "DESCRIPTION": "Discard your hand, then draw that many cards."
   },
   "VUPShionMod:ShionEmbodiment": {
@@ -1380,18 +1381,18 @@
   },
   "VUPShionMod:OppressiveSword": {
     "NAME": "Suppressing Blade",
-    "DESCRIPTION": "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii.",
     "UPGRADE_DESCRIPTION": "Can only be played while X>0. NL Deal damage equal to !M! X times of vup_shion_mod:Cor\u00a0Gladii. NL Gain 5X vup_shion_mod:Cor\u00a0Gladii. NL Increase your vup_shion_mod:Cor\u00a0Gladii by 40%. NL vup_shion_mod:Magiam\u00a0Obruor X.",
     "EXTENDED_DESCRIPTION": [
       "Suppressing Blade+",
       "Crescent Dash",
-      "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii. NL Gain 1 vup_shion_mod:Stiffness.",
+      "Deal damage equal to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL Convert every 1 vup_shion_mod:Stiffness into 4 vup_shion_mod:Cor\u00a0Gladii.",
       "X is 0"
     ]
   },
   "VUPShionMod:Strafe2": {
     "NAME": "Strafe",
-    "DESCRIPTION": "vup_shion_mod:Fire vup_shion_mod:Funnel. NL Deal !D! damage to ALL enemies. NL Gain !M! vup_shion_mod:Matrix\u00aCharge . "
+    "DESCRIPTION": "vup_shion_mod:Fire vup_shion_mod:Funnel. NL Deal !D! damage to ALL enemies. NL Gain !M! vup_shion_mod:Matrix\u00a0Charge . "
   },
   "VUPShionMod:TacticalLink": {
     "NAME": "Tactical Link",
@@ -1428,7 +1429,7 @@
   },
   "VUPShionMod:HyperDimensionalMatrix": {
     "NAME": "Hyperdimensional Matrix",
-    "DESCRIPTION": "Retain. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link. NL For every !M! of that lost, all Funnels are upgraded by 1 in this combat.",
+    "DESCRIPTION": "Retain. NL Lose all vup_shion_mod:Hyperdimensional\u00a0Link. NL For every !M! of that lost,current Funnel are upgraded by 1 in this combat.",
     "EXTENDED_DESCRIPTION": [
       "Not enough Hyperdimensional Link."
     ]
@@ -1479,7 +1480,7 @@
   },
   "VUPShionMod:Defend_Shion2": {
     "NAME": "Gravitational Field",
-    "DESCRIPTION": "Trigger the positive effect of *Gravity vup_shion_mod:Funnel to an enemy.",
+    "DESCRIPTION": "Trigger the positive effect of *Gravity vup_shion_mod:Funnel to an enemy. NL Gain !VUPShionSecondM! vup_shion_mod:Matrix\u00a0Charge.",
     "UPGRADE_DESCRIPTION": "Trigger the positive effect of *Gravity vup_shion_mod:Funnel to an enemy for !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Matrix\u00a0Charge."
   },
   "VUPShionMod:ReleaseFormEisluRen": {

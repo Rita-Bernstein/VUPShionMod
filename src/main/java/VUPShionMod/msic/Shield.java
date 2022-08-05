@@ -1,5 +1,6 @@
 package VUPShionMod.msic;
 
+import VUPShionMod.patches.ShieldPatches;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -124,6 +125,14 @@ public class Shield implements Disposable {
 
     private void brokeBlock() {
         CardCrawlGame.sound.play("BLOCK_BREAK");
+    }
+
+    public int getCurrentShield(){
+        return currentShield;
+    }
+
+    public static Shield getShield(AbstractCreature owner){
+        return ShieldPatches.AddFields.shield.get(owner);
     }
 
     @Override

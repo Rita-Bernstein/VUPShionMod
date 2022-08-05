@@ -41,7 +41,7 @@ public class Shion extends CustomPlayer {
     public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID(Shion.class.getSimpleName()));
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int START_HP = 78;
+    public static final int START_HP = 70;
     public static final int START_GOLD = 99;
     public static boolean firstAttackAnimation = true;
     private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");

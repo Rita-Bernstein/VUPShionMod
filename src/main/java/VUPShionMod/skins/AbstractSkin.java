@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.esotericsoftware.spine.*;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -58,7 +59,7 @@ public abstract class AbstractSkin {
         SaveHelper.saveSkins();
     }
 
-    public void initialize(){
+    public void initialize() {
 
     }
 
@@ -156,6 +157,10 @@ public abstract class AbstractSkin {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(Strike_Red.ID);
         return retVal;
+    }
+
+    public void postCreateStartingDeck(CardGroup cardGroup) {
+
     }
 
     public void unlock() {

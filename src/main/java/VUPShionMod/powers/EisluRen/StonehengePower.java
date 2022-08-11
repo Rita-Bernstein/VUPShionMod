@@ -1,13 +1,9 @@
 package VUPShionMod.powers.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -40,6 +36,6 @@ public class StonehengePower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new AddRefundChargeAction(this.amount));
+        addToBot(new GainRefundChargeAction(this.amount));
     }
 }

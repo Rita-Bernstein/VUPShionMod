@@ -463,8 +463,8 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
         this.intentTip.img = ImageMaster.INTENT_UNKNOWN;
     }
 
-
-    public void heal(int healAmount) {
+    @Override
+    public void heal(int healAmount, boolean showEffect) {
         if (this.isDying) {
             return;
         }
@@ -479,7 +479,7 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
         }
 
         if (healAmount > 0) {
-            AbstractDungeon.effectList.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, healAmount));
+            AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, healAmount));
             healthBarUpdatedEvent();
         }
     }
@@ -1047,20 +1047,20 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
             }
         }
 
-
-        for (AbstractPower p : target.powers) {
-            tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.NORMAL);
-        }
+        if (target != null)
+            for (AbstractPower p : target.powers) {
+                tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.NORMAL);
+            }
 
 
         for (AbstractPower p : this.powers) {
             tmp = p.atDamageFinalGive(tmp, DamageInfo.DamageType.NORMAL);
         }
 
-
-        for (AbstractPower p : target.powers) {
-            tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.NORMAL);
-        }
+        if (target != null)
+            for (AbstractPower p : target.powers) {
+                tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.NORMAL);
+            }
 
 
         dmg = MathUtils.floor(tmp);
@@ -1089,6 +1089,13 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
     }
 
     public void applyPowers() {
+        for (DamageInfo dmg : this.damage) {
+            if (this.targetMonster != null)
+                dmg.applyPowers(this, this.targetMonster);
+            else
+                dmg.output = dmg.base;
+        }
+
 
         if (this.move.baseDamage > -1) {
             calculateDamage(this.move.baseDamage);
@@ -1123,6 +1130,10 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
     public void refreshTargetMonster() {
         this.targetMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
+    }
+
+    public AbstractCreature getTargetMonster() {
+        return this.targetMonster;
     }
 
 

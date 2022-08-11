@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -23,20 +24,22 @@ public class YonggukCityTroy extends AbstractEisluRenCard {
     public YonggukCityTroy() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.secondaryM = this.baseSecondaryM = 4;
-        this.baseBlock = 12;
-        this.magicNumber = this.baseMagicNumber = 70;
+        this.baseBlock = 6;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
+        for(int i=0;i<this.magicNumber;i++)
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyPowerAction(p,p,new BarricadePower(p)));
-        addToBot(new ApplyPowerAction(p, p, new InvinciblePower(p, this.magicNumber),0));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         if (WingShield.getWingShield().getCount() < this.secondaryM) {
             cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
             return false;

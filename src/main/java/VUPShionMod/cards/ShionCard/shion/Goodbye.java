@@ -87,7 +87,7 @@ public class Goodbye extends AbstractShionCard {
         addToBot(new ExhaustAction(BaseMod.MAX_HAND_SIZE, true, false, false, Settings.ACTION_DUR_XFAST));
 
         for (int i = 0; i < this.magicNumber; i++) {
-            addToBot(new PlayTmpCardAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()));
+            addToBot(new PlayTmpCardAction(AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK)));
         }
     }
 

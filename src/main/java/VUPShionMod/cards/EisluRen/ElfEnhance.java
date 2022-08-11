@@ -17,7 +17,7 @@ public class ElfEnhance extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public ElfEnhance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -32,7 +32,7 @@ public class ElfEnhance extends AbstractEisluRenCard {
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    if (MinionGroup.areMinionsBasicallyDead()) {
+                    if (!MinionGroup.areMinionsBasicallyDead()) {
                         addToTop(new ApplyPowerAction(MinionGroup.getCurrentMinion(), p, new BufferPower(MinionGroup.getCurrentMinion(), 1)));
                     }
                     isDone = true;

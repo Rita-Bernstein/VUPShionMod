@@ -68,18 +68,11 @@
     "MOVES": [
       ""
     ],
-    "NAME": "下位精灵"
-  },
-  "VUPShionMod:AltmerMinion": {
-    "MOVES": [
-      ""
-    ],
-    "NAME": "上位精灵"
-  },
-  "VUPShionMod:ElvenKnight": {
-    "MOVES": [
-      ""
-    ],
-    "NAME": "精灵骑士"
+    "NAME": "下位精灵",
+    "DIALOG": [
+      "下位精灵",
+      "上位精灵",
+      "精灵骑士"
+    ]
   }
 }

@@ -18,6 +18,7 @@ public class PlayTmpCardAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractCard card = this.card.makeStatEquivalentCopy();
+        card.tags = this.card.tags;
         card.purgeOnUse = true;
         AbstractDungeon.player.limbo.group.add(card);
         card.current_y = -200.0F * Settings.scale;

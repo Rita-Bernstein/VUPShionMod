@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -19,11 +20,11 @@ public class RhoAias extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public RhoAias() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.secondaryM = this.baseSecondaryM = 4;
+        this.secondaryM = this.baseSecondaryM = 7;
         this.baseBlock = 12;
         this.magicNumber = this.baseMagicNumber = 7;
     }
@@ -31,6 +32,7 @@ public class RhoAias extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber)));
@@ -39,6 +41,7 @@ public class RhoAias extends AbstractEisluRenCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         if (WingShield.getWingShield().getCount() < this.secondaryM) {
             cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
             return false;
@@ -51,8 +54,7 @@ public class RhoAias extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(2);
-            upgradeSecondM(-1);
+            upgradeBaseCost(0);
         }
     }
 }

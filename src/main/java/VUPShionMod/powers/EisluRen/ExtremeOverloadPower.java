@@ -39,11 +39,11 @@ public class ExtremeOverloadPower extends AbstractShionPower {
     @Override
     public void atStartOfTurn() {
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-        addToBot(new LoseWingShieldAction(WingShield.getWingShield().getCount()));
+        addToBot(new LoseWingShieldAction(WingShield.getWingShield().getCount() / 2));
     }
 
     @Override
     public void onVictory() {
-        WingShield.getWingShield().loseChargeQuick(WingShield.getWingShield().getCount());
+        addToBot(new LoseWingShieldAction(WingShield.getWingShield().getCount() / 2));
     }
 }

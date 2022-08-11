@@ -14,7 +14,7 @@ public class SupportTimeDriven extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public SupportTimeDriven() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -30,7 +30,7 @@ public class SupportTimeDriven extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(1);
         }
     }
 }

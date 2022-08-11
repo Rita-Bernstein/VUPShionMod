@@ -51,4 +51,7 @@ public class CardTagsEnum {
 
     @SpireEnum
     public static AbstractCard.CardTags SummonCard;
+
+    @SpireEnum
+    public static AbstractCard.CardTags NoWingShieldCharge;
 }

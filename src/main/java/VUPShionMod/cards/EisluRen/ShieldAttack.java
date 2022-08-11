@@ -1,11 +1,10 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,7 +22,7 @@ public class ShieldAttack extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 4;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 3;
     }
 
     @Override
@@ -31,7 +30,7 @@ public class ShieldAttack extends AbstractEisluRenCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new DrawCardAction(this.magicNumber));
-        addToBot(new AddRefundChargeAction(this.secondaryM));
+        addToBot(new GainRefundChargeAction(this.secondaryM));
     }
 
     @Override

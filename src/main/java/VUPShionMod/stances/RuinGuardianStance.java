@@ -49,9 +49,10 @@ public class RuinGuardianStance extends AbstractStance {
 
     @Override
     public void atStartOfTurn() {
+        AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(1));
         if (!cardsToPlay.group.isEmpty()) {
             for (AbstractCard card : cardsToPlay.group) {
-                AbstractDungeon.actionManager.addToBottom(new PlayTmpCardAction(card.makeStatEquivalentCopy()));
+                AbstractDungeon.actionManager.addToBottom(new PlayTmpCardAction(card));
             }
         }
     }
@@ -71,6 +72,7 @@ public class RuinGuardianStance extends AbstractStance {
     @Override
     public void onExitStance() {
         stopIdleSfx();
+        cardsToPlay.clear();
     }
 
     public void stopIdleSfx() {

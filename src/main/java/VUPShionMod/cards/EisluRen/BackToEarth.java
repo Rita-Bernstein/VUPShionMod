@@ -37,7 +37,7 @@ public class BackToEarth extends AbstractEisluRenCard {
                             !(AbstractDungeon.player.masterDeck.group.get(i)).inBottleLightning) {
 
                         AbstractDungeon.effectList.add(new PurgeCardEffect(AbstractDungeon.player.masterDeck.group.get(i)));
-                        AbstractDungeon.player.masterDeck.removeCard(AbstractDungeon.player.masterDeck.group.get(i));
+                        AbstractDungeon.player.masterDeck.group.remove(AbstractDungeon.player.masterDeck.group.get(i));
                     }
                 }
                 isDone = true;

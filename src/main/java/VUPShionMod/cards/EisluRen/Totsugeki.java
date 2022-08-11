@@ -1,12 +1,8 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
-import VUPShionMod.actions.EisluRen.AddWingShieldAction;
-import VUPShionMod.cards.WangChuan.AbstractWCCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,7 +18,7 @@ public class Totsugeki extends AbstractEisluRenCard {
 
     public Totsugeki() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 5;
+        this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 2;
         this.tags.add(CardTags.STARTER_STRIKE);
     }
@@ -37,7 +33,7 @@ public class Totsugeki extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
+            upgradeMagicNumber(1);
         }
     }
 }

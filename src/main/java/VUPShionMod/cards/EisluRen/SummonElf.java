@@ -16,11 +16,10 @@ public class SummonElf extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public SummonElf() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.isInnate = true;
     }
 
     @Override
@@ -32,7 +31,7 @@ public class SummonElf extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
         }
     }
 }

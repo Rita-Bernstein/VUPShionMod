@@ -29,7 +29,7 @@ public class AethereScindo extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastDamageDeal;
+        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastAttackDamageDeal;
         if (m != null)
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
                 212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
@@ -54,7 +54,7 @@ public class AethereScindo extends AbstractWCCard {
 
 
     public void applyPowers() {
-        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastDamageDeal;
+        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastAttackDamageDeal;
         super.applyPowers();
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
@@ -69,7 +69,7 @@ public class AethereScindo extends AbstractWCCard {
 
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastDamageDeal;
+        this.magicNumber = this.baseMagicNumber =  GameStatsPatch.lastAttackDamageDeal;
         super.calculateCardDamage(mo);
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];

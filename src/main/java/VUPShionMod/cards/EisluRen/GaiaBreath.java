@@ -24,8 +24,8 @@ public class GaiaBreath extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new HealAction(p,p,this.magicNumber));
-        if(!MinionGroup.areMinionsBasicallyDead())
-        addToBot(new HealAction(MinionGroup.getCurrentMinion(),p,this.magicNumber));
+        if(MinionGroup.hasElfMinions())
+        addToBot(new HealAction(MinionGroup.getElfMinion(),p,this.magicNumber));
     }
 
     @Override

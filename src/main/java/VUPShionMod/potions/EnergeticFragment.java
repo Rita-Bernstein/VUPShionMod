@@ -1,19 +1,12 @@
 package VUPShionMod.potions;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Common.UpgradeDeckAction;
-import VUPShionMod.actions.EisluRen.AddWingShieldAction;
-import VUPShionMod.vfx.Common.UpPotionEffect;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-
-import java.util.function.Predicate;
 
 public class EnergeticFragment extends AbstractShionImagePotion {
     public static final String POTION_ID = VUPShionMod.makeID(EnergeticFragment.class.getSimpleName());
@@ -40,7 +33,7 @@ public class EnergeticFragment extends AbstractShionImagePotion {
 
 
     public void use(AbstractCreature target) {
-        addToBot(new AddWingShieldAction(this.potency));
+        addToBot(new GainWingShieldChargeAction(this.potency));
     }
 
 

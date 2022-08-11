@@ -45,15 +45,17 @@ public class WorldLeaf extends AbstractShionImagePotion {
         if (AbstractDungeon.player.currentHealth < (int) (AbstractDungeon.player.maxHealth * this.potency / 100.0F)) {
             if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
                 addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, (int) (AbstractDungeon.player.maxHealth * this.potency / 100.0F - AbstractDungeon.player.currentHealth)));
-                if (AbstractDungeon.player.hasRelic(ElfCore.ID)) {
-                    AbstractDungeon.player.getRelic(ElfCore.ID).flash();
-                    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 9)));
-                }
             } else {
                 AbstractDungeon.player.heal((int) (AbstractDungeon.player.maxHealth * this.potency / 100.0F - AbstractDungeon.player.currentHealth));
             }
         }
 
+        if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+            if (AbstractDungeon.player.hasRelic(ElfCore.ID)) {
+                AbstractDungeon.player.getRelic(ElfCore.ID).flash();
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 9)));
+            }
+        }
     }
 
 

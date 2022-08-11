@@ -1,6 +1,5 @@
 package VUPShionMod.actions.EisluRen;
 
-import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.ui.WingShield;
@@ -10,10 +9,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class AddWingShieldAction extends AbstractGameAction {
+public class GainWingShieldChargeAction extends AbstractGameAction {
     private int sumGain = 0;
 
-    public AddWingShieldAction(int amount) {
+    public GainWingShieldChargeAction(int amount) {
         if (WingShield.getWingShield().getCount() + amount > WingShield.getWingShield().getMaxCount()) {
             this.amount = WingShield.getWingShield().getMaxCount() - WingShield.getWingShield().getCount();
         } else
@@ -22,9 +21,10 @@ public class AddWingShieldAction extends AbstractGameAction {
         this.sumGain = this.amount;
 
         this.duration = 0.1f;
+        this.actionType = ActionType.DAMAGE;
     }
 
-    public AddWingShieldAction(int amount, int sumGain) {
+    public GainWingShieldChargeAction(int amount, int sumGain) {
         this(amount);
         this.sumGain = sumGain;
     }

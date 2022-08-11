@@ -43,7 +43,7 @@ public class IronWallPower extends AbstractShionPower {
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if(type == DamageInfo.DamageType.NORMAL)
-        return (int) Math.floor(damage * 0.8);
+        return (int) Math.floor(damage * 0.5);
 
         return damage;
     }

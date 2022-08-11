@@ -17,7 +17,7 @@ public class WoodBombardment extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public WoodBombardment() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -29,7 +29,7 @@ public class WoodBombardment extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-        int chance = this.upgraded ? 60 : 35;
+        int chance = 35;//this.upgraded ? 60 : 35;
         if (AbstractDungeon.cardRng.random(99) < chance) {
             addToBot(new StunMonsterAction(m, p, 1));
         }
@@ -39,8 +39,7 @@ public class WoodBombardment extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeBaseCost(0);
         }
     }
 }

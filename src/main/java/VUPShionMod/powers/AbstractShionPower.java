@@ -60,6 +60,8 @@ public class AbstractShionPower extends TwoAmountPower {
 
     public void onAddShieldRefund(int amount){}
 
+    public void onLoseShieldCharge(int amount){}
+
     public void onLoseEnergy(int e){}
 
     public void onPlayerMinionDeath(){}

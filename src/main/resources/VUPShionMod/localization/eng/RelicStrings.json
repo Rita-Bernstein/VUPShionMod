@@ -469,5 +469,29 @@
     "DESCRIPTIONS": [
       "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycling."
     ]
+  },
+  "VUPShionMod:ElfCore": {
+    "NAME": "精灵芯核",
+    "FLAVOR": "精灵族的力量核心，盖亚意志的延伸。",
+    "DESCRIPTIONS": [
+      "获得 #y通典：木 时，将其 #y升级 。 NL 使用 #y世界树叶片 时，本场战斗获得 #b9 点 #y力量 。"
+    ]
+  },
+  "VUPShionMod:Warlike": {
+    "NAME": "战意盎然",
+    "FLAVOR": "最终项目，全力以赴。",
+    "DESCRIPTIONS": [
+      "获得 #y力量 时，额外获得 #b1 点 #y力量 。 NL 获得 #y敏捷 时，额外获得 #b1 点 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:WhiteSeal": {
+    "NAME": "啸海豹",
+    "FLAVOR": "翻车被抓的小海豹，拍打它的肚皮就会发出些奇怪的语音。",
+    "DESCRIPTIONS": [
+      "每场战斗可以右键一次触发特效： #b问心无愧 。",
+      "问心无愧",
+      "抽 #b1 张牌。 NL 获得 [E] 。 NL 回复 #b5 点生命。 NL 获得 #b1 层 #y虚弱 。",
+      "问心无愧！"
+    ]
   }
 }

@@ -32,7 +32,7 @@ public class EarthBless extends AbstractEisluRenCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                AbstractDungeon.player.increaseMaxHp(secondaryM, true);
+                AbstractDungeon.player.increaseMaxHp(magicNumber, true);
                 isDone = true;
             }
         });

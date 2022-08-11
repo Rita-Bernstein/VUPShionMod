@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public abstract class AbstractShionRelic extends CustomRelic {
     public boolean upgraded = false;
@@ -23,4 +24,7 @@ public abstract class AbstractShionRelic extends CustomRelic {
     }
 
     public void onAddShieldCharge(int amount){}
+
+    public void onLoseShieldCharge(int amount){}
+
 }

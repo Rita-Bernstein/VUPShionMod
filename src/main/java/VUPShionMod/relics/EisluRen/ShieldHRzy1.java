@@ -1,12 +1,11 @@
 package VUPShionMod.relics.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.tempCards.FunnelMatrix;
+import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
 import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -43,4 +42,11 @@ public class ShieldHRzy1 extends AbstractShionRelic {
     }
 
 
+    @Override
+    public void atTurnStart() {
+        if(GameActionManager.turn >1) {
+            flash();
+            addToBot(new GainWingShieldChargeAction(1));
+        }
+    }
 }

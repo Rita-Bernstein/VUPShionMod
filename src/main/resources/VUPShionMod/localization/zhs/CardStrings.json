@@ -1497,20 +1497,20 @@
   },
   "VUPShionMod:Station": {
     "NAME": "驻扎",
-    "DESCRIPTION": "本回合受到的伤害 NL 降低10%。 NL 获得 !M! 层 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "本回合受到的伤害 NL 降低10%。 NL 本回合每层 vup_shion_mod:构装翼盾充能 可减少伤害提高 !M! 。"
   },
   "VUPShionMod:ShieldCharge": {
     "NAME": "激活·巨盾冲锋",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 造成 !D! 点伤害三次。 NL 获得 !B! 点 格挡 三次。"
   },
   "VUPShionMod:VineCatapult": {
     "NAME": "藤蔓催生",
-    "DESCRIPTION": "给予 !M! 层 虚弱 和 vup_shion_mod:缠绕 。",
-    "UPGRADE_DESCRIPTION": "给予所有敌人 !M! 层 虚弱 和 vup_shion_mod:缠绕 。"
+    "DESCRIPTION": "给予 !M! 层 vup_shion_mod:缠绕 。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人 !M! 层 vup_shion_mod:缠绕 。"
   },
   "VUPShionMod:SummonElf": {
     "NAME": "精灵召唤",
-    "DESCRIPTION": "固有 。 NL 召唤 vup_shion_mod:下位精灵 。"
+    "DESCRIPTION": "召唤 vup_shion_mod:下位精灵 。"
   },
   "VUPShionMod:ShieldAttack": {
     "NAME": "盾袭",
@@ -1518,18 +1518,18 @@
   },
   "VUPShionMod:CounterCannon": {
     "NAME": "激活·反击重炮",
-    "DESCRIPTION": "对所有敌人造成本场战斗 vup_shion_mod:构装翼盾充能 吸收伤害的伤害。 NL 消耗 。",
+    "DESCRIPTION": "保留 。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成本场战斗 vup_shion_mod:构装翼盾充能 吸收伤害两倍的伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害）"
     ]
   },
   "VUPShionMod:BladeOfFan": {
     "NAME": "激活·飞刃散射",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成 !D! 点伤害 !M! 次。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成 !D! 点伤害 !M! 次。 NL 如果只有一名敌人，造成的伤害翻倍。"
   },
   "VUPShionMod:RotorCutter": {
     "NAME": "激活·旋翼切割",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 造成 !D! 点伤害 !M! 次。 NL 给予 易伤 !M! 次。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 造成 !D! 点伤害 !M! 次。 NL 给予 易伤 三次。"
   },
   "VUPShionMod:DragonGun": {
     "NAME": "激活·龙枪",
@@ -1538,7 +1538,8 @@
   },
   "VUPShionMod:MoonlightButterfly": {
     "NAME": "激活：月光蝶",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成 !D! 点伤害 !M! 次。 NL 获得 [E] [E] [E] 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成 !D! 点伤害 !M! 次。 NL 获得 [E] [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成 !D! 点伤害 !M! 次。 NL 获得 [E] [E] [E] 。 NL 抽一张牌。"
   },
   "VUPShionMod:SwordOfDalmos": {
     "NAME": "激活：达尔摩斯之剑",
@@ -1554,30 +1555,30 @@
   },
   "VUPShionMod:FinalFlash": {
     "NAME": "激活·终末闪光",
-    "DESCRIPTION": "vup_shion_mod:构装翼盾充能 大于10层才能打出。 NL 失去所有 vup_shion_mod:构装翼盾充能 ，每失去一层，对所有敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "vup_shion_mod:构装翼盾充能 大于10层才能打出。 NL 失去所有 vup_shion_mod:构装翼盾充能 ，每失去一层，对所有敌人造成 !D! 点伤害三次。"
   },
   "VUPShionMod:Chopper": {
     "NAME": "激活·斩舰刀",
-    "DESCRIPTION": "能被多次 升级 。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成 !D! 点伤害 !M! 次。"
+    "DESCRIPTION": "能被多次 升级 。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 对所有敌人造成 !D! X点伤害 !M! 次。"
   },
   "VUPShionMod:Pandora": {
     "NAME": "激活·潘多拉",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 给予所有敌人X+1层 vup_shion_mod:追击 !M! 次。",
-    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 给予所有敌人X+2层 vup_shion_mod:追击 !M! 次。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 给予所有敌人X+1层 vup_shion_mod:追击 X次。",
+    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 给予所有敌人X+2层 vup_shion_mod:追击 X次。"
   },
   "VUPShionMod:WarmUp": {
     "NAME": "预热",
-    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:能量回收 。 NL 下一张攻击牌造成的伤害提高50%。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:能量回收 。 NL 下一张攻击牌造成的伤害提高50%。 NL 抽一张牌。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:能量回收 。 NL 下一张攻击牌造成的伤害提高100%。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:能量回收 。 NL 下一张攻击牌造成的伤害提高100%。 NL 抽一张牌。"
   },
   "VUPShionMod:RingOfThorns": {
     "NAME": "荆棘之环",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 获得 !M! 点 荆棘 。 NL 给予所有敌人 虚弱 !M! 次。"
+    "DESCRIPTION": "获得 !M! 点 荆棘 。 NL 给予所有敌人 虚弱 !M! 次。"
   },
   "VUPShionMod:Entrench": {
     "NAME": "固守",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 将所有 格挡 转化为双倍的  vup_shion_mod:护盾 。",
-    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 将所有 格挡 转化为三倍的  vup_shion_mod:护盾 。"
+    "DESCRIPTION": "获得 !M! 层 vup_shion_mod:构装翼盾充能 。 NL 将所有 格挡 转化为双倍的  vup_shion_mod:护盾 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:构装翼盾充能 。 NL 将所有 格挡 转化为三倍的  vup_shion_mod:护盾 。"
   },
   "VUPShionMod:Reactivation": {
     "NAME": "再动",
@@ -1589,24 +1590,24 @@
   },
   "VUPShionMod:IronWall": {
     "NAME": "铁壁",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 获得 vup_shion_mod:铁壁 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 获得 vup_shion_mod:铁壁 。 NL 翻倍本回合每层 vup_shion_mod:构装翼盾充能 可减少伤害。"
   },
   "VUPShionMod:RoyalGuardian": {
     "NAME": "皇家守卫",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 本回合每受到7点攻击伤害获得 !M! 层 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 两次。 NL 本回合每受到7点攻击伤害获得 !M! 层 vup_shion_mod:能量回收 。 NL 本回合每层 vup_shion_mod:构装翼盾充能 可减少伤害提高 !VUPShionSecondM! 。"
   },
   "VUPShionMod:ExtremeOverload": {
     "NAME": "极限过载",
-    "DESCRIPTION": "充满 vup_shion_mod:构装翼盾充能 。 NL 获得 vup_shion_mod:超负荷 。 NL 消耗 。"
+    "DESCRIPTION": "充满 vup_shion_mod:构装翼盾充能 。 NL 获得 vup_shion_mod:超负荷 。"
   },
   "VUPShionMod:Soul": {
     "NAME": "魂",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 下一张攻击牌造成的伤害提高 !M! %。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 本回合攻击牌造成的伤害提高 !M! %。 NL 获得 [E] [E] [E] 。"
   },
   "VUPShionMod:MagicTransform": {
     "NAME": "魔力转化",
-    "DESCRIPTION": "获得2X+1层 vup_shion_mod:能量回收 。",
-    "UPGRADE_DESCRIPTION": "获得2X+3层 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "获得3X+1层 vup_shion_mod:能量回收 。",
+    "UPGRADE_DESCRIPTION": "获得3X+3层 vup_shion_mod:能量回收 。"
   },
   "VUPShionMod:SpiralBlade": {
     "NAME": "形态·螺旋刃",
@@ -1634,7 +1635,7 @@
   },
   "VUPShionMod:YonggukCityTroy": {
     "NAME": "永固城邦特洛伊",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 获得 !B! 点 格挡 。 NL 获得 *壁垒 。 NL 获得 !M! 层 *坚不可摧 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! 层 vup_shion_mod:构装翼盾充能 。 NL 获得 !B! 点 格挡 !M! 次。 NL 获得 *壁垒 。"
   },
   "VUPShionMod:Avalon": {
     "NAME": "遥远的理想乡",
@@ -1691,7 +1692,7 @@
   },
   "VUPShionMod:FertileSoil": {
     "NAME": "沃土",
-    "DESCRIPTION": "至多 消耗 弃牌堆中的一张牌。 NL 获得 !M! 层 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "至多 消耗 弃牌堆中的两张牌。 NL 获得 !M! 层 vup_shion_mod:能量回收 。"
   },
   "VUPShionMod:FaithLeap": {
     "NAME": "信仰之跃",
@@ -1705,7 +1706,7 @@
   },
   "VUPShionMod:EarthBless": {
     "NAME": "大地祝福",
-    "DESCRIPTION": "获得 !M! 点 力量 、 敏捷 。 NL 获得 !VUPShionSecondM! 点最大生命。"
+    "DESCRIPTION": "获得 !M! 点 力量 、 敏捷 和 最大生命。"
   },
   "VUPShionMod:LifeLinkCard": {
     "NAME": "生命链接",
@@ -1718,12 +1719,12 @@
   },
   "VUPShionMod:ElfSublimation": {
     "NAME": "精灵升华",
-    "DESCRIPTION": "*精灵 获得 !M! 点最大生命和 无实体 。 NL 其进化为 vup_shion_mod:精灵骑士 。 NL 打出 *精灵强化 时，这张牌的耗能降低2。",
-    "UPGRADE_DESCRIPTION": "*精灵 获得 !M! 点最大生命、 无实体 和 *缓冲 。 NL 其进化为 vup_shion_mod:精灵骑士 。 NL 打出 *精灵强化 时，这张牌的耗能降低2。"
+    "DESCRIPTION": "*精灵 获得 !M! 点最大生命和 无实体 。 NL 其进化为 vup_shion_mod:精灵骑士 。 NL 本场战斗每当打出 *精灵强化 时，这张牌的耗能降低2。",
+    "UPGRADE_DESCRIPTION": "*精灵 获得 !M! 点最大生命、 无实体 和 *缓冲 。 NL 其进化为 vup_shion_mod:精灵骑士 。 NL 本场战斗每当打出 *精灵强化 时，这张牌的耗能降低2。"
   },
   "VUPShionMod:SynchroSummon": {
     "NAME": "同调召唤",
-    "DESCRIPTION": "获得 vup_shion_mod:同调召唤 。"
+    "DESCRIPTION": "固有 。 NL 获得 vup_shion_mod:同调召唤 。"
   },
   "VUPShionMod:HeartOfNature": {
     "NAME": "自然之心",
@@ -1750,7 +1751,7 @@
     "DESCRIPTION": "保留 。 NL 造成1-3点伤害 !M! 次。 NL 保留 时，其本场战斗耗能降低1并将伤害次数提高1。",
     "UPGRADE_DESCRIPTION": "固有 ， 保留 。 NL 造成1-3点伤害 !M! 次。 NL 保留 时，其本场战斗耗能降低1并将伤害次数提高1。"
   },
-    "VUPShionMod:SealResidue": {
+  "VUPShionMod:SealResidue": {
     "NAME": "封印残留",
     "DESCRIPTION": "50%概率获得 !M! 点 vup_shion_mod:护盾 ， NL 获得 vup_shion_mod:护盾 时有50%概率获得 !VUPShionSecondM! 层 vup_shion_mod:能量回收 。",
     "UPGRADE_DESCRIPTION": "70%概率获得 !M! 点 vup_shion_mod:护盾 。 NL 获得 vup_shion_mod:护盾 时有70%概率获得 !VUPShionSecondM! 层 vup_shion_mod:能量回收 。"
@@ -1770,7 +1771,7 @@
   },
   "VUPShionMod:SupportShieldPrayer": {
     "NAME": "支援：圣盾祷告",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:能量回收 。 NL 消耗 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 vup_shion_mod:能量回收 。 NL 本场战斗每层 vup_shion_mod:构装翼盾充能 可减少伤害提高 !VUPShionSecondM! 。"
   },
   "VUPShionMod:SupportTimeDriven": {
     "NAME": "支援：时流驱动",
@@ -1778,6 +1779,6 @@
   },
   "VUPShionMod:SupportGravitater": {
     "NAME": "支援：重力回路",
-    "DESCRIPTION": "获得 !M! 点 vup_shion_mod:重力增幅 。"
+    "DESCRIPTION": "获得 !M! 点 vup_shion_mod:重力增幅 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:残影 。"
   }
 }

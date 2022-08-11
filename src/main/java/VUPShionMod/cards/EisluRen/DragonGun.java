@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Shion.BleedingPower;
 import VUPShionMod.powers.Shion.LockOnPower;
 import VUPShionMod.ui.WingShield;
@@ -39,6 +40,7 @@ public class DragonGun extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
 
         addToBot(new ExhaustAction(1, false, this.upgraded, this.upgraded));
@@ -64,6 +66,7 @@ public class DragonGun extends AbstractEisluRenCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         if (WingShield.getWingShield().getCount() < this.secondaryM) {
             cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
             return false;

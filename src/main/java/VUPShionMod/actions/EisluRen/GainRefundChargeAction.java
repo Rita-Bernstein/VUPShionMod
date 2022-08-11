@@ -6,9 +6,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class AddRefundChargeAction extends AbstractGameAction {
-    public AddRefundChargeAction(int amount) {
+public class GainRefundChargeAction extends AbstractGameAction {
+    public GainRefundChargeAction(int amount) {
         this.amount = amount;
+        this.actionType = ActionType.DAMAGE;
     }
 
     @Override

@@ -43,12 +43,15 @@ public class SpiralBladeStance extends AbstractStance {
     }
 
     @Override
-    public void onPlayCard(AbstractCard card) {
-        if (!card.purgeOnUse && card.type == AbstractCard.CardType.ATTACK && WingShield.getWingShield().getCount() > 0) {
-            AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(1));
+    public void atStartOfTurn() {
+        AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(1));
+    }
 
+    @Override
+    public void onPlayCard(AbstractCard card) {
+        if (!card.purgeOnUse && card.type == AbstractCard.CardType.ATTACK) {
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player,
-                    DamageInfo.createDamageMatrix(6, true),
+                    DamageInfo.createDamageMatrix(1, true),
                     DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HEAVY, true));
 
 

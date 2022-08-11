@@ -1,6 +1,10 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.character.EisluRen;
+import VUPShionMod.character.Liyezhu;
+import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.ui.FinFunnelCharge;
 import VUPShionMod.ui.SansMeter;
@@ -12,6 +16,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -87,7 +92,7 @@ public class EnergyPanelPatches {
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
                 PatchEnergyPanelField.canUseWingShield.set(_instance, true);
-            }else {
+            } else {
                 PatchEnergyPanelField.wingShield.get(_instance).reset();
             }
 
@@ -331,6 +336,23 @@ public class EnergyPanelPatches {
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen;
+    }
+
+    public static boolean isShionModChar(AbstractCreature creature) {
+        if (creature.isPlayer) {
+            if (creature.name.equals(Shion.charStrings.NAMES[0])
+                    || creature.name.equals(WangChuan.charStrings.NAMES[0])
+                    || creature.name.equals(Liyezhu.charStrings.NAMES[0])
+                    || creature.name.equals(EisluRen.charStrings.NAMES[0])
+            ) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isShionEXChar() {
+        return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen;
     }
 
 }

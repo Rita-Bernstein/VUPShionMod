@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.powers.EisluRen.RoyalGuardianPower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -21,13 +22,15 @@ public class RoyalGuardian extends AbstractEisluRenCard {
 
     public RoyalGuardian() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 6;
+        this.baseBlock = 3;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new GainBlockAction(p, this.block,true));
+        addToBot(new GainBlockAction(p, this.block,true));
         if (Settings.FAST_MODE) {
             addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
         } else {
@@ -35,6 +38,7 @@ public class RoyalGuardian extends AbstractEisluRenCard {
         }
 
         addToBot(new ApplyPowerAction(p,p,new RoyalGuardianPower(p,this.magicNumber)));
+        addToBot(new AddWingShieldDamageReduceAction(this.secondaryM));
     }
 
     @Override

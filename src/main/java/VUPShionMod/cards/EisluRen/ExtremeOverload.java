@@ -1,11 +1,10 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddWingShieldAction;
+import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
 import VUPShionMod.powers.EisluRen.ExtremeOverloadPower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -20,12 +19,11 @@ public class ExtremeOverload extends AbstractEisluRenCard {
 
     public ExtremeOverload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.exhaust =true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AddWingShieldAction(WingShield.getWingShield().getMaxCount()));
+        addToBot(new GainWingShieldChargeAction(WingShield.getWingShield().getMaxCount()));
         addToBot(new ApplyPowerAction(p,p,new ExtremeOverloadPower(p)));
     }
 

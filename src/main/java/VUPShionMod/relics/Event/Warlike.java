@@ -20,7 +20,4 @@ public class Warlike extends AbstractShionRelic {
         return this.DESCRIPTIONS[0];
     }
 
-
-
-
 }

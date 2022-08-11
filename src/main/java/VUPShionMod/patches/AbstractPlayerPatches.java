@@ -18,6 +18,7 @@ import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -331,32 +332,32 @@ public class AbstractPlayerPatches {
         }
     }
 
-
-    @SpirePatch(
-            clz = ApplyPowerAction.class,
-            method = SpirePatch.CONSTRUCTOR,
-            paramtypez = {AbstractCreature.class, AbstractCreature.class, AbstractPower.class, int.class, boolean.class, AbstractGameAction.AttackEffect.class}
-
-    )
-    public static class ChangeApplyPowerTargetPatch {
-        @SpireInsertPatch(rloc = 13, localvars = {"amount", "duration"})
-        public static SpireReturn<Void> Insert(ApplyPowerAction _instance,
-                                               AbstractCreature target,
-                                               AbstractCreature source,
-                                               AbstractPower powerToApply,
-                                               int stackAmount,
-                                               boolean isFast,
-                                               AbstractGameAction.AttackEffect effect, @ByRef int[] amount, @ByRef float[] duration) {
-
-            if (!MinionGroup.areMinionsBasicallyDead() && !source.isPlayer && _instance.target.isPlayer) {
-                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                _instance.target = minion;
-                powerToApply.owner = minion;
-            }
-
-            return SpireReturn.Continue();
-        }
-    }
+//
+//    @SpirePatch(
+//            clz = ApplyPowerAction.class,
+//            method = SpirePatch.CONSTRUCTOR,
+//            paramtypez = {AbstractCreature.class, AbstractCreature.class, AbstractPower.class, int.class, boolean.class, AbstractGameAction.AttackEffect.class}
+//
+//    )
+//    public static class ChangeApplyPowerTargetPatch {
+//        @SpireInsertPatch(rloc = 13, localvars = {"amount", "duration"})
+//        public static SpireReturn<Void> Insert(ApplyPowerAction _instance,
+//                                               AbstractCreature target,
+//                                               AbstractCreature source,
+//                                               AbstractPower powerToApply,
+//                                               int stackAmount,
+//                                               boolean isFast,
+//                                               AbstractGameAction.AttackEffect effect, @ByRef int[] amount, @ByRef float[] duration) {
+//
+//            if (!MinionGroup.areMinionsBasicallyDead() && source != null && _instance.target != null && !source.isPlayer && _instance.target.isPlayer) {
+//                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+//                _instance.target = minion;
+//                powerToApply.owner = minion;
+//            }
+//
+//            return SpireReturn.Continue();
+//        }
+//    }
 
 
     @SpirePatch(
@@ -367,13 +368,47 @@ public class AbstractPlayerPatches {
     public static class ChangeDamageActionTargetPatch {
         @SpirePostfixPatch
         public static SpireReturn<Void> Postfix(DamageAction _instance, AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
-            if (!MinionGroup.areMinionsBasicallyDead() && !info.owner.isPlayer && target.isPlayer) {
+            if (!MinionGroup.areMinionsBasicallyDead() && target != null && target.isPlayer) {
+                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                _instance.target = minion;
+            }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = VampireDamageAction.class,
+            method = SpirePatch.CONSTRUCTOR,
+            paramtypez = {AbstractCreature.class, DamageInfo.class, AbstractGameAction.AttackEffect.class}
+    )
+    public static class ChangeVampireDamageActionTargetPatch {
+        @SpirePostfixPatch
+        public static SpireReturn<Void> Postfix(VampireDamageAction _instance, AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
+            if (!MinionGroup.areMinionsBasicallyDead() && target != null && target.isPlayer) {
                 AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
                 _instance.target = minion;
 
             }
 
             return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "damage"
+    )
+    public static class ChangePlayerDamageTargetPatch {
+        @SpirePostfixPatch
+        public static SpireReturn<Void> Postfix(AbstractPlayer _instance,DamageInfo info) {
+            if (!MinionGroup.areMinionsBasicallyDead()) {
+                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                minion.damage(info);
+            }
+
+            return SpireReturn.Return();
         }
     }
 
@@ -385,10 +420,10 @@ public class AbstractPlayerPatches {
         @SpireInsertPatch(rloc = 20, localvars = {"tmp"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, int damage, @ByRef float[] tmp) {
             if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
-                tmp[0] = p.atDamageReceive(tmp[0], DamageInfo.DamageType.NORMAL);
+                for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+                    tmp[0] = p.atDamageReceive(tmp[0], DamageInfo.DamageType.NORMAL);
 
-            }
+                }
             return SpireReturn.Continue();
         }
     }
@@ -402,8 +437,42 @@ public class AbstractPlayerPatches {
         @SpireInsertPatch(rloc = 38, localvars = {"tmp"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, int damage, @ByRef float[] tmp) {
             if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
-                tmp[0] = p.atDamageFinalReceive(tmp[0], DamageInfo.DamageType.NORMAL);
+                for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+                    tmp[0] = p.atDamageFinalReceive(tmp[0], DamageInfo.DamageType.NORMAL);
+                }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractDungeon.class,
+            method = "onModifyPower"
+    )
+    public static class OnApplyPowerPatch {
+        @SpirePostfixPatch
+        public static void Postfix() {
+            if (!MinionGroup.areMinionsBasicallyDead())
+                for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
+                    m.applyPowers();
+                }
+
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractMonster.class,
+            method = "die",
+            paramtypez = {boolean.class}
+    )
+    public static class OnMonsterDeathPatch {
+        @SpireInsertPatch(rloc = 16)
+        public static SpireReturn<Void> Insert(AbstractMonster _instance, boolean triggerRelic) {
+            for(AbstractPlayerMinion minion: MinionGroup.getMinions()){
+                if(minion.getTargetMonster() != null && minion.getTargetMonster().isDeadOrEscaped()){
+                    minion.refreshTargetMonster();
+                }
             }
 
             return SpireReturn.Continue();

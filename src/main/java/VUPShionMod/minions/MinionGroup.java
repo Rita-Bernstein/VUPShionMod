@@ -92,7 +92,7 @@ public class MinionGroup {
             for (AbstractPlayerMinion minion : this.minions) {
                 if (!minion.isDying && !minion.isEscaping) {
                     AbstractDungeon.actionManager.addToBottom(new MinionIntentFlashAction(minion));
-                    AbstractDungeon.actionManager.addToBottom(new WaitAction(1.5F));
+                    AbstractDungeon.actionManager.addToBottom(new WaitAction(1.0F));
                     AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
                         @Override
                         public void update() {
@@ -135,13 +135,11 @@ public class MinionGroup {
     }
 
     public static boolean areMinionsBasicallyDead() {
-        if (AbstractPlayerPatches.AddFields.playerMinions.get(AbstractDungeon.player).minions.isEmpty()) return true;
-        for (AbstractPlayerMinion m : AbstractPlayerPatches.AddFields.playerMinions.get(AbstractDungeon.player).minions) {
+        if (MinionGroup.getMinions().isEmpty()) return true;
+        for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
             if (!m.isDying && !m.isEscaping) {
-                if (m instanceof ElfMinion) {
-                    if (((ElfMinion) m).cannotSelected) {
-                        continue;
-                    }
+                if (m instanceof ElfMinion && m.halfDead) {
+                    continue;
                 }
 
                 return false;
@@ -150,13 +148,20 @@ public class MinionGroup {
         return true;
     }
 
+    public static boolean hasElfMinions() {
+        if (MinionGroup.getMinions().isEmpty()) return false;
+        for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
+            if (m instanceof ElfMinion)
+                return true;
+        }
+        return false;
+    }
+
     public static AbstractPlayerMinion getCurrentMinion() {
-        for (AbstractPlayerMinion m : AbstractPlayerPatches.AddFields.playerMinions.get(AbstractDungeon.player).minions) {
+        for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
             if (!m.isDying && !m.isEscaping) {
-                if (m instanceof ElfMinion) {
-                    if (((ElfMinion) m).cannotSelected) {
-                        continue;
-                    }
+                if (m instanceof ElfMinion && m.halfDead) {
+                    continue;
                 }
                 return m;
             }
@@ -165,6 +170,14 @@ public class MinionGroup {
         return null;
     }
 
+    public static ElfMinion getElfMinion() {
+        for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
+            if (m instanceof ElfMinion) {
+                return (ElfMinion)m;
+            }
+        }
+        return null;
+    }
 
 
 }

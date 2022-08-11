@@ -127,7 +127,7 @@
       "碧月礼装：装备了紫音研发的飞翼组合盾",
       "大大的提高了防御能力",
       "强度：基础",
-      "解锁条件：制作中"
+      "解锁条件：获得真结局"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {
@@ -189,7 +189,7 @@
   "VUPShionMod:WingShield": {
     "TEXT": [
       "构装翼盾",
-      "累计阻挡伤害： #b%d/7 。 NL 能量回收: #b%d/3 。 NL 满层时将获得 #b1 层 #y充能。 NL NL 当前充能： #b%d/%d 。 NL 每层充能阻挡 #b7 点伤害。 NL 每次受到伤害至多失去 #b7 层 #y充能 。",
+      "累计阻挡伤害： #b%d/%d 。 NL 能量回收: #b%d/3 。 NL 满层时将获得 #b1 层 #y充能。 NL NL 当前充能： #b%d/%d 。 NL 每层充能阻挡 #b7 点伤害。 NL 每次受到伤害至多失去 #b7 层 #y充能 。",
       "充能不足"
     ]
   },
@@ -200,7 +200,12 @@
   },
   "VUPShionMod:RuinGuardianStanceAction": {
     "TEXT": [
-      "移除牌组中的两张牌并在每回合打出"
+      "消耗战斗中的两张牌并在每回合打出"
+    ]
+  },
+  "VUPShionMod:LightArmorStanceAction": {
+    "TEXT": [
+      "消耗战斗中的一张牌并在每回合打出"
     ]
   },
   "VUPShionMod:AbstractPlayerMinion": {
@@ -236,6 +241,13 @@
       "这名援护在这个回合被 #y击晕 了。",
       "这名援护的意图 #y不明 （但不是攻击）。",
       "格挡"
+    ]
+  },
+  "VUPShionMod:NeowEventTalkPatch": {
+    "TEXT": [
+      "加载完成，欢迎来到战场",
+      "请选择",
+      "祝武运昌隆"
     ]
   }
 }

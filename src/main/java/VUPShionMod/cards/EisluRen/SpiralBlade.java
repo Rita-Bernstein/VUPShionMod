@@ -12,7 +12,7 @@ public class SpiralBlade extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SpiralBlade.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;

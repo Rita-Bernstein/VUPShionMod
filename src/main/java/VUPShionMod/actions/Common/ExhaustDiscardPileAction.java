@@ -22,11 +22,11 @@ public class ExhaustDiscardPileAction extends AbstractGameAction {
     private boolean anyNum = false;
 
     public ExhaustDiscardPileAction(AbstractCreature source, int amount) {
-        this(source,amount,false);
+        this(source, amount, false);
     }
 
 
-    public ExhaustDiscardPileAction(AbstractCreature source, int amount,boolean anyNum) {
+    public ExhaustDiscardPileAction(AbstractCreature source, int amount, boolean anyNum) {
         this.dupeAmount = 1;
         this.cannotDuplicate = new ArrayList();
 
@@ -35,7 +35,7 @@ public class ExhaustDiscardPileAction extends AbstractGameAction {
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
         this.dupeAmount = amount;
-        this.anyNum  = anyNum;
+        this.anyNum = anyNum;
     }
 
 
@@ -65,8 +65,9 @@ public class ExhaustDiscardPileAction extends AbstractGameAction {
 
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
-            AbstractDungeon.gridSelectScreen.open(temp, this.amount, TEXT[0], false,false,this.anyNum,false);
-
+            AbstractDungeon.gridSelectScreen.open(temp, this.amount, TEXT[0], false, false, this.anyNum, false);
+            if(this.anyNum)
+            AbstractDungeon.overlayMenu.cancelButton.show(CardCrawlGame.languagePack.getUIString("GridCardSelectScreen").TEXT[1]);
         }
 
 

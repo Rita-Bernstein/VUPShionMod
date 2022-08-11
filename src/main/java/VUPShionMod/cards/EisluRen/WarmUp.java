@@ -1,7 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import VUPShionMod.powers.EisluRen.AttackIncreasePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -24,8 +24,8 @@ public class WarmUp extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AddRefundChargeAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new AttackIncreasePower(p, 50)));
+        addToBot(new GainRefundChargeAction(this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new AttackIncreasePower(p, 100)));
         if (upgraded)
             addToBot(new DrawCardAction(1));
     }

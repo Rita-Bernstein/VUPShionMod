@@ -2,11 +2,8 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ExhaustDiscardPileAction;
-import VUPShionMod.actions.Common.ExhaustDrawPileAction;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FertileSoil extends AbstractEisluRenCard {
@@ -25,8 +22,8 @@ public class FertileSoil extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustDiscardPileAction(p, 1));
-        addToBot(new AddRefundChargeAction(this.magicNumber));
+        addToBot(new ExhaustDiscardPileAction(p, 2,true));
+        addToBot(new GainRefundChargeAction(this.magicNumber));
     }
 
     @Override

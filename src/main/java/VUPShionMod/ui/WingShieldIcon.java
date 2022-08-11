@@ -124,7 +124,7 @@ public class WingShieldIcon {
         }
 
         if (this.disappearTimer < 0.0f) {
-            if (this.count > 1)
+            if (this.count >= 1)
                 if (icons[this.count - 1] != null) {
                     sb.draw(icons[this.count - 1], this.cX - 80.0f, this.cY,
                             80.0f, 0.0f, 160, 320,

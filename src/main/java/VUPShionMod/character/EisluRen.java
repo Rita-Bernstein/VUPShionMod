@@ -3,6 +3,7 @@ package VUPShionMod.character;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.Codex.*;
 import VUPShionMod.cards.EisluRen.ShieldCharge;
+import VUPShionMod.cards.EisluRen.WindArrow;
 import VUPShionMod.cards.Liyezhu.SoothingScripture;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -12,6 +13,7 @@ import VUPShionMod.patches.FontHelperPatches;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
+import VUPShionMod.stances.*;
 import VUPShionMod.stances.SpiritStance;
 import VUPShionMod.vfx.victory.LiyezhuVictoryEffect;
 import basemod.abstracts.CustomPlayer;
@@ -36,6 +38,7 @@ import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
@@ -75,7 +78,7 @@ public class EisluRen extends CustomPlayer {
     public EisluRen(String name, PlayerClass setClass) {
         super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
         this.drawX += 5.0F * Settings.scale;
-        this.drawY += 7.0F * Settings.scale;
+        this.drawY += 0.0F * Settings.scale;
 
         this.dialogX = this.drawX + 20.0F * Settings.scale;
         this.dialogY = this.drawY + 270.0F * Settings.scale;
@@ -100,10 +103,7 @@ public class EisluRen extends CustomPlayer {
 
 
         if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount == 0) {
-            this.state.setAnimation(0, "idle_normal", true);
-            this.state.setAnimation(1, "idle_wings", true);
-            this.state.setAnimation(2, "idle_xiaobingpian", true);
-            this.state.setAnimation(3, "change_xiaobingpian_off", false);
+            this.state.setAnimation(0, "idle", true);
         }
 
     }
@@ -185,7 +185,7 @@ public class EisluRen extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new ShieldCharge();
+        return new WindArrow();
     }
 
     @Override
@@ -256,8 +256,8 @@ public class EisluRen extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            this.state.setAnimation(0, "hurt", false).setTimeScale(3.0f);
-            this.state.addAnimation(0, "idle_normal", true, 0.0f);
+            this.state.setAnimation(0, "hurt", false).setTimeScale(2.0f);
+            this.state.addAnimation(0, "idle", true, 0.0f);
         }
 
         super.damage(info);
@@ -271,18 +271,28 @@ public class EisluRen extends CustomPlayer {
 
     @Override
     public void onStanceChange(String id) {
-        if (id.equals(PrayerStance.STANCE_ID)) {
-            stanceSwitchQueue.add("Prayer");
+        if (id.equals(SpiralBladeStance.STANCE_ID)) {
+            stanceSwitchQueue.add("SpiralBladeStance");
             return;
         }
 
-        if (id.equals(JudgeStance.STANCE_ID)) {
-            stanceSwitchQueue.add("JudgeStance");
+        if (id.equals(ThousandsOfBladeStance.STANCE_ID)) {
+            stanceSwitchQueue.add("ThousandsOfBladeStance");
             return;
         }
 
-        if (id.equals(SpiritStance.STANCE_ID)) {
-            stanceSwitchQueue.add("SpiritStance");
+        if (id.equals(LotusOfWarStance.STANCE_ID)) {
+            stanceSwitchQueue.add("LotusOfWarStance");
+            return;
+        }
+
+        if (id.equals(RuinGuardianStance.STANCE_ID)) {
+            stanceSwitchQueue.add("RuinGuardianStance");
+            return;
+        }
+
+        if (id.equals(LightArmorStance.STANCE_ID)) {
+            stanceSwitchQueue.add("LightArmorStance");
             return;
         }
 
@@ -305,112 +315,70 @@ public class EisluRen extends CustomPlayer {
     }
 
     public void switchStanceVisualGo(String ID) {
+        if (currentIdle.equals(ID)) return;
+        closeWingAnimation(currentIdle);
+        openWingAnimation(ID);
+    }
 
-        if (currentIdle.equals("Idle")) {
-            switch (ID) {
-                case "Prayer": {
-                    this.state.setAnimation(5, "change_shengguan_on", false);
-                    this.state.addAnimation(5, "idle_shengguan", true, 0.0f);
-                    currentIdle = "Prayer";
-                    break;
-                }
-                case "Judge": {
-                    this.state.setAnimation(4, "change_bajian", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
-                    currentIdle = "Judge";
-                    break;
-                }
-                case "Spirit": {
-                    this.state.setAnimation(5, "change_shengguan_blue_on", false);
-                    this.state.addAnimation(5, "idle_shengguan_blue", true, 0.0f);
-                    this.state.setAnimation(4, "change_bajian", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
-                    currentIdle = "Spirit";
-                    break;
-                }
-            }
-
-            return;
-        }
-
-
-        if (currentIdle.equals("Prayer")) {
-            switch (ID) {
-                case "Judge": {
-                    this.state.setAnimation(5, "change_shengguan_off", false);
-                    this.state.setAnimation(4, "change_bajian", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
-                    currentIdle = "Judge";
-                    break;
-                }
-                case "Spirit": {
-                    this.state.setAnimation(5, "change_shengguan_WCB", false);
-                    this.state.addAnimation(5, "idle_shengguan_blue", true, 0.0f);
-                    this.state.setAnimation(4, "change_bajian", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_on", false);
-                    currentIdle = "Spirit";
-                    break;
-                }
-                default:
-                    this.state.setAnimation(5, "change_shengguan_off", false);
-                    currentIdle = "Idle";
-                    break;
-            }
-
-            return;
-        }
-
-
-        if (currentIdle.equals("Judge")) {
-            switch (ID) {
-                case "Prayer": {
-                    this.state.setAnimation(5, "change_shengguan_on", false);
-                    this.state.addAnimation(5, "idle_shengguan", true, 0.0f);
-                    this.state.setAnimation(4, "change_qidao", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
-                    currentIdle = "Prayer";
-                    break;
-                }
-                case "Spirit": {
-                    this.state.setAnimation(5, "change_shengguan_blue_on", false);
-                    this.state.addAnimation(5, "idle_shengguan_blue", true, 0.0f);
-                    currentIdle = "Spirit";
-                    break;
-                }
-                default:
-                    this.state.setAnimation(4, "change_qidao", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
-                    currentIdle = "Idle";
-                    break;
-            }
-            return;
-        }
-
-        if (currentIdle.equals("Spirit")) {
-            switch (ID) {
-                case "Prayer": {
-                    this.state.setAnimation(5, "change_shengguan_BCW", false);
-                    this.state.setAnimation(4, "change_qidao", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
-                    currentIdle = "Prayer";
-                    break;
-                }
-                case "Judge": {
-                    this.state.setAnimation(5, "change_shengguan_blue_off", false);
-                    currentIdle = "Judge";
-                    break;
-                }
-                default:
-                    this.state.setAnimation(5, "change_shengguan_blue_off", false);
-                    this.state.setAnimation(4, "change_qidao", false);
-                    this.state.setAnimation(3, "change_xiaobingpian_off", false);
-                    currentIdle = "Idle";
-                    break;
-            }
+    public void closeWingAnimation(String ID) {
+        switch (ID) {
+            case "Idle":
+                this.state.setAnimation(1, "wings_normal_relieves", false).setTimeScale(2.0f);
+                break;
+            case "SpiralBladeStance":
+                this.state.setAnimation(1, "wings_Spiral_knife_relieves", false).setTimeScale(2.0f);
+                break;
+            case "ThousandsOfBladeStance":
+                this.state.setAnimation(1, "wings_Thousand_heavy_blade_relieves", false).setTimeScale(2.0f);
+                break;
+            case "LotusOfWarStance":
+                this.state.setAnimation(1, "wings_Lotus_of_war_relieves", false).setTimeScale(2.0f);
+                break;
+            case "RuinGuardianStance":
+                this.state.setAnimation(1, "wings_Ruins_guard_relieves", false).setTimeScale(2.0f);
+                break;
+            case "LightArmorStance":
+                this.state.setAnimation(1, "wings_Light_armor_relieves", false).setTimeScale(2.0f);
+                break;
 
         }
+    }
 
 
+    public void openWingAnimation(String ID) {
+        switch (ID) {
+            case "Idle":
+                this.state.addAnimation(1, "wings_normal_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_normal_idle", true, 0.0f);
+                currentIdle = "Idle";
+                break;
+            case "SpiralBladeStance":
+                this.state.addAnimation(1, "wings_Spiral_knife_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Spiral_knife_idle", true, 0.0f);
+                currentIdle = "SpiralBladeStance";
+                break;
+            case "ThousandsOfBladeStance":
+                this.state.addAnimation(1, "wings_Thousand_heavy_blade_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Thousand_heavy_blade_idle", true, 0.0f);
+                currentIdle = "ThousandsOfBladeStance";
+                break;
+            case "LotusOfWarStance":
+                this.state.addAnimation(1, "wings_Lotus_of_war_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Lotus_of_war_idle", true, 0.0f);
+                currentIdle = "LotusOfWarStance";
+                break;
+            case "RuinGuardianStance":
+                this.state.addAnimation(1, "wings_Ruins_guard_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Ruins_guard_idle", true, 0.0f);
+                currentIdle = "RuinGuardianStance";
+                break;
+            case "LightArmorStance":
+                this.state.addAnimation(1, "wings_Light_armor_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Light_armor_idle", true, 0.0f);
+                currentIdle = "LightArmorStance";
+                break;
+
+        }
     }
 
     public static boolean isInPrayer() {
@@ -449,5 +417,50 @@ public class EisluRen extends CustomPlayer {
         switchStanceVisualGo("Idle");
     }
 
+
+    @Override
+    public void applyStartOfCombatLogic() {
+        super.applyStartOfCombatLogic();
+        this.state.setAnimation(1, "wings_main_in", false);
+        openWingAnimation("Idle");
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+
+        if (this.stance.ID.equals(SpiralBladeStance.STANCE_ID)) {
+            closeWingAnimation("SpiralBladeStance");
+        }
+
+        if (this.stance.ID.equals(ThousandsOfBladeStance.STANCE_ID)) {
+            closeWingAnimation("ThousandsOfBladeStance");
+        }
+
+        if (this.stance.ID.equals(LotusOfWarStance.STANCE_ID)) {
+            closeWingAnimation("LotusOfWarStance");
+        }
+
+        if (this.stance.ID.equals(RuinGuardianStance.STANCE_ID)) {
+            closeWingAnimation("RuinGuardianStance");
+        }
+
+        if (this.stance.ID.equals(LightArmorStance.STANCE_ID)) {
+            closeWingAnimation("LightArmorStance");
+        }
+
+        if(this.stance.ID.equals(NeutralStance.STANCE_ID)) {
+            closeWingAnimation("Idle");
+        }
+
+        this.state.addAnimation(1, "wings_main_out", false, 0.0f);
+
+        currentIdle = "Idle";
+
+        if (!this.stance.ID.equals("Neutral")) {
+            this.stance = new NeutralStance();
+        }
+
+    }
 }
 

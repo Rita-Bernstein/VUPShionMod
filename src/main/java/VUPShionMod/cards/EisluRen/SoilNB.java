@@ -25,8 +25,8 @@ public class SoilNB extends AbstractEisluRenCard {
 
     public SoilNB() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
-        this.baseDamage = 5;
+        this.baseBlock = 4;
+        this.baseDamage = 4;
     }
 
     @Override

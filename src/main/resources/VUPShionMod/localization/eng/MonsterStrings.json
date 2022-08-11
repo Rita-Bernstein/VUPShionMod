@@ -63,5 +63,17 @@
     "DIALOG": [
       "...YOU JERKS..."
     ]
+  },
+
+  "VUPShionMod:ElfMinion": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "下位精灵",
+    "DIALOG": [
+      "下位精灵",
+      "上位精灵",
+      "精灵骑士"
+    ]
   }
 }

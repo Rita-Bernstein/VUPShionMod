@@ -928,5 +928,103 @@
     "DESCRIPTIONS": [
       "Whenever you trigger #yLoading #yComplete #b5 times,gain #b%d [E]."
     ]
+  },
+
+  "VUPShionMod:ReduceDamagePower": {
+    "NAME": "减伤",
+    "DESCRIPTIONS": [
+      "本回合受到的攻击伤害减少 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:AttackIncreasePower": {
+    "NAME": "攻击提升",
+    "DESCRIPTIONS": [
+      "下一张 #y攻击牌 造成的伤害提高 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:TurnAttackIncreasePower": {
+    "NAME": "回合攻击提升",
+    "DESCRIPTIONS": [
+      "本回合 #y攻击牌 造成的伤害提高 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:IronWallPower": {
+    "NAME": "铁壁",
+    "DESCRIPTIONS": [
+      "本回合受到的攻击伤害减少 #b30% 。"
+    ]
+  },
+  "VUPShionMod:RoyalGuardianPower": {
+    "NAME": "皇家守卫",
+    "DESCRIPTIONS": [
+      "本回合每受到 #b7 点 #y攻击 伤害获得 #b%d 层 #y能量回收 。"
+    ]
+  },
+  "VUPShionMod:ExtremeOverloadPower": {
+    "NAME": "超负荷",
+    "DESCRIPTIONS": [
+      "下回合开始失去一半的 #y构装翼盾充能 "
+    ]
+  },
+  "VUPShionMod:WingsOfDaedalusPower": {
+    "NAME": "代达罗斯之翼",
+    "DESCRIPTIONS": [
+      "每当获得 #y敏捷 时，获得 #b%d 倍的 #y力量 。"
+    ]
+  },
+  "VUPShionMod:StonehengePower": {
+    "NAME": "苍穹巨石阵列",
+    "DESCRIPTIONS": [
+      "每回合获得 #b%d 层 #y能量回收 。"
+    ]
+  },
+  "VUPShionMod:EternalEchoPower": {
+    "NAME": "亘古回响",
+    "DESCRIPTIONS": [
+      "每当失去能量时，获得 #b%d 层 #y能量回收 。"
+    ]
+  },
+  "VUPShionMod:SupportTimeDrivenPower": {
+    "NAME": "时流驱动",
+    "DESCRIPTIONS": [
+      "本回合内不会失去 #y构装翼盾充能 。",
+      "在 #b%d 回合内不会失去 #y构装翼盾充能 。"
+    ]
+  },
+  "VUPShionMod:SupportGravitaterPower": {
+    "NAME": "重力回路",
+    "DESCRIPTIONS": [
+      "每当失去 #b3 层 #y构装翼盾充能 时，获得 #b%d 点 #y力量 。"
+    ]
+  },
+  "VUPShionMod:HurricaneVortexPower": {
+    "NAME": "重力回路",
+    "DESCRIPTIONS": [
+      "接下来的 #b%d 回合开始时对所有敌人造成 7+ #y敏捷 点伤害并给予 #y虚弱 。"
+    ]
+  },
+  "VUPShionMod:ForestBarrierPower": {
+    "NAME": "林海屏障",
+    "DESCRIPTIONS": [
+      "每回合开始时获得本场战斗给予 #y缠绕 总数 #b%d/2 的 #y格挡 。 NL 给予所有敌人 #b%d 层 #y缠绕 #b3 次。"
+    ]
+  },
+  "VUPShionMod:WorldTreeLinkPower": {
+    "NAME": "世界树链接",
+    "DESCRIPTIONS": [
+      "每回合开始时抽满你的手牌。"
+    ]
+  },
+  "VUPShionMod:SpiritCloisterPower": {
+    "NAME": "精灵回廊",
+    "DESCRIPTIONS": [
+      " #y精灵 的伤害受到玩家的 #y力量 加成。 NL #y精灵 生命为0时给予 #b1 点生命。 NL 且其再次获得生命前，不被选为目标。"
+    ]
+  },
+  "VUPShionMod:SynchroSummonPower": {
+    "NAME": "同调召唤",
+    "DESCRIPTIONS": [
+      " #y精灵 生命不为0时，你每回合获得 #b%d 点 #y力量 。"
+    ]
   }
 }

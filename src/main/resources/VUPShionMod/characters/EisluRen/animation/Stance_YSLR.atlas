@@ -1,0 +1,733 @@
+
+Stance_YSLR.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+L_arm
+  rotate: false
+  xy: 2, 2
+  size: 263, 291
+  orig: 263, 291
+  offset: 0, 0
+  index: -1
+L_arm_Goden_piaodai
+  rotate: true
+  xy: 1724, 2
+  size: 40, 188
+  orig: 40, 188
+  offset: 0, 0
+  index: -1
+L_leg
+  rotate: true
+  xy: 1220, 1196
+  size: 90, 538
+  orig: 90, 538
+  offset: 0, 0
+  index: -1
+R_arm_Goden_piaodai
+  rotate: true
+  xy: 1206, 409
+  size: 47, 230
+  orig: 47, 230
+  offset: 0, 0
+  index: -1
+R_arm_piaodai2
+  rotate: true
+  xy: 1963, 467
+  size: 21, 77
+  orig: 21, 77
+  offset: 0, 0
+  index: -1
+R_arm_xiuzi_piaodai
+  rotate: false
+  xy: 1118, 12
+  size: 331, 373
+  orig: 331, 373
+  offset: 0, 0
+  index: -1
+body_down_clouth2
+  rotate: false
+  xy: 709, 729
+  size: 57, 147
+  orig: 57, 147
+  offset: 0, 0
+  index: -1
+body_down_clouth3
+  rotate: true
+  xy: 1914, 2
+  size: 40, 53
+  orig: 40, 53
+  offset: 0, 0
+  index: -1
+eyes_close_C
+  rotate: false
+  xy: 1969, 22
+  size: 77, 36
+  orig: 77, 36
+  offset: 0, 0
+  index: -1
+hair_F_L
+  rotate: true
+  xy: 267, 13
+  size: 26, 74
+  orig: 26, 74
+  offset: 0, 0
+  index: -1
+hair_behind
+  rotate: false
+  xy: 1206, 458
+  size: 345, 421
+  orig: 345, 421
+  offset: 0, 0
+  index: -1
+meimao
+  rotate: false
+  xy: 1206, 387
+  size: 57, 20
+  orig: 57, 20
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1259, 1964
+  size: 768, 82
+  orig: 768, 82
+  offset: 0, 0
+  index: -1
+wings_2
+  rotate: false
+  xy: 1724, 44
+  size: 233, 417
+  orig: 233, 417
+  offset: 0, 0
+  index: -1
+wings_3
+  rotate: true
+  xy: 465, 295
+  size: 432, 346
+  orig: 432, 346
+  offset: 0, 0
+  index: -1
+wings_5
+  rotate: false
+  xy: 1963, 490
+  size: 80, 329
+  orig: 80, 329
+  offset: 0, 0
+  index: -1
+wings_Light_armor3
+  rotate: false
+  xy: 1451, 24
+  size: 271, 432
+  orig: 271, 432
+  offset: 0, 0
+  index: -1
+wings_Light_armor4
+  rotate: false
+  xy: 1760, 1237
+  size: 261, 86
+  orig: 261, 86
+  offset: 0, 0
+  index: -1
+wings_Light_armor6
+  rotate: false
+  xy: 763, 1640
+  size: 494, 406
+  orig: 494, 406
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war
+  rotate: true
+  xy: 1603, 821
+  size: 119, 436
+  orig: 119, 436
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war3
+  rotate: true
+  xy: 1145, 881
+  size: 313, 456
+  orig: 313, 456
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war5
+  rotate: true
+  xy: 1678, 1325
+  size: 134, 367
+  orig: 134, 367
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war6
+  rotate: true
+  xy: 1678, 1461
+  size: 168, 368
+  orig: 168, 368
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war_light
+  rotate: true
+  xy: 1603, 942
+  size: 252, 443
+  orig: 252, 443
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard7
+  rotate: false
+  xy: 1959, 60
+  size: 87, 401
+  orig: 87, 401
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife
+  rotate: false
+  xy: 1220, 1288
+  size: 456, 341
+  orig: 456, 341
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife4
+  rotate: true
+  xy: 813, 379
+  size: 497, 293
+  orig: 497, 293
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife_light4
+  rotate: false
+  xy: 1259, 1631
+  size: 486, 331
+  orig: 486, 331
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife_light5
+  rotate: false
+  xy: 267, 41
+  size: 526, 252
+  orig: 526, 252
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife_light7
+  rotate: false
+  xy: 2, 729
+  size: 705, 541
+  orig: 705, 541
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade
+  rotate: false
+  xy: 709, 878
+  size: 434, 391
+  orig: 434, 391
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade2
+  rotate: false
+  xy: 763, 1271
+  size: 455, 367
+  orig: 455, 367
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade3
+  rotate: false
+  xy: 1553, 463
+  size: 408, 356
+  orig: 408, 356
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade4
+  rotate: false
+  xy: 1747, 1658
+  size: 299, 304
+  orig: 299, 304
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade_light
+  rotate: false
+  xy: 2, 295
+  size: 461, 432
+  orig: 461, 432
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade_light5
+  rotate: false
+  xy: 2, 1272
+  size: 759, 774
+  orig: 759, 774
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade_light6
+  rotate: true
+  xy: 813, 2
+  size: 375, 303
+  orig: 375, 303
+  offset: 0, 0
+  index: -1
+wings_center
+  rotate: false
+  xy: 1108, 387
+  size: 96, 489
+  orig: 96, 489
+  offset: 0, 0
+  index: -1
+
+Stance_YSLR2.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+L_arm_Goden_piaodai2
+  rotate: true
+  xy: 583, 1037
+  size: 79, 168
+  orig: 79, 168
+  offset: 0, 0
+  index: -1
+L_arm_Goden_piaodai3
+  rotate: true
+  xy: 626, 1508
+  size: 149, 206
+  orig: 149, 206
+  offset: 0, 0
+  index: -1
+L_arm_piaodai
+  rotate: false
+  xy: 321, 2
+  size: 172, 363
+  orig: 172, 363
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: false
+  xy: 381, 459
+  size: 151, 503
+  orig: 151, 503
+  offset: 0, 0
+  index: -1
+R_arm_Goden_piaodai2
+  rotate: true
+  xy: 448, 1506
+  size: 150, 176
+  orig: 150, 176
+  offset: 0, 0
+  index: -1
+R_arm_Goden_piaodai3
+  rotate: true
+  xy: 381, 375
+  size: 82, 237
+  orig: 82, 237
+  offset: 0, 0
+  index: -1
+R_leg
+  rotate: false
+  xy: 2, 336
+  size: 170, 555
+  orig: 170, 555
+  offset: 0, 0
+  index: -1
+body_down
+  rotate: false
+  xy: 1638, 280
+  size: 139, 160
+  orig: 139, 160
+  offset: 0, 0
+  index: -1
+body_down_clouth
+  rotate: false
+  xy: 1358, 923
+  size: 147, 237
+  orig: 147, 237
+  offset: 0, 0
+  index: -1
+body_down_clouth_B
+  rotate: false
+  xy: 419, 966
+  size: 125, 57
+  orig: 125, 57
+  offset: 0, 0
+  index: -1
+body_up
+  rotate: true
+  xy: 834, 1508
+  size: 149, 153
+  orig: 149, 153
+  offset: 0, 0
+  index: -1
+eyes_close
+  rotate: true
+  xy: 620, 381
+  size: 80, 49
+  orig: 80, 49
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 534, 463
+  size: 109, 100
+  orig: 109, 100
+  offset: 0, 0
+  index: -1
+hair_F
+  rotate: false
+  xy: 989, 1509
+  size: 108, 174
+  orig: 108, 174
+  offset: 0, 0
+  index: -1
+wings_4
+  rotate: true
+  xy: 132, 914
+  size: 549, 134
+  orig: 549, 134
+  offset: 0, 0
+  index: -1
+wings_6
+  rotate: false
+  xy: 885, 1160
+  size: 141, 346
+  orig: 141, 346
+  offset: 0, 0
+  index: -1
+wings_7
+  rotate: true
+  xy: 1071, 397
+  size: 178, 134
+  orig: 178, 134
+  offset: 0, 0
+  index: -1
+wings_Light_armor1
+  rotate: false
+  xy: 314, 1506
+  size: 132, 540
+  orig: 132, 540
+  offset: 0, 0
+  index: -1
+wings_Light_armor2
+  rotate: true
+  xy: 1152, 913
+  size: 248, 204
+  orig: 248, 204
+  offset: 0, 0
+  index: -1
+wings_Light_armor5
+  rotate: true
+  xy: 1099, 1513
+  size: 170, 320
+  orig: 170, 320
+  offset: 0, 0
+  index: -1
+wings_Light_armor7
+  rotate: true
+  xy: 448, 1658
+  size: 388, 174
+  orig: 388, 174
+  offset: 0, 0
+  index: -1
+wings_Light_armor_blink1
+  rotate: true
+  xy: 1717, 1203
+  size: 293, 294
+  orig: 293, 294
+  offset: 0, 0
+  index: -1
+wings_Light_armor_blink2
+  rotate: false
+  xy: 947, 973
+  size: 185, 185
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+wings_Light_armor_blink3
+  rotate: true
+  xy: 1467, 447
+  size: 214, 215
+  orig: 214, 215
+  offset: 0, 0
+  index: -1
+wings_Light_armor_blink4
+  rotate: true
+  xy: 960, 794
+  size: 177, 178
+  orig: 177, 178
+  offset: 0, 0
+  index: -1
+wings_Light_armor_blink5
+  rotate: true
+  xy: 1467, 277
+  size: 168, 169
+  orig: 168, 169
+  offset: 0, 0
+  index: -1
+wings_Light_armor_blink6
+  rotate: false
+  xy: 1421, 1416
+  size: 294, 294
+  orig: 294, 294
+  offset: 0, 0
+  index: -1
+wings_Light_armor_blink7
+  rotate: false
+  xy: 960, 577
+  size: 215, 215
+  orig: 215, 215
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war2
+  rotate: false
+  xy: 419, 1025
+  size: 162, 479
+  orig: 162, 479
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war4
+  rotate: false
+  xy: 495, 2
+  size: 385, 371
+  orig: 385, 371
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war7
+  rotate: true
+  xy: 1720, 1763
+  size: 283, 324
+  orig: 283, 324
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war_light2
+  rotate: true
+  xy: 1507, 932
+  size: 228, 221
+  orig: 228, 221
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war_light4
+  rotate: true
+  xy: 1507, 932
+  size: 228, 221
+  orig: 228, 221
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war_light3
+  rotate: true
+  xy: 1406, 47
+  size: 228, 221
+  orig: 228, 221
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war_light5
+  rotate: true
+  xy: 671, 375
+  size: 199, 193
+  orig: 199, 193
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war_light6
+  rotate: false
+  xy: 866, 377
+  size: 203, 197
+  orig: 203, 197
+  offset: 0, 0
+  index: -1
+wings_Lotus_of_war_light7
+  rotate: true
+  xy: 1629, 50
+  size: 225, 218
+  orig: 225, 218
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard
+  rotate: false
+  xy: 144, 1502
+  size: 63, 544
+  orig: 63, 544
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard2
+  rotate: false
+  xy: 268, 960
+  size: 75, 541
+  orig: 75, 541
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard3
+  rotate: false
+  xy: 345, 964
+  size: 72, 540
+  orig: 72, 540
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard4
+  rotate: false
+  xy: 209, 1503
+  size: 103, 543
+  orig: 103, 543
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard5
+  rotate: true
+  xy: 546, 970
+  size: 53, 399
+  orig: 53, 399
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard6
+  rotate: false
+  xy: 534, 565
+  size: 55, 399
+  orig: 55, 399
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard_light
+  rotate: false
+  xy: 1360, 1162
+  size: 259, 252
+  orig: 259, 252
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard_light2
+  rotate: false
+  xy: 1207, 398
+  size: 258, 252
+  orig: 258, 252
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard_light3
+  rotate: true
+  xy: 1431, 663
+  size: 258, 252
+  orig: 258, 252
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard_light4
+  rotate: true
+  xy: 1177, 652
+  size: 259, 252
+  orig: 259, 252
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard_light5
+  rotate: true
+  xy: 1152, 136
+  size: 259, 252
+  orig: 259, 252
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard_light6
+  rotate: false
+  xy: 1730, 949
+  size: 258, 252
+  orig: 258, 252
+  offset: 0, 0
+  index: -1
+wings_Ruins_guard_light7
+  rotate: false
+  xy: 1849, 276
+  size: 168, 164
+  orig: 168, 164
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife2
+  rotate: true
+  xy: 174, 367
+  size: 545, 205
+  orig: 545, 205
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife3
+  rotate: true
+  xy: 874, 1685
+  size: 361, 274
+  orig: 361, 274
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife5
+  rotate: true
+  xy: 2, 893
+  size: 570, 128
+  orig: 570, 128
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife6
+  rotate: true
+  xy: 1028, 1163
+  size: 344, 330
+  orig: 344, 330
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife7
+  rotate: true
+  xy: 1150, 1704
+  size: 342, 238
+  orig: 342, 238
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife_light6
+  rotate: true
+  xy: 591, 576
+  size: 392, 367
+  orig: 392, 367
+  offset: 0, 0
+  index: -1
+wings_Spiral_knife_light_C
+  rotate: false
+  xy: 1685, 442
+  size: 252, 251
+  orig: 252, 251
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade5
+  rotate: true
+  xy: 2, 3
+  size: 331, 317
+  orig: 331, 317
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade6
+  rotate: true
+  xy: 882, 2
+  size: 373, 268
+  orig: 373, 268
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade7
+  rotate: true
+  xy: 624, 1659
+  size: 387, 248
+  orig: 387, 248
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade_light2
+  rotate: false
+  xy: 1730, 695
+  size: 252, 252
+  orig: 252, 252
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade_light3
+  rotate: false
+  xy: 1720, 1498
+  size: 297, 263
+  orig: 297, 263
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade_light4
+  rotate: false
+  xy: 1390, 1712
+  size: 328, 334
+  orig: 328, 334
+  offset: 0, 0
+  index: -1
+wings_Thousand_heavy_blade_light7
+  rotate: true
+  xy: 583, 1118
+  size: 386, 300
+  orig: 386, 300
+  offset: 0, 0
+  index: -1
+wings_main
+  rotate: false
+  xy: 2, 1465
+  size: 140, 581
+  orig: 140, 581
+  offset: 0, 0
+  index: -1

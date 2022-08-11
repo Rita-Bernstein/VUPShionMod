@@ -1,19 +1,22 @@
 package VUPShionMod.minions;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import VUPShionMod.powers.EisluRen.SpiritCloisterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.TextAboveCreatureEffect;
 import com.megacrit.cardcrawl.vfx.combat.HealEffect;
+
+import java.util.Iterator;
 
 public class ElfMinion extends AbstractPlayerMinion {
     public static final String ID = VUPShionMod.makeID(ElfMinion.class.getSimpleName());
@@ -23,7 +26,6 @@ public class ElfMinion extends AbstractPlayerMinion {
     public static final String[] DIALOG = monsterStrings.DIALOG;
 
     public int timesUpgraded = 0;
-    public boolean cannotSelected = false;
 
     public ElfMinion(int timesUpgraded) {
         super(NAME, ID, 88, 0.0F, -30.0F, 140.0F, 200.0F, null, 220.0F, 0.0f);
@@ -31,7 +33,9 @@ public class ElfMinion extends AbstractPlayerMinion {
 
         this.timesUpgraded = timesUpgraded;
 
-        this.damage.add(new DamageInfo(this, 5));
+        this.damage.add(new DamageInfo(this, 3));
+        this.damage.add(new DamageInfo(this, 15));
+        this.damage.add(new DamageInfo(this, 20));
 
         this.type = MinionType.Elf;
         this.dialogX = -50.0F * Settings.scale;
@@ -44,14 +48,17 @@ public class ElfMinion extends AbstractPlayerMinion {
         switch (timesUpgraded) {
             case 0:
                 setHp(12);
+                this.name = DIALOG[0];
                 this.state.setAnimation(0, "idle_jingling", true);
                 break;
             case 1:
                 setHp(30);
+                this.name = DIALOG[1];
                 this.state.setAnimation(0, "idle_shangweijingling", true);
                 break;
             case 2:
                 setHp(30);
+                this.name = DIALOG[2];
                 this.state.setAnimation(0, "idle_qishi", true);
                 break;
         }
@@ -64,13 +71,16 @@ public class ElfMinion extends AbstractPlayerMinion {
 
         if (pre == 0) {
             if (current == 1) {
+                this.name = DIALOG[1];
                 this.stateData.setMix("idle_jingling", "idle_shangweijingling", 0.0f);
                 this.state.setAnimation(0, "idle_shangweijingling", true);
             } else {
+                this.name = DIALOG[2];
                 this.stateData.setMix("idle_jingling", "idle_qishi", 0.0f);
                 this.state.setAnimation(0, "idle_qishi", true);
             }
         } else {
+            this.name = DIALOG[2];
             this.stateData.setMix("idle_shangweijingling", "idle_qishi", 0.0f);
             this.state.setAnimation(0, "idle_qishi", true);
         }
@@ -85,46 +95,92 @@ public class ElfMinion extends AbstractPlayerMinion {
     public void usePreBattleAction(ElfMinion minion) {
     }
 
-    public void summonElf(ElfMinion minion) {
+    public void onSpiritCloisterPower(AbstractPower sp) {
+        if(this.halfDead) {
+            sp.flash();
+            this.currentHealth = 1;
+            AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, 1));
+            healthBarUpdatedEvent();
+            showHealthBar();
+        }
+    }
 
+    public void summonElf(ElfMinion minion) {
         int pre = this.timesUpgraded;
-        this.timesUpgraded = Math.max(((ElfMinion) minion).timesUpgraded, this.timesUpgraded);
+        this.timesUpgraded = Math.max(minion.timesUpgraded, this.timesUpgraded);
 
         reloadAnimation(pre, this.timesUpgraded);
 
-
-        init();
-        applyPowers();
-        createIntent();
-
         this.maxHealth += minion.maxHealth;
+        AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, minion.maxHealth));
         AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.hb.cX - this.animX, this.hb.cY,
                 CardCrawlGame.languagePack.getUIString("AbstractCreature").TEXT[2] + Integer.toString(minion.maxHealth), Settings.GREEN_TEXT_COLOR));
         this.heal(minion.maxHealth, true);
+
+        rollMove();
+        createIntent();
+        applyPowers();
+
         healthBarUpdatedEvent();
-        this.cannotSelected = false;
-        
         minion.usePreBattleAction(this);
     }
 
     @Override
+    public void heal(int healAmount, boolean showEffect) {
+        super.heal(healAmount, showEffect);
+        if (this.halfDead) {
+            this.halfDead = false;
+            init();
+            createIntent();
+            applyPowers();
+        }
+    }
+
+    @Override
     public void takeTurn() {
+        if (this.halfDead) {
+            return;
+        }
         switch (this.nextMove) {
-            default:
+            case 0:
                 if (this.targetMonster != null) {
                     addToBot(new AnimateFastAttackAction(this));
                     addToBot(new DamageAction(this.targetMonster, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
-                    addToBot(new AddRefundChargeAction(1));
+                    addToBot(new GainRefundChargeAction(1));
                 }
+                break;
+            case 1:
+                if (this.targetMonster != null) {
+                    addToBot(new AnimateFastAttackAction(this));
+                    addToBot(new DamageAction(this.targetMonster, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
+                    addToBot(new GainRefundChargeAction(2));
+                }
+                break;
+            case 2:
+                addToBot(new AnimateFastAttackAction(this));
+                addToBot(new DamageAllEnemiesAction(this, DamageInfo.createDamageMatrix(this.damage.get(2).base, false),
+                        DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
+                addToBot(new GainRefundChargeAction(3));
                 break;
         }
     }
 
     @Override
     protected void getMove(int num) {
+        if (this.halfDead) {
+            setMove((byte) 3, MinionIntent.UNKNOWN);
+            return;
+        }
         switch (this.timesUpgraded) {
             default:
                 setMove((byte) 0, MinionIntent.ATTACK_BUFF, this.damage.get(0).base);
+                break;
+            case 1:
+                setMove((byte) 1, MinionIntent.ATTACK_BUFF, this.damage.get(1).base);
+                break;
+            case 2:
+                setMove((byte) 2, MinionIntent.ATTACK_BUFF, this.damage.get(2).base);
+                break;
         }
     }
 
@@ -135,13 +191,39 @@ public class ElfMinion extends AbstractPlayerMinion {
     @Override
     public void die() {
 
-        if(AbstractDungeon.player.hasPower(SpiritCloisterPower.POWER_ID)){
-            this.heal(1,true);
-            return;
+    }
+
+
+    @Override
+    public void damage(DamageInfo info) {
+        super.damage(info);
+
+        if (this.currentHealth <= 0 && !this.halfDead) {
+            for (AbstractPower p : this.powers) {
+                p.onDeath();
+            }
+
+            for (Iterator<AbstractPower> s = this.powers.iterator(); s.hasNext(); ) {
+                AbstractPower p = (AbstractPower) s.next();
+
+                if (p.type == AbstractPower.PowerType.DEBUFF
+
+                ) {
+                    s.remove();
+                }
+            }
+
+            if (AbstractDungeon.player.hasPower(SpiritCloisterPower.POWER_ID)) {
+                AbstractDungeon.player.getPower(SpiritCloisterPower.POWER_ID).flash();
+                this.currentHealth = 1;
+                AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, 1));
+                healthBarUpdatedEvent();
+            }
+
+            this.halfDead = true;
+            setMove((byte) 3, MinionIntent.UNKNOWN);
+            createIntent();
+            applyPowers();
         }
-
-        this.halfDead = true;
-        this.cannotSelected = true;
-
     }
 }

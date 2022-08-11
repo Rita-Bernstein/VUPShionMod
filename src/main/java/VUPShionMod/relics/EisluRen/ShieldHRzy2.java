@@ -1,10 +1,12 @@
 package VUPShionMod.relics.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
+import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
 import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -48,9 +50,17 @@ public class ShieldHRzy2 extends AbstractShionRelic {
     }
 
     @Override
-    public void onAddShieldCharge(int amount) {
+    public void onLoseShieldCharge(int amount) {
         flash();
-        addToBot(new AddRefundChargeAction(amount));
+        addToBot(new GainRefundChargeAction(amount));
+    }
+
+    @Override
+    public void atTurnStart() {
+        if (GameActionManager.turn > 1) {
+            flash();
+            addToBot(new GainWingShieldChargeAction(2));
+        }
     }
 
     @Override
@@ -68,5 +78,5 @@ public class ShieldHRzy2 extends AbstractShionRelic {
     public boolean canSpawn() {
         return AbstractDungeon.player.hasRelic(ShieldHRzy1.ID);
     }
-    
+
 }

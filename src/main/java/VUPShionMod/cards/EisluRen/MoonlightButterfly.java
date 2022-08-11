@@ -2,10 +2,12 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,12 +18,12 @@ import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 
 public class MoonlightButterfly extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(MoonlightButterfly.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/MoonlightButterfly.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public MoonlightButterfly() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -33,6 +35,7 @@ public class MoonlightButterfly extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
 
         for (int i = 0; i < this.magicNumber; i++) {
@@ -40,11 +43,13 @@ public class MoonlightButterfly extends AbstractEisluRenCard {
         }
 
         addToBot(new GainEnergyAction(3));
+        if(this.upgraded)addToBot(new DrawCardAction(1));
     }
 
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         if (WingShield.getWingShield().getCount() < this.secondaryM) {
             cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
             return false;
@@ -58,6 +63,8 @@ public class MoonlightButterfly extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

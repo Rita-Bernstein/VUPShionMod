@@ -2,8 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -30,7 +29,7 @@ public class SealResidue extends AbstractEisluRenCard {
         if (AbstractDungeon.cardRng.randomBoolean(chance)) {
             addToBot(new GainShieldAction(p, this.magicNumber));
             if (AbstractDungeon.cardRng.randomBoolean(chance))
-                addToBot(new AddRefundChargeAction(this.secondaryM));
+                addToBot(new GainRefundChargeAction(this.secondaryM));
         }
     }
 

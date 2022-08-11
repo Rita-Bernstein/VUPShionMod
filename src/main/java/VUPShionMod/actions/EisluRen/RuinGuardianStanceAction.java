@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.colorless.Apparition;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -54,21 +55,23 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
+            RuinGuardianStance.cardsToPlay.clear();
+
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.type == AbstractCard.CardType.SKILL)
-                    temp.addToTop(c);
+                if (c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID))
+                    temp.addToTop(c.makeSameInstanceOf());
             }
 
             for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                if (c.type == AbstractCard.CardType.SKILL)
-                    temp.addToTop(c);
+                if (c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID))
+                    temp.addToTop(c.makeSameInstanceOf());
             }
 
             for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-                if (c.type == AbstractCard.CardType.SKILL)
-                    temp.addToTop(c);
+                if (c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID))
+                    temp.addToTop(c.makeSameInstanceOf());
             }
 
             if (temp.isEmpty()) {
@@ -89,6 +92,7 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
             AbstractDungeon.gridSelectScreen.open(temp, 2, TEXT[0], false, false, true, false);
+            AbstractDungeon.overlayMenu.cancelButton.show(CardCrawlGame.languagePack.getUIString("GridCardSelectScreen").TEXT[1]);
 
         }
 

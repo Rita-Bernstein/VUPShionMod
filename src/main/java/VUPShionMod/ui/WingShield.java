@@ -1,7 +1,7 @@
 package VUPShionMod.ui;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddWingShieldAction;
+import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.patches.GameStatsPatch;
@@ -41,6 +41,10 @@ public class WingShield implements Disposable {
     private int refundCharge = 0;
     private int damageReceived = 0;
 
+    private int baseShieldDamageReduce = 2;
+    private int shieldDamageReduce = 2;
+    private int shieldDamageReduceCombat = 2;
+
     private Color color = Color.WHITE.cpy();
 
     public float cX = 0.0f;
@@ -77,7 +81,7 @@ public class WingShield implements Disposable {
     }
 
     public void updateDescription() {
-        this.description = String.format(TEXT[1], this.damageReceived, this.refundCharge, this.count, this.maxCount);
+        this.description = String.format(TEXT[1], this.damageReceived, getDamageReduce(), this.refundCharge, this.count, this.maxCount);
     }
 
     public void updatePos(EnergyPanel _instance) {
@@ -190,7 +194,7 @@ public class WingShield implements Disposable {
         this.refundCharge += amount;
         if (this.refundCharge >= 3) {
             if (this.refundCharge >= 6)
-                addToBot(new AddWingShieldAction((this.refundCharge / 3) - 1, this.refundCharge / 3));
+                addToBot(new GainWingShieldChargeAction((this.refundCharge / 3) - 1, this.refundCharge / 3));
             this.refundCharge %= 3;
             addChargeQuick(1);
         } else
@@ -222,14 +226,33 @@ public class WingShield implements Disposable {
     }
 
     public void atStartOfCombat() {
-        this.count = WingShieldSave.wingShieldSaveAmount;
-        this.refundCharge = WingShieldRefundSave.wingShieldRefundSaveAmount;
-        this.damageReceived = WingShieldDamageSave.wingShieldDamageSaveAmount;
+//        this.count = WingShieldSave.wingShieldSaveAmount;
+//        this.refundCharge = WingShieldRefundSave.wingShieldRefundSaveAmount;
+//        this.damageReceived = WingShieldDamageSave.wingShieldDamageSaveAmount;
+
+        this.count = 7;
+        this.refundCharge = 0;
+        this.damageReceived = 0;
+
+        WingShieldSave.wingShieldSaveAmount = 7;
+        WingShieldRefundSave.wingShieldRefundSaveAmount = 0;
+        WingShieldDamageSave.wingShieldDamageSaveAmount = 0;
+
+        this.shieldDamageReduceCombat = this.baseShieldDamageReduce;
+        this.shieldDamageReduce = this.baseShieldDamageReduce;
+
+
         if (!canUseWingShield()) {
             reset();
         }
         updateDescription();
         updateShieldIcon();
+    }
+
+
+    public void atStartOfTurn() {
+        this.shieldDamageReduce = this.shieldDamageReduceCombat;
+        updateDescription();
     }
 
     public static WingShield getWingShield() {
@@ -254,6 +277,7 @@ public class WingShield implements Disposable {
 
         updateShieldIcon();
     }
+
 
     public void upgradeMax() {
         this.maxCount = 28;
@@ -289,9 +313,8 @@ public class WingShield implements Disposable {
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             if (damageAmount > 0 && canUseWingShield() && this.count > 0) {
-                this.damageReceived += damageAmount;
-                if (damageReceived / 7 > 0) {
-                    int loseCharge = damageReceived / 7;
+                if ((damageReceived + damageAmount) / getDamageReduce() > 0) {
+                    int loseCharge = (damageReceived + damageAmount) / getDamageReduce();
                     if (loseCharge > 7) loseCharge = 7;
 
                     if (loseCharge < this.count) {
@@ -299,7 +322,7 @@ public class WingShield implements Disposable {
                         if (loseCharge >= 7)
                             this.damageReceived = 0;
                         else
-                            this.damageReceived %= 7;
+                            this.damageReceived = (damageReceived + damageAmount) % getDamageReduce();
 
                         GameStatsPatch.wingShieldDamageReduceThisCombat += damageAmount;
                         WingShieldDamageSave.wingShieldDamageSaveAmount = this.damageReceived;
@@ -307,16 +330,19 @@ public class WingShield implements Disposable {
                         return 0;
                     } else {
                         addToTop(new LoseWingShieldAction(this.count));
+                        GameStatsPatch.wingShieldDamageReduceThisCombat += getDamageReduce() * this.count - this.damageReceived;
+                        WingShieldDamageSave.wingShieldDamageSaveAmount = 0;
+
                         int tmp = this.damageReceived;
+                        if(tmp > getDamageReduce()) tmp = getDamageReduce();
                         this.damageReceived = 0;
 
-                        GameStatsPatch.wingShieldDamageReduceThisCombat += 7 * this.count - tmp;
-                        WingShieldDamageSave.wingShieldDamageSaveAmount = this.damageReceived;
                         updateDescription();
-                        return damageAmount - 7 * this.count + tmp;
+                        return damageAmount - (getDamageReduce() - 1) * this.count - (getDamageReduce() - tmp);
                     }
 
                 } else {
+                    damageReceived += damageAmount;
                     GameStatsPatch.wingShieldDamageReduceThisCombat += damageAmount;
                     WingShieldDamageSave.wingShieldDamageSaveAmount = this.damageReceived;
                     updateDescription();
@@ -325,6 +351,24 @@ public class WingShield implements Disposable {
             }
         }
         return damageAmount;
+    }
+
+    public void increaseDamageReduce(int amount) {
+        this.shieldDamageReduce += amount;
+        updateDescription();
+    }
+
+    public void increaseDamageReduceCombat(int amount) {
+        this.shieldDamageReduceCombat += amount;
+
+        if (this.shieldDamageReduce < this.shieldDamageReduceCombat) {
+            this.shieldDamageReduce = this.shieldDamageReduceCombat;
+        }
+        updateDescription();
+    }
+
+    public int getDamageReduce() {
+        return shieldDamageReduce;
     }
 
 

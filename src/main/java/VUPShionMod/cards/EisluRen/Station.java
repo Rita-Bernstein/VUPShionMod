@@ -1,13 +1,9 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.EisluRen.AddRefundChargeAction;
-import VUPShionMod.actions.EisluRen.AddWingShieldAction;
-import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
-import VUPShionMod.cards.WangChuan.AbstractWCCard;
+import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.powers.EisluRen.ReduceDamagePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -29,14 +25,14 @@ public class Station extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new ReduceDamagePower(p,10)));
-        addToBot(new AddRefundChargeAction(this.magicNumber));
+        addToBot(new AddWingShieldDamageReduceAction(this.magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 }

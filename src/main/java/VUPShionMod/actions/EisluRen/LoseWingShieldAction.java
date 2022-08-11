@@ -1,11 +1,15 @@
 package VUPShionMod.actions.EisluRen;
 
 import VUPShionMod.patches.EnergyPanelPatches;
+import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.EisluRen.SupportTimeDrivenPower;
+import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class LoseWingShieldAction extends AbstractGameAction {
     public LoseWingShieldAction(int amount) {
@@ -15,6 +19,8 @@ public class LoseWingShieldAction extends AbstractGameAction {
             this.amount = amount;
 
         this.duration = 0.1f;
+
+        this.actionType = ActionType.DAMAGE;
     }
 
     @Override
@@ -39,6 +45,18 @@ public class LoseWingShieldAction extends AbstractGameAction {
         if (this.amount <= 0) {
             this.isDone = true;
             WingShield.getWingShield().updateRefund();
+
+            for (AbstractPower power : AbstractDungeon.player.powers) {
+                if (power instanceof AbstractShionPower) {
+                    ((AbstractShionPower) power).onLoseShieldCharge(this.amount);
+                }
+            }
+
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                if (r instanceof AbstractShionRelic) {
+                    ((AbstractShionRelic) r).onLoseShieldCharge(this.amount);
+                }
+            }
         }
 
     }

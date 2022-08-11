@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.relics.Event.FragmentsOfFaith;
+import VUPShionMod.skins.sk.EisluRen.OriEisluRen;
 import VUPShionMod.skins.sk.Shion.AquaShion;
 import VUPShionMod.skins.sk.Shion.BlueGiantShion;
 import VUPShionMod.skins.sk.WangChuan.AquaWangChuan;
@@ -35,8 +36,10 @@ public class GameOverScreenPatches {
             if (SaveHelper.isHardMod) {
                 stats.add(new GameOverStat(specialBossStatString.TEXT[5], specialBossStatString.TEXT[5], Integer.toString(500)));
 
-                if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID))
+                if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID)) {
+                    CharacterSelectScreenPatches.skinManager.unlockSkin(OriEisluRen.ID);
                     stats.add(new GameOverStat(specialBossStatString.TEXT[6], specialBossStatString.TEXT[6], Integer.toString(1000)));
+                }
 
             } else {
                 if (SaveHelper.fightSpecialBossWithout) {

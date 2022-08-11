@@ -1,20 +1,50 @@
 {
-  "VUPShionMod:Prayer": {
+  "VUPShionMod:PrayerStance": {
     "NAME": "祈言姿態",
     "DESCRIPTION": [
       "處於這個 #y姿態 時，你造成的傷害減少 #b25% 。 NL 回合結束時回復 #b2 點生命。"
     ]
   },
-  "VUPShionMod:Judge": {
+  "VUPShionMod:JudgeStance": {
     "NAME": "審判姿態",
     "DESCRIPTION": [
       "進入這個 #y姿態 時，獲得 #b1 層 #y自燃 和 #y力量 。"
     ]
   },
-  "VUPShionMod:Spirit": {
+  "VUPShionMod:SpiritStance": {
     "NAME": "言靈姿態",
     "DESCRIPTION": [
       "進入這個 #y姿態 時，獲得 #b1 層 #y自燃 和 #y力量 。 NL 回合結束時回復 #b2 點生命。"
+    ]
+  },
+  "VUPShionMod:SpiralBladeStance": {
+    "NAME": "螺旋刃",
+    "DESCRIPTION": [
+      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 打出 #y攻擊牌 時，對所有敵人造成 #b1 點傷害並給予 #b4 層 #y流血 。"
+    ]
+  },
+  "VUPShionMod:ThousandsOfBladeStance": {
+    "NAME": "千重刃",
+    "DESCRIPTION": [
+      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 打出 #y攻擊牌 時能額外消耗 #b1 層 #y構裝翼盾充能 將這張牌打出兩次，這些牌將不會消耗 #y構裝翼盾充能 。"
+    ]
+  },
+  "VUPShionMod:LotusOfWarStance": {
+    "NAME": "戰爭之蓮",
+    "DESCRIPTION": [
+      "每回合獲得 #b1 層 #y構裝翼盾充能 。 NL 每回合獲得 [E] 、 #b1 點 #y力量 和 #y敏捷 。"
+    ]
+  },
+  "VUPShionMod:RuinGuardianStance": {
+    "NAME": "遺蹟守衛",
+    "DESCRIPTION": [
+      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 進入時至多 #y消耗 戰鬥中的 #b2 張 #y技能牌 。 NL 每回合開始時打出這兩張牌的複製。"
+    ]
+  },
+  "VUPShionMod:LightArmorStance": {
+    "NAME": "明光鎧",
+    "DESCRIPTION": [
+      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 進入時至多 #y消耗 戰鬥中的 #b2 張 #y技能牌 。 NL 每回合開始時打出這兩張牌的複製。 NL 受到的 #y攻擊 傷害減少 #b30% 。"
     ]
   }
 }

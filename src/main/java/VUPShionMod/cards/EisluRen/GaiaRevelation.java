@@ -33,6 +33,7 @@ public class GaiaRevelation extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(3);
+            upgradeBaseCost(0);
         }
     }
 }

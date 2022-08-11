@@ -76,8 +76,8 @@ public class VUPShionMod implements
         EditStringsSubscriber,
         PostDungeonInitializeSubscriber,
         StartActSubscriber,
-        PostCreateStartingRelicsSubscriber ,
-        PostCreateStartingDeckSubscriber{
+        PostCreateStartingRelicsSubscriber,
+        PostCreateStartingDeckSubscriber {
 
 
     public static String MOD_ID = "VUPShionMod";
@@ -205,9 +205,10 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
-        if (SaveHelper.liyezhuRelic) {
-            arrayList.add(FragmentsOfFaith.ID);
-        }
+        if (playerClass != AbstractPlayerEnum.Liyezhu)
+            if (SaveHelper.liyezhuRelic) {
+                arrayList.add(FragmentsOfFaith.ID);
+            }
     }
 
     @Override
@@ -278,6 +279,11 @@ public class VUPShionMod implements
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID) && EnergyPanelPatches.isShionModChar())
+                .endsWithRewardsUI(true)
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(StrangeSeal.ID, StrangeSeal.class) //Event ID//
                 .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID) && EnergyPanelPatches.isShionModChar())
                 .endsWithRewardsUI(true)
                 .create());
@@ -367,8 +373,8 @@ public class VUPShionMod implements
         BaseMod.addPotion(PlanedModify.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, PlanedModify.POTION_ID, AbstractPlayerEnum.VUP_Shion);
         BaseMod.addPotion(CorGladiiFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, CorGladiiFragment.POTION_ID, AbstractPlayerEnum.WangChuan);
         BaseMod.addPotion(WordFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, WordFragment.POTION_ID, AbstractPlayerEnum.Liyezhu);
-        if(isTestMod)
-        BaseMod.addPotion(EnergeticFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, EnergeticFragment.POTION_ID);
+
+            BaseMod.addPotion(EnergeticFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, EnergeticFragment.POTION_ID);
 //        BaseMod.addPotion(TimeFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TimeFragment.POTION_ID);
         BaseMod.addPotion(FlashBang.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, FlashBang.POTION_ID);
 
@@ -386,8 +392,6 @@ public class VUPShionMod implements
         BaseMod.addPotion(Claymore.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, Claymore.POTION_ID);
         BaseMod.addPotion(UAV.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, UAV.POTION_ID);
         BaseMod.addPotion(TransitionGenerator.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TransitionGenerator.POTION_ID);
-
-
 
 
     }
@@ -453,22 +457,22 @@ public class VUPShionMod implements
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
 
-        if(playerClass == AbstractPlayerEnum.VUP_Shion){
+        if (playerClass == AbstractPlayerEnum.VUP_Shion) {
             CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(
                     CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).postCreateStartingDeck(cardGroup);
         }
 
-        if(playerClass == AbstractPlayerEnum.WangChuan){
+        if (playerClass == AbstractPlayerEnum.WangChuan) {
             CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(
                     CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).postCreateStartingDeck(cardGroup);
         }
 
-        if(playerClass == AbstractPlayerEnum.Liyezhu){
+        if (playerClass == AbstractPlayerEnum.Liyezhu) {
             CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
                     CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).postCreateStartingDeck(cardGroup);
         }
 
-        if(playerClass == AbstractPlayerEnum.EisluRen){
+        if (playerClass == AbstractPlayerEnum.EisluRen) {
             CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(
                     CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).postCreateStartingDeck(cardGroup);
         }
@@ -868,7 +872,7 @@ public class VUPShionMod implements
         cards.add(new LiyezhuUpgradeCard());
 
 //路人================
-        if(isTestMod) {
+
             cards.add(new Totsugeki());
             cards.add(new Station());
             cards.add(new ShieldCharge());
@@ -943,7 +947,7 @@ public class VUPShionMod implements
             cards.add(new SupportShieldPrayer());
             cards.add(new SupportTimeDriven());
             cards.add(new SupportGravitater());
-        }
+
 
         for (CustomCard card : cards) {
             BaseMod.addCard(card);
@@ -1018,6 +1022,8 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new ShieldHRzy1(), CardColorEnum.EisluRen_LIME);
         BaseMod.addRelicToCustomPool(new ShieldHRzy2(), CardColorEnum.EisluRen_LIME);
         BaseMod.addRelicToCustomPool(new ElfCore(), CardColorEnum.EisluRen_LIME);
+        BaseMod.addRelicToCustomPool(new Warlike(), CardColorEnum.EisluRen_LIME);
+
 
 //共享遗物
         BaseMod.addRelic(new TrainingScabbard(), RelicType.SHARED);
@@ -1042,6 +1048,7 @@ public class VUPShionMod implements
 //       事件遗物
         BaseMod.addRelic(new FragmentsOfFaith(), RelicType.SHARED);
         BaseMod.addRelic(new FruitCake(), RelicType.SHARED);
+        BaseMod.addRelic(new WhiteSeal(), RelicType.SHARED);
 
 
     }

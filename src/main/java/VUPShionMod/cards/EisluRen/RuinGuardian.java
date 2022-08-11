@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.stances.LotusOfWarStance;
 import VUPShionMod.stances.RuinGuardianStance;
 import VUPShionMod.ui.WingShield;
@@ -23,11 +24,12 @@ public class RuinGuardian extends AbstractEisluRenCard {
     public RuinGuardian() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.selfRetain =true;
-        this.secondaryM = this.baseSecondaryM = 4;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ChangeStanceAction(RuinGuardianStance.STANCE_ID));
     }
@@ -35,6 +37,7 @@ public class RuinGuardian extends AbstractEisluRenCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         if (WingShield.getWingShield().getCount() < this.secondaryM) {
             cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
             return false;

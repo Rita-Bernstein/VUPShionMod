@@ -30,16 +30,14 @@ public class OriEisluRen extends AbstractSkin {
         this.SHOULDER2 = "VUPShionMod/characters/Shion/shoulder2.png";
         this.CORPSE = "VUPShionMod/characters/EisluRen/corpse.png";
 
-        this.atlasURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.atlas";
-        this.jsonURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.json";
-        this.renderScale = 3.0f;
+        this.atlasURL = "VUPShionMod/characters/EisluRen/animation/Stance_YSLR.atlas";
+        this.jsonURL = "VUPShionMod/characters/EisluRen/animation/Stance_YSLR.json";
+        this.renderScale = 2.4f;
 
     }
 
     @Override
     public void initialize() {
-        if (VUPShionMod.isTestMod)
-            unlock();
     }
 
     @Override
@@ -71,7 +69,7 @@ public class OriEisluRen extends AbstractSkin {
         retVal.add(Station.ID);
         retVal.add(Station.ID);
         retVal.add(Station.ID);
-        retVal.add(ShieldCharge.ID);
+        retVal.add(WindArrow.ID);
         retVal.add(VineCatapult.ID);
         retVal.add(SummonElf.ID);
 

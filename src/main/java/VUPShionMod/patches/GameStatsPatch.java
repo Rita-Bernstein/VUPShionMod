@@ -5,6 +5,7 @@ import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.relics.Event.Warlike;
 import VUPShionMod.ui.FinFunnelCharge;
 import VUPShionMod.ui.SwardCharge;
+import VUPShionMod.ui.WingShield;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 
 public class GameStatsPatch {
-    public static int lastDamageDeal = 0;
+    public static int lastAttackDamageDeal = 0;
     public static int shionDeathCount = 0;
     public static int wangchuanDeathCount = 0;
     public static int wingShieldDamageReduceThisCombat = 0;
@@ -33,7 +34,8 @@ public class GameStatsPatch {
     public static class OnUnblockDamagePatch {
         @SpireInsertPatch(rloc = 61, localvars = {"damageAmount"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info, int damageAmount) {
-            lastDamageDeal = damageAmount;
+            if (info.type == DamageInfo.DamageType.NORMAL)
+                lastAttackDamageDeal = damageAmount;
             return SpireReturn.Continue();
         }
     }
@@ -41,10 +43,11 @@ public class GameStatsPatch {
     //    ========================================重置
     public static void turnBaseReset() {
         SwardCharge.getSwardCharge().resetCount();
+        WingShield.getWingShield().atStartOfTurn();
     }
 
     public static void combatBaseReset() {
-        lastDamageDeal = 0;
+        lastAttackDamageDeal = 0;
         wingShieldDamageReduceThisCombat = 0;
         constrictedApplyThisCombat = 0;
 
@@ -128,13 +131,14 @@ public class GameStatsPatch {
 //            中毒相关
 
 
-            if (powerToApply.ID.equals(ConstrictedPower.POWER_ID)) {
+            if (powerToApply != null && powerToApply.ID.equals(ConstrictedPower.POWER_ID)) {
                 constrictedApplyThisCombat += powerToApply.amount;
             }
 
-            if (target.isPlayer)
+
+            if (target != null && target.isPlayer)
                 if (AbstractDungeon.player.hasRelic(Warlike.ID) &&
-                        (powerToApply.ID.equals(StrengthPower.POWER_ID) || powerToApply.ID.equals(DexterityPower.POWER_ID))) {
+                        powerToApply != null && (powerToApply.ID.equals(StrengthPower.POWER_ID) || powerToApply.ID.equals(DexterityPower.POWER_ID))) {
                     AbstractDungeon.player.getRelic(Warlike.ID).flash();
                     powerToApply.amount += 1;
                     amount[0] = amount[0] + 1;

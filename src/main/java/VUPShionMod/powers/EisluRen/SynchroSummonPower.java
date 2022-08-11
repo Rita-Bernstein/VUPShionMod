@@ -43,10 +43,11 @@ public class SynchroSummonPower extends AbstractShionPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if(!MinionGroup.areMinionsBasicallyDead()){
-            for(AbstractPlayerMinion minion : MinionGroup.getMinions()){
-                if(minion instanceof ElfMinion){
-                    addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,this.amount)));
+        if (!MinionGroup.areMinionsBasicallyDead()) {
+            for (AbstractPlayerMinion minion : MinionGroup.getMinions()) {
+                if (minion instanceof ElfMinion && minion.currentHealth > 0) {
+                    flash();
+                    addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount)));
                 }
             }
         }

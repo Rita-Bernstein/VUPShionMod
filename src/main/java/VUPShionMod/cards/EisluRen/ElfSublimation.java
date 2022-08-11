@@ -35,7 +35,7 @@ public class ElfSublimation extends AbstractEisluRenCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if (MinionGroup.areMinionsBasicallyDead()) {
+                if (!MinionGroup.areMinionsBasicallyDead()) {
                     if (upgraded)
                         addToTop(new ApplyPowerAction(MinionGroup.getCurrentMinion(), p, new BufferPower(MinionGroup.getCurrentMinion(), 1)));
                     addToTop(new ApplyPowerAction(MinionGroup.getCurrentMinion(), p, new IntangiblePlayerPower(MinionGroup.getCurrentMinion(), 1)));

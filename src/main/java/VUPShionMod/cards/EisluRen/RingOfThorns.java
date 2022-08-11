@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 
 public class RingOfThorns extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(RingOfThorns.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/RingOfThorns.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -33,22 +33,11 @@ public class RingOfThorns extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));
 
         Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, 1, false);
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
-
-        return super.canUse(p, m);
     }
 
     @Override

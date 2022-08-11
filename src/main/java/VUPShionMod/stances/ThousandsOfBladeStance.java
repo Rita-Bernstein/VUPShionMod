@@ -5,6 +5,7 @@ import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.Common.PlayTmpCardAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.AbstractPlayerEnum;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Shion.BleedingPower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -45,14 +46,18 @@ public class ThousandsOfBladeStance extends AbstractStance {
     public void onPlayCard(AbstractCard card) {
         if (!card.purgeOnUse && card.type == AbstractCard.CardType.ATTACK && WingShield.getWingShield().getCount() > 0) {
             AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(1));
-            AbstractDungeon.actionManager.addToBottom(new PlayTmpCardAction(card.makeStatEquivalentCopy()));
+            for (int i = 0; i < 2; i++) {
+                AbstractCard tmp = card.makeStatEquivalentCopy();
+                tmp.tags.add(CardTagsEnum.NoWingShieldCharge);
+                AbstractDungeon.actionManager.addToBottom(new PlayTmpCardAction(tmp));
+            }
+
         }
     }
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,
-                new StrengthPower(AbstractDungeon.player,2)));
+        AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(1));
     }
 
     @Override

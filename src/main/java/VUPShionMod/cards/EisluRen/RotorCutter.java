@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -19,7 +20,7 @@ import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 
 public class RotorCutter extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(RotorCutter.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/RotorCutter.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -28,25 +29,27 @@ public class RotorCutter extends AbstractEisluRenCard {
 
     public RotorCutter() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 5;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.baseDamage = 2;
+        this.magicNumber = this.baseMagicNumber = 6;
         this.secondaryM = this.baseSecondaryM = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
 
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-        for (int i = 0; i < this.magicNumber; i++)
+        for (int i = 0; i < 3; i++)
             addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false)));
     }
 
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         if (WingShield.getWingShield().getCount() < this.secondaryM) {
             cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
             return false;
@@ -59,8 +62,7 @@ public class RotorCutter extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
-            upgradeDamage(2);
+            upgradeDamage(1);
         }
     }
 }

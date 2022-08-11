@@ -40,11 +40,11 @@ public class SupportGravitaterPower extends AbstractShionPower {
 
 
     @Override
-    public void onAddShieldCharge(int amount) {
+    public void onLoseShieldCharge(int amount) {
         this.amount2 += amount;
-        if (this.amount2 / 3 > 0) {
+        if (this.amount2 / 2 > 0) {
             addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount)));
         }
-        this.amount2 %= 3;
+        this.amount2 %= 2;
     }
 }

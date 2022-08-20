@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.BlurPower;
 
 public class SupportGravitater extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SupportGravitater.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/SupportGravitater.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

@@ -351,8 +351,6 @@ public class EnergyPanelPatches {
         return false;
     }
 
-    public static boolean isShionEXChar() {
-        return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen;
-    }
+
 
 }

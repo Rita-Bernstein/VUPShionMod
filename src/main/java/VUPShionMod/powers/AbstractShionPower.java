@@ -37,6 +37,10 @@ public class AbstractShionPower extends TwoAmountPower {
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount){
     }
 
+    public int monsterAttackPreBlock(DamageInfo info, AbstractMonster m,int damageAmount){
+        return damageAmount;
+    }
+
     public void onStackPower(AbstractPower power){
 
     }
@@ -65,4 +69,6 @@ public class AbstractShionPower extends TwoAmountPower {
     public void onLoseEnergy(int e){}
 
     public void onPlayerMinionDeath(){}
+
+    public int onLoseBlock(int amount){return amount;}
 }

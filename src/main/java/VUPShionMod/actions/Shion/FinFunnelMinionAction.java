@@ -4,6 +4,7 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.powers.Shion.MatrixAmplifyPower;
 import VUPShionMod.powers.Shion.WideAreaLockingPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.ui.FinFunnelCharge;
 import VUPShionMod.vfx.Shion.FinFunnelMinionEffect;
 import com.badlogic.gdx.graphics.Color;
@@ -54,7 +55,7 @@ public class FinFunnelMinionAction extends AbstractGameAction {
 
 
             for (int i = 0; i < 8; i++) {
-                AbstractDungeon.effectList.add(new FinFunnelMinionEffect( this.target, i, isAoe(finFunnels.get(i))));
+                AbstractDungeon.effectList.add(new FinFunnelMinionEffect( this.target, SkinManager.getSkinCharacter(0).reskinCount,i, isAoe(finFunnels.get(i))));
             }
         }
 

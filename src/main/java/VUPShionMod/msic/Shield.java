@@ -34,11 +34,11 @@ public class Shield implements Disposable {
     public void update() {
     }
 
-    public void render(SpriteBatch sb, float x, float y, float blockOffset, float blockScale) {
+    public void render(SpriteBatch sb, AbstractCreature owner,float x, float y, float blockOffset, float blockScale) {
         sb.setColor(this.blockColor);
 
         if (this.currentShield > 0) {
-            if (AbstractDungeon.player.currentBlock > 0) {
+            if (owner.currentBlock > 0) {
                 sb.draw(blockImg,
                         x + BLOCK_ICON_X - 50.0F, y + BLOCK_ICON_Y - 50.0F + blockOffset + 50.0f * Settings.scale * renderScale,
                         50.0F, 50.0F,

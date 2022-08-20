@@ -1036,5 +1036,97 @@
     "DESCRIPTIONS": [
       " #y精灵 生命不为0时，你每回合获得 #b%d 点 #y力量 。"
     ]
+  },
+  "VUPShionMod:BossChainPursuitPower": {
+    "NAME": "连锁追击",
+    "DESCRIPTIONS": [
+      "她的回合结束时给予你 #b%d 层 #y追击 。"
+    ]
+  },
+  "VUPShionMod:BossAttackLoaderPower": {
+    "NAME": "攻击加载",
+    "DESCRIPTIONS": [
+      "每当你洗牌时，将 #b%d 张 #y浮游追击 加入抽牌堆。",
+      "每当你洗牌时，将 #b%d 张 #y浮游追击 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:BossAvatarSpawnPower": {
+    "NAME": "延时替身",
+    "DESCRIPTIONS": [
+      "每回合结束时 #b%d 个获得 #b5 点生命的 #y替身 。"
+    ]
+  },
+  "VUPShionMod:BossAvatarPower": {
+    "NAME": "替身",
+    "DESCRIPTIONS": [
+      "你的一名 #y替身 还剩 #b%d 点生命。 NL 还剩 #b%d 个 #y替身 。"
+    ]
+  },
+  "VUPShionMod:PotentialOutbreakPower": {
+    "NAME": "潜能爆发",
+    "DESCRIPTIONS": [
+      "再受到 #b%d 点伤害后将会结束你的回合并进行一个 #y强力 的行动。"
+    ]
+  },
+  "VUPShionMod:SystemHackPower": {
+    "NAME": "系统骇入",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合回合开始时随机打出、丢弃、消耗各一张手牌。"
+    ]
+  },
+  "VUPShionMod:MagicDisorderPower": {
+    "NAME": "魔能紊乱",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合开始受到 #b30 点伤害。"
+    ]
+  },
+  "VUPShionMod:ActionBlockadePower": {
+    "NAME": "行动封锁",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合回合不能打出技能牌。"
+    ]
+  },
+  "VUPShionMod:AutoShieldPower": {
+    "NAME": "自动护盾",
+    "DESCRIPTIONS": [
+      "每回合结束时获得 #b%d 层 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:LightArmorPower": {
+    "NAME": "光明铠甲",
+    "DESCRIPTIONS": [
+      "受到的攻击伤害减少 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:CoverPower": {
+    "NAME": "掩体",
+    "DESCRIPTIONS": [
+      "当有其他队友存在时，其受到的伤害为 #b0 。"
+    ]
+  },
+  "VUPShionMod:MagicFlyingBladePower": {
+    "NAME": "魔能飞刃",
+    "DESCRIPTIONS": [
+      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。",
+      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:WhiteRosePower": {
+    "NAME": "支援系统：白蔷薇",
+    "DESCRIPTIONS": [
+      "受到 #y攻击伤害 时，获得 #b%d 层 #y多层护甲 。 NL 每回合开始时获得 #b%d 层 #y见切 。"
+    ]
+  },
+  "VUPShionMod:CrimsonDelugeBossPower": {
+    "NAME": "浸染之血",
+    "DESCRIPTIONS": [
+      "超出生命上限的 #g回复 将获得 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:FinalPrayerPower": {
+    "NAME": "最终祷告",
+    "DESCRIPTIONS": [
+      "抽到状态和诅咒时，抽一张牌并获得 [E] 。 NL 失去 #y格挡 时，获得 #b5 点 #y格挡 。 NL 获得 #y格挡 时，获得等量 #y护盾 。"
+    ]
   }
 }

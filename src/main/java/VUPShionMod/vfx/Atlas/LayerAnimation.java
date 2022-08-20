@@ -52,7 +52,8 @@ public class LayerAnimation {
         if (currFrame != null) {
             sb.setColor(currFrame.tint);
 
-            TextureAtlas.AtlasRegion img = atlas.findRegion(spriteSheetId + String.format("_%05d", currFrameIndex));
+            if(atlas != null) {
+                TextureAtlas.AtlasRegion img = atlas.findRegion(spriteSheetId + String.format("_%05d", currFrameIndex));
 
                 sb.draw(img.getTexture(),
                         rootPositionX + xPosition + img.offsetX * currFrame.xScale - currFrame.originalX,
@@ -67,6 +68,7 @@ public class LayerAnimation {
                         img.getRegionWidth(), img.getRegionHeight(),
                         flipX, flipY
                 );
+            }
         }
     }
 }

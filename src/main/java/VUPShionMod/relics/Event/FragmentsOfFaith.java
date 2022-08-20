@@ -1,12 +1,15 @@
 package VUPShionMod.relics.Event;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Liyezhu.FinalPrayerPower;
 import VUPShionMod.relics.AbstractShionRelic;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -53,31 +56,17 @@ public class FragmentsOfFaith extends AbstractShionRelic {
         this.description = getUpdatedDescription();
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
+
+        if(this.counter == -2)
+        this.tips.add(new PowerTip(DESCRIPTIONS[4], DESCRIPTIONS[5]));
         this.initializeTips();
     }
 
     @Override
-    public void onPlayerEndTurn() {
-        if (this.counter == -2) {
-            AbstractPlayer p = AbstractDungeon.player;
-            addToBot(new HealAction(p, p, p.maxHealth - p.currentHealth));
-        }
-    }
-
-    @Override
-    public int onPlayerHeal(int healAmount) {
-        if (this.counter == -2 && AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&(AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
-            if (!(AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
-                addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(healAmount,
-                        true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-        return super.onPlayerHeal(healAmount);
-    }
-
-    @Override
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (this.counter == -2)
-            AbstractDungeon.player.increaseMaxHp(3, true);
-        return super.onAttackedToChangeDamage(info, damageAmount);
+    public void atBattleStart() {
+        flash();
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new FinalPrayerPower(AbstractDungeon.player)));
     }
 
     @Override

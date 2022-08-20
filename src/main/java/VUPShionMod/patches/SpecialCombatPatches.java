@@ -14,6 +14,7 @@ import VUPShionMod.powers.Unique.GravitoniumOverPower;
 import VUPShionMod.relics.Event.AnastasiaNecklace;
 import VUPShionMod.relics.Event.TrackingBeacon;
 import VUPShionMod.relics.Event.UnknownDust;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import basemod.CustomEventRoom;
 import basemod.ReflectionHacks;
@@ -71,8 +72,8 @@ public class SpecialCombatPatches {
     }
 
     public static boolean shouldHardMod() {
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock
-                && CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock
+        return SkinManager.getSkin(0,1).unlock
+                && SkinManager.getSkin(1,2).unlock
                 && SaveHelper.liyezhuVictory;
     }
 
@@ -108,6 +109,14 @@ public class SpecialCombatPatches {
     public static class ProceedButtonPatch {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(ProceedButton _instance) {
+
+            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
+                if (NeowEventPatches.shouldShionTalk() && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))) {
+                    goToShionEvent(_instance, TrainingTest.ID);
+                    return SpireReturn.Return(null);
+                }
+            }
+
             if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))) {
                     goToShionEvent(_instance, Newborn.ID);
@@ -129,12 +138,6 @@ public class SpecialCombatPatches {
                 }
             }
 
-            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && !AbstractDungeon.bossKey.equals(PlagaAMundo.ID)) {
-                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen    && (AbstractDungeon.actNum >= 4 || AbstractDungeon.id.equals("TheEnding"))) {
-                    goToShionEvent(_instance, TrainingTest.ID);
-                    return SpireReturn.Return(null);
-                }
-            }
             return SpireReturn.Continue();
         }
     }
@@ -181,8 +184,8 @@ public class SpecialCombatPatches {
     public static class CGRenderPatch {
         @SpireInsertPatch(rloc = 64)
         public static void Insert(CardCrawlGame _instance) {
-            if(CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null) {
-                SpriteBatch sb = ReflectionHacks.getPrivate(_instance,CardCrawlGame.class,"sb");
+            if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null) {
+                SpriteBatch sb = ReflectionHacks.getPrivate(_instance, CardCrawlGame.class, "sb");
                 for (AbstractRelic r : AbstractDungeon.player.relics) {
                     if (r instanceof AnastasiaNecklace) {
                         ((AnastasiaNecklace) r).renderAbove(sb);

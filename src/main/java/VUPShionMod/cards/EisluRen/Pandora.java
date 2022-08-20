@@ -8,6 +8,7 @@ import VUPShionMod.actions.Shion.FinFunnelMinionAction;
 import VUPShionMod.cards.WangChuan.BombardaMagica;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Shion.PursuitPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.ui.WingShield;
 import VUPShionMod.vfx.Shion.FinFunnelMinionEffect;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -45,12 +46,12 @@ public class Pandora extends AbstractEisluRenCard {
         addToBot(new LoseWingShieldAction(this.secondaryM));
 
         for (int i = 0; i < 8; i++) {
-            AbstractDungeon.effectList.add(new FinFunnelMinionEffect(null, i, true));
+            AbstractDungeon.effectList.add(new FinFunnelMinionEffect(null, SkinManager.getSkinCharacter(0).reskinCount,i, true));
         }
 
 
         Consumer<Integer> actionConsumer = effect -> {
-            Supplier<AbstractPower> powerToApply = () -> new PursuitPower(null, upgraded ? effect + 2 : effect + 1);
+            Supplier<AbstractPower> powerToApply = () -> new PursuitPower(null, AbstractDungeon.player, upgraded ? effect + 2 : effect + 1);
             for (int i = 0; i < effect; i++)
                 addToTop(new ApplyPowerToAllEnemyAction(powerToApply));
         };

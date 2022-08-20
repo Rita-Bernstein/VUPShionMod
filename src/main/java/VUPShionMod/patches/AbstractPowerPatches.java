@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.defect.ShuffleAllAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -140,7 +141,26 @@ public class AbstractPowerPatches {
     public static class OnAfterUseCardPatch {
         @SpireInsertPatch(rloc = 1, localvars = {"targetCard"})
         public static SpireReturn<Void> Insert(UseCardAction _instance, @ByRef AbstractCard[] targetCard) {
-            SwardCharge.getSwardCharge().onAfterUseCard(targetCard[0],_instance);
+            SwardCharge.getSwardCharge().onAfterUseCard(targetCard[0], _instance);
+
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractCreature.class,
+            method = "loseBlock",
+            paramtypez = {int.class, boolean.class}
+    )
+    public static class OnLoseBlockPatch {
+        @SpireInsertPatch(rloc = 0)
+        public static SpireReturn<Void> Insert(AbstractCreature _instance, int amount, boolean noAnimation) {
+            for (AbstractPower power : _instance.powers) {
+                if (power instanceof AbstractShionPower) {
+                    amount = ((AbstractShionPower) power).onLoseBlock(amount);
+                }
+            }
+
 
             return SpireReturn.Continue();
         }

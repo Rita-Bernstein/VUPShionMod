@@ -2,6 +2,9 @@ package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.character.EisluRen;
+import VUPShionMod.character.Liyezhu;
+import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.msic.CharacterPriority;
 import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
@@ -10,8 +13,10 @@ import basemod.CustomCharacterSelectScreen;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.*;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -20,6 +25,9 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import com.megacrit.cardcrawl.screens.custom.CustomModeCharacterButton;
 
 import java.awt.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -67,7 +75,7 @@ public class CharacterSelectScreenPatches {
     public static class CharacterSelectScreenPatch_portraitSkeleton {
         @SpireInsertPatch(rloc = 62)
         public static void Insert(CharacterSelectScreen __instance, SpriteBatch sb) {
-            CharacterSelectScreenPatches.skinManager.characterRender(__instance, sb);
+            CharacterSelectScreenPatches.skinManager.characterRender(sb);
 
         }
     }
@@ -80,7 +88,7 @@ public class CharacterSelectScreenPatches {
     public static class CharacterSelectScreenPatch_Render {
         @SpireInsertPatch(rloc = 80)
         public static void Initialize(CharacterSelectScreen __instance, SpriteBatch sb) {
-            CharacterSelectScreenPatches.skinManager.panelRender(__instance, sb);
+            CharacterSelectScreenPatches.skinManager.panelRender(sb);
         }
     }
 
@@ -105,7 +113,7 @@ public class CharacterSelectScreenPatches {
     public static class CharacterSelectScreenPatch_Update {
         @SpirePostfixPatch
         public static void Postfix(CharacterSelectScreen __instance) {
-            CharacterSelectScreenPatches.skinManager.update(__instance);
+            CharacterSelectScreenPatches.skinManager.update();
         }
     }
 
@@ -166,49 +174,153 @@ public class CharacterSelectScreenPatches {
         public static SpireField<CharacterPriority> characterPriority = new SpireField<>(() -> new CharacterPriority());
     }
 
+
+//    @SpirePatch(
+//            clz = CustomCharacterSelectScreen.class,
+//            method = "initialize"
+//    )
+//    public static class CharacterSelectScreenPatch_BasemodInitialize {
+//        @SpireInsertPatch(rloc = 5)
+//        public static SpireReturn<Void> Insert(CustomCharacterSelectScreen __instance) {
+//            sortChar(__instance);
+//            return SpireReturn.Continue();
+//        }
+//    }
+
     @SpirePatch(
-            clz = CustomCharacterSelectScreen.class,
-            method = "initialize"
+            clz = CharacterSelectScreen.class,
+            method = "open"
     )
     public static class CharacterSelectScreenPatch_BasemodInitialize {
-        @SpireInsertPatch(rloc = 5)
-        public static SpireReturn<Void> Insert(CustomCharacterSelectScreen __instance) {
-            for (CharacterOption option : __instance.options) {
-                if (option.c instanceof Watcher) {
-                    AddFields.characterPriority.get(option.c).setCharacterPriority(-1);
+        @SpireInsertPatch(rloc = 0)
+        public static SpireReturn<Void> Insert(CharacterSelectScreen __instance) {
+            if (__instance instanceof CustomCharacterSelectScreen){
+
+                ArrayList<CharacterOption> allOptions = ReflectionHacks.getPrivate(__instance, CustomCharacterSelectScreen.class, "allOptions");
+
+                if (SaveHelper.isTrainingMod) {
+                    for (CharacterOption option : allOptions) {
+                        if (option.c instanceof EisluRen) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-1);
+                        }
+
+                        if (option.c instanceof Liyezhu) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-2);
+                        }
+
+                        if (option.c instanceof WangChuan) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-3);
+                        }
+
+                        if (option.c instanceof Shion) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-4);
+                        }
+
+
+                        if (option.c instanceof Ironclad) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(0);
+                        }
+
+                        if (option.c instanceof TheSilent) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(1);
+                        }
+                        if (option.c instanceof Defect) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(2);
+                        }
+                        if (option.c instanceof Watcher) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(3);
+                        }
+                    }
+                } else {
+                    for (CharacterOption option : allOptions) {
+                        if (option.c instanceof Watcher) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-1);
+                        }
+
+                        if (option.c instanceof Defect) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-2);
+                        }
+
+                        if (option.c instanceof TheSilent) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-3);
+                        }
+
+                        if (option.c instanceof Ironclad) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(-4);
+                        }
+
+
+                        if (option.c instanceof Shion) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(0);
+                        }
+
+                        if (option.c instanceof WangChuan) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(1);
+                        }
+                        if (option.c instanceof Liyezhu) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(2);
+                        }
+                        if (option.c instanceof EisluRen) {
+                            AddFields.characterPriority.get(option.c).setCharacterPriority(3);
+                        }
+
+                    }
                 }
 
-                if (option.c instanceof Defect) {
-                    AddFields.characterPriority.get(option.c).setCharacterPriority(-2);
-                }
 
-                if (option.c instanceof TheSilent) {
-                    AddFields.characterPriority.get(option.c).setCharacterPriority(-3);
-                }
+                allOptions.sort(Comparator.comparing(o -> AddFields.characterPriority.get(o.c).getCharacterPriority()));
 
-                if (option.c instanceof Ironclad) {
-                    AddFields.characterPriority.get(option.c).setCharacterPriority(-4);
+                ReflectionHacks.setPrivate(__instance, CustomCharacterSelectScreen.class, "allOptions", allOptions);
+
+                int optionsIndex = ReflectionHacks.getPrivate(__instance,CustomCharacterSelectScreen.class,"optionsIndex");
+                int optionsPerIndex = ReflectionHacks.getPrivate(__instance,CustomCharacterSelectScreen.class,"optionsPerIndex");
+
+                __instance.options= new ArrayList(allOptions.subList(
+                        ReflectionHacks.getPrivate(__instance,CustomCharacterSelectScreen.class,"optionsIndex")
+                        , Math.min(allOptions.size(), optionsIndex+optionsPerIndex)));
+
+
+                __instance.options.forEach(o -> o.selected = false);
+
+
+                try {
+                    Method method = CustomCharacterSelectScreen.class.getDeclaredMethod("positionButtons");
+                    method.setAccessible(true);
+                    method.invoke(__instance);
+
+
+                } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                    e.printStackTrace();
                 }
             }
-
-
-            __instance.options.sort(Comparator.comparing(o -> AddFields.characterPriority.get(o.c).getCharacterPriority()));
-
             return SpireReturn.Continue();
         }
     }
 
+//    @SpirePatch(
+//            clz = CustomCharacterSelectScreen.class,
+//            method = "setCurrentOptions"
+//    )
+//    public static class CharacterSelectScreenPatch_SetCurrentOptions {
+//        @SpireInsertPatch(rloc = 0)
+//        public static SpireReturn<Void> Insert(CustomCharacterSelectScreen __instance, boolean rightClicked) {
+//            sortChar(__instance);
+//            return SpireReturn.Continue();
+//        }
+//    }
 
-    @SpirePatch(
-            clz = BaseMod.class,
-            method = "generateCustomCharacterOptions"
-    )
-    public static class CharacterSelectScreenPatch_BasemodGenerateCustomCharacterOptions{
-        @SpireInsertPatch(rloc = 4,localvars = {"options"})
-        public static void Insert(ArrayList<CustomModeCharacterButton> options) {
-            options.removeIf(b -> b.c instanceof EisluRen);
 
-        }
-    }
+
+//    @SpirePatch(
+//            clz = BaseMod.class,
+//            method = "generateCustomCharacterOptions"
+//    )
+//    public static class CharacterSelectScreenPatch_BasemodGenerateCustomCharacterOptions{
+//        @SpireInsertPatch(rloc = 4,localvars = {"options"})
+//        public static void Insert(ArrayList<CustomModeCharacterButton> options) {
+//            options.removeIf(b -> b.c instanceof EisluRen);
+//
+//        }
+//    }
 
 }

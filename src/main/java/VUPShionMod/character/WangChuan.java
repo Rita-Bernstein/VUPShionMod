@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.victory.WangchuanVictoryEffect;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -67,9 +68,9 @@ public class WangChuan extends CustomPlayer {
 
         CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(2);
         initializeClass(null,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).SHOULDER1,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).SHOULDER2,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).CORPSE,
+                SkinManager.getSkin(1).SHOULDER1,
+                SkinManager.getSkin(1).SHOULDER2,
+                SkinManager.getSkin(1).CORPSE,
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         loadAnimation(VUPShionMod.assetPath("characters/WangChuan/animation/STANCE_WANGCHUAN_BREAK.atlas"),
@@ -81,26 +82,26 @@ public class WangChuan extends CustomPlayer {
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).atlasURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).jsonURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).renderScale);
+                SkinManager.getSkin(1).atlasURL,
+                SkinManager.getSkin(1).jsonURL,
+                SkinManager.getSkin(1).renderScale);
 
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(1).reskinCount == 0) {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "idle_YOFU", true);
         }
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 1) {
+        if (SkinManager.getSkinCharacter(1).reskinCount == 1) {
             this.state.setAnimation(0, "idle", true);
         }
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 2){
+        if (SkinManager.getSkinCharacter(1).reskinCount == 2){
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "idle_wing", true);
         }
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount == 3){
+        if (SkinManager.getSkinCharacter(1).reskinCount == 3){
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "weapon_idle", true);
         }
@@ -112,15 +113,13 @@ public class WangChuan extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).getStartingRelic();
+        SkinManager.getSkinCharacter(1).InitializeReskinCount();
+        return SkinManager.getSkin(1).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).getStartingDeck();
+        SkinManager.getSkinCharacter(1).InitializeReskinCount();
+        return SkinManager.getSkin(1).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {

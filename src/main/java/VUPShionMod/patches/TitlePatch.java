@@ -11,13 +11,13 @@ public class TitlePatch {
     @SpirePatch(
             clz = MainMenuScreen.class,
             method = SpirePatch.CONSTRUCTOR,
-            paramtypez = { boolean.class}
+            paramtypez = {boolean.class}
     )
     public static class useCardPatch {
         @SpirePostfixPatch
-        public static void Postfix(MainMenuScreen _instance) {
-            if(!SaveHelper.notReplaceTitle)
-            _instance.bg = new ShionLoginBackground();
+        public static void Postfix(MainMenuScreen _instance, boolean playBgm) {
+            if (!SaveHelper.notReplaceTitle)
+                _instance.bg = new ShionLoginBackground();
         }
     }
 

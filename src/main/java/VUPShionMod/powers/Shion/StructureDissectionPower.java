@@ -184,10 +184,10 @@ public class StructureDissectionPower extends AbstractShionPower {
 
     public void trigger(int previous) {
         if (previous < 3 && this.amount >= 3)
-            addToTop(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 5, false)));
+            addToTop(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 5, this.owner.isPlayer)));
 
         if (previous < 7 && this.amount >= 7)
-            addToTop(new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, 5, false)));
+            addToTop(new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, 5, this.owner.isPlayer)));
 
         if (previous < 12 && this.amount >= 12) {
             addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -9)));
@@ -217,9 +217,8 @@ public class StructureDissectionPower extends AbstractShionPower {
             addToTop(new ApplyPowerAction(this.owner, this.owner, new FireCalibrationPower(this.owner, 3)));
 
         if (previous < 94 && this.amount >= 94) {
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             if (this.owner instanceof AbstractMonster) {
-                addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-
                 if (((AbstractMonster) this.owner).type == AbstractMonster.EnemyType.BOSS) {
                     AbstractMonster m = (AbstractMonster) this.owner;
 
@@ -238,8 +237,8 @@ public class StructureDissectionPower extends AbstractShionPower {
                                 for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                                     if (!monster.isDeadOrEscaped()) {
                                         if (monster.hasPower(MinionPower.POWER_ID)) {
-                                            addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", monster.hb.cX, monster.hb.cY,
-                                                    96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                                            addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", monster.hb.cX, monster.hb.cY,
+                                                    240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                                             addToTop(new AbstractGameAction() {
                                                 @Override
                                                 public void update() {
@@ -259,22 +258,22 @@ public class StructureDissectionPower extends AbstractShionPower {
 
 //                    第一勇士
                     if (m.id.equals(Champ.ID) && m.hasPower(MetallicizePower.POWER_ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, MetallicizePower.POWER_ID));
                         return;
                     }
 
                     if (m.id.equals(AwakenedOne.ID) && m.hasPower(CuriosityPower.POWER_ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, CuriosityPower.POWER_ID));
                         return;
                     }
 
                     if (m.id.equals(TimeEater.ID) && m.hasPower(TimeWarpPower.POWER_ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, TimeWarpPower.POWER_ID));
                         return;
                     }
@@ -283,8 +282,8 @@ public class StructureDissectionPower extends AbstractShionPower {
                         for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                             if (!monster.isDeadOrEscaped()) {
                                 if (monster.name.equals(Donu.ID)) {
-                                    addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", monster.hb.cX, monster.hb.cY,
-                                            96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                                    addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", monster.hb.cX, monster.hb.cY,
+                                            240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                                     addToTop(new AbstractGameAction() {
                                         @Override
                                         public void update() {
@@ -300,8 +299,8 @@ public class StructureDissectionPower extends AbstractShionPower {
                     }
 
                     if (m.id.equals(Donu.ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                         addToTop(new AbstractGameAction() {
                             @Override
                             public void update() {
@@ -315,28 +314,28 @@ public class StructureDissectionPower extends AbstractShionPower {
 
 
                     if (m.id.equals(CorruptHeart.ID) && m.hasPower(InvinciblePower.POWER_ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f,  5.0f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, InvinciblePower.POWER_ID));
                         return;
                     }
 
 
                     if (m.id.equals(RitaShop.ID) && m.hasPower(DefenceMonsterPower.POWER_ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, DefenceMonsterPower.POWER_ID));
                     }
 
                     if (m.id.equals(TimePortal.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
                     }
 
                     if (m.id.equals(Ouroboros.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
-                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Analysis complete", m.hb.cX, m.hb.cY,
-                                96.0f, 54.0f, 5.0f * Settings.scale, 2, false)));
+                        addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
+                                240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
                     }
 
@@ -345,6 +344,8 @@ public class StructureDissectionPower extends AbstractShionPower {
 
                 } else
                     addToTop(new StunMonsterAction((AbstractMonster) this.owner, this.owner, 1));
+            }else {
+                addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -3)));
             }
         }
 

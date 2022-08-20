@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Monster.TimePortal;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Shion.ConcordPower;
 import VUPShionMod.powers.Shion.ReinsOfWarPower;
@@ -44,15 +45,7 @@ public class LabyrinthOfTimelinePower extends AbstractShionPower {
         if (this.amount2 >= this.amount) {
             flash();
             this.amount2 = 0;
-            ArrayList<AbstractPower> powersToRemove = new ArrayList<>();
-            for (AbstractPower p : AbstractDungeon.player.powers) {
-                if (!p.ID.equals(ReinsOfWarPower.POWER_ID) && !p.ID.equals(ConcordPower.POWER_ID))
-                    powersToRemove.add(p);
-            }
-
-            if (!powersToRemove.isEmpty())
-                addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, this.owner,
-                        powersToRemove.get(AbstractDungeon.miscRng.random(powersToRemove.size() - 1))));
+            addToBot(new RemovePlayerBuffAction());
 
         }
 

@@ -1,5 +1,6 @@
 package VUPShionMod.skins;
 
+import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.skins.sk.EisluRen.AbstractSkinEisluRen;
 import VUPShionMod.skins.sk.Liyezhu.AbstractSkinLiyezhu;
 import VUPShionMod.skins.sk.Shion.AbstractSkinShion;
@@ -8,11 +9,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
+import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 
 import java.util.ArrayList;
 
@@ -20,7 +23,6 @@ public class SkinManager {
     public ArrayList<AbstractSkinCharacter> skinCharacters = new ArrayList<>();
     public AbstractSkinCharacter currentSkinCharacter;
     public AbstractSkin currentSkin;
-    public static CharacterSelectScreen screen;
 
     public float scale = 1.1f;
     private Color color = Color.WHITE.cpy();
@@ -65,32 +67,33 @@ public class SkinManager {
     public void unlockAllSkin() {
         for (AbstractSkinCharacter character : skinCharacters) {
             for (AbstractSkin skin : character.skins) {
-                    skin.onUnlock();
+                skin.onUnlock();
             }
         }
     }
 
 
     public void justSelected(CharacterOption option) {
-        for (AbstractSkinCharacter c : skinCharacters) {
-            if (option.name.equals(c.id)) {
-                if (!c.skins.get(c.selectedCount).unlock) {
-                    screen.confirmButton.hide();
+        if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.CHAR_SELECT)
+            for (AbstractSkinCharacter c : skinCharacters) {
+                if (option.name.equals(c.id)) {
+                    if (!c.skins.get(c.selectedCount).unlock) {
+                        CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.hide();
+                    }
                 }
             }
-        }
     }
 
 
-    public void update(CharacterSelectScreen screen) {
-        SkinManager.screen = screen;
+    public void update() {
         CharacterOption selectedOption = null;
         boolean hasChar = false;
 
-        for (CharacterOption o : screen.options) {
-            if (o.selected)
-                selectedOption = o;
-        }
+        if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.CHAR_SELECT)
+            for (CharacterOption o : CardCrawlGame.mainMenuScreen.charSelectScreen.options) {
+                if (o.selected)
+                    selectedOption = o;
+            }
 
         if (selectedOption != null) {
             for (AbstractSkinCharacter c : skinCharacters) {
@@ -102,13 +105,9 @@ public class SkinManager {
                     break;
                 }
             }
-
-
-
-
         }
 
-        if(!hasChar){
+        if (!hasChar) {
             currentSkin = null;
             currentSkinCharacter = null;
             this.panel_x = MathHelper.uiLerpSnap(this.panel_x, this.panel_HideFinalX);
@@ -120,13 +119,13 @@ public class SkinManager {
         }
     }
 
-    public void characterRender(CharacterSelectScreen screen, SpriteBatch sb) {
+    public void characterRender(SpriteBatch sb) {
         if (currentSkin != null) {
             currentSkin.renderPortrait(sb);
         }
     }
 
-    public void panelRender(CharacterSelectScreen screen, SpriteBatch sb) {
+    public void panelRender(SpriteBatch sb) {
         sb.setColor(this.color);
 
         sb.draw(this.body,
@@ -166,6 +165,31 @@ public class SkinManager {
         }
     }
 
+    public static AbstractSkinCharacter getSkinCharacter(int charIndex) {
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(charIndex);
+    }
+
+    public static AbstractSkin getSkin(int charIndex) {
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(charIndex).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(charIndex).reskinCount);
+    }
+
+    public static AbstractSkin getSkin(int charIndex, int skinIndex) {
+        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(charIndex).skins.get(skinIndex);
+    }
+
+    public static AbstractSkin getSkin(String skinId) {
+        AbstractSkin skin = null;
+        for (AbstractSkinCharacter c : CharacterSelectScreenPatches.skinManager.skinCharacters) {
+            for (AbstractSkin sk : c.skins) {
+                if (sk.skinId.equals(skinId)) {
+                    skin = sk;
+                }
+            }
+
+        }
+
+        return skin;
+    }
 
 
 }

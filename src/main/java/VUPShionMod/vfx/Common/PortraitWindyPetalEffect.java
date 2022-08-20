@@ -17,13 +17,21 @@ public class PortraitWindyPetalEffect extends AbstractGameEffect {
     private String name = "";
     private boolean justStart = true;
 
+    private boolean flipX = false;
+
     public PortraitWindyPetalEffect() {
         this.duration = 2.5f;
     }
 
     public PortraitWindyPetalEffect(String name) {
+        this(name, false);
+    }
+
+
+    public PortraitWindyPetalEffect(String name, boolean flipX) {
         this.duration = 2.5f;
         this.name = name;
+        this.flipX = flipX;
     }
 
 
@@ -36,7 +44,7 @@ public class PortraitWindyPetalEffect extends AbstractGameEffect {
         if (this.justStart) {
             this.justStart = false;
             if (!this.name.equals("")) {
-                AbstractDungeon.topLevelEffects.add(new LargPortraitFlashInEffect(this.name));
+                AbstractDungeon.topLevelEffects.add(new LargPortraitFlashInEffect(this.name, this.flipX));
             }
         }
 
@@ -56,7 +64,7 @@ public class PortraitWindyPetalEffect extends AbstractGameEffect {
 
         if (this.timer2 < 0.0F && this.duration > 0.5f) {
             this.timer2 += 0.05F;
-            AbstractDungeon.effectsQueue.add(new PortraitWindyParticleEffect(new Color(0.9F, 0.9F, 1.0F, 1.0F), true));
+            AbstractDungeon.effectsQueue.add(new PortraitWindyParticleEffect(new Color(0.9F, 0.9F, 1.0F, 1.0F), !this.flipX));
         }
 
         if (this.duration < 0.0F)

@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.*;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import VUPShionMod.vfx.Common.AbstractSpineEffect;
 import com.esotericsoftware.spine.AnimationState;
@@ -28,12 +29,12 @@ public class GravityFinFunnel extends AbstractFinFunnel {
         upgradeLevel(level);
         this.effect = 1;
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(0).reskinCount == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.json", SkinManager.getSkin(0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.json", SkinManager.getSkin(0).renderScale);
         }
 
 

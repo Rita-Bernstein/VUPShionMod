@@ -127,7 +127,7 @@
       "碧月礼装：装备了紫音研发的飞翼组合盾",
       "大大的提高了防御能力",
       "强度：基础",
-      "解锁条件：获得真结局"
+      "解锁条件：通关真结局"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {
@@ -248,6 +248,23 @@
       "加载完成，欢迎来到战场",
       "请选择",
       "祝武运昌隆"
+    ]
+  },
+  "VUPShionMod:ShionBasePatches": {
+    "TEXT": [
+      "开始特殊模式"
+    ]
+  },
+  "VUPShionMod:ShionMainMenuPanelButton": {
+    "TEXT": [
+      "训练模式",
+      "在虚拟场景中和队员的投影战斗",
+      "在标准模式中获得“真结局”以解锁"
+    ]
+  },
+  "VUPShionMod:CardPreviewUpgradePatches": {
+    "TEXT": [
+      "多次升级"
     ]
   }
 }

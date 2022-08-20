@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.ReinsOfWarPower;
 import VUPShionMod.powers.Shion.StructureDissectionPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -24,12 +25,12 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
         upgradeLevel(level);
         this.effect = 1;
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(0).reskinCount == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.json",  SkinManager.getSkin(0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.json", SkinManager.getSkin(0).renderScale);
         }
 
         this.state.setAnimation(0, "weapon1_come_in", false);
@@ -56,10 +57,6 @@ public class DissectingFinFunnel extends AbstractFinFunnel {
         return this.effect * (getLevel() - 1) / 3 + 1;
     }
 
-    @Override
-    public void updateDescription() {
-        this.description = String.format(orbStrings.DESCRIPTION[0], getLevel(), getFinalDamage(), getFinalEffect());
-    }
 
     @Override
     public void preBattlePrep() {

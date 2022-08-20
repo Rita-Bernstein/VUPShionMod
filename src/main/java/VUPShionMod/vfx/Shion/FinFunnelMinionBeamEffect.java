@@ -41,6 +41,8 @@ public class FinFunnelMinionBeamEffect extends AbstractGameEffect {
 
         this.muzzle = this.skeleton.findBone("weapon5_muzzle");
 
+        this.isFlipped =isFlipped;
+
         if (isFlipped) {
             this.sX = this.skeleton.getX() + muzzle.getWorldX() - 32.0F * Settings.scale;
             this.sY = this.skeleton.getY() + muzzle.getWorldY() + 20.0F * Settings.scale;
@@ -73,7 +75,7 @@ public class FinFunnelMinionBeamEffect extends AbstractGameEffect {
             this.dX = Settings.WIDTH / 2.0F * Interpolation.pow3Out.apply(this.duration);
             this.dY = AbstractDungeon.floorY + 10.0F * Settings.scale;
         } else {
-            this.dX = Settings.WIDTH + (-Settings.WIDTH) / 2.0F * Interpolation.pow3Out.apply(this.duration);
+            this.dX = Settings.WIDTH -Settings.WIDTH / 2.0F * Interpolation.pow3Out.apply(this.duration);
             this.dY = AbstractDungeon.floorY + 30.0F * Settings.scale;
         }
 

@@ -2,6 +2,7 @@ package VUPShionMod.vfx.Shion;
 
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
+import VUPShionMod.skins.SkinManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -44,7 +45,7 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
     private boolean isAoe = false;
 
 
-    public FinFunnelMinionEffect(AbstractCreature target, int index, boolean isAoe) {
+    public FinFunnelMinionEffect(AbstractCreature target, int skinIndex,int index, boolean isAoe) {
         this.index = index + 1;
 
         this.duration = 2.0f + (7 - index) * 0.15f + index * 0.15f;
@@ -100,15 +101,18 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
             }
 
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
+        loadSkin(skinIndex);
+
+    }
+
+    public void loadSkin(int skinIndex){
+        if (skinIndex == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.atlas",
                     "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.json", 0.8f * this.scale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU5.atlas",
                     "VUPShionMod/img/ui/FinFunnel/Blue/YOFU5.json", 0.8f * this.scale);
         }
-
-
     }
 
 
@@ -137,7 +141,7 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
 
                 if (this.isAoe) {
                     CardCrawlGame.sound.play("ATTACK_DEFECT_BEAM");
-                    AbstractDungeon.effectsQueue.add(new FinFunnelMinionBeamEffect(this.skeleton, false, this.scale));
+                    AbstractDungeon.effectsQueue.add(new FinFunnelMinionBeamEffect(this.skeleton, this.target.isPlayer, this.scale));
                 }
 
             }

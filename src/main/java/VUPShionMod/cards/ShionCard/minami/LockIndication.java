@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
+import VUPShionMod.skins.SkinManager;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -52,6 +53,6 @@ public class LockIndication extends AbstractShionMinamiCard  {
 
     @Override
     public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards) {
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0;
+        return SkinManager.getSkinCharacter(0).reskinCount == 0;
     }
 }

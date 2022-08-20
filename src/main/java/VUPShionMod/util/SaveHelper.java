@@ -5,6 +5,7 @@ import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
+import VUPShionMod.skins.SkinManager;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
@@ -26,6 +27,7 @@ public class SaveHelper {
     public static boolean fightSpecialBoss = false;
     public static boolean fightSpecialBossWithout = false;
     public static boolean isHardMod = false;
+    public static boolean isTrainingMod = false;
     public static boolean liyezhuVictory = false;
 
 
@@ -38,6 +40,7 @@ public class SaveHelper {
             config.setBool(CardCrawlGame.saveSlot + "safePortrait", safePortrait);
             config.setBool(CardCrawlGame.saveSlot + "liyezhuRelic", liyezhuRelic);
             config.setBool(CardCrawlGame.saveSlot + "isHardMod", isHardMod);
+            config.setBool(CardCrawlGame.saveSlot + "isTrainingMod", isTrainingMod);
 
 
             config.save();
@@ -56,6 +59,7 @@ public class SaveHelper {
             safePortrait = config.getBool(CardCrawlGame.saveSlot + "safePortrait");
             liyezhuRelic = config.getBool(CardCrawlGame.saveSlot + "liyezhuRelic");
             isHardMod = config.getBool(CardCrawlGame.saveSlot + "isHardMod");
+            isTrainingMod = config.getBool(CardCrawlGame.saveSlot + "isTrainingMod");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,13 +111,13 @@ public class SaveHelper {
             GameStatsPatch.wangchuanDeathCount = config.getInt(CardCrawlGame.saveSlot + "wangchuanDeathCount");
 
             if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 0)) {
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).unlock = true;
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(1).button.locked = false;
+                SkinManager.getSkin(0,1).unlock = true;
+                SkinManager.getSkin(0,1).button.locked = false;
             }
 
             if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 1)) {
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).unlock = true;
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(2).button.locked = false;
+                SkinManager.getSkin(1,2).unlock = true;
+                SkinManager.getSkin(1,2).button.locked = false;
             }
 
             liyezhuVictory = config.getBool(CardCrawlGame.saveSlot + "liyezhuVictory");

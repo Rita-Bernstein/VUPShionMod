@@ -11,6 +11,7 @@ import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.patches.FontHelperPatches;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
 import VUPShionMod.stances.*;
@@ -84,9 +85,9 @@ public class EisluRen extends CustomPlayer {
         this.dialogY = this.drawY + 270.0F * Settings.scale;
 
         initializeClass(null,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).SHOULDER1,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).SHOULDER2,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).CORPSE,
+                SkinManager.getSkin(3).SHOULDER1,
+                SkinManager.getSkin(3).SHOULDER2,
+                SkinManager.getSkin(3).CORPSE,
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         reloadAnimation();
@@ -97,12 +98,12 @@ public class EisluRen extends CustomPlayer {
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).atlasURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).jsonURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).renderScale);
+                SkinManager.getSkin(3).atlasURL,
+                SkinManager.getSkin(3).jsonURL,
+                SkinManager.getSkin(3).renderScale);
 
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(3).reskinCount == 0) {
             this.state.setAnimation(0, "idle", true);
         }
 
@@ -114,15 +115,13 @@ public class EisluRen extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).getStartingRelic();
+        SkinManager.getSkinCharacter(3).InitializeReskinCount();
+        return SkinManager.getSkin(3).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).getStartingDeck();
+        SkinManager.getSkinCharacter(3).InitializeReskinCount();
+        return SkinManager.getSkin(3).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {

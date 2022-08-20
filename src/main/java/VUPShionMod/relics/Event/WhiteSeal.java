@@ -6,6 +6,7 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.relics.AbstractShionRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
@@ -59,11 +60,11 @@ public class WhiteSeal extends AbstractShionRelic implements ClickableRelic {
             if (!this.grayscale) {
                 this.grayscale = true;
                 flash();
-                addToBot(new TalkAction(true,DESCRIPTIONS[3], 1.2F, 1.2F));
+                addToBot(new TalkAction(true, DESCRIPTIONS[3 + MathUtils.random(2)], 1.2F, 1.2F));
                 addToBot(new DrawCardAction(1));
                 addToBot(new GainEnergyAction(1));
-                addToBot(new HealAction(AbstractDungeon.player,AbstractDungeon.player,5));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new WeakPower(AbstractDungeon.player,1,false)));
+                addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 5));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 1, false)));
             }
     }
 

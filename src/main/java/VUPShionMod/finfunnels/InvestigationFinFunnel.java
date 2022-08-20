@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Shion.*;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -23,16 +24,21 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         upgradeLevel(level);
         this.effect = 1;
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(0).reskinCount == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json", SkinManager.getSkin(0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", SkinManager.getSkin(0).renderScale);
         }
 
         this.state.setAnimation(0, "weapon4_come_in", false);
         this.state.addAnimation(0, "weapon4_idle", true, 0.0f);
+    }
+
+    @Override
+    public int getFinalEffect() {
+        return this.effect * (getLevel() - 1) / 3 + 2;
     }
 
     @Override
@@ -53,10 +59,7 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
         SaveHelper.investigationFinFunnelLevel = level;
     }
 
-    @Override
-    public int getFinalEffect() {
-        return this.effect * (getLevel() - 1) / 3 + 2;
-    }
+
 
 
     @Override

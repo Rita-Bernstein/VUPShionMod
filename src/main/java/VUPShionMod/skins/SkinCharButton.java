@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
+import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 
 public class SkinCharButton {
     public int index;
@@ -182,15 +183,14 @@ public class SkinCharButton {
                                 ).updateCharInfo(ReflectionHacks.getPrivate(option, CharacterOption.class, "charInfo")));
                     }
 
-                    if (SkinManager.screen != null) {
-                        if (this.locked)
-                            SkinManager.screen.confirmButton.hide();
-                        else
-                            SkinManager.screen.confirmButton.show();
-                    }
+                    if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.CHAR_SELECT)
+                    if (this.locked)
+                        CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.hide();
+                    else
+                        CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.show();
+
 
                 }
-
 
             }
         }

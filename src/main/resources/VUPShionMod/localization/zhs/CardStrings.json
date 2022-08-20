@@ -1780,5 +1780,9 @@
   "VUPShionMod:SupportGravitater": {
     "NAME": "支援：重力回路",
     "DESCRIPTION": "获得 !M! 点 vup_shion_mod:重力增幅 。 NL 获得 !VUPShionSecondM! 层 vup_shion_mod:残影 。"
+  },
+  "VUPShionMod:FinFunnelPursuit": {
+    "NAME": "浮游追击",
+    "DESCRIPTION": " 不能被打出 。 NL 在你的回合结束时，你受到 !M! 点伤害并 消耗 。"
   }
 }

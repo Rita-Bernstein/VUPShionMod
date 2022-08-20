@@ -35,8 +35,18 @@ public class ImmuneDamagePower extends AbstractShionPower {
 
     @Override
     public void atEndOfRound() {
-        this.flash();
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        if (this.owner.isPlayer) {
+            this.flash();
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        if (!this.owner.isPlayer) {
+            this.flash();
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        }
     }
 
     @Override

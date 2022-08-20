@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.DamageAndApplyPursuitAction;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.*;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import VUPShionMod.vfx.Shion.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.graphics.Color;
@@ -29,12 +30,12 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
         this.effect = 1;
 
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(0).reskinCount == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.json", SkinManager.getSkin(0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.json", SkinManager.getSkin(0).renderScale);
         }
 
 
@@ -89,9 +90,9 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void powerToApply(AbstractCreature target, float amountScale, boolean top) {
         if (target != null && (int) Math.floor(getFinalEffect() * amountScale) > 0) {
             if (top)
-                addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, (int) Math.floor(getFinalEffect() * amountScale))));
+                addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, AbstractDungeon.player,(int) Math.floor(getFinalEffect() * amountScale))));
             else
-                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, (int) Math.floor(getFinalEffect() * amountScale))));
+                addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, AbstractDungeon.player, (int) Math.floor(getFinalEffect() * amountScale))));
         }
         super.powerToApply(target, amountScale, top);
     }

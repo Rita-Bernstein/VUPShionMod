@@ -9,6 +9,7 @@ import VUPShionMod.cards.ShionCard.liyezhu.*;
 import VUPShionMod.cards.ShionCard.minami.*;
 import VUPShionMod.cards.ShionCard.optionCards.*;
 import VUPShionMod.cards.ShionCard.shion.*;
+import VUPShionMod.cards.ShionCard.shion.Boss.*;
 import VUPShionMod.cards.ShionCard.tempCards.*;
 import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.cards.Codex.*;
@@ -18,6 +19,10 @@ import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.events.*;
 import VUPShionMod.helpers.SecondaryMagicVariable;
+import VUPShionMod.monsters.HardModeBoss.EisluRen.*;
+import VUPShionMod.monsters.HardModeBoss.Liyezhu.*;
+import VUPShionMod.monsters.HardModeBoss.Shion.*;
+import VUPShionMod.monsters.HardModeBoss.WangChuan.*;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.patches.*;
@@ -30,6 +35,7 @@ import VUPShionMod.relics.Shion.*;
 import VUPShionMod.relics.Wangchuan.*;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.ui.SansMeterSave;
 import VUPShionMod.ui.WingShieldDamageSave;
 import VUPShionMod.ui.WingShieldRefundSave;
@@ -279,12 +285,12 @@ public class VUPShionMod implements
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
-                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID) && EnergyPanelPatches.isShionModChar())
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
                 .endsWithRewardsUI(true)
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(StrangeSeal.ID, StrangeSeal.class) //Event ID//
-                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID) && EnergyPanelPatches.isShionModChar())
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
                 .endsWithRewardsUI(true)
                 .create());
 
@@ -368,13 +374,43 @@ public class VUPShionMod implements
         BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
         BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
 
+//        训练模式boss
+        BaseMod.addMonster(AquaShionBoss.ID, () -> new AquaShionBoss());
+        BaseMod.addMonster(OriLiyezhuBoss.ID, () -> new OriLiyezhuBoss());
+        BaseMod.addMonster(OriEisluRenBoss.ID, () -> new OriEisluRenBoss());
+        BaseMod.addMonster(ChinaWangChuanBoss.ID, () -> new ChinaWangChuanBoss());
+        BaseMod.addMonster(PurityWangChuanBoss.ID, () -> new PurityWangChuanBoss());
+
+
+//      加boss图标
+        BaseMod.addBoss("", AquaShionBoss.ID,
+                "VUPShionMod/img/ui/map/boss/ShionBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+
+        BaseMod.addBoss("", OriLiyezhuBoss.ID,
+                "VUPShionMod/img/ui/map/boss/LiyezhuBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/LiyezhuBoss.png");
+
+        BaseMod.addBoss("", OriEisluRenBoss.ID,
+                "VUPShionMod/img/ui/map/boss/EisluRenBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/EisluRenBoss.png");
+
+
+        BaseMod.addBoss("", ChinaWangChuanBoss.ID,
+                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+
+        BaseMod.addBoss("", PurityWangChuanBoss.ID,
+                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
 //        加药水
         BaseMod.addPotion(PlanedModify.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, PlanedModify.POTION_ID, AbstractPlayerEnum.VUP_Shion);
         BaseMod.addPotion(CorGladiiFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, CorGladiiFragment.POTION_ID, AbstractPlayerEnum.WangChuan);
         BaseMod.addPotion(WordFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, WordFragment.POTION_ID, AbstractPlayerEnum.Liyezhu);
+        BaseMod.addPotion(EnergeticFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, EnergeticFragment.POTION_ID, AbstractPlayerEnum.EisluRen);
 
-            BaseMod.addPotion(EnergeticFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, EnergeticFragment.POTION_ID);
+
 //        BaseMod.addPotion(TimeFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TimeFragment.POTION_ID);
         BaseMod.addPotion(FlashBang.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, FlashBang.POTION_ID);
 
@@ -458,23 +494,19 @@ public class VUPShionMod implements
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
 
         if (playerClass == AbstractPlayerEnum.VUP_Shion) {
-            CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(
-                    CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).postCreateStartingDeck(cardGroup);
+            SkinManager.getSkin(0).postCreateStartingDeck(cardGroup);
         }
 
         if (playerClass == AbstractPlayerEnum.WangChuan) {
-            CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).skins.get(
-                    CharacterSelectScreenPatches.skinManager.skinCharacters.get(1).reskinCount).postCreateStartingDeck(cardGroup);
+            SkinManager.getSkin(1).postCreateStartingDeck(cardGroup);
         }
 
         if (playerClass == AbstractPlayerEnum.Liyezhu) {
-            CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
-                    CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).postCreateStartingDeck(cardGroup);
+            SkinManager.getSkin(2).postCreateStartingDeck(cardGroup);
         }
 
         if (playerClass == AbstractPlayerEnum.EisluRen) {
-            CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).skins.get(
-                    CharacterSelectScreenPatches.skinManager.skinCharacters.get(3).reskinCount).postCreateStartingDeck(cardGroup);
+            SkinManager.getSkin(3).postCreateStartingDeck(cardGroup);
         }
     }
 
@@ -691,6 +723,9 @@ public class VUPShionMod implements
         cards.add(new WideAreaLocking());
         cards.add(new ReleaseFormEisluRen());
 
+//        紫音boss
+        cards.add(new FinFunnelPursuit());
+
 //        忘川
         cards.add(new HiltBash());
         cards.add(new Slide());
@@ -873,80 +908,80 @@ public class VUPShionMod implements
 
 //路人================
 
-            cards.add(new Totsugeki());
-            cards.add(new Station());
-            cards.add(new ShieldCharge());
-            cards.add(new VineCatapult());
-            cards.add(new SummonElf());
+        cards.add(new Totsugeki());
+        cards.add(new Station());
+        cards.add(new ShieldCharge());
+        cards.add(new VineCatapult());
+        cards.add(new SummonElf());
 //=====人理之盾相关
-            cards.add(new ShieldAttack());
-            cards.add(new CounterCannon());
-            cards.add(new BladeOfFan());
-            cards.add(new RotorCutter());
-            cards.add(new DragonGun());
-            cards.add(new MoonlightButterfly());
-            cards.add(new SwordOfDalmos());
-            cards.add(new ShieldCrush());
-            cards.add(new FinalFlash());
-            cards.add(new Chopper());
-            cards.add(new Pandora());
+        cards.add(new ShieldAttack());
+        cards.add(new CounterCannon());
+        cards.add(new BladeOfFan());
+        cards.add(new RotorCutter());
+        cards.add(new DragonGun());
+        cards.add(new MoonlightButterfly());
+        cards.add(new SwordOfDalmos());
+        cards.add(new ShieldCrush());
+        cards.add(new FinalFlash());
+        cards.add(new Chopper());
+        cards.add(new Pandora());
 
-            cards.add(new WarmUp());
-            cards.add(new RingOfThorns());
-            cards.add(new Entrench());
-            cards.add(new Reactivation());
-            cards.add(new HotRestart());
-            cards.add(new IronWall());
-            cards.add(new RoyalGuardian());
-            cards.add(new ExtremeOverload());
-            cards.add(new Soul());
-            cards.add(new MagicTransform());
+        cards.add(new WarmUp());
+        cards.add(new RingOfThorns());
+        cards.add(new Entrench());
+        cards.add(new Reactivation());
+        cards.add(new HotRestart());
+        cards.add(new IronWall());
+        cards.add(new RoyalGuardian());
+        cards.add(new ExtremeOverload());
+        cards.add(new Soul());
+        cards.add(new MagicTransform());
 
-            cards.add(new SpiralBlade());
-            cards.add(new ThousandsOfBlade());
-            cards.add(new LotusOfWar());
-            cards.add(new RuinGuardian());
-            cards.add(new LightArmor());
+        cards.add(new SpiralBlade());
+        cards.add(new ThousandsOfBlade());
+        cards.add(new LotusOfWar());
+        cards.add(new RuinGuardian());
+        cards.add(new LightArmor());
 
-            cards.add(new WingsOfDaedalus());
-            cards.add(new YonggukCityTroy());
-            cards.add(new Avalon());
-            cards.add(new RhoAias());
-            cards.add(new Stonehenge());
+        cards.add(new WingsOfDaedalus());
+        cards.add(new YonggukCityTroy());
+        cards.add(new Avalon());
+        cards.add(new RhoAias());
+        cards.add(new Stonehenge());
 //====精灵魔法相关
-            cards.add(new PhysicalMagic());
-            cards.add(new WindArrow());
-            cards.add(new HurricaneVortex());
-            cards.add(new WoodBombardment());
+        cards.add(new PhysicalMagic());
+        cards.add(new WindArrow());
+        cards.add(new HurricaneVortex());
+        cards.add(new WoodBombardment());
 
-            cards.add(new SoilNB());
-            cards.add(new GaiaRevelation());
-            cards.add(new SeaOfThorns());
-            cards.add(new ForestStalking());
-            cards.add(new FertileSoil());
-            cards.add(new FaithLeap());
-            cards.add(new BackToEarth());
+        cards.add(new SoilNB());
+        cards.add(new GaiaRevelation());
+        cards.add(new SeaOfThorns());
+        cards.add(new ForestStalking());
+        cards.add(new FertileSoil());
+        cards.add(new FaithLeap());
+        cards.add(new BackToEarth());
 
-            cards.add(new EarthBless());
-            cards.add(new LifeLinkCard());
-            cards.add(new ElfEnhance());
-            cards.add(new ElfSublimation());
-            cards.add(new SynchroSummon());
-            cards.add(new HeartOfNature());
-            cards.add(new GaiaBreath());
-            cards.add(new ForestBarrier());
-            cards.add(new WorldTreeLink());
+        cards.add(new EarthBless());
+        cards.add(new LifeLinkCard());
+        cards.add(new ElfEnhance());
+        cards.add(new ElfSublimation());
+        cards.add(new SynchroSummon());
+        cards.add(new HeartOfNature());
+        cards.add(new GaiaBreath());
+        cards.add(new ForestBarrier());
+        cards.add(new WorldTreeLink());
 //====时空系相关
-            cards.add(new ConsciousnessStripping());
-            cards.add(new RemnantsOfTime());
-            cards.add(new SealResidue());
-            cards.add(new SpaceTimeMetric());
-            cards.add(new EternalEcho());
+        cards.add(new ConsciousnessStripping());
+        cards.add(new RemnantsOfTime());
+        cards.add(new SealResidue());
+        cards.add(new SpaceTimeMetric());
+        cards.add(new EternalEcho());
 //====支援相关
-            cards.add(new SupportTargetedSniping());
-            cards.add(new SupportShieldPrayer());
-            cards.add(new SupportTimeDriven());
-            cards.add(new SupportGravitater());
+        cards.add(new SupportTargetedSniping());
+        cards.add(new SupportShieldPrayer());
+        cards.add(new SupportTimeDriven());
+        cards.add(new SupportGravitater());
 
 
         for (CustomCard card : cards) {

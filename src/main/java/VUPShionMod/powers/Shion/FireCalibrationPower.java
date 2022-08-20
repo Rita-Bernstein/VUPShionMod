@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FireCalibrationPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID(FireCalibrationPower.class.getSimpleName());
@@ -24,11 +25,12 @@ public class FireCalibrationPower extends AbstractShionPower {
         this.type = PowerType.DEBUFF;
     }
 
-    @Override
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-            return damageAmount + this.amount;
-    }
 
+
+    @Override
+    public int monsterAttackPreBlock(DamageInfo info, AbstractMonster m, int damageAmount) {
+        return damageAmount + this.amount;
+    }
 
     @Override
     public void updateDescription() {

@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 
 public class RoyalGuardian extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(RoyalGuardian.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/RoyalGuardian.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

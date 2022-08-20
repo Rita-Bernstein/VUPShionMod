@@ -49,6 +49,7 @@ public class StrideSlash extends AbstractWCCard {
         }
 
         addToBot(new DrawCardAction(1));
+        if(this.timesUpgraded>=2)
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 

@@ -61,7 +61,7 @@ public class DamageAndApplyPursuitAction extends AbstractGameAction {
                 if(gainBlock)
                     addToTop(new GainBlockAction(this.source, (int) Math.floor(this.target.lastDamageTaken)));
                 if (!this.target.isDeadOrEscaped() && applyPower && pursuitAmount >0) {
-                    addToTop(new ApplyPowerAction(this.target, this.target, new PursuitPower(this.target, pursuitAmount)));
+                    addToTop(new ApplyPowerAction(this.target, this.target, new PursuitPower(this.target,  AbstractDungeon.player,pursuitAmount)));
                 }
             }
 

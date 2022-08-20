@@ -48,8 +48,7 @@ public class StrangeSeal extends AbstractImageEvent {
             case 0:
                 switch (buttonPressed) {
                     case 0:
-                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[6 + AbstractDungeon.eventRng.random(2)]
-                                + eventStrings.DESCRIPTIONS[1]);
+                        this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(OPTIONS[3], sealRelic);
                         this.curScreen = 11;

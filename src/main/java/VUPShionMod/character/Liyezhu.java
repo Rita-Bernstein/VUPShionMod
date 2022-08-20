@@ -6,6 +6,7 @@ import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.modules.EnergyOrbWangChuan;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
 import VUPShionMod.stances.SpiritStance;
@@ -79,9 +80,9 @@ public class Liyezhu extends CustomPlayer {
         this.dialogY = this.drawY + 270.0F * Settings.scale;
 
         initializeClass(null,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).SHOULDER1,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).SHOULDER2,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).CORPSE,
+                SkinManager.getSkin(2).SHOULDER1,
+                SkinManager.getSkin(2).SHOULDER2,
+                SkinManager.getSkin(2).CORPSE,
                 getLoadout(), 0.0F, -5.0F, 260.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
 
         reloadAnimation();
@@ -91,12 +92,12 @@ public class Liyezhu extends CustomPlayer {
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).atlasURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).jsonURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).renderScale);
+                SkinManager.getSkin(2).atlasURL,
+                SkinManager.getSkin(2).jsonURL,
+                SkinManager.getSkin(2).renderScale);
 
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(2).reskinCount == 0) {
             this.state.setAnimation(0, "idle_normal", true);
             this.state.setAnimation(1, "idle_wings", true);
             this.state.setAnimation(2, "idle_xiaobingpian", true);
@@ -111,15 +112,13 @@ public class Liyezhu extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).getStartingRelic();
+        SkinManager.getSkinCharacter(2).InitializeReskinCount();
+        return SkinManager.getSkin(2).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(2).reskinCount).getStartingDeck();
+        SkinManager.getSkinCharacter(2).InitializeReskinCount();
+        return SkinManager.getSkin(2).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {

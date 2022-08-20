@@ -3,8 +3,11 @@ package VUPShionMod.powers.Shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
+import VUPShionMod.monsters.HardModeBoss.Shion.AbstractShionBoss;
+import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.AbstractBossFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.Shion.FinFunnelMinionEffect;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -30,10 +33,13 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public PursuitPower(AbstractCreature owner, int amount) {
+    private AbstractCreature source;
+
+    public PursuitPower(AbstractCreature owner, AbstractCreature source, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
+        this.source = source;
         this.amount = amount;
         this.type = PowerType.DEBUFF;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/PursuitPower128.png"), 0, 0, 128, 128);
@@ -50,16 +56,36 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
     @Override
     public void atStartOfTurn() {
         this.flash();
-        if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
-            for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
-                if (!this.owner.isDeadOrEscaped()) {
-                    funnel.onPursuitEnemy(this.owner);
+        if (!this.owner.isPlayer) {
+            if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
+                for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
+                    if (!this.owner.isDeadOrEscaped()) {
+                        funnel.onPursuitEnemy(this.owner);
+                    }
                 }
+            } else {
+                addToBot(new VFXAction(new FinFunnelMinionEffect(this.owner, SkinManager.getSkinCharacter(0).reskinCount, 0, false)));
+                addToBot(new DamageAction(this.owner,
+                        new DamageInfo(null, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
             }
-        } else {
-            addToBot(new VFXAction(new FinFunnelMinionEffect(this.owner, 0, false)));
-            addToBot(new DamageAction(this.owner,
-                    new DamageInfo(null, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
+        }
+
+    }
+
+    @Override
+    public void atEndOfRound() {
+        if (this.owner.isPlayer) {
+            if (this.source != null && this.source instanceof AbstractShionBoss && !this.source.isDeadOrEscaped()) {
+                AbstractShionBoss boss = (AbstractShionBoss) this.source;
+
+                for (AbstractBossFinFunnel finFunnel : boss.bossFinFunnels) {
+                    finFunnel.onPursuitEnemy(this.owner);
+                }
+            } else {
+                addToBot(new VFXAction(new FinFunnelMinionEffect(this.owner, SkinManager.getSkinCharacter(0).reskinCount, 7, false)));
+                addToBot(new DamageAction(this.owner,
+                        new DamageInfo(null, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
+            }
         }
     }
 

@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainFinFunnelChargeAction;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.Shion.BleedingPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -22,12 +23,12 @@ public class MatrixFinFunnel extends AbstractFinFunnel {
         upgradeLevel(level);
         this.effect = 1;
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 0) {
+        if (SkinManager.getSkinCharacter(0).reskinCount == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json", SkinManager.getSkin(0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", 2.4f);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", SkinManager.getSkin(0).renderScale);
         }
 
         this.state.setAnimation(0, "weapon4_come_in", false);

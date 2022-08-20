@@ -1128,6 +1128,14 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
     protected abstract void getMove(int paramInt);
 
+    public void onMonsterDeath(){
+        refreshTargetMonster();
+    }
+
+    public void onSpawnMonster(){
+        refreshTargetMonster();
+    }
+
     public void refreshTargetMonster() {
         this.targetMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
     }

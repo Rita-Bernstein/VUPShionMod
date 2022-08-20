@@ -1,16 +1,16 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.events.ShionSpireHeart;
+import VUPShionMod.util.SaveHelper;
 import VUPShionMod.util.ShionNpc;
 import basemod.ReflectionHacks;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.neow.NeowEvent;
+import com.megacrit.cardcrawl.rooms.VictoryRoom;
 import com.megacrit.cardcrawl.vfx.InfiniteSpeechBubble;
 
 public class NeowEventPatches {
@@ -22,7 +22,7 @@ public class NeowEventPatches {
     public static class NPCPatch {
         @SpirePostfixPatch
         public static SpireReturn<Void> Postfix(NeowEvent _instance, boolean isDone) {
-            if (EnergyPanelPatches.isShionEXChar())
+            if (shouldShionTalk())
                 ReflectionHacks.setPrivate(_instance, NeowEvent.class, "npc", new ShionNpc());
 
             return SpireReturn.Continue();
@@ -36,7 +36,7 @@ public class NeowEventPatches {
     public static class PlaySfxPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(NeowEvent _instance) {
-            if (EnergyPanelPatches.isShionEXChar()) {
+            if (shouldShionTalk()) {
                 return SpireReturn.Return();
             }
 
@@ -52,7 +52,7 @@ public class NeowEventPatches {
     public static class TalkPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(NeowEvent _instance, String msg) {
-            if (EnergyPanelPatches.isShionEXChar()) {
+            if (shouldShionTalk()) {
                 String finalString = "";
                 String[] TEXT = CardCrawlGame.languagePack.getCharacterString("Neow Event").TEXT;
 
@@ -79,5 +79,26 @@ public class NeowEventPatches {
 
             return SpireReturn.Continue();
         }
+    }
+
+    @SpirePatch(
+            clz = VictoryRoom.class,
+            method = "onPlayerEntry"
+    )
+    public static class VictoryRoomOnPlayerEntryPatch {
+        @SpireInsertPatch(rloc =  6)
+        public static SpireReturn<Void> Insert(VictoryRoom _instance) {
+            if (shouldShionTalk()) {
+                _instance.event = new ShionSpireHeart();
+
+            }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    public static boolean shouldShionTalk() {
+        return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen || SaveHelper.isTrainingMod;
     }
 }

@@ -5,6 +5,7 @@ import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
 import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.victory.ShionGoldVictoryEffect;
 import VUPShionMod.vfx.victory.ShionVictoryEffect;
 import basemod.abstracts.CustomPlayer;
@@ -75,19 +76,19 @@ public class Shion extends CustomPlayer {
         CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(1);
 
         initializeClass(null,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER1,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).SHOULDER2,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).CORPSE,
-                getLoadout(), 0.0F, -5.0F, 240.0F, 380.0F, new EnergyManager(ENERGY_PER_TURN));
+                SkinManager.getSkin(0).SHOULDER1,
+                SkinManager.getSkin(0).SHOULDER2,
+                SkinManager.getSkin(0).CORPSE,
+                getLoadout(), 0.0F, -5.0F, 260.0F, 460.0F, new EnergyManager(ENERGY_PER_TURN));
 
         reloadAnimation();
     }
 
     public void reloadAnimation() {
         this.loadAnimation(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).atlasURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).jsonURL,
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).renderScale);
+                SkinManager.getSkin(0).atlasURL,
+                SkinManager.getSkin(0).jsonURL,
+                SkinManager.getSkin(0).renderScale);
 
 
         this.state.setAnimation(0, "idle", true);
@@ -101,15 +102,13 @@ public class Shion extends CustomPlayer {
     }
 
     public ArrayList<String> getStartingRelics() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).getStartingRelic();
+        SkinManager.getSkinCharacter(0).InitializeReskinCount();
+        return SkinManager.getSkin(0).getStartingRelic();
     }
 
     public ArrayList<String> getStartingDeck() {
-        CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).InitializeReskinCount();
-        return CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).skins.get(
-                CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount).getStartingDeck();
+        SkinManager.getSkinCharacter(0).InitializeReskinCount();
+        return SkinManager.getSkin(0).getStartingDeck();
     }
 
     public CharSelectInfo getLoadout() {
@@ -321,7 +320,7 @@ public class Shion extends CustomPlayer {
     public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
         boolean foundEyeVfx = false;
 
-        if (CharacterSelectScreenPatches.skinManager.skinCharacters.get(0).reskinCount == 2) {
+        if (SkinManager.getSkinCharacter(0).reskinCount == 2) {
             for (AbstractGameEffect e : effects) {
                 if (e instanceof ShionVictoryEffect) {
                     foundEyeVfx = true;

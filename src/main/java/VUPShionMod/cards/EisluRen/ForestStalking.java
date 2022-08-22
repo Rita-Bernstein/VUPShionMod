@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 public class ForestStalking extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(ForestStalking.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ForestStalking.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

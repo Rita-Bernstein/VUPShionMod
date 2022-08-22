@@ -46,9 +46,9 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
         super(NAME, ID, 88, 0.0F, -5.0F, 420.0F, 400.0F, null, 5.0F, -7.0f);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
-            setHp(400);
+            setHp(600);
         } else {
-            setHp(350);
+            setHp(500);
         }
 
 
@@ -91,8 +91,8 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
 
         addToBot(new GainShieldAction(this, 100));
         addToBot(new ApplyPowerAction(this, this, new MagicFlyingBladePower(this, 4)));
-//        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Heat")));
-
+        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Heat")));
+        addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 4)));
     }
 
 
@@ -178,21 +178,6 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
                 CardCrawlGame.sound.play("STANCE_ENTER_WRATH");
                 break;
         }
-    }
-
-
-    @Override
-    public void damage(DamageInfo info) {
-        super.damage(info);
-
-        if (this.currentHealth <= this.maxHealth / 2 && !this.stateChanged) {
-            this.stateChanged = true;
-            this.moveCount = 5;
-            rollMove();
-            createIntent();
-            applyPowers();
-        }
-
     }
 
     @Override

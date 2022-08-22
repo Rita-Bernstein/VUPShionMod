@@ -131,7 +131,7 @@ public class AquaShionBoss extends AbstractShionBoss {
             case 2:
                 addToBot(new TalkAction(this, DIALOG[1], 1.5F, 1.5F));
                 addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY,
-                        240.0f, 135.0f, 5.0f * Settings.scale, 2, false)));
+                        240.0f, 135.0f, 2.5f * Settings.scale, 2, false)));
                 addToBot(new RemovePlayerBuffAction());
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 5, true)));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 5, true)));
@@ -152,7 +152,7 @@ public class AquaShionBoss extends AbstractShionBoss {
             case 5:
                 addToBot(new TalkAction(this, DIALOG[4], 1.5F, 1.5F));
                 addToBot(new VFXAction(this.dissectionEffect));
-                addToBot(new CustomWaitAction(5.0f));
+                addToBot(new CustomWaitAction(4.5f));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new ActionBlockadePower(AbstractDungeon.player)));
                 break;
             case 6:
@@ -208,15 +208,15 @@ public class AquaShionBoss extends AbstractShionBoss {
                 break;
             case 3:
                 setMove(MOVES[0], (byte) 3, Intent.STRONG_DEBUFF);
-                this.moveCount = AbstractDungeon.aiRng.random(6, 7);
+                this.moveCount = 6;
                 break;
             case 4:
                 setMove(MOVES[1], (byte) 4, Intent.STRONG_DEBUFF);
-                this.moveCount = AbstractDungeon.aiRng.random(6, 7);
+                this.moveCount = 6;
                 break;
             case 5:
                 setMove(MOVES[2], (byte) 5, Intent.STRONG_DEBUFF);
-                this.moveCount = AbstractDungeon.aiRng.random(6, 7);
+                this.moveCount = 6;
                 break;
             case 6:
                 setMove((byte) 6, Intent.DEFEND);

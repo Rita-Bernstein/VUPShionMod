@@ -41,9 +41,9 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
         super(NAME, ID, 88, 0.0F, -5.0F, 420.0F, 400.0F, null, 5.0F, -7.0f);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
-            setHp(340);
+            setHp(400);
         } else {
-            setHp(280);
+            setHp(350);
         }
 
 
@@ -129,22 +129,27 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
                 break;
             case 7:
                 addToBot(new TalkAction(this, DIALOG[1], 1.5F, 1.5F));
+                addToBot(new ChangeStateAction(this, "Full7"));
                 addToBot(new GainShieldAction(this, 100));
                 addToBot(new ApplyPowerAction(this, this, new AutoShieldPower(this, 30)));
                 break;
             case 8:
                 addToBot(new TalkAction(this, DIALOG[1], 1.5F, 1.5F));
+                addToBot(new ChangeStateAction(this, "Full8"));
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 5)));
                 addToBot(new GainShieldAction(this, 30));
                 addToBot(new ApplyPowerAction(this, this, new LightArmorPower(this, 50)));
                 break;
             case 9:
                 addToBot(new TalkAction(this, DIALOG[1], 1.5F, 1.5F));
+                addToBot(new ChangeStateAction(this, "Full9"));
                 addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 10)));
                 break;
             case 10:
                 addToBot(new TalkAction(this, DIALOG[2], 1.5F, 1.5F));
-                addToBot(new SpawnMonsterAction(new ElfKnight(), false));
+                AbstractMonster m = new ElfKnight();
+                addToBot(new SpawnMonsterAction(m, false));
+                addToBot(new ApplyPowerAction(m,this,new IntangiblePlayerPower(m,2)));
                 break;
         }
 
@@ -216,35 +221,34 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
                 this.state.addAnimation(1, "wings_Spiral_knife_idle", true, 0.0f);
                 currentIdle = "SpiralBladeAnimation";
                 break;
-            case "Full":
-                switch (currentIdle) {
-                    case "Idle":
-                        this.state.setAnimation(1, "wings_normal_relieves", false).setTimeScale(2.0f);
-                        break;
-                    case "LotusOfWarAnimation":
-                        this.state.setAnimation(1, "wings_Lotus_of_war_relieves", false).setTimeScale(2.0f);
-                        break;
-                    case "SpiralBladeAnimation":
-                        this.state.setAnimation(1, "wings_Spiral_knife_relieves", false).setTimeScale(2.0f);
-                        break;
-                }
+            case "Full7":
+                closeWing();
+                this.state.addAnimation(1, "wings_Ruins_guard_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Ruins_guard_idle", true, 0.0f);
+            break;
+            case "Full8":
+                closeWing();
+                this.state.addAnimation(1, "wings_Light_armor_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Light_armor_idle", true, 0.0f);
+                break;
+            case "Full9":
+                closeWing();
+                this.state.addAnimation(1, "wings_Thousand_heavy_blade_make_up", false, 0.0f).setTimeScale(2.0f);
+                this.state.addAnimation(1, "wings_Thousand_heavy_blade_idle", true, 0.0f);
+                break;
+        }
+    }
 
-
-                switch (moveCount) {
-                    case 7:
-                        this.state.addAnimation(1, "wings_Ruins_guard_make_up", false, 0.0f).setTimeScale(2.0f);
-                        this.state.addAnimation(1, "wings_Ruins_guard_idle", true, 0.0f);
-                        break;
-                    case 8:
-                        this.state.addAnimation(1, "wings_Light_armor_make_up", false, 0.0f).setTimeScale(2.0f);
-                        this.state.addAnimation(1, "wings_Light_armor_idle", true, 0.0f);
-                        break;
-                    case 9:
-                        this.state.addAnimation(1, "wings_Thousand_heavy_blade_make_up", false, 0.0f).setTimeScale(2.0f);
-                        this.state.addAnimation(1, "wings_Thousand_heavy_blade_idle", true, 0.0f);
-                        break;
-                }
-
+    private void closeWing(){
+        switch (currentIdle) {
+            case "Idle":
+                this.state.setAnimation(1, "wings_normal_relieves", false).setTimeScale(2.0f);
+                break;
+            case "LotusOfWarAnimation":
+                this.state.setAnimation(1, "wings_Lotus_of_war_relieves", false).setTimeScale(2.0f);
+                break;
+            case "SpiralBladeAnimation":
+                this.state.setAnimation(1, "wings_Spiral_knife_relieves", false).setTimeScale(2.0f);
                 break;
         }
     }
@@ -260,7 +264,7 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
             rollMove();
             createIntent();
             applyPowers();
-            addToBot(new ChangeStateAction(this, "Full"));
+
         }
 
     }

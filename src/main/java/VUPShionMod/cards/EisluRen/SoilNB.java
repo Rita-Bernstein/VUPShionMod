@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 
 public class SoilNB extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SoilNB.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/SoilNB.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

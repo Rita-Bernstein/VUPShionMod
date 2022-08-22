@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class ConsciousnessStripping extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(ConsciousnessStripping.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ConsciousnessStripping.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

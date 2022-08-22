@@ -63,6 +63,8 @@ public class HurricaneVortexPower extends AbstractShionPower implements Cloneabl
 
         Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, 1, false);
         addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
+
+//        ToDo:回合结束掉层数
     }
 
 

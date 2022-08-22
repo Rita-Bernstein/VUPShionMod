@@ -42,9 +42,9 @@ public class PurityWangChuanBoss extends AbstractVUPShionBoss {
         super(NAME, ID, 88, 0.0F, -5.0F, 420.0F, 400.0F, null, 5.0F, -7.0f);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
-            setHp(400);
+            setHp(600);
         } else {
-            setHp(350);
+            setHp(500);
         }
 
 
@@ -87,7 +87,7 @@ public class PurityWangChuanBoss extends AbstractVUPShionBoss {
         addToBot(new GainShieldAction(this, 100));
         addToBot(new ApplyPowerAction(this, this, new WhiteRosePower(this, 1)));
         addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Thunder")));
-
+        addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 4)));
     }
 
 

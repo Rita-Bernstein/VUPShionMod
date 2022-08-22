@@ -31,7 +31,7 @@ public class OriLiyezhuBoss extends AbstractVUPShionBoss {
         super(NAME, ID, 88, 0.0F, -5.0F, 420.0F, 400.0F, null, 5.0F, -7.0f);
 
         if (AbstractDungeon.ascensionLevel >= 7) {
-            setHp(500);
+            setHp(450);
         } else {
             setHp(400);
         }
@@ -108,6 +108,10 @@ public class OriLiyezhuBoss extends AbstractVUPShionBoss {
                 addToBot(new ApplyPowerAction(this, this, new CombustPower(this, 1, 5) {
                     @Override
                     public void atEndOfTurn(boolean isPlayer) {
+
+                    }
+                    @Override
+                    public void atStartOfTurn() {
                         flash();
                         addToBot(new LoseHPAction(owner, owner, 1, AbstractGameAction.AttackEffect.FIRE));
                         addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(owner, 5, DamageInfo.DamageType.THORNS),

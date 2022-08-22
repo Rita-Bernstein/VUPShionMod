@@ -300,6 +300,7 @@ public class FruitStall extends AbstractImageEvent {
         AbstractDungeon.getCurrRoom().addPotionToRewards(new FruitJuice());
         AbstractDungeon.getCurrRoom().addGoldToRewards(100);
 //        AbstractDungeon.getCurrRoom().addRelicToRewards(new FruitCake());
+        if(!AbstractDungeon.player.hasRelic(FruitCake.ID))
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, cake);
         enterCombatFromImage();
 

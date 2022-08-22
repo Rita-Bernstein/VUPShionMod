@@ -43,15 +43,15 @@ public class FinalFlash extends AbstractEisluRenCard {
     }
 
 
-//    @Override
-//    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-//        if (WingShield.getWingShield().getCount() <= 10) {
-//            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-//            return false;
-//        }
-//
-//        return super.canUse(p, m);
-//    }
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (WingShield.getWingShield().getCount() <= 10) {
+            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+            return false;
+        }
+
+        return super.canUse(p, m);
+    }
 
     @Override
     public void upgrade() {

@@ -66,9 +66,9 @@ public class RitaShop extends CustomMonster {
     public RitaShop() {
         super(NAME, ID, 160, 0.0F, -10.0F, 300.0F, 380.0F, null, 0.0F, 0.0F);
         if (AbstractDungeon.ascensionLevel >= 9) {
-            setHp(180);
+            setHp(1000);
         } else {
-            setHp(160);
+            setHp(800);
         }
 
 

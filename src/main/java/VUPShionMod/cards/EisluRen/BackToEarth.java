@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 public class BackToEarth extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(BackToEarth.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/BackToEarth.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

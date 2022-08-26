@@ -24,6 +24,7 @@ public class StrengthenPower extends AbstractShionPower {
         updateDescription();
     }
 
+
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if(skipFirst){

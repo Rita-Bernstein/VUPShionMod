@@ -1,9 +1,8 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.monsters.RitaShop;
+import VUPShionMod.monsters.Rita.RitaShop;
 import VUPShionMod.relics.Event.FruitCake;
-import VUPShionMod.relics.Event.TrackingBeacon;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -115,7 +114,7 @@ public class FruitStall extends AbstractImageEvent {
                                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                                         imageEventText.clearRemainingOptions();
                                         imageEventText.optionList.set(0,new LargeDialogOptionButton(0,OPTIONS[2],cake));
-//                                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                                        imageEventText.updateDialogOption(0, OPTIONS[2]);
 
                                         if (AbstractDungeon.player.gold >= this.goldLoss) {
                                             imageEventText.updateDialogOption(1, String.format(OPTIONS[3], this.goldLoss));
@@ -158,8 +157,9 @@ public class FruitStall extends AbstractImageEvent {
                                 option = OptionChosen.STEAL;
                                 imageEventText.updateBodyText(DESCRIPTIONS[2]);
                                 imageEventText.clearRemainingOptions();
-                                imageEventText.updateDialogOption(0, OPTIONS[10]);
-
+                                imageEventText.updateDialogOption(0, OPTIONS[12]);
+                                imageEventText.updateDialogOption(1, OPTIONS[13], true);
+                                imageEventText.updateDialogOption(2, OPTIONS[14], true);
                                 this.imageEventText.loadImage("VUPShionMod/img/events/FruitStall2.png");
                                 break;
 
@@ -208,7 +208,12 @@ public class FruitStall extends AbstractImageEvent {
                         break;
 
                     case STEAL:
-                        steal();
+                        switch (buttonPressed){
+                            case 0:
+                            steal();
+                            break;
+                        }
+
                         break;
 
                     case BUY:

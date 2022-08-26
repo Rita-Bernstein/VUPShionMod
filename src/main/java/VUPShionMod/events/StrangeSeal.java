@@ -1,8 +1,6 @@
 package VUPShionMod.events;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.liyezhu.HolySlashDown;
-import VUPShionMod.monsters.RitaShop;
 import VUPShionMod.relics.Event.WhiteSeal;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -13,10 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.potions.FruitJuice;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.ObtainKeyEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class StrangeSeal extends AbstractImageEvent {
     public static final String ID = VUPShionMod.makeID(StrangeSeal.class.getSimpleName());

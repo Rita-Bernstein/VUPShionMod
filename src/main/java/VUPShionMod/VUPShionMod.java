@@ -24,7 +24,7 @@ import VUPShionMod.monsters.HardModeBoss.Liyezhu.*;
 import VUPShionMod.monsters.HardModeBoss.Shion.*;
 import VUPShionMod.monsters.HardModeBoss.WangChuan.*;
 import VUPShionMod.monsters.Story.PlagaAMundo;
-import VUPShionMod.monsters.RitaShop;
+import VUPShionMod.monsters.Rita.RitaShop;
 import VUPShionMod.patches.*;
 import VUPShionMod.potions.*;
 import VUPShionMod.relics.EisluRen.*;

@@ -131,7 +131,7 @@ public class AquaShionBoss extends AbstractShionBoss {
             case 2:
                 addToBot(new TalkAction(this, DIALOG[1], 1.5F, 1.5F));
                 addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY,
-                        240.0f, 135.0f, 2.5f * Settings.scale, 2, false)));
+                        192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                 addToBot(new RemovePlayerBuffAction());
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 5, true)));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 5, true)));

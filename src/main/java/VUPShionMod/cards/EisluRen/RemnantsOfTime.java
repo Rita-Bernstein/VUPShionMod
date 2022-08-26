@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 public class RemnantsOfTime extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(RemnantsOfTime.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/RemnantsOfTime.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

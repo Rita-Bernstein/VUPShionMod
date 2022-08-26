@@ -91,7 +91,7 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
 
 
         addToBot(new GainShieldAction(this, 21));
-        addToBot(new ApplyPowerAction(this, this, new DemonFormPower(this, 1)));
+        addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 1)));
         addToBot(new ApplyPowerAction(this, this, new AutoShieldPower(this, 10)));
         addToBot(new ApplyPowerAction(this, this, new CoverPower(this)));
 //        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Full")));

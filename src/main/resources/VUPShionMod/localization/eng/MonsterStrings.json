@@ -47,17 +47,9 @@
   },
   "VUPShionMod:RitaShop": {
     "MOVES": [
-      "Fiend Fire",
-      "Carnage",
-      "Shockwave",
-      "",
       "Dark Barrier",
-      "Meteor Strike",
-      "Ragnarok",
-      "",
       "Genocide Cutter",
-      "Wind Swallow",
-      "Expunger"
+      "Wind Swallow"
     ],
     "NAME": "Rita Bernstein",
     "DIALOG": [

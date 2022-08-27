@@ -191,7 +191,7 @@ public class PurityWangChuanBoss extends AbstractVUPShionBoss {
         super.die();
         AbstractDungeon.scene.fadeInAmbiance();
         onBossVictoryLogic();
-        onFinalBossVictoryLogic();
+
     }
 
 

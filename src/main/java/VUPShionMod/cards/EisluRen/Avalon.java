@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 public class Avalon extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(Avalon.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/Avalon.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

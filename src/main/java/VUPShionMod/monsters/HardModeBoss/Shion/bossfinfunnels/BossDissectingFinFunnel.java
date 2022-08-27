@@ -28,10 +28,10 @@ public class BossDissectingFinFunnel extends AbstractBossFinFunnel {
 
         if (skinIndex == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.json", SkinManager.getSkin(0, 2).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.json", SkinManager.getSkin(0, 0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.json", SkinManager.getSkin(0, 0).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.json", SkinManager.getSkin(0, 1).renderScale);
         }
 
         this.state.setAnimation(0, "weapon1_come_in", false);

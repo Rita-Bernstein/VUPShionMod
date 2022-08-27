@@ -152,10 +152,6 @@ public abstract class AbstractBossFinFunnel {
         addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
         for (int i = 0; i < loopTimes; i++) {
             addToBot(new DamageAction(target, info, AbstractGameAction.AttackEffect.FIRE));
-        }
-
-
-        if (triggerPassive) {
             powerToApply(target);
         }
     }

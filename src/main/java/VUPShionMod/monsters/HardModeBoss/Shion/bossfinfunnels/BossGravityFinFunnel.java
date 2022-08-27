@@ -33,10 +33,10 @@ public class BossGravityFinFunnel extends AbstractBossFinFunnel {
 
         if (skinIndex == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.json", SkinManager.getSkin(0, 2).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.json", SkinManager.getSkin(0, 0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.json", SkinManager.getSkin(0, 0).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.json", SkinManager.getSkin(0, 1).renderScale);
         }
 
         this.state.setAnimation(0, "weapon2_come_in", false);
@@ -71,11 +71,16 @@ public class BossGravityFinFunnel extends AbstractBossFinFunnel {
                         3.0f, 10.0f, stateConsumer)));
 
 
-                addToTop(new GainBlockAction(this.owner, (int) Math.floor(getFinalEffect() * amountScale), true));
+                if (this.owner.hasPower(GravitoniumPower.POWER_ID))
+                    addToTop(new GainShieldAction(this.owner, (int) Math.floor(getFinalEffect() * amountScale), true));
+                else
+                    addToTop(new GainBlockAction(this.owner, (int) Math.floor(getFinalEffect() * amountScale), true));
 
             } else {
-
-                addToBot(new GainBlockAction(this.owner, (int) Math.floor(getFinalEffect() * amountScale), true));
+                if (this.owner.hasPower(GravitoniumPower.POWER_ID))
+                    addToBot(new GainShieldAction(this.owner, (int) Math.floor(getFinalEffect() * amountScale), true));
+                else
+                    addToBot(new GainBlockAction(this.owner, (int) Math.floor(getFinalEffect() * amountScale), true));
 
                 Consumer<AnimationState> stateConsumer = state -> {
                     state.setAnimation(0, "ZL2_GH7", false);

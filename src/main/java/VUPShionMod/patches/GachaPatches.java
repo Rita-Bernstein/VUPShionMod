@@ -2,12 +2,14 @@ package VUPShionMod.patches;
 
 import VUPShionMod.actions.Unique.GachaAction;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
+import VUPShionMod.powers.AbstractShionPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.MonsterStartTurnAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class GachaPatches {
     @SpirePatch(
@@ -28,6 +30,8 @@ public class GachaPatches {
 
             if (hasMonster)
                 AbstractDungeon.actionManager.addToBottom(new GachaAction());
+
+
             return SpireReturn.Continue();
         }
     }

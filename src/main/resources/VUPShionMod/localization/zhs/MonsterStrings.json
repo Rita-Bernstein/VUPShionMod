@@ -142,5 +142,42 @@
     "DIALOG": [
       "神速……霹雳一闪！"
     ]
+  },
+  "VUPShionMod:OriWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "忘川川-血族礼服",
+    "DIALOG": [
+      "魔能回路……启动"
+    ]
+  },
+  "VUPShionMod:OriShionBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "紫音-强袭武装",
+    "DIALOG": [
+      "轨道打击锁定……",
+      "轨道打击开始"
+    ]
+  },
+  "VUPShionMod:AquaWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "忘川川-盛夏水着",
+    "DIALOG": [
+      "无限……剑制！"
+    ]
+  },
+  "VUPShionMod:BlueGiantShionBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "紫音-士官礼装",
+    "DIALOG": [
+      "超维矩阵……激活！"
+    ]
   }
 }

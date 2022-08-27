@@ -12,29 +12,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.map.DungeonMap;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import javassist.CtBehavior;
+import java.util.Random;
+
+import java.util.Collections;
 
 public class TrainingModePatches {
     public static Color lightColor = Color.WHITE.cpy();
     private static float lightTimer = 0.0f;
-
-    @SpirePatch(
-            clz = TheEnding.class,
-            method = "initializeBoss"
-    )
-    public static class TheEndingBossListPatch {
-        @SpirePostfixPatch
-        public static void Postfix(TheEnding _instance) {
-            if (SaveHelper.isTrainingMod) {
-                AbstractDungeon.bossList.clear();
-
-                AbstractDungeon.bossList.add(AquaShionBoss.ID);
-                AbstractDungeon.bossList.add(AquaShionBoss.ID);
-                AbstractDungeon.bossList.add(AquaShionBoss.ID);
-            }
-        }
-    }
 
     @SpirePatch(
             clz = Exordium.class,
@@ -47,8 +31,9 @@ public class TrainingModePatches {
                 AbstractDungeon.bossList.clear();
 
                 AbstractDungeon.bossList.add(OriLiyezhuBoss.ID);
-                AbstractDungeon.bossList.add(OriLiyezhuBoss.ID);
-                AbstractDungeon.bossList.add(OriLiyezhuBoss.ID);
+                AbstractDungeon.bossList.add(OriWangChuanBoss.ID);
+                AbstractDungeon.bossList.add(OriShionBoss.ID);
+                Collections.shuffle(AbstractDungeon.bossList, new Random(AbstractDungeon.monsterRng.randomLong()));
             }
         }
     }
@@ -65,8 +50,9 @@ public class TrainingModePatches {
                 AbstractDungeon.bossList.clear();
 
                 AbstractDungeon.bossList.add(OriEisluRenBoss.ID);
-                AbstractDungeon.bossList.add(OriEisluRenBoss.ID);
-                AbstractDungeon.bossList.add(OriEisluRenBoss.ID);
+                AbstractDungeon.bossList.add(AquaWangChuanBoss.ID);
+                AbstractDungeon.bossList.add(BlueGiantShionBoss.ID);
+                Collections.shuffle(AbstractDungeon.bossList, new Random(AbstractDungeon.monsterRng.randomLong()));
             }
         }
     }    @SpirePatch(
@@ -84,6 +70,24 @@ public class TrainingModePatches {
                 AbstractDungeon.bossList.add(ChinaWangChuanBoss.ID);
                 AbstractDungeon.bossList.add(PurityWangChuanBoss.ID);
                 AbstractDungeon.bossList.add(PurityWangChuanBoss.ID);
+            }
+        }
+    }
+
+
+    @SpirePatch(
+            clz = TheEnding.class,
+            method = "initializeBoss"
+    )
+    public static class TheEndingBossListPatch {
+        @SpirePostfixPatch
+        public static void Postfix(TheEnding _instance) {
+            if (SaveHelper.isTrainingMod) {
+                AbstractDungeon.bossList.clear();
+
+                AbstractDungeon.bossList.add(AquaShionBoss.ID);
+                AbstractDungeon.bossList.add(AquaShionBoss.ID);
+                AbstractDungeon.bossList.add(AquaShionBoss.ID);
             }
         }
     }

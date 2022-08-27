@@ -20,6 +20,7 @@ public class SummonElf extends AbstractEisluRenCard {
 
     public SummonElf() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        loadJokeCardImage("VUPShionMod/img/cards/EisluRen/beta/SummonElf.png");
     }
 
     @Override

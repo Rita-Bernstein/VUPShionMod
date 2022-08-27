@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.BufferPower;
 
 public class Stonehenge extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(Stonehenge.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/Stonehenge.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

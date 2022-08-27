@@ -9,7 +9,8 @@
     "NAME": "追击",
     "DESCRIPTIONS": [
       "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
-      " 点伤害"
+      " 点伤害。",
+      "你的回合结束时，将受到敌人 #y追击浮游炮 的一次攻击，造成 #b"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -1127,6 +1128,18 @@
     "NAME": "最终祷告",
     "DESCRIPTIONS": [
       "抽到状态和诅咒时，抽一张牌并获得 [E] 。 NL 失去 #y格挡 时，获得 #b5 点 #y格挡 。 NL 获得 #y格挡 时，获得等量 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:StunPlayerPower": {
+    "NAME": "击晕",
+    "DESCRIPTIONS": [
+      "本回合你无法出牌。"
+    ]
+  },
+  "VUPShionMod:ConcordSnipePower": {
+    "NAME": "协合音·狙击",
+    "DESCRIPTIONS": [
+      "其回合开始时给予你 #b%d 层 #y锁定 。"
     ]
   }
 }

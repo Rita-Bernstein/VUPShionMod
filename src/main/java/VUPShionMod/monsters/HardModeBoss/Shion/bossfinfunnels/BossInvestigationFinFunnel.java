@@ -31,10 +31,10 @@ public class BossInvestigationFinFunnel extends AbstractBossFinFunnel {
 
         if (skinIndex == 0){
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json",  SkinManager.getSkin(0, 2).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json",  SkinManager.getSkin(0, 0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", SkinManager.getSkin(0, 0).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", SkinManager.getSkin(0, 1).renderScale);
         }
 
         this.state.setAnimation(0, "weapon4_come_in", false);

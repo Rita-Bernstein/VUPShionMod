@@ -273,12 +273,12 @@ public class Liyezhu extends CustomPlayer {
         }
 
         if (id.equals(JudgeStance.STANCE_ID)) {
-            stanceSwitchQueue.add("JudgeStance");
+            stanceSwitchQueue.add("Judge");
             return;
         }
 
         if (id.equals(SpiritStance.STANCE_ID)) {
-            stanceSwitchQueue.add("SpiritStance");
+            stanceSwitchQueue.add("Spirit");
             return;
         }
 

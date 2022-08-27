@@ -28,6 +28,7 @@ public class FruitCake extends AbstractShionRelic {
     @Override
     public void onEquip() {
         super.onEquip();
+        AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
         //        AchievementPatches.unlockAchievement("RitaShop");
     }
 

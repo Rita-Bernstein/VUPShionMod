@@ -321,6 +321,8 @@ public class AquaShionBoss extends AbstractShionBoss {
     @Override
     public void die() {
         if (!(AbstractDungeon.getCurrRoom()).cannotLose) {
+            useFastShakeAnimation(5.0F);
+            CardCrawlGame.screenShake.rumble(4.0F);
             super.die();
             onBossVictoryLogic();
             onFinalBossVictoryLogic();

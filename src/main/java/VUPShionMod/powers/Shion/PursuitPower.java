@@ -50,13 +50,16 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        if (this.owner.isPlayer)
+            this.description = DESCRIPTIONS[2] + this.amount + DESCRIPTIONS[1];
+        else
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
         if (!this.owner.isPlayer) {
+            flash();
             if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
                 for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
                     if (!this.owner.isDeadOrEscaped()) {
@@ -73,8 +76,9 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
     }
 
     @Override
-    public void atEndOfRound() {
-        if (this.owner.isPlayer) {
+    public void atEndOfTurn(boolean isPlayer) {
+        if (this.owner.isPlayer && isPlayer) {
+            flash();
             if (this.source != null && this.source instanceof AbstractShionBoss && !this.source.isDeadOrEscaped()) {
                 AbstractShionBoss boss = (AbstractShionBoss) this.source;
 

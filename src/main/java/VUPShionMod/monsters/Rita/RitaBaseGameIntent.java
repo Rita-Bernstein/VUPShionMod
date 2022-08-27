@@ -46,14 +46,14 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
     public void initDamage() {
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.m.damage.add(new DamageInfo(this.m, 10));
-            this.m.damage.add(new DamageInfo(this.m, 2));
+            this.m.damage.add(new DamageInfo(this.m, 18));
             this.m.damage.add(new DamageInfo(this.m, 50));
             this.m.damage.add(new DamageInfo(this.m, 10));
             this.m.damage.add(new DamageInfo(this.m, 9));
 
         } else {
             this.m.damage.add(new DamageInfo(this.m, 10));
-            this.m.damage.add(new DamageInfo(this.m, 2));
+            this.m.damage.add(new DamageInfo(this.m, 14));
             this.m.damage.add(new DamageInfo(this.m, 50));
             this.m.damage.add(new DamageInfo(this.m, 10));
             this.m.damage.add(new DamageInfo(this.m, 9));
@@ -95,10 +95,9 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                     addToBot(new AnimateFastAttackAction(m));
                 else
                     addToBot(new AnimateSlowAttackAction(m));
-                amount = AbstractDungeon.ascensionLevel >= 4 ? 5 : 4;
-                for (int i = 1; i < amount; i++)
-                    addToBot(new PummelDamageAction(p, m.damage.get(1)));
-                addToBot(new DamageAction(p, m.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+
+                addToBot(new VFXAction(new ClashEffect(p.hb.cX, p.hb.cY), 0.1F));
+                addToBot(new DamageAction(p, m.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 break;
             case 4:
                 addToBot(new GainBlockAction(m, 40));
@@ -225,8 +224,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 this.moveCount++;
                 break;
             case 3:
-                m.setMove(getCardStringName(Pummel.ID, AbstractDungeon.ascensionLevel >= 4), (byte) 3, AbstractMonster.Intent.ATTACK, m.damage.get(1).base,
-                        AbstractDungeon.ascensionLevel >= 4 ? 5 : 4, true);
+                m.setMove(getCardStringName(Clash.ID, AbstractDungeon.ascensionLevel >= 4), (byte) 3, AbstractMonster.Intent.ATTACK, m.damage.get(1).base);
                 this.moveCount++;
                 break;
             case 4:

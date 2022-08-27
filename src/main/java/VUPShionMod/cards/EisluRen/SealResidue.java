@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SealResidue extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SealResidue.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/SealResidue.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

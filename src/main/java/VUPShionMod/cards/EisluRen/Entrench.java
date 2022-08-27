@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Entrench extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(Entrench.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/Entrench.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

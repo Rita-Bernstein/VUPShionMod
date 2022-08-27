@@ -34,10 +34,10 @@ public class BossPursuitFinFunnel extends AbstractBossFinFunnel {
 
         if (skinIndex == 0) {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.json", SkinManager.getSkin(0, 2).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.json", SkinManager.getSkin(0, 0).renderScale);
         } else {
             loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.json", SkinManager.getSkin(0, 0).renderScale);
+                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.json", SkinManager.getSkin(0, 1).renderScale);
         }
 
 

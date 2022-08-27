@@ -2,6 +2,11 @@ package VUPShionMod.monsters;
 
 import VUPShionMod.monsters.Rita.AbstractMonsterIntent;
 import basemod.abstracts.CustomMonster;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 
@@ -21,6 +26,14 @@ public abstract class AbstractVUPShionBoss extends CustomMonster {
 
     public AbstractVUPShionBoss(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl) {
         super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl);
+    }
+
+
+    public static void attackAction(AbstractMonster m) {
+        if (Settings.FAST_MODE)
+            AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(m));
+        else
+            AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(m));
     }
 
 }

@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 public class FaithLeap extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(FaithLeap.class.getSimpleName());
-    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ReleaseFormEisluRen.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/FaithLeap.png");
     private static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;

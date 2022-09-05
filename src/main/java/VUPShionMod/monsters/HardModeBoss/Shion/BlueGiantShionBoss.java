@@ -56,11 +56,11 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
 
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.damage.add(new DamageInfo(this, 5));
-            this.damage.add(new DamageInfo(this, 6));
+            this.damage.add(new DamageInfo(this, 3));
+            this.damage.add(new DamageInfo(this, 4));
         } else {
-            this.damage.add(new DamageInfo(this, 5));
-            this.damage.add(new DamageInfo(this, 6));
+            this.damage.add(new DamageInfo(this, 3));
+            this.damage.add(new DamageInfo(this, 4));
         }
 
 
@@ -79,10 +79,10 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
         this.flipHorizontal = true;
 
         if (bossFinFunnels.isEmpty()) {
-            bossFinFunnels.add(new BossMatrixFinFunnel(10, this, 1));
-            bossFinFunnels.add(new BossPursuitFinFunnel(10, this, 1));
-            bossFinFunnels.add(new BossGravityFinFunnel(10, this, 1));
-            bossFinFunnels.add(new BossDissectingFinFunnel(10, this, 1));
+            bossFinFunnels.add(new BossMatrixFinFunnel(6, this, 1));
+            bossFinFunnels.add(new BossPursuitFinFunnel(6, this, 1));
+            bossFinFunnels.add(new BossGravityFinFunnel(6, this, 1));
+            bossFinFunnels.add(new BossDissectingFinFunnel(6, this, 1));
         }
 
 

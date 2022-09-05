@@ -44,7 +44,7 @@ public class SpiralBladeStance extends AbstractStance {
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(1));
+        AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(3));
     }
 
     @Override

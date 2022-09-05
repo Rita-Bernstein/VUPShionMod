@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -28,8 +29,8 @@ public class DeploymentOfDefenseSystemPower extends AbstractShionPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        this.flash();
-        addToBot(new GainBlockAction(this.owner, this.amount));
+        flash();
+        addToBot(new GainShieldAction(this.owner, this.amount));
     }
 
     @Override

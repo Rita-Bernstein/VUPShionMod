@@ -1,6 +1,7 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainMaxHPAction;
 import VUPShionMod.actions.Liyezhu.ApplyPsychicAction;
 import VUPShionMod.powers.Common.LoseHPPower;
 import VUPShionMod.stances.JudgeStance;
@@ -40,13 +41,7 @@ public class JudgementOfSins extends AbstractLiyezhuCard {
 
         if (this.upgraded) {
             addToBot(new LoseHPAction(p, p, 25));
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    AbstractDungeon.player.increaseMaxHp(5, false);
-                    isDone = true;
-                }
-            });
+            addToBot(new GainMaxHPAction(p,5));
 
         } else {
             addToBot(new ApplyPowerAction(p, p, new LoseHPPower(p, 3)));

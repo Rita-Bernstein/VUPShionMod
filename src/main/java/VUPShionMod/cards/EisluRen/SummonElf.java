@@ -6,6 +6,8 @@ import VUPShionMod.cards.WangChuan.AbstractWCCard;
 import VUPShionMod.minions.ElfMinion;
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -25,7 +27,15 @@ public class SummonElf extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new RemoveDebuffsAction(p));
         addToBot(new SummonElfAction(new ElfMinion(0)));
+    }
+
+
+    @Override
+    public void triggerAfterOtherCardPlayed(AbstractCard card) {
+        if(card instanceof SynchroSummon || card instanceof LifeLinkCard)
+            updateCost(-1);
     }
 
     @Override

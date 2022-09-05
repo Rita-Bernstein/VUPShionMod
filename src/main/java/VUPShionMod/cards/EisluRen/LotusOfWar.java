@@ -28,22 +28,10 @@ public class LotusOfWar extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ChangeStanceAction(LotusOfWarStance.STANCE_ID));
     }
 
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
-
-        return super.canUse(p, m);
-    }
 
     @Override
     public void upgrade() {

@@ -127,7 +127,7 @@
       "Biyuki Gift: Equipped with the Wing\nComposite Shield developed by Shion",
       "Greatly improved defensive\ncapabilities",
       "Difficulty: Standard",
-      "Acquisition requirements: Work in progress"
+      "Acquisition requirements:True Ending"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {
@@ -188,9 +188,9 @@
   },
   "VUPShionMod:WingShield": {
     "TEXT": [
-      "构装翼盾",
-      "能量回收: #b%d/3 。 NL 满层时将获得 #b1 层 #y充能。 NL NL 当前充能： #b%d/%d 。 NL 每层充能阻挡 #b7 点伤害。 NL 每次受到伤害至多失去 #b7 层 #y充能 。",
-      "充能不足"
+      "Winged Construct",
+      "Recycle: #b%d/3. NL Gain #b1 #yRecharge when the Recycle meter is filled. NL NL Current Recharge: #b%d/%d. NL Every #Recharge blocks #b7 damage. NL You may lose up to #b7 #yRecharge from one single attack.",
+      "Not Enough Recharge!"
     ]
   },
   "VUPShionMod:BetterDiscardAction": {
@@ -201,47 +201,77 @@
 
   "VUPShionMod:RuinGuardianStanceAction": {
     "TEXT": [
-      "消耗战斗中的两张牌并在每回合打出"
+      "Choose to exhaust 2 cards and play one each of their copies each turn. "
     ]
   },
   "VUPShionMod:LightArmorStanceAction": {
     "TEXT": [
-      "消耗战斗中的一张牌并在每回合打出"
+      "Choose to exhaust 2 cards and play one each of their copies each turn. "
     ]
   },
   "VUPShionMod:AbstractPlayerMinion": {
     "TEXT": [
-      "攻势",
-      "这名援护将要 NL #y攻击 造成 #b",
-      " 点伤害 #b",
-      " 次。",
-      "这名援护将要 NL #y攻击 造成 #b",
-      " 点伤害。",
-      "攻势",
-      "这名援护将要进行 #y强化 并 #y攻击 造成 #b",
-      " 次。",
-      "这名援护将要进行 #y强化 并 #y攻击 造成 #b",
-      "策略",
-      "这名援护将要对你施加 #y负面效果 并 #y攻击 造成 #b",
-      "这名援护将要格挡并 #y攻击 造成 #b",
-      "守势",
-      "胆小",
-      "魔法",
-      "熟睡",
-      "击晕",
-      "不明",
-      "这名援护将要进行 #y强化 。",
-      "这名援护将要对你施加一种 #y负面效果 。",
-      "这名援护将要对你施加一种强大的 #y负面效果 。",
-      "这名援护将要在这个回合进行 #y格挡 。",
-      "这名援护将要进行 #y格挡 并对你施加一种 #y负面效果 。",
-      "这名援护将要进行 #y格挡 并进行 #y强化 。",
-      "这名援护将要 #y逃跑 ",
-      "这名援护将要在这个回合使用神秘的 #y魔法 。",
-      "这名援护正在睡觉。",
-      "这名援护在这个回合被 #y击晕 了。",
-      "这名援护的意图 #y不明 （但不是攻击）。",
-      "格挡"
+      "Aggressive",
+      "This ally intends to NL #yattack for #b",
+      " damage for #b",
+      " times.",
+      "This ally intends to NL #yattack for #b",
+      " damage.",
+      "Aggressive",
+      "This ally intends to #yBuff and #yattack for #b",
+      " times.",
+      "This ally intends to #yBuff and #yattack for #b",
+      "Strategic",
+      "This ally intends to apply #yDebuff to you and #yattack for #b",
+      "This ally intends to Block and #yattack for #b",
+      "Defensive",
+      "Scaredy",
+      "Magical",
+      "Asleep",
+      "Stunned",
+      "Unknown",
+      "This ally intends to apply #yBuff to itself.",
+      "This ally intends to apply #yDebuff to you.",
+      "This ally intends to apply a powerful #yDebuff to you.",
+      "This ally intends to #yBlock.",
+      "This ally intends to #yBlock and apply #yDebuff to you.",
+      "This ally intends to #yBlock and apply #yBuff to itself.",
+      "This ally intends to #yescape.",
+      "This ally intends to cast a mysterious #ySpell.",
+      "This ally is asleep.",
+      "This ally is #yStunned.",
+      "This ally's intention is #yunknown. (not to attack)",
+      "Block"
+    ]
+  },
+   "VUPShionMod:NeowEventTalkPatch": {
+    "TEXT": [
+      "Loading Complete~ Welcome to the battlefield.",
+      "Select",
+      "Wish you hunting!"
+    ]
+  },
+  "VUPShionMod:ShionBasePatches": {
+    "TEXT": [
+      "Commencing Special Mode"
+    ]
+  },
+  "VUPShionMod:ShionMainMenuPanelButton": {
+    "TEXT": [
+      "Training Ground",
+      "Fight the shadows in this virtual reality.",
+      "Earn “True Ending” in a standard run."
+    ]
+  },
+  "VUPShionMod:CardPreviewUpgradePatches": {
+    "TEXT": [
+      "Multiple Upgrade"
+    ]
+  },
+  "VUPShionMod:SynchroOption": {
+    "TEXT": [
+      "Synchro",
+      "Increase Synchro counter by 3."
     ]
   }
 }

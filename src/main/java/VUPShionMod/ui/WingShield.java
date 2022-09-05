@@ -5,6 +5,7 @@ import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.patches.GameStatsPatch;
+import VUPShionMod.powers.EisluRen.HotRestartPower;
 import VUPShionMod.relics.EisluRen.ShieldHRzy1;
 import VUPShionMod.relics.EisluRen.ShieldHRzy2;
 import com.badlogic.gdx.graphics.Color;
@@ -251,7 +252,8 @@ public class WingShield implements Disposable {
 
 
     public void atStartOfTurn() {
-        this.shieldDamageReduce = this.shieldDamageReduceCombat;
+        if (!AbstractDungeon.player.hasPower(HotRestartPower.POWER_ID))
+            this.shieldDamageReduce = this.shieldDamageReduceCombat;
         updateDescription();
     }
 
@@ -334,7 +336,7 @@ public class WingShield implements Disposable {
                         WingShieldDamageSave.wingShieldDamageSaveAmount = 0;
 
                         int tmp = this.damageReceived;
-                        if(tmp > getDamageReduce()) tmp = getDamageReduce();
+                        if (tmp > getDamageReduce()) tmp = getDamageReduce();
                         this.damageReceived = 0;
 
                         updateDescription();

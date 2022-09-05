@@ -14,7 +14,7 @@ public class SoleAnthem extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(SoleAnthem.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/SoleAnthem.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -22,7 +22,7 @@ public class SoleAnthem extends AbstractLiyezhuCard {
     public SoleAnthem() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 4;
         this.exhaust = true;
         this.cardsToPreview = new FlayTheEvil();
         this.tags.add(CardTagsEnum.Prayer_CARD);

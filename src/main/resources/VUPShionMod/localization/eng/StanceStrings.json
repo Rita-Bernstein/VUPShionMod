@@ -17,35 +17,34 @@
       "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength. NL At the end of your turn, heal #b2 HP."
     ]
   },
-
   "VUPShionMod:SpiralBladeStance": {
-    "NAME": "螺旋刃",
+    "NAME": "Helix Razor",
     "DESCRIPTION": [
-      "打出 #y攻击牌 时能额外消耗 #b1 层 #y构装翼盾充能 ，对所有敌人造成 #b6 点伤害并给予 #b4 层 #y流血 。"
+      "Lose #b3 #yConstruct #yRecharge each turn. NL Whenever you play an #yAttack, lose #b1 additional #yConstruct #yRecharge, deal #b6 damage to ALL enemies and apply #b4 #yBleeding."
     ]
   },
   "VUPShionMod:ThousandsOfBladeStance": {
-    "NAME": "千重刃",
+    "NAME": "Myriad Slicer",
     "DESCRIPTION": [
-      "每回合获得 #b2 点 #y力量 。 NL 打出 #y攻击牌 时将这张牌额外打出两次。"
+      "Lose #b3 #yConstruct #yRecharge each turn. NL At the start of your turn, gain #b2 #yStrength. NL Whenever you play an #yAttack, you lose #b1 additional #yConstruct #yRecharge and play the Attack for an additional time."
     ]
   },
   "VUPShionMod:LotusOfWarStance": {
-    "NAME": "战争之莲",
+    "NAME": "Bloodthirsty Lotus",
     "DESCRIPTION": [
-      "每回合获得 [E] 、 #b1 点 #y力量 和 #y敏捷 。"
+      "Lose #b1 #yConstruct #yRecharge each turn. NL At the start of your turn, gain [E], #b1 #yStrength and #yDexterity."
     ]
   },
   "VUPShionMod:RuinGuardianStance": {
-    "NAME": "遗迹守卫",
+    "NAME": "Ruin Warden",
     "DESCRIPTION": [
-      "进入时 #y消耗 战斗中的 #b2 张 #y技能牌 。 NL 每回合开始时打出这两张牌的复制。"
+      "Lose #b2 #yConstruct #yRecharge each turn. NL When you enter this #yStance, #yExhaust up to #b2 #ySkills. NL At the start of your turn, play 1 copy of each #ySkill that was then exhausted."
     ]
   },
   "VUPShionMod:LightArmorStance": {
-    "NAME": "明光铠",
+    "NAME": "Bright Armor",
     "DESCRIPTION": [
-      "进入时移除牌组中的 #b1 张 #y攻击牌 。 NL 每回合开始时打出这两张牌的复制。 NL 受到的 #y攻击 伤害减少 #b30% 。"
+      "Lose #b2 #yConstruct #yRecharge each turn. NL When you enter this #yStance, #yExhaust up to #b2 #yAttacks. NL At the start of your turn, play 1 copy of each Attack that was then exhausted. NL You take #b30% less damage from enemy attacks."
     ]
   }
 }

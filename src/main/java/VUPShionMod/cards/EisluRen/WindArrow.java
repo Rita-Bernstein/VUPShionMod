@@ -33,24 +33,29 @@ public class WindArrow extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int chance = this.upgraded ? 70 : 60;
-        if (AbstractDungeon.cardRng.random(99) < chance) {
-            if (m != null && m.hb != null)
-                addToBot(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
-
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-            this.rawDescription = cardStrings.DESCRIPTION;
-            initializeDescription();
-
-            if (AbstractDungeon.cardRng.random(99) < chance) {
-                addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber)));
-            }
+        int chance = this.upgraded ? 70 : 50;
+        if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
+            chance = AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
         }
+
+        if (chance > 0)
+            if (AbstractDungeon.cardRng.random(99) <= chance) {
+                if (m != null && m.hb != null)
+                    addToBot(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
+
+                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
+                this.rawDescription = cardStrings.DESCRIPTION;
+                initializeDescription();
+
+                if (AbstractDungeon.cardRng.random(99) < (this.upgraded ? 70 : 50)) {
+                    addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber)));
+                }
+            }
 
     }
 
     public void applyPowers() {
-        this.baseDamage = 12;
+        this.baseDamage = this.upgraded ? 21 : 17;
         AbstractPower p = AbstractDungeon.player.getPower(DexterityPower.POWER_ID);
         if (p != null) this.baseDamage += p.amount;
 

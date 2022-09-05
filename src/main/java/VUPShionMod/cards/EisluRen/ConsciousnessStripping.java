@@ -18,7 +18,7 @@ public class ConsciousnessStripping extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(ConsciousnessStripping.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ConsciousnessStripping.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;
@@ -27,7 +27,7 @@ public class ConsciousnessStripping extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 1;
         this.magicNumber = this.baseMagicNumber = 4;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     @Override

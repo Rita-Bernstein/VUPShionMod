@@ -5,6 +5,7 @@ import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -19,11 +20,11 @@ public class ExtremeOverloadPower extends AbstractShionPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    public ExtremeOverloadPower(AbstractCreature owner) {
+    public ExtremeOverloadPower(AbstractCreature owner,int amount) {
         this.name = NAME;
         this.owner = owner;
         this.ID = POWER_ID;
-
+        this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ExtremeOverloadPower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ExtremeOverloadPower48.png")), 0, 0, 48, 48);
         updateDescription();
@@ -33,12 +34,12 @@ public class ExtremeOverloadPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = this.amount >1?String.format(DESCRIPTIONS[1],amount): DESCRIPTIONS[0];
     }
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID,1));
         addToBot(new LoseWingShieldAction(WingShield.getWingShield().getCount() / 2));
     }
 

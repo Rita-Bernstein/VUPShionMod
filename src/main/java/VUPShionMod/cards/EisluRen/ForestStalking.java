@@ -11,7 +11,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ForestStalking extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(ForestStalking.class.getSimpleName());
@@ -39,9 +41,16 @@ public class ForestStalking extends AbstractEisluRenCard {
             }
         }));
 
-        if (AbstractDungeon.cardRng.random(99) < 10) {
-            addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
+
+        int chance = 5;
+        if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
+            chance += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount / 5;
         }
+
+        if (chance > 0)
+            if (AbstractDungeon.cardRng.random(99) <= chance) {
+                addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
+            }
     }
 
     @Override

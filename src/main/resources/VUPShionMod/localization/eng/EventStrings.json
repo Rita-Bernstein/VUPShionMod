@@ -26,7 +26,7 @@
   "VUPShionMod:SpireHeart_EisluRen": {
     "NAME": "Spire Heart",
     "DESCRIPTIONS": [
-      "NL 感受着喜悦的鼓动，你维持着最后一丝理智念诵祈言……"
+      "NL You enchant your Winged Construct to Maximum……"
     ],
     "OPTIONS": [
     ]
@@ -35,7 +35,7 @@
     "NAME": "Croissant",
     "DESCRIPTIONS": [
       "Something resembling a dragon's horn catches your attention. NL No...no dragon's horn, upon closer inspection it is a croissant on the floors.",
-      "Just when you pick it up, you hear a voice laughing “Fus Roh Dah！” full of playful implication. Before you could think, you are carried away by a sudden thrust of wind and lose consciousness...",
+      "Just when you pick it up, you hear a voice laughing \"Fus Roh Dah！\" full of playful implication. Before you could think, you are carried away by a sudden thrust of wind and lose consciousness...",
       "You just obtained a croissant to replenish energy and serve as food reserve. (It has a name #yCloyce written on it. Seems you may have left someone hungry, much probably...)",
       "You are more of a rice person who hates the crumbs you may leave about while eating breads, so goodbye."
     ],
@@ -80,7 +80,7 @@
     "DESCRIPTIONS": [
 	  "As you are about to depart, a message come to you.",
       "Finally, the last spot where Liyezhu's traces end is located. Will it turn out to be another echo of your futile fantasy?",
-      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL \"Ready yourself and come here.\"she says. NL \"I was, am and will be you.\" NL \"They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?\" NL \"The Worm of the Time is waiting.\""
     ],
     "OPTIONS": [
       "[Proceed] ...",
@@ -97,7 +97,7 @@
     "DESCRIPTIONS": [
       "As you are about to depart, a message come to you.",
       "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence.",
-      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL \"Ready yourself and come here.\"she says. NL \"I was, am and will be you.\" NL \"They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?\" NL \"The Worm of the Time is waiting.\""
     ],
     "OPTIONS": [
       "[Proceed] ...",
@@ -163,10 +163,10 @@
   "VUPShionMod:MentalBreakdown": {
     "NAME": "Mental Breakdown",
     "DESCRIPTIONS": [
-      "“Bang...bang...bang...” NL Under a tall, looming dome that seems to hem you in, a sudden bump develops and shoots through your mind, and it is growing to full stretch to your groan... NL Frost starts to permeate the chest as your find its implication of an awakening existence... she who was rejected and frozen long ago.",
-      "You acquiesce in her attempt to wake up...  NL Soberness follows a trance. The bump is gone, nothing is agitating any longer, and memories are dead. NL “Why...bother...to reject...her? And...who am...I?” NL “You are the abyss, my precious container.” NL The strings of sanity snap to her gentle voice.",
-      "You destroy your sigil to stop her advent... NL “No, no way...Shut up! You!” NL Your mind is boiling, almost vaporized by the relentless whispering instigations...But those are not enough to force you out of her way. NL You raise you sword, point the tip against your chest...",
-      "You suppress her awakening... NL “————” NL In the vortex of spiritual unrest, you murmur, you whisper prayer, you bear the anguish. NL All of a sudden, a shaft of light filters through, the chaos and agitation is cleansed at touch... NL She is asleep again, so that you may stagger on with your weak body."
+      "\"Bang...bang...bang...\" NL Under a tall, looming dome that seems to hem you in, a sudden bump develops and shoots through your mind, and it is growing to full stretch to your groan... NL Frost starts to permeate the chest as your find its implication of an awakening existence... she who was rejected and frozen long ago.",
+      "You acquiesce in her attempt to wake up...  NL Soberness follows a trance. The bump is gone, nothing is agitating any longer, and memories are dead. NL \"Why...bother...to reject...her? And...who am...I?\" NL \"You are the abyss, my precious container.\" NL The strings of sanity snap to her gentle voice.",
+      "You destroy your sigil to stop her advent... NL \"No, no way...Shut up! You!\" NL Your mind is boiling, almost vaporized by the relentless whispering instigations...But those are not enough to force you out of her way. NL You raise you sword, point the tip against your chest...",
+      "You suppress her awakening... NL \"————\" NL In the vortex of spiritual unrest, you murmur, you whisper prayer, you bear the anguish. NL All of a sudden, a shaft of light filters through, the chaos and agitation is cleansed at touch... NL She is asleep again, so that you may stagger on with your weak body."
     ],
     "OPTIONS": [
       "[Acquiesce] #rLose all Sanity. #gObtain Abyssal Crux.",
@@ -178,9 +178,9 @@
   "VUPShionMod:DistantMemory": {
     "NAME": "Distant Memory",
     "DESCRIPTIONS": [
-      "A fragment of memory emerges from the bottom... NL ——“Apart from other modifications, you now have this, in case you lose control again.” Shion said as she pointed the ring-shaped...object around your ankle. NL ——“Inhibitor Prototype 03, my own creation, and the name, too. It can help you to chill out should any abnormal fluctuation of your emotion is detected...Or more likely, it compels...?” NL ——“Sounds great. But why anklets?” NL ——“Well...a part of my...sick interest?”Shion laughed. “It is sick.” You murmured, eyes averted to the empty hall “You fool...You don't need to do this to keep me at your side.”",
+      "A fragment of memory emerges from the bottom... NL ——\"Apart from other modifications, you now have this, in case you lose control again.\" Shion said as she pointed the ring-shaped...object around your ankle. NL ——\"Inhibitor Prototype 03, my own creation, and the name, too. It can help you to chill out should any abnormal fluctuation of your emotion is detected...Or more likely, it compels...?\" NL ——\"Sounds great. But why anklets?\" NL ——\"Well...a part of my...sick interest?\"Shion laughed. \"It is sick.\" You murmured, eyes averted to the empty hall \"You fool...You don't need to do this to keep me at your side.\"",
       "You drop your head, soothed by the aureole dancing on your ankle, and the light emenating from it.",
-      "You stretch out your hand, but the aureole is giving nothing. “Just now, please...something to keep me going...”"
+      "You stretch out your hand, but the aureole is giving nothing. \"Just now, please...something to keep me going...\""
     ],
     "OPTIONS": [
       "[Activate Program] #gObtain Inhibitor Prototype 03.",
@@ -193,7 +193,7 @@
     "DESCRIPTIONS": [
       "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
       "You have seen it once, and you know where the target is.",
-      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, I am and I will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL \"Ready yourself and come here.\"she says. NL \"I was, I am and I will be you.\" NL \"They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?\" NL \"The Worm of the Time is waiting.\""
     ],
     "OPTIONS": [
       "[Proceed] ...",
@@ -224,33 +224,36 @@
     "DESCRIPTIONS": [
       "You walk in the city street and see everything in a dim vision... NL Just as you pace forward, a shop completely out of proportion to the environment inside the Spire emerges in the view ahead... NL You're curious about what other stores sell besides that very shop.",
       "\"Welcome!\" Says a maid who seems to be the owner. NL \"There are all kinds of fruits that can't be seen in the Spire, but the sales are so good, now there are only some leftovers...I can manage to improvise some fruit juice if you'd like? \" NL At this time, you can see that there is an attractive #y~Fruit~ #y~Cake~ hidden under the shelf. NL It seems that the maid is not telling hte truth, or the cake is just another Not-For-Sale? Anyway, the sweet smell it gives off is too tempting...",
-      " #yDelicious！@ NL When you take your time to feel proud of your skills at stealing, you suddenly feel something terrible behind you. As you turn around...",
+      "What should you do?",
+	  " #yDelicious！@ NL When you take your time to feel proud of your skills at stealing, you suddenly feel something terrible behind you. As you turn around...",
       "\"Thank you for your patronage. You are always welcomed here.\"",
       "\"Really? That would be bravo! Do you have #ystrawberries or any #yother #yfruits? \"",
       "\"Ah! It's my favorite strawberry.\" She seems exceedingly happy.",
       "\"Thank you very much!\"",
-      "“Caution is the mother of safety.”"
+      "\"Caution is the mother of safety.\"",
+	 "\"Thanks and look farwad your coming next time.\""
     ],
     "OPTIONS": [
       "[Approach]",
       "[Ignore]",
-      "[Steal the Cake] #rEncounter #ra #rSpecial #rCombat. #gObtain #gFruit #gCake.",
+      "[Proceed]",
+      "[Steal the Cake] #gObtain #gFruit #gCake.",
       "[Drink for the Thirsty!] #rLose #r%d #rgold. #gGain #g10 #yMax #gHP.",
       "[Locked] No less than %d gold is required.",
       "[Sell] Sell your fruit to the maid.",
-      "[Pear] Gain #b%d gold.",
-      "[Mango] Gain #b%d gold.",
-      "[Strawberry] Gain #b%d gold.",
       "[Locked] Any fruit relic is required.",
       "[Leave]",
+	  "[%s] Gain #b%d gold.",
       "[Back]",
-      "[Fight]"
+      "[Fight] Easy",
+      "[Fight] Hard. Still WIP",
+      "[Fight] Challenged. Still WIP"
     ]
   },
   "VUPShionMod:HolyJudgement": {
     "NAME": "Judgement",
     "DESCRIPTIONS": [
-      "“May the gods have mercy on your villiany.” NL You see her figure, piously bent forth, and the two bandits in the front, brandishing flickering daggers. NL The tip easily submerges into her arm, blood starts to escape its flesh-made prison, but still, she does not bat an eyelid, and repeats “May the gods have mercy on your villiany.” NL She draws her blade... NL And the vision disappears.",
+      "\"May the gods have mercy on your villiany.\" NL You see her figure, piously bent forth, and the two bandits in the front, brandishing flickering daggers. NL The tip easily submerges into her arm, blood starts to escape its flesh-made prison, but still, she does not bat an eyelid, and repeats \"May the gods have mercy on your villiany.\" NL She draws her blade... NL And the vision disappears.",
       "It is a remnant of the memories in the Spire, but this time, you are determined to change what happened next...",
       "It is a remnant of the memories in the Spire, but with it you find clearer connections between you and she."
     ],
@@ -263,10 +266,10 @@
   "VUPShionMod:SpiritSinkingRampage": {
     "NAME": "Psychic Rampage",
     "DESCRIPTIONS": [
-      "In your path through this...space, the casket starts to shake violently as to open by itself, and a sudden emanation of white light from the gap blinds you... NL When you open your eyes again, you find yourself in this familiar room, and find your deceased families alive and well, standing in your front... NL “Welcome back! Happy new year!”“Come on sister, sit here and listen! You will never guess how hard I tried this time!” NL Is this another hallucination? But the vision, the smell, everything is so real...",
+      "In your path through this...space, the casket starts to shake violently as to open by itself, and a sudden emanation of white light from the gap blinds you... NL When you open your eyes again, you find yourself in this familiar room, and find your deceased families alive and well, standing in your front... NL \"Welcome back! Happy new year!\"\"Come on sister, sit here and listen! You will never guess how hard I tried this time!\" NL Is this another hallucination? But the vision, the smell, everything is so real...",
       "Your answer quivers as tears trace a path. The dreamlike vision in your eyes is then peeled off by the tears, revealing her body, that mass of bruise and wound lying in the ruins of steel and concrete, with her hand griping a shell case. NL The casket closes gently, the sharp and clear sound of a dropped shell case pulls your vision back to the reality.",
       "You force a smile to praise her, try your best to recall the way you used to pat on her head, and as you take a step forward, the vision of comfort rips apart like paper, only silence and dimness ahead. Her body vanishes into the blood that soaks your eyes, her smile carves a scar into your heart that mocks all the happiness. NL The casket closes gently, in front of your, the blood forms the congeals into a crimson sword.",
-      "Before you could say anything, you hear a gentle voice from your left. NL “Oh, isn't your sister with you?” NL You turn your head to the left, only to see the emptiness of this dim corridor, as if it was a dream. NL The casket closes gently, a familiar shield integrates into your chest."
+      "Before you could say anything, you hear a gentle voice from your left. NL \"Oh, isn't your sister with you?\" NL You turn your head to the left, only to see the emptiness of this dim corridor, as if it was a dream. NL The casket closes gently, a familiar shield integrates into your chest."
     ],
     "OPTIONS": [
       "[I am Back...] #gObtain Reversed Bullet.",
@@ -277,25 +280,57 @@
   },
 
   "VUPShionMod:StrangeSeal": {
-    "NAME": "奇怪的海豹",
+    "NAME": "A Strange Seal",
     "DESCRIPTIONS": [
-      "你发现了一只奇怪的小海豹，被装在网里，周围有三个奴隶商人的身影。 NL 它不断的拍着自己圆乎乎的肚皮，似乎在呼救。",
-      "“什么， #r@牛@ ↑~马” 海豹发出奇怪的叫声。奴隶商人向你围了上来，一场战斗不可避免。",
-      "“翻车，辣是 #y@不呜~！@ 可能滴！” NL NL “来骗，来，偷袭” NL NL 海豹发出奇怪的叫声吸引着奴隶商人的注意，你悄悄地靠近",
-      " #r~“救救救啾啾命”~ NL NL 海豹发出奇怪的叫声，似乎在对你呼救，你决定？",
-      "你偷走了小海豹，没有被发现",
-      "你试图偷走小海豹，但是被发现了……"
+      "You see a seal, little poor cutie entangled in the net that is watched over by two...no, three slave traders. NL It sees you, trying to tap on the belly that would seem to spell help.",
+      "\"What, #r@Neeew@ ↑ ~Maoooow~ \" The seal starts to chirp strangly. This draws the attraction of those slave traders towards you there, who do not even recall the norm of keeping low profile. The slave traders come up to surround you, and it is clear that there is going to be a fight.",
+      "\"End of the game! G,G! Well played~ Groh #y@Gruw~!@ Might wannna start a new run!\" NL NL The seal keeps twittering incoherently as to keep their eyes on it while you sneak up on this comical act.",
+      "\" #r~Hahahaahaaahelp~ , I mean HELP.\" NL NL The seal screams loudly to ask for your help, what do you do?",
+      "You successfully rescue this garrulous creature from the net...",
+      "Your attempt to rescue that cherubic thing ends up being spotted..."
     ],
     "OPTIONS": [
-      "[接近] 你上前一起拍它的肚皮。",
-      "[等待] 你准备偷袭奴隶商人。",
-      "[无视] 你决定装作没看到。",
-      "[战斗！] 与三奴隶战斗， #g获得啸海豹和100金币。",
-      "[偷袭！] 与三奴隶战斗， #g获得啸海豹。",
-      "[润了润了] 离开",
-      "[尾随] 尾随奴隶商人，寻找时机",
-      "[成功！] #g获得啸海豹。",
-      "[战斗] 与三奴隶战斗， #g获得啸海豹。"
+      "[Approach] You come straight up to tap on its belly.",
+      "[Watch for the ] You decide to sneak attack those slave traders.",
+      "[Ignore] You decide to feign blind, and deaf probably.",
+      "[Combat!] Fight the slave traders. #gObtain Squeal and 100 gold.",
+      "[Sneak Attack!] Fight the slave traders. #gObtain Squeal.",
+      "[Run] Maybe not the best day to become a hero.",
+      "[Follow] Follow the slave traders to seek opportunity.",
+      "[Did it!] #gObtain Squeal.",
+      "[Fight!] Fight the slave traders. #gObtain Squeal."
+    ]
+  },
+  "VUPShionMod:TrainingTest": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "",
+      "You have complete basic simulation training, do you want to go to the next stage?",
+      "The final project will face the Worm of the Time. NL You need to fully grasp and use your abilities, so please be prepared."
+    ],
+    "OPTIONS": [
+      "[Proceed] ……",
+      "[Engage!] I want to challenge difficult projects. #gGain Warpath .",
+      "I want to have a rest first.",
+      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
+      "[Proceed] I want to challenge the final project.",
+      "[To the scene] I am ready!(Extremely dangerous)",
+      "[To the former stage] I still need some adjustments."
+    ]
+  },
+  "VUPShionMod:ShionSpireHeart": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "Congratulations on passing the preliminary training. You can take a rest here.",
+      "Your current score is:…… #b%d point.",
+      "Scanning your key collection progress to determine whether to enter the next Act",
+      "The conditions have been met. Start loading the new battlefield",
+      "The collection of elements has not been achieved, please consolidate the previous training."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Proceed]",
+      "[End Training]"
     ]
   }
 }

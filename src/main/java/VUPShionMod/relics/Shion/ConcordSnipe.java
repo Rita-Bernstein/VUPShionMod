@@ -11,7 +11,9 @@ import VUPShionMod.powers.Shion.ConcordPower;
 import VUPShionMod.powers.Shion.FireCalibrationPower;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import VUPShionMod.relics.AbstractShionRelic;
+import VUPShionMod.relics.Wangchuan.PrototypeCup;
 import VUPShionMod.stances.PrayerStance;
+import VUPShionMod.ui.SynchroOption;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -22,6 +24,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import com.megacrit.cardcrawl.ui.campfire.SmithOption;
+
+import java.util.ArrayList;
 
 public class ConcordSnipe extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(ConcordSnipe.class.getSimpleName());
@@ -90,5 +96,13 @@ public class ConcordSnipe extends AbstractShionRelic {
         if (this.counter > 100)
             this.counter = 100;
         setDescriptionAfterLoading();
+    }
+
+    @Override
+    public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
+        options.stream()
+                .filter(option -> option instanceof SmithOption).findFirst()
+                .map(option -> options.indexOf(option))
+                .ifPresent(index -> options.set(index,new SynchroOption(this)));
     }
 }

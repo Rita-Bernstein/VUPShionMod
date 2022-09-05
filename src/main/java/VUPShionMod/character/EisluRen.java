@@ -50,7 +50,7 @@ import static VUPShionMod.VUPShionMod.EisluRen_Color;
 public class EisluRen extends CustomPlayer {
     public static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID(EisluRen.class.getSimpleName()));
     public static final int ENERGY_PER_TURN = 3;
-    public static final int START_HP = 35;
+    public static final int START_HP = 30;
     public static final int START_GOLD = 1;
 
     public static final String[] orbTextures = {
@@ -392,7 +392,7 @@ public class EisluRen extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/LiyezhuCutScene.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/EisluRenCutScene.png"));
         return panels;
     }
 

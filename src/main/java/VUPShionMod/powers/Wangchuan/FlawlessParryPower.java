@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FlawlessParryPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID(FlawlessParryPower.class.getSimpleName());
@@ -27,7 +28,8 @@ public class FlawlessParryPower extends AbstractShionPower {
         updateDescription();
     }
 
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+    @Override
+    public int onAttackedPreBlock(DamageInfo info, AbstractCreature owner, int damageAmount) {
         if (damageAmount > 0) {
             addToTop(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
         }

@@ -19,7 +19,7 @@ public class WorldTreeLink extends AbstractEisluRenCard {
 
     public WorldTreeLink() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 15;
+        this.magicNumber = this.baseMagicNumber = 7;
         this.secondaryM = this.baseSecondaryM = 1;
     }
 

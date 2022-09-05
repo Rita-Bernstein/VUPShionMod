@@ -2,10 +2,18 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.DiscardAnyCardAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
+
+import java.util.function.Consumer;
 
 public class SpaceTimeMetric extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SpaceTimeMetric.class.getSimpleName());
@@ -23,11 +31,33 @@ public class SpaceTimeMetric extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.upgraded)
-            addToBot(new DiscardAnyCardAction(this.magicNumber));
-        else
+        if (this.upgraded) {
+            Consumer<Integer> consumer = effect -> {
+                addToTop(new ApplyPowerAction(p, p, new LoseDexterityPower(p, effect * 3)));
+                addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, effect * 3)));
+            };
+            addToBot(new DiscardAnyCardAction(this.magicNumber, consumer));
+        } else {
             addToBot(new DiscardAction(p, p, this.magicNumber, false));
-        addToBot(new ExpertiseAction(p, this.magicNumber));
+        }
+
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                int toDraw = magicNumber - AbstractDungeon.player.hand.size();
+                if (toDraw > 0) {
+                    addToTop(new DrawCardAction(toDraw, new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            addToTop(new ApplyPowerAction(p, p, new LoseDexterityPower(p, DrawCardAction.drawnCards.size() * 3)));
+                            addToTop(new ApplyPowerAction(p, p, new DexterityPower(p, DrawCardAction.drawnCards.size() * 3)));
+                            isDone = true;
+                        }
+                    }));
+                }
+                this.isDone = true;
+            }
+        });
     }
 
     @Override

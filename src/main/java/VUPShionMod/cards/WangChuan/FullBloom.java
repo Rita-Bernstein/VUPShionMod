@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainMaxHPAction;
 import VUPShionMod.actions.Common.LoseMaxHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -36,14 +37,7 @@ public class FullBloom extends AbstractWCCard {
         if (this.timesUpgraded <= 1)
             addToBot(new LoseMaxHPAction(p, p, this.secondaryM));
         else
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    AbstractDungeon.player.increaseMaxHp(secondaryM, false);
-                    isDone = true;
-                }
-            });
-
+            addToBot(new GainMaxHPAction(p,secondaryM));
 
         addToBot(new ApplyPowerAction(p, p, new BerserkPower(p, this.magicNumber)));
     }

@@ -48,6 +48,7 @@ public class Consult extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();

@@ -266,5 +266,11 @@
     "TEXT": [
       "多次升级"
     ]
+  },
+  "VUPShionMod:SynchroOption": {
+    "TEXT": [
+      "同调",
+      "提高3层同调的计数"
+    ]
   }
 }

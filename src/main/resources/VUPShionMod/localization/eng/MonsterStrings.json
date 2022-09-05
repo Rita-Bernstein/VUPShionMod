@@ -61,11 +61,124 @@
     "MOVES": [
       ""
     ],
-    "NAME": "下位精灵",
+    "NAME": "Lesser Elf",
     "DIALOG": [
-      "下位精灵",
-      "上位精灵",
-      "精灵骑士"
+      "Lesser Elf",
+      "High Elf",
+      "Elf Knight"
+    ]
+  },
+  "VUPShionMod:AquaShionBoss": {
+    "MOVES": [
+      "系统骇入",
+      "魔能紊乱",
+      "行动封锁",
+      "超新星爆发"
+    ],
+    "NAME": "Shion-Midsummer Swimsuit",
+    "DIALOG": [
+      "正在进行弱点分析……",
+      "解析完成！",
+      "系统强制覆盖……完成！",
+      "检测到魔法回路……进行干扰",
+      "行动预测完成，进行封锁",
+      "时流加速，启动",
+      "防御系统，超频",
+      "全系统，过载 "
+    ]
+  },
+  "VUPShionMod:OriLiyezhuBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Liyezhu-Priestess Duty",
+    "DIALOG": [
+      "审判……降临……"
+    ]
+  },
+  "VUPShionMod:OriEisluRenBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "EisluRen-Biyuki Gift",
+    "DIALOG": [
+      "构装飞翼，变形",
+      "构装飞翼，最高出力等级！",
+      "掩护我"
+    ]
+  },
+  "VUPShionMod:HighElf": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "High Elf",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:ElfKnight": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Elf Knight",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:ChinaWangChuanBoss": {
+    "MOVES": [
+      "终章：热寂"
+    ],
+    "NAME": "Wangchuan-Sapor Peregrinus",
+    "DIALOG": [
+      "无量……空处",
+      "终章……热寂！"
+    ]
+  },
+  "VUPShionMod:PurityWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Wangchuan-Spectre Dance",
+    "DIALOG": [
+      "神速……霹雳一闪！"
+    ]
+  },
+  "VUPShionMod:OriWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Wangchuan-Vampire's Shroud",
+    "DIALOG": [
+      "魔能回路……启动"
+    ]
+  },
+  "VUPShionMod:OriShionBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Shion-Aggressive Armament",
+    "DIALOG": [
+      "轨道打击锁定……",
+      "轨道打击开始"
+    ]
+  },
+  "VUPShionMod:AquaWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Wangchuan-Midsummer Swimsuit",
+    "DIALOG": [
+      "无限……剑制！"
+    ]
+  },
+  "VUPShionMod:BlueGiantShionBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Shion-Conqueror's Attire",
+    "DIALOG": [
+      "超维矩阵……激活！"
     ]
   }
 }

@@ -82,9 +82,6 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 break;
             case 2:
                 addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Shockwave")));
-
-                addToTop(new ChangeStateAction(m, "Intimidate"));
-
                 addToBot(new VFXAction(m, new ShockWaveEffect(m.hb.cX, m.hb.cY, Settings.RED_TEXT_COLOR, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.2F));
 
                 addToBot(new ApplyPowerAction(p, m, new VulnerablePower(p, 3, true)));
@@ -96,6 +93,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 else
                     addToBot(new AnimateSlowAttackAction(m));
 
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_MeteorStrike")));
                 addToBot(new VFXAction(new ClashEffect(p.hb.cX, p.hb.cY), 0.1F));
                 addToBot(new DamageAction(p, m.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 break;
@@ -106,6 +104,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 addToBot(new ApplyPowerAction(m, m, new IntangiblePlayerPower(m, 3)));
                 break;
             case 11:
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Skill0")));
                 addToBot(new ApplyPowerAction(m, m, new AfterImagePower(m, AbstractDungeon.ascensionLevel >= 19 ? 2 : 1) {
                     @Override
                     public void onUseCard(AbstractCard card, UseCardAction action) {
@@ -123,16 +122,18 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
             case 12:
                 break;
             case 13:
-                if (Settings.FAST_MODE)
-                    addToBot(new AnimateFastAttackAction(m));
-                else
-                    addToBot(new AnimateSlowAttackAction(m));
-
                 if (Settings.FAST_MODE) {
                     addToBot(new VFXAction(new GrandFinalEffect(), 0.7F));
                 } else {
                     addToBot(new VFXAction(new GrandFinalEffect(), 1.0F));
                 }
+
+                if (Settings.FAST_MODE)
+                    addToBot(new AnimateFastAttackAction(m));
+                else
+                    addToBot(new AnimateSlowAttackAction(m));
+
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_FiendFire1")));
                 addToBot(new DamageAction(p, m.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 break;
             case 14:
@@ -152,6 +153,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 break;
             case 33:
                 CardCrawlGame.sound.play("STANCE_ENTER_DIVINITY");
+                addToBot(new SFXAction(VUPShionMod.makeID("RitaB_TrueMod")));
                 AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.PINK, true));
                 AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(m.hb.cX, m.hb.cY, "Divinity"));
                 ((AbstractVUPShionBoss) m).stance = new DivinityStance();

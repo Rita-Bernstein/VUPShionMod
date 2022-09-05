@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Common.XActionAction;
 import VUPShionMod.cards.WangChuan.BombardaMagica;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -25,7 +26,7 @@ public class SoilNB extends AbstractEisluRenCard {
 
     public SoilNB() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 4;
+        this.magicNumber = this.baseMagicNumber = 6;
         this.baseDamage = 4;
     }
 
@@ -41,7 +42,7 @@ public class SoilNB extends AbstractEisluRenCard {
                     }
                 }
 
-            addToTop(new GainBlockAction(p, this.block * effect));
+            addToTop(new GainShieldAction(p, this.magicNumber * effect));
 
         };
         addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));

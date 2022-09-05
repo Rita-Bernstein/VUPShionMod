@@ -23,25 +23,24 @@ public class RuinGuardian extends AbstractEisluRenCard {
 
     public RuinGuardian() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.selfRetain =true;
+        this.selfRetain = true;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge) && !upgraded)
+            addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ChangeStanceAction(RuinGuardianStance.STANCE_ID));
     }
-
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM && !upgraded) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

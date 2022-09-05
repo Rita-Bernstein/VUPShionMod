@@ -35,10 +35,10 @@ public class ShionCardRenderPatches {
     public static class RenderPortraitPatch {
         @SpireInsertPatch(rloc = 3, localvars = {"drawY"})
         public static SpireReturn<Void> Insert(AbstractCard card, SpriteBatch sb, @ByRef float[] drawY) {
-            if (card instanceof AbstractVUPShionCard )
+            if (card instanceof AbstractVUPShionCard)
                 drawY[0] = card.current_y - 95.0F + drawYFix * card.drawScale * Settings.scale;
 
-           return SpireReturn.Continue();
+            return SpireReturn.Continue();
         }
     }
 
@@ -56,7 +56,7 @@ public class ShionCardRenderPatches {
             if (card instanceof AbstractVUPShionCard)
                 drawY[0] = card.current_y - card.portrait.packedHeight / 2.0F + drawYFix * card.drawScale * Settings.scale;
 
-           return SpireReturn.Continue();
+            return SpireReturn.Continue();
         }
     }
 
@@ -118,16 +118,26 @@ public class ShionCardRenderPatches {
             method = "renderPortrait"
     )
     public static class MissingPortraitFix {
-        @SpireInsertPatch(rloc = 19, localvars = {"card", "portraitImg"})
-        public static SpireReturn<Void> Insert(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard card, Texture portraitImg) {
-            if (card instanceof AbstractVUPShionCard) {
-                sb.draw(portraitImg, Settings.WIDTH / 2.0F - 250.0F, Settings.HEIGHT / 2.0F - 190.0F + 190.0F * Settings.scale, 250.0F, 190.0F, 500.0F, 380.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 500, 380, false, false);
-                return SpireReturn.Return(null);
-            }
-            return SpireReturn.Continue();
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
+                @Override
+                public void edit(MethodCall m) throws CannotCompileException {
+                    if (m.getClassName().equals(SpriteBatch.class.getName()) && m.getMethodName().equals("draw")) {
+                        m.replace("if(this.card instanceof " + AbstractVUPShionCard.class.getName() + "){" +
+                                " $3 = " + ShionCardRenderPatches.class.getName() + ".getCardY(); $_ = $proceed($$);"
+                                + "} else {"
+                                + "$proceed($$);"
+                                + "}"
+                        );
+                    }
+                }
+            };
         }
     }
 
+    public static float getCardY() {
+        return Settings.HEIGHT / 2.0F - 190.0F + 190.0F * Settings.scale;
+    }
 
     @SpirePatch(
             clz = SingleCardViewPopup.class,

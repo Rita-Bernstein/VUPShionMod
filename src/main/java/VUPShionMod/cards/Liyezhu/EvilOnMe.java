@@ -1,6 +1,7 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainMaxHPAction;
 import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -44,13 +45,7 @@ public class EvilOnMe extends AbstractLiyezhuCard {
         addToBot(new HealAction(p, p, secondaryM * this.magicNumber));
 
         if (this.secondaryM >= 5)
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    AbstractDungeon.player.increaseMaxHp(secondaryM / 5, false);
-                    isDone = true;
-                }
-            });
+            addToBot(new GainMaxHPAction(p,secondaryM / 5));
     }
 
     @Override

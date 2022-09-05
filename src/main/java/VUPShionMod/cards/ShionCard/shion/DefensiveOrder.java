@@ -19,6 +19,7 @@ public class DefensiveOrder extends AbstractShionCard {
 
     public DefensiveOrder() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.selfRetain = true;
     }
 
     @Override
@@ -30,7 +31,8 @@ public class DefensiveOrder extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.selfRetain = true;
+
+            this.returnToHand = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

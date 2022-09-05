@@ -30,27 +30,32 @@ public class LightArmor extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge) && !upgraded)
+            addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ChangeStanceAction(LightArmorStance.STANCE_ID));
     }
+
 
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM && !upgraded) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }
+
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

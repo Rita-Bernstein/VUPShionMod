@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.EisluRen.WingsOfDaedalusPower;
@@ -32,7 +33,7 @@ public class WingsOfDaedalus extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new GainShieldAction(p,7));
         addToBot(new ApplyPowerAction(p,p,new FlyPower(p,this.magicNumber)));
         addToBot(new ApplyPowerAction(p,p,new WingsOfDaedalusPower(p,2)));
     }

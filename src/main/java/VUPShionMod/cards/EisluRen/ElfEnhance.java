@@ -6,6 +6,8 @@ import VUPShionMod.minions.ElfMinion;
 import VUPShionMod.minions.MinionGroup;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
@@ -17,7 +19,7 @@ public class ElfEnhance extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public ElfEnhance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -27,6 +29,7 @@ public class ElfEnhance extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new RemoveDebuffsAction(p));
         addToBot(new SummonElfAction(new ElfMinion(1)));
         if (this.upgraded)
             addToBot(new AbstractGameAction() {
@@ -39,6 +42,12 @@ public class ElfEnhance extends AbstractEisluRenCard {
                 }
             });
 
+    }
+
+    @Override
+    public void triggerAfterOtherCardPlayed(AbstractCard card) {
+        if(card instanceof SynchroSummon || card instanceof LifeLinkCard)
+            updateCost(-1);
     }
 
     @Override

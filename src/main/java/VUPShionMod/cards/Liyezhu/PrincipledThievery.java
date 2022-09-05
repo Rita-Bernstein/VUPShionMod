@@ -22,7 +22,7 @@ public class PrincipledThievery extends AbstractLiyezhuCard {
 
     public PrincipledThievery() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 3;
         this.exhaust = true;
         this.cardsToPreview = new HeavenDecree();

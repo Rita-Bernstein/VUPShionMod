@@ -18,8 +18,8 @@ public class SealResidue extends AbstractEisluRenCard {
 
     public SealResidue() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 9;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.magicNumber = this.baseMagicNumber = 21;
+        this.secondaryM = this.baseSecondaryM = 9;
     }
 
     @Override

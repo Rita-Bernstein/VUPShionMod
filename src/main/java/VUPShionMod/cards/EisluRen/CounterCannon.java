@@ -5,6 +5,7 @@ import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.ui.WingShield;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -29,8 +30,9 @@ public class CounterCannon extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
         this.isMultiDamage = true;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.secondaryM = this.baseSecondaryM = 4;
         this.selfRetain = true;
+        GraveField.grave.set(this,true);
     }
 
     @Override
@@ -75,6 +77,7 @@ public class CounterCannon extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(1);
+            upgradeSecondM(-1);
         }
     }
 }

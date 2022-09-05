@@ -30,7 +30,8 @@ public class FlayTheEvil extends AbstractLiyezhuCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         addToBot(new FlayTheEvilAction(m, 10));
         addToBot(new DrawCardAction(1));
-        addToBot(new DuelSinAction());
+        for (int i = 0; i < 3; i++)
+            addToBot(new DuelSinAction());
     }
 
     @Override

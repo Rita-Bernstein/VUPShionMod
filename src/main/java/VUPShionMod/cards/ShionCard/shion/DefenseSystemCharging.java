@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.finfunnels.GravityFinFunnel;
@@ -27,35 +28,31 @@ public class DefenseSystemCharging extends AbstractShionCard {
 
     public DefenseSystemCharging() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = this.block = 2;
+        this.magicNumber =this.baseMagicNumber = 2;
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(2);
+            upgradeName();
+            upgradeMagicNumber(2);
         }
     }
 
-    @Override
-    public void postReturnToHand() {
-        this.returnToHand = false;
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
 
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new GainShieldAction(p, this.magicNumber));
         addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
         List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         if (cardList.size() >= 2) {
             AbstractCard card = cardList.get(cardList.size() - 2);
             if (card.hasTag(CardTagsEnum.FIN_FUNNEL)) {
-                this.returnToHand = true;
+                this.returnToHandOnce = true;
             }
         }
     }

@@ -20,7 +20,7 @@
   "VUPShionMod:EnergeticFragment": {
     "NAME": "Fragment of Energy",
     "DESCRIPTIONS": [
-      "获得 #b%d 层 #y构装翼盾充能 。"
+      "Gain #b%d #yConstruct #yRecharge."
     ]
   },
   "VUPShionMod:TimeFragment": {
@@ -63,7 +63,7 @@
     ]
   },
   "VUPShionMod:WorldLeaf": {
-    "NAME": "World Leaf",
+    "NAME": "Worldtree Leaf",
     "DESCRIPTIONS": [
       "Heal HP to #b%d%% of Max HP."
     ]

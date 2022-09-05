@@ -26,7 +26,6 @@ public class WarmUp extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainRefundChargeAction(this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new AttackIncreasePower(p, 100)));
-        if (upgraded)
             addToBot(new DrawCardAction(1));
     }
 
@@ -34,8 +33,7 @@ public class WarmUp extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeMagicNumber(3);
         }
     }
 }

@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 
 public abstract class AbstractVUPShionCard extends CustomCard implements SpawnModificationCard {
@@ -52,6 +53,9 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
     private static final Texture orb_aw = ImageMaster.loadImage("VUPShionMod/img/cardui/Shion/512/card_lime_orb_aw.png");
 
     public String betaArtPath;
+
+    public boolean returnToHandOnce = false;
+    public boolean returnToHand = false;
 
     public AbstractVUPShionCard(String id, String img, int cost, CardType type, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type,
@@ -248,6 +252,31 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
         ReflectionHacks.setPrivate(this, AbstractCard.class, "jokePortrait", cardImg);
     }
 
+    @Override
+    protected Texture getPortraitImage() {
+        if (Settings.PLAYTESTER_ART_MODE || UnlockTracker.betaCardPref.getBoolean(this.cardID, false)) {
+            if (this.textureImg == null) {
+                return null;
+            } else {
+                if (betaArtPath != null) {
+                    int endingIndex = betaArtPath.lastIndexOf(".");
+                    String newPath = betaArtPath.substring(0, endingIndex) + "_p" + betaArtPath.substring(endingIndex);
+                    System.out.println("Finding texture: " + newPath);
+
+                    Texture portraitTexture;
+                    try {
+                        portraitTexture = ImageMaster.loadImage(newPath);
+                    } catch (Exception var5) {
+                        portraitTexture = null;
+                    }
+
+                    return portraitTexture;
+                }
+            }
+        }
+        return super.getPortraitImage();
+    }
+
 
     public void postReturnToHand() {
     }
@@ -289,6 +318,10 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
     }
 
     public void onApplyCor(){
-
     }
+
+    public void triggerAfterOtherCardPlayed(AbstractCard card){
+    }
+
+
 }

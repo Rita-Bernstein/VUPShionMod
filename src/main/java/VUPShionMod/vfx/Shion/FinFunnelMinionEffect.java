@@ -141,7 +141,7 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
 
                 if (this.isAoe) {
                     CardCrawlGame.sound.play("ATTACK_DEFECT_BEAM");
-                    AbstractDungeon.effectsQueue.add(new FinFunnelMinionBeamEffect(this.skeleton, this.target.isPlayer, this.scale));
+                    AbstractDungeon.effectsQueue.add(new FinFunnelMinionBeamEffect(this.skeleton,(this.target != null && target.isPlayer), this.scale));
                 }
 
             }

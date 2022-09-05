@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.EisluRen.AttackIncreasePower;
+import VUPShionMod.powers.EisluRen.ExtremeOverloadPower;
 import VUPShionMod.powers.EisluRen.TurnAttackIncreasePower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -25,29 +26,16 @@ public class Soul extends AbstractEisluRenCard {
 
     public Soul() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 300;
-        this.secondaryM = this.baseSecondaryM = 7;
+        this.magicNumber = this.baseMagicNumber = 300;
+        this.secondaryM = this.baseSecondaryM =2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
-
         addToBot(new SFXAction("STANCE_ENTER_WRATH"));
-        addToBot(new ApplyPowerAction(p,p,new TurnAttackIncreasePower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new TurnAttackIncreasePower(p, this.magicNumber)));
         addToBot(new GainEnergyAction(3));
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
-
-        return super.canUse(p, m);
+        addToBot(new ApplyPowerAction(p, p, new ExtremeOverloadPower(p, this.secondaryM)));
     }
 
 
@@ -56,6 +44,7 @@ public class Soul extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(100);
+            upgradeSecondM(-1);
         }
     }
 }

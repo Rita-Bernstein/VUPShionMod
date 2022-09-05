@@ -9,7 +9,8 @@
     "NAME": "追擊",
     "DESCRIPTIONS": [
       "目標的回合開始時， #y追擊浮游炮 將攻擊目標一次，造成 #b",
-      " 點傷害"
+      " 點傷害。",
+      "你的回合結束時，將受到敵人 #y追擊浮游炮 的一次攻擊，造成 #b"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -48,7 +49,7 @@
     "NAME": "防禦系統全展開",
     "DESCRIPTIONS": [
       "在這個回合，你每打出一張牌，就獲得 #b",
-      " 點 #y格擋 。"
+      " 點 #y護盾 。"
     ]
   },
   "VUPShionMod:DeploymentOfDefenseSystemPower2": {
@@ -554,8 +555,8 @@
   "VUPShionMod:FlawlessParryPower": {
     "NAME": "見切",
     "DESCRIPTIONS": [
-      "阻止下一次你受到的生命值損傷。",
-      "阻止下 #b%d 次你受到的生命值損傷。"
+      "阻止下一次你受到的傷害。",
+      "阻止下 #b%d 次你受到的傷害。"
     ]
   },
   "VUPShionMod:PsychicPower": {
@@ -605,7 +606,7 @@
   "VUPShionMod:HallowedCasketPower": {
     "NAME": "聖棺沉靈",
     "DESCRIPTIONS": [
-      "每回合結束時，將 #b%d 張 #y奇蹟 加入手牌並獲得 #b%d 點 #y沉靈 。"
+      "每回合結束時，將 #b%d 張 #y奇蹟 加入抽牌堆並獲得 #b%d 點 #y沉靈 。"
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower": {
@@ -973,7 +974,8 @@
   "VUPShionMod:ExtremeOverloadPower": {
     "NAME": "超負荷",
     "DESCRIPTIONS": [
-      "下回合開始失去一半的 #y構裝翼盾充能 "
+      "下回合開始失去一半的 #y構裝翼盾充能 ",
+      "下 #b%d 個回合開始失去一半的 #y構裝翼盾充能 "
     ]
   },
   "VUPShionMod:WingsOfDaedalusPower": {
@@ -1002,15 +1004,16 @@
     ]
   },
   "VUPShionMod:SupportGravitaterPower": {
-    "NAME": "重力迴路",
+    "NAME": "重力增幅",
     "DESCRIPTIONS": [
-      "每當失去 #b2 層 #y構裝翼盾充能 時，獲得 #b%d 點 #y力量 。"
+      "每獲得 #b5 層 #y構裝翼盾充能 時，獲得 #b%d 點 #y力量 和 #y敏捷 。"
     ]
   },
   "VUPShionMod:HurricaneVortexPower": {
-    "NAME": "重力迴路",
+    "NAME": "颶風漩渦",
     "DESCRIPTIONS": [
-      "接下來的 #b%d 回合開始時對所有敵人造成 7+ #y敏捷 點傷害並給予 #y虛弱 。"
+      "接下來的 #b%d 回合開始時對所有敵人造成 #b7+敏捷 點傷害並給予 #y虛弱 。",
+      "接下來的 #b%d 回合開始時對所有敵人造成 #b%dx(7+敏捷) 點傷害並給予 #y虛弱 。"
     ]
   },
   "VUPShionMod:ForestBarrierPower": {
@@ -1022,7 +1025,7 @@
   "VUPShionMod:WorldTreeLinkPower": {
     "NAME": "世界樹連結",
     "DESCRIPTIONS": [
-      "每回合開始時抽滿你的手牌。"
+      "每回合開始時抽滿你的手牌。 NL 手牌上限提高 #b1 張。"
     ]
   },
   "VUPShionMod:SpiritCloisterPower": {
@@ -1035,6 +1038,128 @@
     "NAME": "同調召喚",
     "DESCRIPTIONS": [
       " #y精靈 生命不為0時，你每回合獲得 #b%d 點 #y力量 。"
+    ]
+  },
+  "VUPShionMod:BossChainPursuitPower": {
+    "NAME": "連鎖追擊",
+    "DESCRIPTIONS": [
+      "她的回合結束時給予你 #b%d 層 #y追擊 。"
+    ]
+  },
+  "VUPShionMod:BossAttackLoaderPower": {
+    "NAME": "攻擊加載",
+    "DESCRIPTIONS": [
+      "每當你洗牌時，將 #b%d 張 #y浮游追擊 加入抽牌堆。",
+      "每當你洗牌時，將 #b%d 張 #y浮游追擊 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:BossAvatarSpawnPower": {
+    "NAME": "延時替身",
+    "DESCRIPTIONS": [
+      "每回合結束時 #b%d 個獲得 #b5 點生命的 #y替身 。"
+    ]
+  },
+  "VUPShionMod:BossAvatarPower": {
+    "NAME": "替身",
+    "DESCRIPTIONS": [
+      "你的一名 #y替身 還剩 #b%d 點生命。 NL 還剩 #b%d 個 #y替身 。"
+    ]
+  },
+  "VUPShionMod:PotentialOutbreakPower": {
+    "NAME": "潛能爆發",
+    "DESCRIPTIONS": [
+      "再受到 #b%d 點傷害後將會結束你的回合併進行一個 #y強力 的行動。"
+    ]
+  },
+  "VUPShionMod:SystemHackPower": {
+    "NAME": "系統駭入",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合回合開始時隨機打出、丟棄、消耗各一張手牌。"
+    ]
+  },
+  "VUPShionMod:MagicDisorderPower": {
+    "NAME": "魔能紊亂",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合開始受到 #b30 點傷害。"
+    ]
+  },
+  "VUPShionMod:ActionBlockadePower": {
+    "NAME": "行動封鎖",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合回合不能打出技能牌。"
+    ]
+  },
+  "VUPShionMod:AutoShieldPower": {
+    "NAME": "自動護盾",
+    "DESCRIPTIONS": [
+      "每回合結束時獲得 #b%d 層 #y護盾 。"
+    ]
+  },
+  "VUPShionMod:LightArmorPower": {
+    "NAME": "光明鎧甲",
+    "DESCRIPTIONS": [
+      "受到的攻擊傷害減少 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:CoverPower": {
+    "NAME": "掩體",
+    "DESCRIPTIONS": [
+      "當有其他隊友存在時，其受到的傷害為 #b0 。"
+    ]
+  },
+  "VUPShionMod:MagicFlyingBladePower": {
+    "NAME": "魔能飛刃",
+    "DESCRIPTIONS": [
+      "每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。",
+      "每回合結束時對你造成 #b%d 點 #y非攻擊 傷害 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:WhiteRosePower": {
+    "NAME": "支援系統：白薔薇",
+    "DESCRIPTIONS": [
+      "受到 #y攻擊傷害 時，獲得 #b%d 層 #y多層護甲 。 NL 每回合開始時獲得 #b%d 層 #y見切 。"
+    ]
+  },
+  "VUPShionMod:CrimsonDelugeBossPower": {
+    "NAME": "浸染之血",
+    "DESCRIPTIONS": [
+      "超出生命上限的 #g回復 將獲得 #y護盾 。"
+    ]
+  },
+  "VUPShionMod:FinalPrayerPower": {
+    "NAME": "最終禱告",
+    "DESCRIPTIONS": [
+      "抽到狀態和詛咒時，抽一張牌並獲得 [E] 。 NL 失去 #y格擋 時，獲得 #b5 點 #y格擋 。 NL 獲得 #y格擋 時，獲得等量 #y護盾 。"
+    ]
+  },
+  "VUPShionMod:StunPlayerPower": {
+    "NAME": "擊暈",
+    "DESCRIPTIONS": [
+      "本回合你無法出牌。"
+    ]
+  },
+  "VUPShionMod:ConcordSnipePower": {
+    "NAME": "協合音·狙擊",
+    "DESCRIPTIONS": [
+      "其回合開始時給予你 #b%d 層 #y鎖定 。"
+    ]
+  },
+  "VUPShionMod:HallowedCasketPower2": {
+    "NAME": "聖棺沉靈-奇蹟",
+    "DESCRIPTIONS": [
+      "每當你 #y消耗 一張 #y奇蹟 時，抽 #b2 張牌並獲得 1 #ySan值."
+    ]
+  },
+  "VUPShionMod:YonggukCityTroyPower": {
+    "NAME": "永固城邦",
+    "DESCRIPTIONS": [
+      "每當你失去或獲得 #y構裝翼盾充能 時，獲得 #b5 倍的 #y護盾 。"
+    ]
+  },
+  "VUPShionMod:HotRestartPower": {
+    "NAME": "熱重啟",
+    "DESCRIPTIONS": [
+      "本回合每層 #y構裝翼盾充能 可減少的傷害不會降低。"
     ]
   }
 }

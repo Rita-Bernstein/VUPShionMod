@@ -49,7 +49,7 @@
     "NAME": "防御系统全展开",
     "DESCRIPTIONS": [
       "在这个回合，你每打出一张牌，就获得 #b",
-      " 点 #y格挡 。"
+      " 点 #y护盾 。"
     ]
   },
   "VUPShionMod:DeploymentOfDefenseSystemPower2": {
@@ -555,8 +555,8 @@
   "VUPShionMod:FlawlessParryPower": {
     "NAME": "见切",
     "DESCRIPTIONS": [
-      "阻止下一次你受到的生命值损伤。",
-      "阻止下 #b%d 次你受到的生命值损伤。"
+      "阻止下一次你受到的伤害。",
+      "阻止下 #b%d 次你受到的伤害。"
     ]
   },
   "VUPShionMod:PsychicPower": {
@@ -606,7 +606,7 @@
   "VUPShionMod:HallowedCasketPower": {
     "NAME": "圣棺沉灵",
     "DESCRIPTIONS": [
-      "每回合结束时，将 #b%d 张 #y奇迹 加入手牌并获得 #b%d 点 #y沉灵 。"
+      "每回合结束时，将 #b%d 张 #y奇迹 加入抽牌堆并获得 #b%d 点 #y沉灵 。"
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower": {
@@ -974,7 +974,8 @@
   "VUPShionMod:ExtremeOverloadPower": {
     "NAME": "超负荷",
     "DESCRIPTIONS": [
-      "下回合开始失去一半的 #y构装翼盾充能 "
+      "下回合开始失去一半的 #y构装翼盾充能 ",
+      "下 #b%d 个回合开始失去一半的 #y构装翼盾充能 "
     ]
   },
   "VUPShionMod:WingsOfDaedalusPower": {
@@ -1003,15 +1004,16 @@
     ]
   },
   "VUPShionMod:SupportGravitaterPower": {
-    "NAME": "重力回路",
+    "NAME": "重力增幅",
     "DESCRIPTIONS": [
-      "每当失去 #b2 层 #y构装翼盾充能 时，获得 #b%d 点 #y力量 。"
+      "每获得 #b5 层 #y构装翼盾充能 时，获得 #b%d 点 #y力量 和 #y敏捷 。"
     ]
   },
   "VUPShionMod:HurricaneVortexPower": {
-    "NAME": "重力回路",
+    "NAME": "飓风漩涡",
     "DESCRIPTIONS": [
-      "接下来的 #b%d 回合开始时对所有敌人造成 7+ #y敏捷 点伤害并给予 #y虚弱 。"
+      "接下来的 #b%d 回合开始时对所有敌人造成 #b7+敏捷 点伤害并给予 #y虚弱 。",
+      "接下来的 #b%d 回合开始时对所有敌人造成 #b%dx(7+敏捷) 点伤害并给予 #y虚弱 。"
     ]
   },
   "VUPShionMod:ForestBarrierPower": {
@@ -1023,7 +1025,7 @@
   "VUPShionMod:WorldTreeLinkPower": {
     "NAME": "世界树链接",
     "DESCRIPTIONS": [
-      "每回合开始时抽满你的手牌。"
+      "每回合开始时抽满你的手牌。 NL 手牌上限提高 #b1 张。"
     ]
   },
   "VUPShionMod:SpiritCloisterPower": {
@@ -1140,6 +1142,24 @@
     "NAME": "协合音·狙击",
     "DESCRIPTIONS": [
       "其回合开始时给予你 #b%d 层 #y锁定 。"
+    ]
+  },
+  "VUPShionMod:HallowedCasketPower2": {
+    "NAME": "圣棺沉灵-奇迹",
+    "DESCRIPTIONS": [
+      "每当你 #y消耗 一张 #y奇迹 时，抽 #b2 张牌并获得 1 #ySan值."
+    ]
+  },
+  "VUPShionMod:YonggukCityTroyPower": {
+    "NAME": "永固城邦",
+    "DESCRIPTIONS": [
+      "每当你失去或获得 #y构装翼盾充能 时，获得 #b5 倍的 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:HotRestartPower": {
+    "NAME": "热重启",
+    "DESCRIPTIONS": [
+      "本回合每层 #y构装翼盾充能 可减少的伤害不会降低。"
     ]
   }
 }

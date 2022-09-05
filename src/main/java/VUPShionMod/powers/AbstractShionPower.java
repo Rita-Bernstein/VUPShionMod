@@ -37,7 +37,11 @@ public class AbstractShionPower extends TwoAmountPower {
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount){
     }
 
-    public int monsterAttackPreBlock(DamageInfo info, AbstractMonster m,int damageAmount){
+    public int onEnemyAttackedPreBlock(DamageInfo info, AbstractMonster m, int damageAmount){
+        return damageAmount;
+    }
+
+    public int onAttackedPreBlock(DamageInfo info, AbstractCreature owner, int damageAmount){
         return damageAmount;
     }
 

@@ -3,9 +3,11 @@ package VUPShionMod.cards.EisluRen;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EntanglePower;
 
 public class Entrench extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(Entrench.class.getSimpleName());
@@ -18,7 +20,7 @@ public class Entrench extends AbstractEisluRenCard {
 
     public Entrench() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 2;
+        this.magicNumber =this.baseMagicNumber = 3;
     }
 
     @Override
@@ -26,8 +28,7 @@ public class Entrench extends AbstractEisluRenCard {
         addToBot(new GainWingShieldChargeAction(this.magicNumber));
         addToBot(new RemoveAllBlockAction(p, p));
         addToBot(new GainShieldAction(p, p.currentBlock * (this.upgraded ? 3 : 2)));
-
-
+        addToBot(new ApplyPowerAction(p,p,new EntanglePower(p)));
     }
 
 
@@ -35,6 +36,7 @@ public class Entrench extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeMagicNumber(1);
             upgradeBaseCost(2);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

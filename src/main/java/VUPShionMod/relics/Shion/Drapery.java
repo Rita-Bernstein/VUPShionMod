@@ -49,7 +49,7 @@ public class Drapery extends AbstractShionRelic implements ClickableRelic {
     @Override
     public void atBattleStart() {
         flash();
-        addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 2, true, true));
+        addToBot(new MakeTempCardInDrawPileAction(new Dazed(), 4, true, true));
 
         this.grayscale = false;
     }

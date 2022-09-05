@@ -11,6 +11,9 @@ import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.potions.FruitJuice;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Mango;
+import com.megacrit.cardcrawl.relics.Pear;
+import com.megacrit.cardcrawl.relics.Strawberry;
 import com.megacrit.cardcrawl.ui.buttons.LargeDialogOptionButton;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
@@ -21,9 +24,8 @@ public class FruitStall extends AbstractImageEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private CurrentScreen curScreen = CurrentScreen.INTRO;
-    private OptionChosen option = OptionChosen.NONE;
-    private FruitChosen selectedFruit = FruitChosen.NONE;
+    private int screenCount = 0;
+
     private boolean[] Fruit = new boolean[]{false, false, false, false};
 
     private int StrawberryGold = 72;
@@ -34,18 +36,6 @@ public class FruitStall extends AbstractImageEvent {
 
     private AbstractRelic cake = new FruitCake();
 
-
-    private enum CurrentScreen {
-        INTRO, DONE,
-    }
-
-    private enum OptionChosen {
-        STEAL, BUY, SELL, NONE, INTRO, DONE
-    }
-
-    private enum FruitChosen {
-        PEAR, MANGO, Strawberry, NONE, INTRO,
-    }
 
     public FruitStall() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/FruitStall.png"));
@@ -61,241 +51,160 @@ public class FruitStall extends AbstractImageEvent {
         }
         this.imageEventText.setDialogOption(OPTIONS[0]);
         this.imageEventText.setDialogOption(OPTIONS[1]);
-
     }
 
-    void getPlayerFruit() {
+    private void getPlayerFruit() {
+        Fruit[0] = AbstractDungeon.player.hasRelic("Pear");
+        Fruit[1] = AbstractDungeon.player.hasRelic("Mango");
+        Fruit[2] = AbstractDungeon.player.hasRelic("Strawberry");
 
-        if (AbstractDungeon.player.hasRelic("Pear")) {
-            Fruit[0] = true;
-        }
-        if (AbstractDungeon.player.hasRelic("Mango")) {
-            Fruit[1] = true;
-        }
-        if (AbstractDungeon.player.hasRelic("Strawberry")) {
-            Fruit[2] = true;
-        }
-
-        if (Fruit[0] || Fruit[1] || Fruit[2]) {
-            Fruit[3] = true;
-        }
-
+        Fruit[3] = Fruit[0] || Fruit[1] || Fruit[2];
     }
-
-    public boolean hasFruit(){
-        boolean fruit = false;
-        if (AbstractDungeon.player.hasRelic("Pear")) {
-            fruit = true;
-        }
-        if (AbstractDungeon.player.hasRelic("Mango")) {
-            fruit = true;
-        }
-        if (AbstractDungeon.player.hasRelic("Strawberry")) {
-            fruit = true;
-        }
-       return fruit;
-    }
-
 
     public void onEnterRoom() {
 
     }
 
+    private void refreshMainScreen() {
+        imageEventText.updateBodyText(DESCRIPTIONS[2]);
+        imageEventText.clearRemainingOptions();
+        imageEventText.optionList.set(0, new LargeDialogOptionButton(0, OPTIONS[3], cake));
+
+        if (AbstractDungeon.player.gold >= this.goldLoss) {
+            imageEventText.updateDialogOption(1, String.format(OPTIONS[4], this.goldLoss));
+        } else {
+            imageEventText.updateDialogOption(1, String.format(OPTIONS[5], this.goldLoss), true);
+        }
+
+        if (Fruit[3]) {
+            imageEventText.updateDialogOption(2, OPTIONS[6]);
+        } else {
+            imageEventText.updateDialogOption(2, OPTIONS[7], true);
+        }
+
+        imageEventText.updateDialogOption(3, OPTIONS[8]);
+        this.screenCount = 20;
+    }
+
     @Override
     protected void buttonEffect(int buttonPressed) {
-        switch (selectedFruit) {
-            case NONE:
-                switch (option) {
-                    case NONE:
-                        switch (curScreen) {
-                            case INTRO:
-                                switch (buttonPressed) {
-                                    case 0:
-                                        imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                                        imageEventText.clearRemainingOptions();
-                                        imageEventText.optionList.set(0,new LargeDialogOptionButton(0,OPTIONS[2],cake));
-                                        imageEventText.updateDialogOption(0, OPTIONS[2]);
-
-                                        if (AbstractDungeon.player.gold >= this.goldLoss) {
-                                            imageEventText.updateDialogOption(1, String.format(OPTIONS[3], this.goldLoss));
-                                        } else {
-                                            imageEventText.updateDialogOption(1, String.format(OPTIONS[4], this.goldLoss), true);
-                                        }
-
-                                        if (Fruit[3]) {
-                                            imageEventText.updateDialogOption(2, OPTIONS[5]);
-                                        } else {
-                                            imageEventText.updateDialogOption(2, OPTIONS[9], true);
-                                        }
-
-                                        imageEventText.updateDialogOption(3, OPTIONS[10]);
-
-                                        option = OptionChosen.INTRO;
-                                        break;
-                                    case 1:
-                                        imageEventText.updateBodyText(DESCRIPTIONS[7]);
-                                        imageEventText.updateDialogOption(0, OPTIONS[10]);
-                                        imageEventText.clearRemainingOptions();
-                                        option = OptionChosen.NONE;
-                                        logMetricIgnored(ID);
-                                        curScreen = CurrentScreen.DONE;
-                                        break;
-                                }
-                                break;
-
-                            case DONE:
-                                this.imageEventText.setDialogOption(OPTIONS[10]);
-                                imageEventText.clearRemainingOptions();
-                                openMap();
-                                break;
-                        }
+        switch (this.screenCount) {
+            case 0:
+                switch (buttonPressed) {
+                    case 0:
+                        imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        imageEventText.clearRemainingOptions();
+                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        this.screenCount = 10;
                         break;
-
-                    case INTRO:
-                        switch (buttonPressed) {
-                            case 0:
-                                option = OptionChosen.STEAL;
-                                imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                                imageEventText.clearRemainingOptions();
-                                imageEventText.updateDialogOption(0, OPTIONS[12]);
-                                imageEventText.updateDialogOption(1, OPTIONS[13], true);
-                                imageEventText.updateDialogOption(2, OPTIONS[14], true);
-                                this.imageEventText.loadImage("VUPShionMod/img/events/FruitStall2.png");
-
-                                if(!AbstractDungeon.player.hasRelic(FruitCake.ID))
-                                    AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, cake);
-                                break;
-
-                            case 1:
-                                option = OptionChosen.BUY;
-                                imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                                imageEventText.clearRemainingOptions();
-                                AbstractDungeon.player.loseGold(this.goldLoss);
-                                AbstractDungeon.player.increaseMaxHp(10, true);
-                                imageEventText.updateDialogOption(0, OPTIONS[10]);
-                                break;
-
-                            case 2:
-                                option = OptionChosen.SELL;
-                                imageEventText.updateBodyText(DESCRIPTIONS[4]);
-                                imageEventText.clearRemainingOptions();
-                                if (Fruit[0]) {
-                                    imageEventText.updateDialogOption(0, String.format(OPTIONS[6], PEARGold));
-                                } else {
-                                    imageEventText.updateDialogOption(0, OPTIONS[9], true);
-                                }
-                                if (Fruit[1]) {
-                                    imageEventText.updateDialogOption(1, String.format(OPTIONS[7], MANGOGold));
-                                } else {
-                                    imageEventText.updateDialogOption(1, OPTIONS[9], true);
-                                }
-                                if (Fruit[2]) {
-                                    imageEventText.updateDialogOption(2, String.format(OPTIONS[8], StrawberryGold));
-                                } else {
-                                    imageEventText.updateDialogOption(2, OPTIONS[9], true);
-                                }
-                                imageEventText.updateDialogOption(3, OPTIONS[11]);
-
-                                break;
-                            case 3:
-                                imageEventText.updateBodyText(DESCRIPTIONS[7]);
-                                imageEventText.updateDialogOption(0, OPTIONS[10]);
-                                imageEventText.clearRemainingOptions();
-                                option = OptionChosen.NONE;
-                                logMetricIgnored(ID);
-                                curScreen = CurrentScreen.DONE;
-                                break;
-
-                        }
-
-                        break;
-
-                    case STEAL:
-                        switch (buttonPressed){
-                            case 0:
-                            steal();
-                            break;
-                        }
-
-                        break;
-
-                    case BUY:
-                        openMap();
-                        break;
-
-                    case SELL:
-                        switch (buttonPressed) {
-                            case 0:
-                                Fruit[0] = false;
-                                if (Fruit[1] || Fruit[2]) {
-                                    Fruit[3] = true;
-                                } else {
-                                    Fruit[3] = false;
-                                }
-                                AbstractDungeon.player.loseRelic("Pear");
-                                imageEventText.updateBodyText(DESCRIPTIONS[6]);
-                                AbstractDungeon.effectList.add(new RainingGoldEffect(this.PEARGold));
-                                AbstractDungeon.player.gainGold(this.PEARGold);
-                                imageEventText.updateDialogOption(0, OPTIONS[9], true);
-
-
-                                break;
-                            case 1:
-                                Fruit[1] = false;
-                                if (Fruit[0] || Fruit[2]) {
-                                    Fruit[3] = true;
-                                } else {
-                                    Fruit[3] = false;
-                                }
-                                AbstractDungeon.player.loseRelic("Mango");
-                                imageEventText.updateBodyText(DESCRIPTIONS[6]);
-                                AbstractDungeon.effectList.add(new RainingGoldEffect(this.MANGOGold));
-                                AbstractDungeon.player.gainGold(this.MANGOGold);
-                                imageEventText.updateDialogOption(1, OPTIONS[9], true);
-                                break;
-                            case 2:
-                                Fruit[2] = false;
-                                if (Fruit[0] || Fruit[1]) {
-                                    Fruit[3] = true;
-                                } else {
-                                    Fruit[3] = false;
-                                }
-                                imageEventText.updateBodyText(DESCRIPTIONS[5]);
-                                AbstractDungeon.player.loseRelic("Strawberry");
-                                AbstractDungeon.effectList.add(new RainingGoldEffect(this.StrawberryGold));
-                                AbstractDungeon.player.gainGold(this.StrawberryGold);
-                                imageEventText.updateDialogOption(2, OPTIONS[9], true);
-                                break;
-                            case 3:
-                                imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                                imageEventText.optionList.set(0,new LargeDialogOptionButton(0,OPTIONS[2],cake));
-//                                imageEventText.updateDialogOption(0, OPTIONS[2]);
-
-                                if (AbstractDungeon.player.gold >= this.goldLoss) {
-                                    imageEventText.updateDialogOption(1, String.format(OPTIONS[3], goldLoss));
-                                } else {
-                                    imageEventText.updateDialogOption(1, String.format(OPTIONS[4], goldLoss), true);
-                                }
-
-                                if (Fruit[3]) {
-                                    imageEventText.updateDialogOption(2, OPTIONS[5]);
-                                } else {
-                                    imageEventText.updateDialogOption(2, OPTIONS[9], true);
-                                }
-                                imageEventText.updateDialogOption(3, OPTIONS[10]);
-                                option = OptionChosen.INTRO;
-
-                                break;
-
-
-                        }
-                        break;
-
-                    case DONE:
+                    case 1:
+                        imageEventText.updateBodyText(DESCRIPTIONS[8]);
+                        imageEventText.clearRemainingOptions();
+                        imageEventText.updateDialogOption(0, OPTIONS[8]);
                         logMetricIgnored(ID);
-                        openMap();
+                        this.screenCount = 40;
                         break;
                 }
+                break;
+
+            case 10:
+                refreshMainScreen();
+                break;
+            case 20:
+                switch (buttonPressed) {
+                    case 0:
+                        imageEventText.updateBodyText(DESCRIPTIONS[3]);
+                        imageEventText.clearRemainingOptions();
+                        imageEventText.updateDialogOption(0, OPTIONS[11]);
+                        imageEventText.updateDialogOption(1, OPTIONS[12], true);
+                        imageEventText.updateDialogOption(2, OPTIONS[13], true);
+                        this.imageEventText.loadImage("VUPShionMod/img/events/FruitStall2.png");
+
+                        this.screenCount = 30;
+                        if (!AbstractDungeon.player.hasRelic(FruitCake.ID))
+                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, cake);
+                        break;
+                    case 1:
+                        imageEventText.updateBodyText(DESCRIPTIONS[4]);
+                        imageEventText.clearRemainingOptions();
+                        AbstractDungeon.player.loseGold(this.goldLoss);
+                        AbstractDungeon.player.increaseMaxHp(10, true);
+                        imageEventText.updateDialogOption(0, OPTIONS[8]);
+                        this.screenCount = 40;
+                        break;
+                    case 2:
+                        imageEventText.updateBodyText(DESCRIPTIONS[5]);
+                        imageEventText.clearRemainingOptions();
+                        if (Fruit[0]) {
+                            imageEventText.updateDialogOption(0, String.format(OPTIONS[9], CardCrawlGame.languagePack.getRelicStrings(Pear.ID).NAME, PEARGold));
+                        } else {
+                            imageEventText.updateDialogOption(0, OPTIONS[7], true);
+                        }
+                        if (Fruit[1]) {
+                            imageEventText.updateDialogOption(0, String.format(OPTIONS[9], CardCrawlGame.languagePack.getRelicStrings(Mango.ID).NAME, MANGOGold));
+                        } else {
+                            imageEventText.updateDialogOption(1, OPTIONS[7], true);
+                        }
+                        if (Fruit[2]) {
+                            imageEventText.updateDialogOption(0, String.format(OPTIONS[9], CardCrawlGame.languagePack.getRelicStrings(Strawberry.ID).NAME, StrawberryGold));
+                        } else {
+                            imageEventText.updateDialogOption(2, OPTIONS[7], true);
+                        }
+                        imageEventText.updateDialogOption(3, OPTIONS[10]);
+                        this.screenCount = 50;
+                        break;
+                    case 3:
+                        imageEventText.updateBodyText(DESCRIPTIONS[9]);
+                        imageEventText.clearRemainingOptions();
+                        imageEventText.updateDialogOption(0, OPTIONS[8]);
+                        this.screenCount = 40;
+                        break;
+                }
+                break;
+            case 30:
+                switch (buttonPressed) {
+                    case 0:
+                        steal();
+                        break;
+                }
+                break;
+
+            case 40:
+                openMap();
+                break;
+            case 50:
+                switch (buttonPressed) {
+                    case 0:
+                        AbstractDungeon.player.loseRelic(Pear.ID);
+                        getPlayerFruit();
+                        imageEventText.updateBodyText(DESCRIPTIONS[7]);
+                        AbstractDungeon.effectList.add(new RainingGoldEffect(this.PEARGold));
+                        AbstractDungeon.player.gainGold(this.PEARGold);
+                        imageEventText.updateDialogOption(0, OPTIONS[7], true);
+                        break;
+                    case 1:
+                        AbstractDungeon.player.loseRelic(Mango.ID);
+                        getPlayerFruit();
+                        imageEventText.updateBodyText(DESCRIPTIONS[7]);
+                        AbstractDungeon.effectList.add(new RainingGoldEffect(this.MANGOGold));
+                        AbstractDungeon.player.gainGold(this.MANGOGold);
+                        imageEventText.updateDialogOption(1, OPTIONS[7], true);
+                        break;
+                    case 2:
+                        AbstractDungeon.player.loseRelic(Strawberry.ID);
+                        getPlayerFruit();
+                        imageEventText.updateBodyText(DESCRIPTIONS[6]);
+                        AbstractDungeon.effectList.add(new RainingGoldEffect(this.StrawberryGold));
+                        AbstractDungeon.player.gainGold(this.StrawberryGold);
+                        imageEventText.updateDialogOption(2, OPTIONS[7], true);
+                        break;
+                    case 3:
+                        refreshMainScreen();
+                        break;
+
+
+                }
+                break;
 
 
         }

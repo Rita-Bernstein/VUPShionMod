@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.ui.WingShield;
@@ -19,11 +20,11 @@ public class Avalon extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public Avalon() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.secondaryM = this.baseSecondaryM = 4;
+        this.secondaryM = this.baseSecondaryM = 7;
         this.baseBlock = 12;
         this.magicNumber = this.baseMagicNumber = 3;
     }
@@ -32,7 +33,7 @@ public class Avalon extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new GainShieldAction(p, 7));
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber)));
         addToBot(new HealAction(p, p, p.maxHealth));
     }
@@ -53,7 +54,7 @@ public class Avalon extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(2);
+            upgradeBaseCost(1);
             upgradeSecondM(-1);
         }
     }

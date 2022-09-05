@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 public class RipsoulShrilling extends AbstractLiyezhuCard {
@@ -41,7 +42,7 @@ public class RipsoulShrilling extends AbstractLiyezhuCard {
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new ApplyPowerAction(m, p, new LoseStrengthPower(m, this.magicNumber)));
+        addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber)));
     }
 
     @Override

@@ -20,13 +20,13 @@
   "VUPShionMod:SpiralBladeStance": {
     "NAME": "螺旋刃",
     "DESCRIPTION": [
-      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 打出 #y攻擊牌 時，對所有敵人造成 #b1 點傷害並給予 #b4 層 #y流血 。"
+      "每回合失去 #b3 層 #y構裝翼盾充能 。 NL 打出 #y攻擊牌 時，對所有敵人造成 #b1 點傷害並給予 #b4 層 #y流血 。"
     ]
   },
   "VUPShionMod:ThousandsOfBladeStance": {
     "NAME": "千重刃",
     "DESCRIPTION": [
-      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 打出 #y攻擊牌 時能額外消耗 #b1 層 #y構裝翼盾充能 將這張牌打出兩次，這些牌將不會消耗 #y構裝翼盾充能 。"
+      "每回合失去 #b3 層 #y構裝翼盾充能 。 NL 打出 #y攻擊牌 時能額外消耗 #b1 層 #y構裝翼盾充能 將這張牌打出兩次，這些牌將不會消耗 #y構裝翼盾充能 。"
     ]
   },
   "VUPShionMod:LotusOfWarStance": {
@@ -38,13 +38,13 @@
   "VUPShionMod:RuinGuardianStance": {
     "NAME": "遺蹟守衛",
     "DESCRIPTION": [
-      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 進入時至多 #y消耗 戰鬥中的 #b2 張 #y技能牌 。 NL 每回合開始時打出這兩張牌的複製。"
+      "每回合失去 #b2 層 #y構裝翼盾充能 。 NL 進入時至多 #y消耗 戰鬥中的 #b2 張 #y技能牌 。 NL 每回合開始時打出這兩張牌的複製。"
     ]
   },
   "VUPShionMod:LightArmorStance": {
     "NAME": "明光鎧",
     "DESCRIPTION": [
-      "每回合失去 #b1 層 #y構裝翼盾充能 。 NL 進入時至多 #y消耗 戰鬥中的 #b2 張 #y技能牌 。 NL 每回合開始時打出這兩張牌的複製。 NL 受到的 #y攻擊 傷害減少 #b30% 。"
+      "每回合失去 #b2 層 #y構裝翼盾充能 。 NL 進入時至多 #y消耗 戰鬥中的 #b2 張 #y技能牌 。 NL 每回合開始時打出這兩張牌的複製。 NL 受到的 #y攻擊 傷害減少 #b30% 。"
     ]
   }
 }

@@ -1,8 +1,10 @@
 package VUPShionMod.ui;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainMaxHPAction;
 import VUPShionMod.actions.Common.LoseMaxHPAction;
 import VUPShionMod.relics.AbstractShionRelic;
+import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -170,6 +172,9 @@ public class SansMeter {
         if (this.amount < 0)
             this.amount = 0;
 
+        if (SaveHelper.isTrainingMod && this.amount <= 0)
+            this.amount = 1;
+
         SansMeterSave.sansMeterSaveAmount = this.amount;
     }
 
@@ -188,22 +193,10 @@ public class SansMeter {
         this.amount = SansMeterSave.sansMeterSaveAmount;
 
         if (this.amount >= this.amount_MAX)
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    AbstractDungeon.player.increaseMaxHp(10, false);
-                    isDone = true;
-                }
-            });
+            addToBot(new GainMaxHPAction(AbstractDungeon.player,10));
 
         if (this.amount < this.amount_MAX && this.amount > 50)
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    AbstractDungeon.player.increaseMaxHp(1, false);
-                    isDone = true;
-                }
-            });
+            addToBot(new GainMaxHPAction(AbstractDungeon.player,1));
 
         if (this.amount <= 50)
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 3, false)));

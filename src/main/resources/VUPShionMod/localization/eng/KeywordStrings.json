@@ -86,7 +86,7 @@
     "NAMES": [
       "parry"
     ],
-    "DESCRIPTION": "Prevents the next time you would lose HP in this turn."
+    "DESCRIPTION": "Prevents the next time you damaged in this turn."
   },
   {
     "NAMES": [
@@ -188,129 +188,153 @@
 
   {
     "NAMES": [
-      "能量回收"
+      "recycle"
     ],
-    "DESCRIPTION": "每有 #b3 层 #y能量回收 ， NL 获得 #b1 点 #y构装翼盾充能 。"
+    "DESCRIPTION": "For every #b3 #yRecycle you have, NL gain #b1 #yConstruct #yRecharge."
   },
   {
     "NAMES": [
-      "构装翼盾充能"
+      "construct\u00a0recharge"
     ],
-    "DESCRIPTION": "每层充能累计可阻挡 #b7 点伤害。 NL 每次受到伤害至多失去 #b7 层 #y充能 。"
+	"PROPER_NAME": "Construct Recharge",
+    "DESCRIPTION": "Each charge blocks #b7 damage. NL You may lose #b7 #yConstruct #yRecharge at most from one single attack."
   },
   {
     "NAMES": [
-      "超负荷"
+      "overburdened"
     ],
-    "DESCRIPTION": "下回合开始失去所有 #y构装翼盾充能 。"
+    "DESCRIPTION": "At the start of the turn, lose half of #yConstruct #yRecharge."
   },
   {
     "NAMES": [
-      "螺旋刃"
+      "helix\u00a0razor"
     ],
-    "DESCRIPTION": " #y姿态 。 NL 打出 #y攻击牌 时能额外消耗 #b1 层 #y构装翼盾充能 ，对所有敌人造成 #b6 点伤害并给予 #b4 层 #y流血 。"
+	"PROPER_NAME": "Helix Razor",
+    "DESCRIPTION": " #yStance. NL Lose #b3 #yConstruct #yRecharge each turn. NL Deal #b6 damage to ALL enemies and apply #b4 #yBleeding."
   },
   {
     "NAMES": [
-      "千重刃"
+      "myriad\u00a0slicer"
     ],
-    "DESCRIPTION": " #y姿态 。 NL 每回合获得 #b2 点 #y力量 。 NL 打出 #y攻击牌 时能额外消耗 #b1 层 #y构装翼盾充能 将这张牌打出一次。"
+	"PROPER_NAME": "Myriad Slicer",
+    "DESCRIPTION": " #yStance. NL Lose #b3 #yConstruct #yRecharge each turn. NL Whenever you play an #yAttack, you may lose #b1 additional #yConstruct #yRecharge and play the Attack for an additional time."
   },
   {
     "NAMES": [
-      "战争之莲"
+      "bloodthirsty\u00a0lotus"
     ],
-    "DESCRIPTION": " #y姿态 。 NL 每回合获得 [E] 、 #b1 点 #y力量 和 #y敏捷 。"
+	"PROPER_NAME": "Bloodthirsty Lotus",
+    "DESCRIPTION": " #yStance. NL At the start of your turn, gain [E], #b1 #yStrength and #yDexterity."
   },
   {
     "NAMES": [
-      "遗迹守卫"
+      "ruin\u00a0warden"
     ],
-    "DESCRIPTION": " #y姿态 。 NL 进入时 #y消耗 战斗中的 #b2 张 #y技能牌 。 NL 每回合开始时打出这两张牌的复制。"
+	"PROPER_NAME": "Ruin Warden",
+    "DESCRIPTION": " #yStance. NL Lose #b2 #yConstruct #yRecharge each turn. NL When you enter this #yStance, #yExhaust up to #b2 #ySkills. NL At the start of your turn, play 1 copy of each #ySkill that was then exhausted."
   },
   {
     "NAMES": [
-      "明光铠"
+      "bright\u00a0armor"
     ],
-    "DESCRIPTION": " #y姿态 。 NL 受到的 #y攻击 伤害减少 #b30% 。"
+    "DESCRIPTION": " #yStance. NL Lose #b2 #yConstruct #yRecharge each turn. NL When you enter this #yStance, #yExhaust up to #b2 #yAttacks. NL At the start of your turn, play 1 copy of each Attack that was then exhausted. NL You take #b30% less damage from enemy attacks."
   },
   {
     "NAMES": [
-      "代达罗斯之翼"
+      "wings\u00a0of\u00a0daedalus"
     ],
-    "DESCRIPTION": "每当获得 #y敏捷 时，获得双倍的 #y力量 。"
+	"PROPER_NAME": "Wings of Daedalus",
+    "DESCRIPTION": "Whenever you gain #yDexterity, gain double #yStrength."
   },
   {
     "NAMES": [
-      "林海屏障"
+      "vegetated"
     ],
-    "DESCRIPTION": "每回合开始时获得本场战斗给予 #y缠绕 总数 1/2 的 #y格挡 。 NL 给予所有敌人 #b1 层 #y缠绕 #b3 次。"
+    "DESCRIPTION": "At the start of your turn, gain Block equal to half of #yConstricted that you have applied this combat. NL Apply #b1 #yConstricted to ALL enemies for #b3 times."
   },
   {
     "NAMES": [
-      "精灵回廊"
+      "spiritual\u00a0corridor"
     ],
-    "DESCRIPTION": " #y精灵 的伤害受到玩家的 #y力量 加成。 NL #y精灵 生命为0时给予 #b1 点生命。 NL 其再次获得生命前，不再承受伤害。"
+	"PROPER_NAME": "Spiritual Corridor",
+    "DESCRIPTION": "Damage dealt by the #yElf increases as your #yStrength increases. NL Heal #b1 HP to the #yElf while its HP reaches 0. NL It no longer takes any damage while its HP remains 0."
   },
   {
     "NAMES": [
-      "世界树链接"
+      "worldtree\u00a0channel"
     ],
-    "DESCRIPTION": "每回合开始时抽满手牌。"
+	"PROPER_NAME": "Worldtree Channel",
+    "DESCRIPTION": "At the start of your turn, draw cards until your hand is full. NL Increase your hand size by #b1."
   },
   {
     "NAMES": [
-      "下位精灵"
+      "lesser\u00a0elf"
     ],
-    "DESCRIPTION": " #y爪牙 NL #r生命：12 NL 每回合对随机敌人造成 #b5 点伤害。 NL 每回合给予你 #b1 层 #y能量回收 。"
+	"PROPER_NAME": "Lesser Elf",
+    "DESCRIPTION": " #yMinion. NL #rHP:12. NL Each turn, it deals #b5 damage to a random enemy and grant you #b1 #yRecycle."
   },
   {
     "NAMES": [
-      "上位精灵"
+      "high\u00a0elf"
     ],
-    "DESCRIPTION": " #y爪牙 NL 每回合对随机敌人造成 #b15 点伤害。 NL 每回合给予你 #b2 层 #y能量回收 。"
+	"PROPER_NAME": "High Elf",
+    "DESCRIPTION": " #yMinion. NL Each turn, it deals #b15 damage to a random enemy and grants you #b2 #yRecycle."
   },
   {
     "NAMES": [
-      "精灵骑士"
+      "elf\u00a0knight"
     ],
-    "DESCRIPTION": " #y爪牙 NL 每回合对所有敌人造成 #b20 点伤害。 NL 每回合给予你 #b2 层 #y能量回收 。"
+	"PROPER_NAME": "Elf Knight",
+    "DESCRIPTION": " #yMinion. NL Each turn, it deals #b20 damage to a random enemy and grants you #b2 #yRecycle."
   },
   {
     "NAMES": [
-      "亘古回响"
+      "Echo"
     ],
-    "DESCRIPTION": "每当失去能量时，获得 #b1 层 #y能量回收 。"
+    "DESCRIPTION": "Whenever you lose Energy, gain #b1 #yRecycle."
   },
   {
     "NAMES": [
-      "时流驱动"
+      "actuated"
     ],
-    "DESCRIPTION": "在若干个回合内不会失去 #y构装翼盾充能 。"
+    "DESCRIPTION": "In a few turns, you do not lose any #yConstruct #yRecharge."
   },
   {
     "NAMES": [
-      "缠绕"
+      "Constricted"
     ],
-    "DESCRIPTION": "拥有 #y缠绕 的生物在其回合结束时受到 #y缠绕 层数的伤害。"
+    "DESCRIPTION": "Creatures with #yConstricted take damage that much at the end of turn."
   },
   {
     "NAMES": [
-      "重力增幅"
+      "gravity\u00a0amplifier"
     ],
-    "DESCRIPTION": "每当失去 #b3 层 #y构装翼盾充能 时，获得 #b1 点 #y力量 。"
+	"PROPER_NAME": "Gravity Amplifier",
+    "DESCRIPTION": "For every #b5 #yConstruct #yRecharge you gain, gain #b1 #yStrength and #yDexterity."
   },
   {
     "NAMES": [
-      "同调召唤"
+      "synchrochannel"
     ],
-    "DESCRIPTION": " #y精灵 生命不为0时，你每回合获得 #b4 点 #y力量 。"
+    "DESCRIPTION": "While the #yElf's HP is above 0, you gain #b4 #yStrength at the start of your turn."
   },
   {
     "NAMES": [
-      "铁壁"
+      "rampart"
     ],
-    "DESCRIPTION": "本回合受到的攻击伤害降低30%，不可叠加。"
+    "DESCRIPTION": "Damage taken from enemy attacks is decreased by 50%. This effect does not become more effective if applied more than once."
+  },
+  {
+    "NAMES": [
+      "replacing"
+    ],
+    "DESCRIPTION": "Return it to your hand form discard pile if possible."
+  },
+  {
+    "NAMES": [
+      "Troy"
+    ],
+    "DESCRIPTION": "每当你失去或获得 #y构装翼盾充能 时，获得 #b5 倍的 #y护盾 。。"
   }
 ]
 

@@ -2,6 +2,7 @@ package VUPShionMod.actions.EisluRen;
 
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.cards.EisluRen.GaiaBreath;
 import VUPShionMod.stances.RuinGuardianStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -30,6 +31,8 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
     }
 
 
+
+
     private void exhaustCard(AbstractCard card) {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.uuid.equals(card.uuid)) {
@@ -53,6 +56,10 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
         }
     }
 
+    private boolean canAddCard(AbstractCard c){
+        return c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID)&& !c.cardID.equals(GaiaBreath.ID);
+    }
+
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             RuinGuardianStance.cardsToPlay.clear();
@@ -60,17 +67,17 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID))
+                if (canAddCard(c))
                     temp.addToTop(c.makeSameInstanceOf());
             }
 
             for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                if (c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID))
+                if (canAddCard(c))
                     temp.addToTop(c.makeSameInstanceOf());
             }
 
             for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-                if (c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID))
+                if (canAddCard(c))
                     temp.addToTop(c.makeSameInstanceOf());
             }
 

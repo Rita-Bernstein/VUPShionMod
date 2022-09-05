@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.powers.EisluRen.ReduceDamagePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -18,13 +19,15 @@ public class Station extends AbstractEisluRenCard {
 
     public Station() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 2;
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new ReduceDamagePower(p,10)));
+        addToBot(new ApplyPowerAction(p, p, new ReduceDamagePower(p, 10)));
+        addToBot(new GainShieldAction(p, this.secondaryM));
         addToBot(new AddWingShieldDamageReduceAction(this.magicNumber));
     }
 

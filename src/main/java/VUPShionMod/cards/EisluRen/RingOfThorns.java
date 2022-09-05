@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
@@ -38,6 +39,9 @@ public class RingOfThorns extends AbstractEisluRenCard {
         Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, 1, false);
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
+
+        Supplier<AbstractPower> powerToApply2 = () -> new ConstrictedPower(null, p, this.magicNumber);
+        addToBot(new ApplyPowerToAllEnemyAction(powerToApply2));
     }
 
     @Override

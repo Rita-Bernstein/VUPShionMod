@@ -18,12 +18,12 @@ public class HurricaneVortex extends AbstractEisluRenCard {
 
     public HurricaneVortex() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new HurricaneVortexPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new HurricaneVortexPower(p, 1)));
     }
 
     @Override

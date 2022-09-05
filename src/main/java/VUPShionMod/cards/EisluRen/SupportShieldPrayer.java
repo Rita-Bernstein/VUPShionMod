@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceCombatAction;
 import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -11,7 +12,7 @@ public class SupportShieldPrayer extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SupportShieldPrayer.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/SupportShieldPrayer.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -26,7 +27,7 @@ public class SupportShieldPrayer extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new GainShieldAction(p, 7));
         addToBot(new GainRefundChargeAction(this.magicNumber));
         addToBot(new AddWingShieldDamageReduceCombatAction(this.secondaryM));
     }

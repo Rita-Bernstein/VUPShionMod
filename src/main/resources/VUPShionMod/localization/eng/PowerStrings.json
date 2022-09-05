@@ -9,7 +9,8 @@
     "NAME": "Pursued",
     "DESCRIPTIONS": [
       "At the start of the target's turn, #yPursuing #yFunnel deals #b",
-      " damage."
+      " damage.",
+	   "At the end of your turn,take damage form #yPursuing #yFunnel ,deals #b"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -48,14 +49,13 @@
     "NAME": "Defense Unfold",
     "DESCRIPTIONS": [
       "This turn, gain #b",
-      " #yBlock whenever you play a card."
+      " #yShield whenever you play a card."
     ]
   },
     "VUPShionMod:DeploymentOfDefenseSystemPower2": {
     "NAME": "Defense Unfold",
     "DESCRIPTIONS": [
       "This turn, gain #b",
-      " #yBlock whenever you play a card.",
 	  " #yHyperdimensionalLink"
     ]
   },
@@ -606,7 +606,7 @@
   "VUPShionMod:HallowedCasketPower": {
     "NAME": "Hallowed Casket",
     "DESCRIPTIONS": [
-      "At the end of your turn, add #b%d #yMiracle into your hand and gain #b%d #yPsychic."
+      "At the end of your turn, add #b%d #yMiracle into your draw pile and gain #b%d #yPsychic."
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower": {
@@ -657,6 +657,12 @@
       "Whenever you trigger #yPunitive, apply #b%d #ySinful to ALL ENTITIES."
     ]
   },
+    "VUPShionMod:Arbitration3Power": {
+    "NAME": "Arbitratus Omnes-Heal",
+    "DESCRIPTIONS": [
+      "Whenever you trigger #yPunitive,heal #b%d HP."
+    ]
+  },
   "VUPShionMod:ProphecyOfDestructionPower": {
     "NAME": "Prophecy of Demise",
     "DESCRIPTIONS": [
@@ -674,6 +680,13 @@
     "DESCRIPTIONS": [
       "This turn, #yPrayer cards cost 0.",
       "In #b%d turns, #yPrayer cards cost 0."
+    ]
+  },
+    "VUPShionMod:BrokenSanctuary2Power": {
+    "NAME": "Broken Sanctuary-Draw",
+    "DESCRIPTIONS": [
+      "Whenever you played a #yPrayer card,draw #b%d card.",
+      "Whenever you played a #yPrayer card,draw #b%d cards."
     ]
   },
   "VUPShionMod:PrecastingPower": {
@@ -888,7 +901,6 @@
       "At the end of turn, it deals #b%d #ynon-Attack damage #b%d times "
     ]
   },
-
   "VUPShionMod:MatrixFinFunnelUpgradePower": {
     "NAME": "Matrix Upgrade",
     "DESCRIPTIONS": [
@@ -929,102 +941,225 @@
       "Whenever you trigger #yLoading #yComplete #b5 times,gain #b%d [E]."
     ]
   },
-
   "VUPShionMod:ReduceDamagePower": {
-    "NAME": "减伤",
+    "NAME": "Reduce Damage Taken",
     "DESCRIPTIONS": [
-      "本回合受到的攻击伤害减少 #b%d%% 。"
+      "Damage taken this turn is decreased by #b%d%%."
     ]
   },
   "VUPShionMod:AttackIncreasePower": {
-    "NAME": "攻击提升",
+    "NAME": "Increase Attack Damage",
     "DESCRIPTIONS": [
-      "下一张 #y攻击牌 造成的伤害提高 #b%d%% 。"
+      "The next #yAttack deals #b%d%% more damage."
     ]
   },
   "VUPShionMod:TurnAttackIncreasePower": {
-    "NAME": "回合攻击提升",
+    "NAME": "Fierceness",
     "DESCRIPTIONS": [
-      "本回合 #y攻击牌 造成的伤害提高 #b%d%% 。"
+      "This turn, #yAttacks deal #b%d%% more damage."
     ]
   },
   "VUPShionMod:IronWallPower": {
-    "NAME": "铁壁",
+    "NAME": "Rampart",
     "DESCRIPTIONS": [
-      "本回合受到的攻击伤害减少 #b30% 。"
+      "Damage taken this turn is decreased by #b30%."
     ]
   },
   "VUPShionMod:RoyalGuardianPower": {
-    "NAME": "皇家守卫",
+    "NAME": "Royal Watch",
     "DESCRIPTIONS": [
-      "本回合每受到 #b7 点 #y攻击 伤害获得 #b%d 层 #y能量回收 。"
+      "This turn, for every #b7 damage you take from enemy attacks, gain #b%d #yRecycle."
     ]
   },
   "VUPShionMod:ExtremeOverloadPower": {
-    "NAME": "超负荷",
+    "NAME": "Overburdened",
     "DESCRIPTIONS": [
-      "下回合开始失去一半的 #y构装翼盾充能 "
+      "At the start of the next turn, lose half of #yConstruct #yRecharge. ",
+      "At the start of the next #b%d turns, lose half of #yConstruct #yRecharge. "
     ]
   },
   "VUPShionMod:WingsOfDaedalusPower": {
-    "NAME": "代达罗斯之翼",
+    "NAME": "Wings of Daedalus",
     "DESCRIPTIONS": [
-      "每当获得 #y敏捷 时，获得 #b%d 倍的 #y力量 。"
+      "Whenever you gain #yDexterity, gain #b%d times of that much #yStrength."
     ]
   },
   "VUPShionMod:StonehengePower": {
-    "NAME": "苍穹巨石阵列",
+    "NAME": "Stonehenge",
     "DESCRIPTIONS": [
-      "每回合获得 #b%d 层 #y能量回收 。"
+      "At the start of your turn, gain #b%d #yRecycle."
     ]
   },
   "VUPShionMod:EternalEchoPower": {
-    "NAME": "亘古回响",
+    "NAME": "Echo",
     "DESCRIPTIONS": [
-      "每当失去能量时，获得 #b%d 层 #y能量回收 。"
+      "Whenever you lose Energy, gain #b%d #yRecycle."
     ]
   },
   "VUPShionMod:SupportTimeDrivenPower": {
-    "NAME": "时流驱动",
+    "NAME": "Actuated",
     "DESCRIPTIONS": [
-      "本回合内不会失去 #y构装翼盾充能 。",
-      "在 #b%d 回合内不会失去 #y构装翼盾充能 。"
+      "This turn, you do not lose #yConstruct #yRecharge.",
+      "In #b%d turns, you do not lose #yConstruct #yRecharge."
     ]
   },
   "VUPShionMod:SupportGravitaterPower": {
-    "NAME": "重力回路",
+    "NAME": "Gravity Amplifier",
     "DESCRIPTIONS": [
-      "每当失去 #b3 层 #y构装翼盾充能 时，获得 #b%d 点 #y力量 。"
+      "For every #b5 #yConstruct #yRecharge you gain, gain #b%d #yStrength and #yDexterity."
     ]
   },
   "VUPShionMod:HurricaneVortexPower": {
-    "NAME": "重力回路",
+    "NAME": "Tornado",
     "DESCRIPTIONS": [
-      "接下来的 #b%d 回合开始时对所有敌人造成 7+ #y敏捷 点伤害并给予 #y虚弱 。"
+      "At the start of next #b%d turns, deal damage equal to 7+ #yDexterity and apply 1 #yWeak to ALL enemies.",
+      "At the start of next #b%d turns, deal damage equal to #b%d #bx #b(7 #b+ #bDexterity) and apply 1 #yWeak to ALL enemies."
     ]
   },
   "VUPShionMod:ForestBarrierPower": {
-    "NAME": "林海屏障",
+    "NAME": "Vegetated",
     "DESCRIPTIONS": [
-      "每回合开始时获得本场战斗给予 #y缠绕 总数 #b%d/2 的 #y格挡 。 NL 给予所有敌人 #b%d 层 #y缠绕 #b3 次。"
+      "At the start of your turn, gain #yBlock equal to half of #yConstricted you have applied this combat. NL Apply #b%d #yConstricted to ALL enemies for #b3 times."
     ]
   },
   "VUPShionMod:WorldTreeLinkPower": {
-    "NAME": "世界树链接",
+    "NAME": "Worldtree Channel",
     "DESCRIPTIONS": [
-      "每回合开始时抽满你的手牌。"
+      "At the start of your turn, draw cards until your hand is full. NL Increase your hand size by #b1."
     ]
   },
   "VUPShionMod:SpiritCloisterPower": {
-    "NAME": "精灵回廊",
+    "NAME": "Spiritual Corridor",
     "DESCRIPTIONS": [
-      " #y精灵 的伤害受到玩家的 #y力量 加成。 NL #y精灵 生命为0时给予 #b1 点生命。 NL 且其再次获得生命前，不被选为目标。"
+      "Damage dealt by the #yElf increases as your #yStrength increases. NL Heal #b1 HP to the #yElf when its HP reaches 0. NL It can no longer be selected as the target until healed."
     ]
   },
   "VUPShionMod:SynchroSummonPower": {
-    "NAME": "同调召唤",
+    "NAME": "Synchrochannel",
     "DESCRIPTIONS": [
-      " #y精灵 生命不为0时，你每回合获得 #b%d 点 #y力量 。"
+      "At the start of your turn, gain #b%d #yStrength while the HP of the #yElf is above 0. "
+    ]
+  },
+  "VUPShionMod:BossChainPursuitPower": {
+    "NAME": "连锁追击",
+    "DESCRIPTIONS": [
+      "她的回合结束时给予你 #b%d 层 #y追击 。"
+    ]
+  },
+  "VUPShionMod:BossAttackLoaderPower": {
+    "NAME": "攻击加载",
+    "DESCRIPTIONS": [
+      "每当你洗牌时，将 #b%d 张 #y浮游追击 加入抽牌堆。",
+      "每当你洗牌时，将 #b%d 张 #y浮游追击 加入抽牌堆。"
+    ]
+  },
+  "VUPShionMod:BossAvatarSpawnPower": {
+    "NAME": "延时替身",
+    "DESCRIPTIONS": [
+      "每回合结束时 #b%d 个获得 #b5 点生命的 #y替身 。"
+    ]
+  },
+  "VUPShionMod:BossAvatarPower": {
+    "NAME": "替身",
+    "DESCRIPTIONS": [
+      "你的一名 #y替身 还剩 #b%d 点生命。 NL 还剩 #b%d 个 #y替身 。"
+    ]
+  },
+  "VUPShionMod:PotentialOutbreakPower": {
+    "NAME": "潜能爆发",
+    "DESCRIPTIONS": [
+      "再受到 #b%d 点伤害后将会结束你的回合并进行一个 #y强力 的行动。"
+    ]
+  },
+  "VUPShionMod:SystemHackPower": {
+    "NAME": "系统骇入",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合回合开始时随机打出、丢弃、消耗各一张手牌。"
+    ]
+  },
+  "VUPShionMod:MagicDisorderPower": {
+    "NAME": "魔能紊乱",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合开始受到 #b30 点伤害。"
+    ]
+  },
+  "VUPShionMod:ActionBlockadePower": {
+    "NAME": "行动封锁",
+    "DESCRIPTIONS": [
+      "本回合所有能力失效。 NL 本回合回合不能打出技能牌。"
+    ]
+  },
+  "VUPShionMod:AutoShieldPower": {
+    "NAME": "自动护盾",
+    "DESCRIPTIONS": [
+      "每回合结束时获得 #b%d 层 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:LightArmorPower": {
+    "NAME": "光明铠甲",
+    "DESCRIPTIONS": [
+      "受到的攻击伤害减少 #b%d%% 。"
+    ]
+  },
+  "VUPShionMod:CoverPower": {
+    "NAME": "掩体",
+    "DESCRIPTIONS": [
+      "当有其他队友存在时，其受到的伤害为 #b0 。"
+    ]
+  },
+  "VUPShionMod:MagicFlyingBladePower": {
+    "NAME": "魔能飞刃",
+    "DESCRIPTIONS": [
+      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。",
+      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。"
+    ]
+  },
+  "VUPShionMod:WhiteRosePower": {
+    "NAME": "支援系统：白蔷薇",
+    "DESCRIPTIONS": [
+      "受到 #y攻击伤害 时，获得 #b%d 层 #y多层护甲 。 NL 每回合开始时获得 #b%d 层 #y见切 。"
+    ]
+  },
+  "VUPShionMod:CrimsonDelugeBossPower": {
+    "NAME": "浸染之血",
+    "DESCRIPTIONS": [
+      "超出生命上限的 #g回复 将获得 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:FinalPrayerPower": {
+    "NAME": "最终祷告",
+    "DESCRIPTIONS": [
+      "抽到状态和诅咒时，抽一张牌并获得 [E] 。 NL 失去 #y格挡 时，获得 #b5 点 #y格挡 。 NL 获得 #y格挡 时，获得等量 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:StunPlayerPower": {
+    "NAME": "Stuned",
+    "DESCRIPTIONS": [
+      "You can't play Any card in this turn."
+    ]
+  },
+  "VUPShionMod:ConcordSnipePower": {
+    "NAME": "协合音·狙击",
+    "DESCRIPTIONS": [
+      "其回合开始时给予你 #b%d 层 #y锁定 。"
+    ]
+  },
+  "VUPShionMod:HallowedCasketPower2": {
+    "NAME": "Hallowed Case - Miracle",
+    "DESCRIPTIONS": [
+      "Whenever you Exhaust #yMiracle ,draw #b2 cards and gain #b1 Sanity."
+    ]
+  },
+  "VUPShionMod:YonggukCityTroyPower": {
+    "NAME": "永固城邦",
+    "DESCRIPTIONS": [
+      "每当你失去或获得 #y构装翼盾充能 时，获得 #b5 倍的 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:HotRestartPower": {
+    "NAME": "热重启",
+    "DESCRIPTIONS": [
+      "本回合每层 #y构装翼盾充能 可减少的伤害不会降低。"
     ]
   }
 }

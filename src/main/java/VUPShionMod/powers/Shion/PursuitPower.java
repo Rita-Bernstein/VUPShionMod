@@ -50,7 +50,7 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
 
     @Override
     public void updateDescription() {
-        if (this.owner.isPlayer)
+        if (this.owner != null && this.owner.isPlayer)
             this.description = DESCRIPTIONS[2] + this.amount + DESCRIPTIONS[1];
         else
             this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];

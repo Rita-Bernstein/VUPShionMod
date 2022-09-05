@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
+import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +15,7 @@ public class SacredAdvice extends AbstractShionLiyezhuCard {
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/liyezhu/lyz02.png");
     private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public SacredAdvice() {
@@ -24,7 +25,8 @@ public class SacredAdvice extends AbstractShionLiyezhuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHyperdimensionalLinksAction(this.magicNumber));
-        addToBot(new GainEnergyAction(this.upgraded ? 4 : 3));
+        addToBot(new GainEnergyAction(this.upgraded ? 3 : 2));
+        addToBot(new BetterDrawPileToHandAction(1));
 
     }
 

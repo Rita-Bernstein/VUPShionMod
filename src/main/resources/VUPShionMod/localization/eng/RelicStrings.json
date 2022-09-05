@@ -128,14 +128,14 @@
     "NAME": "Martyr Vessel",
     "FLAVOR": "The weapon weighs heavily with things which commons can not afford to bear, but yet beaconed a trail throughout the maid's life.",
     "DESCRIPTIONS": [
-      "At the start of combat,Enter #yPraying #yStance ."
+      "At the start of combat,Enter #yPraying #yStance . NL At the start of combat,add #b2 #yMiracle to your discard pile."
     ]
   },
   "VUPShionMod:HallowedCase": {
     "NAME": "Hallowed Case",
     "FLAVOR": "Blaze. Blaze. Blaze is shed in confronting greater misery.",
     "DESCRIPTIONS": [
-      "#rReplace Martyr Vessel. NL #yPraying #yStance: At the end of your turn, heal #b2 HP and gain #b2 #yWeak. NL Upon entering #yJudging #yStance, remove #yWeak and gain #b1 #yCommune at the start of every turn."
+      "#rReplace Martyr Vessel. NL At the start of combat,Enter #yPraying #yStance . NL At the start of combat,add #b2 #yMiracle to your discard pile. NL Gain #b1 #yPsychic at the end of your turn."
     ]
   },
   "VUPShionMod:TheRipple": {
@@ -149,14 +149,14 @@
     "NAME": "Support System: Placid Aqua",
     "FLAVOR": "Incidence of risks is now mostly averted for the local data gathered.",
     "DESCRIPTIONS": [
-      "#rReplace Support System: The Ripple. NL Start each combat with #b3 #yDexterity. NL At the start of your turn, gain #yFrail."
+      "#rReplace Support System: The Ripple. NL Start each combat with #b3 #yDexterity."
     ]
   },
   "VUPShionMod:Drapery": {
     "NAME": "Overloaded Supernova",
     "FLAVOR": "Experimental overload protector that can overload all equipments for a short period of time, somehow fabricated in a shape of swimming costume.（Incidence of risks occur due to excessive energy draining.）",
     "DESCRIPTIONS": [
-      "At the start of each combat, shuffle #b2 #yDazed into draw pile. At the start of each turn ,gain 1 #yFrail. Right Click: #bSupernova #bOutburst. (once per combat)",
+      "At the start of each combat, shuffle #b4 #yDazed into draw pile. At the start of each turn ,gain 1 #yFrail. Right Click: #bSupernova #bOutburst. (once per combat)",
       "Supernova",
       " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b1 time. NL Enhance random #b2 #yFunnels. NL End your turn."
     ]
@@ -174,7 +174,7 @@
     "NAME": "Abyssal Crux",
     "FLAVOR": "It is not her standing in front of her, not any longer.",
     "DESCRIPTIONS": [
-      "You can no longer #yrest at rest sites. NL Whenever you lose HP during combat, heal HP twice as much.",
+      "You can no longer #yrest at rest sites. NL Whenever you lose HP during combat, heal HP 30% as much.",
       "Reversed Crux of Abyss",
       "She is the container that Abyss loves most among all others, even willing to keep her sane. NL ...But the price is paid with the permanent suffering upon everything she cherishes.",
       "Any damage received is converted into HP loss. NL At the end of your turn, lose #b500 HP and Max HP. NL Whenever you lose HP, deal equal damage to ALL enemies."
@@ -201,7 +201,9 @@
       "At the end of each combat, gain #b5 Max HP. NL Upon entering Stage 3, it is converted into #yHalo #yof #yFaith.",
       "Halo of Faith",
       "Spirits sing, dreams realize. NL Cut the line, it is time.",
-      "At the end of your turn, heal HP to your Max HP. NL Whenever you heal HP, deal equal damage to ALL enemies. NL Whenever you receive damage from enemy attacks, gain #b3 Max HP."
+       "每场战斗开始时获得 #y最终祷告 。 每回合结束回复当前损失的生命值。 NL 回复生命时，对所有敌人造成等量的伤害。 NL 受到攻击伤害时，获得 #b3 点最大生命。",
+      "最终祷告",
+      "抽到状态和诅咒时，抽一张牌并获得 [E] 。 NL 失去 #y格挡 时，获得 #b5 点 #y格挡 。 NL 获得 #y格挡 时，获得等量 #y护盾 。"
     ]
   },
   "VUPShionMod:WaveSlasher": {
@@ -215,7 +217,7 @@
     "NAME": "Wave Breaker",
     "FLAVOR": "Subspace stabilizer is implanted to add stability.",
     "DESCRIPTIONS": [
-      "Whenever you play a #ySkill, lose #b2 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b15% #yCor #yGladii each turn."
+      "At the start of your turn, gain [E] . NL Whenever you play a #ySkill, lose #b2 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b33% #yCor #yGladii each turn."
     ]
   },
   "VUPShionMod:WhiteRose": {
@@ -272,10 +274,9 @@
     "NAME": "Fruit Cake",
     "FLAVOR": "The stall... What on earth is wrong with it?",
     "DESCRIPTIONS": [
-      "At the start of your turn,if your HP is at or above 50%, gain [E] . NL Otherwise,no longer works in this combat."
+      "Upon pickup,heal all of your HP. NL At the start of your turn,if your HP is at or above 50%, gain [E] . NL Otherwise,no longer works in this combat."
     ]
   },
-
   "VUPShionMod:PrototypeCup": {
     "NAME": "Prototype: Empty Goblet",
     "FLAVOR": "Semi-permanent energy source that linked to your inner Magia circuit. It damages acting faculty in exchange of enormous output of Magia.",
@@ -304,7 +305,6 @@
       "#rReplace Magia Sword: Danyingke. NL You no longer gain #yStiffness. NL Whenever you play an #yAttack, gain 1 #yMagiam #yObruor and play it for 1 additional time. NL Lose half of your #yCor #yGladii each turn."
     ]
   },
-
   "VUPShionMod:TrainingScabbard": {
     "NAME": "Training Scabbard",
     "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
@@ -313,7 +313,7 @@
     ]
   },
   "VUPShionMod:TrainingLightsaber": {
-    "NAME": "Trainging Saber",
+    "NAME": "Training Saber",
     "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
       "Start each combat with #b%s #Strength. After any #yElite or #yBoss fight, increase the effect by #b1."
@@ -460,38 +460,40 @@
     "NAME": "Shield HR Type: ZY-1",
     "FLAVOR": "In order to compensate for the fragile defense of the elves, equipped with a shape-shifting energy shield.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%."
+      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Gain #b1 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge."
     ]
   },
   "VUPShionMod:ShieldHRzy2": {
     "NAME": "Shield HR Type: ZY-2",
     "FLAVOR": "Based on the Shield HR Type: ZY-1,the kinetic energy recovery device has been added. Increased range.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycling."
+      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Gain #b2 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycle."
     ]
   },
   "VUPShionMod:ElfCore": {
-    "NAME": "精灵芯核",
-    "FLAVOR": "精灵族的力量核心，盖亚意志的延伸。",
+    "NAME": "Spiritual Nucleus",
+    "FLAVOR": "It is the source of Elven power, the extension of Gaea's will.",
     "DESCRIPTIONS": [
-      "获得 #y通典：木 时，将其 #y升级 。 NL 使用 #y世界树叶片 时，本场战斗获得 #b9 点 #y力量 。"
+      "Whenever you obtain #yCodex #yLigni, upgrade it. NL When you use #yWorldtree #yLeaf, gain #b9 #yStrength."
     ]
   },
   "VUPShionMod:Warlike": {
-    "NAME": "战意盎然",
-    "FLAVOR": "最终项目，全力以赴。",
+    "NAME": "Warpath",
+    "FLAVOR": "Let's go all out for this end of all.",
     "DESCRIPTIONS": [
-      "获得 #y力量 时，额外获得 #b1 点 #y力量 。 NL 获得 #y敏捷 时，额外获得 #b1 点 #y敏捷 。"
+      "Whenever you gain #yStrength, gain #b1 additional #yStrength. NL Whenever you gain #yDexterity, gain #b1 additional #yDexterity."
     ]
   },
   "VUPShionMod:WhiteSeal": {
-    "NAME": "啸海豹",
-    "FLAVOR": "翻车被抓的小海豹，拍打它的肚皮就会发出些奇怪的语音。",
+    "NAME": "Squeal",
+    "FLAVOR": "A very talkative seal you rescued from the nets. It takes a pat on its belly to stop its constant twittering.",
     "DESCRIPTIONS": [
-      "每场战斗可以右键一次触发特效： #b问心无愧 。",
-      "问心无愧",
-      "抽 #b1 张牌。 NL 获得 [E] 。 NL 回复 #b5 点生命。 NL 获得 #b1 层 #y虚弱 。",
-      "问心无愧！"
+      "Once per combat, you may right-click this relic to active #bClear #bConscience.",
+      "Clear Conscience",
+      "Draw #b1 card. NL Gain [E] . NL Heal #b5 HP. NL Gain #b1 #yWeak.",
+      "什么， #r@牛↑~马@ ",
+      "豹弊？ #r~不↑呜↓~ 可能的",
+      "来 #b~骗~ ，来， #p~偷袭~！ "
     ]
   }
 }

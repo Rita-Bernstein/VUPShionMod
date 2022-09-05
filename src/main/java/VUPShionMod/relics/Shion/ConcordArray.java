@@ -7,12 +7,17 @@ import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.powers.Codex.TwoAttackPower;
 import VUPShionMod.powers.Shion.ConcordPower;
 import VUPShionMod.relics.AbstractShionRelic;
+import VUPShionMod.ui.SynchroOption;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import com.megacrit.cardcrawl.ui.campfire.SmithOption;
+
+import java.util.ArrayList;
 
 public class ConcordArray extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(ConcordArray.class.getSimpleName());
@@ -73,5 +78,13 @@ public class ConcordArray extends AbstractShionRelic {
         if (this.counter > 100)
             this.counter = 100;
         setDescriptionAfterLoading();
+    }
+
+    @Override
+    public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
+        options.stream()
+                .filter(option -> option instanceof SmithOption).findFirst()
+                .map(option -> options.indexOf(option))
+                .ifPresent(index -> options.set(index,new SynchroOption(this)));
     }
 }

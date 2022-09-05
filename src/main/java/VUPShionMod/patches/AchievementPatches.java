@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.screens.stats.StatsScreen;
 import java.util.ArrayList;
 
 public class AchievementPatches {
-    private static final AchievementStrings achievementStrings = CardCrawlGame.languagePack.getAchievementString(VUPShionMod.makeID("Achievement"));
+    private static final AchievementStrings achievementStrings = CardCrawlGame.languagePack.getAchievementString(VUPShionMod.makeID(AchievementPatches.class.getSimpleName()));
     public static final String[] NAMES = achievementStrings.NAMES;
     public static final String[] TEXT = achievementStrings.TEXT;
 
@@ -64,6 +64,7 @@ public class AchievementPatches {
     }
 
     public static void unlockAchievement(String key){
+        if(VUPShionMod.isTestMod)
         if(!SaveHelper.getAchievement(key)){
             SaveHelper.unlockAchievement(key);
         }

@@ -3,6 +3,7 @@ package VUPShionMod.powers.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -26,24 +27,18 @@ public class HallowedCasketPower extends AbstractShionPower {
         updateDescription();
     }
 
-    @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-        this.amount2++;
-        updateDescription();
-    }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount2, amount);
+        this.description = String.format(DESCRIPTIONS[0], amount, amount2);
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flash();
-            addToBot(new MakeTempCardInHandAction(new Miracle(), this.amount2));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PsychicPower(AbstractDungeon.player, this.amount)));
+            addToBot(new MakeTempCardInDrawPileAction(new Miracle(), this.amount,true, true, false));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PsychicPower(AbstractDungeon.player, this.amount2)));
         }
     }
 }

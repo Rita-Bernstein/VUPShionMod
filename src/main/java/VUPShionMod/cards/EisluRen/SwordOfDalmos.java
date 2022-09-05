@@ -4,13 +4,16 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.ui.WingShield;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -26,7 +29,7 @@ public class SwordOfDalmos extends AbstractEisluRenCard {
 
     public SwordOfDalmos() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 21;
+        this.baseDamage = 18;
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 2;
     }
@@ -35,7 +38,12 @@ public class SwordOfDalmos extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+
+        if (m != null)
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", m.hb.cX, m.hb.y + 700.0f * Settings.scale,
+                    50.0f, 90.0f, 8.0f * Settings.scale, 1, false)));
+
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
     }
 
 

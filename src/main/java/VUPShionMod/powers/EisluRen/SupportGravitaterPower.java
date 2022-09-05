@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class SupportGravitaterPower extends AbstractShionPower {
@@ -41,11 +42,13 @@ public class SupportGravitaterPower extends AbstractShionPower {
 
 
     @Override
-    public void onLoseShieldCharge(int amount) {
+    public void onAddShieldCharge(int amount) {
         this.amount2 += amount;
-        if (this.amount2 / 2 > 0) {
+        if (this.amount2 / 5 > 0) {
             addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount)));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.amount)));
         }
-        this.amount2 %= 2;
+        this.amount2 %= 5;
     }
+
 }

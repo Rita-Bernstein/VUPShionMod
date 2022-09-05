@@ -6,6 +6,7 @@ import VUPShionMod.relics.Event.Warlike;
 import VUPShionMod.ui.FinFunnelCharge;
 import VUPShionMod.ui.SwardCharge;
 import VUPShionMod.ui.WingShield;
+import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -119,7 +120,7 @@ public class GameStatsPatch {
             paramtypez = {AbstractCreature.class, AbstractCreature.class, AbstractPower.class, int.class, boolean.class, AbstractGameAction.AttackEffect.class}
 
     )
-    public static class PowerStackPatch {
+    public static class PowerExtraStackPatch {
         @SpireInsertPatch(rloc = 24, localvars = {"amount", "duration"})
         public static SpireReturn<Void> Insert(ApplyPowerAction _instance,
                                                AbstractCreature target,
@@ -144,6 +145,27 @@ public class GameStatsPatch {
                     amount[0] = amount[0] + 1;
                 }
 
+
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = ApplyPowerAction.class,
+            method = "update"
+    )
+    public static class PowerStackStatsPatch {
+        @SpireInsertPatch(rloc = 70)
+        public static SpireReturn<Void> Insert(ApplyPowerAction _instance) {
+            AbstractPower powerToApply = ReflectionHacks.getPrivate(_instance, ApplyPowerAction.class, "powerToApply");
+
+
+            if (_instance.target != null && _instance.source != null)
+                if (!_instance.target.isDeadOrEscaped() && _instance.source.isPlayer && _instance.target != _instance.source)
+                    if (powerToApply.ID.equals(ConstrictedPower.POWER_ID)) {
+                        constrictedApplyThisCombat += powerToApply.amount;
+                    }
 
             return SpireReturn.Continue();
         }

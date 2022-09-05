@@ -34,11 +34,6 @@ public class PlacidAqua extends AbstractShionRelic {
     }
 
     @Override
-    public void atTurnStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, 1, false)));
-    }
-
-    @Override
     public void obtain() {
         AbstractPlayer player = AbstractDungeon.player;
         player.relics.stream()

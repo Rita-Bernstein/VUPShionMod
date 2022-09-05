@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
+import java.util.function.Consumer;
+
 
 public class DiscardAnyCardAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("BetterDiscardAction"));
@@ -19,10 +21,19 @@ public class DiscardAnyCardAction extends AbstractGameAction {
 
     private boolean justStart = true;
 
+    private Consumer<Integer> consumer;
+
     public DiscardAnyCardAction(int amount) {
         this.actionType = ActionType.DISCARD;
         this.amount = amount;
         this.duration = 0.5f;
+    }
+
+    public DiscardAnyCardAction(int amount, Consumer<Integer> consumer) {
+        this.actionType = ActionType.DISCARD;
+        this.amount = amount;
+        this.duration = 0.5f;
+        this.consumer = consumer;
     }
 
 
@@ -43,7 +54,11 @@ public class DiscardAnyCardAction extends AbstractGameAction {
                     AbstractDungeon.player.hand.moveToDiscardPile(c);
                     GameActionManager.incrementDiscard(false);
                     c.triggerOnManualDiscard();
+
                 }
+
+                if (this.consumer != null)
+                    consumer.accept(AbstractDungeon.handCardSelectScreen.selectedCards.group.size());
             }
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

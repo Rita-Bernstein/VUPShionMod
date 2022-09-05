@@ -1,10 +1,6 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.actions.Shion.TurnTriggerAllFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.cards.ShionCard.anastasia.AttackOrderGamma;
-import VUPShionMod.character.Shion;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
@@ -12,8 +8,6 @@ import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.helpers.ChargeHelper;
 import VUPShionMod.powers.Monster.BossShion.SavePowerPower;
 import VUPShionMod.vfx.Common.AbstractSpineEffect;
-import basemod.ReflectionHacks;
-import basemod.patches.com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue.Save;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -32,12 +26,8 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.PlayerTurnEffect;
-import com.megacrit.cardcrawl.vfx.combat.BattleStartEffect;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
 
 @SuppressWarnings("unused")
 public class AbstractPlayerPatches {
@@ -213,12 +203,47 @@ public class AbstractPlayerPatches {
             clz = AbstractMonster.class,
             method = "damage"
     )
-    public static class MonsterAttackedBeforeBlockPatch {
+    public static class MonsterEnemyAttackedBeforeBlockPatch {
         @SpireInsertPatch(rloc = 17, localvars = {"damageAmount"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info, @ByRef int[] damageAmount) {
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p instanceof AbstractShionPower) {
-                    damageAmount[0] = ((AbstractShionPower) p).monsterAttackPreBlock(info, _instance, damageAmount[0]);
+                    damageAmount[0] = ((AbstractShionPower) p).onEnemyAttackedPreBlock(info, _instance, damageAmount[0]);
+                }
+            }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "damage"
+    )
+    public static class PlayerAttackedBeforeBlockPatch {
+        @SpireInsertPatch(rloc = 6, localvars = {"damageAmount"})
+        public static SpireReturn<Void> Insert(AbstractPlayer _instance, DamageInfo info, @ByRef int[] damageAmount) {
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof AbstractShionPower) {
+                    damageAmount[0] = ((AbstractShionPower) p).onAttackedPreBlock(info, _instance, damageAmount[0]);
+                }
+            }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractMonster.class,
+            method = "damage"
+    )
+    public static class MonsterOnAttackedBeforeBlockPatch {
+        @SpireInsertPatch(rloc = 9, localvars = {"damageAmount"})
+        public static SpireReturn<Void> Insert(AbstractMonster _instance, DamageInfo info, @ByRef int[] damageAmount) {
+            for (AbstractPower p : _instance.powers) {
+                if (p instanceof AbstractShionPower) {
+                    damageAmount[0] = ((AbstractShionPower) p).onAttackedPreBlock(info, _instance, damageAmount[0]);
                 }
             }
 

@@ -4,13 +4,14 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.minions.MinionGroup;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GaiaBreath extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(GaiaBreath.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/GaiaBreath.png");
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
@@ -18,7 +19,7 @@ public class GaiaBreath extends AbstractEisluRenCard {
 
     public GaiaBreath() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 12;
+        this.magicNumber = this.baseMagicNumber = 7;
     }
 
     @Override
@@ -26,6 +27,8 @@ public class GaiaBreath extends AbstractEisluRenCard {
         addToBot(new HealAction(p,p,this.magicNumber));
         if(MinionGroup.hasElfMinions())
         addToBot(new HealAction(MinionGroup.getElfMinion(),p,this.magicNumber));
+
+        addToBot(new RemoveDebuffsAction(p));
     }
 
     @Override

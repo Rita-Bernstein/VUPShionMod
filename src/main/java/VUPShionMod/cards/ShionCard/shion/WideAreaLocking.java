@@ -17,11 +17,12 @@ public class WideAreaLocking extends AbstractShionCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public WideAreaLocking() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.selfRetain = true;
+        this.returnToHand = true;
     }
 
     @Override
@@ -33,7 +34,7 @@ public class WideAreaLocking extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
         }
     }
 }

@@ -47,17 +47,9 @@
   },
   "VUPShionMod:RitaShop": {
     "MOVES": [
-      "惡魔之焰",
-      "殘殺",
-      "震盪波",
-      "",
       "黑暗屏障",
-      "隕石打擊",
-      "諸神之黃昏",
-      "",
-      "滅絕掃腿",
-      "烈風燕破",
-      "滅除之刃"
+      "滅族切割",
+      "烈風燕破"
     ],
     "NAME": "麗塔・伯恩斯坦",
     "DIALOG": [
@@ -73,6 +65,119 @@
       "下位精靈",
       "上位精靈",
       "精靈騎士"
+    ]
+  },
+  "VUPShionMod:AquaShionBoss": {
+    "MOVES": [
+      "系統駭入",
+      "魔能紊亂",
+      "行動封鎖",
+      "超新星爆發"
+    ],
+    "NAME": "紫音-盛夏水著",
+    "DIALOG": [
+      "正在進行弱點分析……",
+      "解析完成！",
+      "系統強制覆蓋……完成！",
+      "檢測到魔法迴路……進行干擾",
+      "行動預測完成，進行封鎖",
+      "時流加速，啟動",
+      "防禦系統，超頻",
+      "全系統，過載 "
+    ]
+  },
+  "VUPShionMod:OriLiyezhuBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "黎夜竹-祈神禮裝",
+    "DIALOG": [
+      "審判……降臨……"
+    ]
+  },
+  "VUPShionMod:OriEisluRenBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "伊詩露菍-碧月禮裝",
+    "DIALOG": [
+      "構裝飛翼，變形",
+      "構裝飛翼，最高出力等級！",
+      "掩護我"
+    ]
+  },
+  "VUPShionMod:HighElf": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "上位精靈",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:ElfKnight": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "精靈騎士",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "VUPShionMod:ChinaWangChuanBoss": {
+    "MOVES": [
+      "終章：熱寂"
+    ],
+    "NAME": "忘川川-國風禮裝",
+    "DIALOG": [
+      "無量……空處",
+      "終章……熱寂！"
+    ]
+  },
+  "VUPShionMod:PurityWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "忘川川-士官禮裝",
+    "DIALOG": [
+      "神速……霹靂一閃！"
+    ]
+  },
+  "VUPShionMod:OriWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "忘川川-血族禮服",
+    "DIALOG": [
+      "魔能迴路……啟動"
+    ]
+  },
+  "VUPShionMod:OriShionBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "紫音-強襲武裝",
+    "DIALOG": [
+      "軌道打擊鎖定……",
+      "軌道打擊開始"
+    ]
+  },
+  "VUPShionMod:AquaWangChuanBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "忘川川-盛夏水著",
+    "DIALOG": [
+      "無限……劍制！"
+    ]
+  },
+  "VUPShionMod:BlueGiantShionBoss": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "紫音-士官禮裝",
+    "DIALOG": [
+      "超維矩陣……激活！"
     ]
   }
 }

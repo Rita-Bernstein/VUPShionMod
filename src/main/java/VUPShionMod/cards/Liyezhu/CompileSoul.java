@@ -2,6 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
+import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -24,7 +25,7 @@ public class CompileSoul extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p, this.magicNumber));
+        addToBot(new BetterDiscardPileToHandAction(this.magicNumber));
 
         if (p.hasPower(PsychicPower.POWER_ID)) {
             if (this.upgraded)

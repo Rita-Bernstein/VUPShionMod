@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.stances.AbstractStance;
 
 public class ShieldHRzy1 extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(ShieldHRzy1.class.getSimpleName());
@@ -41,6 +42,11 @@ public class ShieldHRzy1 extends AbstractShionRelic {
         return super.onLoseHpLast(damageAmount);
     }
 
+    @Override
+    public void onChangeStance(AbstractStance prevStance, AbstractStance newStance) {
+        flash();
+        addToBot(new GainWingShieldChargeAction(4));
+    }
 
     @Override
     public void atTurnStart() {

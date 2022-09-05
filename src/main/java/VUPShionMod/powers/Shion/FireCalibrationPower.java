@@ -28,7 +28,7 @@ public class FireCalibrationPower extends AbstractShionPower {
 
 
     @Override
-    public int monsterAttackPreBlock(DamageInfo info, AbstractMonster m, int damageAmount) {
+    public int onEnemyAttackedPreBlock(DamageInfo info, AbstractMonster m, int damageAmount) {
         return damageAmount + this.amount;
     }
 

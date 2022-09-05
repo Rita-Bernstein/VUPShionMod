@@ -5,6 +5,7 @@ import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,6 +30,7 @@ public class SuperCharge extends AbstractShionMinamiCard {
 //        addToBot(new ReducePowerAction(p, p, HyperdimensionalLinksPower.POWER_ID, this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new GainEnergyAction(1));
     }
 
     public AbstractCard makeCopy() {

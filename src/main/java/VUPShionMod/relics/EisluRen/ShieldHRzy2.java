@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.stances.AbstractStance;
 
 public class ShieldHRzy2 extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(ShieldHRzy2.class.getSimpleName());
@@ -53,6 +54,12 @@ public class ShieldHRzy2 extends AbstractShionRelic {
     public void onLoseShieldCharge(int amount) {
         flash();
         addToBot(new GainRefundChargeAction(amount));
+    }
+
+    @Override
+    public void onChangeStance(AbstractStance prevStance, AbstractStance newStance) {
+        flash();
+        addToBot(new GainWingShieldChargeAction(4));
     }
 
     @Override

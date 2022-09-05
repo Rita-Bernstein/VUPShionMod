@@ -6,7 +6,9 @@ import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.stances.PrayerStance;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -31,6 +33,7 @@ public class HallowedCase extends AbstractShionRelic {
     public void atBattleStart() {
         flash();
         addToBot(new ChangeStanceAction(PrayerStance.STANCE_ID));
+        addToBot(new MakeTempCardInDiscardAction(new Miracle(),2));
     }
 
     @Override

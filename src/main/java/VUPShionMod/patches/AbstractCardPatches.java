@@ -5,10 +5,15 @@ import VUPShionMod.powers.Common.FreeCardPower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import javassist.expr.ExprEditor;
+import javassist.expr.MethodCall;
 
 import java.lang.reflect.Field;
 
@@ -49,7 +54,6 @@ public class AbstractCardPatches {
             if (_card[0] instanceof AbstractVUPShionCard) {
                 AbstractVUPShionCard c = ((AbstractVUPShionCard) _card[0]);
                 c.postReturnToHand();
-                SpireReturn.Continue();
             }
         }
     }
@@ -72,11 +76,93 @@ public class AbstractCardPatches {
             if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null
                     && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT
                     && AbstractDungeon.player.hasPower(FreeCardPower.POWER_ID))
-               return SpireReturn.Return(true);
+                return SpireReturn.Return(true);
 
 
             return SpireReturn.Continue();
         }
     }
+
+
+    @SpirePatch(
+            clz = UseCardAction.class,
+            method = "update"
+    )
+    public static class ReturnToHandPatch {
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
+                @Override
+                public void edit(MethodCall m) throws CannotCompileException {
+                    if (m.getClassName().equals(CardGroup.class.getName()) && m.getMethodName().equals("moveToDiscardPile")) {
+                        m.replace("if (this.targetCard instanceof " + AbstractVUPShionCard.class.getName() + "){" +
+                                AbstractCardPatches.class.getName() + ".returnToHandOnce(this.targetCard);}else{" +
+                                "$_ = $proceed($$);" +
+                                "}");
+                    }
+                }
+            };
+        }
+    }
+
+    public static void returnToHandOnce(AbstractCard card) {
+        if (card instanceof AbstractVUPShionCard) {
+            AbstractVUPShionCard c = ((AbstractVUPShionCard) card);
+            if (c.returnToHandOnce || c.returnToHand) {
+                AbstractDungeon.player.hand.moveToHand(card);
+                AbstractDungeon.player.onCardDrawOrDiscard();
+                c.returnToHandOnce = false;
+            } else {
+                AbstractDungeon.player.hand.moveToDiscardPile(card);
+            }
+
+        }
+    }
+
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "useCard"
+    )
+    public static class UseCardPlayerPatch {
+        @SpireInsertPatch(rloc = 23)
+        public static void Insert(AbstractPlayer _instance, AbstractCard c, AbstractMonster monster, int energyOnUse) {
+            for (AbstractCard card : AbstractDungeon.player.hand.group) {
+                if (card instanceof AbstractVUPShionCard) {
+                    if (card != c)
+                        ((AbstractVUPShionCard) card).triggerAfterOtherCardPlayed(c);
+                }
+            }
+
+            for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+                if (card instanceof AbstractVUPShionCard) {
+                    if (card != c)
+                        ((AbstractVUPShionCard) card).triggerAfterOtherCardPlayed(c);
+                }
+            }
+
+            for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
+                if (card instanceof AbstractVUPShionCard) {
+                    if (card != c)
+                        ((AbstractVUPShionCard) card).triggerAfterOtherCardPlayed(c);
+                }
+            }
+
+            for (AbstractCard card : AbstractDungeon.player.exhaustPile.group) {
+                if (card instanceof AbstractVUPShionCard) {
+                    if (card != c)
+                        ((AbstractVUPShionCard) card).triggerAfterOtherCardPlayed(c);
+                }
+            }
+
+            for (AbstractCard card : AbstractDungeon.player.limbo.group) {
+                if (card instanceof AbstractVUPShionCard) {
+                    if (card != c)
+                        ((AbstractVUPShionCard) card).triggerAfterOtherCardPlayed(c);
+                }
+            }
+
+        }
+    }
+
 
 }

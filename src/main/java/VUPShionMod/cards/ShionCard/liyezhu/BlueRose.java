@@ -18,7 +18,7 @@ public class BlueRose extends AbstractShionLiyezhuCard {
 
     public BlueRose() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 20;
+        this.baseMagicNumber = this.magicNumber = 40;
         this.exhaust = true;
     }
 

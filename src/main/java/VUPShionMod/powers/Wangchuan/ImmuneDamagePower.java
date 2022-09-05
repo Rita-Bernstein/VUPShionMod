@@ -55,6 +55,11 @@ public class ImmuneDamagePower extends AbstractShionPower {
     }
 
     @Override
+    public int onAttackedPreBlock(DamageInfo info, AbstractCreature owner, int damageAmount){
+        return 0;
+    }
+
+    @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }

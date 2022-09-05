@@ -33,6 +33,22 @@ public class WorldTreeLinkPower extends AbstractShionPower {
     }
 
     @Override
+    public void onInitialApplication() {
+        super.onInitialApplication();
+        BaseMod.MAX_HAND_SIZE += 1;
+    }
+
+    @Override
+    public void onRemove() {
+        BaseMod.MAX_HAND_SIZE -= 1;
+    }
+
+    @Override
+    public void onVictory() {
+        BaseMod.MAX_HAND_SIZE -= 1;
+    }
+
+    @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }

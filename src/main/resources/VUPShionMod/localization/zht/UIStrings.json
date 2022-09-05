@@ -249,5 +249,28 @@
       "請選擇",
       "祝武運昌隆"
     ]
+  },
+  "VUPShionMod:ShionBasePatches": {
+    "TEXT": [
+      "開始特殊模式"
+    ]
+  },
+  "VUPShionMod:ShionMainMenuPanelButton": {
+    "TEXT": [
+      "訓練模式",
+      "在虛擬場景中和隊員的投影戰鬥",
+      "在標準模式中獲得「真結局」以解鎖"
+    ]
+  },
+  "VUPShionMod:CardPreviewUpgradePatches": {
+    "TEXT": [
+      "多次升級"
+    ]
+  },
+  "VUPShionMod:SynchroOption": {
+    "TEXT": [
+      "同調",
+      "提高3層同調的計數"
+    ]
   }
 }

@@ -21,7 +21,7 @@ public class SeaOfThorns extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public SeaOfThorns() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

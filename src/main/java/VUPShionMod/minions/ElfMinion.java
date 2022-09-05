@@ -2,9 +2,12 @@ package VUPShionMod.minions;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
+import VUPShionMod.powers.EisluRen.IronWallPower;
 import VUPShionMod.powers.EisluRen.SpiritCloisterPower;
+import VUPShionMod.powers.Monster.PlagaAMundo.FlyPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,6 +16,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.vfx.TextAboveCreatureEffect;
 import com.megacrit.cardcrawl.vfx.combat.HealEffect;
 
@@ -90,18 +94,36 @@ public class ElfMinion extends AbstractPlayerMinion {
 
     @Override
     public void usePreBattleAction() {
+        usePreBattleAction(this);
     }
 
     public void usePreBattleAction(ElfMinion minion) {
+        switch (this.timesUpgraded) {
+            case 1:
+                addToBot(new ApplyPowerAction(this, this, new FlyPower(this, 2)));
+                break;
+            case 2:
+                addToBot(new ApplyPowerAction(this, this, new IronWallPower(this) {
+                    @Override
+                    public void atStartOfTurn() {
+                    }
+                }));
+                break;
+        }
     }
 
     public void onSpiritCloisterPower(AbstractPower sp) {
-        if(this.halfDead) {
+        if (this.halfDead) {
             sp.flash();
+            this.halfDead = false;
             this.currentHealth = 1;
             AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, 1));
             healthBarUpdatedEvent();
             showHealthBar();
+
+            rollMove();
+            createIntent();
+            applyPowers();
         }
     }
 
@@ -111,18 +133,23 @@ public class ElfMinion extends AbstractPlayerMinion {
 
         reloadAnimation(pre, this.timesUpgraded);
 
-        this.maxHealth += minion.maxHealth;
-        AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, minion.maxHealth));
-        AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.hb.cX - this.animX, this.hb.cY,
-                CardCrawlGame.languagePack.getUIString("AbstractCreature").TEXT[2] + Integer.toString(minion.maxHealth), Settings.GREEN_TEXT_COLOR));
-        this.heal(minion.maxHealth, true);
+        increaseMaxHP(minion.maxHealth);
 
         rollMove();
         createIntent();
         applyPowers();
 
         healthBarUpdatedEvent();
-        minion.usePreBattleAction(this);
+        this.usePreBattleAction(minion);
+    }
+
+
+    public void increaseMaxHP(int amount){
+        this.maxHealth += amount;
+        AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, amount));
+        AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.hb.cX - this.animX, this.hb.cY,
+                CardCrawlGame.languagePack.getUIString("AbstractCreature").TEXT[2] + Integer.toString(amount), Settings.GREEN_TEXT_COLOR));
+        this.heal(amount, true);
     }
 
     @Override

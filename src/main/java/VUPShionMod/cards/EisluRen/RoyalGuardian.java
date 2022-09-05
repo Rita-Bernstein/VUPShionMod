@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.powers.EisluRen.RoyalGuardianPower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -15,7 +16,7 @@ public class RoyalGuardian extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(RoyalGuardian.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/RoyalGuardian.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -29,8 +30,9 @@ public class RoyalGuardian extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block,true));
-        addToBot(new GainBlockAction(p, this.block,true));
+        addToBot(new GainShieldAction(p, 7,true));
+        addToBot(new GainShieldAction(p, 7,true));
+
         if (Settings.FAST_MODE) {
             addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
         } else {

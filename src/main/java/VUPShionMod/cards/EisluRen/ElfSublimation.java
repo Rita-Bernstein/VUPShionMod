@@ -8,6 +8,7 @@ import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -26,37 +27,38 @@ public class ElfSublimation extends AbstractEisluRenCard {
     public ElfSublimation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 30;
-
+        this.secondaryM = this.baseSecondaryM = 1;
+        this.selfRetain =true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new RemoveDebuffsAction(p));
         addToBot(new SummonElfAction(new ElfMinion(2)));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 if (!MinionGroup.areMinionsBasicallyDead()) {
-                    if (upgraded)
-                        addToTop(new ApplyPowerAction(MinionGroup.getCurrentMinion(), p, new BufferPower(MinionGroup.getCurrentMinion(), 1)));
-                    addToTop(new ApplyPowerAction(MinionGroup.getCurrentMinion(), p, new IntangiblePlayerPower(MinionGroup.getCurrentMinion(), 1)));
+                    addToTop(new ApplyPowerAction(MinionGroup.getCurrentMinion(), p, new IntangiblePlayerPower(MinionGroup.getCurrentMinion(), secondaryM)));
                 }
                 isDone = true;
             }
         });
     }
 
+
+
     @Override
-    public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if (c instanceof ElfEnhance)
-            updateCost(-2);
+    public void triggerAfterOtherCardPlayed(AbstractCard card) {
+        if(card instanceof SynchroSummon || card instanceof LifeLinkCard)
+            updateCost(-1);
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
+            upgradeSecondM(1);
             upgradeBaseCost(4);
         }
     }

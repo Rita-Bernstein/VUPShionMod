@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Burn;
+import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,6 +21,9 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
         this.duration = this.startDuration;
     }
 
+    private boolean cardToExhaust(AbstractCard c){
+        return c.hasTag(CardTagsEnum.Suffering_CARD) || c instanceof Miracle;
+    }
 
     public void update() {
         if (this.duration == this.startDuration) {
@@ -27,7 +31,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
 
             for (int i = 0; i < AbstractDungeon.player.drawPile.size(); ) {
                 AbstractCard c = AbstractDungeon.player.drawPile.group.get(i);
-                if (c.hasTag(CardTagsEnum.Suffering_CARD)) {
+                if (cardToExhaust(c)) {
                     statusCount++;
                     AbstractDungeon.player.drawPile.removeCard(c);
                     AbstractDungeon.player.limbo.addToTop(c);
@@ -44,7 +48,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
 
             for (int i = 0; i < AbstractDungeon.player.discardPile.size(); ) {
                 AbstractCard c = AbstractDungeon.player.discardPile.group.get(i);
-                if (c.hasTag(CardTagsEnum.Suffering_CARD)) {
+                if (cardToExhaust(c)) {
                     statusCount++;
                     AbstractDungeon.player.discardPile.removeCard(c);
                     AbstractDungeon.player.limbo.addToTop(c);
@@ -61,7 +65,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
 
             for (int i = 0; i < AbstractDungeon.player.hand.size(); ) {
                 AbstractCard c = AbstractDungeon.player.hand.group.get(i);
-                if (c.hasTag(CardTagsEnum.Suffering_CARD)) {
+                if (cardToExhaust(c)) {
                     statusCount++;
                     AbstractDungeon.player.hand.removeCard(c);
                     AbstractDungeon.player.limbo.addToTop(c);

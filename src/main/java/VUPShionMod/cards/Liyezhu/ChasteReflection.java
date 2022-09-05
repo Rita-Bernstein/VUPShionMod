@@ -14,7 +14,7 @@ public class ChasteReflection extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public ChasteReflection() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

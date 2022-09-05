@@ -123,7 +123,7 @@ public class VUPShionMod implements
 
     public static Color transparent = Color.WHITE.cpy();
 
-    public static boolean isTestMod = true;
+    public static boolean isTestMod = false;
 
 
     public VUPShionMod() {
@@ -371,59 +371,60 @@ public class VUPShionMod implements
 
 
 //      添加boss
-        BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
-        BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
 
+            BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
+            BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
+        if (isTestMod) {
 //        训练模式boss
-        BaseMod.addMonster(AquaShionBoss.ID, () -> new AquaShionBoss());
-        BaseMod.addMonster(OriLiyezhuBoss.ID, () -> new OriLiyezhuBoss());
-        BaseMod.addMonster(OriEisluRenBoss.ID, () -> new OriEisluRenBoss());
-        BaseMod.addMonster(ChinaWangChuanBoss.ID, () -> new ChinaWangChuanBoss());
-        BaseMod.addMonster(PurityWangChuanBoss.ID, () -> new PurityWangChuanBoss());
-        BaseMod.addMonster(OriWangChuanBoss.ID, () -> new OriWangChuanBoss());
-        BaseMod.addMonster(OriShionBoss.ID, () -> new OriShionBoss());
-        BaseMod.addMonster(AquaWangChuanBoss.ID, () -> new AquaWangChuanBoss());
-        BaseMod.addMonster(BlueGiantShionBoss.ID, () -> new BlueGiantShionBoss());
-
+            BaseMod.addMonster(AquaShionBoss.ID, () -> new AquaShionBoss());
+            BaseMod.addMonster(OriLiyezhuBoss.ID, () -> new OriLiyezhuBoss());
+            BaseMod.addMonster(OriEisluRenBoss.ID, () -> new OriEisluRenBoss());
+            BaseMod.addMonster(ChinaWangChuanBoss.ID, () -> new ChinaWangChuanBoss());
+            BaseMod.addMonster(PurityWangChuanBoss.ID, () -> new PurityWangChuanBoss());
+            BaseMod.addMonster(OriWangChuanBoss.ID, () -> new OriWangChuanBoss());
+            BaseMod.addMonster(OriShionBoss.ID, () -> new OriShionBoss());
+            BaseMod.addMonster(AquaWangChuanBoss.ID, () -> new AquaWangChuanBoss());
+            BaseMod.addMonster(BlueGiantShionBoss.ID, () -> new BlueGiantShionBoss());
 
 
 //      加boss图标
-        BaseMod.addBoss("", AquaShionBoss.ID,
-                "VUPShionMod/img/ui/map/boss/ShionBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+            BaseMod.addBoss("", AquaShionBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/ShionBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
 
-        BaseMod.addBoss("", OriLiyezhuBoss.ID,
-                "VUPShionMod/img/ui/map/boss/LiyezhuBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/LiyezhuBoss.png");
+            BaseMod.addBoss("", OriLiyezhuBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/LiyezhuBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/LiyezhuBoss.png");
 
-        BaseMod.addBoss("", OriEisluRenBoss.ID,
-                "VUPShionMod/img/ui/map/boss/EisluRenBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/EisluRenBoss.png");
+            BaseMod.addBoss("", OriEisluRenBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/EisluRenBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/EisluRenBoss.png");
 
 
-        BaseMod.addBoss("", ChinaWangChuanBoss.ID,
-                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+            BaseMod.addBoss("", ChinaWangChuanBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-        BaseMod.addBoss("", PurityWangChuanBoss.ID,
-                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+            BaseMod.addBoss("", PurityWangChuanBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-        BaseMod.addBoss("", OriWangChuanBoss.ID,
-                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+            BaseMod.addBoss("", OriWangChuanBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-        BaseMod.addBoss("", OriShionBoss.ID,
-                "VUPShionMod/img/ui/map/boss/ShionBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+            BaseMod.addBoss("", OriShionBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/ShionBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
 
-        BaseMod.addBoss("", AquaWangChuanBoss.ID,
-                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+            BaseMod.addBoss("", AquaWangChuanBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-        BaseMod.addBoss("", BlueGiantShionBoss.ID,
-                "VUPShionMod/img/ui/map/boss/ShionBoss.png",
-                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+            BaseMod.addBoss("", BlueGiantShionBoss.ID,
+                    "VUPShionMod/img/ui/map/boss/ShionBoss.png",
+                    "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+        }
 //        加药水
         BaseMod.addPotion(PlanedModify.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, PlanedModify.POTION_ID, AbstractPlayerEnum.VUP_Shion);
         BaseMod.addPotion(CorGladiiFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, CorGladiiFragment.POTION_ID, AbstractPlayerEnum.WangChuan);

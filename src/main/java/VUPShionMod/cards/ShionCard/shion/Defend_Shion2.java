@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Shion.GainFinFunnelChargeAction;
 import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.actions.Shion.TurnTriggerFinFunnelAction;
@@ -40,8 +41,8 @@ public class Defend_Shion2 extends AbstractShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
-
-            addToBot(new GainFinFunnelChargeAction(this.secondaryM));
+            addToBot(new GainShieldAction(p,this.secondaryM));
+            addToBot(new GainFinFunnelChargeAction(2));
     }
 
     @Override

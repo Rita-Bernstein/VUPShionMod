@@ -16,11 +16,11 @@ public class RavingExcoriation extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public RavingExcoriation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override

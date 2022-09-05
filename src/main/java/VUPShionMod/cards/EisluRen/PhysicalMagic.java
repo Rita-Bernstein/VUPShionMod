@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class PhysicalMagic extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(PhysicalMagic.class.getSimpleName());
@@ -24,14 +25,23 @@ public class PhysicalMagic extends AbstractEisluRenCard {
     public PhysicalMagic() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 9;
+        this.selfRetain = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (AbstractDungeon.cardRng.random(99) < 10) {
-            addToBot(new StunMonsterAction(m, p, 1));
+
+        int chance = 0;
+        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
+            chance += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount / 10;
+
         }
+
+        if (chance > 0)
+            if (AbstractDungeon.cardRng.random(99) <= chance) {
+                addToBot(new StunMonsterAction(m, p, 1));
+            }
 
         if (m.getIntentBaseDmg() < 0) {
             addToBot(new DrawCardAction(1));

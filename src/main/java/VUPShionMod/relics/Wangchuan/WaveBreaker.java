@@ -49,10 +49,14 @@ public class WaveBreaker extends AbstractShionRelic {
     public void onPlayerEndTurn() {
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID)) {
             flash();
-            int amount = (int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.15f);
+            int amount = (int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.33f);
             addToBot(new LoseCorGladiiAction(amount));
         }
     }
+
+    public void onEquip() { AbstractDungeon.player.energy.energyMaster++; }
+
+    public void onUnequip() { AbstractDungeon.player.energy.energyMaster--; }
 
     @Override
     public void obtain() {

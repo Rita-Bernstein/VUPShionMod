@@ -26,7 +26,7 @@ public class Strafe2 extends AbstractShionCard {
     public Strafe2() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
-        this.baseDamage = 3;
+        this.baseDamage = 9;
         this.magicNumber = this.baseMagicNumber = 3;
         this.isMultiDamage = true;
         loadJokeCardImage(VUPShionMod.assetPath("img/cards/ShionCard/joke/zy15.png"));

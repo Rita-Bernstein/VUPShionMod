@@ -51,7 +51,7 @@ public class Pandora extends AbstractEisluRenCard {
 
 
         Consumer<Integer> actionConsumer = effect -> {
-            Supplier<AbstractPower> powerToApply = () -> new PursuitPower(null, AbstractDungeon.player, upgraded ? effect + 2 : effect + 1);
+            Supplier<AbstractPower> powerToApply = () -> new PursuitPower(null, AbstractDungeon.player, upgraded ? effect + 3 : effect + 2);
             for (int i = 0; i < effect; i++)
                 addToTop(new ApplyPowerToAllEnemyAction(powerToApply));
         };

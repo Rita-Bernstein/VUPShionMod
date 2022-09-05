@@ -15,7 +15,7 @@ public class FlawlessParry extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(FlawlessParry.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc19.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;

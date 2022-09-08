@@ -103,7 +103,8 @@
   },
   "VUPShionMod:AvariciousPrayer": {
     "DESCRIPTION": [
-      "Random enemy a lose #b%d HP and apply #ySin and #yStrength."
+      "Draw #b%d card and gain #b%d [E].",
+      "Draw #b%d cards and gain #b%d [E]."
     ],
     "NAME": "Avaricious"
   },
@@ -124,5 +125,17 @@
       "Heal #b%d HP."
     ],
     "NAME": "Heal"
+  },
+  "VUPShionMod:SanguinaryPreceptPrayer": {
+    "DESCRIPTION": [
+      "Lose #b%d *Sanity . NL ALL enemies lose HP equal to #b10%% of its max HP."
+    ],
+    "NAME": "Sanguinary Precept"
+  },
+  "VUPShionMod:SanPrayer": {
+    "DESCRIPTION": [
+      "Gain #b%d #ySanity."
+    ],
+    "NAME": "Sanity"
   }
 }

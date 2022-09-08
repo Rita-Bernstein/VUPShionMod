@@ -20,9 +20,14 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
     private AbstractPlayer p;
     private int dupeAmount;
     private ArrayList<AbstractCard> cannotDuplicate;
-
+    private boolean anyNum = false;
 
     public ExhaustDrawPileAction(AbstractCreature source, int amount) {
+        this(source,amount,false);
+    }
+
+    public ExhaustDrawPileAction(AbstractCreature source, int amount,boolean anyNum) {
+
         this.dupeAmount = 1;
         this.cannotDuplicate = new ArrayList();
 
@@ -31,6 +36,7 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
         this.dupeAmount = amount;
+        this.anyNum = anyNum;
     }
 
 
@@ -47,7 +53,7 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
             }
 
 
-            if (temp.size() <= this.amount) {
+            if (temp.size() <= this.amount && !anyNum) {
                 for (AbstractCard c : temp.group) {
                     this.p.drawPile.moveToExhaustPile(c);
                     CardCrawlGame.dungeon.checkForPactAchievement();
@@ -61,7 +67,8 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
             AbstractDungeon.gridSelectScreen.open(temp, this.amount, TEXT[0], false,false,true,false);
-
+            if(this.anyNum)
+                AbstractDungeon.overlayMenu.cancelButton.show(CardCrawlGame.languagePack.getUIString("GridCardSelectScreen").TEXT[1]);
         }
 
 

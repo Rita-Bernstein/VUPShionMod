@@ -21,8 +21,9 @@ public class RemovePlayerBuffAction extends AbstractGameAction {
     public void update() {
         ArrayList<AbstractPower> powersToRemove = new ArrayList<>();
         for (AbstractPower p : AbstractDungeon.player.powers) {
-            if (!p.ID.equals(ReinsOfWarPower.POWER_ID) && !p.ID.equals(ConcordPower.POWER_ID) && !p.ID.equals(FinalPrayerPower.POWER_ID))
-                powersToRemove.add(p);
+            if (p.type != AbstractPower.PowerType.DEBUFF)
+                if (!p.ID.equals(ReinsOfWarPower.POWER_ID) && !p.ID.equals(ConcordPower.POWER_ID) && !p.ID.equals(FinalPrayerPower.POWER_ID))
+                    powersToRemove.add(p);
         }
 
         if (!powersToRemove.isEmpty())

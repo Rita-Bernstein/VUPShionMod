@@ -21,20 +21,20 @@ public class Reactivation extends AbstractEisluRenCard {
     public Reactivation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 7;
-        this.secondaryM = this.baseSecondaryM= 5;
+        this.secondaryM = this.baseSecondaryM = 5;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int charge = 3;
-        if(p.hasPower(DexterityPower.POWER_ID)){
-            charge += p.getPower(DexterityPower.POWER_ID).amount/5;
+        int charge = 0;
+        if (p.hasPower(DexterityPower.POWER_ID)) {
+            charge += p.getPower(DexterityPower.POWER_ID).amount / 5;
         }
 
         addToBot(new GainRefundChargeAction(charge));
         addToBot(new GainEnergyAction(4));
-        addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
-        addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.secondaryM)));
     }
 
     @Override

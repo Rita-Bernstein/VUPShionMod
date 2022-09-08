@@ -30,6 +30,7 @@ public class ElfMinion extends AbstractPlayerMinion {
     public static final String[] DIALOG = monsterStrings.DIALOG;
 
     public int timesUpgraded = 0;
+    public boolean cantSelected = false;
 
     public ElfMinion(int timesUpgraded) {
         super(NAME, ID, 88, 0.0F, -30.0F, 140.0F, 200.0F, null, 220.0F, 0.0f);
@@ -51,7 +52,7 @@ public class ElfMinion extends AbstractPlayerMinion {
 
         switch (timesUpgraded) {
             case 0:
-                setHp(12);
+                setHp(8);
                 this.name = DIALOG[0];
                 this.state.setAnimation(0, "idle_jingling", true);
                 break;
@@ -144,17 +145,15 @@ public class ElfMinion extends AbstractPlayerMinion {
     }
 
 
-    public void increaseMaxHP(int amount){
+    public void increaseMaxHP(int amount) {
         this.maxHealth += amount;
-        AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, amount));
-        AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(this.hb.cX - this.animX, this.hb.cY,
-                CardCrawlGame.languagePack.getUIString("AbstractCreature").TEXT[2] + Integer.toString(amount), Settings.GREEN_TEXT_COLOR));
         this.heal(amount, true);
     }
 
     @Override
     public void heal(int healAmount, boolean showEffect) {
         super.heal(healAmount, showEffect);
+        this.cantSelected = false;
         if (this.halfDead) {
             this.halfDead = false;
             init();
@@ -233,22 +232,24 @@ public class ElfMinion extends AbstractPlayerMinion {
             for (Iterator<AbstractPower> s = this.powers.iterator(); s.hasNext(); ) {
                 AbstractPower p = (AbstractPower) s.next();
 
-                if (p.type == AbstractPower.PowerType.DEBUFF
-
-                ) {
+                if (p.type == AbstractPower.PowerType.DEBUFF) {
                     s.remove();
                 }
             }
 
+            this.halfDead = true;
+            setMove((byte) 3, MinionIntent.UNKNOWN);
             if (AbstractDungeon.player.hasPower(SpiritCloisterPower.POWER_ID)) {
                 AbstractDungeon.player.getPower(SpiritCloisterPower.POWER_ID).flash();
                 this.currentHealth = 1;
+                this.halfDead = false;
+                this.cantSelected = true;
                 AbstractDungeon.effectsQueue.add(new HealEffect(this.hb.cX - this.animX, this.hb.cY, 1));
                 healthBarUpdatedEvent();
+                rollMove();
             }
 
-            this.halfDead = true;
-            setMove((byte) 3, MinionIntent.UNKNOWN);
+
             createIntent();
             applyPowers();
         }

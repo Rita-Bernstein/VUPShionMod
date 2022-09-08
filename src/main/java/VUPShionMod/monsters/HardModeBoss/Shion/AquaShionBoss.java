@@ -6,6 +6,7 @@ import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Unique.BossFinFunnelMinionAction;
 import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
 import VUPShionMod.actions.Unique.TurnTriggerAllBossFinFunnelAction;
+import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.BossDissectingFinFunnel;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.BossGravityFinFunnel;
@@ -24,6 +25,7 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -126,9 +128,11 @@ public class AquaShionBoss extends AbstractShionBoss {
     public void takeTurn() {
         switch (this.nextMove) {
             case 1:
+                addToBot(new SFXAction("SHION_30"));
                 addToBot(new TalkAction(this, DIALOG[0], 1.5F, 1.5F));
                 break;
             case 2:
+                addToBot(new SFXAction("SHION_24"));
                 addToBot(new TalkAction(this, DIALOG[1], 1.5F, 1.5F));
                 addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY,
                         192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
@@ -137,22 +141,25 @@ public class AquaShionBoss extends AbstractShionBoss {
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 5, true)));
                 break;
             case 3:
+                addToBot(new SFXAction("SHION_29"));
                 addToBot(new TalkAction(this, DIALOG[2], 1.5F, 1.5F));
                 addToBot(new VFXAction(this.dissectionEffect));
-                addToBot(new CustomWaitAction(5.0f));
+                addToBot(new CustomWaitAction(4.0f));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new SystemHackPower(AbstractDungeon.player)));
 
                 break;
             case 4:
-                addToBot(new TalkAction(this, DIALOG[3], 1.5F, 1.5F));
+                addToBot(new SFXAction("SHION_19"));
+                addToBot(new TalkAction(this, DIALOG[3], 2.5F, 2.5F));
                 addToBot(new VFXAction(this.dissectionEffect));
-                addToBot(new CustomWaitAction(7.0f));
+                addToBot(new CustomWaitAction(5.5f));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new MagicDisorderPower(AbstractDungeon.player)));
                 break;
             case 5:
+                addToBot(new SFXAction("SHION_22"));
                 addToBot(new TalkAction(this, DIALOG[4], 1.5F, 1.5F));
                 addToBot(new VFXAction(this.dissectionEffect));
-                addToBot(new CustomWaitAction(4.5f));
+                addToBot(new CustomWaitAction(3.5f));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new ActionBlockadePower(AbstractDungeon.player)));
                 break;
             case 6:
@@ -162,15 +169,18 @@ public class AquaShionBoss extends AbstractShionBoss {
                 addToBot(new BossFinFunnelMinionAction(this));
                 break;
             case 8:
+                addToBot(new SFXAction("SHION_28"));
                 addToBot(new TalkAction(this, DIALOG[5], 1.5F, 1.5F));
                 addToBot(new GainShieldAction(this, 200));
                 addToBot(new BossFinFunnelMinionAction(this));
                 break;
             case 9:
+                addToBot(new SFXAction("SHION_21"));
                 addToBot(new TalkAction(this, DIALOG[6], 1.5F, 1.5F));
                 addToBot(new GainShieldAction(this, 600));
                 break;
             case 10:
+                addToBot(new SFXAction("SHION_26"));
                 addToBot(new TalkAction(this, DIALOG[7], 1.5F, 1.5F));
                 addToBot(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 2)));
                 addToBot(new TurnTriggerAllBossFinFunnelAction(this));
@@ -287,11 +297,13 @@ public class AquaShionBoss extends AbstractShionBoss {
             tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
         }
 
-        if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+        if (!MinionGroup.areMinionsBasicallyDead()) {
+            AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+            if(minion !=null)
+            for (AbstractPower p : minion.powers) {
                 tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
-
             }
+        }
 
         tmp = AbstractDungeon.player.stance.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
 
@@ -305,10 +317,13 @@ public class AquaShionBoss extends AbstractShionBoss {
             tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
         }
 
-        if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+        if (!MinionGroup.areMinionsBasicallyDead()) {
+            AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+            if(minion !=null)
+            for (AbstractPower p : minion.powers) {
                 tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
             }
+        }
 
         dmg = MathUtils.floor(tmp);
         if (dmg < 0) {

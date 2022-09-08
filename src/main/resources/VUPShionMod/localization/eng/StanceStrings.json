@@ -8,13 +8,13 @@
   "VUPShionMod:JudgeStance": {
     "NAME": "Judging Stance",
     "DESCRIPTION": [
-      "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength."
+      "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength. NL When you play an #yAttack, trigger #yPunitive."
     ]
   },
   "VUPShionMod:SpiritStance": {
     "NAME": "Wordpower Stance",
     "DESCRIPTION": [
-      "Upon entering this #yStance, gain #b1 #yImmolated and #yStrength. NL At the end of your turn, heal #b2 HP."
+      "Regarded as in both #yJudging #yStance and #yPraying #yStance. NL Can not enter #yJudging #yStance. NL Upon entering this #yStance, gain #b1 #yCombustion and #yStrength. NL When you play an #yAttack, trigger #yPunitive. NL At the end of your turn,heal #b2 HP. NL  NL Gain #b9 max HP at the end of combat. NL Whenever you lose HP,gain #yShield equal to that amount. NL #yPunitive will not damage you."
     ]
   },
   "VUPShionMod:SpiralBladeStance": {

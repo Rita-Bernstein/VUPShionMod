@@ -20,8 +20,8 @@ public class Whisk extends AbstractLiyezhuCard {
 
     public Whisk() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     @Override
@@ -40,6 +40,7 @@ public class Whisk extends AbstractLiyezhuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             upgradeMagicNumber(1);
+            upgradeSecondM(1);
         }
     }
 }

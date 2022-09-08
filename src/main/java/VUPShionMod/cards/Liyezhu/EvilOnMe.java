@@ -42,19 +42,37 @@ public class EvilOnMe extends AbstractLiyezhuCard {
             addToBot(new RemoveSpecificPowerAction(p, p, SinPower.POWER_ID));
         }
 
+        addToBot(new GainMaxHPAction(p, (int) (p.maxHealth * 0.05f)));
         addToBot(new HealAction(p, p, secondaryM * this.magicNumber));
 
-        if (this.secondaryM >= 5)
-            addToBot(new GainMaxHPAction(p,secondaryM / 5));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        secondaryM = 0;
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            if (mo.hasPower(SinPower.POWER_ID)) {
+                secondaryM += mo.getPower(SinPower.POWER_ID).amount;
+            }
+        }
+
+        if (p.hasPower(SinPower.POWER_ID)) {
+            secondaryM += p.getPower(SinPower.POWER_ID).amount;
+        }
+
+        if(secondaryM >=15)
+            return super.canUse(p, m);
+        return false;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeBaseCost(1);
+            this.selfRetain = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            upgradeMagicNumber(1);
         }
     }
 }

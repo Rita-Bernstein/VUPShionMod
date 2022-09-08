@@ -141,7 +141,8 @@
       "Whenever you slay a non-minion enemy, lose #b3 #ySanity. Whenever you #yrest at Restsites, gain #b40 #ySanity and choose to obtain 1 #yPrayer card.",
       " NL NL While #ySanity is full, gain #b10 Max HP at the start of each combat. Else, gain #b1 Max HP instead if #ySanity is above #b50.",
       " NL NL While #ySanity is below #b50, gain #b3 #yVulnerable at the start of combat. NL Whenever you slay a non-minion enemy, lose #b1 Max HP.",
-      " NL NL While #ySanity is below #b30, gain #b3 #yWeak at the start of combat. NL Whenever you slay a non-minion enemy, lose #b4 more Max HP. Whenever you gain #ySinful, gain #b1 more."
+      " NL NL While #ySanity is below #b30, gain #b3 #yWeak at the start of combat. NL Whenever you slay a non-minion enemy, lose #b4 more Max HP. Whenever you gain #ySinful, gain #b1 more.",
+      "Not enough Sanity"
     ]
   },
   "VUPShionMod:Gallery": {
@@ -189,7 +190,7 @@
   "VUPShionMod:WingShield": {
     "TEXT": [
       "Winged Construct",
-      "Recycle: #b%d/3. NL Gain #b1 #yRecharge when the Recycle meter is filled. NL NL Current Recharge: #b%d/%d. NL Every #Recharge blocks #b7 damage. NL You may lose up to #b7 #yRecharge from one single attack.",
+      "Recycle: #b%d/3. NL Gain #b1 #yRecharge when the Recycle meter is filled. NL NL Current Recharge: #b%d/%d. NL You may lose up to #b7 #yRecharge from one single attack.",
       "Not Enough Recharge!"
     ]
   },
@@ -198,7 +199,6 @@
       "Discard any cards"
     ]
   },
-
   "VUPShionMod:RuinGuardianStanceAction": {
     "TEXT": [
       "Choose to exhaust 2 cards and play one each of their copies each turn. "
@@ -244,7 +244,7 @@
       "Block"
     ]
   },
-   "VUPShionMod:NeowEventTalkPatch": {
+  "VUPShionMod:NeowEventTalkPatch": {
     "TEXT": [
       "Loading Complete~ Welcome to the battlefield.",
       "Select",
@@ -272,6 +272,11 @@
     "TEXT": [
       "Synchro",
       "Increase Synchro counter by 3."
+    ]
+  },
+  "VUPShionMod:ExhaustToApplySinAction": {
+    "TEXT": [
+      "Exhaust a card to apply Sinful."
     ]
   }
 }

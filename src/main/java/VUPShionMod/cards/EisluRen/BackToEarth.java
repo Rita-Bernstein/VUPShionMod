@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.ExhaustAllStatusAndCurseAction;
 import VUPShionMod.actions.Common.ExhaustDrawPileAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -44,26 +45,7 @@ public class BackToEarth extends AbstractEisluRenCard {
             }
         });
 
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
-                    if (card.type == CardType.CURSE || card.type == CardType.STATUS)
-                        addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.drawPile));
-                }
-
-                for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
-                    if (card.type == CardType.CURSE || card.type == CardType.STATUS)
-                        addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.discardPile));
-                }
-
-                for (AbstractCard card : AbstractDungeon.player.hand.group) {
-                    if (card.type == CardType.CURSE || card.type == CardType.STATUS)
-                        addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
-                }
-                isDone = true;
-            }
-        });
+      addToBot(new ExhaustAllStatusAndCurseAction());
 
         addToBot(new RemoveDebuffsAction(p));
 

@@ -19,7 +19,7 @@ public class WarmUp extends AbstractEisluRenCard {
 
     public WarmUp() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 4;
     }
 
     @Override

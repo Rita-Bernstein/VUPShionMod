@@ -18,11 +18,11 @@ public class YonggukCityTroyPower extends AbstractShionPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    public YonggukCityTroyPower(AbstractCreature owner) {
+    public YonggukCityTroyPower(AbstractCreature owner,int amount) {
         this.name = NAME;
         this.owner = owner;
         this.ID = POWER_ID;
-
+        this.amount = amount;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IronWallPower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IronWallPower48.png")), 0, 0, 48, 48);
         updateDescription();
@@ -39,11 +39,11 @@ public class YonggukCityTroyPower extends AbstractShionPower {
 
     @Override
     public void onLoseShieldCharge(int amount) {
-        addToBot(new GainShieldAction(this.owner, amount * 5));
+        addToBot(new GainShieldAction(this.owner, amount * this.amount));
     }
 
     @Override
     public void onAddShieldCharge(int amount) {
-        addToBot(new GainShieldAction(this.owner, amount * 5));
+        addToBot(new GainShieldAction(this.owner, amount  * this.amount));
     }
 }

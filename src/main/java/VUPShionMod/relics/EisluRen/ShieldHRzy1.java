@@ -6,7 +6,9 @@ import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
@@ -35,7 +37,6 @@ public class ShieldHRzy1 extends AbstractShionRelic {
     public int onLoseHpLast(int damageAmount) {
         if (AbstractDungeon.player != null && AbstractDungeon.currMapNode != null &&
                 (AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT) {
-            flash();
             return damageAmount / 2;
         }
 
@@ -54,5 +55,12 @@ public class ShieldHRzy1 extends AbstractShionRelic {
             flash();
             addToBot(new GainWingShieldChargeAction(1));
         }
+
+    }
+
+    @Override
+    public void atBattleStart() {
+        flash();
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,5)));
     }
 }

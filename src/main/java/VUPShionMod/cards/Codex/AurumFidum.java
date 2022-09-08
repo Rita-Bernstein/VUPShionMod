@@ -21,6 +21,7 @@ public class AurumFidum extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
+        this.parentCardID = AurumNimium.ID;
     }
 
     public AurumFidum() {
@@ -49,7 +50,6 @@ public class AurumFidum extends AbstractCodexCard {
         super.upgrade();
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
-                upgradeMagicNumber(-1);
             }
 
             if (this.timesUpgraded == 2) {

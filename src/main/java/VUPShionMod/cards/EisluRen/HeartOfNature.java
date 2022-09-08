@@ -3,6 +3,7 @@ package VUPShionMod.cards.EisluRen;
 import VUPShionMod.VUPShionMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BerserkPower;
@@ -23,6 +24,7 @@ public class HeartOfNature extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new BerserkPower(p,1)));
+        addToBot(new RemoveDebuffsAction(p));
     }
 
     @Override

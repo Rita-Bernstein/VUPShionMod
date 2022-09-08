@@ -1,8 +1,10 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -20,21 +22,22 @@ public class Barrier extends AbstractLiyezhuCard {
 
     public Barrier() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 5;
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p,this.block));
+        addToBot(new GainShieldAction(p,this.magicNumber));
+        if(upgraded)
+            addToBot(new DrawCardAction(1));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(3);
+            upgradeMagicNumber(1);
         }
     }
 }

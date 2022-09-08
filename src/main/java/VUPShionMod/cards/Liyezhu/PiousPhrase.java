@@ -23,7 +23,7 @@ public class PiousPhrase extends AbstractLiyezhuCard {
     public PiousPhrase() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.secondaryM = this.baseSecondaryM = 5;
         this.exhaust = true;
         this.cardsToPreview = new RavingExcoriation();
         this.tags.add(CardTagsEnum.Prayer_CARD);

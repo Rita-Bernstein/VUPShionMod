@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.EisluRen.YonggukCityTroyPower;
@@ -20,12 +21,11 @@ public class YonggukCityTroy extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public YonggukCityTroy() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.secondaryM = this.baseSecondaryM = 4;
-        this.baseBlock = 6;
         this.magicNumber = this.baseMagicNumber = 4;
     }
 
@@ -33,9 +33,10 @@ public class YonggukCityTroy extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
             addToBot(new LoseWingShieldAction(this.secondaryM));
+
         for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new GainBlockAction(p, 6));
-        addToBot(new ApplyPowerAction(p, p, new YonggukCityTroyPower(p)));
+            addToBot(new GainShieldAction(p, 6));
+        addToBot(new ApplyPowerAction(p, p, new YonggukCityTroyPower(p,5)));
     }
 
     @Override
@@ -53,7 +54,7 @@ public class YonggukCityTroy extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(2);
+            upgradeBaseCost(1);
             upgradeSecondM(-1);
         }
     }

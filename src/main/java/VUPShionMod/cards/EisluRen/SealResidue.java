@@ -3,9 +3,13 @@ package VUPShionMod.cards.EisluRen;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
+import VUPShionMod.patches.CardTagsEnum;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.List;
 
 public class SealResidue extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SealResidue.class.getSimpleName());
@@ -24,12 +28,29 @@ public class SealResidue extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        float chance = this.upgraded ? 0.8f : 0.6f;
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 1 && AbstractDungeon.actionManager.cardsPlayedThisCombat
+                .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).type == CardType.POWER) {
+            addToBot(new GainShieldAction(p, this.magicNumber));
+            addToBot(new GainRefundChargeAction(this.secondaryM));
+            return;
+        }
 
+        float chance = this.upgraded ? 0.8f : 0.6f;
         if (AbstractDungeon.cardRng.randomBoolean(chance)) {
             addToBot(new GainShieldAction(p, this.magicNumber));
             if (AbstractDungeon.cardRng.randomBoolean(chance))
                 addToBot(new GainRefundChargeAction(this.secondaryM));
+        }
+    }
+
+
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 1 && AbstractDungeon.actionManager.cardsPlayedThisCombat
+                .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).type == CardType.POWER) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
 

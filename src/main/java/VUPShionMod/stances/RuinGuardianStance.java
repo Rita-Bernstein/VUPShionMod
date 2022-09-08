@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class RuinGuardianStance extends AbstractStance {
+public class RuinGuardianStance extends AbstractVUPShionStance {
     public static final String STANCE_ID = VUPShionMod.makeID(RuinGuardianStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 

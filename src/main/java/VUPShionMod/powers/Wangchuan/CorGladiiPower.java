@@ -3,6 +3,7 @@ package VUPShionMod.powers.Wangchuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -35,14 +36,14 @@ public class CorGladiiPower extends AbstractShionPower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        for(AbstractPower p : AbstractDungeon.player.powers){
-            if(p instanceof AbstractShionPower){
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof AbstractShionPower) {
                 ((AbstractShionPower) p).onStackPower(this);
             }
         }
 
-        for(AbstractCard card: AbstractDungeon.player.discardPile.group){
-            if(card instanceof AbstractVUPShionCard){
+        for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+            if (card instanceof AbstractVUPShionCard) {
                 ((AbstractVUPShionCard) card).onApplyCor();
             }
         }
@@ -51,15 +52,15 @@ public class CorGladiiPower extends AbstractShionPower {
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        for(AbstractPower p : AbstractDungeon.player.powers){
-            if(p instanceof AbstractShionPower){
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof AbstractShionPower) {
                 ((AbstractShionPower) p).onStackPower(this);
             }
         }
 
 
-        for(AbstractCard card: AbstractDungeon.player.discardPile.group){
-            if(card instanceof AbstractVUPShionCard){
+        for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+            if (card instanceof AbstractVUPShionCard) {
                 ((AbstractVUPShionCard) card).onApplyCor();
             }
         }
@@ -69,18 +70,31 @@ public class CorGladiiPower extends AbstractShionPower {
     public void reducePower(int reduceAmount) {
         super.reducePower(reduceAmount);
         if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
-            AbstractShionPower p =(AbstractShionPower)AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID);
+            AbstractShionPower p = (AbstractShionPower) AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID);
             p.onNumSpecificTrigger(reduceAmount);
         }
+
+        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
+            AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID).amount += reduceAmount;
+        }
+
+        GameStatsPatch.corGladiiLoseThisTurn += reduceAmount;
     }
 
     @Override
     public void onRemove() {
         super.onRemove();
         if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
-            AbstractShionPower p =(AbstractShionPower)AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID);
+            AbstractShionPower p = (AbstractShionPower) AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID);
             p.onNumSpecificTrigger(this.amount);
         }
+
+
+        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
+            AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID).amount += this.amount;
+        }
+
+        GameStatsPatch.corGladiiLoseThisTurn += this.amount;
     }
 
     @Override

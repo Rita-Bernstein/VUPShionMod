@@ -29,13 +29,13 @@ public class RotorCutter extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 3;
 
     public RotorCutter() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 2;
-        this.magicNumber = this.baseMagicNumber = 6;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.magicNumber = this.baseMagicNumber = 14;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class RotorCutter extends AbstractEisluRenCard {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE,true));
 
         for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false)));
+            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false),1,true));
     }
 
 
@@ -78,6 +78,7 @@ public class RotorCutter extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeBaseCost(2);
             upgradeDamage(1);
         }
     }

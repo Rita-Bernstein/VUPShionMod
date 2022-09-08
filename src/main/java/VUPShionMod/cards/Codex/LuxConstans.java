@@ -2,9 +2,12 @@ package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class LuxConstans extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID(LuxConstans.class.getSimpleName());
@@ -21,7 +24,9 @@ public class LuxConstans extends AbstractCodexCard {
         this.timesUpgraded = upgrades;
         this.exhaust = true;
         this.isEthereal =true;
+        this.parentCardID = LuxRapida.ID;
     }
+
 
     public LuxConstans() {
         this(0);

@@ -14,7 +14,7 @@ public class HotRestart extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(HotRestart.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/HotRestart.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -29,7 +29,7 @@ public class HotRestart extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainRefundChargeAction(this.magicNumber));
 
-        int drawCard = 1;
+        int drawCard = 0;
         if(AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)){
             drawCard += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount/10;
         }

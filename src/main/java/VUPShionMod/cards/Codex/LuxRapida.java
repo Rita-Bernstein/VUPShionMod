@@ -6,10 +6,13 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+
+import java.util.ArrayList;
 
 public class LuxRapida extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID(LuxRapida.class.getSimpleName());
@@ -26,7 +29,11 @@ public class LuxRapida extends AbstractCodexCard {
         this.timesUpgraded = upgrades;
         this.exhaust = true;
         this.isEthereal = true;
+        this.parentCardID = LuxConstans.ID;
     }
+
+
+
 
     public LuxRapida() {
         this(0);

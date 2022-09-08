@@ -4,9 +4,11 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 
 public class TranscendSoul2Power extends AbstractShionPower {
@@ -25,15 +27,11 @@ public class TranscendSoul2Power extends AbstractShionPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) {
-            if (this.owner.hasPower(PsychicPower.POWER_ID)) {
-                addToBot(new DamageAllEnemiesAction(null,
-                        DamageInfo.createDamageMatrix(this.owner.getPower(PsychicPower.POWER_ID).amount * this.amount, true),
-                        DamageInfo.DamageType.THORNS,
-                        AbstractGameAction.AttackEffect.FIRE));
-            }
-        }
+    public int onLoseHp(int damageAmount) {
+        flash();
+        addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damageAmount * this.amount, true),
+                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+        return super.onLoseHp(damageAmount);
     }
 
     @Override

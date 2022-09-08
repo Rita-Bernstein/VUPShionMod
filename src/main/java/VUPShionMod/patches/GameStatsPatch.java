@@ -27,6 +27,7 @@ public class GameStatsPatch {
     public static int wangchuanDeathCount = 0;
     public static int wingShieldDamageReduceThisCombat = 0;
     public static int constrictedApplyThisCombat = 0;
+    public static int corGladiiLoseThisTurn = 0;
 
     @SpirePatch(
             clz = AbstractMonster.class,
@@ -45,6 +46,8 @@ public class GameStatsPatch {
     public static void turnBaseReset() {
         SwardCharge.getSwardCharge().resetCount();
         WingShield.getWingShield().atStartOfTurn();
+
+        corGladiiLoseThisTurn = 0;
     }
 
     public static void combatBaseReset() {
@@ -140,9 +143,11 @@ public class GameStatsPatch {
             if (target != null && target.isPlayer)
                 if (AbstractDungeon.player.hasRelic(Warlike.ID) &&
                         powerToApply != null && (powerToApply.ID.equals(StrengthPower.POWER_ID) || powerToApply.ID.equals(DexterityPower.POWER_ID))) {
-                    AbstractDungeon.player.getRelic(Warlike.ID).flash();
-                    powerToApply.amount += 1;
-                    amount[0] = amount[0] + 1;
+                    if(powerToApply.amount >0) {
+                        AbstractDungeon.player.getRelic(Warlike.ID).flash();
+                        powerToApply.amount += 1;
+                        amount[0] = amount[0] + 1;
+                    }
                 }
 
 

@@ -21,6 +21,7 @@ public class HomoRapidus extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
         this.exhaust =true;
+        this.parentCardID = HomoNimius.ID;
     }
 
     public HomoRapidus() {

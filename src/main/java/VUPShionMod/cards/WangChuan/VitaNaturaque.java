@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,23 +21,24 @@ public class VitaNaturaque extends AbstractWCCard {
 
     public VitaNaturaque() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
+
+        this.secondaryM = this.baseSecondaryM = 5;
         this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ApplyPowerAction(p,p,new BlurPower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new MagiamObruorPower(p,1)));
+        addToBot(new GainShieldAction(p, this.secondaryM));
+        addToBot(new ApplyPowerAction(p, p, new BlurPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(3);
+            upgradeSecondM(3);
             upgradeMagicNumber(1);
         }
     }

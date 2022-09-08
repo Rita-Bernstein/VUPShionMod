@@ -34,7 +34,7 @@ public class Soul extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("STANCE_ENTER_WRATH"));
         addToBot(new ApplyPowerAction(p, p, new TurnAttackIncreasePower(p, this.magicNumber)));
-        addToBot(new GainEnergyAction(3));
+        addToBot(new GainEnergyAction(1));
         addToBot(new ApplyPowerAction(p, p, new ExtremeOverloadPower(p, this.secondaryM)));
     }
 

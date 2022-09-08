@@ -12,12 +12,14 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class LoseWingShieldAction extends AbstractGameAction {
+    private int effect ;
     public LoseWingShieldAction(int amount) {
         if (WingShield.getWingShield().getCount() - amount < 0) {
             this.amount = WingShield.getWingShield().getCount();
         } else
             this.amount = amount;
 
+        this.effect = this.amount;
         this.duration = 0.1f;
 
         this.actionType = ActionType.DAMAGE;
@@ -48,13 +50,13 @@ public class LoseWingShieldAction extends AbstractGameAction {
 
             for (AbstractPower power : AbstractDungeon.player.powers) {
                 if (power instanceof AbstractShionPower) {
-                    ((AbstractShionPower) power).onLoseShieldCharge(this.amount);
+                    ((AbstractShionPower) power).onLoseShieldCharge(this.effect);
                 }
             }
 
             for (AbstractRelic r : AbstractDungeon.player.relics) {
                 if (r instanceof AbstractShionRelic) {
-                    ((AbstractShionRelic) r).onLoseShieldCharge(this.amount);
+                    ((AbstractShionRelic) r).onLoseShieldCharge(this.effect);
                 }
             }
         }

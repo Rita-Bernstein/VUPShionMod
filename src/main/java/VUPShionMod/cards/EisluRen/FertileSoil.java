@@ -17,12 +17,12 @@ public class FertileSoil extends AbstractEisluRenCard {
 
     public FertileSoil() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustDiscardPileAction(p, 2,true));
+        addToBot(new ExhaustDiscardPileAction(p, 1,true));
         addToBot(new GainRefundChargeAction(this.magicNumber));
     }
 

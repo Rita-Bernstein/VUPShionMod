@@ -2,10 +2,16 @@ package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Common.NextTurnAttackPower;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DoubleDamagePower;
 import com.megacrit.cardcrawl.powers.PhantasmalPower;
+
+import java.util.function.Predicate;
 
 public class CaligoRapida extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID(CaligoRapida.class.getSimpleName());
@@ -21,6 +27,7 @@ public class CaligoRapida extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 0;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
+        this.parentCardID = CaligoConstans.ID;
     }
 
     public CaligoRapida() {
@@ -29,10 +36,20 @@ public class CaligoRapida extends AbstractCodexCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1), 1));
-
-        if (this.timesUpgraded >= 1)
-            addToBot(new ApplyPowerAction(p, p, new NextTurnAttackPower(p, this.magicNumber)));
+        switch (this.timesUpgraded){
+            case 0:
+                addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1) ));
+                break;
+            case 1 :
+                addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1)));
+                addToBot(new ApplyPowerAction(p, p, new NextTurnAttackPower(p, this.magicNumber)));
+                break;
+            case 2:
+                addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, 1,false)));
+                Predicate<AbstractCard> predicate = (pr) -> pr.type == AbstractCard.CardType.ATTACK;
+                addToBot(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.discardPile, predicate, this.baseDamage));
+                break;
+        }
     }
 
 
@@ -47,7 +64,6 @@ public class CaligoRapida extends AbstractCodexCard {
             if (this.timesUpgraded == 2) {
                 this.exhaust = false;
                 this.isEthereal = true;
-                this.shuffleBackIntoDrawPile = true;
                 upgradeMagicNumber(1);
             }
         }

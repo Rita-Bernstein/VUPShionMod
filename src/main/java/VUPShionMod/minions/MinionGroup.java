@@ -2,6 +2,7 @@ package VUPShionMod.minions;
 
 import VUPShionMod.actions.Common.MinionIntentFlashAction;
 import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.powers.EisluRen.SpiritCloisterPower;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -101,8 +102,6 @@ public class MinionGroup {
                             isDone = true;
                         }
                     });
-
-
                 }
             }
     }
@@ -148,20 +147,13 @@ public class MinionGroup {
         return true;
     }
 
-    public static boolean hasElfMinions() {
-        if (MinionGroup.getMinions().isEmpty()) return false;
-        for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
-            if (m instanceof ElfMinion)
-                return true;
-        }
-        return false;
-    }
 
     public static AbstractPlayerMinion getCurrentMinion() {
         for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
             if (!m.isDying && !m.isEscaping) {
-                if (m instanceof ElfMinion && m.halfDead) {
-                    continue;
+                if (m instanceof ElfMinion) {
+                    if (m.halfDead || ((ElfMinion) m).cantSelected)
+                        continue;
                 }
                 return m;
             }
@@ -173,7 +165,7 @@ public class MinionGroup {
     public static ElfMinion getElfMinion() {
         for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
             if (m instanceof ElfMinion) {
-                return (ElfMinion)m;
+                return (ElfMinion) m;
             }
         }
         return null;

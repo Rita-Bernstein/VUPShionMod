@@ -7,6 +7,7 @@ import VUPShionMod.actions.Unique.BossFinFunnelMinionAction;
 import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
 import VUPShionMod.actions.Unique.TriggerAllBossFinFunnelPassiveAction;
 import VUPShionMod.actions.Unique.TurnTriggerAllBossFinFunnelAction;
+import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.*;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -123,6 +125,7 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
                 addToBot(new BossFinFunnelMinionAction(this));
                 break;
             case 4:
+                addToBot(new SFXAction("SHION_20"));
                 addToBot(new TalkAction(this, DIALOG[0], 1.5F, 1.5F));
                 addToBot(new GainShieldAction(this, 100));
                 addToBot(new AbstractGameAction() {
@@ -197,11 +200,14 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
             tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
         }
 
-        if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+        if (!MinionGroup.areMinionsBasicallyDead()) {
+            AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+            if(minion !=null)
+            for (AbstractPower p : minion.powers) {
                 tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
 
             }
+        }
 
         tmp = AbstractDungeon.player.stance.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
 
@@ -215,10 +221,13 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
             tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
         }
 
-        if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+        if (!MinionGroup.areMinionsBasicallyDead()) {
+            AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+            if(minion !=null)
+            for (AbstractPower p : minion.powers) {
                 tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
             }
+        }
 
         dmg = MathUtils.floor(tmp);
         if (dmg < 0) {

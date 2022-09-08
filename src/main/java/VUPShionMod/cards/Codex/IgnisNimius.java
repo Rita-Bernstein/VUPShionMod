@@ -3,6 +3,7 @@ package VUPShionMod.cards.Codex;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Common.FreeCardPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -20,6 +21,7 @@ public class IgnisNimius extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 1;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
+        this.parentCardID = IgnisRapidus.ID;
     }
 
     public IgnisNimius() {
@@ -29,6 +31,9 @@ public class IgnisNimius extends AbstractCodexCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new FreeCardPower(p, this.magicNumber)));
+        if(this.timesUpgraded >=2){
+            addToBot(new DrawCardAction(1));
+        }
     }
 
 
@@ -44,8 +49,9 @@ public class IgnisNimius extends AbstractCodexCard {
 
             if (this.timesUpgraded == 2) {
                 upgradeBaseCost(0);
-                upgradeMagicNumber(-1);
+                upgradeMagicNumber(-3);
                 this.isEthereal = false;
+                this.exhaust = false;
             }
         }
     }

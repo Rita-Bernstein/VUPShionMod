@@ -42,7 +42,7 @@ public class ForestStalking extends AbstractEisluRenCard {
         }));
 
 
-        int chance = 5;
+        int chance = 0;
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
             chance += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount / 5;
         }

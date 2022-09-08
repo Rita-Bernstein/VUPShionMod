@@ -174,7 +174,7 @@
     "NAME": "Abyssal Crux",
     "FLAVOR": "It is not her standing in front of her, not any longer.",
     "DESCRIPTIONS": [
-      "You can no longer #yrest at rest sites. NL Whenever you lose HP during combat, heal HP 30% as much.",
+      "You can no longer #yrest at rest sites. NL You can not longer gain #ySanity. NL Whenever you lose HP during combat, heal HP 30% as much.",
       "Reversed Crux of Abyss",
       "She is the container that Abyss loves most among all others, even willing to keep her sane. NL ...But the price is paid with the permanent suffering upon everything she cherishes.",
       "Any damage received is converted into HP loss. NL At the end of your turn, lose #b500 HP and Max HP. NL Whenever you lose HP, deal equal damage to ALL enemies."
@@ -460,21 +460,21 @@
     "NAME": "Shield HR Type: ZY-1",
     "FLAVOR": "In order to compensate for the fragile defense of the elves, equipped with a shape-shifting energy shield.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Gain #b1 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge."
+      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b1 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge."
     ]
   },
   "VUPShionMod:ShieldHRzy2": {
     "NAME": "Shield HR Type: ZY-2",
     "FLAVOR": "Based on the Shield HR Type: ZY-1,the kinetic energy recovery device has been added. Increased range.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Gain #b2 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycle."
+      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b2 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycle."
     ]
   },
   "VUPShionMod:ElfCore": {
     "NAME": "Spiritual Nucleus",
     "FLAVOR": "It is the source of Elven power, the extension of Gaea's will.",
     "DESCRIPTIONS": [
-      "Whenever you obtain #yCodex #yLigni, upgrade it. NL When you use #yWorldtree #yLeaf, gain #b9 #yStrength."
+      "Whenever you obtain #yCodex #yLigni, upgrade it. NL When you use #yWorldtree #yLeaf, gain #b9 #yStrength. NL When #yFairy #yin #ya #yBottle triggered,it heals you and #yElf to max HP."
     ]
   },
   "VUPShionMod:Warlike": {
@@ -494,6 +494,14 @@
       "什么， #r@牛↑~马@ ",
       "豹弊？ #r~不↑呜↓~ 可能的",
       "来 #b~骗~ ，来， #p~偷袭~！ "
+    ]
+  },
+  "VUPShionMod:Hymn": {
+    "NAME": "圣歌·共鸣",
+    "FLAVOR": "Anastasia试作圣力增幅器，具有一定的精神安定效果。“上聆天心，和为长歌。”",
+    "DESCRIPTIONS": [
+      " #y祈言姿态 中打出 #y祈言牌 时，获得 #b1 #ySan值 和 #y沉灵 ，并将一张 #y奇迹 加入手牌。",
+      " NL NL #y审判姿态 中打出 #y祈言牌 时，对所有造成 #b3+5% 其最大生命的伤害。。"
     ]
   }
 }

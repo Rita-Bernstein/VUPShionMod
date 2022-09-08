@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -37,7 +38,7 @@ public class GravitaterPower extends AbstractShionPower {
     public void onStackPower(AbstractPower power) {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
-            addToBot(new GainBlockAction(this.owner,this.owner,this.amount));
+            addToBot(new GainShieldAction(this.owner,this.amount));
         }
     }
 }

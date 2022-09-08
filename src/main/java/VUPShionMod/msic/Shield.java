@@ -112,7 +112,7 @@ public class Shield implements Disposable {
         return damageAmount;
     }
 
-    private void loseBlock(int amount) {
+    public void loseBlock(int amount) {
         this.currentShield -= amount;
         if (this.currentShield < 0) {
             this.currentShield = 0;

@@ -111,13 +111,13 @@ public class SaveHelper {
             GameStatsPatch.wangchuanDeathCount = config.getInt(CardCrawlGame.saveSlot + "wangchuanDeathCount");
 
             if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 0)) {
-                SkinManager.getSkin(0,1).unlock = true;
-                SkinManager.getSkin(0,1).button.locked = false;
+                SkinManager.getSkin(0, 1).unlock = true;
+                SkinManager.getSkin(0, 1).button.locked = false;
             }
 
             if (config.getBool(CardCrawlGame.saveSlot + "ReskinUnlock" + 1)) {
-                SkinManager.getSkin(1,2).unlock = true;
-                SkinManager.getSkin(1,2).button.locked = false;
+                SkinManager.getSkin(1, 2).unlock = true;
+                SkinManager.getSkin(1, 2).button.locked = false;
             }
 
             liyezhuVictory = config.getBool(CardCrawlGame.saveSlot + "liyezhuVictory");

@@ -20,11 +20,11 @@ public class HallowedCasketPower2 extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public HallowedCasketPower2(AbstractCreature owner) {
+    public HallowedCasketPower2(AbstractCreature owner,int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = -1;
+        this.amount = amount;
         this.loadRegion("anger");
         updateDescription();
     }
@@ -32,21 +32,15 @@ public class HallowedCasketPower2 extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description =  String.format(this.amount >1?DESCRIPTIONS[1]:DESCRIPTIONS[0],this.amount,this.amount) ;
     }
 
     @Override
     public void onExhaust(AbstractCard card) {
         if(card instanceof Miracle){
             flash();
-            addToBot(new DrawCardAction(2));
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(1);
-                    isDone = true;
-                }
-            });
+            addToBot(new DrawCardAction(this.amount));
+            addToBot(new ApplyPowerAction(this.owner,this.owner,new PsychicPower(this.owner,this.amount)));
         }
     }
 }

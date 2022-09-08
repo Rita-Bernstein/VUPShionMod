@@ -5,8 +5,10 @@ import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ShieldAttack extends AbstractEisluRenCard {
@@ -16,7 +18,7 @@ public class ShieldAttack extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public ShieldAttack() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -34,10 +36,20 @@ public class ShieldAttack extends AbstractEisluRenCard {
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 1 && AbstractDungeon.actionManager.cardsPlayedThisCombat
+                .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).type == AbstractCard.CardType.ATTACK) {
+            return super.canUse(p, m);
+        }
+        return false;
+    }
+
+    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeDamage(2);
+            upgradeSecondM(2);
             upgradeMagicNumber(1);
         }
     }

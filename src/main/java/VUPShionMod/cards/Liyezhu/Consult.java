@@ -17,11 +17,11 @@ public class Consult extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public Consult() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.cardsToPreview = new Identify();
     }
 
@@ -48,7 +48,6 @@ public class Consult extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();

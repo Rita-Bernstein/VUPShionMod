@@ -506,7 +506,7 @@
   "VUPShionMod:GravitaterPower": {
     "NAME": "Gravitater",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor, gain #b%d #yBlock."
+      "Whenever you gain #yMagiam #yObruor, gain #b%d #yShield."
     ]
   },
   "VUPShionMod:SuperloaderPower": {
@@ -594,7 +594,7 @@
   "VUPShionMod:CalamityPower": {
     "NAME": "Calamitously Sinful",
     "DESCRIPTIONS": [
-      "At the the start of your turn, apply #b%d #ySinful to ALL ENTITIES."
+      "At the the start of your turn, apply #b%d #ySinful to ALL ENTITIES and #yPunitive #b%d."
     ]
   },
   "VUPShionMod:Calamity2Power": {
@@ -624,7 +624,7 @@
   "VUPShionMod:AsceticismPower": {
     "NAME": "Ecstasy of Asceticism",
     "DESCRIPTIONS": [
-      "Every time you lose HP, gain #b%d [E] ."
+      "Every time you lose HP, gain #b%d [E] and heal #b%d HP."
     ]
   },
   "VUPShionMod:Asceticism2Power": {
@@ -642,7 +642,7 @@
   "VUPShionMod:TranscendSoul2Power": {
     "NAME": "Scorch Soul",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage #b%d times of #yPsychic to ALL enemies."
+      "Whenever you lose HP,deal damage equal to #b%d times of HP you lose to ALL enemies."
     ]
   },
   "VUPShionMod:ArbitrationPower": {
@@ -678,8 +678,7 @@
   "VUPShionMod:BrokenSanctuaryPower": {
     "NAME": "Broken Sanctuary",
     "DESCRIPTIONS": [
-      "This turn, #yPrayer cards cost 0.",
-      "In #b%d turns, #yPrayer cards cost 0."
+      " #yPrayer cards cost 0."
     ]
   },
     "VUPShionMod:BrokenSanctuary2Power": {
@@ -981,13 +980,13 @@
   "VUPShionMod:WingsOfDaedalusPower": {
     "NAME": "Wings of Daedalus",
     "DESCRIPTIONS": [
-      "Whenever you gain #yDexterity, gain #b%d times of that much #yStrength."
+      "Whenever you gain #yDexterity or #ytemporary #yDexterity , gain #b%d times of that much #yStrength or #ytemporary #yStrength."
     ]
   },
   "VUPShionMod:StonehengePower": {
     "NAME": "Stonehenge",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b%d #yRecycle."
+      "Whenever you played a card: NL #rAttack: Gain #b%d #yRecycle. NL #gSkill: Gain #b%d #yShield. NL #bPower: Gain #b%d [E]."
     ]
   },
   "VUPShionMod:EternalEchoPower": {
@@ -1012,8 +1011,8 @@
   "VUPShionMod:HurricaneVortexPower": {
     "NAME": "Tornado",
     "DESCRIPTIONS": [
-      "At the start of next #b%d turns, deal damage equal to 7+ #yDexterity and apply 1 #yWeak to ALL enemies.",
-      "At the start of next #b%d turns, deal damage equal to #b%d #bx #b(7 #b+ #bDexterity) and apply 1 #yWeak to ALL enemies."
+      "At the start of next #b%d turns, deal damage equal to #yDexterity and apply 1 #yWeak to ALL enemies.",
+      "At the start of next #b%d turns, deal damage equal to #b%d x #yDexterity and apply 1 #yWeak to ALL enemies."
     ]
   },
   "VUPShionMod:ForestBarrierPower": {
@@ -1062,7 +1061,7 @@
   "VUPShionMod:BossAvatarPower": {
     "NAME": "替身",
     "DESCRIPTIONS": [
-      "你的一名 #y替身 还剩 #b%d 点生命。 NL 还剩 #b%d 个 #y替身 。"
+      " #y紫音 的一名 #y替身 还剩 #b%d 点生命。 NL 还剩 #b%d 个 #y替身 。"
     ]
   },
   "VUPShionMod:PotentialOutbreakPower": {
@@ -1147,19 +1146,66 @@
   "VUPShionMod:HallowedCasketPower2": {
     "NAME": "Hallowed Case - Miracle",
     "DESCRIPTIONS": [
-      "Whenever you Exhaust #yMiracle ,draw #b2 cards and gain #b1 Sanity."
+      "Whenever you Exhaust #yMiracle ,draw #b%d card and gain #b%d #yPsychic.",
+      "Whenever you Exhaust #yMiracle ,draw #b%d cards and gain #b%d #yPsychic."
     ]
   },
   "VUPShionMod:YonggukCityTroyPower": {
     "NAME": "永固城邦",
     "DESCRIPTIONS": [
-      "每当你失去或获得 #y构装翼盾充能 时，获得 #b5 倍的 #y护盾 。"
+      "每当你失去或获得 #y构装翼盾充能 时，获得 #b%d 倍的 #y护盾 。"
     ]
   },
   "VUPShionMod:HotRestartPower": {
     "NAME": "热重启",
     "DESCRIPTIONS": [
       "本回合每层 #y构装翼盾充能 可减少的伤害不会降低。"
+    ]
+  },
+  "VUPShionMod:SwearPower": {
+    "NAME": "Swear",
+    "DESCRIPTIONS": [
+      "Until start of your next turn,your HP will not below #b1.",
+      "Until start of your next #b%d turns,your HP will not below #b1."
+    ]
+  },
+  "VUPShionMod:BeinglessMomentPower": {
+    "NAME": "虚像刹那",
+    "DESCRIPTIONS": [
+      "本回合 #g回复 生命时将获得等量的 #y护盾 。",
+      "接下来的 #b%d 个回合 #g回复 生命时将获得等量的 #y护盾 。"
+    ]
+  },
+  "VUPShionMod:LeachingBloodPower": {
+    "NAME": "吸血",
+    "DESCRIPTIONS": [
+      "你的下张 #y攻击牌 造成伤害时，回复等量的生命。",
+      "你的下 #b%d张 #y攻击牌 造成伤害时，回复等量的生命。"
+    ]
+  },
+  "VUPShionMod:SubLunaPower": {
+    "NAME": "Sub Luna",
+    "DESCRIPTIONS": [
+      "This turn, you do not lose ##yCor #yGladii.",
+      "In #b%d turns, you do not lose #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:IntensaPower": {
+    "NAME": "Intensa",
+    "DESCRIPTIONS": [
+      "At the start of your next turn,gain #yCor #yGladii you lost in this turn.(Gain #b%d stack)"
+    ]
+  },
+  "VUPShionMod:ProphecyOfSalvation2Power": {
+    "NAME": "Prophecy of Demise",
+    "DESCRIPTIONS": [
+      "Healing is #b50% more effective in this combat."
+    ]
+  },
+  "VUPShionMod:ProphecyOfDestruction2Power": {
+    "NAME": "Prophecy of Demise",
+    "DESCRIPTIONS": [
+      "At the start of your turn,you can #yExhaust a card to to apply #b%d #ySinful to ALL enemies."
     ]
   }
 }

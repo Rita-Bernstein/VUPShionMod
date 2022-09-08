@@ -30,7 +30,7 @@ public class TacticalLayout extends AbstractShionMinamiCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
-        addToBot(new ExhaustDrawPileAction(p, 1));
+        addToBot(new ExhaustDrawPileAction(p, 1,true));
         addToBot(new TriggerFinFunnelPassiveAction(true, this.magicNumber));
     }
 

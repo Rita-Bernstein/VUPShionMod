@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 
 import java.util.function.Supplier;
 
-public class ThousandsOfBladeStance extends AbstractStance {
+public class ThousandsOfBladeStance extends AbstractVUPShionStance {
     public static final String STANCE_ID = VUPShionMod.makeID(ThousandsOfBladeStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 

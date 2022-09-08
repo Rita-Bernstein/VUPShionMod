@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
-public class LightArmorStance extends AbstractStance {
+public class LightArmorStance extends AbstractVUPShionStance {
     public static final String STANCE_ID = VUPShionMod.makeID(LightArmorStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 

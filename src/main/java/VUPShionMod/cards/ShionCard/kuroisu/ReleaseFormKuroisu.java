@@ -4,8 +4,10 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import VUPShionMod.powers.Shion.ReleaseFormKuroisuPower;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,6 +26,7 @@ public class ReleaseFormKuroisu extends AbstractShionKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("SHION_" + (32 + MathUtils.random(1))));
         addToBot(new VFXAction(new PortraitWindyPetalEffect("Kuroisu"),1.0f));
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormKuroisuPower(p, this.magicNumber), 0));
     }

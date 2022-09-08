@@ -25,7 +25,7 @@ public class TerraNimia extends AbstractCodexCard implements SpawnModificationCa
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
         this.exhaust= true;
-
+        this.parentCardID = TerraRapida.ID;
 
     }
 
@@ -43,7 +43,7 @@ public class TerraNimia extends AbstractCodexCard implements SpawnModificationCa
                 addToBot(new ApplyPowerAction(p,p,new FourSkillPower(p,1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,1)));
+                addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,2)));
                 break;
         }
     }

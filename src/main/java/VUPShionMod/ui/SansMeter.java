@@ -3,8 +3,12 @@ package VUPShionMod.ui;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainMaxHPAction;
 import VUPShionMod.actions.Common.LoseMaxHPAction;
+import VUPShionMod.events.MentalBreakdown;
+import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.AbstractShionRelic;
+import VUPShionMod.relics.Event.AbyssalCrux;
 import VUPShionMod.util.SaveHelper;
+import basemod.CustomEventRoom;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,11 +18,15 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.map.MapEdge;
+import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.MinionPower;
@@ -27,6 +35,8 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+
+import java.util.ArrayList;
 
 public class SansMeter {
     private Texture bg;
@@ -179,6 +189,7 @@ public class SansMeter {
     }
 
     public void addSan(int amount) {
+        if (AbstractDungeon.player.hasRelic(AbyssalCrux.ID)) return;
         this.amount += amount;
         if (this.amount > this.amount_MAX)
             this.amount = this.amount_MAX;
@@ -193,10 +204,10 @@ public class SansMeter {
         this.amount = SansMeterSave.sansMeterSaveAmount;
 
         if (this.amount >= this.amount_MAX)
-            addToBot(new GainMaxHPAction(AbstractDungeon.player,10));
+            addToBot(new GainMaxHPAction(AbstractDungeon.player, 10));
 
         if (this.amount < this.amount_MAX && this.amount > 50)
-            addToBot(new GainMaxHPAction(AbstractDungeon.player,1));
+            addToBot(new GainMaxHPAction(AbstractDungeon.player, 1));
 
         if (this.amount <= 50)
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 3, false)));
@@ -218,8 +229,46 @@ public class SansMeter {
     }
 
 
-    public Integer onSave() {
-        return this.amount;
+    public static SansMeter getSans() {
+        return EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel);
+    }
+
+    public void onVictory() {
+        if (!SansMental.sansMental && this.amount <= 0) {
+            RoomEventDialog.optionList.clear();
+
+            AbstractDungeon.eventList.add(0, MentalBreakdown.ID);
+
+            MapRoomNode cur = AbstractDungeon.currMapNode;
+            MapRoomNode node = new MapRoomNode(cur.x, cur.y);
+            node.room = new CustomEventRoom();
+
+            ArrayList<MapEdge> curEdges = cur.getEdges();
+            for (MapEdge edge : curEdges) {
+                node.addEdge(edge);
+            }
+
+
+            AbstractDungeon.player.releaseCard();
+            AbstractDungeon.overlayMenu.hideCombatPanels();
+            AbstractDungeon.previousScreen = null;
+            AbstractDungeon.dynamicBanner.hide();
+            AbstractDungeon.dungeonMapScreen.closeInstantly();
+            AbstractDungeon.closeCurrentScreen();
+            AbstractDungeon.topPanel.unhoverHitboxes();
+            AbstractDungeon.fadeIn();
+            AbstractDungeon.effectList.clear();
+            AbstractDungeon.topLevelEffects.clear();
+            AbstractDungeon.topLevelEffectsQueue.clear();
+            AbstractDungeon.effectsQueue.clear();
+            AbstractDungeon.dungeonMapScreen.dismissable = true;
+            AbstractDungeon.nextRoom = node;
+            AbstractDungeon.setCurrMapNode(node);
+            AbstractDungeon.getCurrRoom().onPlayerEntry();
+            AbstractDungeon.scene.nextRoom(node.room);
+            AbstractDungeon.rs = node.room.event instanceof AbstractImageEvent ? AbstractDungeon.RenderScene.EVENT : AbstractDungeon.RenderScene.NORMAL;
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.EVENT;
+        }
     }
 
 }

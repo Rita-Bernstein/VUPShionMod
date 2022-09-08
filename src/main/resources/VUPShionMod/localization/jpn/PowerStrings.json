@@ -484,7 +484,7 @@
   "VUPShionMod:GravitaterPower": {
     "NAME": "重力回路",
     "DESCRIPTIONS": [
-      "获得 #y魔能过载 时，获得 #b%d 点 #y格挡 。"
+      "获得 #y魔能过载 时，获得 #b%d 点 #y护盾 。"
     ]
   },
   "VUPShionMod:SuperloaderPower": {

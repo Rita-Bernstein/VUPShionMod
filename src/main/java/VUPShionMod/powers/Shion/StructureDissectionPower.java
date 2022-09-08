@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -182,6 +183,10 @@ public class StructureDissectionPower extends AbstractShionPower {
         trigger(0);
     }
 
+    private void playSFX(){
+        addToTop(new SFXAction("SHION_24"));
+    }
+
     public void trigger(int previous) {
         if (previous < 3 && this.amount >= 3)
             addToTop(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 5, this.owner.isPlayer)));
@@ -250,7 +255,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                                         }
                                     }
                                 }
-
+                                playSFX();
                                 return;
                             }
                         }
@@ -261,6 +266,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
                                 192.0f, 108.0f, 2.5f* Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, MetallicizePower.POWER_ID));
+                        playSFX();
                         return;
                     }
 
@@ -268,6 +274,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
                                 192.0f, 108.0f, 2.5f* Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, CuriosityPower.POWER_ID));
+                        playSFX();
                         return;
                     }
 
@@ -275,6 +282,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
                                 192.0f, 108.0f, 2.5f* Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, TimeWarpPower.POWER_ID));
+                        playSFX();
                         return;
                     }
 
@@ -292,6 +300,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                                             isDone = true;
                                         }
                                     });
+                                    playSFX();
                                     return;
                                 }
                             }
@@ -309,6 +318,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                                 isDone = true;
                             }
                         });
+                        playSFX();
                         return;
                     }
 
@@ -317,6 +327,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
                                 192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, InvinciblePower.POWER_ID));
+                        playSFX();
                         return;
                     }
 
@@ -325,28 +336,38 @@ public class StructureDissectionPower extends AbstractShionPower {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
                                 192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, DefenceMonsterPower.POWER_ID));
+                        playSFX();
+                        return;
                     }
 
                     if (m.id.equals(TimePortal.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
                                 192.0f, 108.0f,  2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
+                        playSFX();
+                        return;
                     }
 
                     if (m.id.equals(Ouroboros.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
                                 192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
+                        playSFX();
+                        return;
                     }
 
 
                     addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -3)));
+                    playSFX();
 
                 } else
                     addToTop(new StunMonsterAction((AbstractMonster) this.owner, this.owner, 1));
+                playSFX();
             }else {
                 addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -3)));
+                playSFX();
             }
+
         }
 
     }

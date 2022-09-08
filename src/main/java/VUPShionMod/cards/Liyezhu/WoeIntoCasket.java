@@ -1,8 +1,11 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.ExhaustAllStatusAndCurseAction;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,9 +28,13 @@ public class WoeIntoCasket extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(p.hasPower(PsychicPower.POWER_ID)){
-            addToBot(new GainEnergyAction(p.getPower(PsychicPower.POWER_ID).amount));
-            addToBot(new RemoveSpecificPowerAction(p,p,PsychicPower.POWER_ID));
+        addToBot(new ExhaustAllStatusAndCurseAction());
+        if (p.hasPower(PsychicPower.POWER_ID)) {
+            int amount = p.getPower(PsychicPower.POWER_ID).amount;
+            if (amount > 10) amount = 10;
+            addToBot(new GainEnergyAction(amount));
+            addToBot(new DrawCardAction(amount));
+            addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID,amount));
         }
     }
 

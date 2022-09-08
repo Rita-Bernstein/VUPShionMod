@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.ApplyPrayerAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.prayers.LoseHPPrayer;
+import VUPShionMod.prayers.SanguinaryPreceptPrayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,15 +15,15 @@ public class SanguinaryPrecept extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(SanguinaryPrecept.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/SanguinaryPrecept.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
 
     public SanguinaryPrecept() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 6;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 4;
         this.exhaust = true;
         this.cardsToPreview = new FlickeringTip();
         this.tags.add(CardTagsEnum.Prayer_CARD);
@@ -36,7 +37,7 @@ public class SanguinaryPrecept extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 if (isInPrayer()) {
-                        addToTop(new ApplyPrayerAction(new LoseHPPrayer(secondaryM, magicNumber)));
+                        addToTop(new ApplyPrayerAction(new SanguinaryPreceptPrayer(secondaryM, magicNumber)));
                 }
                 if (isInJudge() ) {
                     AbstractCard temp = new FlickeringTip();
@@ -56,7 +57,7 @@ public class SanguinaryPrecept extends AbstractLiyezhuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
-            upgradeMagicNumber(3);
+            this.selfRetain = true;
         }
     }
 }

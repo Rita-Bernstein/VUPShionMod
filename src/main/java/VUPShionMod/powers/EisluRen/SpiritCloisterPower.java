@@ -38,8 +38,10 @@ public class SpiritCloisterPower extends AbstractShionPower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        if (MinionGroup.hasElfMinions())
-            MinionGroup.getElfMinion().onSpiritCloisterPower(this);
+        ElfMinion elf = MinionGroup.getElfMinion();
+        if(elf !=null)
+           elf.onSpiritCloisterPower(this);
+
     }
 
     @Override

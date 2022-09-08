@@ -25,13 +25,13 @@ public class ReapTheSinful extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public ReapTheSinful() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 9;
         this.isMultiDamage = true;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
@@ -48,20 +48,25 @@ public class ReapTheSinful extends AbstractLiyezhuCard {
 
 
         addToBot(new DuelSinAction());
-        if (upgraded) {
+        if (upgraded)
             addToBot(new DuelSinAction());
-            if (p.hasPower(PsychicPower.POWER_ID))
-                if (p.getPower(PsychicPower.POWER_ID).amount >= 2) {
-                    addToBot(new DuelSinAction());
-                    addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 2));
+
+
+        if (p.hasPower(PsychicPower.POWER_ID))
+            if (p.getPower(PsychicPower.POWER_ID).amount >= 1) {
+                for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                    addToBot(new ApplySinAction(mo, this.magicNumber));
                 }
-        }
+                addToBot(new ApplySinAction(p, this.magicNumber));
+                addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));
+            }
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -7,6 +7,7 @@ import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.helpers.ChargeHelper;
 import VUPShionMod.powers.Monster.BossShion.SavePowerPower;
+import VUPShionMod.ui.SansMeter;
 import VUPShionMod.vfx.Common.AbstractSpineEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.esotericsoftware.spine.Skeleton;
@@ -113,6 +114,8 @@ public class AbstractPlayerPatches {
         public static void Postfix(AbstractPlayer player) {
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                 AddFields.finFunnelManager.get(player).onVictory();
+                if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel))
+                    SansMeter.getSans().onVictory();
             }
 
             for (AbstractGameEffect effect : AbstractDungeon.effectList) {
@@ -422,7 +425,9 @@ public class AbstractPlayerPatches {
         public static SpireReturn<Void> Postfix(DamageAction _instance, AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
             if (!MinionGroup.areMinionsBasicallyDead() && target != null && target.isPlayer) {
                 AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                _instance.target = minion;
+                if (minion != null) {
+                    _instance.target = minion;
+                }
             }
 
             return SpireReturn.Continue();
@@ -439,7 +444,8 @@ public class AbstractPlayerPatches {
         public static SpireReturn<Void> Postfix(VampireDamageAction _instance, AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
             if (!MinionGroup.areMinionsBasicallyDead() && target != null && target.isPlayer) {
                 AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                _instance.target = minion;
+                if (minion != null)
+                    _instance.target = minion;
 
             }
 
@@ -457,7 +463,8 @@ public class AbstractPlayerPatches {
         public static SpireReturn<Void> Postfix(AbstractPlayer _instance, DamageInfo info) {
             if (!MinionGroup.areMinionsBasicallyDead()) {
                 AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                minion.damage(info);
+                if (minion != null)
+                    minion.damage(info);
             }
 
             return SpireReturn.Return();
@@ -471,11 +478,13 @@ public class AbstractPlayerPatches {
     public static class ChangeMonsterCalculateTargetPatch {
         @SpireInsertPatch(rloc = 20, localvars = {"tmp"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, int damage, @ByRef float[] tmp) {
-            if (!MinionGroup.areMinionsBasicallyDead())
-                for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
-                    tmp[0] = p.atDamageReceive(tmp[0], DamageInfo.DamageType.NORMAL);
-
-                }
+            if (!MinionGroup.areMinionsBasicallyDead()) {
+                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                if (minion != null)
+                    for (AbstractPower p : minion.powers) {
+                        tmp[0] = p.atDamageReceive(tmp[0], DamageInfo.DamageType.NORMAL);
+                    }
+            }
             return SpireReturn.Continue();
         }
     }
@@ -488,10 +497,13 @@ public class AbstractPlayerPatches {
     public static class ChangeMonsterCalculateTargetPatch2 {
         @SpireInsertPatch(rloc = 38, localvars = {"tmp"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, int damage, @ByRef float[] tmp) {
-            if (!MinionGroup.areMinionsBasicallyDead())
-                for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
-                    tmp[0] = p.atDamageFinalReceive(tmp[0], DamageInfo.DamageType.NORMAL);
-                }
+            if (!MinionGroup.areMinionsBasicallyDead()) {
+                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                if (minion != null)
+                    for (AbstractPower p : minion.powers) {
+                        tmp[0] = p.atDamageFinalReceive(tmp[0], DamageInfo.DamageType.NORMAL);
+                    }
+            }
 
             return SpireReturn.Continue();
         }

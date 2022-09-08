@@ -2,14 +2,17 @@ package VUPShionMod.patches;
 
 
 import VUPShionMod.stances.*;
+import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
 
 public class StancePatch {
-
     @SpirePatch(
             clz = AbstractStance.class,
             method = "getStanceFromName"
@@ -23,6 +26,7 @@ public class StancePatch {
             if (name.equals(JudgeStance.STANCE_ID)) {
                 return SpireReturn.Return(new JudgeStance());
             }
+
             if (name.equals(SpiritStance.STANCE_ID)) {
                 return SpireReturn.Return(new SpiritStance());
             }
@@ -47,6 +51,24 @@ public class StancePatch {
                 return SpireReturn.Return(new LightArmorStance());
             }
 
+
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = ChangeStanceAction.class,
+            method = "update"
+    )
+    public static class ChangeStanceActionPatch {
+        @SpireInsertPatch(rloc = 7)
+        public static SpireReturn<Void> Insert(ChangeStanceAction _instance) {
+            AbstractStance oldStance = AbstractDungeon.player.stance;
+            String id = ReflectionHacks.getPrivate(_instance, ChangeStanceAction.class, "id");
+            if (id != null)
+                if (!oldStance.ID.equals(SpiritStance.STANCE_ID) && id.equals(JudgeStance.STANCE_ID)) {
+                    ReflectionHacks.setPrivate(_instance, ChangeStanceAction.class, "id", SpiritStance.STANCE_ID);
+                }
 
             return SpireReturn.Continue();
         }

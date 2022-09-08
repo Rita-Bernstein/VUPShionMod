@@ -35,7 +35,7 @@ public class WindArrow extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int chance = this.upgraded ? 70 : 50;
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
-            chance = AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
+            chance += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
         }
 
         if (chance > 0)

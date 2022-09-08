@@ -18,11 +18,11 @@ public class Calamity2Power extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public Calamity2Power(AbstractCreature owner) {
+    public Calamity2Power(AbstractCreature owner,int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = -1;
+        this.amount = amount;
         updateDescription();
         isTurnBased = true;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower128.png")), 0, 0, 128, 128);
@@ -37,10 +37,6 @@ public class Calamity2Power extends AbstractShionPower {
 
     @Override
     public void atStartOfTurnPostDraw() {
-        if (!(AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if(mo.hasPower(SinPower.POWER_ID))
-                addToBot(new ApplyPowerAction(mo,mo,new StrengthPower(mo,-mo.getPower(SinPower.POWER_ID).amount)));
-        }
+        super.atStartOfTurnPostDraw();
     }
 }

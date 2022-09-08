@@ -3,6 +3,7 @@ package VUPShionMod.cards.Codex;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Codex.TurnDexPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -21,6 +22,7 @@ public class VentusRapidus extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 1;
         this.timesUpgraded = upgrades;
+        this.parentCardID = VentusNimius.ID;
     }
 
     public VentusRapidus() {
@@ -38,6 +40,7 @@ public class VentusRapidus extends AbstractCodexCard {
                 break;
             case 2:
                 addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
+                addToBot(new DrawCardAction(2));
                 addToBot(new ApplyPowerAction(p, p, new TurnDexPower(p, this.secondaryM)));
                 break;
         }

@@ -103,7 +103,8 @@
   },
   "VUPShionMod:AvariciousPrayer": {
     "DESCRIPTION": [
-      "所有敌人 失去 #b%d 点生命并给予 #y罪孽 。"
+      "抽 #b%d 张牌并获得 #b%d [E] 。",
+      "抽 #b%d 张牌并获得 #b%d [E] 。"
     ],
     "NAME": "贪婪"
   },
@@ -124,5 +125,17 @@
       "回复 #b%d 点生命。"
     ],
     "NAME": "回复"
+  },
+  "VUPShionMod:SanguinaryPreceptPrayer": {
+    "DESCRIPTION": [
+      "失去 #b%d *San值 ，所有敌人失去其 #b10%% 最大生命的生命。"
+    ],
+    "NAME": "屠戮诫言"
+  },
+  "VUPShionMod:SanPrayer": {
+    "DESCRIPTION": [
+      "获得 #b%d *San值 。"
+    ],
+    "NAME": "希祈"
   }
 }

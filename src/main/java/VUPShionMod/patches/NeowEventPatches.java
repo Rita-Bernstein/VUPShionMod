@@ -55,23 +55,26 @@ public class NeowEventPatches {
             if (shouldShionTalk()) {
                 String finalString = "";
                 String[] TEXT = CardCrawlGame.languagePack.getCharacterString("Neow Event").TEXT;
-
+                String soundKey = "";
                 for (int i = 0; i < 4; i++)
                     if (msg.equals(TEXT[i])) {
+                        soundKey = "SHION_23";
                         finalString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("NeowEventTalkPatch")).TEXT[0];
                         break;
                     }
 
                 for (int i = 4; i < 8; i++)
                     if (msg.equals(TEXT[i])) {
+                        soundKey = "SHION_25";
                         finalString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("NeowEventTalkPatch")).TEXT[1];
                     }
 
                 if (msg.equals(TEXT[8]) || msg.equals(TEXT[9])) {
+                    soundKey = "SHION_31";
                     finalString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("NeowEventTalkPatch")).TEXT[2];
                 }
 
-
+                CardCrawlGame.sound.play(soundKey);
                 AbstractDungeon.effectList.add(new InfiniteSpeechBubble(
                         1500.0F * Settings.xScale, AbstractDungeon.floorY + 270.0F * Settings.yScale, finalString));
                 return SpireReturn.Return();

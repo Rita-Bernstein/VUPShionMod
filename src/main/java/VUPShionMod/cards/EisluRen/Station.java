@@ -19,8 +19,8 @@ public class Station extends AbstractEisluRenCard {
 
     public Station() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 3;
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 

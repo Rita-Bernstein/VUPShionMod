@@ -1,11 +1,13 @@
 package VUPShionMod.stances;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Liyezhu.DuelSinAction;
 import VUPShionMod.character.Liyezhu;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
@@ -15,7 +17,7 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
 
-public class JudgeStance extends AbstractStance {
+public class JudgeStance extends AbstractVUPShionStance {
     public static final String STANCE_ID = VUPShionMod.makeID(JudgeStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 
@@ -69,6 +71,13 @@ public class JudgeStance extends AbstractStance {
                 new CombustPower(AbstractDungeon.player, 1, 5), 5));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                 new StrengthPower(AbstractDungeon.player, 1)));
+    }
+
+    @Override
+    public void onPlayCard(AbstractCard card) {
+        if(card.type == AbstractCard.CardType.ATTACK){
+            AbstractDungeon.actionManager.addToBottom(new DuelSinAction());
+        }
     }
 
 

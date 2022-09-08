@@ -2,6 +2,7 @@ package VUPShionMod.skins.sk.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.Liyezhu.*;
+import VUPShionMod.relics.Liyezhu.Hymn;
 import VUPShionMod.relics.Liyezhu.MartyrVessel;
 import VUPShionMod.skins.AbstractSkin;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -43,6 +44,7 @@ public class OriLiyezhu extends AbstractSkin {
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(MartyrVessel.ID);
+        info.relics.add(Hymn.ID);
         return info;
     }
 
@@ -50,6 +52,7 @@ public class OriLiyezhu extends AbstractSkin {
     public ArrayList<String> getStartingRelic() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(MartyrVessel.ID);
+        retVal.add(Hymn.ID);
         return retVal;
     }
 

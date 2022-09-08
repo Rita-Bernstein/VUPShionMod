@@ -1,8 +1,10 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Liyezhu.AddSansAction;
 import VUPShionMod.actions.Liyezhu.ApplySinAction;
 import VUPShionMod.actions.Liyezhu.DuelSinAction;
+import VUPShionMod.actions.Unique.RemovePlayerDebuffAction;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -29,18 +31,18 @@ public class LimpidHeart extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new HealAction(p, p, this.secondaryM));
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                addToTop(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));
-                addToTop(new DuelSinAction());
-                for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                    addToTop(new ApplySinAction(mo, p.hasPower(PsychicPower.POWER_ID) ? magicNumber + 3 : magicNumber));
-                }
 
-                isDone = true;
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            addToBot(new ApplySinAction(mo, this.magicNumber));
+        }
+
+        addToBot(new RemovePlayerDebuffAction());
+        if (AbstractDungeon.player.hasPower(PsychicPower.POWER_ID)) {
+            if (AbstractDungeon.player.getPower(PsychicPower.POWER_ID).amount > 1) {
+                addToBot(new AddSansAction(1));
+                addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));
             }
-        });
+        }
     }
 
     @Override

@@ -1012,8 +1012,8 @@
   "VUPShionMod:HurricaneVortexPower": {
     "NAME": "颶風漩渦",
     "DESCRIPTIONS": [
-      "接下來的 #b%d 回合開始時對所有敵人造成 #b7+敏捷 點傷害並給予 #y虛弱 。",
-      "接下來的 #b%d 回合開始時對所有敵人造成 #b%dx(7+敏捷) 點傷害並給予 #y虛弱 。"
+      "接下來的 #b%d 回合開始時對所有敵人造成 #y敏捷 點傷害並給予 #y虛弱 。",
+      "接下來的 #b%d 回合開始時對所有敵人造成 #b%d x #y敏捷 點傷害並給予 #y虛弱 。"
     ]
   },
   "VUPShionMod:ForestBarrierPower": {

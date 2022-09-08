@@ -26,7 +26,7 @@ public class Stonehenge extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.secondaryM = this.baseSecondaryM = 4;
         this.baseBlock = 12;
-        this.magicNumber = this.baseMagicNumber = 6;
+        this.magicNumber = this.baseMagicNumber =1;
     }
 
     @Override

@@ -44,7 +44,7 @@ public class PhysicalMagic extends AbstractEisluRenCard {
             }
 
         if (m.getIntentBaseDmg() < 0) {
-            addToBot(new DrawCardAction(1));
+            addToBot(new DrawCardAction(this.upgraded ? 2 : 1));
             addToBot(new GainEnergyAction(1));
         }
     }
@@ -54,6 +54,8 @@ public class PhysicalMagic extends AbstractEisluRenCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(3);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

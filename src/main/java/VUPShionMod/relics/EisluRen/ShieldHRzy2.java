@@ -7,8 +7,10 @@ import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.ui.WingShield;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
@@ -32,6 +34,7 @@ public class ShieldHRzy2 extends AbstractShionRelic {
     @Override
     public void atBattleStart() {
         WingShield.getWingShield().upgradeMax();
+        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,5)));
     }
 
     @Override
@@ -69,6 +72,8 @@ public class ShieldHRzy2 extends AbstractShionRelic {
             addToBot(new GainWingShieldChargeAction(2));
         }
     }
+
+
 
     @Override
     public void obtain() {

@@ -3,6 +3,7 @@ package VUPShionMod.actions.Liyezhu;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Liyezhu.SinPower;
+import VUPShionMod.stances.SpiritStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -24,7 +25,7 @@ public class DuelSinAction extends AbstractGameAction {
             }
         }
 
-        if(AbstractDungeon.player.hasPower(SinPower.POWER_ID))
+        if(AbstractDungeon.player.hasPower(SinPower.POWER_ID) && !AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID))
         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player,AbstractDungeon.player.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.HP_LOSS));
 
         if(!AbstractDungeon.player.isDeadOrEscaped()){

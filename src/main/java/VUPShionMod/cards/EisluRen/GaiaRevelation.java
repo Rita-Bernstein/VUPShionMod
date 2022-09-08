@@ -29,7 +29,7 @@ public class GaiaRevelation extends AbstractEisluRenCard {
 
         int scryAmount = AbstractDungeon.cardRng.random(1, this.magicNumber);
         addToBot(new ScryAction(scryAmount));
-        addToBot(new GainRefundChargeAction(scryAmount/2));
+        addToBot(new GainRefundChargeAction(scryAmount));
     }
 
     @Override

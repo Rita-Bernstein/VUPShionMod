@@ -3,6 +3,7 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.IntensaPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -52,6 +53,9 @@ public class GladiiInfiniti extends AbstractWCCard {
         this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         initializeDescription();
 
+
+
+        addToBot(new ApplyPowerAction(p,p,new IntensaPower(p),0));
         addToBot(new ApplyStiffnessAction(4));
 
         addToBot(new StunMonsterAction(m, p, 1));

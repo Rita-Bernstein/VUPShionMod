@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainMaxHPAction;
+import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.powers.EisluRen.SpiritCloisterPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -27,9 +28,10 @@ public class LifeLinkCard extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new SpiritCloisterPower(p)));
-        if(MinionGroup.hasElfMinions()){
-            addToBot(new GainMaxHPAction(MinionGroup.getElfMinion(),this.magicNumber));
-        }
+        AbstractPlayerMinion elf = MinionGroup.getElfMinion();
+        if(elf !=null)
+            addToBot(new GainMaxHPAction(elf,this.magicNumber));
+
 
         addToBot(new RemoveDebuffsAction(p));
     }

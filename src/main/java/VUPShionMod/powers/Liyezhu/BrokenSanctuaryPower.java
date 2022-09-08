@@ -14,13 +14,11 @@ public class BrokenSanctuaryPower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private boolean justApplied;
 
-    public BrokenSanctuaryPower(AbstractCreature owner, int amount) {
+    public BrokenSanctuaryPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = amount;
         loadRegion("swivel");
         updateDescription();
     }
@@ -28,19 +26,8 @@ public class BrokenSanctuaryPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = this.amount > 1 ? String.format(DESCRIPTIONS[1], this.amount) : DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0];
     }
-
-
-    public void atEndOfRound() {
-        if (this.amount == 0) {
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-        } else {
-            addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
-        }
-    }
-
-
 
 
 }

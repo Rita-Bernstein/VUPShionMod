@@ -5,6 +5,7 @@ import VUPShionMod.actions.Liyezhu.ApplyPrayerAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.prayers.HealPrayer;
 import VUPShionMod.prayers.RegenPrayer;
+import VUPShionMod.prayers.SanPrayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -23,7 +24,7 @@ public class SoothingScripture extends AbstractLiyezhuCard {
     public SoothingScripture() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 6;
-        this.magicNumber = this.baseMagicNumber = 10;
+        this.magicNumber = this.baseMagicNumber = 5;
         this.secondaryM = this.baseSecondaryM = 3;
         this.exhaust = true;
         this.cardsToPreview = new EmanationOfIre();
@@ -38,6 +39,7 @@ public class SoothingScripture extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 if (isInPrayer())
+                    addToTop(new ApplyPrayerAction(new SanPrayer(secondaryM, 1)));
                     addToTop(new ApplyPrayerAction(new HealPrayer(secondaryM, magicNumber)));
 
                 if (isInJudge() ) {

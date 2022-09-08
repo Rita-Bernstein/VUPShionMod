@@ -4,6 +4,8 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.ApplySinAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,33 +26,21 @@ public class AvariciousPrayer extends AbstractPrayer {
         this.turns = turns;
         this.amount = amount;
         updateDescription();
-        loadRegion("strength");
+        loadRegion("carddraw");
 //        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/prayer/BloodPrayerPrayer128.png")), 0, 0, 128, 128);
 //        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/prayer/BloodPrayerPrayer36.png")), 0, 0, 36, 36);
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(this.amount>1? DESCRIPTIONS[1]:DESCRIPTIONS[0], this.amount,this.amount);
     }
 
     @Override
     public void use() {
-        int count = this.amount;
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                        if (!monster.isDeadOrEscaped()) {
-                            addToTop(new ApplySinAction(monster, 1));
-                            addToTop(new LoseHPAction(monster, AbstractDungeon.player, count));
-                        }
-                    }
-                }
-                isDone = true;
-            }
-        });
+        flash();
+        addToBot(new DrawCardAction(this.amount));
+        addToBot(new GainEnergyAction(this.amount));
 
     }
 

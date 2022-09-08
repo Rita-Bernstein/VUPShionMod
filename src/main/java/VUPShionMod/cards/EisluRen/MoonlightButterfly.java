@@ -44,7 +44,7 @@ public class MoonlightButterfly extends AbstractEisluRenCard {
             addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
         }
 
-        int energy = 2;
+        int energy = 0;
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
             energy += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount / 5;
         }

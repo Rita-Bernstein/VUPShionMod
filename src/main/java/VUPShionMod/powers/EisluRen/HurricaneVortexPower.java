@@ -61,7 +61,7 @@ public class HurricaneVortexPower extends AbstractShionPower implements Cloneabl
     @Override
     public void atStartOfTurn() {
         flash();
-        int damage = 7;
+        int damage = 0;
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
             damage += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
         }

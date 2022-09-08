@@ -23,6 +23,7 @@ public class AquaRapida extends AbstractCodexCard {
         this.secondaryM =this.baseSecondaryM = 0;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
+        this.parentCardID = AquaConstans.ID;
     }
 
     public AquaRapida() {

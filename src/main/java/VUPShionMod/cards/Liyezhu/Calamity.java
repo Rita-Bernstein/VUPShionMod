@@ -29,15 +29,15 @@ public class Calamity extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.isInnate = true;
         vupCardSetBanner(CardRarity.RARE, CardType.POWER);
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 5)));
-        addToBot(new ApplyPowerAction(p, p, new BerserkPower(p, 2)));
-        addToBot(new ApplyPowerAction(p, p, new LoseHPPower(p, 20)));
-        addToBot(new ApplyPowerAction(p, p, new CalamityPower(p, 2)));
-        addToBot(new ApplyPowerAction(p, p, new Calamity2Power(p)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new BerserkPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new CalamityPower(p, this.secondaryM)));
     }
 
     @Override

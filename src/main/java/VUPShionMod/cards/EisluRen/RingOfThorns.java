@@ -3,6 +3,7 @@ package VUPShionMod.cards.EisluRen;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.MorsLibraquePower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -34,6 +35,8 @@ public class RingOfThorns extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
+            addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));
 
         Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, 1, false);
@@ -42,6 +45,18 @@ public class RingOfThorns extends AbstractEisluRenCard {
 
         Supplier<AbstractPower> powerToApply2 = () -> new ConstrictedPower(null, p, this.magicNumber);
         addToBot(new ApplyPowerToAllEnemyAction(powerToApply2));
+    }
+
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
+
+        return super.canUse(p, m);
     }
 
     @Override

@@ -23,7 +23,9 @@ public class TonitrusRapidus extends AbstractCodexCard {
         this.secondaryM = this.baseSecondaryM = 1;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
+        this.parentCardID = TonitrusConstans.ID;
     }
+
 
     public TonitrusRapidus() {
         this(0);

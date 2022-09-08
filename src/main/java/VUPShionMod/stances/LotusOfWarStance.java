@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
-public class LotusOfWarStance extends AbstractStance {
+public class LotusOfWarStance extends AbstractVUPShionStance {
     public static final String STANCE_ID = VUPShionMod.makeID(LotusOfWarStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 

@@ -2,14 +2,18 @@ package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.AbstractWCCard;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class ChaosRapidus extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID(ChaosRapidus.class.getSimpleName());
@@ -24,7 +28,9 @@ public class ChaosRapidus extends AbstractCodexCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
         this.timesUpgraded = upgrades;
+        this.parentCardID = ChaosNimius.ID;
     }
+
 
     public ChaosRapidus() {
         this(0);

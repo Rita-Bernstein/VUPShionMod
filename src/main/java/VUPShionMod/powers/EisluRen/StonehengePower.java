@@ -1,9 +1,13 @@
 package VUPShionMod.powers.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -30,12 +34,22 @@ public class StonehengePower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);
+        this.description = String.format(DESCRIPTIONS[0], amount, amount * 7, amount);
     }
 
-
     @Override
-    public void atStartOfTurn() {
-        addToBot(new GainRefundChargeAction(this.amount));
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == AbstractCard.CardType.ATTACK) {
+            addToBot(new GainRefundChargeAction(this.amount));
+        }
+
+        if (card.type == AbstractCard.CardType.SKILL) {
+            addToBot(new GainShieldAction(this.owner, this.amount * 7));
+        }
+
+
+        if (card.type == AbstractCard.CardType.POWER) {
+            addToBot(new GainEnergyAction(this.amount));
+        }
     }
 }

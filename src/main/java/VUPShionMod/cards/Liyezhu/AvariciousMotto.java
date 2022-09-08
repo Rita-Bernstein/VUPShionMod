@@ -21,9 +21,7 @@ public class AvariciousMotto extends AbstractLiyezhuCard {
 
     public AvariciousMotto() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
-        this.magicNumber = this.baseMagicNumber = 6;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.secondaryM = this.baseSecondaryM = 4;
         this.exhaust = true;
         this.cardsToPreview = new BurnishedRazor();
         this.tags.add(CardTagsEnum.Prayer_CARD);
@@ -37,7 +35,7 @@ public class AvariciousMotto extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 if (isInPrayer()) {
-                    addToTop(new ApplyPrayerAction(new AvariciousPrayer(secondaryM, magicNumber)));
+                    addToTop(new ApplyPrayerAction(new AvariciousPrayer(secondaryM, 1)));
                 }
                 if (isInJudge() ) {
                     AbstractCard temp = new BurnishedRazor();
@@ -57,7 +55,7 @@ public class AvariciousMotto extends AbstractLiyezhuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
-            upgradeMagicNumber(3);
+            upgradeBaseCost(0);
         }
     }
 }

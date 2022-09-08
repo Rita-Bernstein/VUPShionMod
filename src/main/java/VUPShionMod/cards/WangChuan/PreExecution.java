@@ -6,6 +6,7 @@ import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -34,7 +35,7 @@ public class PreExecution extends AbstractWCCard {
             addToBot(new ApplyStiffnessAction(this.secondaryM));
 
         if (this.upgraded)
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1)));
+            addToBot(new GainEnergyAction(1));
     }
 
     @Override

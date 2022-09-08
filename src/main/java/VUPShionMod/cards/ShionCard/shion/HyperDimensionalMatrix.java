@@ -9,6 +9,7 @@ import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -29,6 +30,7 @@ public class HyperDimensionalMatrix extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new SFXAction("SHION_20"));
         addToBot(new HyperDimensionalMatrixAction(this.magicNumber));
     }
 

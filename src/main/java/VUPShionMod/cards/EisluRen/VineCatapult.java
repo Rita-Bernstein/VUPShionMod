@@ -25,7 +25,7 @@ public class VineCatapult extends AbstractEisluRenCard {
 
     public VineCatapult() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override

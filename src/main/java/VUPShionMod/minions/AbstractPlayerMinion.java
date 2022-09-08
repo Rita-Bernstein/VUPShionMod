@@ -1030,6 +1030,66 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
     }
 
+    private DamageInfo applyPowerElf(DamageInfo info, AbstractCreature owner, AbstractCreature target) {
+        info.output = info.base;
+        info.isModified = false;
+        float tmp = info.output;
+
+
+        for (AbstractPower p : owner.powers) {
+            tmp = p.atDamageGive(tmp, info.type);
+
+            if (info.base != (int) tmp) {
+                info.isModified = true;
+            }
+        }
+
+
+        if (AbstractDungeon.player.hasPower(SpiritCloisterPower.POWER_ID)) {
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p.ID.equals(StrengthPower.POWER_ID)) {
+                    tmp = p.atDamageGive(tmp, DamageInfo.DamageType.NORMAL);
+
+                    if (info.base != (int) tmp) {
+                        info.isModified = true;
+                    }
+                }
+            }
+        }
+
+        if (target != null)
+            for (AbstractPower p : target.powers) {
+                tmp = p.atDamageReceive(tmp, info.type);
+                if (info.base != (int) tmp) {
+                    info.isModified = true;
+                }
+            }
+
+
+        for (AbstractPower p : owner.powers) {
+            tmp = p.atDamageFinalGive(tmp, info.type);
+            if (info.base != (int) tmp) {
+                info.isModified = true;
+            }
+        }
+
+        if (target != null)
+            for (AbstractPower p : target.powers) {
+                tmp = p.atDamageFinalReceive(tmp, info.type);
+                if (info.base != (int) tmp) {
+                    info.isModified = true;
+                }
+            }
+
+
+        info.output = MathUtils.floor(tmp);
+        if (info.output < 0) {
+            info.output = 0;
+        }
+
+        return info;
+    }
+
 
     private void calculateDamage(int dmg) {
         AbstractCreature target = this.targetMonster;
@@ -1090,10 +1150,17 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
     public void applyPowers() {
         for (DamageInfo dmg : this.damage) {
-            if (this.targetMonster != null)
-                dmg.applyPowers(this, this.targetMonster);
-            else
+            if (this.targetMonster != null) {
+                if (this.id.equals(ElfMinion.ID)) {
+                    DamageInfo info = applyPowerElf(dmg, this, this.targetMonster);
+                    dmg.output = info.output;
+                    dmg.isModified = info.isModified;
+                } else {
+                    dmg.applyPowers(this, this.targetMonster);
+                }
+            } else {
                 dmg.output = dmg.base;
+            }
         }
 
 
@@ -1128,11 +1195,11 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
     protected abstract void getMove(int paramInt);
 
-    public void onMonsterDeath(){
+    public void onMonsterDeath() {
         refreshTargetMonster();
     }
 
-    public void onSpawnMonster(){
+    public void onSpawnMonster() {
         refreshTargetMonster();
     }
 

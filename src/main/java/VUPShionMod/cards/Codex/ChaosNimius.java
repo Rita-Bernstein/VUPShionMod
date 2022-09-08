@@ -2,12 +2,16 @@ package VUPShionMod.cards.Codex;
 
 import VUPShionMod.VUPShionMod;
 import basemod.BaseMod;
+import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class ChaosNimius extends AbstractCodexCard {
     public static final String ID = VUPShionMod.makeID(ChaosNimius.class.getSimpleName());
@@ -22,7 +26,10 @@ public class ChaosNimius extends AbstractCodexCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
         this.timesUpgraded = upgrades;
+        this.parentCardID = ChaosRapidus.ID;
     }
+
+
 
     public ChaosNimius() {
         this(0);

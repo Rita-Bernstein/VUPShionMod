@@ -12,9 +12,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.*;
 
 public class WingsOfDaedalusPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID(WingsOfDaedalusPower.class.getSimpleName());
@@ -43,9 +41,13 @@ public class WingsOfDaedalusPower extends AbstractShionPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.ID.equals(DexterityPower.POWER_ID) && target.isPlayer) {
+        if ((power.ID.equals(DexterityPower.POWER_ID) )&& target.isPlayer && power.amount >0) {
             flash();
             addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount * power.amount)));
+        }
+        if ((power.ID.equals(LoseDexterityPower.POWER_ID) )&& target.isPlayer && power.amount >0) {
+            flash();
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new LoseStrengthPower(this.owner, this.amount * power.amount)));
         }
     }
 }

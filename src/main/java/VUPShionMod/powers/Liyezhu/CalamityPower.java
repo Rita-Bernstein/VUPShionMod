@@ -2,6 +2,7 @@ package VUPShionMod.powers.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.ApplySinAction;
+import VUPShionMod.actions.Liyezhu.DuelSinAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -22,16 +23,22 @@ public class CalamityPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        this.amount2 = 3;
         updateDescription();
         isTurnBased = true;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower36.png")), 0, 0, 36, 36);
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+        amount2 += 3;
+    }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount, amount2);
     }
 
     @Override
@@ -41,5 +48,10 @@ public class CalamityPower extends AbstractShionPower {
         }
 
         addToBot(new ApplySinAction(AbstractDungeon.player, this.amount));
+
+        for (int i = 0; i < this.amount2; i++) {
+            addToBot(new DuelSinAction());
+        }
+
     }
 }

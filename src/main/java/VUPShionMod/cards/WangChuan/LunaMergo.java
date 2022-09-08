@@ -4,10 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -22,7 +19,7 @@ public class LunaMergo extends AbstractWCCard {
 
     public LunaMergo() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 9;
+        this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 2;
     }
@@ -30,7 +27,7 @@ public class LunaMergo extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new DrawCardAction(this.magicNumber));
+        addToBot(new GainEnergyAction(2));
         addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.secondaryM));
         addToBot(new ReducePowerAction(p, p, MagiamObruorPower.POWER_ID,this.secondaryM));
         if (this.upgraded)
@@ -41,7 +38,6 @@ public class LunaMergo extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(3);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

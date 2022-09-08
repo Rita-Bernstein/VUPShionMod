@@ -44,6 +44,5 @@ public class VampireFormPower extends AbstractShionPower {
                 flash();
                 AbstractDungeon.player.heal(this.amount);
             }
-
     }
 }

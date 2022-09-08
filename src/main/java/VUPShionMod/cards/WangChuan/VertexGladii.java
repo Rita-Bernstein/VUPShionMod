@@ -3,6 +3,8 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.IntensaPower;
+import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -56,6 +58,11 @@ public class VertexGladii extends AbstractWCCard {
         addToBot(new ApplyStiffnessAction(timesUpgraded >= 2 ? 2 : 3));
 
         addToBot(new DrawCardAction(2));
+
+        if(timesUpgraded >=2){
+            addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
+            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p),0));
+        }
 
         this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
@@ -134,7 +141,7 @@ public class VertexGladii extends AbstractWCCard {
             }
 
             if (this.timesUpgraded == 2) {
-                upgradeBaseCost(1);
+                upgradeBaseCost(2);
                 upgradeMagicNumber(2);
             }
         }

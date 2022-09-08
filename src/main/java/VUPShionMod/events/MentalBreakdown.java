@@ -5,6 +5,7 @@ import VUPShionMod.cards.Liyezhu.Calamity;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.relics.Event.AbyssalCrux;
+import VUPShionMod.ui.SansMental;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -38,7 +39,7 @@ public class MentalBreakdown extends AbstractImageEvent {
 
 
     public void onEnterRoom() {
-
+        SansMental.sansMental = true;
     }
 
     @Override

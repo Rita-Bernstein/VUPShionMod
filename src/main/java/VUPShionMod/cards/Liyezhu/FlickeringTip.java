@@ -17,7 +17,7 @@ public class FlickeringTip extends AbstractLiyezhuCard {
 
     public FlickeringTip() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 12;
+        this.baseDamage = 14;
         this.magicNumber = this.baseMagicNumber = 6;
     }
 
@@ -30,8 +30,7 @@ public class FlickeringTip extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
-            upgradeMagicNumber(3);
+            upgradeDamage(5);
         }
     }
 }

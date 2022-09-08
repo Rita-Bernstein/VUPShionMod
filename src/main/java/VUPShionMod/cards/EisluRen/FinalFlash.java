@@ -32,10 +32,9 @@ public class FinalFlash extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new FinalFlashBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal),0.0f));
-
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(WingShield.getWingShield().getCount()));
+            addToBot(new LoseWingShieldAction(WingShield.getWingShield().getCount()));
+        addToBot(new VFXAction(new FinalFlashBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal),0.0f));
 
         for (int i = 0; i < WingShield.getWingShield().getCount() * 3; i++) {
             addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE,true));

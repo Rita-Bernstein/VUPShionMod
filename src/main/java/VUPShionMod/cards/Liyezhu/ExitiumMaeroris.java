@@ -1,7 +1,7 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Wangchuan.ExitiumMaerorisExhaustAction;
+import VUPShionMod.actions.Liyezhu.ExitiumMaerorisExhaustAction;
 import VUPShionMod.patches.CardTagsEnum;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

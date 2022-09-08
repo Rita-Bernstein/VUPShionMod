@@ -122,6 +122,7 @@
     "NAMES": [
       "punitive"
     ],
+    "PROPER_NAME": "Punitive",
     "DESCRIPTION": "ALL ENTITIES lose HP equal to their #ySinful."
   },
   {
@@ -129,7 +130,7 @@
       "judging\u00a0stance"
     ],
 	"PROPER_NAME": "Judging Stance",
-    "DESCRIPTION": "Upon entering this #yStance, gain #b1 #yCombustion and #yStrength."
+    "DESCRIPTION": "Upon entering this #yStance, gain #b1 #yCombustion and #yStrength. NL When you play an #yAttack, trigger #yPunitive."
   },
   {
     "NAMES": [
@@ -143,7 +144,7 @@
       "wordpower\u00a0stance"
     ],
 	"PROPER_NAME": "Wordpower Stance",
-    "DESCRIPTION": "Regarded as in both #yJudging #yStance and #yPraying #yStance. NL Upon entering this #yStance, gain #b1 #yCombustion and #yStrength. NL At the end of your turn,heal #b2 HP."
+    "DESCRIPTION": "Regarded as in both #yJudging #yStance and #yPraying #yStance. NL Can not enter #yJudging #yStance. NL Upon entering this #yStance, gain #b1 #yCombustion and #yStrength. NL When you play an #yAttack, trigger #yPunitive. NL At the end of your turn,heal #b2 HP. NL  NL Gain #b9 max HP at the end of combat. NL Whenever you lose HP,gain #yShield equal to that amount. NL #yPunitive will not damage you."
   },
   {
     "NAMES": [
@@ -244,7 +245,7 @@
       "wings\u00a0of\u00a0daedalus"
     ],
 	"PROPER_NAME": "Wings of Daedalus",
-    "DESCRIPTION": "Whenever you gain #yDexterity, gain double #yStrength."
+    "DESCRIPTION": "Whenever you gain #yDexterity or #ytemporary #yDexterity , gain #b2 times of that much #yStrength or #ytemporary #yStrength."
   },
   {
     "NAMES": [
@@ -316,25 +317,64 @@
     "NAMES": [
       "synchrochannel"
     ],
+    "PROPER_NAME": "Synchrochannel",
     "DESCRIPTION": "While the #yElf's HP is above 0, you gain #b4 #yStrength at the start of your turn."
   },
   {
     "NAMES": [
       "rampart"
     ],
+    "PROPER_NAME": "Rampart",
     "DESCRIPTION": "Damage taken from enemy attacks is decreased by 50%. This effect does not become more effective if applied more than once."
   },
   {
     "NAMES": [
       "replacing"
     ],
+    "PROPER_NAME": "Replacing",
     "DESCRIPTION": "Return it to your hand form discard pile if possible."
   },
   {
     "NAMES": [
-      "Troy"
+      "troy"
     ],
-    "DESCRIPTION": "每当你失去或获得 #y构装翼盾充能 时，获得 #b5 倍的 #y护盾 。。"
+    "PROPER_NAME": "Troy",
+    "DESCRIPTION": "Whenever you lose or gain #yConstruct #yRecharge, gain #yShield equal to #b5 times of that amount."
+  },
+  {
+    "NAMES": [
+      "swear"
+    ],
+    "PROPER_NAME": "Swear",
+    "DESCRIPTION": "Until start of your next turn,your HP will not below #b1."
+  } ,
+  {
+    "NAMES": [
+      "stonehenge"
+    ],
+    "PROPER_NAME": "Stonehenge",
+    "DESCRIPTION": "Whenever you played a card: NL #rAttack: Gain #b1 #yRecycle. NL #gSkill: Gain #b7 #yShield. NL #bPower: Gain [E]."
+  },
+  {
+    "NAMES": [
+      "sub\u00a0luna"
+    ],
+    "PROPER_NAME": "Sub Luna",
+    "DESCRIPTION": "This turn, you do not lose ##yCor #yGladii."
+  }  ,
+  {
+    "NAMES": [
+      "nihil"
+    ],
+    "PROPER_NAME": "Nihil",
+    "DESCRIPTION": "Any damage taken is reduced to #b0 this turn. This power cannot be stacked."
+  },
+  {
+    "NAMES": [
+      "intensa"
+    ],
+    "PROPER_NAME": "Intensa",
+    "DESCRIPTION": "At the start of your next turn,gain #yCor #yGladii you lost in this turn. This power cannot be stacked."
   }
 ]
 

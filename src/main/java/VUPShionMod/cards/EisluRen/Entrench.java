@@ -2,7 +2,9 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
+import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -26,8 +28,7 @@ public class Entrench extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainWingShieldChargeAction(this.magicNumber));
-        addToBot(new RemoveAllBlockAction(p, p));
-        addToBot(new GainShieldAction(p, p.currentBlock * (this.upgraded ? 3 : 2)));
+        addToBot(new AddWingShieldDamageReduceAction(WingShield.getWingShield().getDamageReduce()));
         addToBot(new ApplyPowerAction(p,p,new EntanglePower(p)));
     }
 

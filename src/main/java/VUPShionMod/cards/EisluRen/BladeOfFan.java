@@ -36,42 +36,45 @@ public class BladeOfFan extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
-        for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    int count = 0;
-                    int[] finalMultiDamage = multiDamage;
-                    if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                            if (monster != null && !monster.isDeadOrEscaped()) {
-                                count++;
-                            }
+            addToBot(new LoseWingShieldAction(this.secondaryM));
+
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                int count = 0;
+                if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                    for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+                        if (monster != null && !monster.isDeadOrEscaped()) {
+                            count++;
                         }
                     }
-
-                    if (count <= 1) {
-                        for (int i = 0; i < finalMultiDamage.length; i++) {
-                            finalMultiDamage[i] *= 2;
-                        }
-                    }
-
-                    addToTop(new DamageAllEnemiesAction(p, finalMultiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-                    addToTop(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
-                    isDone = true;
                 }
-            });
+
+                if (count <= 1) {
+                    for (int i = 0; i < multiDamage.length; i++) {
+                        multiDamage[i] *= 2;
+                    }
+                }
+
+                isDone = true;
+            }
+        });
+
+        for (int i = 0; i < this.magicNumber; i++) {
+            addToBot(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        }
+
     }
 
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

@@ -1,11 +1,16 @@
 package VUPShionMod.stances;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.Liyezhu.DuelSinAction;
 import VUPShionMod.character.Liyezhu;
 import VUPShionMod.patches.AbstractPlayerEnum;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
@@ -13,9 +18,11 @@ import com.megacrit.cardcrawl.powers.CombustPower;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
 
-public class SpiritStance extends AbstractStance {
-    public static final String STANCE_ID =  VUPShionMod.makeID(SpiritStance.class.getSimpleName());
+public class SpiritStance extends AbstractVUPShionStance {
+    public static final String STANCE_ID = VUPShionMod.makeID(SpiritStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 
 
@@ -55,14 +62,9 @@ public class SpiritStance extends AbstractStance {
             stopIdleSfx();
         }
 
-//        if (!(AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)) {
-//            sfxId = CardCrawlGame.sound.playAndLoop(GuardianMod.makeID("STANCE_LOOP_Defensive_Mode"));
-//        }
-
-//        AbstractDungeon.actionManager.addToTop(new VFXAction(AbstractDungeon.player,
-//                new IntenseZoomEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, false), 0.05F, true));
-//        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.RED, true));
-
+        CardCrawlGame.sound.play("STANCE_ENTER_DIVINITY");
+        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.PINK, true));
+        AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, "Divinity"));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                 new CombustPower(AbstractDungeon.player, 1, 5), 5));
@@ -83,11 +85,26 @@ public class SpiritStance extends AbstractStance {
         }
     }
 
+    @Override
+    public void onPlayCard(AbstractCard card) {
+        if(card.type == AbstractCard.CardType.ATTACK){
+            AbstractDungeon.actionManager.addToBottom(new DuelSinAction());
+        }
+    }
+
+    @Override
+    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
+        addToTop(new GainShieldAction(AbstractDungeon.player,AbstractDungeon.player.lastDamageTaken));
+    }
+
+    @Override
+    public void onVictory() {
+        AbstractDungeon.player.increaseMaxHp(9,true);
+    }
 
     @Override
     public void onEndOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player,AbstractDungeon.player,
-                2));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
     }
 
 

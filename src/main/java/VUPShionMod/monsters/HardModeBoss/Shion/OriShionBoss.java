@@ -207,11 +207,13 @@ public class OriShionBoss extends AbstractShionBoss {
         if (this.strike) {
             if (!MinionGroup.areMinionsBasicallyDead()) {
                 AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                if(minion !=null)
                 tmp += minion.maxHealth * 0.5f;
-
             } else
                 tmp += target.maxHealth * 0.5f;
-        }
+            }
+
+
 
 
         for (AbstractPower p : this.powers) {
@@ -223,11 +225,14 @@ public class OriShionBoss extends AbstractShionBoss {
             tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
         }
 
-        if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+        if (!MinionGroup.areMinionsBasicallyDead()) {
+            AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+            if(minion !=null)
+            for (AbstractPower p : minion.powers) {
                 tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
 
             }
+        }
 
         tmp = AbstractDungeon.player.stance.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
 
@@ -241,10 +246,13 @@ public class OriShionBoss extends AbstractShionBoss {
             tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
         }
 
-        if (!MinionGroup.areMinionsBasicallyDead())
-            for (AbstractPower p : MinionGroup.getCurrentMinion().powers) {
+        if (!MinionGroup.areMinionsBasicallyDead()) {
+            AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+            if(minion !=null)
+            for (AbstractPower p : minion.powers) {
                 tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
             }
+        }
 
         dmg = MathUtils.floor(tmp);
         if (dmg < 0) {

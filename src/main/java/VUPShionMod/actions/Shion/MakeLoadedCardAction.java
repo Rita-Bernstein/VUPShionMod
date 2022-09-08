@@ -15,7 +15,7 @@ public class MakeLoadedCardAction extends AbstractGameAction {
     private int amount;
     private boolean inDiscardPile = false;
     private boolean upgrade = false;
-    private boolean top = false;
+    private boolean randomSpot = true;
     private String text = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction")).TEXT[1];
 
     public MakeLoadedCardAction(AbstractCard card) {
@@ -62,12 +62,12 @@ public class MakeLoadedCardAction extends AbstractGameAction {
     }
 
 
-    public MakeLoadedCardAction(boolean top,boolean upgrade, AbstractCard card, int amount, boolean inDiscardPile) {
+    public MakeLoadedCardAction(boolean randomSpot,boolean upgrade, AbstractCard card, int amount, boolean inDiscardPile) {
         this.card = card;
         this.amount = amount;
         this.inDiscardPile = inDiscardPile;
         this.upgrade = upgrade;
-        this.top = top;
+        this.randomSpot = randomSpot;
     }
 
     @Override
@@ -84,7 +84,7 @@ public class MakeLoadedCardAction extends AbstractGameAction {
             }
         } else {
             if (!inDiscardPile)
-                addToTop(new MakeTempCardInDrawPileAction(this.card, this.amount, this.top, true, false));
+                addToTop(new MakeTempCardInDrawPileAction(this.card, this.amount, this.randomSpot, true, false));
             else
                 addToTop(new MakeTempCardInDiscardAction(this.card, this.amount));
         }

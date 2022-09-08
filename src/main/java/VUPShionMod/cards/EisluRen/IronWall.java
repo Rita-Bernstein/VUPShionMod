@@ -31,7 +31,6 @@ public class IronWall extends AbstractEisluRenCard {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ApplyPowerAction(p,p,new IronWallPower(p)));
-        addToBot(new AddWingShieldDamageReduceAction(WingShield.getWingShield().getDamageReduce()));
     }
 
     @Override

@@ -23,7 +23,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
-public class PrayerStance extends AbstractStance {
+public class PrayerStance extends AbstractVUPShionStance {
     public static final String STANCE_ID = VUPShionMod.makeID(PrayerStance.class.getSimpleName());
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
 

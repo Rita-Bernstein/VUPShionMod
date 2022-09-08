@@ -30,9 +30,6 @@ public class RoyalGuardian extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainShieldAction(p, 7,true));
-        addToBot(new GainShieldAction(p, 7,true));
-
         if (Settings.FAST_MODE) {
             addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.1F));
         } else {

@@ -9,9 +9,11 @@ import VUPShionMod.powers.Shion.ReleaseFormLiyezhuCPower;
 import VUPShionMod.powers.Shion.ReleaseFormLiyezhuPower;
 import VUPShionMod.vfx.Common.AbstractSpineEffect;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
+import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -31,7 +33,8 @@ public class ReleaseFormEisluRen extends AbstractShionLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("EisluRen"),1.0f));
+        addToBot(new SFXAction("SHION_" + (32 + MathUtils.random(1))));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("EisluRen"), 1.0f));
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormEisluRenPower(p, 1), 0));
     }
 

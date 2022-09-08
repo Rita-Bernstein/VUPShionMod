@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.EisluRen.SummonElfAction;
+import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.ElfMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.patches.CardTagsEnum;
@@ -39,7 +40,9 @@ public class ElfSublimation extends AbstractEisluRenCard {
             @Override
             public void update() {
                 if (!MinionGroup.areMinionsBasicallyDead()) {
-                    addToTop(new ApplyPowerAction(MinionGroup.getCurrentMinion(), p, new IntangiblePlayerPower(MinionGroup.getCurrentMinion(), secondaryM)));
+                    AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                    if(minion !=null)
+                    addToTop(new ApplyPowerAction(minion, p, new IntangiblePlayerPower(minion, secondaryM)));
                 }
                 isDone = true;
             }

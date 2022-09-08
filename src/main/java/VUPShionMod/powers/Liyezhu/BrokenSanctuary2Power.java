@@ -42,9 +42,4 @@ public class BrokenSanctuary2Power extends AbstractShionPower {
         }
     }
 
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if(isPlayer)
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
-    }
 }

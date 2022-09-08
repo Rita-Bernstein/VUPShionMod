@@ -21,13 +21,14 @@ public class HallowedCasket extends AbstractLiyezhuCard {
     public HallowedCasket() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.cardsToPreview = new Miracle();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new HallowedCasketPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new HallowedCasketPower2(p)));
+        addToBot(new ApplyPowerAction(p, p, new HallowedCasketPower2(p,this.secondaryM)));
 
         if(this.upgraded)
             addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,1)));

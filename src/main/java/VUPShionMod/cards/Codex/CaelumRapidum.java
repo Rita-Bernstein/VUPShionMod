@@ -20,6 +20,7 @@ public class CaelumRapidum extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
+        this.parentCardID = CaelumNimium.ID;
     }
 
     public CaelumRapidum() {

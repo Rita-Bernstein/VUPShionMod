@@ -22,7 +22,7 @@ public class SwordOfDalmos extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SwordOfDalmos.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/SwordOfDalmos.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 0;

@@ -1,14 +1,20 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.SubLunaPower;
 import VUPShionMod.ui.SwardCharge;
+import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.actions.defect.ShuffleAllAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -161,6 +167,67 @@ public class AbstractPowerPatches {
                 }
             }
 
+
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = ReducePowerAction.class,
+            method = "update"
+    )
+    public static class NotLosePowerPowerPatch {
+        @SpireInsertPatch(rloc = 0)
+        public static SpireReturn<Void> Insert(ReducePowerAction _instance) {
+            String powerID = ReflectionHacks.getPrivate(_instance, ReducePowerAction.class, "powerID");
+            AbstractPower powerInstance = ReflectionHacks.getPrivate(_instance, ReducePowerAction.class, "powerInstance");
+
+            if (powerID != null) {
+                if (powerID.equals(CorGladiiPower.POWER_ID) && AbstractDungeon.player.hasPower(SubLunaPower.POWER_ID)) {
+                    AbstractDungeon.player.getPower(SubLunaPower.POWER_ID).flash();
+                    _instance.isDone = true;
+                    return SpireReturn.Return();
+                }
+            }
+
+            if (powerInstance != null) {
+                if (powerInstance.ID.equals(CorGladiiPower.POWER_ID) && AbstractDungeon.player.hasPower(SubLunaPower.POWER_ID)) {
+                    AbstractDungeon.player.getPower(SubLunaPower.POWER_ID).flash();
+                    _instance.isDone = true;
+                    return SpireReturn.Return();
+                }
+            }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = RemoveSpecificPowerAction.class,
+            method = "update"
+    )
+    public static class NotRemovePowerPowerPatch {
+        @SpireInsertPatch(rloc = 0)
+        public static SpireReturn<Void> Insert(RemoveSpecificPowerAction _instance) {
+            String powerToRemove = ReflectionHacks.getPrivate(_instance, ReducePowerAction.class, "powerToRemove");
+            AbstractPower powerInstance = ReflectionHacks.getPrivate(_instance, ReducePowerAction.class, "powerInstance");
+
+            if (powerToRemove != null) {
+                if (powerToRemove.equals(CorGladiiPower.POWER_ID) && AbstractDungeon.player.hasPower(SubLunaPower.POWER_ID)) {
+                    AbstractDungeon.player.getPower(SubLunaPower.POWER_ID).flash();
+                    _instance.isDone = true;
+                    return SpireReturn.Return();
+                }
+            }
+
+            if (powerInstance != null) {
+                if (powerInstance.ID.equals(CorGladiiPower.POWER_ID) && AbstractDungeon.player.hasPower(SubLunaPower.POWER_ID)) {
+                    AbstractDungeon.player.getPower(SubLunaPower.POWER_ID).flash();
+                    _instance.isDone = true;
+                    return SpireReturn.Return();
+                }
+            }
 
             return SpireReturn.Continue();
         }

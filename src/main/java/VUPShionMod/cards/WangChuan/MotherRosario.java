@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.MotherRosarioAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.IntensaPower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -58,8 +59,12 @@ public class MotherRosario extends AbstractWCCard {
         }
 
         addToBot(new ApplyStiffnessAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
-
+        if(this.timesUpgraded >=2){
+            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p),0));
+            addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 2)));
+        }else {
+            addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
+        }
     }
 
     @Override

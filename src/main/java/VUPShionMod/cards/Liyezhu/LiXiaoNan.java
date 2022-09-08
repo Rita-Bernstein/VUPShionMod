@@ -5,8 +5,13 @@ import VUPShionMod.actions.Liyezhu.DuelSinAction;
 import VUPShionMod.actions.Liyezhu.FlayTheEvilAction;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
 import VUPShionMod.powers.Liyezhu.SinPower;
+import VUPShionMod.powers.Liyezhu.SwearPower;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.vfx.EisluRen.FinalFlashBlastEffect;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -22,24 +27,31 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public LiXiaoNan() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
-        this.magicNumber = 1;
+        this.magicNumber = 6;
+        this.selfRetain = true;
+        this.exhaust = true;
+        GraveField.grave.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-
+        addToBot(new ApplyPowerAction(p, p, new SwearPower(p, 1)));
+        addToBot(new VFXAction(new FinalFlashBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.0f));
         calculateCardDamage(m);
 
 
         addToBot(new LoseHPAction(p, p, p.maxHealth / 2));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
+        for (int i = 0; i <  this.magicNumber; i++)
+            addToBot(new DuelSinAction());
+        this.rawDescription = DESCRIPTION;
+        initializeDescription();
 
     }
 
@@ -47,19 +59,10 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
     public void applyPowers() {
         int tureBaseDamage = this.baseDamage;
 
-        int psy = 0;
-        int sin = 0;
-        if (AbstractDungeon.player.hasPower(PsychicPower.POWER_ID))
-            psy = AbstractDungeon.player.getPower(PsychicPower.POWER_ID).amount;
-
-
-        if (AbstractDungeon.player.hasPower(SinPower.POWER_ID))
-            sin = AbstractDungeon.player.getPower(SinPower.POWER_ID).amount;
-
-        this.baseDamage = (int) Math.floor(AbstractDungeon.player.maxHealth * (psy + sin) * this.magicNumber * 0.05f);
+        this.baseDamage = AbstractDungeon.player.maxHealth;
 
         super.applyPowers();
-        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
         this.baseDamage = tureBaseDamage;
@@ -67,7 +70,7 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
 
 
     public void onMoveToDiscard() {
-        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
         initializeDescription();
     }
 
@@ -75,19 +78,10 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
     public void calculateCardDamage(AbstractMonster mo) {
         int tureBaseDamage = this.baseDamage;
 
-        int psy = 0;
-        int sin = 0;
-        if (AbstractDungeon.player.hasPower(PsychicPower.POWER_ID))
-            psy = AbstractDungeon.player.getPower(PsychicPower.POWER_ID).amount;
-
-
-        if (AbstractDungeon.player.hasPower(SinPower.POWER_ID))
-            sin = AbstractDungeon.player.getPower(SinPower.POWER_ID).amount;
-
-        this.baseDamage = (int) Math.floor(AbstractDungeon.player.maxHealth * (psy + sin) * this.magicNumber * 0.05f);
+        this.baseDamage = AbstractDungeon.player.maxHealth;
         super.calculateCardDamage(mo);
 
-        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        this.rawDescription = DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
 
@@ -98,7 +92,7 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

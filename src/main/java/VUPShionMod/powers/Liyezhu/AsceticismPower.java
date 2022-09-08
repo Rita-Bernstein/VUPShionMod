@@ -3,6 +3,7 @@ package VUPShionMod.powers.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,14 +26,13 @@ public class AsceticismPower extends AbstractShionPower {
 
     @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0 && info.owner == this.owner) {
-            flash();
-            addToTop(new GainEnergyAction(this.amount));
-        }
+        flash();
+        addToTop(new GainEnergyAction(this.amount));
+        addToBot(new HealAction(this.owner, this.owner, this.amount * 2));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount, this.amount * 2);
     }
 }

@@ -1,12 +1,15 @@
 package VUPShionMod.actions.Liyezhu;
 
+import VUPShionMod.actions.Common.GainMaxHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.EscapeAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.EnemyData;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -27,15 +30,18 @@ public class FlickeringTipAction extends AbstractGameAction {
 
 
     public void update() {
-        if (this.duration == 0.1F &&
-                this.target != null) {
+        if (this.duration == 0.1F && this.target != null) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.NONE));
             this.target.damage(this.info);
 
-            if ((((AbstractMonster) this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead) {
-                addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 1, true)));
-                addToTop(new GainEnergyAction(1));
-                addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
+            if (target instanceof AbstractMonster) {
+                AbstractMonster monster = (AbstractMonster) target;
+                if ((monster.isDying || monster.currentHealth <= 0) && !monster.halfDead && monster.type != AbstractMonster.EnemyType.BOSS) {
+                    monster.isDying = false;
+                    addToTop(new EscapeAction(monster));
+                    addToTop(new AddSansAction(magicNumber));
+                    addToTop(new GainMaxHPAction(AbstractDungeon.player, magicNumber));
+                }
             }
 
             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {

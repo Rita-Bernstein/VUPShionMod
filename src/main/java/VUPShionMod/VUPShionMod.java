@@ -36,10 +36,7 @@ import VUPShionMod.relics.Wangchuan.*;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.skins.SkinManager;
-import VUPShionMod.ui.SansMeterSave;
-import VUPShionMod.ui.WingShieldDamageSave;
-import VUPShionMod.ui.WingShieldRefundSave;
-import VUPShionMod.ui.WingShieldSave;
+import VUPShionMod.ui.*;
 import VUPShionMod.util.SaveHelper;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
@@ -123,7 +120,7 @@ public class VUPShionMod implements
 
     public static Color transparent = Color.WHITE.cpy();
 
-    public static boolean isTestMod = false;
+    public static boolean isTestMod = true;
 
 
     public VUPShionMod() {
@@ -211,7 +208,6 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
-        if (playerClass != AbstractPlayerEnum.Liyezhu)
             if (SaveHelper.liyezhuRelic) {
                 arrayList.add(FragmentsOfFaith.ID);
             }
@@ -332,10 +328,10 @@ public class VUPShionMod implements
 
 
 //      蓝宝事件
-        BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
-                .playerClass(AbstractPlayerEnum.Liyezhu)
-                .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID))
-                .create());
+//        BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
+//                .playerClass(AbstractPlayerEnum.Liyezhu)
+//                .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID))
+//                .create());
 
 
         BaseMod.addEvent(new AddEventParams.Builder(DistantMemory.ID, DistantMemory.class) //Event ID//
@@ -466,8 +462,8 @@ public class VUPShionMod implements
 
     @Override
     public void receiveAddAudio() {
-        for (int i = 1; i <= 18; i++) {
-            BaseMod.addAudio("SHION_" + i, assetPath("audio/sfx/shion" + i + ".ogg"));
+        for (int i = 1; i <= 33; i++) {
+            BaseMod.addAudio("SHION_" + i, assetPath("audio/sound/Shion/VO/shion" + i + ".ogg"));
         }
 
         BaseMod.addAudio(makeID("RitaB_Attack0"), assetPath("/audio/sound/Rita/VO/RitaB_Attack0.wav"));
@@ -554,7 +550,7 @@ public class VUPShionMod implements
             SaveHelper.fightSpecialBossWithout = false;
             SaveHelper.isHardMod = false;
 
-            SansMeterSave.sansMeterSaveAmount = 100;
+            SansMeterSave.sansMeterSaveAmount = 60;
             WingShieldSave.wingShieldSaveAmount = 7;
             WingShieldRefundSave.wingShieldRefundSaveAmount = 0;
             WingShieldDamageSave.wingShieldDamageSaveAmount = 0;
@@ -610,6 +606,7 @@ public class VUPShionMod implements
                 AbstractPlayerEnum.EisluRen);
 
         BaseMod.addSaveField("SansMeterSave", new SansMeterSave());
+        BaseMod.addSaveField("SansMental", new SansMental());
         BaseMod.addSaveField("WingShieldSave", new WingShieldSave());
         BaseMod.addSaveField("WingShieldRefundSave", new WingShieldRefundSave());
         BaseMod.addSaveField("WingShieldDamageSave", new WingShieldDamageSave());
@@ -1003,6 +1000,7 @@ public class VUPShionMod implements
         cards.add(new SupportShieldPrayer());
         cards.add(new SupportTimeDriven());
         cards.add(new SupportGravitater());
+        cards.add(new ShieldProjection());
 
 
         for (CustomCard card : cards) {
@@ -1067,6 +1065,7 @@ public class VUPShionMod implements
 
 
         BaseMod.addRelicToCustomPool(new MartyrVessel(), CardColorEnum.Liyezhu_LIME);
+        BaseMod.addRelicToCustomPool(new Hymn(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new HallowedCase(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new AbyssalCrux(), CardColorEnum.Liyezhu_LIME);
         BaseMod.addRelicToCustomPool(new Inhibitor(), CardColorEnum.Liyezhu_LIME);

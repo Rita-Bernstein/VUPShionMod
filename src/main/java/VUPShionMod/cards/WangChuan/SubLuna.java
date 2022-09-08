@@ -1,7 +1,10 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
+import VUPShionMod.powers.Wangchuan.ImmuneDamagePower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
+import VUPShionMod.powers.Wangchuan.SubLunaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,7 +30,8 @@ public class SubLuna extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new ImmuneDamagePower(p)));
+        addToBot(new ApplyPowerAction(p,p,new SubLunaPower(p,1)));
         addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, 1)));
     }

@@ -2,24 +2,29 @@ package VUPShionMod.actions.Liyezhu;
 
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 
 public class CruciformPenanceAction extends AbstractGameAction {
-    public CruciformPenanceAction(int healAmount) {
+    private DamageInfo info;
+
+    public CruciformPenanceAction(AbstractCreature target, DamageInfo info, int healAmount) {
         this.actionType = ActionType.DAMAGE;
         this.startDuration = Settings.ACTION_DUR_LONG;
         this.duration = this.startDuration;
         this.amount = healAmount;
-        this.target = AbstractDungeon.player;
+        this.target = target;
+        this.info = info;
+
     }
 
     private boolean cardToExhaust(AbstractCard c) {
@@ -51,11 +56,17 @@ public class CruciformPenanceAction extends AbstractGameAction {
                     addToTop(new DuelSinAction());
                 }
 
-                addToTop(new ApplyPowerAction(this.target, this.target, new StrengthPower(this.target, statusCount * 2)));
+                for (int i = 0; i < statusCount; i++) {
+                    addToBot(new DamageAction(this.target, this.info, AbstractGameAction.AttackEffect.NONE));
+                }
+
+                if (this.target != null)
+                    addToBot(new VFXAction(new ClashEffect(this.target.hb.cX, this.target.hb.cY), 0.1F));
+
                 addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, statusCount * amount));
             }
 
-            for (int i = 0; i < AbstractDungeon.player.drawPile.size();) {
+            for (int i = 0; i < AbstractDungeon.player.drawPile.size(); ) {
                 AbstractCard c = AbstractDungeon.player.drawPile.group.get(i);
                 if (cardToExhaust(c)) {
                     AbstractDungeon.player.drawPile.removeCard(c);
@@ -66,7 +77,7 @@ public class CruciformPenanceAction extends AbstractGameAction {
                     c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
                     addToTop(new WaitAction(0.1F));
                     addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.limbo));
-                }else {
+                } else {
                     i++;
                 }
             }
@@ -82,7 +93,7 @@ public class CruciformPenanceAction extends AbstractGameAction {
                     c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
                     addToTop(new WaitAction(0.1F));
                     addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.limbo));
-                }else {
+                } else {
                     i++;
                 }
             }
@@ -98,7 +109,7 @@ public class CruciformPenanceAction extends AbstractGameAction {
                     c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
                     addToTop(new WaitAction(0.1F));
                     addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.limbo));
-                }else {
+                } else {
                     i++;
                 }
             }

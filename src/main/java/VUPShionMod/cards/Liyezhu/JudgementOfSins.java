@@ -56,7 +56,6 @@ public class JudgementOfSins extends AbstractLiyezhuCard {
             initializeTitle();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            this.isInnate = false;
         }
     }
 }

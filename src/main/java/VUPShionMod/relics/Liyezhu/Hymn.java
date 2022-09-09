@@ -12,11 +12,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -41,16 +42,15 @@ public class Hymn extends AbstractShionRelic {
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if (targetCard.hasTag(CardTagsEnum.Prayer_CARD)) {
             if (AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID)) {
-
                 addToBot(new AddSansAction(1));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PsychicPower(AbstractDungeon.player, 1)));
-                addToBot(new MakeTempCardInHandAction(new Miracle(), 1));
+                addToBot(new MakeTempCardInDrawPileAction(new Miracle(),1,true,true,false));
             }
 
             if (AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID)) {
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                        addToBot(new DamageAction(monster, new DamageInfo(AbstractDungeon.player, 3 + (int) (monster.maxHealth * 0.05f), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
+                        addToBot(new DamageAction(monster, new DamageInfo(AbstractDungeon.player, (int) (monster.maxHealth * 0.05f), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
                     }
                 }
             }

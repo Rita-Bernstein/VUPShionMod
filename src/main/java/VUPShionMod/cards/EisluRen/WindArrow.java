@@ -44,7 +44,7 @@ public class WindArrow extends AbstractEisluRenCard {
                     addToBot(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
 
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-                this.rawDescription = cardStrings.DESCRIPTION;
+                this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
                 initializeDescription();
 
                 if (AbstractDungeon.cardRng.random(99) < (this.upgraded ? 70 : 50)) {
@@ -60,14 +60,16 @@ public class WindArrow extends AbstractEisluRenCard {
         if (p != null) this.baseDamage += p.amount;
 
         super.applyPowers();
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
 
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
+        this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 

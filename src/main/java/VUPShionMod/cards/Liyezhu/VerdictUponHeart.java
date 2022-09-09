@@ -16,14 +16,14 @@ public class VerdictUponHeart extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(VerdictUponHeart.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/VerdictUponHeart.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final int COST = 1;
 
     public VerdictUponHeart() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 6;
+        this.magicNumber = this.baseMagicNumber = 5;
         this.exhaust = true;
     }
 

@@ -19,6 +19,7 @@ public class FlickeringTip extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 14;
         this.magicNumber = this.baseMagicNumber = 6;
+        vupCardSetBanner(CardRarity.RARE,CardType.ATTACK);
     }
 
     @Override
@@ -31,6 +32,9 @@ public class FlickeringTip extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeDamage(5);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.selfRetain = true;
         }
     }
 }

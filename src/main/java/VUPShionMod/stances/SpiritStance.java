@@ -66,10 +66,6 @@ public class SpiritStance extends AbstractVUPShionStance {
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.PINK, true));
         AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, "Divinity"));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new CombustPower(AbstractDungeon.player, 1, 5), 5));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new StrengthPower(AbstractDungeon.player, 1)));
     }
 
 
@@ -94,18 +90,14 @@ public class SpiritStance extends AbstractVUPShionStance {
 
     @Override
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
-        addToTop(new GainShieldAction(AbstractDungeon.player,AbstractDungeon.player.lastDamageTaken));
+        addToTop(new GainShieldAction(AbstractDungeon.player,AbstractDungeon.player.lastDamageTaken/2));
     }
 
     @Override
     public void onVictory() {
-        AbstractDungeon.player.increaseMaxHp(9,true);
+        AbstractDungeon.player.increaseMaxHp(5,true);
     }
 
-    @Override
-    public void onEndOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
-    }
 
 
     @Override

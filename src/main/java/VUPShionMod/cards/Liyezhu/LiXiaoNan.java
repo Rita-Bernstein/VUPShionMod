@@ -32,7 +32,7 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
     public LiXiaoNan() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 0;
-        this.magicNumber = 6;
+        this.magicNumber = this.baseMagicNumber = 6;
         this.selfRetain = true;
         this.exhaust = true;
         GraveField.grave.set(this, true);
@@ -43,12 +43,10 @@ public class LiXiaoNan extends AbstractLiyezhuCard {
         addToBot(new ApplyPowerAction(p, p, new SwearPower(p, 1)));
         addToBot(new VFXAction(new FinalFlashBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.0f));
         calculateCardDamage(m);
-
-
         addToBot(new LoseHPAction(p, p, p.maxHealth / 2));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
-        for (int i = 0; i <  this.magicNumber; i++)
+        for (int i = 0; i < this.magicNumber; i++)
             addToBot(new DuelSinAction());
         this.rawDescription = DESCRIPTION;
         initializeDescription();

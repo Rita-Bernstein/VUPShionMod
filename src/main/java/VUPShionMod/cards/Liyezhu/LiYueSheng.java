@@ -2,6 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Wangchuan.MarchDrawCardAction;
+import VUPShionMod.powers.Liyezhu.PsychicPower;
 import VUPShionMod.powers.Liyezhu.SwearPower;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
@@ -31,7 +32,7 @@ public class LiYueSheng extends AbstractLiyezhuCard {
     public LiYueSheng() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 10;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.secondaryM = this.baseSecondaryM = 10;
         this.exhaust =true;
         this.selfRetain =true;
         GraveField.grave.set(this,true);
@@ -52,7 +53,7 @@ public class LiYueSheng extends AbstractLiyezhuCard {
 
         addToBot(new RemoveDebuffsAction(p));
         addToBot(new LoseHPAction(p,p,count*this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,count*this.secondaryM)));
+        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,count*this.secondaryM)));
     }
 
     @Override

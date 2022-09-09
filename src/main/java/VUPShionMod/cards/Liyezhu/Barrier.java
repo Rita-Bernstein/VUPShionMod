@@ -22,7 +22,7 @@ public class Barrier extends AbstractLiyezhuCard {
 
     public Barrier() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 
@@ -37,7 +37,8 @@ public class Barrier extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

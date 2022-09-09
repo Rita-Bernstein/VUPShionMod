@@ -606,7 +606,7 @@
   "VUPShionMod:HallowedCasketPower": {
     "NAME": "Hallowed Casket",
     "DESCRIPTIONS": [
-      "At the end of your turn, add #b%d #yMiracle into your draw pile and gain #b%d #yPsychic."
+      "At the end of your turn, add #b%d #yMiracle into your discard pile and gain #b%d #yPsychic."
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower": {
@@ -624,7 +624,7 @@
   "VUPShionMod:AsceticismPower": {
     "NAME": "Ecstasy of Asceticism",
     "DESCRIPTIONS": [
-      "Every time you lose HP, gain #b%d [E] and heal #b%d HP."
+      "Every time you lose HP, heal #b%d HP."
     ]
   },
   "VUPShionMod:Asceticism2Power": {

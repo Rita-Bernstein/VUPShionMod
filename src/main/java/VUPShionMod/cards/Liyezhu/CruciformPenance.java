@@ -29,7 +29,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
 
     public CruciformPenance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 21;
+        this.baseDamage = 14;
         this.magicNumber = this.baseMagicNumber = 4;
         this.secondaryM = this.baseSecondaryM = 10;
     }
@@ -42,13 +42,14 @@ public class CruciformPenance extends AbstractLiyezhuCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, this.magicNumber)));
 
-        addToBot(new CruciformPenanceAction(this.secondaryM));
+        addToBot(new CruciformPenanceAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.secondaryM));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeDamage(3);
             upgradeMagicNumber(1);
         }
     }

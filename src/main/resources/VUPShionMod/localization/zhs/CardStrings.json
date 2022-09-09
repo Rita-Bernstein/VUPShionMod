@@ -1042,7 +1042,7 @@
   "VUPShionMod:JudgementOfSins": {
     "NAME": "原罪审判",
     "DESCRIPTION": " 固有 ， 保留 。 NL 进入 vup_shion_mod:审判姿态 。 NL 获得 !M! 层 vup_shion_mod:沉灵 。 NL 每回合开始时失去3点生命。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 进入 vup_shion_mod:审判姿态 。 NL 获得 !M! 层 vup_shion_mod:沉灵 和 !VUPShionSecondM! 层 再生 。 NL 受到25点伤害并获得5点最大生命。",
+    "UPGRADE_DESCRIPTION": " 固有 。 保留 。 NL 进入 vup_shion_mod:审判姿态 。 NL 获得 !M! 层 vup_shion_mod:沉灵 和 !VUPShionSecondM! 层 再生 。 NL 受到25点伤害并获得5点最大生命。",
     "EXTENDED_DESCRIPTION": [
       "自我审判"
     ]
@@ -1091,7 +1091,8 @@
   },
   "VUPShionMod:FlickeringTip": {
     "NAME": "不弑寒芒",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 击杀非首领时：获得 !M! 点 *San值 和 !M! 点最大生命。"
+    "DESCRIPTION": " 造成 !D! 点伤害。 NL 击杀非首领时：获得 !M! 点 *San值 和 !M! 点最大生命。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 造成 !D! 点伤害。 NL 击杀非首领时：获得 !M! 点 *San值 和 !M! 点最大生命。"
   },
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "姦淫诫言",
@@ -1124,7 +1125,8 @@
   },
   "VUPShionMod:CelestialIncarnation": {
     "NAME": "圣躯代行",
-    "DESCRIPTION": "进入 vup_shion_mod:言灵姿态 。"
+    "DESCRIPTION": "进入 vup_shion_mod:言灵姿态 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 进入 vup_shion_mod:言灵姿态 。"
   },
   "VUPShionMod:Calamity": {
     "NAME": "崩坏",
@@ -1132,8 +1134,8 @@
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "圣棺沉灵",
-    "DESCRIPTION": "每回合结束时将 *奇迹 加入抽牌堆并获得 !M! 点 vup_shion_mod:沉灵 。 NL 消耗 *奇迹 时，抽一张牌并获得 !VUPShionSecondM! 点 vup_shion_mod:沉灵 。",
-    "UPGRADE_DESCRIPTION": "获得 vup_shion_mod:沉灵 。 NL 每回合结束时将 *奇迹 加入抽牌堆并获得 !M! 点 vup_shion_mod:沉灵 。 NL 消耗 *奇迹 时，抽一张牌并获得 !VUPShionSecondM! 点 vup_shion_mod:沉灵 。"
+    "DESCRIPTION": "每回合结束时将 *奇迹 加入弃牌堆并获得 !M! 点 vup_shion_mod:沉灵 。 NL 消耗 *奇迹 时，抽一张牌并获得 !VUPShionSecondM! 点 vup_shion_mod:沉灵 。",
+    "UPGRADE_DESCRIPTION": "获得 vup_shion_mod:沉灵 。 NL 每回合结束时将 *奇迹 加入弃牌堆并获得 !M! 点 vup_shion_mod:沉灵 。 NL 消耗 *奇迹 时，抽一张牌并获得 !VUPShionSecondM! 点 vup_shion_mod:沉灵 。"
   },
   "VUPShionMod:EnsanguinedFigure": {
     "NAME": "浸染之衣",
@@ -1145,13 +1147,13 @@
   },
   "VUPShionMod:Asceticism": {
     "NAME": "苦行天途",
-    "DESCRIPTION": "获得 !M! 点 *San值。 NL 每当你失去生命时，获得 [E] 并回复2点生命。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点 *San值。 NL 每当你失去生命时，获得 [E] 并回复2点生命。 NL 每两次你失去生命时，抽一张牌。"
+    "DESCRIPTION": "获得 !M! 点 *San值。 NL 每当你失去生命时，回复2点生命。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 *San值。 NL 每当你失去生命时，回复2点生命。 NL 每两次你失去生命时，抽一张牌。"
   },
   "VUPShionMod:TranscendSoul": {
     "NAME": "祭灵天途",
-    "DESCRIPTION": "获得 !M! 点 *San值。 NL回合结束时，回复 vup_shion_mod:沉灵 !VUPShionSecondM! 倍的生命。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点 *San值。 NL回合结束时，回复 vup_shion_mod:沉灵 !VUPShionSecondM! 倍的生命。 NL 失去生命时，对所有敌人造成等量伤害。",
+    "DESCRIPTION": "获得 !M! 点 *San值。 NL 回合结束时，回复 vup_shion_mod:沉灵 !VUPShionSecondM! 倍的生命。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 *San值。 NL 回合结束时，回复 vup_shion_mod:沉灵 !VUPShionSecondM! 倍的生命。 NL 失去生命时，对所有敌人造成等量伤害。",
     "EXTENDED_DESCRIPTION": [
       "度灵天途"
     ]
@@ -1159,7 +1161,7 @@
   "VUPShionMod:Arbitration": {
     "NAME": "审判开庭",
     "DESCRIPTION": "每当造成未被 格挡 的伤害时，给予 !M! 层 vup_shion_mod:罪孽 。",
-    "UPGRADE_DESCRIPTION": "每当触发 vup_shion_mod:伐罪 时，给予 *所有人 !M! 层 vup_shion_mod:罪孽 并回复8点生命。",
+    "UPGRADE_DESCRIPTION": "每当触发 vup_shion_mod:伐罪 时，给予 *所有人 !M! 层 vup_shion_mod:罪孽 并回复4点生命。",
     "EXTENDED_DESCRIPTION": [
       "万物·审判开庭"
     ]
@@ -1178,7 +1180,7 @@
   },
   "VUPShionMod:SacredChop": {
     "NAME": "至圣斩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 vup_shion_mod:沉灵 。 NL 随机移除一个负面效果。 NL 将一张 *奇迹 加入抽牌堆。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 vup_shion_mod:沉灵 。 NL 随机移除一个负面效果。 NL 将一张 *奇迹 加入手牌。"
   },
   "VUPShionMod:SavageSeries": {
     "NAME": "连斩",
@@ -1187,7 +1189,7 @@
   },
   "VUPShionMod:CruciformPenance": {
     "NAME": "至圣十字斩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! vup_shion_mod:沉灵 。 NL 消耗 所有 *奇迹 。每 消耗 一张牌，回复 !VUPShionSecondM! 点生命、获得2点 力量 并 vup_shion_mod:伐罪 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! vup_shion_mod:沉灵 。 NL 消耗 所有 *奇迹 。每 消耗 一张牌，回复 !VUPShionSecondM! 点生命、额外造成一次伤害 并 vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "罪孽收割",
@@ -1271,7 +1273,7 @@
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "一切苦难入棺",
-    "DESCRIPTION": "消耗 所有诅咒和状态牌。 vup_shion_mod:沉灵 X(X<=10)：获得X [E] 。 NL 抽X张牌。 NL 消耗 。"
+    "DESCRIPTION": "消耗 所有诅咒和状态牌。 vup_shion_mod:沉灵 X(X<=7)：获得X [E] 。 NL 抽X张牌。 NL 消耗 。"
   },
   "VUPShionMod:EvilOnMe": {
     "NAME": "一切罪孽归我",
@@ -1455,16 +1457,16 @@
   },
   "VUPShionMod:LiYueSheng": {
     "NAME": "刻心·黎月笙",
-    "DESCRIPTION": "保留 。 墓地 。 NL 获得 1 层 vup_shion_mod:誓 。 NL 失去所有负面效果。 NL 每失去一个效果， NL 你失去 !M! 点生命并获得 !VUPShionSecondM! 点 力量 。 消耗 。"
+    "DESCRIPTION": "保留 。 墓地 。 NL 获得 1 层 vup_shion_mod:誓 。 NL 失去所有负面效果。 NL 每失去一个效果， NL 你失去 !M! 点生命并获得 !VUPShionSecondM! 点 vup_shion_mod:沉灵 。 消耗 。"
   },
   "VUPShionMod:LiXiaoYa": {
     "NAME": "愿景·黎晓雅",
-    "DESCRIPTION": "保留 。 NL 回复 !M! 点生命。 NL 进入 vup_shion_mod:祈言姿态 。 NL 将 *自我审判 加入手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 回复 !M! 点生命。 NL 进入 vup_shion_mod:祈言姿态 。 NL 将 *圣躯代行 加入手牌。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 NL 获得 !M! 点最大生命。 NL 回复 !VUPShionSecondM! 点生命。  NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 获得 !M! 点最大生命。 NL 回复 !VUPShionSecondM! 点生命。 NL 消耗 。"
   },
   "VUPShionMod:LiyezhuUpgradeCard": {
     "NAME": "武装·升阶具现",
-    "DESCRIPTION": "保留 。 NL 消耗 手牌中的 !M! 张 *奇迹 ，否则失去 !M! 点最大生命。 NL 选择 升级 牌组中的一张牌。 消耗 。",
+    "DESCRIPTION": " 消耗 手牌中的 !M! 张 *奇迹 ，否则失去 !M! 点最大生命。 NL 选择 升级 牌组中的一张牌。 消耗 。",
     "UPGRADE_DESCRIPTION": "保留 。 NL 消耗 手牌中的 !M! 张 *奇迹 ，否则失去 !M! 点最大生命。 NL 至多选择 升级 牌组中的一张牌。 消耗 。"
   },
   "VUPShionMod:MatrixUpgrade": {

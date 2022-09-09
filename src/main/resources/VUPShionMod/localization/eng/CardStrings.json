@@ -1041,8 +1041,8 @@
   },
   "VUPShionMod:JudgementOfSins": {
     "NAME": "Judgement of Sins",
-    "DESCRIPTION": "Innate, Retain. NL Enter vup_shion_mod:Judging\u00a0Stance. NL Gain !M! vup_shion_mod:Psychic. NL Lose 3 HP at the start of your turn.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Enter vup_shion_mod:Judging\u00a0Stance. NL Gain !M! vup_shion_mod:Psychic and !VUPShionSecondM! Regen. NL Take 25 damage and gain 5 Max HP.",
+    "DESCRIPTION": "Innate. Retain. NL Enter vup_shion_mod:Judging\u00a0Stance. NL Gain !M! vup_shion_mod:Psychic. NL Lose 3 HP at the start of your turn.",
+    "UPGRADE_DESCRIPTION": "Innate. Retain. NL Enter vup_shion_mod:Judging\u00a0Stance. NL Gain !M! vup_shion_mod:Psychic and !VUPShionSecondM! Regen. NL Take 25 damage and gain 5 Max HP.",
     "EXTENDED_DESCRIPTION": [
       "Judgement of Ego"
     ]
@@ -1091,7 +1091,8 @@
   },
   "VUPShionMod:FlickeringTip": {
     "NAME": "Flickering Tip",
-    "DESCRIPTION": "Deal !D! damage. NL On kill non-boss,Gain !M! *Sanity and !M! max HP."
+    "DESCRIPTION": "Deal !D! damage. NL On kill non-boss,Gain !M! *Sanity and !M! max HP.",
+    "UPGRADE_DESCRIPTION": " Retain. NL Deal !D! damage. NL On kill non-boss,Gain !M! *Sanity and !M! max HP."
   },
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "Inordinate Admonition",
@@ -1124,7 +1125,8 @@
   },
   "VUPShionMod:CelestialIncarnation": {
     "NAME": "Celestial Incarnation",
-    "DESCRIPTION": "Enter vup_shion_mod:Wordpower\u00a0Stance."
+    "DESCRIPTION": "Enter vup_shion_mod:Wordpower\u00a0Stance.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Enter vup_shion_mod:Wordpower\u00a0Stance."
   },
   "VUPShionMod:Calamity": {
     "NAME": "Calamity",
@@ -1132,8 +1134,8 @@
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "Hallowed Case",
-    "DESCRIPTION": "At the end of your turn, add a *Miracle into your draw pile and gain !M! vup_shion_mod:Psychic. NL Whenever you Exhaust *Miracle ,draw a card and gain !VUPShionSecondM! vup_shion_mod:Psychic.",
-    "UPGRADE_DESCRIPTION": "Gain 1 vup_shion_mod:Psychic. NL At the end of your turn, add a *Miracle into your draw pile and gain !M! vup_shion_mod:Psychic. NL Whenever you Exhaust *Miracle ,draw a card and gain !VUPShionSecondM! vup_shion_mod:Psychic."
+    "DESCRIPTION": "At the end of your turn, add a *Miracle into your discard pile and gain !M! vup_shion_mod:Psychic. NL Whenever you Exhaust *Miracle ,draw a card and gain !VUPShionSecondM! vup_shion_mod:Psychic.",
+    "UPGRADE_DESCRIPTION": "Gain 1 vup_shion_mod:Psychic. NL At the end of your turn, add a *Miracle into your discard pile and gain !M! vup_shion_mod:Psychic. NL Whenever you Exhaust *Miracle ,draw a card and gain !VUPShionSecondM! vup_shion_mod:Psychic."
   },
   "VUPShionMod:EnsanguinedFigure": {
     "NAME": "Ensanguined Figure",
@@ -1145,8 +1147,8 @@
   },
   "VUPShionMod:Asceticism": {
     "NAME": "Asceticism",
-    "DESCRIPTION": "Gain !M! *Sanity. NL Everytime you lose HP, gain [E] and heal 2 HP.",
-    "UPGRADE_DESCRIPTION": "Gain !M! *Sanity. NL Everytime you lose HP, gain [E] and heal 2 HP. NL Every 2 times you lose HP, draw 1 card."
+    "DESCRIPTION": "Gain !M! *Sanity. NL Everytime you lose HP, heal 2 HP.",
+    "UPGRADE_DESCRIPTION": "Gain !M! *Sanity. NL Everytime you lose HP, heal 2 HP. NL Every 2 times you lose HP, draw a card."
   },
   "VUPShionMod:TranscendSoul": {
     "NAME": "Transcend Soul",
@@ -1159,7 +1161,7 @@
   "VUPShionMod:Arbitration": {
     "NAME": "Arbitratus",
     "DESCRIPTION": "Whenever you deal unblocked damage, apply !M! vup_shion_mod:Sinful.",
-    "UPGRADE_DESCRIPTION": "Whenever you trigger vup_shion_mod:Punitive, apply !M! vup_shion_mod:Sinful to ALL ENTITIES, heal 5HP.",
+    "UPGRADE_DESCRIPTION": "Whenever you trigger vup_shion_mod:Punitive, apply !M! vup_shion_mod:Sinful to ALL ENTITIES, heal 4 HP.",
     "EXTENDED_DESCRIPTION": [
       "Arbitratus Omnes"
     ]
@@ -1178,7 +1180,7 @@
   },
   "VUPShionMod:SacredChop": {
     "NAME": "Sacred Chop",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Psychic. NL Remove a random Debuff. NL Add a *Miracle to your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Psychic. NL Remove a random Debuff. NL Add a *Miracle to your hand."
   },
   "VUPShionMod:SavageSeries": {
     "NAME": "Savage Series",
@@ -1187,7 +1189,7 @@
   },
   "VUPShionMod:CruciformPenance": {
     "NAME": "Cruciform Penance",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Psychic. NL Exhaust ALL your *Miracle. NL Heal !VUPShionSecondM! HP,gain 2 Strength and vup_shion_mod:Punitive for each card you Exhausted."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Psychic. NL Exhaust ALL your *Miracle. NL Heal !VUPShionSecondM! HP,deal an additional damage and vup_shion_mod:Punitive for each card you Exhausted."
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "Reap the Sinful",
@@ -1271,7 +1273,7 @@
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "Woe into Casket",
-    "DESCRIPTION": "Exhaust all Curses and Status cards. NL vup_shion_mod:Psychic X(X<=10): Gain X [E] . NL Draw X cards. NL Exhaust."
+    "DESCRIPTION": "Exhaust all Curses and Status cards. NL vup_shion_mod:Psychic X(X<=7): Gain X [E] . NL Draw X cards. NL Exhaust."
   },
   "VUPShionMod:EvilOnMe": {
     "NAME": "Evil on Me",
@@ -1286,7 +1288,7 @@
   "VUPShionMod:BrokenSanctuary": {
     "NAME": "Broken Sanctuary",
     "DESCRIPTION": "Retain. NL ALL vup_shion_mod:Prayer cards cost 0 . Whenever you play a vup_shion_mod:Prayer card , draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Innate, Retain. NL ALL vup_shion_mod:Prayer cards cost 0 . Whenever you play a vup_shion_mod:Prayer card , draw !M! cards.."
+    "UPGRADE_DESCRIPTION": "Innate, Retain. NL ALL vup_shion_mod:Prayer cards cost 0 . Whenever you play a vup_shion_mod:Prayer card , draw !M! cards."
   },
   "VUPShionMod:Precasting": {
     "NAME": "Precasting",
@@ -1455,16 +1457,16 @@
   },
   "VUPShionMod:LiYueSheng": {
     "NAME": "Etch into Heart",
-    "DESCRIPTION": "Retain. Grave. NL Gain 1 vup_shion_mod:Swear. NL Clear all debuff. NL For each cleared, lose !M! HP and gain !VUPShionSecondM! Strength. NL Exhaust."
+    "DESCRIPTION": "Retain. Grave. NL Gain 1 vup_shion_mod:Swear. NL Clear all debuff. NL For each cleared, lose !M! HP and gain !VUPShionSecondM! vup_shion_mod:Psychic. NL Exhaust."
   },
   "VUPShionMod:LiXiaoYa": {
     "NAME": "Shining Lie",
-    "DESCRIPTION": "Retain. NL Heal !M! HP. NL Enter vup_shion_mod:Praying\u00a0Stance. NL Add 1 *Judgement *of *Ego into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Heal !M! HP. NL Enter vup_shion_mod:Praying\u00a0Stance. NL Add 1 *Celestial *Incarnation into your hand. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Gain !M! max HP. NL Heal !VUPShionSecondM! HP. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! max HP. NL Heal !VUPShionSecondM! HP. NL Exhaust."
   },
   "VUPShionMod:LiyezhuUpgradeCard": {
     "NAME": "Higher Avatar",
-    "DESCRIPTION": "Retain. NL Exhaust !M! *Miracle in your hand. NL Otherwise lose !M! max HP. NL Choose 1 card from your deck to Upgrade. NL Exhaust.",
+    "DESCRIPTION": "Exhaust !M! *Miracle in your hand. NL Otherwise lose !M! max HP. NL Choose 1 card from your deck to Upgrade. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Exhaust !M! *Miracle in your hand. NL Otherwise lose !M! max HP. NL Choose no more than 1 card from your deck to Upgrade. NL Exhaust."
   },
   "VUPShionMod:MatrixUpgrade": {

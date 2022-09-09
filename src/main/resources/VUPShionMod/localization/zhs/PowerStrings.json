@@ -606,7 +606,7 @@
   "VUPShionMod:HallowedCasketPower": {
     "NAME": "圣棺沉灵",
     "DESCRIPTIONS": [
-      "每回合结束时，将 #b%d 张 #y奇迹 加入抽牌堆并获得 #b%d 点 #y沉灵 。"
+      "每回合结束时，将 #b%d 张 #y奇迹 加入弃牌堆并获得 #b%d 点 #y沉灵 。"
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower": {
@@ -624,7 +624,7 @@
   "VUPShionMod:AsceticismPower": {
     "NAME": "苦行天途",
     "DESCRIPTIONS": [
-      "每当你失去生命时，获得 #b%d [E] 并回复 #b%d 点生命。"
+      "每当你失去生命时，回复 #b%d 点生命。"
     ]
   },
   "VUPShionMod:Asceticism2Power": {

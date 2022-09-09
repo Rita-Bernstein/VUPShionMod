@@ -29,8 +29,6 @@ public class LiyezhuUpgradeCard extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
         this.exhaust = true;
-        this.selfRetain = true;
-
     }
 
     @Override
@@ -72,6 +70,7 @@ public class LiyezhuUpgradeCard extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.selfRetain = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

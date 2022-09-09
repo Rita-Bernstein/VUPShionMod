@@ -67,10 +67,6 @@ public class JudgeStance extends AbstractVUPShionStance {
 //        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLDENROD, true));
 
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new CombustPower(AbstractDungeon.player, 1, 5), 5));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new StrengthPower(AbstractDungeon.player, 1)));
     }
 
     @Override

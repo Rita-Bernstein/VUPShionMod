@@ -19,7 +19,7 @@ public class Sentence extends AbstractLiyezhuCard {
 
     public Sentence() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 6;
+        this.baseDamage = 5;
         this.magicNumber = this.baseMagicNumber = 2;
     }
 
@@ -33,7 +33,7 @@ public class Sentence extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(2);
             upgradeMagicNumber(1);
         }
     }

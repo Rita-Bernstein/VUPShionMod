@@ -24,8 +24,8 @@ public class LimpidHeart extends AbstractLiyezhuCard {
 
     public LimpidHeart() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
-        this.secondaryM = this.baseSecondaryM = 10;
+        this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 7;
     }
 
     @Override

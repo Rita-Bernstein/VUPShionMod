@@ -24,6 +24,7 @@ public class BrokenSanctuary extends AbstractLiyezhuCard {
     public BrokenSanctuary() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.selfRetain = true;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override

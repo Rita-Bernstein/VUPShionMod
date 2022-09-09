@@ -425,7 +425,7 @@
   "VUPShionMod:PreExecution": {
     "NAME": "擬斬",
     "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 獲得 !VUPShionSecondM! 點 vup_shion_mod:硬直 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 獲得1點 敏捷 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 獲得 [E] 。",
     "EXTENDED_DESCRIPTION": [
       "心眼"
     ]
@@ -493,7 +493,7 @@
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斬",
     "DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害兩次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得3點 vup_shion_mod:硬直 。 NL 抽兩張牌。",
-    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害三次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽兩張牌。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:劍勢 的傷害三次。 NL 獲得5 + vup_shion_mod:劍勢 的 格擋 。 NL 獲得2點 vup_shion_mod:硬直 。 NL 抽兩張牌。 NL vup_shion_mod:魔能過載 ，vup_shion_mod:極意 。",
     "EXTENDED_DESCRIPTION": [
       "回天劍舞",
       "極·回天劍舞",
@@ -530,8 +530,8 @@
   },
   "VUPShionMod:GladiiInfiniti": {
     "NAME": "無限劍制",
-    "DESCRIPTION": "保留 ， 消耗 。 NL 保留 時打出前耗能降低 NL 造成1+ vup_shion_mod:劍勢 的傷害8次。 NL 獲得4點 vup_shion_mod:硬直 。 NL 擊暈 敵人。",
-    "UPGRADE_DESCRIPTION": "保留 ， 消耗 。 NL 保留 時打出前耗能降低 NL 造成1+ vup_shion_mod:劍勢 的傷害8次。 NL 獲得4點 vup_shion_mod:硬直 。 NL 擊暈 敵人。",
+    "DESCRIPTION": "保留 ， 消耗 ，vup_shion_mod:極意 。 NL 保留 時打出前耗能降低 NL 造成1+ vup_shion_mod:劍勢 的傷害8次。 NL 獲得4點 vup_shion_mod:硬直 。 NL 擊暈 敵人。",
+    "UPGRADE_DESCRIPTION": "保留 ， 消耗 ，vup_shion_mod:極意 。 NL 保留 時打出前耗能降低 NL 造成1+ vup_shion_mod:劍勢 的傷害8次。 NL 獲得4點 vup_shion_mod:硬直 。 NL 擊暈 敵人。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 點傷害）"
     ]
@@ -546,8 +546,8 @@
   },
   "VUPShionMod:LunaMergo": {
     "NAME": "調息",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 和 vup_shion_mod:魔能過載 。",
-    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 抽 !M! 張牌。 NL 獲得5點 vup_shion_mod:劍勢 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 和 vup_shion_mod:魔能過載 。",
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 [E] [E] 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 和 vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 [E] [E] 。 NL 獲得5點 vup_shion_mod:劍勢 。 NL 失去 !VUPShionSecondM! 點 vup_shion_mod:硬直 和 vup_shion_mod:魔能過載 。",
     "EXTENDED_DESCRIPTION": [
       "月讀"
     ]
@@ -560,7 +560,7 @@
   "VUPShionMod:Sharpen": {
     "NAME": "銳意",
     "DESCRIPTION": "獲得 !M! 點 vup_shion_mod:劍勢 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 獲得 !M! 點 vup_shion_mod:劍勢 。 NL 消耗 。"
+    "UPGRADE_DESCRIPTION": "獲得 !M! 點 vup_shion_mod:劍勢 。 NL 抽一張牌。 NL 消耗 。"
   },
   "VUPShionMod:FlawlessParry": {
     "NAME": "見切",
@@ -580,8 +580,8 @@
   },
   "VUPShionMod:SubLuna": {
     "NAME": "月隱",
-    "DESCRIPTION": "獲得1層 無實體 。 NL 失去 !M! 點 vup_shion_mod:硬直 。 NL 下回合獲得 [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "獲得1層 無實體 。 NL 失去 !M! 點 vup_shion_mod:硬直 。 NL 下回合獲得 [E] [E] 。 NL 消耗 。"
+    "DESCRIPTION": "獲得 vup_shion_mod:咫尺天涯 。 NL 獲得 vup_shion_mod:月隱 。 NL 失去 !M! 點 vup_shion_mod:硬直 。 NL 下回合獲得 [E] 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "獲得 vup_shion_mod:咫尺天涯 。 NL 獲得 vup_shion_mod:月隱 。 NL 下回合獲得 [E] [E] 。 NL 消耗 。"
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "斷水",
@@ -633,8 +633,8 @@
   },
   "VUPShionMod:AfflictioBellumque": {
     "NAME": "二之章：戰亂",
-    "DESCRIPTION": " 虛無 。 NL 對所有敵人造成 !D! 點傷害並給予 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 。",
-    "UPGRADE_DESCRIPTION": " 虛無 。 NL 對所有敵人造成 !D! 點傷害並給予 !M! 層 易傷 。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": " 虛無 。 NL 對所有敵人造成 !D! 點傷害並給予 !M! 層 易傷 。 NL 消耗 一張牌。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": " 虛無 。 NL 對所有敵人造成 !D! 點傷害並給予 !M! 層 易傷 。 NL 消耗 一張牌。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:RosaSpinaque": {
     "NAME": "四之章：荊棘",
@@ -661,7 +661,7 @@
   },
   "VUPShionMod:VitaNaturaque": {
     "NAME": "六之章：延續",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 層 vup_shion_mod:殘影 。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": "獲得 !VUPShionSecondM! 點 vup_shion_mod:護盾 。 NL 獲得 !M! 層 vup_shion_mod:殘影 。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:CorLapisque": {
     "NAME": "五之章：心之璧",
@@ -742,7 +742,7 @@
   "VUPShionMod:CaligoConstans": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成雙倍傷害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "虛無 。 NL 下回合造成雙倍傷害。 NL 下回合抽 !M! 張攻擊牌。 NL 將這張牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "虛無 。 NL 本回合回合造成雙倍傷害。 NL 抽 !M! 張攻擊牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（永續）",
       "通典：暗（極意）",
@@ -752,7 +752,7 @@
   "VUPShionMod:CaligoRapida": {
     "NAME": "通典：暗",
     "DESCRIPTION": "下回合造成雙倍傷害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "虛無 。 NL 下回合造成雙倍傷害。 NL 下回合抽 !M! 張攻擊牌。 NL 將這張牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "虛無 。 NL 本回合造成雙倍傷害。 NL 抽 !M! 張攻擊牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：暗（神速）",
       "通典：暗（極意）",
@@ -782,7 +782,7 @@
   "VUPShionMod:TerraNimia": {
     "NAME": "通典：地",
     "DESCRIPTION": "下張技能牌打出 !M! 次。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下張技能牌打出 !M! 次。",
+    "UPGRADE_DESCRIPTION": "下兩張技能牌打出 !M! 次。",
     "EXTENDED_DESCRIPTION": [
       "通典：地（泛濫）",
       "通典：地（極意）",
@@ -792,7 +792,7 @@
   "VUPShionMod:TerraRapida": {
     "NAME": "通典：地",
     "DESCRIPTION": "下張技能牌打出 !M! 次。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下張技能牌打出 !M! 次。",
+    "UPGRADE_DESCRIPTION": "下兩張技能牌打出 !M! 次。",
     "EXTENDED_DESCRIPTION": [
       "通典：地（永續）",
       "通典：地（極意）",
@@ -842,7 +842,7 @@
   "VUPShionMod:IgnisRapidus": {
     "NAME": "通典：火",
     "DESCRIPTION": "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "虛無 。 NL 下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：火（神速）",
       "通典：火（極意）",
@@ -852,7 +852,7 @@
   "VUPShionMod:IgnisNimius": {
     "NAME": "通典：火",
     "DESCRIPTION": "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "下 !M! 張牌耗能為0。 NL 打出後將其 消耗 。 NL 抽一張牌。",
     "EXTENDED_DESCRIPTION": [
       "通典：火（泛濫）",
       "通典：火（極意）",
@@ -862,7 +862,7 @@
   "VUPShionMod:VentusRapidus": {
     "NAME": "通典：風",
     "DESCRIPTION": "獲得 !M! 點 敏捷 。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! 點 敏捷 。 NL 你的回合開始時， NL 獲得 !VUPShionSecondM! 點 敏捷 。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 點 敏捷 。 NL 抽兩張牌。 NL 你的回合開始時， NL 獲得 !VUPShionSecondM! 點 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       "通典：風（神速）",
       "通典：風（極意）",
@@ -872,7 +872,7 @@
   "VUPShionMod:VentusNimius": {
     "NAME": "通典：風",
     "DESCRIPTION": "獲得 !M! 點 敏捷 。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! 點 敏捷 。 NL 你的回合開始時， NL 獲得 !VUPShionSecondM! 點 敏捷 。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 點 敏捷 。 NL 抽兩張牌。 NL 你的回合開始時， NL 獲得 !VUPShionSecondM! 點 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       "通典：風（永續）",
       "通典：風（極意）",
@@ -962,7 +962,7 @@
   },
   "VUPShionMod:Gravitater": {
     "NAME": "重力迴路",
-    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，獲得 !M! 點 格擋 。 NL vup_shion_mod:魔能過載 。"
+    "DESCRIPTION": "獲得 vup_shion_mod:魔能過載 時，獲得 !M! 點 vup_shion_mod:護盾 。 NL vup_shion_mod:魔能過載 。"
   },
   "VUPShionMod:Superloader": {
     "NAME": "超載迴路",
@@ -1014,16 +1014,17 @@
   },
   "VUPShionMod:Barrier": {
     "NAME": "障壁",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。"
+    "DESCRIPTION": "獲得 !M! 點 vup_shion_mod:護盾 。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 點 vup_shion_mod:護盾 。 NL 抽一張牌。"
   },
   "VUPShionMod:SoothingScripture": {
     "NAME": "安息祈言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：回復 !M! 點生命。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *狂躁之光 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：回復 !M! 點生命。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *狂躁之光+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：獲得 1 *San值 ，回復 !M! 點生命。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *狂躁之光 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：獲得 1 *San值 ，回復 !M! 點生命。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *狂躁之光+ 。 NL 消耗 。"
   },
   "VUPShionMod:EmanationOfIre": {
     "NAME": "狂躁之光",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 如果敵人的意圖不是攻擊，給予 !M! 層 易傷 。 NL vup_shion_mod:沉靈 1:造成 !D! 點傷害。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 造成 !D! 點傷害。 NL 給予 !M! 層 易傷 。 NL vup_shion_mod:沉靈 :造成 !D! 點傷害。 NL 消耗 。"
   },
   "VUPShionMod:TranquilPrayer": {
     "NAME": "靜默祈言",
@@ -1041,7 +1042,7 @@
   "VUPShionMod:JudgementOfSins": {
     "NAME": "原罪審判",
     "DESCRIPTION": " 固有 ， 保留 。 NL 進入 vup_shion_mod:審判姿態 。 NL 獲得 !M! 層 vup_shion_mod:沉靈 。 NL 每回合開始時失去3點生命。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 進入 vup_shion_mod:審判姿態 。 NL 獲得 !M! 層 vup_shion_mod:沉靈 和 !VUPShionSecondM! 層 再生 。 NL 受到25點傷害並獲得5點最大生命。",
+    "UPGRADE_DESCRIPTION": " 固有 。 保留 。 NL 進入 vup_shion_mod:審判姿態 。 NL 獲得 !M! 層 vup_shion_mod:沉靈 和 !VUPShionSecondM! 層 再生 。 NL 受到25點傷害並獲得5點最大生命。",
     "EXTENDED_DESCRIPTION": [
       "自我審判"
     ]
@@ -1053,7 +1054,8 @@
   },
   "VUPShionMod:BeinglessMoment": {
     "NAME": "虛像剎那",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL 獲得 !M! 層 易傷 。"
+    "DESCRIPTION": "獲得 !M! 層 易傷 。 NL 本回合回復生命時，獲得等量的 vup_shion_mod:護盾 。 NL 下張攻擊牌造成傷害時，回復等量的生命。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 獲得 !M! 層 易傷 。 NL 本回合回復生命時，獲得等量的 vup_shion_mod:護盾 。 NL 下張攻擊牌造成傷害時，回復等量的生命。"
   },
   "VUPShionMod:SoleAnthem": {
     "NAME": "唯一祈言",
@@ -1080,16 +1082,17 @@
   },
   "VUPShionMod:LimpidHeart": {
     "NAME": "守聖澄心",
-    "DESCRIPTION": "回復 !VUPShionSecondM! 點生命。 NL 給予所有敵人 !M! 層 vup_shion_mod:罪孽 。 NL vup_shion_mod:伐罪 。 NL vup_shion_mod:沉靈 ：額外給予3層。"
+    "DESCRIPTION": "回復 !VUPShionSecondM! 點生命。 NL 給予所有敵人 !M! 層 vup_shion_mod:罪孽 。 NL 移除隨機一個負面效果。 NL vup_shion_mod:沉靈 ：獲得 1 *San值 。"
   },
   "VUPShionMod:SanguinaryPrecept": {
     "NAME": "屠戮誡言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ： *所有人 失去 !M! 點生命 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *不弒寒芒 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ： *所有人 失去 !M! 點生命 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *不弒寒芒+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ： 失去 !M! *San值 ，所有敵人失去其10%最大生命的生命。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *不弒寒芒 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL vup_shion_mod:祈言 !VUPShionSecondM! ： 失去 !M! *San值 ，所有敵人失去其10%最大生命的生命。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *不弒寒芒+ 。 NL 消耗 。"
   },
   "VUPShionMod:FlickeringTip": {
     "NAME": "不弒寒芒",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 擊殺時：獲得 易傷 和 [E] 並回復 !M! 點生命。"
+    "DESCRIPTION": " 造成 !D! 點傷害。 NL 擊殺非首領時：獲得 !M! 點 *San值 和 !M! 點最大生命。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 造成 !D! 點傷害。 NL 擊殺非首領時：獲得 !M! 點 *San值 和 !M! 點最大生命。"
   },
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "姦淫誡言",
@@ -1103,8 +1106,8 @@
   },
   "VUPShionMod:AvariciousMotto": {
     "NAME": "貪婪誡言",
-    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：所有敵人失去 !M! 點生命。 NL 給予 vup_shion_mod:罪孽 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *溢光之刃 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：所有敵人失去 !M! 點生命。 NL 給予 vup_shion_mod:罪孽 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *溢光之刃+ 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：抽一張牌並獲得 [E] 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *溢光之刃 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " vup_shion_mod:祈言 !VUPShionSecondM! ：抽一張牌並獲得 [E] 。 NL vup_shion_mod:審判姿態 ： vup_shion_mod:啟封 ： *溢光之刃+ 。 NL 消耗 。"
   },
   "VUPShionMod:BurnishedRazor": {
     "NAME": "溢光之刃",
@@ -1122,34 +1125,35 @@
   },
   "VUPShionMod:CelestialIncarnation": {
     "NAME": "聖軀代行",
-    "DESCRIPTION": "進入 vup_shion_mod:言靈姿態 。"
+    "DESCRIPTION": "進入 vup_shion_mod:言靈姿態 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 進入 vup_shion_mod:言靈姿態 。"
   },
   "VUPShionMod:Calamity": {
     "NAME": "崩壞",
-    "DESCRIPTION": "固有 ， vup_shion_mod:靈魂破損 。 NL 獲得5點 力量 。 NL 每回合開始時獲得 [E] [E] 並失去20點生命；給予 *所有人 2層 vup_shion_mod:罪孽 ；所有敵人失去 vup_shion_mod:罪孽 層數的 力量 。"
+    "DESCRIPTION": "固有 ， vup_shion_mod:靈魂破損 。 NL 獲得 !M! 點 力量 。 NL 每回合開始時獲得 [E] 。 NL 每回合開始給予 *所有人 !VUPShionSecondM! 層 vup_shion_mod:罪孽 並 vup_shion_mod:伐罪 3。"
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "聖棺沉靈",
-    "DESCRIPTION": "每回合結束時將 *奇蹟 加入抽牌堆並獲得 !M! 點 vup_shion_mod:沉靈 。 NL 消耗 *奇蹟 時，抽兩張牌並獲得1san。",
-    "UPGRADE_DESCRIPTION": "獲得 vup_shion_mod:沉靈 。 NL 每回合結束時將 *奇蹟 加入抽牌堆並獲得 !M! 點 vup_shion_mod:沉靈 。 NL 消耗 *奇蹟 時，抽兩張牌並獲得1san。"
+    "DESCRIPTION": "每回合結束時將 *奇蹟 加入棄牌堆並獲得 !M! 點 vup_shion_mod:沉靈 。 NL 消耗 *奇蹟 時，抽一張牌並獲得 !VUPShionSecondM! 點 vup_shion_mod:沉靈 。",
+    "UPGRADE_DESCRIPTION": "獲得 vup_shion_mod:沉靈 。 NL 每回合結束時將 *奇蹟 加入棄牌堆並獲得 !M! 點 vup_shion_mod:沉靈 。 NL 消耗 *奇蹟 時，抽一張牌並獲得 !VUPShionSecondM! 點 vup_shion_mod:沉靈 。"
   },
   "VUPShionMod:EnsanguinedFigure": {
     "NAME": "浸染之衣",
-    "DESCRIPTION": "每當你受到傷害時，給予攻擊者 !M! 層 vup_shion_mod:罪孽 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 每當你受到傷害時，給予攻擊者 !M! 層 vup_shion_mod:罪孽 。"
   },
   "VUPShionMod:CrimsonDeluge": {
     "NAME": "浸染之血",
-    "DESCRIPTION": "超出生命上限的回覆將獲得 vup_shion_mod:護盾 。 NL 每當打出攻擊牌時，回復 !M! 點生命。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 超出生命上限的回覆將獲得 vup_shion_mod:護盾 。 NL 每當打出攻擊牌時，回復 !M! 點生命。"
   },
   "VUPShionMod:Asceticism": {
     "NAME": "苦行天途",
-    "DESCRIPTION": "每當你失去生命時，獲得 [E] 。",
-    "UPGRADE_DESCRIPTION": "每當你失去生命時，獲得 [E] 。 NL 每兩次你失去生命時，抽一張牌。"
+    "DESCRIPTION": "獲得 !M! 點 *San值。 NL 每當你失去生命時，回復2點生命。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 點 *San值。 NL 每當你失去生命時，回復2點生命。 NL 每兩次你失去生命時，抽一張牌。"
   },
   "VUPShionMod:TranscendSoul": {
     "NAME": "祭靈天途",
-    "DESCRIPTION": "回合結束時，回復 vup_shion_mod:沉靈 !M! 倍的生命。",
-    "UPGRADE_DESCRIPTION": "回合結束時，回復 vup_shion_mod:沉靈 !M! 倍的生命並對所有敵人造成等量傷害。",
+    "DESCRIPTION": "獲得 !M! 點 *San值。 NL 回合結束時，回復 vup_shion_mod:沉靈 !VUPShionSecondM! 倍的生命。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 點 *San值。 NL 回合結束時，回復 vup_shion_mod:沉靈 !VUPShionSecondM! 倍的生命。 NL 失去生命時，對所有敵人造成等量傷害。",
     "EXTENDED_DESCRIPTION": [
       "度靈天途"
     ]
@@ -1157,18 +1161,18 @@
   "VUPShionMod:Arbitration": {
     "NAME": "審判開庭",
     "DESCRIPTION": "每當造成未被 格擋 的傷害時，給予 !M! 層 vup_shion_mod:罪孽 。",
-    "UPGRADE_DESCRIPTION": "每當觸發 vup_shion_mod:伐罪 時，給予 *所有人 !M! 層 vup_shion_mod:罪孽 並回復8點生命。",
+    "UPGRADE_DESCRIPTION": "每當觸發 vup_shion_mod:伐罪 時，給予 *所有人 !M! 層 vup_shion_mod:罪孽 並回復4點生命。",
     "EXTENDED_DESCRIPTION": [
       "萬物·審判開庭"
     ]
   },
   "VUPShionMod:ProphecyOfDestruction": {
     "NAME": "破滅預言",
-    "DESCRIPTION": "每當打出 vup_shion_mod:祈言 牌時，對隨機敵人造成 !M! 點傷害。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 每當打出 vup_shion_mod:祈言 牌時，對隨機敵人造成 !M! 點傷害。 NL 每回合可選 消耗 一張牌從而給予所有人2層 vup_shion_mod:罪孽 。 "
   },
   "VUPShionMod:ProphecyOfSalvation": {
     "NAME": "救世預言",
-    "DESCRIPTION": "每當打出 vup_shion_mod:祈言 牌時， NL 回復 !M! 點生命。"
+    "DESCRIPTION": "獲得 !VUPShionSecondM! *San值 。 NL 每當打出 vup_shion_mod:祈言 牌時， NL 回復 !M! 點生命。 NL 本場戰鬥生命回復效果提高50%。"
   },
   "VUPShionMod:Sentence": {
     "NAME": "判罪",
@@ -1176,21 +1180,21 @@
   },
   "VUPShionMod:SacredChop": {
     "NAME": "至聖斬",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL vup_shion_mod:伐罪 。 NL 獲得 vup_shion_mod:沉靈 。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !M! 點 vup_shion_mod:沉靈 。 NL 隨機移除一個負面效果。 NL 將一張 *奇蹟 加入手牌。"
   },
   "VUPShionMod:SavageSeries": {
     "NAME": "連斬",
-    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 獲得 vup_shion_mod:沉靈 。 NL 抽一張牌。 NL 如果打出的上一張牌是攻擊，獲得 [E] 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 獲得 vup_shion_mod:沉靈 。 NL 抽一張牌。 NL vup_shion_mod:伐罪 。 NL 如果打出的上一張牌是攻擊，獲得 [E] 。"
+    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:沉靈 。 NL 抽一張牌。 NL 如果打出的上一張牌是攻擊，獲得 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:沉靈 。 NL 抽兩張牌。 NL vup_shion_mod:伐罪 。 NL 如果打出的上一張牌是攻擊，獲得 [E] [E] 。"
   },
   "VUPShionMod:CruciformPenance": {
     "NAME": "至聖十字斬",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 vup_shion_mod:沉靈 。 NL vup_shion_mod:伐罪 。 NL 回復 !M! 點生命。"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 獲得 !M! vup_shion_mod:沉靈 。 NL 消耗 所有 *奇蹟 。每 消耗 一張牌，回復 !VUPShionSecondM! 點生命、額外造成一次傷害 並 vup_shion_mod:伐罪 。"
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "罪孽收割",
-    "DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 。",
-    "UPGRADE_DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 2。 NL vup_shion_mod:沉靈 2： vup_shion_mod:伐罪 。"
+    "DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 。 NL vup_shion_mod:沉靈 1：給予 *所有人 !M! 層 vup_shion_mod:罪孽 。",
+    "UPGRADE_DESCRIPTION": "給予所有敵人你當前層數的 vup_shion_mod:罪孽 。 NL 對所有敵人造成 !D! 點傷害。 NL vup_shion_mod:伐罪 2。 NL vup_shion_mod:沉靈 1：給予 *所有人 !M! 層 vup_shion_mod:罪孽 。"
   },
   "VUPShionMod:Whisk": {
     "NAME": "棺擊",
@@ -1208,8 +1212,7 @@
   },
   "VUPShionMod:CruelSword": {
     "NAME": "浸染之劍",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 如果敵人有 格擋 ， NL 再造成一次傷害並給予 !M! 層 虛弱 和 vup_shion_mod:罪孽 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害。 NL 如果敵人有 格擋 ， NL 再造成兩次傷害並給予 !M! 層 虛弱 和 vup_shion_mod:罪孽 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 造成 !D! 點傷害。 NL 消耗 手牌中的所有狀態和詛咒牌。 每 消耗 一張牌，額外造成一次傷害並給予 !M! 層 虛弱 和 vup_shion_mod:罪孽 。"
   },
   "VUPShionMod:Execution": {
     "NAME": "執行",
@@ -1234,7 +1237,8 @@
   },
   "VUPShionMod:RedEyes": {
     "NAME": "浸染之目",
-    "DESCRIPTION": "吸取敵人的 !M! 點 力量 、 敏捷 和 !VUPShionSecondM! 點生命。 NL 將抽牌堆的一張技能牌加入手牌。 消耗 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 吸取敵人的 !M! 點 力量 、 敏捷 和 10 點生命。 NL 將抽牌堆的一張技能牌加入手牌。 消耗 。",
+    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 吸取敵人的 !M! 點 力量 、 敏捷 和 15 點生命。 NL 將抽牌堆的一張技能牌加入手牌。 消耗 。"
   },
   "VUPShionMod:Consult": {
     "NAME": "查閱",
@@ -1243,7 +1247,8 @@
   },
   "VUPShionMod:Identify": {
     "NAME": "指認",
-    "DESCRIPTION": "給予 !M! 層 vup_shion_mod:罪孽 ， NL 消耗 。"
+    "DESCRIPTION": "給予 !VUPShionSecondM! 層 虛弱 和 易傷。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "給予 !M! 層 vup_shion_mod:罪孽 。 NL 給予 !VUPShionSecondM! 層 虛弱 和 易傷。 NL 消耗 。"
   },
   "VUPShionMod:MiseriamVoco": {
     "NAME": "苦難祈求",
@@ -1268,21 +1273,22 @@
   },
   "VUPShionMod:WoeIntoCasket": {
     "NAME": "一切苦難入棺",
-    "DESCRIPTION": " vup_shion_mod:沉靈 X：獲得X [E] 。 NL 消耗 。"
+    "DESCRIPTION": "消耗 所有詛咒和狀態牌。 vup_shion_mod:沉靈 X(X<=7)：獲得X [E] 。 NL 抽X張牌。 NL 消耗 。"
   },
   "VUPShionMod:EvilOnMe": {
     "NAME": "一切罪孽歸我",
-    "DESCRIPTION": "*所有人 失去 vup_shion_mod:罪孽 。 NL 獲得失去層數的生命。 NL 獲得失去層數/5的最大生命。 消耗 。",
-    "UPGRADE_DESCRIPTION": "*所有人 失去 vup_shion_mod:罪孽 。 NL 獲得失去層數 !M! 倍的生命。 NL 獲得失去層數/5的最大生命。 消耗 。"
+    "DESCRIPTION": "*所有人 至少有15層 vup_shion_mod:罪孽 才能打出。 NL *所有人 失去 vup_shion_mod:罪孽 。 NL 獲得當前最大生命5%的最大生命。獲得失去層數的生命。 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 *所有人 至少有15層 vup_shion_mod:罪孽 才能打出。 NL *所有人 失去 vup_shion_mod:罪孽 。 NL 獲得當前最大生命5%的最大生命。獲得失去層數的生命。 消耗 。"
   },
   "VUPShionMod:VerdictUponHeart": {
     "NAME": "一切審判證心",
-    "DESCRIPTION": " vup_shion_mod:伐罪 !M! 。 NL 消耗 。"
+    "DESCRIPTION": " vup_shion_mod:伐罪 !M! 。 NL 獲得 *所有人 vup_shion_mod:罪孽 層數總和的 vup_shion_mod:沉靈 和生命。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 vup_shion_mod:伐罪 !M! 。 NL 獲得 *所有人 vup_shion_mod:罪孽 層數總和的 vup_shion_mod:沉靈 和生命。 NL 消耗 。"
   },
   "VUPShionMod:BrokenSanctuary": {
     "NAME": "破碎聖堂",
-    "DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能變為0。 NL 本回合每打出一張 vup_shion_mod:祈言 牌 ，抽 !M! 張牌。",
-    "UPGRADE_DESCRIPTION": "固有 ， 保留 。 NL 本回合所有 vup_shion_mod:祈言 牌耗能變為0。 NL 本回合每打出一張 vup_shion_mod:祈言 牌 ，抽 !M! 張牌。"
+    "DESCRIPTION": "保留 。 NL 所有 vup_shion_mod:祈言 牌耗能變為0。 NL 每打出一張 vup_shion_mod:祈言 牌 ，抽 !M! 張牌。",
+    "UPGRADE_DESCRIPTION": "固有 ， 保留 。 NL 所有 vup_shion_mod:祈言 牌耗能變為0。 NL 每打出一張 vup_shion_mod:祈言 牌 ，抽 !M! 張牌。"
   },
   "VUPShionMod:Precasting": {
     "NAME": "預備詠唱",
@@ -1364,7 +1370,7 @@
   "VUPShionMod:MotherRosario": {
     "NAME": "水平四方斬",
     "DESCRIPTION": "對隨機敵人造成4+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。",
-    "UPGRADE_DESCRIPTION": "對隨機敵人造成2+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 對所有敵人造成 vup_shion_mod:劍勢 + 敏捷 點傷害3次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 。",
+    "UPGRADE_DESCRIPTION": "對隨機敵人造成2+ 敏捷 點傷害 !VUPShionSecondM! 次。 NL 對所有敵人造成 vup_shion_mod:劍勢 + 敏捷 點傷害3次。 NL 獲得 !M! 層 vup_shion_mod:硬直 。 NL vup_shion_mod:魔能過載 2，vup_shion_mod:極意 。",
     "EXTENDED_DESCRIPTION": [
       "星屑飛濺",
       "聖母詠嘆",
@@ -1444,25 +1450,24 @@
   },
   "VUPShionMod:LiXiaoNan": {
     "NAME": "絕命·黎曉楠",
-    "DESCRIPTION": "失去最大生命一半的生命。造成失去生命 NL X ( vup_shion_mod:沉靈 + vup_shion_mod:罪孽 ) NL X0.1的傷害。 消耗 。",
-    "UPGRADE_DESCRIPTION": "失去最大生命一半的生命。造成失去生命 NL X ( vup_shion_mod:沉靈 + vup_shion_mod:罪孽 ) NL X0.2的傷害。 消耗 。",
+    "DESCRIPTION": "保留 。 墓地 。 NL 獲得 1 層 vup_shion_mod:誓 。 NL 失去最大生命一半的生命。造成最大生命的傷害。 NL vup_shion_mod:伐罪 !M! ， 消耗 。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 點傷害）"
     ]
   },
   "VUPShionMod:LiYueSheng": {
     "NAME": "刻心·黎月笙",
-    "DESCRIPTION": "失去所有負面效果。 NL 每失去一個效果， NL 你失去 !M! 點生命並獲得 !VUPShionSecondM! 點 力量 。 消耗 。"
+    "DESCRIPTION": "保留 。 墓地 。 NL 獲得 1 層 vup_shion_mod:誓 。 NL 失去所有負面效果。 NL 每失去一個效果， NL 你失去 !M! 點生命並獲得 !VUPShionSecondM! 點 vup_shion_mod:沉靈 。 消耗 。"
   },
   "VUPShionMod:LiXiaoYa": {
     "NAME": "願景·黎曉雅",
-    "DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 進入 vup_shion_mod:祈言姿態 。 NL 將 *自我審判 加入手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 進入 vup_shion_mod:祈言姿態 。 NL 將 *聖軀代行 加入手牌。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 NL 獲得 !M! 點最大生命。 NL 回復 !VUPShionSecondM! 點生命。  NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 獲得 !M! 點最大生命。 NL 回復 !VUPShionSecondM! 點生命。 NL 消耗 。"
   },
   "VUPShionMod:LiyezhuUpgradeCard": {
     "NAME": "武裝·升階具現",
-    "DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 選擇 升級 牌組中的一張牌。 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 失去 !M! 點生命。 NL 至多選擇 升級 牌組中的兩張牌。 消耗 。"
+    "DESCRIPTION": " 消耗 手牌中的 !M! 張 *奇蹟 ，否則失去 !M! 點最大生命。 NL 選擇 升級 牌組中的一張牌。 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 消耗 手牌中的 !M! 張 *奇蹟 ，否則失去 !M! 點最大生命。 NL 至多選擇 升級 牌組中的一張牌。 消耗 。"
   },
   "VUPShionMod:MatrixUpgrade": {
     "NAME": "矩陣浮游炮升級計劃",
@@ -1513,7 +1518,7 @@
   },
   "VUPShionMod:ShieldAttack": {
     "NAME": "盾襲",
-    "DESCRIPTION": "造成 !D! 點傷害兩次。 NL 抽 !M! 張牌。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "你打出的上一張牌為攻擊牌時才能打出。 NL 造成 !D! 點傷害兩次。 NL 抽 !M! 張牌。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。"
   },
   "VUPShionMod:CounterCannon": {
     "NAME": "激活·反擊重炮",
@@ -1537,8 +1542,8 @@
   },
   "VUPShionMod:MoonlightButterfly": {
     "NAME": "激活：月光蝶",
-    "DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 對所有敵人造成2+ 敏捷 點傷害 !M! 次。 NL 獲得(2+ 敏捷 /5) [E] 。",
-    "UPGRADE_DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 對所有敵人造成2+ 敏捷 點傷害 !M! 次。 NL 獲得(2+ 敏捷 /5) [E] 。 NL 抽一張牌。"
+    "DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 對所有敵人造成2+ 敏捷 點傷害 !M! 次。 NL 獲得 敏捷 /5 [E] 。",
+    "UPGRADE_DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 對所有敵人造成2+ 敏捷 點傷害 !M! 次。 NL 獲得 敏捷 /5 [E] 。 NL 抽一張牌。"
   },
   "VUPShionMod:SwordOfDalmos": {
     "NAME": "激活：達爾摩斯之劍",
@@ -1571,28 +1576,28 @@
   },
   "VUPShionMod:RingOfThorns": {
     "NAME": "荊棘之環",
-    "DESCRIPTION": "獲得 !M! 點 荊棘 。 NL 給予所有敵人 虛弱 !M! 次。 NL 給予所有敵人 !M! 層 vup_shion_mod:纏繞 。"
+    "DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 !M! 點 荊棘 。 NL 給予所有敵人 虛弱 !M! 次。 NL 給予所有敵人 !M! 層 vup_shion_mod:纏繞 。"
   },
   "VUPShionMod:Entrench": {
     "NAME": "固守",
-    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:構裝翼盾充能 。 NL 將所有 格擋 轉化為雙倍的 vup_shion_mod:護盾 。 NL 本回合不能打出攻擊牌。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! 層 vup_shion_mod:構裝翼盾充能 。 NL 將所有 格擋 轉化為三倍的 vup_shion_mod:護盾 。 NL 本回合不能打出攻擊牌。"
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:構裝翼盾充能 。 NL 翻倍本回合每層 vup_shion_mod:構裝翼盾充能 可減少的傷害。 NL 本回合不能打出攻擊牌。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 層 vup_shion_mod:構裝翼盾充能 。 NL 翻倍本回合每層 vup_shion_mod:構裝翼盾充能 可減少的傷害。 NL 本回合不能打出攻擊牌。"
   },
   "VUPShionMod:Reactivation": {
     "NAME": "再動",
-    "DESCRIPTION": "獲得 (3+ 敏捷 /5) 層 vup_shion_mod:能量回收 。 NL 獲得 [E] [E] [E] [E] 。 NL 獲得 !VUPShionSecondM! 點臨時 敏捷 。"
+    "DESCRIPTION": "獲得 敏捷 /5層 vup_shion_mod:能量回收 。 NL 獲得 [E] [E] [E] [E] 。 NL 獲得 !VUPShionSecondM! 點臨時 敏捷 。"
   },
   "VUPShionMod:HotRestart": {
     "NAME": "熱重啟",
-    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 抽 (1+ 敏捷 /10) 張牌。 NL 本回合每層 vup_shion_mod:構裝翼盾充能 可減少的傷害不會降低。"
+    "DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 抽 敏捷 /10 張牌。 NL 本回合每層 vup_shion_mod:構裝翼盾充能 可減少的傷害不會降低。"
   },
   "VUPShionMod:IronWall": {
     "NAME": "鐵壁",
-    "DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 vup_shion_mod:鐵壁 。 NL 翻倍本回合每層 vup_shion_mod:構裝翼盾充能 可減少的傷害。"
+    "DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 vup_shion_mod:鐵壁 。"
   },
   "VUPShionMod:RoyalGuardian": {
     "NAME": "皇家守衛",
-    "DESCRIPTION": "獲得 7 點 vup_shion_mod:護盾 兩次。 NL 本回合每受到7點攻擊傷害獲得 !M! 層 vup_shion_mod:能量回收 。 NL 本回合每層 vup_shion_mod:構裝翼盾充能 可減少的傷害提高 !VUPShionSecondM! 。"
+    "DESCRIPTION": "本回合每受到7點攻擊傷害獲得 !M! 層 vup_shion_mod:能量回收 。 NL 本回合每層 vup_shion_mod:構裝翼盾充能 可減少的傷害提高 !VUPShionSecondM! 。"
   },
   "VUPShionMod:ExtremeOverload": {
     "NAME": "極限過載",
@@ -1600,12 +1605,12 @@
   },
   "VUPShionMod:Soul": {
     "NAME": "魂",
-    "DESCRIPTION": "本回合攻擊牌造成的傷害提高 !M! %。 NL 獲得 [E] [E] [E] 。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:超負荷 。"
+    "DESCRIPTION": "本回合攻擊牌造成的傷害提高 !M! %。 NL 獲得 [E] 。 NL 獲得 !VUPShionSecondM! 層 vup_shion_mod:超負荷 。"
   },
   "VUPShionMod:MagicTransform": {
     "NAME": "魔力轉化",
-    "DESCRIPTION": "獲得3X+1層 vup_shion_mod:能量回收 。",
-    "UPGRADE_DESCRIPTION": "獲得3X+3層 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "獲得4X+1層 vup_shion_mod:能量回收 。",
+    "UPGRADE_DESCRIPTION": "獲得4X+3層 vup_shion_mod:能量回收 。"
   },
   "VUPShionMod:SpiralBlade": {
     "NAME": "形態·螺旋刃",
@@ -1619,7 +1624,8 @@
   },
   "VUPShionMod:LotusOfWar": {
     "NAME": "形態·戰爭之蓮",
-    "DESCRIPTION": "保留 。 構裝翼盾變形為 vup_shion_mod:戰爭之蓮 。"
+    "DESCRIPTION": "保留 。 NL 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 構裝翼盾變形為 vup_shion_mod:戰爭之蓮 。",
+    "UPGRADE_DESCRIPTION": "保留 。 構裝翼盾變形為 vup_shion_mod:戰爭之蓮 。"
   },
   "VUPShionMod:RuinGuardian": {
     "NAME": "形態·遺蹟守衛",
@@ -1649,11 +1655,12 @@
   },
   "VUPShionMod:Stonehenge": {
     "NAME": "蒼穹巨石陣列",
-    "DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 7 點 vup_shion_mod:護盾 。 NL 每回合獲得 !M! 層 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": " 失去 !VUPShionSecondM! 層 vup_shion_mod:構裝翼盾充能 。 NL 獲得 7 點 vup_shion_mod:護盾 。 NL 獲得 !M! 層 vup_shion_mod:蒼穹巨石陣列 。"
   },
   "VUPShionMod:PhysicalMagic": {
     "NAME": "拳擊魔法但是物理",
-    "DESCRIPTION": "保留 。 NL 造成 !D! 點傷害。 NL ( 力量 /10)%的概率 *擊暈 目標。 NL 如果目標敵人的意圖不是攻擊，抽一張牌並獲得 [E] 。"
+    "DESCRIPTION": "保留 。 NL 造成 !D! 點傷害。 NL ( 力量 /10)%的概率 *擊暈 目標。 NL 如果目標敵人的意圖不是攻擊，抽一張牌並獲得 [E] 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成 !D! 點傷害。 NL ( 力量 /10)%的概率 *擊暈 目標。 NL 如果目標敵人的意圖不是攻擊，抽兩張牌並獲得 [E] 。"
   },
   "VUPShionMod:WindArrow": {
     "NAME": "風之矢",
@@ -1665,7 +1672,7 @@
   },
   "VUPShionMod:HurricaneVortex": {
     "NAME": "颶風漩渦",
-    "DESCRIPTION": "接下來的 !M! 回合開始時對所有敵人造成7+ 敏捷 點傷害並給予 虛弱 。"
+    "DESCRIPTION": "接下來的 !M! 回合開始時對所有敵人造成 敏捷 點傷害並給予 虛弱 。"
   },
   "VUPShionMod:WoodBombardment": {
     "NAME": "巨木轟擊",
@@ -1682,7 +1689,7 @@
   },
   "VUPShionMod:GaiaRevelation": {
     "NAME": "蓋亞啟示",
-    "DESCRIPTION": "將抽牌堆中的一張牌加入手牌。 NL 預見 1- !M! 張牌。 NL 獲得 預見 數量一半的 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "將抽牌堆中的一張牌加入手牌。 NL 預見 1- !M! 張牌。 NL 獲得 預見 數量的 vup_shion_mod:能量回收 。"
   },
   "VUPShionMod:SeaOfThorns": {
     "NAME": "荊棘海",
@@ -1690,11 +1697,11 @@
   },
   "VUPShionMod:ForestStalking": {
     "NAME": "林海潛行",
-    "DESCRIPTION": "抽一張牌。 NL 抽到的牌本場戰鬥打出前耗能為0。 NL (5+ 敏捷 /5)%概率獲得 無實體 。 NL 消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "抽一張牌。 NL 抽到的牌本場戰鬥打出前耗能為0。 NL ( 敏捷 /5)%概率獲得 無實體 。 NL 消耗性 !stslib:ex! 。"
   },
   "VUPShionMod:FertileSoil": {
     "NAME": "沃土",
-    "DESCRIPTION": "至多 消耗 棄牌堆中的兩張牌。 NL 獲得 !M! 層 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "至多 消耗 棄牌堆中的一張牌。 NL 獲得 !M! 層 vup_shion_mod:能量回收 。"
   },
   "VUPShionMod:FaithLeap": {
     "NAME": "信仰之躍",
@@ -1729,7 +1736,7 @@
   },
   "VUPShionMod:HeartOfNature": {
     "NAME": "自然之心",
-    "DESCRIPTION": "每回合獲得 [E] 。"
+    "DESCRIPTION": "每回合獲得 [E] 。 NL 移除所有負面效果。"
   },
   "VUPShionMod:GaiaBreath": {
     "NAME": "蓋亞之息",
@@ -1745,7 +1752,8 @@
   },
   "VUPShionMod:ConsciousnessStripping": {
     "NAME": "意識剝離",
-    "DESCRIPTION": "造成 !D! 點傷害 !M! 次並隨機給予 虛弱 、 易傷 或 vup_shion_mod:流血 。 NL 其失去 !VUPShionSecondM! 點 力量 。"
+    "DESCRIPTION": "造成 !D! 點傷害 !M! 次並隨機給予 虛弱 、 易傷 或 vup_shion_mod:流血 。 NL 其失去 !VUPShionSecondM! 點 力量 。",
+    "UPGRADE_DESCRIPTION": "對所有敵人造成 !D! 點傷害 !M! 次並隨機給予 虛弱 、 易傷 或 vup_shion_mod:流血 。 NL 其失去 !VUPShionSecondM! 點 力量 。"
   },
   "VUPShionMod:RemnantsOfTime": {
     "NAME": "時之殘響",
@@ -1754,8 +1762,8 @@
   },
   "VUPShionMod:SealResidue": {
     "NAME": "封印殘留",
-    "DESCRIPTION": "50%概率獲得 !M! 點 vup_shion_mod:護盾 ， NL 獲得 vup_shion_mod:護盾 時有50%概率獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。",
-    "UPGRADE_DESCRIPTION": "70%概率獲得 !M! 點 vup_shion_mod:護盾 。 NL 獲得 vup_shion_mod:護盾 時有70%概率獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。"
+    "DESCRIPTION": "50%概率獲得 !M! 點 vup_shion_mod:護盾 ， NL 獲得 vup_shion_mod:護盾 時有50%概率獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。 NL 如果你打出的上一張牌是能力牌將必定觸發。",
+    "UPGRADE_DESCRIPTION": "70%概率獲得 !M! 點 vup_shion_mod:護盾 。 NL 獲得 vup_shion_mod:護盾 時有70%概率獲得 !VUPShionSecondM! 層 vup_shion_mod:能量回收 。 NL 如果你打出的上一張牌是能力牌將必定觸發。"
   },
   "VUPShionMod:SpaceTimeMetric": {
     "NAME": "時空度規",
@@ -1785,5 +1793,9 @@
   "VUPShionMod:FinFunnelPursuit": {
     "NAME": "浮游追擊",
     "DESCRIPTION": " 不能被打出 。 NL 在你的回合結束時，你受到 !M! 點傷害並 消耗 。"
+  },
+  "VUPShionMod:ShieldProjection": {
+    "NAME": "護盾投射",
+    "DESCRIPTION": "保留 。 vup_shion_mod:復位 。 NL 將你的 vup_shion_mod:護盾 轉移給 *精靈 。"
   }
 }

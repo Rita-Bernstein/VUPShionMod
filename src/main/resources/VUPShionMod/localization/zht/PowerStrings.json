@@ -506,7 +506,7 @@
   "VUPShionMod:GravitaterPower": {
     "NAME": "重力迴路",
     "DESCRIPTIONS": [
-      "獲得 #y魔能過載 時，獲得 #b%d 點 #y格擋 。"
+      "獲得 #y魔能過載 時，獲得 #b%d 點 #y護盾 。"
     ]
   },
   "VUPShionMod:SuperloaderPower": {
@@ -594,7 +594,7 @@
   "VUPShionMod:CalamityPower": {
     "NAME": "崩壞-罪孽",
     "DESCRIPTIONS": [
-      "每回合開始時， #y所有人 獲得 #b%d 層 #y罪孽 。"
+      "每回合開始時， #y所有人 獲得 #b%d 層 #y罪孽 並 #y伐罪 #b%d。"
     ]
   },
   "VUPShionMod:Calamity2Power": {
@@ -606,7 +606,7 @@
   "VUPShionMod:HallowedCasketPower": {
     "NAME": "聖棺沉靈",
     "DESCRIPTIONS": [
-      "每回合結束時，將 #b%d 張 #y奇蹟 加入抽牌堆並獲得 #b%d 點 #y沉靈 。"
+      "每回合結束時，將 #b%d 張 #y奇蹟 加入棄牌堆並獲得 #b%d 點 #y沉靈 。"
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower": {
@@ -622,9 +622,9 @@
     ]
   },
   "VUPShionMod:AsceticismPower": {
-    "NAME": "苦行天途-能量",
+    "NAME": "苦行天途",
     "DESCRIPTIONS": [
-      "每當你失去生命時，獲得 #b%d [E] 。"
+      "每當你失去生命時，回復 #b%d 點生命。"
     ]
   },
   "VUPShionMod:Asceticism2Power": {
@@ -642,7 +642,7 @@
   "VUPShionMod:TranscendSoul2Power": {
     "NAME": "祭靈天途-進攻",
     "DESCRIPTIONS": [
-      "回合結束時，對所有敵人造成 #y沉靈 #b%d 倍的傷害。"
+      "失去生命時，對所有人造成失去生命量 #b%d 倍的傷害。"
     ]
   },
   "VUPShionMod:ArbitrationPower": {
@@ -678,8 +678,7 @@
   "VUPShionMod:BrokenSanctuaryPower": {
     "NAME": "破碎聖堂",
     "DESCRIPTIONS": [
-      "本回合所有 #y祈言 牌耗能變為0。",
-      "在 #b%d 個回合所有 #y祈言 牌耗能變為0。"
+      "所有 #y祈言 牌耗能變為0。"
     ]
   },
   "VUPShionMod:BrokenSanctuary2Power": {
@@ -981,13 +980,13 @@
   "VUPShionMod:WingsOfDaedalusPower": {
     "NAME": "代達羅斯之翼",
     "DESCRIPTIONS": [
-      "每當獲得 #y敏捷 時，獲得 #b%d 倍的 #y力量 。"
+      "每當獲得 #y敏捷 獲得 #y臨時敏捷 時，獲得 #b%d 倍的 #y力量 或 #y臨時力量 。"
     ]
   },
   "VUPShionMod:StonehengePower": {
     "NAME": "蒼穹巨石陣列",
     "DESCRIPTIONS": [
-      "每回合獲得 #b%d 層 #y能量回收 。"
+      "每當你打出一張牌時： NL #r攻擊: 獲得 #b%d 層 #y能量回收 。 NL #g技能： 獲得 #b%d 點 #y護盾。 NL #b能力： 獲得 #b%d [E] 。"
     ]
   },
   "VUPShionMod:EternalEchoPower": {
@@ -1062,7 +1061,7 @@
   "VUPShionMod:BossAvatarPower": {
     "NAME": "替身",
     "DESCRIPTIONS": [
-      "你的一名 #y替身 還剩 #b%d 點生命。 NL 還剩 #b%d 個 #y替身 。"
+      " #y紫音 的一名 #y替身 還剩 #b%d 點生命。 NL 還剩 #b%d 個 #y替身 。"
     ]
   },
   "VUPShionMod:PotentialOutbreakPower": {
@@ -1147,19 +1146,66 @@
   "VUPShionMod:HallowedCasketPower2": {
     "NAME": "聖棺沉靈-奇蹟",
     "DESCRIPTIONS": [
-      "每當你 #y消耗 一張 #y奇蹟 時，抽 #b2 張牌並獲得 1 #ySan值."
+      "每當你 #y消耗 一張 #y奇蹟 時，抽 #b%d 張牌並獲得 #b%d 點 #y沉靈 。",
+      "每當你 #y消耗 一張 #y奇蹟 時，抽 #b%d 張牌並獲得 #b%d 點 #y沉靈 。"
     ]
   },
   "VUPShionMod:YonggukCityTroyPower": {
     "NAME": "永固城邦",
     "DESCRIPTIONS": [
-      "每當你失去或獲得 #y構裝翼盾充能 時，獲得 #b5 倍的 #y護盾 。"
+      "每當你失去或獲得 #y構裝翼盾充能 時，獲得 #b%d 倍的 #y護盾 。"
     ]
   },
   "VUPShionMod:HotRestartPower": {
     "NAME": "熱重啟",
     "DESCRIPTIONS": [
       "本回合每層 #y構裝翼盾充能 可減少的傷害不會降低。"
+    ]
+  },
+  "VUPShionMod:SwearPower": {
+    "NAME": "誓",
+    "DESCRIPTIONS": [
+      "下個回合開始前，你的生命最低為 #b1 。",
+      "下 #b%d 個回合開始前，你的生命最低為 #b1 。"
+    ]
+  },
+  "VUPShionMod:BeinglessMomentPower": {
+    "NAME": "虛像剎那",
+    "DESCRIPTIONS": [
+      "本回合 #g回復 生命時將獲得等量的 #y護盾 。",
+      "接下來的 #b%d 個回合 #g回復 生命時將獲得等量的 #y護盾 。"
+    ]
+  },
+  "VUPShionMod:LeachingBloodPower": {
+    "NAME": "吸血",
+    "DESCRIPTIONS": [
+      "你的下張 #y攻擊牌 造成傷害時，回復等量的生命。",
+      "你的下 #b%d張 #y攻擊牌 造成傷害時，回復等量的生命。"
+    ]
+  },
+  "VUPShionMod:SubLunaPower": {
+    "NAME": "月隱",
+    "DESCRIPTIONS": [
+      "本回合內不會失去 #y劍勢 。",
+      "在 #b%d 回合內不會失去 #y劍勢 。"
+    ]
+  },
+  "VUPShionMod:IntensaPower": {
+    "NAME": "極意",
+    "DESCRIPTIONS": [
+      "你的下個回合開始時，獲得本回合失去的 #y劍勢 。（獲得 #b%d 層）"
+    ]
+  },
+  "VUPShionMod:ProphecyOfSalvation2Power": {
+    "NAME": "救世預言",
+    "DESCRIPTIONS": [
+      "本場戰鬥生命回復效果提高 #b50% 。"
+    ]
+  },
+  "VUPShionMod:ProphecyOfDestruction2Power": {
+    "NAME": "破滅預言",
+    "DESCRIPTIONS": [
+      "每回合可選 #y消耗 一張牌從而給予所有人 #b%d 層 #y罪孽 。"
     ]
   }
 }

@@ -57,6 +57,7 @@ public class MorsLibraquePower extends AbstractShionPower {
             addToBot(new VFXAction(new GiantTextEffect(this.owner.hb.cX, this.owner.hb.cY)));
             addToBot(new InstantKillAction(this.owner));
 
+            if(this.owner != null && !this.owner.isPlayer)
             if(this.owner.id.equals(CorruptHeart.ID))
                 CharacterSelectScreenPatches.skinManager.unlockSkin(ChinaWangChuan.ID);
 

@@ -21,7 +21,7 @@ public class FlayTheEvil extends AbstractLiyezhuCard {
 
     public FlayTheEvil() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 18;
+        this.baseDamage = 9;
         this.magicNumber = this.baseMagicNumber = 2;
     }
 
@@ -38,7 +38,7 @@ public class FlayTheEvil extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(7);
+            upgradeDamage(3);
         }
     }
 }

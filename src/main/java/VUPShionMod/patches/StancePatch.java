@@ -66,7 +66,7 @@ public class StancePatch {
             AbstractStance oldStance = AbstractDungeon.player.stance;
             String id = ReflectionHacks.getPrivate(_instance, ChangeStanceAction.class, "id");
             if (id != null)
-                if (!oldStance.ID.equals(SpiritStance.STANCE_ID) && id.equals(JudgeStance.STANCE_ID)) {
+                if (oldStance.ID.equals(SpiritStance.STANCE_ID) && id.equals(JudgeStance.STANCE_ID)) {
                     ReflectionHacks.setPrivate(_instance, ChangeStanceAction.class, "id", SpiritStance.STANCE_ID);
                 }
 

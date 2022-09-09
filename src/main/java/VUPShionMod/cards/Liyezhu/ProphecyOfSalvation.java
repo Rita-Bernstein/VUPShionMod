@@ -35,7 +35,7 @@ public class ProphecyOfSalvation extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(5);
+            upgradeMagicNumber(2);
         }
     }
 }

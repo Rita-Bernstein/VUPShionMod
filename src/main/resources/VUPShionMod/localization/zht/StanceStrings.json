@@ -8,13 +8,13 @@
   "VUPShionMod:JudgeStance": {
     "NAME": "審判姿態",
     "DESCRIPTION": [
-      "進入這個 #y姿態 時，獲得 #b1 層 #y自燃 和 #y力量 。"
+      "打出 #y攻擊牌 時，觸發 #y伐罪 。"
     ]
   },
   "VUPShionMod:SpiritStance": {
     "NAME": "言靈姿態",
     "DESCRIPTION": [
-      "進入這個 #y姿態 時，獲得 #b1 層 #y自燃 和 #y力量 。 NL 回合結束時回復 #b2 點生命。"
+      "被視為處於 #y審判姿態 和 #y祈言姿態 。 NL 不會進入 #y審判姿態 。 NL 打出 #y攻擊牌 時，觸發 #y伐罪 。 NL 戰鬥結束時獲得 #b5 點最大生命。 NL 失去生命時獲得一半的 #y護盾。 NL #y伐罪 將不會對你造成傷害。"
     ]
   },
   "VUPShionMod:SpiralBladeStance": {

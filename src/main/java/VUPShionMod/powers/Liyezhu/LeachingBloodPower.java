@@ -29,13 +29,14 @@ public class LeachingBloodPower extends AbstractShionPower {
         updateDescription();
     }
 
+
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && card.type == AbstractCard.CardType.ATTACK && this.amount > 0){
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        if (!card.purgeOnUse && card.type == AbstractCard.CardType.ATTACK && this.amount > 0) {
             flash();
             this.amount--;
-            if (this.amount <= 0){
-                addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+            if (this.amount <= 0) {
+                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             }
         }
     }
@@ -44,11 +45,10 @@ public class LeachingBloodPower extends AbstractShionPower {
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m, int damageAmount) {
         if (m != null && info.type == DamageInfo.DamageType.NORMAL)
             if (m.lastDamageTaken > 0) {
-                flash();
-                AbstractDungeon.player.heal(this.amount);
+
+                AbstractDungeon.player.heal(m.lastDamageTaken);
             }
     }
-
 
 
     @Override

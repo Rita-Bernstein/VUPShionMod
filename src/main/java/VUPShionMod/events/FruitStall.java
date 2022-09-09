@@ -141,12 +141,12 @@ public class FruitStall extends AbstractImageEvent {
                             imageEventText.updateDialogOption(0, OPTIONS[7], true);
                         }
                         if (Fruit[1]) {
-                            imageEventText.updateDialogOption(0, String.format(OPTIONS[9], CardCrawlGame.languagePack.getRelicStrings(Mango.ID).NAME, MANGOGold));
+                            imageEventText.updateDialogOption(1, String.format(OPTIONS[9], CardCrawlGame.languagePack.getRelicStrings(Mango.ID).NAME, MANGOGold));
                         } else {
                             imageEventText.updateDialogOption(1, OPTIONS[7], true);
                         }
                         if (Fruit[2]) {
-                            imageEventText.updateDialogOption(0, String.format(OPTIONS[9], CardCrawlGame.languagePack.getRelicStrings(Strawberry.ID).NAME, StrawberryGold));
+                            imageEventText.updateDialogOption(2, String.format(OPTIONS[9], CardCrawlGame.languagePack.getRelicStrings(Strawberry.ID).NAME, StrawberryGold));
                         } else {
                             imageEventText.updateDialogOption(2, OPTIONS[7], true);
                         }
@@ -201,8 +201,6 @@ public class FruitStall extends AbstractImageEvent {
                     case 3:
                         refreshMainScreen();
                         break;
-
-
                 }
                 break;
 

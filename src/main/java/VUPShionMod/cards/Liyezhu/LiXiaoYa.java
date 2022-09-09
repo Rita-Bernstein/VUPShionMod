@@ -1,6 +1,7 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainMaxHPAction;
 import VUPShionMod.powers.Liyezhu.SwearPower;
 import VUPShionMod.stances.JudgeStance;
 import VUPShionMod.stances.PrayerStance;
@@ -28,10 +29,8 @@ public class LiXiaoYa extends AbstractLiyezhuCard {
 
     public LiXiaoYa() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 20;
-
-        this.cardsToPreview = new JudgementOfSins();
-        this.cardsToPreview.upgrade();
+        this.magicNumber = this.baseMagicNumber = 7;
+        this.secondaryM = this.baseSecondaryM = 20;
         this.selfRetain = true;
         this.exhaust = true;
 
@@ -39,27 +38,16 @@ public class LiXiaoYa extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new HealAction(p, p, this.magicNumber));
-        addToBot(new ChangeStanceAction(PrayerStance.STANCE_ID));
-        if (this.upgraded) {
-            addToBot(new MakeTempCardInHandAction(new CelestialIncarnation(), 1));
-        } else {
-            AbstractCard card = new JudgementOfSins();
-            card.upgrade();
-            addToBot(new MakeTempCardInHandAction(card, 1));
-
-        }
-
+        addToBot(new GainMaxHPAction(p,this.magicNumber));
+        addToBot(new HealAction(p,p,this.secondaryM));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeMagicNumber(3);
             upgradeBaseCost(2);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
-            this.cardsToPreview = new CelestialIncarnation();
         }
     }
 }

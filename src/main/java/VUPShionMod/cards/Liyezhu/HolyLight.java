@@ -19,7 +19,7 @@ public class HolyLight extends AbstractLiyezhuCard {
 
     public HolyLight() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 4;
+        this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 2;
         this.tags.add(CardTags.STARTER_STRIKE);
     }
@@ -35,7 +35,7 @@ public class HolyLight extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeDamage(2);
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

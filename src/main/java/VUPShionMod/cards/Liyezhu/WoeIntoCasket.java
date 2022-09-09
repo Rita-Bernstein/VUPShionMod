@@ -14,7 +14,7 @@ public class WoeIntoCasket extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(WoeIntoCasket.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/WoeIntoCasket.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -31,7 +31,7 @@ public class WoeIntoCasket extends AbstractLiyezhuCard {
         addToBot(new ExhaustAllStatusAndCurseAction());
         if (p.hasPower(PsychicPower.POWER_ID)) {
             int amount = p.getPower(PsychicPower.POWER_ID).amount;
-            if (amount > 10) amount = 10;
+            if (amount > 7) amount = 7;
             addToBot(new GainEnergyAction(amount));
             addToBot(new DrawCardAction(amount));
             addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID,amount));

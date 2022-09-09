@@ -20,13 +20,13 @@ public class DuelSinAction extends AbstractGameAction {
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                 if (!monster.isDeadOrEscaped()) {
                     if(monster.hasPower(SinPower.POWER_ID))
-                        monster.damage(new DamageInfo(monster,monster.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.HP_LOSS));
+                        monster.damage(new DamageInfo(monster,monster.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.THORNS));
                 }
             }
         }
 
         if(AbstractDungeon.player.hasPower(SinPower.POWER_ID) && !AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID))
-        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player,AbstractDungeon.player.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.HP_LOSS));
+        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player,AbstractDungeon.player.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.THORNS));
 
         if(!AbstractDungeon.player.isDeadOrEscaped()){
             for(AbstractPower power : AbstractDungeon.player.powers){

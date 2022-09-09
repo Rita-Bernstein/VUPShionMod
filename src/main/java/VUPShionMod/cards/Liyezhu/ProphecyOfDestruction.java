@@ -24,7 +24,7 @@ public class ProphecyOfDestruction extends AbstractLiyezhuCard {
     public ProphecyOfDestruction() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
-        this.magicNumber = this.baseMagicNumber = 15;
+        this.magicNumber = this.baseMagicNumber = 6;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -52,7 +52,7 @@ public class ProphecyOfDestruction extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(5);
+            upgradeMagicNumber(3);
         }
     }
 }

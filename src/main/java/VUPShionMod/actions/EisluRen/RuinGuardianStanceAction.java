@@ -87,15 +87,6 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
             }
 
 
-            if (temp.size() <= 2) {
-                for (AbstractCard card : temp.group) {
-                    exhaustCard(card);
-                    RuinGuardianStance.cardsToPlay.addToTop(card.makeStatEquivalentCopy());
-                }
-                isDone = true;
-                return;
-            }
-
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
             AbstractDungeon.gridSelectScreen.open(temp, 2, TEXT[0], false, false, true, false);

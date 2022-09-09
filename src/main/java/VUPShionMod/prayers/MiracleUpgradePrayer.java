@@ -31,9 +31,9 @@ public class MiracleUpgradePrayer extends AbstractPrayer {
 
     @Override
     public void use() {
-        AbstractCard c = new Miracle();
-        c.upgrade();
-        addToBot(new MakeTempCardInHandAction(c,this.amount));
+        AbstractCard mir = new Miracle();
+        mir.upgrade();
+        addToBot(new MakeTempCardInHandAction(mir,this.amount));
     }
 
     @Override

@@ -1,13 +1,10 @@
 package VUPShionMod.prayers;
 
 import VUPShionMod.VUPShionMod;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class MiraclePrayer extends AbstractPrayer {
     public static final String Prayer_ID = VUPShionMod.makeID(MiraclePrayer.class.getSimpleName());
@@ -33,7 +30,6 @@ public class MiraclePrayer extends AbstractPrayer {
 
     @Override
     public void use() {
-
         addToBot(new MakeTempCardInHandAction(new Miracle(),this.amount));
     }
 

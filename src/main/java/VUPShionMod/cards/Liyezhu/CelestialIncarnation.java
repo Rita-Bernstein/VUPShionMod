@@ -32,6 +32,9 @@ public class CelestialIncarnation extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.selfRetain = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

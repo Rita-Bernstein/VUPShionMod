@@ -27,7 +27,7 @@ public class CruelSword extends AbstractLiyezhuCard {
 
     public CruelSword() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 12;
+        this.baseDamage = 6;
         this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 1;
     }

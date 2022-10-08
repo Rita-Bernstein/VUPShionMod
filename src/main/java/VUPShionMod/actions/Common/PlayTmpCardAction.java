@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class PlayTmpCardAction extends AbstractGameAction {
     AbstractCard card;
@@ -29,7 +30,14 @@ public class PlayTmpCardAction extends AbstractGameAction {
         card.drawScale = 0.12F;
         card.targetDrawScale = 0.75F;
         card.applyPowers();
-        addToTop(new NewQueueCardAction(card, (AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false, true));
+
+        AbstractMonster m = (AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
+
+        if(m!= null){
+            card.calculateCardDamage(m);
+        }
+
+        addToTop(new NewQueueCardAction(card,m , false, true));
         addToTop(new UnlimboAction(card));
         if (!Settings.FAST_MODE) {
             addToTop(new WaitAction(Settings.ACTION_DUR_MED));

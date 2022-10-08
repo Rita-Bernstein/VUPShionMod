@@ -137,7 +137,7 @@
       "praying\u00a0stance"
     ],
 	"PROPER_NAME": "Praying Stance",
-    "DESCRIPTION": "#yStance. NL While in this #yStance, deal #b25% less damage. NL At the end of your turn,heal #b2 HP."
+    "DESCRIPTION": "#yStance. NL While in this #yStance, deal #b50% less damage. NL Healing is #b50% more effective. NL At the end of your turn,heal #b2 HP."
   },
   {
     "NAMES": [
@@ -272,7 +272,7 @@
       "lesser\u00a0elf"
     ],
 	"PROPER_NAME": "Lesser Elf",
-    "DESCRIPTION": " #yMinion. NL #rHP:12. NL Each turn, it deals #b5 damage to a random enemy and grant you #b1 #yRecycle."
+    "DESCRIPTION": " #yMinion. NL #rHP:8. NL Each turn, it deals #b5 damage to a random enemy and grant you #b1 #yRecycle."
   },
   {
     "NAMES": [
@@ -325,14 +325,14 @@
       "rampart"
     ],
     "PROPER_NAME": "Rampart",
-    "DESCRIPTION": "Damage taken from enemy attacks is decreased by 50%. This effect does not become more effective if applied more than once."
+    "DESCRIPTION": "Damage taken from enemy attacks is decreased by 50%. This effect does not become more effective even if applied more than once."
   },
   {
     "NAMES": [
-      "replacing"
+      "return"
     ],
-    "PROPER_NAME": "Replacing",
-    "DESCRIPTION": "Return it to your hand form discard pile if possible."
+    "PROPER_NAME": "Return",
+    "DESCRIPTION": "Return to your hand after being played. This turn, the effect is not applied to any other same cards that you play afterwards."
   },
   {
     "NAMES": [
@@ -367,14 +367,14 @@
       "nihil"
     ],
     "PROPER_NAME": "Nihil",
-    "DESCRIPTION": "Any damage taken is reduced to #b0 this turn. This power cannot be stacked."
+    "DESCRIPTION": "Any damage taken is reduced to #b0 this turn. This power does not become more effective even if gained more than once."
   },
   {
     "NAMES": [
       "intensa"
     ],
     "PROPER_NAME": "Intensa",
-    "DESCRIPTION": "At the start of your next turn,gain #yCor #yGladii you lost in this turn. This power cannot be stacked."
+    "DESCRIPTION": "At the start of your next turn, gain #yCor #yGladii you lost in this turn. This power does not become more effective even if gained more than once."
   }
 ]
 

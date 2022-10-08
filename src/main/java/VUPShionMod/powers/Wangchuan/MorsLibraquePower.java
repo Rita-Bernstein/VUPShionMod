@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.AchievementPatches;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.skins.sk.WangChuan.ChinaWangChuan;
@@ -58,8 +59,10 @@ public class MorsLibraquePower extends AbstractShionPower {
             addToBot(new InstantKillAction(this.owner));
 
             if(this.owner != null && !this.owner.isPlayer)
-            if(this.owner.id.equals(CorruptHeart.ID))
+            if(this.owner.id.equals(CorruptHeart.ID)) {
+                AchievementPatches.unlockAchievement("06");
                 CharacterSelectScreenPatches.skinManager.unlockSkin(ChinaWangChuan.ID);
+            }
 
         }
     }

@@ -31,9 +31,9 @@ public class SavageSeries extends AbstractLiyezhuCard {
 
     public SavageSeries() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 8;
+        this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class SavageSeries extends AbstractLiyezhuCard {
         }
 
         addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, this.secondaryM)));
-        addToBot(new DrawCardAction(this.upgraded ? 2 : 1));
+        addToBot(new DrawCardAction( 1));
 
         if (this.upgraded)
             addToBot(new DuelSinAction());
@@ -72,6 +72,9 @@ public class SavageSeries extends AbstractLiyezhuCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeSecondM(1);
+            upgradeDamage(1);
+            upgradeBaseCost(1);
         }
     }
 }

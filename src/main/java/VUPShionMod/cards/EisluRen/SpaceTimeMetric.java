@@ -66,6 +66,7 @@ public class SpaceTimeMetric extends AbstractEisluRenCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeBaseCost(0);
         }
     }
 }

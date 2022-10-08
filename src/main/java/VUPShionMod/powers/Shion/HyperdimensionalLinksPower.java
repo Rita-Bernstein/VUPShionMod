@@ -34,6 +34,7 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SupportArmamentPower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SupportArmamentPower32.png")), 0, 0, 32, 32);
         updateDescription();
+        this.priority = 0;
     }
 
 

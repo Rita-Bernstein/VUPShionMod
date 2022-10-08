@@ -26,7 +26,7 @@ public class SeaOfThorns extends AbstractEisluRenCard {
     public SeaOfThorns() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class SeaOfThorns extends AbstractEisluRenCard {
         for (int i = 0; i < this.secondaryM; i++)
             addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
 
-        addToBot(new ApplyPowerAction(p,p,new ArtifactPower(p,1)));
+        addToBot(new ApplyPowerAction(p,p,new ArtifactPower(p,this.upgraded?2:1)));
     }
 
     @Override
@@ -43,6 +43,9 @@ public class SeaOfThorns extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
+            upgradeSecondM(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

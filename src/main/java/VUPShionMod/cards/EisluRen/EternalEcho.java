@@ -30,7 +30,7 @@ public class EternalEcho extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(2);
+            upgradeBaseCost(1);
         }
     }
 }

@@ -16,15 +16,16 @@ import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 
 public class CruciformPenanceAction extends AbstractGameAction {
     private DamageInfo info;
+    private int duelSinTimes;
 
-    public CruciformPenanceAction(AbstractCreature target, DamageInfo info, int healAmount) {
+    public CruciformPenanceAction(AbstractCreature target, DamageInfo info, int healAmount, int duelSinTimes) {
         this.actionType = ActionType.DAMAGE;
         this.startDuration = Settings.ACTION_DUR_LONG;
         this.duration = this.startDuration;
         this.amount = healAmount;
         this.target = target;
         this.info = info;
-
+        this.duelSinTimes = duelSinTimes;
     }
 
     private boolean cardToExhaust(AbstractCard c) {
@@ -52,7 +53,7 @@ public class CruciformPenanceAction extends AbstractGameAction {
 
 
             if (statusCount > 0) {
-                for (int i = 0; i < statusCount; i++) {
+                for (int i = 0; i < statusCount * duelSinTimes; i++) {
                     addToTop(new DuelSinAction());
                 }
 

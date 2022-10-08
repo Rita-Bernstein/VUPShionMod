@@ -6,6 +6,7 @@ import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.ui.WingShield;
 import VUPShionMod.vfx.EisluRen.FinalFlashBlastEffect;
 import VUPShionMod.vfx.Monster.OuroborosLaserBeamEffect;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -28,6 +29,7 @@ public class FinalFlash extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 3;
         this.isMultiDamage = true;
+        GraveField.grave.set(this,true);
     }
 
     @Override
@@ -57,6 +59,10 @@ public class FinalFlash extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeDamage(5);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.selfRetain = true;
+            upgradeBaseCost(0);
         }
     }
 }

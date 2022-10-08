@@ -35,6 +35,7 @@ public class RingOfThorns extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(!this.upgraded)
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
             addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));
@@ -51,7 +52,7 @@ public class RingOfThorns extends AbstractEisluRenCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+            if (WingShield.getWingShield().getCount() < this.secondaryM && !this.upgraded) {
                 cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
                 return false;
             }
@@ -64,6 +65,8 @@ public class RingOfThorns extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

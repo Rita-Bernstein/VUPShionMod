@@ -29,6 +29,7 @@ public class Entrench extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainWingShieldChargeAction(this.magicNumber));
         addToBot(new AddWingShieldDamageReduceAction(WingShield.getWingShield().getDamageReduce()));
+        if(!this.upgraded)
         addToBot(new ApplyPowerAction(p,p,new EntanglePower(p)));
     }
 

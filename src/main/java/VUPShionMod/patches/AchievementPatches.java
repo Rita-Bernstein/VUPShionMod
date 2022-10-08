@@ -5,11 +5,11 @@ import VUPShionMod.msic.AchievementShionItem;
 import VUPShionMod.util.SaveHelper;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.AchievementStrings;
 import com.megacrit.cardcrawl.screens.stats.AchievementGrid;
 import com.megacrit.cardcrawl.screens.stats.AchievementItem;
@@ -31,8 +31,27 @@ public class AchievementPatches {
         @SpirePostfixPatch
         public static void Postfix(AchievementGrid _instance) {
             ArrayList<AchievementItem> items = (ArrayList<AchievementItem>) ReflectionHacks.getPrivate(_instance, AchievementGrid.class, "items");
-//            if(items != null)
-//            items.add(new AchievementShionItem(NAMES[0], TEXT[0], "RitaShop", "RitaShop", false));
+            if (items != null) {
+                items.add(new AchievementShionItem(NAMES[0], TEXT[0], "00", "00", false));
+                items.add(new AchievementShionItem(NAMES[3], TEXT[3], "03", "03", false));
+                items.add(new AchievementShionItem(NAMES[4], TEXT[4], "04", "04", false));
+                items.add(new AchievementShionItem(NAMES[5], TEXT[5], "05", "05", false));
+                items.add(new AchievementShionItem(NAMES[7], TEXT[7], "07", "07", false));
+                items.add(new AchievementShionItem(NAMES[6], TEXT[6], "06", "06", false));
+                items.add(new AchievementShionItem(NAMES[8], TEXT[8], "08", "08", false));
+            }
+        }
+    }
+
+
+    @SpirePatch(
+            clz = StatsScreen.class,
+            method = "renderStatScreen"
+    )
+    public static class RenderStatScreenLine {
+        @SpireInsertPatch(rloc = 9, localvars = {"renderY"})
+        public static void Insert(StatsScreen _instance, SpriteBatch sb, @ByRef float[] renderY) {
+            renderY[0] -= 1.0f * 200.0F * Settings.scale;
         }
     }
 
@@ -63,14 +82,13 @@ public class AchievementPatches {
         }
     }
 
-    public static void unlockAchievement(String key){
-        if(VUPShionMod.isTestMod)
-        if(!SaveHelper.getAchievement(key)){
-            SaveHelper.unlockAchievement(key);
-        }
+    public static void unlockAchievement(String key) {
+            if (!SaveHelper.getAchievement(key)) {
+                SaveHelper.unlockAchievement(key);
+            }
     }
 
-    public static boolean getAchievement(String key){
-       return SaveHelper.getAchievement(key);
+    public static boolean getAchievement(String key) {
+        return SaveHelper.getAchievement(key);
     }
 }

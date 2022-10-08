@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,6 +37,9 @@ public class WoodBombardment extends AbstractEisluRenCard {
         addToBot(new WaitAction(0.8F));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
+        if(this.upgraded)
+            addToBot(new GainEnergyAction(1));
+
         int chance = 35;//this.upgraded ? 60 : 35;
         if (AbstractDungeon.cardRng.random(99) < chance) {
             addToBot(new StunMonsterAction(m, p, 1));
@@ -47,6 +51,8 @@ public class WoodBombardment extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

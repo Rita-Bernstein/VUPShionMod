@@ -28,8 +28,8 @@ public class SealResidue extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 1 && AbstractDungeon.actionManager.cardsPlayedThisCombat
-                .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).type == CardType.POWER) {
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 2 && AbstractDungeon.actionManager.cardsPlayedThisCombat
+                .get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2).type == CardType.POWER) {
             addToBot(new GainShieldAction(p, this.magicNumber));
             addToBot(new GainRefundChargeAction(this.secondaryM));
             return;

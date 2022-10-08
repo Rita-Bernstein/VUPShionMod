@@ -1,5 +1,6 @@
 package VUPShionMod.actions.Unique;
 
+import VUPShionMod.powers.Common.NoSkillsPower;
 import VUPShionMod.powers.Liyezhu.FinalPrayerPower;
 import VUPShionMod.powers.Shion.ConcordPower;
 import VUPShionMod.powers.Shion.ReinsOfWarPower;
@@ -22,7 +23,7 @@ public class RemovePlayerBuffAction extends AbstractGameAction {
         ArrayList<AbstractPower> powersToRemove = new ArrayList<>();
         for (AbstractPower p : AbstractDungeon.player.powers) {
             if (p.type != AbstractPower.PowerType.DEBUFF)
-                if (!p.ID.equals(ReinsOfWarPower.POWER_ID) && !p.ID.equals(ConcordPower.POWER_ID) && !p.ID.equals(FinalPrayerPower.POWER_ID))
+                if (!p.ID.equals(ReinsOfWarPower.POWER_ID) && !p.ID.equals(ConcordPower.POWER_ID) && !p.ID.equals(FinalPrayerPower.POWER_ID) || !p.ID.equals(NoSkillsPower.POWER_ID))
                     powersToRemove.add(p);
         }
 

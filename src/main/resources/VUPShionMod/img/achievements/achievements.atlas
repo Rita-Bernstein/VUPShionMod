@@ -1,25 +1,109 @@
 
 achievements.png
-size: 256,256
+size: 2048,256
 format: RGBA8888
 filter: MipMapLinearLinear,Linear
 repeat: none
-locked/RitaShop
+locked/00
   rotate: false
   xy: 2, 2
   size: 160, 160
   orig: 160, 160
   offset: 0, 0
   index: -1
+locked/03
+  rotate: false
+  xy: 164, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+locked/04
+  rotate: false
+  xy: 326, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+locked/05
+  rotate: false
+  xy: 488, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+locked/06
+  rotate: false
+  xy: 650, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+locked/07
+  rotate: false
+  xy: 812, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+locked/08
+  rotate: false
+  xy: 974, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
 
 achievements2.png
-size: 256,256
+size: 2048,256
 format: RGBA8888
 filter: MipMapLinearLinear,Linear
 repeat: none
-unlocked/RitaShop
+unlocked/00
   rotate: false
   xy: 2, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+unlocked/03
+  rotate: false
+  xy: 164, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+unlocked/04
+  rotate: false
+  xy: 326, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+unlocked/05
+  rotate: false
+  xy: 488, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+unlocked/06
+  rotate: false
+  xy: 650, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+unlocked/07
+  rotate: false
+  xy: 812, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+unlocked/08
+  rotate: false
+  xy: 974, 2
   size: 160, 160
   orig: 160, 160
   offset: 0, 0

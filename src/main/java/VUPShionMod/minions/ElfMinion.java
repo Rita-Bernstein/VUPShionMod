@@ -5,8 +5,10 @@ import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
 import VUPShionMod.powers.EisluRen.IronWallPower;
 import VUPShionMod.powers.EisluRen.SpiritCloisterPower;
 import VUPShionMod.powers.Monster.PlagaAMundo.FlyPower;
+import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -31,6 +33,7 @@ public class ElfMinion extends AbstractPlayerMinion {
 
     public int timesUpgraded = 0;
     public boolean cantSelected = false;
+    private boolean effectShowed = false;
 
     public ElfMinion(int timesUpgraded) {
         super(NAME, ID, 88, 0.0F, -30.0F, 140.0F, 200.0F, null, 220.0F, 0.0f);
@@ -101,14 +104,23 @@ public class ElfMinion extends AbstractPlayerMinion {
     public void usePreBattleAction(ElfMinion minion) {
         switch (this.timesUpgraded) {
             case 1:
-                addToBot(new ApplyPowerAction(this, this, new FlyPower(this, 2)));
+                if (!this.hasPower(FlyPower.POWER_ID))
+                    addToBot(new ApplyPowerAction(this, this, new FlyPower(this, 2)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(this, this, new IronWallPower(this) {
-                    @Override
-                    public void atStartOfTurn() {
-                    }
-                }));
+                if (!this.effectShowed) {
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", this.hb.cX, this.hb.y + 700.0f * Settings.scale,
+                            50.0f, 90.0f, 8.0f * Settings.scale, 1, false)));
+                    this.effectShowed = true;
+                }
+
+                if (!this.hasPower(IronWallPower.POWER_ID))
+                    addToBot(new ApplyPowerAction(this, this, new IronWallPower(this) {
+                        @Override
+                        public void atStartOfTurn() {
+                        }
+                    }));
+
                 break;
         }
     }

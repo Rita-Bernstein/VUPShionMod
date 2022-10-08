@@ -23,46 +23,56 @@ public class EvilOnMe extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 0;
+        this.secondaryM = this.baseSecondaryM = 13;
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        secondaryM = 0;
+        int amount = 0;
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             if (mo.hasPower(SinPower.POWER_ID)) {
-                secondaryM += mo.getPower(SinPower.POWER_ID).amount;
+                amount += mo.getPower(SinPower.POWER_ID).amount;
                 addToBot(new RemoveSpecificPowerAction(mo, p, SinPower.POWER_ID));
             }
         }
 
         if (p.hasPower(SinPower.POWER_ID)) {
-            secondaryM += p.getPower(SinPower.POWER_ID).amount;
+            amount += p.getPower(SinPower.POWER_ID).amount;
             addToBot(new RemoveSpecificPowerAction(p, p, SinPower.POWER_ID));
         }
 
         addToBot(new GainMaxHPAction(p, (int) (p.maxHealth * 0.05f)));
-        addToBot(new HealAction(p, p, secondaryM * this.magicNumber));
+        addToBot(new HealAction(p, p, amount * this.magicNumber));
 
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        secondaryM = 0;
+        boolean canUse = true;
+
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             if (mo.hasPower(SinPower.POWER_ID)) {
-                secondaryM += mo.getPower(SinPower.POWER_ID).amount;
-            }
+                if (mo.getPower(SinPower.POWER_ID).amount < this.secondaryM) {
+                    canUse = false;
+                }
+            } else
+                canUse = false;
         }
 
         if (p.hasPower(SinPower.POWER_ID)) {
-            secondaryM += p.getPower(SinPower.POWER_ID).amount;
+            if (p.getPower(SinPower.POWER_ID).amount < this.secondaryM) {
+                canUse = false;
+            }
+        } else
+            canUse = false;
+
+        if (!canUse) {
+            this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+            return false;
         }
 
-        if(secondaryM >=15)
-            return super.canUse(p, m);
-        return false;
+        return super.canUse(p, m);
     }
 
     @Override

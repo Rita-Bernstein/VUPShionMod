@@ -33,6 +33,7 @@ public class EarthBless extends AbstractEisluRenCard {
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
         addToBot(new GainMaxHPAction(p,magicNumber));
         addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
+        if(!this.upgraded)
         addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.secondaryM)));
     }
 
@@ -41,6 +42,8 @@ public class EarthBless extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

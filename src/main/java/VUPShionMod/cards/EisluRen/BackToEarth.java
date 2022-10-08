@@ -58,6 +58,7 @@ public class BackToEarth extends AbstractEisluRenCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.selfRetain = true;
+            upgradeBaseCost(0);
         }
     }
 }

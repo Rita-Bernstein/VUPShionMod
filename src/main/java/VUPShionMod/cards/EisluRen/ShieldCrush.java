@@ -45,7 +45,7 @@ public class ShieldCrush extends AbstractEisluRenCard {
         addToBot(new WaitAction(0.8F));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new GainShieldAction(p,this.damage/3));
+        addToBot(new GainShieldAction(p, this.upgraded ? this.damage / 2 : this.damage / 3));
 
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
@@ -83,6 +83,8 @@ public class ShieldCrush extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -15,6 +15,10 @@ public abstract class AbstractVUPShionStance extends AbstractStance {
 
     public void onVictory(){}
 
+    public int onHeal(int healAmount){
+        return healAmount;
+    }
+
 
     protected void addToBot(AbstractGameAction action) {
         AbstractDungeon.actionManager.addToBottom(action);

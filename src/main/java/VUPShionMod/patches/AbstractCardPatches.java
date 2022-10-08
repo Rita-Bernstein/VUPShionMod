@@ -107,10 +107,12 @@ public class AbstractCardPatches {
     public static void returnToHandOnce(AbstractCard card) {
         if (card instanceof AbstractVUPShionCard) {
             AbstractVUPShionCard c = ((AbstractVUPShionCard) card);
-            if (c.returnToHandOnce || c.returnToHand) {
+            if ((!GameStatsPatch.returnToHandList.contains(card.cardID) && c.returnToHand) || c.returnToHandOnce) {
                 AbstractDungeon.player.hand.moveToHand(card);
                 AbstractDungeon.player.onCardDrawOrDiscard();
                 c.returnToHandOnce = false;
+                if(!GameStatsPatch.returnToHandList.contains(card.cardID) && c.returnToHand)
+                GameStatsPatch.returnToHandList.add(card.cardID);
             } else {
                 AbstractDungeon.player.hand.moveToDiscardPile(card);
             }

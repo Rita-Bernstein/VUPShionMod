@@ -65,7 +65,7 @@ public class HurricaneVortexPower extends AbstractShionPower implements Cloneabl
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
             damage += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
         }
-        addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(damage*this.amount, false),
+        addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(damage * this.amount, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HEAVY, true));
 
         Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, 1, false);

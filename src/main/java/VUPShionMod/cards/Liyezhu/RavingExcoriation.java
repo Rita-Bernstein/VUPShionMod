@@ -16,7 +16,7 @@ public class RavingExcoriation extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public RavingExcoriation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -40,6 +40,7 @@ public class RavingExcoriation extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 }

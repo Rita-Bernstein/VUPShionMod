@@ -196,7 +196,7 @@
   },
   "VUPShionMod:BetterDiscardAction": {
     "TEXT": [
-      "Discard any cards"
+      "Choose to discard any card"
     ]
   },
   "VUPShionMod:RuinGuardianStanceAction": {
@@ -248,7 +248,7 @@
     "TEXT": [
       "Loading Complete~ Welcome to the battlefield.",
       "Select",
-      "Wish you hunting!"
+      "Wish you good hunting!"
     ]
   },
   "VUPShionMod:ShionBasePatches": {

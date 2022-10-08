@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.SaveHelper;
 
 public class SaveDataPatches {
@@ -37,6 +38,8 @@ public class SaveDataPatches {
                     config.setBool(slot + "liyezhuVictory", false);
                 }
 
+                for (int i = 0; i < 28; i++)
+                    config.setBool(CardCrawlGame.saveSlot + "Achievement" + String.format("%02d", i), false);
 
                 config.setInt(slot + "gravityFinFunnelLevel", 1);
                 config.setInt(slot + "investigationFinFunnelLevel", 1);

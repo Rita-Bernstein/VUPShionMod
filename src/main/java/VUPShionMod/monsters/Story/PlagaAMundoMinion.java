@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
+import com.megacrit.cardcrawl.actions.unique.CannotLoseAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -265,8 +266,6 @@ public class PlagaAMundoMinion extends CustomMonster {
                         die();
 
                         if(AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-
-
                             createBoss();
                         }
                     } else {
@@ -277,7 +276,7 @@ public class PlagaAMundoMinion extends CustomMonster {
                 }
             } else {
                 if (SaveHelper.isHardMod) {
-                    AbstractDungeon.getCurrRoom().cannotLose = true;
+                    addToBot(new CannotLoseAction());
                     addToBot(new AbstractGameAction() {
                         @Override
                         public void update() {
@@ -295,12 +294,19 @@ public class PlagaAMundoMinion extends CustomMonster {
                     createBoss();
 
                 } else {
-                    (AbstractDungeon.getCurrRoom()).cannotLose = false;
-                    for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
-                        if (m instanceof PlagaAMundoMinion) {
-                            m.die();
+                    addToBot(new CanLoseAction());
+                    addToBot(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
+                                if (m instanceof PlagaAMundoMinion) {
+                                    ((PlagaAMundoMinion) m).forceDie = true;
+                                    m.die();
+                                }
+                            }
+                            isDone = true;
                         }
-                    }
+                    });
                 }
 
 
@@ -309,6 +315,11 @@ public class PlagaAMundoMinion extends CustomMonster {
     }
 
     private void createBoss() {
+        for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
+            if (m.id.equals(TimePortal.ID)|| m.id.equals(Ouroboros.ID))
+                return;
+        }
+
         addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player, DespairPower.POWER_ID));
         addToBot(new TalkAction(true, DIALOG[0], 1.0f, 5.0f));
         addToBot(new CustomWaitAction(6.0f));

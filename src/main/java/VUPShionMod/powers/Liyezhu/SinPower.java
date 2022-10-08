@@ -23,7 +23,7 @@ public class SinPower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
         isTurnBased = true;
-
+        this.priority = 0;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/SinPower128.png"), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/SinPower48.png"), 0, 0, 48, 48);
     }

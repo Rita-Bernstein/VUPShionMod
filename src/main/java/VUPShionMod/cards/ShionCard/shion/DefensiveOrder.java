@@ -31,7 +31,6 @@ public class DefensiveOrder extends AbstractShionCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-
             this.returnToHand = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

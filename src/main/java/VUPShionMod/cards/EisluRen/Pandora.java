@@ -74,7 +74,7 @@ public class Pandora extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeSecondM(-1);
+            upgradeSecondM(-2);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

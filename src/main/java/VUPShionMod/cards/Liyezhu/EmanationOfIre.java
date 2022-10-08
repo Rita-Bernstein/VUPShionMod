@@ -25,7 +25,7 @@ public class EmanationOfIre extends AbstractLiyezhuCard {
 
     public EmanationOfIre() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 10;
+        this.baseDamage = 7;
         this.magicNumber = this.baseMagicNumber = 99;
         this.secondaryM = this.baseSecondaryM =2;
         this.exhaust = true;
@@ -65,7 +65,7 @@ public class EmanationOfIre extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(7);
         }
     }
 }

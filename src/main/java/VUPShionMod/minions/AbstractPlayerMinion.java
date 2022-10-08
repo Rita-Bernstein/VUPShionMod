@@ -1,6 +1,7 @@
 package VUPShionMod.minions;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.ShieldPatches;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.EisluRen.SpiritCloisterPower;
 import VUPShionMod.vfx.Common.FlashMinionIntentEffect;
@@ -708,6 +709,7 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
         damageAmount = decrementBlock(info, damageAmount);
 
+        damageAmount = ShieldPatches.AddFields.shield.get(this).decrementBlock(info, damageAmount, this);
 
         if (info.owner == AbstractDungeon.player) {
             for (AbstractRelic r : AbstractDungeon.player.relics) {

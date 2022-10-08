@@ -15,7 +15,7 @@ public class PiousPhrase extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(PiousPhrase.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/PiousPhrase.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -60,6 +60,7 @@ public class PiousPhrase extends AbstractLiyezhuCard {
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.cardsToPreview.upgrade();
+            this.selfRetain = true;
         }
     }
 }

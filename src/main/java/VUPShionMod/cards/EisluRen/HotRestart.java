@@ -27,6 +27,7 @@ public class HotRestart extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(this.upgraded)
         addToBot(new GainRefundChargeAction(this.magicNumber));
 
         int drawCard = 0;
@@ -43,6 +44,8 @@ public class HotRestart extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(3);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -15,45 +15,46 @@ public class DuelSinAction extends AbstractGameAction {
 
     public DuelSinAction() {
     }
+
     public void update() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                 if (!monster.isDeadOrEscaped()) {
-                    if(monster.hasPower(SinPower.POWER_ID))
-                        monster.damage(new DamageInfo(monster,monster.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.THORNS));
+                    if (monster.hasPower(SinPower.POWER_ID))
+                        monster.damage(new DamageInfo(monster, monster.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.THORNS));
                 }
             }
         }
 
-        if(AbstractDungeon.player.hasPower(SinPower.POWER_ID) && !AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID))
-        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player,AbstractDungeon.player.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.THORNS));
+        if (AbstractDungeon.player.hasPower(SinPower.POWER_ID) && !AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID))
+            AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, AbstractDungeon.player.getPower(SinPower.POWER_ID).amount, DamageInfo.DamageType.THORNS));
 
-        if(!AbstractDungeon.player.isDeadOrEscaped()){
-            for(AbstractPower power : AbstractDungeon.player.powers){
-                if(power instanceof AbstractShionPower)
+        if (!AbstractDungeon.player.isDeadOrEscaped()) {
+            for (AbstractPower power : AbstractDungeon.player.powers) {
+                if (power instanceof AbstractShionPower)
                     ((AbstractShionPower) power).onDuelSin();
             }
 
-            for(AbstractCard card : AbstractDungeon.player.drawPile.group){
-                if(card instanceof AbstractVUPShionCard){
+            for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
+                if (card instanceof AbstractVUPShionCard) {
                     ((AbstractVUPShionCard) card).onDuelSin();
                 }
             }
 
-            for(AbstractCard card : AbstractDungeon.player.hand.group){
-                if(card instanceof AbstractVUPShionCard){
+            for (AbstractCard card : AbstractDungeon.player.hand.group) {
+                if (card instanceof AbstractVUPShionCard) {
                     ((AbstractVUPShionCard) card).onDuelSin();
                 }
             }
 
-            for(AbstractCard card : AbstractDungeon.player.discardPile.group){
-                if(card instanceof AbstractVUPShionCard){
+            for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+                if (card instanceof AbstractVUPShionCard) {
                     ((AbstractVUPShionCard) card).onDuelSin();
                 }
             }
 
-            for(AbstractCard card : AbstractDungeon.player.exhaustPile.group){
-                if(card instanceof AbstractVUPShionCard){
+            for (AbstractCard card : AbstractDungeon.player.exhaustPile.group) {
+                if (card instanceof AbstractVUPShionCard) {
                     ((AbstractVUPShionCard) card).onDuelSin();
                 }
             }
@@ -61,8 +62,7 @@ public class DuelSinAction extends AbstractGameAction {
         }
 
 
-
-        isDone =true;
+        isDone = true;
     }
 }
 

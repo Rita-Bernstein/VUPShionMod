@@ -19,13 +19,18 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.metrics.Metrics;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.potions.FairyPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.LizardTail;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
+import com.megacrit.cardcrawl.screens.stats.StatsScreen;
 
 import java.util.ArrayList;
+
+import static com.megacrit.cardcrawl.screens.GameOverScreen.shouldUploadMetricData;
 
 public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathRelic {
     public static final String ID = VUPShionMod.makeID(UnknownDust.class.getSimpleName());
@@ -96,8 +101,29 @@ public class UnknownDust extends AbstractShionRelic implements OnPlayerDeathReli
         }
     }
 
+    private void submitDefeatMetrics(MonsterGroup m) {
+        if (m != null && !m.areMonstersDead() && !m.areMonstersBasicallyDead()) {
+            CardCrawlGame.metricData.addEncounterData();
+        }
+
+        Metrics metrics = new Metrics();
+
+        metrics.gatherAllDataAndSave(true, false, m);
+
+        if (shouldUploadMetricData()) {
+            metrics.setValues(true, false, m, Metrics.MetricRequestType.UPLOAD_METRICS);
+            Thread t = new Thread(metrics);
+            t.setName("Metrics");
+            t.start();
+        }
+    }
+
     private void endGame() {
+        submitDefeatMetrics(AbstractDungeon.getMonsters());
+        StatsScreen.incrementDeath(AbstractDungeon.player.getCharStat());
+        CardCrawlGame.playerPref.flush();
         SaveAndContinue.deleteSave(AbstractDungeon.player);
+
         if (AbstractDungeon.unlocks.isEmpty() || Settings.isDemo) {
             CardCrawlGame.playCreditsBgm = true;
             CardCrawlGame.startOverButShowCredits();

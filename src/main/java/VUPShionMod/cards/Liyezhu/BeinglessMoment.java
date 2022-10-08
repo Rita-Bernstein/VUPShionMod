@@ -1,14 +1,9 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.powers.Common.DoubleDamageReceivePower;
-import VUPShionMod.powers.Liyezhu.BeinglessMomentPower;
+import VUPShionMod.powers.Liyezhu.HealToShieldPower;
 import VUPShionMod.powers.Liyezhu.LeachingBloodPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -24,13 +19,12 @@ public class BeinglessMoment extends AbstractLiyezhuCard {
 
     public BeinglessMoment() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, false)));
-        addToBot(new ApplyPowerAction(p, p, new BeinglessMomentPower(p)));
         addToBot(new ApplyPowerAction(p, p, new LeachingBloodPower(p, 1)));
     }
 

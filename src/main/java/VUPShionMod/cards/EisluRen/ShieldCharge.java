@@ -47,8 +47,10 @@ public class ShieldCharge extends AbstractEisluRenCard {
         for (int i = 0; i < 3; i++)
             addToBot(new GainShieldAction(p, this.magicNumber));
 
-        addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,5)));
-        addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,5)));
+        if(this.upgraded) {
+            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 5)));
+            addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 5)));
+        }
     }
 
     @Override
@@ -67,6 +69,8 @@ public class ShieldCharge extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

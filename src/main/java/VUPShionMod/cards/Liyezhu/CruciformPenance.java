@@ -30,8 +30,8 @@ public class CruciformPenance extends AbstractLiyezhuCard {
     public CruciformPenance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 14;
-        this.magicNumber = this.baseMagicNumber = 4;
-        this.secondaryM = this.baseSecondaryM = 10;
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.secondaryM = this.baseSecondaryM = 6;
     }
 
     @Override
@@ -40,17 +40,43 @@ public class CruciformPenance extends AbstractLiyezhuCard {
             addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        this.rawDescription = this.upgraded? UPGRADE_DESCRIPTION: DESCRIPTION;
+        initializeDescription();
+
+
         addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, this.magicNumber)));
 
-        addToBot(new CruciformPenanceAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.secondaryM));
+        addToBot(new CruciformPenanceAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.secondaryM, this.upgraded ? 2 : 1));
+    }
+
+
+    public void applyPowers() {
+        this.baseDamage = 0;
+        if (AbstractDungeon.player.hasPower(PsychicPower.POWER_ID)) {
+            this.baseDamage += AbstractDungeon.player.getPower(PsychicPower.POWER_ID).amount * 2;
+        }
+
+        super.applyPowers();
+        this.rawDescription = this.upgraded? UPGRADE_DESCRIPTION: DESCRIPTION;
+        this.rawDescription += EXTENDED_DESCRIPTION[0];
+        initializeDescription();
+    }
+
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        this.rawDescription = this.upgraded? UPGRADE_DESCRIPTION: DESCRIPTION;
+        this.rawDescription += EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
-            upgradeMagicNumber(1);
+            upgradeSecondM(3);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -23,7 +23,7 @@ public class IronWall extends AbstractEisluRenCard {
 
     public IronWall() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 3;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class IronWall extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeSecondM(-1);
+            upgradeSecondM(-2);
         }
     }
 }

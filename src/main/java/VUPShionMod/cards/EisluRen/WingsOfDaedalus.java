@@ -33,7 +33,10 @@ public class WingsOfDaedalus extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
+
+        if(this.upgraded)
         addToBot(new GainShieldAction(p,7));
+
         addToBot(new ApplyPowerAction(p,p,new FlyPower(p,this.magicNumber)));
         addToBot(new ApplyPowerAction(p,p,new WingsOfDaedalusPower(p,2)));
     }
@@ -57,6 +60,8 @@ public class WingsOfDaedalus extends AbstractEisluRenCard {
             this.upgradeName();
             upgradeBaseCost(2);
             upgradeSecondM(-1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

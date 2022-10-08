@@ -47,7 +47,7 @@ public class CaligoRapida extends AbstractCodexCard {
             case 2:
                 addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, 1,false)));
                 Predicate<AbstractCard> predicate = (pr) -> pr.type == AbstractCard.CardType.ATTACK;
-                addToBot(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.discardPile, predicate, this.magicNumber));
+                addToBot(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.drawPile, predicate, this.magicNumber));
                 break;
         }
     }

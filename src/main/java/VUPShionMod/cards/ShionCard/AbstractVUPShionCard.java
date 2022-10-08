@@ -320,6 +320,8 @@ public abstract class AbstractVUPShionCard extends CustomCard implements SpawnMo
     public void onApplyCor(){
     }
 
+    public void onApplySin(){}
+
     public void triggerAfterOtherCardPlayed(AbstractCard card){
     }
 

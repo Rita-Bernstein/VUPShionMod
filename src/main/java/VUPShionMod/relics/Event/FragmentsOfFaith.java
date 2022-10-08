@@ -64,9 +64,11 @@ public class FragmentsOfFaith extends AbstractShionRelic {
 
     @Override
     public void atBattleStart() {
-        flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new FinalPrayerPower(AbstractDungeon.player)));
+        if(this.counter == 2) {
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FinalPrayerPower(AbstractDungeon.player)));
+        }
     }
 
     @Override

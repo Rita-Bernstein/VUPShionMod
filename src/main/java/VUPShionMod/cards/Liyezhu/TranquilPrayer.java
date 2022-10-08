@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.ApplyPrayerAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.prayers.LoseStrengthPrayer;
+import VUPShionMod.prayers.SinPrayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,8 +22,8 @@ public class TranquilPrayer extends AbstractLiyezhuCard {
 
     public TranquilPrayer() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 2;
         this.exhaust = true;
         this.cardsToPreview = new EdgeOfSquall();
         this.tags.add(CardTagsEnum.Prayer_CARD);
@@ -36,7 +37,7 @@ public class TranquilPrayer extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 if (isInPrayer())
-                    addToTop(new ApplyPrayerAction(new LoseStrengthPrayer(secondaryM, magicNumber)));
+                    addToTop(new ApplyPrayerAction(new SinPrayer(secondaryM, magicNumber)));
 
                 if (isInJudge() ) {
                     AbstractCard temp = new EdgeOfSquall();
@@ -55,8 +56,9 @@ public class TranquilPrayer extends AbstractLiyezhuCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            upgradeMagicNumber(1);
+            upgradeSecondM(1);
             this.cardsToPreview.upgrade();
+            this.selfRetain = true;
         }
     }
 }

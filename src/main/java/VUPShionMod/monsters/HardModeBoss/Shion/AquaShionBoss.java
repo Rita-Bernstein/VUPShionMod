@@ -100,6 +100,7 @@ public class AquaShionBoss extends AbstractShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_ENDING");
 
+        if(this.dissectionEffect == null)
         if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu
                 || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
@@ -350,6 +351,7 @@ public class AquaShionBoss extends AbstractShionBoss {
         super.dispose();
         if (this.dissectionEffect.atlas != null) {
             this.dissectionEffect.dispose();
+            this.dissectionEffect = null;
         }
     }
 }

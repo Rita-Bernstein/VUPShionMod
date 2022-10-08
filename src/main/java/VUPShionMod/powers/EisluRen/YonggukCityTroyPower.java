@@ -18,7 +18,7 @@ public class YonggukCityTroyPower extends AbstractShionPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-    public YonggukCityTroyPower(AbstractCreature owner,int amount) {
+    public YonggukCityTroyPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.owner = owner;
         this.ID = POWER_ID;
@@ -34,7 +34,7 @@ public class YonggukCityTroyPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
@@ -44,6 +44,6 @@ public class YonggukCityTroyPower extends AbstractShionPower {
 
     @Override
     public void onAddShieldCharge(int amount) {
-        addToBot(new GainShieldAction(this.owner, amount  * this.amount));
+        addToBot(new GainShieldAction(this.owner, amount * this.amount));
     }
 }

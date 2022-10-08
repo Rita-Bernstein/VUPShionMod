@@ -65,7 +65,7 @@ public class AbstractPotionPatches {
             method = "update"
     )
     public static class MapRoomNodeUpdate {
-        @SpireInsertPatch(rloc = 75)
+        @SpireInsertPatch(rloc = 74)
         public static SpireReturn<Boolean> Insert(MapRoomNode _instance) {
             if (AbstractDungeon.player.hasPotion(TransitionGenerator.POTION_ID) && (AbstractDungeon.player.getRelic("WingedGreaves")).counter > 0) {
                 (AbstractDungeon.player.getRelic("WingedGreaves")).counter++;

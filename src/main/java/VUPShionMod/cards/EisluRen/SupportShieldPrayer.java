@@ -27,6 +27,7 @@ public class SupportShieldPrayer extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(this.upgraded)
         addToBot(new GainShieldAction(p, 7));
         addToBot(new GainRefundChargeAction(this.magicNumber));
         addToBot(new AddWingShieldDamageReduceCombatAction(this.secondaryM));
@@ -37,6 +38,8 @@ public class SupportShieldPrayer extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

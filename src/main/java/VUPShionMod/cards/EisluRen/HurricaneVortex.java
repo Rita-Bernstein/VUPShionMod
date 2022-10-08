@@ -31,6 +31,7 @@ public class HurricaneVortex extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
+            upgradeBaseCost(1);
         }
     }
 }

@@ -45,7 +45,6 @@ public class LeachingBloodPower extends AbstractShionPower {
     public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m, int damageAmount) {
         if (m != null && info.type == DamageInfo.DamageType.NORMAL)
             if (m.lastDamageTaken > 0) {
-
                 AbstractDungeon.player.heal(m.lastDamageTaken);
             }
     }

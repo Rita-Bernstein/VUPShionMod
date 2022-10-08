@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
+import VUPShionMod.monsters.Story.TimePortal;
 import VUPShionMod.powers.Monster.PlagaAMundo.DestroyPower;
 import VUPShionMod.powers.Monster.PlagaAMundo.ShockPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
@@ -21,7 +22,6 @@ public class PatchStunPower {
     public static SpireReturn<Void> Prefix(StunMonsterPower __instance, byte ___moveByte) {
         if (__instance.owner instanceof PlagaAMundo) {
             AbstractMonster m = (AbstractMonster) __instance.owner;
-
 
 
             if (m.hasPower(ShockPower.POWER_ID)) {
@@ -50,7 +50,7 @@ public class PatchStunPower {
                 }
             }
 
-            if(GameActionManager.turn >= 12){
+            if (GameActionManager.turn >= 12) {
                 m.setMove((byte) 98, AbstractMonster.Intent.UNKNOWN);
             }
 
@@ -93,19 +93,28 @@ public class PatchStunPower {
             return SpireReturn.Return(null);
         }
 
+        if (__instance.owner instanceof TimePortal) {
+            AbstractMonster m = (AbstractMonster) __instance.owner;
+            switch (___moveByte) {
+                case 0:
+                    m.setMove((byte) 0, AbstractMonster.Intent.DEBUFF);
+                    break;
+                case 1:
+                    m.setMove((byte) 1,  AbstractMonster.Intent.UNKNOWN);
+                    break;
+                case 2:
+                    m.setMove((byte) 2, AbstractMonster.Intent.UNKNOWN);
+                    break;
+                default:
+                    m.setMove((byte) 3, AbstractMonster.Intent.NONE);
+                    break;
+            }
 
-//        if(__instance.owner instanceof RitaShop){
-//            AbstractMonster m = (AbstractMonster)__instance.owner;
-//
-//            if(___moveByte == 99){
-//                m.setMove((byte) 99, AbstractMonster.Intent.UNKNOWN);
-//                m.createIntent();
-//                m.applyPowers();
-//                return SpireReturn.Return(null);
-//            }
-//
-//
-//        }
+
+            m.createIntent();
+            m.applyPowers();
+            return SpireReturn.Return(null);
+        }
 
         return SpireReturn.Continue();
     }

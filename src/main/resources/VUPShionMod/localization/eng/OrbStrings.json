@@ -110,7 +110,7 @@
   },
   "VUPShionMod:SinPrayer": {
     "DESCRIPTION": [
-      " #yALL #yENTITIES gain #b%d #ySin."
+      "ALL enemies gain #b%d #ySin."
     ],
     "NAME": "Sin"
   },

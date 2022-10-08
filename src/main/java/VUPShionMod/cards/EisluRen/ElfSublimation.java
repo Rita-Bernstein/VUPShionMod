@@ -23,12 +23,12 @@ public class ElfSublimation extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 5;
+    private static final int COST = 6;
 
     public ElfSublimation() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 30;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.secondaryM = this.baseSecondaryM = 2;
         this.selfRetain =true;
     }
 
@@ -61,8 +61,7 @@ public class ElfSublimation extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeSecondM(1);
-            upgradeBaseCost(4);
+            upgradeSecondM(2);
         }
     }
 }

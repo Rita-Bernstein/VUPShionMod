@@ -21,7 +21,7 @@ public class CrimsonDeluge extends AbstractLiyezhuCard {
 
     public CrimsonDeluge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -49,6 +49,7 @@ public class CrimsonDeluge extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(1);
+            upgradeMagicNumber(1);
         }
     }
 }

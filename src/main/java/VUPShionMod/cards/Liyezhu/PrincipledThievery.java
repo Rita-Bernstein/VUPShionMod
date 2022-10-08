@@ -15,7 +15,7 @@ public class PrincipledThievery extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(PrincipledThievery.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/PrincipledThievery.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -38,7 +38,6 @@ public class PrincipledThievery extends AbstractLiyezhuCard {
             public void update() {
                 if (isInPrayer()) {
                     addToTop(new ApplyPrayerAction(new ThieveryPrayer(secondaryM, magicNumber)));
-                    addToTop(new ApplyPrayerAction(new SinPrayer(secondaryM, 4)));
                 }
                 if (isInJudge()) {
                     AbstractCard temp = new HeavenDecree();
@@ -59,6 +58,7 @@ public class PrincipledThievery extends AbstractLiyezhuCard {
             initializeDescription();
             this.cardsToPreview.upgrade();
             upgradeMagicNumber(1);
+            this.selfRetain = true;
         }
     }
 }

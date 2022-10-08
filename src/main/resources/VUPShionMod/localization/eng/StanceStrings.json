@@ -2,7 +2,7 @@
   "VUPShionMod:PrayerStance": {
     "NAME": "Praying Stance",
     "DESCRIPTION": [
-      "While in this #yStance, you deal #b25% less damage. NL At the end of your turn, heal #b2 HP."
+      "While in this #yStance, you deal #b50% less damage. NL Healing is #b50% more effective. NL At the end of your turn, heal #b2 HP."
     ]
   },
   "VUPShionMod:JudgeStance": {

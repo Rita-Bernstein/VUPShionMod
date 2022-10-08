@@ -28,7 +28,7 @@ public class ExhaustToApplySinAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.5F) {
-            AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, true, true);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], 2, true, true);
 
             addToBot(new WaitAction(0.25F));
             tickDuration();

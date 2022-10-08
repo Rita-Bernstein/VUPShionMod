@@ -24,7 +24,7 @@ public class MagicTransform extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         Consumer<Integer> actionConsumer = effect -> {
-            addToTop(new GainRefundChargeAction(upgraded ? (4 * effect + 3) : (4 * effect + 1)));
+            addToTop(new GainRefundChargeAction(upgraded ? (4 * effect + 3) : (3 * effect + 1)));
         };
         addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
     }

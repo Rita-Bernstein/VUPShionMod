@@ -17,20 +17,21 @@ public class Precasting extends AbstractLiyezhuCard {
 
     public Precasting() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.isInnate =true;
-        this.exhaust =true;
+        this.magicNumber = this.baseMagicNumber = 3;
+        this.isInnate = true;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new PrecastingPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PrecastingPower(p, this.magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeMagicNumber(1);
             upgradeBaseCost(0);
         }
     }

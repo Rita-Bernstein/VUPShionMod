@@ -32,7 +32,6 @@ public class CounterCannon extends AbstractEisluRenCard {
         this.isMultiDamage = true;
         this.secondaryM = this.baseSecondaryM = 4;
         this.selfRetain = true;
-        GraveField.grave.set(this,true);
     }
 
     @Override
@@ -78,6 +77,9 @@ public class CounterCannon extends AbstractEisluRenCard {
             this.upgradeName();
             upgradeBaseCost(1);
             upgradeSecondM(-1);
+            GraveField.grave.set(this,true);
+            this.rawDescription  = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 
 public class SupportGravitater extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(SupportGravitater.class.getSimpleName());
@@ -22,13 +23,15 @@ public class SupportGravitater extends AbstractEisluRenCard {
     public SupportGravitater() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 3;
+        this.secondaryM = this.baseSecondaryM = 5;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new SupportGravitaterPower(p,this.magicNumber)));
         addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
+        if(!this.upgraded)
+            addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.secondaryM)));
         addToBot(new ApplyPowerAction(p,p,new FlyPower(p,1)));
     }
 
@@ -37,6 +40,8 @@ public class SupportGravitater extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

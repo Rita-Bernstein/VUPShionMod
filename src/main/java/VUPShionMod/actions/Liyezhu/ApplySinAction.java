@@ -1,9 +1,11 @@
 package VUPShionMod.actions.Liyezhu;
 
+import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -28,6 +30,12 @@ public class ApplySinAction extends AbstractGameAction {
 
         if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
             power.amount = EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).changeSinApply(power);
+        }
+
+        for(AbstractCard card : AbstractDungeon.player.discardPile.group){
+            if(card instanceof AbstractVUPShionCard){
+                ((AbstractVUPShionCard) card).onApplySin();
+            }
         }
 
         addToTop(new ApplyPowerAction(this.source, this.source, power));

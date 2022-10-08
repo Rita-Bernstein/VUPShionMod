@@ -291,15 +291,16 @@ public class AbstractPlayerPatches {
     }
 
     @SpirePatch(
-            clz = MonsterGroup.class,
-            method = "applyPreTurnLogic"
+            clz = AbstractRoom.class,
+            method = "update"
     )
     public static class ApplyPreTurnLogicPatch {
-        @SpirePostfixPatch
-        public static void Insert(MonsterGroup _instance) {
-            AddFields.playerMinions.get(AbstractDungeon.player).usePreBattleAction();
+        @SpireInsertPatch(rloc = 64)
+        public static void Insert(AbstractRoom _instance) {
+            AddFields.playerMinions.get(AbstractDungeon.player).applyPreTurnLogic();
         }
     }
+
 
     @SpirePatch(
             clz = MonsterGroup.class,
@@ -342,7 +343,7 @@ public class AbstractPlayerPatches {
     )
     public static class ApplyEndOfTurnPowersPatch {
         @SpirePostfixPatch
-        public static void Insert(MonsterGroup _instance) {
+        public static void Postfix(MonsterGroup _instance) {
             AddFields.playerMinions.get(AbstractDungeon.player).applyEndOfTurnPowers();
         }
     }
@@ -503,6 +504,23 @@ public class AbstractPlayerPatches {
                     for (AbstractPower p : minion.powers) {
                         tmp[0] = p.atDamageFinalReceive(tmp[0], DamageInfo.DamageType.NORMAL);
                     }
+            }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = DamageInfo.class,
+            method = "applyPowers"
+    )
+    public static class ChangeMonsterCalculateTargetPatch3 {
+        @SpireInsertPatch(rloc = 0)
+        public static SpireReturn<Void> Insert(DamageInfo info, AbstractCreature owner, @ByRef AbstractCreature[] _target) {
+            if (!MinionGroup.areMinionsBasicallyDead() && !(owner.isPlayer || owner instanceof AbstractPlayerMinion)) {
+                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                if (minion != null)
+                    _target[0] = minion;
             }
 
             return SpireReturn.Continue();

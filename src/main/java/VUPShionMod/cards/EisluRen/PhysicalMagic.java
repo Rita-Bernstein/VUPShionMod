@@ -25,7 +25,7 @@ public class PhysicalMagic extends AbstractEisluRenCard {
     public PhysicalMagic() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 9;
-        this.selfRetain = true;
+
     }
 
     @Override
@@ -56,6 +56,7 @@ public class PhysicalMagic extends AbstractEisluRenCard {
             upgradeDamage(3);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            this.selfRetain = true;
         }
     }
 }

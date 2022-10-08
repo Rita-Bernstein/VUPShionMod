@@ -612,13 +612,19 @@
   "VUPShionMod:EnsanguinedFigurePower": {
     "NAME": "浸染之衣",
     "DESCRIPTIONS": [
-      "每当你受到伤害时，给予攻击者 #b%d 层 #y罪孽 。"
+      "每当你受到伤害时，给予所有人 #b%d 层 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:EnsanguinedFigurePower2": {
+    "NAME": "浸染之衣",
+    "DESCRIPTIONS": [
+      "每当你受到伤害时，给予所有敌人 #b%d 层 #y罪孽 。"
     ]
   },
   "VUPShionMod:CrimsonDelugePower": {
     "NAME": "浸染之血",
     "DESCRIPTIONS": [
-      "超出生命上限的 #g回复 将获得 #y护盾 。  NL 每当打出 #y攻击牌 时，回复 #b%d 点生命。"
+      "超出生命上限的 #g回复 将获得一半的 #y护盾 。 NL 每当打出 #y攻击牌 时，回复 #b%d 点生命。"
     ]
   },
   "VUPShionMod:AsceticismPower": {
@@ -980,7 +986,7 @@
   "VUPShionMod:WingsOfDaedalusPower": {
     "NAME": "代达罗斯之翼",
     "DESCRIPTIONS": [
-      "每当获得 #y敏捷 获得 #y临时敏捷 时，获得 #b%d 倍的 #y力量 或 #y临时力量 。"
+      "每当获得 #y敏捷 或获得 #y临时敏捷 时，获得 #b%d 倍的 #y力量 或 #y临时力量 。"
     ]
   },
   "VUPShionMod:StonehengePower": {
@@ -1055,7 +1061,7 @@
   "VUPShionMod:BossAvatarSpawnPower": {
     "NAME": "延时替身",
     "DESCRIPTIONS": [
-      "每回合结束时 #b%d 个获得 #b5 点生命的 #y替身 。"
+      "每回合结束时获得 #b%d 个 #b5 点生命的 #y替身 。"
     ]
   },
   "VUPShionMod:BossAvatarPower": {
@@ -1169,8 +1175,8 @@
       "下 #b%d 个回合开始前，你的生命最低为 #b1 。"
     ]
   },
-  "VUPShionMod:BeinglessMomentPower": {
-    "NAME": "虚像刹那",
+  "VUPShionMod:HealToShieldPower": {
+    "NAME": "生命护盾",
     "DESCRIPTIONS": [
       "本回合 #g回复 生命时将获得等量的 #y护盾 。",
       "接下来的 #b%d 个回合 #g回复 生命时将获得等量的 #y护盾 。"
@@ -1179,8 +1185,8 @@
   "VUPShionMod:LeachingBloodPower": {
     "NAME": "吸血",
     "DESCRIPTIONS": [
-      "你的下张 #y攻击牌 造成伤害时，回复等量的生命。",
-      "你的下 #b%d张 #y攻击牌 造成伤害时，回复等量的生命。"
+      "你的下张 #y攻击牌 造成未被 #y格挡 的攻击伤害时，回复等量的生命。",
+      "你的下 #b%d张 #y攻击牌 造成未被 #y格挡 的攻击伤害时，回复等量的生命。"
     ]
   },
   "VUPShionMod:SubLunaPower": {
@@ -1199,13 +1205,13 @@
   "VUPShionMod:ProphecyOfSalvation2Power": {
     "NAME": "救世预言",
     "DESCRIPTIONS": [
-      "本场战斗生命回复效果提高 #b50% 。"
+      "本场战斗生命回复效果提高 #b%d%% 。"
     ]
   },
   "VUPShionMod:ProphecyOfDestruction2Power": {
     "NAME": "破灭预言",
     "DESCRIPTIONS": [
-      "每回合可选 #y消耗 一张牌从而给予所有人 #b%d 层 #y罪孽 。"
+      "每回合至多 #y消耗 两张牌从而给予所有人 #b%d 层 #y罪孽 。"
     ]
   }
 }

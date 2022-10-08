@@ -27,7 +27,7 @@ public class ProphecyOfSalvation extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AddSansAction(this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new ProphecyOfSalvationPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new ProphecyOfSalvation2Power(p)));
+        addToBot(new ApplyPowerAction(p, p, new ProphecyOfSalvation2Power(p,1)));
 
     }
 
@@ -36,6 +36,7 @@ public class ProphecyOfSalvation extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(2);
+            upgradeBaseCost(0);
         }
     }
 }

@@ -25,6 +25,7 @@ public class WorldTreeLink extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(this.upgraded)
         addToBot(new GainShieldAction(p, this.magicNumber));
         addToBot(new ApplyPowerAction(p,p,new WorldTreeLinkPower(p)));
     }
@@ -34,6 +35,8 @@ public class WorldTreeLink extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(2);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

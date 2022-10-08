@@ -2,10 +2,12 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.ApplySinAction;
+import VUPShionMod.stances.PrayerStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Sentence extends AbstractLiyezhuCard {
@@ -19,8 +21,9 @@ public class Sentence extends AbstractLiyezhuCard {
 
     public Sentence() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 5;
+        this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 2;
+        this.selfRetain = true;
     }
 
     @Override
@@ -30,11 +33,21 @@ public class Sentence extends AbstractLiyezhuCard {
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if(AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID)) {
+            this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+            return false;
+        }
+        return super.canUse(p, m);
+    }
+
+    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeDamage(2);
             upgradeMagicNumber(1);
+            upgradeBaseCost(0);
         }
     }
 }

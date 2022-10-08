@@ -27,7 +27,7 @@ public class CrimsonDelugePower extends AbstractShionPower {
 
     @Override
     public int onHeal(int healAmount) {
-        addToTop(new GainShieldAction(this.owner, this.owner.currentHealth + healAmount - this.owner.maxHealth));
+        addToTop(new GainShieldAction(this.owner,(int)((this.owner.currentHealth + healAmount - this.owner.maxHealth) *0.5f)));
         return super.onHeal(healAmount);
     }
 

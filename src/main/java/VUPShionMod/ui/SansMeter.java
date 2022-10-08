@@ -18,7 +18,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.events.GenericEventDialog;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
@@ -34,6 +36,8 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import java.util.ArrayList;
@@ -234,41 +238,58 @@ public class SansMeter {
     }
 
     public void onVictory() {
-        if (!SansMental.sansMental && this.amount <= 0) {
-            RoomEventDialog.optionList.clear();
+        if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss))
+            if (!SansMental.sansMental && this.amount <= 0) {
+                RoomEventDialog.optionList.clear();
 
-            AbstractDungeon.eventList.add(0, MentalBreakdown.ID);
+                AbstractDungeon.eventList.add(0, MentalBreakdown.ID);
 
-            MapRoomNode cur = AbstractDungeon.currMapNode;
-            MapRoomNode node = new MapRoomNode(cur.x, cur.y);
-            node.room = new CustomEventRoom();
+                MapRoomNode cur = AbstractDungeon.currMapNode;
+                MapRoomNode node = new MapRoomNode(cur.x, cur.y);
+                node.room = new CustomEventRoom();
 
-            ArrayList<MapEdge> curEdges = cur.getEdges();
-            for (MapEdge edge : curEdges) {
-                node.addEdge(edge);
+                ArrayList<MapEdge> curEdges = cur.getEdges();
+                for (MapEdge edge : curEdges) {
+                    node.addEdge(edge);
+                }
+
+
+                AbstractDungeon.player.releaseCard();
+                AbstractDungeon.overlayMenu.hideCombatPanels();
+                AbstractDungeon.previousScreen = null;
+                AbstractDungeon.dynamicBanner.hide();
+                AbstractDungeon.dungeonMapScreen.closeInstantly();
+                AbstractDungeon.closeCurrentScreen();
+                AbstractDungeon.topPanel.unhoverHitboxes();
+                AbstractDungeon.fadeIn();
+                AbstractDungeon.effectList.clear();
+                AbstractDungeon.topLevelEffects.clear();
+                AbstractDungeon.topLevelEffectsQueue.clear();
+                AbstractDungeon.effectsQueue.clear();
+                AbstractDungeon.dungeonMapScreen.dismissable = true;
+                AbstractDungeon.nextRoom = node;
+                AbstractDungeon.setCurrMapNode(node);
+                AbstractDungeon.getCurrRoom().onPlayerEntry();
+                AbstractDungeon.scene.nextRoom(node.room);
+                AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
+
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.EVENT;
+                if ((AbstractDungeon.getCurrRoom()) != null) {
+
+                    (AbstractDungeon.getCurrRoom()).isBattleOver = false;
+
+                    if ((AbstractDungeon.getCurrRoom()).monsters != null) {
+                        if ((AbstractDungeon.getCurrRoom()).monsters.monsters != null) {
+                            (AbstractDungeon.getCurrRoom()).monsters.monsters.clear();
+                        }
+                    }
+
+                    if((AbstractDungeon.getCurrRoom()).rewards != null)
+                    (AbstractDungeon.getCurrRoom()).rewards.clear();
+                }
+                GenericEventDialog.show();
+                CardCrawlGame.fadeIn(1.5F);
             }
-
-
-            AbstractDungeon.player.releaseCard();
-            AbstractDungeon.overlayMenu.hideCombatPanels();
-            AbstractDungeon.previousScreen = null;
-            AbstractDungeon.dynamicBanner.hide();
-            AbstractDungeon.dungeonMapScreen.closeInstantly();
-            AbstractDungeon.closeCurrentScreen();
-            AbstractDungeon.topPanel.unhoverHitboxes();
-            AbstractDungeon.fadeIn();
-            AbstractDungeon.effectList.clear();
-            AbstractDungeon.topLevelEffects.clear();
-            AbstractDungeon.topLevelEffectsQueue.clear();
-            AbstractDungeon.effectsQueue.clear();
-            AbstractDungeon.dungeonMapScreen.dismissable = true;
-            AbstractDungeon.nextRoom = node;
-            AbstractDungeon.setCurrMapNode(node);
-            AbstractDungeon.getCurrRoom().onPlayerEntry();
-            AbstractDungeon.scene.nextRoom(node.room);
-            AbstractDungeon.rs = node.room.event instanceof AbstractImageEvent ? AbstractDungeon.RenderScene.EVENT : AbstractDungeon.RenderScene.NORMAL;
-            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.EVENT;
-        }
     }
 
 }

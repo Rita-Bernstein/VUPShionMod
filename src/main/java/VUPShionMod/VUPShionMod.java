@@ -120,7 +120,7 @@ public class VUPShionMod implements
 
     public static Color transparent = Color.WHITE.cpy();
 
-    public static boolean isTestMod = true;
+    public static boolean isTestMod = false;
 
 
     public VUPShionMod() {
@@ -208,9 +208,9 @@ public class VUPShionMod implements
 
     @Override
     public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
-            if (SaveHelper.liyezhuRelic) {
-                arrayList.add(FragmentsOfFaith.ID);
-            }
+        if (SaveHelper.liyezhuRelic) {
+            arrayList.add(FragmentsOfFaith.ID);
+        }
     }
 
     @Override
@@ -328,10 +328,10 @@ public class VUPShionMod implements
 
 
 //      蓝宝事件
-//        BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
-//                .playerClass(AbstractPlayerEnum.Liyezhu)
-//                .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID))
-//                .create());
+        BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.Liyezhu)
+                .spawnCondition(() -> false)//AbstractDungeon.id.equals(TheBeyond.ID))
+                .create());
 
 
         BaseMod.addEvent(new AddEventParams.Builder(DistantMemory.ID, DistantMemory.class) //Event ID//
@@ -368,8 +368,8 @@ public class VUPShionMod implements
 
 //      添加boss
 
-            BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
-            BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
+        BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
+        BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
         if (isTestMod) {
 //        训练模式boss
             BaseMod.addMonster(AquaShionBoss.ID, () -> new AquaShionBoss());
@@ -551,6 +551,7 @@ public class VUPShionMod implements
             SaveHelper.isHardMod = false;
 
             SansMeterSave.sansMeterSaveAmount = 60;
+            SansMental.sansMental = false;
             WingShieldSave.wingShieldSaveAmount = 7;
             WingShieldRefundSave.wingShieldRefundSaveAmount = 0;
             WingShieldDamageSave.wingShieldDamageSaveAmount = 0;

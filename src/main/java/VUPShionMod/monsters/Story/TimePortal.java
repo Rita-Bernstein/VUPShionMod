@@ -114,15 +114,12 @@ public class TimePortal extends CustomMonster {
                     addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 2, true, true, false));
                     break;
                 case 1:
-
                     addToBot(new SummonMinionAction(this, new Ouroboros(false), 5));
                     addToBot(new ChangeStateAction(this, "NPC"));
-                    this.summoned = true;
                     break;
                 case 2:
                     addToBot(new SummonMinionAction(this, new Ouroboros(true), 5));
                     addToBot(new ChangeStateAction(this, "NPC"));
-                    this.summoned = true;
                     break;
             }
 

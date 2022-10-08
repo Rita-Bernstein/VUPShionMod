@@ -19,7 +19,7 @@ public class SoothingScripture extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public SoothingScripture() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -61,6 +61,7 @@ public class SoothingScripture extends AbstractLiyezhuCard {
             initializeDescription();
             this.cardsToPreview.upgrade();
             upgradeSecondM(1);
+            this.selfRetain = true;
         }
     }
 }

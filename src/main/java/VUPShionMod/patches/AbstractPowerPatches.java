@@ -210,8 +210,8 @@ public class AbstractPowerPatches {
     public static class NotRemovePowerPowerPatch {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(RemoveSpecificPowerAction _instance) {
-            String powerToRemove = ReflectionHacks.getPrivate(_instance, ReducePowerAction.class, "powerToRemove");
-            AbstractPower powerInstance = ReflectionHacks.getPrivate(_instance, ReducePowerAction.class, "powerInstance");
+            String powerToRemove = ReflectionHacks.getPrivate(_instance, RemoveSpecificPowerAction.class, "powerToRemove");
+            AbstractPower powerInstance = ReflectionHacks.getPrivate(_instance, RemoveSpecificPowerAction.class, "powerInstance");
 
             if (powerToRemove != null) {
                 if (powerToRemove.equals(CorGladiiPower.POWER_ID) && AbstractDungeon.player.hasPower(SubLunaPower.POWER_ID)) {

@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
@@ -91,17 +92,25 @@ public class PrayerStance extends AbstractVUPShionStance {
 
     @Override
     public void onEndOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player,
-                2));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
     }
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
+
         if (type == DamageInfo.DamageType.NORMAL) {
-            return damage * 0.75f;
+            return damage * 0.5f;
         }
 
         return damage;
+    }
+
+    @Override
+    public int onHeal(int healAmount) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
+            return (int) (healAmount * 1.5f);
+        else
+            return healAmount;
     }
 
     @Override

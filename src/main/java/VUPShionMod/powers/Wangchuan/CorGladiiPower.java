@@ -27,7 +27,7 @@ public class CorGladiiPower extends AbstractShionPower {
         this.owner = owner;
         this.amount = amount;
         updateDescription();
-
+        this.priority = 0;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CorGladiiPower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CorGladiiPower36.png")), 0, 0, 36, 36);
     }
@@ -74,10 +74,6 @@ public class CorGladiiPower extends AbstractShionPower {
             p.onNumSpecificTrigger(reduceAmount);
         }
 
-        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID).amount += reduceAmount;
-        }
-
         GameStatsPatch.corGladiiLoseThisTurn += reduceAmount;
     }
 
@@ -87,11 +83,6 @@ public class CorGladiiPower extends AbstractShionPower {
         if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
             AbstractShionPower p = (AbstractShionPower) AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID);
             p.onNumSpecificTrigger(this.amount);
-        }
-
-
-        if (AbstractDungeon.player.hasPower(PetalsFallPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(PetalsFallPower.POWER_ID).amount += this.amount;
         }
 
         GameStatsPatch.corGladiiLoseThisTurn += this.amount;

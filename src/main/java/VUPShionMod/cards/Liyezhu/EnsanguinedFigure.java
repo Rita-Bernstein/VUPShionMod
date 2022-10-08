@@ -3,6 +3,7 @@ package VUPShionMod.cards.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.LoseSansAction;
 import VUPShionMod.powers.Liyezhu.EnsanguinedFigurePower;
+import VUPShionMod.powers.Liyezhu.EnsanguinedFigurePower2;
 import VUPShionMod.ui.SansMeter;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
@@ -28,8 +29,11 @@ public class EnsanguinedFigure extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseSansAction(this.secondaryM));
-        addToBot(new LoseHPAction(p,p,5));
-        addToBot(new ApplyPowerAction(p, p, new EnsanguinedFigurePower(p, this.magicNumber)));
+        addToBot(new LoseHPAction(p, p, 5));
+        if (!this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new EnsanguinedFigurePower(p, this.magicNumber)));
+        else
+            addToBot(new ApplyPowerAction(p, p, new EnsanguinedFigurePower2(p, this.magicNumber)));
     }
 
     @Override
@@ -48,6 +52,9 @@ public class EnsanguinedFigure extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(1);
+            upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

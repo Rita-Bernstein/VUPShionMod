@@ -67,6 +67,7 @@ public class RedEyes extends AbstractLiyezhuCard {
             upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            this.isInnate = true;
         }
     }
 }

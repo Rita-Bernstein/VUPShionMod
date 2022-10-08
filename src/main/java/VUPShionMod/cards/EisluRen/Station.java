@@ -27,6 +27,7 @@ public class Station extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ReduceDamagePower(p, 10)));
+        if(this.upgraded)
         addToBot(new GainShieldAction(p, this.secondaryM));
         addToBot(new AddWingShieldDamageReduceAction(this.magicNumber));
     }
@@ -36,6 +37,8 @@ public class Station extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

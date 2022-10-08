@@ -8,25 +8,25 @@
     "DESCRIPTION": "Gain !B! Block."
   },
   "VUPShionMod:DefenseSystemCharging": {
-    "NAME": "Back on Defense",
+    "NAME": "Defense System Chargeing",
     "DESCRIPTION": "Gain !M! vup_shion_mod:Shield. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel. NL If the last card played this combat was a vup_shion_mod:Funnel card, return to your hand."
   },
   "VUPShionMod:DeploymentOfDefenseSystem": {
-    "NAME": "Defense Unfold",
+    "NAME": "Anastasia Defense System Unfolding",
     "DESCRIPTION": "Whenever you play a card this turn, gain !M! vup_shion_mod:Shield and !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link."
   },
   "VUPShionMod:AttackSystemPreload": {
-    "NAME": "Offensive Preload",
+    "NAME": "Offensive System Preload",
     "DESCRIPTION": "Shuffle !M! *Quick *Attack into your draw pile.",
     "UPGRADE_DESCRIPTION": "Shuffle !M! *Quick *Attack+ into your draw pile."
   },
   "VUPShionMod:DefenseSystemPreload": {
-    "NAME": "Defensive Preload",
+    "NAME": "Defensive System Preload",
     "DESCRIPTION": "Shuffle !M! *Quick *Defense into your draw pile.",
     "UPGRADE_DESCRIPTION": "Shuffle !M! *Quick *Defense+ into your draw pile."
   },
   "VUPShionMod:AnalyseSystemPreload": {
-    "NAME": "Analysis Preload",
+    "NAME": "Analysis System Preload",
     "DESCRIPTION": "Shuffle !M! *Quick *Skim into your draw pile.",
     "UPGRADE_DESCRIPTION": "Shuffle !M! *Quick *Skim+ into your draw pile."
   },
@@ -51,16 +51,16 @@
     ]
   },
   "VUPShionMod:AttackInitiation": {
-    "NAME": "Initialize",
+    "NAME": "Attack Initiation",
     "DESCRIPTION": "For the next !M! cards this turn, draw 1 card whenever you play a card."
   },
   "VUPShionMod:EnduranceInitiation": {
-    "NAME": "Endure",
+    "NAME": "Endurance Initiation",
     "DESCRIPTION": "Create 1 copy of the chosen card and shuffle it into your draw pile. NL Grant it vup_shion_mod:Loading\u00a0Complete and Exhaust. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Create 2 copies of the chosen card and shuffle one each into your draw pile and discard pile. NL Grant both vup_shion_mod:Loading\u00a0Complete and Exhaust. NL Exhaust."
   },
   "VUPShionMod:AttackPreparation": {
-    "NAME": "Ready Posture",
+    "NAME": "Attack Preparation",
     "DESCRIPTION": " Retain your hand. NL Gain [E] [E] next turn.",
     "UPGRADE_DESCRIPTION": " Retain your hand. NL Gain [E] [E] [E] next turn."
   },
@@ -72,10 +72,10 @@
     ]
   },
   "VUPShionMod:AnastasiaCore": {
-    "NAME": "Anastasia Reactor",
+    "NAME": "Anastasia Core",
     "DESCRIPTION": "Whenever you play a vup_shion_mod:Funnel card this turn, gain [E] and draw 1 card. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Anastasia Core"
+      "Anastasia Core of Wisdom"
     ]
   },
   "VUPShionMod:DimensionSplitting": {
@@ -86,7 +86,7 @@
     ]
   },
   "VUPShionMod:Goodbye": {
-    "NAME": "Enough!",
+    "NAME": "Bye have a great time!",
     "DESCRIPTION": " Exhaust your hand. NL Play !M! copies of random Attacks. NL Exhaust."
   },
   "VUPShionMod:EnhancedWeapon": {
@@ -127,11 +127,11 @@
     "DESCRIPTION": " Ethereal. NL At the start of your turn, vup_shion_mod:Funnel is triggered 1 additional time. NL Incompatible with other Orders."
   },
   "VUPShionMod:AttackOrderDelta": {
-    "NAME": "Order: Versatile",
+    "NAME": "Order: Defensive",
     "DESCRIPTION": " Ethereal. NL Damage dealt by vup_shion_mod:Funnel each turn now grants you equal Block. NL Incompatible with other Orders."
   },
   "VUPShionMod:Reboot": {
-    "NAME": "Reinstall",
+    "NAME": "Reboot",
     "DESCRIPTION": "Discard your hand, then draw that many cards."
   },
   "VUPShionMod:TeamWork": {
@@ -175,7 +175,7 @@
     "DESCRIPTION": "vup_shion_mod:Task: NL Play 5 vup_shion_mod:Funnel cards during this combat. NL Reward: Dissecting Funnel is upgraded by 1."
   },
   "VUPShionMod:TimeBacktracking": {
-    "NAME": "Reverse Time",
+    "NAME": "Reversing Time",
     "DESCRIPTION": "Draw !M! cards. NL Gain [E] next turn.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain [E] [E] next turn."
   },
@@ -184,7 +184,7 @@
     "DESCRIPTION": "vup_shion_mod:Loading\u00a0Complete. NL Gain !B! Block. NL Trigger the passive ability of *Gravity vup_shion_mod:Funnel. NL Shuffle !M! *Quick *Defense into your discard pile. NL Exhaustive !stslib:ex!."
   },
   "VUPShionMod:TimeStop": {
-    "NAME": "Pause",
+    "NAME": "Time stop",
     "DESCRIPTION": "Prevent an enemy from acting this turn. NL Shuffle all vup_shion_mod:Loading\u00a0Complete cards from your discard pile into your draw pile. Exhaust.",
     "UPGRADE_DESCRIPTION": "Prevent an enemy from acting this turn. NL Put all vup_shion_mod:Loading\u00a0Complete cards from your discard pile on the top of your draw pile. Exhaust."
   },
@@ -209,7 +209,7 @@
     "DESCRIPTION": "Whenever you trigger vup_shion_mod:Loading\u00a0Complete, gain !M! Block."
   },
   "VUPShionMod:ReleaseFormKuroisu": {
-    "NAME": "Cloyce Form",
+    "NAME": "Released Form Cloyce",
     "DESCRIPTION": " NL Every card you played,gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. This power does not increase in effect when played more than once.",
     "UPGRADE_DESCRIPTION": ""
   },
@@ -226,7 +226,7 @@
     ]
   },
   "VUPShionMod:TimeOverload": {
-    "NAME": "Overload",
+    "NAME": "Time Overload",
     "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E] [E] [E]. NL Lose [E] [E] next turn.",
     "UPGRADE_DESCRIPTION": "Gain !M! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain [E] [E] [E]. NL Lose [E] next turn."
   },
@@ -260,7 +260,7 @@
     "DESCRIPTION": "Exhaust up to a card in your draw pile. NL Trigger the passive ability of your vup_shion_mod:Funnel to a random enemy !M! times."
   },
   "VUPShionMod:FinFunnelSupport": {
-    "NAME": "Reinforcement",
+    "NAME": "Fuunel Reinforcement",
     "DESCRIPTION": "Trigger the passive ability of your vup_shion_mod:Funnel to an enemy. NL Draw !M! cards."
   },
   "VUPShionMod:Anticoagulation": {
@@ -273,11 +273,11 @@
     "DESCRIPTION": "Trigger vup_shion_mod:Pursued on ALL enemies !M! times."
   },
   "VUPShionMod:SuperCharge": {
-    "NAME": "Hoarse Charging",
+    "NAME": "Hyper Charging",
     "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Hyperdimensional\u00a0Link. NL Gain !M! Strength and Dexterity. NL Gain [E]."
   },
   "VUPShionMod:ReleaseFormMinami": {
-    "NAME": "Minami Form",
+    "NAME": "Released Form Minami",
     "DESCRIPTION": "Ethereal. Whenever you trigger the passive ability of your vup_shion_mod:Funnel by cards, increase the effect by 50%. This power does not increase in effect when played more than once.",
     "UPGRADE_DESCRIPTION": "Whenever you trigger the passive ability of your vup_shion_mod:Funnel by cards, increase the effect by 50%. This power does not increase in effect when played more than once."
   },
@@ -302,7 +302,7 @@
     "DESCRIPTION": "Trigger the passive ability of *Gravity vup_shion_mod:Funnel to ALL enemies. NL Apply !M! Weak to ALL enemies. NL Exhaustive !stslib:ex!."
   },
   "VUPShionMod:FirePower": {
-    "NAME": "ALL Out!",
+    "NAME": "SHOW Hand!",
     "DESCRIPTION": "Shoot a massive blast with vup_shion_mod:Funnel. Deal damage !M! times as much as vup_shion_mod:Total\u00a0Upgrade to ALL enemies. NL Set vup_shion_mod:Total\u00a0Upgrade to 0 this turn.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
@@ -522,8 +522,8 @@
   },
   "VUPShionMod:AethereScindo": {
     "NAME": "Aethere Scindo",
-    "DESCRIPTION": "Deal damage equal to the damage dealt last time for 2 times. NL Draw 1 card. NL Gain 1 vup_shion_mod:Stiffness.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to the damage dealt last time for 3 times. NL Draw 1 card. NL Gain 1 vup_shion_mod:Stiffness.",
+    "DESCRIPTION": "Deal damage equal to the damage dealt last time for 3 times. NL Draw 1 card. NL Gain 2 vup_shion_mod:Stiffness.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the damage dealt last time for 4 times. NL Draw 1 card. NL Gain 2 vup_shion_mod:Stiffness.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
     ]
@@ -537,7 +537,7 @@
     ]
   },
   "VUPShionMod:Guard": {
-    "NAME": "Guard",
+    "NAME": "Defensive Stance",
     "DESCRIPTION": "Gain !B! Block. NL Lose !M! vup_shion_mod:Stiffness. NL Lose !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii.",
     "UPGRADE_DESCRIPTION": "Retain. NL Gain !B! Block. NL Lose !M! vup_shion_mod:Stiffness. NL Lose !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii.",
     "EXTENDED_DESCRIPTION": [
@@ -545,7 +545,7 @@
     ]
   },
   "VUPShionMod:LunaMergo": {
-    "NAME": "Wind Susurrates",
+    "NAME": "Adjust Breath",
     "DESCRIPTION": "Gain !B! Block. NL Gain [E] [E]. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness and vup_shion_mod:Magiam\u00a0Obruor .",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain [E] [E]. NL Gain 5 vup_shion_mod:Cor\u00a0Gladii. NL Lose !VUPShionSecondM! vup_shion_mod:Stiffness. and vup_shion_mod:Magiam\u00a0Obruor .",
     "EXTENDED_DESCRIPTION": [
@@ -572,16 +572,16 @@
   },
   "VUPShionMod:Moonstrider": {
     "NAME": "Moonstrider",
-    "DESCRIPTION": "Gain Block equal to !VUPShionSecondM! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn.",
-    "UPGRADE_DESCRIPTION": "Gain Block equal to !VUPShionSecondM! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn. NL Draw a card.",
+    "DESCRIPTION": "Gain Block equal to 5+ !VUPShionSecondM! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to 5+ !VUPShionSecondM! + vup_shion_mod:Cor\u00a0Gladii. NL Gain !M! vup_shion_mod:Cor\u00a0Gladii whenever attacked this turn. NL Draw a card.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain !B! Block)"
     ]
   },
   "VUPShionMod:SubLuna": {
     "NAME": "Sub Luna",
-    "DESCRIPTION": "Gain vup_shion_mod:Nihil. NL Gain 1 vup_shion_mod:Sub\u00a0Luna. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] [E] next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain vup_shion_mod:Nihil. NL Gain 1 vup_shion_mod:Sub\u00a0Luna. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] [E] next turn. NL Exhaust."
+    "DESCRIPTION": "Gain vup_shion_mod:Nihil. NL Gain 1 vup_shion_mod:Sub\u00a0Luna. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "NL Gain vup_shion_mod:Nihil. NL Gain 1 vup_shion_mod:Sub\u00a0Luna. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E]  next turn. NL Exhaust."
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "Sever Current",
@@ -605,7 +605,7 @@
   },
   "VUPShionMod:PetalsFall": {
     "NAME": "Petals Fall",
-    "DESCRIPTION": "Whenever you play an Attack, gain !M! vup_shion_mod:Cor\u00a0Gladii.",
+    "DESCRIPTION": "Whenever you lose vup_shion_mod:Cor\u00a0Gladii, NL lost block equals to !M! times of vup_shion_mod:Cor\u00a0Gladii. NL deal damages equals to !M! times of vup_shion_mod:Cor\u00a0Gladii ",
     "UPGRADE_DESCRIPTION": "Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii. NL You no longer lose vup_shion_mod:Cor\u00a0Gladii. NL At the start of your turn, gain !M! vup_shion_mod:Cor\u00a0Gladii."
   },
   "VUPShionMod:Poise": {
@@ -842,7 +842,7 @@
   "VUPShionMod:IgnisRapidus": {
     "NAME": "Codex Ignis",
     "DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust. Ethereal.",
+    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Draw a card.",
     "EXTENDED_DESCRIPTION": [
       "Ignis Rapidus",
       "Ignis Intensus",
@@ -852,7 +852,7 @@
   "VUPShionMod:IgnisNimius": {
     "NAME": "Codex Ignis",
     "DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Exhaust. Ethereal.",
+    "UPGRADE_DESCRIPTION": "Your next !M! cards cost 0 and Exhaust upon being played. NL Draw a card.",
     "EXTENDED_DESCRIPTION": [
       "Ignis Nimius",
       "Ignis Intensus",
@@ -943,14 +943,14 @@
     "NAME": "Funnel Matrix",
     "DESCRIPTION": "Trigger the passive ability of all vup_shion_mod:Funnel to an enemy. NL Exhaust."
   },
-  "VUPShionMod:ALLeviator": {
+  "VUPShionMod:Alleviator": {
     "NAME": "ALLeviator",
     "DESCRIPTION": "For every first time you trigger vup_shion_mod:Magiam\u00a0Obruor each turn, gain [E] . NL vup_shion_mod:Magiam\u00a0Obruor.",
     "UPGRADE_DESCRIPTION": "Innate. For every first time you trigger vup_shion_mod:Magiam\u00a0Obruor each turn, gain [E] . NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:Recharger": {
     "NAME": "Recharger",
-    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! temporary Strength. NL vup_shion_mod:Magiam\u00a0Obruor."
+    "DESCRIPTION": "Whenever you gain vup_shion_mod:Magiam\u00a0Obruor, gain !M! vup_shion_mod:Cor\u00a0Gladii. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:Accelerator": {
     "NAME": "Accelerator",
@@ -972,7 +972,7 @@
   "VUPShionMod:Antisequencer": {
     "NAME": "Antisequencer",
     "DESCRIPTION": "At the start of your turn, gain 1 vup_shion_mod:Magiam\u00a0Obruor, play the top !M! cards in your draw pile. NL vup_shion_mod:Magiam\u00a0Obruor.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 2 vup_shion_mod:Magiam\u00a0Obruor, play the top !M! cards in your draw pile. NL vup_shion_mod:Magiam\u00a0Obruor."
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 1 vup_shion_mod:Magiam\u00a0Obruor, play the top !M! cards in your draw pile. NL vup_shion_mod:Magiam\u00a0Obruor."
   },
   "VUPShionMod:GensBombardae": {
     "NAME": "Gens Bombardae",
@@ -1020,7 +1020,7 @@
   "VUPShionMod:SoothingScripture": {
     "NAME": "Soothing Scripture",
     "DESCRIPTION": "vup_shion_mod:Prayer !VUPShionSecondM! :Gain 1 *Sanity ,Heal !M! HP. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Emanation *of *Ire. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "vup_shion_mod:Prayer !VUPShionSecondM! :Gain 1 *Sanity ,Heal !M! HP. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Emanation *of *Ire+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": " Retain. vup_shion_mod:Prayer !VUPShionSecondM! :Gain 1 *Sanity ,Heal !M! HP. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Emanation *of *Ire+. NL Exhaust."
   },
   "VUPShionMod:EmanationOfIre": {
     "NAME": "Emanation of Ire",
@@ -1028,8 +1028,8 @@
   },
   "VUPShionMod:TranquilPrayer": {
     "NAME": "Tranquil Prayer",
-    "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : ALL enemies lose !M! Strength. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Edge *of *Squall. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : ALL enemies lose !M! Strength. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Edge *of *Squall+. NL Exhaust."
+    "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : ALL enemies gain !M! vup_shion_mod:Sinful. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Edge *of *Squall. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. vup_shion_mod:Prayer !VUPShionSecondM! : ALL enemies gain !M! vup_shion_mod:Sinful. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Edge *of *Squall+. NL Exhaust."
   },
   "VUPShionMod:EdgeOfSquall": {
     "NAME": "Edge of Squall",
@@ -1037,7 +1037,7 @@
   },
   "VUPShionMod:RipsoulShrilling": {
     "NAME": "Ripsoul Shrilling",
-    "DESCRIPTION": "Retain. Can not be Upgraded. NL Deal !D! damage. NL The enemy loses !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Retain. Can not be Upgraded. NL Deal !D! damage. NL Apply !M! vup_shion_mod:Sinful. NL The enemy loses !M! Strength. NL Exhaust."
   },
   "VUPShionMod:JudgementOfSins": {
     "NAME": "Judgement of Sins",
@@ -1050,26 +1050,27 @@
   "VUPShionMod:RealizingCanticle": {
     "NAME": "Realizing Canticle",
     "DESCRIPTION": "Gain 1 Artificial. vup_shion_mod:Prayer !VUPShionSecondM! : gain 1 Artificial. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Beingless *Moment. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Artificial. NL vup_shion_mod:Prayer !VUPShionSecondM! : gain 1 Artificial. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Beingless *Moment+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. Gain 1 Artificial. NL vup_shion_mod:Prayer !VUPShionSecondM! : gain 1 Artificial. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Beingless *Moment+. NL Exhaust."
   },
   "VUPShionMod:BeinglessMoment": {
     "NAME": "Beingless Moment",
-    "DESCRIPTION": "Gain !M! Vulnerable. NL Whenever you heal in this turn,gain vup_shion_mod:Shield equal to that many. NL Heal HP when your next Attack deal damage equal to that many. ",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! Vulnerable. NL Whenever you heal in this turn,gain vup_shion_mod:Shield equal to that many. NL Heal HP when your next Attack deal damage equal to that many. "
+    "DESCRIPTION": "Gain !M! Vulnerable. NL Whenever you deal damage by attack, heal equal to that many.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain !M! Vulnerable. NL Whenever you deal damage by attack, heal equal to that many."
   },
   "VUPShionMod:SoleAnthem": {
     "NAME": "Sole Anthem",
     "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : gain !M! Strength. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold : *Flay *the *Evil. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : gain !M! Strength. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold : *Flay *the *Evil+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. NL vup_shion_mod:Prayer !VUPShionSecondM! : gain !M! Strength. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold : *Flay *the *Evil+. NL Exhaust."
   },
   "VUPShionMod:FlayTheEvil": {
     "NAME": "Flay the Evil",
-    "DESCRIPTION": "Deal !D! damage. NL Finish any non-Boss enemy with at least 10 vup_shion_mod:Sinful. NL Draw 1 card. NL vup_shion_mod:Punitive 3."
+    "DESCRIPTION": "Deal !D! damage. NL Finish any non-Boss enemy with at least 10 vup_shion_mod:Sinful. NL vup_shion_mod:Punitive 3.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Finish any non-Boss enemy with at least 15 vup_shion_mod:Sinful. NL Draw 1 card. NL vup_shion_mod:Punitive 2."
   },
   "VUPShionMod:PiousPhrase": {
     "NAME": "Pious Phrase",
     "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : Add 1 *Miracle into your hand. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Raving *Excoriation. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : Add 1 *Miracle+ into your hand. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Raving *Excoriation+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": " Retain. vup_shion_mod:Prayer !VUPShionSecondM! : Add 1 *Miracle+ into your hand. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Raving *Excoriation+. NL Exhaust."
   },
   "VUPShionMod:RavingExcoriation": {
     "NAME": "Raving Excoriation",
@@ -1078,7 +1079,7 @@
   "VUPShionMod:BlindDevotion": {
     "NAME": "Blind Devotion",
     "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : Gain !M! Thorn. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Limpid *Heart. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : Gain !M! Thorn. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Limpid *Heart+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": " Retain. vup_shion_mod:Prayer !VUPShionSecondM! : Gain !M! Thorn. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Limpid *Heart+. NL Exhaust."
   },
   "VUPShionMod:LimpidHeart": {
     "NAME": "Limpid Heart",
@@ -1097,17 +1098,17 @@
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "Inordinate Admonition",
     "DESCRIPTION": "vup_shion_mod:Prayer !VUPShionSecondM! : Deal !D! damage to ALL enemies, heal HP equal to unblocked damage dealt. NL Gain 1 vup_shion_mod:Sinful. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Chaste *Reflection. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "vup_shion_mod:Prayer !VUPShionSecondM! : Deal !D! damage to ALL enemies, heal HP equal to unblocked damage dealt. NL Gain 1 vup_shion_mod:Sinful. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Chaste *Reflection+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": " Retain. NL vup_shion_mod:Prayer !VUPShionSecondM! : Deal !D! damage to ALL enemies, heal HP equal to unblocked damage dealt. NL Gain 1 vup_shion_mod:Sinful. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Chaste *Reflection+. NL Exhaust."
   },
   "VUPShionMod:ChasteReflection": {
     "NAME": "Chaste Reflection",
-    "DESCRIPTION": "At the start of the next turn, deal damage equal to that received this turn to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "At the start of the next turn, gain [E] and deal damage equal to that received this turn to ALL enemies."
+    "DESCRIPTION": "At the start of the next turn, deal damage equal to that received this turn to ALL enemies. NL Heal HP when your next Attack deal damage equal to that many.",
+    "UPGRADE_DESCRIPTION": "Retain. NL At the start of the next turn, gain [E] and deal damage equal to that received this turn to ALL enemies. NL Heal HP when your next Attack deal damage equal to that many."
   },
   "VUPShionMod:AvariciousMotto": {
     "NAME": "Avaricious Motto",
     "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! :Draw a card and gain [E]. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Burnished *Razor. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! :Draw a card and gain [E]. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Burnished *Razor+. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. vup_shion_mod:Prayer !VUPShionSecondM! :Draw a card and gain [E]. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Burnished *Razor+. NL Exhaust."
   },
   "VUPShionMod:BurnishedRazor": {
     "NAME": "Burnished Razor",
@@ -1116,8 +1117,8 @@
   },
   "VUPShionMod:PrincipledThievery": {
     "NAME": "Principled Thievery",
-    "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : Gain gold !M! times the number of enemies. NL Apply 1 vup_shion_mod:Sinful to ALL ENTITIES.  NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Heaven's *Decree. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : Gain gold !M! times the number of enemies. NL Apply 1 vup_shion_mod:Sinful to ALL ENTITIES.  NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Heaven's *Decree+. NL Exhaust."
+    "DESCRIPTION": " vup_shion_mod:Prayer !VUPShionSecondM! : Gain gold !M! times the number of enemies. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Heaven's *Decree. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL vup_shion_mod:Prayer !VUPShionSecondM! : Gain gold !M! times the number of enemies. NL vup_shion_mod:Judging\u00a0Stance: vup_shion_mod:Unfold: *Heaven's *Decree+. NL Exhaust."
   },
   "VUPShionMod:HeavenDecree": {
     "NAME": "Heaven's Decree",
@@ -1130,7 +1131,7 @@
   },
   "VUPShionMod:Calamity": {
     "NAME": "Calamity",
-    "DESCRIPTION": "Innate, vup_shion_mod:Soul\u00a0Wearing. NL Gain !M! Strength. NL At the start of your turn, lose 20 HP, gain [E] , apply !VUPShionSecondM! vup_shion_mod:Sinful to ALL ENTITIES and vup_shion_mod:Punitive 3."
+    "DESCRIPTION": "Innate, vup_shion_mod:Soul\u00a0Wearing. NL Gain !M! Strength. NL At the start of your turn, gain [E] , apply !VUPShionSecondM! vup_shion_mod:Sinful to ALL ENTITIES and vup_shion_mod:Punitive 3."
   },
   "VUPShionMod:HallowedCasket": {
     "NAME": "Hallowed Case",
@@ -1139,11 +1140,12 @@
   },
   "VUPShionMod:EnsanguinedFigure": {
     "NAME": "Ensanguined Figure",
-    "DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Whenever attacked, apply !M! vup_shion_mod:Sinful to the attacker."
+    "DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Whenever attacked, apply !M! vup_shion_mod:Sinful to ALL ENTITIES.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Whenever attacked, apply !M! vup_shion_mod:Sinful to ALL enemies."
   },
   "VUPShionMod:CrimsonDeluge": {
     "NAME": "Crimson Deluge",
-    "DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Any HP healed beyond your Max HP is converted into vup_shion_mod:Shield. NL When you play an Attack, heal !M! HP. "
+    "DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Any HP healed beyond your Max HP is converted into half of vup_shion_mod:Shield. NL When you play an Attack, heal !M! HP. "
   },
   "VUPShionMod:Asceticism": {
     "NAME": "Asceticism",
@@ -1161,40 +1163,51 @@
   "VUPShionMod:Arbitration": {
     "NAME": "Arbitratus",
     "DESCRIPTION": "Whenever you deal unblocked damage, apply !M! vup_shion_mod:Sinful.",
-    "UPGRADE_DESCRIPTION": "Whenever you trigger vup_shion_mod:Punitive, apply !M! vup_shion_mod:Sinful to ALL ENTITIES, heal 4 HP.",
+    "UPGRADE_DESCRIPTION": "Whenever you trigger vup_shion_mod:Punitive, apply !M! vup_shion_mod:Sinful to ALL ENTITIES, heal !VUPShionSecondM! HP.",
     "EXTENDED_DESCRIPTION": [
       "Arbitratus Omnes"
     ]
   },
   "VUPShionMod:ProphecyOfDestruction": {
     "NAME": "Prophecy of Demise",
-    "DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Whenever you play vup_shion_mod:Prayer card, deal !M! damage to a random enemy. NL At start of your turn,you can exhaust a card to apply 2 vup_shion_mod:Sinful to ALL enemies."
+    "DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Whenever you play vup_shion_mod:Prayer card, deal !M! damage to a random enemy. NL At start of your turn,you can exhaust 2 cards to apply 2 vup_shion_mod:Sinful to ALL enemies."
   },
   "VUPShionMod:ProphecyOfSalvation": {
     "NAME": "Prophecy of Salvation",
-    "DESCRIPTION": "Gain !VUPShionSecondM! *Sanity. NL Whenever you play vup_shion_mod:Prayer card, heal !M! HP. NL Healing is 50% more effective in this combat."
+    "DESCRIPTION": "Gain !VUPShionSecondM! *Sanity. NL Whenever you play vup_shion_mod:Prayer card, heal !M! HP. NL Healing is 80% more effective in this combat."
   },
   "VUPShionMod:Sentence": {
     "NAME": "Sentence",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! vup_shion_mod:Sinful."
+    "DESCRIPTION": "Retain. NL Can not played when vup_shion_mod:Praying\u00a0Stance. NL Deal !D! damage. NL Apply !M! vup_shion_mod:Sinful.",
+    "EXTENDED_DESCRIPTION": [
+      "Praying Stance"
+    ]
   },
   "VUPShionMod:SacredChop": {
     "NAME": "Sacred Chop",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Psychic. NL Remove a random Debuff. NL Add a *Miracle to your hand."
+    "DESCRIPTION": "Deal damage equal to your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Remove a random Debuff. NL Add a *Miracle to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Remove a random Debuff. NL Add a *Miracle to your hand. NL Draw a card.",
+    "EXTENDED_DESCRIPTION": [
+      "(Deal !D! damage)"
+    ]
   },
   "VUPShionMod:SavageSeries": {
     "NAME": "Savage Series",
     "DESCRIPTION": "Deal !D! damage !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Psychic. NL Draw a card. NL If the last card played this combat was an Attack, gain [E] [E].",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Psychic. NL Draw 2 cards. NL vup_shion_mod:Punitive. NL If the last card played this combat was an Attack, gain [E] [E]."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Psychic. NL Draw a card. NL If the last card played this combat was an Attack, gain [E] [E]."
   },
   "VUPShionMod:CruciformPenance": {
     "NAME": "Cruciform Penance",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! vup_shion_mod:Psychic. NL Exhaust ALL your *Miracle. NL Heal !VUPShionSecondM! HP,deal an additional damage and vup_shion_mod:Punitive for each card you Exhausted."
+    "DESCRIPTION": "Deal damage equal to twice of your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Exhaust ALL your *Miracle. NL Heal !VUPShionSecondM! HP,deal an additional damage and vup_shion_mod:Punitive for each card you Exhausted.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to twice of your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Exhaust ALL your *Miracle. NL Heal !VUPShionSecondM! HP,deal an additional damage and vup_shion_mod:Punitive 2 for each card you Exhausted.",
+    "EXTENDED_DESCRIPTION": [
+      "(Deal !D! damage)"
+    ]
   },
   "VUPShionMod:ReapTheSinful": {
     "NAME": "Reap the Sinful",
-    "DESCRIPTION": "Apply your vup_shion_mod:Sinful ALL enemies. A Deal !D! damage to ALL enemies. NL vup_shion_mod:Punitive. NL vup_shion_mod:Psychic 1: apply !M! vup_shion_mod:Sinful to ALL ENTITIES.",
-    "UPGRADE_DESCRIPTION": "Apply your vup_shion_mod:Sinful ALL enemies. A Deal !D! damage to ALL enemies. NL vup_shion_mod:Punitive 2. NL vup_shion_mod:Psychic 1: apply !M! vup_shion_mod:Sinful to ALL ENTITIES."
+    "DESCRIPTION": "Apply your vup_shion_mod:Sinful ALL enemies. A Deal !D! damage to ALL enemies. NL vup_shion_mod:Psychic 1: apply !M! vup_shion_mod:Sinful to ALL ENTITIES.",
+    "UPGRADE_DESCRIPTION": "Apply your vup_shion_mod:Sinful ALL enemies. A Deal !D! damage to ALL enemies. NL vup_shion_mod:Punitive . NL vup_shion_mod:Psychic 1: apply !M! vup_shion_mod:Sinful to ALL ENTITIES."
   },
   "VUPShionMod:Whisk": {
     "NAME": "Club",
@@ -1216,8 +1229,8 @@
   },
   "VUPShionMod:Execution": {
     "NAME": "Conduct",
-    "DESCRIPTION": "Heal !M! HP. NL Lose !VUPShionSecondM! vup_shion_mod:Sinful. NL Whenever you trigger vup_shion_mod:Punitive, put this card from discard pile into your hand.",
-    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Lose !VUPShionSecondM! vup_shion_mod:Sinful. NL Deal !D! damage. NL Whenever you trigger vup_shion_mod:Punitive, put this card from discard pile into your hand."
+    "DESCRIPTION": "Heal !M! HP. NL Lose !VUPShionSecondM! vup_shion_mod:Sinful. NL Whenever you apply vup_shion_mod:Sinful, put this card from discard pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Lose !VUPShionSecondM! vup_shion_mod:Sinful. NL Deal !D! damage. NL Whenever you apply vup_shion_mod:Sinful, put this card from discard pile into your hand."
   },
   "VUPShionMod:Enchant": {
     "NAME": "Enchant",
@@ -1238,7 +1251,7 @@
   "VUPShionMod:RedEyes": {
     "NAME": "Tainted Eyes",
     "DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Siphon !M! Strength, Dexterity and 10 HP. NL Put a Skill from discard pile into your hand. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Siphon !M! Strength, Dexterity and 10 HP. NL Put a Skill from discard pile into your hand. Exhaust."
+    "UPGRADE_DESCRIPTION": " Innate. Lose !VUPShionSecondM! *Sanity. NL Lose 5 HP. NL Siphon !M! Strength, Dexterity and 10 HP. NL Put a Skill from discard pile into your hand. Exhaust."
   },
   "VUPShionMod:Consult": {
     "NAME": "Consult",
@@ -1277,8 +1290,11 @@
   },
   "VUPShionMod:EvilOnMe": {
     "NAME": "Evil on Me",
-    "DESCRIPTION": "Can play if vup_shion_mod:Sinful ALL ENTITIES have are more than 15. NL ALL ENTITIES lose their vup_shion_mod:Sinful. NL Gain max HP equal to 5% of current. Exhaust.",
-    "UPGRADE_DESCRIPTION": " Retain.Can play if vup_shion_mod:Sinful ALL ENTITIES have are more than 15. NL ALL ENTITIES lose their vup_shion_mod:Sinful. NL Gain max HP equal to 5% of current. Exhaust."
+    "DESCRIPTION": "Can play if vup_shion_mod:Sinful ALL ENTITIES have are more than 13. NL ALL ENTITIES lose their vup_shion_mod:Sinful. NL Gain max HP equal to 5% of current. Exhaust.",
+    "UPGRADE_DESCRIPTION": " Retain.Can play if vup_shion_mod:Sinful ALL ENTITIES have are more than 13. NL ALL ENTITIES lose their vup_shion_mod:Sinful. NL Gain max HP equal to 5% of current. Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "not enough total sinful"
+    ]
   },
   "VUPShionMod:VerdictUponHeart": {
     "NAME": "Verdict upon Heart",
@@ -1287,8 +1303,8 @@
   },
   "VUPShionMod:BrokenSanctuary": {
     "NAME": "Broken Sanctuary",
-    "DESCRIPTION": "Retain. NL ALL vup_shion_mod:Prayer cards cost 0 . Whenever you play a vup_shion_mod:Prayer card , draw !M! cards.",
-    "UPGRADE_DESCRIPTION": "Innate, Retain. NL ALL vup_shion_mod:Prayer cards cost 0 . Whenever you play a vup_shion_mod:Prayer card , draw !M! cards."
+    "DESCRIPTION": "ALL vup_shion_mod:Prayer cards cost 0 . Whenever you play a vup_shion_mod:Prayer card , draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Innate. NL ALL vup_shion_mod:Prayer cards cost 0 . Whenever you play a vup_shion_mod:Prayer card , draw !M! cards."
   },
   "VUPShionMod:Precasting": {
     "NAME": "Precasting",
@@ -1446,7 +1462,7 @@
   "VUPShionMod:DefensiveOrder": {
     "NAME": "Defensive Command",
     "DESCRIPTION": "Retain. NL This turn, any vup_shion_mod:Bleeding, vup_shion_mod:Pursued damage to deal is converted into Block, any active damage dealt by vup_shion_mod:Funnel is converted into vup_shion_mod:Shield.",
-    "UPGRADE_DESCRIPTION": "Retain. vup_shion_mod:Replacing. NL This turn, any vup_shion_mod:Bleeding, vup_shion_mod:Pursued damage to deal is converted into Block, any active damage dealt by vup_shion_mod:Funnel is converted into vup_shion_mod:Shield."
+    "UPGRADE_DESCRIPTION": "Retain. vup_shion_mod:Return. NL This turn, any vup_shion_mod:Bleeding, vup_shion_mod:Pursued damage to deal is converted into Block, any active damage dealt by vup_shion_mod:Funnel is converted into vup_shion_mod:Shield."
   },
   "VUPShionMod:LiXiaoNan": {
     "NAME": "Extremis",
@@ -1479,7 +1495,7 @@
   },
   "VUPShionMod:WideAreaLocking": {
     "NAME": "AoE Targeting",
-    "DESCRIPTION": "Retain. vup_shion_mod:Replacing. NL The next vup_shion_mod:auto\u00a0funnel attack from full vup_shion_mod:Matrix\u00a0Charge hits ALL enemies."
+    "DESCRIPTION": "Retain. vup_shion_mod:Return. NL The next vup_shion_mod:auto\u00a0funnel attack from full vup_shion_mod:Matrix\u00a0Charge hits ALL enemies."
   },
   "VUPShionMod:Strike_Shion2": {
     "NAME": "Snipe",
@@ -1501,35 +1517,41 @@
   },
   "VUPShionMod:Station": {
     "NAME": "Station",
-    "DESCRIPTION": "Damage received this turn is decreased by 10%. NL Gain !VUPShionSecondM! vup_shion_mod:Shield. NL Gain !M! vup_shion_mod:Recycle."
+    "DESCRIPTION": "Damage received this turn is decreased by 10%. NL Gain !M! vup_shion_mod:Recycle.",
+    "UPGRADE_DESCRIPTION": "Damage received this turn is decreased by 10%. NL Gain !VUPShionSecondM! vup_shion_mod:Shield. NL Gain !M! vup_shion_mod:Recycle."
   },
   "VUPShionMod:ShieldCharge": {
     "NAME": "March of Shields",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage twice. NL Gain !B! vup_shion_mod:Shield twice. NL Gain 5 temporary Dexterity."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage twice. NL Gain !B! vup_shion_mod:Shield twice.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage twice. NL Gain !B! vup_shion_mod:Shield twice. NL Gain 5 temporary Dexterity."
   },
   "VUPShionMod:VineCatapult": {
     "NAME": "Catapult Vines",
-    "DESCRIPTION": "Apply !M! Weak and vup_shion_mod:Constricted.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Weak and vup_shion_mod:Constricted to ALL enemies."
+    "DESCRIPTION": "Apply !M! vup_shion_mod:Constricted.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vup_shion_mod:Constricted to ALL enemies."
   },
   "VUPShionMod:SummonElf": {
     "NAME": "Channelsong",
-    "DESCRIPTION": "Remove ALL your Debuffs. NL Summon vup_shion_mod:Lesser\u00a0Elf. NL Decrease the cost by 1 if *Interwoven *Lives or *Sychrochannel has been played."
+    "DESCRIPTION": "Summon vup_shion_mod:Lesser\u00a0Elf. NL Decrease the cost by 1 if *Interwoven *Lives or *Sychrochannel has been played.",
+    "UPGRADE_DESCRIPTION": "Remove ALL your Debuffs. NL Summon vup_shion_mod:Lesser\u00a0Elf. NL Decrease the cost by 1 if *Interwoven *Lives or *Sychrochannel has been played."
   },
   "VUPShionMod:ShieldAttack": {
     "NAME": "Shield Bash",
-    "DESCRIPTION": "Can only be played if the last card played this combat was an Attack. NL Deal !D! damage twice. NL Draw !M! cards. NL Gain !VUPShionSecondM! vup_shion_mod:Recycle."
+    "DESCRIPTION": "Can only be played if the last card played this combat was an Attack. NL Deal !D! damage twice. NL Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Can only be played if the last card played this combat was an Attack. NL Deal !D! damage twice. NL Draw !M! cards. NL Gain !VUPShionSecondM! vup_shion_mod:Recycle."
   },
   "VUPShionMod:CounterCannon": {
     "NAME": "Retaliating Cannon",
-    "DESCRIPTION": "Retain. Grave. NL Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal damage equal to that absorbed with vup_shion_mod:Construct\u00a0Recharge to ALL enemies.",
+    "DESCRIPTION": "Retain. NL Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal damage equal to that absorbed with vup_shion_mod:Construct\u00a0Recharge to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Retain. Grave. NL Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal damage equal to that absorbed with vup_shion_mod:Construct\u00a0Recharge to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage)"
     ]
   },
   "VUPShionMod:BladeOfFan": {
     "NAME": "Rain of Bolts",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage to ALL enemies for !M! times."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage to ALL enemies for !M! times.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage to ALL enemies for !M! times. NL Double this damage if there is only one enemy."
   },
   "VUPShionMod:RotorCutter": {
     "NAME": "Rotor Cutter",
@@ -1537,7 +1559,7 @@
   },
   "VUPShionMod:DragonGun": {
     "NAME": "Dragonlance",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Exhaust 1 card. NL The target receives 2 more damage from Attacks. NL Deal !D! damage !M! times.",
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL The target receives 2 more damage from Attacks. NL Deal !D! damage !M! times.",
     "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Exhaust up to 1 card. NL The target receives 2 more damage from Attacks. NL Deal !D! damage !M! times."
   },
   "VUPShionMod:MoonlightButterfly": {
@@ -1547,19 +1569,21 @@
   },
   "VUPShionMod:SwordOfDalmos": {
     "NAME": "Sword of Damocles",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage. NL Whenever Retained, gain !M! Strength.",
-    "UPGRADE_DESCRIPTION": "Retain. Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage. NL Whenever Retained, gain !M! Strength."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage. NL Whenever Retained, gain !M! Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal !D! damage. NL Whenever Retained, gain !M! Strength. NL Exhaust."
   },
   "VUPShionMod:ShieldCrush": {
     "NAME": "Trample",
     "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal damage equal to vup_shion_mod:Shield + Block you have. NL Gain vup_shion_mod:Shield equal to 1/3 damage you dealt.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Deal damage equal to vup_shion_mod:Shield + Block you have. NL Gain vup_shion_mod:Shield equal to 1/2 damage you dealt.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage.)"
     ]
   },
   "VUPShionMod:FinalFlash": {
     "NAME": "Final Spark",
-    "DESCRIPTION": "No less than 10 vup_shion_mod:Construct\u00a0Recharge is required to play this card. NL Lose all vup_shion_mod:Construct\u00a0Recharge, deal !D! damage to ALL enemies for each loss."
+    "DESCRIPTION": " Grave. NL No less than 10 vup_shion_mod:Construct\u00a0Recharge is required to play this card. NL Lose all vup_shion_mod:Construct\u00a0Recharge, deal !D! damage to ALL enemies for each loss.",
+    "UPGRADE_DESCRIPTION": " Retain. Grave. NL No less than 10 vup_shion_mod:Construct\u00a0Recharge is required to play this card. NL Lose all vup_shion_mod:Construct\u00a0Recharge, deal !D! damage to ALL enemies for each loss."
   },
   "VUPShionMod:Chopper": {
     "NAME": "Cleaver",
@@ -1572,16 +1596,18 @@
   },
   "VUPShionMod:WarmUp": {
     "NAME": "Warm Up",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Recycle. NL Your next Attack deals 150% damage. NL Draw 1 card."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Recycle. NL Your next Attack deals 100% damage. NL Draw 1 card.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Your next Attack deals 100% damage. NL Draw 2 cards."
   },
   "VUPShionMod:RingOfThorns": {
     "NAME": "Circlet of Thorns",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain !M! Thorn. NL Apply 1 Weak to ALL enemies for !M! times. NL Apply !M! vup_shion_mod:Constricted to ALL enemies."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain !M! Thorn. NL Apply 1 Weak to ALL enemies for !M! times. NL Apply !M! vup_shion_mod:Constricted to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Thorn. NL Apply 1 Weak to ALL enemies for !M! times. NL Apply !M! vup_shion_mod:Constricted to ALL enemies."
   },
   "VUPShionMod:Entrench": {
     "NAME": "Take Root",
     "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL This turn, damage reduction from vup_shion_mod:Construct\u00a0Recharge is doubled. NL You can't play Attack in this turn.",
-    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL This turn, damage reduction from vup_shion_mod:Construct\u00a0Recharge is doubled. NL You can't play Attack in this turn."
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL This turn, damage reduction from vup_shion_mod:Construct\u00a0Recharge is doubled."
   },
   "VUPShionMod:Reactivation": {
     "NAME": "Hyperaction",
@@ -1589,7 +1615,8 @@
   },
   "VUPShionMod:HotRestart": {
     "NAME": "Warm Restart",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Recycle. NL Draw Dexterity /10 cards. NL This turn, damage reduction from vup_shion_mod:Construct\u00a0Recharge will not reduce."
+    "DESCRIPTION": "Draw Dexterity /10 cards. NL This turn, damage reduction from vup_shion_mod:Construct\u00a0Recharge will not reduce.",
+    "UPGRADE_DESCRIPTION": "Gain !M! vup_shion_mod:Recycle. NL Draw Dexterity /10 cards. NL This turn, damage reduction from vup_shion_mod:Construct\u00a0Recharge will not reduce."
   },
   "VUPShionMod:IronWall": {
     "NAME": "Iron Wall",
@@ -1601,15 +1628,17 @@
   },
   "VUPShionMod:ExtremeOverload": {
     "NAME": "Squeeze",
-    "DESCRIPTION": "Full vup_shion_mod:Construct\u00a0Recharge. NL Gain !VUPShionSecondM! temporary Dexterity. NL Gain !M! vup_shion_mod:Overburdened. NL Exhaust."
+    "DESCRIPTION": "Full vup_shion_mod:Construct\u00a0Recharge. NL Gain !VUPShionSecondM! temporary Dexterity. NL Gain !M! vup_shion_mod:Overburdened. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Full vup_shion_mod:Construct\u00a0Recharge. NL Gain !VUPShionSecondM! Dexterity. NL Gain !M! vup_shion_mod:Overburdened. NL Exhaust."
   },
   "VUPShionMod:Soul": {
     "NAME": "Psyche",
-    "DESCRIPTION": "This turn, Attacks deal !M! % more damage. NL Gain [E]. NL Gain !M! vup_shion_mod:Overburdened."
+    "DESCRIPTION": "This turn, Attacks deal !M! % more damage. NL Gain !M! vup_shion_mod:Overburdened.",
+    "UPGRADE_DESCRIPTION": "This turn, Attacks deal !M! % more damage. NL Gain [E]. NL Gain !M! vup_shion_mod:Overburdened."
   },
   "VUPShionMod:MagicTransform": {
     "NAME": "Magia Transformation",
-    "DESCRIPTION": "Gain 4X+1 vup_shion_mod:Recycle.",
+    "DESCRIPTION": "Gain 3X+1 vup_shion_mod:Recycle.",
     "UPGRADE_DESCRIPTION": "Gain 4X+3 vup_shion_mod:Recycle."
   },
   "VUPShionMod:SpiralBlade": {
@@ -1639,31 +1668,35 @@
   },
   "VUPShionMod:WingsOfDaedalus": {
     "NAME": "Wings of Daedalus",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! *Flight. NL Gain vup_shion_mod:Wings\u00a0of\u00a0Daedalus."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain !M! *Flight. NL Gain vup_shion_mod:Wings\u00a0of\u00a0Daedalus.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! *Flight. NL Gain vup_shion_mod:Wings\u00a0of\u00a0Daedalus."
   },
   "VUPShionMod:YonggukCityTroy": {
     "NAME": "Troy the Invincible",
     "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 6 vup_shion_mod:Shield !M! times. NL Gain *Troy."
   },
   "VUPShionMod:Avalon": {
-    "NAME": "Avalon the Intangible",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! Intangible. NL Heal to full HP."
+    "NAME": "Garden of Avalon ",
+    "DESCRIPTION": " Grave. NL Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain !M! Intangible.",
+    "UPGRADE_DESCRIPTION": " Grave. NL Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! Intangible. NL Heal you and ally to full HP."
   },
   "VUPShionMod:RhoAias": {
     "NAME": "Rho Aias",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! *Buffer."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain !M! *Buffer.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! *Buffer."
   },
   "VUPShionMod:Stonehenge": {
     "NAME": "Stonehenge",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! vup_shion_mod:Stonehenge."
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain !M! vup_shion_mod:Stonehenge.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Construct\u00a0Recharge. NL Gain 7 vup_shion_mod:Shield. NL Gain !M! vup_shion_mod:Stonehenge."
   },
   "VUPShionMod:PhysicalMagic": {
     "NAME": "Magic Punch!",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL ( Strength /10)% chance to Stun the enemy. NL If the enemy does not intend to attack, draw 1 card and gain [E].",
+    "DESCRIPTION": "Deal !D! damage. NL ( Strength /10)% chance to Stun the enemy. NL If the enemy does not intend to attack, draw 1 card and gain [E].",
     "UPGRADE_DESCRIPTION": "Retain. NL Deal !D! damage. NL ( Strength /10)% chance to Stun the enemy. NL If the enemy does not intend to attack, draw 2 cards and gain [E]."
   },
   "VUPShionMod:WindArrow": {
-    "NAME": "Air Arrow",
+    "NAME": "Wind Arrow",
     "DESCRIPTION": "(50+ Dexterity )% chance to deal damage equal to 17+ Dexterity. NL When it does, it has another 50% chance to decrease the enemy's Strength by !M! .",
     "UPGRADE_DESCRIPTION": "(70+ Dexterity )% chance to deal damage equal to 21+ Dexterity. NL When it does, it has another 60% chance to decrease the enemy's Strength by !M! .",
     "EXTENDED_DESCRIPTION": [
@@ -1677,7 +1710,7 @@
   "VUPShionMod:WoodBombardment": {
     "NAME": "Windfall",
     "DESCRIPTION": "Deal !D! damage. NL 25% chance to *Stun the enemy. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL 50% chance to *Stun the enemy. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain [E]. NL 25% chance to *Stun the enemy. NL Exhaust."
   },
   "VUPShionMod:SoilNB": {
     "NAME": "Mould the Terrain",
@@ -1693,7 +1726,8 @@
   },
   "VUPShionMod:SeaOfThorns": {
     "NAME": "Sea of Bramble",
-    "DESCRIPTION": "Apply !M! vup_shion_mod:Constricted to ALL enemies for !VUPShionSecondM! times. NL Gain 1 Artifact."
+    "DESCRIPTION": "Apply !M! vup_shion_mod:Constricted to ALL enemies for !VUPShionSecondM! times. NL Gain 1 Artifact.",
+    "UPGRADE_DESCRIPTION": "Apply !M! vup_shion_mod:Constricted to ALL enemies for !VUPShionSecondM! times. NL Gain 2 Artifact."
   },
   "VUPShionMod:ForestStalking": {
     "NAME": "Engulfed in Green",
@@ -1701,7 +1735,8 @@
   },
   "VUPShionMod:FertileSoil": {
     "NAME": "Culture of the Grown",
-    "DESCRIPTION": "Exhaust up to 1 card in your discard pile. NL Gain !M! vup_shion_mod:Recycle."
+    "DESCRIPTION": "Exhaust up to 1 card in your discard pile.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to 1 card in your discard pile. NL Gain !M! vup_shion_mod:Recycle."
   },
   "VUPShionMod:FaithLeap": {
     "NAME": "Leap of Faith",
@@ -1715,7 +1750,8 @@
   },
   "VUPShionMod:EarthBless": {
     "NAME": "Earth's Blessing",
-    "DESCRIPTION": "Gain !M! Strength and Dexterity. NL Gain !VUPShionSecondM! Max HP. NL Gain !VUPShionSecondM! temporary Dexterity."
+    "DESCRIPTION": "Gain !M! Strength and Dexterity. NL Gain !VUPShionSecondM! Max HP. NL Gain !VUPShionSecondM! temporary Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Strength and Dexterity. NL Gain !VUPShionSecondM! Max HP. NL Gain !VUPShionSecondM! Dexterity."
   },
   "VUPShionMod:LifeLinkCard": {
     "NAME": "Interwoven Lives",
@@ -1732,15 +1768,18 @@
   },
   "VUPShionMod:SynchroSummon": {
     "NAME": "Sychrochannel",
-    "DESCRIPTION": "Gain vup_shion_mod:Synchrochannel."
+    "DESCRIPTION": "Gain vup_shion_mod:Synchrochannel.",
+    "UPGRADE_DESCRIPTION": " Innate. NL Gain vup_shion_mod:Synchrochannel."
   },
   "VUPShionMod:HeartOfNature": {
-    "NAME": "Bear the Fruit",
-    "DESCRIPTION": "At the start of your turn, gain [E]. NL Remove ALL your Debuffs."
+    "NAME": "Heart Of Nature",
+    "DESCRIPTION": "At the start of your turn, gain [E].",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain [E]. NL Remove ALL Debuffs."
   },
   "VUPShionMod:GaiaBreath": {
     "NAME": "Gaea's Breath",
-    "DESCRIPTION": " Grave. NL Heal !M! HP for both you and the *Elf. NL Remove ALL your Debuff."
+    "DESCRIPTION": " Grave. NL Heal !M! HP for both you and the *Elf. NL Remove ALL your Debuff.",
+    "UPGRADE_DESCRIPTION": " Grave. NL Heal !M! HP for both you and the *Elf. NL *Elf gain !VUPShionSecondM! max HP. NL Remove ALL your Debuff."
   },
   "VUPShionMod:ForestBarrier": {
     "NAME": "Vegetate",
@@ -1748,7 +1787,8 @@
   },
   "VUPShionMod:WorldTreeLink": {
     "NAME": "Worldtree Channel",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Shield. NL Gain !VUPShionSecondM! vup_shion_mod:Worldtree\u00a0Channel."
+    "DESCRIPTION": "Gain !VUPShionSecondM! vup_shion_mod:Worldtree\u00a0Channel.",
+    "UPGRADE_DESCRIPTION": "Gain !M! vup_shion_mod:Shield. NL Gain !VUPShionSecondM! vup_shion_mod:Worldtree\u00a0Channel."
   },
   "VUPShionMod:ConsciousnessStripping": {
     "NAME": "Detach the Grafted",
@@ -1775,11 +1815,13 @@
   },
   "VUPShionMod:SupportTargetedSniping": {
     "NAME": "Directed Sniping",
-    "DESCRIPTION": "Finish an enemy with less than !M! HP. NL Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "Finish an enemy with less than !M! HP. NL Deal !D! damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Finish an enemy with less than !M! HP. NL Deal !D! damage. NL Draw 2 cards. NL Exhaust."
   },
   "VUPShionMod:SupportShieldPrayer": {
     "NAME": "Canopysong",
-    "DESCRIPTION": "Gain 7 vup_shion_mod:Shield. NL Gain !M! vup_shion_mod:Recycle. NL Exhaust."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Recycle. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 7 vup_shion_mod:Shield. NL Gain !M! vup_shion_mod:Recycle. NL Exhaust."
   },
   "VUPShionMod:SupportTimeDriven": {
     "NAME": "Fluctuating Chronicle",
@@ -1787,7 +1829,8 @@
   },
   "VUPShionMod:SupportGravitater": {
     "NAME": "Law of Attraction",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Gravity\u00a0Amplifier. NL Gain !VUPShionSecondM! Dexterity. NL Gain 1 *Flight."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Gravity\u00a0Amplifier. NL Gain !VUPShionSecondM! temporary Dexterity. NL Gain 1 *Flight.",
+    "UPGRADE_DESCRIPTION": "Gain !M! vup_shion_mod:Gravity\u00a0Amplifier. NL Gain !VUPShionSecondM! Dexterity. NL Gain 1 *Flight."
   },
   "VUPShionMod:FinFunnelPursuit": {
     "NAME": "Funnel Pursuit",
@@ -1795,6 +1838,6 @@
   },
   "VUPShionMod:ShieldProjection": {
     "NAME": "Shield Projection",
-    "DESCRIPTION": "Retain. vup_shion_mod:Replacing. NL Transfer your vup_shion_mod:Shield to *Elf."
+    "DESCRIPTION": "Retain. vup_shion_mod:Return. NL Transfer your vup_shion_mod:Shield to *Elf."
   }
 }

@@ -1,6 +1,10 @@
 package VUPShionMod.actions.Liyezhu;
 
 import VUPShionMod.actions.Common.GainMaxHPAction;
+import VUPShionMod.monsters.Story.Ouroboros;
+import VUPShionMod.monsters.Story.PlagaAMundo;
+import VUPShionMod.monsters.Story.PlagaAMundoMinion;
+import VUPShionMod.monsters.Story.TimePortal;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.EscapeAction;
@@ -37,8 +41,10 @@ public class FlickeringTipAction extends AbstractGameAction {
             if (target instanceof AbstractMonster) {
                 AbstractMonster monster = (AbstractMonster) target;
                 if ((monster.isDying || monster.currentHealth <= 0) && !monster.halfDead && monster.type != AbstractMonster.EnemyType.BOSS) {
-                    monster.isDying = false;
-                    addToTop(new EscapeAction(monster));
+                    if (!notPlagaMonster(monster)) {
+                        monster.isDying = false;
+                        addToTop(new EscapeAction(monster));
+                    }
                     addToTop(new AddSansAction(magicNumber));
                     addToTop(new GainMaxHPAction(AbstractDungeon.player, magicNumber));
                 }
@@ -52,4 +58,13 @@ public class FlickeringTipAction extends AbstractGameAction {
 
         tickDuration();
     }
+
+
+    public boolean notPlagaMonster(AbstractMonster mo) {
+        return !mo.id.equals(TimePortal.ID)
+                && !mo.id.equals(PlagaAMundo.ID)
+                && !mo.id.equals(PlagaAMundoMinion.ID)
+                && !mo.id.equals(Ouroboros.ID);
+    }
+
 }

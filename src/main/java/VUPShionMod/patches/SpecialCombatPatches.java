@@ -12,6 +12,7 @@ import VUPShionMod.monsters.Story.TimePortal;
 import VUPShionMod.powers.Shion.AttackOrderSpecialPower;
 import VUPShionMod.powers.Unique.GravitoniumOverPower;
 import VUPShionMod.relics.Event.AnastasiaNecklace;
+import VUPShionMod.relics.Event.FragmentsOfFaith;
 import VUPShionMod.relics.Event.TrackingBeacon;
 import VUPShionMod.relics.Event.UnknownDust;
 import VUPShionMod.skins.SkinManager;
@@ -63,8 +64,16 @@ public class SpecialCombatPatches {
             }
         }
 
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu && !AbstractDungeon.player.hasRelic(UnknownDust.ID)) {
+        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu && !AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID)) {
             SaveHelper.fightSpecialBossWithout = true;
+        }
+
+        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
+            SaveHelper.fightSpecialBossWithout = true;
+        }
+
+        if (AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID)) {
+            SaveHelper.fightSpecialBossWithout = false;
         }
 
 
@@ -72,9 +81,9 @@ public class SpecialCombatPatches {
     }
 
     public static boolean shouldHardMod() {
-        return SkinManager.getSkin(0,1).unlock
-                && SkinManager.getSkin(1,2).unlock
-                && SaveHelper.liyezhuVictory;
+        return SkinManager.getSkin(0, 1).unlock
+                && SkinManager.getSkin(1, 2).unlock
+                && AchievementPatches.getAchievement("08");
     }
 
     @SpirePatch(
@@ -202,18 +211,18 @@ public class SpecialCombatPatches {
 
 
                 if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
+                    if (AbstractDungeon.getMonsters() != null)
+                        if ((AbstractDungeon.getMonsters()).monsters != null)
+                            if (!(AbstractDungeon.getMonsters()).monsters.isEmpty())
+                                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                                    if (monster instanceof Ouroboros) {
+                                        ((Ouroboros) monster).renderAbove(sb);
+                                    }
 
-                    if ((AbstractDungeon.getMonsters()).monsters != null)
-                        if (!(AbstractDungeon.getMonsters()).monsters.isEmpty())
-                            for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                                if (monster instanceof Ouroboros) {
-                                    ((Ouroboros) monster).renderAbove(sb);
+                                    if (monster instanceof PlagaAMundoMinion)
+                                        ((PlagaAMundoMinion) monster).renderAbove(sb);
+
                                 }
-
-                                if (monster instanceof PlagaAMundoMinion)
-                                    ((PlagaAMundoMinion) monster).renderAbove(sb);
-
-                            }
                 }
             }
 

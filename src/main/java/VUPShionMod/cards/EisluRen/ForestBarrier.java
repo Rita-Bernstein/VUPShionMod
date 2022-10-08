@@ -14,7 +14,7 @@ public class ForestBarrier extends AbstractEisluRenCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public ForestBarrier() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

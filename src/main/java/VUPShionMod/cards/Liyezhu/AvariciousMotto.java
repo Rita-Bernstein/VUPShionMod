@@ -14,7 +14,7 @@ public class AvariciousMotto extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(AvariciousMotto.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/AvariciousMotto.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -56,6 +56,7 @@ public class AvariciousMotto extends AbstractLiyezhuCard {
             initializeDescription();
             this.cardsToPreview.upgrade();
             upgradeBaseCost(0);
+            this.selfRetain = true;
         }
     }
 }

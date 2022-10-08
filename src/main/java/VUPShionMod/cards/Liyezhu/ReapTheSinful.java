@@ -22,14 +22,14 @@ public class ReapTheSinful extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ReapTheSinful.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/ReapTheSinful.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final int COST = 1;
 
     public ReapTheSinful() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 9;
+        this.baseDamage = 3;
         this.isMultiDamage = true;
         this.magicNumber = this.baseMagicNumber = 2;
     }
@@ -47,7 +47,6 @@ public class ReapTheSinful extends AbstractLiyezhuCard {
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
 
 
-        addToBot(new DuelSinAction());
         if (upgraded)
             addToBot(new DuelSinAction());
 
@@ -66,6 +65,7 @@ public class ReapTheSinful extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeDamage(3);
             upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

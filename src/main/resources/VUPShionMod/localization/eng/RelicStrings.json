@@ -135,7 +135,7 @@
     "NAME": "Hallowed Case",
     "FLAVOR": "Blaze. Blaze. Blaze is shed in confronting greater misery.",
     "DESCRIPTIONS": [
-      "#rReplace Martyr Vessel. NL At the start of combat,Enter #yPraying #yStance . NL At the start of combat,add #b2 #yMiracle to your discard pile. NL Gain #b1 #yPsychic at the end of your turn."
+      "#rReplace Martyr Vessel. NL Gain [E] at start of your turn. NL At the start of combat,Enter #yPraying #yStance . NL At the start of combat,add #b2 #yMiracle to your discard pile. NL Gain #b1 #yPsychic at the end of your turn."
     ]
   },
   "VUPShionMod:TheRipple": {
@@ -201,9 +201,9 @@
       "At the end of each combat, gain #b5 Max HP. NL Upon entering Stage 3, it is converted into #yHalo #yof #yFaith.",
       "Halo of Faith",
       "Spirits sing, dreams realize. NL Cut the line, it is time.",
-       "每场战斗开始时获得 #y最终祷告 。 每回合结束回复当前损失的生命值。 NL 回复生命时，对所有敌人造成等量的伤害。 NL 受到攻击伤害时，获得 #b3 点最大生命。",
-      "最终祷告",
-      "抽到状态和诅咒时，抽一张牌并获得 [E] 。 NL 失去 #y格挡 时，获得 #b5 点 #y格挡 。 NL 获得 #y格挡 时，获得等量 #y护盾 。"
+       "Start each combat with #yFinal #yPrayer.",
+      "Final Prayer",
+      "Whenever you draw 1 Curse or Status card, draw 1 card and gain [E]. NL Whenever you lose #yBlock, gain #b5 #yBlock. NL Whenever you gain #yBlock, gain equal #yShield."
     ]
   },
   "VUPShionMod:WaveSlasher": {
@@ -491,17 +491,17 @@
       "Once per combat, you may right-click this relic to active #bClear #bConscience.",
       "Clear Conscience",
       "Draw #b1 card. NL Gain [E] . NL Heal #b5 HP. NL Gain #b1 #yWeak.",
-      "什么， #r@牛↑~马@ ",
-      "豹弊？ #r~不↑呜↓~ 可能的",
-      "来 #b~骗~ ，来， #p~偷袭~！ "
+      "Hah you #r@LITTLE↑~CHICKEN@ ",
+      "Dddd...ddye？You mean die? #r~No↑Way↓~ ",
+      "Come #b~you~ ,little chicken, #p~I wheel show you who's the boss~！ "
     ]
   },
   "VUPShionMod:Hymn": {
-    "NAME": "圣歌·共鸣",
-    "FLAVOR": "Anastasia试作圣力增幅器，具有一定的精神安定效果。“上聆天心，和为长歌。”",
+    "NAME": "Chant Resonance",
+    "FLAVOR": "Anastasia amplifier prototype that sadates the mind. “Audi decretum stellae, canta cum corde poemae.”",
     "DESCRIPTIONS": [
-      " #y祈言姿态 中打出 #y祈言牌 时，获得 #b1 #ySan值 和 #y沉灵 ，并将一张 #y奇迹 加入抽牌堆。",
-      " NL NL #y审判姿态 中打出 #y祈言牌 时，对所有敌人造成 #b5% 其最大生命的伤害。"
+      "Whenever you play any #yPrayer #yCard in #yPrayer #yStance, gain #b1 #ySanity and #yPsychic, then add a #yMiracle into your draw pile.",
+      " NL NL Whenever you play any #yPrayer #yCard in #yJudging #yStance, ALL enemies take damage equal to #b5% of their max HP."
     ]
   }
 }

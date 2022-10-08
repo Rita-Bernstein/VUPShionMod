@@ -27,6 +27,7 @@ public class SummonElf extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(this.upgraded)
         addToBot(new RemoveDebuffsAction(p));
         addToBot(new SummonElfAction(new ElfMinion(0)));
     }
@@ -43,6 +44,8 @@ public class SummonElf extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

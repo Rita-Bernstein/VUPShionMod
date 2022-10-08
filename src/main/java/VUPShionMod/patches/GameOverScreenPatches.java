@@ -38,6 +38,7 @@ public class GameOverScreenPatches {
 
                 if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID)) {
                     CharacterSelectScreenPatches.skinManager.unlockSkin(OriEisluRen.ID);
+                    AchievementPatches.unlockAchievement("07");
                     stats.add(new GameOverStat(specialBossStatString.TEXT[6], specialBossStatString.TEXT[6], Integer.toString(1000)));
                 }
 
@@ -52,10 +53,16 @@ public class GameOverScreenPatches {
 
                     if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
                         stats.add(new GameOverStat(specialBossStatString.TEXT[0], specialBossStatString.TEXT[4], Integer.toString(1000)));
+
+                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen)
+                        stats.add(new GameOverStat(specialBossStatString.TEXT[3], specialBossStatString.TEXT[3], Integer.toString(1000)));
                 }
 
                 if (SaveHelper.fightSpecialBoss) {
-                    stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(500)));
+                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen)
+                        stats.add(new GameOverStat(specialBossStatString.TEXT[3], specialBossStatString.TEXT[3], Integer.toString(500)));
+                    else
+                        stats.add(new GameOverStat(specialBossStatString.TEXT[2], specialBossStatString.TEXT[3], Integer.toString(500)));
                 }
 
             }
@@ -110,8 +117,12 @@ public class GameOverScreenPatches {
                     if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan)
                         CharacterSelectScreenPatches.skinManager.unlockSkin(AquaWangChuan.ID);
 
-                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu)
+                    if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
+                        AchievementPatches.unlockAchievement("08");
                         SaveHelper.liyezhuVictory = true;
+                    }
+
+                    AchievementPatches.unlockAchievement("03");
 
                     SaveHelper.saveSkins();
                 }
@@ -136,8 +147,10 @@ public class GameOverScreenPatches {
                 if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
                     GameStatsPatch.shionDeathCount++;
 
-                    if (GameStatsPatch.shionDeathCount >= 2)
+                    if (GameStatsPatch.shionDeathCount >= 2) {
+                        AchievementPatches.unlockAchievement("05");
                         CharacterSelectScreenPatches.skinManager.unlockSkin(AquaShion.ID);
+                    }
 
                     SaveHelper.saveSkins();
 
@@ -147,8 +160,10 @@ public class GameOverScreenPatches {
 
                     GameStatsPatch.wangchuanDeathCount++;
 
-                    if (GameStatsPatch.wangchuanDeathCount >= 2)
+                    if (GameStatsPatch.wangchuanDeathCount >= 2) {
                         CharacterSelectScreenPatches.skinManager.unlockSkin(PurityWangChuan.ID);
+                        AchievementPatches.unlockAchievement("04");
+                    }
                     SaveHelper.saveSkins();
                 }
             }

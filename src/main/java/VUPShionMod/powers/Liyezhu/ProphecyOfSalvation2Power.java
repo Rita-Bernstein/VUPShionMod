@@ -16,22 +16,23 @@ public class ProphecyOfSalvation2Power extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public ProphecyOfSalvation2Power(AbstractCreature owner) {
+    public ProphecyOfSalvation2Power(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.loadRegion("anger");
+        this.amount = amount;
+        this.loadRegion("regen");
         updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = String.format(DESCRIPTIONS[0], this.amount * 50);
     }
 
     @Override
     public int onHeal(int healAmount) {
         flash();
-        return (int) (healAmount * 1.5f);
+        return (int) (healAmount * (1.0f + this.amount * 0.5f));
     }
 }

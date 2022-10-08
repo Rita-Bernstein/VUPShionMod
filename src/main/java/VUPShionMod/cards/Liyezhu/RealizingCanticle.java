@@ -60,6 +60,7 @@ public class RealizingCanticle extends AbstractLiyezhuCard {
             initializeDescription();
             this.cardsToPreview.upgrade();
             upgradeSecondM(1);
+            this.selfRetain = true;
         }
     }
 }

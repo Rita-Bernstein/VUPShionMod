@@ -42,13 +42,13 @@ public class FinalPrayerPower extends AbstractShionPower {
 
     @Override
     public void onGainedBlock(float blockAmount) {
-        if(blockAmount >0.0f)
-        addToBot(new GainShieldAction(this.owner, (int) blockAmount));
+        if (blockAmount > 0.0f)
+            addToBot(new GainShieldAction(this.owner, (int) blockAmount));
     }
 
     @Override
     public int onLoseBlock(int amount) {
-        addToBot(new GainBlockAction(this.owner,5));
+        addToBot(new GainBlockAction(this.owner, 5));
         return super.onLoseBlock(amount);
     }
 

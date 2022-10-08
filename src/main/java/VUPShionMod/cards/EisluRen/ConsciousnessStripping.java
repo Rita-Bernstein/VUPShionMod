@@ -90,6 +90,7 @@ public class    ConsciousnessStripping extends AbstractEisluRenCard {
             initializeDescription();
             this.target = CardTarget.ALL_ENEMY;
             this.isMultiDamage = true;
+            upgradeBaseCost(0);
         }
     }
 }

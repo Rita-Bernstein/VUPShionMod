@@ -16,7 +16,7 @@ public class Execution extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(Execution.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/Execution.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 0;
@@ -24,7 +24,7 @@ public class Execution extends AbstractLiyezhuCard {
     public Execution() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 2;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -39,7 +39,7 @@ public class Execution extends AbstractLiyezhuCard {
     }
 
     @Override
-    public void onDuelSin() {
+    public void onApplySin() {
         addToBot(new DiscardToHandAction(this));
     }
 
@@ -47,7 +47,6 @@ public class Execution extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(2);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
             this.target = CardTarget.ENEMY;

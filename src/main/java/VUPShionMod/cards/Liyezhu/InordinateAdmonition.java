@@ -60,6 +60,7 @@ public class InordinateAdmonition extends AbstractLiyezhuCard {
             initializeDescription();
             this.cardsToPreview.upgrade();
             upgradeDamage(4);
+            this.selfRetain = true;
         }
     }
 }

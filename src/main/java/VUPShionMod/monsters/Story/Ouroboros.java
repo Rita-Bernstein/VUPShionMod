@@ -278,16 +278,12 @@ public class Ouroboros extends CustomMonster {
                 this.state.addAnimation(3, "attack_fire_wait", true, 0.0f);
                 break;
             case "Fire_Attack":
-
                 this.state.setAnimation(0, "attack_fire", false);
                 this.state.addAnimation(0, "timebug_idle", true, 0.0f);
-
                 this.charging = false;
                 break;
             case "Fire_Attack2":
                 this.state.setAnimation(3, "attack_fire_cold_down", false);
-
-
                 if (this.isDefect)
                     this.state.setAnimation(1, "lightwing_drop", false);
                 break;

@@ -16,14 +16,13 @@ public class BrokenSanctuary extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(BrokenSanctuary.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/BrokenSanctuary.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
 
     public BrokenSanctuary() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.selfRetain = true;
         this.magicNumber = this.baseMagicNumber = 1;
     }
 

@@ -40,7 +40,7 @@ public class AbyssalCrux extends AbstractShionRelic {
             this.flavorText = DESCRIPTIONS[2];
             return this.DESCRIPTIONS[3];
         }
-        ReflectionHacks.setPrivateFinal(this, AbstractRelic.class, "name", CardCrawlGame.languagePack.getRelicStrings(ID).DESCRIPTIONS);
+        ReflectionHacks.setPrivateFinal(this, AbstractRelic.class, "name", CardCrawlGame.languagePack.getRelicStrings(ID).NAME);
         this.flavorText = CardCrawlGame.languagePack.getRelicStrings(ID).FLAVOR;
         return this.DESCRIPTIONS[0];
     }

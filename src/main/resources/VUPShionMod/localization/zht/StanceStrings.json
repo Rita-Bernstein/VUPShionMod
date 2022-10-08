@@ -2,7 +2,7 @@
   "VUPShionMod:PrayerStance": {
     "NAME": "祈言姿態",
     "DESCRIPTION": [
-      "處於這個 #y姿態 時，你造成的傷害減少 #b25% 。 NL 回合結束時回復 #b2 點生命。"
+      "處於這個 #y姿態 時，你造成的傷害減少 #b50% 。 NL 受生命回復效果提高 #b50% 。 NL 回合結束時回復 #b2 點生命。"
     ]
   },
   "VUPShionMod:JudgeStance": {

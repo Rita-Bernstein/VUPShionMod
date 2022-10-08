@@ -68,6 +68,7 @@ public class FaithLeap extends AbstractEisluRenCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeBaseCost(0);
         }
     }
 }

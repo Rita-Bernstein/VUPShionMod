@@ -41,6 +41,11 @@ public class HallowedCase extends AbstractShionRelic {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PsychicPower(AbstractDungeon.player, 1)));
     }
 
+    public void onEquip() { AbstractDungeon.player.energy.energyMaster++; }
+
+    public void onUnequip() { AbstractDungeon.player.energy.energyMaster--; }
+
+
     @Override
     public void obtain() {
         AbstractPlayer player = AbstractDungeon.player;

@@ -43,6 +43,7 @@ public class DragonGun extends AbstractEisluRenCard {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
 
+        if(this.upgraded)
         addToBot(new ExhaustAction(1, false, this.upgraded, this.upgraded));
         addToBot(new ApplyPowerAction(m,p,new LockOnPower(m,2)));
 

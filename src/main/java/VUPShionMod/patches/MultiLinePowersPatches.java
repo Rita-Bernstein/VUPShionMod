@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
 import com.evacipated.cardcrawl.modthespire.lib.Matcher;
@@ -36,11 +37,13 @@ public class MultiLinePowersPatches {
 
     public static void incrementOffsetY(float[] offsetX, AbstractPower p) {
         if (!Loader.isModLoaded("mintySpire")) {
-            count++;
-            if (count == 6) {
-                count = 0;
-                offsetY -= 38.0F * Settings.scale;
-                offsetX[0] = ((doingAmounts ? 0 : 10) - 48) * Settings.scale;
+            if (!(p instanceof InvisiblePower)) {
+                count++;
+                if (count == 6) {
+                    count = 0;
+                    offsetY -= 38.0F * Settings.scale;
+                    offsetX[0] = ((doingAmounts ? 0 : 10) - 48) * Settings.scale;
+                }
             }
         }
     }

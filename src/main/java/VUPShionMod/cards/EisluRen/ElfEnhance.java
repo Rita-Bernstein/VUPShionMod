@@ -59,6 +59,7 @@ public class ElfEnhance extends AbstractEisluRenCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeBaseCost(2);
         }
     }
 }

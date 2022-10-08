@@ -38,11 +38,6 @@ public class AntiAirPower extends AbstractShionPower {
 
     @Override
     public void preEndOfRound() {
-        if (justApplied) {
-            justApplied = false;
-            return;
-        }
-
         AbstractPlayer trueTarget = AbstractDungeon.player;
         if (AbstractDungeon.player instanceof WangChuan) {
             if (((WangChuan) AbstractDungeon.player).shionHelper != null)

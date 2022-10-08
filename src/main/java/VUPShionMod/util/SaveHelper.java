@@ -1,13 +1,16 @@
 package VUPShionMod.util;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.patches.AchievementPatches;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.BlueGiantShion;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import javafx.scene.control.Skin;
 
 public class SaveHelper {
     public static int gravityFinFunnelLevel = 1;
@@ -121,6 +124,30 @@ public class SaveHelper {
             }
 
             liyezhuVictory = config.getBool(CardCrawlGame.saveSlot + "liyezhuVictory");
+
+            if (SkinManager.getSkin(0, 2).unlock) {
+                AchievementPatches.unlockAchievement("05");
+            }
+
+            if (SkinManager.getSkin(1, 1).unlock) {
+                AchievementPatches.unlockAchievement("04");
+            }
+
+            if (SkinManager.getSkin(3, 0).unlock) {
+                AchievementPatches.unlockAchievement("07");
+            }
+
+            if (SkinManager.getSkin(1, 3).unlock) {
+                AchievementPatches.unlockAchievement("06");
+            }
+
+            if (liyezhuVictory) {
+                AchievementPatches.unlockAchievement("08");
+            }
+
+            if (SkinManager.getSkin(0, 1).unlock || SkinManager.getSkin(1, 2).unlock) {
+                AchievementPatches.unlockAchievement("03");
+            }
 
 
         } catch (Exception e) {

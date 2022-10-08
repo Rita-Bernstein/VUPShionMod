@@ -612,13 +612,19 @@
   "VUPShionMod:EnsanguinedFigurePower": {
     "NAME": "Ensanguined Figure",
     "DESCRIPTIONS": [
-      "Whenever you receive damage, apply #b%d #ySinful to the attacker."
+      "Whenever you receive damage, apply #b%d #ySinful to ALL ENTITIES."
+    ]
+  },
+  "VUPShionMod:EnsanguinedFigurePower2": {
+    "NAME": "Ensanguined Figure+",
+    "DESCRIPTIONS": [
+      "Whenever you receive damage, apply #b%d #ySinful to ALL enemies."
     ]
   },
   "VUPShionMod:CrimsonDelugePower": {
     "NAME": "Crimson Deluge",
     "DESCRIPTIONS": [
-      "HP regen beyond Max HP is converted into #yShield."
+      "HP regen beyond Max HP is converted into half of #yShield. NL Whenever you play an #yAttack ,heal #b%d HP."
     ]
   },
   "VUPShionMod:AsceticismPower": {
@@ -1040,107 +1046,107 @@
     ]
   },
   "VUPShionMod:BossChainPursuitPower": {
-    "NAME": "连锁追击",
+    "NAME": "Chain Pursuit",
     "DESCRIPTIONS": [
-      "她的回合结束时给予你 #b%d 层 #y追击 。"
+      "At the end of turn, apply #b%d #yPursued to you."
     ]
   },
   "VUPShionMod:BossAttackLoaderPower": {
-    "NAME": "攻击加载",
+    "NAME": "Offensive Preload",
     "DESCRIPTIONS": [
-      "每当你洗牌时，将 #b%d 张 #y浮游追击 加入抽牌堆。",
-      "每当你洗牌时，将 #b%d 张 #y浮游追击 加入抽牌堆。"
+      "Whenever you shuffle, shuffle #b%d #yPursuing #yFunnel into your draw pile.",
+      "Whenever you shuffle, shuffle #b%d #yPursuing #yFunnel into your draw pile."
     ]
   },
   "VUPShionMod:BossAvatarSpawnPower": {
-    "NAME": "延时替身",
+    "NAME": "Gain Lure",
     "DESCRIPTIONS": [
-      "每回合结束时 #b%d 个获得 #b5 点生命的 #y替身 。"
+      "At the end of your turn, gain #b%d #yLures, each having #b5 HP."
     ]
   },
   "VUPShionMod:BossAvatarPower": {
-    "NAME": "替身",
+    "NAME": "Shion's Lure",
     "DESCRIPTIONS": [
-      " #y紫音 的一名 #y替身 还剩 #b%d 点生命。 NL 还剩 #b%d 个 #y替身 。"
+      "A #yLure of #yShion has #b%d HP remaining. NL There are #b%d #yLure remaining."
     ]
   },
   "VUPShionMod:PotentialOutbreakPower": {
-    "NAME": "潜能爆发",
+    "NAME": "Potential Outburst",
     "DESCRIPTIONS": [
-      "再受到 #b%d 点伤害后将会结束你的回合并进行一个 #y强力 的行动。"
+      "After taking #b%d more damage, end your turn and perform a #ypowerful action."
     ]
   },
   "VUPShionMod:SystemHackPower": {
-    "NAME": "系统骇入",
+    "NAME": "Hacked In",
     "DESCRIPTIONS": [
-      "本回合所有能力失效。 NL 本回合回合开始时随机打出、丢弃、消耗各一张手牌。"
+      "This turn, all your powers are disabled. NL At the start of your turn, play and discard and exhaust 1 each of the cards in your hand."
     ]
   },
   "VUPShionMod:MagicDisorderPower": {
-    "NAME": "魔能紊乱",
+    "NAME": "Magia Disorder",
     "DESCRIPTIONS": [
-      "本回合所有能力失效。 NL 本回合开始受到 #b30 点伤害。"
+      "This turn, all your powers are disabled. NL At the start of your turn, take #b30 damage."
     ]
   },
   "VUPShionMod:ActionBlockadePower": {
-    "NAME": "行动封锁",
+    "NAME": "Action Disabled",
     "DESCRIPTIONS": [
-      "本回合所有能力失效。 NL 本回合回合不能打出技能牌。"
+      "This turn, all your powers are disabled. NL You can not play any Skill this turn."
     ]
   },
   "VUPShionMod:AutoShieldPower": {
-    "NAME": "自动护盾",
+    "NAME": "Auto Shield",
     "DESCRIPTIONS": [
-      "每回合结束时获得 #b%d 层 #y护盾 。"
+      "At the end of your turn, gain #b%d #yShield."
     ]
   },
   "VUPShionMod:LightArmorPower": {
-    "NAME": "光明铠甲",
+    "NAME": "Bright Armor",
     "DESCRIPTIONS": [
-      "受到的攻击伤害减少 #b%d%% 。"
+      "Take #b%d%% less damage from enemy attacks."
     ]
   },
   "VUPShionMod:CoverPower": {
-    "NAME": "掩体",
+    "NAME": "Cover",
     "DESCRIPTIONS": [
-      "当有其他队友存在时，其受到的伤害为 #b0 。"
+      "Does not take any damage while the allies are present."
     ]
   },
   "VUPShionMod:MagicFlyingBladePower": {
-    "NAME": "魔能飞刃",
+    "NAME": "Magic Darts",
     "DESCRIPTIONS": [
-      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。",
-      "每回合结束时对你造成 #b%d 点 #y非攻击 伤害 #b%d 次。"
+      "At the end of your turn, deal #b%d #ynon-attack damage for #b%d times to you.",
+      "At the end of your turn, deal #b%d #ynon-attack damage for #b%d times to you."
     ]
   },
   "VUPShionMod:WhiteRosePower": {
-    "NAME": "支援系统：白蔷薇",
+    "NAME": "White Rose",
     "DESCRIPTIONS": [
-      "受到 #y攻击伤害 时，获得 #b%d 层 #y多层护甲 。 NL 每回合开始时获得 #b%d 层 #y见切 。"
+      "Whenever you take damage from enemy attacks, gain #b%d #yPlated #yArmor. NL At the start of your turn, gain #b%d #yBuffer."
     ]
   },
   "VUPShionMod:CrimsonDelugeBossPower": {
-    "NAME": "浸染之血",
+    "NAME": "Crimson Deluge",
     "DESCRIPTIONS": [
-      "超出生命上限的 #g回复 将获得 #y护盾 。"
+      "Any HP healed beyond Max HP is converted into #yShield."
     ]
   },
   "VUPShionMod:FinalPrayerPower": {
-    "NAME": "最终祷告",
+    "NAME": "Final Prayer",
     "DESCRIPTIONS": [
-      "抽到状态和诅咒时，抽一张牌并获得 [E] 。 NL 失去 #y格挡 时，获得 #b5 点 #y格挡 。 NL 获得 #y格挡 时，获得等量 #y护盾 。"
+      "Whenever you draw 1 Curse or Status card, draw 1 card and gain [E]. NL Whenever you lose #yBlock, gain #b5 #yBlock. NL Whenever you gain #yBlock, gain equal #yShield."
     ]
   },
   "VUPShionMod:StunPlayerPower": {
-    "NAME": "Stuned",
+    "NAME": "Stunned",
     "DESCRIPTIONS": [
       "You can't play Any card in this turn."
     ]
   },
   "VUPShionMod:ConcordSnipePower": {
-    "NAME": "协合音·狙击",
+    "NAME": "Concord: Snipe",
     "DESCRIPTIONS": [
-      "其回合开始时给予你 #b%d 层 #y锁定 。"
+      "At the start of turn, apply #b%d #yLocked #yOn to you."
     ]
   },
   "VUPShionMod:HallowedCasketPower2": {
@@ -1151,15 +1157,15 @@
     ]
   },
   "VUPShionMod:YonggukCityTroyPower": {
-    "NAME": "永固城邦",
+    "NAME": "Troy the Invincible",
     "DESCRIPTIONS": [
-      "每当你失去或获得 #y构装翼盾充能 时，获得 #b%d 倍的 #y护盾 。"
+      "Whenever you gain or lose #yConstruct #yRecharge, gain #yShield #b%d times of that gain or loss."
     ]
   },
   "VUPShionMod:HotRestartPower": {
-    "NAME": "热重启",
+    "NAME": "Warm Restart",
     "DESCRIPTIONS": [
-      "本回合每层 #y构装翼盾充能 可减少的伤害不会降低。"
+      "This turn, damage that would be reduced by #yConstruct #yRecharge does not decrease."
     ]
   },
   "VUPShionMod:SwearPower": {
@@ -1169,18 +1175,18 @@
       "Until start of your next #b%d turns,your HP will not below #b1."
     ]
   },
-  "VUPShionMod:BeinglessMomentPower": {
-    "NAME": "虚像刹那",
+  "VUPShionMod:HealToShieldPower": {
+    "NAME": "Life Shield",
     "DESCRIPTIONS": [
-      "本回合 #g回复 生命时将获得等量的 #y护盾 。",
-      "接下来的 #b%d 个回合 #g回复 生命时将获得等量的 #y护盾 。"
+      "This turn, gain #yShield equal to the HP healed.",
+      "In #b%d turns, #gain #yShield equal to the HP healed."
     ]
   },
   "VUPShionMod:LeachingBloodPower": {
-    "NAME": "吸血",
+    "NAME": "Leech",
     "DESCRIPTIONS": [
-      "你的下张 #y攻击牌 造成伤害时，回复等量的生命。",
-      "你的下 #b%d张 #y攻击牌 造成伤害时，回复等量的生命。"
+      "Your next #yAttack heals you equal to the unblocked damage it deals.",
+      "Your next #b%d #yAttacks heal you equal to the unblocked damage they deal."
     ]
   },
   "VUPShionMod:SubLunaPower": {
@@ -1193,19 +1199,19 @@
   "VUPShionMod:IntensaPower": {
     "NAME": "Intensa",
     "DESCRIPTIONS": [
-      "At the start of your next turn,gain #yCor #yGladii you lost in this turn.(Gain #b%d stack)"
+      "At the start of your next turn, gain #yCor #yGladii you lose this turn.(Gain #b%d)"
     ]
   },
   "VUPShionMod:ProphecyOfSalvation2Power": {
     "NAME": "Prophecy of Demise",
     "DESCRIPTIONS": [
-      "Healing is #b50% more effective in this combat."
+      "Healing is #b%d%% more effective in this combat."
     ]
   },
   "VUPShionMod:ProphecyOfDestruction2Power": {
     "NAME": "Prophecy of Demise",
     "DESCRIPTIONS": [
-      "At the start of your turn,you can #yExhaust a card to to apply #b%d #ySinful to ALL enemies."
+      "At the start of your turn, you may #yExhaust 2 cards to apply #b%d #ySinful to ALL enemies."
     ]
   }
 }

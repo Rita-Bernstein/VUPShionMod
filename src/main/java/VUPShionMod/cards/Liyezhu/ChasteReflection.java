@@ -2,6 +2,7 @@ package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Liyezhu.ChasteReflectionPower;
+import VUPShionMod.powers.Liyezhu.HealToShieldPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -26,6 +27,8 @@ public class ChasteReflection extends AbstractLiyezhuCard {
 
         if (this.upgraded)
             addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, 1)));
+
+        addToBot(new ApplyPowerAction(p, p, new HealToShieldPower(p)));
     }
 
     @Override
@@ -34,6 +37,7 @@ public class ChasteReflection extends AbstractLiyezhuCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            this.selfRetain = true;
         }
     }
 }

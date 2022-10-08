@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.actions.Unique.GachaAction;
+import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
 import VUPShionMod.powers.AbstractShionPower;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
@@ -31,6 +32,8 @@ public class GachaPatches {
             if (hasMonster)
                 AbstractDungeon.actionManager.addToBottom(new GachaAction());
 
+
+            AbstractPlayerPatches.AddFields.playerMinions.get(AbstractDungeon.player).applyPreTurnLogic();
 
             return SpireReturn.Continue();
         }

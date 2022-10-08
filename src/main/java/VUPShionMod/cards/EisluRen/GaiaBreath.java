@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainMaxHPAction;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
@@ -22,6 +23,7 @@ public class GaiaBreath extends AbstractEisluRenCard {
     public GaiaBreath() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 7;
+        this.secondaryM = this.baseSecondaryM = 7;
         GraveField.grave.set(this,true);
     }
 
@@ -30,8 +32,11 @@ public class GaiaBreath extends AbstractEisluRenCard {
         addToBot(new HealAction(p,p,this.magicNumber));
 
         AbstractPlayerMinion elf = MinionGroup.getElfMinion();
-        if(elf !=null)
-        addToBot(new HealAction(elf,p,this.magicNumber));
+        if(elf !=null) {
+            addToBot(new HealAction(elf, p, this.magicNumber));
+            if(upgraded)
+                addToBot(new GainMaxHPAction(elf,this.secondaryM));
+        }
 
         addToBot(new RemoveDebuffsAction(p));
     }
@@ -41,6 +46,8 @@ public class GaiaBreath extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

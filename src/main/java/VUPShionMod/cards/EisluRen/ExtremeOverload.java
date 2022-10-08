@@ -38,6 +38,7 @@ public class ExtremeOverload extends AbstractEisluRenCard {
 
         addToBot(new GainWingShieldChargeAction(WingShield.getWingShield().getMaxCount()));
         addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
+        if(!this.upgraded)
         addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.secondaryM)));
         addToBot(new ApplyPowerAction(p,p,new ExtremeOverloadPower(p,this.magicNumber)));
     }
@@ -50,6 +51,8 @@ public class ExtremeOverload extends AbstractEisluRenCard {
             this.upgradeName();
             upgradeBaseCost(0);
             upgradeMagicNumber(-1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

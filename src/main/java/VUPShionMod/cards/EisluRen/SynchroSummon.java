@@ -19,7 +19,7 @@ public class SynchroSummon extends AbstractEisluRenCard {
     public SynchroSummon() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
-        this.isInnate = true;
+
     }
 
     @Override
@@ -31,7 +31,10 @@ public class SynchroSummon extends AbstractEisluRenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(0);
+            this.isInnate = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

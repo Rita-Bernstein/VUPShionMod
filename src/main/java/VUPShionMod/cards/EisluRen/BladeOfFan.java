@@ -38,6 +38,7 @@ public class BladeOfFan extends AbstractEisluRenCard {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
             addToBot(new LoseWingShieldAction(this.secondaryM));
 
+        if(upgraded)
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
@@ -85,6 +86,8 @@ public class BladeOfFan extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription= UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -35,7 +35,10 @@ public class RhoAias extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
         addToBot(new LoseWingShieldAction(this.secondaryM));
+
+        if(this.upgraded)
         addToBot(new GainShieldAction(p, 7));
+
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber)));
 
     }
@@ -56,6 +59,8 @@ public class RhoAias extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -22,7 +22,7 @@ public class SpiritImpact extends AbstractLiyezhuCard {
 
     public SpiritImpact() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 10;
+        this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 3;
     }
 
@@ -66,6 +66,7 @@ public class SpiritImpact extends AbstractLiyezhuCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeMagicNumber(2);
+            upgradeDamage(2);
         }
     }
 }

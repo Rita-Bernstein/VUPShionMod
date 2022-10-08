@@ -34,7 +34,6 @@ public class SinPrayer extends AbstractPrayer {
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             addToBot(new ApplySinAction(mo, this.amount));
         }
-
     }
 
     @Override

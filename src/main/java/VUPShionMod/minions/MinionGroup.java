@@ -51,8 +51,7 @@ public class MinionGroup {
                     if (!minion.hasPower(Barricade.ID)) {
                         minion.loseBlock();
                     }
-
-                    minion.applyStartOfTurnPostDrawPowers();
+                    minion.applyStartOfTurnPowers();
                 }
             }
     }
@@ -83,6 +82,19 @@ public class MinionGroup {
                 if (!minion.isDying && !minion.isEscaping) {
                     for (AbstractPower power : minion.powers)
                         power.atEndOfRound();
+
+                    AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            if (minion.targetMonster == null) {
+                                minion.refreshTargetMonster();
+                            }else if(minion.targetMonster.isDeadOrEscaped()){
+                                minion.refreshTargetMonster();
+                            }
+
+                            isDone = true;
+                        }
+                    });
                 }
             }
 
@@ -136,11 +148,11 @@ public class MinionGroup {
     public static boolean areMinionsBasicallyDead() {
         if (MinionGroup.getMinions().isEmpty()) return true;
         for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
-            if (!m.isDying && !m.isEscaping) {
-                if (m instanceof ElfMinion && m.halfDead) {
-                    continue;
-                }
+            if (m instanceof ElfMinion && m.halfDead) {
+                continue;
+            }
 
+            if (!m.isDying && !m.isEscaping) {
                 return false;
             }
         }
@@ -150,11 +162,12 @@ public class MinionGroup {
 
     public static AbstractPlayerMinion getCurrentMinion() {
         for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
+            if (m instanceof ElfMinion) {
+                if (m.halfDead || ((ElfMinion) m).cantSelected)
+                    continue;
+            }
+
             if (!m.isDying && !m.isEscaping) {
-                if (m instanceof ElfMinion) {
-                    if (m.halfDead || ((ElfMinion) m).cantSelected)
-                        continue;
-                }
                 return m;
             }
         }

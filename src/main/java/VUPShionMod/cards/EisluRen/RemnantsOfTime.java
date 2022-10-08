@@ -52,6 +52,7 @@ public class RemnantsOfTime extends AbstractEisluRenCard {
             this.isInnate = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeBaseCost(2);
         }
     }
 }

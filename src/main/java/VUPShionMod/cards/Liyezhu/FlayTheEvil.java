@@ -21,16 +21,20 @@ public class FlayTheEvil extends AbstractLiyezhuCard {
 
     public FlayTheEvil() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 9;
+        this.baseDamage = 5;
         this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        addToBot(new FlayTheEvilAction(m, 10));
+        addToBot(new FlayTheEvilAction(m, upgraded ? 15 : 10));
+        if(upgraded)
         addToBot(new DrawCardAction(1));
-        for (int i = 0; i < 3; i++)
+
+
+        int times = upgraded ? 2 : 3;
+        for (int i = 0; i < times; i++)
             addToBot(new DuelSinAction());
     }
 
@@ -38,7 +42,9 @@ public class FlayTheEvil extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
+            upgradeBaseCost(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

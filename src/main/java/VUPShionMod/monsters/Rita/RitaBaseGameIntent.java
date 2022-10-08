@@ -3,6 +3,7 @@ package VUPShionMod.monsters.Rita;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.Monster.BossShion.PotentialOutbreakPower;
+import VUPShionMod.powers.Monster.PlagaAMundo.StrengthenPower;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
@@ -77,8 +78,12 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
 
         switch (m.nextMove) {
             case 1:
-                addToBot(new VFXAction(m, new InflameEffect(m), 1.0F));
-                addToBot(new ApplyPowerAction(m, m, new StrengthPower(m, AbstractDungeon.ascensionLevel >= 19 ? 3 : 2)));
+                addToBot(new VFXAction(this.m, new VerticalAuraEffect(Color.BLACK, this.m.hb.cX, this.m.hb.cY), 0.33F));
+                addToBot(new SFXAction("ATTACK_FIRE"));
+                addToBot(new VFXAction(this.m, new VerticalAuraEffect(Color.PURPLE, this.m.hb.cX, this.m.hb.cY), 0.33F));
+                addToBot(new VFXAction(this.m, new VerticalAuraEffect(Color.CYAN, this.m.hb.cX, this.m.hb.cY), 0.0F));
+                addToBot(new VFXAction(this.m, new BorderLongFlashEffect(Color.MAGENTA), 0.0F, true));
+                addToBot(new ApplyPowerAction(m, m, new StrengthenPower(m, AbstractDungeon.ascensionLevel >= 19 ? 3 : 2)));
                 break;
             case 2:
                 addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Shockwave")));
@@ -105,7 +110,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 break;
             case 11:
                 addToBot(new SFXAction(VUPShionMod.makeID("RitaB_Skill0")));
-                addToBot(new ApplyPowerAction(m, m, new AfterImagePower(m, AbstractDungeon.ascensionLevel >= 19 ? 2 : 1) {
+                addToBot(new ApplyPowerAction(m, m, new AfterImagePower(m, AbstractDungeon.ascensionLevel >= 19 ? 3 : 2) {
                     @Override
                     public void onUseCard(AbstractCard card, UseCardAction action) {
                         flash();
@@ -149,7 +154,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 break;
             case 32:
                 addToBot(new DamageAction(p, m.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-                addToBot(new ApplyPowerAction(p,m,new VulnerablePower(p,2,true)));
+                addToBot(new ApplyPowerAction(p, m, new VulnerablePower(p, 2, true)));
                 break;
             case 33:
                 CardCrawlGame.sound.play("STANCE_ENTER_DIVINITY");
@@ -218,7 +223,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
 
         switch (this.moveCount) {
             case 1:
-                m.setMove(getCardStringName(Inflame.ID, AbstractDungeon.ascensionLevel >= 19), (byte) 1, AbstractMonster.Intent.BUFF);
+                m.setMove(getCardStringName(DemonForm.ID, AbstractDungeon.ascensionLevel >= 19), (byte) 1, AbstractMonster.Intent.BUFF);
                 this.moveCount++;
                 break;
             case 2:
@@ -231,7 +236,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 break;
             case 4:
                 m.setMove(getCardStringName(Impervious.ID, true), (byte) 4, AbstractMonster.Intent.DEFEND);
-                this.moveCount = 1;
+                this.moveCount = 2;
                 break;
             case 10:
                 m.setMove(getCardStringName(WraithForm.ID), (byte) 10, AbstractMonster.Intent.BUFF);
@@ -239,9 +244,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
                 break;
             case 11:
                 m.setMove(getCardStringName(AfterImage.ID) + "/" + getCardStringName(Malaise.ID), (byte) 11, AbstractMonster.Intent.STRONG_DEBUFF);
-                this.moveCount++;
-                if (AbstractDungeon.ascensionLevel >= 19)
-                    this.moveCount++;
+                this.moveCount += 2;
                 break;
             case 12:
                 m.setMove(getCardStringName(Acrobatics.ID, true), (byte) 12, AbstractMonster.Intent.UNKNOWN);

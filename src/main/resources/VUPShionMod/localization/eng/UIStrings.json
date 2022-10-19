@@ -15,7 +15,7 @@
   "VUPShionMod:EnduranceInitiationAction": {
     "TEXT": [
       "Copy",
-      " NL vup_shion_mod:Loading_Complete Exhaust."
+      " NL vup_shion_mod:Loading_Complete. Exhaust."
     ]
   },
   "VUPShionMod:SelectCardToHandAction": {
@@ -172,8 +172,8 @@
   "VUPShionMod:SwardCharge": {
     "TEXT": [
       "Magia Blade",
-      " #yMagia #yCombo: #b%d/#b4. NL Whenever the counter is filled, play a NL #yThundersteel with no #yStiffness. NL Clear all #yCombo and #pMagia #yLoad. NL For #reach different #yAttack you play, NL gain #b1 #yCombo. NL Lose all #yCombo at the end of your turn. NL When reach to #b3 stack of charge,gain #b1 #yCor #yCorGladii .",
-      " NL NL #pMagia #pLoad: #b%d(%d)/#b3: NL Each #yLoad you have #yupgrades the #yThundersteel played by #yMagia #yCombo for #yonce. NL For every #b3 #yMagiam #yObruor you gain, gain #b1 #pMagia #pLoad."
+      " #yMagia #yCombo: #b%d/ #b4. NL Whenever the counter is filled, play a NL #yThundersteel with no #yStiffness. NL Clear all #yCombo and #pMagia #yLoad. NL For #reach different #yAttack you play, NL gain #b1 #yCombo. NL Lose all #yCombo at the end of your turn. NL When reach to #b3 stack of charge,gain #b1 #yCor #yCorGladii .",
+      " NL NL #pMagia #pLoad: #b%d(%d)/ #b3: NL Each #yLoad you have #yupgrades the #yThundersteel played by #yMagia #yCombo for #yonce. NL For every #b3 #yMagiam #yObruor you gain, gain #b1 #pMagia #pLoad."
     ]
   },
   "VUPShionMod:ShionFinFunnelSwitch": {
@@ -253,7 +253,7 @@
   },
   "VUPShionMod:ShionBasePatches": {
     "TEXT": [
-      "Commencing Special Mode"
+      "Play Special Mode"
     ]
   },
   "VUPShionMod:ShionMainMenuPanelButton": {
@@ -277,6 +277,12 @@
   "VUPShionMod:ExhaustToApplySinAction": {
     "TEXT": [
       "Exhaust a card to apply Sinful."
+    ]
+  },
+  "VUPShionMod:DrawPileLoadCardAction": {
+    "TEXT": [
+      "Add Loading Complete to cards",
+      " NL vup_shion_mod:Loading_Complete. Exhaust."
     ]
   }
 }

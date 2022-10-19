@@ -7,6 +7,7 @@ import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 
 public class Accelerator extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(Accelerator.class.getSimpleName());
@@ -19,13 +20,18 @@ public class Accelerator extends AbstractWCCard {
 
     public Accelerator() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM  = this.baseSecondaryM = 3;
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new AcceleratorPower(p,this.magicNumber)));
+
+        if(this.upgraded)
+            addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
+
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 
@@ -33,7 +39,8 @@ public class Accelerator extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

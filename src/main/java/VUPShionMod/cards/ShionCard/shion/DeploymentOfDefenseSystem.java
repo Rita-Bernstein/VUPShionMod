@@ -23,8 +23,8 @@ public class DeploymentOfDefenseSystem extends AbstractShionCard {
 
     public DeploymentOfDefenseSystem() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 7;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.magicNumber = this.baseMagicNumber = 4;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override

@@ -2,13 +2,17 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
+import VUPShionMod.helpers.SheatheModifier;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
+import basemod.helpers.CardModifierManager;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -16,6 +20,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
+
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class BreakChop extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(BreakChop.class.getSimpleName());
@@ -28,7 +37,7 @@ public class BreakChop extends AbstractWCCard {
 
     public BreakChop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 14;
+        this.baseDamage = 0;
         this.baseBlock = 6;
         this.magicNumber = this.baseMagicNumber = 1;
     }
@@ -38,8 +47,7 @@ public class BreakChop extends AbstractWCCard {
         switch (this.timesUpgraded) {
             default:
                 if (m != null)
-                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                            212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                    addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
                 for (int i = 0; i < this.magicNumber; i++)
@@ -47,14 +55,16 @@ public class BreakChop extends AbstractWCCard {
                 break;
             case 2:
                 if (m != null)
-                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                            212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                    addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
                 for (int i = 0; i < this.magicNumber; i++) {
                     addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false)));
                     addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false)));
                 }
+
+                Predicate<AbstractCard> predicate = (pr) -> pr.type == CardType.ATTACK;
+                addToBot(new MoveCardsAction(p.hand, p.drawPile, predicate, 1));
 
                 addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, 1));
                 break;
@@ -66,12 +76,13 @@ public class BreakChop extends AbstractWCCard {
         int trueDamage = this.baseDamage;
 
         if (this.timesUpgraded >= 2) {
-            this.baseDamage = 7;
-
             if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
                 this.baseDamage += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
+        } else {
+            this.baseDamage = this.upgraded ? 9 : 1;
         }
 
+        this.baseDamage += mo.getIntentDmg();
         super.calculateCardDamage(mo);
 
         this.baseDamage = trueDamage;

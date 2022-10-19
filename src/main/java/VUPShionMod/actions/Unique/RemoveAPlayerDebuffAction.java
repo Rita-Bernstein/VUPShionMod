@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
-public class RemovePlayerDebuffAction extends AbstractGameAction {
+public class RemoveAPlayerDebuffAction extends AbstractGameAction {
 
-    public RemovePlayerDebuffAction() {
+    public RemoveAPlayerDebuffAction() {
 
     }
 

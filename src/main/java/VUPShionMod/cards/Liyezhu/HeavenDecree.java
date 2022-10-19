@@ -1,7 +1,9 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.Liyezhu.DecreePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -21,25 +23,14 @@ public class HeavenDecree extends AbstractLiyezhuCard {
     public HeavenDecree() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 1;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        if (m.getIntentDmg() > 0) {
-            int damageAmount = m.getIntentBaseDmg();
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                        AbstractMonster monster = AbstractDungeon.getMonsters().getRandomMonster(m, true, AbstractDungeon.cardRandomRng);
-                        if (monster != null)
-                            addToTop(new DamageAction(monster, new DamageInfo(p, damageAmount, damageTypeForTurn), AttackEffect.FIRE));
-                    }
-                    isDone = true;
-                }
-            });
-        }
+        addToBot(new ApplyPowerAction(m, p, new DecreePower(m, this.magicNumber)));
     }
 
     @Override

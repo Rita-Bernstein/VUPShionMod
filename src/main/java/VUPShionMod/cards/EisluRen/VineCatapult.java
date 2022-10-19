@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
+import VUPShionMod.actions.EisluRen.PlayerMinionTakeTurnAction;
 import VUPShionMod.cards.WangChuan.AbstractWCCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -39,6 +40,7 @@ public class VineCatapult extends AbstractEisluRenCard {
                 }
             }
         }
+        addToBot(new PlayerMinionTakeTurnAction());
     }
 
     @Override

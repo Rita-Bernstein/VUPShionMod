@@ -44,13 +44,14 @@ public class Hymn extends AbstractShionRelic {
             if (AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID)) {
                 addToBot(new AddSansAction(1));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PsychicPower(AbstractDungeon.player, 1)));
-                addToBot(new MakeTempCardInDrawPileAction(new Miracle(),1,true,true,false));
+                addToBot(new MakeTempCardInDrawPileAction(new Miracle(), 1, true, true, false));
             }
 
             if (AbstractDungeon.player.stance.ID.equals(JudgeStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(SpiritStance.STANCE_ID)) {
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                        addToBot(new DamageAction(monster, new DamageInfo(AbstractDungeon.player, (int) (monster.maxHealth * 0.05f), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
+                        if (!monster.isDeadOrEscaped())
+                            addToBot(new DamageAction(monster, new DamageInfo(AbstractDungeon.player, (int) (monster.maxHealth * 0.05f), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
                     }
                 }
             }

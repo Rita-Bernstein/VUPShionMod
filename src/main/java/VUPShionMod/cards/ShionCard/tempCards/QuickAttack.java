@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.TurnTriggerFinFunnelsAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
@@ -25,10 +26,12 @@ public class QuickAttack extends AbstractVUPShionCard {
 
     public QuickAttack() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 2;
+        this.baseDamage = 1;
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.tags.add(CardTagsEnum.LOADED);
         this.exhaust = true;
+
+        this.magicNumber = this.baseMagicNumber = 2;
 
         vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
     }
@@ -37,22 +40,16 @@ public class QuickAttack extends AbstractVUPShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (m != null) {
-            AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
-            if (funnel != null) {
-                funnel.activeFire(m,  new DamageInfo(p, this.damage, this.damageTypeForTurn));
-            } else {
-                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            }
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new TurnTriggerFinFunnelsAction(this.magicNumber,true));
     }
 
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeName();
-            upgradeDamage(1);
+            upgradeName();
+            upgradeMagicNumber(1);
         }
     }
 }

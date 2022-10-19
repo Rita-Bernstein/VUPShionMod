@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Shion.BleedingPower;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
@@ -42,7 +43,7 @@ public class CoronaChop extends AbstractWCCard {
                 if (p.hasPower(CorGladiiPower.POWER_ID))
                     addToBot(new ApplyPowerAction(p, p, new HeliumLuxquePower(p, p.getPower(CorGladiiPower.POWER_ID).amount)));
 
-                addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+                addToBot(new ApplyCorGladiiAction(this.magicNumber));
                 addToBot(new ApplyStiffnessAction(this.secondaryM));
                 break;
             case 1:
@@ -51,7 +52,7 @@ public class CoronaChop extends AbstractWCCard {
                 if (p.hasPower(CorGladiiPower.POWER_ID))
                     addToBot(new ApplyPowerAction(p, p, new HeliumLuxquePower(p, p.getPower(CorGladiiPower.POWER_ID).amount)));
 
-                addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+                addToBot(new ApplyCorGladiiAction(this.magicNumber));
                 addToBot(new ApplyStiffnessAction(this.secondaryM));
                 break;
             case 2:
@@ -66,7 +67,7 @@ public class CoronaChop extends AbstractWCCard {
 
                 addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, amount)));
                 addToBot(new ExhaustAction(2, false, true, true));
-                addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+                addToBot(new ApplyCorGladiiAction(this.magicNumber));
                 addToBot(new ApplyStiffnessAction(this.secondaryM));
                 addToBot(new ApplyPowerAction(p,p,new MagiamObruorPower(p,1)));
                 break;

@@ -1,18 +1,26 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.XActionAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
+import VUPShionMod.actions.Shion.TurnTriggerAllFinFunnelAction;
+import VUPShionMod.actions.Shion.TurnTriggerFinFunnelsAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+
+import java.util.function.Consumer;
 
 public class SpeedShot extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID(SpeedShot.class.getSimpleName());
@@ -29,6 +37,31 @@ public class SpeedShot extends AbstractShionCard {
         this.baseDamage = 0;
     }
 
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        Consumer<Integer> actionConsumer = effect -> {
+            AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
+
+            int times = upgraded ? effect + 2 : effect + 1;
+
+            if (times < FinFunnelManager.getFinFunnelList().size()) {
+                addToTop(new TurnTriggerFinFunnelsAction(times,true));
+            } else {
+                addToTop(new TurnTriggerFinFunnelsAction(times % FinFunnelManager.getFinFunnelList().size(),true));
+
+                for (int i = 0; i < times / FinFunnelManager.getFinFunnelList().size(); i++)
+                    addToTop(new TurnTriggerAllFinFunnelAction(true, true));
+            }
+        };
+        addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
+
+        if (this.upgraded)
+            addToBot(new GainEnergyAction(1));
+
+    }
+
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -38,61 +71,4 @@ public class SpeedShot extends AbstractShionCard {
         }
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        int effect = EnergyPanel.totalCount;
-        if (this.energyOnUse != -1) {
-            effect = this.energyOnUse;
-        }
-        if (p.hasRelic(ChemicalX.ID)) {
-            effect += ChemicalX.BOOST;
-            p.getRelic(ChemicalX.ID).flash();
-        }
-        if (this.upgraded) {
-            effect += 2;
-        } else
-            effect++;
-
-
-        if (effect > 0) {
-            AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
-
-            if (funnel != null) {
-                funnel.activeFire(m,  new DamageInfo(p, this.damage, this.damageTypeForTurn), effect);
-            } else {
-                for (int i = 0; i < effect; i++)
-                    this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            }
-
-            if (!this.freeToPlayOnce) {
-                p.energy.use(EnergyPanel.totalCount);
-            }
-        }
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += AbstractFinFunnel.calculateTotalFinFunnelLevel();
-        super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    @Override
-    public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += AbstractFinFunnel.calculateTotalFinFunnelLevel();
-        super.applyPowers();
-        this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-
-    @Override
-    public AbstractCard makeCopy() {
-        return new SpeedShot();
-    }
 }

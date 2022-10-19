@@ -1,9 +1,12 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
+import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -19,7 +22,29 @@ public class AttackSystemPreload extends AbstractShionCard {
     public AttackSystemPreload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 2;
         this.cardsToPreview = new QuickAttack();
+    }
+
+
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
+        addToBot(new MakeLoadedCardAction(upgraded,new QuickAttack(),this.magicNumber));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+
+        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+            if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.secondaryM)
+                return super.canUse(p, m);
+        }
+
+        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+        return false;
+
     }
 
     @Override
@@ -31,10 +56,5 @@ public class AttackSystemPreload extends AbstractShionCard {
             initializeDescription();
             this.cardsToPreview.upgrade();
         }
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeLoadedCardAction(upgraded,new QuickAttack(),this.magicNumber));
     }
 }

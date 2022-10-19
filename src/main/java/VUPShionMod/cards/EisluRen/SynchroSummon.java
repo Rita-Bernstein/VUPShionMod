@@ -18,7 +18,7 @@ public class SynchroSummon extends AbstractEisluRenCard {
 
     public SynchroSummon() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 2;
 
     }
 

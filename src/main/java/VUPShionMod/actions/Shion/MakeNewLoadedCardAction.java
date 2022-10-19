@@ -2,6 +2,7 @@ package VUPShionMod.actions.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Shion.QuickTriggerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -67,6 +68,8 @@ public class MakeNewLoadedCardAction extends AbstractGameAction {
                 if (p instanceof AbstractShionPower) {
                     for (int i = 0; i < this.amount; i++)
                         ((AbstractShionPower) p).onTriggerLoaded();
+
+                    GameStatsPatch.loadingCardTriggerCombat += amount;
                 }
             }
 

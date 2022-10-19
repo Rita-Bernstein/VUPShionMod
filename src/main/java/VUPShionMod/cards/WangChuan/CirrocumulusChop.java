@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Unique.RemoveAPlayerDebuffAction;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
@@ -60,7 +61,7 @@ public class CirrocumulusChop extends AbstractWCCard {
                 }
 
                 addToBot(new ApplyPowerAction(m, p, new ConstrictedPower(m, p, amount)));
-
+                addToBot(new RemoveAPlayerDebuffAction());
                 break;
         }
 

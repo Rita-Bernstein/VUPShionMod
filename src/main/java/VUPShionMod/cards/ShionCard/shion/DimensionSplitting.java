@@ -3,7 +3,9 @@ package VUPShionMod.cards.ShionCard.shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -31,21 +33,12 @@ public class DimensionSplitting extends AbstractShionCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.selfRetain = true;
         this.isMultiDamage = true;
+
+        GraveField.grave.set(this,true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int realBaseDamage = this.baseDamage;
-        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisCombat;
-        int ctr = 0;
-        for (AbstractCard card : cardList) {
-            if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
-                ctr++;
-            }
-        }
-        this.baseDamage += ctr * this.magicNumber;
-
-        calculateCardDamage(null);
 
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
@@ -58,7 +51,6 @@ public class DimensionSplitting extends AbstractShionCard {
         }
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
 
-        this.baseDamage = realBaseDamage;
         this.rawDescription = DESCRIPTION;
         initializeDescription();
     }
@@ -67,14 +59,7 @@ public class DimensionSplitting extends AbstractShionCard {
     @Override
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        List<AbstractCard> cardList = AbstractDungeon.actionManager.cardsPlayedThisCombat;
-        int ctr = 0;
-        for (AbstractCard card : cardList) {
-            if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
-                ctr++;
-            }
-        }
-        this.baseDamage += ctr * this.magicNumber;
+        this.baseDamage += GameStatsPatch.loadingCardTriggerCombat * this.magicNumber;
         super.applyPowers();
         this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();

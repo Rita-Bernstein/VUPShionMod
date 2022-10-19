@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class StiffnessPower extends AbstractShionPower {
     public static final String POWER_ID = VUPShionMod.makeID(StiffnessPower.class.getSimpleName());
@@ -31,9 +32,19 @@ public class StiffnessPower extends AbstractShionPower {
         this.type = PowerType.DEBUFF;
     }
 
+    private int getTrigger() {
+        int bottom = 4;
+
+        AbstractPower p = AbstractDungeon.player.getPower(StiffnessEndIncreasePower.POWER_ID);
+        if (p != null) {
+            bottom += p.amount;
+        }
+        return bottom;
+    }
+
     @Override
     public void onInitialApplication() {
-        if (this.amount >= 4) {
+        if (this.amount >= getTrigger()) {
             addToBot(new PressEndTurnButtonAction());
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
@@ -42,7 +53,7 @@ public class StiffnessPower extends AbstractShionPower {
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        if (this.amount >= 4) {
+        if (this.amount >= getTrigger()) {
             addToBot(new PressEndTurnButtonAction());
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }

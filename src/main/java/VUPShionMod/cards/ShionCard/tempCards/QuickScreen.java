@@ -1,7 +1,9 @@
 package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.finfunnels.DissectingFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -22,26 +24,35 @@ public class QuickScreen extends AbstractVUPShionCard {
 
     public QuickScreen() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 1;
+        this.magicNumber = this.baseMagicNumber = 5;
+        this.secondaryM = this.baseSecondaryM = 4;
         this.tags.add(CardTagsEnum.LOADED);
         this.exhaust = true;
 
-        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
-    }
-
-
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
+        vupCardSetBanner(CardRarity.UNCOMMON, TYPE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ScryAction(this.magicNumber));
         addToBot(new DrawCardAction(p, this.secondaryM));
+
+        int times = this.upgraded ? 4 : 2;
+
+        for (int i = 0; i < times; i++)
+            addToBot(new TriggerFinFunnelPassiveAction(DissectingFinFunnel.ID, true, true));
     }
+
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            upgradeName();
+            upgradeMagicNumber(2);
+            upgradeSecondM(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+        }
+    }
+
+
 }

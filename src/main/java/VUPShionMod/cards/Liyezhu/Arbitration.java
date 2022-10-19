@@ -39,7 +39,6 @@ public class Arbitration extends AbstractLiyezhuCard {
             this.upgradeName();
             this.name = EXTENDED_DESCRIPTION[0];
             initializeTitle();
-            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

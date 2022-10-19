@@ -4,12 +4,17 @@ import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
+import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.helpers.ChargeHelper;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
+import VUPShionMod.powers.Liyezhu.DecreePower;
 import VUPShionMod.powers.Monster.BossShion.SavePowerPower;
 import VUPShionMod.ui.SansMeter;
 import VUPShionMod.vfx.Common.AbstractSpineEffect;
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.Skeleton;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -156,6 +161,8 @@ public class AbstractPlayerPatches {
                         p.useCard(c, m, 0);
 
                         AbstractDungeon.actionManager.cardsPlayedThisTurn.add(c);
+
+                        GameStatsPatch.loadingCardTriggerCombat++;
 
                         for (AbstractPower power : AbstractDungeon.player.powers)
                             if (power instanceof AbstractShionPower)
@@ -424,11 +431,16 @@ public class AbstractPlayerPatches {
     public static class ChangeDamageActionTargetPatch {
         @SpirePostfixPatch
         public static SpireReturn<Void> Postfix(DamageAction _instance, AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
-            if (!MinionGroup.areMinionsBasicallyDead() && target != null && target.isPlayer) {
-                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                if (minion != null) {
-                    _instance.target = minion;
-                }
+            if (target != null && target.isPlayer) {
+                if (info.owner != null && info.owner.hasPower(DecreePower.POWER_ID)) {
+                    _instance.target = info.owner;
+                } else if (!AbstractDungeon.player.hasPower(CoverMinionPower.POWER_ID))
+                    if (!MinionGroup.areMinionsBasicallyDead()) {
+                        AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                        if (minion != null) {
+                            _instance.target = minion;
+                        }
+                    }
             }
 
             return SpireReturn.Continue();
@@ -443,11 +455,15 @@ public class AbstractPlayerPatches {
     public static class ChangeVampireDamageActionTargetPatch {
         @SpirePostfixPatch
         public static SpireReturn<Void> Postfix(VampireDamageAction _instance, AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
-            if (!MinionGroup.areMinionsBasicallyDead() && target != null && target.isPlayer) {
-                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                if (minion != null)
-                    _instance.target = minion;
-
+            if (target != null && target.isPlayer) {
+                if (info.owner != null && info.owner.hasPower(DecreePower.POWER_ID)) {
+                    _instance.target = info.owner;
+                } else if (!AbstractDungeon.player.hasPower(CoverMinionPower.POWER_ID))
+                    if (!MinionGroup.areMinionsBasicallyDead()) {
+                        AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                        if (minion != null)
+                            _instance.target = minion;
+                    }
             }
 
             return SpireReturn.Continue();
@@ -462,11 +478,14 @@ public class AbstractPlayerPatches {
     public static class ChangePlayerDamageTargetPatch {
         @SpirePostfixPatch
         public static SpireReturn<Void> Postfix(AbstractPlayer _instance, DamageInfo info) {
-            if (!MinionGroup.areMinionsBasicallyDead()) {
-                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                if (minion != null)
-                    minion.damage(info);
-            }
+            if (info.owner != null && info.owner.hasPower(DecreePower.POWER_ID)) {
+                info.owner.damage(info);
+            } else if (!AbstractDungeon.player.hasPower(CoverMinionPower.POWER_ID))
+                if (!MinionGroup.areMinionsBasicallyDead()) {
+                    AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                    if (minion != null)
+                        minion.damage(info);
+                }
 
             return SpireReturn.Return();
         }
@@ -479,13 +498,14 @@ public class AbstractPlayerPatches {
     public static class ChangeMonsterCalculateTargetPatch {
         @SpireInsertPatch(rloc = 20, localvars = {"tmp"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, int damage, @ByRef float[] tmp) {
-            if (!MinionGroup.areMinionsBasicallyDead()) {
-                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                if (minion != null)
-                    for (AbstractPower p : minion.powers) {
-                        tmp[0] = p.atDamageReceive(tmp[0], DamageInfo.DamageType.NORMAL);
-                    }
-            }
+            if (!_instance.hasPower(DecreePower.POWER_ID) && !AbstractDungeon.player.hasPower(CoverMinionPower.POWER_ID))
+                if (!MinionGroup.areMinionsBasicallyDead()) {
+                    AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                    if (minion != null)
+                        for (AbstractPower p : minion.powers) {
+                            tmp[0] = p.atDamageReceive(tmp[0], DamageInfo.DamageType.NORMAL);
+                        }
+                }
             return SpireReturn.Continue();
         }
     }
@@ -498,13 +518,62 @@ public class AbstractPlayerPatches {
     public static class ChangeMonsterCalculateTargetPatch2 {
         @SpireInsertPatch(rloc = 38, localvars = {"tmp"})
         public static SpireReturn<Void> Insert(AbstractMonster _instance, int damage, @ByRef float[] tmp) {
-            if (!MinionGroup.areMinionsBasicallyDead()) {
-                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                if (minion != null)
-                    for (AbstractPower p : minion.powers) {
-                        tmp[0] = p.atDamageFinalReceive(tmp[0], DamageInfo.DamageType.NORMAL);
-                    }
+            if (!_instance.hasPower(DecreePower.POWER_ID) && !AbstractDungeon.player.hasPower(CoverMinionPower.POWER_ID))
+                if (!MinionGroup.areMinionsBasicallyDead()) {
+                    AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                    if (minion != null)
+                        for (AbstractPower p : minion.powers) {
+                            tmp[0] = p.atDamageFinalReceive(tmp[0], DamageInfo.DamageType.NORMAL);
+                        }
+                }
+
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractMonster.class,
+            method = "calculateDamage"
+    )
+    public static class ChangeMonsterCalculateTargetPatch3 {
+        @SpirePostfixPatch()
+        public static SpireReturn<Void> Insert(AbstractMonster _instance, int damage) {
+            if (_instance.hasPower(DecreePower.POWER_ID)) {
+                AbstractCreature target = _instance;
+                float tmp = damage;
+
+
+                for (AbstractPower p : _instance.powers) {
+                    tmp = p.atDamageGive(tmp, DamageInfo.DamageType.NORMAL);
+                }
+
+
+                for (AbstractPower p : target.powers) {
+                    tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.NORMAL);
+                }
+
+                if(target instanceof AbstractVUPShionBoss)
+                tmp = ((AbstractVUPShionBoss)target).stance.atDamageReceive(tmp, DamageInfo.DamageType.NORMAL);
+
+
+                for (AbstractPower p : _instance.powers) {
+                    tmp = p.atDamageFinalGive(tmp, DamageInfo.DamageType.NORMAL);
+                }
+
+
+                for (AbstractPower p : target.powers) {
+                    tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.NORMAL);
+                }
+
+
+                damage = MathUtils.floor(tmp);
+                if (damage < 0) {
+                    damage = 0;
+                }
+
+                ReflectionHacks.setPrivate(_instance, AbstractMonster.class, "intentDmg", damage);
             }
+
 
             return SpireReturn.Continue();
         }
@@ -514,14 +583,17 @@ public class AbstractPlayerPatches {
             clz = DamageInfo.class,
             method = "applyPowers"
     )
-    public static class ChangeMonsterCalculateTargetPatch3 {
+    public static class ChangeMonsterCalculateTargetPatch4 {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(DamageInfo info, AbstractCreature owner, @ByRef AbstractCreature[] _target) {
-            if (!MinionGroup.areMinionsBasicallyDead() && !(owner.isPlayer || owner instanceof AbstractPlayerMinion)) {
-                AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                if (minion != null)
-                    _target[0] = minion;
-            }
+            if (info.owner != null && info.owner.hasPower(DecreePower.POWER_ID)) {
+                _target[0] = info.owner;
+            } else if (!AbstractDungeon.player.hasPower(CoverMinionPower.POWER_ID))
+                if (!MinionGroup.areMinionsBasicallyDead() && !(owner.isPlayer || owner instanceof AbstractPlayerMinion)) {
+                    AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
+                    if (minion != null)
+                        _target[0] = minion;
+                }
 
             return SpireReturn.Continue();
         }
@@ -539,7 +611,6 @@ public class AbstractPlayerPatches {
                 for (AbstractPlayerMinion m : MinionGroup.getMinions()) {
                     m.applyPowers();
                 }
-
         }
     }
 

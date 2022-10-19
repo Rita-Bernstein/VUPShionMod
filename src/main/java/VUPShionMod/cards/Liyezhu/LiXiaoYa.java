@@ -29,8 +29,8 @@ public class LiXiaoYa extends AbstractLiyezhuCard {
 
     public LiXiaoYa() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 7;
-        this.secondaryM = this.baseSecondaryM = 20;
+        this.magicNumber = this.baseMagicNumber = 5;
+        this.secondaryM = this.baseSecondaryM = 12;
         this.selfRetain = true;
         this.exhaust = true;
 
@@ -46,7 +46,7 @@ public class LiXiaoYa extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(2);
             upgradeBaseCost(2);
         }
     }

@@ -3,6 +3,7 @@ package VUPShionMod.powers.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -36,16 +37,18 @@ public class SwearPower extends AbstractShionPower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if(damageAmount >= this.owner.currentHealth){
+        if (damageAmount >= this.owner.currentHealth) {
             int damage = this.owner.currentHealth - 1;
             if (damage < 0) damage = 0;
             return damage;
-        }else
+        } else
             return damageAmount;
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
         addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
+        if (this.amount <= 1)
+            addToBot(new HealAction(this.owner, this.owner, this.owner.maxHealth / 10));
     }
 }

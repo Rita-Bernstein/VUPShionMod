@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.EisluRen.PlayerMinionTakeTurnAction;
 import VUPShionMod.msic.Shield;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -52,10 +53,11 @@ public class WindArrow extends AbstractEisluRenCard {
                 }
             }
 
+        addToBot(new PlayerMinionTakeTurnAction());
     }
 
     public void applyPowers() {
-        this.baseDamage = this.upgraded ? 21 : 17;
+        this.baseDamage = 12;
         AbstractPower p = AbstractDungeon.player.getPower(DexterityPower.POWER_ID);
         if (p != null) this.baseDamage += p.amount;
 

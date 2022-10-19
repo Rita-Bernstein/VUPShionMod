@@ -35,8 +35,4 @@ public class Calamity2Power extends AbstractShionPower {
         this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
-    @Override
-    public void atStartOfTurnPostDraw() {
-        super.atStartOfTurnPostDraw();
-    }
 }

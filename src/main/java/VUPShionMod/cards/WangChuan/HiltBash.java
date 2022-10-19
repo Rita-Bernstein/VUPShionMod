@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -19,8 +20,9 @@ public class HiltBash extends AbstractWCCard {
 
     public HiltBash() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 5;
+        this.baseDamage = 4;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.tags.add(CardTags.STARTER_STRIKE);
     }
 
@@ -31,12 +33,15 @@ public class HiltBash extends AbstractWCCard {
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+        addToBot(new ApplyCorGladiiAction(this.secondaryM));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            upgradeSecondM(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             this.initializeTitle();

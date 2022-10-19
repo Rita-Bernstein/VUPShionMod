@@ -149,7 +149,7 @@
     "NAME": "支援系統：水世界",
     "FLAVOR": "由於收集了本地化數據，規避了空間裝置的使用風險。",
     "DESCRIPTIONS": [
-      "#r替換支援系統：水世界（不穩定）。 NL 每場戰鬥開始時獲得 #b3 點 #y敏捷。"
+      "#r替換支援系統：水世界（不穩定）。 NL 每回合獲得 [E] 。 NL 每場戰鬥開始時獲得 #b3 點 #y敏捷。"
     ]
   },
   "VUPShionMod:Drapery": {
@@ -217,7 +217,7 @@
     "NAME": "魔能刃：斷浪",
     "FLAVOR": "在斬浪的基礎上升級了加裝了亞空間穩定器",
     "DESCRIPTIONS": [
-      "每回合獲得 [E] 。 NL 每打出一張 #y技能牌 失去 #b2 點 #y硬直 。 NL 每回合打出的第一張 #y攻擊牌 耗能變為 #b0 。 NL 每回合失去 #b33% 的 #y劍勢 。"
+      "每打出一張 #y技能牌 失去 #b2 點 #y硬直 。 NL 每回合打出的第一張 #y攻擊牌 耗能變為 #b0 。 NL 每回合失去 #b33% 的 #y劍勢 。"
     ]
   },
   "VUPShionMod:WhiteRose": {
@@ -316,14 +316,14 @@
     "NAME": "訓練用光劍",
     "FLAVOR": "Anastasia訓練場的裝備，為什麼會在這裡？",
     "DESCRIPTIONS": [
-      "每場戰鬥開始時, #y力量 #b%s 。 #y精英 或 #y首領 戰後，將效果 #b+1 。"
+      "每場戰鬥開始時，獲得 #y力量 #b%s 。 #y精英 或 #y首領 戰後，將效果 #b+1 。"
     ]
   },
   "VUPShionMod:TrainingPropeller": {
     "NAME": "訓練用推進器",
     "FLAVOR": "Anastasia訓練場的裝備，為什麼會在這裡？",
     "DESCRIPTIONS": [
-      "每場戰鬥開始時, #y敏捷 #b%s 。 #y精英 或 #y首領 戰後，將效果 #b+1 。"
+      "每場戰鬥開始時, 獲得 #y敏捷 #b%s 。 #y精英 或 #y首領 戰後，將效果 #b+1 。"
     ]
   },
   "VUPShionMod:FishingRod": {

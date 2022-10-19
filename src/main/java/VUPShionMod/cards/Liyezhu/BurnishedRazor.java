@@ -5,6 +5,7 @@ import VUPShionMod.actions.Liyezhu.DuelSinAction;
 import VUPShionMod.powers.Liyezhu.SinPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -41,8 +42,8 @@ public class BurnishedRazor extends AbstractLiyezhuCard {
         addToBot(new ExpungeVFXAction(m));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
 
-        if (!this.upgraded)
-            addToBot(new DamageAction(p, new DamageInfo(p, this.damage / 2, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
+        if (this.upgraded)
+            addToBot(new HealAction(p,p,this.damage / 2));
 
         addToBot(new DuelSinAction());
 

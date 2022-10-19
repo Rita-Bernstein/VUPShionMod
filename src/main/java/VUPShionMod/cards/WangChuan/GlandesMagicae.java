@@ -23,6 +23,7 @@ public class GlandesMagicae extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 13;
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
+        this.selfRetain = true;
     }
 
     @Override

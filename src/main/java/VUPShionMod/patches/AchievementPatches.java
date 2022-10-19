@@ -39,6 +39,7 @@ public class AchievementPatches {
                 items.add(new AchievementShionItem(NAMES[7], TEXT[7], "07", "07", false));
                 items.add(new AchievementShionItem(NAMES[6], TEXT[6], "06", "06", false));
                 items.add(new AchievementShionItem(NAMES[8], TEXT[8], "08", "08", false));
+                items.add(new AchievementShionItem(NAMES[10], TEXT[10], "10", "10", false));
             }
         }
     }

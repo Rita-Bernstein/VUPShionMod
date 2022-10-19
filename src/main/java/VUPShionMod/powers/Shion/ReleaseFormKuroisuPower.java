@@ -25,6 +25,7 @@ public class ReleaseFormKuroisuPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        this.amount2 = 0;
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReleaseFormKuroisuPower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReleaseFormKuroisuPower32.png")), 0, 0, 32, 32);
         updateDescription();
@@ -32,7 +33,12 @@ public class ReleaseFormKuroisuPower extends AbstractShionPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        addToBot(new GainHyperdimensionalLinksAction(this.amount));
+        this.amount2++;
+        if (this.amount2 > 2) {
+            this.amount2 = 0;
+            flash();
+            addToBot(new GainHyperdimensionalLinksAction(this.amount));
+        }
     }
 
     @Override

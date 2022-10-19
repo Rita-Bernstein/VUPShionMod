@@ -2,7 +2,10 @@ package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
+import VUPShionMod.actions.Shion.TurnTriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
+import VUPShionMod.finfunnels.AbstractFinFunnel;
+import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -23,13 +26,17 @@ public class FinFunnelSupport extends AbstractShionMinamiCard {
     public FinFunnelSupport() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
                 125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
-        addToBot(new TriggerFinFunnelPassiveAction(m));
+
+        for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList) {
+            addToBot(new TurnTriggerFinFunnelAction(m,funnel.id,true));
+        }
+
         addToBot(new DrawCardAction(p, this.magicNumber));
     }
 

@@ -240,6 +240,20 @@ public class SansMeter {
     public void onVictory() {
         if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss))
             if (!SansMental.sansMental && this.amount <= 0) {
+                if ((AbstractDungeon.getCurrRoom()) != null) {
+
+                    (AbstractDungeon.getCurrRoom()).isBattleOver = false;
+
+                    if ((AbstractDungeon.getCurrRoom()).monsters != null) {
+                        if ((AbstractDungeon.getCurrRoom()).monsters.monsters != null) {
+                            (AbstractDungeon.getCurrRoom()).monsters.monsters.clear();
+                        }
+                    }
+
+                    if((AbstractDungeon.getCurrRoom()).rewards != null)
+                        (AbstractDungeon.getCurrRoom()).rewards.clear();
+                }
+
                 RoomEventDialog.optionList.clear();
 
                 AbstractDungeon.eventList.add(0, MentalBreakdown.ID);
@@ -274,19 +288,6 @@ public class SansMeter {
                 AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
 
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.EVENT;
-                if ((AbstractDungeon.getCurrRoom()) != null) {
-
-                    (AbstractDungeon.getCurrRoom()).isBattleOver = false;
-
-                    if ((AbstractDungeon.getCurrRoom()).monsters != null) {
-                        if ((AbstractDungeon.getCurrRoom()).monsters.monsters != null) {
-                            (AbstractDungeon.getCurrRoom()).monsters.monsters.clear();
-                        }
-                    }
-
-                    if((AbstractDungeon.getCurrRoom()).rewards != null)
-                    (AbstractDungeon.getCurrRoom()).rewards.clear();
-                }
                 GenericEventDialog.show();
                 CardCrawlGame.fadeIn(1.5F);
             }

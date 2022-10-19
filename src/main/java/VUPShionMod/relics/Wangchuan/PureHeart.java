@@ -1,6 +1,7 @@
 package VUPShionMod.relics.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
 import VUPShionMod.cards.WangChuan.OnrushingTip;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
@@ -33,7 +34,7 @@ public class PureHeart extends AbstractShionRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, 2)));
+        addToBot(new ApplyCorGladiiAction(2));
     }
 
     @Override

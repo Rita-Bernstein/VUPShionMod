@@ -2,6 +2,7 @@ package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
+import VUPShionMod.actions.Shion.TurnTriggerFinFunnelAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.patches.AbstractPlayerPatches;
@@ -47,7 +48,7 @@ public class FunnelMatrix extends AbstractVUPShionCard {
                     80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
 
         for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList) {
-            addToBot(new TriggerFinFunnelPassiveAction(m, funnel.id,true));
+            addToBot(new TurnTriggerFinFunnelAction(m,funnel.id,true));
         }
     }
 }

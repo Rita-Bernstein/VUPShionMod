@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.powers.EisluRen.SupportTimeDrivenPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -24,6 +25,7 @@ public class SupportTimeDriven extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p,p,new SupportTimeDrivenPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.EisluRen.PlayerMinionTakeTurnAction;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -51,6 +52,8 @@ public class ForestStalking extends AbstractEisluRenCard {
             if (AbstractDungeon.cardRng.random(99) <= chance) {
                 addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
             }
+
+        addToBot(new PlayerMinionTakeTurnAction());
     }
 
     @Override

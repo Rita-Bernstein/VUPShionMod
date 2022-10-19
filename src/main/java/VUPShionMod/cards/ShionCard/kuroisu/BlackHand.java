@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -27,6 +28,7 @@ public class BlackHand extends AbstractShionKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainHyperdimensionalLinksAction(4));
         addToBot(new LoseHPAction(p, p, this.magicNumber));
 
         addToBot(new DrawCardAction(this.secondaryM, new AbstractGameAction() {

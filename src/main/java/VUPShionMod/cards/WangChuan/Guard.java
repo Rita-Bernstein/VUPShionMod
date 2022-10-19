@@ -24,7 +24,7 @@ public class Guard extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 22;
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 4;
+        this.secondaryM = this.baseSecondaryM = 3;
     }
 
     @Override

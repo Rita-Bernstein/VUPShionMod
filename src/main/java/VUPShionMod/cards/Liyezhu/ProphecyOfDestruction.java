@@ -16,7 +16,7 @@ public class ProphecyOfDestruction extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ProphecyOfDestruction.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/ProphecyOfDestruction.png");
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -33,7 +33,7 @@ public class ProphecyOfDestruction extends AbstractLiyezhuCard {
         addToBot(new LoseSansAction(this.secondaryM));
 
         addToBot(new ApplyPowerAction(p, p, new ProphecyOfDestructionPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new ProphecyOfDestruction2Power(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new ProphecyOfDestruction2Power(p, this.upgraded ? 2 : 1)));
 
     }
 

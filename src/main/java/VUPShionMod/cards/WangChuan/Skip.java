@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -19,20 +20,24 @@ public class Skip extends AbstractWCCard {
     public Skip() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.exhaust =true;
+        this.secondaryM = this.baseSecondaryM = 5;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(this.upgraded)
+        addToBot(new ScryAction(this.secondaryM));
         addToBot(new DrawCardAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new MagiamObruorPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.cards.ShionCard.optionCards.*;
 import VUPShionMod.powers.Shion.*;
@@ -38,6 +39,8 @@ public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
         this.isInnate = true;
         this.setBannerTexture("VUPShionMod/img/banner/512/banner_rare.png", "VUPShionMod/img/banner/1024/banner_rare.png");
         this.setPortraitTextures("VUPShionMod/img/banner/512/frame_skill_rare.png", "VUPShionMod/img/banner/1024/frame_skill_rare.png");
+
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     public static boolean checkUpgradePower() {
@@ -49,16 +52,12 @@ public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
                 !p.hasPower(PursuitFinFunnelUpgradePower.POWER_ID);
     }
 
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            upgradeBaseCost(1);
-        }
-    }
+
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainHyperdimensionalLinksAction(this.secondaryM));
+
         ArrayList<AbstractCard> list = new ArrayList<>();
         list.add(new MatrixUpgrade());
         list.add(new GravityFinFunnelUpgrade());
@@ -67,6 +66,13 @@ public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
         addToBot(new ChooseOneAction(list));
     }
 
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            upgradeBaseCost(1);
+        }
+    }
 
     @Override
     public void update() {
@@ -88,10 +94,5 @@ public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
                 rotationTimer -= Gdx.graphics.getDeltaTime();
             }
         }
-    }
-
-    @Override
-    public AbstractCard makeCopy() {
-        return super.makeCopy();
     }
 }

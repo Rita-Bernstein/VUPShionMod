@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Limit extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID(Limit.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu13.png");
-    private static final int COST = 1;
+    private static final int COST = 0;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -26,7 +26,7 @@ public class Limit extends AbstractShionKuroisuCard {
     public Limit() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
-        this.baseDamage = 12;
+        this.baseDamage = 8;
 
         this.isMultiDamage = true;
         ExhaustiveVariable.setBaseValue(this,2);
@@ -59,7 +59,7 @@ public class Limit extends AbstractShionKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeDamage(4);
         }
     }
 }

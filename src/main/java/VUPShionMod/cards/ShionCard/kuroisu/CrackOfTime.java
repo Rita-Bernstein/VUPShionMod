@@ -18,7 +18,7 @@ public class CrackOfTime extends AbstractShionKuroisuCard {
 
     public CrackOfTime() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -33,7 +33,7 @@ public class CrackOfTime extends AbstractShionKuroisuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
         }
     }
 }

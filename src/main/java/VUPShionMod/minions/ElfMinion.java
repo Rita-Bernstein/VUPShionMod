@@ -41,8 +41,8 @@ public class ElfMinion extends AbstractPlayerMinion {
 
         this.timesUpgraded = timesUpgraded;
 
-        this.damage.add(new DamageInfo(this, 3));
-        this.damage.add(new DamageInfo(this, 15));
+        this.damage.add(new DamageInfo(this, 5));
+        this.damage.add(new DamageInfo(this, 10));
         this.damage.add(new DamageInfo(this, 20));
 
         this.type = MinionType.Elf;

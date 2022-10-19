@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.powers.Common.DenergizePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -21,10 +22,12 @@ public class OverspeedField extends AbstractVUPShionCard {
     public OverspeedField() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 4;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainHyperdimensionalLinksAction(this.secondaryM));
         addToBot(new DrawCardAction(p, this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new DenergizePower(p, 2)));
         addToBot(new ApplyBulletTimeAction());

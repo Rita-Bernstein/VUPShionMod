@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.EisluRen.PlayerMinionTakeTurnAction;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -42,6 +43,8 @@ public class PhysicalMagic extends AbstractEisluRenCard {
             if (AbstractDungeon.cardRng.random(99) <= chance) {
                 addToBot(new StunMonsterAction(m, p, 1));
             }
+
+        addToBot(new PlayerMinionTakeTurnAction());
 
         if (m.getIntentBaseDmg() < 0) {
             addToBot(new DrawCardAction(this.upgraded ? 2 : 1));

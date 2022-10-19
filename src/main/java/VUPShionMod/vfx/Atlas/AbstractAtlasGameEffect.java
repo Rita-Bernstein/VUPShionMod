@@ -108,8 +108,10 @@ public class AbstractAtlasGameEffect extends AbstractGameEffect {
         curAnimation.yPosition = yPosition;
         curAnimation.update();
 
-        if (isCurAnimationDone())
+        if (isCurAnimationDone()) {
             this.isDone = true;
+            dispose();
+        }
     }
 
     public void render(SpriteBatch sb) {

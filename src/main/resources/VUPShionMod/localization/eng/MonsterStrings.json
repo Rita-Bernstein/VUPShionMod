@@ -56,7 +56,6 @@
       "...YOU JERKS..."
     ]
   },
-
   "VUPShionMod:ElfMinion": {
     "MOVES": [
       ""
@@ -70,21 +69,21 @@
   },
   "VUPShionMod:AquaShionBoss": {
     "MOVES": [
-      "系统骇入",
-      "魔能紊乱",
-      "行动封锁",
-      "超新星爆发"
+      "HACKING IN...",
+      "DISTURBING THE MAGIA FLOW...",
+      "DISABLING ACTION...",
+      "SUPERNOVA OUTBURST!"
     ],
     "NAME": "Shion-Midsummer Swimsuit",
     "DIALOG": [
-      "正在进行弱点分析……",
-      "解析完成！",
-      "系统强制覆盖……完成！",
-      "检测到魔法回路……进行干扰",
-      "行动预测完成，进行封锁",
-      "时流加速，启动",
-      "防御系统，超频",
-      "全系统，过载 "
+      "COMMENCING ANALYZING WEAK SPOT...",
+      "ANALYZE COMPLETED",
+      "FORCE COVERING PROTOCOL...DONE",
+      "MAGIA CIRCUIT DETECTED...COMMENCING DISTURBING...",
+      "ACTION ANTICIPATION COMPLETED...COMMENCING BLOCKING...",
+      "ACCELERATION INITIATING.",
+      "OVERDRIVING DEFENSIVE SYSTEM...",
+      "SYSTEM OV...VVEEERLOAAADED .%&*#@^&"
     ]
   },
   "VUPShionMod:OriLiyezhuBoss": {
@@ -93,7 +92,7 @@
     ],
     "NAME": "Liyezhu-Priestess Duty",
     "DIALOG": [
-      "审判……降临……"
+      "The judgement...awaits..."
     ]
   },
   "VUPShionMod:OriEisluRenBoss": {
@@ -102,9 +101,9 @@
     ],
     "NAME": "EisluRen-Biyuki Gift",
     "DIALOG": [
-      "构装飞翼，变形",
-      "构装飞翼，最高出力等级！",
-      "掩护我"
+      "Wings, change your shape!",
+      "Maximum output!",
+      "Cover me."
     ]
   },
   "VUPShionMod:HighElf": {
@@ -127,12 +126,12 @@
   },
   "VUPShionMod:ChinaWangChuanBoss": {
     "MOVES": [
-      "终章：热寂"
+      "Mors Universi"
     ],
     "NAME": "Wangchuan-Sapor Peregrinus",
     "DIALOG": [
-      "无量……空处",
-      "终章……热寂！"
+      "Nihil est...Immensum...",
+      "Exitus Omnia...Mors Universi..."
     ]
   },
   "VUPShionMod:PurityWangChuanBoss": {
@@ -141,7 +140,7 @@
     ],
     "NAME": "Wangchuan-Spectre Dance",
     "DIALOG": [
-      "神速……霹雳一闪！"
+      "Watch my move and don't blink!"
     ]
   },
   "VUPShionMod:OriWangChuanBoss": {
@@ -150,7 +149,7 @@
     ],
     "NAME": "Wangchuan-Vampire's Shroud",
     "DIALOG": [
-      "魔能回路……启动"
+      "Magia circuit enabled..."
     ]
   },
   "VUPShionMod:OriShionBoss": {
@@ -159,8 +158,8 @@
     ],
     "NAME": "Shion-Aggressive Armament",
     "DIALOG": [
-      "轨道打击锁定……",
-      "轨道打击开始"
+      "TARGET LOCKED FOR ORBITAL STRIKE",
+      "ORBITAL STRIKE INCOMING..."
     ]
   },
   "VUPShionMod:AquaWangChuanBoss": {
@@ -169,7 +168,7 @@
     ],
     "NAME": "Wangchuan-Midsummer Swimsuit",
     "DIALOG": [
-      "无限……剑制！"
+      "Terre gladios infinitios!"
     ]
   },
   "VUPShionMod:BlueGiantShionBoss": {
@@ -178,7 +177,7 @@
     ],
     "NAME": "Shion-Conqueror's Attire",
     "DIALOG": [
-      "超维矩阵……激活！"
+      "HYPERDIMENSIONAL MATRIX ACTIVATING..."
     ]
   }
 }

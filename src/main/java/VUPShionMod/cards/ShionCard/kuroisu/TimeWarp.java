@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class TimeWarp extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID(TimeWarp.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/kuroisu/kuroisu10.png");
-    private static final int COST = 1;
+    private static final int COST = 0;
     public static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -21,8 +21,8 @@ public class TimeWarp extends AbstractShionKuroisuCard {
     public TimeWarp() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
-        this.secondaryM = this.baseSecondaryM = 1;
-        this.baseDamage = 3;
+        this.secondaryM = this.baseSecondaryM = 3;
+        this.baseDamage = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -38,11 +38,15 @@ public class TimeWarp extends AbstractShionKuroisuCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+
         if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
             if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.secondaryM)
                 return super.canUse(p, m);
         }
+
+        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
         return false;
+
     }
 
     public void upgrade() {

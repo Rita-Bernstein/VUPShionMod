@@ -14,7 +14,7 @@ public class Rob extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID(Rob.class.getSimpleName());
     public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy23.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final int COST = 1;

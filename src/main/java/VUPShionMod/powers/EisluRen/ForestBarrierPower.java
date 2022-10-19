@@ -2,6 +2,7 @@ package VUPShionMod.powers.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -49,7 +50,7 @@ public class ForestBarrierPower extends AbstractShionPower {
     @Override
     public void atStartOfTurn() {
         flash();
-        addToBot(new GainBlockAction(this.owner, GameStatsPatch.constrictedApplyThisCombat * this.amount / 2));
+        addToBot(new GainShieldAction(this.owner, GameStatsPatch.constrictedApplyThisCombat * this.amount / 2));
 
         Supplier<AbstractPower> powerToApply = () -> new ConstrictedPower(null, AbstractDungeon.player, this.amount);
         addToTop(new ApplyPowerToAllEnemyAction(powerToApply));

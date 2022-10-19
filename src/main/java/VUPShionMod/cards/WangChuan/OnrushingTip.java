@@ -1,7 +1,9 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
+import VUPShionMod.powers.EisluRen.ReduceDamagePower;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.StiffnessPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -30,7 +32,7 @@ public class OnrushingTip extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, 8)));
+        addToBot(new ApplyCorGladiiAction(8));
 
         int d = this.magicNumber;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
@@ -46,6 +48,8 @@ public class OnrushingTip extends AbstractWCCard {
         initializeDescription();
 
 
+        if(this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new ReduceDamagePower(p, 30)));
         addToBot(new ApplyStiffnessAction(this.secondaryM));
     }
 

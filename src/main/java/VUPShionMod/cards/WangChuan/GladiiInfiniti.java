@@ -55,7 +55,7 @@ public class GladiiInfiniti extends AbstractWCCard {
 
 
 
-        addToBot(new ApplyPowerAction(p,p,new IntensaPower(p),0));
+        addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
         addToBot(new ApplyStiffnessAction(4));
 
         addToBot(new StunMonsterAction(m, p, 1));

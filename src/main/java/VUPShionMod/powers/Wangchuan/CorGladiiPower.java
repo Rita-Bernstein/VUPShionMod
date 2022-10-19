@@ -75,6 +75,7 @@ public class CorGladiiPower extends AbstractShionPower {
         }
 
         GameStatsPatch.corGladiiLoseThisTurn += reduceAmount;
+
     }
 
     @Override

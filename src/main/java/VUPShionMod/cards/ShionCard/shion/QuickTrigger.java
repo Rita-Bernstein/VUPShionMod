@@ -1,6 +1,8 @@
 package VUPShionMod.cards.ShionCard.shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
+import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.powers.Shion.QuickTriggerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -19,11 +21,13 @@ public class QuickTrigger extends AbstractShionCard {
     public QuickTrigger() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new QuickTriggerPower(p,this.magicNumber),this.magicNumber));
+        addToBot(new GainHyperdimensionalLinksAction(this.secondaryM));
+        addToBot(new ApplyPowerAction(p, p, new QuickTriggerPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override

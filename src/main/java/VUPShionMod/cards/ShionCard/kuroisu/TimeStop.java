@@ -3,9 +3,12 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.LoadCardDiscardPileToTopOfDeckAction;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
+import VUPShionMod.monsters.Story.Ouroboros;
+import VUPShionMod.patches.AchievementPatches;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 public class TimeStop extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID(TimeStop.class.getSimpleName());
@@ -22,6 +25,11 @@ public class TimeStop extends AbstractShionKuroisuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new StunMonsterAction(m, p, 1));
+
+        if(m.id.equals(Ouroboros.ID) && !m.hasPower(ArtifactPower.POWER_ID)){
+            AchievementPatches.unlockAchievement("10");
+        }
+
         addToBot(new LoadCardDiscardPileToTopOfDeckAction(p, upgraded));
     }
 

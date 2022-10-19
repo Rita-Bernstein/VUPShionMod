@@ -54,10 +54,6 @@ public class WaveBreaker extends AbstractShionRelic {
         }
     }
 
-    public void onEquip() { AbstractDungeon.player.energy.energyMaster++; }
-
-    public void onUnequip() { AbstractDungeon.player.energy.energyMaster--; }
-
     @Override
     public void obtain() {
         AbstractPlayer player = AbstractDungeon.player;

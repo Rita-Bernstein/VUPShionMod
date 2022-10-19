@@ -27,7 +27,7 @@ public class RitaShop extends AbstractVUPShionBoss {
 
 
     public RitaShop() {
-        super(NAME, ID, 160, 0.0F, 0.0F, 300.0F, 380.0F, "VUPShionMod/img/monsters/Rita/maid/MaidRita.png", 0.0F, 0.0F);
+        super(NAME, ID, 160, 0.0F, 8.0F, 300.0F, 380.0F, "VUPShionMod/img/monsters/Rita/maid/MaidRita.png", 0.0F, -30.0F);
         if (AbstractDungeon.ascensionLevel >= 9) {
             setHp(630);
         } else {

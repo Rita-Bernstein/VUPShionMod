@@ -28,6 +28,7 @@ public class AcceleratorPower extends AbstractShionPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
         updateDescription();
         this.isTurnBased = true;
+        this.priority = 1;
     }
 
     @Override

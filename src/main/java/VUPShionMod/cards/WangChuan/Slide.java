@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -22,28 +23,28 @@ public class Slide extends AbstractWCCard {
 
     public Slide() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseBlock = 5;
+        this.baseBlock = 2;
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded) {
             addToBot(new GainBlockAction(p, this.block));
-            addToBot(new GainBlockAction(p, this.block));
-        }
 
+        }
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ApplyCorGladiiAction(this.secondaryM));
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(-2);
-            upgradeMagicNumber(1);
+            upgradeBlock(1);
+            upgradeSecondM(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             this.initializeTitle();

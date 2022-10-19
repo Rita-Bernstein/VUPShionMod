@@ -244,6 +244,7 @@ public class Ouroboros extends CustomMonster {
 
             this.state.setAnimation(0, "timebug_dead", false);
             this.state.addAnimation(0, "timebug_dead_disapper", false, 0.0f);
+            this.state.setAnimation(4, "lightwing_drop", false);
             if (this.charging)
                 this.state.setAnimation(3, "attack_fire_cold_down", false);
 

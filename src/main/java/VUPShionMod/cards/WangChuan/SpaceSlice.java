@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 
 public class SpaceSlice extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(SpaceSlice.class.getSimpleName());
@@ -38,15 +39,19 @@ public class SpaceSlice extends AbstractWCCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
-                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                if(m != null)
+                addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
+
+                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 break;
             case 1:
-                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                if(m != null)
+                    addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
+                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 break;
             case 2:
                 if(m != null)
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 039 Radial Transition", m.hb.cX, m.hb.cY + 50.0f * Settings.scale,
-                        80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
+                    addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
                 for (int i = 0; i < 4; i++) {
                     this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 }

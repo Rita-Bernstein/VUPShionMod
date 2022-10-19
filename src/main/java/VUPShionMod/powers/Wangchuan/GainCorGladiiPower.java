@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -33,6 +34,6 @@ public class GainCorGladiiPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new CorGladiiPower(AbstractDungeon.player,this.amount)));
+        addToBot(new ApplyCorGladiiAction(this.amount));
     }
 }

@@ -3,10 +3,7 @@ package VUPShionMod.actions.Shion;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.patches.AbstractPlayerPatches;
-import VUPShionMod.powers.Shion.AttackOrderAlphaPower;
-import VUPShionMod.powers.Shion.AttackOrderBetaPower;
-import VUPShionMod.powers.Shion.AttackOrderDeltaPower;
-import VUPShionMod.powers.Shion.AttackOrderGammaPower;
+import VUPShionMod.powers.Shion.*;
 import VUPShionMod.vfx.Shion.AllFinFunnelBeamEffect;
 import VUPShionMod.vfx.Shion.AllFinFunnelSmallLaserEffect;
 import VUPShionMod.vfx.Shion.FinFunnelBeamEffect;
@@ -32,6 +29,8 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
     private boolean isMultiDamage = false;
     private String forceFinFunnel;
 
+    private boolean isCard = false;
+
     public TurnTriggerFinFunnelAction(boolean random) {
         this.random = random;
         this.duration = 1.0f;
@@ -41,6 +40,11 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
         this.target = target;
         this.duration = 1.0f;
         this.forceFinFunnel = forceFinFunnel;
+    }
+
+    public TurnTriggerFinFunnelAction(AbstractMonster target, String forceFinFunnel, boolean isCard) {
+        this(target, forceFinFunnel);
+        this.isCard = isCard;
     }
 
     private void getPower() {
@@ -70,6 +74,12 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
 
 //            特效部分
         if (availableFinFunnel.size() > 0) {
+
+            float effect = 1.0f;
+            if (AbstractDungeon.player.hasPower(ReleaseFormMinamiPower.POWER_ID) && this.isCard) {
+                effect += AbstractDungeon.player.getPower(ReleaseFormMinamiPower.POWER_ID).amount * 0.5f;
+            }
+
             AbstractFinFunnel finFunnel;
             if (this.forceFinFunnel.equals(""))
                 finFunnel = availableFinFunnel.get(AbstractDungeon.miscRng.random(availableFinFunnel.size() - 1));
@@ -94,14 +104,14 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
                     if (AbstractDungeon.getMonsters().areMonstersBasicallyDead())
                         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
 
-                            f.powerToApply(mo);
+                            f.powerToApply(mo, effect, false);
                         }
                 }
             } else {
                 addToBot(new DamageAction(this.target, new DamageInfo(null,
                         finFunnel.getFinalDamage(), DamageInfo.DamageType.THORNS), AttackEffect.FIRE));
 
-                finFunnel.powerToApply(this.target);
+                finFunnel.powerToApply(this.target, effect, false);
             }
         }
 

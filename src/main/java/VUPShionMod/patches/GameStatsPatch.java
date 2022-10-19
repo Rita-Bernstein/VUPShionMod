@@ -35,6 +35,7 @@ public class GameStatsPatch {
     public static int wingShieldDamageReduceThisCombat = 0;
     public static int constrictedApplyThisCombat = 0;
     public static int corGladiiLoseThisTurn = 0;
+    public static int loadingCardTriggerCombat = 0;
     public static ArrayList<String> returnToHandList = new ArrayList<>();
 
     @SpirePatch(
@@ -64,6 +65,7 @@ public class GameStatsPatch {
         lastAttackDamageDeal = 0;
         wingShieldDamageReduceThisCombat = 0;
         constrictedApplyThisCombat = 0;
+        loadingCardTriggerCombat = 0;
 
         for (AbstractFinFunnel finFunnel : FinFunnelManager.getFinFunnelList()) {
             finFunnel.resetLevelCombat();

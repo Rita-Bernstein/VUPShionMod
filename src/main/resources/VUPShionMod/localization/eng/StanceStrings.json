@@ -8,7 +8,7 @@
   "VUPShionMod:JudgeStance": {
     "NAME": "Judging Stance",
     "DESCRIPTION": [
-      "When you play an #yAttack, trigger #yPunitive."
+      "When you play an #yAttack, trigger #yPunitive. NL Damage from #yPunitive reduce by #b50% ."
     ]
   },
   "VUPShionMod:SpiritStance": {
@@ -38,7 +38,7 @@
   "VUPShionMod:RuinGuardianStance": {
     "NAME": "Ruin Warden",
     "DESCRIPTION": [
-      "Lose #b2 #yConstruct #yRecharge each turn. NL When you enter this #yStance, #yExhaust up to #b2 #ySkills. NL At the start of your turn, play 1 copy of each #ySkill that was then exhausted."
+      "Gain #b1 #yConstruct #yRecharge each turn. NL When you enter this #yStance, #yExhaust up to #b1 #ySkill. NL At the start of your turn, play 1 copy of each #ySkill that was then exhausted."
     ]
   },
   "VUPShionMod:LightArmorStance": {

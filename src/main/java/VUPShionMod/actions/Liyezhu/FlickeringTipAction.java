@@ -5,6 +5,8 @@ import VUPShionMod.monsters.Story.Ouroboros;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.Story.PlagaAMundoMinion;
 import VUPShionMod.monsters.Story.TimePortal;
+import VUPShionMod.patches.EnergyPanelPatches;
+import VUPShionMod.relics.Event.AbyssalCrux;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.EscapeAction;
@@ -45,8 +47,11 @@ public class FlickeringTipAction extends AbstractGameAction {
                         monster.isDying = false;
                         addToTop(new EscapeAction(monster));
                     }
-                    addToTop(new AddSansAction(magicNumber));
-                    addToTop(new GainMaxHPAction(AbstractDungeon.player, magicNumber));
+                    if (!AbstractDungeon.player.hasRelic(AbyssalCrux.ID))
+                        if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
+                            EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(this.amount);
+                        }
+                    AbstractDungeon.player.increaseMaxHp(magicNumber, true);
                 }
             }
 

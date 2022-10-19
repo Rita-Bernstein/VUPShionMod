@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
@@ -31,6 +32,7 @@ public class Entrench extends AbstractEisluRenCard {
         addToBot(new AddWingShieldDamageReduceAction(WingShield.getWingShield().getDamageReduce()));
         if(!this.upgraded)
         addToBot(new ApplyPowerAction(p,p,new EntanglePower(p)));
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
     }
 
 

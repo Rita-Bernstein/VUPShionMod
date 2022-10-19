@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class AddSansAction extends AbstractGameAction {
     public AddSansAction(int amount){
         this.amount = amount;
+        this.actionType = ActionType.DAMAGE;
     }
 
     @Override

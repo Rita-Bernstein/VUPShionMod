@@ -3,6 +3,7 @@ package VUPShionMod.cards.EisluRen;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.powers.EisluRen.ReduceDamagePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,6 +31,7 @@ public class Station extends AbstractEisluRenCard {
         if(this.upgraded)
         addToBot(new GainShieldAction(p, this.secondaryM));
         addToBot(new AddWingShieldDamageReduceAction(this.magicNumber));
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
     }
 
     @Override

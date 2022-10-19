@@ -1,6 +1,7 @@
 package VUPShionMod.relics.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.cards.WangChuan.OnrushingTip;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.relics.AbstractShionRelic;
@@ -33,9 +34,7 @@ public class WhitePurity extends AbstractShionRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new CorGladiiPower(AbstractDungeon.player, 5)));
+        addToBot(new ApplyCorGladiiAction(5));
         
     }
 

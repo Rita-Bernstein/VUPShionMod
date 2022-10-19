@@ -7,6 +7,7 @@ import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.ElfMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.ui.WingShield;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -68,6 +69,9 @@ public class Avalon extends AbstractEisluRenCard {
                 }
             }
         }
+
+
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
     }
 
     @Override

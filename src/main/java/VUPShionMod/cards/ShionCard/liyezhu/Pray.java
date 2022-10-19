@@ -24,18 +24,10 @@ public class Pray extends AbstractShionLiyezhuCard {
         this.exhaust = true;
     }
 
-    @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(1);
-        }
-    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainHyperdimensionalLinksAction(2));
-//        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, 2)));
+        addToBot(new GainHyperdimensionalLinksAction(3));
         addToBot(new DrawCardAction(this.baseMagicNumber, new AbstractGameAction() {
             @Override
             public void update() {
@@ -50,5 +42,14 @@ public class Pray extends AbstractShionLiyezhuCard {
                 isDone = true;
             }
         }));
+    }
+
+
+    @Override
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeMagicNumber(1);
+        }
     }
 }

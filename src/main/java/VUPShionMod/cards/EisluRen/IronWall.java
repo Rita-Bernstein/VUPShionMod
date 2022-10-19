@@ -1,9 +1,11 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.powers.EisluRen.IronWallPower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -24,22 +26,25 @@ public class IronWall extends AbstractEisluRenCard {
     public IronWall() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.secondaryM = this.baseSecondaryM = 3;
+        this.magicNumber = this.baseMagicNumber = 7;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
-        addToBot(new ApplyPowerAction(p,p,new IronWallPower(p)));
+            addToBot(new LoseWingShieldAction(this.secondaryM));
+        addToBot(new ApplyPowerAction(p, p, new IronWallPower(p)));
+        addToBot(new GainShieldAction(p, this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

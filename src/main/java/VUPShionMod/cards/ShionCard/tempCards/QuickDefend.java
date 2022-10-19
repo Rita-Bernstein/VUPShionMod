@@ -28,24 +28,26 @@ public class QuickDefend extends AbstractVUPShionCard {
     public QuickDefend() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = this.block = 2;
-        this.secondaryM = this.baseSecondaryM = 2;
         this.tags.add(CardTagsEnum.LOADED);
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.exhaust = true;
 
-        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
-    }
+        this.magicNumber = this.baseMagicNumber = 2;
 
+        vupCardSetBanner(CardRarity.UNCOMMON, TYPE);
+    }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
-                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
+                125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
         addToBot(new SFXAction("SHION_9"));
         applyPowers();
         addToBot(new GainBlockAction(p, this.block));
-        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
+
+        for (int i = 0; i < this.magicNumber; i++)
+            addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID, true));
     }
 
     @Override
@@ -53,6 +55,7 @@ public class QuickDefend extends AbstractVUPShionCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBlock(1);
+            upgradeMagicNumber(1);
         }
     }
 }

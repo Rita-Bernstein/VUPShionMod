@@ -41,7 +41,7 @@
     "NAME": "Dissecting Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
-      "  #yFunnel cards, upgrade #yPursuing #yFunnel by #b1.",
+      " #yFunnel cards, upgrade #yPursuing #yFunnel by #b1.",
       "Task Completed!"
     ]
   },
@@ -75,7 +75,7 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "Liberated Form: Cloyce",
     "DESCRIPTIONS": [
-      "Every card you played, gain #b%d #HyperdimensionalLinks ."
+      "Every #b3 cards you played, gain #b%d #HyperdimensionalLinks ."
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
@@ -125,7 +125,7 @@
   "VUPShionMod:ReleaseFormLiyezhuBPower": {
     "NAME": "Liberated Form: Liyezhu",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage #b%d times as much as your #yHyperdimensional #yLink to ALL enemies."
+      "At the end of your turn, deal damage #b%d times equal to your #yHyperdimensional #yLink to ALL enemies."
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhuCPower": {
@@ -141,7 +141,7 @@
     ]
   },
   "VUPShionMod:LockOnPower2": {
-    "NAME": "锁定",
+    "NAME": "Locked On",
     "DESCRIPTIONS": [
       "Whenever this creature get injured,you gain #b%d #yHyperdimensional #yLink."
     ]
@@ -301,7 +301,7 @@
   "VUPShionMod:VampireFormPower": {
     "NAME": "Vampire Form",
     "DESCRIPTIONS": [
-      "Whenever you deal #yunblocked damage, heal #b%d HP."
+      "Whenever you deal #yunblocked #yAttack damage, heal #b%d HP."
     ]
   },
   "VUPShionMod:MensVirtusquePower": {
@@ -349,7 +349,7 @@
   "VUPShionMod:MoonstriderPower": {
     "NAME": "Moonstrider",
     "DESCRIPTIONS": [
-      "Whenever attacked this turn, gain #b%d #yCor #yGladii."
+      "Whenever recieve #yAttack damage in this turn, gain #b%d #yCor #yGladii."
     ]
   },
   "VUPShionMod:DistantiaAbsensquePower": {
@@ -494,7 +494,7 @@
   "VUPShionMod:AcceleratorPower": {
     "NAME": "Accelerator",
     "DESCRIPTIONS": [
-      "Whenever you gain #yMagiam #yObruor, gain #b%d #yDexterity."
+      "Whenever you gain #yMagiam #yObruor, gain #b%d temporary #yDexterity."
     ]
   },
   "VUPShionMod:RecoilerPower": {
@@ -666,7 +666,7 @@
     "VUPShionMod:Arbitration3Power": {
     "NAME": "Arbitratus Omnes-Heal",
     "DESCRIPTIONS": [
-      "Whenever you trigger #yPunitive,heal #b%d HP."
+      "Whenever you trigger #yPunitive , heal #b%d HP."
     ]
   },
   "VUPShionMod:ProphecyOfDestructionPower": {
@@ -1024,7 +1024,7 @@
   "VUPShionMod:ForestBarrierPower": {
     "NAME": "Vegetated",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #yBlock equal to half of #yConstricted you have applied this combat. NL Apply #b%d #yConstricted to ALL enemies for #b3 times."
+      "At the start of your turn, gain #yShield equal to half of #yConstricted you have applied this combat. NL Apply #b%d #yConstricted to ALL enemies for #b3 times."
     ]
   },
   "VUPShionMod:WorldTreeLinkPower": {
@@ -1042,7 +1042,7 @@
   "VUPShionMod:SynchroSummonPower": {
     "NAME": "Synchrochannel",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b%d #yStrength while the HP of the #yElf is above 0. "
+      "At the start of your turn, gain #b%d #yStrength while the HP of the #yElf is above #b0. "
     ]
   },
   "VUPShionMod:BossChainPursuitPower": {
@@ -1073,7 +1073,7 @@
   "VUPShionMod:PotentialOutbreakPower": {
     "NAME": "Potential Outburst",
     "DESCRIPTIONS": [
-      "After taking #b%d more damage, end your turn and perform a #ypowerful action."
+      "After taking #b%d more damage, end your turn and perform a #yPowerful action."
     ]
   },
   "VUPShionMod:SystemHackPower": {
@@ -1165,14 +1165,14 @@
   "VUPShionMod:HotRestartPower": {
     "NAME": "Warm Restart",
     "DESCRIPTIONS": [
-      "This turn, damage that would be reduced by #yConstruct #yRecharge does not decrease."
+      "This turn, #yImpact #yAbsorption does not decrease."
     ]
   },
   "VUPShionMod:SwearPower": {
-    "NAME": "Swear",
+    "NAME": "Promise",
     "DESCRIPTIONS": [
-      "Until start of your next turn,your HP will not below #b1.",
-      "Until start of your next #b%d turns,your HP will not below #b1."
+      "Until the start of your next turn, your HP does not drop below #b1.",
+      "Until the start of your next #b%d turns, your HP does not drop below #b1."
     ]
   },
   "VUPShionMod:HealToShieldPower": {
@@ -1212,6 +1212,57 @@
     "NAME": "Prophecy of Demise",
     "DESCRIPTIONS": [
       "At the start of your turn, you may #yExhaust 2 cards to apply #b%d #ySinful to ALL enemies."
+    ]
+  },
+  "VUPShionMod:CoverMinionPower": {
+    "NAME": "Cover",
+    "DESCRIPTIONS": [
+      "This turn, your #yally does not take any damage."
+    ]
+  },
+  "VUPShionMod:SinfulMarkPower": {
+    "NAME": "Sinful Mark",
+    "DESCRIPTIONS": [
+      "Whenever you apply #ySinful to it, apply additional #b%d."
+    ]
+  },
+  "VUPShionMod:ExemptionPower": {
+    "NAME": "Exempted",
+    "DESCRIPTIONS": [
+      "This turn, whenever you take damage from #yPunitive, heal HP equal to #b120%% of that damage. NL Upon entering #yWordpower #yStance, convert this status into #yDivine #yJudgement.",
+      "In #b%d turns, whenever you take damage from #yPunitive, heal HP equal to #b120%% of that damage. NL Upon entering #yWordpower #yStance, convert this status into #yDivine #yJudgement."
+    ]
+  },
+  "VUPShionMod:DivineJudgmentPower": {
+    "NAME": "Divine Judgement",
+    "DESCRIPTIONS": [
+      "This turn, #yPunitive deals #b100%% more damage.",
+      "In #b%d turns, #yPunitive deals #b100%% more damage."
+    ]
+  },
+  "VUPShionMod:DecreePower": {
+    "NAME": "Divine Will",
+    "DESCRIPTIONS": [
+      "This turn, this enemy's attack damages itself.",
+      "In #b%d turns, this enemy's attack damages itself."
+    ]
+  },
+  "VUPShionMod:PreExecutionPower": {
+    "NAME": "Pre-execution",
+    "DESCRIPTIONS": [
+      "This turn, you gain #b%d00%% more #yCor #yGladii."
+    ]
+  },
+  "VUPShionMod:PreExecutionPower2": {
+    "NAME": "Clarity",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yCor #Gladii this turn, gain Block #b%d times that much."
+    ]
+  },
+  "VUPShionMod:StiffnessEndIncreasePower": {
+    "NAME": "Ease",
+    "DESCRIPTIONS": [
+      "Your turn is not ended until you gain #b%d more #yStiffness above the threshold of 4."
     ]
   }
 }

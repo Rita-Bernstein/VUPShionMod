@@ -2,6 +2,7 @@ package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.SelectCardToHandAction;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionAnastasiaCard;
 import VUPShionMod.patches.CardTagsEnum;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
@@ -23,10 +24,12 @@ public class TeamWork extends AbstractShionAnastasiaCard {
     public TeamWork() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
+        this.secondaryM = this.baseSecondaryM = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainHyperdimensionalLinksAction(this.secondaryM));
         addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.SHION_KUROISU_CARD), true, true));
         addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.SHION_ANASTASIA_CARD), true, true));
         addToBot(new SelectCardToHandAction(returnRandomCardByCardTagInCombat(CardTagsEnum.SHION_MINAMI_CARD), true, true));

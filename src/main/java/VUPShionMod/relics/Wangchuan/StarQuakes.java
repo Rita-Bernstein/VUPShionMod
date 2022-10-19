@@ -1,6 +1,7 @@
 package VUPShionMod.relics.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.LoseCorGladiiAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.relics.AbstractShionRelic;
@@ -31,7 +32,7 @@ public class StarQuakes extends AbstractShionRelic {
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (c.type == AbstractCard.CardType.ATTACK) {
             flash();
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, 2)));
+            addToBot(new ApplyCorGladiiAction(2));
         }
     }
 

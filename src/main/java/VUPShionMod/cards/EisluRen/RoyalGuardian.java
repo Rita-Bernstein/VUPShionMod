@@ -3,6 +3,7 @@ package VUPShionMod.cards.EisluRen;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.powers.EisluRen.RoyalGuardianPower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -38,6 +39,7 @@ public class RoyalGuardian extends AbstractEisluRenCard {
 
         addToBot(new ApplyPowerAction(p,p,new RoyalGuardianPower(p,this.magicNumber)));
         addToBot(new AddWingShieldDamageReduceAction(this.secondaryM));
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
     }
 
     @Override

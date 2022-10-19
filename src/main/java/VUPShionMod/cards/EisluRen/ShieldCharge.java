@@ -2,9 +2,12 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.EisluRen.AddWingShieldDamageReduceAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
+import VUPShionMod.actions.EisluRen.PlayerMinionTakeTurnAction;
 import VUPShionMod.cards.WangChuan.AbstractWCCard;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -44,6 +47,8 @@ public class ShieldCharge extends AbstractEisluRenCard {
         for (int i = 0; i < 3; i++)
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 
+        addToBot(new PlayerMinionTakeTurnAction());
+
         for (int i = 0; i < 3; i++)
             addToBot(new GainShieldAction(p, this.magicNumber));
 
@@ -51,6 +56,9 @@ public class ShieldCharge extends AbstractEisluRenCard {
             addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 5)));
             addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 5)));
         }
+
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new AddWingShieldDamageReduceAction(2));
     }
 
     @Override

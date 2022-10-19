@@ -18,7 +18,7 @@ public class Totsugeki extends AbstractEisluRenCard {
 
     public Totsugeki() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 3;
+        this.baseDamage = 2;
         this.magicNumber = this.baseMagicNumber = 2;
         this.tags.add(CardTags.STARTER_STRIKE);
     }

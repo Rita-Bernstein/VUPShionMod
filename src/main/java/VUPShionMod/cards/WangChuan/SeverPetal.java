@@ -1,8 +1,10 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.powers.Wangchuan.IntensaPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -34,7 +36,7 @@ public class SeverPetal extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.secondaryM)));
+        addToBot(new ApplyCorGladiiAction(this.secondaryM));
 
         int d = this.magicNumber;
         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
@@ -50,17 +52,21 @@ public class SeverPetal extends AbstractWCCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.NONE));
 
-        if(this.timesUpgraded >=2)
+        if(this.timesUpgraded >=2) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.NONE));
+        }
 
 
         this.rawDescription = getDescription(timesUpgraded);
         initializeDescription();
 
 
-        addToBot(new ApplyStiffnessAction(2));
+        addToBot(new ApplyStiffnessAction(3));
         addToBot(new DrawCardAction(1));
+
+        if(this.timesUpgraded >=2)
+            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
     }
 
 

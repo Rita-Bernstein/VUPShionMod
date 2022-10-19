@@ -22,7 +22,7 @@ public class EnsanguinedFigure extends AbstractLiyezhuCard {
 
     public EnsanguinedFigure() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -51,7 +51,6 @@ public class EnsanguinedFigure extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
             upgradeBaseCost(0);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

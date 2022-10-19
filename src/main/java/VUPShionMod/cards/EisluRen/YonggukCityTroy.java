@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.powers.EisluRen.YonggukCityTroyPower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -37,6 +38,7 @@ public class YonggukCityTroy extends AbstractEisluRenCard {
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new GainShieldAction(p, 6));
         addToBot(new ApplyPowerAction(p, p, new YonggukCityTroyPower(p,5)));
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
     }
 
     @Override

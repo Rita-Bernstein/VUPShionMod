@@ -3,6 +3,7 @@ package VUPShionMod.actions.Liyezhu;
 import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Liyezhu.SinPower;
+import VUPShionMod.powers.Liyezhu.SinfulMarkPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,32 +14,38 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class ApplySinAction extends AbstractGameAction {
 
     public ApplySinAction(AbstractCreature target, int amount) {
-        this.source = target;
+        this.target = target;
         this.amount = amount;
     }
 
 
     @Override
     public void update() {
-//        for (AbstractPower power : this.source.powers) {
-//            if (power instanceof AbstractIrisRaphaelPower) {
-//                this.amount = ((AbstractIrisRaphaelPower) power).changeHeatApplyAmount(this.amount);
-//            }
-//        }
+        if (target == null) {
+            isDone = true;
+            return;
+        }
 
-        AbstractPower power = new SinPower(this.source, this.amount);
+        for (AbstractPower power : target.powers) {
+            if (power instanceof SinfulMarkPower) {
+                this.amount += power.amount;
+                power.flash();
+            }
+        }
+
+        AbstractPower power = new SinPower(this.target, this.amount);
 
         if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
             power.amount = EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).changeSinApply(power);
         }
 
-        for(AbstractCard card : AbstractDungeon.player.discardPile.group){
-            if(card instanceof AbstractVUPShionCard){
+        for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
+            if (card instanceof AbstractVUPShionCard) {
                 ((AbstractVUPShionCard) card).onApplySin();
             }
         }
 
-        addToTop(new ApplyPowerAction(this.source, this.source, power));
+        addToTop(new ApplyPowerAction(this.target, this.target, power));
 
         isDone = true;
     }

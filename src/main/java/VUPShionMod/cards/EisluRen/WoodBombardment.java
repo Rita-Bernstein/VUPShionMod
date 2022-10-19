@@ -1,6 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.EisluRen.PlayerMinionTakeTurnAction;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -36,6 +37,8 @@ public class WoodBombardment extends AbstractEisluRenCard {
         }
         addToBot(new WaitAction(0.8F));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+
+        addToBot(new PlayerMinionTakeTurnAction());
 
         if(this.upgraded)
             addToBot(new GainEnergyAction(1));

@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Common.XActionAction;
 import VUPShionMod.cards.WangChuan.BombardaMagica;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,6 +47,8 @@ public class SoilNB extends AbstractEisluRenCard {
 
         };
         addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
+
+        addToTop(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
     }
 
     @Override

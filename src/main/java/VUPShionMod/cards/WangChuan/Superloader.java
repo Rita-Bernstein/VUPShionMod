@@ -5,6 +5,7 @@ import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.powers.Wangchuan.SuperloaderPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -26,6 +27,10 @@ public class Superloader extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new SuperloaderPower(p, this.magicNumber)));
+
+        if(this.upgraded)
+            addToBot(new GainEnergyAction(2));
+
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 

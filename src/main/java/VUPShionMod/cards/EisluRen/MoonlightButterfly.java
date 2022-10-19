@@ -66,7 +66,7 @@ public class MoonlightButterfly extends AbstractEisluRenCard {
 
     @Override
     public void applyPowers() {
-        this.baseDamage = 2;
+        this.baseDamage = 0;
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
             this.baseDamage += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
         }

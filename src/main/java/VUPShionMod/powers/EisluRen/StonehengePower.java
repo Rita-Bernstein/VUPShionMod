@@ -34,7 +34,7 @@ public class StonehengePower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount, amount * 7, amount);
+        this.description = String.format(DESCRIPTIONS[0], amount, amount * 3, amount);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class StonehengePower extends AbstractShionPower {
         }
 
         if (card.type == AbstractCard.CardType.SKILL) {
-            addToBot(new GainShieldAction(this.owner, this.amount * 7));
+            addToBot(new GainShieldAction(this.owner, this.amount * 3));
         }
 
 

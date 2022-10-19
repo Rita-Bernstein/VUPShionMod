@@ -13,15 +13,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class LockOn extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID(LockOn.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia08.png");
-    private static final int COST = 0;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     public LockOn() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 1;
+        this.selfRetain= true;
     }
 
     @Override
@@ -45,6 +46,9 @@ public class LockOn extends AbstractShionAnastasiaCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(4);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.returnToHand = true;
         }
     }
 

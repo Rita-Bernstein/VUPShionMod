@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -26,6 +27,7 @@ public class RechargerPower extends AbstractShionPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
         updateDescription();
         this.isTurnBased = true;
+        this.priority = 1;
     }
 
     @Override
@@ -37,7 +39,7 @@ public class RechargerPower extends AbstractShionPower {
     public void onStackPower(AbstractPower power) {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
-            addToBot(new ApplyPowerAction(this.owner,this.owner,new CorGladiiPower(this.owner,this.amount)));
+            addToBot(new ApplyCorGladiiAction(this.amount));
         }
     }
 }

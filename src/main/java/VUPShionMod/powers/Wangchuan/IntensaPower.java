@@ -1,9 +1,11 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.patches.GameStatsPatch;
 import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -18,25 +20,36 @@ public class IntensaPower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public IntensaPower(AbstractCreature owner) {
+    public IntensaPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = GameStatsPatch.corGladiiLoseThisTurn;
+        this.amount = amount;
+
+        if (this.amount > 2)
+            this.amount = 2;
+
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PetalsFallPower128.png")), 0, 0, 128, 128);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PetalsFallPower36.png")), 0, 0, 36, 36);
         updateDescription();
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
 
+        if (this.amount > 2)
+            this.amount = 2;
+    }
 
     @Override
     public void atStartOfTurn() {
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+        addToBot(new ApplyCorGladiiAction((int) (this.amount * GameStatsPatch.corGladiiLoseThisTurn * 0.6f)));
     }
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = String.format(DESCRIPTIONS[0], (int) (this.amount * GameStatsPatch.corGladiiLoseThisTurn * 0.6f));
     }
 }

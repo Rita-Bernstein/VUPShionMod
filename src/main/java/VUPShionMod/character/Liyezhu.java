@@ -169,6 +169,10 @@ public class Liyezhu extends CustomPlayer {
         tmpPool.add(new AquaRapida());
         tmpPool.add(new IgnisRapidus());
         tmpPool.add(new IgnisNimius());
+        tmpPool.add(new CaelumNimium());
+        tmpPool.add(new CaelumRapidum());
+        tmpPool.add(new HomoRapidus());
+        tmpPool.add(new HomoNimius());
 
 
         return super.getCardPool(tmpPool);

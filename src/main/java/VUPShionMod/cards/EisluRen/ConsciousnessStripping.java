@@ -2,6 +2,7 @@ package VUPShionMod.cards.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
+import VUPShionMod.actions.EisluRen.PlayerMinionTakeTurnAction;
 import VUPShionMod.powers.Shion.BleedingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -80,6 +81,9 @@ public class    ConsciousnessStripping extends AbstractEisluRenCard {
 
             addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.secondaryM)));
         }
+
+
+        addToBot(new PlayerMinionTakeTurnAction());
     }
 
     @Override

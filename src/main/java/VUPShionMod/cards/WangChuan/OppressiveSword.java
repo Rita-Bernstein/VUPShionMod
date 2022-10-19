@@ -2,6 +2,7 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.XActionAction;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.*;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
@@ -45,7 +46,7 @@ public class OppressiveSword extends AbstractWCCard {
                         if (p.hasPower(StiffnessPower.POWER_ID)) {
                             this.amount = p.getPower(StiffnessPower.POWER_ID).amount;
                             addToTop(new RemoveSpecificPowerAction(p, p, StiffnessPower.POWER_ID));
-                            addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.amount * 4)));
+                            addToTop(new ApplyCorGladiiAction(this.amount *4));
                         }
                         isDone = true;
                     }
@@ -58,7 +59,7 @@ public class OppressiveSword extends AbstractWCCard {
 
                 Consumer<Integer> actionConsumer = effect -> {
                     addToTop(new ApplyPowerAction(p, p, new MagiamObruorPower(p, effect)));
-                    addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, 5 * effect)));
+                    addToTop(new ApplyCorGladiiAction(5 * effect));
                     baseDamage = this.magicNumber * effect;
                     calculateCardDamage(m);
                     addToTop(new DamageAction(m, new DamageInfo(p, this.damage * effect, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
@@ -69,7 +70,7 @@ public class OppressiveSword extends AbstractWCCard {
                     @Override
                     public void update() {
                         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                            addToTop(new ApplyPowerAction(p, p, new CorGladiiPower(p, (int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.4))));
+                            addToTop(new ApplyCorGladiiAction((int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.4)));
                         isDone = true;
                     }
                 });

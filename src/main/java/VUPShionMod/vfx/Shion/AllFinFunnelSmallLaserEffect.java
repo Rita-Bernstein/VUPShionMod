@@ -39,6 +39,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
     private boolean isMultiDamage = false;
     private boolean isApplyBleeding = false;
     private boolean isGainBlock = false;
+    private float effect;
 
 
     private static TextureAtlas.AtlasRegion atkImg;
@@ -70,8 +71,9 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
             isGainBlock = true;
     }
 
-    public AllFinFunnelSmallLaserEffect(ArrayList<AbstractFinFunnel> finFunnels) {
+    public AllFinFunnelSmallLaserEffect(ArrayList<AbstractFinFunnel> finFunnels,float effect) {
         super();
+        this.effect = effect;
         this.finFunnels = finFunnels;
         if (img == null) {
             img = ImageMaster.vfxAtlas.findRegion("combat/laserThin");
@@ -108,6 +110,8 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
                 posUpdated = true;
 
                 for (AbstractFinFunnel finFunnel : this.finFunnels) {
+
+
                     AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
                     if (m == null)
                         return;
@@ -132,7 +136,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
                     if (m.lastDamageTaken > 0 && isGainBlock) {
                         addToBot(new GainBlockAction(p, (int) Math.floor(m.lastDamageTaken)));
                     }
-                    finFunnel.powerToApply(m);
+                    finFunnel.powerToApply(m,effect,false);
 
                     CardCrawlGame.sound.play("ATTACK_FIRE");
                     CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT", 0.5f);

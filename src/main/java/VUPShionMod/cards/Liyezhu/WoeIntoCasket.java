@@ -3,6 +3,7 @@ package VUPShionMod.cards.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ExhaustAllStatusAndCurseAction;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -24,6 +25,7 @@ public class WoeIntoCasket extends AbstractLiyezhuCard {
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
+        GraveField.grave.set(this,true);
     }
 
     @Override

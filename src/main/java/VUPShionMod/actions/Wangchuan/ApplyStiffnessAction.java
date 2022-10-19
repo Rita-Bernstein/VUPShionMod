@@ -20,17 +20,17 @@ public class ApplyStiffnessAction extends AbstractGameAction {
     public void update() {
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             if (r.relicId.equals(MagiaSwordRed.ID) || r.relicId.equals(MagiaSwordRuby.ID)) {
-                this.isDone =true;
+                this.isDone = true;
                 return;
             }
         }
 
-        for(AbstractPower p : AbstractDungeon.player.powers){
-            if(p instanceof PoisePower)
-                this.amount -= p.amount;
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof PoisePower)
+                this.amount--;
         }
 
-        if(this.amount <=0) {
+        if (this.amount <= 0) {
             isDone = true;
             return;
         }

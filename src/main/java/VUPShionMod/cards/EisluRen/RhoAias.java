@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.ui.WingShield;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -40,6 +41,7 @@ public class RhoAias extends AbstractEisluRenCard {
         addToBot(new GainShieldAction(p, 7));
 
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
 
     }
 

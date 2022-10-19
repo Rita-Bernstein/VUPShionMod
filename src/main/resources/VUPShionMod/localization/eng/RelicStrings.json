@@ -13,7 +13,7 @@
     "FLAVOR": "Future is a scattering illusion of time that is not ours to foretell. Push through with determination, and this is all we can do.",
     "DESCRIPTIONS": [
       " #yRight #yClick: Take an extra turn after this turn, end your turn. (works #b%d times)",
-      "This relic has been exhausted."
+      "This relic has been use up."
     ]
   },
   "VUPShionMod:Croissant": {
@@ -51,14 +51,14 @@
     "NAME": "Nebula",
     "FLAVOR": "Universal type of support equipment from Anastasia, includes elementary thrusters and energy shields.",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b3 #yBlock. Lose #b1 #yStiffness each turn."
+      "At the start of your turn, gain #b3 #yBlock. Lose #b3 #yStiffness each turn."
     ]
   },
   "VUPShionMod:Protostar": {
     "NAME": "Protostar",
     "FLAVOR": "Improved model of Nebula with greater thruster power and extra magia barrier generators.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b2 #yBuffer. Lose #b2 #yStiffness each turn."
+      "At the start of each combat, gain #b2 #yBuffer and #yDexterity. Lose #b3 #yStiffness each turn."
     ]
   },
   "VUPShionMod:TrackingBeacon": {
@@ -72,7 +72,7 @@
     "NAME": "Blue Giant",
     "FLAVOR": "Potent ranged firepower in exchange of mobility.",
     "DESCRIPTIONS": [
-      "At the start of your turn, lose [E] and add 1 #yFunnel #yMatrix into your hand."
+      "At the start of your turn, lose [E] and add #yFunnel #yMatrix into your hand."
     ]
   },
   "VUPShionMod:DarkStar": {
@@ -107,14 +107,14 @@
     "NAME": "Prototype: Pure Heart",
     "FLAVOR": "Specialized type of support equipment from Anastasia, powerful blade cumbered by excessive magia that surges within.",
     "DESCRIPTIONS": [
-      "Whenever you play a card, gain #b2 #yCod #yGladii. At the end of your turn, lose #b50% of #yCor #yGladii."
+      "Lose [E] and add #yOnrushing #yTip with Ethereal to your hand at start of your turn. NL Whenever you play a card, gain #b2 #yCod #yGladii. At the end of your turn, lose #b50% of #yCor #yGladii."
     ]
   },
   "VUPShionMod:WhitePurity": {
     "NAME": "Prototype: White Purity",
     "FLAVOR": "Improved model of Prototype: Pure Heart that is installed with a modified energy inhibitor.",
     "DESCRIPTIONS": [
-      "#rReplace Prototype: Pure Heart. NL Whenever you play a card, gain #b5 #yCod #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
+      "#rReplace Prototype: Pure Heart. NL Add #yOnrushing #yTip with Ethereal to your hand at start of your turn. NL Whenever you play a card, gain #b5 #yCod #yGladii. At the end of your turn, lose #b33% of #yCor #yGladii."
     ]
   },
   "VUPShionMod:SapphireRoseNecklace": {
@@ -149,7 +149,7 @@
     "NAME": "Support System: Placid Aqua",
     "FLAVOR": "Incidence of risks is now mostly averted for the local data gathered.",
     "DESCRIPTIONS": [
-      "#rReplace Support System: The Ripple. NL Start each combat with #b3 #yDexterity."
+      "#rReplace Support System: The Ripple. NL Gain [E] at the start of your turn. NL Start each combat with #b3 #yDexterity."
     ]
   },
   "VUPShionMod:Drapery": {
@@ -157,7 +157,7 @@
     "FLAVOR": "Experimental overload protector that can overload all equipments for a short period of time, somehow fabricated in a shape of swimming costume.（Incidence of risks occur due to excessive energy draining.）",
     "DESCRIPTIONS": [
       "At the start of each combat, shuffle #b4 #yDazed into draw pile. At the start of each turn ,gain 1 #yFrail. Right Click: #bSupernova #bOutburst. (once per combat)",
-      "Supernova",
+      "Supernova Outburst",
       " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b1 time. NL Enhance random #b2 #yFunnels. NL End your turn."
     ]
   },
@@ -166,7 +166,7 @@
     "FLAVOR": "Zero point energy capacitor is implanted to alleviate burden of the equiper.",
     "DESCRIPTIONS": [
       "#rReplace Overloaded Supernova. NL Right Click: #bSupernova #bOutburst. (once per combat)",
-      "Supernova",
+      "Supernova Outburst",
       " NL NL #bSupernova #bOutburst: NL Gain #b1 #yIntangible. NL Fire all #yFunnels #b1 time. NL Enhance random #b2 #yFunnels. NL End your turn."
     ]
   },
@@ -198,7 +198,7 @@
     "NAME": "Fragments of Faith",
     "FLAVOR": "The line is reversed. NL Hope you may see what is true.",
     "DESCRIPTIONS": [
-      "At the end of each combat, gain #b5 Max HP. NL Upon entering Stage 3, it is converted into #yHalo #yof #yFaith.",
+      "At the end of each combat, gain #b5 Max HP. NL Upon entering Act 3, it is converted into #yHalo #yof #yFaith.",
       "Halo of Faith",
       "Spirits sing, dreams realize. NL Cut the line, it is time.",
        "Start each combat with #yFinal #yPrayer.",
@@ -217,21 +217,21 @@
     "NAME": "Wave Breaker",
     "FLAVOR": "Subspace stabilizer is implanted to add stability.",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain [E] . NL Whenever you play a #ySkill, lose #b2 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b33% #yCor #yGladii each turn."
+      "Whenever you play a #ySkill, lose #b2 #yStiffness. NL The first #yAttack played each turn costs #b0. NL Lose #b33% #yCor #yGladii each turn."
     ]
   },
   "VUPShionMod:WhiteRose": {
     "NAME": "White Rose",
     "FLAVOR": "Universal support equipment from Anastasia, analyzing module is implanted to tackle threats.",
     "DESCRIPTIONS": [
-      "Whenever attacked, gain #b1 #yPlated #yArmor."
+      "Whenever attacked, gain #b2 #yPlated #yArmor."
     ]
   },
   "VUPShionMod:PurityWhiteRose": {
     "NAME": "Stainless Rose",
     "FLAVOR": "AI module is implanted to improve analyzing performance.",
     "DESCRIPTIONS": [
-      "#rReplace White Rose. NL Whenever you receive damage from enemy #yattacks, gain #b2 #yPlated #yArmor."
+      "#rReplace White Rose. NL Whenever you receive #yAttack damage, gain #b4 #yPlated #yArmor."
     ]
   },
   "VUPShionMod:ConcordSnipe": {
@@ -241,7 +241,7 @@
       "At each start of turn, make one enemy damage received increase #b1 ,unstackable. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
       "Time&Space Synchro",
       "Your damage decreases #b%d%%, NL Damage received increase by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
-      "Your damage increases #b%d%%, NL Damage received decrease by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
+      "Your damage increases #b%d%%, NL Damage received decrease by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% . NL ( #b50%% Maximum)",
       "Matrix Synchro",
       "For every funnel level at #b5 , gain #b1 #y HyperdimentionalLink at each of your turn."
     ]
@@ -253,7 +253,7 @@
       "All #yfunnel upgrades by #b1. NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
       "Time&Space Synchro",
       "Your damage decreases by #b%d%%, NL Damage received increases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
-      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
+      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% . NL ( #b50%% Maximum)",
       "Matrix Synchro",
       "For every funnel level at #b5 , gain #b1 #y HyperdimentionalLink at each of your turn."
     ]
@@ -265,7 +265,7 @@
       "At the start of each combat, gain [E] [E] . NL #bTime&Space #bSynchro. #bMatrix #bSynchro .",
       "Time&Space Synchro",
       "Your damage decreases by #b%d%%, NL Damage received increases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% .",
-      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by NL （#b50%% Maximum）",
+      "Your damage increases by #b%d%%, NL Damage received decreases by #b%d%%. NL Decrease this effect for each floor climbed by #b1%% NL ( #b50%% Maximum)",
       "Matrix Synchro",
       "For every funnel level at #b5 , gain #b1 #yHyperdimentional #yLink at each of your turn."
     ]
@@ -302,7 +302,7 @@
     "NAME": "Magia Sword: Zhushazhui",
     "FLAVOR": "Improved model of Magia Sword: Danyingke to specialize in dealing damage at the cost of more Magia consumption.",
     "DESCRIPTIONS": [
-      "#rReplace Magia Sword: Danyingke. NL You no longer gain #yStiffness. NL Whenever you play an #yAttack, gain 1 #yMagiam #yObruor and play it for 1 additional time. NL Lose half of your #yCor #yGladii each turn."
+      "#rReplace Magia Sword: Danyingke. NL You no longer gain #yStiffness. NL Whenever you play an #yAttack, gain 1 #yMagiam #yObruor and play it for an additional time. NL Lose half of your #yCor #yGladii each turn."
     ]
   },
   "VUPShionMod:TrainingScabbard": {
@@ -316,14 +316,14 @@
     "NAME": "Training Saber",
     "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
-      "Start each combat with #b%s #Strength. After any #yElite or #yBoss fight, increase the effect by #b1."
+      "Start each combat with #b%s #Strength. After any #yElite or #yBoss fight, increase this effect by #b1."
     ]
   },
   "VUPShionMod:TrainingPropeller": {
     "NAME": "Training Propeller",
     "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
-      "Start each combat with #b%s #Dexterity. After any #yElite or #yBoss fight, increase the effect by #b1."
+      "Start each combat with #b%s #Dexterity. After any #yElite or #yBoss fight, increase this effect by #b1."
     ]
   },
   "VUPShionMod:FishingRod": {
@@ -404,7 +404,7 @@
     "NAME": "Emergency Medical Collar",
     "FLAVOR": "A piece of equipment from Anastasia training ground, but why is it here?",
     "DESCRIPTIONS": [
-      "Whenever you draw 1 #yStatus or #yCurse card, draw 1 card."
+      "Whenever you draw 1 #yStatus or #yCurse card, draw a card."
     ]
   },
   "VUPShionMod:CardRecorder": {
@@ -460,14 +460,14 @@
     "NAME": "Shield HR Type: ZY-1",
     "FLAVOR": "In order to compensate for the fragile defense of the elves, equipped with a shape-shifting energy shield.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b1 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge."
+      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b1 #yConstruct #yRecharge at start of your turn except start of turn. NL Whenever you change #yStance ,gain #b4 #yConstruct #yRecharge."
     ]
   },
   "VUPShionMod:ShieldHRzy2": {
     "NAME": "Shield HR Type: ZY-2",
     "FLAVOR": "Based on the Shield HR Type: ZY-1,the kinetic energy recovery device has been added. Increased range.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b2 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b1 #yConstruct #yRecharge. NL Whenever #yConstructed #yWing #yShield lose charge,gain #b1 #yRecycle."
+      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b2 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b4 #yConstruct #yRecharge. NL Whenever #yConstructed #yWing #yShield lose charge,gain #yRecycle equal to you lost."
     ]
   },
   "VUPShionMod:ElfCore": {

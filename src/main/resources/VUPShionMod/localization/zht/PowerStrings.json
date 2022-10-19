@@ -75,7 +75,7 @@
   "VUPShionMod:ReleaseFormKuroisuPower": {
     "NAME": "姿態解放-克洛伊斯",
     "DESCRIPTIONS": [
-      "每打出一張牌，獲得 #b%d 點 #y超維連結 。"
+      "每打出 #b3 張牌，獲得 #b%d 點 #y超維連結 。"
     ]
   },
   "VUPShionMod:UpgradedReleaseFormKuroisuPower": {
@@ -331,7 +331,7 @@
   "VUPShionMod:PoisePower": {
     "NAME": "緘默",
     "DESCRIPTIONS": [
-      "每當你打出一張 #y攻擊牌 ，抽 #b%d 張牌。 NL 減少 #b%d 層獲得的 #y硬直 。"
+      "每當你打出一張 #y攻擊牌 ，抽 #b%d 張牌。 NL 減少 #b1 層獲得的 #y硬直 。"
     ]
   },
   "VUPShionMod:PetalsFallPower": {
@@ -349,7 +349,7 @@
   "VUPShionMod:MoonstriderPower": {
     "NAME": "月步",
     "DESCRIPTIONS": [
-      "本回合每次受到攻擊時，獲得 #b%d 點 #y劍勢 。"
+      "本回合每次受到 #y攻擊 傷害時，獲得 #b%d 點 #y劍勢 。"
     ]
   },
   "VUPShionMod:DistantiaAbsensquePower": {
@@ -616,7 +616,7 @@
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower2": {
-    "NAME": "浸染之衣",
+    "NAME": "浸染之衣+",
     "DESCRIPTIONS": [
       "每當你受到傷害時，給予所有敵人 #b%d 層 #y罪孽 。"
     ]
@@ -654,7 +654,7 @@
   "VUPShionMod:ArbitrationPower": {
     "NAME": "審判開庭",
     "DESCRIPTIONS": [
-      "每當造成未被 格擋 的傷害時，給予 #b%d 層 #y罪孽 。"
+      "每當造成未被 #y格擋 的傷害時，給予 #b%d 層 #y罪孽 。"
     ]
   },
   "VUPShionMod:Arbitration2Power": {
@@ -1024,7 +1024,7 @@
   "VUPShionMod:ForestBarrierPower": {
     "NAME": "林海屏障",
     "DESCRIPTIONS": [
-      "每回合開始時獲得本場戰鬥給予 #y纏繞 總數 #b%d/2 的 #y格擋 。 NL 給予所有敵人 #b%d 層 #y纏繞 #b3 次。"
+      "每回合開始時獲得本場戰鬥給予 #y纏繞 總數 #b%d/2 的 #y護盾 。 NL 給予所有敵人 #b%d 層 #y纏繞 #b3 次。"
     ]
   },
   "VUPShionMod:WorldTreeLinkPower": {
@@ -1165,7 +1165,7 @@
   "VUPShionMod:HotRestartPower": {
     "NAME": "熱重啟",
     "DESCRIPTIONS": [
-      "本回合每層 #y構裝翼盾充能 可減少的傷害不會降低。"
+      "本回合 #y衝擊預備 不會降低。"
     ]
   },
   "VUPShionMod:SwearPower": {
@@ -1212,6 +1212,57 @@
     "NAME": "破滅預言",
     "DESCRIPTIONS": [
       "每回合至多 #y消耗 兩張牌從而給予所有人 #b%d 層 #y罪孽 。"
+    ]
+  },
+  "VUPShionMod:CoverMinionPower": {
+    "NAME": "掩護",
+    "DESCRIPTIONS": [
+      "本回合， #y援護 不再承受傷害。"
+    ]
+  },
+  "VUPShionMod:SinfulMarkPower": {
+    "NAME": "罪印",
+    "DESCRIPTIONS": [
+      "其獲得 #y罪孽 時，額外獲得 #b%d 層。"
+    ]
+  },
+  "VUPShionMod:ExemptionPower": {
+    "NAME": "豁免",
+    "DESCRIPTIONS": [
+      "本回合受到 #y伐罪 傷害時，回復 #y伐罪 傷害 #b120%% 的生命。 NL 進入 #y言靈姿態 時，變為 #y神裁 。",
+      "在 #b%d 個回合內受到 #y伐罪 傷害時，回復 #y伐罪 傷害 #b120%% 的生命。 NL 進入 #y言靈姿態 時，變為 #y神裁 。"
+    ]
+  },
+  "VUPShionMod:DivineJudgmentPower": {
+    "NAME": "神裁",
+    "DESCRIPTIONS": [
+      "本回合 #y伐罪 造成的傷害提高 #b100%% 。",
+      "在 #b%d 個回合內 #y伐罪 造成的傷害提高 #b100%% 。"
+    ]
+  },
+  "VUPShionMod:DecreePower": {
+    "NAME": "神意",
+    "DESCRIPTIONS": [
+      "本回合這名敵人將攻擊自身。",
+      "在 #b%d 個回合內這名敵人將攻擊自身。"
+    ]
+  },
+  "VUPShionMod:PreExecutionPower": {
+    "NAME": "擬斬",
+    "DESCRIPTIONS": [
+      "本回合 #y劍意 的獲得提高 #b%d00%% 。"
+    ]
+  },
+  "VUPShionMod:PreExecutionPower2": {
+    "NAME": "心眼",
+    "DESCRIPTIONS": [
+      "本回合獲得 #y劍意 時，獲得 #b%d 倍的 #y格擋 。"
+    ]
+  },
+  "VUPShionMod:StiffnessEndIncreasePower": {
+    "NAME": "硬直抗性",
+    "DESCRIPTIONS": [
+      "#y硬直 的觸發層數提高 #b%d 。"
     ]
   }
 }

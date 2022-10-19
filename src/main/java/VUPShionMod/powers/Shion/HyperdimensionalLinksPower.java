@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
+import com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
@@ -43,6 +44,7 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
         super.onVictory();
         if (this.amount >= 10)
             randomDeckUpgrade();
+//            AbstractDungeon.effectList.add(new CampfireSmithEffect());
     }
 
     public void randomDeckUpgrade() {

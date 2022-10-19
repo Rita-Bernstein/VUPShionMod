@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
@@ -36,7 +37,7 @@ public class StrideSlash extends AbstractWCCard {
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+        addToBot(new ApplyCorGladiiAction(this.magicNumber));
 
         if(this.timesUpgraded>=2)
         if (p.hasPower(CorGladiiPower.POWER_ID)) {

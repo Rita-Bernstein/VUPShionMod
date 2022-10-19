@@ -63,9 +63,10 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
         this.loops = loops;
     }
 
-    public TriggerFinFunnelPassiveAction(String forceFinFunnel, boolean random) {
+    public TriggerFinFunnelPassiveAction(String forceFinFunnel, boolean random,boolean isCard) {
         this.random = random;
         this.forceFinFunnel = forceFinFunnel;
+        this.isCard = isCard;
     }
 
     @Override

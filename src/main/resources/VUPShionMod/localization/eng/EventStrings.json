@@ -31,6 +31,74 @@
     "OPTIONS": [
     ]
   },
+  "VUPShionMod:Newborn": {
+    "NAME": "A Message",
+    "DESCRIPTIONS": [
+      "As you are about to depart, a message comes to you.",
+      "Finally, the last spot where Liyezhu's traces end is located. Will it turn out to be another echo of your futile fantasy?",
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+    ],
+    "OPTIONS": [
+      "[Proceed] ...",
+      "[Not This Time!] Battle Ahead. #gObtain Anastasia Droplet.",
+      "[Return Home]",
+      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
+      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
+      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
+      "[To the former stage] I seem to have hallucination..."
+    ]
+  },
+  "VUPShionMod:Contact": {
+    "NAME": "Unexpected Contact",
+    "DESCRIPTIONS": [
+      "As you are about to depart, a message comes to you.",
+      "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence.",
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+    ],
+    "OPTIONS": [
+      "[Proceed] ...",
+      "[Fists Can Talk!] Battle Ahead. #gObtain Tracking Beacon.",
+      "[Return Home]",
+      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
+      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
+      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
+      "[To the former stage] I seem to have hallucination..."
+    ]
+  },
+  "VUPShionMod:Prophesy": {
+    "NAME": "Omens of Unknown",
+    "DESCRIPTIONS": [
+      "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
+      "You have seen it once, and you know where the target is.",
+      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, I am and I will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
+    ],
+    "OPTIONS": [
+      "[Proceed] ...",
+      "[Engage!] Battle Ahead. #gObtain Unknown Dust.",
+      "The body is too exhausted to go on...",
+      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
+      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
+      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
+      "[To the former stage] I seem to have hallucination..."
+    ]
+  },
+  "VUPShionMod:TrainingTest": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "",
+      "基础模拟训练已经完成，要进入下一阶段吗？",
+      "最终项目将直面时之巨虫，难度极高。 NL 需要完全掌握并发挥自身能力，请做好准备。"
+    ],
+    "OPTIONS": [
+      "[继续] ……",
+      "[前进] 我要挑战高难项目。 #g获得战意盎然 。",
+      "我想先休息一下",
+      "[锁定] 需要使用紫音、忘川和黎夜竹通过深空孽障",
+      "[前进] 我要挑战最终项目",
+      "[前进] 我已经准备好了（极度危险）",
+      "[返回上一级] 我还需要一些调整"
+    ]
+  },
   "VUPShionMod:CroissantEvent": {
     "NAME": "Croissant",
     "DESCRIPTIONS": [
@@ -73,40 +141,6 @@
       "[Gu!]",
       "[Leave]",
       "Chose a card add into your deck"
-    ]
-  },
-  "VUPShionMod:Newborn": {
-    "NAME": "A Message",
-    "DESCRIPTIONS": [
-	  "As you are about to depart, a message comes to you.",
-      "Finally, the last spot where Liyezhu's traces end is located. Will it turn out to be another echo of your futile fantasy?",
-      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
-    ],
-    "OPTIONS": [
-      "[Proceed] ...",
-      "[Not This Time!] Battle Ahead. #gObtain Anastasia Droplet.",
-      "[Return Home]",
-      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
-      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
-      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
-      "[To the former stage] I seem to have hallucination..."
-    ]
-  },
-   "VUPShionMod:Contact": {
-    "NAME": "Unexpected Contact",
-    "DESCRIPTIONS": [
-      "As you are about to depart, a message comes to you.",
-      "Necessary information is gathered and analyzed as you leave the Spire to its mayhem along your ascension. Revelations about the creators of this towering sprawl unfolds, and their coordinates too, with an expectation of numerous hostile creatures' presence.",
-      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, am and will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
-    ],
-    "OPTIONS": [
-      "[Proceed] ...",
-      "[Fists Can Talk!] Battle Ahead. #gObtain Tracking Beacon.",
-      "[Return Home]",
-      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
-      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
-      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
-      "[To the former stage] I seem to have hallucination..."
     ]
   },
   "VUPShionMod:LakeAmidst": {
@@ -188,29 +222,12 @@
       "[Leave]"
     ]
   },
-  "VUPShionMod:Prophesy": {
-    "NAME": "Omens of Unknown",
-    "DESCRIPTIONS": [
-      "The instigating unrest is now gradually settling...But somehow it gives you the inkling of something far worse, the doom that entwines you all...",
-      "You have seen it once, and you know where the target is.",
-      "#r@The@ #r@voice@ #r@of@ #r@yourself@ #r@eeriely@ #r@worms@ #r@into@ #r@your@ #r@head@ #r@out@ #r@of@ #r@the@ #r@complete@ #r@void.@ NL NL “Ready yourself and come here.”she says. NL “I was, I am and I will be you.” NL “They joined into a Gordian knot...maybe it is you to be counted on to untie...at least for this time?” NL “The Worm of the Time is waiting.”"
-    ],
-    "OPTIONS": [
-      "[Proceed] ...",
-      "[Engage!] Battle Ahead. #gObtain Unknown Dust.",
-      "The body is too exhausted to go on...",
-      "[LOCKED] Victory over Plaga Mundi as Shion, Wangchuan and Liyezhu is required.",
-      "[Deja Vu] As your are about to respond, a spate of buzzing in your ear interrupted.",
-      "[To the scene] Anastasia, set the teleporting coordinates please. (extremely dangerous)",
-      "[To the former stage] I seem to have hallucination..."
-    ]
-  },
   "VUPShionMod:VacuumRipples": {
     "NAME": "Ripples of Vacuum",
     "DESCRIPTIONS": [
       "The magia circulates, the vacuum ripples, you can sense that sea of energy on the other side of the timeline...",
       "Infinite...power.",
-	  "An enormous flow of magia baptizes your body..."
+      "An enormous flow of magia baptizes your body..."
     ],
     "OPTIONS": [
       "[Commune] #gObtain Anima Virtutis.",
@@ -278,7 +295,6 @@
       "[Leave]"
     ]
   },
-
   "VUPShionMod:StrangeSeal": {
     "NAME": "A Strange Seal",
     "DESCRIPTIONS": [
@@ -299,6 +315,21 @@
       "[Follow] Follow the slave traders to seek opportunity.",
       "[Did it!] #gObtain Squeal.",
       "[Fight!] Fight the slave traders. #gObtain Squeal."
+    ]
+  },
+  "VUPShionMod:ShionSpireHeart": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "恭喜您通过了前期训练，将在此稍作休整。",
+      "您当前的评价是…… #b%d 分。",
+      "正在扫描您的要素收集进度，以判断是否进入下一阶段",
+      "条件已满足，开始加载新战场",
+      "要素收集未达成，请巩固前期训练"
+    ],
+    "OPTIONS": [
+      "[继续]",
+      "[前进]",
+      "[结束训练]"
     ]
   }
 }

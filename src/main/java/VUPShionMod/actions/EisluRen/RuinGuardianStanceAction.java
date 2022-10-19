@@ -89,7 +89,7 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
 
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
-            AbstractDungeon.gridSelectScreen.open(temp, 2, TEXT[0], false, false, true, false);
+            AbstractDungeon.gridSelectScreen.open(temp, 1, TEXT[0], false, false, true, false);
             AbstractDungeon.overlayMenu.cancelButton.show(CardCrawlGame.languagePack.getUIString("GridCardSelectScreen").TEXT[1]);
 
         }

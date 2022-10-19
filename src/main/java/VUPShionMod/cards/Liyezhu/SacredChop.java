@@ -1,22 +1,16 @@
 package VUPShionMod.cards.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Liyezhu.DuelSinAction;
-import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
-import VUPShionMod.actions.Unique.RemovePlayerDebuffAction;
-import VUPShionMod.msic.Shield;
+import VUPShionMod.actions.Unique.RemoveAPlayerDebuffAction;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.watcher.ExpungeVFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.ArrayList;
 
 public class SacredChop extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(SacredChop.class.getSimpleName());
@@ -42,7 +36,7 @@ public class SacredChop extends AbstractLiyezhuCard {
         initializeDescription();
 
         addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, this.magicNumber)));
-        addToBot(new RemovePlayerDebuffAction());
+        addToBot(new RemoveAPlayerDebuffAction());
         addToBot(new MakeTempCardInHandAction(new Miracle(), 1));
         if (this.upgraded)
             addToBot(new DrawCardAction(1));

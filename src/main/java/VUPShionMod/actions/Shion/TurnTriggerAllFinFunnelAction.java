@@ -26,10 +26,17 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
     private boolean isMultiDamage = false;
     private boolean isApplyBleeding = false;
     private boolean isGainBlock = false;
+    private boolean isCard = false;
 
     public TurnTriggerAllFinFunnelAction(boolean random) {
         this.random = random;
         this.duration = 1.0f;
+    }
+
+    public TurnTriggerAllFinFunnelAction(boolean random, boolean isCard) {
+        this.random = random;
+        this.duration = 1.0f;
+        this.isCard = isCard;
     }
 
     private void getPower() {
@@ -68,11 +75,18 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
 
 //            特效部分
         if (availableFinFunnel.size() > 0) {
+
+            float effect = 1.0f;
+            if (AbstractDungeon.player.hasPower(ReleaseFormMinamiPower.POWER_ID) && this.isCard) {
+                effect += AbstractDungeon.player.getPower(ReleaseFormMinamiPower.POWER_ID).amount * 0.5f;
+            }
+
+
             if (isMultiDamage) {
                 addToBot(new VFXAction(new AllFinFunnelBeamEffect(availableFinFunnel, p.flipHorizontal), 0.4f));
             } else {
 //                单体部分的实体代码在特效里面
-                addToBot(new VFXAction(p, new AllFinFunnelSmallLaserEffect(availableFinFunnel), 0.3f, true));
+                addToBot(new VFXAction(p, new AllFinFunnelSmallLaserEffect(availableFinFunnel, effect), 0.3f, true));
                 addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
             }
 
@@ -86,7 +100,7 @@ public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
                     if (AbstractDungeon.getMonsters().areMonstersBasicallyDead())
                         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
 
-                            f.powerToApply(mo);
+                            f.powerToApply(mo, effect, false);
                         }
                 }
 

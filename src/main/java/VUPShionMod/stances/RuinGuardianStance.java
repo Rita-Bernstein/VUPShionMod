@@ -3,6 +3,7 @@ package VUPShionMod.stances;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.ApplyPowerToAllEnemyAction;
 import VUPShionMod.actions.Common.PlayTmpCardAction;
+import VUPShionMod.actions.EisluRen.GainWingShieldChargeAction;
 import VUPShionMod.actions.EisluRen.LoseWingShieldAction;
 import VUPShionMod.actions.EisluRen.RuinGuardianStanceAction;
 import VUPShionMod.patches.AbstractPlayerEnum;
@@ -49,7 +50,7 @@ public class RuinGuardianStance extends AbstractVUPShionStance {
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new LoseWingShieldAction(2));
+        AbstractDungeon.actionManager.addToBottom(new GainWingShieldChargeAction(1));
         if (!cardsToPlay.group.isEmpty()) {
             for (AbstractCard card : cardsToPlay.group) {
                 AbstractDungeon.actionManager.addToBottom(new PlayTmpCardAction(card));

@@ -1,9 +1,11 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.actions.Shion.TriggerDimensionSplitterAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
+import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import VUPShionMod.skins.SkinManager;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.SpawnModificationCard;
@@ -24,9 +26,12 @@ public class LockIndication extends AbstractShionMinamiCard  {
 
     public LockIndication() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.secondaryM = this.baseSecondaryM = 3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
+
         int count = MathUtils.random(1);
         switch (count) {
             case 0:
@@ -39,10 +44,19 @@ public class LockIndication extends AbstractShionMinamiCard  {
         addToBot(new TriggerDimensionSplitterAction());
     }
 
-    public AbstractCard makeCopy() {
-        return new LockIndication();
-    }
 
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+
+        if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
+            if (p.getPower(HyperdimensionalLinksPower.POWER_ID).amount >= this.secondaryM)
+                return super.canUse(p, m);
+        }
+
+        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+        return false;
+
+    }
 
     public void upgrade() {
         if (!this.upgraded) {
@@ -50,6 +64,7 @@ public class LockIndication extends AbstractShionMinamiCard  {
             upgradeBaseCost(0);
         }
     }
+
 
     @Override
     public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards) {

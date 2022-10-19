@@ -7,10 +7,13 @@ import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.msic.Shield;
 import VUPShionMod.patches.ShieldPatches;
+import VUPShionMod.powers.EisluRen.CoverMinionPower;
 import VUPShionMod.powers.EisluRen.SupportGravitaterPower;
 import VUPShionMod.powers.Monster.PlagaAMundo.FlyPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -28,15 +31,19 @@ public class ShieldProjection extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.selfRetain = true;
         this.returnToHand = true;
+        this.magicNumber = this.baseMagicNumber = 7;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractPlayerMinion elf = MinionGroup.getElfMinion();
-        if(elf != null){
+        if (elf != null) {
             addToBot(new RemoveAllShieldAction(p));
             addToBot(new GainShieldAction(elf, Shield.getShield(p).getCurrentShield()));
         }
+
+        addToBot(new GainShieldAction(p, this.magicNumber));
+        addToBot(new RemoveSpecificPowerAction(p, p, CoverMinionPower.POWER_ID));
     }
 
     @Override

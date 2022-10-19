@@ -19,7 +19,7 @@ public class ExhaustToApplySinAction extends AbstractGameAction {
     public static final String[] TEXT = uiStrings.TEXT;
     private int amount;
 
-    public ExhaustToApplySinAction( int amount) {
+    public ExhaustToApplySinAction(int amount) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.amount = amount;
         this.duration = 0.5F;
@@ -28,7 +28,7 @@ public class ExhaustToApplySinAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.5F) {
-            AbstractDungeon.handCardSelectScreen.open(TEXT[0], 2, true, true);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[0], amount > 1 ? 2 : 1, true, true);
 
             addToBot(new WaitAction(0.25F));
             tickDuration();
@@ -42,7 +42,7 @@ public class ExhaustToApplySinAction extends AbstractGameAction {
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                         if (monster != null && !monster.isDeadOrEscaped()) {
-                            addToTop(new ApplySinAction(monster,amount));
+                            addToTop(new ApplySinAction(monster, amount));
                         }
                     }
                 }

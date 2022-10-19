@@ -1,6 +1,7 @@
 package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -25,7 +26,7 @@ public class SeverCurrent extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new CorGladiiPower(p, this.magicNumber)));
+        addToBot(new ApplyCorGladiiAction(this.magicNumber));
     }
 
     @Override

@@ -3,10 +3,8 @@ package VUPShionMod.cards.Liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Liyezhu.AddSansAction;
 import VUPShionMod.actions.Liyezhu.ApplySinAction;
-import VUPShionMod.actions.Liyezhu.DuelSinAction;
-import VUPShionMod.actions.Unique.RemovePlayerDebuffAction;
+import VUPShionMod.actions.Unique.RemoveAPlayerDebuffAction;
 import VUPShionMod.powers.Liyezhu.PsychicPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,7 +34,7 @@ public class LimpidHeart extends AbstractLiyezhuCard {
             addToBot(new ApplySinAction(mo, this.magicNumber));
         }
 
-        addToBot(new RemovePlayerDebuffAction());
+        addToBot(new RemoveAPlayerDebuffAction());
         if (AbstractDungeon.player.hasPower(PsychicPower.POWER_ID)) {
             if (AbstractDungeon.player.getPower(PsychicPower.POWER_ID).amount > 1) {
                 addToBot(new AddSansAction(1));

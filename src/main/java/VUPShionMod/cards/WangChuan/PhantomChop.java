@@ -3,6 +3,7 @@ package VUPShionMod.cards.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.PlayTmpCardAction;
 import VUPShionMod.actions.Common.XActionAction;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.actions.Wangchuan.ApplyStiffnessAction;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,19 +32,23 @@ public class PhantomChop extends AbstractWCCard {
     public PhantomChop() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 3;
+        this.secondaryM = this.baseSecondaryM = 3;
         this.selfRetain = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int trueDamage = this.baseDamage;
-        if(this.timesUpgraded >=2){
-            this.baseDamage =1;
+        if (this.timesUpgraded >= 2) {
+            this.baseDamage = 1;
 
             if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
                 this.baseDamage += AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount;
 
             calculateCardDamage(m);
+
+
+            addToBot(new ApplyCorGladiiAction(this.secondaryM));
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

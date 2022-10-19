@@ -53,6 +53,13 @@ locked/08
   orig: 160, 160
   offset: 0, 0
   index: -1
+locked/10
+  rotate: false
+  xy: 1136, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
 
 achievements2.png
 size: 2048,256
@@ -104,6 +111,13 @@ unlocked/07
 unlocked/08
   rotate: false
   xy: 974, 2
+  size: 160, 160
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+unlocked/10
+  rotate: false
+  xy: 1136, 2
   size: 160, 160
   orig: 160, 160
   offset: 0, 0

@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.ui.SwardCharge;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -71,7 +72,7 @@ public class MagiamObruorPower extends AbstractShionPower {
         if (this.owner.hasPower(MensVirtusquePower.POWER_ID)) {
             AbstractPower p = this.owner.getPower(MensVirtusquePower.POWER_ID);
             p.flash();
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new CorGladiiPower(AbstractDungeon.player, p.amount * this.amount)));
+            addToBot(new ApplyCorGladiiAction(p.amount * this.amount));
         } else {
             addToBot(new LoseEnergyAction(this.amount));
             for(AbstractPower p : AbstractDungeon.player.powers){

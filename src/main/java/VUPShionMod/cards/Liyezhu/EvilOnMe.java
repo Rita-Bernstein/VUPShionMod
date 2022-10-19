@@ -23,7 +23,7 @@ public class EvilOnMe extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 13;
+        this.secondaryM = this.baseSecondaryM = 9;
         this.exhaust = true;
     }
 
@@ -42,32 +42,27 @@ public class EvilOnMe extends AbstractLiyezhuCard {
             addToBot(new RemoveSpecificPowerAction(p, p, SinPower.POWER_ID));
         }
 
-        addToBot(new GainMaxHPAction(p, (int) (p.maxHealth * 0.05f)));
+        addToBot(new GainMaxHPAction(p, (int) (p.maxHealth * 0.03f)));
         addToBot(new HealAction(p, p, amount * this.magicNumber));
 
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = true;
+
+        int count = 0;
 
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
             if (mo.hasPower(SinPower.POWER_ID)) {
-                if (mo.getPower(SinPower.POWER_ID).amount < this.secondaryM) {
-                    canUse = false;
-                }
-            } else
-                canUse = false;
+                count += mo.getPower(SinPower.POWER_ID).amount;
+            }
         }
 
         if (p.hasPower(SinPower.POWER_ID)) {
-            if (p.getPower(SinPower.POWER_ID).amount < this.secondaryM) {
-                canUse = false;
-            }
-        } else
-            canUse = false;
+           count += p.getPower(SinPower.POWER_ID).amount;
+        }
 
-        if (!canUse) {
+        if (count < this.secondaryM) {
             this.cantUseMessage = EXTENDED_DESCRIPTION[0];
             return false;
         }

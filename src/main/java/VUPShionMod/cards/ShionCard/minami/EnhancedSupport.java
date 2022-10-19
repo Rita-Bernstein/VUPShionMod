@@ -1,6 +1,9 @@
 package VUPShionMod.cards.ShionCard.minami;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.XActionAction;
+import VUPShionMod.actions.EisluRen.GainRefundChargeAction;
+import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
 import VUPShionMod.patches.CardTagsEnum;
@@ -12,6 +15,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+
+import java.util.function.Consumer;
 
 public class EnhancedSupport extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID(EnhancedSupport.class.getSimpleName());
@@ -28,32 +33,15 @@ public class EnhancedSupport extends AbstractShionMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
-                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
+                125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
 
-        int effect = EnergyPanel.totalCount;
-        if (this.energyOnUse != -1) {
-            effect = this.energyOnUse;
-        }
-        if (p.hasRelic(ChemicalX.ID)) {
-            effect += ChemicalX.BOOST;
-            p.getRelic(ChemicalX.ID).flash();
-        }
-        if (this.upgraded) {
-            effect+=2;
-        }else
-            effect++;
-
-        effect *= 1;
-
-        if (effect > 0) {
-
-            addToBot(new TriggerFinFunnelPassiveAction(m, effect));
+        Consumer<Integer> actionConsumer = effect -> {
+            addToTop(new GainHyperdimensionalLinksAction(effect));
+            addToTop(new TriggerFinFunnelPassiveAction(m, upgraded ? effect + 2 : effect + 1));
+        };
+        addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
 
 
-            if (!this.freeToPlayOnce) {
-                p.energy.use(EnergyPanel.totalCount);
-            }
-        }
     }
 
     public AbstractCard makeCopy() {

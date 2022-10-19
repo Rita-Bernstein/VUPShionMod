@@ -30,8 +30,9 @@ public class CruciformPenance extends AbstractLiyezhuCard {
     public CruciformPenance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 14;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 6;
+        this.selfRetain =true;
     }
 
     @Override

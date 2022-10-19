@@ -1,6 +1,7 @@
 package VUPShionMod.powers.Wangchuan;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Wangchuan.ApplyCorGladiiAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -35,7 +36,7 @@ public class MoonstriderPower extends AbstractShionPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner) {
             flash();
-            addToTop(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new CorGladiiPower(AbstractDungeon.player,this.amount)));
+            addToTop(new ApplyCorGladiiAction(this.amount));
         }
         return damageAmount;
     }

@@ -22,7 +22,7 @@ import java.util.function.Consumer;
 public class ReleaseFormEisluRen extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(ReleaseFormEisluRen.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/ReleaseFormEisluRen.png");
-    private static final int COST = 2;
+    private static final int COST = 1;
     public static final CardType TYPE = CardType.POWER;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -42,7 +42,7 @@ public class ReleaseFormEisluRen extends AbstractShionLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(0);
         }
     }
 

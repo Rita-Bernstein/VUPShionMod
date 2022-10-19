@@ -44,6 +44,7 @@ public class SummonElf extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(1);
+            this.isInnate = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

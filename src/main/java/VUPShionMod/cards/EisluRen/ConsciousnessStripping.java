@@ -52,7 +52,7 @@ public class    ConsciousnessStripping extends AbstractEisluRenCard {
                 for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                     if (monster != null && !monster.isDeadOrEscaped()) {
                         for (int i = 0; i < this.magicNumber; i++) {
-                            int chance = AbstractDungeon.cardRng.random(99);
+                            int chance = AbstractDungeon.cardRandomRng.random(99);
                             if (chance > 66)
                                 addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, 1, false)));
                             else if (chance > 33)
@@ -70,7 +70,7 @@ public class    ConsciousnessStripping extends AbstractEisluRenCard {
             for (int i = 0; i < this.magicNumber; i++)
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             for (int i = 0; i < this.magicNumber; i++) {
-                int chance = AbstractDungeon.cardRng.random(99);
+                int chance = AbstractDungeon.cardRandomRng.random(99);
                 if (chance > 66)
                     addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 1, false)));
                 else if (chance > 33)

@@ -2,6 +2,7 @@ package VUPShionMod.cards.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.patches.CardTagsEnum;
+import VUPShionMod.powers.Wangchuan.ImmuneDamagePower;
 import VUPShionMod.powers.Wangchuan.MagiamObruorPower;
 import VUPShionMod.powers.Wangchuan.NihilImmensum2Power;
 import VUPShionMod.powers.Wangchuan.NihilImmensumPower;
@@ -20,12 +21,14 @@ public class NihilImmensum extends AbstractWCCard {
 
     public NihilImmensum() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 7;
+        this.magicNumber = this.baseMagicNumber = 15;
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new ImmuneDamagePower(p)));
+
         if (upgraded)
             addToBot(new ApplyPowerAction(p, p, new NihilImmensum2Power(p, 1)));
         else
@@ -37,7 +40,7 @@ public class NihilImmensum extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(-2);
+            upgradeMagicNumber(-5);
         }
     }
 }

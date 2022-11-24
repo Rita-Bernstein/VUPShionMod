@@ -19,7 +19,7 @@ public class NihilImmensumPower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public static final int triggerAmount = 7;
+    public static final int triggerAmount = 15;
 
     public NihilImmensumPower(AbstractCreature owner, int amount) {
         this.name = NAME;

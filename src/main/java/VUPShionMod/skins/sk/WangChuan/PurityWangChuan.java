@@ -2,6 +2,7 @@ package VUPShionMod.skins.sk.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.relics.Wangchuan.PureHeart;
 import VUPShionMod.relics.Wangchuan.WhiteRose;
 import VUPShionMod.skins.AbstractSkin;
@@ -16,9 +17,9 @@ public class PurityWangChuan extends AbstractSkin {
     public static final String ID = PurityWangChuan.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public PurityWangChuan() {
-        super(ID,1);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait2.png");
+    public PurityWangChuan(int index) {
+        super(ID, index);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait2.sff");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -31,6 +32,20 @@ public class PurityWangChuan extends AbstractSkin {
         this.atlasURL = "VUPShionMod/characters/WangChuan/animation/STANCE_WANGCHUAN_WHITE.atlas";
         this.jsonURL = "VUPShionMod/characters/WangChuan/animation/STANCE_WANGCHUAN_WHITE.json";
         this.renderScale = 3.0f;
+
+
+    }
+
+    public String getCharacterName() {
+        return WangChuan.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return WangChuan.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return WangChuan.charStrings.TEXT[0];
     }
 
 

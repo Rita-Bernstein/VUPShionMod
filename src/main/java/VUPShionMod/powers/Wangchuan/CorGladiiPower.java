@@ -76,6 +76,11 @@ public class CorGladiiPower extends AbstractShionPower {
 
         GameStatsPatch.corGladiiLoseThisTurn += reduceAmount;
 
+        if (AbstractDungeon.player.hasPower(IntensaPower.POWER_ID)) {
+            AbstractShionPower p = (AbstractShionPower) AbstractDungeon.player.getPower(IntensaPower.POWER_ID);
+            p.updateDescription();
+        }
+
     }
 
     @Override
@@ -87,6 +92,11 @@ public class CorGladiiPower extends AbstractShionPower {
         }
 
         GameStatsPatch.corGladiiLoseThisTurn += this.amount;
+
+        if (AbstractDungeon.player.hasPower(IntensaPower.POWER_ID)) {
+            AbstractShionPower p = (AbstractShionPower) AbstractDungeon.player.getPower(IntensaPower.POWER_ID);
+            p.updateDescription();
+        }
     }
 
     @Override

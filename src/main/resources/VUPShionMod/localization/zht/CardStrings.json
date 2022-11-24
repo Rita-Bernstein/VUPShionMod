@@ -94,7 +94,8 @@
   },
   "VUPShionMod:Goodbye": {
     "NAME": "mmd不陪你玩了",
-    "DESCRIPTION": "保留 。 墓地 。 NL 消耗 所有手牌 。 NL 打出 !M! 張隨機攻擊牌。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 墓地 。 NL 消耗 所有手牌 。 NL 打出 !M! 張隨機攻擊牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 墓地 。 NL 消耗 所有手牌 。 NL 打出 !M! 張隨機攻擊牌。"
   },
   "VUPShionMod:EnhancedWeapon": {
     "NAME": "強化兵裝",
@@ -1031,7 +1032,7 @@
   },
   "VUPShionMod:NihilImmensum": {
     "NAME": "偽·無量空處",
-    "DESCRIPTION": "每獲得 !M! 次 vup_shion_mod:魔能過載 ，本回合內受到的傷害為0。 NL vup_shion_mod:魔能過載 5。"
+    "DESCRIPTION": "獲得 vup_shion_mod:咫尺天涯 。 NL 每獲得 !M! 次 vup_shion_mod:魔能過載 ，本回合內受到的傷害為0。 NL vup_shion_mod:魔能過載 5。"
   },
   "VUPShionMod:ArtificiumMundi": {
     "NAME": "偽·世界",
@@ -1132,8 +1133,8 @@
   },
   "VUPShionMod:FlickeringTip": {
     "NAME": "不弒寒芒",
-    "DESCRIPTION": " 造成 !D! 點傷害。 NL 擊殺非首領時：獲得 !M! 點 *San值 和 !M! 點最大生命。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 造成 !D! 點傷害。 NL 擊殺非首領時：獲得 !M! 點 *San值 和 !M! 點最大生命。"
+    "DESCRIPTION": " 造成 !D! 點傷害。 NL 斬殺 非首領時：獲得 !M! 點 *San值 和 !M! 點最大生命。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 造成 !D! 點傷害。 NL 斬殺 非首領時：獲得 !M! 點 *San值 和 !M! 點最大生命。"
   },
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "姦淫誡言",
@@ -1180,8 +1181,8 @@
   },
   "VUPShionMod:EnsanguinedFigure": {
     "NAME": "浸染之衣",
-    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 每當你受到傷害時，給予 *所有人 !M! 層 vup_shion_mod:罪孽 。",
-    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 每當你受到傷害時，給予所有敵人 !M! 層 vup_shion_mod:罪孽 。"
+    "DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 每當你受到攻擊傷害時，給予 *所有人 !M! 層 vup_shion_mod:罪孽 。",
+    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! *San值 。 NL 失去 5 點生命。 NL 每當你受到攻擊傷害時，給予所有敵人 !M! 層 vup_shion_mod:罪孽 。"
   },
   "VUPShionMod:CrimsonDeluge": {
     "NAME": "浸染之血",
@@ -1257,8 +1258,8 @@
   },
   "VUPShionMod:AnnihilatingChoir": {
     "NAME": "破滅詠唱",
-    "DESCRIPTION": "對 *所有人 造成 !D! 點傷害。 NL vup_shion_mod:沉靈 X:對所有敵人造成10X點傷害， NL 回復10X點生命。",
-    "UPGRADE_DESCRIPTION": "對 *所有人 造成 !D! 點傷害。 NL vup_shion_mod:沉靈 X:對所有敵人造成15X點傷害， NL 獲得X層 vup_shion_mod:沉靈 。"
+    "DESCRIPTION": "對 *所有人 造成 !D! 點傷害。 NL vup_shion_mod:沉靈 X:對所有敵人造成 !M! X點傷害， NL 回復 !M! X點生命。",
+    "UPGRADE_DESCRIPTION": "對 *所有人 造成 !D! 點傷害。 NL vup_shion_mod:沉靈 X:對所有敵人造成 !M! X點傷害， NL 獲得X層 vup_shion_mod:沉靈 。"
   },
   "VUPShionMod:SpiritImpact": {
     "NAME": "聖靈衝擊",
@@ -1658,8 +1659,8 @@
   },
   "VUPShionMod:HotRestart": {
     "NAME": "熱重啟",
-    "DESCRIPTION": "抽 敏捷 /5 張牌。 NL 獲得抽牌數量的 vup_shion_mod:衝擊預備 。",
-    "UPGRADE_DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 抽 敏捷 /5 張牌。 NL 獲得抽牌數量的 vup_shion_mod:衝擊預備 。"
+    "DESCRIPTION": "抽 敏捷 /5 張牌。 NL 獲得抽牌數量兩倍的 vup_shion_mod:衝擊預備 。",
+    "UPGRADE_DESCRIPTION": "獲得 !M! 層 vup_shion_mod:能量回收 。 NL 抽 敏捷 /5 張牌。 NL 獲得抽牌數量兩倍的 vup_shion_mod:衝擊預備 。"
   },
   "VUPShionMod:IronWall": {
     "NAME": "鐵壁",
@@ -1883,5 +1884,21 @@
   "VUPShionMod:ShieldProjection": {
     "NAME": "護盾投射",
     "DESCRIPTION": "保留 。 vup_shion_mod:復位 。 NL 將你的 vup_shion_mod:護盾 轉移給 *精靈 。 NL 獲得 !M! 點 vup_shion_mod:護盾 。 NL 失去 vup_shion_mod:掩護 。"
+  },
+  "VUPShionMod:SetupFinFunnel": {
+    "NAME": "浮游炮部署",
+    "DESCRIPTION": "固有 。 保留 。 vup_shion_mod:復位 。 NL 部署隨機一門等級為 !M! 的 *南小棉 vup_shion_mod:浮游炮 。 NL 每回合失去 [E] 。"
+  },
+  "VUPShionMod:CalibrationDeployment": {
+    "NAME": "校準部署",
+    "DESCRIPTION": " 保留 。 vup_shion_mod:復位 。 NL 不能被 升級 。 NL 觸發當前 vup_shion_mod:浮游炮 回合開始的效果。 NL 變化當前的 *南小棉 vup_shion_mod:浮游炮 。"
+  },
+  "VUPShionMod:MinamiHandCard": {
+    "NAME": "狐的底牌",
+    "DESCRIPTION": " 墓地 。 NL 觸發 vup_shion_mod:自動浮游炮 。 NL 從當前角色的 *能力牌 中選擇一張。 NL 將它的複製加入手牌。"
+  },
+  "VUPShionMod:MinamiReact": {
+    "NAME": "狐的隨機應變",
+    "DESCRIPTION": " 觸發所有 vup_shion_mod:浮游炮 回合開始的效果。 NL 如果敵人的意圖為攻擊，獲得 !M! 點 vup_shion_mod:護盾 ，否則造成 !D! 點傷害。"
   }
 }

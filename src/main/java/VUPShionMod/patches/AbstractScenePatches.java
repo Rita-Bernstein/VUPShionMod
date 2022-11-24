@@ -19,10 +19,10 @@ import com.megacrit.cardcrawl.vfx.campfire.CampfireEndingBurningEffect;
 
 @SuppressWarnings("unused")
 public class AbstractScenePatches {
-    public static Texture campfire = ImageMaster.loadImage("VUPShionMod/characters/Shion/Campfire.png");
-    public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.png" : "Campfire.png"));
-    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/Campfire2.png");
-    public static Texture campfire_Eis = ImageMaster.loadImage("VUPShionMod/characters/EisluRen/Campfire.png");
+    public static Texture campfire = ImageMaster.loadImage("VUPShionMod/characters/Shion/Campfire.sff");
+    public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.sff" : "Campfire.sff"));
+    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/Campfire2.sff");
+    public static Texture campfire_Eis = ImageMaster.loadImage("VUPShionMod/characters/EisluRen/Campfire.sff");
     public static final float scale = 1.0f;
     public static final float offSet_x = 0.0f;
     public static final float offSet_y = 0.0f;

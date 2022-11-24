@@ -78,8 +78,10 @@ public class BreakAppointment extends AbstractImageEvent {
                         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
                         for (AbstractCard card : VUPShionMod.mi_Cards) {
-                            group.addToTop(card);
-                            UnlockTracker.markCardAsSeen(card.cardID);
+                            if(card.rarity != AbstractCard.CardRarity.BASIC) {
+                                group.addToTop(card);
+                                UnlockTracker.markCardAsSeen(card.cardID);
+                            }
                         }
 
                         AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[4], false);

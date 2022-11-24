@@ -44,7 +44,7 @@ public class WoodBombardment extends AbstractEisluRenCard {
             addToBot(new GainEnergyAction(1));
 
         int chance = 35;//this.upgraded ? 60 : 35;
-        if (AbstractDungeon.cardRng.random(99) < chance) {
+        if (AbstractDungeon.cardRandomRng.random(99) < chance) {
             addToBot(new StunMonsterAction(m, p, 1));
         }
     }

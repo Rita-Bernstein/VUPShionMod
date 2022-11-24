@@ -36,9 +36,9 @@ public class SealResidue extends AbstractEisluRenCard {
         }
 
         float chance = this.upgraded ? 0.8f : 0.6f;
-        if (AbstractDungeon.cardRng.randomBoolean(chance)) {
+        if (AbstractDungeon.cardRandomRng.randomBoolean(chance)) {
             addToBot(new GainShieldAction(p, this.magicNumber));
-            if (AbstractDungeon.cardRng.randomBoolean(chance))
+            if (AbstractDungeon.cardRandomRng.randomBoolean(chance))
                 addToBot(new GainRefundChargeAction(this.secondaryM));
         }
     }

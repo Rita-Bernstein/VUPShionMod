@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 import java.util.ArrayList;
 
 public class ShionLoginBackground extends TitleBackground implements Disposable {
-    private Texture bg_account = ImageMaster.loadImage("VUPShionMod/img/ui/mainBg.png");
+    private Texture bg_account = ImageMaster.loadImage("VUPShionMod/img/ui/mainBg.sff");
     private float display_Cx = Settings.WIDTH / 2.0f;
     private float display_Cy = Settings.HEIGHT / 2.0F;
     private float loginScale = 0.8f;

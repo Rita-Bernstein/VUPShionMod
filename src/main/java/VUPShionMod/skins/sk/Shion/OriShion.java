@@ -5,10 +5,12 @@ import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.minami.TacticalLink;
 import VUPShionMod.cards.ShionCard.shion.*;
+import VUPShionMod.character.Shion;
 import VUPShionMod.relics.Shion.ConcordSnipe;
 import VUPShionMod.relics.Shion.DimensionSplitterAria;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.util.SaveHelper;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -21,8 +23,8 @@ public class OriShion extends AbstractSkin {
     public static final String ID = OriShion.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public OriShion() {
-        super(ID,0);
+    public OriShion(int index) {
+        super(ID, index);
         this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Shion/portrait.png");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
@@ -68,12 +70,36 @@ public class OriShion extends AbstractSkin {
         setAnimation();
     }
 
+    public String getCharacterName() {
+        return Shion.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return Shion.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return Shion.charStrings.TEXT[0];
+    }
+
+
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(DimensionSplitterAria.ID);
         info.relics.add(ConcordSnipe.ID);
         return info;
+    }
+
+    public void doCharSelectScreenSelectEffect() {
+        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(2)));
+    }
+
+    @Override
+    public void justSkinSelected(int lastSelectedCount) {
+        if (lastSelectedCount == 3) {
+            doCharSelectScreenSelectEffect();
+        }
     }
 
     @Override

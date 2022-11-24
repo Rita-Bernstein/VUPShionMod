@@ -67,4 +67,6 @@ public class PlanedModify extends AbstractShionImagePotion {
     public AbstractPotion makeCopy() {
         return new PlanedModify();
     }
+
+
 }

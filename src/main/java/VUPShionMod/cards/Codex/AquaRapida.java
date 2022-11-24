@@ -20,7 +20,7 @@ public class AquaRapida extends AbstractCodexCard {
     public AquaRapida(int upgrades) {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
-        this.secondaryM =this.baseSecondaryM = 0;
+        this.secondaryM = this.baseSecondaryM = 0;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
         this.parentCardID = AquaConstans.ID;
@@ -32,9 +32,9 @@ public class AquaRapida extends AbstractCodexCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new EnergizedPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.secondaryM)));
-        if(this.timesUpgraded>0)
+        if (this.timesUpgraded > 0)
             addToBot(new DrawCardAction(1));
     }
 
@@ -43,13 +43,13 @@ public class AquaRapida extends AbstractCodexCard {
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1){
+            if (this.timesUpgraded == 1) {
                 upgradeBaseCost(0);
                 upgradeSecondM(2);
             }
 
-            if (this.timesUpgraded == 2){
-                this.exhaust =false;
+            if (this.timesUpgraded == 2) {
+                this.exhaust = false;
             }
         }
     }

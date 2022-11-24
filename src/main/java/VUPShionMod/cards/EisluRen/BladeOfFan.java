@@ -38,28 +38,28 @@ public class BladeOfFan extends AbstractEisluRenCard {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
             addToBot(new LoseWingShieldAction(this.secondaryM));
 
-        if(upgraded)
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                int count = 0;
-                if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-                        if (monster != null && !monster.isDeadOrEscaped()) {
-                            count++;
+        if (upgraded)
+            addToBot(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    int count = 0;
+                    if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
+                            if (monster != null && !monster.isDeadOrEscaped()) {
+                                count++;
+                            }
                         }
                     }
-                }
 
-                if (count <= 1) {
-                    for (int i = 0; i < multiDamage.length; i++) {
-                        multiDamage[i] *= 2;
+                    if (count <= 1) {
+                        for (int i = 0; i < multiDamage.length; i++) {
+                            multiDamage[i] *= 2;
+                        }
                     }
-                }
 
-                isDone = true;
-            }
-        });
+                    isDone = true;
+                }
+            });
 
         for (int i = 0; i < this.magicNumber; i++) {
             addToBot(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
@@ -86,7 +86,7 @@ public class BladeOfFan extends AbstractEisluRenCard {
         if (!this.upgraded) {
             this.upgradeName();
             upgradeBaseCost(0);
-            this.rawDescription= UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

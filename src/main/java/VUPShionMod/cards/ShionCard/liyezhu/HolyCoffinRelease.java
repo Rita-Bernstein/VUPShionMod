@@ -2,10 +2,16 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.powers.Shion.HolyCoffinReleasePower;
+import VUPShionMod.skins.SkinManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class HolyCoffinRelease extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(HolyCoffinRelease.class.getSimpleName());
@@ -34,4 +40,6 @@ public class HolyCoffinRelease extends AbstractShionLiyezhuCard {
             upgradeMagicNumber(1);
         }
     }
+
+
 }

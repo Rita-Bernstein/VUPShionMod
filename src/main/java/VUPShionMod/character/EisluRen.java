@@ -142,7 +142,7 @@ public class EisluRen extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return charStrings.NAMES[1];
+        return  SkinManager.getSkin(3).getCharacterTiTleName();
     }
 
     @Override
@@ -392,7 +392,7 @@ public class EisluRen extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/EisluRenCutScene.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/EisluRenCutScene.sff"));
         return panels;
     }
 

@@ -46,7 +46,7 @@ public class MiseriamVoco extends AbstractLiyezhuCard {
         list.add(new VoluntasDoloris());
         list.add(new ViaAfflictionis());
 
-        if (!this.upgraded) list.remove(AbstractDungeon.cardRng.random(list.size() - 1));
+        if (!this.upgraded) list.remove(AbstractDungeon.cardRandomRng.random(list.size() - 1));
 
         for (AbstractCard card : list) {
             addToBot(new MakeTempCardInHandAction(card));

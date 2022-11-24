@@ -92,6 +92,24 @@ public class TrainingModePatches {
         }
     }
 
+
+    @SpirePatch(
+            clz = TheEnding.class,
+            method = "generateMonsters"
+    )
+    public static class TheEndingEliteListPatch {
+        @SpirePostfixPatch
+        public static void Postfix(TheEnding _instance) {
+            if (SaveHelper.isTrainingMod) {
+                AbstractDungeon.eliteMonsterList.clear();
+
+                AbstractDungeon.eliteMonsterList.add(MinamiShionBoss.ID);
+                AbstractDungeon.eliteMonsterList.add(MinamiShionBoss.ID);
+                AbstractDungeon.eliteMonsterList.add(MinamiShionBoss.ID);
+            }
+        }
+    }
+
     @SpirePatch(
             clz = DungeonMap.class,
             method = "renderBossIcon"

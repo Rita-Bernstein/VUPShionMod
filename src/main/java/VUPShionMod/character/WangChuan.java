@@ -140,7 +140,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return charStrings.NAMES[1];
+        return  SkinManager.getSkin(1).getCharacterTiTleName();
     }
 
     @Override
@@ -257,7 +257,7 @@ public class WangChuan extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/WangChuanCutScene.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/WangChuanCutScene.sff"));
         return panels;
     }
 

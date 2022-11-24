@@ -3,17 +3,22 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class HolyCharge extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(HolyCharge.class.getSimpleName());
@@ -79,4 +84,6 @@ public class HolyCharge extends AbstractShionLiyezhuCard {
             upgradeDamage(6);
         }
     }
+
+
 }

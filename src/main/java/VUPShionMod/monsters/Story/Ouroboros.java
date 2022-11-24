@@ -2,10 +2,12 @@ package VUPShionMod.monsters.Story;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.CustomWaitAction;
+import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.cutscenes.CGlayout;
 import VUPShionMod.patches.CharacterSelectScreenPatches;
 import VUPShionMod.patches.SpecialCombatPatches;
+import VUPShionMod.powers.Monster.PlagaAMundo.FlyPower;
 import VUPShionMod.powers.Monster.TimePortal.*;
 import VUPShionMod.powers.Shion.ReinsOfWarPower;
 import VUPShionMod.relics.Event.FragmentsOfFaith;
@@ -126,27 +128,15 @@ public class Ouroboros extends CustomMonster {
 
 
         addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, 3)));
-
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                ArrayList<AbstractPower> powersToRemove = new ArrayList<>();
-                for (AbstractPower p : AbstractDungeon.player.powers) {
-                    if (!p.ID.equals(ReinsOfWarPower.POWER_ID))
-                        powersToRemove.add(p);
-                }
-
-                if (!powersToRemove.isEmpty())
-                    addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, Ouroboros.this,
-                            powersToRemove.get(AbstractDungeon.miscRng.random(powersToRemove.size() - 1))));
-                isDone = true;
-            }
-        });
+        addToBot(new RemovePlayerBuffAction());
 
         addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new WeakPower(AbstractDungeon.player,99,true)));
 
-        if(!this.isDefect)
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new VulnerablePower(AbstractDungeon.player,99,true)));
+        if(!this.isDefect) {
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 99, true)));
+            addToBot(new ApplyPowerAction(this,this,new FlyPower(this,99)));
+            addToBot(new ApplyPowerAction(this,this,new StrengthPower(this,200)));
+        }
 
     }
 

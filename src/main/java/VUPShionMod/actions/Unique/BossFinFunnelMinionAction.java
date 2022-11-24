@@ -4,6 +4,7 @@ import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.monsters.HardModeBoss.Shion.AbstractShionBoss;
 import VUPShionMod.monsters.HardModeBoss.Shion.AquaShionBoss;
+import VUPShionMod.monsters.HardModeBoss.Shion.MinamiShionBoss;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.AbstractBossFinFunnel;
 import VUPShionMod.powers.Shion.MatrixAmplifyPower;
 import VUPShionMod.powers.Shion.WideAreaLockingPower;
@@ -37,6 +38,8 @@ public class BossFinFunnelMinionAction extends AbstractGameAction {
         if (boss instanceof AquaShionBoss)
             this.skinIndex = 2;
 
+        if (boss instanceof MinamiShionBoss)
+            this.skinIndex = 3;
     }
 
 

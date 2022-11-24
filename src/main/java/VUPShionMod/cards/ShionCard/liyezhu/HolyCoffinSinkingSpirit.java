@@ -2,10 +2,16 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.powers.Shion.HolyCoffinSinkingSpiritPower;
+import VUPShionMod.skins.SkinManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class HolyCoffinSinkingSpirit extends AbstractShionLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(HolyCoffinSinkingSpirit.class.getSimpleName());

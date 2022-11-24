@@ -63,71 +63,90 @@
       "Aggressive Armament: Maneuver\nsky-based weaponary and your funnels\nto crush your enemies.",
       "Bonus: None",
       "Difficulty: Standard",
-      "Acquisition requirements: None"
+      "Acquisition Requirements: None"
     ]
   },
   "VUPShionMod:BlueGiantShion": {
     "TEXT": [
       "Conqueror's Attire: Specialize in\nfunnels and win by versatility.",
-      "At the start of your turn,\nadd 1 Funnel Matrix\ninto your hand.",
+      "Bonus: At the start of your turn,\nadd 1 Funnel Matrix\ninto your hand.",
       "Difficulty: Advance",
-      "Acquisition requirements:\nVictory in the final battle."
+      "Acquisition Requirements:\nVictory in the final battle."
     ]
   },
   "VUPShionMod:AquaShion": {
     "TEXT": [
-      "Midsummer Swimsuit: Stretch your\npotential to its limit,\nfor a short time.",
-      "You can activate\nSupernova Outburst\nonce per combat.",
+      "Midsummer Swimsuit: Stretch your\npotential to its limit for a spurt.",
+      "Bonus: You can activate\nSupernova Outburst\nonce per combat.",
       "Difficulty: Transcendent",
-      "Acquisition requirements:\nFail in Act 3 or further for twice."
+      "Acquisition Requirements:\nFail in Act 3 or further for twice."
+    ]
+  },
+  "VUPShionMod:MinamiShion": {
+    "TEXT": [
+      "Keeper of Arsenal: Logistic Support\nwinds up in combat.",
+      "but sure she’s got heaps of\nFunnels.",
+      "Difficulty: ?",
+      "Acquisition Requirements: True Ending.",
+      "Minami",
+      "Minami",
+      "Poor little fox, dining with forks. NL Pitched into crisis, crying water was the vox. "
+    ]
+  },
+  "VUPShionMod:GodShion": {
+    "TEXT": [
+      "Carmen Cantat: A beloved vessel\ndraws sympathy from higher places.",
+      "Friendship strengthens the\nbound and builds up sturdy mind.",
+      "Difficulty: Advanced",
+      "Acquisition Requirements: Work in Progress."
     ]
   },
   "VUPShionMod:OriWangChuan": {
     "TEXT": [
       "Vampire's Shroud: Right hand\nfor sword and left hand for magic.",
-      "Glans Magica in starter deck.",
+      "Bonus: Glans Magica in starter deck.",
       "Difficulty: Standard",
-      "Acquisition requirements: None"
+      "Acquisition Requirements: None"
     ]
   },
   "VUPShionMod:PurityWangChuan": {
     "TEXT": [
       "Spectre Dance: Mastery over one\nsingle technique is enough to\ntake them all.",
-      "In the Blink in starter deck.",
+      "Bonus: In the Blink in starter deck.",
       "Difficulty: Transcendent",
-      "Acquisition requirements:\nFail in Act 3 or further for twice."
+      "Acquisition Requirements:\nFail in Act 3 or further for twice."
     ]
   },
   "VUPShionMod:AquaWangChuan": {
     "TEXT": [
       "Midsummer Swimsuit: Warp the time\naround you to rain daggers\non your foes.",
-      "Replace all Slide with Warp.",
+      "Bonus: Replace all Slide with Warp.",
       "Difficulty: Advance",
-      "Acquisition requirements:\nVictory in the final battle."
+      "Acquisition Requirements:\nVictory in the final battle."
     ]
   },
   "VUPShionMod:ChinaWangChuan": {
     "TEXT": [
       "Sapor Peregrinus: Wield telekinetic sword\nwith your magia and launch\nrelentless attacks.",
-      "Peripheral circuit is planted to\navert Magiam Obruor.",
+      "Bonus: Peripheral circuit is planted to\navert Magiam Obruor.",
       "Difficulty: Advance",
-      "Acquisition requirements:\nDefeat Corrupt Heart with Mors Universi."
+      "Acquisition Requirements:\nDefeat Corrupt Heart with Mors Universi."
     ]
   },
   "VUPShionMod:OriLiyezhu": {
     "TEXT": [
-      "Priestess Duty: Bless the container,\nnot the soul in it.",
-      "Heals your body, not your mind.",
+      "Priestess Duty: Bless the container,\nnot the soul fenced within.",
+      "Bonus: Mens mala in corpore sano.",
       "Difficulty: Standard",
-      "Acquisition requirements: None"
+      "Acquisition Requirements: None"
     ]
   },
   "VUPShionMod:OriEisluRen": {
     "TEXT": [
       "Biyuki Gift: Equipped with the Wing\nComposite Shield developed by Shion",
-      "Greatly improved defensive\ncapabilities",
+      "Bonus: Greatly improved defensive\ncapabilities",
       "Difficulty: Standard",
-      "Acquisition requirements:True Ending"
+      "Acquisition Requirements:True Ending"
     ]
   },
   "VUPShionMod:PileCostForTurnZeroAction": {
@@ -253,14 +272,14 @@
   },
   "VUPShionMod:ShionBasePatches": {
     "TEXT": [
-      "Play Special Mode"
+      "Play in Special Mode"
     ]
   },
   "VUPShionMod:ShionMainMenuPanelButton": {
     "TEXT": [
       "Training Ground",
       "Fight the shadows in this virtual reality.",
-      "Earn “True Ending” in a standard run."
+      "Achieve the “True Ending” in a standard run."
     ]
   },
   "VUPShionMod:CardPreviewUpgradePatches": {
@@ -281,8 +300,8 @@
   },
   "VUPShionMod:DrawPileLoadCardAction": {
     "TEXT": [
-      "Add Loading Complete to cards",
-      " NL vup_shion_mod:Loading_Complete. Exhaust."
+      "Grant Quick Boot effect on the cards you choose.",
+      " NL vup_shion_mod:Quick\u00a0Boot. Exhaust."
     ]
   }
 }

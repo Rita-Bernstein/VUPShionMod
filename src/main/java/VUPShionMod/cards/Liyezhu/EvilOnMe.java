@@ -23,7 +23,7 @@ public class EvilOnMe extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 9;
+        this.secondaryM = this.baseSecondaryM = 3;
         this.exhaust = true;
     }
 

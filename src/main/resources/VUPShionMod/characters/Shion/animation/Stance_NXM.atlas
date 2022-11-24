@@ -1,0 +1,244 @@
+
+Stance_NXM.png
+size: 2048,1024
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 1678, 907
+  size: 100, 238
+  orig: 100, 238
+  offset: 0, 0
+  index: -1
+arm_L_piaodai
+  rotate: true
+  xy: 1102, 649
+  size: 125, 395
+  orig: 125, 395
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: true
+  xy: 865, 762
+  size: 161, 235
+  orig: 161, 235
+  offset: 0, 0
+  index: -1
+arm_R_armor
+  rotate: true
+  xy: 787, 508
+  size: 108, 67
+  orig: 108, 67
+  offset: 0, 0
+  index: -1
+arm_R_armor2
+  rotate: false
+  xy: 987, 726
+  size: 75, 34
+  orig: 75, 34
+  offset: 0, 0
+  index: -1
+arm_R_piaodai_R
+  rotate: false
+  xy: 665, 220
+  size: 98, 286
+  orig: 98, 286
+  offset: 0, 0
+  index: -1
+arm_R_piaodai_W
+  rotate: true
+  xy: 2, 71
+  size: 480, 356
+  orig: 480, 356
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 360, 62
+  size: 142, 419
+  orig: 142, 419
+  offset: 0, 0
+  index: -1
+body_armor
+  rotate: true
+  xy: 2, 27
+  size: 42, 146
+  orig: 42, 146
+  offset: 0, 0
+  index: -1
+body_armor_sidai
+  rotate: true
+  xy: 411, 753
+  size: 170, 452
+  orig: 170, 452
+  offset: 0, 0
+  index: -1
+ear_L
+  rotate: false
+  xy: 360, 509
+  size: 49, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+ear_R
+  rotate: true
+  xy: 150, 28
+  size: 41, 54
+  orig: 41, 54
+  offset: 0, 0
+  index: -1
+eyes1
+  rotate: false
+  xy: 2, 2
+  size: 29, 23
+  orig: 29, 23
+  offset: 0, 0
+  index: -1
+eyes2
+  rotate: false
+  xy: 765, 411
+  size: 24, 19
+  orig: 24, 19
+  offset: 0, 0
+  index: -1
+eyes_meimao
+  rotate: false
+  xy: 1083, 755
+  size: 17, 5
+  orig: 17, 5
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 879, 645
+  size: 106, 115
+  orig: 106, 115
+  offset: 0, 0
+  index: -1
+foot_R_armor
+  rotate: false
+  xy: 856, 585
+  size: 15, 31
+  orig: 15, 31
+  offset: 0, 0
+  index: -1
+foot_R_armor2
+  rotate: true
+  xy: 879, 624
+  size: 19, 55
+  orig: 19, 55
+  offset: 0, 0
+  index: -1
+hair_behind
+  rotate: false
+  xy: 360, 206
+  size: 303, 300
+  orig: 303, 300
+  offset: 0, 0
+  index: -1
+hair_frount
+  rotate: false
+  xy: 411, 508
+  size: 374, 243
+  orig: 374, 243
+  offset: 0, 0
+  index: -1
+head_armor_golden
+  rotate: false
+  xy: 1615, 858
+  size: 52, 60
+  orig: 52, 60
+  offset: 0, 0
+  index: -1
+head_fashi1
+  rotate: false
+  xy: 987, 710
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+head_fashi2
+  rotate: false
+  xy: 1064, 745
+  size: 17, 15
+  orig: 17, 15
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: true
+  xy: 1102, 776
+  size: 142, 421
+  orig: 142, 421
+  offset: 0, 0
+  index: -1
+leg_L_armor
+  rotate: false
+  xy: 815, 477
+  size: 15, 29
+  orig: 15, 29
+  offset: 0, 0
+  index: -1
+leg_L_armor2
+  rotate: false
+  xy: 1499, 713
+  size: 23, 61
+  orig: 23, 61
+  offset: 0, 0
+  index: -1
+leg_L_link_piaodai
+  rotate: true
+  xy: 787, 618
+  size: 133, 90
+  orig: 133, 90
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: true
+  xy: 1181, 920
+  size: 87, 495
+  orig: 87, 495
+  offset: 0, 0
+  index: -1
+leg_R_armor
+  rotate: false
+  xy: 765, 432
+  size: 48, 74
+  orig: 48, 74
+  offset: 0, 0
+  index: -1
+leg_R_link_piaodai
+  rotate: true
+  xy: 1918, 915
+  size: 92, 127
+  orig: 92, 127
+  offset: 0, 0
+  index: -1
+leg_R_link_piaodai2
+  rotate: false
+  xy: 1525, 779
+  size: 88, 139
+  orig: 88, 139
+  offset: 0, 0
+  index: -1
+neck_armor
+  rotate: false
+  xy: 1615, 841
+  size: 26, 15
+  orig: 26, 15
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 411, 925
+  size: 768, 82
+  orig: 768, 82
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 2, 553
+  size: 407, 454
+  orig: 407, 454
+  offset: 0, 0
+  index: -1

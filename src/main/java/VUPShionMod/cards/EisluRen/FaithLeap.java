@@ -34,10 +34,10 @@ public class FaithLeap extends AbstractEisluRenCard {
         addToBot(new PressEndTurnButtonAction());
 
         if (this.upgraded) {
-            if (AbstractDungeon.cardRng.random(99) < 25)
+            if (AbstractDungeon.cardRandomRng.random(99) < 25)
                 addToBot(new DamageAction(p, new DamageInfo(p, 15, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-            else if (AbstractDungeon.cardRng.random(99) < 1)
+            else if (AbstractDungeon.cardRandomRng.random(99) < 1)
                 addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {
@@ -47,10 +47,10 @@ public class FaithLeap extends AbstractEisluRenCard {
                     }
                 });
         }else {
-            if (AbstractDungeon.cardRng.random(99) < 35)
+            if (AbstractDungeon.cardRandomRng.random(99) < 35)
                 addToBot(new DamageAction(p, new DamageInfo(p, 15, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-            else if (AbstractDungeon.cardRng.random(99) < 2)
+            else if (AbstractDungeon.cardRandomRng.random(99) < 2)
                 addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {

@@ -2,7 +2,9 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.ShionCard.AbstractShionKuroisuCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.powers.Shion.ReleaseFormKuroisuPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -10,7 +12,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 public class ReleaseFormKuroisu extends AbstractShionKuroisuCard {
     public static final String ID = VUPShionMod.makeID(ReleaseFormKuroisu.class.getSimpleName());
@@ -41,4 +46,6 @@ public class ReleaseFormKuroisu extends AbstractShionKuroisuCard {
             upgradeBaseCost(1);
         }
     }
+
+
 }

@@ -2,6 +2,8 @@ package VUPShionMod.skins.sk.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
+import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.relics.Wangchuan.TheRipple;
 import VUPShionMod.relics.Wangchuan.WaveSlasher;
 import VUPShionMod.skins.AbstractSkin;
@@ -16,9 +18,9 @@ public class AquaWangChuan extends AbstractSkin {
     public static final String ID = AquaWangChuan.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public AquaWangChuan() {
-        super(ID,2);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait3.png");
+    public AquaWangChuan(int index) {
+        super(ID, index);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait3.sff");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -32,8 +34,20 @@ public class AquaWangChuan extends AbstractSkin {
         this.jsonURL = "VUPShionMod/characters/WangChuan/animation/STANCE_WANGCHUAN_BIKINI.json";
         this.renderScale = 3.0F;
 
+
     }
 
+    public String getCharacterName() {
+        return WangChuan.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return WangChuan.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return WangChuan.charStrings.TEXT[0];
+    }
 
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {

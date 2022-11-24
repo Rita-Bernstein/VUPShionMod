@@ -139,7 +139,7 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return charStrings.NAMES[1];
+        return  SkinManager.getSkin(2).getCharacterTiTleName();
     }
 
     @Override
@@ -446,7 +446,7 @@ public class Liyezhu extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/LiyezhuCutScene.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/LiyezhuCutScene.sff"));
         return panels;
     }
 

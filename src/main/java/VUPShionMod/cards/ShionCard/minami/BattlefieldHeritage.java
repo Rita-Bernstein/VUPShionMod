@@ -38,6 +38,8 @@ public class BattlefieldHeritage extends AbstractShionMinamiCard {
         addToBot(new MoveCardsAction(p.hand, p.discardPile, predicate, this.secondaryM, callback));
     }
 
+    
+
     public AbstractCard makeCopy() {
         return new BattlefieldHeritage();
     }

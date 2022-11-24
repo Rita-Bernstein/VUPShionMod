@@ -86,33 +86,40 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
             else
                 finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).getFinFunnel(this.forceFinFunnel);
 
-            if (isMultiDamage) {
-                addToBot(new VFXAction(new FinFunnelBeamEffect(finFunnel, p.flipHorizontal), 0.4f));
-            } else {
-                addToBot(new VFXAction(p, new FinFunnelSmallLaserEffect(finFunnel, this.target), 0.3f, true));
-                addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
-            }
+
 
 //攻击Action
             if (isMultiDamage) {
                 for (AbstractFinFunnel f : availableFinFunnel) {
-                    addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(f.getFinalDamage(), true),
-                            DamageInfo.DamageType.THORNS, AttackEffect.FIRE, true));
-
 
 //            结算被动效果
                     if (AbstractDungeon.getMonsters().areMonstersBasicallyDead())
                         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
 
-                            f.powerToApply(mo, effect, false);
+                            f.powerToApply(mo, effect, true);
                         }
+
+                    addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(f.getFinalDamage(), true),
+                            DamageInfo.DamageType.THORNS, AttackEffect.FIRE, true));
+
                 }
             } else {
-                addToBot(new DamageAction(this.target, new DamageInfo(null,
-                        finFunnel.getFinalDamage(), DamageInfo.DamageType.THORNS), AttackEffect.FIRE));
+                finFunnel.powerToApply(this.target, effect, true);
 
-                finFunnel.powerToApply(this.target, effect, false);
+                addToTop(new DamageAction(this.target, new DamageInfo(null,
+                        finFunnel.getFinalDamage(), DamageInfo.DamageType.THORNS), AttackEffect.FIRE));
             }
+
+
+            if (isMultiDamage) {
+                addToTop(new VFXAction(new FinFunnelBeamEffect(finFunnel, p.flipHorizontal), 0.4f));
+            } else {
+                addToTop(new VFXAction(new BorderFlashEffect(Color.SKY)));
+                addToTop(new VFXAction(p, new FinFunnelSmallLaserEffect(finFunnel, this.target), 0.3f, true));
+
+            }
+
+
         }
 
         this.isDone = true;

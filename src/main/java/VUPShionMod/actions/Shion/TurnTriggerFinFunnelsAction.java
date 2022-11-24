@@ -73,7 +73,7 @@ public class TurnTriggerFinFunnelsAction extends AbstractGameAction {
         } else {
             for (int i = 0; i < this.amount; i++) {
                 if (!availableFinFunnelToAdd.isEmpty()) {
-                    int index = AbstractDungeon.cardRng.random(availableFinFunnelToAdd.size() - 1);
+                    int index = AbstractDungeon.cardRandomRng.random(availableFinFunnelToAdd.size() - 1);
                     availableFinFunnel.add(availableFinFunnelToAdd.get(index));
                     availableFinFunnelToAdd.remove(index);
                 }

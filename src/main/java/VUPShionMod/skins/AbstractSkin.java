@@ -36,6 +36,8 @@ public abstract class AbstractSkin {
     public String level;
     public String unlockString;
 
+
+
     public boolean unlock = false;
 
     public String SHOULDER1;
@@ -84,6 +86,11 @@ public abstract class AbstractSkin {
     public void setAnimation() {
         SaveHelper.loadSettings();
     }
+
+    public void doCharSelectScreenSelectEffect(){
+    }
+
+    public void justSkinSelected(int lastSelectedCount){}
 
 
     public void renderPortrait(SpriteBatch sb) {
@@ -151,6 +158,18 @@ public abstract class AbstractSkin {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(BurningBlood.ID);
         return retVal;
+    }
+
+    public String getCharacterName() {
+        return "";
+    }
+
+    public String getCharacterFlavorText() {
+        return "";
+    }
+
+    public String getCharacterTiTleName() {
+        return "";
     }
 
     public ArrayList<String> getStartingDeck() {

@@ -120,7 +120,7 @@ public class VUPShionMod implements
 
     public static Color transparent = Color.WHITE.cpy();
 
-    public static boolean isTestMod = false;
+    public static boolean isTestMod = true;
 
 
     public VUPShionMod() {
@@ -306,6 +306,19 @@ public class VUPShionMod implements
                 .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
                 .create());
 
+        BaseMod.addEvent(new AddEventParams.Builder(LetItRot.ID, LetItRot.class) //Event ID//
+                //Event Character//
+                .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() -> (AbstractDungeon.id.equals(TheCity.ID) || AbstractDungeon.id.equals(TheBeyond.ID))
+                        && SkinManager.getSkinCharacter(0).reskinCount == 3)
+                .create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(IntelligentFinFunnel.ID, IntelligentFinFunnel.class) //Event ID//
+                //Event Character//
+                .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() -> (!AbstractDungeon.id.equals(TheEnding.ID)))
+                .create());
+
 
 //        忘川事件
 
@@ -326,6 +339,11 @@ public class VUPShionMod implements
                         && (BoundaryOfChaos.hasCodex() || BoundaryOfChaos.hasCodex1() || BoundaryOfChaos.hasCodex2()))
                 .create());
 
+        BaseMod.addEvent(new AddEventParams.Builder(BoundaryOfChaos.ID, BoundaryOfChaos.class) //Event ID//
+                .playerClass(AbstractPlayerEnum.VUP_Shion)
+                .spawnCondition(() -> AbstractDungeon.id.equals(TheBeyond.ID) && SkinManager.getSkinCharacter(0).reskinCount == 3
+                        && (BoundaryOfChaos.hasCodex() || BoundaryOfChaos.hasCodex1() || BoundaryOfChaos.hasCodex2()))
+                .create());
 
 //      蓝宝事件
         BaseMod.addEvent(new AddEventParams.Builder(MentalBreakdown.ID, MentalBreakdown.class) //Event ID//
@@ -381,6 +399,9 @@ public class VUPShionMod implements
             BaseMod.addMonster(OriShionBoss.ID, () -> new OriShionBoss());
             BaseMod.addMonster(AquaWangChuanBoss.ID, () -> new AquaWangChuanBoss());
             BaseMod.addMonster(BlueGiantShionBoss.ID, () -> new BlueGiantShionBoss());
+
+//            训练模式精英
+            BaseMod.addMonster(MinamiShionBoss.ID, () -> new MinamiShionBoss());
 
 
 //      加boss图标
@@ -464,6 +485,10 @@ public class VUPShionMod implements
     public void receiveAddAudio() {
         for (int i = 1; i <= 33; i++) {
             BaseMod.addAudio("SHION_" + i, assetPath("audio/sound/Shion/VO/shion" + i + ".ogg"));
+        }
+
+        for (int i = 0; i <= 12; i++) {
+            BaseMod.addAudio("MINAMI_" + i, assetPath("audio/sound/Minami/VO/" + String.format("%02d",i) + ".ogg"));
         }
 
         BaseMod.addAudio(makeID("RitaB_Attack0"), assetPath("/audio/sound/Rita/VO/RitaB_Attack0.wav"));
@@ -550,7 +575,7 @@ public class VUPShionMod implements
             SaveHelper.fightSpecialBossWithout = false;
             SaveHelper.isHardMod = false;
 
-            SansMeterSave.sansMeterSaveAmount = 60;
+            SansMeterSave.sansMeterSaveAmount = 75;
             SansMental.sansMental = false;
             WingShieldSave.wingShieldSaveAmount = 7;
             WingShieldRefundSave.wingShieldRefundSaveAmount = 0;
@@ -741,6 +766,12 @@ public class VUPShionMod implements
 
         cards.add(new WideAreaLocking());
         cards.add(new ReleaseFormEisluRen());
+
+//        粉毛皮肤卡
+        cards.add(new SetupFinFunnel());
+        cards.add(new CalibrationDeployment());
+        cards.add(new MinamiHandCard());
+        cards.add(new MinamiReact());
 
 //        紫音boss
         cards.add(new FinFunnelPursuit());
@@ -1044,6 +1075,10 @@ public class VUPShionMod implements
         BaseMod.addRelicToCustomPool(new ConcordSnipe(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new ConcordArray(), CardColorEnum.VUP_Shion_LIME);
         BaseMod.addRelicToCustomPool(new ConcordCharge(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new PowerCore(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new PowerCore2(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new ConcordCompanion(), CardColorEnum.VUP_Shion_LIME);
+        BaseMod.addRelicToCustomPool(new InfiniteSushi(), CardColorEnum.VUP_Shion_LIME);
 
         BaseMod.addRelicToCustomPool(new Nebula(), CardColorEnum.WangChuan_LIME);
         BaseMod.addRelicToCustomPool(new Protostar(), CardColorEnum.WangChuan_LIME);

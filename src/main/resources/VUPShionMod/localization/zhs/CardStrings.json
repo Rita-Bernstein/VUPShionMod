@@ -94,7 +94,8 @@
   },
   "VUPShionMod:Goodbye": {
     "NAME": "mmd不陪你玩了",
-    "DESCRIPTION": "保留 。 墓地 。 NL 消耗 所有手牌 。 NL 打出 !M! 张随机攻击牌。 NL 消耗 。"
+    "DESCRIPTION": "保留 。 墓地 。 NL 消耗 所有手牌 。 NL 打出 !M! 张随机攻击牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 墓地 。 NL 消耗 所有手牌 。 NL 打出 !M! 张随机攻击牌。"
   },
   "VUPShionMod:EnhancedWeapon": {
     "NAME": "强化兵装",
@@ -1031,7 +1032,7 @@
   },
   "VUPShionMod:NihilImmensum": {
     "NAME": "伪·无量空处",
-    "DESCRIPTION": "每获得 !M! 次 vup_shion_mod:魔能过载 ，本回合内受到的伤害为0。 NL vup_shion_mod:魔能过载 5。"
+    "DESCRIPTION": "获得 vup_shion_mod:咫尺天涯 。 NL 每获得 !M! 次 vup_shion_mod:魔能过载 ，本回合内受到的伤害为0。 NL vup_shion_mod:魔能过载 5。"
   },
   "VUPShionMod:ArtificiumMundi": {
     "NAME": "伪·世界",
@@ -1132,8 +1133,8 @@
   },
   "VUPShionMod:FlickeringTip": {
     "NAME": "不弑寒芒",
-    "DESCRIPTION": " 造成 !D! 点伤害。 NL 击杀非首领时：获得 !M! 点 *San值 和 !M! 点最大生命。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 造成 !D! 点伤害。 NL 击杀非首领时：获得 !M! 点 *San值 和 !M! 点最大生命。"
+    "DESCRIPTION": " 造成 !D! 点伤害。 NL 斩杀 非首领时：获得 !M! 点 *San值 和 !M! 点最大生命。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 造成 !D! 点伤害。 NL 斩杀 非首领时：获得 !M! 点 *San值 和 !M! 点最大生命。"
   },
   "VUPShionMod:InordinateAdmonition": {
     "NAME": "姦淫诫言",
@@ -1257,8 +1258,8 @@
   },
   "VUPShionMod:AnnihilatingChoir": {
     "NAME": "破灭咏唱",
-    "DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成10X点伤害， NL 回复10X点生命。",
-    "UPGRADE_DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成15X点伤害， NL 获得X层 vup_shion_mod:沉灵 。"
+    "DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成 !M! X点伤害， NL 回复 !M! X点生命。",
+    "UPGRADE_DESCRIPTION": "对 *所有人 造成 !D! 点伤害。 NL vup_shion_mod:沉灵 X:对所有敌人造成 !M! X点伤害， NL 获得X层 vup_shion_mod:沉灵 。"
   },
   "VUPShionMod:SpiritImpact": {
     "NAME": "圣灵冲击",
@@ -1658,8 +1659,8 @@
   },
   "VUPShionMod:HotRestart": {
     "NAME": "热重启",
-    "DESCRIPTION": "抽 敏捷 /5 张牌。 NL 获得抽牌数量的 vup_shion_mod:冲击预备 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:能量回收 。 NL 抽 敏捷 /5 张牌。 NL 获得抽牌数量的 vup_shion_mod:冲击预备 。"
+    "DESCRIPTION": "抽 敏捷 /5 张牌。 NL 获得抽牌数量两倍的 vup_shion_mod:冲击预备 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 vup_shion_mod:能量回收 。 NL 抽 敏捷 /5 张牌。 NL 获得抽牌数量两倍的 vup_shion_mod:冲击预备 。"
   },
   "VUPShionMod:IronWall": {
     "NAME": "铁壁",
@@ -1883,5 +1884,21 @@
   "VUPShionMod:ShieldProjection": {
     "NAME": "护盾投射",
     "DESCRIPTION": "保留 。 vup_shion_mod:复位 。 NL 将你的 vup_shion_mod:护盾 转移给 *精灵 。 NL 获得 !M! 点 vup_shion_mod:护盾 。 NL 失去 vup_shion_mod:掩护 。"
+  },
+  "VUPShionMod:SetupFinFunnel": {
+    "NAME": "浮游炮部署",
+    "DESCRIPTION": "固有 。 保留 。 vup_shion_mod:复位 。 NL 部署随机一门等级为 !M! 的 *南小棉 vup_shion_mod:浮游炮 。 NL 每回合失去 [E] 。"
+  },
+  "VUPShionMod:CalibrationDeployment": {
+    "NAME": "校准部署",
+    "DESCRIPTION": " 保留 。 vup_shion_mod:复位 。 NL 不能被 升级 。 NL 触发当前 vup_shion_mod:浮游炮 回合开始的效果。 NL 变化当前的 *南小棉 vup_shion_mod:浮游炮 。"
+  },
+  "VUPShionMod:MinamiHandCard": {
+    "NAME": "狐的底牌",
+    "DESCRIPTION": " 墓地 。 NL 触发 vup_shion_mod:自动浮游炮 。 NL 从当前角色的 *能力牌 中选择一张。 NL 将它的复制加入手牌。"
+  },
+  "VUPShionMod:MinamiReact": {
+    "NAME": "狐的随机应变",
+    "DESCRIPTION": " 触发所有 vup_shion_mod:浮游炮 回合开始的效果。 NL 如果敌人的意图为攻击，获得 !M! 点 vup_shion_mod:护盾 ，否则造成 !D! 点伤害。"
   }
 }

@@ -25,29 +25,47 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(PursuitFinFunnel.class.getSimpleName()));
 
     public PursuitFinFunnel(int level) {
+      this(level,-1);
+    }
+
+    public PursuitFinFunnel(int level,int index) {
         super(ID);
         upgradeLevel(level);
         this.effect = 1;
 
-
-        if (SkinManager.getSkinCharacter(0).reskinCount == 0) {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.json", SkinManager.getSkin(0).renderScale);
-        } else {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.json", SkinManager.getSkin(0).renderScale);
+        switch (SkinManager.getSkinCharacter(0).reskinCount) {
+            case 0:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon3.json", SkinManager.getSkin(0).renderScale);
+                break;
+            case 3:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.json", SkinManager.getSkin(0).renderScale);
+                break;
+            default:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Blue/YOFU3.json", SkinManager.getSkin(0).renderScale);
         }
 
 
-        this.state.setAnimation(0, "weapon3_come_in", false);
-        this.state.addAnimation(0, "weapon3_idle", true, 0.0f);
-
+        this.index = index;
+        initAnimation(this.index);
     }
 
     @Override
+    protected void initAnimation(int index){
+        if(this.index<0) {
+            this.state.setAnimation(0, "weapon3_come_in", false);
+            this.state.addAnimation(0, "weapon3_idle", true, 0.0f);
+        }else {
+            super.initAnimation(index);
+        }
+    }
+
+
+    @Override
     public void preBattlePrep() {
-        this.state.setAnimation(0, "weapon3_come_in", false);
-        this.state.addAnimation(0, "weapon3_idle", true, 0.0f);
+        initAnimation(this.index);
     }
 
     @Override
@@ -90,7 +108,7 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
     public void powerToApply(AbstractCreature target, float amountScale, boolean top) {
         if (target != null && (int) Math.floor(getFinalEffect() * amountScale) > 0) {
             if (top)
-                addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, AbstractDungeon.player,(int) Math.floor(getFinalEffect() * amountScale))));
+                addToTop(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, AbstractDungeon.player, (int) Math.floor(getFinalEffect() * amountScale))));
             else
                 addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PursuitPower(target, AbstractDungeon.player, (int) Math.floor(getFinalEffect() * amountScale))));
         }
@@ -99,27 +117,28 @@ public class PursuitFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updatePosition(Skeleton skeleton) {
+        if(SkinManager.getSkinCharacter(0).reskinCount!=3) {
+            body = this.skeleton.findBone("weapon3_bone");
+            muzzle = this.skeleton.findBone("weapon3_muzzle");
+        }else {
+            body = this.skeleton.findBone("weapon" + (index + 1) + "_bone");
+            muzzle = this.skeleton.findBone("weapon" + (index + 1) + "_muzzle");
+        }
 
-        body = this.skeleton.findBone("weapon3_bone");
-        muzzle = this.skeleton.findBone("weapon3_muzzle");
-
-
-        if (AbstractDungeon.player.flipHorizontal)
-            this.cX = this.skeleton.getX() + body.getWorldX() - 48.0f * Settings.scale;
-        else
-            this.cX = this.skeleton.getX() + body.getWorldX() + 48.0f * Settings.scale;
-        this.cY = this.skeleton.getY() + body.getWorldY();
-        hb.move(cX, cY);
-        this.muzzle_X = this.skeleton.getX() + muzzle.getWorldX();
-        this.muzzle_Y = this.skeleton.getY() + muzzle.getWorldY();
+        super.updatePosition(skeleton);
 
     }
 
     @Override
     public void playFinFunnelAnimation(String id) {
         if (id.equals(this.id)) {
-            this.state.setAnimation(0, "weapon3_attack", false).setTimeScale(3.0f);
-            this.state.addAnimation(0, "weapon3_idle", true, 0.0F);
+            if(SkinManager.getSkinCharacter(0).reskinCount!=3) {
+                this.state.setAnimation(0, "weapon3_attack", false).setTimeScale(3.0f);
+                this.state.addAnimation(0, "weapon3_idle", true, 0.0F);
+            }else {
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(3.0f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F);
+            }
         }
     }
 }

@@ -2,6 +2,8 @@ package VUPShionMod.skins.sk.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.EisluRen.*;
+import VUPShionMod.character.EisluRen;
+import VUPShionMod.character.Liyezhu;
 import VUPShionMod.relics.EisluRen.ElfCore;
 import VUPShionMod.relics.EisluRen.ShieldHRzy1;
 import VUPShionMod.relics.Liyezhu.MartyrVessel;
@@ -18,9 +20,9 @@ public class OriEisluRen extends AbstractSkin {
     public static final String ID = OriEisluRen.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public OriEisluRen() {
-        super(ID, 0);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/EisluRen/portrait.png");
+    public OriEisluRen(int index) {
+        super(ID, index);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/EisluRen/portrait.sff");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -38,6 +40,18 @@ public class OriEisluRen extends AbstractSkin {
 
     @Override
     public void initialize() {
+    }
+
+    public String getCharacterName() {
+        return EisluRen.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return EisluRen.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return EisluRen.charStrings.TEXT[0];
     }
 
     @Override

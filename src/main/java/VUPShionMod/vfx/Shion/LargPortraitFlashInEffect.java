@@ -24,7 +24,7 @@ public class LargPortraitFlashInEffect extends AbstractGameEffect {
     }
 
     public LargPortraitFlashInEffect(String name, boolean flipX) {
-        this.img = ImageMaster.loadImage("VUPShionMod/img/vfx/LargPortraitFlashInEffect/" + name + ".png");
+        this.img = ImageMaster.loadImage("VUPShionMod/img/vfx/LargPortraitFlashInEffect/" + name + ".sff");
         this.duration = 2.25f;
         this.offSet_x = Settings.WIDTH;
         this.offSet_y = 0.0f * Settings.scale;

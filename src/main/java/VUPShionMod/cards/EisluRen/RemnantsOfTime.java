@@ -32,7 +32,7 @@ public class RemnantsOfTime extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.baseDamage = AbstractDungeon.cardRng.random(1, 3);
+        this.baseDamage = AbstractDungeon.cardRandomRng.random(1, 3);
         calculateCardDamage(m);
 
         for (int i = 0; i < this.magicNumber; i++)

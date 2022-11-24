@@ -3,9 +3,11 @@ package VUPShionMod.cards.ShionCard.liyezhu;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionLiyezhuCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.powers.Shion.ReleaseFormLiyezhuBPower;
 import VUPShionMod.powers.Shion.ReleaseFormLiyezhuCPower;
 import VUPShionMod.powers.Shion.ReleaseFormLiyezhuPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.Common.AbstractSpineEffect;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
 import com.badlogic.gdx.math.MathUtils;
@@ -13,10 +15,13 @@ import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {

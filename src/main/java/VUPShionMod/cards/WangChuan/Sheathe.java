@@ -67,7 +67,6 @@ public class Sheathe extends AbstractWCCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(0);
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.name = EXTENDED_DESCRIPTION[0];
             this.initializeTitle();

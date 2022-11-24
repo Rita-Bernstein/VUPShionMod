@@ -25,22 +25,42 @@ public class BossGravityFinFunnel extends AbstractBossFinFunnel {
     public static final String ID = GravityFinFunnel.class.getSimpleName();
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(GravityFinFunnel.class.getSimpleName()));
 
+    public BossGravityFinFunnel(int level, AbstractCreature owner, int skinIndex){
+        this(level,owner,-1,skinIndex);
+    }
 
-    public BossGravityFinFunnel(int level, AbstractCreature owner, int skinIndex) {
-        super(owner, ID);
+    public BossGravityFinFunnel(int level, AbstractCreature owner, int index, int skinIndex) {
+        super(owner, ID,skinIndex);
         upgradeLevel(level);
         this.effect = 1;
 
-        if (skinIndex == 0) {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.json", SkinManager.getSkin(0, 0).renderScale);
-        } else {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.json", SkinManager.getSkin(0, 1).renderScale);
+        switch (skinIndex) {
+            case 0:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon2.json", SkinManager.getSkin(0).renderScale);
+                break;
+            case 3:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.json", SkinManager.getSkin(0).renderScale);
+                break;
+            default:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Blue/YOFU2.json", SkinManager.getSkin(0).renderScale);
         }
 
-        this.state.setAnimation(0, "weapon2_come_in", false);
-        this.state.addAnimation(0, "weapon2_idle", true, 0.0f);
+
+        this.index = index;
+        initAnimation(this.index);
+    }
+
+    @Override
+    protected void initAnimation(int index) {
+        if (this.index < 0) {
+            this.state.setAnimation(0, "weapon2_come_in", false);
+            this.state.addAnimation(0, "weapon2_idle", true, 0.0f);
+        } else {
+            super.initAnimation(index);
+        }
     }
 
 
@@ -53,8 +73,7 @@ public class BossGravityFinFunnel extends AbstractBossFinFunnel {
     @Override
     public void preBattlePrep() {
 
-        this.state.setAnimation(0, "weapon2_come_in", false);
-        this.state.addAnimation(0, "weapon2_idle", true, 0.0f);
+        initAnimation(this.index);
     }
 
 
@@ -96,27 +115,28 @@ public class BossGravityFinFunnel extends AbstractBossFinFunnel {
     }
 
     @Override
-    public void updatePosition() {
+    public void updatePosition(Skeleton skeleton) {
+        if (this.index < 0) {
+            body = this.skeleton.findBone("weapon2_bone");
+            muzzle = this.skeleton.findBone("weapon2_muzzle");
+        } else {
+            body = this.skeleton.findBone("weapon" + (index + 1) + "_bone");
+            muzzle = this.skeleton.findBone("weapon" + (index + 1) + "_muzzle");
+        }
 
-        body = this.skeleton.findBone("weapon2_bone");
-        muzzle = this.skeleton.findBone("weapon2_muzzle");
-
-
-        if (this.owner.flipHorizontal)
-            this.cX = this.skeleton.getX() + body.getWorldX() - 48.0f * Settings.scale;
-        else
-            this.cX = this.skeleton.getX() + body.getWorldX() + 48.0f * Settings.scale;
-        this.cY = this.skeleton.getY() + body.getWorldY();
-        hb.move(cX, cY);
-        this.muzzle_X = this.skeleton.getX() + muzzle.getWorldX();
-        this.muzzle_Y = this.skeleton.getY() + muzzle.getWorldY();
+        super.updatePosition(skeleton);
     }
 
     @Override
     public void playFinFunnelAnimation(String id) {
         if (id.equals(this.id)) {
-            this.state.setAnimation(0, "weapon2_attack", false).setTimeScale(3.0f);
-            this.state.addAnimation(0, "weapon2_idle", true, 0.0F);
+            if (this.index < 0) {
+                this.state.setAnimation(0, "weapon2_attack", false).setTimeScale(3.0f);
+                this.state.addAnimation(0, "weapon2_idle", true, 0.0F);
+            } else {
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(2.0f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F).setTimeScale(0.5f);
+            }
         }
     }
 

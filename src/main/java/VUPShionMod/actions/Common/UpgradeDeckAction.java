@@ -40,7 +40,7 @@ public class UpgradeDeckAction extends AbstractGameAction {
     }
 
     public UpgradeDeckAction(int amount, boolean optional, Predicate<AbstractCard> predicate) {
-        this.actionType = ActionType.DRAW;
+        this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
         this.amount = amount;

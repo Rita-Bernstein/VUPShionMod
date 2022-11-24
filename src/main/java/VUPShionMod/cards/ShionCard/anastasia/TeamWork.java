@@ -65,10 +65,13 @@ public class TeamWork extends AbstractShionAnastasiaCard {
 
 
         int temp;
+
         for (int i = 0; i < 3; i++) {
-            temp = AbstractDungeon.cardRng.random(list.size() - 1);
-            returnCard.add(list.get(temp));
-            list.remove(temp);
+            if(!list.isEmpty()) {
+                temp = AbstractDungeon.cardRandomRng.random(list.size() - 1);
+                returnCard.add(list.get(temp));
+                list.remove(temp);
+            }else break;
         }
 
         return returnCard;

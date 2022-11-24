@@ -6,12 +6,15 @@ import VUPShionMod.cards.ShionCard.minami.FinFunnelActive;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.minami.TacticalLink;
 import VUPShionMod.cards.ShionCard.shion.*;
+import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.relics.Shion.BlueGiant;
 import VUPShionMod.relics.Shion.ConcordArray;
 import VUPShionMod.relics.Shion.ConcordCharge;
 import VUPShionMod.relics.Shion.ConcordSnipe;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.util.SaveHelper;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,8 +29,8 @@ public class BlueGiantShion extends AbstractSkin {
     public static final String ID = BlueGiantShion.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public BlueGiantShion() {
-        super(ID, 1);
+    public BlueGiantShion(int index) {
+        super(ID, index);
         this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Shion/portrait2.png");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
@@ -46,6 +49,7 @@ public class BlueGiantShion extends AbstractSkin {
         this.atlasURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX.atlas";
         this.jsonURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX.json";
         this.renderScale = 2.4f;
+
 
     }
 
@@ -69,12 +73,37 @@ public class BlueGiantShion extends AbstractSkin {
         setAnimation();
     }
 
+    public String getCharacterName() {
+        return Shion.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return Shion.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return Shion.charStrings.TEXT[0];
+    }
+
+
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
         info.relics.clear();
         info.relics.add(BlueGiant.ID);
         info.relics.add(ConcordCharge.ID);
         return info;
+    }
+
+    @Override
+    public void doCharSelectScreenSelectEffect() {
+        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(2)));
+    }
+
+    @Override
+    public void justSkinSelected(int lastSelectedCount) {
+        if (lastSelectedCount == 3) {
+            doCharSelectScreenSelectEffect();
+        }
     }
 
     @Override

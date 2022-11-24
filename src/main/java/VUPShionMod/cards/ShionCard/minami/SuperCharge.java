@@ -3,13 +3,18 @@ package VUPShionMod.cards.ShionCard.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
+import VUPShionMod.skins.SkinManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
+
+import java.util.ArrayList;
 
 public class SuperCharge extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID(SuperCharge.class.getSimpleName());
@@ -43,8 +48,6 @@ public class SuperCharge extends AbstractShionMinamiCard {
         if (power == null) return (this.secondaryM <= 0) && super.canUse(p, m);
 
         return (power.amount >= this.secondaryM) && super.canUse(p, m);
-
-
     }
 
     public void upgrade() {
@@ -53,4 +56,6 @@ public class SuperCharge extends AbstractShionMinamiCard {
             upgradeSecondM(-1);
         }
     }
+
+
 }

@@ -36,6 +36,7 @@ public class Goodbye extends AbstractShionCard {
         this.magicNumber = this.baseMagicNumber = 3;
         this.selfRetain = true;
         GraveField.grave.set(this,true);
+        this.exhaust =true;
     }
 
 
@@ -56,6 +57,8 @@ public class Goodbye extends AbstractShionCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(0);
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 

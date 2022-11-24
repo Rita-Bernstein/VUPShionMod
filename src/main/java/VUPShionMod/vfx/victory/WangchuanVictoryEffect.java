@@ -31,7 +31,7 @@ public class WangchuanVictoryEffect extends AbstractGameEffect {
 
         loadanimation(this.speed);
 
-        this.img = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/victory/victory.png");
+        this.img = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/victory/victory.sff");
     }
 
     public WangchuanVictoryEffect() {

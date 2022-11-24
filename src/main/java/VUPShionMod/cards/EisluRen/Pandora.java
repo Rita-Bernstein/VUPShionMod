@@ -28,7 +28,7 @@ public class Pandora extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(Pandora.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/Pandora.png");
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final int COST = -1;

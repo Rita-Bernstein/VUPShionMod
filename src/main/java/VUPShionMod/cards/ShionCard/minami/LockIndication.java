@@ -64,10 +64,4 @@ public class LockIndication extends AbstractShionMinamiCard  {
             upgradeBaseCost(0);
         }
     }
-
-
-    @Override
-    public boolean canSpawn(ArrayList<AbstractCard> currentRewardCards) {
-        return SkinManager.getSkinCharacter(0).reskinCount == 0;
-    }
 }

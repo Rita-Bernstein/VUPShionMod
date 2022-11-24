@@ -106,12 +106,19 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
     }
 
     public void loadSkin(int skinIndex){
-        if (skinIndex == 0) {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.json", 0.8f * this.scale);
-        } else {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU5.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU5.json", 0.8f * this.scale);
+
+        switch (skinIndex){
+            case 0:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.json", 0.8f * this.scale);
+                break;
+            case 3:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.json", 0.8f * this.scale);
+                break;
+            default:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU5.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Blue/YOFU5.json", 0.8f * this.scale);
         }
     }
 

@@ -2,6 +2,9 @@ package VUPShionMod.skins.sk.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.Liyezhu.*;
+import VUPShionMod.character.EisluRen;
+import VUPShionMod.character.Liyezhu;
+import VUPShionMod.character.Shion;
 import VUPShionMod.relics.Liyezhu.Hymn;
 import VUPShionMod.relics.Liyezhu.MartyrVessel;
 import VUPShionMod.skins.AbstractSkin;
@@ -16,9 +19,9 @@ public class OriLiyezhu extends AbstractSkin {
     public static final String ID = OriLiyezhu.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public OriLiyezhu() {
-        super(ID,0);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/portrait.png");
+    public OriLiyezhu(int index) {
+        super(ID, index);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/portrait.sff");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -32,13 +35,25 @@ public class OriLiyezhu extends AbstractSkin {
         this.jsonURL = "VUPShionMod/characters/Liyezhu/animation/Stance_Lan.json";
         this.renderScale = 3.0f;
 
-
     }
 
     @Override
     public void initialize() {
         unlock();
     }
+
+    public String getCharacterName() {
+        return Liyezhu.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return Liyezhu.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return Liyezhu.charStrings.TEXT[0];
+    }
+
 
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {

@@ -32,7 +32,7 @@ public abstract class AbstractShionBoss extends AbstractVUPShionBoss {
 
         if (!bossFinFunnels.isEmpty()) {
             for (AbstractBossFinFunnel finFunnel : this.bossFinFunnels) {
-                finFunnel.updatePosition();
+                finFunnel.updatePosition(this.skeleton);
                 finFunnel.update();
             }
         }

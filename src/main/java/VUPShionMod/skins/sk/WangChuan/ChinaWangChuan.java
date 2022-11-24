@@ -2,6 +2,8 @@ package VUPShionMod.skins.sk.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
+import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.relics.Wangchuan.MagiaSwordRed;
 import VUPShionMod.relics.Wangchuan.PrototypeCup;
 import VUPShionMod.relics.Wangchuan.TheRipple;
@@ -20,9 +22,9 @@ public class ChinaWangChuan extends AbstractSkin {
     public static final String ID = ChinaWangChuan.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public ChinaWangChuan() {
-        super(ID,3);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait4.png");
+    public ChinaWangChuan(int index) {
+        super(ID, index);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait4.sff");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -36,6 +38,18 @@ public class ChinaWangChuan extends AbstractSkin {
         this.jsonURL = "VUPShionMod/characters/WangChuan/animation/Wangchuan_ChinaTaoist.json";
         this.renderScale = 3.0F;
 
+    }
+
+    public String getCharacterName() {
+        return WangChuan.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return WangChuan.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return WangChuan.charStrings.TEXT[0];
     }
 
 

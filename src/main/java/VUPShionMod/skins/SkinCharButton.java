@@ -71,7 +71,7 @@ public class SkinCharButton {
             distance = -Math.abs(listSize - this.index + selectedCount);
         }
 
-        if (!display && listSize >= 5 && selectedCount > listSize - 2 && listSize - selectedCount + this.index < 3) {
+        if (!display && listSize >= 5 && selectedCount > listSize - 3 && listSize - selectedCount + this.index < 3) {
             display = true;
             distance = Math.abs(listSize - selectedCount + this.index);
         }
@@ -132,10 +132,10 @@ public class SkinCharButton {
         if (Math.abs(selectCount - this.index) == 1)
             selectAble = true;
 
-        if (selectCount == 0 && this.index == CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.size())
+        if (selectCount == 0 && this.index == CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.size() - 1)
             selectAble = true;
 
-        if (selectCount == CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.size() && this.index == 0)
+        if (selectCount == CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.size() - 1 && this.index == 0)
             selectAble = true;
 
         return selectAble;
@@ -147,6 +147,8 @@ public class SkinCharButton {
         this.hb.width = 260.0f * this.scale * Settings.scale;
         this.hb.height = 154.0f * this.scale * Settings.scale;
         this.hb.move(this.cX + this.current_x, this.cY + this.current_y);
+
+
 
 
         if (CharacterSelectScreenPatches.skinManager.currentSkinCharacter != null) {
@@ -179,16 +181,22 @@ public class SkinCharButton {
                     if (option != null) {
                         ReflectionHacks.setPrivate(option, CharacterOption.class, "charInfo",
                                 CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.get(
-                                        CharacterSelectScreenPatches.skinManager.currentSkinCharacter.selectedCount
-                                ).updateCharInfo(ReflectionHacks.getPrivate(option, CharacterOption.class, "charInfo")));
+                                        CharacterSelectScreenPatches.skinManager.currentSkinCharacter.selectedCount)
+                                        .updateCharInfo(ReflectionHacks.getPrivate(option, CharacterOption.class, "charInfo")));
                     }
 
                     if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.CHAR_SELECT)
-                    if (this.locked)
-                        CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.hide();
-                    else
-                        CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.show();
+                        if (this.locked)
+                            CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.hide();
+                        else
+                            CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.show();
 
+
+                    CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.get(
+                            CharacterSelectScreenPatches.skinManager.currentSkinCharacter.selectedCount).justSkinSelected(
+                                    CharacterSelectScreenPatches.skinManager.currentSkinCharacter.lastSelectedCount);
+
+                    CharacterSelectScreenPatches.skinManager.currentSkinCharacter.lastSelectedCount = this.index;
 
                 }
 

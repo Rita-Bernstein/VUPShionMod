@@ -38,7 +38,7 @@ public class BrokenSanctuary2Power extends AbstractShionPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if(card.hasTag(CardTagsEnum.Prayer_CARD)){
-            addToBot(new DrawCardAction(1));
+            addToBot(new DrawCardAction(this.amount));
         }
     }
 

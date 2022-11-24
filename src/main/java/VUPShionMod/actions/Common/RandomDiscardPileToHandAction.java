@@ -47,7 +47,7 @@ public class RandomDiscardPileToHandAction extends AbstractGameAction {
             AbstractCard c;
             for (int i = 0; i < this.numberOfCards; i++) {
                 if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                    c = cardsToMove.get(AbstractDungeon.cardRng.random(cardsToMove.size() - 1));
+                    c = cardsToMove.get(AbstractDungeon.cardRandomRng.random(cardsToMove.size() - 1));
                     this.player.hand.addToHand(c);
                     this.player.discardPile.removeCard(c);
 

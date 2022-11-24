@@ -6,6 +6,7 @@ import VUPShionMod.character.Liyezhu;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.msic.CharacterPriority;
+import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import basemod.BaseMod;
@@ -20,9 +21,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import com.megacrit.cardcrawl.screens.custom.CustomModeCharacterButton;
+import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
+import javassist.CtBehavior;
 
 import java.awt.*;
 import java.lang.reflect.Field;
@@ -128,8 +132,9 @@ public class CharacterSelectScreenPatches {
         @SpireInsertPatch(rloc = 6)
         public static SpireReturn<Void> Insert(CharacterOption __instance, SpriteBatch sb) {
             Color glowColor = ReflectionHacks.getPrivate(__instance, CharacterOption.class, "glowColor");
-            if (__instance.c.name.equals(CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("Shion")).NAMES[0])) {
+            if (__instance.c instanceof Shion) {
                 if (__instance.selected) {
+
                     glowColor.r = 0.0f;
                     glowColor.g = 1.0f;
                     glowColor.b = 1.0f;
@@ -139,7 +144,7 @@ public class CharacterSelectScreenPatches {
                 }
             }
 
-            if (__instance.c.name.equals(CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("Liyezhu")).NAMES[0])) {
+            if (__instance.c instanceof Liyezhu) {
                 if (__instance.selected) {
                     glowColor.r = 1.0f;
                     glowColor.g = 1.0f;
@@ -150,7 +155,7 @@ public class CharacterSelectScreenPatches {
                 }
             }
 
-            if (__instance.c.name.equals(CardCrawlGame.languagePack.getCharacterString(VUPShionMod.makeID("EisluRen")).NAMES[0])) {
+            if (__instance.c instanceof EisluRen) {
                 if (__instance.selected) {
                     glowColor.r = 0.0f;
                     glowColor.g = 1.0f;
@@ -194,7 +199,7 @@ public class CharacterSelectScreenPatches {
     public static class CharacterSelectScreenPatch_BasemodInitialize {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(CharacterSelectScreen __instance) {
-            if (__instance instanceof CustomCharacterSelectScreen){
+            if (__instance instanceof CustomCharacterSelectScreen) {
 
                 ArrayList<CharacterOption> allOptions = ReflectionHacks.getPrivate(__instance, CustomCharacterSelectScreen.class, "allOptions");
 
@@ -272,12 +277,12 @@ public class CharacterSelectScreenPatches {
 
                 ReflectionHacks.setPrivate(__instance, CustomCharacterSelectScreen.class, "allOptions", allOptions);
 
-                int optionsIndex = ReflectionHacks.getPrivate(__instance,CustomCharacterSelectScreen.class,"optionsIndex");
-                int optionsPerIndex = ReflectionHacks.getPrivate(__instance,CustomCharacterSelectScreen.class,"optionsPerIndex");
+                int optionsIndex = ReflectionHacks.getPrivate(__instance, CustomCharacterSelectScreen.class, "optionsIndex");
+                int optionsPerIndex = ReflectionHacks.getPrivate(__instance, CustomCharacterSelectScreen.class, "optionsPerIndex");
 
-                __instance.options= new ArrayList(allOptions.subList(
-                        ReflectionHacks.getPrivate(__instance,CustomCharacterSelectScreen.class,"optionsIndex")
-                        , Math.min(allOptions.size(), optionsIndex+optionsPerIndex)));
+                __instance.options = new ArrayList(allOptions.subList(
+                        ReflectionHacks.getPrivate(__instance, CustomCharacterSelectScreen.class, "optionsIndex")
+                        , Math.min(allOptions.size(), optionsIndex + optionsPerIndex)));
 
 
                 __instance.options.forEach(o -> o.selected = false);
@@ -297,30 +302,21 @@ public class CharacterSelectScreenPatches {
         }
     }
 
-//    @SpirePatch(
-//            clz = CustomCharacterSelectScreen.class,
-//            method = "setCurrentOptions"
-//    )
-//    public static class CharacterSelectScreenPatch_SetCurrentOptions {
-//        @SpireInsertPatch(rloc = 0)
-//        public static SpireReturn<Void> Insert(CustomCharacterSelectScreen __instance, boolean rightClicked) {
-//            sortChar(__instance);
-//            return SpireReturn.Continue();
-//        }
-//    }
-
-
-
-//    @SpirePatch(
-//            clz = BaseMod.class,
-//            method = "generateCustomCharacterOptions"
-//    )
-//    public static class CharacterSelectScreenPatch_BasemodGenerateCustomCharacterOptions{
-//        @SpireInsertPatch(rloc = 4,localvars = {"options"})
-//        public static void Insert(ArrayList<CustomModeCharacterButton> options) {
-//            options.removeIf(b -> b.c instanceof EisluRen);
-//
-//        }
-//    }
-
+    @SpirePatch(
+            clz = CharacterOption.class,
+            method = "render"
+    )
+    public static class CharacterOptionRenderInfoPatch {
+        @SpireInsertPatch(rloc = 1, localvars = {"name", "flavorText"})
+        public static SpireReturn<Void> Insert(CharacterOption _instance, SpriteBatch sb, @ByRef String[] name, @ByRef String[] flavorText) {
+            if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.CHAR_SELECT)
+                for (AbstractSkinCharacter c : CharacterSelectScreenPatches.skinManager.skinCharacters) {
+                    if (c.isCharacter(_instance)) {
+                        name[0] = c.skins.get(c.selectedCount).getCharacterName();
+                        flavorText[0] = c.skins.get(c.selectedCount).getCharacterFlavorText();
+                    }
+                }
+            return SpireReturn.Continue();
+        }
+    }
 }

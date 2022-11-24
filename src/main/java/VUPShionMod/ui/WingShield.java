@@ -253,9 +253,10 @@ public class WingShield implements Disposable {
 
     public void atStartOfTurn() {
         if (!AbstractDungeon.player.hasPower(HotRestartPower.POWER_ID)) {
-            damageReceived = (int) Math.floor(this.damageReceived * (float) this.shieldDamageReduceCombat / (float) this.shieldDamageReduce);
-            this.shieldDamageReduce = this.shieldDamageReduceCombat;
-
+            int pre = this.shieldDamageReduce;
+            this.shieldDamageReduce -= this.shieldDamageReduce / 2 - this.shieldDamageReduceCombat;
+            this.shieldDamageReduce = Math.max(this.shieldDamageReduce, this.shieldDamageReduceCombat);
+            damageReceived = (int) Math.floor(this.damageReceived * (float) this.shieldDamageReduce / (float) pre);
         }
         updateDescription();
     }

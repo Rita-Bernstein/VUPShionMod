@@ -8,7 +8,7 @@ import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Shion.*;
-import VUPShionMod.relics.Shion.DimensionSplitterAria;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.Shion.FinFunnelBeamEffect;
 import VUPShionMod.vfx.Shion.FinFunnelSmallLaserEffect;
 import com.badlogic.gdx.Gdx;
@@ -20,7 +20,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,10 +30,8 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
-import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.TintEffect;
@@ -50,10 +47,13 @@ public abstract class AbstractFinFunnel {
 
     public boolean canUse = false;
 
+    public int index = -1;
     public float cX = 0.0F;
     public float cY = 0.0F;
     public float muzzle_X = 0.0F;
     public float muzzle_Y = 0.0F;
+    public float minamiPosX = 0.0F;
+    public float minamiPosY = 0.0F;
     public Hitbox hb;
     protected float fontScale;
     public Color renderColor = Settings.CREAM_COLOR.cpy();
@@ -77,10 +77,7 @@ public abstract class AbstractFinFunnel {
         this.hb = new Hitbox(192.0F * Settings.scale, 96.0F * Settings.scale);
         this.fontScale = 0.7F;
 
-        if (AbstractDungeon.player != null) {
-            this.cX = AbstractDungeon.player.hb.cX;
-            this.cY = AbstractDungeon.player.hb.cY;
-        }
+        updateMinamiPos();
         this.id = id;
         this.name = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(id)).NAME;
     }
@@ -95,6 +92,11 @@ public abstract class AbstractFinFunnel {
         this.skeleton.setColor(Color.WHITE);
         this.stateData = new AnimationStateData(skeletonData);
         this.state = new AnimationState(this.stateData);
+    }
+
+    protected void initAnimation(int index){
+        this.state.setAnimation(0, "weapon" + (index + 1) + "_come_in", false);
+        this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f);
     }
 
 
@@ -297,6 +299,22 @@ public abstract class AbstractFinFunnel {
     }
 
     public void updatePosition(Skeleton skeleton) {
+        this.minamiPosX = AbstractDungeon.player.drawX + AbstractDungeon.player.animX;
+        this.minamiPosY = AbstractDungeon.player.drawY + AbstractDungeon.player.animY;
+
+        updateMinamiPos();
+
+        if (AbstractDungeon.player.flipHorizontal)
+            this.cX = this.skeleton.getX() + body.getWorldX() - 48.0f * Settings.scale;
+        else
+            this.cX = this.skeleton.getX() + body.getWorldX() + 48.0f * Settings.scale;
+        this.cY = this.skeleton.getY() + body.getWorldY();
+
+
+        hb.move(cX, cY);
+        this.muzzle_X = this.skeleton.getX() + muzzle.getWorldX();
+        this.muzzle_Y = this.skeleton.getY() + muzzle.getWorldY();
+
     }
 
 
@@ -306,7 +324,7 @@ public abstract class AbstractFinFunnel {
             this.state.update(Gdx.graphics.getDeltaTime());
             this.state.apply(this.skeleton);
             this.skeleton.updateWorldTransform();
-            this.skeleton.setPosition(AbstractDungeon.player.drawX + AbstractDungeon.player.animX, AbstractDungeon.player.drawY + AbstractDungeon.player.animY);
+            this.skeleton.setPosition(this.minamiPosX, this.minamiPosY);
             this.skeleton.setColor(this.tint.color);
             this.skeleton.setFlip(AbstractDungeon.player.flipHorizontal, AbstractDungeon.player.flipVertical);
 
@@ -364,7 +382,6 @@ public abstract class AbstractFinFunnel {
     }
 
     public int getFinalDamage() {
-
         return (getLevel() - 1) / 2 + 1;
     }
 
@@ -390,5 +407,40 @@ public abstract class AbstractFinFunnel {
         this.levelForCombat = this.level;
         this.updateDescription();
     }
+
+
+    public void updateMinamiPos() {
+        if (AbstractDungeon.player != null) {
+            float flip = AbstractDungeon.player.flipHorizontal ? -1.0f : 1.0f;
+            switch (this.index) {
+                case 0:
+                    this.minamiPosX += -flip * 300.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    this.minamiPosY += 668.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    break;
+                case 1:
+                    this.minamiPosX += flip * 300.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    this.minamiPosY += 498.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    break;
+                case 2:
+                    this.minamiPosX += -flip * 140.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    this.minamiPosY += 416.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    break;
+                case 3:
+                    this.minamiPosX += flip * 200.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    this.minamiPosY += 320.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    break;
+                case 4:
+                    this.minamiPosX += -flip * 70.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    this.minamiPosY += 860.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    break;
+                case 5:
+                    this.minamiPosX += flip * 220.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    this.minamiPosY += 749.0f * Settings.scale / SkinManager.getSkin(0).renderScale;
+                    break;
+            }
+        }
+    }
+
+
 
 }

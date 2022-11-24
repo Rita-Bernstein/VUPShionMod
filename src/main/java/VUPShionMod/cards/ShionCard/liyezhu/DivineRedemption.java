@@ -57,7 +57,7 @@ public class DivineRedemption extends AbstractShionLiyezhuCard {
 
                 AbstractCard card;
                 for (int i = 0; i < secondaryM; i++) {
-                    card = temp.group.get(AbstractDungeon.cardRng.random(temp.group.size() - 1));
+                    card = temp.group.get(AbstractDungeon.cardRandomRng.random(temp.group.size() - 1));
                     addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
                     temp.group.remove(card);
                 }

@@ -49,31 +49,31 @@ public class CGlayout implements Disposable {
 
         switch (name) {
             case "Liyezhu_BE":
-                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG04.png"));
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG04.sff"));
                 break;
             case "Liyezhu_TE":
-                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG01.png"));
-                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG02.png"));
-                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG03.png"));
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG01.sff"));
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG02.sff"));
+                this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Liyezhu/" + lang + "/CG03.sff"));
                 break;
             case "WangChuan":
                 for (int i = 1; i < 6; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/WangChuan/" + lang + "/CG0" + i + ".png"));
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/WangChuan/" + lang + "/CG0" + i + ".sff"));
                 }
                 break;
             case "StoryBE":
                 for (int i = 1; i < 4; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/StoryBE/" + lang + "/CG0" + i + ".png"));
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/StoryBE/" + lang + "/CG0" + i + ".sff"));
                 }
                 break;
             case "StoryTE":
                 for (int i = 1; i < 3; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/StoryTE/" + lang + "/CG0" + i + ".png"));
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/StoryTE/" + lang + "/CG0" + i + ".sff"));
                 }
                 break;
             default:
                 for (int i = 1; i < 10; i++) {
-                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Shion/" + lang + "/CG0" + i + ".png"));
+                    this.panels.add(new CutscenePanel("VUPShionMod/img/cg/Shion/" + lang + "/CG0" + i + ".sff"));
                 }
                 break;
         }

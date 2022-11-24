@@ -1,10 +1,17 @@
 package VUPShionMod.character;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.shion.Defend_Shion;
+import VUPShionMod.cards.Codex.*;
+import VUPShionMod.cards.EisluRen.*;
+import VUPShionMod.cards.ShionCard.kuroisu.ReleaseFormKuroisu;
+import VUPShionMod.cards.ShionCard.liyezhu.*;
+import VUPShionMod.cards.ShionCard.minami.*;
+import VUPShionMod.cards.ShionCard.shion.*;
+import VUPShionMod.cards.WangChuan.*;
 import VUPShionMod.modules.EnergyOrbShion;
 import VUPShionMod.patches.*;
 import VUPShionMod.powers.Shion.DelayAvatarPower;
+import VUPShionMod.powers.Shion.StrikeIntegratedPower;
 import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.victory.ShionGoldVictoryEffect;
 import VUPShionMod.vfx.victory.ShionVictoryEffect;
@@ -35,6 +42,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static VUPShionMod.VUPShionMod.Shion_Color;
 
@@ -92,7 +100,8 @@ public class Shion extends CustomPlayer {
 
 
         this.state.setAnimation(0, "idle", true);
-        this.state.setAnimation(4, "wing_idle", true);
+        if (SkinManager.getSkinCharacter(0).reskinCount != 3)
+            this.state.setAnimation(4, "wing_idle", true);
 
     }
 
@@ -129,7 +138,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return charStrings.NAMES[1];
+        return SkinManager.getSkin(0).getCharacterTiTleName();
     }
 
     @Override
@@ -150,8 +159,67 @@ public class Shion extends CustomPlayer {
             CardLibrary.addPurpleCards(tmpPool);
         }
 
+        tmpPool.add(new BlockThis());
+        tmpPool.add(new SupportShion());
+        tmpPool.add(new Replenish());
+        tmpPool.add(new OffensiveAdvance());
+        tmpPool.add(new PhysicalMagic());
+        tmpPool.add(new SupportTargetedSniping());
+        tmpPool.add(new Anticoagulation());
+        tmpPool.add(new StrikeIntegrated());
+        tmpPool.add(new CollaborativeInvestigation());
+
+        tmpPool.add(new AquaConstans());
+        tmpPool.add(new AquaRapida());
+        tmpPool.add(new VentusRapidus());
+        tmpPool.add(new VentusNimius());
+        tmpPool.add(new TonitrusConstans());
+        tmpPool.add(new TonitrusRapidus());
+
+
+        if(!tmpPool.isEmpty()) {
+            removeCardPool(tmpPool,
+
+                    pr -> SkinManager.getSkinCharacter(0).reskinCount == 3 &&
+                            pr instanceof HyperDimensionalMatrix
+                            || pr instanceof ArmedToTheTeeth
+                            || pr instanceof SantaCroce
+                            || pr instanceof SacredAdvice
+                            || pr instanceof ReleaseFormLiyezhu
+                            || pr instanceof HolyCoffinSinkingSpirit
+                            || pr instanceof HolyCoffinRelease
+                            || pr instanceof HolyCharge
+                            || pr instanceof BlueBlade
+                            || pr instanceof ReleaseFormKuroisu
+                            || pr instanceof SuperCharge
+                            || pr instanceof StrengthPray,
+
+                    pr -> SkinManager.getSkinCharacter(0).reskinCount == 1 &&
+                            pr instanceof LockIndication,
+
+                    pr -> pr instanceof GravityRepression
+                    || pr instanceof TrackingAnalysis
+                    || pr instanceof CollaborativeInvestigation
+                    );
+        }
 
         return super.getCardPool(tmpPool);
+    }
+
+
+    public static void removeCardPool(ArrayList<AbstractCard> oriCards, Predicate<AbstractCard>... filters) {
+        ArrayList<AbstractCard> cards = new ArrayList<>();
+
+        for (AbstractCard c : oriCards) {
+            for (Predicate<AbstractCard> filter : filters)
+                if (filter.test(c)) {
+                    cards.add(c);
+                }
+        }
+
+        if (!cards.isEmpty()) {
+            oriCards.removeAll(cards);
+        }
     }
 
     @Override
@@ -171,7 +239,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return START_HP/10;
+        return START_HP / 10;
     }
 
     @Override
@@ -181,8 +249,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(2)));
-//        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
+        SkinManager.getSkin(0).doCharSelectScreenSelectEffect();
     }
 
     @Override
@@ -231,8 +298,13 @@ public class Shion extends CustomPlayer {
 
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
-            this.state.setAnimation(0, "hurt", false);
-            this.state.addAnimation(0, "idle", true, 0.0F);
+            if (SkinManager.getSkinCharacter(0).reskinCount != 3) {
+                this.state.setAnimation(0, "hurt", false);
+                this.state.addAnimation(0, "idle", true, 0.0F);
+            } else {
+                this.state.setAnimation(0, "hurt", false).setTimeScale(3.0f);
+                this.state.addAnimation(0, "idle", true, 0.0F);
+            }
         }
 
         super.damage(info);
@@ -300,9 +372,9 @@ public class Shion extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene1.png"));
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene2.png"));
-        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene3.png"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene1.sff"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene2.sff"));
+        panels.add(new CutscenePanel("VUPShionMod/img/scenes/ShionCutScene3.sff"));
         return panels;
     }
 

@@ -340,10 +340,10 @@ public class EnergyPanelPatches {
 
     public static boolean isShionModChar(AbstractCreature creature) {
         if (creature.isPlayer) {
-            if (creature.name.equals(Shion.charStrings.NAMES[0])
-                    || creature.name.equals(WangChuan.charStrings.NAMES[0])
-                    || creature.name.equals(Liyezhu.charStrings.NAMES[0])
-                    || creature.name.equals(EisluRen.charStrings.NAMES[0])
+            if (creature instanceof Shion
+                    || creature instanceof WangChuan
+                    || creature instanceof Liyezhu
+                    || creature instanceof EisluRen
             ) {
                 return true;
             }

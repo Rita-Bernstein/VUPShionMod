@@ -8,16 +8,14 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import java.util.ArrayList;
 
 public abstract class AbstractSkinCharacter {
-    public String id;
     public int reskinCount = 0;
     public int selectedCount = 0;
+    public int lastSelectedCount = 0;
 
     public ArrayList<AbstractSkin> skins = new ArrayList<>();
     public ArrayList<SkinInfoLabel> labels = new ArrayList<>();
 
-
-    public AbstractSkinCharacter(String id) {
-        this.id = id;
+    public AbstractSkinCharacter() {
     }
 
     public void InitializeReskinCount() {
@@ -27,6 +25,10 @@ public abstract class AbstractSkinCharacter {
         if (reskinCount > skins.size()) {
             this.reskinCount = 0;
         }
+    }
+
+    public boolean isCharacter(CharacterOption option){
+        return false;
     }
 
 
@@ -61,7 +63,7 @@ public abstract class AbstractSkinCharacter {
 
 
     public void initialize() {
-        this.selectedCount = this.reskinCount;
+       this.lastSelectedCount =  this.selectedCount = this.reskinCount;
 
         if (this.labels.isEmpty()) {
             this.labels.add(new SkinInfoLabel(skins.get(selectedCount).unlockString, 0));
@@ -94,7 +96,7 @@ public abstract class AbstractSkinCharacter {
                 distance = -Math.abs(this.skins.size() - skin.button.index + selectedCount);
             }
 
-            if (!display && this.skins.size() >= 5 && selectedCount > this.skins.size() - 2 && this.skins.size() - selectedCount + skin.button.index < 3) {
+            if (!display && this.skins.size() >= 5 && selectedCount > this.skins.size() - 3 && this.skins.size() - selectedCount + skin.button.index < 3) {
                 display = true;
                 distance = Math.abs(this.skins.size() - selectedCount + skin.button.index);
             }
@@ -105,7 +107,7 @@ public abstract class AbstractSkinCharacter {
                 skin.button.current_x = 0.0f;
                 skin.button.current_y = 0.0f;
                 skin.button.color.a = 0.0f;
-                return;
+                continue;
             }
 
 

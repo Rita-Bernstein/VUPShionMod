@@ -6,6 +6,7 @@ import VUPShionMod.cards.ShionCard.anastasia.AttackOrderGamma;
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.patches.AbstractPlayerPatches;
 import VUPShionMod.patches.EnergyPanelPatches;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -29,10 +30,6 @@ public class FinFunnelManager {
         this.box = new Texture(VUPShionMod.assetPath("img/effects/finFunnelSelectedEffect.png"));
     }
 
-    public void initializeFinFunnel() {
-
-    }
-
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new TurnTriggerAllFinFunnelAction(true));
         if (AbstractDungeon.player.hasPower(AttackOrderGamma.ID))
@@ -47,6 +44,12 @@ public class FinFunnelManager {
     }
 
     public void preBattlePrep() {
+        if (finFunnelList != null)
+            finFunnelList.clear();
+
+        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
+            initializeFinFunnelShion();
+
         SaveHelper.loadFinFunnels();
         selectedFinFunnel = getFinFunnel(SaveHelper.activeFinFunnel);
         if (selectedFinFunnel != null) {
@@ -65,9 +68,6 @@ public class FinFunnelManager {
     }
 
     public AbstractFinFunnel getFinFunnel(String id) {
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion)
-            initializeFinFunnelShion();
-
         if (!finFunnelList.isEmpty())
             for (AbstractFinFunnel finFunnel : finFunnelList) {
                 if (finFunnel.id.equals(id))
@@ -86,7 +86,7 @@ public class FinFunnelManager {
     }
 
     public static AbstractFinFunnel getFinFunnelMini() {
-        if(getFinFunnelList().isEmpty()){
+        if (getFinFunnelList().isEmpty()) {
             System.out.println("浮游炮列表为空");
             return null;
         }
@@ -96,8 +96,15 @@ public class FinFunnelManager {
         for (AbstractFinFunnel finFunnel : getFinFunnelList()) {
             if (!finFunnel.id.equals(MatrixFinFunnel.ID))
                 tmp.add(finFunnel);
-
         }
+
+        if(tmp.isEmpty()){
+            for (AbstractFinFunnel finFunnel : getFinFunnelList()) {
+                if (finFunnel.id.equals(MatrixFinFunnel.ID))
+                    tmp.add(finFunnel);
+            }
+        }
+
 
         if (!tmp.isEmpty())
             return tmp.get(AbstractDungeon.miscRng.random(tmp.size() - 1));
@@ -108,7 +115,7 @@ public class FinFunnelManager {
     }
 
     public void initializeFinFunnelShion() {
-        if (finFunnelList.isEmpty()) {
+        if (finFunnelList.isEmpty() && SkinManager.getSkinCharacter(0).reskinCount != 3) {
             finFunnelList.add(new MatrixFinFunnel(SaveHelper.matrixFinFunnelLevel));
 //            finFunnelList.add(new InvestigationFinFunnel(SaveHelper.investigationFinFunnelLevel));
             finFunnelList.add(new PursuitFinFunnel(SaveHelper.pursuitFinFunnelLevel));
@@ -139,8 +146,8 @@ public class FinFunnelManager {
                 for (AbstractFinFunnel funnel : finFunnelList) {
                     funnel.render(sb);
                 }
-
-                sb.draw(this.box, this.cX - 48.0F + 24.0f * Settings.scale, this.cY - 48.0F + 48.0f * Settings.scale,
+                
+                sb.draw(this.box, this.cX - 48.0F - 24.0f * Settings.scale, this.cY - 48.0F + 48.0f * Settings.scale,
                         48.0f, 48.0f,
                         48.0f, 48.0f,
                         2.0f * Settings.scale, 2.0f * Settings.scale,

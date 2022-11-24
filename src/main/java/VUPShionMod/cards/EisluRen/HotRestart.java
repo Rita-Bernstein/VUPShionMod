@@ -37,7 +37,7 @@ public class HotRestart extends AbstractEisluRenCard {
         }
 
         addToBot(new DrawCardAction(drawCard));
-        addToBot(new AddWingShieldDamageReduceAction(drawCard));
+        addToBot(new AddWingShieldDamageReduceAction(drawCard * 2));
     }
 
     @Override

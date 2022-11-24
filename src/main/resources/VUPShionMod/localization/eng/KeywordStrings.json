@@ -1,9 +1,9 @@
 [
   {
     "NAMES": [
-      "loading\u00a0complete"
+      "quick\u00a0boot"
     ],
-    "PROPER_NAME": "Loading Complete",
+    "PROPER_NAME": "Quick Boot",
     "DESCRIPTION": "Will be played without any cost when drawn. Draw a card upon being played."
   },
   {
@@ -12,14 +12,14 @@
       "funnels"
     ],
     "PROPER_NAME": "Funnel",
-    "DESCRIPTION": "#yFunnel attacks at the start of each of your turn. NL For each Energy cost this turn, you may switch #yFunnel."
+    "DESCRIPTION": "#yFunnels attack at the start of each of your turns. NL For each Energy spent per turn, you may also switch #yFunnel."
   },
   {
     "NAMES": [
-      "total\u00a0upgrade"
+      "total\u00a0sychro"
     ],
-    "PROPER_NAME": "Total Upgrade",
-    "DESCRIPTION": "Sum of the upgrades of all your #yFunnels."
+    "PROPER_NAME": "Total Sychro",
+    "DESCRIPTION": "Sum of the improvements on all your #yFunnels."
   },
   {
     "NAMES": [
@@ -41,16 +41,17 @@
   },
   {
     "NAMES": [
-      "hyperdimensional\u00a0link"
+      "hyperlink"
     ],
-    "PROPER_NAME": "Hyperdimensional Link",
-    "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperdimensional #yLink, #yupgrade a random card."
+    "PROPER_NAME": "Hyperlink",
+    "DESCRIPTION": "Whenever you end combat with #b10 or more #yHyperlink, #yupgrade a random card."
   },
   {
     "NAMES": [
-      "fire"
+      "activate"
     ],
-    "DESCRIPTION": "Trigger the passive ability of your #yFunnel."
+    "PROPER_NAME": "Activate",
+    "DESCRIPTION": "Trigger the passive ability of the selected #yFunnel."
   },
   {
     "NAMES": [
@@ -375,13 +376,13 @@
       "intensa"
     ],
     "PROPER_NAME": "Intensa",
-    "DESCRIPTION": "At the start of your next turn, gain #b60% #yCor #yGladii you lost in this turn. NL At most #b120% ."
+    "DESCRIPTION": "At the start of your next turn, regain #b60% #yCor #yGladii that you have lost in this turn. NL #b120% of #yCor #yGladii may be regained in this way at most."
   },
     {
     "NAMES": [
       "resonance"
     ],
-    "DESCRIPTION": "Whenever you play #yInterwoven #yLives or #ySychrochannel ,cost of this card reduce by #b1."
+    "DESCRIPTION": "Whenever you play #yInterwoven #yLives or #ySychrochannel, reduce the cost of this card by #b1."
   },
   {
     "NAMES": [

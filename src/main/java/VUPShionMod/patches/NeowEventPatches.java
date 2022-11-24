@@ -2,6 +2,7 @@ package VUPShionMod.patches;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.events.ShionSpireHeart;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.util.SaveHelper;
 import VUPShionMod.util.ShionNpc;
 import basemod.ReflectionHacks;
@@ -102,6 +103,8 @@ public class NeowEventPatches {
 
 
     public static boolean shouldShionTalk() {
-        return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen || SaveHelper.isTrainingMod;
+        return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen
+                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && SkinManager.getSkinCharacter(0).reskinCount ==3
+                || SaveHelper.isTrainingMod;
     }
 }

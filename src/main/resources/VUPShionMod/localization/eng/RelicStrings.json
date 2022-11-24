@@ -460,14 +460,14 @@
     "NAME": "Shield HR Type: ZY-1",
     "FLAVOR": "In order to compensate for the fragile defense of the elves, equipped with a shape-shifting energy shield.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b1 #yConstruct #yRecharge at start of your turn except start of turn. NL Whenever you change #yStance ,gain #b4 #yConstruct #yRecharge."
+      "Maintains charge of #yConstructed #yWing #yShield. Reduce damage lose at out of combat by #b50%. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b1 #yConstruct #yRecharge at the start of your turn except start of combat. NL Whenever you change #yStance ,gain #b4 #yConstruct #yRecharge."
     ]
   },
   "VUPShionMod:ShieldHRzy2": {
     "NAME": "Shield HR Type: ZY-2",
     "FLAVOR": "Based on the Shield HR Type: ZY-1,the kinetic energy recovery device has been added. Increased range.",
     "DESCRIPTIONS": [
-      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b2 #yConstruct #yRecharge at start of your turn except start of combat. NL Whenever you change #yStance ,gain #b4 #yConstruct #yRecharge. NL Whenever #yConstructed #yWing #yShield lose charge,gain #yRecycle equal to you lost."
+      "Maintains charge of #yConstructed #yWing #yShield. NL #yConstructed #yWing #yShield can stack #b7 additional charge. NL Reduce damage lose at out of combat by #b50%. NL Gain #b5 #yDexterity at start of each combat. NL Gain #b2 #yConstruct #yRecharge at the start of your turn except start of combat. NL Whenever you change #yStance ,gain #b4 #yConstruct #yRecharge. NL Whenever #yConstructed #yWing #yShield lose charge,gain #yRecycle equal to you lost."
     ]
   },
   "VUPShionMod:ElfCore": {
@@ -502,6 +502,39 @@
     "DESCRIPTIONS": [
       "Whenever you play any #yPrayer #yCard in #yPrayer #yStance, gain #b1 #ySanity and #yPsychic, then add a #yMiracle into your draw pile.",
       " NL NL Whenever you play any #yPrayer #yCard in #yJudging #yStance, ALL enemies take damage equal to #b5% of their max HP."
+    ]
+  },
+
+  "VUPShionMod:PowerCore": {
+    "NAME": "ZY辅助动力核心",
+    "FLAVOR": "为什么总是小狐拿行李啊……",
+    "DESCRIPTIONS": [
+      "拾起时获得一个药水栏位。 NL 每场战斗开始时失去 #b5点 #y敏捷 并获得一个 #y魔能弹夹 。 NL 每回合开始时获得 [E] [E] 。",
+      "魔能弹夹",
+      "获得 [E] 并抽两张牌。"
+    ]
+  },
+  "VUPShionMod:PowerCore2": {
+    "NAME": "ZY辅助动力核心·改",
+    "FLAVOR": "小狐决定把你的弹药用光",
+    "DESCRIPTIONS": [
+      "#r替换ZY辅助动力核心。 NL 每场战斗开始时失去 #b5 点 #y敏捷 。 NL 每回合开始时获得 [E] [E] 并获得一个 #y魔能弹夹 。",
+      "魔能弹夹",
+      "获得 [E] 并抽两张牌。"
+    ]
+  },
+  "VUPShionMod:ConcordCompanion": {
+    "NAME": "协合音·伴星",
+    "FLAVOR": "为什么小狐一个文职也要战斗训练啊……",
+    "DESCRIPTIONS": [
+      "#r你无法获得超维链接。 NL #y浮游炮 数量上限提高 #b2 。 NL 每场战斗开始时获得 [E] [E] 。"
+    ]
+  },
+  "VUPShionMod:InfiniteSushi": {
+    "NAME": "无限寿司",
+    "FLAVOR": "什么？虚拟场景中食物可以无限吃，还不会涨肚子？…阿这…",
+    "DESCRIPTIONS": [
+      "每场战斗开始是获得 #b1 点 #y力量 和 [E]。"
     ]
   }
 }

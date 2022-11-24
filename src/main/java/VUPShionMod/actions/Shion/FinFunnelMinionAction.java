@@ -2,6 +2,7 @@ package VUPShionMod.actions.Shion;
 
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
+import VUPShionMod.finfunnels.MatrixFinFunnel;
 import VUPShionMod.powers.Shion.MatrixAmplifyPower;
 import VUPShionMod.powers.Shion.WideAreaLockingPower;
 import VUPShionMod.skins.SkinManager;
@@ -45,17 +46,18 @@ public class FinFunnelMinionAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || this.target == null) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead() || this.target == null || finFunnels == null || finFunnels.isEmpty()) {
             isDone = true;
             return;
         }
+
 
         if (!createFinFunnelMini) {
             this.createFinFunnelMini = true;
 
 
             for (int i = 0; i < 8; i++) {
-                AbstractDungeon.effectList.add(new FinFunnelMinionEffect( this.target, SkinManager.getSkinCharacter(0).reskinCount,i, isAoe(finFunnels.get(i))));
+                AbstractDungeon.effectList.add(new FinFunnelMinionEffect(this.target, SkinManager.getSkinCharacter(0).reskinCount, i, isAoe(finFunnels.get(i))));
             }
         }
 
@@ -71,26 +73,30 @@ public class FinFunnelMinionAction extends AbstractGameAction {
                 }
             });
 
-            for (int i = 7; i >= 0; i--) {
-                if (!isAoe(finFunnels.get(i))) {
+            if (!finFunnels.isEmpty())
+                for (int i = 7; i >= 0; i--) {
+                    if (!isAoe(finFunnels.get(i))) {
 
-                    finFunnels.get(i).powerToApply(this.target, this.fullPower ? 2.0f : 1.0f, true);
-                    addToTop(new DamageAction(this.target,
-                            new DamageInfo(null,
-                                    this.fullPower ? finFunnels.get(i).getFinalDamage() * 2 : finFunnels.get(i).getFinalDamage(),
-                                    DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
-                } else {
+                        if (!finFunnels.get(i).id.equals(MatrixFinFunnel.ID))
+                            finFunnels.get(i).powerToApply(this.target, this.fullPower ? 2.0f : 1.0f, true);
 
-                    for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                        finFunnels.get(i).powerToApply(mo, this.fullPower ? 2.0f : 1.5f, true);
+                        addToTop(new DamageAction(this.target,
+                                new DamageInfo(null,
+                                        this.fullPower ? finFunnels.get(i).getFinalDamage() * 2 : finFunnels.get(i).getFinalDamage(),
+                                        DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE, true));
+                    } else {
+
+                        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                            if (!finFunnels.get(i).id.equals(MatrixFinFunnel.ID))
+                                finFunnels.get(i).powerToApply(mo, this.fullPower ? 2.0f : 1.5f, true);
+                        }
+
+                        addToTop(new DamageAllEnemiesAction(null,
+                                DamageInfo.createDamageMatrix(this.fullPower ? finFunnels.get(i).getFinalDamage() * 2 : finFunnels.get(i).getFinalDamage(),
+                                        true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+
                     }
-
-                    addToTop(new DamageAllEnemiesAction(null,
-                            DamageInfo.createDamageMatrix(this.fullPower ? finFunnels.get(i).getFinalDamage() * 2 : finFunnels.get(i).getFinalDamage(),
-                                    true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-
                 }
-            }
         }
     }
 }

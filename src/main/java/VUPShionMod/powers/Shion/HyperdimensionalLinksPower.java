@@ -2,6 +2,7 @@ package VUPShionMod.powers.Shion;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.relics.Shion.ConcordCompanion;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -24,8 +25,6 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private AbstractCard theCard;
-
 
     public HyperdimensionalLinksPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -36,6 +35,10 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SupportArmamentPower32.png")), 0, 0, 32, 32);
         updateDescription();
         this.priority = 0;
+
+        if(AbstractDungeon.player.hasRelic(ConcordCompanion.ID)  && this.amount>9) {
+            this.amount = 9;
+        }
     }
 
 
@@ -47,6 +50,16 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
 //            AbstractDungeon.effectList.add(new CampfireSmithEffect());
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        super.stackPower(stackAmount);
+
+        if(AbstractDungeon.player.hasRelic(ConcordCompanion.ID)  && this.amount>9) {
+            this.amount = 9;
+        }
+
+    }
+
     public void randomDeckUpgrade() {
         ArrayList<AbstractCard> possibleCards = new ArrayList<AbstractCard>();
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
@@ -55,6 +68,7 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
             }
         }
 
+        AbstractCard theCard = null;
         if (!possibleCards.isEmpty()) {
             theCard = possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));
             theCard.upgrade();
@@ -63,7 +77,7 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
 
         if (theCard != null) {
             AbstractDungeon.effectsQueue.add(new UpgradeShineEffect(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-            AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(this.theCard.makeStatEquivalentCopy()));
+            AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(theCard.makeStatEquivalentCopy()));
             addToTop(new WaitAction(Settings.ACTION_DUR_MED));
         }
     }

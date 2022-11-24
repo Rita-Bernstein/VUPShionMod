@@ -2,10 +2,8 @@ package VUPShionMod.patches;
 
 import VUPShionMod.potions.ShoppingVoucher;
 import VUPShionMod.potions.TransitionGenerator;
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import VUPShionMod.skins.SkinManager;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ModHelper;
@@ -85,7 +83,7 @@ public class AbstractPotionPatches {
         public static SpireReturn<Boolean> Insert(MapRoomNode _instance, boolean normalConnection, boolean wingedConnection) {
             if (!normalConnection && wingedConnection) {
                 for (AbstractPotion potion : AbstractDungeon.player.potions) {
-                    if(potion.ID.equals(TransitionGenerator.POTION_ID)) {
+                    if (potion.ID.equals(TransitionGenerator.POTION_ID)) {
                         potion.flash();
                         potion.use(AbstractDungeon.player);
                         AbstractDungeon.topPanel.destroyPotion(potion.slot);
@@ -106,6 +104,25 @@ public class AbstractPotionPatches {
         public static SpireReturn<Boolean> Insert(DungeonMapScreen _instance, @ByRef boolean[] flightMatters) {
             if (AbstractDungeon.player.hasPotion(TransitionGenerator.POTION_ID))
                 flightMatters[0] = true;
+            return SpireReturn.Continue();
+        }
+    }
+
+
+    @SpirePatch(
+            clz = PotionHelper.class,
+            method = "getPotions"
+    )
+    public static class PotionFilterPatch {
+        @SpireInsertPatch(rloc = 77, localvars = {"retVal"})
+        public static SpireReturn<ArrayList<String>> Insert(AbstractPlayer.PlayerClass c, boolean getAll, ArrayList<String> retVal) {
+
+            if (AbstractDungeon.player != null)
+                if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && SkinManager.getSkinCharacter(0).reskinCount == 3) {
+                    retVal.removeIf(pr -> pr.equals("VUPShionMod:PlanedModify"));
+                }
+
+
             return SpireReturn.Continue();
         }
     }

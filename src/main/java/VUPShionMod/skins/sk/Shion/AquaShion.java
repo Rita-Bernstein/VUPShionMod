@@ -7,10 +7,14 @@ import VUPShionMod.cards.ShionCard.minami.FinFunnelActive;
 import VUPShionMod.cards.ShionCard.minami.TacticalLayout;
 import VUPShionMod.cards.ShionCard.minami.TacticalLink;
 import VUPShionMod.cards.ShionCard.shion.*;
+import VUPShionMod.character.Liyezhu;
+import VUPShionMod.character.Shion;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.relics.Shion.ConcordArray;
 import VUPShionMod.relics.Shion.ConcordSnipe;
 import VUPShionMod.relics.Shion.Drapery;
 import VUPShionMod.skins.AbstractSkin;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,9 +28,9 @@ public class AquaShion extends AbstractSkin {
     public static final String ID = AquaShion.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public AquaShion() {
-        super(ID,2);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Shion/portrait3.png");
+    public AquaShion(int index) {
+        super(ID, index);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Shion/portrait3.sff");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -39,14 +43,28 @@ public class AquaShion extends AbstractSkin {
         this.atlasURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX_BIKINI.atlas";
         this.jsonURL = "VUPShionMod/characters/Shion/animation/Stance_ZYLJX_BIKINI.json";
         this.renderScale = 2.4f;
+
+
     }
 
 
     @Override
     public void setAnimation() {
         portraitState.setAnimation(0, "idle", true);
-
     }
+
+    public String getCharacterName() {
+        return Shion.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return Shion.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return Shion.charStrings.TEXT[0];
+    }
+
 
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {
@@ -54,6 +72,18 @@ public class AquaShion extends AbstractSkin {
         info.relics.add(Drapery.ID);
         info.relics.add(ConcordArray.ID);
         return info;
+    }
+
+    @Override
+    public void doCharSelectScreenSelectEffect() {
+        CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(2)));
+    }
+
+    @Override
+    public void justSkinSelected(int lastSelectedCount) {
+        if (lastSelectedCount == 3) {
+            doCharSelectScreenSelectEffect();
+        }
     }
 
     @Override

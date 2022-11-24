@@ -1,9 +1,13 @@
 package VUPShionMod.potions;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.relics.Shion.InfiniteSushi;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -42,6 +46,13 @@ public class Cola extends AbstractShionImagePotion {
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.potency)));
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.potency)));
             addToBot(new GainEnergyAction(this.potency));
+
+            if(AbstractDungeon.player.hasRelic(InfiniteSushi.ID)){
+                AbstractDungeon.player.getRelic(InfiniteSushi.ID).onTrigger();
+                addToBot(new HealAction(AbstractDungeon.player,AbstractDungeon.player,10));
+                addToBot(new SFXAction("MINAMI_3"));
+            }
+
         }
     }
 

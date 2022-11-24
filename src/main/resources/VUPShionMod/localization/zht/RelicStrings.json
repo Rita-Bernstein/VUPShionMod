@@ -503,5 +503,37 @@
       " #y祈言姿態 中打出 #y祈言牌 時，獲得 #b1 #ySan值 和 #y沉靈 ，並將一張 #y奇蹟 加入抽牌堆。",
       " NL NL #y審判姿態 中打出 #y祈言牌 時，對所有敵人造成 #b5% 其最大生命的傷害。"
     ]
+  },
+  "VUPShionMod:PowerCore": {
+    "NAME": "ZY輔助動力核心",
+    "FLAVOR": "為什麼總是小狐拿行李啊……",
+    "DESCRIPTIONS": [
+      "拾起時獲得一個藥水欄位。 NL 每場戰鬥開始時失去 #b5點 #y敏捷 並獲得一個 #y魔能彈夾 。 NL 每回合開始時獲得 [E] [E] 。",
+      "魔能彈夾",
+      "獲得 [E] 並抽兩張牌。"
+    ]
+  },
+  "VUPShionMod:PowerCore2": {
+    "NAME": "ZY輔助動力核心·改",
+    "FLAVOR": "小狐決定把你的彈藥用光",
+    "DESCRIPTIONS": [
+      "#r替換ZY輔助動力核心。 NL 每場戰鬥開始時失去 #b5 點 #y敏捷 。 NL 每回合開始時獲得 [E] [E] 並獲得一個 #y魔能彈夾 。",
+      "魔能彈夾",
+      "獲得 [E] 並抽兩張牌。"
+    ]
+  },
+  "VUPShionMod:ConcordCompanion": {
+    "NAME": "協合音·伴星",
+    "FLAVOR": "為什麼小狐一個文職也要戰鬥訓練啊……",
+    "DESCRIPTIONS": [
+      "你至多有 #b9 層 #y超維連結 。 NL #y浮游炮 數量上限提高 #b2 。 NL 每場戰鬥開始時獲得 [E] [E] 。"
+    ]
+  },
+  "VUPShionMod:InfiniteSushi": {
+    "NAME": "無限壽司",
+    "FLAVOR": "什麼？虛擬場景中食物可以無限吃，還不會漲肚子？…阿這…",
+    "DESCRIPTIONS": [
+      "每場戰鬥開始是獲得 #b1 點 #y力量 和 [E] 。"
+    ]
   }
 }

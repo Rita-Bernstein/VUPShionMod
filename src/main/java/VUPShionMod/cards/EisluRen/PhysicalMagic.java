@@ -40,7 +40,7 @@ public class PhysicalMagic extends AbstractEisluRenCard {
         }
 
         if (chance > 0)
-            if (AbstractDungeon.cardRng.random(99) <= chance) {
+            if (AbstractDungeon.cardRandomRng.random(99) <= chance) {
                 addToBot(new StunMonsterAction(m, p, 1));
             }
 

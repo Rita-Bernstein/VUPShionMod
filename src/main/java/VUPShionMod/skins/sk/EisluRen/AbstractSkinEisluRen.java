@@ -1,17 +1,22 @@
 package VUPShionMod.skins.sk.EisluRen;
 
+import VUPShionMod.VUPShionMod;
+import VUPShionMod.character.EisluRen;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 
 public class AbstractSkinEisluRen extends AbstractSkinCharacter {
-    public static final String ID = CardCrawlGame.languagePack.getCharacterString("VUPShionMod:EisluRen").NAMES[0];
 
     public AbstractSkinEisluRen() {
-        super(ID);
+        super();
         if (this.skins.isEmpty()) {
-            this.skins.add(new OriEisluRen());
+            this.skins.add(new OriEisluRen(0));
         }
     }
 
-
+    @Override
+    public boolean isCharacter(CharacterOption option) {
+        return option.c instanceof EisluRen;
+    }
 }

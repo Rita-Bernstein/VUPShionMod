@@ -40,7 +40,7 @@ public class WindArrow extends AbstractEisluRenCard {
         }
 
         if (chance > 0)
-            if (AbstractDungeon.cardRng.random(99) <= chance) {
+            if (AbstractDungeon.cardRandomRng.random(99) <= chance) {
                 if (m != null && m.hb != null)
                     addToBot(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
 
@@ -48,7 +48,7 @@ public class WindArrow extends AbstractEisluRenCard {
                 this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
                 initializeDescription();
 
-                if (AbstractDungeon.cardRng.random(99) < (this.upgraded ? 70 : 50)) {
+                if (AbstractDungeon.cardRandomRng.random(99) < (this.upgraded ? 70 : 50)) {
                     addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber)));
                 }
             }

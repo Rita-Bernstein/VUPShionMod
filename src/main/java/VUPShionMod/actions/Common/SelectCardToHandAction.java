@@ -44,7 +44,7 @@ public class SelectCardToHandAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (AbstractDungeon.getCurrRoom().isBattleEnding()) {
+        if (AbstractDungeon.getCurrRoom().isBattleEnding() || cards.isEmpty()) {
             this.isDone = true;
             return;
         }

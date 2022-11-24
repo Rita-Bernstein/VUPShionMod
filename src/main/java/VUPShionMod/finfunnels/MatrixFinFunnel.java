@@ -18,27 +18,51 @@ public class MatrixFinFunnel extends AbstractFinFunnel {
     public static final String ID = MatrixFinFunnel.class.getSimpleName();
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(MatrixFinFunnel.class.getSimpleName()));
 
+
     public MatrixFinFunnel(int level) {
+        this(level,-1);
+    }
+
+    public MatrixFinFunnel(int level, int index) {
         super(ID);
         upgradeLevel(level);
         this.effect = 1;
 
-        if (SkinManager.getSkinCharacter(0).reskinCount == 0) {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json", SkinManager.getSkin(0).renderScale);
-        } else {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", SkinManager.getSkin(0).renderScale);
+
+        switch (SkinManager.getSkinCharacter(0).reskinCount) {
+            case 0:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon4.json", SkinManager.getSkin(0).renderScale);
+                break;
+            case 3:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.json", SkinManager.getSkin(0).renderScale);
+                break;
+            default:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Blue/YOFU4.json", SkinManager.getSkin(0).renderScale);
         }
 
-        this.state.setAnimation(0, "weapon4_come_in", false);
-        this.state.addAnimation(0, "weapon4_idle", true, 0.0f);
+        this.index = index;
+
+        initAnimation(this.index);
     }
 
     @Override
+    protected void initAnimation(int index){
+        if(SkinManager.getSkinCharacter(0).reskinCount!=3) {
+            this.state.setAnimation(0, "weapon4_come_in", false);
+            this.state.addAnimation(0, "weapon4_idle", true, 0.0f);
+        }else {
+            super.initAnimation(index);
+        }
+
+    }
+
+
+    @Override
     public void preBattlePrep() {
-        this.state.setAnimation(0, "weapon4_come_in", false);
-        this.state.addAnimation(0, "weapon4_idle", true, 0.0f);
+        initAnimation(this.index);
     }
 
     @Override
@@ -74,25 +98,27 @@ public class MatrixFinFunnel extends AbstractFinFunnel {
     @Override
     public void updatePosition(Skeleton skeleton) {
 
-        body = this.skeleton.findBone("weapon4_bone");
-        muzzle = this.skeleton.findBone("weapon4_muzzle");
-
-        if (AbstractDungeon.player.flipHorizontal)
-            this.cX = this.skeleton.getX() + body.getWorldX() - 48.0f * Settings.scale;
-        else
-            this.cX = this.skeleton.getX() + body.getWorldX() + 48.0f * Settings.scale;
-        this.cY = this.skeleton.getY() + body.getWorldY();
-        hb.move(cX, cY);
-        this.muzzle_X = this.skeleton.getX() + muzzle.getWorldX();
-        this.muzzle_Y = this.skeleton.getY() + muzzle.getWorldY();
+        if(SkinManager.getSkinCharacter(0).reskinCount!=3) {
+            body = this.skeleton.findBone("weapon4_bone");
+            muzzle = this.skeleton.findBone("weapon4_muzzle");
+        }else {
+            body = this.skeleton.findBone("weapon" + (index + 1) + "_bone");
+            muzzle = this.skeleton.findBone("weapon" + (index + 1) + "_muzzle");
+        }
+        super.updatePosition(skeleton);
 
     }
 
     @Override
     public void playFinFunnelAnimation(String id) {
         if (id.equals(this.id)) {
-            this.state.setAnimation(0, "weapon4_attack", false).setTimeScale(3.0f);
-            this.state.addAnimation(0, "weapon4_idle", true, 0.0F);
+            if(SkinManager.getSkinCharacter(0).reskinCount!=3) {
+                this.state.setAnimation(0, "weapon4_attack", false).setTimeScale(3.0f);
+                this.state.addAnimation(0, "weapon4_idle", true, 0.0F);
+            }else {
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(3.0f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F);
+            }
         }
     }
 }

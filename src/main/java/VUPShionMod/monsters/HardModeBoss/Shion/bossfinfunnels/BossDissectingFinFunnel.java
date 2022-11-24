@@ -20,26 +20,45 @@ public class BossDissectingFinFunnel extends AbstractBossFinFunnel {
     public static final String ID = DissectingFinFunnel.class.getSimpleName();
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(DissectingFinFunnel.class.getSimpleName()));
 
-
     public BossDissectingFinFunnel(int level, AbstractCreature owner, int skinIndex) {
-        super(owner, ID);
+        this(level, owner, -1, skinIndex);
+    }
+
+    public BossDissectingFinFunnel(int level, AbstractCreature owner, int index, int skinIndex) {
+        super(owner, ID, skinIndex);
         upgradeLevel(level);
         this.effect = 1;
 
-        if (skinIndex == 0) {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.json", SkinManager.getSkin(0, 0).renderScale);
-        } else {
-            loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.atlas",
-                    "VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.json", SkinManager.getSkin(0, 1).renderScale);
+
+        switch (skinIndex) {
+            case 0:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon1.json", SkinManager.getSkin(0).renderScale);
+                break;
+            case 3:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Minami/Stance_NXM_FUYO.json", SkinManager.getSkin(0).renderScale);
+                break;
+            default:
+                loadAnimation("VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.atlas",
+                        "VUPShionMod/img/ui/FinFunnel/Blue/YOFU1.json", SkinManager.getSkin(0).renderScale);
         }
 
-        this.state.setAnimation(0, "weapon1_come_in", false);
-        this.state.addAnimation(0, "weapon1_idle", true, 0.0f);
+        this.index = index;
 
-        this.state.setAnimation(1, "weapon1_idle_lightring", true);
+        initAnimation(this.index);
     }
 
+    @Override
+    protected void initAnimation(int index) {
+        if (this.index < 0) {
+            this.state.setAnimation(0, "weapon1_come_in", false);
+            this.state.addAnimation(0, "weapon1_idle", true, 0.0f);
+            this.state.setAnimation(1, "weapon1_idle_lightring", true);
+        } else {
+            super.initAnimation(index);
+        }
+    }
 
     @Override
     public int getFinalEffect() {
@@ -47,15 +66,13 @@ public class BossDissectingFinFunnel extends AbstractBossFinFunnel {
     }
 
 
-
-      @Override
+    @Override
     public void preBattlePrep() {
 //        AbstractPower p = new ReinsOfWarPower(AbstractDungeon.player);
 //        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, p));
 //        p.atStartOfTurnPostDraw();
 
-        this.state.setAnimation(0, "weapon1_come_in", false);
-        this.state.addAnimation(0, "weapon1_idle", true, 0.0f);
+        initAnimation(this.index);
     }
 
 
@@ -73,28 +90,27 @@ public class BossDissectingFinFunnel extends AbstractBossFinFunnel {
     }
 
     @Override
-    public void updatePosition() {
-
-        body = this.skeleton.findBone("weapon1_bone");
-        muzzle = this.skeleton.findBone("weapon1_muzzle");
-
-
-        if (this.owner.flipHorizontal)
-            this.cX = this.skeleton.getX() + body.getWorldX() - 48.0f * Settings.scale;
-        else
-            this.cX = this.skeleton.getX() + body.getWorldX() + 48.0f * Settings.scale;
-
-        this.cY = this.skeleton.getY() + body.getWorldY();
-        hb.move(cX, cY);
-        this.muzzle_X = this.skeleton.getX() + muzzle.getWorldX();
-        this.muzzle_Y = this.skeleton.getY() + muzzle.getWorldY();
+    public void updatePosition(Skeleton skeleton) {
+        if (this.index < 0) {
+            body = this.skeleton.findBone("weapon1_bone");
+            muzzle = this.skeleton.findBone("weapon1_muzzle");
+        } else {
+            body = this.skeleton.findBone("weapon" + (index + 1) + "_bone");
+            muzzle = this.skeleton.findBone("weapon" + (index + 1) + "_muzzle");
+        }
+        super.updatePosition(skeleton);
     }
 
     @Override
     public void playFinFunnelAnimation(String id) {
         if (id.equals(this.id)) {
-            this.state.setAnimation(0, "weapon1_attack", false).setTimeScale(3.0f);
-            this.state.addAnimation(0, "weapon1_idle", true, 0.0F);
+            if (this.index < 0) {
+                this.state.setAnimation(0, "weapon1_attack", false).setTimeScale(3.0f);
+                this.state.addAnimation(0, "weapon1_idle", true, 0.0F);
+            } else {
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(2.0f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F).setTimeScale(0.5f);
+            }
         }
     }
 

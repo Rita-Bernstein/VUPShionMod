@@ -289,7 +289,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                     if (m.id.equals(Deca.ID)) {
                         for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                             if (!monster.isDeadOrEscaped()) {
-                                if (monster.name.equals(Donu.ID)) {
+                                if (monster.id.equals(Donu.ID)) {
                                     addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", monster.hb.cX, monster.hb.cY,
                                             192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                                     addToTop(new AbstractGameAction() {

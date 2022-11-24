@@ -33,7 +33,6 @@ public class FinalFlashBlastEffect extends AbstractGameEffect {
         this.startingDuration = 1.0F;
     }
 
-
     public void update() {
         if (!this.playedSfx) {
             AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(new Color(1.0f,0.36f,0.63f,1.0f)));

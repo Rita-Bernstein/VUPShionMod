@@ -76,7 +76,7 @@ public class SkinManager {
     public void justSelected(CharacterOption option) {
         if (CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.CHAR_SELECT)
             for (AbstractSkinCharacter c : skinCharacters) {
-                if (option.name.equals(c.id)) {
+                if (c.isCharacter(option)) {
                     if (!c.skins.get(c.selectedCount).unlock) {
                         CardCrawlGame.mainMenuScreen.charSelectScreen.confirmButton.hide();
                     }
@@ -97,7 +97,7 @@ public class SkinManager {
 
         if (selectedOption != null) {
             for (AbstractSkinCharacter c : skinCharacters) {
-                if (selectedOption.name.equals(c.id)) {
+                if (c.isCharacter(selectedOption)) {
                     currentSkinCharacter = c;
                     currentSkin = currentSkinCharacter.skins.get(currentSkinCharacter.selectedCount);
                     this.panel_x = MathHelper.uiLerpSnap(this.panel_x, this.panel_ShowFinalX);
@@ -124,6 +124,7 @@ public class SkinManager {
             currentSkin.renderPortrait(sb);
         }
     }
+
 
     public void panelRender(SpriteBatch sb) {
         sb.setColor(this.color);

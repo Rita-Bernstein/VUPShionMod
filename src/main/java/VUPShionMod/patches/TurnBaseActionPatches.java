@@ -55,7 +55,6 @@ public class TurnBaseActionPatches {
                 EnergyPanelPatches.PatchEnergyPanelField.wingShield.get(AbstractDungeon.overlayMenu.energyPanel).reset();
             }
 
-
             return SpireReturn.Continue();
         }
     }

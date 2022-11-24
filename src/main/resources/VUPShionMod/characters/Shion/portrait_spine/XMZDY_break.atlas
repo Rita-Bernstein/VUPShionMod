@@ -1,0 +1,316 @@
+
+XMZDY_break.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+LOGO
+  rotate: true
+  xy: 1984, 1884
+  size: 156, 62
+  orig: 156, 62
+  offset: 0, 0
+  index: -1
+NXM_ear_L
+  rotate: false
+  xy: 1984, 1747
+  size: 62, 135
+  orig: 62, 135
+  offset: 0, 0
+  index: -1
+NXM_ear_R_rongmao
+  rotate: false
+  xy: 1984, 1704
+  size: 40, 41
+  orig: 40, 41
+  offset: 0, 0
+  index: -1
+ZY_meimao
+  rotate: false
+  xy: 2, 2
+  size: 80, 54
+  orig: 80, 54
+  offset: 0, 0
+  index: -1
+background
+  rotate: false
+  xy: 2, 1050
+  size: 1980, 990
+  orig: 1980, 990
+  offset: 0, 0
+  index: -1
+background_black
+  rotate: false
+  xy: 2, 58
+  size: 1980, 990
+  orig: 1980, 990
+  offset: 0, 0
+  index: -1
+
+XMZDY_break2.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+lightline1
+  rotate: false
+  xy: 2, 994
+  size: 1980, 990
+  orig: 1980, 990
+  offset: 0, 0
+  index: -1
+zhezhao
+  rotate: false
+  xy: 2, 2
+  size: 1980, 990
+  orig: 1980, 990
+  offset: 0, 0
+  index: -1
+
+XMZDY_break3.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+LOGO_shadow
+  rotate: false
+  xy: 879, 122
+  size: 164, 71
+  orig: 164, 71
+  offset: 0, 0
+  index: -1
+NXM_ear_L_rongmao
+  rotate: false
+  xy: 879, 55
+  size: 140, 65
+  orig: 140, 65
+  offset: 0, 0
+  index: -1
+NXM_ear_R
+  rotate: true
+  xy: 1045, 128
+  size: 65, 86
+  orig: 65, 86
+  offset: 0, 0
+  index: -1
+ZY_arm_L
+  rotate: true
+  xy: 1133, 122
+  size: 71, 74
+  orig: 71, 74
+  offset: 0, 0
+  index: -1
+ZY_chest
+  rotate: false
+  xy: 515, 49
+  size: 205, 144
+  orig: 205, 144
+  offset: 0, 0
+  index: -1
+ZY_chest_armor
+  rotate: false
+  xy: 722, 48
+  size: 155, 145
+  orig: 155, 145
+  offset: 0, 0
+  index: -1
+ZY_face
+  rotate: false
+  xy: 316, 2
+  size: 197, 191
+  orig: 197, 191
+  offset: 0, 0
+  index: -1
+ZY_hair_frount
+  rotate: true
+  xy: 2, 28
+  size: 165, 312
+  orig: 165, 312
+  offset: 0, 0
+  index: -1
+breakglass
+  rotate: false
+  xy: 2, 195
+  size: 1637, 990
+  orig: 1637, 990
+  offset: 0, 0
+  index: -1
+lightline2
+  rotate: false
+  xy: 2, 1187
+  size: 1980, 854
+  orig: 1980, 854
+  offset: 0, 0
+  index: -1
+lightline4
+  rotate: true
+  xy: 1641, 49
+  size: 1136, 331
+  orig: 1136, 331
+  offset: 0, 0
+  index: -1
+
+XMZDY_break4.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+NXM_bdoy_light_shadow
+  rotate: true
+  xy: 948, 371
+  size: 978, 540
+  orig: 978, 540
+  offset: 0, 0
+  index: -1
+NXM_body
+  rotate: false
+  xy: 1490, 79
+  size: 503, 673
+  orig: 503, 673
+  offset: 0, 0
+  index: -1
+NXM_head
+  rotate: false
+  xy: 2, 2
+  size: 684, 355
+  orig: 684, 355
+  offset: 0, 0
+  index: -1
+NXM_head_sidai2
+  rotate: false
+  xy: 1243, 150
+  size: 202, 219
+  orig: 202, 219
+  offset: 0, 0
+  index: -1
+NXM_tail
+  rotate: false
+  xy: 1329, 1477
+  size: 626, 559
+  orig: 626, 559
+  offset: 0, 0
+  index: -1
+ZY_bdoy_light_shadow
+  rotate: false
+  xy: 2, 359
+  size: 944, 990
+  orig: 944, 990
+  offset: 0, 0
+  index: -1
+ZY_body
+  rotate: false
+  xy: 1490, 754
+  size: 536, 721
+  orig: 536, 721
+  offset: 0, 0
+  index: -1
+lightline3
+  rotate: false
+  xy: 2, 1351
+  size: 1325, 685
+  orig: 1325, 685
+  offset: 0, 0
+  index: -1
+lizi
+  rotate: true
+  xy: 688, 22
+  size: 335, 553
+  orig: 335, 553
+  offset: 0, 0
+  index: -1
+
+XMZDY_break5.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+NXM_arm_R
+  rotate: true
+  xy: 2, 2
+  size: 238, 417
+  orig: 238, 417
+  offset: 0, 0
+  index: -1
+NXM_clouth_tun_armor
+  rotate: false
+  xy: 1602, 43
+  size: 297, 313
+  orig: 297, 313
+  offset: 0, 0
+  index: -1
+NXM_hair_behind
+  rotate: false
+  xy: 961, 771
+  size: 783, 614
+  orig: 783, 614
+  offset: 0, 0
+  index: -1
+NXM_hair_fasi
+  rotate: true
+  xy: 1746, 910
+  size: 475, 274
+  orig: 475, 274
+  offset: 0, 0
+  index: -1
+NXM_leg_L
+  rotate: false
+  xy: 1602, 358
+  size: 325, 411
+  orig: 325, 411
+  offset: 0, 0
+  index: -1
+ZY_arm_L2
+  rotate: false
+  xy: 421, 41
+  size: 221, 199
+  orig: 221, 199
+  offset: 0, 0
+  index: -1
+ZY_hair_behind
+  rotate: false
+  xy: 2, 242
+  size: 828, 854
+  orig: 828, 854
+  offset: 0, 0
+  index: -1
+ZY_head_armor_behind
+  rotate: true
+  xy: 832, 38
+  size: 731, 768
+  orig: 731, 768
+  offset: 0, 0
+  index: -1
+ZY_headarmor
+  rotate: true
+  xy: 961, 1387
+  size: 643, 957
+  orig: 643, 957
+  offset: 0, 0
+  index: -1
+ZY_wings
+  rotate: false
+  xy: 2, 1098
+  size: 957, 932
+  orig: 957, 932
+  offset: 0, 0
+  index: -1
+
+XMZDY_break6.png
+size: 1024,512
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+NXM_body_armor
+  rotate: true
+  xy: 2, 2
+  size: 500, 665
+  orig: 500, 665
+  offset: 0, 0
+  index: -1
+ZY_arm_R
+  rotate: false
+  xy: 669, 207
+  size: 307, 295
+  orig: 307, 295
+  offset: 0, 0
+  index: -1

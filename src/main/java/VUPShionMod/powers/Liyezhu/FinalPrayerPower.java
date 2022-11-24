@@ -5,6 +5,7 @@ import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.powers.AbstractShionPower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -31,6 +32,7 @@ public class FinalPrayerPower extends AbstractShionPower {
         if ((card.type == AbstractCard.CardType.STATUS || card.type == AbstractCard.CardType.CURSE) && !this.owner.hasPower("No Draw")) {
             flash();
             addToBot(new DrawCardAction(this.owner, 1));
+            addToBot(new GainEnergyAction(1));
         }
     }
 

@@ -39,6 +39,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 
@@ -239,58 +240,72 @@ public class SansMeter {
 
     public void onVictory() {
         if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss))
-            if (!SansMental.sansMental && this.amount <= 0) {
-                if ((AbstractDungeon.getCurrRoom()) != null) {
+            AbstractDungeon.effectsQueue.add(new AbstractGameEffect() {
+                @Override
+                public void update() {
+                    if (!SansMental.sansMental && SansMeter.this.amount <= 0) {
+                        if ((AbstractDungeon.getCurrRoom()) != null) {
 
-                    (AbstractDungeon.getCurrRoom()).isBattleOver = false;
+                            (AbstractDungeon.getCurrRoom()).isBattleOver = false;
 
-                    if ((AbstractDungeon.getCurrRoom()).monsters != null) {
-                        if ((AbstractDungeon.getCurrRoom()).monsters.monsters != null) {
-                            (AbstractDungeon.getCurrRoom()).monsters.monsters.clear();
+                            if ((AbstractDungeon.getCurrRoom()).monsters != null) {
+                                if ((AbstractDungeon.getCurrRoom()).monsters.monsters != null) {
+                                    (AbstractDungeon.getCurrRoom()).monsters.monsters.clear();
+                                }
+                            }
+
+                            if((AbstractDungeon.getCurrRoom()).rewards != null)
+                                (AbstractDungeon.getCurrRoom()).rewards.clear();
                         }
+
+                        RoomEventDialog.optionList.clear();
+
+                        AbstractDungeon.eventList.add(0, MentalBreakdown.ID);
+
+                        MapRoomNode cur = AbstractDungeon.currMapNode;
+                        MapRoomNode node = new MapRoomNode(cur.x, cur.y);
+                        node.room = new CustomEventRoom();
+
+                        ArrayList<MapEdge> curEdges = cur.getEdges();
+                        for (MapEdge edge : curEdges) {
+                            node.addEdge(edge);
+                        }
+
+
+                        AbstractDungeon.player.releaseCard();
+                        AbstractDungeon.overlayMenu.hideCombatPanels();
+                        AbstractDungeon.previousScreen = null;
+                        AbstractDungeon.dynamicBanner.hide();
+                        AbstractDungeon.dungeonMapScreen.closeInstantly();
+                        AbstractDungeon.closeCurrentScreen();
+                        AbstractDungeon.topPanel.unhoverHitboxes();
+                        AbstractDungeon.fadeIn();
+                        AbstractDungeon.dungeonMapScreen.dismissable = true;
+                        AbstractDungeon.nextRoom = node;
+                        AbstractDungeon.setCurrMapNode(node);
+                        AbstractDungeon.getCurrRoom().onPlayerEntry();
+                        AbstractDungeon.scene.nextRoom(node.room);
+                        AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
+
+                        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.EVENT;
+                        GenericEventDialog.show();
+                        CardCrawlGame.fadeIn(1.5F);
                     }
 
-                    if((AbstractDungeon.getCurrRoom()).rewards != null)
-                        (AbstractDungeon.getCurrRoom()).rewards.clear();
+                    isDone =true;
                 }
 
-                RoomEventDialog.optionList.clear();
+                @Override
+                public void render(SpriteBatch spriteBatch) {
 
-                AbstractDungeon.eventList.add(0, MentalBreakdown.ID);
-
-                MapRoomNode cur = AbstractDungeon.currMapNode;
-                MapRoomNode node = new MapRoomNode(cur.x, cur.y);
-                node.room = new CustomEventRoom();
-
-                ArrayList<MapEdge> curEdges = cur.getEdges();
-                for (MapEdge edge : curEdges) {
-                    node.addEdge(edge);
                 }
 
+                @Override
+                public void dispose() {
 
-                AbstractDungeon.player.releaseCard();
-                AbstractDungeon.overlayMenu.hideCombatPanels();
-                AbstractDungeon.previousScreen = null;
-                AbstractDungeon.dynamicBanner.hide();
-                AbstractDungeon.dungeonMapScreen.closeInstantly();
-                AbstractDungeon.closeCurrentScreen();
-                AbstractDungeon.topPanel.unhoverHitboxes();
-                AbstractDungeon.fadeIn();
-                AbstractDungeon.effectList.clear();
-                AbstractDungeon.topLevelEffects.clear();
-                AbstractDungeon.topLevelEffectsQueue.clear();
-                AbstractDungeon.effectsQueue.clear();
-                AbstractDungeon.dungeonMapScreen.dismissable = true;
-                AbstractDungeon.nextRoom = node;
-                AbstractDungeon.setCurrMapNode(node);
-                AbstractDungeon.getCurrRoom().onPlayerEntry();
-                AbstractDungeon.scene.nextRoom(node.room);
-                AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
+                }
+            });
 
-                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.EVENT;
-                GenericEventDialog.show();
-                CardCrawlGame.fadeIn(1.5F);
-            }
     }
 
 }

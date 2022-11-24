@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.EnemyData;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -42,7 +43,7 @@ public class FlickeringTipAction extends AbstractGameAction {
 
             if (target instanceof AbstractMonster) {
                 AbstractMonster monster = (AbstractMonster) target;
-                if ((monster.isDying || monster.currentHealth <= 0) && !monster.halfDead && monster.type != AbstractMonster.EnemyType.BOSS) {
+                if ((monster.isDying || monster.currentHealth <= 0) && !monster.halfDead && monster.type != AbstractMonster.EnemyType.BOSS && !monster.hasPower(MinionPower.POWER_ID)) {
                     if (!notPlagaMonster(monster)) {
                         monster.isDying = false;
                         addToTop(new EscapeAction(monster));

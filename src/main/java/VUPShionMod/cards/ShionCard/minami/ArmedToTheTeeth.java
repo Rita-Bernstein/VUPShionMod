@@ -3,15 +3,20 @@ package VUPShionMod.cards.ShionCard.minami;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.LoseHyperdimensionalLinksAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
+import VUPShionMod.character.Shion;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
+import VUPShionMod.skins.SkinManager;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+
+import java.util.ArrayList;
 
 public class ArmedToTheTeeth extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID(ArmedToTheTeeth.class.getSimpleName());
@@ -45,4 +50,5 @@ public class ArmedToTheTeeth extends AbstractShionMinamiCard {
             this.upgradeBaseCost(1);
         }
     }
+
 }

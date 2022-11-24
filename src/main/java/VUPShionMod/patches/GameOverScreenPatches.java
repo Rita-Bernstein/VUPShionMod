@@ -5,6 +5,7 @@ import VUPShionMod.relics.Event.FragmentsOfFaith;
 import VUPShionMod.skins.sk.EisluRen.OriEisluRen;
 import VUPShionMod.skins.sk.Shion.AquaShion;
 import VUPShionMod.skins.sk.Shion.BlueGiantShion;
+import VUPShionMod.skins.sk.Shion.MinamiShion;
 import VUPShionMod.skins.sk.WangChuan.AquaWangChuan;
 import VUPShionMod.skins.sk.WangChuan.PurityWangChuan;
 import VUPShionMod.util.SaveHelper;
@@ -38,6 +39,7 @@ public class GameOverScreenPatches {
 
                 if (!AbstractDungeon.player.hasRelic(FragmentsOfFaith.ID)) {
                     CharacterSelectScreenPatches.skinManager.unlockSkin(OriEisluRen.ID);
+                    CharacterSelectScreenPatches.skinManager.unlockSkin(MinamiShion.ID);
                     AchievementPatches.unlockAchievement("07");
                     stats.add(new GameOverStat(specialBossStatString.TEXT[6], specialBossStatString.TEXT[6], Integer.toString(1000)));
                 }

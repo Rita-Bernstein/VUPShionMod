@@ -8,6 +8,7 @@ import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.skins.SkinManager;
 import VUPShionMod.skins.sk.Shion.BlueGiantShion;
+import VUPShionMod.skins.sk.Shion.MinamiShion;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import javafx.scene.control.Skin;
@@ -135,7 +136,9 @@ public class SaveHelper {
 
             if (SkinManager.getSkin(3, 0).unlock) {
                 AchievementPatches.unlockAchievement("07");
+                CharacterSelectScreenPatches.skinManager.unlockSkin(MinamiShion.ID);
             }
+
 
             if (SkinManager.getSkin(1, 3).unlock) {
                 AchievementPatches.unlockAchievement("06");

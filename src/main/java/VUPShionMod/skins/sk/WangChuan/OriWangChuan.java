@@ -2,6 +2,7 @@ package VUPShionMod.skins.sk.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.cards.WangChuan.*;
+import VUPShionMod.character.WangChuan;
 import VUPShionMod.relics.Wangchuan.Nebula;
 import VUPShionMod.relics.Wangchuan.StarQuakes;
 import VUPShionMod.skins.AbstractSkin;
@@ -16,9 +17,9 @@ public class OriWangChuan extends AbstractSkin {
     public static final String ID = OriWangChuan.class.getSimpleName();
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ID));
 
-    public OriWangChuan() {
-        super(ID,0);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait.png");
+    public OriWangChuan(int index) {
+        super(ID, index);
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/portrait.sff");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -39,6 +40,18 @@ public class OriWangChuan extends AbstractSkin {
         unlock();
     }
 
+
+    public String getCharacterName() {
+        return WangChuan.charStrings.NAMES[0];
+    }
+
+    public String getCharacterTiTleName() {
+        return WangChuan.charStrings.NAMES[1];
+    }
+
+    public String getCharacterFlavorText() {
+        return WangChuan.charStrings.TEXT[0];
+    }
 
     @Override
     public CharSelectInfo updateCharInfo(CharSelectInfo info) {

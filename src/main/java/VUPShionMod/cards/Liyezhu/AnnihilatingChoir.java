@@ -22,9 +22,9 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
 
     public AnnihilatingChoir() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseDamage = 20;
+        this.baseDamage = 10;
         this.isMultiDamage = true;
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
         if(p.hasPower(PsychicPower.POWER_ID)){
             int powerAmount = p.getPower(PsychicPower.POWER_ID).amount;
             if(this.upgraded) {
-                this.baseDamage = powerAmount * 15;
+                this.baseDamage = powerAmount * this.magicNumber;
                 applyPowers();
 
                 addToBot(new SFXAction("ATTACK_HEAVY"));
@@ -52,7 +52,7 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
                 addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,powerAmount)));
 
             }else {
-                this.baseDamage = powerAmount * 10;
+                this.baseDamage = powerAmount * this.magicNumber;
                 applyPowers();
 
                 addToBot(new SFXAction("ATTACK_HEAVY"));

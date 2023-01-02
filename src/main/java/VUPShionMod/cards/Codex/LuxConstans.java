@@ -23,7 +23,7 @@ public class LuxConstans extends AbstractCodexCard {
         this.magicNumber = this.baseMagicNumber = 1;
         this.timesUpgraded = upgrades;
         this.exhaust = true;
-        this.isEthereal =true;
+        this.isEthereal = true;
         this.parentCardID = LuxRapida.ID;
     }
 

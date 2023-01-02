@@ -30,7 +30,7 @@ public class MiraclePrayer extends AbstractPrayer {
 
     @Override
     public void use() {
-        addToBot(new MakeTempCardInHandAction(new Miracle(),this.amount));
+        addToBot(new MakeTempCardInHandAction(new Miracle(), this.amount));
     }
 
     @Override

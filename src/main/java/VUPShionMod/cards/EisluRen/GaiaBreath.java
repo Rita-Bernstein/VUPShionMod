@@ -24,18 +24,18 @@ public class GaiaBreath extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 7;
         this.secondaryM = this.baseSecondaryM = 7;
-        GraveField.grave.set(this,true);
+        GraveField.grave.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new HealAction(p,p,this.magicNumber));
+        addToBot(new HealAction(p, p, this.magicNumber));
 
         AbstractPlayerMinion elf = MinionGroup.getElfMinion();
-        if(elf !=null) {
+        if (elf != null) {
             addToBot(new HealAction(elf, p, this.magicNumber));
-            if(upgraded)
-                addToBot(new GainMaxHPAction(elf,this.secondaryM));
+            if (upgraded)
+                addToBot(new GainMaxHPAction(elf, this.secondaryM));
         }
 
         addToBot(new RemoveDebuffsAction(p));

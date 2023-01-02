@@ -18,14 +18,12 @@ public class AnticoagulationPower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public AnticoagulationPower(AbstractCreature owner,int amount) {
+    public AnticoagulationPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AnticoagulationPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AnticoagulationPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("AnticoagulationPower");
         updateDescription();
         this.isTurnBased = true;
         this.type = PowerType.DEBUFF;
@@ -33,11 +31,11 @@ public class AnticoagulationPower extends AbstractShionPower {
 
     @Override
     public void atEndOfRound() {
-        addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
+        addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],this.amount) ;
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

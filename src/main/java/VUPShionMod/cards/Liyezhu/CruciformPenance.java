@@ -32,7 +32,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
         this.baseDamage = 14;
         this.magicNumber = this.baseMagicNumber = 2;
         this.secondaryM = this.baseSecondaryM = 6;
-        this.selfRetain =true;
+        this.selfRetain = true;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
             addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        this.rawDescription = this.upgraded? UPGRADE_DESCRIPTION: DESCRIPTION;
+        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         initializeDescription();
 
 
@@ -58,7 +58,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
         }
 
         super.applyPowers();
-        this.rawDescription = this.upgraded? UPGRADE_DESCRIPTION: DESCRIPTION;
+        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
@@ -66,7 +66,7 @@ public class CruciformPenance extends AbstractLiyezhuCard {
 
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = this.upgraded? UPGRADE_DESCRIPTION: DESCRIPTION;
+        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.rawDescription += EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }

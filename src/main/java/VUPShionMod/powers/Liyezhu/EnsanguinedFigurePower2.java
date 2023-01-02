@@ -31,7 +31,7 @@ public class EnsanguinedFigurePower2 extends AbstractShionPower {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                     if (monster != null && !monster.isDeadOrEscaped()) {
-                        addToTop(new ApplySinAction(monster,this.amount));
+                        addToTop(new ApplySinAction(monster, this.amount));
                     }
                 }
             }

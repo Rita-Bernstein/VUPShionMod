@@ -1,1 +1,2825 @@
-{"skeleton":{"hash":"4+sLkzNAe9Jm/FXgyLzYQ9u5ANI","spine":"3.7.94","width":685,"height":615,"images":"./images/","audio":"E:/委托/紫音/南小绵"},"bones":[{"name":"root"},{"name":"weapon1_root","parent":"root","x":-2132.29,"y":2653.05},{"name":"weapon1_bone","parent":"weapon1_root","length":163.63,"rotation":-23.48,"x":-41.1,"y":17.98},{"name":"weapon1_muzzle","parent":"weapon1_bone","x":163.2,"y":0.54},{"name":"weapon2_root","parent":"root","x":-1671.51,"y":2484},{"name":"weapon2_bone","parent":"weapon2_root","length":87.71,"rotation":-22.57,"x":-17.29,"y":7.74},{"name":"weapon2_muzzle","parent":"weapon2_bone","x":88.04,"y":0.47},{"name":"weapon3_root","parent":"root","x":-2009.41,"y":2401.64},{"name":"weapon3_bone","parent":"weapon3_root","length":129.96,"rotation":-17.8,"x":-32.19,"y":12.57},{"name":"weapon3_muzzle","parent":"weapon3_bone","x":129.48,"y":-0.15},{"name":"weapon4_root","parent":"root","x":-1756.86,"y":2328.67},{"name":"weapon4_bone","parent":"weapon4_root","length":82.49,"rotation":-17.08,"x":-16.15,"y":4.75},{"name":"weapon4_muzzle","parent":"weapon4_bone","x":81.58,"y":-0.28},{"name":"weapon5_root","parent":"root","x":-1958.08,"y":2834.76},{"name":"weapon5_bone","parent":"weapon5_root","length":103.51,"rotation":-34.93,"x":-16.16,"y":12.57},{"name":"weapon5_muzzle","parent":"weapon5_bone","x":102.71,"y":0.49},{"name":"weapon6_root","parent":"root","x":-1779.75,"y":2734.75},{"name":"weapon6_bone","parent":"weapon6_root","length":78.94,"rotation":-33.24,"x":-11.41,"y":8.47},{"name":"weapon6_muzzle","parent":"weapon6_bone","x":78.42,"y":0.11}],"slots":[{"name":"FUYO6_penqi","bone":"weapon6_root","attachment":"FUYO6_penqi"},{"name":"FUYO6","bone":"weapon6_root","attachment":"FUYO6"},{"name":"FUYO6_light","bone":"weapon6_root","attachment":"FUYO6_light"},{"name":"FUYO4_penqi","bone":"weapon4_root","attachment":"FUYO4_penqi"},{"name":"FUYO4","bone":"weapon4_root","attachment":"FUYO4"},{"name":"FUYO4_light","bone":"weapon4_root","attachment":"FUYO4_light"},{"name":"FUYO2_penqi","bone":"weapon2_root","attachment":"FUYO2_penqi"},{"name":"FUYO2","bone":"weapon2_root","attachment":"FUYO2"},{"name":"FUYO2_light","bone":"weapon2_root","attachment":"FUYO2_light"},{"name":"FUYO5_penqi","bone":"weapon5_root","attachment":"FUYO5_penqi"},{"name":"FUYO5","bone":"weapon5_root","attachment":"FUYO5"},{"name":"FUYO5_light","bone":"weapon5_root","attachment":"FUYO5_light"},{"name":"FUYO3_penqi","bone":"weapon3_root","attachment":"FUYO3_penqi"},{"name":"FUYO3","bone":"weapon3_root","attachment":"FUYO3"},{"name":"FUYO3_light","bone":"weapon3_root","attachment":"FUYO3_light"},{"name":"FUYO1_penqi","bone":"weapon1_root","attachment":"FUYO1_penqi"},{"name":"FUYO1","bone":"weapon1_root","attachment":"FUYO1"},{"name":"FUYO1_light","bone":"weapon1_root","attachment":"FUYO1_light"}],"skins":{"default":{"FUYO1":{"FUYO1":{"x":18.98,"y":3.51,"width":189,"height":118}},"FUYO1_light":{"FUYO1_light":{"x":13.48,"y":3.51,"width":212,"height":130}},"FUYO1_penqi":{"FUYO1_penqi":{"x":-50.02,"y":21.01,"width":207,"height":135}},"FUYO2":{"FUYO2":{"x":14.7,"y":-0.94,"width":106,"height":63}},"FUYO2_light":{"FUYO2_light":{"x":12.2,"y":-1.44,"width":117,"height":68}},"FUYO2_penqi":{"FUYO2_penqi":{"x":-23.3,"y":7.06,"width":116,"height":73}},"FUYO3":{"FUYO3":{"x":8.6,"y":6.42,"width":170,"height":81}},"FUYO3_light":{"FUYO3_light":{"x":7.1,"y":7.42,"width":185,"height":93}},"FUYO3_penqi":{"FUYO3_penqi":{"x":-51.4,"y":6.92,"width":182,"height":104}},"FUYO4":{"FUYO4":{"x":10.05,"y":1.38,"width":112,"height":53}},"FUYO4_light":{"FUYO4_light":{"x":9.05,"y":1.88,"width":120,"height":60}},"FUYO4_penqi":{"FUYO4_penqi":{"x":-28.95,"y":2.38,"width":120,"height":67}},"FUYO5":{"FUYO5":{"x":10.27,"y":-1.2,"width":122,"height":102}},"FUYO5_light":{"FUYO5_light":{"x":4.77,"y":-2.2,"width":143,"height":108}},"FUYO5_penqi":{"FUYO5_penqi":{"x":-35.23,"y":21.3,"width":139,"height":113}},"FUYO6":{"FUYO6":{"x":10.94,"y":-1.19,"width":92,"height":74}},"FUYO6_light":{"FUYO6_light":{"x":6.44,"y":-2.19,"width":105,"height":78}},"FUYO6_penqi":{"FUYO6_penqi":{"x":-22.56,"y":14.81,"width":103,"height":82}}}},"animations":{"weapon1_attack":{"bones":{"weapon1_root":{"rotate":[{"time":0,"angle":24.23},{"time":0.3333,"angle":13.82,"curve":"stepped"},{"time":0.6667,"angle":13.82},{"time":1.0667,"angle":32.76},{"time":1.3333,"angle":13.82,"curve":"stepped"},{"time":1.6667,"angle":13.82},{"time":2.1667,"angle":24.23}],"translate":[{"time":0,"x":2103.11,"y":-2653.05},{"time":0.3333,"x":2480.84,"y":-2194.04,"curve":"stepped"},{"time":0.6667,"x":2480.84,"y":-2194.04},{"time":1.0667,"x":2423.88,"y":-2194.04},{"time":1.3333,"x":2480.84,"y":-2194.04,"curve":"stepped"},{"time":1.6667,"x":2480.84,"y":-2194.04},{"time":2.1667,"x":2103.11,"y":-2653.05}]}}},"weapon1_come_in":{"slots":{"FUYO1_light":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]},"FUYO1_penqi":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]}},"bones":{"weapon1_root":{"rotate":[{"time":0,"angle":0},{"time":0.6667,"angle":-11.43},{"time":0.8333,"angle":10.86,"curve":"stepped"},{"time":1.1667,"angle":10.86}],"translate":[{"time":0,"x":0,"y":0},{"time":0.6667,"x":1934.86,"y":-2440.8},{"time":0.8333,"x":2103.11,"y":-2653.05,"curve":"stepped"},{"time":1.1667,"x":2103.11,"y":-2653.05}]}}},"weapon1_idle":{"slots":{"FUYO1_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffff66","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]},"FUYO1_penqi":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.5667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.7667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.8667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.9333,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]}},"bones":{"weapon1_root":{"rotate":[{"time":0,"angle":10.86,"curve":[0.25,0,0.75,1]},{"time":1,"angle":10.86}],"translate":[{"time":0,"x":2103.11,"y":-2653.05,"curve":[0.25,0,0.75,1]},{"time":0.5,"x":2103.11,"y":-2630.65,"curve":[0.25,0,0.75,1]},{"time":1,"x":2103.11,"y":-2653.05}]}}},"weapon1_idle_lightring":{"slots":{"FUYO1":{"color":[{"time":0,"color":"ffffffff"}]}}},"weapon1_leave_out":{"bones":{"weapon1_root":{"rotate":[{"time":0,"angle":24.23},{"time":0.3333,"angle":53.64}],"translate":[{"time":0,"x":2103.11,"y":-2653.05,"curve":"stepped"},{"time":0.3333,"x":2103.11,"y":-2653.05},{"time":1,"x":3854.33,"y":237.94}]}}},"weapon2_attack":{"bones":{"weapon2_root":{"rotate":[{"time":0,"angle":23.45},{"time":0.3333,"angle":14.32,"curve":"stepped"},{"time":0.6667,"angle":14.32},{"time":1.0667,"angle":32.21},{"time":1.3333,"angle":14.32,"curve":"stepped"},{"time":1.6667,"angle":14.32},{"time":2.1667,"angle":23.45}],"translate":[{"time":0,"x":1656.22,"y":-2484},{"time":0.3333,"x":2018.46,"y":-2024.99,"curve":"stepped"},{"time":0.6667,"x":2018.46,"y":-2024.99},{"time":1.0667,"x":1963.33,"y":-2024.99},{"time":1.3333,"x":2018.46,"y":-2024.99,"curve":"stepped"},{"time":1.6667,"x":2018.46,"y":-2024.99},{"time":2.1667,"x":1656.22,"y":-2484}]}}},"weapon2_come_in":{"slots":{"FUYO2_light":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]},"FUYO2_penqi":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]}},"bones":{"weapon2_root":{"rotate":[{"time":0,"angle":0},{"time":0.6667,"angle":-8.55},{"time":0.8333,"angle":9.28,"curve":"stepped"},{"time":1.1667,"angle":9.28}],"translate":[{"time":0,"x":0,"y":0},{"time":0.6667,"x":1523.73,"y":-2285.28},{"time":0.8333,"x":1656.22,"y":-2484,"curve":"stepped"},{"time":1.1667,"x":1656.22,"y":-2484}]}}},"weapon2_idle":{"slots":{"FUYO2_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffff66","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]},"FUYO2_penqi":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.5667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.7667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.8667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.9333,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]}},"bones":{"weapon2_root":{"rotate":[{"time":0,"angle":9.28,"curve":[0.25,0,0.75,1]},{"time":1,"angle":9.28}],"translate":[{"time":0,"x":1656.22,"y":-2484,"curve":[0.25,0,0.75,1]},{"time":0.5,"x":1656.22,"y":-2464.79,"curve":[0.25,0,0.75,1]},{"time":1,"x":1656.22,"y":-2484}]}}},"weapon2_idle_lightring":{"slots":{"FUYO2":{"color":[{"time":0,"color":"ffffffff"}]}}},"weapon2_leave_out":{"bones":{"weapon2_root":{"rotate":[{"time":0,"angle":23.45},{"time":0.3333,"angle":44.3}],"translate":[{"time":0,"x":1656.22,"y":-2484,"curve":"stepped"},{"time":0.3333,"x":1656.22,"y":-2484},{"time":1,"x":3710.33,"y":462.94}]}}},"weapon3_attack":{"bones":{"weapon3_root":{"rotate":[{"time":0,"angle":17.46},{"time":0.3333,"angle":7.6,"curve":"stepped"},{"time":0.6667,"angle":7.6},{"time":1.0667,"angle":26.98},{"time":1.3333,"angle":7.6,"curve":"stepped"},{"time":1.6667,"angle":7.6},{"time":2.1667,"angle":17.46}],"translate":[{"time":0,"x":1992.34,"y":-2401.64},{"time":0.3333,"x":2358,"y":-1942.63,"curve":"stepped"},{"time":0.6667,"x":2358,"y":-1942.63},{"time":1.0667,"x":2301.75,"y":-1942.63},{"time":1.3333,"x":2358,"y":-1942.63,"curve":"stepped"},{"time":1.6667,"x":2358,"y":-1942.63},{"time":2.1667,"x":1992.34,"y":-2401.64}]}}},"weapon3_come_in":{"slots":{"FUYO3_light":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]},"FUYO3_penqi":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]}},"bones":{"weapon3_root":{"rotate":[{"time":0,"angle":0},{"time":0.6667,"angle":-19.78},{"time":0.8333,"angle":2.08,"curve":"stepped"},{"time":1.1667,"angle":2.08}],"translate":[{"time":0,"x":0,"y":0},{"time":0.6667,"x":1832.95,"y":-2209.51},{"time":0.8333,"x":1992.34,"y":-2401.64,"curve":"stepped"},{"time":1.1667,"x":1992.34,"y":-2401.64}]}}},"weapon3_idle":{"slots":{"FUYO3_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffff66","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]},"FUYO3_penqi":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.5667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.7667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.8667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.9333,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]}},"bones":{"weapon3_root":{"rotate":[{"time":0,"angle":2.08,"curve":[0.25,0,0.75,1]},{"time":1,"angle":2.08}],"translate":[{"time":0,"x":1992.34,"y":-2401.64,"curve":[0.25,0,0.75,1]},{"time":0.5,"x":1992.34,"y":-2372.83,"curve":[0.25,0,0.75,1]},{"time":1,"x":1992.34,"y":-2401.64}]}}},"weapon3_idle_lightring":{"slots":{"FUYO3":{"color":[{"time":0,"color":"ffffffff"}]}}},"weapon3_leave_out":{"bones":{"weapon3_root":{"rotate":[{"time":0,"angle":17.46},{"time":0.3333,"angle":45.05}],"translate":[{"time":0,"x":1992.34,"y":-2401.64,"curve":"stepped"},{"time":0.3333,"x":1992.34,"y":-2401.64},{"time":1,"x":3890.33,"y":417.95}]}}},"weapon4_attack":{"bones":{"weapon4_root":{"rotate":[{"time":0,"angle":18.16},{"time":0.3333,"angle":6.78,"curve":"stepped"},{"time":0.6667,"angle":6.78},{"time":1.0667,"angle":26.64},{"time":1.3333,"angle":6.78,"curve":"stepped"},{"time":1.6667,"angle":6.78},{"time":2.1667,"angle":18.16}],"translate":[{"time":0,"x":1742.99,"y":-2328.67},{"time":0.3333,"x":2106.46,"y":-1869.66,"curve":"stepped"},{"time":0.6667,"x":2106.46,"y":-1869.66},{"time":1.0667,"x":2048.13,"y":-1869.66},{"time":1.3333,"x":2106.46,"y":-1869.66,"curve":"stepped"},{"time":1.6667,"x":2106.46,"y":-1869.66},{"time":2.1667,"x":1742.99,"y":-2328.67}]}}},"weapon4_come_in":{"slots":{"FUYO4_light":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]},"FUYO4_penqi":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]}},"bones":{"weapon4_root":{"rotate":[{"time":0,"angle":0},{"time":0.6667,"angle":-21.05},{"time":0.8333,"angle":-0.18,"curve":"stepped"},{"time":1.1667,"angle":-0.18}],"translate":[{"time":0,"x":0,"y":0},{"time":0.6667,"x":1603.55,"y":-2142.38},{"time":0.8333,"x":1742.99,"y":-2328.67,"curve":"stepped"},{"time":1.1667,"x":1742.99,"y":-2328.67}]}}},"weapon4_idle":{"slots":{"FUYO4_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffff66","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]},"FUYO4_penqi":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.5667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.7667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.8667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.9333,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]}},"bones":{"weapon4_root":{"rotate":[{"time":0,"angle":-0.18,"curve":[0.25,0,0.75,1]},{"time":1,"angle":-0.18}],"translate":[{"time":0,"x":1742.99,"y":-2328.67,"curve":[0.25,0,0.75,1]},{"time":0.5,"x":1742.99,"y":-2296.66,"curve":[0.25,0,0.75,1]},{"time":1,"x":1742.99,"y":-2328.67}]}}},"weapon4_idle_lightring":{"slots":{"FUYO4":{"color":[{"time":0,"color":"ffffffff"}]}}},"weapon4_leave_out":{"bones":{"weapon4_root":{"rotate":[{"time":0,"angle":18.16},{"time":0.3333,"angle":44.5}],"translate":[{"time":0,"x":1742.99,"y":-2328.67,"curve":"stepped"},{"time":0.3333,"x":1742.99,"y":-2328.67},{"time":1,"x":3770.65,"y":744.21}]}}},"weapon5_attack":{"bones":{"weapon5_root":{"rotate":[{"time":0,"angle":36.77},{"time":0.3333,"angle":24.49,"curve":"stepped"},{"time":0.6667,"angle":24.49},{"time":1.0667,"angle":43.5},{"time":1.3333,"angle":24.49,"curve":"stepped"},{"time":1.6667,"angle":24.49},{"time":2.1667,"angle":36.77}],"translate":[{"time":0,"x":1941.01,"y":-2834.76},{"time":0.3333,"x":2306.48,"y":-2375.75,"curve":"stepped"},{"time":0.6667,"x":2306.48,"y":-2375.75},{"time":1.0667,"x":2250.22,"y":-2375.75},{"time":1.3333,"x":2306.48,"y":-2375.75,"curve":"stepped"},{"time":1.6667,"x":2306.48,"y":-2375.75},{"time":2.1667,"x":1941.01,"y":-2834.76}]}}},"weapon5_come_in":{"slots":{"FUYO5_light":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]},"FUYO5_penqi":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]}},"bones":{"weapon5_root":{"rotate":[{"time":0,"angle":0},{"time":0.6667,"angle":-9.8},{"time":0.8333,"angle":17.47,"curve":"stepped"},{"time":1.1667,"angle":17.47}],"translate":[{"time":0,"x":0,"y":0},{"time":0.6667,"x":1785.72,"y":-2607.98},{"time":0.8333,"x":1941.01,"y":-2834.76,"curve":"stepped"},{"time":1.1667,"x":1941.01,"y":-2834.76}]}}},"weapon5_idle":{"slots":{"FUYO5_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffff66","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]},"FUYO5_penqi":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.5667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.7667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.8667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.9333,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]}},"bones":{"weapon5_root":{"rotate":[{"time":0,"angle":17.47,"curve":[0.25,0,0.75,1]},{"time":1,"angle":17.47}],"translate":[{"time":0,"x":1941.01,"y":-2834.76,"curve":[0.25,0,0.75,1]},{"time":0.5,"x":1941.01,"y":-2799.55,"curve":[0.25,0,0.75,1]},{"time":1,"x":1941.01,"y":-2834.76}]}}},"weapon5_idle_lightring":{"slots":{"FUYO5":{"color":[{"time":0,"color":"ffffffff"}]}}},"weapon5_leave_out":{"bones":{"weapon5_root":{"rotate":[{"time":0,"angle":36.77},{"time":0.3333,"angle":55.47}],"translate":[{"time":0,"x":1941.01,"y":-2834.76,"curve":"stepped"},{"time":0.3333,"x":1941.01,"y":-2834.76},{"time":1,"x":3845.23,"y":344.27}]}}},"weapon6_attack":{"bones":{"weapon6_root":{"rotate":[{"time":0,"angle":35.01},{"time":0.3333,"angle":23.53,"curve":"stepped"},{"time":0.6667,"angle":23.53},{"time":1.0667,"angle":41.64},{"time":1.3333,"angle":23.53,"curve":"stepped"},{"time":1.6667,"angle":23.53},{"time":2.1667,"angle":35.01}],"translate":[{"time":0,"x":1765.88,"y":-2734.75},{"time":0.3333,"x":2128.53,"y":-2275.74,"curve":"stepped"},{"time":0.6667,"x":2128.53,"y":-2275.74},{"time":1.0667,"x":2071.71,"y":-2275.74},{"time":1.3333,"x":2128.53,"y":-2275.74,"curve":"stepped"},{"time":1.6667,"x":2128.53,"y":-2275.74},{"time":2.1667,"x":1765.88,"y":-2734.75}]}}},"weapon6_come_in":{"slots":{"FUYO6_light":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]},"FUYO6_penqi":{"color":[{"time":0.8333,"color":"ffffffff","curve":"stepped"},{"time":1.1667,"color":"ffffffff"}]}},"bones":{"weapon6_root":{"rotate":[{"time":0,"angle":0},{"time":0.6667,"angle":-12.28},{"time":0.8333,"angle":16.52,"curve":"stepped"},{"time":1.1667,"angle":16.52}],"translate":[{"time":0,"x":0,"y":0},{"time":0.6667,"x":1624.61,"y":-2515.97},{"time":0.8333,"x":1765.88,"y":-2734.75,"curve":"stepped"},{"time":1.1667,"x":1765.88,"y":-2734.75}]}}},"weapon6_idle":{"slots":{"FUYO6_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffff66","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]},"FUYO6_penqi":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.5667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.7667,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":0.8667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.9333,"color":"ffffff5e","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffff"}]}},"bones":{"weapon6_root":{"rotate":[{"time":0,"angle":16.52,"curve":[0.25,0,0.75,1]},{"time":1,"angle":16.52}],"translate":[{"time":0,"x":1765.88,"y":-2734.75,"curve":[0.25,0,0.75,1]},{"time":0.5,"x":1765.88,"y":-2705.94,"curve":[0.25,0,0.75,1]},{"time":1,"x":1765.88,"y":-2734.75}]}}},"weapon6_idle_lightring":{"slots":{"FUYO6":{"color":[{"time":0,"color":"ffffffff"}]}}},"weapon6_leave_out":{"bones":{"weapon6_root":{"rotate":[{"time":0,"angle":35.01},{"time":0.3333,"angle":62.85}],"translate":[{"time":0,"x":1765.88,"y":-2734.75,"curve":"stepped"},{"time":0.3333,"x":1765.88,"y":-2734.75},{"time":1,"x":3881.33,"y":228.94}]}}}}}
+{
+  "skeleton": {
+    "hash": "4+sLkzNAe9Jm/FXgyLzYQ9u5ANI",
+    "spine": "3.7.94",
+    "width": 685,
+    "height": 615,
+    "images": "./images/",
+    "audio": "E:/委托/紫音/南小绵"
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "weapon1_root",
+      "parent": "root",
+      "x": -2132.29,
+      "y": 2653.05
+    },
+    {
+      "name": "weapon1_bone",
+      "parent": "weapon1_root",
+      "length": 163.63,
+      "rotation": -23.48,
+      "x": -41.1,
+      "y": 17.98
+    },
+    {
+      "name": "weapon1_muzzle",
+      "parent": "weapon1_bone",
+      "x": 163.2,
+      "y": 0.54
+    },
+    {
+      "name": "weapon2_root",
+      "parent": "root",
+      "x": -1671.51,
+      "y": 2484
+    },
+    {
+      "name": "weapon2_bone",
+      "parent": "weapon2_root",
+      "length": 87.71,
+      "rotation": -22.57,
+      "x": -17.29,
+      "y": 7.74
+    },
+    {
+      "name": "weapon2_muzzle",
+      "parent": "weapon2_bone",
+      "x": 88.04,
+      "y": 0.47
+    },
+    {
+      "name": "weapon3_root",
+      "parent": "root",
+      "x": -2009.41,
+      "y": 2401.64
+    },
+    {
+      "name": "weapon3_bone",
+      "parent": "weapon3_root",
+      "length": 129.96,
+      "rotation": -17.8,
+      "x": -32.19,
+      "y": 12.57
+    },
+    {
+      "name": "weapon3_muzzle",
+      "parent": "weapon3_bone",
+      "x": 129.48,
+      "y": -0.15
+    },
+    {
+      "name": "weapon4_root",
+      "parent": "root",
+      "x": -1756.86,
+      "y": 2328.67
+    },
+    {
+      "name": "weapon4_bone",
+      "parent": "weapon4_root",
+      "length": 82.49,
+      "rotation": -17.08,
+      "x": -16.15,
+      "y": 4.75
+    },
+    {
+      "name": "weapon4_muzzle",
+      "parent": "weapon4_bone",
+      "x": 81.58,
+      "y": -0.28
+    },
+    {
+      "name": "weapon5_root",
+      "parent": "root",
+      "x": -1958.08,
+      "y": 2834.76
+    },
+    {
+      "name": "weapon5_bone",
+      "parent": "weapon5_root",
+      "length": 103.51,
+      "rotation": -34.93,
+      "x": -16.16,
+      "y": 12.57
+    },
+    {
+      "name": "weapon5_muzzle",
+      "parent": "weapon5_bone",
+      "x": 102.71,
+      "y": 0.49
+    },
+    {
+      "name": "weapon6_root",
+      "parent": "root",
+      "x": -1779.75,
+      "y": 2734.75
+    },
+    {
+      "name": "weapon6_bone",
+      "parent": "weapon6_root",
+      "length": 78.94,
+      "rotation": -33.24,
+      "x": -11.41,
+      "y": 8.47
+    },
+    {
+      "name": "weapon6_muzzle",
+      "parent": "weapon6_bone",
+      "x": 78.42,
+      "y": 0.11
+    }
+  ],
+  "slots": [
+    {
+      "name": "FUYO6_penqi",
+      "bone": "weapon6_root",
+      "attachment": "FUYO6_penqi"
+    },
+    {
+      "name": "FUYO6",
+      "bone": "weapon6_root",
+      "attachment": "FUYO6"
+    },
+    {
+      "name": "FUYO6_light",
+      "bone": "weapon6_root",
+      "attachment": "FUYO6_light"
+    },
+    {
+      "name": "FUYO4_penqi",
+      "bone": "weapon4_root",
+      "attachment": "FUYO4_penqi"
+    },
+    {
+      "name": "FUYO4",
+      "bone": "weapon4_root",
+      "attachment": "FUYO4"
+    },
+    {
+      "name": "FUYO4_light",
+      "bone": "weapon4_root",
+      "attachment": "FUYO4_light"
+    },
+    {
+      "name": "FUYO2_penqi",
+      "bone": "weapon2_root",
+      "attachment": "FUYO2_penqi"
+    },
+    {
+      "name": "FUYO2",
+      "bone": "weapon2_root",
+      "attachment": "FUYO2"
+    },
+    {
+      "name": "FUYO2_light",
+      "bone": "weapon2_root",
+      "attachment": "FUYO2_light"
+    },
+    {
+      "name": "FUYO5_penqi",
+      "bone": "weapon5_root",
+      "attachment": "FUYO5_penqi"
+    },
+    {
+      "name": "FUYO5",
+      "bone": "weapon5_root",
+      "attachment": "FUYO5"
+    },
+    {
+      "name": "FUYO5_light",
+      "bone": "weapon5_root",
+      "attachment": "FUYO5_light"
+    },
+    {
+      "name": "FUYO3_penqi",
+      "bone": "weapon3_root",
+      "attachment": "FUYO3_penqi"
+    },
+    {
+      "name": "FUYO3",
+      "bone": "weapon3_root",
+      "attachment": "FUYO3"
+    },
+    {
+      "name": "FUYO3_light",
+      "bone": "weapon3_root",
+      "attachment": "FUYO3_light"
+    },
+    {
+      "name": "FUYO1_penqi",
+      "bone": "weapon1_root",
+      "attachment": "FUYO1_penqi"
+    },
+    {
+      "name": "FUYO1",
+      "bone": "weapon1_root",
+      "attachment": "FUYO1"
+    },
+    {
+      "name": "FUYO1_light",
+      "bone": "weapon1_root",
+      "attachment": "FUYO1_light"
+    }
+  ],
+  "skins": {
+    "default": {
+      "FUYO1": {
+        "FUYO1": {
+          "x": 18.98,
+          "y": 3.51,
+          "width": 189,
+          "height": 118
+        }
+      },
+      "FUYO1_light": {
+        "FUYO1_light": {
+          "x": 13.48,
+          "y": 3.51,
+          "width": 212,
+          "height": 130
+        }
+      },
+      "FUYO1_penqi": {
+        "FUYO1_penqi": {
+          "x": -50.02,
+          "y": 21.01,
+          "width": 207,
+          "height": 135
+        }
+      },
+      "FUYO2": {
+        "FUYO2": {
+          "x": 14.7,
+          "y": -0.94,
+          "width": 106,
+          "height": 63
+        }
+      },
+      "FUYO2_light": {
+        "FUYO2_light": {
+          "x": 12.2,
+          "y": -1.44,
+          "width": 117,
+          "height": 68
+        }
+      },
+      "FUYO2_penqi": {
+        "FUYO2_penqi": {
+          "x": -23.3,
+          "y": 7.06,
+          "width": 116,
+          "height": 73
+        }
+      },
+      "FUYO3": {
+        "FUYO3": {
+          "x": 8.6,
+          "y": 6.42,
+          "width": 170,
+          "height": 81
+        }
+      },
+      "FUYO3_light": {
+        "FUYO3_light": {
+          "x": 7.1,
+          "y": 7.42,
+          "width": 185,
+          "height": 93
+        }
+      },
+      "FUYO3_penqi": {
+        "FUYO3_penqi": {
+          "x": -51.4,
+          "y": 6.92,
+          "width": 182,
+          "height": 104
+        }
+      },
+      "FUYO4": {
+        "FUYO4": {
+          "x": 10.05,
+          "y": 1.38,
+          "width": 112,
+          "height": 53
+        }
+      },
+      "FUYO4_light": {
+        "FUYO4_light": {
+          "x": 9.05,
+          "y": 1.88,
+          "width": 120,
+          "height": 60
+        }
+      },
+      "FUYO4_penqi": {
+        "FUYO4_penqi": {
+          "x": -28.95,
+          "y": 2.38,
+          "width": 120,
+          "height": 67
+        }
+      },
+      "FUYO5": {
+        "FUYO5": {
+          "x": 10.27,
+          "y": -1.2,
+          "width": 122,
+          "height": 102
+        }
+      },
+      "FUYO5_light": {
+        "FUYO5_light": {
+          "x": 4.77,
+          "y": -2.2,
+          "width": 143,
+          "height": 108
+        }
+      },
+      "FUYO5_penqi": {
+        "FUYO5_penqi": {
+          "x": -35.23,
+          "y": 21.3,
+          "width": 139,
+          "height": 113
+        }
+      },
+      "FUYO6": {
+        "FUYO6": {
+          "x": 10.94,
+          "y": -1.19,
+          "width": 92,
+          "height": 74
+        }
+      },
+      "FUYO6_light": {
+        "FUYO6_light": {
+          "x": 6.44,
+          "y": -2.19,
+          "width": 105,
+          "height": 78
+        }
+      },
+      "FUYO6_penqi": {
+        "FUYO6_penqi": {
+          "x": -22.56,
+          "y": 14.81,
+          "width": 103,
+          "height": 82
+        }
+      }
+    }
+  },
+  "animations": {
+    "weapon1_attack": {
+      "bones": {
+        "weapon1_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 24.23
+            },
+            {
+              "time": 0.3333,
+              "angle": 13.82,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "angle": 13.82
+            },
+            {
+              "time": 1.0667,
+              "angle": 32.76
+            },
+            {
+              "time": 1.3333,
+              "angle": 13.82,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "angle": 13.82
+            },
+            {
+              "time": 2.1667,
+              "angle": 24.23
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 2103.11,
+              "y": -2653.05
+            },
+            {
+              "time": 0.3333,
+              "x": 2480.84,
+              "y": -2194.04,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "x": 2480.84,
+              "y": -2194.04
+            },
+            {
+              "time": 1.0667,
+              "x": 2423.88,
+              "y": -2194.04
+            },
+            {
+              "time": 1.3333,
+              "x": 2480.84,
+              "y": -2194.04,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "x": 2480.84,
+              "y": -2194.04
+            },
+            {
+              "time": 2.1667,
+              "x": 2103.11,
+              "y": -2653.05
+            }
+          ]
+        }
+      }
+    },
+    "weapon1_come_in": {
+      "slots": {
+        "FUYO1_light": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO1_penqi": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon1_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0
+            },
+            {
+              "time": 0.6667,
+              "angle": -11.43
+            },
+            {
+              "time": 0.8333,
+              "angle": 10.86,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": 10.86
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.6667,
+              "x": 1934.86,
+              "y": -2440.8
+            },
+            {
+              "time": 0.8333,
+              "x": 2103.11,
+              "y": -2653.05,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "x": 2103.11,
+              "y": -2653.05
+            }
+          ]
+        }
+      }
+    },
+    "weapon1_idle": {
+      "slots": {
+        "FUYO1_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff66",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO1_penqi": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.7667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon1_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 10.86,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": 10.86
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 2103.11,
+              "y": -2653.05,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "x": 2103.11,
+              "y": -2630.65,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 2103.11,
+              "y": -2653.05
+            }
+          ]
+        }
+      }
+    },
+    "weapon1_idle_lightring": {
+      "slots": {
+        "FUYO1": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      }
+    },
+    "weapon1_leave_out": {
+      "bones": {
+        "weapon1_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 24.23
+            },
+            {
+              "time": 0.3333,
+              "angle": 53.64
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 2103.11,
+              "y": -2653.05,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.3333,
+              "x": 2103.11,
+              "y": -2653.05
+            },
+            {
+              "time": 1,
+              "x": 3854.33,
+              "y": 237.94
+            }
+          ]
+        }
+      }
+    },
+    "weapon2_attack": {
+      "bones": {
+        "weapon2_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 23.45
+            },
+            {
+              "time": 0.3333,
+              "angle": 14.32,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "angle": 14.32
+            },
+            {
+              "time": 1.0667,
+              "angle": 32.21
+            },
+            {
+              "time": 1.3333,
+              "angle": 14.32,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "angle": 14.32
+            },
+            {
+              "time": 2.1667,
+              "angle": 23.45
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1656.22,
+              "y": -2484
+            },
+            {
+              "time": 0.3333,
+              "x": 2018.46,
+              "y": -2024.99,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "x": 2018.46,
+              "y": -2024.99
+            },
+            {
+              "time": 1.0667,
+              "x": 1963.33,
+              "y": -2024.99
+            },
+            {
+              "time": 1.3333,
+              "x": 2018.46,
+              "y": -2024.99,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "x": 2018.46,
+              "y": -2024.99
+            },
+            {
+              "time": 2.1667,
+              "x": 1656.22,
+              "y": -2484
+            }
+          ]
+        }
+      }
+    },
+    "weapon2_come_in": {
+      "slots": {
+        "FUYO2_light": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO2_penqi": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon2_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0
+            },
+            {
+              "time": 0.6667,
+              "angle": -8.55
+            },
+            {
+              "time": 0.8333,
+              "angle": 9.28,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": 9.28
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.6667,
+              "x": 1523.73,
+              "y": -2285.28
+            },
+            {
+              "time": 0.8333,
+              "x": 1656.22,
+              "y": -2484,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "x": 1656.22,
+              "y": -2484
+            }
+          ]
+        }
+      }
+    },
+    "weapon2_idle": {
+      "slots": {
+        "FUYO2_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff66",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO2_penqi": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.7667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon2_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 9.28,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": 9.28
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1656.22,
+              "y": -2484,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "x": 1656.22,
+              "y": -2464.79,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 1656.22,
+              "y": -2484
+            }
+          ]
+        }
+      }
+    },
+    "weapon2_idle_lightring": {
+      "slots": {
+        "FUYO2": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      }
+    },
+    "weapon2_leave_out": {
+      "bones": {
+        "weapon2_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 23.45
+            },
+            {
+              "time": 0.3333,
+              "angle": 44.3
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1656.22,
+              "y": -2484,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.3333,
+              "x": 1656.22,
+              "y": -2484
+            },
+            {
+              "time": 1,
+              "x": 3710.33,
+              "y": 462.94
+            }
+          ]
+        }
+      }
+    },
+    "weapon3_attack": {
+      "bones": {
+        "weapon3_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 17.46
+            },
+            {
+              "time": 0.3333,
+              "angle": 7.6,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "angle": 7.6
+            },
+            {
+              "time": 1.0667,
+              "angle": 26.98
+            },
+            {
+              "time": 1.3333,
+              "angle": 7.6,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "angle": 7.6
+            },
+            {
+              "time": 2.1667,
+              "angle": 17.46
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1992.34,
+              "y": -2401.64
+            },
+            {
+              "time": 0.3333,
+              "x": 2358,
+              "y": -1942.63,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "x": 2358,
+              "y": -1942.63
+            },
+            {
+              "time": 1.0667,
+              "x": 2301.75,
+              "y": -1942.63
+            },
+            {
+              "time": 1.3333,
+              "x": 2358,
+              "y": -1942.63,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "x": 2358,
+              "y": -1942.63
+            },
+            {
+              "time": 2.1667,
+              "x": 1992.34,
+              "y": -2401.64
+            }
+          ]
+        }
+      }
+    },
+    "weapon3_come_in": {
+      "slots": {
+        "FUYO3_light": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO3_penqi": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon3_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0
+            },
+            {
+              "time": 0.6667,
+              "angle": -19.78
+            },
+            {
+              "time": 0.8333,
+              "angle": 2.08,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": 2.08
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.6667,
+              "x": 1832.95,
+              "y": -2209.51
+            },
+            {
+              "time": 0.8333,
+              "x": 1992.34,
+              "y": -2401.64,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "x": 1992.34,
+              "y": -2401.64
+            }
+          ]
+        }
+      }
+    },
+    "weapon3_idle": {
+      "slots": {
+        "FUYO3_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff66",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO3_penqi": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.7667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon3_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 2.08,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": 2.08
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1992.34,
+              "y": -2401.64,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "x": 1992.34,
+              "y": -2372.83,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 1992.34,
+              "y": -2401.64
+            }
+          ]
+        }
+      }
+    },
+    "weapon3_idle_lightring": {
+      "slots": {
+        "FUYO3": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      }
+    },
+    "weapon3_leave_out": {
+      "bones": {
+        "weapon3_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 17.46
+            },
+            {
+              "time": 0.3333,
+              "angle": 45.05
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1992.34,
+              "y": -2401.64,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.3333,
+              "x": 1992.34,
+              "y": -2401.64
+            },
+            {
+              "time": 1,
+              "x": 3890.33,
+              "y": 417.95
+            }
+          ]
+        }
+      }
+    },
+    "weapon4_attack": {
+      "bones": {
+        "weapon4_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 18.16
+            },
+            {
+              "time": 0.3333,
+              "angle": 6.78,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "angle": 6.78
+            },
+            {
+              "time": 1.0667,
+              "angle": 26.64
+            },
+            {
+              "time": 1.3333,
+              "angle": 6.78,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "angle": 6.78
+            },
+            {
+              "time": 2.1667,
+              "angle": 18.16
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1742.99,
+              "y": -2328.67
+            },
+            {
+              "time": 0.3333,
+              "x": 2106.46,
+              "y": -1869.66,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "x": 2106.46,
+              "y": -1869.66
+            },
+            {
+              "time": 1.0667,
+              "x": 2048.13,
+              "y": -1869.66
+            },
+            {
+              "time": 1.3333,
+              "x": 2106.46,
+              "y": -1869.66,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "x": 2106.46,
+              "y": -1869.66
+            },
+            {
+              "time": 2.1667,
+              "x": 1742.99,
+              "y": -2328.67
+            }
+          ]
+        }
+      }
+    },
+    "weapon4_come_in": {
+      "slots": {
+        "FUYO4_light": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO4_penqi": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon4_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0
+            },
+            {
+              "time": 0.6667,
+              "angle": -21.05
+            },
+            {
+              "time": 0.8333,
+              "angle": -0.18,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": -0.18
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.6667,
+              "x": 1603.55,
+              "y": -2142.38
+            },
+            {
+              "time": 0.8333,
+              "x": 1742.99,
+              "y": -2328.67,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "x": 1742.99,
+              "y": -2328.67
+            }
+          ]
+        }
+      }
+    },
+    "weapon4_idle": {
+      "slots": {
+        "FUYO4_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff66",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO4_penqi": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.7667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon4_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": -0.18,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": -0.18
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1742.99,
+              "y": -2328.67,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "x": 1742.99,
+              "y": -2296.66,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 1742.99,
+              "y": -2328.67
+            }
+          ]
+        }
+      }
+    },
+    "weapon4_idle_lightring": {
+      "slots": {
+        "FUYO4": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      }
+    },
+    "weapon4_leave_out": {
+      "bones": {
+        "weapon4_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 18.16
+            },
+            {
+              "time": 0.3333,
+              "angle": 44.5
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1742.99,
+              "y": -2328.67,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.3333,
+              "x": 1742.99,
+              "y": -2328.67
+            },
+            {
+              "time": 1,
+              "x": 3770.65,
+              "y": 744.21
+            }
+          ]
+        }
+      }
+    },
+    "weapon5_attack": {
+      "bones": {
+        "weapon5_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 36.77
+            },
+            {
+              "time": 0.3333,
+              "angle": 24.49,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "angle": 24.49
+            },
+            {
+              "time": 1.0667,
+              "angle": 43.5
+            },
+            {
+              "time": 1.3333,
+              "angle": 24.49,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "angle": 24.49
+            },
+            {
+              "time": 2.1667,
+              "angle": 36.77
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1941.01,
+              "y": -2834.76
+            },
+            {
+              "time": 0.3333,
+              "x": 2306.48,
+              "y": -2375.75,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "x": 2306.48,
+              "y": -2375.75
+            },
+            {
+              "time": 1.0667,
+              "x": 2250.22,
+              "y": -2375.75
+            },
+            {
+              "time": 1.3333,
+              "x": 2306.48,
+              "y": -2375.75,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "x": 2306.48,
+              "y": -2375.75
+            },
+            {
+              "time": 2.1667,
+              "x": 1941.01,
+              "y": -2834.76
+            }
+          ]
+        }
+      }
+    },
+    "weapon5_come_in": {
+      "slots": {
+        "FUYO5_light": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO5_penqi": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon5_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0
+            },
+            {
+              "time": 0.6667,
+              "angle": -9.8
+            },
+            {
+              "time": 0.8333,
+              "angle": 17.47,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": 17.47
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.6667,
+              "x": 1785.72,
+              "y": -2607.98
+            },
+            {
+              "time": 0.8333,
+              "x": 1941.01,
+              "y": -2834.76,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "x": 1941.01,
+              "y": -2834.76
+            }
+          ]
+        }
+      }
+    },
+    "weapon5_idle": {
+      "slots": {
+        "FUYO5_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff66",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO5_penqi": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.7667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon5_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 17.47,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": 17.47
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1941.01,
+              "y": -2834.76,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "x": 1941.01,
+              "y": -2799.55,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 1941.01,
+              "y": -2834.76
+            }
+          ]
+        }
+      }
+    },
+    "weapon5_idle_lightring": {
+      "slots": {
+        "FUYO5": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      }
+    },
+    "weapon5_leave_out": {
+      "bones": {
+        "weapon5_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 36.77
+            },
+            {
+              "time": 0.3333,
+              "angle": 55.47
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1941.01,
+              "y": -2834.76,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.3333,
+              "x": 1941.01,
+              "y": -2834.76
+            },
+            {
+              "time": 1,
+              "x": 3845.23,
+              "y": 344.27
+            }
+          ]
+        }
+      }
+    },
+    "weapon6_attack": {
+      "bones": {
+        "weapon6_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 35.01
+            },
+            {
+              "time": 0.3333,
+              "angle": 23.53,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "angle": 23.53
+            },
+            {
+              "time": 1.0667,
+              "angle": 41.64
+            },
+            {
+              "time": 1.3333,
+              "angle": 23.53,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "angle": 23.53
+            },
+            {
+              "time": 2.1667,
+              "angle": 35.01
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1765.88,
+              "y": -2734.75
+            },
+            {
+              "time": 0.3333,
+              "x": 2128.53,
+              "y": -2275.74,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "x": 2128.53,
+              "y": -2275.74
+            },
+            {
+              "time": 1.0667,
+              "x": 2071.71,
+              "y": -2275.74
+            },
+            {
+              "time": 1.3333,
+              "x": 2128.53,
+              "y": -2275.74,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "x": 2128.53,
+              "y": -2275.74
+            },
+            {
+              "time": 2.1667,
+              "x": 1765.88,
+              "y": -2734.75
+            }
+          ]
+        }
+      }
+    },
+    "weapon6_come_in": {
+      "slots": {
+        "FUYO6_light": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO6_penqi": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon6_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0
+            },
+            {
+              "time": 0.6667,
+              "angle": -12.28
+            },
+            {
+              "time": 0.8333,
+              "angle": 16.52,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": 16.52
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.6667,
+              "x": 1624.61,
+              "y": -2515.97
+            },
+            {
+              "time": 0.8333,
+              "x": 1765.88,
+              "y": -2734.75,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "x": 1765.88,
+              "y": -2734.75
+            }
+          ]
+        }
+      }
+    },
+    "weapon6_idle": {
+      "slots": {
+        "FUYO6_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff66",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "FUYO6_penqi": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.7667,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffff5e",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon6_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 16.52,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": 16.52
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1765.88,
+              "y": -2734.75,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "x": 1765.88,
+              "y": -2705.94,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 1765.88,
+              "y": -2734.75
+            }
+          ]
+        }
+      }
+    },
+    "weapon6_idle_lightring": {
+      "slots": {
+        "FUYO6": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      }
+    },
+    "weapon6_leave_out": {
+      "bones": {
+        "weapon6_root": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 35.01
+            },
+            {
+              "time": 0.3333,
+              "angle": 62.85
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 1765.88,
+              "y": -2734.75,
+              "curve": "stepped"
+            },
+            {
+              "time": 0.3333,
+              "x": 1765.88,
+              "y": -2734.75
+            },
+            {
+              "time": 1,
+              "x": 3881.33,
+              "y": 228.94
+            }
+          ]
+        }
+      }
+    }
+  }
+}

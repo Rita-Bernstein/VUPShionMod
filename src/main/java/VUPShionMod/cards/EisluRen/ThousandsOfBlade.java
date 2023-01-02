@@ -23,7 +23,7 @@ public class ThousandsOfBlade extends AbstractEisluRenCard {
 
     public ThousandsOfBlade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.selfRetain =true;
+        this.selfRetain = true;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 

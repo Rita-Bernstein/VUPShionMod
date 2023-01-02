@@ -92,10 +92,10 @@ public class AttackCircuit extends AbstractShionRelic implements CustomBottleRel
             if (c.type == AbstractCard.CardType.ATTACK)
                 tmp.addToTop(c);
         }
-        if(!tmp.isEmpty())
-        AbstractDungeon.gridSelectScreen.open(tmp,
-                1, DESCRIPTIONS[2],
-                false, false, false, false);
+        if (!tmp.isEmpty())
+            AbstractDungeon.gridSelectScreen.open(tmp,
+                    1, DESCRIPTIONS[2],
+                    false, false, false, false);
     }
 
 
@@ -128,13 +128,13 @@ public class AttackCircuit extends AbstractShionRelic implements CustomBottleRel
     @Override
     public void atBattleStartPreDraw() {
         super.atBattleStartPreDraw();
-        if(this.card != null && !AbstractDungeon.player.drawPile.group.isEmpty())
-        for (AbstractCard ca : AbstractDungeon.player.drawPile.group) {
-            if (this.card.uuid == ca.uuid) {
-                AbstractDungeon.player.drawPile.removeCard(ca);
-                break;
+        if (this.card != null && !AbstractDungeon.player.drawPile.group.isEmpty())
+            for (AbstractCard ca : AbstractDungeon.player.drawPile.group) {
+                if (this.card.uuid == ca.uuid) {
+                    AbstractDungeon.player.drawPile.removeCard(ca);
+                    break;
+                }
             }
-        }
     }
 
 

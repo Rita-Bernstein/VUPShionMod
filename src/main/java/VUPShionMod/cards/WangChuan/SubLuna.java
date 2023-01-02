@@ -18,7 +18,7 @@ public class SubLuna extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(SubLuna.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/wangchuan/wc21.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -33,11 +33,8 @@ public class SubLuna extends AbstractWCCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ImmuneDamagePower(p)));
-        addToBot(new ApplyPowerAction(p,p,new SubLunaPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new SubLunaPower(p, 1)));
         addToBot(new ReducePowerAction(p, p, StiffnessPower.POWER_ID, this.magicNumber));
-
-        if(this.upgraded)
-            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
 
         addToBot(new ApplyPowerAction(p, p, new EnergizedBluePower(p, 1)));
         addToBot(new PressEndTurnButtonAction());

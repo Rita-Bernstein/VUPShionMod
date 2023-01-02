@@ -25,7 +25,7 @@ public class HourHand extends AbstractShionKuroisuCard {
         this.baseBlock = 12;
         this.selfRetain = true;
         this.cardsToPreview = new QuickScreen();
-        ExhaustiveVariable.setBaseValue(this,2);
+        ExhaustiveVariable.setBaseValue(this, 2);
 
         this.secondaryM = this.baseSecondaryM = 1;
     }
@@ -33,7 +33,7 @@ public class HourHand extends AbstractShionKuroisuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
         addToBot(new GainBlockAction(p, p, this.block));
-        addToBot(new MakeLoadedCardAction(new QuickScreen(),true));
+        addToBot(new MakeLoadedCardAction(new QuickScreen(), true));
     }
 
     @Override

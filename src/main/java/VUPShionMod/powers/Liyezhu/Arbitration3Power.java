@@ -33,6 +33,6 @@ public class Arbitration3Power extends AbstractShionPower {
     @Override
     public void onDuelSin() {
         flash();
-        addToBot(new HealAction(this.owner,this.owner,this.amount));
+        addToBot(new HealAction(this.owner, this.owner, this.amount));
     }
 }

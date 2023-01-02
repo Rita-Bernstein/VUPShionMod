@@ -38,10 +38,10 @@ public class FourAttackPower extends AbstractShionPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type == AbstractCard.CardType.ATTACK){
+        if (card.type == AbstractCard.CardType.ATTACK) {
             this.amount--;
             if (this.amount == 0) {
-                addToTop(new ReducePowerAction(this.owner, this.owner, POWER_ID,1));
+                addToTop(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
             }
         }
 

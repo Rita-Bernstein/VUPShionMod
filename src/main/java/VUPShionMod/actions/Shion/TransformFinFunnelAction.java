@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import java.util.ArrayList;
 
 public class TransformFinFunnelAction extends AbstractGameAction {
-    private AbstractFinFunnel finFunnel;
+    private final AbstractFinFunnel finFunnel;
 
 
     public TransformFinFunnelAction(AbstractFinFunnel finFunnel) {
@@ -17,28 +17,27 @@ public class TransformFinFunnelAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (finFunnel.index < 0) {
+        if (FinFunnelManager.getFinFunnelList().isEmpty() || finFunnel == null || finFunnel.index < 0) {
             this.isDone = true;
             return;
         }
 
-
         ArrayList<AbstractFinFunnel> finFunnelArrayList = new ArrayList<>();
 
         if (!DissectingFinFunnel.ID.equals(this.finFunnel.id)) {
-            finFunnelArrayList.add(new DissectingFinFunnel(this.finFunnel.getLevel(),finFunnel.index));
+            finFunnelArrayList.add(new DissectingFinFunnel(this.finFunnel.getLevel(), finFunnel.index));
         }
         if (!GravityFinFunnel.ID.equals(this.finFunnel.id)) {
-            finFunnelArrayList.add(new GravityFinFunnel(this.finFunnel.getLevel(),finFunnel.index));
+            finFunnelArrayList.add(new GravityFinFunnel(this.finFunnel.getLevel(), finFunnel.index));
         }
         if (!InvestigationFinFunnel.ID.equals(this.finFunnel.id)) {
-            finFunnelArrayList.add(new InvestigationFinFunnel(this.finFunnel.getLevel(),finFunnel.index));
+            finFunnelArrayList.add(new InvestigationFinFunnel(this.finFunnel.getLevel(), finFunnel.index));
         }
         if (!MatrixFinFunnel.ID.equals(this.finFunnel.id)) {
-            finFunnelArrayList.add(new MatrixFinFunnel(this.finFunnel.getLevel(),finFunnel.index));
+            finFunnelArrayList.add(new MatrixFinFunnel(this.finFunnel.getLevel(), finFunnel.index));
         }
         if (!PursuitFinFunnel.ID.equals(this.finFunnel.id)) {
-            finFunnelArrayList.add(new PursuitFinFunnel(this.finFunnel.getLevel(),finFunnel.index));
+            finFunnelArrayList.add(new PursuitFinFunnel(this.finFunnel.getLevel(), finFunnel.index));
         }
 
 

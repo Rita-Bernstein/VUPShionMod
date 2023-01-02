@@ -27,7 +27,7 @@ public class WeatherEyePower extends AbstractShionPower {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        if(card.type == AbstractCard.CardType.ATTACK){
+        if (card.type == AbstractCard.CardType.ATTACK) {
             flash();
             addToBot(new GainBlockAction(this.owner, this.owner, this.amount));
         }

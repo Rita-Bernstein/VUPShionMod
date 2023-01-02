@@ -44,6 +44,7 @@ public class StarBreaker extends AbstractShionRelic {
             addToBot(new LoseCorGladiiAction(amount));
         }
     }
+
     @Override
     public void obtain() {
         AbstractPlayer player = AbstractDungeon.player;

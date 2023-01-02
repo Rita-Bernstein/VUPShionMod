@@ -23,7 +23,7 @@ public class BleedingPower extends AbstractShionPower implements HealthBarRender
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private AbstractCreature source;
+    private final AbstractCreature source;
 
     public BleedingPower(AbstractCreature owner, AbstractCreature source, int amount) {
         this.name = powerStrings.NAME;
@@ -33,9 +33,7 @@ public class BleedingPower extends AbstractShionPower implements HealthBarRender
         this.amount = amount;
         this.type = PowerType.DEBUFF;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/BleedingPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/BleedingPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("BleedingPower");
     }
 
 
@@ -59,9 +57,9 @@ public class BleedingPower extends AbstractShionPower implements HealthBarRender
     @Override
     public void onSpecificTrigger() {
         flash();
-        if(AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
-            addToBot(new GainBlockAction(AbstractDungeon.player,this.amount));
-        }else {
+        if (AbstractDungeon.player.hasPower(DefensiveOrderPower.POWER_ID)) {
+            addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
+        } else {
             addToTop(new LoseHPAction(this.owner, null, this.amount));
         }
     }

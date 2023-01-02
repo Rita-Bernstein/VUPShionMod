@@ -1,6 +1,6 @@
 package VUPShionMod.actions.Liyezhu;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Liyezhu.DivineJudgmentPower;
 import VUPShionMod.powers.Liyezhu.ExemptionPower;

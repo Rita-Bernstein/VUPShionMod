@@ -26,8 +26,7 @@ public class PreExecutionPower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PoisePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PoisePower36.png")), 0, 0, 36, 36);
+        loadShionRegion("PoisePower");
     }
 
 
@@ -38,6 +37,6 @@ public class PreExecutionPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 }

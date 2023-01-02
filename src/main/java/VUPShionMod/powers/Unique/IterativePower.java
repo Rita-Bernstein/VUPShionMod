@@ -19,8 +19,7 @@ public class IterativePower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = -1;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IterativePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IterativePower32.png")), 0, 0, 32, 32);
+        loadShionRegion("IterativePower");
         updateDescription();
     }
 

@@ -25,7 +25,7 @@ public class ExitiumMaeroris extends AbstractLiyezhuCard {
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 5;
         this.selfRetain = true;
-        this.exhaust= true;
+        this.exhaust = true;
         this.tags.add(CardTagsEnum.Suffering_CARD);
     }
 
@@ -34,7 +34,7 @@ public class ExitiumMaeroris extends AbstractLiyezhuCard {
         addToBot(new ExitiumMaerorisExhaustAction());
         addToBot(new ExpertiseAction(p, BaseMod.MAX_HAND_SIZE));
         addToBot(new GainEnergyAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber)));
     }
 
     @Override

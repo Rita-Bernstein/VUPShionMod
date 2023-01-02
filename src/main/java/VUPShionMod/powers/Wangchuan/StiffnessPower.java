@@ -26,10 +26,9 @@ public class StiffnessPower extends AbstractShionPower {
         this.owner = owner;
         this.amount = amount;
         updateDescription();
-
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/StiffnessPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/StiffnessPower36.png")), 0, 0, 36, 36);
         this.type = PowerType.DEBUFF;
+
+        loadShionRegion("StiffnessPower");
     }
 
     private int getTrigger() {

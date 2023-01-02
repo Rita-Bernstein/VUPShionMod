@@ -33,7 +33,7 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
         this.secondaryM = this.baseSecondaryM = 1;
 
         this.timesUpgraded = upgrades;
-        vupCardSetBanner(CardRarity.RARE,CardType.ATTACK);
+        vupCardSetBanner(CardRarity.RARE, CardType.ATTACK);
     }
 
     public HolySlashDown() {
@@ -53,8 +53,8 @@ public class HolySlashDown extends AbstractShionLiyezhuCard {
         for (int i = 0; i < this.magicNumber; i++) {
             addToBot(new SFXAction("ATTACK_FAST"));
             if (m != null)
-            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 020 Slash1 Ray Right", m.hb.cX, m.hb.cY,
-                    125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
+                addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 020 Slash1 Ray Right", m.hb.cX, m.hb.cY,
+                        125.0f, 125.0f, 2.0f * Settings.scale, 2, false)));
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         }
 

@@ -25,8 +25,7 @@ public class AntisequencerPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("CircuitPower");
         updateDescription();
         this.isTurnBased = true;
     }
@@ -40,7 +39,7 @@ public class AntisequencerPower extends AbstractShionPower {
     public void atStartOfTurn() {
         flash();
         for (int i = 0; i < this.amount; i++)
-        addToBot(new PlayTopCardAction((AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false));
+            addToBot(new PlayTopCardAction((AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false));
     }
 
 }

@@ -20,8 +20,8 @@ import java.util.ArrayList;
 
 public class TurnTriggerAllFinFunnelAction extends AbstractGameAction {
     private AbstractMonster target;
-    private boolean random;
-    private AbstractPlayer p = AbstractDungeon.player;
+    private final boolean random;
+    private final AbstractPlayer p = AbstractDungeon.player;
     private boolean isDoubleDamage = false;
     private boolean isMultiDamage = false;
     private boolean isApplyBleeding = false;

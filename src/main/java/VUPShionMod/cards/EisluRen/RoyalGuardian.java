@@ -37,9 +37,9 @@ public class RoyalGuardian extends AbstractEisluRenCard {
             addToBot(new VFXAction(p, new FlameBarrierEffect(p.hb.cX, p.hb.cY), 0.5F));
         }
 
-        addToBot(new ApplyPowerAction(p,p,new RoyalGuardianPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new RoyalGuardianPower(p, this.magicNumber)));
         addToBot(new AddWingShieldDamageReduceAction(this.secondaryM));
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
     @Override

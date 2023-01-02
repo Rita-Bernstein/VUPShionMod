@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import java.util.ArrayList;
 
 public class RandomDiscardPileToHandAction extends AbstractGameAction {
-    private AbstractPlayer player;
-    private int numberOfCards;
+    private final AbstractPlayer player;
+    private final int numberOfCards;
 
     public RandomDiscardPileToHandAction(int numberOfCards) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;

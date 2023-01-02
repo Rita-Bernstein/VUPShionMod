@@ -26,18 +26,18 @@ public class FinFunnelCharge implements Disposable {
     public String name = TEXT[0];
     public String description = TEXT[1];
 
-    private  Texture body;
+    private Texture body;
     private Texture light;
     private Texture max;
     private int count = 0;
 
-    private Color color = Color.WHITE.cpy();
+    private final Color color = Color.WHITE.cpy();
 
     public float cX = 0.0f;
     public float cY = 0.0f;
     public float scale = 0.55f;
 
-    private Hitbox hb;
+    private final Hitbox hb;
 
     private float lightTimer = 0.0f;
 
@@ -103,7 +103,7 @@ public class FinFunnelCharge implements Disposable {
                 sb.draw(this.light, this.cX - this.light.getWidth() / 2.0f, this.cY - this.light.getHeight(),
                         this.light.getWidth() / 2.0f, this.light.getHeight(), this.light.getWidth(), this.light.getHeight(),
                         this.scale * Settings.scale, this.scale * Settings.scale,
-                        -45.0f + (int) (actual / 2) * 15.0f,
+                        -45.0f + (actual / 2) * 15.0f,
                         0, 0, this.light.getWidth(), this.light.getHeight(), false, false);
             }
 
@@ -112,7 +112,7 @@ public class FinFunnelCharge implements Disposable {
         if (this.max != null && this.count >= 15) {
             if (this.count >= 16) {
                 this.color.a = 1.0f;
-            }else {
+            } else {
                 this.lightTimer += Gdx.graphics.getDeltaTime() * 4.0f;
                 this.color.a = ((float) Math.cos(this.lightTimer) + 1.0f) * 0.2f + 0.6f;
             }

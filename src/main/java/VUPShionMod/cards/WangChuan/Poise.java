@@ -25,11 +25,11 @@ public class Poise extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new PoisePower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new StiffnessEndIncreasePower(p,this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new PoisePower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new StiffnessEndIncreasePower(p, this.secondaryM)));
 
-        if(this.upgraded)
-            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new IntensaPower(p, 1)));
     }
 
     @Override

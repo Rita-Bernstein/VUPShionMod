@@ -45,7 +45,7 @@ public class SavageSeries extends AbstractLiyezhuCard {
         }
 
         addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, this.secondaryM)));
-        addToBot(new DrawCardAction( 1));
+        addToBot(new DrawCardAction(1));
 
         if (this.upgraded)
             addToBot(new DuelSinAction());

@@ -78,7 +78,7 @@ public class BreakAppointment extends AbstractImageEvent {
                         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
                         for (AbstractCard card : VUPShionMod.mi_Cards) {
-                            if(card.rarity != AbstractCard.CardRarity.BASIC) {
+                            if (card.rarity != AbstractCard.CardRarity.BASIC) {
                                 group.addToTop(card);
                                 UnlockTracker.markCardAsSeen(card.cardID);
                             }

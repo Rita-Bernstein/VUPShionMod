@@ -28,8 +28,7 @@ public class DimensionSplitterAriaUpgradePower extends AbstractShionPower {
         this.ID = POWER_ID + UUID.randomUUID();
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/DimensionSplitterAriaUpgrade128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/DimensionSplitterAriaUpgrade32.png")), 0, 0, 32, 32);
+        loadShionRegion("DimensionSplitterAriaUpgrade");
         updateDescription();
     }
 

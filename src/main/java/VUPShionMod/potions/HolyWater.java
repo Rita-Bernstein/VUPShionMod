@@ -65,11 +65,7 @@ public class HolyWater extends AbstractShionImagePotion {
         if (AbstractDungeon.actionManager.turnHasEnded && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             return false;
         }
-        if ((AbstractDungeon.getCurrRoom()).event != null && (AbstractDungeon.getCurrRoom()).event instanceof com.megacrit.cardcrawl.events.shrines.WeMeetAgain) {
-            return false;
-        }
-
-        return true;
+        return (AbstractDungeon.getCurrRoom()).event == null || !((AbstractDungeon.getCurrRoom()).event instanceof com.megacrit.cardcrawl.events.shrines.WeMeetAgain);
     }
 
     public int getPotency(int ascensionLevel) {

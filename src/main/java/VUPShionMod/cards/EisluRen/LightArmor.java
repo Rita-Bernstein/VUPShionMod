@@ -23,7 +23,7 @@ public class LightArmor extends AbstractEisluRenCard {
 
     public LightArmor() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.selfRetain =true;
+        this.selfRetain = true;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -34,7 +34,6 @@ public class LightArmor extends AbstractEisluRenCard {
             addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ChangeStanceAction(LightArmorStance.STANCE_ID));
     }
-
 
 
     @Override

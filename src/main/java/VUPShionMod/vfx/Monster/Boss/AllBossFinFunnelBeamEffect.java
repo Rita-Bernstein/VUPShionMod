@@ -17,8 +17,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 
 public class AllBossFinFunnelBeamEffect extends AbstractGameEffect {
-    private ArrayList<AbstractBossFinFunnel> finFunnels;
-    private ArrayList<FinFunnelBeamData> dataList = new ArrayList<>();
+    private final ArrayList<AbstractBossFinFunnel> finFunnels;
+    private final ArrayList<FinFunnelBeamData> dataList = new ArrayList<>();
     private boolean isFlipped = false;
     private static TextureAtlas.AtlasRegion img;
     private boolean posUpdated = false;
@@ -53,7 +53,7 @@ public class AllBossFinFunnelBeamEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if(this.finFunnels.isEmpty()){
+        if (this.finFunnels.isEmpty()) {
             this.isDone = true;
             return;
         }

@@ -23,16 +23,16 @@ public class Entrench extends AbstractEisluRenCard {
 
     public Entrench() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainWingShieldChargeAction(this.magicNumber));
         addToBot(new AddWingShieldDamageReduceAction(WingShield.getWingShield().getDamageReduce()));
-        if(!this.upgraded)
-        addToBot(new ApplyPowerAction(p,p,new EntanglePower(p)));
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        if (!this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new EntanglePower(p)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
 

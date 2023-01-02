@@ -17,7 +17,7 @@ public class ExhaustRarityCardAction extends AbstractGameAction {
         this.actionType = AbstractGameAction.ActionType.WAIT;
     }
 
-    private float startingDuration;
+    private final float startingDuration;
     private AbstractCard card;
 
     public void update() {

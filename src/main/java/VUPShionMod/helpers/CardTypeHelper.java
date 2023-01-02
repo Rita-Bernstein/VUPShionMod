@@ -56,7 +56,6 @@ public class CardTypeHelper {
     public static void renderRotatedText(SpriteBatch sb, BitmapFont font, String msg, float x, float y, float offsetX, float offsetY, float angle, boolean roundY, Color c, AbstractCard.CardRarity rarity) {
 
 
-
         if (roundY) {
             y = Math.round(y) + 0.25F;
         }
@@ -82,7 +81,7 @@ public class CardTypeHelper {
         sb.setTransformMatrix(mx4);
         sb.begin();
 
-        switch (rarity){
+        switch (rarity) {
             case RARE:
                 RenderTypeColor.typeRareColor.a = c.a;
                 font.setColor(RenderTypeColor.typeRareColor);

@@ -14,10 +14,10 @@ import java.util.ArrayList;
 
 public class SelectCardToHandAction extends AbstractGameAction {
     private boolean retrieveCard;
-    private ArrayList<AbstractCard> cards;
-    private boolean freeForTurn;
-    private boolean isExhaust;
-    private boolean isEthereal;
+    private final ArrayList<AbstractCard> cards;
+    private final boolean freeForTurn;
+    private final boolean isExhaust;
+    private final boolean isEthereal;
 
     public SelectCardToHandAction(ArrayList<AbstractCard> cards, boolean freeForTurn, boolean isExhaust, boolean isEthereal) {
         this.retrieveCard = false;

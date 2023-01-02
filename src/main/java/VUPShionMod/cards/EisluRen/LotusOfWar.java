@@ -22,7 +22,7 @@ public class LotusOfWar extends AbstractEisluRenCard {
 
     public LotusOfWar() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.selfRetain =true;
+        this.selfRetain = true;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
@@ -43,7 +43,6 @@ public class LotusOfWar extends AbstractEisluRenCard {
 
         return super.canUse(p, m);
     }
-
 
 
     @Override

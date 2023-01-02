@@ -12,7 +12,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class LoseWingShieldAction extends AbstractGameAction {
-    private int effect ;
+    private final int effect;
+
     public LoseWingShieldAction(int amount) {
         if (WingShield.getWingShield().getCount() - amount < 0) {
             this.amount = WingShield.getWingShield().getCount();
@@ -32,7 +33,7 @@ public class LoseWingShieldAction extends AbstractGameAction {
             return;
         }
 
-        if(AbstractDungeon.player.hasPower(SupportTimeDrivenPower.POWER_ID)){
+        if (AbstractDungeon.player.hasPower(SupportTimeDrivenPower.POWER_ID)) {
             isDone = true;
             return;
         }

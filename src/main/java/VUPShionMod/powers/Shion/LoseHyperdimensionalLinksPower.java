@@ -21,9 +21,7 @@ public class LoseHyperdimensionalLinksPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/LoseHyperdimensionalLinksPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/LoseHyperdimensionalLinksPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("LoseHyperdimensionalLinksPower");
         updateDescription();
         this.isTurnBased = true;
     }
@@ -36,6 +34,6 @@ public class LoseHyperdimensionalLinksPower extends AbstractShionPower {
     @Override
     public void atStartOfTurn() {
         addToBot(new LoseHyperdimensionalLinksAction(true));
-        addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
+        addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
     }
 }

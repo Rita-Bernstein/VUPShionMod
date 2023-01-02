@@ -23,7 +23,6 @@ public class SubspacePursuerPower extends AbstractShionPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-
     public SubspacePursuerPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -32,8 +31,7 @@ public class SubspacePursuerPower extends AbstractShionPower {
         this.amount2 = 15;
         updateDescription();
         this.isTurnBased = false;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower32.png")), 0, 0, 32, 32);
+        loadShionRegion("ContortTimePower");
 
     }
 

@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 import java.util.ArrayList;
 
 public class MinionGroup {
-    private ArrayList<AbstractPlayerMinion> minions = new ArrayList<>();
+    private final ArrayList<AbstractPlayerMinion> minions = new ArrayList<>();
 
     public MinionGroup() {
     }
@@ -88,7 +88,7 @@ public class MinionGroup {
                         public void update() {
                             if (minion.targetMonster == null) {
                                 minion.refreshTargetMonster();
-                            }else if(minion.targetMonster.isDeadOrEscaped()){
+                            } else if (minion.targetMonster.isDeadOrEscaped()) {
                                 minion.refreshTargetMonster();
                             }
 

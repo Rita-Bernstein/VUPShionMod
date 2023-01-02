@@ -32,9 +32,9 @@ public class ArmedToTheTeeth extends AbstractShionMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("SHION_16"));
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("ArmedToTheTeeth"),1.0f));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("ArmedToTheTeeth"), 1.0f));
         if (p.hasPower(HyperdimensionalLinksPower.POWER_ID)) {
-            int amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount*2;
+            int amount = p.getPower(HyperdimensionalLinksPower.POWER_ID).amount * 2;
             addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
             addToBot(new LoseHyperdimensionalLinksAction(true));
         }

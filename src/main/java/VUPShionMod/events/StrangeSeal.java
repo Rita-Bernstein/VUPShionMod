@@ -22,7 +22,7 @@ public class StrangeSeal extends AbstractImageEvent {
 
     private int curScreen = 0;
 
-    private AbstractRelic sealRelic = new WhiteSeal();
+    private final AbstractRelic sealRelic = new WhiteSeal();
 
 
     public StrangeSeal() {

@@ -26,8 +26,8 @@ public class Skip extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.upgraded)
-        addToBot(new ScryAction(this.secondaryM));
+        if (this.upgraded)
+            addToBot(new ScryAction(this.secondaryM));
         addToBot(new DrawCardAction(this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }

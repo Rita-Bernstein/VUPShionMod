@@ -17,7 +17,7 @@ public class BetterHealAction extends AbstractGameAction {
         this.actionType = ActionType.HEAL;
     }
 
-    public BetterHealAction(AbstractCreature target, AbstractCreature source, int amount,boolean showEffect) {
+    public BetterHealAction(AbstractCreature target, AbstractCreature source, int amount, boolean showEffect) {
         this.setValues(target, source, amount);
         this.startDuration = this.duration;
         if (Settings.FAST_MODE) {
@@ -35,7 +35,7 @@ public class BetterHealAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == this.startDuration) {
-            this.target.heal(this.amount,this.showEffect);
+            this.target.heal(this.amount, this.showEffect);
         }
 
         this.tickDuration();

@@ -33,7 +33,7 @@ public class GameOverScreenPatches {
     public static class PatchVictoryScreen {
         @SpireInsertPatch(rloc = 197)
         public static SpireReturn<Void> Insert(VictoryScreen _instance) {
-            ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(_instance, GameOverScreen.class, "stats");
+            ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(_instance, GameOverScreen.class, "stats");
             if (SaveHelper.isHardMod) {
                 stats.add(new GameOverStat(specialBossStatString.TEXT[5], specialBossStatString.TEXT[5], Integer.toString(500)));
 

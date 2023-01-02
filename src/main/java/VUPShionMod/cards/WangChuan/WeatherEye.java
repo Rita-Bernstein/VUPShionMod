@@ -22,7 +22,7 @@ public class WeatherEye extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new WeatherEyePower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new WeatherEyePower(p, this.magicNumber)));
     }
 
     @Override

@@ -27,9 +27,7 @@ public class ReinsOfWarPower extends AbstractShionPower {
         this.name = NAME;
         this.owner = owner;
         this.ID = POWER_ID;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReinsOfWarPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReinsOfWarPower36.png")), 0, 0, 36, 36);
-
+        loadShionRegion("ReinsOfWarPower");
         updateDescription();
     }
 
@@ -51,46 +49,46 @@ public class ReinsOfWarPower extends AbstractShionPower {
         AbstractFinFunnel finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).getFinFunnel(DissectingFinFunnel.ID);
 
         if (finFunnel != null) {
-            if(finFunnel.getLevel() >= 26){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
+            if (finFunnel.getLevel() >= 26) {
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 3)));
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 2)));
                 addToBot(new GainEnergyAction(2));
                 return;
             }
 
-            if(finFunnel.getLevel() >= 21){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,3)));
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
+            if (finFunnel.getLevel() >= 21) {
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 3)));
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 2)));
                 addToBot(new GainEnergyAction(1));
                 return;
             }
 
-            if(finFunnel.getLevel() >= 16){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
+            if (finFunnel.getLevel() >= 16) {
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 2)));
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 2)));
                 addToBot(new GainEnergyAction(1));
                 return;
             }
 
-            if(finFunnel.getLevel() >= 11){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,2)));
+            if (finFunnel.getLevel() >= 11) {
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 2)));
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 2)));
                 return;
             }
 
-            if(finFunnel.getLevel() >= 6){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,2)));
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,1)));
+            if (finFunnel.getLevel() >= 6) {
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 2)));
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 1)));
                 return;
             }
 
-            if(finFunnel.getLevel() >= 4){
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new StrengthPower(this.owner,1)));
-                addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,1)));
+            if (finFunnel.getLevel() >= 4) {
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1)));
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 1)));
                 return;
             }
 
-            addToBot(new ApplyPowerAction(this.owner,this.owner,new DexterityPower(this.owner,1)));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 1)));
         }
     }
 }

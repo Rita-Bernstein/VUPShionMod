@@ -1,11 +1,14 @@
 package VUPShionMod.monsters.HardModeBoss.Liyezhu;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.Liyezhu.CrimsonDelugePower;
 import VUPShionMod.powers.Monster.BossLiyezhu.CrimsonDelugeBossPower;
 import VUPShionMod.powers.Monster.BossShion.*;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Liyezhu.OriLiyezhu;
+import VUPShionMod.skins.sk.Shion.OriShion;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -74,7 +77,7 @@ public class OriLiyezhuBoss extends AbstractVUPShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
 
-
+        addToBot(new VersusEffectAction(OriLiyezhu.ID));
         addToBot(new ApplyPowerAction(this, this, new CrimsonDelugeBossPower(this, 5)));
         addToBot(new ApplyPowerAction(this, this, new ThornsPower(this, 1)));
         addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Judge")));
@@ -108,8 +111,8 @@ public class OriLiyezhuBoss extends AbstractVUPShionBoss {
                 addToBot(new ApplyPowerAction(this, this, new CombustPower(this, 1, 5) {
                     @Override
                     public void atEndOfTurn(boolean isPlayer) {
-
                     }
+
                     @Override
                     public void atStartOfTurn() {
                         flash();
@@ -149,7 +152,7 @@ public class OriLiyezhuBoss extends AbstractVUPShionBoss {
                 this.moveCount++;
                 break;
             case 5:
-                setMove((byte) 3, Intent.ATTACK_BUFF, damage.get(1).base, 4, true);
+                setMove((byte) 5, Intent.ATTACK_BUFF, damage.get(1).base, 4, true);
                 break;
 
         }

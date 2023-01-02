@@ -14,7 +14,7 @@ import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
 public class ShionGoldVictoryEffect extends AbstractGameEffect {
 
-    private float speed;
+    private final float speed;
 
     private static TextureAtlas Atlas = null;
     private static com.esotericsoftware.spine.Skeleton Skeleton;
@@ -26,17 +26,18 @@ public class ShionGoldVictoryEffect extends AbstractGameEffect {
         this.speed = speed;
         this.duration = 3.0f;
 
-        loadanimation(this.speed);
+        loadAnimation(this.speed);
     }
 
     public ShionGoldVictoryEffect() {
         this(1.0f);
     }
 
-    private static void loadanimation(float timeScale) {
+    private void loadAnimation(float timeScale) {
         Atlas = new TextureAtlas(Gdx.files.internal("VUPShionMod/characters/Shion/portrait_spine/Shion.atlas"));
         SkeletonJson json = new SkeletonJson(Atlas);
-        json.setScale(Settings.scale * 1.0f);
+
+        json.setScale(Settings.scale * getScale());
         Data = json.readSkeletonData(Gdx.files.internal("VUPShionMod/characters/Shion/portrait_spine/Shion.json"));
 
 
@@ -47,9 +48,25 @@ public class ShionGoldVictoryEffect extends AbstractGameEffect {
         StateData.setDefaultMix(0.2F);
 
         State.setTimeScale(1.0f * timeScale);
-        Skeleton.setPosition(0.0f * Settings.scale, -40.0f * Settings.scale);
+
+        if (Settings.isFourByThree)
+            Skeleton.setPosition(-160.0f * Settings.xScale, 0.0f * Settings.yScale);
+        else {
+            Skeleton.setPosition(0.0f * Settings.xScale, -40.0f * Settings.yScale);
+        }
 
         State.setAnimation(0, "idle", true);
+    }
+
+    private float getScale() {
+        if (Settings.isFourByThree)
+            return 1.3f;
+
+        if (Settings.isSixteenByTen) {
+            return 1.12f;
+        }
+
+        return 1.0f;
     }
 
 

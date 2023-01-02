@@ -22,8 +22,8 @@ public class Execution extends AbstractLiyezhuCard {
 
     public Execution() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.magicNumber = this.baseMagicNumber = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
     }
 
     @Override

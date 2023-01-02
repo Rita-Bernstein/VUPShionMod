@@ -27,9 +27,9 @@ public class Whisk extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DuelSinAction());
-        addToBot(new ApplyPowerAction(m,p,new WeakPower(m,this.magicNumber,false)));
-        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,this.secondaryM)));
-        if(this.upgraded)
+        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false)));
+        addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, this.secondaryM)));
+        if (this.upgraded)
             addToBot(new DrawCardAction(1));
     }
 

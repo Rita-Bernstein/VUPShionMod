@@ -29,11 +29,13 @@ public class NoSkillsPower extends AbstractShionPower {
 
 
     @Override
-    public void playApplyPowerSfx() { CardCrawlGame.sound.play("POWER_ENTANGLED", 0.05F); }
+    public void playApplyPowerSfx() {
+        CardCrawlGame.sound.play("POWER_ENTANGLED", 0.05F);
+    }
 
     @Override
     public void updateDescription() {
-        this.description =DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0];
     }
 
     @Override

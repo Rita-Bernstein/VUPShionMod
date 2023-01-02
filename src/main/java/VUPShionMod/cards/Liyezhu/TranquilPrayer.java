@@ -39,7 +39,7 @@ public class TranquilPrayer extends AbstractLiyezhuCard {
                 if (isInPrayer())
                     addToTop(new ApplyPrayerAction(new SinPrayer(secondaryM, magicNumber)));
 
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new EdgeOfSquall();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

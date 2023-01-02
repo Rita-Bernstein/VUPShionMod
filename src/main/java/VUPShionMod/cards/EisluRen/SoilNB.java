@@ -48,7 +48,7 @@ public class SoilNB extends AbstractEisluRenCard {
         };
         addToBot(new XActionAction(actionConsumer, this.freeToPlayOnce, this.energyOnUse));
 
-        addToTop(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToTop(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
     @Override

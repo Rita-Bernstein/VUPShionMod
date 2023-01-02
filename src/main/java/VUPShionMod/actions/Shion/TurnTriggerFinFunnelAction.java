@@ -25,9 +25,9 @@ import java.util.ArrayList;
 public class TurnTriggerFinFunnelAction extends AbstractGameAction {
     private AbstractMonster target;
     private boolean random = false;
-    private AbstractPlayer p = AbstractDungeon.player;
+    private final AbstractPlayer p = AbstractDungeon.player;
     private boolean isMultiDamage = false;
-    private String forceFinFunnel;
+    private String forceFinFunnel = "None";
 
     private boolean isCard = false;
 
@@ -36,10 +36,23 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
         this.duration = 1.0f;
     }
 
+    public TurnTriggerFinFunnelAction(AbstractMonster target, boolean isCard) {
+        this.target = target;
+        this.duration = 1.0f;
+    }
+
     public TurnTriggerFinFunnelAction(AbstractMonster target, String forceFinFunnel) {
         this.target = target;
         this.duration = 1.0f;
         this.forceFinFunnel = forceFinFunnel;
+    }
+
+
+    public TurnTriggerFinFunnelAction(AbstractMonster target, boolean ALLFinFunnels, boolean isCard) {
+        this.target = target;
+        this.duration = 1.0f;
+        this.forceFinFunnel = "ALL";
+        this.isCard = isCard;
     }
 
     public TurnTriggerFinFunnelAction(AbstractMonster target, String forceFinFunnel, boolean isCard) {
@@ -80,17 +93,27 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
                 effect += AbstractDungeon.player.getPower(ReleaseFormMinamiPower.POWER_ID).amount * 0.5f;
             }
 
-            AbstractFinFunnel finFunnel;
-            if (this.forceFinFunnel.equals(""))
-                finFunnel = availableFinFunnel.get(AbstractDungeon.miscRng.random(availableFinFunnel.size() - 1));
-            else
-                finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).getFinFunnel(this.forceFinFunnel);
+            ArrayList<AbstractFinFunnel> finFunnels = new ArrayList<>();
+            if (this.forceFinFunnel.equals("ALL")) {
+                finFunnels = FinFunnelManager.getFinFunnelList();
+            } else {
+                if (this.forceFinFunnel.equals("None")) {
+                    finFunnels.add(availableFinFunnel.get(AbstractDungeon.miscRng.random(availableFinFunnel.size() - 1)));
+                } else
+                    finFunnels = AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).getFinFunnels(this.forceFinFunnel);
+            }
 
 
+            if (finFunnels == null || finFunnels.isEmpty()) {
+                this.isDone = true;
+                return;
+            }
 
 //攻击Action
+
+
             if (isMultiDamage) {
-                for (AbstractFinFunnel f : availableFinFunnel) {
+                for (AbstractFinFunnel f : finFunnels) {
 
 //            结算被动效果
                     if (AbstractDungeon.getMonsters().areMonstersBasicallyDead())
@@ -104,18 +127,23 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
 
                 }
             } else {
-                finFunnel.powerToApply(this.target, effect, true);
+                for (AbstractFinFunnel f : finFunnels) {
+                    f.powerToApply(this.target, effect, true);
 
-                addToTop(new DamageAction(this.target, new DamageInfo(null,
-                        finFunnel.getFinalDamage(), DamageInfo.DamageType.THORNS), AttackEffect.FIRE));
+                    addToTop(new DamageAction(this.target, new DamageInfo(null,
+                            f.getFinalDamage(), DamageInfo.DamageType.THORNS), AttackEffect.FIRE));
+                }
             }
 
 
             if (isMultiDamage) {
-                addToTop(new VFXAction(new FinFunnelBeamEffect(finFunnel, p.flipHorizontal), 0.4f));
+                for (AbstractFinFunnel f : finFunnels)
+                    addToTop(new VFXAction(new FinFunnelBeamEffect(f, p.flipHorizontal), 0.4f));
             } else {
-                addToTop(new VFXAction(new BorderFlashEffect(Color.SKY)));
-                addToTop(new VFXAction(p, new FinFunnelSmallLaserEffect(finFunnel, this.target), 0.3f, true));
+                for (AbstractFinFunnel f : finFunnels) {
+                    addToTop(new VFXAction(new BorderFlashEffect(Color.SKY)));
+                    addToTop(new VFXAction(p, new FinFunnelSmallLaserEffect(f, this.target), 0.3f, true));
+                }
 
             }
 
@@ -123,5 +151,9 @@ public class TurnTriggerFinFunnelAction extends AbstractGameAction {
         }
 
         this.isDone = true;
+    }
+
+
+    private void triggerEffect(AbstractFinFunnel finFunnel) {
     }
 }

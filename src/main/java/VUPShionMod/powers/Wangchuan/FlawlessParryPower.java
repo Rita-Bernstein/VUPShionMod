@@ -23,8 +23,9 @@ public class FlawlessParryPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PetalsFallPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PetalsFallPower36.png")), 0, 0, 36, 36);
+        loadShionRegion("PetalsFallPower");
+
+
         updateDescription();
     }
 

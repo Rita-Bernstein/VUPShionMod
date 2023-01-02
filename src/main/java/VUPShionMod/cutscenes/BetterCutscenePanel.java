@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class BetterCutscenePanel extends CutscenePanel {
-    private Texture img;
-    private Color color;
-    private float timeScale;
+    private final Texture img;
+    private final Color color;
+    private final float timeScale;
 
     public BetterCutscenePanel(String imgUrl, String sfx, float timeScale) {
         super(imgUrl, sfx);

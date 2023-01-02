@@ -26,11 +26,12 @@ public class BossPursuitFinFunnel extends AbstractBossFinFunnel {
     public static final String ID = PursuitFinFunnel.class.getSimpleName();
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(PursuitFinFunnel.class.getSimpleName()));
 
-    public BossPursuitFinFunnel(int level, AbstractCreature owner, int skinIndex){
-        this(level,owner,-1,skinIndex);
+    public BossPursuitFinFunnel(int level, AbstractCreature owner, int skinIndex) {
+        this(level, owner, -1, skinIndex);
     }
-    public BossPursuitFinFunnel(int level, AbstractCreature owner,int index, int skinIndex) {
-        super(owner, ID,skinIndex);
+
+    public BossPursuitFinFunnel(int level, AbstractCreature owner, int index, int skinIndex) {
+        super(owner, ID, skinIndex);
         upgradeLevel(level);
         this.effect = 1;
 
@@ -54,15 +55,14 @@ public class BossPursuitFinFunnel extends AbstractBossFinFunnel {
     }
 
     @Override
-    protected void initAnimation(int index){
-        if(this.index<0) {
+    protected void initAnimation(int index) {
+        if (this.index < 0) {
             this.state.setAnimation(0, "weapon3_come_in", false);
             this.state.addAnimation(0, "weapon3_idle", true, 0.0f);
-        }else {
+        } else {
             super.initAnimation(index);
         }
     }
-
 
 
     @Override
@@ -94,19 +94,19 @@ public class BossPursuitFinFunnel extends AbstractBossFinFunnel {
     public void powerToApply(AbstractCreature target, float amountScale, boolean top) {
         if (target != null && (int) Math.floor(getFinalEffect() * amountScale) > 0) {
             if (top)
-                addToTop(new ApplyPowerAction(target, this.owner, new PursuitPower(target, this.owner,(int) Math.floor(getFinalEffect() * amountScale))));
+                addToTop(new ApplyPowerAction(target, this.owner, new PursuitPower(target, this.owner, (int) Math.floor(getFinalEffect() * amountScale))));
             else
-                addToBot(new ApplyPowerAction(target, this.owner, new PursuitPower(target, this.owner,(int) Math.floor(getFinalEffect() * amountScale))));
+                addToBot(new ApplyPowerAction(target, this.owner, new PursuitPower(target, this.owner, (int) Math.floor(getFinalEffect() * amountScale))));
         }
         super.powerToApply(target, amountScale, top);
     }
 
     @Override
     public void updatePosition(Skeleton skeleton) {
-        if(this.index<0) {
+        if (this.index < 0) {
             body = this.skeleton.findBone("weapon3_bone");
             muzzle = this.skeleton.findBone("weapon3_muzzle");
-        }else {
+        } else {
             body = this.skeleton.findBone("weapon" + (index + 1) + "_bone");
             muzzle = this.skeleton.findBone("weapon" + (index + 1) + "_muzzle");
         }
@@ -118,12 +118,12 @@ public class BossPursuitFinFunnel extends AbstractBossFinFunnel {
     @Override
     public void playFinFunnelAnimation(String id) {
         if (id.equals(this.id)) {
-            if(this.index<0) {
+            if (this.index < 0) {
                 this.state.setAnimation(0, "weapon3_attack", false).setTimeScale(3.0f);
                 this.state.addAnimation(0, "weapon3_idle", true, 0.0F);
-            }else {
-                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(2.0f);
-                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F).setTimeScale(0.5f);
+            } else {
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(1.9f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
             }
         }
     }

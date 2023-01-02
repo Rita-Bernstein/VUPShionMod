@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class ReadAction extends AbstractGameAction {
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ReadAction"))).TEXT;
-    private AbstractPlayer player;
-    private int numberOfCards;
+    private final AbstractPlayer player;
+    private final int numberOfCards;
 
     public ReadAction(int numberOfCards) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -40,7 +40,7 @@ public class ReadAction extends AbstractGameAction {
                     cardsToCopy.add(c);
             }
 
-            if(cardsToCopy.isEmpty()) {
+            if (cardsToCopy.isEmpty()) {
                 this.isDone = true;
                 return;
             }

@@ -28,6 +28,6 @@ public class MartyrVessel extends AbstractShionRelic {
     public void atBattleStart() {
         flash();
         addToBot(new ChangeStanceAction(PrayerStance.STANCE_ID));
-        addToBot(new MakeTempCardInDiscardAction(new Miracle(),2));
+        addToBot(new MakeTempCardInDiscardAction(new Miracle(), 2));
     }
 }

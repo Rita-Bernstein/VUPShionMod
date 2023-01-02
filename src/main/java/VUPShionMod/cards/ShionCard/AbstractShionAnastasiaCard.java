@@ -1,6 +1,7 @@
 package VUPShionMod.cards.ShionCard;
 
 
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardTagsEnum;
 
 public abstract class AbstractShionAnastasiaCard extends AbstractVUPShionCard {

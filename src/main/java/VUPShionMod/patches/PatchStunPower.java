@@ -100,7 +100,7 @@ public class PatchStunPower {
                     m.setMove((byte) 0, AbstractMonster.Intent.DEBUFF);
                     break;
                 case 1:
-                    m.setMove((byte) 1,  AbstractMonster.Intent.UNKNOWN);
+                    m.setMove((byte) 1, AbstractMonster.Intent.UNKNOWN);
                     break;
                 case 2:
                     m.setMove((byte) 2, AbstractMonster.Intent.UNKNOWN);

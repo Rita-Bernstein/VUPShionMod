@@ -13,9 +13,9 @@ import java.util.Set;
 
 public class LargPortraitFlashInEffect extends AbstractGameEffect {
     private Texture img;
-    private Color color = Color.WHITE.cpy();
+    private final Color color = Color.WHITE.cpy();
     private float offSet_x;
-    private float offSet_y;
+    private final float offSet_y;
 
     private boolean flipX = false;
 
@@ -44,7 +44,7 @@ public class LargPortraitFlashInEffect extends AbstractGameEffect {
         if (this.duration > 2.0F) {
             this.offSet_x = Settings.WIDTH * (this.duration - 2.0f) * 4;
         } else {
-            this.offSet_x = (-200.0f * (2.0f - this.duration) * 0.5f) * Settings.scale;
+            this.offSet_x = (-200.0f * (2.0f - this.duration) * 0.5f) * Settings.xScale / getScale();
         }
 
         if (this.duration < 0.5f) {
@@ -63,21 +63,29 @@ public class LargPortraitFlashInEffect extends AbstractGameEffect {
 //        sb.setBlendFunction(770, 771);
 
         if (this.img != null) {
-
             if (this.flipX)
                 sb.draw(this.img, Settings.WIDTH / 2.0f + 300.0f * Settings.scale - this.img.getWidth() / 2.0f - offSet_x,
                         Settings.HEIGHT / 2.0f - this.img.getHeight() / 2.0f + offSet_y,
                         this.img.getWidth() / 2.0f, this.img.getHeight() / 2.0f, this.img.getWidth(), this.img.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, this.img.getWidth(), this.img.getHeight(), false, false);
+                        getScale() * scale * Settings.scale, getScale() * scale * Settings.scale, 0.0F, 0, 0, this.img.getWidth(), this.img.getHeight(), false, false);
 
             else
                 sb.draw(this.img, Settings.WIDTH / 2.0f - 300.0f * Settings.scale - this.img.getWidth() / 2.0f + offSet_x,
                         Settings.HEIGHT / 2.0f - this.img.getHeight() / 2.0f + offSet_y,
                         this.img.getWidth() / 2.0f, this.img.getHeight() / 2.0f, this.img.getWidth(), this.img.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, this.img.getWidth(), this.img.getHeight(), false, false);
-
-
+                        getScale() * scale * Settings.scale, getScale() * scale * Settings.scale, 0.0F, 0, 0, this.img.getWidth(), this.img.getHeight(), false, false);
         }
+    }
+
+    private float getScale() {
+        if (Settings.isFourByThree)
+            return 1.4f;
+
+        if (Settings.isSixteenByTen) {
+            return 1.12f;
+        }
+
+        return 1.0f;
     }
 
     @Override

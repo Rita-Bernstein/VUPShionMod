@@ -19,8 +19,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 
 public class MonstersFinFunnelSmallLaserEffect extends AbstractGameEffect {
-    private AbstractFinFunnel finFunnel;
-    private ArrayList<AbstractMonster> targets;
+    private final AbstractFinFunnel finFunnel;
+    private final ArrayList<AbstractMonster> targets;
     private float sX;
     private float sY;
     private float dX;
@@ -60,13 +60,13 @@ public class MonstersFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if(this.finFunnel == null){
+        if (this.finFunnel == null) {
             this.isDone = true;
             return;
         }
 
         if ((duration == 0.8F && !isFast) || (this.duration == 0.55f && isFast)) {
-               finFunnel.playFinFunnelAnimation(finFunnel.id);
+            finFunnel.playFinFunnelAnimation(finFunnel.id);
         }
 
 
@@ -90,15 +90,15 @@ public class MonstersFinFunnelSmallLaserEffect extends AbstractGameEffect {
             }
 
             if (this.duration > this.startingDuration / 2.0F) {
-                if(isFast)
+                if (isFast)
                     this.color.a = Interpolation.pow2In.apply(1.0F, 0.0F, (this.duration - 0.225F) * 8.0F);
                 else
                     this.color.a = Interpolation.pow2In.apply(1.0F, 0.0F, (this.duration - 0.25F) * 4.0F);
             } else {
-                if(isFast)
-                this.color.a = Interpolation.bounceIn.apply(0.0F, 1.0F, this.duration * 8.0F);
+                if (isFast)
+                    this.color.a = Interpolation.bounceIn.apply(0.0F, 1.0F, this.duration * 8.0F);
                 else
-                this.color.a = Interpolation.bounceIn.apply(0.0F, 1.0F, this.duration * 4.0F);
+                    this.color.a = Interpolation.bounceIn.apply(0.0F, 1.0F, this.duration * 4.0F);
             }
         }
 

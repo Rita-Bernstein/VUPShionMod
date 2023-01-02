@@ -46,9 +46,9 @@ public class SpeedShot extends AbstractShionCard {
             int times = upgraded ? effect + 2 : effect + 1;
 
             if (times < FinFunnelManager.getFinFunnelList().size()) {
-                addToTop(new TurnTriggerFinFunnelsAction(times,true));
+                addToTop(new TurnTriggerFinFunnelsAction(times, true));
             } else {
-                addToTop(new TurnTriggerFinFunnelsAction(times % FinFunnelManager.getFinFunnelList().size(),true));
+                addToTop(new TurnTriggerFinFunnelsAction(times % FinFunnelManager.getFinFunnelList().size(), true));
 
                 for (int i = 0; i < times / FinFunnelManager.getFinFunnelList().size(); i++)
                     addToTop(new TurnTriggerAllFinFunnelAction(true, true));

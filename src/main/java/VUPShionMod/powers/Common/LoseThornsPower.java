@@ -20,10 +20,10 @@ public class LoseThornsPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
         this.isTurnBased = true;
         this.type = PowerType.DEBUFF;
+        loadShionRegion("Clock");
     }
 
     @Override

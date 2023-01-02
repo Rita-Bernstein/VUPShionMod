@@ -32,7 +32,7 @@ public class OriShion extends AbstractSkin {
         this.unlockString = uiString.TEXT[3];
 
         this.portraitAtlasPath = "VUPShionMod/characters/Shion/victory/background_break";
-        loadAnimation(1.16f);
+        loadAnimation(getScale(1.16f));
         setAnimation();
 
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
@@ -42,7 +42,17 @@ public class OriShion extends AbstractSkin {
         this.atlasURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.atlas";
         this.jsonURL = "VUPShionMod/characters/Shion/animation/STANCE_ZY_YTD_without_weapon.json";
         this.renderScale = 2.0f;
+    }
 
+    private float getScale(float scale) {
+        if (Settings.isFourByThree)
+            return scale * 1.3f;
+
+        if (Settings.isSixteenByTen) {
+            return scale * 1.12f;
+        }
+
+        return scale;
     }
 
     @Override
@@ -52,7 +62,11 @@ public class OriShion extends AbstractSkin {
 
     @Override
     public void setPos() {
-        portraitSkeleton.setPosition(-40.0f * Settings.scale, -140.0f * Settings.scale);
+        if (Settings.isFourByThree) {
+            portraitSkeleton.setPosition(-220.0f * Settings.xScale, -140.0f * Settings.yScale);
+        } else {
+            portraitSkeleton.setPosition(-40.0f * Settings.xScale, -140.0f * Settings.yScale);
+        }
     }
 
     @Override

@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 
 public class AbstractAtlasGameEffect extends AbstractGameEffect {
-    private Info info;
+    private final Info info;
     public TextureAtlas atlas;
-    private Animation curAnimation;
+    private final Animation curAnimation;
     public float scale = 1.0F;
 
     private float frameTimer = 0.0F;
@@ -21,7 +21,7 @@ public class AbstractAtlasGameEffect extends AbstractGameEffect {
     public boolean flipX = false;
     public boolean flipY = false;
 
-    public AbstractAtlasGameEffect(boolean replace, String id, float x, float y, float originalX, float originalY, float scale, int delay, boolean loop,boolean flipX) {
+    public AbstractAtlasGameEffect(boolean replace, String id, float x, float y, float originalX, float originalY, float scale, int delay, boolean loop, boolean flipX) {
         this.atlas = new TextureAtlas(Gdx.files.internal("VUPShionMod/img/vfx/Atlas/" + id + ".atlas"));
 
         this.xPosition = x;
@@ -64,32 +64,32 @@ public class AbstractAtlasGameEffect extends AbstractGameEffect {
     }
 
 
-    public AbstractAtlasGameEffect(String id, float x, float y, float originalX, float originalY, float scale, int delay, boolean loop,boolean flipX) {
-        this(false, id, x, y, originalX, originalY, scale, delay, loop,flipX);
+    public AbstractAtlasGameEffect(String id, float x, float y, float originalX, float originalY, float scale, int delay, boolean loop, boolean flipX) {
+        this(false, id, x, y, originalX, originalY, scale, delay, loop, flipX);
     }
 
     public AbstractAtlasGameEffect(String id, float x, float y, float originalX, float originalY, float scale, int delay, boolean loop) {
-        this(false, id, x, y, originalX, originalY, scale, delay, loop,false);
+        this(false, id, x, y, originalX, originalY, scale, delay, loop, false);
     }
 
     public AbstractAtlasGameEffect(String id, float x, float y, float originalX, float originalY, float scale, int delay) {
-        this(false, id, x, y, originalX, originalY, scale, delay, false,false);
+        this(false, id, x, y, originalX, originalY, scale, delay, false, false);
     }
 
     public AbstractAtlasGameEffect(String id, float x, float y, float originalX, float originalY, float scale, boolean loop) {
-        this(false, id, x, y, originalX, originalY, scale, 3, loop,false);
+        this(false, id, x, y, originalX, originalY, scale, 3, loop, false);
     }
 
     public AbstractAtlasGameEffect(String id, float x, float y, float originalX, float originalY, float scale) {
-        this(false, id, x, y, originalX, originalY, scale, 3, false,false);
+        this(false, id, x, y, originalX, originalY, scale, 3, false, false);
     }
 
     public AbstractAtlasGameEffect(String id, float x, float y, float originalX, float originalY) {
-        this(false, id, x, y, originalX, originalY, 2.1f * Settings.scale, 3, false,false);
+        this(false, id, x, y, originalX, originalY, 2.1f * Settings.scale, 3, false, false);
     }
 
     public AbstractAtlasGameEffect(String id, float x, float y, float scale) {
-        this(false, id, x, y, 0.0f, 0.0f, scale, 3, false,false);
+        this(false, id, x, y, 0.0f, 0.0f, scale, 3, false, false);
     }
 
     public void update() {
@@ -121,7 +121,7 @@ public class AbstractAtlasGameEffect extends AbstractGameEffect {
 
     @Override
     public void dispose() {
-        if(this.atlas != null) {
+        if (this.atlas != null) {
             atlas.dispose();
             atlas = null;
         }

@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
 public class OuroborosLaserBeamEffect extends AbstractGameEffect {
-    private float x;
-    private float y;
+    private final float x;
+    private final float y;
     private static final float DUR = 2.0F;
     private static TextureAtlas.AtlasRegion img;
     private boolean playedSfx = false;
@@ -34,7 +34,7 @@ public class OuroborosLaserBeamEffect extends AbstractGameEffect {
 
     public void update() {
         if (!this.playedSfx) {
-            AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(new Color(1.0f,0.36f,0.63f,1.0f)));
+            AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(new Color(1.0f, 0.36f, 0.63f, 1.0f)));
             this.playedSfx = true;
             CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM");
             CardCrawlGame.screenShake.rumble(2.0F);

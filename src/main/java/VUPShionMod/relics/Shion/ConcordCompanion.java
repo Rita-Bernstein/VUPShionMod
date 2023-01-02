@@ -1,7 +1,9 @@
 package VUPShionMod.relics.Shion;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.PlayTmpCardAction;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
+import VUPShionMod.cards.ShionCard.minami.SetupFinFunnel;
 import VUPShionMod.finfunnels.AbstractFinFunnel;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.powers.Shion.ConcordPower;
@@ -12,6 +14,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -42,7 +45,22 @@ public class ConcordCompanion extends AbstractShionRelic {
     @Override
     public void atBattleStart() {
         flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new GainHyperdimensionalLinksAction(6));
         addToBot(new GainEnergyAction(2));
+
+
+        AbstractCard c = null;
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+            if (card instanceof SetupFinFunnel) {
+                c = card.makeStatEquivalentCopy();
+                break;
+            }
+        }
+
+        if (c != null)
+            addToBot(new PlayTmpCardAction(c));
+
+
     }
 }

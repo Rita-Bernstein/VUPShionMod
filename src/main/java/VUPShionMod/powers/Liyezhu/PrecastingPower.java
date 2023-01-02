@@ -28,5 +28,4 @@ public class PrecastingPower extends AbstractShionPower {
     }
 
 
-
 }

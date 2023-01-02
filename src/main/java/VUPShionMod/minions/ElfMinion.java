@@ -8,6 +8,7 @@ import VUPShionMod.powers.Monster.PlagaAMundo.FlyPower;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -182,20 +183,29 @@ public class ElfMinion extends AbstractPlayerMinion {
         switch (this.nextMove) {
             case 0:
                 if (this.targetMonster != null) {
-                    addToBot(new AnimateFastAttackAction(this));
+                    if (Settings.FAST_MODE)
+                        addToBot(new AnimateFastAttackAction(this));
+                    else
+                        addToBot(new AnimateSlowAttackAction(this));
                     addToBot(new DamageAction(this.targetMonster, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
                     addToBot(new GainRefundChargeAction(1));
                 }
                 break;
             case 1:
                 if (this.targetMonster != null) {
-                    addToBot(new AnimateFastAttackAction(this));
+                    if (Settings.FAST_MODE)
+                        addToBot(new AnimateFastAttackAction(this));
+                    else
+                        addToBot(new AnimateSlowAttackAction(this));
                     addToBot(new DamageAction(this.targetMonster, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
                     addToBot(new GainRefundChargeAction(2));
                 }
                 break;
             case 2:
-                addToBot(new AnimateFastAttackAction(this));
+                if (Settings.FAST_MODE)
+                    addToBot(new AnimateFastAttackAction(this));
+                else
+                    addToBot(new AnimateSlowAttackAction(this));
                 addToBot(new DamageAllEnemiesAction(this, DamageInfo.createDamageMatrix(this.damage.get(2).base, false),
                         DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
                 addToBot(new GainRefundChargeAction(3));
@@ -242,7 +252,7 @@ public class ElfMinion extends AbstractPlayerMinion {
             }
 
             for (Iterator<AbstractPower> s = this.powers.iterator(); s.hasNext(); ) {
-                AbstractPower p = (AbstractPower) s.next();
+                AbstractPower p = s.next();
 
                 if (p.type == AbstractPower.PowerType.DEBUFF) {
                     s.remove();

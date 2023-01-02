@@ -33,9 +33,9 @@ public class LiYueSheng extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 10;
         this.secondaryM = this.baseSecondaryM = 10;
-        this.exhaust =true;
-        this.selfRetain =true;
-        GraveField.grave.set(this,true);
+        this.exhaust = true;
+        this.selfRetain = true;
+        GraveField.grave.set(this, true);
     }
 
     @Override
@@ -43,17 +43,17 @@ public class LiYueSheng extends AbstractLiyezhuCard {
         addToBot(new SFXAction("STANCE_ENTER_WRATH"));
         addToBot(new VFXAction(new BorderFlashEffect(Color.SCARLET, true)));
         addToBot(new VFXAction(new StanceChangeParticleGenerator(p.hb.cX, p.hb.cY, "Wrath")));
-        addToBot(new ApplyPowerAction(p,p,new SwearPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new SwearPower(p, 1)));
 
         int count = 0;
-        for(AbstractPower power : AbstractDungeon.player.powers){
-            if(power.type == AbstractPower.PowerType.DEBUFF)
+        for (AbstractPower power : AbstractDungeon.player.powers) {
+            if (power.type == AbstractPower.PowerType.DEBUFF)
                 count++;
         }
 
         addToBot(new RemoveDebuffsAction(p));
-        addToBot(new LoseHPAction(p,p,count*this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,count*this.secondaryM)));
+        addToBot(new LoseHPAction(p, p, count * this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, count * this.secondaryM)));
     }
 
     @Override

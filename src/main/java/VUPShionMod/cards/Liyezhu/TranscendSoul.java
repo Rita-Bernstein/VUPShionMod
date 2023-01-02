@@ -27,9 +27,9 @@ public class TranscendSoul extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AddSansAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new TranscendSoulPower(p,this.secondaryM)));
-        if(this.upgraded)
-        addToBot(new ApplyPowerAction(p, p, new TranscendSoul2Power(p, 1)));
+        addToBot(new ApplyPowerAction(p, p, new TranscendSoulPower(p, this.secondaryM)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new TranscendSoul2Power(p, 1)));
     }
 
     @Override

@@ -46,7 +46,7 @@ public class SansMeterPatches {
             method = "update"
     )
     public static class SleepWithCatcherPatch {
-        @SpireInsertPatch(rloc = 24,localvars = {"rewardCards"})
+        @SpireInsertPatch(rloc = 24, localvars = {"rewardCards"})
         public static SpireReturn<Void> Insert(CampfireSleepEffect _instance, List<AbstractCard> rewardCards) {
             if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
                 rewardCards.addAll(returnPrayerCard());

@@ -1,5 +1,7 @@
 package VUPShionMod.monsters.Rita;
 
+import VUPShionMod.actions.Unique.VersusEffectAction;
+import VUPShionMod.skins.sk.Shion.OriShion;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,7 +24,8 @@ public abstract class AbstractMonsterIntent {
         this.DIALOG = CardCrawlGame.languagePack.getMonsterStrings(m.id).DIALOG;
     }
 
-    public void initDamage(){}
+    public void initDamage() {
+    }
 
     public void usePreBattleAction() {
 

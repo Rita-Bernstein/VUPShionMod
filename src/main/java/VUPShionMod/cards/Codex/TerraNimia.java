@@ -24,7 +24,7 @@ public class TerraNimia extends AbstractCodexCard implements SpawnModificationCa
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
         this.timesUpgraded = upgrades;
-        this.exhaust= true;
+        this.exhaust = true;
         this.parentCardID = TerraRapida.ID;
 
     }
@@ -37,13 +37,13 @@ public class TerraNimia extends AbstractCodexCard implements SpawnModificationCa
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
-                addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new TwoSkillPower(p, 1)));
                 break;
             case 1:
-                addToBot(new ApplyPowerAction(p,p,new FourSkillPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new FourSkillPower(p, 1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p,p,new TwoSkillPower(p,2)));
+                addToBot(new ApplyPowerAction(p, p, new TwoSkillPower(p, 2)));
                 break;
         }
     }
@@ -53,15 +53,15 @@ public class TerraNimia extends AbstractCodexCard implements SpawnModificationCa
     public void upgrade() {
         super.upgrade();
         if (timesUpgraded <= 2) {
-            if (this.timesUpgraded == 1){
+            if (this.timesUpgraded == 1) {
                 upgradeMagicNumber(2);
-                this.isEthereal =true;
+                this.isEthereal = true;
             }
 
 
-            if (this.timesUpgraded == 2){
-                this.isEthereal =false;
-                this.exhaust =false;
+            if (this.timesUpgraded == 2) {
+                this.isEthereal = false;
+                this.exhaust = false;
                 upgradeMagicNumber(-2);
                 upgradeBaseCost(0);
             }

@@ -15,15 +15,15 @@ import java.util.ArrayList;
 
 public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
     private AbstractMonster target;
-    private boolean random;
+    private final boolean random;
     private String forceFinFunnel = "None";
     private int loops = 1;
     private boolean isCard = true;
 
-    private boolean isDoubleDamage = false;
-    private boolean isMultiDamage = false;
-    private boolean isApplyBleeding = false;
-    private boolean isGainBlock = false;
+    private final boolean isDoubleDamage = false;
+    private final boolean isMultiDamage = false;
+    private final boolean isApplyBleeding = false;
+    private final boolean isGainBlock = false;
 
     public TriggerFinFunnelPassiveAction(AbstractMonster target) {
         this.target = target;
@@ -51,19 +51,19 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
         this.forceFinFunnel = forceFinFunnel;
     }
 
-    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel,boolean isCard) {
+    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel, boolean isCard) {
         this.target = target;
         this.random = false;
         this.forceFinFunnel = forceFinFunnel;
         this.isCard = isCard;
     }
 
-    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel, int loops,boolean isCard) {
-        this(target, forceFinFunnel,isCard);
+    public TriggerFinFunnelPassiveAction(AbstractMonster target, String forceFinFunnel, int loops, boolean isCard) {
+        this(target, forceFinFunnel, isCard);
         this.loops = loops;
     }
 
-    public TriggerFinFunnelPassiveAction(String forceFinFunnel, boolean random,boolean isCard) {
+    public TriggerFinFunnelPassiveAction(String forceFinFunnel, boolean random, boolean isCard) {
         this.random = random;
         this.forceFinFunnel = forceFinFunnel;
         this.isCard = isCard;
@@ -79,15 +79,33 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
 
 //        初始化敌人数组， 初始化浮游炮数组并获取。一些玩家power情况
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractFinFunnel f = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
+        ArrayList<AbstractFinFunnel> finFunnels = new ArrayList<>();
+
 
 //        强制转换浮游炮
 
-        if (!forceFinFunnel.equals("None"))
-            f = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(forceFinFunnel);
+        if (!forceFinFunnel.equals("None")) {
+            finFunnels = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnels(forceFinFunnel);
+        } else {
+            finFunnels.add(AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel);
+        }
 
 
+        if (finFunnels == null || finFunnels.isEmpty()) {
+            this.isDone = true;
+            return;
+        }
 
+        for(AbstractFinFunnel finFunnel : finFunnels){
+            triggerEffect(finFunnel);
+        }
+
+
+        this.isDone = true;
+    }
+
+
+    private void triggerEffect(AbstractFinFunnel f) {
 //        计算循环
 //        if (p.hasPower(ReleaseFormMinamiPower.POWER_ID))
 //            this.loops *= p.getPower(ReleaseFormMinamiPower.POWER_ID).amount + 1;
@@ -101,13 +119,13 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
 
 //            获取敌人
 
-        if ((AbstractDungeon.player.hasPower(WideAreaLockingPower.POWER_ID) && f.id.equals(PursuitFinFunnel.ID))){
-            for (int i = 0; i < this.loops; i++){
+        if ((AbstractDungeon.player.hasPower(WideAreaLockingPower.POWER_ID) && f.id.equals(PursuitFinFunnel.ID))) {
+            for (int i = 0; i < this.loops; i++) {
                 for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                     f.powerToApply(mo);
                 }
             }
-        }else {
+        } else {
             for (int i = 0; i < this.loops; i++) {
 
                 if (random || this.target == null) {
@@ -128,7 +146,5 @@ public class TriggerFinFunnelPassiveAction extends AbstractGameAction {
                 }
             }
         }
-
-        this.isDone = true;
     }
 }

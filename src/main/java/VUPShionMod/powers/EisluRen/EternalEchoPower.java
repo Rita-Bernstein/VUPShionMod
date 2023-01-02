@@ -21,10 +21,9 @@ public class EternalEchoPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/EternalEchoPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/EternalEchoPower48.png")), 0, 0, 48, 48);
         updateDescription();
         this.isTurnBased = true;
+        loadShionRegion("EternalEchoPower");
 
     }
 
@@ -34,7 +33,7 @@ public class EternalEchoPower extends AbstractShionPower {
     }
 
     @Override
-    public void onLoseEnergy(int e) {
-        addToBot(new GainRefundChargeAction(e*this.amount));
+    public void onLoseEnergy(int e,int energyUsed) {
+        addToBot(new GainRefundChargeAction(energyUsed * this.amount));
     }
 }

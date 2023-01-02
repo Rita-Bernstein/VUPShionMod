@@ -23,7 +23,7 @@ public class Anticoagulation extends AbstractShionMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(m, p, new AnticoagulationPower(m, this.magicNumber),this.magicNumber));
+        addToBot(new ApplyPowerAction(m, p, new AnticoagulationPower(m, this.magicNumber), this.magicNumber));
     }
 
 

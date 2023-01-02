@@ -23,7 +23,7 @@ public class SFFPatches {
     public static class SFFReadPatch {
         @SpirePrefixPatch
         public static SpireReturn<InputStream> returnStance(FileHandle _instance) {
-            File file = ReflectionHacks.getPrivate(_instance,FileHandle.class,"file");
+            File file = ReflectionHacks.getPrivate(_instance, FileHandle.class, "file");
             String suffix = file.getName();
             suffix = suffix.substring(suffix.lastIndexOf('.') + 1);
             if (suffix.equals("sff")) {
@@ -40,7 +40,7 @@ public class SFFPatches {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                return SpireReturn.Return(input) ;
+                return SpireReturn.Return(input);
             } else {
                 return SpireReturn.Continue();
             }

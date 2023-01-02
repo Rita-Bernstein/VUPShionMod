@@ -23,10 +23,10 @@ public class PetalsFall extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PetalsFallPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PetalsFallPower(p, this.magicNumber)));
 
-        if(this.upgraded)
-            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new IntensaPower(p, 1)));
     }
 
     @Override

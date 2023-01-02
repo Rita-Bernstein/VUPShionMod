@@ -12,10 +12,10 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 import java.util.ArrayList;
 
 public class LoadCardDiscardPileToTopOfDeckAction extends AbstractGameAction {
-    private AbstractPlayer p;
-    private boolean upgraded;
+    private final AbstractPlayer p;
+    private final boolean upgraded;
 
-    public LoadCardDiscardPileToTopOfDeckAction(AbstractCreature source,boolean upgraded) {
+    public LoadCardDiscardPileToTopOfDeckAction(AbstractCreature source, boolean upgraded) {
         this.p = AbstractDungeon.player;
         setValues(null, source, this.amount);
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;

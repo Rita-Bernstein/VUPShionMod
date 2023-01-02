@@ -24,8 +24,8 @@ public class SupportTimeDriven extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new SupportTimeDrivenPower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new SupportTimeDrivenPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
     @Override

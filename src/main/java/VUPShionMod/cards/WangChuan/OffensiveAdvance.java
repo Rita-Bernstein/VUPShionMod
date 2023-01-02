@@ -22,7 +22,7 @@ public class OffensiveAdvance extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new DemonFormPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DemonFormPower(p, this.magicNumber)));
     }
 
     @Override

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class GainShieldAction extends AbstractGameAction {
-    private int amount;
+    private final int amount;
 
     public GainShieldAction(AbstractCreature target, int amount) {
         this.amount = amount;

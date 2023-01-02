@@ -53,7 +53,7 @@ public class Shion extends CustomPlayer {
     public static final int START_HP = 70;
     public static final int START_GOLD = 99;
     public static boolean firstAttackAnimation = true;
-    private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
+    private final Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
@@ -74,7 +74,7 @@ public class Shion extends CustomPlayer {
     };
 
     public Shion(String name, PlayerClass setClass) {
-        super(name, setClass, new EnergyOrbShion(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
+        super(name, setClass, new EnergyOrbShion(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), null, null);
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
 
@@ -143,6 +143,7 @@ public class Shion extends CustomPlayer {
 
     @Override
     public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
+        ArrayList<AbstractCard> pool = super.getCardPool(tmpPool);
 
         if (ModHelper.isModEnabled("Red Cards")) {
             CardLibrary.addRedCards(tmpPool);
@@ -169,15 +170,17 @@ public class Shion extends CustomPlayer {
         tmpPool.add(new StrikeIntegrated());
         tmpPool.add(new CollaborativeInvestigation());
 
-        tmpPool.add(new AquaConstans());
-        tmpPool.add(new AquaRapida());
-        tmpPool.add(new VentusRapidus());
-        tmpPool.add(new VentusNimius());
-        tmpPool.add(new TonitrusConstans());
-        tmpPool.add(new TonitrusRapidus());
+        if(SkinManager.getSkinCharacter(0).reskinCount == 3) {
+            tmpPool.add(new AquaConstans());
+            tmpPool.add(new AquaRapida());
+            tmpPool.add(new TonitrusConstans());
+            tmpPool.add(new TonitrusRapidus());
+            tmpPool.add(new VentusRapidus());
+            tmpPool.add(new VentusNimius());
 
+        }
 
-        if(!tmpPool.isEmpty()) {
+        if (!tmpPool.isEmpty()) {
             removeCardPool(tmpPool,
 
                     pr -> SkinManager.getSkinCharacter(0).reskinCount == 3 &&
@@ -198,12 +201,12 @@ public class Shion extends CustomPlayer {
                             pr instanceof LockIndication,
 
                     pr -> pr instanceof GravityRepression
-                    || pr instanceof TrackingAnalysis
-                    || pr instanceof CollaborativeInvestigation
-                    );
+                            || pr instanceof TrackingAnalysis
+                            || pr instanceof CollaborativeInvestigation
+            );
         }
 
-        return super.getCardPool(tmpPool);
+        return pool;
     }
 
 

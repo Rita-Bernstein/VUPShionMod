@@ -65,10 +65,10 @@ public class MotherRosario extends AbstractWCCard {
         }
 
         addToBot(new ApplyStiffnessAction(this.magicNumber));
-        if(this.timesUpgraded >=2){
-            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
+        if (this.timesUpgraded >= 2) {
+            addToBot(new ApplyPowerAction(p, p, new IntensaPower(p, 1)));
             addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 2)));
-        }else {
+        } else {
             addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
         }
     }

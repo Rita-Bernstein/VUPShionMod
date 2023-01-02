@@ -35,6 +35,6 @@ public class EnhancedWeapon extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new EnhancedWeaponPower(p,this.magicNumber),this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new EnhancedWeaponPower(p, this.magicNumber), this.magicNumber));
     }
 }

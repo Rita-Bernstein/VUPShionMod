@@ -23,8 +23,7 @@ public class TurnObruorPower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MagiamObruorPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MagiamObruorPower36.png")), 0, 0, 36, 36);
+        loadShionRegion("MagiamObruorPower");
     }
 
     @Override

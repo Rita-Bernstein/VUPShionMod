@@ -23,13 +23,11 @@ public class YonggukCityTroyPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IronWallPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IronWallPower48.png")), 0, 0, 48, 48);
         updateDescription();
         this.isTurnBased = true;
         this.priority = 10;
 
-
+        loadShionRegion("IronWallPower");
     }
 
     @Override

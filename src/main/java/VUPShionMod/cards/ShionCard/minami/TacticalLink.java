@@ -32,13 +32,13 @@ public class TacticalLink extends AbstractShionMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
-                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
+                125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
         addToBot(new TriggerFinFunnelPassiveAction(m));
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
 
-        addToBot(new MakeLoadedCardAction(new QuickAttack(),1));
-        if(this.upgraded)
-        addToBot(new MakeLoadedCardAction(new QuickDefend(),1));
+        addToBot(new MakeLoadedCardAction(new QuickAttack(), 1));
+        if (this.upgraded)
+            addToBot(new MakeLoadedCardAction(new QuickDefend(), 1));
     }
 
     public AbstractCard makeCopy() {

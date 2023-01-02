@@ -11,7 +11,7 @@ public class AbstractSkinLiyezhu extends AbstractSkinCharacter {
 
     public AbstractSkinLiyezhu() {
         super();
-        if(this.skins.isEmpty()) {
+        if (this.skins.isEmpty()) {
             this.skins.add(new OriLiyezhu(0));
         }
     }

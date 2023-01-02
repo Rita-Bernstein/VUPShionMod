@@ -41,10 +41,10 @@ public class SkinInfoLabel {
 
     public void update() {
 
-        this.cX = CharacterSelectScreenPatches.skinManager.panel_x + (200.0f + 60.0f * this.index)
-                * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+        this.cX = CharacterSelectScreenPatches.skinManager.panel_x + (180.0f * (Settings.BIG_TEXT_MODE ? 0.8f : 1.0f) + 60.0f * this.index)
+                * CharacterSelectScreenPatches.skinManager.scale * Settings.xScale;
         this.cY = Settings.HEIGHT * 0.5f + (430.0f - 80.0f * this.index)
-                * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+                * CharacterSelectScreenPatches.skinManager.scale * Settings.yScale;
 
 
         this.hb.move(this.cX + 200.0f * this.scale * Settings.scale, this.cY);
@@ -68,7 +68,7 @@ public class SkinInfoLabel {
                 this.cY - 15.0f * this.scale * Settings.scale,
                 0.0F, 0.0f,
                 2.0F, 2.0f,
-                (200.0f - 30.0f * this.index) * this.scale * Settings.scale, this.scale * Settings.scale,
+                (240.0f - 30.0f * this.index) * this.scale * Settings.scale, this.scale * Settings.scale,
                 0.0f,
                 0, 0,
                 2, 2,
@@ -97,11 +97,11 @@ public class SkinInfoLabel {
                 false, false);
 
 
-        float scaleX =  FontHelper.cardTitleFont.getData().scaleX;
-        float scaleY =  FontHelper.cardTitleFont.getData().scaleY;
+        float scaleX = FontHelper.cardTitleFont.getData().scaleX;
+        float scaleY = FontHelper.cardTitleFont.getData().scaleY;
         FontHelper.cardTitleFont.getData().setScale(0.8F);
         FontHelper.renderFontLeft(sb, FontHelper.cardTitleFont, this.msg, this.cX + 30.0f * this.scale * Settings.scale, this.cY, this.color);
-        FontHelper.cardTitleFont.getData().setScale(scaleX,scaleY);
+        FontHelper.cardTitleFont.getData().setScale(scaleX, scaleY);
 
         this.hb.render(sb);
 

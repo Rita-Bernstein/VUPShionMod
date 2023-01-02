@@ -14,7 +14,7 @@ public class SinPower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private boolean justApplied = true;
+    private final boolean justApplied = true;
 
     public SinPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -24,8 +24,7 @@ public class SinPower extends AbstractShionPower {
         updateDescription();
         isTurnBased = true;
         this.priority = 0;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/SinPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/SinPower48.png"), 0, 0, 48, 48);
+        loadShionRegion("SinPower");
     }
 
 

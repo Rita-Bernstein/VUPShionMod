@@ -39,23 +39,23 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
     public static final String[] TEXT = uiStrings.TEXT;
     protected static final byte ESCAPE = 99;
     public float deathTimer;
-    private Color nameColor;
-    private Color nameBgColor;
+    private final Color nameColor;
+    private final Color nameBgColor;
     protected Texture img;
     public boolean tintFadeOutCalled;
     protected HashMap<Byte, String> moveSet;
     public boolean escaped;
     public boolean escapeNext;
-    private PowerTip intentTip;
+    private final PowerTip intentTip;
     public MinionType type;
     private float hoverTimer;
     public boolean cannotEscape;
     public ArrayList<DamageInfo> damage;
     private float intentParticleTimer;
     private float intentAngle;
-    private ArrayList<AbstractGameEffect> intentVfx;
+    private final ArrayList<AbstractGameEffect> intentVfx;
     public byte nextMove;
-    private BobEffect bobEffect;
+    private final BobEffect bobEffect;
     private static final float INTENT_HB_W = 64.0F * Settings.scale;
     public Hitbox intentHb;
     public MinionIntent intent;
@@ -69,7 +69,7 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
     private int intentBaseDmg;
     private int intentMultiAmt;
     private boolean isMultiDmg;
-    private Color intentColor;
+    private final Color intentColor;
     public String moveName;
     public static String[] MOVES;
     public static String[] DIALOG;
@@ -78,11 +78,11 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
     protected AbstractCreature targetMonster;
 
-    public enum MinionIntent {ATTACK, ATTACK_BUFF, ATTACK_DEBUFF, ATTACK_DEFEND, BUFF, DEBUFF, STRONG_DEBUFF, DEBUG, DEFEND, DEFEND_DEBUFF, DEFEND_BUFF, ESCAPE, MAGIC, NONE, SLEEP, STUN, UNKNOWN;}
+    public enum MinionIntent {ATTACK, ATTACK_BUFF, ATTACK_DEBUFF, ATTACK_DEFEND, BUFF, DEBUFF, STRONG_DEBUFF, DEBUG, DEFEND, DEFEND_DEBUFF, DEFEND_BUFF, ESCAPE, MAGIC, NONE, SLEEP, STUN, UNKNOWN}
 
 
     public enum MinionType {
-        Elf, None;
+        Elf, None
     }
 
 
@@ -287,7 +287,7 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
 
 
         for (Iterator<AbstractGameEffect> i = this.intentVfx.iterator(); i.hasNext(); ) {
-            AbstractGameEffect e = (AbstractGameEffect) i.next();
+            AbstractGameEffect e = i.next();
             e.update();
             if (e.isDone) {
                 i.remove();
@@ -868,7 +868,7 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
         if (this.intent.name().contains("ATTACK")) {
             if (this.isMultiDmg) {
                 FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont,
-                        Integer.toString(this.intentDmg) + "x" + Integer.toString(this.intentMultiAmt), this.intentHb.cX - 30.0F * Settings.scale, this.intentHb.cY + this.bobEffect.y - 12.0F * Settings.scale, this.intentColor);
+                        this.intentDmg + "x" + this.intentMultiAmt, this.intentHb.cX - 30.0F * Settings.scale, this.intentHb.cY + this.bobEffect.y - 12.0F * Settings.scale, this.intentColor);
 
             } else {
                 FontHelper.renderFontLeftTopAligned(sb, FontHelper.topPanelInfoFont,
@@ -1141,10 +1141,8 @@ public abstract class AbstractPlayerMinion extends AbstractCreature {
         }
 
         if (!this.isPlayer) {
-            AbstractPlayerMinion m = (AbstractPlayerMinion) this;
-            if (m.isEscaping) {
-                return true;
-            }
+            AbstractPlayerMinion m = this;
+            return m.isEscaping;
         }
 
         return false;

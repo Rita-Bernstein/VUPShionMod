@@ -23,7 +23,7 @@ public class AnastasiaPlan extends AbstractShionAnastasiaCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new DoubleCardPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DoubleCardPower(p, this.magicNumber)));
     }
 
     public void upgrade() {

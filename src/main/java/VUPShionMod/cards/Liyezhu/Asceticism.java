@@ -25,9 +25,9 @@ public class Asceticism extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AddSansAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new AsceticismPower(p,2)));
-        if(this.upgraded)
-        addToBot(new ApplyPowerAction(p,p,new Asceticism2Power(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new AsceticismPower(p, 2)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new Asceticism2Power(p, 1)));
     }
 
     @Override

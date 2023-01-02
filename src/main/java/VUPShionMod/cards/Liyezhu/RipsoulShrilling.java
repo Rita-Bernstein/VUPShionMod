@@ -43,7 +43,7 @@ public class RipsoulShrilling extends AbstractLiyezhuCard {
         }
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new ApplySinAction(m,this.magicNumber));
+        addToBot(new ApplySinAction(m, this.magicNumber));
         addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.magicNumber)));
     }
 

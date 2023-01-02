@@ -23,7 +23,7 @@ public class TimeBacktracking extends AbstractShionKuroisuCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p,this.magicNumber));
+        addToBot(new DrawCardAction(p, this.magicNumber));
         addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.secondaryM), this.secondaryM));
     }
 

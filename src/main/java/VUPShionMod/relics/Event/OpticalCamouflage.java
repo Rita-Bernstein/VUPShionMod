@@ -27,6 +27,6 @@ public class OpticalCamouflage extends AbstractShionRelic {
     @Override
     public void atBattleStartPreDraw() {
         super.atBattleStartPreDraw();
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new IntangiblePlayerPower(AbstractDungeon.player,1)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1)));
     }
 }

@@ -23,8 +23,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class FlickeringTipAction extends AbstractGameAction {
-    private int magicNumber;
-    private DamageInfo info;
+    private final int magicNumber;
+    private final DamageInfo info;
     private static final float DURATION = 0.1F;
 
     public FlickeringTipAction(AbstractCreature target, DamageInfo info, int magicNumber) {

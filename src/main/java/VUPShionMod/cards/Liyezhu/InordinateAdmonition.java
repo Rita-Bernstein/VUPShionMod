@@ -41,7 +41,7 @@ public class InordinateAdmonition extends AbstractLiyezhuCard {
                     addToTop(new ApplyPrayerAction(new VampirePrayer(secondaryM, baseDamage)));
                     addToTop(new ApplyPrayerAction(new SelfSinPrayer(secondaryM, 1)));
                 }
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new ChasteReflection();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

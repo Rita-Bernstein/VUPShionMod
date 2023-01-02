@@ -28,7 +28,7 @@ public class MinamiShion extends AbstractSkin {
         this.unlockString = uiString.TEXT[3];
 
         this.portraitAtlasPath = "VUPShionMod/characters/Shion/portrait_spine/XMZDY_break";
-        loadAnimation(1.1f);
+        loadAnimation(getScale(1.1f));
         setAnimation();
 
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
@@ -41,14 +41,26 @@ public class MinamiShion extends AbstractSkin {
 
     }
 
-    @Override
-    public void initialize() {
-        unlock();
+    private float getScale(float scale) {
+        if (Settings.isFourByThree)
+            return scale * 1.3f;
+
+        if (Settings.isSixteenByTen) {
+            return scale * 1.12f;
+        }
+
+        return scale;
     }
+
+
 
     @Override
     public void setPos() {
-        portraitSkeleton.setPosition(-40.0f * Settings.scale, 0.0f * Settings.scale);
+        if (Settings.isFourByThree) {
+            portraitSkeleton.setPosition(-100.0f * Settings.scale, 0.0f * Settings.scale);
+        } else {
+            portraitSkeleton.setPosition(-40.0f * Settings.scale, 0.0f * Settings.scale);
+        }
     }
 
 
@@ -77,7 +89,7 @@ public class MinamiShion extends AbstractSkin {
         return info;
     }
 
-    public void doCharSelectScreenSelectEffect(){
+    public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.sound.play("MINAMI_12");
     }
 

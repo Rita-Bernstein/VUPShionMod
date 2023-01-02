@@ -28,17 +28,17 @@ public class GravityLoading extends AbstractShionMinamiCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
-        ExhaustiveVariable.setBaseValue(this,2);
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
-                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
+                125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
 
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead())
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                 if (!mo.isDeadOrEscaped()) {
-                    addToBot(new TriggerFinFunnelPassiveAction(mo, GravityFinFunnel.ID,true));
+                    addToBot(new TriggerFinFunnelPassiveAction(mo, GravityFinFunnel.ID, true));
                     addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.magicNumber, false), this.magicNumber));
                 }
             }

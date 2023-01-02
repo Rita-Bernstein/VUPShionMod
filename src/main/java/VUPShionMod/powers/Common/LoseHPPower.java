@@ -23,18 +23,17 @@ public class LoseHPPower extends AbstractShionPower {
         updateDescription();
         isTurnBased = true;
         this.type = PowerType.DEBUFF;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower36.png")), 0, 0, 36, 36);
+        loadShionRegion("MorsLibraquePower");
     }
 
 
     @Override
     public void updateDescription() {
-        this.description =  String.format(DESCRIPTIONS[0],this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
-        addToBot(new LoseHPAction(this.owner,this.owner,this.amount));
+        addToBot(new LoseHPAction(this.owner, this.owner, this.amount));
     }
 }

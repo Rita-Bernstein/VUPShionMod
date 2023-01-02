@@ -15,15 +15,17 @@ import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class SelectSrcCardToHandAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("VUPShionMod:SelectSrcCardToHandAction");
     private static final float DURATION_PER_CARD = 0.25F;
     public static final String[] TEXT = uiStrings.TEXT;
-    private AbstractPlayer p;
-    private boolean optional;
-    private Predicate<AbstractCard> predicate;
+    private final AbstractPlayer p;
+    private final boolean optional;
+    private Predicate<AbstractCard> predicate = null;
+    private Consumer<AbstractCard> cardConsumer = null;
 
     public SelectSrcCardToHandAction(int amount, boolean optional) {
         this.actionType = ActionType.DRAW;
@@ -41,6 +43,11 @@ public class SelectSrcCardToHandAction extends AbstractGameAction {
 
         this.optional = optional;
         this.predicate = predicate;
+    }
+
+    public SelectSrcCardToHandAction(int amount, boolean optional, Predicate<AbstractCard> predicate, Consumer<AbstractCard> cardConsumer) {
+        this(amount, optional, predicate);
+        this.cardConsumer = cardConsumer;
     }
 
 
@@ -109,7 +116,11 @@ public class SelectSrcCardToHandAction extends AbstractGameAction {
 
         if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
-                addToTop(new MakeTempCardInHandAction(card.makeStatEquivalentCopy(), this.amount));
+                AbstractCard c = card.makeStatEquivalentCopy();
+                if (this.cardConsumer != null) {
+                    this.cardConsumer.accept(c);
+                }
+                addToTop(new MakeTempCardInHandAction(c, this.amount));
             }
 
         }

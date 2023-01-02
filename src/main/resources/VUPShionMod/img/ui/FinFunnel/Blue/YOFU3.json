@@ -1,1 +1,537 @@
-{"skeleton":{"hash":"i1hqrYp13Ls2ohvI0v8qNEHRXuQ","spine":"3.7.94","width":248.49,"height":84.79,"images":"./images/","audio":"F:/委托/紫音/紫音蓝巨星/images"},"bones":[{"name":"root"},{"name":"weapon3_bone","parent":"root","length":155.93,"rotation":-14.81,"x":199.27,"y":425.76},{"name":"weapon3_muzzle","parent":"weapon3_bone","x":156.37,"y":-0.12}],"slots":[{"name":"YOFU_ZL_penqi","bone":"weapon3_bone","attachment":"YOFU_ZL_penqi"},{"name":"YOFU_ZL","bone":"weapon3_bone","attachment":"YOFU_ZL"},{"name":"YOFU_ZL_light","bone":"weapon3_bone","attachment":"YOFU_ZL_light"}],"skins":{"default":{"YOFU_ZL":{"YOFU_ZL":{"x":77.4,"y":2.78,"rotation":15.71,"width":186,"height":56}},"YOFU_ZL_light":{"YOFU_ZL_light":{"x":97.75,"y":-0.68,"rotation":15.71,"width":148,"height":38}},"YOFU_ZL_penqi":{"YOFU_ZL_penqi":{"x":34.51,"y":8.54,"rotation":15.71,"width":229,"height":74}}}},"animations":{"weapon3_attack":{"bones":{"weapon3_bone":{"rotate":[{"time":0,"angle":0,"curve":[0.25,0,0.75,1]},{"time":0.6667,"angle":13.83,"curve":[0.25,0,0.75,1]},{"time":1.1667,"angle":29.91,"curve":[0.25,0,0.75,1]},{"time":1.8333,"angle":13.83,"curve":[0.25,0,0.75,1]},{"time":2.6667,"angle":0}],"translate":[{"time":0,"x":0,"y":0,"curve":[0.25,0,0.75,1]},{"time":0.6667,"x":158.01,"y":157.71,"curve":[0.25,0,0.75,1]},{"time":1.1667,"x":48.03,"y":99.16,"curve":[0.25,0,0.75,1]},{"time":1.8333,"x":158.01,"y":157.71,"curve":[0.25,0,0.75,1]},{"time":2.6667,"x":0,"y":0}]}}},"weapon3_come_in":{"bones":{"weapon3_bone":{"rotate":[{"time":0,"angle":0,"curve":[0.25,0,0.75,1]},{"time":1,"angle":17.05,"curve":"stepped"},{"time":1.1667,"angle":17.05,"curve":[0.25,0,0.75,1]},{"time":1.3333,"angle":0}],"translate":[{"time":0,"x":-2173.27,"y":453.63,"curve":[0.25,0,0.75,1]},{"time":1,"x":0,"y":99.79,"curve":[0.25,0,0.75,1]},{"time":1.3333,"x":0,"y":0}]}}},"weapon3_idle":{"slots":{"YOFU_ZL_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.8333,"color":"ffffff00","curve":"stepped"},{"time":1,"color":"ffffff00","curve":[0.25,0,0.75,1]},{"time":2,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":2.8333,"color":"ffffff00","curve":[0.25,0,0.75,1]},{"time":4,"color":"ffffffff"}]},"YOFU_ZL_penqi":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff58","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff58","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3333,"color":"ffffff58","curve":[0.25,0,0.75,1]},{"time":0.4,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffff58","curve":[0.25,0,0.75,1]},{"time":0.5333,"color":"ffffffff","curve":"stepped"},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffbd","curve":[0.25,0,0.75,1]},{"time":1.3333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":1.6667,"color":"ffffffbd","curve":[0.25,0,0.75,1]},{"time":2,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":2.3333,"color":"ffffffbd","curve":[0.25,0,0.75,1]},{"time":2.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":3,"color":"ffffffbd","curve":[0.25,0,0.75,1]},{"time":3.3333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":3.5667,"color":"ffffffbd","curve":[0.25,0,0.75,1]},{"time":3.8333,"color":"ffffffff"}]}},"bones":{"weapon3_bone":{"translate":[{"time":0,"x":0,"y":0,"curve":[0.25,0,0.75,1]},{"time":1.8333,"x":0,"y":24.09,"curve":"stepped"},{"time":2,"x":0,"y":24.09,"curve":[0.25,0,0.75,1]},{"time":3.8333,"x":0,"y":0}]}}}}}
+{
+  "skeleton": {
+    "hash": "i1hqrYp13Ls2ohvI0v8qNEHRXuQ",
+    "spine": "3.7.94",
+    "width": 248.49,
+    "height": 84.79,
+    "images": "./images/",
+    "audio": "F:/委托/紫音/紫音蓝巨星/images"
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "weapon3_bone",
+      "parent": "root",
+      "length": 155.93,
+      "rotation": -14.81,
+      "x": 199.27,
+      "y": 425.76
+    },
+    {
+      "name": "weapon3_muzzle",
+      "parent": "weapon3_bone",
+      "x": 156.37,
+      "y": -0.12
+    }
+  ],
+  "slots": [
+    {
+      "name": "YOFU_ZL_penqi",
+      "bone": "weapon3_bone",
+      "attachment": "YOFU_ZL_penqi"
+    },
+    {
+      "name": "YOFU_ZL",
+      "bone": "weapon3_bone",
+      "attachment": "YOFU_ZL"
+    },
+    {
+      "name": "YOFU_ZL_light",
+      "bone": "weapon3_bone",
+      "attachment": "YOFU_ZL_light"
+    }
+  ],
+  "skins": {
+    "default": {
+      "YOFU_ZL": {
+        "YOFU_ZL": {
+          "x": 77.4,
+          "y": 2.78,
+          "rotation": 15.71,
+          "width": 186,
+          "height": 56
+        }
+      },
+      "YOFU_ZL_light": {
+        "YOFU_ZL_light": {
+          "x": 97.75,
+          "y": -0.68,
+          "rotation": 15.71,
+          "width": 148,
+          "height": 38
+        }
+      },
+      "YOFU_ZL_penqi": {
+        "YOFU_ZL_penqi": {
+          "x": 34.51,
+          "y": 8.54,
+          "rotation": 15.71,
+          "width": 229,
+          "height": 74
+        }
+      }
+    }
+  },
+  "animations": {
+    "weapon3_attack": {
+      "bones": {
+        "weapon3_bone": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "angle": 13.83,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.1667,
+              "angle": 29.91,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.8333,
+              "angle": 13.83,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.6667,
+              "angle": 0
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "x": 158.01,
+              "y": 157.71,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.1667,
+              "x": 48.03,
+              "y": 99.16,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.8333,
+              "x": 158.01,
+              "y": 157.71,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.6667,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      }
+    },
+    "weapon3_come_in": {
+      "bones": {
+        "weapon3_bone": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": 17.05,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": 17.05,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.3333,
+              "angle": 0
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": -2173.27,
+              "y": 453.63,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": 99.79,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.3333,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      }
+    },
+    "weapon3_idle": {
+      "slots": {
+        "YOFU_ZL_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.8333,
+              "color": "ffffff00",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 4,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "YOFU_ZL_penqi": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff58",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff58",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3333,
+              "color": "ffffff58",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffff58",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffbd",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffffbd",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffffbd",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3,
+              "color": "ffffffbd",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3.5667,
+              "color": "ffffffbd",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3.8333,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon3_bone": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.8333,
+              "x": 0,
+              "y": 24.09,
+              "curve": "stepped"
+            },
+            {
+              "time": 2,
+              "x": 0,
+              "y": 24.09,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3.8333,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@ public class LostEquipment extends AbstractImageEvent {
     public LostEquipment() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/LostEquipment.png"));
         if (AbstractDungeon.player.gold >= 100)
-            this.imageEventText.setDialogOption(OPTIONS[0],new OpticalCamouflage());
+            this.imageEventText.setDialogOption(OPTIONS[0], new OpticalCamouflage());
         else
             this.imageEventText.setDialogOption(OPTIONS[1], true);
 
@@ -51,7 +51,7 @@ public class LostEquipment extends AbstractImageEvent {
     protected void buttonEffect(int buttonPressed) {
         switch (this.curScreen) {
             case INTRO:
-                switch (buttonPressed){
+                switch (buttonPressed) {
                     case 0:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         this.imageEventText.clearAllDialogs();
@@ -67,7 +67,7 @@ public class LostEquipment extends AbstractImageEvent {
                         CardGroup cardGroup = CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards());
                         AbstractCard card = cardGroup.getRandomCard(AbstractDungeon.eventRng);
                         CardCrawlGame.sound.play("CARD_EXHAUST");
-                        AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, Settings.WIDTH *0.5f, Settings.HEIGHT *0.5f));
+                        AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f));
                         AbstractDungeon.player.masterDeck.removeCard(card);
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, new Sniperscope());
                         this.curScreen = CurrentScreen.COMPLETE;

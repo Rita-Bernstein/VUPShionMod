@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SecondHandAction extends AbstractGameAction {
-    private AbstractCard card;
+    private final AbstractCard card;
 
     public SecondHandAction(AbstractCard card) {
         this.card = card;

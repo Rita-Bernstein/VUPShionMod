@@ -18,12 +18,12 @@ public class EternalEcho extends AbstractEisluRenCard {
 
     public EternalEcho() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber =this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new EternalEchoPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new EternalEchoPower(p, this.magicNumber)));
     }
 
     @Override

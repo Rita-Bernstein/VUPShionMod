@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class MakeNewLoadedCardAction extends AbstractGameAction {
-    private AbstractCard card;
-    private int amount;
+    private final AbstractCard card;
+    private final int amount;
     private boolean inDiscardPile = false;
-    private String text = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction")).TEXT[1];
+    private final String text = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction")).TEXT[1];
 
     public MakeNewLoadedCardAction(AbstractCard card) {
         this.card = card;

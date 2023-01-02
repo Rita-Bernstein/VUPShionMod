@@ -28,7 +28,7 @@ public class PlanedModify extends AbstractShionImagePotion {
 
 
     public PlanedModify() {
-        super(POTION_ID, PlanedModify.class.getSimpleName()+".png", RARITY);
+        super(POTION_ID, PlanedModify.class.getSimpleName() + ".png", RARITY);
         this.isThrown = false;
         this.targetRequired = false;
         this.labOutlineColor = VUPShionMod.ShionPotion_Color;
@@ -49,14 +49,13 @@ public class PlanedModify extends AbstractShionImagePotion {
                 @Override
                 public void update() {
                     AbstractFinFunnel finFunnel = FinFunnelManager.getSelectedFinFunnel();
-                    if(finFunnel != null)
+                    if (finFunnel != null)
                         finFunnel.upgradeLevel(potency);
-                    isDone  = true;
+                    isDone = true;
                 }
             });
         }
     }
-
 
 
     public int getPotency(int ascensionLevel) {

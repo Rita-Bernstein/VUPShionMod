@@ -29,8 +29,7 @@ public class IntensaPower extends AbstractShionPower {
         if (this.amount > 2)
             this.amount = 2;
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PetalsFallPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PetalsFallPower36.png")), 0, 0, 36, 36);
+        loadShionRegion("PetalsFallPower");
         updateDescription();
     }
 
@@ -45,11 +44,11 @@ public class IntensaPower extends AbstractShionPower {
     @Override
     public void atStartOfTurn() {
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-        addToBot(new ApplyCorGladiiAction((int) (this.amount * GameStatsPatch.corGladiiLoseThisTurn * 0.6f)));
+        addToBot(new ApplyCorGladiiAction((int) (this.amount * GameStatsPatch.corGladiiLoseThisTurn * 0.5f)));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], (int) (this.amount * GameStatsPatch.corGladiiLoseThisTurn * 0.6f));
+        this.description = String.format(DESCRIPTIONS[0], (int) (this.amount * GameStatsPatch.corGladiiLoseThisTurn * 0.5f));
     }
 }

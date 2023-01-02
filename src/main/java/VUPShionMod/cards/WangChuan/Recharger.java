@@ -28,10 +28,10 @@ public class Recharger extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new RechargerPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new RechargerPower(p, this.magicNumber)));
 
-        if(this.upgraded)
-            addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.secondaryM)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.secondaryM)));
 
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }

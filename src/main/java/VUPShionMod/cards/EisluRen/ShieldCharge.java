@@ -52,12 +52,12 @@ public class ShieldCharge extends AbstractEisluRenCard {
         for (int i = 0; i < 3; i++)
             addToBot(new GainShieldAction(p, this.magicNumber));
 
-        if(this.upgraded) {
+        if (this.upgraded) {
             addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 5)));
             addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 5)));
         }
 
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
         addToBot(new AddWingShieldDamageReduceAction(2));
     }
 

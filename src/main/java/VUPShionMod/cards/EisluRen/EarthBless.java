@@ -24,17 +24,17 @@ public class EarthBless extends AbstractEisluRenCard {
     public EarthBless() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM  = this.baseSecondaryM = 10;
+        this.secondaryM = this.baseSecondaryM = 10;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber)));
-        addToBot(new GainMaxHPAction(p,magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
-        if(!this.upgraded)
-        addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.secondaryM)));
+        addToBot(new GainMaxHPAction(p, magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.secondaryM)));
+        if (!this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.secondaryM)));
     }
 
     @Override

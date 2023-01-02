@@ -26,9 +26,7 @@ public class AnastasiaCorePower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AnastasiaCorePower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AnastasiaCorePower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("AnastasiaCorePower");
         updateDescription();
     }
 

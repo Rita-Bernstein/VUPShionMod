@@ -16,9 +16,9 @@ public class UpgradeAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("VUPShionMod:UpgradeAction");
     private static final float DURATION_PER_CARD = 0.25F;
     public static final String[] TEXT = uiStrings.TEXT;
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
     private int dupeAmount;
-    private ArrayList<AbstractCard> cannotDuplicate;
+    private final ArrayList<AbstractCard> cannotDuplicate;
 
 
     public UpgradeAction(AbstractCreature source, int amount) {

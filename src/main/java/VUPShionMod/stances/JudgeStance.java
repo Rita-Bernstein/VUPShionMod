@@ -71,7 +71,7 @@ public class JudgeStance extends AbstractVUPShionStance {
 
     @Override
     public void onPlayCard(AbstractCard card) {
-        if(card.type == AbstractCard.CardType.ATTACK){
+        if (card.type == AbstractCard.CardType.ATTACK) {
             AbstractDungeon.actionManager.addToBottom(new DuelSinAction());
         }
     }

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class MoveFinFunnelSelectedEffectAction extends AbstractGameAction {
-    private AbstractFinFunnel finFunnel;
+    private final AbstractFinFunnel finFunnel;
 
     public MoveFinFunnelSelectedEffectAction(AbstractFinFunnel target) {
         this.finFunnel = target;
@@ -17,6 +17,8 @@ public class MoveFinFunnelSelectedEffectAction extends AbstractGameAction {
 
     @Override
     public void update() {
+
+
         if (this.duration == this.startDuration) {
             AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).selectedFinFunnel = this.finFunnel;
             SaveHelper.activeFinFunnel = this.finFunnel.id;

@@ -38,8 +38,8 @@ public class ElfEnhance extends AbstractEisluRenCard {
                 public void update() {
                     if (!MinionGroup.areMinionsBasicallyDead()) {
                         AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                        if(minion !=null)
-                        addToTop(new ApplyPowerAction(minion, p, new BufferPower(minion, 1)));
+                        if (minion != null)
+                            addToTop(new ApplyPowerAction(minion, p, new BufferPower(minion, 1)));
                     }
                     isDone = true;
                 }
@@ -49,7 +49,7 @@ public class ElfEnhance extends AbstractEisluRenCard {
 
     @Override
     public void triggerAfterOtherCardPlayed(AbstractCard card) {
-        if(card instanceof SynchroSummon || card instanceof LifeLinkCard)
+        if (card instanceof SynchroSummon || card instanceof LifeLinkCard)
             updateCost(-1);
     }
 

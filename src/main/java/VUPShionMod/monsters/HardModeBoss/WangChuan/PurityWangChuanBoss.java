@@ -3,6 +3,7 @@ package VUPShionMod.monsters.HardModeBoss.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.Monster.BossShion.PotentialOutbreakPower;
 import VUPShionMod.powers.Monster.BossWangChuan.MagicFlyingBladePower;
@@ -10,6 +11,8 @@ import VUPShionMod.powers.Monster.BossWangChuan.WhiteRosePower;
 import VUPShionMod.powers.Wangchuan.ImmuneDamagePower;
 import VUPShionMod.powers.Wangchuan.MorsLibraquePower;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.OriShion;
+import VUPShionMod.skins.sk.WangChuan.PurityWangChuan;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -35,8 +38,8 @@ public class PurityWangChuanBoss extends AbstractVUPShionBoss {
     public static final String[] DIALOG = monsterStrings.DIALOG;
 
 
-    private int moveCount = 1;
-    private boolean inThunder = false;
+    private final int moveCount = 1;
+    private final boolean inThunder = false;
 
     public PurityWangChuanBoss() {
         super(NAME, ID, 88, 0.0F, -5.0F, 420.0F, 400.0F, null, 5.0F, -7.0f);
@@ -83,11 +86,12 @@ public class PurityWangChuanBoss extends AbstractVUPShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
 
-
+        addToBot(new VersusEffectAction(PurityWangChuan.ID));
         addToBot(new GainShieldAction(this, 100));
+        addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 30)));
         addToBot(new ApplyPowerAction(this, this, new WhiteRosePower(this, 1)));
         addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Thunder")));
-        addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 4)));
+        addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 7)));
     }
 
 

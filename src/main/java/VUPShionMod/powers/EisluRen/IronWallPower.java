@@ -21,14 +21,10 @@ public class IronWallPower extends AbstractShionPower {
         this.name = NAME;
         this.owner = owner;
         this.ID = POWER_ID;
-
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IronWallPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/IronWallPower48.png")), 0, 0, 48, 48);
         updateDescription();
         this.isTurnBased = true;
         this.priority = 10;
-
-
+        loadShionRegion("IronWallPower");
     }
 
     @Override
@@ -42,8 +38,8 @@ public class IronWallPower extends AbstractShionPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        if(type == DamageInfo.DamageType.NORMAL)
-        return (int) Math.floor(damage * 0.5);
+        if (type == DamageInfo.DamageType.NORMAL)
+            return (int) Math.floor(damage * 0.5);
 
         return damage;
     }

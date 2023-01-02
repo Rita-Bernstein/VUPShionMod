@@ -17,8 +17,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class FinFunnelMinionBeamEffect extends AbstractGameEffect {
-    private Skeleton skeleton;
-    private Bone muzzle;
+    private final Skeleton skeleton;
+    private final Bone muzzle;
     private float sX;
     private float sY;
     private float dX;
@@ -28,7 +28,7 @@ public class FinFunnelMinionBeamEffect extends AbstractGameEffect {
     private static TextureAtlas.AtlasRegion img;
     private boolean posUpdated = false;
 
-    private float scaleY;
+    private final float scaleY;
 
 
     public FinFunnelMinionBeamEffect(Skeleton skeleton, boolean isFlipped, float scaleY) {
@@ -41,7 +41,7 @@ public class FinFunnelMinionBeamEffect extends AbstractGameEffect {
 
         this.muzzle = this.skeleton.findBone("weapon5_muzzle");
 
-        this.isFlipped =isFlipped;
+        this.isFlipped = isFlipped;
 
         if (isFlipped) {
             this.sX = this.skeleton.getX() + muzzle.getWorldX() - 32.0F * Settings.scale;
@@ -75,7 +75,7 @@ public class FinFunnelMinionBeamEffect extends AbstractGameEffect {
             this.dX = Settings.WIDTH / 2.0F * Interpolation.pow3Out.apply(this.duration);
             this.dY = AbstractDungeon.floorY + 10.0F * Settings.scale;
         } else {
-            this.dX = Settings.WIDTH -Settings.WIDTH / 2.0F * Interpolation.pow3Out.apply(this.duration);
+            this.dX = Settings.WIDTH - Settings.WIDTH / 2.0F * Interpolation.pow3Out.apply(this.duration);
             this.dY = AbstractDungeon.floorY + 30.0F * Settings.scale;
         }
 

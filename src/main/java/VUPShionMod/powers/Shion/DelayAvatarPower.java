@@ -21,7 +21,7 @@ public class DelayAvatarPower extends AbstractShionPower implements CloneablePow
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private int damage;
+    private final int damage;
     private static int idOffset;
 
     public DelayAvatarPower(AbstractCreature owner, int amount) {
@@ -31,9 +31,7 @@ public class DelayAvatarPower extends AbstractShionPower implements CloneablePow
         this.owner = owner;
         this.amount = amount;
         this.damage = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("DelayAvatarPower");
         updateDescription();
     }
 

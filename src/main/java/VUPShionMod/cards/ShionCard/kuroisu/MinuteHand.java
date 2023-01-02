@@ -28,17 +28,17 @@ public class MinuteHand extends AbstractShionKuroisuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 7;
         this.cardsToPreview = new QuickAttack();
-        ExhaustiveVariable.setBaseValue(this,3);
+        ExhaustiveVariable.setBaseValue(this, 3);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         if (m != null)
-        addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 030 Slash Right", m.hb.cX, m.hb.cY + 480.0f * Settings.scale,
-                128.0f, 232.0f, 2.5f * Settings.scale, 2, false)));
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 030 Slash Right", m.hb.cX, m.hb.cY + 480.0f * Settings.scale,
+                    128.0f, 232.0f, 2.5f * Settings.scale, 2, false)));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new MakeLoadedCardAction(new QuickAttack(),true));
+        addToBot(new MakeLoadedCardAction(new QuickAttack(), true));
     }
 
     public AbstractCard makeCopy() {

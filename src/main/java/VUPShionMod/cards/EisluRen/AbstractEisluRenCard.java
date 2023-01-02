@@ -1,8 +1,7 @@
 package VUPShionMod.cards.EisluRen;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
-import VUPShionMod.patches.CardTagsEnum;
 
 public abstract class AbstractEisluRenCard extends AbstractVUPShionCard {
 

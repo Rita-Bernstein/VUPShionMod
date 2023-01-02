@@ -27,8 +27,7 @@ public class DoubleDamageReceivePower extends AbstractShionPower {
         updateDescription();
         isTurnBased = true;
         this.type = PowerType.DEBUFF;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower36.png")), 0, 0, 36, 36);
+        loadShionRegion("MorsLibraquePower");
     }
 
 
@@ -41,6 +40,7 @@ public class DoubleDamageReceivePower extends AbstractShionPower {
         if (type == DamageInfo.DamageType.NORMAL) {
             return damage * 2.0F;
         }
+
         return damage;
     }
 

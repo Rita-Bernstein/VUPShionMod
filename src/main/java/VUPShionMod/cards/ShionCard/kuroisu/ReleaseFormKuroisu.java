@@ -32,7 +32,7 @@ public class ReleaseFormKuroisu extends AbstractShionKuroisuCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("SHION_" + (32 + MathUtils.random(1))));
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("Kuroisu"),1.0f));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("Kuroisu"), 1.0f));
         addToBot(new ApplyPowerAction(p, p, new ReleaseFormKuroisuPower(p, this.magicNumber), 0));
     }
 

@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 public class WingShieldIcon {
 
     private int count = 0;
-    private int index;
-    private Color color = Color.WHITE.cpy();
+    private final int index;
+    private final Color color = Color.WHITE.cpy();
 
     private float cX;
     private float cY;

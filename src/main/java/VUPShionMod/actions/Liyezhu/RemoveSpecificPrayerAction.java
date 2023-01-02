@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class RemoveSpecificPrayerAction extends AbstractGameAction {
-    private AbstractPrayer prayerInstance;
+    private final AbstractPrayer prayerInstance;
     private boolean justStart = true;
 
     public RemoveSpecificPrayerAction(AbstractPrayer prayerInstance) {

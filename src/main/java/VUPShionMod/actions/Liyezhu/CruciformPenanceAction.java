@@ -15,8 +15,8 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 
 public class CruciformPenanceAction extends AbstractGameAction {
-    private DamageInfo info;
-    private int duelSinTimes;
+    private final DamageInfo info;
+    private final int duelSinTimes;
 
     public CruciformPenanceAction(AbstractCreature target, DamageInfo info, int healAmount, int duelSinTimes) {
         this.actionType = ActionType.DAMAGE;

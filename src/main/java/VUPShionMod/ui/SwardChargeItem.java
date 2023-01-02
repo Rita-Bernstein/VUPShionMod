@@ -12,12 +12,12 @@ public class SwardChargeItem implements Disposable {
     private Texture img;
     private float cX;
     private float cY;
-    private float scale;
+    private final float scale;
 
     private boolean hide = true;
     private boolean shine = false;
 
-    private Color color = Color.WHITE.cpy();
+    private final Color color = Color.WHITE.cpy();
 
     public float lightTimer = 0.0f;
 

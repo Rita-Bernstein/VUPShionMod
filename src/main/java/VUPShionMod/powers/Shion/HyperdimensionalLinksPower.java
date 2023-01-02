@@ -31,12 +31,11 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SupportArmamentPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SupportArmamentPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("SupportArmamentPower");
         updateDescription();
         this.priority = 0;
 
-        if(AbstractDungeon.player.hasRelic(ConcordCompanion.ID)  && this.amount>9) {
+        if (AbstractDungeon.player.hasRelic(ConcordCompanion.ID) && this.amount > 9) {
             this.amount = 9;
         }
     }
@@ -54,7 +53,7 @@ public class HyperdimensionalLinksPower extends AbstractShionPower {
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
 
-        if(AbstractDungeon.player.hasRelic(ConcordCompanion.ID)  && this.amount>9) {
+        if (AbstractDungeon.player.hasRelic(ConcordCompanion.ID) && this.amount > 9) {
             this.amount = 9;
         }
 

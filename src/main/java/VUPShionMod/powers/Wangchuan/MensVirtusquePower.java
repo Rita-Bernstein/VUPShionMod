@@ -26,14 +26,13 @@ public class MensVirtusquePower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MensVirtusquePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MensVirtusquePower36.png")), 0, 0, 36, 36);
+        loadShionRegion("MensVirtusquePower");
     }
 
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
 }

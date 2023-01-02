@@ -26,8 +26,8 @@ public class ViaAfflictionis extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new LoseHPAction(p,p,this.baseMagicNumber));
-        addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,1)));
+        addToBot(new LoseHPAction(p, p, this.baseMagicNumber));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1)));
         addToBot(new DrawCardAction(this.secondaryM));
         addToBot(new MakeTempCardInDiscardAction(new ViaAfflictionis(), 1));
     }

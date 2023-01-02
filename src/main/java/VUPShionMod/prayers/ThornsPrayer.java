@@ -32,7 +32,7 @@ public class ThornsPrayer extends AbstractPrayer {
 
     @Override
     public void use() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ThornsPower(AbstractDungeon.player,this.amount)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, this.amount)));
     }
 
     @Override

@@ -23,9 +23,9 @@ import java.util.ArrayList;
 
 public class BossFinFunnelMinionAction extends AbstractGameAction {
     private boolean createFinFunnelMini = false;
-    private ArrayList<AbstractBossFinFunnel> finFunnels = new ArrayList<>();
+    private final ArrayList<AbstractBossFinFunnel> finFunnels = new ArrayList<>();
 
-    private boolean fullPower = false;
+    private final boolean fullPower = false;
     private int skinIndex = 0;
 
     public BossFinFunnelMinionAction(AbstractShionBoss boss) {
@@ -63,7 +63,7 @@ public class BossFinFunnelMinionAction extends AbstractGameAction {
                 finFunnels.get(i).powerToApply(AbstractDungeon.player, 1.0f, true);
                 addToTop(new DamageAction(AbstractDungeon.player,
                         new DamageInfo(null,
-                                 finFunnels.get(i).getFinalDamage(),
+                                finFunnels.get(i).getFinalDamage(),
                                 DamageInfo.DamageType.THORNS), AttackEffect.FIRE, true));
             }
         }

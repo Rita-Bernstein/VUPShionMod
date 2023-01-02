@@ -13,7 +13,7 @@ public class CompileSoul extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(CompileSoul.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/CompileSoul.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 1;
@@ -29,7 +29,7 @@ public class CompileSoul extends AbstractLiyezhuCard {
 
         if (p.hasPower(PsychicPower.POWER_ID)) {
             if (this.upgraded)
-                addToBot(new DrawCardAction( 2));
+                addToBot(new DrawCardAction(2));
             else
                 addToBot(new GainEnergyAction(1));
             addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, 1));

@@ -29,9 +29,7 @@ public class DoubleCardPower extends AbstractShionPower {
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DoubleCardPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DoubleCardPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("DoubleCardPower");
     }
 
     @Override
@@ -63,7 +61,7 @@ public class DoubleCardPower extends AbstractShionPower {
 
             this.amount--;
             if (this.amount == 0) {
-                addToTop(new ReducePowerAction(this.owner, this.owner, POWER_ID,1));
+                addToTop(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
             }
         }
 

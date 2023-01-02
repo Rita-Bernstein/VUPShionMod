@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 
 public class MonsterStanceAuraEffect extends StanceAuraEffect {
-    private TextureAtlas.AtlasRegion img;
+    private final TextureAtlas.AtlasRegion img;
 
     public MonsterStanceAuraEffect(AbstractCreature owner, String stanceId) {
         super(stanceId);

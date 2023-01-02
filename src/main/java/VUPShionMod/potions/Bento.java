@@ -67,12 +67,8 @@ public class Bento extends AbstractShionImagePotion {
                 (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             return false;
         }
-        if ((AbstractDungeon.getCurrRoom()).event != null &&
-                (AbstractDungeon.getCurrRoom()).event instanceof com.megacrit.cardcrawl.events.shrines.WeMeetAgain) {
-            return false;
-        }
-
-        return true;
+        return (AbstractDungeon.getCurrRoom()).event == null ||
+                !((AbstractDungeon.getCurrRoom()).event instanceof com.megacrit.cardcrawl.events.shrines.WeMeetAgain);
     }
 
 

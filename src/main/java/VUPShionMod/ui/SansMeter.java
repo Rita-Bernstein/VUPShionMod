@@ -44,22 +44,22 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 
 public class SansMeter {
-    private Texture bg;
-    private Texture meter;
-    private Texture light;
+    private final Texture bg;
+    private final Texture meter;
+    private final Texture light;
 
     public int amount = 100;
     public int amount_MAX = 100;
-    private Hitbox hb;
+    private final Hitbox hb;
 
     private float cX = 0.0f;
     private float cY = 0.0f;
     public float current_x = 0.0f;
     public float current_y = 0.0f;
-    private float scale = 0.23f;
+    private final float scale = 0.23f;
     private float lightTimer = 0.0f;
 
-    private Color color = Color.WHITE.cpy();
+    private final Color color = Color.WHITE.cpy();
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("SansMeter"));
     public static final String[] TEXT = uiStrings.TEXT;
@@ -254,7 +254,7 @@ public class SansMeter {
                                 }
                             }
 
-                            if((AbstractDungeon.getCurrRoom()).rewards != null)
+                            if ((AbstractDungeon.getCurrRoom()).rewards != null)
                                 (AbstractDungeon.getCurrRoom()).rewards.clear();
                         }
 
@@ -292,7 +292,7 @@ public class SansMeter {
                         CardCrawlGame.fadeIn(1.5F);
                     }
 
-                    isDone =true;
+                    isDone = true;
                 }
 
                 @Override

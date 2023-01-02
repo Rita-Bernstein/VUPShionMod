@@ -53,7 +53,7 @@ public class BossInvestigationFinFunnel extends AbstractBossFinFunnel {
 
     @Override
     protected void initAnimation(int index) {
-        if (SkinManager.getSkinCharacter(0).reskinCount != 3) {
+        if (this.index < 0) {
             this.state.setAnimation(0, "weapon4_come_in", false);
             this.state.addAnimation(0, "weapon4_idle", true, 0.0f);
         } else {
@@ -107,8 +107,8 @@ public class BossInvestigationFinFunnel extends AbstractBossFinFunnel {
                 this.state.setAnimation(0, "weapon4_attack", false).setTimeScale(3.0f);
                 this.state.addAnimation(0, "weapon4_idle", true, 0.0F);
             } else {
-                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(2.0f);
-                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F).setTimeScale(0.5f);
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(1.9f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
             }
         }
     }

@@ -13,22 +13,22 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 
 public class GachaEffect extends AbstractGameEffect {
-    private AbstractMonster m;
-    private int result;
-    private Texture rolling1 = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/Rolling1.png");
-    private Texture rolling2 = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/Rolling2.png");
-    private Texture rolling3 = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/Rolling3.png");
-    private Texture rollingMask = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/RollingMask.png");
-    private ArrayList<Texture> rollingItems = new ArrayList<>();
+    private final AbstractMonster m;
+    private final int result;
+    private final Texture rolling1 = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/Rolling1.png");
+    private final Texture rolling2 = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/Rolling2.png");
+    private final Texture rolling3 = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/Rolling3.png");
+    private final Texture rollingMask = ImageMaster.loadImage("VUPShionMod/img/ui/Rolling/RollingMask.png");
+    private final ArrayList<Texture> rollingItems = new ArrayList<>();
 
     private float cX = 0.0f;
     private float cY = 0.0f;
-    private float renderScale = 0.5f;
-    private float startX;
-    private float startY;
-    private float targetX;
-    private float targetY;
-    private Color glowColor = new Color(0.95f,0.23f,0.35f,0.0f);
+    private final float renderScale = 0.5f;
+    private final float startX;
+    private final float startY;
+    private final float targetX;
+    private final float targetY;
+    private final Color glowColor = new Color(0.95f, 0.23f, 0.35f, 0.0f);
     private int phase = 0;
 
     private float rollingTimer = 0.1f;

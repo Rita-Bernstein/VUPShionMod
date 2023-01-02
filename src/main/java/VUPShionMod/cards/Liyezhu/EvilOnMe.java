@@ -59,7 +59,7 @@ public class EvilOnMe extends AbstractLiyezhuCard {
         }
 
         if (p.hasPower(SinPower.POWER_ID)) {
-           count += p.getPower(SinPower.POWER_ID).amount;
+            count += p.getPower(SinPower.POWER_ID).amount;
         }
 
         if (count < this.secondaryM) {

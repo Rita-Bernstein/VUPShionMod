@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class AddFinFunnelAction extends AbstractGameAction {
     private boolean isRandom = false;
     private String forceId = "";
-    private int newLevel;
+    private final int newLevel;
 
     public AddFinFunnelAction(int newLevel) {
         isRandom = true;
@@ -58,7 +58,7 @@ public class AddFinFunnelAction extends AbstractGameAction {
         }
 
         if (finFunnelToGain != null) {
-            if(FinFunnelManager.getFinFunnelList().isEmpty()){
+            if (FinFunnelManager.getFinFunnelList().isEmpty()) {
                 AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).selectedFinFunnel = finFunnelToGain;
             }
 

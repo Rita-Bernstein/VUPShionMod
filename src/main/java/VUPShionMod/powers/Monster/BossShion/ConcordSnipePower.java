@@ -24,9 +24,7 @@ public class ConcordSnipePower extends AbstractShionPower {
         this.owner = owner;
         this.amount = amount;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/ConcordSnipePower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/ConcordSnipePower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("ConcordSnipePower");
     }
 
     @Override
@@ -34,7 +32,6 @@ public class ConcordSnipePower extends AbstractShionPower {
         flash();
         addToBot(new ApplyPowerAction(AbstractDungeon.player, this.owner, new LockOnPower(AbstractDungeon.player, this.amount)));
     }
-
 
 
     @Override

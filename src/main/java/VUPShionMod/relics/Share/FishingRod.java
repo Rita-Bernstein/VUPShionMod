@@ -16,7 +16,6 @@ public class FishingRod extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
 
-
     public FishingRod() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.UNCOMMON, LandingSound.CLINK);
     }

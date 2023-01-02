@@ -31,11 +31,9 @@ public class FinFunnelSupport extends AbstractShionMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
-                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
+                125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
 
-        for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList) {
-            addToBot(new TurnTriggerFinFunnelAction(m,funnel.id,true));
-        }
+        addToBot(new TurnTriggerFinFunnelAction(m, true, true));
 
         addToBot(new DrawCardAction(p, this.magicNumber));
     }

@@ -17,11 +17,13 @@ public class LifeLinkPower extends AbstractPower {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount =  -1;
+        this.amount = -1;
         this.loadRegion("regrow");
         updateDescription();
     }
 
-    public void updateDescription() { this.description = DESCRIPTIONS[0]; }
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0];
+    }
 
 }

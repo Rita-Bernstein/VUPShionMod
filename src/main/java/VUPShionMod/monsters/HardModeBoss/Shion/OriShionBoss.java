@@ -1,20 +1,14 @@
 package VUPShionMod.monsters.HardModeBoss.Shion;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.actions.Common.GainShieldAction;
-import VUPShionMod.actions.Unique.BossFinFunnelMinionAction;
-import VUPShionMod.actions.Unique.BossTriggerDimensionSplitterAction;
-import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
-import VUPShionMod.actions.Unique.TurnTriggerAllBossFinFunnelAction;
+import VUPShionMod.actions.Unique.*;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.*;
-import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.powers.Monster.BossShion.*;
-import VUPShionMod.powers.Shion.PursuitPower;
 import VUPShionMod.skins.SkinManager;
-import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
+import VUPShionMod.skins.sk.Shion.OriShion;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
@@ -23,7 +17,6 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,9 +26,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.LaserBeamEffect;
 
 public class OriShionBoss extends AbstractShionBoss {
@@ -106,6 +96,7 @@ public class OriShionBoss extends AbstractShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
 
+        addToBot(new VersusEffectAction(OriShion.ID));
 
         addToBot(new ApplyPowerAction(this, this, new ConcordSnipePower(this, 1)));
 //        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Strike")));
@@ -167,11 +158,11 @@ public class OriShionBoss extends AbstractShionBoss {
                 this.moveCount++;
                 break;
             case 2:
-                setMove((byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(1).base,4,true);
+                setMove((byte) 2, Intent.ATTACK_DEBUFF, this.damage.get(1).base, 4, true);
                 this.moveCount++;
                 break;
             case 3:
-                setMove((byte) 3, Intent.ATTACK_DEFEND, this.damage.get(2).base,4,true);
+                setMove((byte) 3, Intent.ATTACK_DEFEND, this.damage.get(2).base, 4, true);
                 this.moveCount = 2;
                 break;
             case 4:
@@ -207,13 +198,11 @@ public class OriShionBoss extends AbstractShionBoss {
         if (this.strike) {
             if (!MinionGroup.areMinionsBasicallyDead()) {
                 AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                if(minion !=null)
-                tmp += minion.maxHealth * 0.5f;
+                if (minion != null)
+                    tmp += minion.maxHealth * 0.5f;
             } else
                 tmp += target.maxHealth * 0.5f;
-            }
-
-
+        }
 
 
         for (AbstractPower p : this.powers) {
@@ -227,11 +216,11 @@ public class OriShionBoss extends AbstractShionBoss {
 
         if (!MinionGroup.areMinionsBasicallyDead()) {
             AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-            if(minion !=null)
-            for (AbstractPower p : minion.powers) {
-                tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
+            if (minion != null)
+                for (AbstractPower p : minion.powers) {
+                    tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
 
-            }
+                }
         }
 
         tmp = AbstractDungeon.player.stance.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
@@ -248,10 +237,10 @@ public class OriShionBoss extends AbstractShionBoss {
 
         if (!MinionGroup.areMinionsBasicallyDead()) {
             AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-            if(minion !=null)
-            for (AbstractPower p : minion.powers) {
-                tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
-            }
+            if (minion != null)
+                for (AbstractPower p : minion.powers) {
+                    tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
+                }
         }
 
         dmg = MathUtils.floor(tmp);

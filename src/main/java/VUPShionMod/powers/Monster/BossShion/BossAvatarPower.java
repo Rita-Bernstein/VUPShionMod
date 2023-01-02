@@ -29,9 +29,7 @@ public class BossAvatarPower extends AbstractShionPower {
         this.amount = amount;
         this.amount2 = 5;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("DelayAvatarPower");
     }
 
     @Override

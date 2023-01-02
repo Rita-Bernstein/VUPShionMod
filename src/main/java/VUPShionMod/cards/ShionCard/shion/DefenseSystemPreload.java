@@ -27,11 +27,10 @@ public class DefenseSystemPreload extends AbstractShionCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
-        addToBot(new MakeLoadedCardAction(this.upgraded,new QuickDefend(),this.magicNumber));
+        addToBot(new MakeLoadedCardAction(this.upgraded, new QuickDefend(), this.magicNumber));
 //        addToBot(new MakeTempCardInDrawPileAction(new QuickDefend(), this.magicNumber, true, true, false));
     }
 

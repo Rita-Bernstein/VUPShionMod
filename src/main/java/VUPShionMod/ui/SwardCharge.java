@@ -39,22 +39,22 @@ public class SwardCharge implements Disposable {
     private int magiamCount = 0;
 
 
-    private Color color = Color.WHITE.cpy();
+    private final Color color = Color.WHITE.cpy();
 
     public float cX = 0.0f;
     public float cY = 0.0f;
     public float scale = 0.55f;
 
-    private Hitbox hb;
+    private final Hitbox hb;
 
     private Texture body;
-    private ArrayList<SwardChargeItem> comboImg = new ArrayList<>();
-    private ArrayList<SwardChargeItem> upgradeImg = new ArrayList<>();
+    private final ArrayList<SwardChargeItem> comboImg = new ArrayList<>();
+    private final ArrayList<SwardChargeItem> upgradeImg = new ArrayList<>();
     public boolean comboTrigger = false;
     public boolean upgradeShine = false;
 
 
-    private ArrayList<String> cardsPlayed = new ArrayList<>();
+    private final ArrayList<String> cardsPlayed = new ArrayList<>();
 
     public SwardCharge() {
         this.body = ImageMaster.loadImage("VUPShionMod/img/ui/SwardCharge/Body.png");
@@ -155,7 +155,7 @@ public class SwardCharge implements Disposable {
             return;
         }
 
-        if(this.comboTrigger)return;
+        if (this.comboTrigger) return;
 
         if (card.type == AbstractCard.CardType.ATTACK) {
             if (!this.cardsPlayed.contains(card.cardID)) {
@@ -169,7 +169,7 @@ public class SwardCharge implements Disposable {
             }
         }
 
-        if(this.count ==3){
+        if (this.count == 3) {
             addToBot(new ApplyCorGladiiAction(1));
         }
 

@@ -30,7 +30,7 @@ public class SelfSinPrayer extends AbstractPrayer {
 
     @Override
     public void use() {
-        addToBot(new ApplySinAction(AbstractDungeon.player,this.amount));
+        addToBot(new ApplySinAction(AbstractDungeon.player, this.amount));
     }
 
     @Override

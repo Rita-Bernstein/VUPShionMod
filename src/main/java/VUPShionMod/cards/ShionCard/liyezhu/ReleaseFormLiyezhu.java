@@ -42,7 +42,7 @@ public class ReleaseFormLiyezhu extends AbstractShionLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainHyperdimensionalLinksAction(this.magicNumber));
         addToBot(new SFXAction("SHION_" + (32 + MathUtils.random(1))));
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("Liyezhu"),1.0f));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("Liyezhu"), 1.0f));
 
         Consumer<AnimationState> stateConsumer = state -> {
             state.setAnimation(0, "FZ_Open", false);

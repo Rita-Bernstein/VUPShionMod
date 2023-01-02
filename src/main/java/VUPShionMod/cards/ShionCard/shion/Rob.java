@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Rob extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID(Rob.class.getSimpleName());
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy23.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy23.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -39,7 +39,7 @@ public class Rob extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int count = MathUtils.random(2);
-        switch (count){
+        switch (count) {
             case 0:
                 addToBot(new SFXAction("SHION_1"));
                 break;

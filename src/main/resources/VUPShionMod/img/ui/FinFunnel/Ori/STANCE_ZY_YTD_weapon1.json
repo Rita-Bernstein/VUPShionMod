@@ -1,1 +1,627 @@
-{"skeleton":{"hash":"uxsbVz1m61UuGvEWn8qHlTRLdt8","spine":"3.7.94","width":168,"height":76,"images":"./images/","audio":"F:/委托/紫音/杀戮尖塔mod企划/角色spine/游戏立绘/咏叹调/images"},"bones":[{"name":"root","color":"abe323ff"},{"name":"weapon1_bone","parent":"root","length":133.3,"rotation":-20.36,"x":171.92,"y":716.56},{"name":"weapon1_muzzle","parent":"weapon1_bone","x":131.55,"y":0.19}],"slots":[{"name":"YOFU_JX_light","bone":"weapon1_bone","attachment":"YOFU_JX_light"},{"name":"YOFU_JX","bone":"weapon1_bone","attachment":"YOFU_JX"},{"name":"YOFU_JX_light_ring","bone":"weapon1_bone","attachment":"YOFU_JX_light_ring"}],"transform":[{"name":"weapon1","order":0,"bones":["weapon1_bone","weapon1_muzzle"],"target":"root","rotation":-20.36,"x":171.92,"y":716.56,"rotateMix":0.001,"translateMix":0.001,"scaleMix":0.001,"shearMix":0.001}],"skins":{"default":{"YOFU_JX":{"YOFU_JX":{"x":58.32,"y":2.42,"rotation":20.36,"width":140,"height":57}},"YOFU_JX_light":{"YOFU_JX_light":{"x":-1.23,"y":-5.27,"rotation":20.36,"width":79,"height":66}},"YOFU_JX_light_ring":{"YOFU_JX_light_ring":{"type":"mesh","uvs":[1,1,0,1,0,0,1,0],"triangles":[1,2,3,1,3,0],"vertices":[111.71,-9.23,19.83,-43.33,-0.7,11.99,91.18,46.08],"hull":4,"edges":[0,2,2,4,4,6,0,6],"width":98,"height":59}}}},"animations":{"weapon1_attack":{"bones":{"weapon1_bone":{"rotate":[{"time":0,"angle":0,"curve":[0.25,0,0.75,1]},{"time":0.6667,"angle":14.9,"curve":[0.25,0,0.75,1]},{"time":0.8333,"angle":26.72,"curve":[0.25,0,0.75,1]},{"time":1.1667,"angle":14.9,"curve":[0.25,0,0.75,1]},{"time":2,"angle":0}],"translate":[{"time":0,"x":0,"y":0,"curve":[0.25,0,0.75,1]},{"time":0.6667,"x":126.14,"y":-98.55,"curve":[0.25,0,0.75,1]},{"time":0.8333,"x":69.58,"y":-131.23,"curve":[0.25,0,0.75,1]},{"time":1.1667,"x":126.14,"y":-98.55,"curve":[0.25,0,0.75,1]},{"time":2,"x":0,"y":0}]}}},"weapon1_come_in":{"bones":{"weapon1_bone":{"rotate":[{"time":0,"angle":0,"curve":[0.25,0,0.75,1]},{"time":1,"angle":16.21,"curve":"stepped"},{"time":1.1667,"angle":16.21,"curve":[0.25,0,0.75,1]},{"time":1.3333,"angle":0}],"translate":[{"time":0,"x":-2133.08,"y":162.83,"curve":[0.25,0,0.75,1]},{"time":1,"x":0,"y":49.57,"curve":[0.25,0,0.75,1]},{"time":1.3333,"x":0,"y":0}]}}},"weapon1_idle":{"slots":{"YOFU_JX_light":{"color":[{"time":0,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.0667,"color":"ffffff36","curve":[0.25,0,0.75,1]},{"time":0.1333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.2,"color":"ffffff36","curve":[0.25,0,0.75,1]},{"time":0.2667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.3333,"color":"ffffff36","curve":[0.25,0,0.75,1]},{"time":0.4,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.4667,"color":"ffffff36","curve":[0.25,0,0.75,1]},{"time":0.5333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":0.6,"color":"ffffff36","curve":[0.25,0,0.75,1]},{"time":0.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":1,"color":"ffffffa0","curve":[0.25,0,0.75,1]},{"time":1.3333,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":1.6667,"color":"ffffffa0","curve":[0.25,0,0.75,1]},{"time":2,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":2.3333,"color":"ffffffa0","curve":[0.25,0,0.75,1]},{"time":2.6667,"color":"ffffffff","curve":[0.25,0,0.75,1]},{"time":2.8333,"color":"ffffffa0","curve":[0.25,0,0.75,1]},{"time":3,"color":"ffffffff"}]}},"bones":{"weapon1_bone":{"translate":[{"time":0,"x":0,"y":0,"curve":[0.25,0,0.75,1]},{"time":1.3333,"x":0,"y":21.28,"curve":"stepped"},{"time":1.5,"x":0,"y":21.28,"curve":[0.25,0,0.75,1]},{"time":3,"x":0,"y":0}]}}},"weapon1_idle_lightring":{"slots":{"YOFU_JX_light_ring":{"color":[{"time":0,"color":"ffffff00"},{"time":1.5,"color":"ffffffff"},{"time":2.9667,"color":"ffffff00"},{"time":3,"color":"ffffffff"}],"attachment":[{"time":2.9667,"name":null},{"time":3,"name":"YOFU_JX_light_ring"}]}},"deform":{"default":{"YOFU_JX_light_ring":{"YOFU_JX_light_ring":[{"time":0,"curve":[0.25,0,0.75,1]},{"time":1.5,"vertices":[-5.40723,-1.02175,-14.85228,-4.52675,-16.85674,0.87522,-7.41174,4.38017],"curve":[0.25,0,0.75,1]},{"time":2.9,"vertices":[-22.01659,-0.1449,-22.01659,-0.1449,-22.01659,-0.1449,-22.01659,-0.1449],"curve":[0.25,0,0.75,1]},{"time":3}]}}}}}}
+{
+  "skeleton": {
+    "hash": "uxsbVz1m61UuGvEWn8qHlTRLdt8",
+    "spine": "3.7.94",
+    "width": 168,
+    "height": 76,
+    "images": "./images/",
+    "audio": "F:/委托/紫音/杀戮尖塔mod企划/角色spine/游戏立绘/咏叹调/images"
+  },
+  "bones": [
+    {
+      "name": "root",
+      "color": "abe323ff"
+    },
+    {
+      "name": "weapon1_bone",
+      "parent": "root",
+      "length": 133.3,
+      "rotation": -20.36,
+      "x": 171.92,
+      "y": 716.56
+    },
+    {
+      "name": "weapon1_muzzle",
+      "parent": "weapon1_bone",
+      "x": 131.55,
+      "y": 0.19
+    }
+  ],
+  "slots": [
+    {
+      "name": "YOFU_JX_light",
+      "bone": "weapon1_bone",
+      "attachment": "YOFU_JX_light"
+    },
+    {
+      "name": "YOFU_JX",
+      "bone": "weapon1_bone",
+      "attachment": "YOFU_JX"
+    },
+    {
+      "name": "YOFU_JX_light_ring",
+      "bone": "weapon1_bone",
+      "attachment": "YOFU_JX_light_ring"
+    }
+  ],
+  "transform": [
+    {
+      "name": "weapon1",
+      "order": 0,
+      "bones": [
+        "weapon1_bone",
+        "weapon1_muzzle"
+      ],
+      "target": "root",
+      "rotation": -20.36,
+      "x": 171.92,
+      "y": 716.56,
+      "rotateMix": 0.001,
+      "translateMix": 0.001,
+      "scaleMix": 0.001,
+      "shearMix": 0.001
+    }
+  ],
+  "skins": {
+    "default": {
+      "YOFU_JX": {
+        "YOFU_JX": {
+          "x": 58.32,
+          "y": 2.42,
+          "rotation": 20.36,
+          "width": 140,
+          "height": 57
+        }
+      },
+      "YOFU_JX_light": {
+        "YOFU_JX_light": {
+          "x": -1.23,
+          "y": -5.27,
+          "rotation": 20.36,
+          "width": 79,
+          "height": 66
+        }
+      },
+      "YOFU_JX_light_ring": {
+        "YOFU_JX_light_ring": {
+          "type": "mesh",
+          "uvs": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "triangles": [
+            1,
+            2,
+            3,
+            1,
+            3,
+            0
+          ],
+          "vertices": [
+            111.71,
+            -9.23,
+            19.83,
+            -43.33,
+            -0.7,
+            11.99,
+            91.18,
+            46.08
+          ],
+          "hull": 4,
+          "edges": [
+            0,
+            2,
+            2,
+            4,
+            4,
+            6,
+            0,
+            6
+          ],
+          "width": 98,
+          "height": 59
+        }
+      }
+    }
+  },
+  "animations": {
+    "weapon1_attack": {
+      "bones": {
+        "weapon1_bone": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "angle": 14.9,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8333,
+              "angle": 26.72,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.1667,
+              "angle": 14.9,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2,
+              "angle": 0
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "x": 126.14,
+              "y": -98.55,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.8333,
+              "x": 69.58,
+              "y": -131.23,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.1667,
+              "x": 126.14,
+              "y": -98.55,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      }
+    },
+    "weapon1_come_in": {
+      "bones": {
+        "weapon1_bone": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "angle": 16.21,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.1667,
+              "angle": 16.21,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.3333,
+              "angle": 0
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": -2133.08,
+              "y": 162.83,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": 49.57,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.3333,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      }
+    },
+    "weapon1_idle": {
+      "slots": {
+        "YOFU_JX_light": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.0667,
+              "color": "ffffff36",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.1333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "color": "ffffff36",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.2667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.3333,
+              "color": "ffffff36",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.4667,
+              "color": "ffffff36",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.5333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6,
+              "color": "ffffff36",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1,
+              "color": "ffffffa0",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffffa0",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffffa0",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.6667,
+              "color": "ffffffff",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.8333,
+              "color": "ffffffa0",
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "weapon1_bone": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 1.3333,
+              "x": 0,
+              "y": 21.28,
+              "curve": "stepped"
+            },
+            {
+              "time": 1.5,
+              "x": 0,
+              "y": 21.28,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        }
+      }
+    },
+    "weapon1_idle_lightring": {
+      "slots": {
+        "YOFU_JX_light_ring": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.5,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.9667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3,
+              "color": "ffffffff"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 2.9667,
+              "name": null
+            },
+            {
+              "time": 3,
+              "name": "YOFU_JX_light_ring"
+            }
+          ]
+        }
+      },
+      "deform": {
+        "default": {
+          "YOFU_JX_light_ring": {
+            "YOFU_JX_light_ring": [
+              {
+                "time": 0,
+                "curve": [
+                  0.25,
+                  0,
+                  0.75,
+                  1
+                ]
+              },
+              {
+                "time": 1.5,
+                "vertices": [
+                  -5.40723,
+                  -1.02175,
+                  -14.85228,
+                  -4.52675,
+                  -16.85674,
+                  0.87522,
+                  -7.41174,
+                  4.38017
+                ],
+                "curve": [
+                  0.25,
+                  0,
+                  0.75,
+                  1
+                ]
+              },
+              {
+                "time": 2.9,
+                "vertices": [
+                  -22.01659,
+                  -0.1449,
+                  -22.01659,
+                  -0.1449,
+                  -22.01659,
+                  -0.1449,
+                  -22.01659,
+                  -0.1449
+                ],
+                "curve": [
+                  0.25,
+                  0,
+                  0.75,
+                  1
+                ]
+              },
+              {
+                "time": 3
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

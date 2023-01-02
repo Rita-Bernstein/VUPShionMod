@@ -27,7 +27,6 @@ public class AnalyseSystemPreload extends AbstractShionCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));

@@ -16,7 +16,6 @@ public class Memento extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
 
-
     public Memento() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.BOSS, LandingSound.CLINK);
     }
@@ -29,8 +28,8 @@ public class Memento extends AbstractShionRelic {
     @Override
     public void atTurnStart() {
         flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
-        addToBot(new LoseHPAction(AbstractDungeon.player,AbstractDungeon.player,2));
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 2));
 
     }
 

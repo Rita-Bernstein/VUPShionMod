@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public abstract class AbstractShionBoss extends AbstractVUPShionBoss {
     public ArrayList<AbstractBossFinFunnel> bossFinFunnels = new ArrayList<>();
-    private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
+    private final Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
 
 
     public AbstractShionBoss(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
@@ -105,6 +105,17 @@ public abstract class AbstractShionBoss extends AbstractVUPShionBoss {
         else {
             System.out.println("浮游炮列表为空");
             return null;
+        }
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+
+        if (bossFinFunnels != null && !bossFinFunnels.isEmpty()) {
+            for (AbstractBossFinFunnel finFunnel : bossFinFunnels) {
+                finFunnel.dispose();
+            }
         }
     }
 }

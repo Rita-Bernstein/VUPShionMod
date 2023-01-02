@@ -56,10 +56,10 @@ public class RotorCutter extends AbstractEisluRenCard {
         }
 
         for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE,true));
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
 
         for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false),1,true));
+            addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false), 1, true));
     }
 
 

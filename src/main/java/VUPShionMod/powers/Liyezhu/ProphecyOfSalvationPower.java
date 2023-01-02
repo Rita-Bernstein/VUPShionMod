@@ -33,9 +33,9 @@ public class ProphecyOfSalvationPower extends AbstractShionPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card.hasTag(CardTagsEnum.Prayer_CARD)){
+        if (card.hasTag(CardTagsEnum.Prayer_CARD)) {
             flash();
-            addToBot(new HealAction(this.owner,this.owner,this.amount));
+            addToBot(new HealAction(this.owner, this.owner, this.amount));
         }
     }
 }

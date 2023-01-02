@@ -17,17 +17,17 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import java.util.ArrayList;
 
 public class CGlayout implements Disposable {
-    private Color bgColor;
-    private Color screenColor;
+    private final Color bgColor;
+    private final Color screenColor;
 
     private float darkenTimer = 1.0F;
     private float fadeTimer = 1.0F;
     private float switchTimer = 1.0F;
     public float switchTimerMax = 2.0f;
 
-    private int currentScene = 0;
+    private final int currentScene = 0;
 
-    private ArrayList<CutscenePanel> panels = new ArrayList<>();
+    private final ArrayList<CutscenePanel> panels = new ArrayList<>();
 
     private Texture bgImg;
     public boolean isDone = false;

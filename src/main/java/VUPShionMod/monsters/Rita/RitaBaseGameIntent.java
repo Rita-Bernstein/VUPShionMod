@@ -1,6 +1,8 @@
 package VUPShionMod.monsters.Rita;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.actions.Common.RemoveAllShieldAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.Monster.BossShion.PotentialOutbreakPower;
 import VUPShionMod.powers.Monster.PlagaAMundo.StrengthenPower;
@@ -36,7 +38,7 @@ import com.megacrit.cardcrawl.vfx.combat.*;
 import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
 
 public class RitaBaseGameIntent extends AbstractMonsterIntent {
-    private PlayerDataListener playerDataListener = new PlayerDataListener();
+    private final PlayerDataListener playerDataListener = new PlayerDataListener();
 
 
     public RitaBaseGameIntent(AbstractMonster m) {
@@ -66,7 +68,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
     public void usePreBattleAction() {
         CardCrawlGame.music.playTempBGM(VUPShionMod.makeID("RitaFight1"));
 
-
+//        addToBot(new VersusEffectAction("RitaShop"));
         addToBot(new ApplyPowerAction(m, m, new PotentialOutbreakPower(m, (int) (m.maxHealth * 0.3f), "Silent")));
     }
 
@@ -208,6 +210,7 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
             case 29:
                 addToBot(new DamageAction(p, m.damage.get(3), AbstractGameAction.AttackEffect.FIRE));
                 addToBot(new RemoveAllBlockAction(p, m));
+                addToBot(new RemoveAllShieldAction(p));
                 break;
         }
 
@@ -216,9 +219,9 @@ public class RitaBaseGameIntent extends AbstractMonsterIntent {
 
     @Override
     public void getMove(int num) {
-        if (this.moveCount >= 4 && this.moveCount < 32 && !this.playerDataListener.playerHasHugeBlock()) {
+        if (this.moveCount >= 4 && this.moveCount < 32 && this.playerDataListener.playerHasHugeBlock()) {
             this.playerDataListener.playerHasHugeBlockUsed();
-            m.setMove(getCardStringName(Melter.ID), (byte) 29, AbstractMonster.Intent.ATTACK_DEBUFF, m.damage.get(3).base);
+            m.setMove(getCardStringName(Melter.ID) + " EX", (byte) 29, AbstractMonster.Intent.ATTACK_DEBUFF, m.damage.get(3).base);
         }
 
         switch (this.moveCount) {

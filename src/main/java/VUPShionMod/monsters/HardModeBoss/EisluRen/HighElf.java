@@ -71,7 +71,7 @@ public class HighElf extends AbstractVUPShionBoss {
 
     @Override
     public void takeTurn() {
-        addToBot(new AnimateFastAttackAction(this));
+        attackAction(this);
         addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
         addToBot(new GainRefundChargeAction(2));
 

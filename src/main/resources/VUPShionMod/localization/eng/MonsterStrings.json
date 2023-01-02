@@ -184,16 +184,16 @@
     "MOVES": [
       ""
     ],
-    "NAME": "南小棉-武库芯核",
+    "NAME": "Minami-Keeper of Arsenal",
     "DIALOG": [
-      "Foxy Dash！",
-      "已部署重力浮游炮",
-      "已部署追击浮游炮",
-      "浮游矩阵部署完毕",
-      "防御指令启动",
-      "所有能量导入火力单元",
-      "火力倾泻！",
-      "Off I puff!"
+      "Foxy Dash!",
+      "Deploy Gravity Funnel",
+      "Deploy Pursuing Funnel",
+      "ALL Funnels in place",
+      "Boot Defense Order",
+      "All energy inducted fire units",
+      "SHOW Hand!！",
+      "Off I Puff!"
     ]
   }
 }

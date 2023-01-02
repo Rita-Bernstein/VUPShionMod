@@ -13,12 +13,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 public class TimeWarpAction extends AbstractGameAction {
-    private int amount;
+    private final int amount;
     private static final float DURATION = 0.01F;
     private static final float POST_ATTACK_WAIT_DUR = 0.1F;
     private int numTimes;
-    private int damage;
-    private DamageInfo.DamageType damageTypeForTurn;
+    private final int damage;
+    private final DamageInfo.DamageType damageTypeForTurn;
 
     public TimeWarpAction(AbstractCreature target, int amount, int numTimes, int damage, DamageInfo.DamageType damageTypeForTurn) {
         this.target = target;
@@ -32,37 +32,35 @@ public class TimeWarpAction extends AbstractGameAction {
     }
 
 
-       public void update() {
-             if (this.target == null) {
-                   this.isDone = true;
-            
-                   return;
-                 }
-             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {
-                   AbstractDungeon.actionManager.clearPostCombatActions();
-                   this.isDone = true;
-                   return;
-                 }
-        
-             if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                   this.numTimes--;
-                   AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-                   addToTop(new TimeWarpAction(randomMonster, this.amount, this.numTimes,this.damage, this.damageTypeForTurn));
-                 }
-        
-        
-        
-        
-             if (this.target.currentHealth > 0) {
-                 addToTop(new DamageAction(this.target,
-                         new DamageInfo(AbstractDungeon.player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                   addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new WeakPower(this.target, this.amount,false), this.amount, true, AbstractGameAction.AttackEffect.POISON));
-                   addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new BleedingPower(this.target, this.source,this.amount), this.amount, true, AbstractGameAction.AttackEffect.POISON));
+    public void update() {
+        if (this.target == null) {
+            this.isDone = true;
 
-                 }
-        
-             this.isDone = true;
-           }
+            return;
+        }
+        if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {
+            AbstractDungeon.actionManager.clearPostCombatActions();
+            this.isDone = true;
+            return;
+        }
+
+        if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.numTimes--;
+            AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+            addToTop(new TimeWarpAction(randomMonster, this.amount, this.numTimes, this.damage, this.damageTypeForTurn));
+        }
+
+
+        if (this.target.currentHealth > 0) {
+            addToTop(new DamageAction(this.target,
+                    new DamageInfo(AbstractDungeon.player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new WeakPower(this.target, this.amount, false), this.amount, true, AbstractGameAction.AttackEffect.POISON));
+            addToTop(new ApplyPowerAction(this.target, AbstractDungeon.player, new BleedingPower(this.target, this.source, this.amount), this.amount, true, AbstractGameAction.AttackEffect.POISON));
+
+        }
+
+        this.isDone = true;
+    }
 }
 
 

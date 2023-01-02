@@ -31,7 +31,7 @@ public class WideAreaLocking extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
-        addToBot(new ApplyPowerAction(p,p,new WideAreaLockingPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new WideAreaLockingPower(p, 1)));
     }
 
 

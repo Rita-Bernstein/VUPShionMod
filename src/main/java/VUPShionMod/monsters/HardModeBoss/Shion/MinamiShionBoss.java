@@ -6,6 +6,7 @@ import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Unique.BossFinFunnelMinionAction;
 import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
 import VUPShionMod.actions.Unique.TurnTriggerAllBossFinFunnelAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.*;
@@ -13,6 +14,8 @@ import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.powers.Monster.BossShion.*;
 import VUPShionMod.powers.Shion.GravitoniumPower;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.MinamiShion;
+import VUPShionMod.skins.sk.Shion.OriShion;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import VUPShionMod.vfx.EisluRen.FinalFlashBlastEffect;
 import basemod.ReflectionHacks;
@@ -90,7 +93,7 @@ public class MinamiShionBoss extends AbstractShionBoss {
     public void usePreBattleAction() {
         super.usePreBattleAction();
 
-
+        addToBot(new VersusEffectAction(MinamiShion.ID));
         addToBot(new GainShieldAction(this, 50));
         addToBot(new ApplyPowerAction(this, this, new GravitoniumPower(this)));
         addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Full")));

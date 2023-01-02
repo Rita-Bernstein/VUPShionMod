@@ -8,15 +8,16 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import java.util.function.Consumer;
 
 public class XActionAction extends AbstractGameAction {
-    private int energyOnUse;
-    private boolean freeToPlayOnce;
-    private Consumer<Integer> actionConsumer;
+    private final int energyOnUse;
+    private final boolean freeToPlayOnce;
+    private final Consumer<Integer> actionConsumer;
+
     public XActionAction(Consumer<Integer> actionConsumer, boolean freeToPlayOnce, int energyOnUse) {
         this.freeToPlayOnce = freeToPlayOnce;
         this.duration = Settings.ACTION_DUR_XFAST;
         this.actionType = AbstractGameAction.ActionType.SPECIAL;
         this.energyOnUse = energyOnUse;
-        this.actionConsumer =actionConsumer;
+        this.actionConsumer = actionConsumer;
     }
 
 
@@ -33,7 +34,7 @@ public class XActionAction extends AbstractGameAction {
         }
 
         if (effect >= 0) {
-            if(actionConsumer != null)
+            if (actionConsumer != null)
                 actionConsumer.accept(effect);
             if (!this.freeToPlayOnce) {
                 AbstractDungeon.player.energy.use(EnergyPanel.totalCount);

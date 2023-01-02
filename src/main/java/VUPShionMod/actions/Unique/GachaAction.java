@@ -78,11 +78,11 @@ public class GachaAction extends AbstractGameAction {
         }
 
         if (amount > 0)
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (!mo.isDeadOrEscaped() && mo.id.equals(PlagaAMundoMinion.ID)) {
-                addToBot(new GainBlockAction(mo, mo, amount));
+            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                if (!mo.isDeadOrEscaped() && mo.id.equals(PlagaAMundoMinion.ID)) {
+                    addToTop(new GainBlockAction(mo, mo, amount));
+                }
             }
-        }
     }
 
     private void applyHealing() {
@@ -101,11 +101,11 @@ public class GachaAction extends AbstractGameAction {
         }
 
         if (amount > 0)
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-            if (!mo.isDeadOrEscaped() && mo.id.equals(PlagaAMundoMinion.ID)) {
-                addToBot(new HealAction(mo, mo, amount));
+            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                if (!mo.isDeadOrEscaped() && mo.id.equals(PlagaAMundoMinion.ID)) {
+                    addToTop(new HealAction(mo, mo, amount));
+                }
             }
-        }
 
     }
 
@@ -127,7 +127,7 @@ public class GachaAction extends AbstractGameAction {
         if (amount > 0)
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
                 if (!mo.isDeadOrEscaped() && mo.id.equals(PlagaAMundoMinion.ID)) {
-                    addToBot(new ApplyPowerAction(mo, mo, new ArtifactPower(mo, amount)));
+                    addToTop(new ApplyPowerAction(mo, mo, new ArtifactPower(mo, amount)));
                 }
             }
 
@@ -149,7 +149,7 @@ public class GachaAction extends AbstractGameAction {
         }
 
         if (amount > 0)
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, amount, true)));
+            addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FrailPower(AbstractDungeon.player, amount, true)));
 
     }
 

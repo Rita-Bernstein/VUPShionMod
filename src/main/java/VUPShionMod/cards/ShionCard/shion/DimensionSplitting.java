@@ -34,7 +34,7 @@ public class DimensionSplitting extends AbstractShionCard {
         this.selfRetain = true;
         this.isMultiDamage = true;
 
-        GraveField.grave.set(this,true);
+        GraveField.grave.set(this, true);
     }
 
     @Override

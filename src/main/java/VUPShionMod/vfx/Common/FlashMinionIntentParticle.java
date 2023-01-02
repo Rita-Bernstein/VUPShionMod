@@ -10,22 +10,22 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-public class FlashMinionIntentParticle  extends AbstractGameEffect {
+public class FlashMinionIntentParticle extends AbstractGameEffect {
     private static final float DURATION = 1.0F;
     private static final float START_SCALE;
     private float scale = 0.01F;
     private static int W;
-    private Texture img;
-    private float x;
-    private float y;
-    private Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
+    private final Texture img;
+    private final float x;
+    private final float y;
+    private final Color shineColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
 
     public FlashMinionIntentParticle(Texture img, AbstractPlayerMinion m) {
         this.duration = 1.0F;
         this.img = img;
         W = img.getWidth();
-        this.x = m.intentHb.cX - (float)W / 2.0F;
-        this.y = m.intentHb.cY - (float)W / 2.0F;
+        this.x = m.intentHb.cX - (float) W / 2.0F;
+        this.y = m.intentHb.cY - (float) W / 2.0F;
         this.renderBehind = true;
     }
 
@@ -48,7 +48,7 @@ public class FlashMinionIntentParticle  extends AbstractGameEffect {
         sb.setBlendFunction(770, 1);
         this.shineColor.a = this.duration / 2.0F;
         sb.setColor(this.shineColor);
-        sb.draw(this.img, this.x, this.y, (float)W / 2.0F, (float)W / 2.0F, (float)W, (float)W, this.scale, this.scale, 0.0F, 0, 0, W, W, false, false);
+        sb.draw(this.img, this.x, this.y, (float) W / 2.0F, (float) W / 2.0F, (float) W, (float) W, this.scale, this.scale, 0.0F, 0, 0, W, W, false, false);
         sb.setBlendFunction(770, 771);
     }
 

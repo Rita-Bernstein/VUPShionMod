@@ -27,22 +27,20 @@ public class MagicDisorderPower extends SavePowerPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-
     public MagicDisorderPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower48.png"), 0, 0, 48, 48);
+        loadShionRegion("DelayAvatarPower");
     }
 
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
 
-        if(!this.endingEffect)
-        addToBot(new SavePlayerPowersAction(this));
+        if (!this.endingEffect)
+            addToBot(new SavePlayerPowersAction(this));
     }
 
 
@@ -52,18 +50,18 @@ public class MagicDisorderPower extends SavePowerPower {
             justApplied = false;
 
             flash();
-            addToBot(new DamageAction(AbstractDungeon.player,new DamageInfo(null,30, DamageInfo.DamageType.THORNS),
+            addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(null, 30, DamageInfo.DamageType.THORNS),
                     AbstractGameAction.AttackEffect.FIRE));
 
             return;
         }
 
         flash();
-        this.endingEffect =true;
+        this.endingEffect = true;
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if(!playerPowersToSave.isEmpty()){
+                if (!playerPowersToSave.isEmpty()) {
                     AbstractDungeon.player.powers.addAll(playerPowersToSave);
                     playerPowersToSave.clear();
                 }

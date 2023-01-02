@@ -77,6 +77,18 @@ public class FinFunnelManager {
         return null;
     }
 
+    public ArrayList<AbstractFinFunnel> getFinFunnels(String id) {
+        ArrayList<AbstractFinFunnel> list = new ArrayList<>();
+
+        if (!finFunnelList.isEmpty())
+            for (AbstractFinFunnel finFunnel : finFunnelList) {
+                if (finFunnel.id.equals(id))
+                    list.add(finFunnel);
+            }
+
+        return list;
+    }
+
     public static ArrayList<AbstractFinFunnel> getFinFunnelList() {
         return AbstractPlayerPatches.AddFields.finFunnelManager.get(AbstractDungeon.player).finFunnelList;
     }
@@ -98,7 +110,7 @@ public class FinFunnelManager {
                 tmp.add(finFunnel);
         }
 
-        if(tmp.isEmpty()){
+        if (tmp.isEmpty()) {
             for (AbstractFinFunnel finFunnel : getFinFunnelList()) {
                 if (finFunnel.id.equals(MatrixFinFunnel.ID))
                     tmp.add(finFunnel);
@@ -146,7 +158,7 @@ public class FinFunnelManager {
                 for (AbstractFinFunnel funnel : finFunnelList) {
                     funnel.render(sb);
                 }
-                
+
                 sb.draw(this.box, this.cX - 48.0F - 24.0f * Settings.scale, this.cY - 48.0F + 48.0f * Settings.scale,
                         48.0f, 48.0f,
                         48.0f, 48.0f,

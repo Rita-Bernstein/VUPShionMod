@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.function.Supplier;
 
 public class ApplyPowerToAllEnemyAction extends AbstractGameAction {
-    private Supplier<AbstractPower> powerToApply;
+    private final Supplier<AbstractPower> powerToApply;
 
     public ApplyPowerToAllEnemyAction(Supplier<AbstractPower> powerToApply) {
         this.powerToApply = powerToApply;

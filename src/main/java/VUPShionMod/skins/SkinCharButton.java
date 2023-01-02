@@ -142,13 +142,11 @@ public class SkinCharButton {
     }
 
     public void update(CharacterOption option) {
-        this.cX = CharacterSelectScreenPatches.skinManager.panel_x + 504.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
-        this.cY = 513.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+        this.cX = CharacterSelectScreenPatches.skinManager.panel_x + 504.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.xScale;
+        this.cY = 513.0f * CharacterSelectScreenPatches.skinManager.scale * Settings.yScale;
         this.hb.width = 260.0f * this.scale * Settings.scale;
         this.hb.height = 154.0f * this.scale * Settings.scale;
         this.hb.move(this.cX + this.current_x, this.cY + this.current_y);
-
-
 
 
         if (CharacterSelectScreenPatches.skinManager.currentSkinCharacter != null) {
@@ -194,7 +192,7 @@ public class SkinCharButton {
 
                     CharacterSelectScreenPatches.skinManager.currentSkinCharacter.skins.get(
                             CharacterSelectScreenPatches.skinManager.currentSkinCharacter.selectedCount).justSkinSelected(
-                                    CharacterSelectScreenPatches.skinManager.currentSkinCharacter.lastSelectedCount);
+                            CharacterSelectScreenPatches.skinManager.currentSkinCharacter.lastSelectedCount);
 
                     CharacterSelectScreenPatches.skinManager.currentSkinCharacter.lastSelectedCount = this.index;
 

@@ -27,14 +27,14 @@ public class Exile extends AbstractWCCard {
         this.exhaust = true;
         this.isEthereal = true;
 
-        vupCardSetBanner(CardRarity.RARE,CardType.ATTACK);
+        vupCardSetBanner(CardRarity.RARE, CardType.ATTACK);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Smoke 037 Radial Transition", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
                 96.0f, 54.0f, 10.0f * Settings.scale, 2, false)));
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("MorsLibraque"),1.0f));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("MorsLibraque"), 1.0f));
         addToBot(new InstantKillAction(m));
     }
 

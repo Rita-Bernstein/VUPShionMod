@@ -8,9 +8,9 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "Pursued",
     "DESCRIPTIONS": [
-      "At the start of the target's turn, #yPursuing #yFunnel deals #b",
+      "At the start of the target's turn,ALL #yPursuing #yFunnel deals #b",
       " damage.",
-	   "At the end of your turn,take damage form #yPursuing #yFunnel ,deals #b"
+      "At the end of your turn,take damage form ALL #yPursuing #yFunnel ,deals #b"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -37,7 +37,7 @@
       "Task Completed!"
     ]
   },
-    "VUPShionMod:DissectingFinFunnelUpgradePower": {
+  "VUPShionMod:DissectingFinFunnelUpgradePower": {
     "NAME": "Dissecting Upgrade",
     "DESCRIPTIONS": [
       "After playing #b",
@@ -52,11 +52,11 @@
       " #yShield whenever you play a card."
     ]
   },
-    "VUPShionMod:DeploymentOfDefenseSystemPower2": {
+  "VUPShionMod:DeploymentOfDefenseSystemPower2": {
     "NAME": "Defense Unfold",
     "DESCRIPTIONS": [
       "This turn, gain #b",
-	  " #yHyperdimensionalLink"
+      " #yHyperdimensionalLink"
     ]
   },
   "VUPShionMod:AnastasiaCorePower": {
@@ -572,11 +572,11 @@
     ]
   },
   "VUPShionMod:LoseHPPower": {
-  "NAME": "Lose HP",
-  "DESCRIPTIONS": [
-    "At the start of your turn, lose #b%d HP."
-  ]
-},
+    "NAME": "Lose HP",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b%d HP."
+    ]
+  },
   "VUPShionMod:DoubleDamageReceivePower": {
     "NAME": "Receive Double Damage",
     "DESCRIPTIONS": [
@@ -663,7 +663,7 @@
       "Whenever you trigger #yPunitive, apply #b%d #ySinful to ALL ENTITIES."
     ]
   },
-    "VUPShionMod:Arbitration3Power": {
+  "VUPShionMod:Arbitration3Power": {
     "NAME": "Arbitratus Omnes-Heal",
     "DESCRIPTIONS": [
       "Whenever you trigger #yPunitive , heal #b%d HP."
@@ -687,7 +687,7 @@
       " #yPrayer cards cost 0."
     ]
   },
-    "VUPShionMod:BrokenSanctuary2Power": {
+  "VUPShionMod:BrokenSanctuary2Power": {
     "NAME": "Broken Sanctuary-Draw",
     "DESCRIPTIONS": [
       "Whenever you played a #yPrayer card,draw #b%d card.",
@@ -933,7 +933,7 @@
       "Damage received is increased by #b%d."
     ]
   },
-   "VUPShionMod:DespairPower": {
+  "VUPShionMod:DespairPower": {
     "NAME": "Approaching Despair",
     "DESCRIPTIONS": [
       "#rSomething bad is about to happen. NL #rWe must hurry. NL Confront the Worm of the Time at the end of this turn.",
@@ -1263,6 +1263,12 @@
     "NAME": "Ease",
     "DESCRIPTIONS": [
       "Your turn is not ended until you gain #b%d more #yStiffness above the threshold of 4."
+    ]
+  },
+  "VUPShionMod:EarthBlessingPower": {
+    "NAME": "Earth Blessing",
+    "DESCRIPTIONS": [
+      "Immune to ALL Debuffs."
     ]
   }
 }

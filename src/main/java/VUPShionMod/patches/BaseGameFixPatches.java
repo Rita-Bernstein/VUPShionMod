@@ -8,12 +8,12 @@ import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
 public class BaseGameFixPatches {
     @SpirePatch(
             clz = HandCardSelectScreen.class,
-            method= "refreshSelectedCards"
+            method = "refreshSelectedCards"
     )
     public static class HandCardSelectScreenPatch {
         @SpireInsertPatch(rloc = 99, localvars = {"anyNumber"})
         public static SpireReturn<Void> Insert(HandCardSelectScreen _instance, boolean anyNumber) {
-            if (_instance.selectedCards.size() >= 1 && anyNumber && !_instance.canPickZero){
+            if (_instance.selectedCards.size() >= 1 && anyNumber && !_instance.canPickZero) {
                 _instance.button.enable();
             }
 

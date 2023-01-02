@@ -23,22 +23,22 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class ChargeHelper implements Disposable {
-    private Texture mainImg15 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeUI15.png");
-    private Texture mainImg10 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeUI10.png");
-    private Texture iconImg15 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon15.png");
-    private Texture iconImg10 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon10.png");
+    private final Texture mainImg15 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeUI15.png");
+    private final Texture mainImg10 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeUI10.png");
+    private final Texture iconImg15 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon15.png");
+    private final Texture iconImg10 = ImageMaster.loadImage("VUPShionMod/img/ui/ChargeUI/ChargeIcon10.png");
     private int count = 0;
-    private AbstractPlayer p = AbstractDungeon.player;
+    private final AbstractPlayer p = AbstractDungeon.player;
     public boolean active = false;
     private float drawX = 0.0f;
     private float drawY = 0.0f;
-    private float drawScale = 0.8f;
-    private Hitbox hb = new Hitbox(800 * Settings.scale, 240 * Settings.scale);
+    private final float drawScale = 0.8f;
+    private final Hitbox hb = new Hitbox(800 * Settings.scale, 240 * Settings.scale);
 
     public String name;
     public String description;
 
-    private int damage = 200;
+    private final int damage = 200;
 
     public ChargeHelper() {
         name = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("ChargeHelper")).TEXT[0];
@@ -144,7 +144,7 @@ public class ChargeHelper implements Disposable {
         }
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-        AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelPassiveAction(true,false));
+        AbstractDungeon.actionManager.addToBottom(new TriggerAllFinFunnelPassiveAction(true, false));
     }
 
     @Override

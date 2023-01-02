@@ -22,9 +22,7 @@ public class DecreePower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
         isTurnBased = true;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower36.png")), 0, 0, 36, 36);
-        this.type = PowerType.DEBUFF;
+        loadShionRegion("MorsLibraquePower");
     }
 
     @Override

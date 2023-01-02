@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
+
 public class OverloadFortress extends AbstractShionAnastasiaCard {
     public static final String ID = VUPShionMod.makeID(OverloadFortress.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/anastasia/anastasia12.png");
@@ -34,9 +36,11 @@ public class OverloadFortress extends AbstractShionAnastasiaCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                AbstractFinFunnel finFunnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnel(GravityFinFunnel.ID);
-                if (finFunnel != null)
-                    finFunnel.loseTempLevel(magicNumber);
+                ArrayList<AbstractFinFunnel> finFunnels = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).getFinFunnels(GravityFinFunnel.ID);
+                if (finFunnels != null && !finFunnels.isEmpty()) {
+                    for (AbstractFinFunnel finFunnel : finFunnels)
+                        finFunnel.loseTempLevel(magicNumber);
+                }
 
                 this.isDone = true;
             }

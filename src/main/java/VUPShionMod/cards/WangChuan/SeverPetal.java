@@ -52,7 +52,7 @@ public class SeverPetal extends AbstractWCCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.NONE));
 
-        if(this.timesUpgraded >=2) {
+        if (this.timesUpgraded >= 2) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.NONE));
         }
@@ -65,8 +65,8 @@ public class SeverPetal extends AbstractWCCard {
         addToBot(new ApplyStiffnessAction(3));
         addToBot(new DrawCardAction(1));
 
-        if(this.timesUpgraded >=2)
-            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
+        if (this.timesUpgraded >= 2)
+            addToBot(new ApplyPowerAction(p, p, new IntensaPower(p, 1)));
     }
 
 

@@ -40,7 +40,7 @@ public class TriggerDimensionSplitterAction extends AbstractGameAction {
         if (this.justStart) {
             this.justStart = false;
 
-            CardCrawlGame.sound.play("ATTACK_IRON_2",-0.5F);
+            CardCrawlGame.sound.play("ATTACK_IRON_2", -0.5F);
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                 if (monster != null && !monster.isDeadOrEscaped()) {
 
@@ -67,7 +67,7 @@ public class TriggerDimensionSplitterAction extends AbstractGameAction {
                 }
             }
 
-            if(fatal>0){
+            if (fatal > 0) {
                 addToTop(new GainEnergyAction(1));
                 addToTop(new TriggerDimensionSplitterAction());
             }

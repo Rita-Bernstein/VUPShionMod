@@ -51,39 +51,39 @@ public class InTheBlink extends AbstractWCCard {
         switch (this.timesUpgraded) {
             case 0:
                 calculateCardDamage(m);
-                if(m != null)
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                if (m != null)
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                            212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
-                if(!this.hasTag(CardTagsEnum.NoSwardCharge))
-                addToBot(new ApplyStiffnessAction(3));
+                if (!this.hasTag(CardTagsEnum.NoSwardCharge))
+                    addToBot(new ApplyStiffnessAction(3));
                 break;
             case 1:
                 calculateCardDamage(m);
-                if(m != null)
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                if (m != null)
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                            212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
 
                 addToBot(new ReducePowerAction(p, p, CorGladiiPower.POWER_ID, 1));
-                if(!this.hasTag(CardTagsEnum.NoSwardCharge))
-                addToBot(new ApplyStiffnessAction(3));
+                if (!this.hasTag(CardTagsEnum.NoSwardCharge))
+                    addToBot(new ApplyStiffnessAction(3));
                 break;
             case 2:
                 calculateCardDamage(m);
-                if(m != null)
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                        212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
+                if (m != null)
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                            212.0f, 255.0f, 1.5f * Settings.scale, 2, false)));
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
-                if(!this.hasTag(CardTagsEnum.NoSwardCharge))
-                addToBot(new ApplyStiffnessAction(3));
+                if (!this.hasTag(CardTagsEnum.NoSwardCharge))
+                    addToBot(new ApplyStiffnessAction(3));
                 break;
         }
 
@@ -92,14 +92,14 @@ public class InTheBlink extends AbstractWCCard {
             addBaseAoeDamage();
             doAoeDamage();
 
-            if(!this.hasTag(CardTagsEnum.NoSwardCharge))
-            addToBot(new ApplyStiffnessAction(3));
+            if (!this.hasTag(CardTagsEnum.NoSwardCharge))
+                addToBot(new ApplyStiffnessAction(3));
 
             if (this.timesUpgraded >= 9)
                 addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, 1)));
         }
 
-        if(this.hasTag(CardTagsEnum.NoSwardCharge)){
+        if (this.hasTag(CardTagsEnum.NoSwardCharge)) {
             addToBot(new AbstractGameAction() {
                 @Override
                 public void update() {

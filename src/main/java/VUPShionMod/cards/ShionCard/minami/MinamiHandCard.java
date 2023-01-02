@@ -4,6 +4,7 @@ import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.SelectSrcCardToHandAction;
 import VUPShionMod.actions.Shion.FinFunnelMinionAction;
 import VUPShionMod.cards.ShionCard.AbstractShionMinamiCard;
+import VUPShionMod.patches.CardTagsEnum;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.GraveField;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -23,12 +24,14 @@ public class MinamiHandCard extends AbstractShionMinamiCard {
     public MinamiHandCard() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         GraveField.grave.set(this, true);
+        this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToTop(new FinFunnelMinionAction(AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng)));
-        Predicate<AbstractCard> predicate = card -> card.type == AbstractCard.CardType.POWER;
-        addToBot(new SelectSrcCardToHandAction(1, true, predicate));
+        addToBot(new SelectSrcCardToHandAction(1, true,
+                card -> card.type == AbstractCard.CardType.POWER,
+                card -> card.setCostForTurn(0)));
     }
 
     public void upgrade() {

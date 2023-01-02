@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class LoseSansAction extends AbstractGameAction {
-    public LoseSansAction(int amount){
+    public LoseSansAction(int amount) {
         this.amount = amount;
     }
 
@@ -14,6 +14,6 @@ public class LoseSansAction extends AbstractGameAction {
         if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
             EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).loseSan(this.amount);
         }
-        isDone =true;
+        isDone = true;
     }
 }

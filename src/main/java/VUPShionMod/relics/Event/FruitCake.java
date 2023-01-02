@@ -29,30 +29,8 @@ public class FruitCake extends AbstractShionRelic {
     public void onEquip() {
         super.onEquip();
         AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
+        AbstractDungeon.player.increaseMaxHp(Math.max(AbstractDungeon.player.maxHealth / 4, 25), true);
         AchievementPatches.unlockAchievement("00");
     }
 
-    @Override
-    public void atTurnStart() {
-        if (!this.usedUp) {
-            if (!AbstractDungeon.player.isBloodied) {
-                flash();
-                addToBot(new GainEnergyAction(1));
-            } else {
-                this.grayscale = true;
-                this.usedUp = true;
-            }
-        }
-    }
-
-    @Override
-    public void atBattleStart() {
-        if (AbstractDungeon.player.isBloodied) {
-            this.grayscale = true;
-            this.usedUp = true;
-        } else {
-            this.grayscale = false;
-            this.usedUp = false;
-        }
-    }
 }

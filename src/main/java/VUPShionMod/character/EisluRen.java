@@ -73,11 +73,11 @@ public class EisluRen extends CustomPlayer {
 
     private static String currentIdle = "Idle";
     public float stanceSwitchAnimTimer = 0.0F;
-    private ArrayList<String> stanceSwitchQueue = new ArrayList<>();
+    private final ArrayList<String> stanceSwitchQueue = new ArrayList<>();
 
 
     public EisluRen(String name, PlayerClass setClass) {
-        super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
+        super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), null, null);
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 0.0F * Settings.scale;
 
@@ -142,12 +142,12 @@ public class EisluRen extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return  SkinManager.getSkin(3).getCharacterTiTleName();
+        return SkinManager.getSkin(3).getCharacterTiTleName();
     }
 
     @Override
     public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
-
+        ArrayList<AbstractCard> pool = super.getCardPool(tmpPool);
         if (ModHelper.isModEnabled("Red Cards")) {
             CardLibrary.addRedCards(tmpPool);
         }
@@ -174,7 +174,7 @@ public class EisluRen extends CustomPlayer {
         tmpPool.add(new LignumConstans());
 
 
-        return super.getCardPool(tmpPool);
+        return pool;
     }
 
     @Override
@@ -448,7 +448,7 @@ public class EisluRen extends CustomPlayer {
             closeWingAnimation("LightArmorStance");
         }
 
-        if(this.stance.ID.equals(NeutralStance.STANCE_ID)) {
+        if (this.stance.ID.equals(NeutralStance.STANCE_ID)) {
             closeWingAnimation("Idle");
         }
 

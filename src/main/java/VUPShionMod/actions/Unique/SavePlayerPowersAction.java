@@ -9,9 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 
-
 public class SavePlayerPowersAction extends AbstractGameAction {
-    private SavePowerPower powerToSave;
+    private final SavePowerPower powerToSave;
 
     public SavePlayerPowersAction(SavePowerPower powerToSave) {
         this.powerToSave = powerToSave;
@@ -19,8 +18,8 @@ public class SavePlayerPowersAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        for(AbstractPower p : AbstractDungeon.player.powers){
-            if(!(p instanceof InvisiblePower) && !(p instanceof SavePowerPower)){
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (!(p instanceof InvisiblePower) && !(p instanceof SavePowerPower)) {
                 powerToSave.playerPowersToSave.add(p);
 //                addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player,p));
             }

@@ -34,7 +34,7 @@ public class AttackInitiationPower extends AbstractShionPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         this.flash();
         addToBot(new DrawCardAction(1));
-        addToBot(new ReducePowerAction(this.owner,this.owner,this,1));
+        addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
         updateDescription();
     }
 
@@ -47,6 +47,6 @@ public class AttackInitiationPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

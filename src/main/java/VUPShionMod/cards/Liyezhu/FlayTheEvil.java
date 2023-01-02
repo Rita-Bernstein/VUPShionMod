@@ -29,8 +29,8 @@ public class FlayTheEvil extends AbstractLiyezhuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         addToBot(new FlayTheEvilAction(m, upgraded ? 15 : 10));
-        if(upgraded)
-        addToBot(new DrawCardAction(1));
+        if (upgraded)
+            addToBot(new DrawCardAction(1));
 
 
         int times = upgraded ? 2 : 3;

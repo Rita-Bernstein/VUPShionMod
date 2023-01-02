@@ -23,7 +23,7 @@ public class GravityCharging extends AbstractShionMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID, this.magicNumber,true));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID, this.magicNumber, true));
     }
 
     @Override

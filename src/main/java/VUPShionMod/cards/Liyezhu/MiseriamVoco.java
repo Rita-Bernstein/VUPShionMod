@@ -24,7 +24,7 @@ public class MiseriamVoco extends AbstractLiyezhuCard {
 
     private float rotationTimer;
     private int previewIndex;
-    private ArrayList<AbstractCard> cardsList = new ArrayList<>();
+    private final ArrayList<AbstractCard> cardsList = new ArrayList<>();
 
     public MiseriamVoco() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);

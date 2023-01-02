@@ -28,8 +28,7 @@ public class DespairPower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
         this.isTurnBased = true;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower32.png")), 0, 0, 32, 32);
+        loadShionRegion("ContortTimePower");
 
     }
 
@@ -51,7 +50,7 @@ public class DespairPower extends AbstractShionPower {
                 }
             }
 
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             return;
         }
 

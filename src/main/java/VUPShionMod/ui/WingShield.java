@@ -42,21 +42,21 @@ public class WingShield implements Disposable {
     private int refundCharge = 0;
     private int damageReceived = 0;
 
-    private int baseShieldDamageReduce = 2;
+    private final int baseShieldDamageReduce = 2;
     private int shieldDamageReduce = 2;
     private int shieldDamageReduceCombat = 2;
 
-    private Color color = Color.WHITE.cpy();
+    private final Color color = Color.WHITE.cpy();
 
     public float cX = 0.0f;
     public float cY = 0.0f;
     public float scale = 0.33f;
 
-    private Hitbox hb;
+    private final Hitbox hb;
 
-    private Texture[] iconTextures = new Texture[5];
+    private final Texture[] iconTextures = new Texture[5];
 
-    private ArrayList<WingShieldIcon> shieldIcons = new ArrayList<>();
+    private final ArrayList<WingShieldIcon> shieldIcons = new ArrayList<>();
 
     public WingShield() {
         this.body = ImageMaster.loadImage("VUPShionMod/img/ui/WingShield/Body.png");

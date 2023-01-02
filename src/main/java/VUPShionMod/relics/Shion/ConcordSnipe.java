@@ -57,7 +57,7 @@ public class ConcordSnipe extends AbstractShionRelic {
         else
             this.tips.add(new PowerTip(DESCRIPTIONS[1], String.format(DESCRIPTIONS[3], this.counter - 50, this.counter - 50)));
 
-        this.tips.add(new PowerTip(DESCRIPTIONS[4],DESCRIPTIONS[5]));
+        this.tips.add(new PowerTip(DESCRIPTIONS[4], DESCRIPTIONS[5]));
         this.initializeTips();
     }
 
@@ -65,27 +65,27 @@ public class ConcordSnipe extends AbstractShionRelic {
     public void atTurnStart() {
         flash();
         AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.miscRng);
-        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new FireCalibrationPower(m, 1),0));
+        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new FireCalibrationPower(m, 1), 0));
     }
 
     @Override
     public void atTurnStartPostDraw() {
         flash();
-        int amount =0;
-        if(!FinFunnelManager.getFinFunnelList().isEmpty()){
-            for(AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()){
-                if(funnel.getLevel() >=5)
+        int amount = 0;
+        if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
+            for (AbstractFinFunnel funnel : FinFunnelManager.getFinFunnelList()) {
+                if (funnel.getLevel() >= 5)
                     amount++;
             }
         }
 
-        if(amount>0)
+        if (amount > 0)
             addToBot(new GainHyperdimensionalLinksAction(amount));
     }
 
     @Override
     public void atBattleStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ConcordPower(AbstractDungeon.player,this.counter)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConcordPower(AbstractDungeon.player, this.counter)));
     }
 
 
@@ -103,6 +103,6 @@ public class ConcordSnipe extends AbstractShionRelic {
         options.stream()
                 .filter(option -> option instanceof SmithOption).findFirst()
                 .map(option -> options.indexOf(option))
-                .ifPresent(index -> options.set(index,new SynchroOption(this)));
+                .ifPresent(index -> options.set(index, new SynchroOption(this)));
     }
 }

@@ -51,18 +51,18 @@ public class IntelligentFinFunnel extends AbstractImageEvent {
                     case 0:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new GravityRepression(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                        logMetricObtainCard(NAME, "continue",new GravityRepression());
+                        logMetricObtainCard(NAME, "continue", new GravityRepression());
                         break;
 
                     case 1:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new TrackingAnalysis(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                        logMetricObtainCard(NAME, "continue",new TrackingAnalysis());
+                        logMetricObtainCard(NAME, "continue", new TrackingAnalysis());
                         break;
                     case 2:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[1]);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new CollaborativeInvestigation(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                        logMetricObtainCard(NAME, "continue",new CollaborativeInvestigation());
+                        logMetricObtainCard(NAME, "continue", new CollaborativeInvestigation());
                         break;
                 }
 

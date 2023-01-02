@@ -8,9 +8,9 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "追擊",
     "DESCRIPTIONS": [
-      "目標的回合開始時， #y追擊浮游炮 將攻擊目標一次，造成 #b",
+      "目標的回合開始時，所有 #yy追擊浮游炮 將攻擊目標一次，造成 #b",
       " 點傷害。",
-      "你的回合結束時，將受到敵人 #y追擊浮游炮 的一次攻擊，造成 #b"
+      "你的回合結束時，將受到敵人所有 #y追擊浮游炮 的一次攻擊，造成 #b"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -612,13 +612,13 @@
   "VUPShionMod:EnsanguinedFigurePower": {
     "NAME": "浸染之衣",
     "DESCRIPTIONS": [
-      "每當你受到傷害時，給予所有人 #b%d 層 #y罪孽 。"
+      "每當你受到 #y攻擊 傷害時，給予所有人 #b%d 層 #y罪孽 。"
     ]
   },
   "VUPShionMod:EnsanguinedFigurePower2": {
     "NAME": "浸染之衣+",
     "DESCRIPTIONS": [
-      "每當你受到傷害時，給予所有敵人 #b%d 層 #y罪孽 。"
+      "每當你受到 #y攻擊 傷害時，給予所有敵人 #b%d 層 #y罪孽 。"
     ]
   },
   "VUPShionMod:CrimsonDelugePower": {
@@ -1263,6 +1263,12 @@
     "NAME": "硬直抗性",
     "DESCRIPTIONS": [
       "#y硬直 的觸發層數提高 #b%d 。"
+    ]
+  },
+  "VUPShionMod:EarthBlessingPower": {
+    "NAME": "大地祝福",
+    "DESCRIPTIONS": [
+      "免疫所有負面效果。"
     ]
   }
 }

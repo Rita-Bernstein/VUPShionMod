@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 public class GainPrayerEffect extends AbstractGameEffect {
     private static final float EFFECT_DUR = 2.0F;
     private float scale;
-    private TextureAtlas.AtlasRegion region48;
-    private float xPos;
-    private float yPos;
+    private final TextureAtlas.AtlasRegion region48;
+    private final float xPos;
+    private final float yPos;
 
     public GainPrayerEffect(AbstractPrayer prayer) {
         this.region48 = prayer.region48;

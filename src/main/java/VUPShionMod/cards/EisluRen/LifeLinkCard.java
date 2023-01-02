@@ -27,10 +27,10 @@ public class LifeLinkCard extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new SpiritCloisterPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new SpiritCloisterPower(p)));
         AbstractPlayerMinion elf = MinionGroup.getElfMinion();
-        if(elf !=null)
-            addToBot(new GainMaxHPAction(elf,this.magicNumber));
+        if (elf != null)
+            addToBot(new GainMaxHPAction(elf, this.magicNumber));
 
 
         addToBot(new RemoveDebuffsAction(p));

@@ -1,6 +1,7 @@
 package VUPShionMod.patches;
 
 import VUPShionMod.util.SaveHelper;
+import VUPShionMod.util.ShionImageHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -19,13 +20,14 @@ import com.megacrit.cardcrawl.vfx.campfire.CampfireEndingBurningEffect;
 
 @SuppressWarnings("unused")
 public class AbstractScenePatches {
-    public static Texture campfire = ImageMaster.loadImage("VUPShionMod/characters/Shion/Campfire.sff");
-    public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.sff" : "Campfire.sff"));
-    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/Campfire2.sff");
-    public static Texture campfire_Eis = ImageMaster.loadImage("VUPShionMod/characters/EisluRen/Campfire.sff");
     public static final float scale = 1.0f;
     public static final float offSet_x = 0.0f;
     public static final float offSet_y = 0.0f;
+
+    public static Texture campfire_Shion = ImageMaster.loadImage("VUPShionMod/characters/Shion/Campfire.sff");
+    public static Texture campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.sff" : "Campfire.sff"));
+    public static Texture campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/Campfire2.sff");
+    public static Texture campfire_Eis = ImageMaster.loadImage("VUPShionMod/characters/EisluRen/Campfire.sff");
 
 
     @SpirePatch(
@@ -36,42 +38,22 @@ public class AbstractScenePatches {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(TheBottomScene scene, SpriteBatch sb) {
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire, Settings.WIDTH / 2.0f - campfire.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire.getWidth() / 2.0f, campfire.getHeight() / 2.0f, campfire.getWidth(), campfire.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire.getWidth(), campfire.getHeight(), false, false);
+                renderCampfire(sb,campfire_Shion);
                 return SpireReturn.Return(null);
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Wc, Settings.WIDTH / 2.0f - campfire_Wc.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Wc.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Wc.getWidth() / 2.0f, campfire_Wc.getHeight() / 2.0f, campfire_Wc.getWidth(), campfire_Wc.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Wc.getWidth(), campfire_Wc.getHeight(), false, false);
+                renderCampfire(sb,campfire_Wc);
                 return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Li);
                 return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Eis, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Eis);
                 return SpireReturn.Return();
             }
 
@@ -87,42 +69,22 @@ public class AbstractScenePatches {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(TheCityScene scene, SpriteBatch sb) {
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire, Settings.WIDTH / 2.0f - campfire.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire.getWidth() / 2.0f, campfire.getHeight() / 2.0f, campfire.getWidth(), campfire.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire.getWidth(), campfire.getHeight(), false, false);
+                renderCampfire(sb,campfire_Shion);
                 return SpireReturn.Return(null);
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Wc, Settings.WIDTH / 2.0f - campfire_Wc.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Wc.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Wc.getWidth() / 2.0f, campfire_Wc.getHeight() / 2.0f, campfire_Wc.getWidth(), campfire_Wc.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Wc.getWidth(), campfire_Wc.getHeight(), false, false);
-                return SpireReturn.Return(null);
+                renderCampfire(sb,campfire_Wc);
+                return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Li);
                 return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Eis, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Eis);
                 return SpireReturn.Return();
             }
 
@@ -138,42 +100,22 @@ public class AbstractScenePatches {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(TheBeyondScene scene, SpriteBatch sb) {
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire, Settings.WIDTH / 2.0f - campfire.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire.getWidth() / 2.0f, campfire.getHeight() / 2.0f, campfire.getWidth(), campfire.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire.getWidth(), campfire.getHeight(), false, false);
+                renderCampfire(sb,campfire_Shion);
                 return SpireReturn.Return(null);
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Wc, Settings.WIDTH / 2.0f - campfire_Wc.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Wc.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Wc.getWidth() / 2.0f, campfire_Wc.getHeight() / 2.0f, campfire_Wc.getWidth(), campfire_Wc.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Wc.getWidth(), campfire_Wc.getHeight(), false, false);
-                return SpireReturn.Return(null);
+                renderCampfire(sb,campfire_Wc);
+                return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Li);
                 return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Eis, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Eis);
                 return SpireReturn.Return();
             }
 
@@ -189,46 +131,38 @@ public class AbstractScenePatches {
         @SpirePrefixPatch
         public static SpireReturn<Void> Prefix(TheEndingScene scene, SpriteBatch sb) {
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire, Settings.WIDTH / 2.0f - campfire.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire.getWidth() / 2.0f, campfire.getHeight() / 2.0f, campfire.getWidth(), campfire.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire.getWidth(), campfire.getHeight(), false, false);
+                renderCampfire(sb,campfire_Shion);
                 return SpireReturn.Return(null);
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Wc, Settings.WIDTH / 2.0f - campfire_Wc.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Wc.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Wc.getWidth() / 2.0f, campfire_Wc.getHeight() / 2.0f, campfire_Wc.getWidth(), campfire_Wc.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Wc.getWidth(), campfire_Wc.getHeight(), false, false);
-                return SpireReturn.Return(null);
+                renderCampfire(sb,campfire_Wc);
+                return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Li, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Li);
                 return SpireReturn.Return();
             }
 
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
-                sb.setColor(Color.WHITE);
-                sb.setBlendFunction(770, 771);
-                sb.draw(campfire_Eis, Settings.WIDTH / 2.0f - campfire_Li.getWidth() / 2.0f + offSet_x * Settings.scale,
-                        Settings.HEIGHT / 2.0f - campfire_Li.getHeight() / 2.0f + offSet_y * Settings.scale,
-                        campfire_Li.getWidth() / 2.0f, campfire_Li.getHeight() / 2.0f, campfire_Li.getWidth(), campfire_Li.getHeight(),
-                        scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire_Li.getWidth(), campfire_Li.getHeight(), false, false);
+                renderCampfire(sb,campfire_Eis);
                 return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();
+        }
+    }
+
+
+    private static void renderCampfire(SpriteBatch sb,Texture campfire) {
+        if (campfire != null) {
+            sb.setColor(Color.WHITE);
+            sb.setBlendFunction(770, 771);
+            sb.draw(campfire, Settings.WIDTH / 2.0f - campfire.getWidth() / 2.0f + offSet_x * Settings.scale,
+                    Settings.HEIGHT / 2.0f - campfire.getHeight() / 2.0f + offSet_y * Settings.scale,
+                    campfire.getWidth() / 2.0f, campfire.getHeight() / 2.0f, campfire.getWidth(), campfire.getHeight(),
+                    scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, campfire.getWidth(), campfire.getHeight(), false, false);
         }
     }
 

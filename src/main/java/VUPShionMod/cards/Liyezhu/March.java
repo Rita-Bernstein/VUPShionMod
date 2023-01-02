@@ -20,7 +20,7 @@ public class March extends AbstractLiyezhuCard {
         this.baseDamage = 10;
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 10;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     @Override

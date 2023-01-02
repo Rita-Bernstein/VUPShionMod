@@ -38,7 +38,7 @@ public class SoleAnthem extends AbstractLiyezhuCard {
                 if (isInPrayer())
                     addToTop(new ApplyPrayerAction(new StrengthPrayer(secondaryM, magicNumber)));
 
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new FlayTheEvil();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

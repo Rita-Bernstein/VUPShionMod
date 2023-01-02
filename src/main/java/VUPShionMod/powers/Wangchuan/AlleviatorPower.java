@@ -23,8 +23,7 @@ public class AlleviatorPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("CircuitPower");
         updateDescription();
         this.isTurnBased = true;
         this.priority = -10;
@@ -42,7 +41,7 @@ public class AlleviatorPower extends AbstractShionPower {
 
     @Override
     public void onTriggerMagiamObruor(AbstractPower power) {
-        if(!turnTriggered) {
+        if (!turnTriggered) {
             flash();
             addToBot(new GainEnergyAction(this.amount));
             turnTriggered = true;

@@ -29,7 +29,7 @@ public class FinFunnelPursuit extends AbstractShionCard {
         this.magicNumber = this.baseMagicNumber = 30;
         this.exhaust = true;
 
-        vupCardSetBanner(CardRarity.RARE,CardType.SKILL);
+        vupCardSetBanner(CardRarity.RARE, CardType.SKILL);
         setBackgroundTexture("VUPShionMod/img/cardui/Shion/512/bg_skill_lime.png",
                 "VUPShionMod/img/cardui/Shion/1024/bg_skill_lime.png");
     }

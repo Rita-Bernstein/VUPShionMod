@@ -58,7 +58,7 @@ public class GodShion extends AbstractSkin {
     @Override
     public void renderPortrait(SpriteBatch sb) {
 //        super.renderPortrait(sb);
-        SkinManager.getSkin(0,3).renderPortrait(sb);
+        SkinManager.getSkin(0, 3).renderPortrait(sb);
     }
 
     @Override
@@ -88,13 +88,13 @@ public class GodShion extends AbstractSkin {
     }
 
     @Override
-    public void doCharSelectScreenSelectEffect(){
+    public void doCharSelectScreenSelectEffect() {
         CardCrawlGame.sound.play("SHION_" + (3 + MathUtils.random(2)));
     }
 
     @Override
     public void justSkinSelected(int lastSelectedCount) {
-        if(lastSelectedCount ==3){
+        if (lastSelectedCount == 3) {
             doCharSelectScreenSelectEffect();
         }
     }

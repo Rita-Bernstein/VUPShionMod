@@ -32,8 +32,8 @@ public class SiegePower extends AbstractShionPower {
     public void atStartOfTurn() {
         flash();
         addToBot(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, this.amount, false)));
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new FrailPower(this.owner,  this.amount, false)));
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner,  this.amount, false)));
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new FrailPower(this.owner, this.amount, false)));
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, this.amount, false)));
     }
 
     @Override

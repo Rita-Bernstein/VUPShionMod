@@ -21,9 +21,7 @@ public class HolyCoffinSinkingSpiritPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/HolyCoffinSinkingSpiritPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/HolyCoffinSinkingSpiritPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("HolyCoffinSinkingSpiritPower");
         updateDescription();
     }
 
@@ -36,9 +34,9 @@ public class HolyCoffinSinkingSpiritPower extends AbstractShionPower {
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         super.onApplyPower(power, target, source);
-        if(power instanceof HyperdimensionalLinksPower && target.isPlayer && power.amount > 0){
+        if (power instanceof HyperdimensionalLinksPower && target.isPlayer && power.amount > 0) {
             flash();
-            addToBot(new GainBlockAction(this.owner,this.amount));
+            addToBot(new GainBlockAction(this.owner, this.amount));
         }
     }
 

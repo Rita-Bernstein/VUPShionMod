@@ -16,8 +16,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class BossFinFunnelSmallLaserEffect extends AbstractGameEffect {
-    private AbstractBossFinFunnel finFunnel;
-    private AbstractCreature target;
+    private final AbstractBossFinFunnel finFunnel;
+    private final AbstractCreature target;
     private float sX;
     private float sY;
     private float dX;
@@ -49,7 +49,7 @@ public class BossFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if(finFunnel == null || this.target == null){
+        if (finFunnel == null || this.target == null) {
             this.isDone = true;
             return;
         }

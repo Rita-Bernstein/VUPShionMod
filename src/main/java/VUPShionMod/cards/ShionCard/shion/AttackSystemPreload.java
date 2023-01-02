@@ -6,6 +6,7 @@ import VUPShionMod.actions.Shion.MakeLoadedCardAction;
 import VUPShionMod.cards.ShionCard.AbstractShionCard;
 import VUPShionMod.cards.ShionCard.tempCards.QuickAttack;
 import VUPShionMod.powers.Shion.HyperdimensionalLinksPower;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,11 +28,11 @@ public class AttackSystemPreload extends AbstractShionCard {
     }
 
 
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseHyperdimensionalLinksAction(this.secondaryM));
-        addToBot(new MakeLoadedCardAction(upgraded,new QuickAttack(),this.magicNumber));
+        addToBot(new MakeLoadedCardAction(upgraded, new QuickAttack(), this.magicNumber, true));
+        addToBot(new DrawCardAction(1));
     }
 
     @Override

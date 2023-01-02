@@ -24,8 +24,7 @@ public class CollaborativeInvestigationPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = -1;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AttackOrderPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AttackOrderPower48.png"), 0, 0, 48, 48);
+        loadShionRegion("AttackOrderPower");
 
         updateDescription();
     }
@@ -35,7 +34,7 @@ public class CollaborativeInvestigationPower extends AbstractShionPower {
     public void onTriggerFinFunnel(AbstractFinFunnel finFunnel, AbstractCreature target) {
         if (!finFunnel.id.equals(InvestigationFinFunnel.ID)) {
             flash();
-            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, InvestigationFinFunnel.ID,false));
+            addToBot(new TriggerFinFunnelPassiveAction((AbstractMonster) target, InvestigationFinFunnel.ID, false));
         }
     }
 

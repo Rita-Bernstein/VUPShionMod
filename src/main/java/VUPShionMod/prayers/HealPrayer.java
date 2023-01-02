@@ -27,16 +27,16 @@ public class HealPrayer extends AbstractPrayer {
 
     @Override
     public void updateDescription() {
-            this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
     public void use() {
-        addToBot(new HealAction(AbstractDungeon.player,AbstractDungeon.player,this.amount));
+        addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
     }
 
     @Override
     public AbstractPrayer makeCopy() {
-        return new HealPrayer(this.turns,this.amount);
+        return new HealPrayer(this.turns, this.amount);
     }
 }

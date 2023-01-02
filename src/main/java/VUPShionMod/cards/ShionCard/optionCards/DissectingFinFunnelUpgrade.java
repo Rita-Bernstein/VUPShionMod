@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.optionCards;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.powers.Shion.*;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -30,7 +30,7 @@ public class DissectingFinFunnelUpgrade extends AbstractVUPShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
 
 
-        vupCardSetBanner(CardRarity.RARE,TYPE);
+        vupCardSetBanner(CardRarity.RARE, TYPE);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class DissectingFinFunnelUpgrade extends AbstractVUPShionCard {
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
         if (FinFunnelUpgrade.checkUpgradePower())
-        addToBot(new ApplyPowerAction(p, p, new DissectingFinFunnelUpgradePower(p, 5)));
+            addToBot(new ApplyPowerAction(p, p, new DissectingFinFunnelUpgradePower(p, 5)));
     }
 
     @Override

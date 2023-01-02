@@ -46,7 +46,7 @@ public class Liyezhu extends CustomPlayer {
     public static final int START_HP = 100;
     public static final int START_GOLD = 0;
 
-    private Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
+    private final Texture avatar = ImageMaster.loadImage("VUPShionMod/characters/Shion/Avatar.png");
 
     public static final String[] orbTextures = {
             "VUPShionMod/img/ui/topPanel/Shion/layer1.png",
@@ -69,10 +69,10 @@ public class Liyezhu extends CustomPlayer {
 
     private static String currentIdle = "Idle";
     public float stanceSwitchAnimTimer = 0.0F;
-    private ArrayList<String> stanceSwitchQueue = new ArrayList<>();
+    private final ArrayList<String> stanceSwitchQueue = new ArrayList<>();
 
     public Liyezhu(String name, PlayerClass setClass) {
-        super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
+        super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), null, null);
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
 
@@ -87,7 +87,7 @@ public class Liyezhu extends CustomPlayer {
 
         reloadAnimation();
 
-         CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(3);
+        CharacterSelectScreenPatches.AddFields.characterPriority.get(this).setCharacterPriority(3);
     }
 
     public void reloadAnimation() {
@@ -139,12 +139,12 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return  SkinManager.getSkin(2).getCharacterTiTleName();
+        return SkinManager.getSkin(2).getCharacterTiTleName();
     }
 
     @Override
     public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
-
+        ArrayList<AbstractCard> pool = super.getCardPool(tmpPool);
         if (ModHelper.isModEnabled("Red Cards")) {
             CardLibrary.addRedCards(tmpPool);
         }
@@ -175,7 +175,7 @@ public class Liyezhu extends CustomPlayer {
         tmpPool.add(new HomoNimius());
 
 
-        return super.getCardPool(tmpPool);
+        return pool;
     }
 
     @Override
@@ -195,7 +195,7 @@ public class Liyezhu extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return START_HP/10;
+        return START_HP / 10;
     }
 
     @Override
@@ -289,7 +289,6 @@ public class Liyezhu extends CustomPlayer {
         stanceSwitchQueue.add("Idle");
 
     }
-
 
 
     private void tickStanceVisualTimer() {

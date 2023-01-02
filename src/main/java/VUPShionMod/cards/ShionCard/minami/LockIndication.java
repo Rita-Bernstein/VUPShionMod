@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class LockIndication extends AbstractShionMinamiCard  {
+public class LockIndication extends AbstractShionMinamiCard {
     public static final String ID = VUPShionMod.makeID(LockIndication.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/minami/minami03.png");
     private static final int COST = 1;

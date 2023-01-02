@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class MotherRosarioAction extends AbstractGameAction {
-    private AbstractCard card;
+    private final AbstractCard card;
 
     public MotherRosarioAction(AbstractCard card) {
         this.card = card;

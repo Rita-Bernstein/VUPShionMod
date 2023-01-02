@@ -2,9 +2,7 @@ package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TurnTriggerFinFunnelsAction;
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardTagsEnum;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -33,15 +31,14 @@ public class QuickAttack extends AbstractVUPShionCard {
 
         this.magicNumber = this.baseMagicNumber = 2;
 
-        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
+        vupCardSetBanner(CardRarity.UNCOMMON, TYPE);
     }
-
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new TurnTriggerFinFunnelsAction(this.magicNumber,true));
+        addToBot(new TurnTriggerFinFunnelsAction(this.magicNumber, true));
     }
 
 

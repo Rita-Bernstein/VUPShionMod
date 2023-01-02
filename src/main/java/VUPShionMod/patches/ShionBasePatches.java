@@ -28,7 +28,6 @@ public class ShionBasePatches {
     public static class SetMainMenuButtonsPatch {
         @SpireInsertPatch(rloc = 22, localvars = {"index"})
         public static void Insert(MainMenuScreen _instance, @ByRef int[] index) {
-            if (VUPShionMod.isTestMod)
                 _instance.buttons.add(new MenuButton(ShionBasePatches.ShionBase, index[0]++));
         }
     }
@@ -41,7 +40,6 @@ public class ShionBasePatches {
     public static class MainMenuScreenUpdatePatch {
         @SpireInsertPatch(rloc = 13)
         public static void Insert(MainMenuScreen _instance) {
-            if (VUPShionMod.isTestMod)
                 _instance.buttons.add(new MenuButton(ShionBasePatches.ShionBase, _instance.buttons.size()));
         }
     }
@@ -76,7 +74,7 @@ public class ShionBasePatches {
                 return SpireReturn.Return();
             }
 
-            if(_instance.result == MenuButton.ClickResult.PLAY){
+            if (_instance.result == MenuButton.ClickResult.PLAY) {
                 SaveHelper.isTrainingMod = false;
                 SaveHelper.saveSettings();
             }
@@ -97,7 +95,7 @@ public class ShionBasePatches {
 
             if (screen == ShionBasePatches.ShionBaseScreen) {
                 _instance.panels.add(new ShionMainMenuPanelButton(ShionMainMenuPanelButton.Play_ShionBase,
-                        SkinManager.getSkin(3,0).unlock ? MainMenuPanelButton.PanelColor.BLUE : MainMenuPanelButton.PanelColor.GRAY,
+                        SkinManager.getSkin(3, 0).unlock ? MainMenuPanelButton.PanelColor.BLUE : MainMenuPanelButton.PanelColor.GRAY,
                         Settings.WIDTH / 2.0F - 450.0F * Settings.scale, Settings.HEIGHT / 2.0F, 0));
 
 

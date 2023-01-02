@@ -36,7 +36,7 @@ public class Strafe2 extends AbstractShionCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractFinFunnel funnel = AbstractPlayerPatches.AddFields.finFunnelManager.get(p).selectedFinFunnel;
         if (funnel != null) {
-            funnel.activeFire(m, this.baseDamage,true,1);
+            funnel.activeFire(m, this.baseDamage, true, 1);
         } else {
             addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage,
                     this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));

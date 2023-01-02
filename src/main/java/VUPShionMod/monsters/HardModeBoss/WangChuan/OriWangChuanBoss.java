@@ -3,6 +3,7 @@ package VUPShionMod.monsters.HardModeBoss.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.Monster.BossShion.PotentialOutbreakPower;
 import VUPShionMod.powers.Monster.BossWangChuan.MagicFlyingBladePower;
@@ -10,6 +11,8 @@ import VUPShionMod.powers.Monster.PlagaAMundo.StrengthenPower;
 import VUPShionMod.powers.Wangchuan.ImmuneDamagePower;
 import VUPShionMod.powers.Wangchuan.MorsLibraquePower;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.OriShion;
+import VUPShionMod.skins.sk.WangChuan.OriWangChuan;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -87,7 +90,7 @@ public class OriWangChuanBoss extends AbstractVUPShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
 
-
+        addToBot(new VersusEffectAction(OriWangChuan.ID));
         addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, 10)));
 //        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (maxHealth * 0.5f), "MagiaCup")));
     }

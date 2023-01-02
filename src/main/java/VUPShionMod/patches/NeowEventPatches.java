@@ -90,7 +90,7 @@ public class NeowEventPatches {
             method = "onPlayerEntry"
     )
     public static class VictoryRoomOnPlayerEntryPatch {
-        @SpireInsertPatch(rloc =  6)
+        @SpireInsertPatch(rloc = 6)
         public static SpireReturn<Void> Insert(VictoryRoom _instance) {
             if (shouldShionTalk()) {
                 _instance.event = new ShionSpireHeart();
@@ -104,7 +104,7 @@ public class NeowEventPatches {
 
     public static boolean shouldShionTalk() {
         return AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen
-                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && SkinManager.getSkinCharacter(0).reskinCount ==3
+                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion && SkinManager.getSkinCharacter(0).reskinCount == 3
                 || SaveHelper.isTrainingMod;
     }
 }

@@ -47,9 +47,9 @@ public class Cola extends AbstractShionImagePotion {
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.potency)));
             addToBot(new GainEnergyAction(this.potency));
 
-            if(AbstractDungeon.player.hasRelic(InfiniteSushi.ID)){
+            if (AbstractDungeon.player.hasRelic(InfiniteSushi.ID)) {
                 AbstractDungeon.player.getRelic(InfiniteSushi.ID).onTrigger();
-                addToBot(new HealAction(AbstractDungeon.player,AbstractDungeon.player,10));
+                addToBot(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 10));
                 addToBot(new SFXAction("MINAMI_3"));
             }
 

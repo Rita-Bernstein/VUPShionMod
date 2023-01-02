@@ -25,7 +25,7 @@ public class DistantiaAbsensquePower extends AbstractShionPower {
     }
 
     @Override
-    public void onStackPower(AbstractPower power) {
+    public void onStackPower(AbstractPower power,int preAmount) {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
             addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, this.amount)));
@@ -35,6 +35,6 @@ public class DistantiaAbsensquePower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

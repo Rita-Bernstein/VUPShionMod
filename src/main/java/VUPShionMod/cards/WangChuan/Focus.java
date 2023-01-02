@@ -22,7 +22,7 @@ public class Focus extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new GainCorGladiiPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new GainCorGladiiPower(p, this.magicNumber)));
     }
 
     @Override

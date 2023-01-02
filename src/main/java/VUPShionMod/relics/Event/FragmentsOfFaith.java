@@ -57,14 +57,14 @@ public class FragmentsOfFaith extends AbstractShionRelic {
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
 
-        if(this.counter == -2)
-        this.tips.add(new PowerTip(DESCRIPTIONS[4], DESCRIPTIONS[5]));
+        if (this.counter == -2)
+            this.tips.add(new PowerTip(DESCRIPTIONS[4], DESCRIPTIONS[5]));
         this.initializeTips();
     }
 
     @Override
     public void atBattleStart() {
-        if(this.counter == 2) {
+        if (this.counter == 2) {
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FinalPrayerPower(AbstractDungeon.player)));
@@ -86,7 +86,6 @@ public class FragmentsOfFaith extends AbstractShionRelic {
         this.outlineImg = OUTLINE_UPGRADE_IMG;
         setDescriptionAfterLoading();
     }
-
 
 
 }

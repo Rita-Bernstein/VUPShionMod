@@ -40,7 +40,7 @@ public class WoodBombardment extends AbstractEisluRenCard {
 
         addToBot(new PlayerMinionTakeTurnAction());
 
-        if(this.upgraded)
+        if (this.upgraded)
             addToBot(new GainEnergyAction(1));
 
         int chance = 35;//this.upgraded ? 60 : 35;

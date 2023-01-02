@@ -44,9 +44,13 @@ public class PlacidAqua extends AbstractShionRelic {
         (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.25F;
     }
 
-    public void onEquip() { AbstractDungeon.player.energy.energyMaster++; }
+    public void onEquip() {
+        AbstractDungeon.player.energy.energyMaster++;
+    }
 
-    public void onUnequip() { AbstractDungeon.player.energy.energyMaster--; }
+    public void onUnequip() {
+        AbstractDungeon.player.energy.energyMaster--;
+    }
 
 
     @Override

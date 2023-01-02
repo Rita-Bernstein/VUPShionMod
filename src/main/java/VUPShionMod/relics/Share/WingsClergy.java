@@ -17,7 +17,6 @@ public class WingsClergy extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
 
-
     public WingsClergy() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.COMMON, LandingSound.CLINK);
     }
@@ -30,8 +29,8 @@ public class WingsClergy extends AbstractShionRelic {
     @Override
     public void atBattleStart() {
         flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new RegenPower(AbstractDungeon.player,3)));
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RegenPower(AbstractDungeon.player, 3)));
     }
 
     @Override

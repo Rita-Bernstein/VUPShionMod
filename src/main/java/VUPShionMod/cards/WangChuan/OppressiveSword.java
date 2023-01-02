@@ -46,7 +46,7 @@ public class OppressiveSword extends AbstractWCCard {
                         if (p.hasPower(StiffnessPower.POWER_ID)) {
                             this.amount = p.getPower(StiffnessPower.POWER_ID).amount;
                             addToTop(new RemoveSpecificPowerAction(p, p, StiffnessPower.POWER_ID));
-                            addToTop(new ApplyCorGladiiAction(this.amount *4));
+                            addToTop(new ApplyCorGladiiAction(this.amount * 4));
                         }
                         isDone = true;
                     }
@@ -70,7 +70,7 @@ public class OppressiveSword extends AbstractWCCard {
                     @Override
                     public void update() {
                         if (AbstractDungeon.player.hasPower(CorGladiiPower.POWER_ID))
-                            addToTop(new ApplyCorGladiiAction((int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.4)));
+                            addToTop(new ApplyCorGladiiAction((int) Math.floor(AbstractDungeon.player.getPower(CorGladiiPower.POWER_ID).amount * 0.2)));
                         isDone = true;
                     }
                 });

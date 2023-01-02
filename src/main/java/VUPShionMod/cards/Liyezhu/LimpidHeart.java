@@ -18,12 +18,12 @@ public class LimpidHeart extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public LimpidHeart() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM = this.baseSecondaryM = 7;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.secondaryM = this.baseSecondaryM = 3;
     }
 
     @Override
@@ -47,7 +47,8 @@ public class LimpidHeart extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(1);
+            upgradeSecondM(4);
         }
     }
 }

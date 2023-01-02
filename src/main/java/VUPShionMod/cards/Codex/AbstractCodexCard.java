@@ -1,6 +1,5 @@
 package VUPShionMod.cards.Codex;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
 import VUPShionMod.cards.WangChuan.AbstractWCCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.patches.CardTagsEnum;

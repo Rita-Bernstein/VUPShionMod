@@ -12,12 +12,12 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class FinFunnelMinionLaserEffect extends AbstractGameEffect {
-    private float sX;
-    private float sY;
-    private float dX;
+    private final float sX;
+    private final float sY;
+    private final float dX;
 
-    private float dY;
-    private float dst;
+    private final float dY;
+    private final float dst;
     private static TextureAtlas.AtlasRegion img;
 
     private float scaleY = 1.0f;

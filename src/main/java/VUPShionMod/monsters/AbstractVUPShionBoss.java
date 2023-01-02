@@ -17,15 +17,15 @@ public abstract class AbstractVUPShionBoss extends CustomMonster {
 
 
     public AbstractVUPShionBoss(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY) {
-        super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY);
+        super(name, id, maxHealth, hb_x, hb_y, hb_w, getScale(hb_h), imgUrl, offsetX, offsetY);
     }
 
     public AbstractVUPShionBoss(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl, float offsetX, float offsetY, boolean ignoreBlights) {
-        super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl, offsetX, offsetY, ignoreBlights);
+        super(name, id, maxHealth, hb_x, hb_y, hb_w, getScale(hb_h), imgUrl, offsetX, offsetY, ignoreBlights);
     }
 
     public AbstractVUPShionBoss(String name, String id, int maxHealth, float hb_x, float hb_y, float hb_w, float hb_h, String imgUrl) {
-        super(name, id, maxHealth, hb_x, hb_y, hb_w, hb_h, imgUrl);
+        super(name, id, maxHealth, hb_x, hb_y, hb_w, getScale(hb_h), imgUrl);
     }
 
 
@@ -36,4 +36,14 @@ public abstract class AbstractVUPShionBoss extends CustomMonster {
             AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(m));
     }
 
+    protected static float getScale(float scale) {
+        if (Settings.isFourByThree)
+            return scale * 1.3f;
+
+        if (Settings.isSixteenByTen) {
+            return scale * 1.12f;
+        }
+
+        return scale;
+    }
 }

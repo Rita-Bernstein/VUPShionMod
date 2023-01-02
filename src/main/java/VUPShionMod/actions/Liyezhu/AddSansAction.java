@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class AddSansAction extends AbstractGameAction {
-    public AddSansAction(int amount){
+    public AddSansAction(int amount) {
         this.amount = amount;
         this.actionType = ActionType.DAMAGE;
     }
@@ -14,9 +14,9 @@ public class AddSansAction extends AbstractGameAction {
     @Override
     public void update() {
         if (!AbstractDungeon.player.hasRelic(AbyssalCrux.ID))
-        if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
-            EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(this.amount);
-        }
-        isDone =true;
+            if (EnergyPanelPatches.PatchEnergyPanelField.canUseSans.get(AbstractDungeon.overlayMenu.energyPanel)) {
+                EnergyPanelPatches.PatchEnergyPanelField.sans.get(AbstractDungeon.overlayMenu.energyPanel).addSan(this.amount);
+            }
+        isDone = true;
     }
 }

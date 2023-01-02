@@ -35,7 +35,7 @@ public class SeaOfThorns extends AbstractEisluRenCard {
         for (int i = 0; i < this.secondaryM; i++)
             addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
 
-        addToBot(new ApplyPowerAction(p,p,new ArtifactPower(p,this.upgraded?2:1)));
+        addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, this.upgraded ? 2 : 1)));
     }
 
     @Override

@@ -46,7 +46,7 @@ public class BlackHand extends AbstractShionKuroisuCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(AbstractDungeon.player.currentHealth <= this.magicNumber) {
+        if (AbstractDungeon.player.currentHealth <= this.magicNumber) {
             this.cantUseMessage = EXTENDED_DESCRIPTION[0];
             return false;
         }

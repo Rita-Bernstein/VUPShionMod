@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.utils.Disposable;
 import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -27,7 +28,7 @@ import com.megacrit.cardcrawl.vfx.TintEffect;
 
 import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
-public abstract class AbstractBossFinFunnel {
+public abstract class AbstractBossFinFunnel implements Disposable {
     public String id;
     public String name;
     public String description;
@@ -64,14 +65,14 @@ public abstract class AbstractBossFinFunnel {
 
     protected TintEffect tint = new TintEffect();
 
-    public AbstractBossFinFunnel(AbstractCreature owner, String id,int skinIndex) {
+    public AbstractBossFinFunnel(AbstractCreature owner, String id, int skinIndex) {
         this.hb = new Hitbox(192.0F * Settings.scale, 96.0F * Settings.scale);
         this.fontScale = 0.7F;
 
         this.owner = owner;
 
         updateMinamiPos();
-        this.skinIndex  = skinIndex;
+        this.skinIndex = skinIndex;
 
         this.id = id;
         this.name = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(id)).NAME;
@@ -90,7 +91,7 @@ public abstract class AbstractBossFinFunnel {
     }
 
 
-    protected void initAnimation(int index){
+    protected void initAnimation(int index) {
         this.state.setAnimation(0, "weapon" + (index + 1) + "_come_in", false);
         this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
     }
@@ -107,7 +108,7 @@ public abstract class AbstractBossFinFunnel {
     }
 
     public void atTurnStart() {
-        activeFire(AbstractDungeon.player,  new DamageInfo(this.owner, getFinalDamage(), DamageInfo.DamageType.THORNS),true,1);
+        activeFire(AbstractDungeon.player, new DamageInfo(this.owner, getFinalDamage(), DamageInfo.DamageType.THORNS), true, 1);
     }
 
     public void preBattlePrep() {
@@ -278,30 +279,38 @@ public abstract class AbstractBossFinFunnel {
             float flip = this.owner.flipHorizontal ? -1.0f : 1.0f;
             switch (this.index) {
                 case 0:
-                    this.minamiPosX += -flip * 300.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
-                    this.minamiPosY += 668.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
+                    this.minamiPosX += -flip * 300.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
+                    this.minamiPosY += 668.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
                     break;
                 case 1:
-                    this.minamiPosX += flip * 300.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
-                    this.minamiPosY += 498.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
+                    this.minamiPosX += flip * 300.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
+                    this.minamiPosY += 498.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
                     break;
                 case 2:
-                    this.minamiPosX += -flip * 140.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
-                    this.minamiPosY += 416.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
+                    this.minamiPosX += -flip * 140.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
+                    this.minamiPosY += 416.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
                     break;
                 case 3:
-                    this.minamiPosX += flip * 200.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
-                    this.minamiPosY += 320.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
+                    this.minamiPosX += flip * 200.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
+                    this.minamiPosY += 320.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
                     break;
                 case 4:
-                    this.minamiPosX += -flip * 70.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
-                    this.minamiPosY += 860.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
+                    this.minamiPosX += -flip * 70.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
+                    this.minamiPosY += 860.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
                     break;
                 case 5:
-                    this.minamiPosX += flip * 220.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
-                    this.minamiPosY += 749.0f * Settings.scale / SkinManager.getSkin(0,this.skinIndex).renderScale;
+                    this.minamiPosX += flip * 220.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
+                    this.minamiPosY += 749.0f * Settings.scale / SkinManager.getSkin(0, this.skinIndex).renderScale;
                     break;
             }
+        }
+    }
+
+    @Override
+    public void dispose() {
+        if (this.atlas != null) {
+            atlas.dispose();
+            atlas = null;
         }
     }
 }

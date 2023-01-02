@@ -1,5 +1,6 @@
 package VUPShionMod;
 
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.cards.EisluRen.*;
 import VUPShionMod.cards.Liyezhu.*;
 import VUPShionMod.cards.ShionCard.*;
@@ -25,6 +26,7 @@ import VUPShionMod.monsters.HardModeBoss.Shion.*;
 import VUPShionMod.monsters.HardModeBoss.WangChuan.*;
 import VUPShionMod.monsters.Story.PlagaAMundo;
 import VUPShionMod.monsters.Rita.RitaShop;
+import VUPShionMod.msic.VersusEffectData;
 import VUPShionMod.patches.*;
 import VUPShionMod.potions.*;
 import VUPShionMod.relics.EisluRen.*;
@@ -36,8 +38,13 @@ import VUPShionMod.relics.Wangchuan.*;
 import VUPShionMod.skins.AbstractSkin;
 import VUPShionMod.skins.AbstractSkinCharacter;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.*;
+import VUPShionMod.skins.sk.WangChuan.*;
+import VUPShionMod.skins.sk.Liyezhu.*;
+import VUPShionMod.skins.sk.EisluRen.*;
 import VUPShionMod.ui.*;
 import VUPShionMod.util.SaveHelper;
+import VUPShionMod.util.ShionImageHelper;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -65,6 +72,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
@@ -120,8 +128,9 @@ public class VUPShionMod implements
 
     public static Color transparent = Color.WHITE.cpy();
 
-    public static boolean isTestMod = true;
+    public static boolean isTestMod = false;
 
+    public static HashMap<String, VersusEffectData> versusEffectData = new HashMap<>();
 
     public VUPShionMod() {
         BaseMod.subscribe(this);
@@ -281,7 +290,8 @@ public class VUPShionMod implements
                 .create());
 
         BaseMod.addEvent(new AddEventParams.Builder(FruitStall.ID, FruitStall.class) //Event ID//
-                .spawnCondition(() -> AbstractDungeon.id.equals(TheCity.ID))
+                .spawnCondition(() -> (AbstractDungeon.id.equals(TheCity.ID) || AbstractDungeon.id.equals(TheBeyond.ID))
+                        && AbstractDungeon.player.gold >= (AbstractDungeon.ascensionLevel >= 15 ? 125 : 100))
                 .endsWithRewardsUI(true)
                 .create());
 
@@ -388,60 +398,60 @@ public class VUPShionMod implements
 
         BaseMod.addMonster(PlagaAMundo.ID, () -> new PlagaAMundo());
         BaseMod.addMonster(RitaShop.ID, () -> new RitaShop());
-        if (isTestMod) {
+
 //        训练模式boss
-            BaseMod.addMonster(AquaShionBoss.ID, () -> new AquaShionBoss());
-            BaseMod.addMonster(OriLiyezhuBoss.ID, () -> new OriLiyezhuBoss());
-            BaseMod.addMonster(OriEisluRenBoss.ID, () -> new OriEisluRenBoss());
-            BaseMod.addMonster(ChinaWangChuanBoss.ID, () -> new ChinaWangChuanBoss());
-            BaseMod.addMonster(PurityWangChuanBoss.ID, () -> new PurityWangChuanBoss());
-            BaseMod.addMonster(OriWangChuanBoss.ID, () -> new OriWangChuanBoss());
-            BaseMod.addMonster(OriShionBoss.ID, () -> new OriShionBoss());
-            BaseMod.addMonster(AquaWangChuanBoss.ID, () -> new AquaWangChuanBoss());
-            BaseMod.addMonster(BlueGiantShionBoss.ID, () -> new BlueGiantShionBoss());
+        BaseMod.addMonster(AquaShionBoss.ID, () -> new AquaShionBoss());
+        BaseMod.addMonster(OriLiyezhuBoss.ID, () -> new OriLiyezhuBoss());
+        BaseMod.addMonster(OriEisluRenBoss.ID, () -> new OriEisluRenBoss());
+        BaseMod.addMonster(ChinaWangChuanBoss.ID, () -> new ChinaWangChuanBoss());
+        BaseMod.addMonster(PurityWangChuanBoss.ID, () -> new PurityWangChuanBoss());
+        BaseMod.addMonster(OriWangChuanBoss.ID, () -> new OriWangChuanBoss());
+        BaseMod.addMonster(OriShionBoss.ID, () -> new OriShionBoss());
+        BaseMod.addMonster(AquaWangChuanBoss.ID, () -> new AquaWangChuanBoss());
+        BaseMod.addMonster(BlueGiantShionBoss.ID, () -> new BlueGiantShionBoss());
 
 //            训练模式精英
-            BaseMod.addMonster(MinamiShionBoss.ID, () -> new MinamiShionBoss());
+        BaseMod.addMonster(MinamiShionBoss.ID, () -> new MinamiShionBoss());
 
 
 //      加boss图标
-            BaseMod.addBoss("", AquaShionBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/ShionBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+        BaseMod.addBoss("", AquaShionBoss.ID,
+                "VUPShionMod/img/ui/map/boss/ShionBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
 
-            BaseMod.addBoss("", OriLiyezhuBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/LiyezhuBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/LiyezhuBoss.png");
+        BaseMod.addBoss("", OriLiyezhuBoss.ID,
+                "VUPShionMod/img/ui/map/boss/LiyezhuBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/LiyezhuBoss.png");
 
-            BaseMod.addBoss("", OriEisluRenBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/EisluRenBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/EisluRenBoss.png");
+        BaseMod.addBoss("", OriEisluRenBoss.ID,
+                "VUPShionMod/img/ui/map/boss/EisluRenBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/EisluRenBoss.png");
 
 
-            BaseMod.addBoss("", ChinaWangChuanBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+        BaseMod.addBoss("", ChinaWangChuanBoss.ID,
+                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-            BaseMod.addBoss("", PurityWangChuanBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+        BaseMod.addBoss("", PurityWangChuanBoss.ID,
+                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-            BaseMod.addBoss("", OriWangChuanBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+        BaseMod.addBoss("", OriWangChuanBoss.ID,
+                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-            BaseMod.addBoss("", OriShionBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/ShionBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+        BaseMod.addBoss("", OriShionBoss.ID,
+                "VUPShionMod/img/ui/map/boss/ShionBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
 
-            BaseMod.addBoss("", AquaWangChuanBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
+        BaseMod.addBoss("", AquaWangChuanBoss.ID,
+                "VUPShionMod/img/ui/map/boss/WangChuanBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png");
 
-            BaseMod.addBoss("", BlueGiantShionBoss.ID,
-                    "VUPShionMod/img/ui/map/boss/ShionBoss.png",
-                    "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
-        }
+        BaseMod.addBoss("", BlueGiantShionBoss.ID,
+                "VUPShionMod/img/ui/map/boss/ShionBoss.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png");
+
 //        加药水
         BaseMod.addPotion(PlanedModify.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, PlanedModify.POTION_ID, AbstractPlayerEnum.VUP_Shion);
         BaseMod.addPotion(CorGladiiFragment.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, CorGladiiFragment.POTION_ID, AbstractPlayerEnum.WangChuan);
@@ -467,12 +477,70 @@ public class VUPShionMod implements
         BaseMod.addPotion(UAV.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, UAV.POTION_ID);
         BaseMod.addPotion(TransitionGenerator.class, PotionPlaceHolderColor, PotionPlaceHolderColor, null, TransitionGenerator.POTION_ID);
 
+//原版
+        VersusEffectData.addData("Ironclad", "VUPShionMod/img/vfx/VersusEffect/portrait/Ironclad.png",
+                "VUPShionMod/img/vfx/VersusEffect/name/Ironclad.png", "VUPShionMod/img/vfx/VersusEffect/classIcon/Ironclad.png");
+
+        VersusEffectData.addData("Silent", "VUPShionMod/img/vfx/VersusEffect/portrait/Silent.png",
+                "VUPShionMod/img/vfx/VersusEffect/name/Silent.png", "VUPShionMod/img/vfx/VersusEffect/classIcon/Silent.png");
+
+        VersusEffectData.addData("Defect", "VUPShionMod/img/vfx/VersusEffect/portrait/Defect.png",
+                "VUPShionMod/img/vfx/VersusEffect/name/Defect.png", "VUPShionMod/img/vfx/VersusEffect/classIcon/Defect.png");
+
+        VersusEffectData.addData("Watcher", "VUPShionMod/img/vfx/VersusEffect/portrait/Watcher.png",
+                "VUPShionMod/img/vfx/VersusEffect/name/Watcher.png", "VUPShionMod/img/vfx/VersusEffect/classIcon/Watcher.png");
+
+
+//        紫音
+        VersusEffectData.addData(OriShion.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/OriShion.png", "VUPShionMod/img/vfx/VersusEffect/name/OriShion.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/OriShion.png");
+
+        VersusEffectData.addData(BlueGiantShion.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/BlueGiantShion.png", "VUPShionMod/img/vfx/VersusEffect/name/OriShion.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/BlueGiantShion.png");
+
+        VersusEffectData.addData(AquaShion.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/AquaShion.png", "VUPShionMod/img/vfx/VersusEffect/name/OriShion.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/AquaShion.png");
+
+        VersusEffectData.addData(MinamiShion.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/MinamiShion.png", "VUPShionMod/img/vfx/VersusEffect/name/MinamiShion.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/MinamiShion.png");
+
+        VersusEffectData.addData(GodShion.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/GodShion.png", "VUPShionMod/img/vfx/VersusEffect/name/OriShion.png",
+                "VUPShionMod/img/ui/map/bossOutline/ShionBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/GodShion.png");
+//忘川
+
+        VersusEffectData.addData(OriWangChuan.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/OriWangChuan.png", "VUPShionMod/img/vfx/VersusEffect/name/OriWangChuan.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/OriWangChuan.png");
+
+        VersusEffectData.addData(PurityWangChuan.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/PurityWangChuan.png", "VUPShionMod/img/vfx/VersusEffect/name/OriWangChuan.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/PurityWangChuan.png");
+
+        VersusEffectData.addData(AquaWangChuan.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/AquaWangChuan.png", "VUPShionMod/img/vfx/VersusEffect/name/OriWangChuan.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/AquaWangChuan.png");
+
+        VersusEffectData.addData(ChinaWangChuan.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/ChinaWangChuan.png", "VUPShionMod/img/vfx/VersusEffect/name/OriWangChuan.png",
+                "VUPShionMod/img/ui/map/bossOutline/WangChuanBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/ChinaWangChuan.png");
+
+//        小蓝
+        VersusEffectData.addData(OriLiyezhu.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/OriLiyezhu.png", "VUPShionMod/img/vfx/VersusEffect/name/OriLiyezhu.png",
+                "VUPShionMod/img/ui/map/bossOutline/LiyezhuBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/OriLiyezhu.png");
+
+//        小绿
+        VersusEffectData.addData(OriEisluRen.ID, "VUPShionMod/img/vfx/VersusEffect/portrait/OriEisluRen.png", "VUPShionMod/img/vfx/VersusEffect/name/OriEiisluRen.png",
+                "VUPShionMod/img/ui/map/bossOutline/EisluRenBoss.png", "VUPShionMod/img/vfx/VersusEffect/title/OriEisluRen.png");
+
+//  日他
+//        VersusEffectData.addData("RitaShop", "VUPShionMod/img/vfx/VersusEffect/portrait/RitaShop.png", "VUPShionMod/img/vfx/VersusEffect/name/RitaShop.png",
+//                "VUPShionMod/img/vfx/VersusEffect/classIcon/RitaB.png", "VUPShionMod/img/vfx/VersusEffect/title/RitaShop.png");
+
+//空角色
+        VersusEffectData.addData("", "VUPShionMod/img/vfx/VersusEffect/portrait/Empty.png", "VUPShionMod/img/vfx/VersusEffect/name/Empty.png",
+                "VUPShionMod/img/vfx/VersusEffect/classIcon/Empty.png", "VUPShionMod/img/vfx/VersusEffect/title/Empty.png");
+
 
     }
 
     public static void safeSwitch() {
-        AbstractScenePatches.campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.png" : "Campfire.png"));
-        AbstractScenePatches.campfire_Li = ImageMaster.loadImage("VUPShionMod/characters/Liyezhu/" + (SaveHelper.safeCampfire ? "Campfire2.png" : "Campfire.png"));
+        AbstractScenePatches.campfire_Wc = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/" + (SaveHelper.safeCampfire ? "Campfire2.sff" : "Campfire.sff"));
 
         for (AbstractSkinCharacter character : CharacterSelectScreenPatches.skinManager.skinCharacters) {
             for (AbstractSkin skin : character.skins)
@@ -488,7 +556,7 @@ public class VUPShionMod implements
         }
 
         for (int i = 0; i <= 12; i++) {
-            BaseMod.addAudio("MINAMI_" + i, assetPath("audio/sound/Minami/VO/" + String.format("%02d",i) + ".ogg"));
+            BaseMod.addAudio("MINAMI_" + i, assetPath("audio/sound/Minami/VO/" + String.format("%02d", i) + ".ogg"));
         }
 
         BaseMod.addAudio(makeID("RitaB_Attack0"), assetPath("/audio/sound/Rita/VO/RitaB_Attack0.wav"));

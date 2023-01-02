@@ -31,14 +31,13 @@ public class BattlefieldHeritage extends AbstractShionMinamiCard {
 //        addToBot(new ApplyPowerAction(p, p, new HyperdimensionalLinksPower(p, this.magicNumber)));
         Predicate<AbstractCard> predicate = (pr) -> pr.type == CardType.ATTACK;
         Consumer<List<AbstractCard>> callback = cards -> {
-            for(AbstractCard c : cards)
-                c.setCostForTurn(c.costForTurn -1);
+            for (AbstractCard c : cards)
+                c.setCostForTurn(c.costForTurn - 1);
         };
 
         addToBot(new MoveCardsAction(p.hand, p.discardPile, predicate, this.secondaryM, callback));
     }
 
-    
 
     public AbstractCard makeCopy() {
         return new BattlefieldHeritage();

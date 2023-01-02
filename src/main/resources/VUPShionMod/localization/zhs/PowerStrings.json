@@ -8,9 +8,9 @@
   "VUPShionMod:PursuitPower": {
     "NAME": "追击",
     "DESCRIPTIONS": [
-      "目标的回合开始时， #y追击浮游炮 将攻击目标一次，造成 #b",
+      "目标的回合开始时，所有 #yy追击浮游炮 将攻击目标一次，造成 #b",
       " 点伤害。",
-      "你的回合结束时，将受到敌人 #y追击浮游炮 的一次攻击，造成 #b"
+      "你的回合结束时，将受到敌人所有 #y追击浮游炮 的一次攻击，造成 #b"
     ]
   },
   "VUPShionMod:InvestigationFinFunnelUpgradePower": {
@@ -1263,6 +1263,12 @@
     "NAME": "硬直抗性",
     "DESCRIPTIONS": [
       "#y硬直 的触发层数提高 #b%d 。"
+    ]
+  },
+  "VUPShionMod:EarthBlessingPower": {
+    "NAME": "大地祝福",
+    "DESCRIPTIONS": [
+      "免疫所有负面效果。"
     ]
   }
 }

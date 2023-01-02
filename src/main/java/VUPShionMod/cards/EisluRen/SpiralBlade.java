@@ -23,13 +23,13 @@ public class SpiralBlade extends AbstractEisluRenCard {
 
     public SpiralBlade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.selfRetain =true;
+        this.selfRetain = true;
         this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!hasTag(CardTagsEnum.NoWingShieldCharge) &&!upgraded)
+        if (!hasTag(CardTagsEnum.NoWingShieldCharge) && !upgraded)
             addToBot(new LoseWingShieldAction(secondaryM));
         addToBot(new ChangeStanceAction(SpiralBladeStance.STANCE_ID));
     }

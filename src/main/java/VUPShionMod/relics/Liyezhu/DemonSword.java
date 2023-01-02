@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.LizardTail;
 
-public class DemonSword extends AbstractShionRelic  {
+public class DemonSword extends AbstractShionRelic {
     public static final String ID = VUPShionMod.makeID(DemonSword.class.getSimpleName());
     public static final String IMG_PATH = "img/relics/DemonSword.png";
     private static final String OUTLINE_PATH = "img/relics/outline/DemonSword.png";
@@ -34,9 +34,9 @@ public class DemonSword extends AbstractShionRelic  {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if(info.type == DamageInfo.DamageType.NORMAL){
-            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,1)));
-            addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new LoseStrengthPower(AbstractDungeon.player,1)));
+        if (info.type == DamageInfo.DamageType.NORMAL) {
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 1)));
         }
         super.onAttack(info, damageAmount, target);
     }

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
 public class AttackPreparation extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID(AttackPreparation.class.getSimpleName());
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy14.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy14.png");
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;

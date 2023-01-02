@@ -20,8 +20,6 @@ public class MiracleUpgradePrayer extends AbstractPrayer {
         this.amount = amount;
         updateDescription();
         loadRegion("energized_blue");
-//        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/prayer/BloodPrayerPrayer128.png")), 0, 0, 128, 128);
-//        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/prayer/BloodPrayerPrayer36.png")), 0, 0, 36, 36);
     }
 
     @Override
@@ -33,7 +31,7 @@ public class MiracleUpgradePrayer extends AbstractPrayer {
     public void use() {
         AbstractCard mir = new Miracle();
         mir.upgrade();
-        addToBot(new MakeTempCardInHandAction(mir,this.amount));
+        addToBot(new MakeTempCardInHandAction(mir, this.amount));
     }
 
     @Override

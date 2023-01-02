@@ -31,7 +31,7 @@ public class HealToShieldPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurnPostDraw() {
-        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
     @Override

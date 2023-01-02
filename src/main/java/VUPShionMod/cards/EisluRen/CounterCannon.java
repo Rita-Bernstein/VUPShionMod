@@ -37,7 +37,7 @@ public class CounterCannon extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+            addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal)));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE));
         this.rawDescription = cardStrings.DESCRIPTION;
@@ -47,18 +47,17 @@ public class CounterCannon extends AbstractEisluRenCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }
 
 
-
     public void applyPowers() {
-        this.baseDamage = GameStatsPatch.wingShieldDamageReduceThisCombat *2;
+        this.baseDamage = GameStatsPatch.wingShieldDamageReduceThisCombat * 2;
         super.applyPowers();
         this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
@@ -77,8 +76,8 @@ public class CounterCannon extends AbstractEisluRenCard {
             this.upgradeName();
             upgradeBaseCost(1);
             upgradeSecondM(-1);
-            GraveField.grave.set(this,true);
-            this.rawDescription  = UPGRADE_DESCRIPTION;
+            GraveField.grave.set(this, true);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

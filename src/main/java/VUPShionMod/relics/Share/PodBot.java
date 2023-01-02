@@ -18,7 +18,6 @@ public class PodBot extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
 
-
     public PodBot() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.UNCOMMON, LandingSound.CLINK);
     }
@@ -31,7 +30,7 @@ public class PodBot extends AbstractShionRelic {
     @Override
     public void atTurnStart() {
         flash();
-        Supplier<AbstractPower> powerToApply = () -> new WeakPower(null,1,false);
+        Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, 1, false);
         addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
 
     }

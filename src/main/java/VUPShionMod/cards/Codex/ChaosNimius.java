@@ -30,7 +30,6 @@ public class ChaosNimius extends AbstractCodexCard {
     }
 
 
-
     public ChaosNimius() {
         this(0);
     }

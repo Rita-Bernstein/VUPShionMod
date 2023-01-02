@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class MinionIntentFlashAction extends AbstractGameAction {
-    private AbstractPlayerMinion m;
+    private final AbstractPlayerMinion m;
 
     public MinionIntentFlashAction(AbstractPlayerMinion m) {
         if (Settings.FAST_MODE) {

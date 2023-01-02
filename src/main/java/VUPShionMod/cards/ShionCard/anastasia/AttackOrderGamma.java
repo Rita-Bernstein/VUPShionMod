@@ -23,7 +23,7 @@ public class AttackOrderGamma extends AbstractShionAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new AttackOrderGammaPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new AttackOrderGammaPower(p)));
     }
 
     @Override

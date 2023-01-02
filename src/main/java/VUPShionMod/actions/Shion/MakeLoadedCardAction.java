@@ -11,12 +11,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class MakeLoadedCardAction extends AbstractGameAction {
-    private AbstractCard card;
-    private int amount;
+    private final AbstractCard card;
+    private final int amount;
     private boolean inDiscardPile = false;
     private boolean upgrade = false;
     private boolean randomSpot = true;
-    private String text = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction")).TEXT[1];
+    private final String text = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID("EnduranceInitiationAction")).TEXT[1];
 
     public MakeLoadedCardAction(AbstractCard card) {
         this.card = card;
@@ -28,7 +28,7 @@ public class MakeLoadedCardAction extends AbstractGameAction {
         this.amount = amount;
     }
 
-    public MakeLoadedCardAction(boolean upgrade,AbstractCard card, int amount) {
+    public MakeLoadedCardAction(boolean upgrade, AbstractCard card, int amount) {
         this.card = card;
         this.amount = amount;
         this.upgrade = upgrade;
@@ -40,7 +40,7 @@ public class MakeLoadedCardAction extends AbstractGameAction {
         this.inDiscardPile = inDiscardPile;
     }
 
-    public MakeLoadedCardAction(boolean upgrade,AbstractCard card, boolean inDiscardPile) {
+    public MakeLoadedCardAction(boolean upgrade, AbstractCard card, boolean inDiscardPile) {
         this.card = card;
         this.amount = 1;
         this.inDiscardPile = inDiscardPile;
@@ -62,7 +62,7 @@ public class MakeLoadedCardAction extends AbstractGameAction {
     }
 
 
-    public MakeLoadedCardAction(boolean randomSpot,boolean upgrade, AbstractCard card, int amount, boolean inDiscardPile) {
+    public MakeLoadedCardAction(boolean randomSpot, boolean upgrade, AbstractCard card, int amount, boolean inDiscardPile) {
         this.card = card;
         this.amount = amount;
         this.inDiscardPile = inDiscardPile;

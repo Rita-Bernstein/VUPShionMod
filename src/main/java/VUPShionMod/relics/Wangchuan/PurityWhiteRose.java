@@ -30,7 +30,7 @@ public class PurityWhiteRose extends AbstractShionRelic {
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && info.type == DamageInfo.DamageType.NORMAL)
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new PlatedArmorPower(AbstractDungeon.player,4)));
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, 4)));
         return super.onAttackedToChangeDamage(info, damageAmount);
     }
 

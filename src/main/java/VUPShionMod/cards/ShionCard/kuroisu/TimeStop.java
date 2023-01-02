@@ -26,7 +26,7 @@ public class TimeStop extends AbstractShionKuroisuCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new StunMonsterAction(m, p, 1));
 
-        if(m.id.equals(Ouroboros.ID) && !m.hasPower(ArtifactPower.POWER_ID)){
+        if (m.id.equals(Ouroboros.ID) && !m.hasPower(ArtifactPower.POWER_ID)) {
             AchievementPatches.unlockAchievement("10");
         }
 

@@ -15,7 +15,7 @@ public class Arbitration extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 1;
+    private static final int COST = 3;
 
     public Arbitration() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -41,6 +41,7 @@ public class Arbitration extends AbstractLiyezhuCard {
             initializeTitle();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+            upgradeBaseCost(2);
         }
     }
 }

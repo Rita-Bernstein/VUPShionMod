@@ -63,7 +63,7 @@ public class AbstractSpineEffect extends AbstractGameEffect {
             }
         }
 
-        if(this.isDone){
+        if (this.isDone) {
             dispose();
         }
     }

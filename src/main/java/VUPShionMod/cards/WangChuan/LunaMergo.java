@@ -37,7 +37,7 @@ public class LunaMergo extends AbstractWCCard {
 
         AbstractPower power = p.getPower(StiffnessPower.POWER_ID);
         if (power != null) {
-            addToBot(new ApplyCorGladiiAction(power.amount* this.secondaryM));
+            addToBot(new ApplyCorGladiiAction(power.amount * this.secondaryM));
         }
     }
 

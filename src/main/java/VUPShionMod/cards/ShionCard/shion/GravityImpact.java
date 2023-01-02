@@ -40,7 +40,7 @@ public class GravityImpact extends AbstractShionCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
         for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new TurnTriggerFinFunnelAction(m, GravityFinFunnel.ID));
+            addToBot(new TurnTriggerFinFunnelAction(m, GravityFinFunnel.ID,true));
 
     }
 

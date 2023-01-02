@@ -29,10 +29,9 @@ public class MagiaCup extends AbstractShionRelic {
     }
 
 
-
     @Override
     public void onPlayerEndTurn() {
-        addToBot(new ReducePowerAction(AbstractDungeon.player,AbstractDungeon.player, MagiamObruorPower.POWER_ID,5));
+        addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, MagiamObruorPower.POWER_ID, 5));
     }
 
 

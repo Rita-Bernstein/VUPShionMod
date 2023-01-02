@@ -25,7 +25,7 @@ public class Alleviator extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new AlleviatorPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new AlleviatorPower(p, this.magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 
@@ -35,7 +35,7 @@ public class Alleviator extends AbstractWCCard {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            this.isInnate =true;
+            this.isInnate = true;
         }
     }
 }

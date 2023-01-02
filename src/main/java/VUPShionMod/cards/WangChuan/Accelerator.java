@@ -21,16 +21,16 @@ public class Accelerator extends AbstractWCCard {
     public Accelerator() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.secondaryM  = this.baseSecondaryM = 3;
+        this.secondaryM = this.baseSecondaryM = 3;
         this.tags.add(CardTagsEnum.MagiamObruor_CARD);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new AcceleratorPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new AcceleratorPower(p, this.magicNumber)));
 
-        if(this.upgraded)
-            addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.secondaryM)));
 
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }

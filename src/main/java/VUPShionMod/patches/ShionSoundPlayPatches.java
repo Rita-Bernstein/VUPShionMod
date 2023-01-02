@@ -38,11 +38,11 @@ public class ShionSoundPlayPatches {
             paramtypez = {boolean.class}
     )
     public static class AbstractMonsterPatch {
-        public static void Postfix(AbstractMonster _instance,boolean triggerRelics) {
+        public static void Postfix(AbstractMonster _instance, boolean triggerRelics) {
             if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion) {
-                if (_instance.type == AbstractMonster.EnemyType.BOSS || _instance.type == AbstractMonster.EnemyType.ELITE){
+                if (_instance.type == AbstractMonster.EnemyType.BOSS || _instance.type == AbstractMonster.EnemyType.ELITE) {
                     int count = MathUtils.random(2);
-                    switch (count){
+                    switch (count) {
                         case 0:
                             CardCrawlGame.sound.play("SHION_1");
                             break;

@@ -1,5 +1,6 @@
 package VUPShionMod.monsters.Rita;
 
+import VUPShionMod.msic.Shield;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class PlayerDataListener {
@@ -12,7 +13,7 @@ public class PlayerDataListener {
 
 
     public void recordPlayerData() {
-        if (AbstractDungeon.player.currentBlock >= 90)
+        if (AbstractDungeon.player.currentBlock + Shield.getShield(AbstractDungeon.player).getCurrentShield() >= 90)
             this.playerHugeBlockTurn++;
     }
 

@@ -29,8 +29,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 
 public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
-    private ArrayList<AbstractFinFunnel> finFunnels;
-    private ArrayList<FinFunnelSmallLaserData> dataList = new ArrayList<>();
+    private final ArrayList<AbstractFinFunnel> finFunnels;
+    private final ArrayList<FinFunnelSmallLaserData> dataList = new ArrayList<>();
     private static TextureAtlas.AtlasRegion img;
     private boolean posUpdated = false;
 
@@ -39,14 +39,14 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
     private boolean isMultiDamage = false;
     private boolean isApplyBleeding = false;
     private boolean isGainBlock = false;
-    private float effect;
+    private final float effect;
 
 
     private static TextureAtlas.AtlasRegion atkImg;
-    private Color atkColor = Color.WHITE.cpy();
-    private static int blockSound = 0;
+    private final Color atkColor = Color.WHITE.cpy();
+    private static final int blockSound = 0;
 
-    private AbstractPlayer p = AbstractDungeon.player;
+    private final AbstractPlayer p = AbstractDungeon.player;
 
     public static class FinFunnelSmallLaserData {
         public float sX = 0.0f;
@@ -71,7 +71,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
             isGainBlock = true;
     }
 
-    public AllFinFunnelSmallLaserEffect(ArrayList<AbstractFinFunnel> finFunnels,float effect) {
+    public AllFinFunnelSmallLaserEffect(ArrayList<AbstractFinFunnel> finFunnels, float effect) {
         super();
         this.effect = effect;
         this.finFunnels = finFunnels;
@@ -94,7 +94,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if(this.finFunnels.isEmpty()){
+        if (this.finFunnels.isEmpty()) {
             this.isDone = true;
             return;
         }
@@ -136,7 +136,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
                     if (m.lastDamageTaken > 0 && isGainBlock) {
                         addToBot(new GainBlockAction(p, (int) Math.floor(m.lastDamageTaken)));
                     }
-                    finFunnel.powerToApply(m,effect,false);
+                    finFunnel.powerToApply(m, effect, false);
 
                     CardCrawlGame.sound.play("ATTACK_FIRE");
                     CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT", 0.5f);
@@ -181,7 +181,7 @@ public class AllFinFunnelSmallLaserEffect extends AbstractGameEffect {
                 sb.setBlendFunction(770, 771);
 
 
-                if (this.atkImg != null) {
+                if (atkImg != null) {
                     sb.setColor(this.atkColor);
                     sb.draw(atkImg, data.sX - atkImg.packedWidth / 2.0f, data.sY - atkImg.packedHeight / 2.0f,
                             atkImg.packedWidth / 2.0F, atkImg.packedHeight / 2.0F,

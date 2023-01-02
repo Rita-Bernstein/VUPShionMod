@@ -29,29 +29,26 @@ public class ActionBlockadePower extends SavePowerPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 
-
     public ActionBlockadePower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower48.png"), 0, 0, 48, 48);
+        loadShionRegion("DelayAvatarPower");
     }
 
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
 
-        if(!this.endingEffect)
-        addToBot(new SavePlayerPowersAction(this));
+        if (!this.endingEffect)
+            addToBot(new SavePlayerPowersAction(this));
     }
-
 
 
     @Override
     public boolean canPlayCard(AbstractCard card) {
-        if(card.type == AbstractCard.CardType.SKILL)
+        if (card.type == AbstractCard.CardType.SKILL)
             return false;
 
         return super.canPlayCard(card);
@@ -65,11 +62,11 @@ public class ActionBlockadePower extends SavePowerPower {
         }
 
         flash();
-        this.endingEffect =true;
+        this.endingEffect = true;
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if(!playerPowersToSave.isEmpty()){
+                if (!playerPowersToSave.isEmpty()) {
                     AbstractDungeon.player.powers.addAll(playerPowersToSave);
                     playerPowersToSave.clear();
                 }

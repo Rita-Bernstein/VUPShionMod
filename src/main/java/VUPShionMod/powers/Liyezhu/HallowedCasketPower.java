@@ -37,7 +37,7 @@ public class HallowedCasketPower extends AbstractShionPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             flash();
-            addToBot(new MakeTempCardInDiscardAction(new Miracle(),1));
+            addToBot(new MakeTempCardInDiscardAction(new Miracle(), 1));
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PsychicPower(AbstractDungeon.player, this.amount2)));
         }
     }

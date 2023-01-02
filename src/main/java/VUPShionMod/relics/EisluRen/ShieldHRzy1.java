@@ -51,7 +51,7 @@ public class ShieldHRzy1 extends AbstractShionRelic {
 
     @Override
     public void atTurnStart() {
-        if(GameActionManager.turn >1) {
+        if (GameActionManager.turn > 1) {
             flash();
             addToBot(new GainWingShieldChargeAction(1));
         }
@@ -61,6 +61,6 @@ public class ShieldHRzy1 extends AbstractShionRelic {
     @Override
     public void atBattleStart() {
         flash();
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,5)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 5)));
     }
 }

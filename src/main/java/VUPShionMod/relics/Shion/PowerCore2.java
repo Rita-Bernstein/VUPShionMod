@@ -26,11 +26,11 @@ public class PowerCore2 extends AbstractShionRelic {
         getKeyword();
     }
 
-    private void getKeyword(){
+    private void getKeyword() {
         this.description = getUpdatedDescription();
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(DESCRIPTIONS[1],DESCRIPTIONS[2]));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
 
@@ -41,24 +41,24 @@ public class PowerCore2 extends AbstractShionRelic {
 
     @Override
     public void atBattleStart() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,-5)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, -5)));
     }
 
     @Override
     public void atTurnStartPostDraw() {
         flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         addToBot(new ObtainPotionAction(new MagiaMagazine()));
     }
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.energy.energyMaster+=2;
+        AbstractDungeon.player.energy.energyMaster += 2;
     }
 
     @Override
     public void onUnequip() {
-        AbstractDungeon.player.energy.energyMaster-=2;
+        AbstractDungeon.player.energy.energyMaster -= 2;
     }
 
 
@@ -71,6 +71,7 @@ public class PowerCore2 extends AbstractShionRelic {
                 .ifPresent(index -> instantObtain(player, index, true));
 
         (AbstractDungeon.getCurrRoom()).rewardPopOutTimer = 0.25F;
+        AbstractDungeon.player.energy.energyMaster -= 2;
     }
 
     @Override

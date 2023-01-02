@@ -30,7 +30,7 @@ public class GladiiInfiniti extends AbstractWCCard {
         this.baseDamage = 0;
         this.magicNumber = this.baseMagicNumber = 5;
         this.selfRetain = true;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     @Override
@@ -54,8 +54,7 @@ public class GladiiInfiniti extends AbstractWCCard {
         initializeDescription();
 
 
-
-        addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new IntensaPower(p, 1)));
         addToBot(new ApplyStiffnessAction(4));
 
         addToBot(new StunMonsterAction(m, p, 1));

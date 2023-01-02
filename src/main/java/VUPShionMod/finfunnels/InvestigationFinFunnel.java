@@ -20,10 +20,10 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(InvestigationFinFunnel.class.getSimpleName()));
 
     public InvestigationFinFunnel(int level) {
-      this(level,-1);
+        this(level, -1);
     }
 
-    public InvestigationFinFunnel(int level,int index) {
+    public InvestigationFinFunnel(int level, int index) {
         super(ID);
         upgradeLevel(level);
         this.effect = 1;
@@ -49,11 +49,11 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     }
 
     @Override
-    protected void initAnimation(int index){
-        if(SkinManager.getSkinCharacter(0).reskinCount!=3) {
+    protected void initAnimation(int index) {
+        if (this.index < 0) {
             this.state.setAnimation(0, "weapon4_come_in", false);
             this.state.addAnimation(0, "weapon4_idle", true, 0.0f);
-        }else {
+        } else {
             super.initAnimation(index);
         }
 
@@ -73,16 +73,16 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     @Override
     public void upgradeLevel(int amount) {
         super.upgradeLevel(amount);
+        if(this.index <0)
         SaveHelper.investigationFinFunnelLevel = level;
     }
 
     @Override
     public void loseLevel(int amount) {
         super.loseLevel(amount);
+        if(this.index <0)
         SaveHelper.investigationFinFunnelLevel = level;
     }
-
-
 
 
     @Override
@@ -100,10 +100,10 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
 
     @Override
     public void updatePosition(Skeleton skeleton) {
-        if(this.index < 0) {
+        if (this.index < 0) {
             body = this.skeleton.findBone("weapon4_bone");
             muzzle = this.skeleton.findBone("weapon4_muzzle");
-        }else {
+        } else {
             body = this.skeleton.findBone("weapon" + (index + 1) + "_bone");
             muzzle = this.skeleton.findBone("weapon" + (index + 1) + "_muzzle");
         }
@@ -114,12 +114,12 @@ public class InvestigationFinFunnel extends AbstractFinFunnel {
     @Override
     public void playFinFunnelAnimation(String id) {
         if (id.equals(this.id)) {
-            if(this.index < 0) {
+            if (this.index < 0) {
                 this.state.setAnimation(0, "weapon4_attack", false).setTimeScale(3.0f);
                 this.state.addAnimation(0, "weapon4_idle", true, 0.0F);
-            }else {
-                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(3.0f);
-                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F);
+            } else {
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(1.9f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
             }
         }
     }

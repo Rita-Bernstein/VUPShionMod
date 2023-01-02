@@ -37,7 +37,7 @@ public class Strike_Shion2 extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new TurnTriggerFinFunnelAction(m, PursuitFinFunnel.ID));
+            addToBot(new TurnTriggerFinFunnelAction(m, PursuitFinFunnel.ID,true));
 
         addToBot(new GainFinFunnelChargeAction(this.secondaryM));
 

@@ -22,9 +22,9 @@ public class ShionNpc extends AnimatedNpc {
         try {
             Method method = AnimatedNpc.class.getDeclaredMethod("loadAnimation", String.class, String.class, float.class);
             method.setAccessible(true);
-            method.invoke(this, SkinManager.getSkin(0,0).atlasURL,
-                    SkinManager.getSkin(0,0).jsonURL,
-                    SkinManager.getSkin(0,0).renderScale);
+            method.invoke(this, SkinManager.getSkin(0, 0).atlasURL,
+                    SkinManager.getSkin(0, 0).jsonURL,
+                    SkinManager.getSkin(0, 0).renderScale);
 
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
@@ -40,7 +40,7 @@ public class ShionNpc extends AnimatedNpc {
             state.setAnimation(0, "idle", true);
             state.setAnimation(4, "wing_idle", true);
 
-       } catch (IllegalAccessException | NoSuchFieldException e) {
+        } catch (IllegalAccessException | NoSuchFieldException e) {
             e.printStackTrace();
         }
     }

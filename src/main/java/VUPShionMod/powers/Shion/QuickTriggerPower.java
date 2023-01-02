@@ -19,12 +19,12 @@ public class QuickTriggerPower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public QuickTriggerPower(AbstractCreature owner,int amount) {
+    public QuickTriggerPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.setImage("Clock84.png", "Clock32.png");
+        loadShionRegion("Clock");
         updateDescription();
     }
 

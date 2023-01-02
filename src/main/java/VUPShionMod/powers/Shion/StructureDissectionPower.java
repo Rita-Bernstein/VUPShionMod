@@ -47,8 +47,7 @@ public class StructureDissectionPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/StructureDissectionPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/StructureDissectionPower36.png")), 0, 0, 36, 36);
+        loadShionRegion("StructureDissectionPower");
         updateDescription();
         this.type = PowerType.DEBUFF;
     }
@@ -183,7 +182,7 @@ public class StructureDissectionPower extends AbstractShionPower {
         trigger(0);
     }
 
-    private void playSFX(){
+    private void playSFX() {
         addToTop(new SFXAction("SHION_24"));
     }
 
@@ -264,7 +263,7 @@ public class StructureDissectionPower extends AbstractShionPower {
 //                    第一勇士
                     if (m.id.equals(Champ.ID) && m.hasPower(MetallicizePower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
-                                192.0f, 108.0f, 2.5f* Settings.scale, 2, false)));
+                                192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, MetallicizePower.POWER_ID));
                         playSFX();
                         return;
@@ -272,7 +271,7 @@ public class StructureDissectionPower extends AbstractShionPower {
 
                     if (m.id.equals(AwakenedOne.ID) && m.hasPower(CuriosityPower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
-                                192.0f, 108.0f, 2.5f* Settings.scale, 2, false)));
+                                192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, CuriosityPower.POWER_ID));
                         playSFX();
                         return;
@@ -280,7 +279,7 @@ public class StructureDissectionPower extends AbstractShionPower {
 
                     if (m.id.equals(TimeEater.ID) && m.hasPower(TimeWarpPower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
-                                192.0f, 108.0f, 2.5f* Settings.scale, 2, false)));
+                                192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, TimeWarpPower.POWER_ID));
                         playSFX();
                         return;
@@ -309,7 +308,7 @@ public class StructureDissectionPower extends AbstractShionPower {
 
                     if (m.id.equals(Donu.ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
-                                192.0f, 108.0f,  2.5f * Settings.scale, 2, false)));
+                                192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new AbstractGameAction() {
                             @Override
                             public void update() {
@@ -342,7 +341,7 @@ public class StructureDissectionPower extends AbstractShionPower {
 
                     if (m.id.equals(TimePortal.ID) && m.hasPower(ContortTimePower.POWER_ID)) {
                         addToTop(new VFXAction(new AbstractAtlasGameEffect("Circle 15", m.hb.cX, m.hb.cY,
-                                192.0f, 108.0f,  2.5f * Settings.scale, 2, false)));
+                                192.0f, 108.0f, 2.5f * Settings.scale, 2, false)));
                         addToTop(new RemoveSpecificPowerAction(m, AbstractDungeon.player, ContortTimePower.POWER_ID));
                         playSFX();
                         return;
@@ -363,7 +362,7 @@ public class StructureDissectionPower extends AbstractShionPower {
                 } else
                     addToTop(new StunMonsterAction((AbstractMonster) this.owner, this.owner, 1));
                 playSFX();
-            }else {
+            } else {
                 addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -3)));
                 playSFX();
             }

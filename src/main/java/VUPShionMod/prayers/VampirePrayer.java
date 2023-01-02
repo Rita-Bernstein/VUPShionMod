@@ -1,6 +1,7 @@
 package VUPShionMod.prayers;
 
 import VUPShionMod.VUPShionMod;
+import VUPShionMod.powers.AbstractShionPower;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -22,7 +23,7 @@ public class VampirePrayer extends AbstractPrayer {
     public static final String[] DESCRIPTIONS = prayerStrings.DESCRIPTION;
 
 
-    private AbstractCard card = new Reaper();
+    private final AbstractCard card = new Reaper();
 
     public VampirePrayer(int turns, int amount) {
         this.ID = Prayer_ID;
@@ -30,9 +31,8 @@ public class VampirePrayer extends AbstractPrayer {
         this.turns = turns;
         this.amount = amount;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/VampireFormPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/VampireFormPower36.png")), 0, 0, 36, 36);
-
+        this.region48 = AbstractShionPower.shionAtlas.findRegion("48/VampireFormPower");
+        this.region128 = AbstractShionPower.shionAtlas.findRegion("128/VampireFormPower");
         card.baseDamage = amount;
     }
 

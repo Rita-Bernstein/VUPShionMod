@@ -28,12 +28,12 @@ public class RemoveAllShieldAction extends AbstractGameAction {
 
     @Override
     public void update() {
-            if (!this.target.isDying && !this.target.isDead && this.duration == this.startDuration) {
-                Shield.getShield(this.target).loseBlock(Shield.getShield(this.target).getCurrentShield());
-            } else {
-                isDone = true;
-                return;
-            }
+        if (!this.target.isDying && !this.target.isDead && this.duration == this.startDuration) {
+            Shield.getShield(this.target).loseBlock(Shield.getShield(this.target).getCurrentShield());
+        } else {
+            isDone = true;
+            return;
+        }
         tickDuration();
     }
 }

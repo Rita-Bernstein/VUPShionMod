@@ -34,8 +34,7 @@ public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PursuitFinFunnelUpgrade128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PursuitFinFunnelUpgrade32.png")), 0, 0, 32, 32);
+        loadShionRegion("PursuitFinFunnelUpgrade");
         updateDescription();
     }
 
@@ -46,24 +45,24 @@ public class PursuitFinFunnelUpgradePower extends AbstractShionPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(this.amount > 0)
-        if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)){
-            this.amount--;
-            updateDescription();
-            if (this.amount <= 0 && !used) {
-                this.used = true;
-                this.amount = -1;
-                List<AbstractFinFunnel> funnelList = FinFunnelManager.getFinFunnelList();
-                for (AbstractFinFunnel funnel : funnelList) {
-                    if (funnel instanceof PursuitFinFunnel) {
-                        this.flash();
-                        funnel.upgradeLevel(1);
-                        this.description = DESCRIPTIONS[2];
-                        break;
+        if (this.amount > 0)
+            if (card.hasTag(CardTagsEnum.FIN_FUNNEL) || card.hasTag(CardTagsEnum.TRIGGER_FIN_FUNNEL)) {
+                this.amount--;
+                updateDescription();
+                if (this.amount <= 0 && !used) {
+                    this.used = true;
+                    this.amount = -1;
+                    List<AbstractFinFunnel> funnelList = FinFunnelManager.getFinFunnelList();
+                    for (AbstractFinFunnel funnel : funnelList) {
+                        if (funnel instanceof PursuitFinFunnel) {
+                            this.flash();
+                            funnel.upgradeLevel(1);
+                            this.description = DESCRIPTIONS[2];
+                            break;
+                        }
                     }
+                    EnergyPanelPatches.levelUP = true;
                 }
-                EnergyPanelPatches.levelUP = true;
             }
-        }
     }
 }

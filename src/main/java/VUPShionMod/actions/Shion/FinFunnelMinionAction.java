@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class FinFunnelMinionAction extends AbstractGameAction {
     private boolean createFinFunnelMini = false;
-    private ArrayList<AbstractFinFunnel> finFunnels = new ArrayList<>();
+    private final ArrayList<AbstractFinFunnel> finFunnels = new ArrayList<>();
     private boolean isAoe = false;
 
     private boolean fullPower = false;
@@ -74,9 +74,8 @@ public class FinFunnelMinionAction extends AbstractGameAction {
             });
 
             if (!finFunnels.isEmpty())
-                for (int i = 7; i >= 0; i--) {
+                for (int i = finFunnels.size() - 1; i >= 0; i--) {
                     if (!isAoe(finFunnels.get(i))) {
-
                         if (!finFunnels.get(i).id.equals(MatrixFinFunnel.ID))
                             finFunnels.get(i).powerToApply(this.target, this.fullPower ? 2.0f : 1.0f, true);
 

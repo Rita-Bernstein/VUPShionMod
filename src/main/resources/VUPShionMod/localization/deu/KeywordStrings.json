@@ -3,21 +3,21 @@
     "NAMES": [
       "Volle\u00a0Ladung"
     ],
-	"PROPER_NAME": "Volle Ladung",
+    "PROPER_NAME": "Volle Ladung",
     "DESCRIPTION": "Wird beim Ziehen automatisch und gratis gespielt. Ziehe eine Karte Nachdem sie gespielt wurde."
   },
   {
     "NAMES": [
       "Schwebende\u00a0Kanone"
     ],
-	"PROPER_NAME":  "Schwebende Kanone",
+    "PROPER_NAME": "Schwebende Kanone",
     "DESCRIPTION": "#yKanone greift zu beginn jedes Zuges an. NL Für Energiekosten kannst du deine #yKanone wechseln."
   },
   {
     "NAMES": [
       "Alle\u00a0Aufwertungen"
     ],
-	"PROPER_NAME": "Alle Aufwertungen",
+    "PROPER_NAME": "Alle Aufwertungen",
     "DESCRIPTION": "Anzahl der Aufwertungen von #yDimensions #ySplitter: #yAria und die drei #yKanonen."
   },
   {
@@ -42,7 +42,7 @@
     "NAMES": [
       "Hyperdimensionale\u00a0Verbindung"
     ],
-	"PROPER_NAME": "Hyperdimensionale Verbindung",
+    "PROPER_NAME": "Hyperdimensionale Verbindung",
     "DESCRIPTION": "Immer wenn du den Kampf mit #b10 oder mehr #yHyperdimensionale #yVerbindung beendest wird eine Zufällige deiner Karten aufgewertet."
   },
   {

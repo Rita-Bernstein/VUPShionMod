@@ -127,13 +127,13 @@ public class TotipotentCircuit extends AbstractShionRelic implements CustomBottl
     @Override
     public void atBattleStartPreDraw() {
         super.atBattleStartPreDraw();
-        if(this.card != null && !AbstractDungeon.player.drawPile.group.isEmpty())
-        for (AbstractCard ca : AbstractDungeon.player.drawPile.group) {
-            if (this.card.uuid == ca.uuid) {
-                AbstractDungeon.player.drawPile.removeCard(ca);
-                break;
+        if (this.card != null && !AbstractDungeon.player.drawPile.group.isEmpty())
+            for (AbstractCard ca : AbstractDungeon.player.drawPile.group) {
+                if (this.card.uuid == ca.uuid) {
+                    AbstractDungeon.player.drawPile.removeCard(ca);
+                    break;
+                }
             }
-        }
     }
 
 

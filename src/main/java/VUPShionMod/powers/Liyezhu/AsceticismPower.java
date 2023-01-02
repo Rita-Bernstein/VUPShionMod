@@ -27,7 +27,7 @@ public class AsceticismPower extends AbstractShionPower {
     @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
         flash();
-        addToBot(new HealAction(this.owner, this.owner, this.amount ));
+        addToBot(new HealAction(this.owner, this.owner, this.amount));
     }
 
     @Override

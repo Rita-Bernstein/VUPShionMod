@@ -16,7 +16,7 @@ public class SoothingScripture extends AbstractLiyezhuCard {
     public static final String ID = VUPShionMod.makeID(SoothingScripture.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/Liyezhu/SoothingScripture.png");
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
 
     private static final int COST = 2;
@@ -40,9 +40,9 @@ public class SoothingScripture extends AbstractLiyezhuCard {
             public void update() {
                 if (isInPrayer())
                     addToTop(new ApplyPrayerAction(new SanPrayer(secondaryM, 1)));
-                    addToTop(new ApplyPrayerAction(new HealPrayer(secondaryM, magicNumber)));
+                addToTop(new ApplyPrayerAction(new HealPrayer(secondaryM, magicNumber)));
 
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new EmanationOfIre();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

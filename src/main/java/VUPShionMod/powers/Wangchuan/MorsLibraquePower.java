@@ -32,8 +32,7 @@ public class MorsLibraquePower extends AbstractShionPower {
         updateDescription();
         isTurnBased = true;
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MorsLibraquePower36.png")), 0, 0, 36, 36);
+        loadShionRegion("MorsLibraquePower");
     }
 
     @Override
@@ -58,11 +57,11 @@ public class MorsLibraquePower extends AbstractShionPower {
             addToBot(new VFXAction(new GiantTextEffect(this.owner.hb.cX, this.owner.hb.cY)));
             addToBot(new InstantKillAction(this.owner));
 
-            if(this.owner != null && !this.owner.isPlayer)
-            if(this.owner.id.equals(CorruptHeart.ID)) {
-                AchievementPatches.unlockAchievement("06");
-                CharacterSelectScreenPatches.skinManager.unlockSkin(ChinaWangChuan.ID);
-            }
+            if (this.owner != null && !this.owner.isPlayer)
+                if (this.owner.id.equals(CorruptHeart.ID)) {
+                    AchievementPatches.unlockAchievement("06");
+                    CharacterSelectScreenPatches.skinManager.unlockSkin(ChinaWangChuan.ID);
+                }
 
         }
     }

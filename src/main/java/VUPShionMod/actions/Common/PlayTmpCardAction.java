@@ -33,11 +33,11 @@ public class PlayTmpCardAction extends AbstractGameAction {
 
         AbstractMonster m = (AbstractDungeon.getCurrRoom()).monsters.getRandomMonster(null, true, AbstractDungeon.miscRng);
 
-        if(m!= null){
+        if (m != null) {
             card.calculateCardDamage(m);
         }
 
-        addToTop(new NewQueueCardAction(card,m , false, true));
+        addToTop(new NewQueueCardAction(card, m, false, true));
         addToTop(new UnlimboAction(card));
         if (!Settings.FAST_MODE) {
             addToTop(new WaitAction(Settings.ACTION_DUR_MED));

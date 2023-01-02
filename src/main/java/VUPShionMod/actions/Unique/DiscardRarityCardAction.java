@@ -15,7 +15,7 @@ public class DiscardRarityCardAction extends AbstractGameAction {
         this.actionType = ActionType.WAIT;
     }
 
-    private float startingDuration;
+    private final float startingDuration;
     private AbstractCard card;
 
     public void update() {

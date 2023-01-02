@@ -17,8 +17,8 @@
   },
   "VUPShionMod:AttackSystemPreload": {
     "NAME": "攻击系统预加载",
-    "DESCRIPTION": "失去 !VUPShionSecondM! 点 vup_shion_mod:超维链接 。 NL 将 !M! 张 *快速攻击 加入抽牌堆。",
-    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 点 vup_shion_mod:超维链接 。 NL 将 !M! 张 *快速攻击+ 加入抽牌堆。",
+    "DESCRIPTION": "失去 !VUPShionSecondM! 点 vup_shion_mod:超维链接 。 NL 将 !M! 张 *快速攻击 加入弃牌堆。 NL 抽一张牌。",
+    "UPGRADE_DESCRIPTION": "失去 !VUPShionSecondM! 点 vup_shion_mod:超维链接 。 NL 将 !M! 张 *快速攻击+ 加入弃牌堆。 NL 抽一张牌。",
     "EXTENDED_DESCRIPTION": [
       "超维链接不足"
     ]
@@ -451,8 +451,8 @@
   },
   "VUPShionMod:Slide": {
     "NAME": "滑步",
-    "DESCRIPTION": "获得 !B! 点 格挡 两次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 三次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 两次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。 NL 获得 !M! 点临时 敏捷 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 三次。 NL 获得 !VUPShionSecondM! 点 vup_shion_mod:剑势 。 NL 获得 !M! 点临时 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       "九宫步"
     ]
@@ -527,12 +527,12 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "旋身回斩",
-    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害两次。 NL 获得5 + vup_shion_mod:剑势 的 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+    "DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害两次。 NL 获得5 + vup_shion_mod:剑势 的 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽一张牌。",
     "UPGRADE_DESCRIPTION": "造成 !M! + vup_shion_mod:剑势 的伤害三次。 NL 获得5 + vup_shion_mod:剑势 的 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。 NL vup_shion_mod:魔能过载 ， vup_shion_mod:极意 。",
     "EXTENDED_DESCRIPTION": [
       "回天剑舞",
       "极·回天剑舞",
-      "造成 !M! + vup_shion_mod:剑势 的伤害三次。 NL 获得5 + vup_shion_mod:剑势 的 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽两张牌。",
+      "造成 !M! + vup_shion_mod:剑势 的伤害三次。 NL 获得5 + vup_shion_mod:剑势 的 格挡 。 NL 获得3点 vup_shion_mod:硬直 。 NL 抽一张牌。",
       "（造成 !D! 点伤害，获得 !B! 点 格挡 。）"
     ]
   },
@@ -616,7 +616,7 @@
   "VUPShionMod:SubLuna": {
     "NAME": "月隐",
     "DESCRIPTION": "获得 vup_shion_mod:咫尺天涯 。 NL 获得 vup_shion_mod:月隐 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] 。 NL 结束你的回合。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 获得 vup_shion_mod:咫尺天涯 。 NL 获得 vup_shion_mod:月隐 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 获得 vup_shion_mod:极意 。 NL 下回合获得 [E] [E] 。 NL 结束你的回合。 NL 消耗 。"
+    "UPGRADE_DESCRIPTION": "保留 。 NL 获得 vup_shion_mod:咫尺天涯 。 NL 获得 vup_shion_mod:月隐 。 NL 失去 !M! 点 vup_shion_mod:硬直 。 NL 下回合获得 [E] [E] 。 NL 结束你的回合。 NL 消耗 。"
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "断水",
@@ -1271,7 +1271,8 @@
   },
   "VUPShionMod:Execution": {
     "NAME": "执行",
-    "DESCRIPTION": "回复 2 点生命。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:罪孽 。 NL 获得 !M! 层 vup_shion_mod:豁免 。 NL 给予 1 层 vup_shion_mod:罪印 。 "
+    "DESCRIPTION": "回复 3 点生命。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:罪孽 。 NL 获得 !M! 层 vup_shion_mod:豁免 。 NL 给予 1 层 vup_shion_mod:罪印 。 ",
+    "UPGRADE_DESCRIPTION": "回复 4 点生命。 NL 失去 !VUPShionSecondM! 层 vup_shion_mod:罪孽 。 NL 获得 !M! 层 vup_shion_mod:豁免 。 NL 给予 1 层 vup_shion_mod:罪印 。 "
   },
   "VUPShionMod:Enchant": {
     "NAME": "附魂",
@@ -1448,7 +1449,7 @@
   "VUPShionMod:OppressiveSword": {
     "NAME": "剑压",
     "DESCRIPTION": "造成 vup_shion_mod:剑势 层数 !M! 倍的伤害。 NL 每点 vup_shion_mod:硬直 转化成4层 vup_shion_mod:剑势 。",
-    "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:剑势 层数 !M! X倍的伤害。 NL 获得5X 层 vup_shion_mod:剑势 。 NL 获得40%的 vup_shion_mod:剑势 。 NL vup_shion_mod:魔能过载 X。",
+    "UPGRADE_DESCRIPTION": "X>0才能打出。 NL 造成 vup_shion_mod:剑势 层数 !M! X倍的伤害。 NL 获得5X 层 vup_shion_mod:剑势 。 NL 获得20%的 vup_shion_mod:剑势 。 NL vup_shion_mod:魔能过载 X。",
     "EXTENDED_DESCRIPTION": [
       "剑压+",
       "月牙天冲",
@@ -1502,8 +1503,8 @@
   },
   "VUPShionMod:DefensiveOrder": {
     "NAME": "防御指示",
-    "DESCRIPTION": "保留 。 NL 本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。",
-    "UPGRADE_DESCRIPTION": "保留 。 vup_shion_mod:复位 。 NL 本回合所有 vup_shion_mod:流血 、 vup_shion_mod:追击 伤害变为获得等量 格挡 。 NL vup_shion_mod:浮游炮 主动造成的伤害替换为获得等量 vup_shion_mod:护盾 。"
+    "DESCRIPTION": "保留 。 NL 获得 vup_shion_mod:总炮强化 !M! 倍的 格挡 。 NL 本回合 vup_shion_mod:总炮强化 视为0。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 获得 vup_shion_mod:总炮强化 !M! 倍的 格挡 。"
   },
   "VUPShionMod:LiXiaoNan": {
     "NAME": "绝命·黎晓楠",
@@ -1887,7 +1888,7 @@
   },
   "VUPShionMod:SetupFinFunnel": {
     "NAME": "浮游炮部署",
-    "DESCRIPTION": "固有 。 保留 。 vup_shion_mod:复位 。 NL 部署随机一门等级为 !M! 的 *南小棉 vup_shion_mod:浮游炮 。 NL 每回合失去 [E] 。"
+    "DESCRIPTION": "固有 。 保留 。 vup_shion_mod:复位 。 NL 部署随机一门等级为 !M! 的 *南小棉 vup_shion_mod:浮游炮 。 NL 其每回合使失去 [E] 。"
   },
   "VUPShionMod:CalibrationDeployment": {
     "NAME": "校准部署",
@@ -1895,10 +1896,10 @@
   },
   "VUPShionMod:MinamiHandCard": {
     "NAME": "狐的底牌",
-    "DESCRIPTION": " 墓地 。 NL 触发 vup_shion_mod:自动浮游炮 。 NL 从当前角色的 *能力牌 中选择一张。 NL 将它的复制加入手牌。"
+    "DESCRIPTION": " 墓地 。 NL 触发 vup_shion_mod:自动浮游炮 。 NL 从当前角色的 *能力牌 中选择一张。 NL 将它的0耗能复制加入手牌。"
   },
   "VUPShionMod:MinamiReact": {
     "NAME": "狐的随机应变",
-    "DESCRIPTION": " 触发所有 vup_shion_mod:浮游炮 回合开始的效果。 NL 如果敌人的意图为攻击，获得 !M! 点 vup_shion_mod:护盾 ，否则造成 !D! 点伤害。"
+    "DESCRIPTION": "触发所有 vup_shion_mod:浮游炮 回合开始的效果。 NL 如果敌人的意图为攻击，获得 !M! 点 vup_shion_mod:护盾 ，否则造成 !D! 点伤害。"
   }
 }

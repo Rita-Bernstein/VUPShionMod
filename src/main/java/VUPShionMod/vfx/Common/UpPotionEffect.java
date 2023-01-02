@@ -23,7 +23,7 @@ public class UpPotionEffect extends AbstractGameEffect {
     public static final String[] TEXT = uiStrings.TEXT;
     private static final float DUR = 1.5F;
     private boolean openedScreen;
-    private Color screenColor;
+    private final Color screenColor;
     private int times = 1;
     private Predicate<AbstractCard> predicate;
     private boolean justStart = true;

@@ -51,12 +51,12 @@ public class HomoNimius extends AbstractCodexCard {
         if (timesUpgraded <= 2) {
             if (this.timesUpgraded == 1) {
                 upgradeMagicNumber(1);
-                this.isEthereal =true;
+                this.isEthereal = true;
             }
 
             if (this.timesUpgraded == 2) {
                 this.isInnate = true;
-                this.isEthereal =false;
+                this.isEthereal = false;
                 upgradeBaseCost(0);
             }
         }

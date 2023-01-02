@@ -59,7 +59,7 @@ public class WangChuan extends CustomPlayer {
 
 
     public WangChuan(String name, PlayerClass setClass) {
-        super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), (String) null, null);
+        super(name, setClass, new EnergyOrbWangChuan(orbTextures, "VUPShionMod/img/ui/topPanel/Shion/energyVFX.png"), null, null);
         this.drawX += 5.0F * Settings.scale;
         this.drawY += 7.0F * Settings.scale;
 
@@ -96,12 +96,12 @@ public class WangChuan extends CustomPlayer {
             this.state.setAnimation(0, "idle", true);
         }
 
-        if (SkinManager.getSkinCharacter(1).reskinCount == 2){
+        if (SkinManager.getSkinCharacter(1).reskinCount == 2) {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "idle_wing", true);
         }
 
-        if (SkinManager.getSkinCharacter(1).reskinCount == 3){
+        if (SkinManager.getSkinCharacter(1).reskinCount == 3) {
             this.state.setAnimation(0, "idle", true);
             this.state.setAnimation(1, "weapon_idle", true);
         }
@@ -140,11 +140,12 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return  SkinManager.getSkin(1).getCharacterTiTleName();
+        return SkinManager.getSkin(1).getCharacterTiTleName();
     }
 
     @Override
     public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> tmpPool) {
+        ArrayList<AbstractCard> pool = super.getCardPool(tmpPool);
 
         if (ModHelper.isModEnabled("Red Cards")) {
             CardLibrary.addRedCards(tmpPool);
@@ -165,7 +166,7 @@ public class WangChuan extends CustomPlayer {
             tmpPool.add(c.makeCopy());
         }
 
-        return super.getCardPool(tmpPool);
+        return pool;
     }
 
     @Override
@@ -185,7 +186,7 @@ public class WangChuan extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return START_HP/10;
+        return START_HP / 10;
     }
 
     @Override
@@ -247,7 +248,7 @@ public class WangChuan extends CustomPlayer {
     public void damage(DamageInfo info) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - this.currentBlock > 0) {
             this.state.setAnimation(0, "hurt", false).setTimeScale(1.5f);
-            this.state.addAnimation(0, "idle", true,0.0f);
+            this.state.addAnimation(0, "idle", true, 0.0f);
         }
 
         super.damage(info);

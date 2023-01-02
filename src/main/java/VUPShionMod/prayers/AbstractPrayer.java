@@ -35,8 +35,8 @@ public abstract class AbstractPrayer implements Comparable<AbstractPrayer>, Disp
     public float x;
     public float y;
 
-    private Color renderColor = Color.WHITE.cpy();
-    private ArrayList<AbstractGameEffect> effect = new ArrayList();
+    private final Color renderColor = Color.WHITE.cpy();
+    private final ArrayList<AbstractGameEffect> effect = new ArrayList();
     protected float fontScale = 1.0F;
 
     public AbstractCreature owner = AbstractDungeon.player;
@@ -125,15 +125,15 @@ public abstract class AbstractPrayer implements Comparable<AbstractPrayer>, Disp
 
     }
 
-    public void triggerPrayer(){
+    public void triggerPrayer() {
         use();
         addToBot(new RemoveSpecificPrayerAction(this));
     }
 
-    public AbstractPrayer makeCopy(){
-        try{
+    public AbstractPrayer makeCopy() {
+        try {
             return this.getClass().newInstance();
-        }catch(InstantiationException | IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException("BaseMod failed to auto-generate makeCopy for card: " + ID);
         }
     }

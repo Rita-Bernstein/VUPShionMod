@@ -23,8 +23,7 @@ public class GravitaterPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("CircuitPower");
         updateDescription();
         this.isTurnBased = true;
         this.priority = 1;
@@ -36,10 +35,10 @@ public class GravitaterPower extends AbstractShionPower {
     }
 
     @Override
-    public void onStackPower(AbstractPower power) {
+    public void onStackPower(AbstractPower power,int preAmount) {
         if (power.ID.equals(MagiamObruorPower.POWER_ID)) {
             flash();
-            addToBot(new GainShieldAction(this.owner,this.amount));
+            addToBot(new GainShieldAction(this.owner, this.amount));
         }
     }
 }

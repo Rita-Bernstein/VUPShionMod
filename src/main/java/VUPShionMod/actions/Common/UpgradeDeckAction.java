@@ -23,9 +23,9 @@ public class UpgradeDeckAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("VUPShionMod:UpgradeDeckAction");
     private static final float DURATION_PER_CARD = 0.25F;
     public static final String[] TEXT = uiStrings.TEXT;
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private boolean optional;
+    private final boolean optional;
     private Predicate<AbstractCard> predicate;
 
     public UpgradeDeckAction(int amount, boolean optional) {

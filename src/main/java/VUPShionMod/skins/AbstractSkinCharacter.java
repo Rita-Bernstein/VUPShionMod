@@ -27,7 +27,7 @@ public abstract class AbstractSkinCharacter {
         }
     }
 
-    public boolean isCharacter(CharacterOption option){
+    public boolean isCharacter(CharacterOption option) {
         return false;
     }
 
@@ -63,7 +63,7 @@ public abstract class AbstractSkinCharacter {
 
 
     public void initialize() {
-       this.lastSelectedCount =  this.selectedCount = this.reskinCount;
+        this.lastSelectedCount = this.selectedCount = this.reskinCount;
 
         if (this.labels.isEmpty()) {
             this.labels.add(new SkinInfoLabel(skins.get(selectedCount).unlockString, 0));
@@ -73,8 +73,8 @@ public abstract class AbstractSkinCharacter {
         }
 
         for (int i = 0; i < this.labels.size(); i++) {
-            this.labels.get(i).cX = CharacterSelectScreenPatches.skinManager.panel_x + (200.0f + 60.0f * i) * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
-            this.labels.get(i).cY = Settings.HEIGHT * 0.5f + (430.0f - 80.0f * i) * CharacterSelectScreenPatches.skinManager.scale * Settings.scale;
+            this.labels.get(i).cX = CharacterSelectScreenPatches.skinManager.panel_x + (200.0f + 60.0f * i) * CharacterSelectScreenPatches.skinManager.scale * Settings.xScale;
+            this.labels.get(i).cY = Settings.HEIGHT * 0.5f + (430.0f - 80.0f * i) * CharacterSelectScreenPatches.skinManager.scale * Settings.yScale;
         }
 
 

@@ -35,7 +35,7 @@ public class WhitePurity extends AbstractShionRelic {
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         addToBot(new ApplyCorGladiiAction(5));
-        
+
     }
 
     @Override

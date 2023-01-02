@@ -28,10 +28,10 @@ public class Station extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new ReduceDamagePower(p, 10)));
-        if(this.upgraded)
-        addToBot(new GainShieldAction(p, this.secondaryM));
+        if (this.upgraded)
+            addToBot(new GainShieldAction(p, this.secondaryM));
         addToBot(new AddWingShieldDamageReduceAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
     @Override

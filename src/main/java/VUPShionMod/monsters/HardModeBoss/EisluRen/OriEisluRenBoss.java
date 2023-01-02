@@ -2,14 +2,18 @@ package VUPShionMod.monsters.HardModeBoss.EisluRen;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.Liyezhu.CrimsonDelugePower;
 import VUPShionMod.powers.Monster.BossEisluRen.AutoShieldPower;
 import VUPShionMod.powers.Monster.BossEisluRen.CoverPower;
+import VUPShionMod.powers.Monster.BossEisluRen.EarthBlessingPower;
 import VUPShionMod.powers.Monster.BossEisluRen.LightArmorPower;
 import VUPShionMod.powers.Monster.BossShion.PotentialOutbreakPower;
 import VUPShionMod.powers.Monster.PlagaAMundo.StrengthenPower;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.EisluRen.OriEisluRen;
+import VUPShionMod.skins.sk.Shion.OriShion;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -32,8 +36,6 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
 
     private int moveCount = 1;
     private static String currentIdle = "Idle";
-    private boolean stateChanged = false;
-
 
     private int randomDamageResult = 0;
 
@@ -89,12 +91,15 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");
 
+        addToBot(new VersusEffectAction(OriEisluRen.ID));
 
         addToBot(new GainShieldAction(this, 21));
-        addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 1)));
-        addToBot(new ApplyPowerAction(this, this, new AutoShieldPower(this, 10)));
+
         addToBot(new ApplyPowerAction(this, this, new CoverPower(this)));
-//        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Full")));
+        addToBot(new ApplyPowerAction(this, this, new EarthBlessingPower(this)));
+        addToBot(new ApplyPowerAction(this, this, new AutoShieldPower(this, 10)));
+        addToBot(new ApplyPowerAction(this, this, new StrengthenPower(this, 1)));
+        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Full")));
 
     }
 
@@ -149,7 +154,7 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
                 addToBot(new TalkAction(this, DIALOG[2], 1.5F, 1.5F));
                 AbstractMonster m = new ElfKnight();
                 addToBot(new SpawnMonsterAction(m, false));
-                addToBot(new ApplyPowerAction(m,this,new IntangiblePlayerPower(m,2)));
+                addToBot(new ApplyPowerAction(m, this, new IntangiblePlayerPower(m, 2)));
                 break;
         }
 
@@ -225,7 +230,7 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
                 closeWing();
                 this.state.addAnimation(1, "wings_Ruins_guard_make_up", false, 0.0f).setTimeScale(2.0f);
                 this.state.addAnimation(1, "wings_Ruins_guard_idle", true, 0.0f);
-            break;
+                break;
             case "Full8":
                 closeWing();
                 this.state.addAnimation(1, "wings_Light_armor_make_up", false, 0.0f).setTimeScale(2.0f);
@@ -236,10 +241,19 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
                 this.state.addAnimation(1, "wings_Thousand_heavy_blade_make_up", false, 0.0f).setTimeScale(2.0f);
                 this.state.addAnimation(1, "wings_Thousand_heavy_blade_idle", true, 0.0f);
                 break;
+
+
+            case "Full":
+                this.moveCount = AbstractDungeon.aiRng.random(7, 9);
+                rollMove();
+                createIntent();
+                applyPowers();
+                CardCrawlGame.sound.play("STANCE_ENTER_WRATH");
+                break;
         }
     }
 
-    private void closeWing(){
+    private void closeWing() {
         switch (currentIdle) {
             case "Idle":
                 this.state.setAnimation(1, "wings_normal_relieves", false).setTimeScale(2.0f);
@@ -253,21 +267,6 @@ public class OriEisluRenBoss extends AbstractVUPShionBoss {
         }
     }
 
-
-    @Override
-    public void damage(DamageInfo info) {
-        super.damage(info);
-
-        if (this.currentHealth <= this.maxHealth / 2 && !this.stateChanged) {
-            this.stateChanged = true;
-            this.moveCount = AbstractDungeon.aiRng.random(7, 9);
-            rollMove();
-            createIntent();
-            applyPowers();
-
-        }
-
-    }
 
     @Override
     public void die() {

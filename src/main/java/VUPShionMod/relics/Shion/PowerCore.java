@@ -28,11 +28,11 @@ public class PowerCore extends AbstractShionRelic {
         getKeyword();
     }
 
-    private void getKeyword(){
+    private void getKeyword() {
         this.description = getUpdatedDescription();
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(DESCRIPTIONS[1],DESCRIPTIONS[2]));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
     @Override
@@ -43,34 +43,34 @@ public class PowerCore extends AbstractShionRelic {
     @Override
     public void atBattleStart() {
         flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player,this));
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,-5)));
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, -5)));
         addToBot(new ObtainPotionAction(new MagiaMagazine()));
     }
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.energy.energyMaster+=2;
-            AbstractDungeon.effectsQueue.add(new AbstractGameEffect() {
-                @Override
-                public void update() {
-                    AbstractDungeon.player.potions.add(new PotionSlot(AbstractDungeon.player.potionSlots));
-                    AbstractDungeon.player.potionSlots ++;
-                    isDone = true;
-                }
+        AbstractDungeon.player.energy.energyMaster += 2;
+        AbstractDungeon.effectsQueue.add(new AbstractGameEffect() {
+            @Override
+            public void update() {
+                AbstractDungeon.player.potions.add(new PotionSlot(AbstractDungeon.player.potionSlots));
+                AbstractDungeon.player.potionSlots++;
+                isDone = true;
+            }
 
-                @Override
-                public void render(SpriteBatch spriteBatch) {
-                }
+            @Override
+            public void render(SpriteBatch spriteBatch) {
+            }
 
-                @Override
-                public void dispose() {
-                }
-            });
+            @Override
+            public void dispose() {
+            }
+        });
     }
 
     @Override
     public void onUnequip() {
-        AbstractDungeon.player.energy.energyMaster-=2;
+        AbstractDungeon.player.energy.energyMaster -= 2;
     }
 }

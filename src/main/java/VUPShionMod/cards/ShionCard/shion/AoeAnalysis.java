@@ -25,8 +25,8 @@ public class AoeAnalysis extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("Order"),1.0f));
-        addToBot(new ApplyPowerAction(p,p,new AoeAnalysisPower(p)));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("Order"), 1.0f));
+        addToBot(new ApplyPowerAction(p, p, new AoeAnalysisPower(p)));
     }
 
     @Override

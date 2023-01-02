@@ -41,7 +41,7 @@ public class PlagaAMundoMinion extends CustomMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
 
-    private int baseAttackTimes = 15;
+    private final int baseAttackTimes = 15;
     private boolean isGunMode = false;
     private boolean isFirstGunMode = true;
 
@@ -265,7 +265,7 @@ public class PlagaAMundoMinion extends CustomMonster {
                         this.forceDie = true;
                         die();
 
-                        if(AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                             createBoss();
                         }
                     } else {
@@ -316,11 +316,11 @@ public class PlagaAMundoMinion extends CustomMonster {
 
     private void createBoss() {
         for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
-            if (m.id.equals(TimePortal.ID)|| m.id.equals(Ouroboros.ID))
+            if (m.id.equals(TimePortal.ID) || m.id.equals(Ouroboros.ID))
                 return;
         }
 
-        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player, DespairPower.POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, DespairPower.POWER_ID));
         addToBot(new TalkAction(true, DIALOG[0], 1.0f, 5.0f));
         addToBot(new CustomWaitAction(6.0f));
         addToBot(new AbstractGameAction() {

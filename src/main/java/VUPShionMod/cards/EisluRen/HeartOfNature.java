@@ -23,9 +23,9 @@ public class HeartOfNature extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new BerserkPower(p,1)));
-        if(this.upgraded)
-        addToBot(new RemoveDebuffsAction(p));
+        addToBot(new ApplyPowerAction(p, p, new BerserkPower(p, 1)));
+        if (this.upgraded)
+            addToBot(new RemoveDebuffsAction(p));
     }
 
     @Override

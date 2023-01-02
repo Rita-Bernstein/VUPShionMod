@@ -38,7 +38,7 @@ public class Boot extends AbstractShionCard {
             public void update() {
                 for (AbstractCard card : p.hand.group) {
                     AbstractCard t = card.makeSameInstanceOf();
-                    addToTop(new MakeLoadedCardAction(t,magicNumber));
+                    addToTop(new MakeLoadedCardAction(t, magicNumber));
                 }
                 isDone = true;
             }

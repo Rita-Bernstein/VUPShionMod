@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
 public class FinalFlashBlastEffect extends AbstractGameEffect {
-    private float x;
-    private float y;
+    private final float x;
+    private final float y;
     private static final float DUR = 1.0F;
     private static TextureAtlas.AtlasRegion img;
     private boolean playedSfx = false, flipHorizontal = false;
@@ -35,7 +35,7 @@ public class FinalFlashBlastEffect extends AbstractGameEffect {
 
     public void update() {
         if (!this.playedSfx) {
-            AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(new Color(1.0f,0.36f,0.63f,1.0f)));
+            AbstractDungeon.effectsQueue.add(new BorderLongFlashEffect(new Color(1.0f, 0.36f, 0.63f, 1.0f)));
             this.playedSfx = true;
             CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT");
             CardCrawlGame.screenShake.rumble(2.0F);
@@ -65,40 +65,40 @@ public class FinalFlashBlastEffect extends AbstractGameEffect {
                             MathUtils.random(-0.05F, 0.05F), this.scale * 1.5F +
                             MathUtils.random(-0.1F, 0.1F),
                     MathUtils.random(-4.0F, 4.0F));
-            sb.draw(img, this.x, this.y - img.packedHeight/ 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F +
+            sb.draw(img, this.x, this.y - img.packedHeight / 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F +
 
 
                             MathUtils.random(-0.05F, 0.05F), this.scale * 1.5F +
                             MathUtils.random(-0.1F, 0.1F),
                     MathUtils.random(-4.0F, 4.0F));
             sb.setColor(this.color);
-            sb.draw(img, this.x, this.y - img.packedHeight/ 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
+            sb.draw(img, this.x, this.y - img.packedHeight / 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
 
 
                     MathUtils.random(-2.0F, 2.0F));
-            sb.draw(img, this.x, this.y - img.packedHeight/ 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
+            sb.draw(img, this.x, this.y - img.packedHeight / 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
 
 
                     MathUtils.random(-2.0F, 2.0F));
         } else {
-            sb.draw(img, this.x, this.y - img.packedHeight/ 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F +
+            sb.draw(img, this.x, this.y - img.packedHeight / 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F +
 
 
                             MathUtils.random(-0.05F, 0.05F), this.scale * 1.5F +
                             MathUtils.random(-0.1F, 0.1F),
                     MathUtils.random(186.0F, 189.0F));
-            sb.draw(img, this.x, this.y - img.packedHeight/ 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F +
+            sb.draw(img, this.x, this.y - img.packedHeight / 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F +
 
 
                             MathUtils.random(-0.05F, 0.05F), this.scale * 1.5F +
                             MathUtils.random(-0.1F, 0.1F),
                     MathUtils.random(186.0F, 189.0F));
             sb.setColor(this.color);
-            sb.draw(img, this.x, this.y - img.packedHeight/ 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
+            sb.draw(img, this.x, this.y - img.packedHeight / 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
 
 
                     MathUtils.random(187.0F, 188.0F));
-            sb.draw(img, this.x, this.y - img.packedHeight/ 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
+            sb.draw(img, this.x, this.y - img.packedHeight / 2.0f, 0.0F, img.packedHeight / 2.0F, img.packedWidth, img.packedHeight, this.scale * 2.0F, this.scale / 2.0F,
 
 
                     MathUtils.random(187.0F, 188.0F));

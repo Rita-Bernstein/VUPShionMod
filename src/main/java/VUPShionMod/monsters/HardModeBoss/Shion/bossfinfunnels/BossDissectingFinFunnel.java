@@ -108,8 +108,8 @@ public class BossDissectingFinFunnel extends AbstractBossFinFunnel {
                 this.state.setAnimation(0, "weapon1_attack", false).setTimeScale(3.0f);
                 this.state.addAnimation(0, "weapon1_idle", true, 0.0F);
             } else {
-                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(2.0f);
-                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F).setTimeScale(0.5f);
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(1.9f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
             }
         }
     }

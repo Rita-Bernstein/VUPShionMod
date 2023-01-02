@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class ExhaustToApplySinAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(ExhaustToApplySinAction.class.getSimpleName()));
     public static final String[] TEXT = uiStrings.TEXT;
-    private int amount;
+    private final int amount;
 
     public ExhaustToApplySinAction(int amount) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;

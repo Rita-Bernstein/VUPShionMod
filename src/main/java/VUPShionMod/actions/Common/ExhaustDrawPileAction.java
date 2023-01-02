@@ -17,16 +17,16 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustAction");
     private static final float DURATION_PER_CARD = 0.25F;
     public static final String[] TEXT = uiStrings.TEXT;
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
     private int dupeAmount;
-    private ArrayList<AbstractCard> cannotDuplicate;
+    private final ArrayList<AbstractCard> cannotDuplicate;
     private boolean anyNum = false;
 
     public ExhaustDrawPileAction(AbstractCreature source, int amount) {
-        this(source,amount,false);
+        this(source, amount, false);
     }
 
-    public ExhaustDrawPileAction(AbstractCreature source, int amount,boolean anyNum) {
+    public ExhaustDrawPileAction(AbstractCreature source, int amount, boolean anyNum) {
 
         this.dupeAmount = 1;
         this.cannotDuplicate = new ArrayList();
@@ -66,8 +66,8 @@ public class ExhaustDrawPileAction extends AbstractGameAction {
 
             temp.sortAlphabetically(true);
             temp.sortByRarityPlusStatusCardType(false);
-            AbstractDungeon.gridSelectScreen.open(temp, this.amount, TEXT[0], false,false,true,false);
-            if(this.anyNum)
+            AbstractDungeon.gridSelectScreen.open(temp, this.amount, TEXT[0], false, false, true, false);
+            if (this.anyNum)
                 AbstractDungeon.overlayMenu.cancelButton.show(CardCrawlGame.languagePack.getUIString("GridCardSelectScreen").TEXT[1]);
         }
 

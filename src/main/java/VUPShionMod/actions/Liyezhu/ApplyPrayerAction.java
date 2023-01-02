@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.Collections;
 
 public class ApplyPrayerAction extends AbstractGameAction {
-    private AbstractPrayer prayerToApply;
+    private final AbstractPrayer prayerToApply;
     private float startingDuration;
     private boolean justStart = true;
 

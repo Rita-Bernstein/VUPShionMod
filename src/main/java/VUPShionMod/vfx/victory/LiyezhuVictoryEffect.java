@@ -13,7 +13,7 @@ import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
 public class LiyezhuVictoryEffect extends AbstractGameEffect {
 
-    private float speed;
+    private final float speed;
 
     private static TextureAtlas Atlas = null;
     private static com.esotericsoftware.spine.Skeleton Skeleton;
@@ -25,17 +25,17 @@ public class LiyezhuVictoryEffect extends AbstractGameEffect {
         this.speed = speed;
         this.duration = 3.0f;
 
-        loadanimation(this.speed);
+        loadAnimation(this.speed);
     }
 
     public LiyezhuVictoryEffect() {
         this(1.0f);
     }
 
-    private static void loadanimation(float timeScale) {
+    private void loadAnimation(float timeScale) {
         Atlas = new TextureAtlas(Gdx.files.internal("VUPShionMod/characters/Liyezhu/victory/STANCE_LZ.atlas"));
         SkeletonJson json = new SkeletonJson(Atlas);
-        json.setScale(Settings.scale / 1.0F);
+        json.setScale(Settings.scale * getScale());
         Data = json.readSkeletonData(Gdx.files.internal("VUPShionMod/characters/Liyezhu/victory/STANCE_LZ.json"));
 
 
@@ -46,9 +46,20 @@ public class LiyezhuVictoryEffect extends AbstractGameEffect {
         StateData.setDefaultMix(0.2F);
 
         State.setTimeScale(1.0f * timeScale);
-        Skeleton.setPosition(-20.0f * Settings.scale, 10.0f * Settings.scale);
+        Skeleton.setPosition(-20.0f * getScale() * Settings.xScale, 10.0f * getScale() * Settings.yScale);
 
         State.setAnimation(0, "background_idle", true);
+    }
+
+    private float getScale() {
+        if (Settings.isFourByThree)
+            return 1.4f;
+
+        if (Settings.isSixteenByTen) {
+            return 1.12f;
+        }
+
+        return 1.0f;
     }
 
 

@@ -24,8 +24,8 @@ public class LoseMaxHPAction extends AbstractGameAction {
 
 
     public void update() {
-        if(this.target.maxHealth <=1){
-            this.isDone =true;
+        if (this.target.maxHealth <= 1) {
+            this.isDone = true;
             return;
         }
 

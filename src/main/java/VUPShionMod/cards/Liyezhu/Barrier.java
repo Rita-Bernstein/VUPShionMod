@@ -28,8 +28,8 @@ public class Barrier extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainShieldAction(p,this.magicNumber));
-        if(upgraded)
+        addToBot(new GainShieldAction(p, this.magicNumber));
+        if (upgraded)
             addToBot(new DrawCardAction(1));
     }
 

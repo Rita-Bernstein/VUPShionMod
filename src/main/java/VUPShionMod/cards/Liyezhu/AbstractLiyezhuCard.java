@@ -1,6 +1,6 @@
 package VUPShionMod.cards.Liyezhu;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardColorEnum;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.stances.JudgeStance;

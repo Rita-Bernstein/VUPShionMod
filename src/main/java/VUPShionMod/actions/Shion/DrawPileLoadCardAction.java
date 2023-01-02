@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class DrawPileLoadCardAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(DrawPileLoadCardAction.class.getSimpleName()));
     private static final float DURATION_PER_CARD = 0.25F;
-    private AbstractPlayer p;
-    private ArrayList<AbstractCard> cannotDuplicate;
+    private final AbstractPlayer p;
+    private final ArrayList<AbstractCard> cannotDuplicate;
     private boolean anyNum = false;
 
 

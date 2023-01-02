@@ -36,7 +36,7 @@ public class NextTurnAttackPower extends AbstractShionPower {
         flash();
         Predicate<AbstractCard> predicate = (pr) -> pr.type == AbstractCard.CardType.ATTACK;
         addToBot(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.discardPile, predicate, this.amount));
-        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
     @Override

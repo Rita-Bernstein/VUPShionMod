@@ -35,23 +35,23 @@ public class RhoAias extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+            addToBot(new LoseWingShieldAction(this.secondaryM));
 
-        if(this.upgraded)
-        addToBot(new GainShieldAction(p, 7));
+        if (this.upgraded)
+            addToBot(new GainShieldAction(p, 7));
 
         addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
 
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

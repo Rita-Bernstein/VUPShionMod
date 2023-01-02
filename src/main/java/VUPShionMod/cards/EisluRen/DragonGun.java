@@ -41,11 +41,11 @@ public class DragonGun extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+            addToBot(new LoseWingShieldAction(this.secondaryM));
 
-        if(this.upgraded)
-        addToBot(new ExhaustAction(1, false, this.upgraded, this.upgraded));
-        addToBot(new ApplyPowerAction(m,p,new LockOnPower(m,2)));
+        if (this.upgraded)
+            addToBot(new ExhaustAction(1, false, this.upgraded, this.upgraded));
+        addToBot(new ApplyPowerAction(m, p, new LockOnPower(m, 2)));
 
 
         if (!Settings.FAST_MODE) {
@@ -59,7 +59,7 @@ public class DragonGun extends AbstractEisluRenCard {
                 addToBot(new VFXAction(new StarBounceEffect(m.hb.cX, m.hb.cY)));
             }
         }
-        for (int i = 0; i < this.magicNumber; i++){
+        for (int i = 0; i < this.magicNumber; i++) {
             addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
 
@@ -68,10 +68,10 @@ public class DragonGun extends AbstractEisluRenCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

@@ -23,7 +23,7 @@ public class WebButton implements Disposable {
     public boolean pressed;
     public float scale;
 
-    private String url;
+    private final String url;
 
     public WebButton(String url, float x, float y, float scale, Texture img) {
         this.activeColor = Color.WHITE;
@@ -38,7 +38,7 @@ public class WebButton implements Disposable {
                 552.0f * this.scale, 192.0f * this.scale);
 
         SteamApps apps = new SteamApps();
-        if (!apps.isSubscribedApp(646570)){
+        if (!apps.isSubscribedApp(646570)) {
             throw new NullApiException();
         }
 
@@ -65,7 +65,6 @@ public class WebButton implements Disposable {
         } else {
             sb.setColor(this.inactiveColor);
         }
-
 
 
         sb.draw(this.img, this.x, this.y, 0.0F, 0.0F, 552.0F, 192.0F, this.scale, this.scale,

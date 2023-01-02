@@ -26,7 +26,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import java.util.ArrayList;
 
 public class TurnTriggerAllBossFinFunnelAction extends AbstractGameAction {
-    private AbstractShionBoss boss;
+    private final AbstractShionBoss boss;
 
 
     public TurnTriggerAllBossFinFunnelAction(AbstractShionBoss boss) {

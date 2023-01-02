@@ -14,15 +14,15 @@ import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 import java.util.ArrayList;
 
 public class ShionLoginBackground extends TitleBackground implements Disposable {
-    private Texture bg_account = ImageMaster.loadImage("VUPShionMod/img/ui/mainBg.sff");
-    private float display_Cx = Settings.WIDTH / 2.0f;
-    private float display_Cy = Settings.HEIGHT / 2.0F;
-    private float loginScale = 0.8f;
+    private final Texture bg_account = ImageMaster.loadImage("VUPShionMod/img/ui/mainBg.sff");
+    private final float display_Cx = Settings.WIDTH / 2.0f;
+    private final float display_Cy = Settings.HEIGHT / 2.0F;
+    private final float loginScale = 0.8f;
 
-    private ArrayList<WebButton> buttons = new ArrayList<>();
+    private final ArrayList<WebButton> buttons = new ArrayList<>();
 
-    private float fix_y;
-    private float scale = 0.36f;
+    private final float fix_y;
+    private final float scale = 0.36f;
 
     public ShionLoginBackground() {
         this.fix_y = 230.0f * this.scale * Settings.scale;

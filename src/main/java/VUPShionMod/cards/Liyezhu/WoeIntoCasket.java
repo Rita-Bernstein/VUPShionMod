@@ -25,7 +25,7 @@ public class WoeIntoCasket extends AbstractLiyezhuCard {
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
-        GraveField.grave.set(this,true);
+        GraveField.grave.set(this, true);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class WoeIntoCasket extends AbstractLiyezhuCard {
             if (amount > 7) amount = 7;
             addToBot(new GainEnergyAction(amount));
             addToBot(new DrawCardAction(amount));
-            addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID,amount));
+            addToBot(new ReducePowerAction(p, p, PsychicPower.POWER_ID, amount));
         }
     }
 

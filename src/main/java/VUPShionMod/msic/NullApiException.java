@@ -1,7 +1,8 @@
 package VUPShionMod.msic;
 
 public class NullApiException extends RuntimeException {
-    public NullApiException(){}
+    public NullApiException() {
+    }
 
     @Override
     public String getMessage() {

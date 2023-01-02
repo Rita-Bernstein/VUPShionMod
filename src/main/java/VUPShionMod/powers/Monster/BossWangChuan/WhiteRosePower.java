@@ -23,7 +23,7 @@ public class WhiteRosePower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private boolean justApplied = true;
+    private final boolean justApplied = true;
 
     public WhiteRosePower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -33,23 +33,21 @@ public class WhiteRosePower extends AbstractShionPower {
         this.amount2 = 4;
         updateDescription();
         this.isTurnBased = false;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DefectPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DefectPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("DefectPower");
     }
 
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if(info.type == DamageInfo.DamageType.NORMAL)
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, this.amount * 2)));
+        if (info.type == DamageInfo.DamageType.NORMAL)
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new PlatedArmorPower(this.owner, this.amount * 2)));
         return super.onAttacked(info, damageAmount);
     }
 
     @Override
     public void atStartOfTurn() {
         flash();
-        addToBot(new ApplyPowerAction(this.owner,this.owner,new FlawlessParryPower(this.owner,this.amount)));
+        addToBot(new ApplyPowerAction(this.owner, this.owner, new FlawlessParryPower(this.owner, this.amount)));
     }
 
     @Override

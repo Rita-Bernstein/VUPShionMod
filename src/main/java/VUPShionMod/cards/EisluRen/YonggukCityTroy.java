@@ -37,8 +37,8 @@ public class YonggukCityTroy extends AbstractEisluRenCard {
 
         for (int i = 0; i < this.magicNumber; i++)
             addToBot(new GainShieldAction(p, 6));
-        addToBot(new ApplyPowerAction(p, p, new YonggukCityTroyPower(p,5)));
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new YonggukCityTroyPower(p, 5)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
     @Override

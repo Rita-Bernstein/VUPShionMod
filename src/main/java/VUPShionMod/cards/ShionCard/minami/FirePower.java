@@ -34,7 +34,7 @@ public class FirePower extends AbstractShionMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         int count = MathUtils.random(2);
-        switch (count){
+        switch (count) {
             case 0:
                 addToBot(new SFXAction("SHION_1"));
                 break;

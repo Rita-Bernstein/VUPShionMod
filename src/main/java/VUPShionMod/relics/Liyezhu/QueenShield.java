@@ -32,7 +32,7 @@ public class QueenShield extends AbstractShionRelic {
     public void wasHPLost(int damageAmount) {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT && damageAmount > 0) {
             flash();
-           addToTop(new GainBlockAction(AbstractDungeon.player,6));
+            addToTop(new GainBlockAction(AbstractDungeon.player, 6));
         }
     }
 }

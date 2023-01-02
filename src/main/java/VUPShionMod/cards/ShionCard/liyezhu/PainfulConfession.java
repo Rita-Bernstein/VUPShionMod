@@ -53,7 +53,7 @@ public class PainfulConfession extends AbstractShionLiyezhuCard {
             }
         }
 
-        addToBot(new ApplyPowerAction(p,p,new RegenPower(p,this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new RegenPower(p, this.secondaryM)));
     }
 
     @Override

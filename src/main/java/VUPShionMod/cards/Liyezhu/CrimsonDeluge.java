@@ -17,7 +17,7 @@ public class CrimsonDeluge extends AbstractLiyezhuCard {
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
 
     public CrimsonDeluge() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -28,7 +28,7 @@ public class CrimsonDeluge extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new LoseSansAction(this.secondaryM));
-        addToBot(new LoseHPAction(p,p,5));
+        addToBot(new LoseHPAction(p, p, 5));
         addToBot(new ApplyPowerAction(p, p, new CrimsonDelugePower(p, this.magicNumber)));
     }
 
@@ -48,7 +48,7 @@ public class CrimsonDeluge extends AbstractLiyezhuCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(2);
             upgradeMagicNumber(1);
         }
     }

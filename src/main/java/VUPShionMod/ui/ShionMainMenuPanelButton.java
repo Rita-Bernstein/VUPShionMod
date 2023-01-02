@@ -18,14 +18,14 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.mainMenu.MainMenuPanelButton;
 
 public class ShionMainMenuPanelButton extends MainMenuPanelButton {
-    private PanelClickResult result;
+    private final PanelClickResult result;
 
     private static Texture trainingModeMain;
     private static Texture trainingModeHighlight;
     private static Texture trainingModeLock;
     private static Texture trainingMode;
 
-    private float uiScale = 1.0f;
+    private final float uiScale = 1.0f;
     private float offSet_y = 0.0f;
 
 

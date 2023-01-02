@@ -6,7 +6,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class ExhaustAllStatusAndCurseAction extends AbstractGameAction {
-    public ExhaustAllStatusAndCurseAction(){}
+    public ExhaustAllStatusAndCurseAction() {
+    }
 
     @Override
     public void update() {

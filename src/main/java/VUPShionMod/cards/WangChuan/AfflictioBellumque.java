@@ -48,12 +48,12 @@ public class AfflictioBellumque extends AbstractWCCard {
         addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
 
-        addToBot(new ExhaustAction(1,false));
+        addToBot(new ExhaustAction(1, false));
 
         Supplier<AbstractPower> powerToApply = () -> new VulnerablePower(null, this.magicNumber, false);
         addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
 
-        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
 
     }
 

@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class SummonElfAction extends AbstractGameAction {
-    private ElfMinion minion;
+    private final ElfMinion minion;
 
     private float starterX = 0.0f;
     private float starterY = 0.0f;

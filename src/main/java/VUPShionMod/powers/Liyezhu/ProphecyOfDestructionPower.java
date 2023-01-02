@@ -36,7 +36,7 @@ public class ProphecyOfDestructionPower extends AbstractShionPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card.hasTag(CardTagsEnum.Prayer_CARD)){
+        if (card.hasTag(CardTagsEnum.Prayer_CARD)) {
             flash();
             addToBot(new DamageRandomEnemyAction(new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS),
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));

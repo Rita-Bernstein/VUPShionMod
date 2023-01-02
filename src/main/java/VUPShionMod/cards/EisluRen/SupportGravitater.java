@@ -28,11 +28,11 @@ public class SupportGravitater extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new SupportGravitaterPower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
-        if(!this.upgraded)
-            addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.secondaryM)));
-        addToBot(new ApplyPowerAction(p,p,new FlyPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new SupportGravitaterPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.secondaryM)));
+        if (!this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new FlyPower(p, 1)));
     }
 
     @Override

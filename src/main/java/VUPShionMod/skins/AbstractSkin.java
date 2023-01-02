@@ -37,7 +37,6 @@ public abstract class AbstractSkin {
     public String unlockString;
 
 
-
     public boolean unlock = false;
 
     public String SHOULDER1;
@@ -87,10 +86,11 @@ public abstract class AbstractSkin {
         SaveHelper.loadSettings();
     }
 
-    public void doCharSelectScreenSelectEffect(){
+    public void doCharSelectScreenSelectEffect() {
     }
 
-    public void justSkinSelected(int lastSelectedCount){}
+    public void justSkinSelected(int lastSelectedCount) {
+    }
 
 
     public void renderPortrait(SpriteBatch sb) {
@@ -127,6 +127,7 @@ public abstract class AbstractSkin {
 
     public void safeSwitch() {
     }
+
 
     public void skeletonRender(SpriteBatch sb) {
         sb.end();

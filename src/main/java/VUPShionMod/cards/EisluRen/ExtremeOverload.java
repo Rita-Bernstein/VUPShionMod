@@ -26,7 +26,7 @@ public class ExtremeOverload extends AbstractEisluRenCard {
 
     public ExtremeOverload() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber= 3;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.secondaryM = this.baseSecondaryM = 5;
     }
 
@@ -37,12 +37,11 @@ public class ExtremeOverload extends AbstractEisluRenCard {
         addToBot(new VFXAction(new StanceChangeParticleGenerator(p.hb.cX, p.hb.cY, "Wrath")));
 
         addToBot(new GainWingShieldChargeAction(WingShield.getWingShield().getMaxCount()));
-        addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.secondaryM)));
-        if(!this.upgraded)
-        addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.secondaryM)));
-        addToBot(new ApplyPowerAction(p,p,new ExtremeOverloadPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.secondaryM)));
+        if (!this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new ExtremeOverloadPower(p, this.magicNumber)));
     }
-
 
 
     @Override

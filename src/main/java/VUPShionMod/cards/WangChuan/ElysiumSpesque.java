@@ -24,8 +24,8 @@ public class ElysiumSpesque extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new PlatedArmorPower(p,this.magicNumber)));
-        addToBot(new ApplyPowerAction(p,p,new MagiamObruorPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 
     @Override

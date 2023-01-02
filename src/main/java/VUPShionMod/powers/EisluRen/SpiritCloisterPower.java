@@ -29,18 +29,17 @@ public class SpiritCloisterPower extends AbstractShionPower {
         this.name = NAME;
         this.owner = owner;
         this.ID = POWER_ID;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SpiritCloisterPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SpiritCloisterPower48.png")), 0, 0, 48, 48);
         updateDescription();
         this.isTurnBased = true;
+        loadShionRegion("SpiritCloisterPower");
     }
 
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
         ElfMinion elf = MinionGroup.getElfMinion();
-        if(elf !=null)
-           elf.onSpiritCloisterPower(this);
+        if (elf != null)
+            elf.onSpiritCloisterPower(this);
 
     }
 

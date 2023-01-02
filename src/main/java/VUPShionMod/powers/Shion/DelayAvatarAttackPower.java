@@ -22,8 +22,8 @@ public class DelayAvatarAttackPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.setImage("Clock84.png", "Clock32.png");
         updateDescription();
+        loadShionRegion("Clock");
     }
 
     @Override
@@ -39,6 +39,6 @@ public class DelayAvatarAttackPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format( DESCRIPTIONS[0],this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

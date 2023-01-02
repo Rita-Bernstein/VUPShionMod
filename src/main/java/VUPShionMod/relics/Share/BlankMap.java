@@ -15,7 +15,6 @@ public class BlankMap extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
 
-
     public BlankMap() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.COMMON, LandingSound.CLINK);
     }
@@ -28,7 +27,7 @@ public class BlankMap extends AbstractShionRelic {
 
     @Override
     public void onEnterRoom(AbstractRoom room) {
-        if (room instanceof com.megacrit.cardcrawl.rooms.EventRoom){
+        if (room instanceof com.megacrit.cardcrawl.rooms.EventRoom) {
             flash();
             AbstractDungeon.player.gainGold(18);
         }

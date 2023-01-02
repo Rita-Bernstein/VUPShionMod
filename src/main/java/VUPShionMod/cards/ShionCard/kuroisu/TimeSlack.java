@@ -31,16 +31,16 @@ public class TimeSlack extends AbstractShionKuroisuCard {
         this.cardsToPreview = new QuickDefend();
         this.tags.add(CardTagsEnum.TRIGGER_FIN_FUNNEL);
         this.tags.add(CardTagsEnum.LOADED);
-        ExhaustiveVariable.setBaseValue(this,3);
+        ExhaustiveVariable.setBaseValue(this, 3);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 008 Impact Radial", p.hb.cX, p.hb.cY,
-                125.0f, 125.0f, 3.0f * Settings.scale, 2,false)));
+                125.0f, 125.0f, 3.0f * Settings.scale, 2, false)));
         addToBot(new GainBlockAction(p, p, this.block));
-        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID,true));
-        addToBot(new MakeLoadedCardAction(new QuickDefend(),this.magicNumber,true));
+        addToBot(new TriggerFinFunnelPassiveAction(m, GravityFinFunnel.ID, true));
+        addToBot(new MakeLoadedCardAction(new QuickDefend(), this.magicNumber, true));
 //        addToBot(new MakeTempCardInDiscardAction(new QuickDefend(),this.magicNumber));
     }
 

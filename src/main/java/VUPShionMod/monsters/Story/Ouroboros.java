@@ -52,7 +52,7 @@ public class Ouroboros extends CustomMonster {
     private boolean cgDone = false;
     private int moveCount = 0;
 
-    private CGlayout cg;
+    private final CGlayout cg;
 
     protected Bone fireBone;
     private float waitingDeath = 6.0f;
@@ -130,12 +130,12 @@ public class Ouroboros extends CustomMonster {
         addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, 3)));
         addToBot(new RemovePlayerBuffAction());
 
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new WeakPower(AbstractDungeon.player,99,true)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 99, true)));
 
-        if(!this.isDefect) {
+        if (!this.isDefect) {
             addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 99, true)));
-            addToBot(new ApplyPowerAction(this,this,new FlyPower(this,99)));
-            addToBot(new ApplyPowerAction(this,this,new StrengthPower(this,200)));
+            addToBot(new ApplyPowerAction(this, this, new FlyPower(this, 99)));
+            addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 200)));
         }
 
     }

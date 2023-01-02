@@ -112,7 +112,7 @@ public class CardPreviewUpgradePatches {
     public static class RenderHitbox {
         @SpireInsertPatch(rloc = 0)
         public static SpireReturn<Void> Insert(SingleCardViewPopup _instance, SpriteBatch sb) {
-            if (SingleCardViewPopup.isViewingUpgrade  && copyCanUpgradeMuti) {
+            if (SingleCardViewPopup.isViewingUpgrade && copyCanUpgradeMuti) {
 
                 FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont,
                         CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(CardPreviewUpgradePatches.class.getSimpleName())).TEXT[0],

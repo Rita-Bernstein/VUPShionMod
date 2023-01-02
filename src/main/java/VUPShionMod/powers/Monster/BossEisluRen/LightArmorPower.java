@@ -22,8 +22,7 @@ public class LightArmorPower extends AbstractShionPower {
         this.owner = owner;
         this.amount = amount;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("CircuitPower");
         this.priority = 10;
     }
 
@@ -32,7 +31,7 @@ public class LightArmorPower extends AbstractShionPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        if(type == DamageInfo.DamageType.NORMAL)
+        if (type == DamageInfo.DamageType.NORMAL)
             return (int) Math.floor(damage * (100 - this.amount) * 0.01);
 
         return damage;

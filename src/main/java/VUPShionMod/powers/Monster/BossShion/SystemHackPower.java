@@ -36,16 +36,15 @@ public class SystemHackPower extends SavePowerPower {
         this.ID = POWER_ID;
         this.owner = owner;
         updateDescription();
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/DelayAvatarPower48.png"), 0, 0, 48, 48);
+        loadShionRegion("DelayAvatarPower");
     }
 
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
 
-        if(!this.endingEffect)
-        addToBot(new SavePlayerPowersAction(this));
+        if (!this.endingEffect)
+            addToBot(new SavePlayerPowersAction(this));
     }
 
 
@@ -92,11 +91,11 @@ public class SystemHackPower extends SavePowerPower {
         }
 
         flash();
-        this.endingEffect =true;
+        this.endingEffect = true;
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                if(!playerPowersToSave.isEmpty()){
+                if (!playerPowersToSave.isEmpty()) {
                     AbstractDungeon.player.powers.addAll(playerPowersToSave);
                     playerPowersToSave.clear();
                 }

@@ -21,10 +21,10 @@ public class ShionSpireHeart extends AbstractEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private Color fadeColor;
+    private final Color fadeColor;
     private AnimatedNpc npc;
 
-    private int damageDealt;
+    private final int damageDealt;
 
     private int currentScreen = 0;
 

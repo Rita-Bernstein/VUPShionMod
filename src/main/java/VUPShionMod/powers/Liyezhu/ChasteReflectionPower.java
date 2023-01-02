@@ -29,7 +29,7 @@ public class ChasteReflectionPower extends AbstractShionPower {
 
 
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if(info.type != DamageInfo.DamageType.HP_LOSS) {
+        if (info.type != DamageInfo.DamageType.HP_LOSS) {
             this.amount2 += damageAmount;
             updateDescription();
         }
@@ -40,7 +40,7 @@ public class ChasteReflectionPower extends AbstractShionPower {
     public void atStartOfTurn() {
         flash();
         addToBot(new DamageAllEnemiesAction(null,
-                          DamageInfo.createDamageMatrix(this.amount2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                DamageInfo.createDamageMatrix(this.amount2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HEAVY));
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 

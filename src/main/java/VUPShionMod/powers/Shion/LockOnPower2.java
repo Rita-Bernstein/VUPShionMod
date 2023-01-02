@@ -20,7 +20,7 @@ public class LockOnPower2 extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.setImage("Lock84.png", "Lock32.png");
+        loadShionRegion("LockOnPower");
         updateDescription();
         this.type = PowerType.DEBUFF;
     }

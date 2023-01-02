@@ -36,15 +36,15 @@ public class CaligoConstans extends AbstractCodexCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        switch (this.timesUpgraded){
+        switch (this.timesUpgraded) {
             case 0:
-                addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1) ));
+                addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1)));
                 break;
-            case 1 :
+            case 1:
                 addToBot(new ApplyPowerAction(p, p, new PhantasmalPower(p, 1)));
                 break;
             case 2:
-                addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, 1,false)));
+                addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, 1, false)));
                 Predicate<AbstractCard> predicate = (pr) -> pr.type == AbstractCard.CardType.ATTACK;
                 addToBot(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.drawPile, predicate, this.magicNumber));
                 break;

@@ -27,10 +27,10 @@ public class Gravitater extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new GravitaterPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new GravitaterPower(p, this.magicNumber)));
 
-        if(this.upgraded)
-            addToBot(new GainShieldAction(p,this.secondaryM));
+        if (this.upgraded)
+            addToBot(new GainShieldAction(p, this.secondaryM));
 
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }

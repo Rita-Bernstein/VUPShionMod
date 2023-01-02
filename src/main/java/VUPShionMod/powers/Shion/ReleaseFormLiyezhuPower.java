@@ -20,8 +20,7 @@ public class ReleaseFormLiyezhuPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReleaseFormLiyezhuPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReleaseFormLiyezhuPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("ReleaseFormLiyezhuPower");
         updateDescription();
     }
 

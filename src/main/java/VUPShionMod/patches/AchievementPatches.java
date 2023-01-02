@@ -30,7 +30,7 @@ public class AchievementPatches {
     public static class ShionSaveDataPatch {
         @SpirePostfixPatch
         public static void Postfix(AchievementGrid _instance) {
-            ArrayList<AchievementItem> items = (ArrayList<AchievementItem>) ReflectionHacks.getPrivate(_instance, AchievementGrid.class, "items");
+            ArrayList<AchievementItem> items = ReflectionHacks.getPrivate(_instance, AchievementGrid.class, "items");
             if (items != null) {
                 items.add(new AchievementShionItem(NAMES[0], TEXT[0], "00", "00", false));
                 items.add(new AchievementShionItem(NAMES[3], TEXT[3], "03", "03", false));
@@ -84,9 +84,9 @@ public class AchievementPatches {
     }
 
     public static void unlockAchievement(String key) {
-            if (!SaveHelper.getAchievement(key)) {
-                SaveHelper.unlockAchievement(key);
-            }
+        if (!SaveHelper.getAchievement(key)) {
+            SaveHelper.unlockAchievement(key);
+        }
     }
 
     public static boolean getAchievement(String key) {

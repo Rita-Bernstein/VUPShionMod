@@ -26,8 +26,8 @@ public class BossTriggerDimensionSplitterAction extends AbstractGameAction {
 
         if (!MinionGroup.areMinionsBasicallyDead()) {
             AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-            if(minion!=null)
-            this.target = minion;
+            if (minion != null)
+                this.target = minion;
         }
     }
 

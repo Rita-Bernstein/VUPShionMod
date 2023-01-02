@@ -16,7 +16,6 @@ public class DragonScales extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
 
-
     public DragonScales() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.COMMON, LandingSound.CLINK);
     }
@@ -27,12 +26,11 @@ public class DragonScales extends AbstractShionRelic {
     }
 
 
-
     @Override
     public void onLoseHp(int damageAmount) {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             flash();
-            addToTop(new GainBlockAction(AbstractDungeon.player,AbstractDungeon.player,3));
+            addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 3));
         }
     }
 

@@ -52,7 +52,7 @@ public class LightArmorStanceAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             LightArmorStance.cardsToPlay.clear();
-            
+
             CardGroup temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
             for (AbstractCard c : AbstractDungeon.player.hand.group) {

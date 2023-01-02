@@ -109,7 +109,7 @@ public class PlagaAMundo extends CustomMonster {
 
 
     public void takeTurn() {
-        if(minionSummoned) return;
+        if (minionSummoned) return;
         AbstractPlayer trueTarget = AbstractDungeon.player;
         if (AbstractDungeon.player instanceof WangChuan) {
             if (((WangChuan) AbstractDungeon.player).shionHelper != null)
@@ -136,7 +136,7 @@ public class PlagaAMundo extends CustomMonster {
                 break;
             case 98:
                 this.minionSummoned = true;
-                if(SaveHelper.isHardMod) {
+                if (SaveHelper.isHardMod) {
                     addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new SiegePower(AbstractDungeon.player, 1)));
                     addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new DespairPower(AbstractDungeon.player, 8)));
                 }
@@ -166,7 +166,7 @@ public class PlagaAMundo extends CustomMonster {
 
 
     protected void getMove(int num) {
-        if(minionSummoned) {
+        if (minionSummoned) {
             setMove((byte) 97, Intent.UNKNOWN);
             return;
         }

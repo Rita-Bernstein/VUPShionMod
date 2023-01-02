@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.map.DungeonMap;
+
 import java.util.Random;
 
 import java.util.Collections;
@@ -55,7 +56,9 @@ public class TrainingModePatches {
                 Collections.shuffle(AbstractDungeon.bossList, new Random(AbstractDungeon.monsterRng.randomLong()));
             }
         }
-    }    @SpirePatch(
+    }
+
+    @SpirePatch(
 
 
             clz = TheBeyond.class,

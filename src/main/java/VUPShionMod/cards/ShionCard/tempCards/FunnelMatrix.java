@@ -1,11 +1,8 @@
 package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
 import VUPShionMod.actions.Shion.TurnTriggerFinFunnelAction;
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.finfunnels.AbstractFinFunnel;
-import VUPShionMod.patches.AbstractPlayerPatches;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.CardTagsEnum;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;
@@ -29,7 +26,7 @@ public class FunnelMatrix extends AbstractVUPShionCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.tags.add(CardTagsEnum.FIN_FUNNEL);
         this.exhaust = true;
-        vupCardSetBanner(CardRarity.UNCOMMON,TYPE);
+        vupCardSetBanner(CardRarity.UNCOMMON, TYPE);
     }
 
     @Override
@@ -47,8 +44,8 @@ public class FunnelMatrix extends AbstractVUPShionCard {
             addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 039 Radial Transition", m.hb.cX, m.hb.cY + 50.0f * Settings.scale,
                     80.0f, 60.0f, 10.0f * Settings.scale, 2, false)));
 
-        for (AbstractFinFunnel funnel : AbstractPlayerPatches.AddFields.finFunnelManager.get(p).finFunnelList) {
-            addToBot(new TurnTriggerFinFunnelAction(m,funnel.id,true));
-        }
+
+            addToBot(new TurnTriggerFinFunnelAction(m, true, true));
+
     }
 }

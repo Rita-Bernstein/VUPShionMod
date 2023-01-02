@@ -27,8 +27,8 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
     protected AnimationStateData stateData;
     protected TintEffect tint = new TintEffect();
 
-    private AbstractCreature target;
-    private int index;
+    private final AbstractCreature target;
+    private final int index;
 
     private boolean isFinFunnelIn = false;
     private boolean isFinFunnelOut = false;
@@ -43,10 +43,12 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
     private float delayTimer = 0.0f;
 
     private boolean isAoe = false;
+    private int skinIndex = 0;
 
 
-    public FinFunnelMinionEffect(AbstractCreature target, int skinIndex,int index, boolean isAoe) {
+    public FinFunnelMinionEffect(AbstractCreature target, int skinIndex, int index, boolean isAoe) {
         this.index = index + 1;
+        this.skinIndex = skinIndex;
 
         this.duration = 2.0f + (7 - index) * 0.15f + index * 0.15f;
         this.fireTimer += index * 0.15f;
@@ -105,9 +107,9 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
 
     }
 
-    public void loadSkin(int skinIndex){
+    public void loadSkin(int skinIndex) {
 
-        switch (skinIndex){
+        switch (skinIndex) {
             case 0:
                 loadAnimation("VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.atlas",
                         "VUPShionMod/img/ui/FinFunnel/Ori/STANCE_ZY_YTD_weapon5.json", 0.8f * this.scale);
@@ -148,7 +150,7 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
 
                 if (this.isAoe) {
                     CardCrawlGame.sound.play("ATTACK_DEFECT_BEAM");
-                    AbstractDungeon.effectsQueue.add(new FinFunnelMinionBeamEffect(this.skeleton,(this.target != null && target.isPlayer), this.scale));
+                    AbstractDungeon.effectsQueue.add(new FinFunnelMinionBeamEffect(this.skeleton, (this.target != null && target.isPlayer), this.scale));
                 }
 
             }
@@ -164,10 +166,18 @@ public class FinFunnelMinionEffect extends AbstractGameEffect {
             else
                 root.setRotation(-((MathUtils.atan2(this.cX - this.dX, this.cY - this.dY) * 57.295776F) + 90.0f));
 
-            this.state.setAnimation(1, "weapon5_idle_lightring", false);
-            this.state.setAnimation(0, "weapon5_come_in", false);
-            this.state.addAnimation(0, "weapon5_attack", false, 0.0f);
-            this.state.addAnimation(0, "weapon5_idle", false, 0.0f);
+
+            if (this.skinIndex == 3) {
+                this.state.setAnimation(1, "weapon5_idle_lightring", false);
+                this.state.setAnimation(0, "weapon5_come_in", false).setTimeScale(1.0f);
+//                this.state.addAnimation(0, "weapon5_attack", false, 0.0f).setTimeScale(1.9f);
+                this.state.addAnimation(0, "weapon5_idle", false, 0.0f).setTimeScale(0.5f);
+            } else {
+                this.state.setAnimation(1, "weapon5_idle_lightring", false);
+                this.state.setAnimation(0, "weapon5_come_in", false);
+                this.state.addAnimation(0, "weapon5_attack", false, 0.0f);
+                this.state.addAnimation(0, "weapon5_idle", false, 0.0f);
+            }
         }
 
         if (this.duration <= 0.3f && !this.isFinFunnelOut) {

@@ -43,12 +43,12 @@ public class BurnishedRazor extends AbstractLiyezhuCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
 
         if (this.upgraded)
-            addToBot(new HealAction(p,p,this.damage / 2));
+            addToBot(new HealAction(p, p, this.damage / 2));
 
         addToBot(new DuelSinAction());
 
-        if(hasPower)
-            addToBot(new ReducePowerAction(p,p,SinPower.POWER_ID,1));
+        if (hasPower)
+            addToBot(new ReducePowerAction(p, p, SinPower.POWER_ID, 1));
 
     }
 

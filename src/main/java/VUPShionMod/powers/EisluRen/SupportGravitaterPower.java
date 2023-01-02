@@ -28,11 +28,9 @@ public class SupportGravitaterPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.amount = amount;
         this.amount2 = 0;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SupportGravitaterPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/SupportGravitaterPower48.png")), 0, 0, 48, 48);
         updateDescription();
         this.isTurnBased = true;
-
+        loadShionRegion("SupportGravitaterPower");
     }
 
     @Override

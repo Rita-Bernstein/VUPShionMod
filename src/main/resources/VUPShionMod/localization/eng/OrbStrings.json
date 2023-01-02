@@ -3,35 +3,45 @@
     "NAME": "Scouting Funnel",
     "DESCRIPTION": [
       "Current Sychronization: #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding. NL The passive effect augments for every 3 improvements in sychronization.",
-      "Current Sychronization: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding. NL PThe passive effect augments for every 3 improvements in sychronization."
+      "Current Sychronization: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yBleeding. NL PThe passive effect augments for every 3 improvements in sychronization.",
+      "Minami %s",
+      "Lose [E] at start of your turn. NL "
     ]
   },
   "VUPShionMod:GravityFinFunnel": {
     "NAME": "Gravity Funnel",
     "DESCRIPTION": [
       "Current Sychronization: #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock. NL The passive effect augments for every 3 improvements in sychronization.",
-      "Current Sychronization: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock. NL The passive effect augments for every 3 improvements in sychronization."
+      "Current Sychronization: #g%d / #b%d. NL At the start of each turn, deal #b%d damage to a random enemy and trigger its passive ability. NL #yPassive: Grant #b%d #yBlock. NL The passive effect augments for every 3 improvements in sychronization.",
+      "Minami %s",
+      "Lose [E] at start of your turn. NL "
     ]
   },
   "VUPShionMod:PursuitFinFunnel": {
     "NAME": "Pursuing Funnel",
     "DESCRIPTION": [
       "Current Sychronization: #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued. NL The passive effect augments for every 3 improvements in sychronization.",
-      "Current Sychronization: #g%d / #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued. NL The passive effect augments for every 3 improvements in sychronization."
+      "Current Sychronization: #g%d / #b%d. NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yPursued. NL The passive effect augments for every 3 improvements in sychronization.",
+      "Minami %s",
+      "Lose [E] at start of your turn. NL "
     ]
   },
- "VUPShionMod:DissectingFinFunnel": {
+  "VUPShionMod:DissectingFinFunnel": {
     "NAME": "Dissecting Funnel",
     "DESCRIPTION": [
       "Current Sychronization： #b%d. NL At the start of each combat,get #yReinsOfWar . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yStructureDissection. NL The passive effect augments for every 3 improvements in sychronization. ",
-      "Current Sychronization： #g%d / #b%d. NL At the start of each combat,get #yReinsOfWar . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yStructureDissection. NL The passive effect augments for every 3 improvements in sychronization. "
+      "Current Sychronization： #g%d / #b%d. NL At the start of each combat,get #yReinsOfWar . NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Apply #b%d #yStructureDissection. NL The passive effect augments for every 3 improvements in sychronization. ",
+      "Minami %s",
+      "Lose [E] at start of your turn. NL "
     ]
   },
   "VUPShionMod:MatrixFinFunnel": {
     "NAME": "Matrix Funnel",
     "DESCRIPTION": [
       "Current Sychronization： #b%d 。 NL At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Gain #b%d #yMatrix #yCharge . NL Max passive #b8 . NL The passive effect augments for every 3 improvements in sychronization.",
-      "Current Sychronization： #g%d / #b%d 。 At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Gain #b%d #yMatrix #yCharge . NL Max passive #b8 . NL The passive effect augments for every 3 improvements in sychronization."
+      "Current Sychronization： #g%d / #b%d 。 At the start of each turn, deal #b%d Damage to a random enemy and trigger its passive ability. NL #yPassive: Gain #b%d #yMatrix #yCharge . NL Max passive #b8 . NL The passive effect augments for every 3 improvements in sychronization.",
+      "Minami %s",
+      "Lose [E] at start of your turn. NL "
     ]
   },
   "VUPShionMod:AbstractTurnIcon": {

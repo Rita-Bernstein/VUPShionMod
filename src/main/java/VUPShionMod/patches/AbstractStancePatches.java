@@ -33,11 +33,11 @@ public class AbstractStancePatches {
     @SpirePatch(
             clz = AbstractCreature.class,
             method = "heal",
-            paramtypez = {int.class,boolean.class}
+            paramtypez = {int.class, boolean.class}
     )
     public static class OnHealPatch {
         @SpireInsertPatch(rloc = 21)
-        public static void Insert(AbstractCreature _instance,@ByRef int[] healAmount, boolean showEffect) {
+        public static void Insert(AbstractCreature _instance, @ByRef int[] healAmount, boolean showEffect) {
             AbstractStance stance = AbstractDungeon.player.stance;
             if (stance instanceof AbstractVUPShionStance) {
                 healAmount[0] = ((AbstractVUPShionStance) stance).onHeal(healAmount[0]);

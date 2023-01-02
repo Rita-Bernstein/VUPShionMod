@@ -29,22 +29,21 @@ public class AoeAnalysisPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = -1;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AttackOrderPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AttackOrderPower48.png"), 0, 0, 48, 48);
+        loadShionRegion("AttackOrderPower");
 
         updateDescription();
     }
 
     @Override
     public void onInitialApplication() {
-        if(this.owner.hasPower(GravityVortexPower.POWER_ID))
-        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, GravityVortexPower.POWER_ID));
+        if (this.owner.hasPower(GravityVortexPower.POWER_ID))
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, GravityVortexPower.POWER_ID));
 
-        if(this.owner.hasPower(ChainPursuitPower.POWER_ID))
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, ChainPursuitPower.POWER_ID));
+        if (this.owner.hasPower(ChainPursuitPower.POWER_ID))
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, ChainPursuitPower.POWER_ID));
 
-        if(this.owner.hasPower(StrikeIntegratedPower.POWER_ID))
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, StrikeIntegratedPower.POWER_ID));
+        if (this.owner.hasPower(StrikeIntegratedPower.POWER_ID))
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, StrikeIntegratedPower.POWER_ID));
 
         if (this.owner.hasPower(MatrixAmplifyPower.POWER_ID))
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, MatrixAmplifyPower.POWER_ID));
@@ -52,21 +51,21 @@ public class AoeAnalysisPower extends AbstractShionPower {
 
     @Override
     public void onTriggerFinFunnel(AbstractFinFunnel finFunnel, AbstractCreature target) {
-            if (finFunnel.id.equals(DissectingFinFunnel.ID)) {
-                flash();
-                if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
-                        if (monster != null && !monster.isDeadOrEscaped() && monster != target) {
-                            addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new StructureDissectionPower(monster, finFunnel.getFinalEffect())));
-                        }
+        if (finFunnel.id.equals(DissectingFinFunnel.ID)) {
+            flash();
+            if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
+                    if (monster != null && !monster.isDeadOrEscaped() && monster != target) {
+                        addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new StructureDissectionPower(monster, finFunnel.getFinalEffect())));
                     }
                 }
             }
+        }
     }
 
 
     @Override
     public void updateDescription() {
-        this.description =DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0];
     }
 }

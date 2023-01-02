@@ -25,8 +25,8 @@ public class MatrixAmplify extends AbstractShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("Order"),1.0f));
-        addToBot(new ApplyPowerAction(p,p,new MatrixAmplifyPower(p)));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("Order"), 1.0f));
+        addToBot(new ApplyPowerAction(p, p, new MatrixAmplifyPower(p)));
     }
 
     @Override

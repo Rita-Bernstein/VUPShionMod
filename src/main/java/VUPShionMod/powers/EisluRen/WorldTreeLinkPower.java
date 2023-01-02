@@ -25,11 +25,9 @@ public class WorldTreeLinkPower extends AbstractShionPower {
         this.name = NAME;
         this.owner = owner;
         this.ID = POWER_ID;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/WorldTreeLinkPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/WorldTreeLinkPower48.png")), 0, 0, 48, 48);
         updateDescription();
         this.isTurnBased = true;
-
+        loadShionRegion("WorldTreeLinkPower");
     }
 
     @Override

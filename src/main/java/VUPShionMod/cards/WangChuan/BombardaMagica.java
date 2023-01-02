@@ -30,8 +30,8 @@ public class BombardaMagica extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(m != null)
-            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 013 Ray Up loop", m.hb.cX, m.hb.y +680.0f*Settings.scale,
+        if (m != null)
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 013 Ray Up loop", m.hb.cX, m.hb.y + 680.0f * Settings.scale,
                     50.0f, 90.0f, 8.0f * Settings.scale, 2, false)));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
@@ -51,8 +51,6 @@ public class BombardaMagica extends AbstractWCCard {
     public boolean canUpgrade() {
         return timesUpgraded <= 1;
     }
-
-
 
 
     @Override

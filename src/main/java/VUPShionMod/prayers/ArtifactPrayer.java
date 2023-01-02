@@ -27,16 +27,16 @@ public class ArtifactPrayer extends AbstractPrayer {
 
     @Override
     public void updateDescription() {
-            this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
     public void use() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new ArtifactPower(AbstractDungeon.player,this.amount)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, this.amount)));
     }
 
     @Override
     public AbstractPrayer makeCopy() {
-        return new ArtifactPrayer(this.turns,this.amount);
+        return new ArtifactPrayer(this.turns, this.amount);
     }
 }

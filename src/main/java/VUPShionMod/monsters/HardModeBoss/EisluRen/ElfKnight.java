@@ -38,7 +38,6 @@ public class ElfKnight extends AbstractVUPShionBoss {
             this.damage.add(new DamageInfo(this, 20));
         }
 
-
         this.type = EnemyType.NORMAL;
         this.dialogX = -70.0F * Settings.scale;
         this.dialogY = 100.0F * Settings.scale;
@@ -63,7 +62,7 @@ public class ElfKnight extends AbstractVUPShionBoss {
 
     @Override
     public void takeTurn() {
-        addToBot(new AnimateFastAttackAction(this));
+        attackAction(this);
         addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
         addToBot(new GainRefundChargeAction(2));
 

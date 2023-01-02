@@ -51,7 +51,7 @@ public class TurnBaseActionPatches {
 
             if (EnergyPanelPatches.PatchEnergyPanelField.canUseWingShield.get(AbstractDungeon.overlayMenu.energyPanel)) {
                 EnergyPanelPatches.PatchEnergyPanelField.wingShield.get(AbstractDungeon.overlayMenu.energyPanel).atStartOfCombat();
-            }else {
+            } else {
                 EnergyPanelPatches.PatchEnergyPanelField.wingShield.get(AbstractDungeon.overlayMenu.energyPanel).reset();
             }
 

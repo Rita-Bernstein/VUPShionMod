@@ -24,11 +24,10 @@ public class ReduceDamagePower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
         updateDescription();
         this.isTurnBased = true;
         this.priority = 10;
+        loadShionRegion("CircuitPower");
 
         if (this.amount > 100) this.amount = 100;
     }
@@ -50,8 +49,8 @@ public class ReduceDamagePower extends AbstractShionPower {
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        if(type == DamageInfo.DamageType.NORMAL)
-        return (int) Math.floor(damage * (100 - this.amount) * 0.01);
+        if (type == DamageInfo.DamageType.NORMAL)
+            return (int) Math.floor(damage * (100 - this.amount) * 0.01);
 
         return damage;
     }

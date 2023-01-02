@@ -20,9 +20,8 @@ public class DefensiveOrderPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/LoseFinFunnelUpgradePower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/LoseFinFunnelUpgradePower48.png"), 0, 0, 48, 48);
 
+        loadShionRegion("LoseFinFunnelUpgradePower");
         updateDescription();
         this.isTurnBased = true;
     }
@@ -34,6 +33,6 @@ public class DefensiveOrderPower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(this.amount>1?DESCRIPTIONS[1]: DESCRIPTIONS[0], this.amount);
+        this.description = String.format(this.amount > 1 ? DESCRIPTIONS[1] : DESCRIPTIONS[0], this.amount);
     }
 }

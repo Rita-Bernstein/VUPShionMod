@@ -8,7 +8,7 @@ public class AbstractSkinShion extends AbstractSkinCharacter {
 
     public AbstractSkinShion() {
         super();
-        if(this.skins.isEmpty()) {
+        if (this.skins.isEmpty()) {
             skins.add(new OriShion(0));
             skins.add(new BlueGiantShion(1));
             skins.add(new AquaShion(2));

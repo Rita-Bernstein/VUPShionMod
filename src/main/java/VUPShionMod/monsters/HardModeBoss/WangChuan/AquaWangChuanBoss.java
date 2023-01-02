@@ -2,11 +2,14 @@ package VUPShionMod.monsters.HardModeBoss.WangChuan;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.powers.Monster.BossShion.PotentialOutbreakPower;
 import VUPShionMod.powers.Monster.BossWangChuan.StunPlayerPower;
 import VUPShionMod.powers.Monster.PlagaAMundo.StrengthenPower;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.OriShion;
+import VUPShionMod.skins.sk.WangChuan.AquaWangChuan;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -79,7 +82,7 @@ public class AquaWangChuanBoss extends AbstractVUPShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");
 
-
+        addToBot(new VersusEffectAction(AquaWangChuan.ID));
         addToBot(new GainShieldAction(this, 50));
         addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (maxHealth * 0.5f), "Infiniti")));
     }
@@ -91,7 +94,7 @@ public class AquaWangChuanBoss extends AbstractVUPShionBoss {
         switch (this.nextMove) {
             case 1:
                 attackAction(this);
-                temp = 4;
+                temp = 6;
                 for (int i = 0; i < temp; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 addToBot(new GainBlockAction(this, 14));
@@ -123,7 +126,7 @@ public class AquaWangChuanBoss extends AbstractVUPShionBoss {
     protected void getMove(int num) {
         switch (this.moveCount) {
             default:
-                setMove((byte) 1, Intent.ATTACK_BUFF, this.damage.get(0).base, 4, true);
+                setMove((byte) 1, Intent.ATTACK_BUFF, this.damage.get(0).base, 6, true);
                 if (!this.stateChanged)
                     this.moveCount++;
                 else

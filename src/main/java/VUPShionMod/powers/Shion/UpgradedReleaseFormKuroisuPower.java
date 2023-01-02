@@ -20,18 +20,17 @@ public class UpgradedReleaseFormKuroisuPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.setImage("Clock84.png", "Clock32.png");
+        loadShionRegion("Clock");
         updateDescription();
         this.isTurnBased = true;
     }
-
 
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         AbstractCard c = new QuickScreen();
         c.upgrade();
-        addToBot(new MakeLoadedCardAction(true,c,this.amount));
+        addToBot(new MakeLoadedCardAction(true, c, this.amount));
     }
 
     @Override

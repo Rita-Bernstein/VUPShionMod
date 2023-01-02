@@ -30,7 +30,7 @@ public class SupportTargetedSniping extends AbstractEisluRenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new JudgementAction(m, this.magicNumber));
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if(this.upgraded)
+        if (this.upgraded)
             addToBot(new DrawCardAction(2));
     }
 

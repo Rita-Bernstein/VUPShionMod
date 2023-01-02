@@ -26,7 +26,7 @@ public class ProbePower extends AbstractShionPower {
 
     @Override
     public void updateDescription() {
-        this.description = this.amount >1 ? String.format(DESCRIPTIONS[1],this.amount):DESCRIPTIONS[0];
+        this.description = this.amount > 1 ? String.format(DESCRIPTIONS[1], this.amount) : DESCRIPTIONS[0];
     }
 
     @Override

@@ -41,12 +41,12 @@ public class StunPlayerPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        if(justApplied){
-            this.justApplied =false;
+        if (justApplied) {
+            this.justApplied = false;
             return;
         }
 
-        addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
     @Override

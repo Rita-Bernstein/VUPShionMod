@@ -6,6 +6,7 @@ import VUPShionMod.actions.Common.GainShieldAction;
 import VUPShionMod.actions.Unique.BossFinFunnelMinionAction;
 import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
 import VUPShionMod.actions.Unique.TurnTriggerAllBossFinFunnelAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.BossDissectingFinFunnel;
@@ -15,6 +16,8 @@ import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.BossPursuitFinFunn
 import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.powers.Monster.BossShion.*;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.AquaShion;
+import VUPShionMod.skins.sk.Shion.OriShion;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -46,7 +49,7 @@ public class AquaShionBoss extends AbstractShionBoss {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
 
-    private AbstractAtlasGameEffect dissectionEffect;
+    private AbstractAtlasGameEffect dissectionEffect = null;
 
     private int moveCount = 1;
 
@@ -100,23 +103,23 @@ public class AquaShionBoss extends AbstractShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_ENDING");
 
-        if(this.dissectionEffect == null)
-        if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
-                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu
-                || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
-            this.dissectionEffect = new AbstractAtlasGameEffect("Warning 13", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
-                    500.0f, 300.0f, 1.0f * Settings.scale, 2, false);
+        if (this.dissectionEffect == null)
+            if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.VUP_Shion
+                    || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.Liyezhu
+                    || AbstractDungeon.player.chosenClass == AbstractPlayerEnum.EisluRen) {
+                this.dissectionEffect = new AbstractAtlasGameEffect("Warning 13", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
+                        500.0f, 300.0f, 1.0f * Settings.scale, 2, false);
 
-        } else if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
-            this.dissectionEffect = new AbstractAtlasGameEffect("Warning 06", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
-                    550.0f, 300.0f, 1.0f * Settings.scale, 2, false);
+            } else if (AbstractDungeon.player.chosenClass == AbstractPlayerEnum.WangChuan) {
+                this.dissectionEffect = new AbstractAtlasGameEffect("Warning 06", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
+                        550.0f, 300.0f, 1.0f * Settings.scale, 2, false);
 
-        } else {
-            this.dissectionEffect = new AbstractAtlasGameEffect("Warning 20", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
-                    450.0f, 400.0f, 1.0f * Settings.scale, 2, false);
-        }
+            } else {
+                this.dissectionEffect = new AbstractAtlasGameEffect("Warning 20", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
+                        450.0f, 400.0f, 1.0f * Settings.scale, 2, false);
+            }
 
-
+        addToBot(new VersusEffectAction(AquaShion.ID));
         addToBot(new ApplyPowerAction(this, this, new BossChainPursuitPower(this, 10)));
         addToBot(new ApplyPowerAction(this, this, new BossAttackLoaderPower(this, 1)));
         addToBot(new ApplyPowerAction(this, this, new BossAvatarSpawnPower(this, 1)));
@@ -300,10 +303,10 @@ public class AquaShionBoss extends AbstractShionBoss {
 
         if (!MinionGroup.areMinionsBasicallyDead()) {
             AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-            if(minion !=null)
-            for (AbstractPower p : minion.powers) {
-                tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
-            }
+            if (minion != null)
+                for (AbstractPower p : minion.powers) {
+                    tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
+                }
         }
 
         tmp = AbstractDungeon.player.stance.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
@@ -320,10 +323,10 @@ public class AquaShionBoss extends AbstractShionBoss {
 
         if (!MinionGroup.areMinionsBasicallyDead()) {
             AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-            if(minion !=null)
-            for (AbstractPower p : minion.powers) {
-                tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
-            }
+            if (minion != null)
+                for (AbstractPower p : minion.powers) {
+                    tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
+                }
         }
 
         dmg = MathUtils.floor(tmp);
@@ -349,7 +352,7 @@ public class AquaShionBoss extends AbstractShionBoss {
     @Override
     public void dispose() {
         super.dispose();
-        if (this.dissectionEffect.atlas != null) {
+        if (dissectionEffect != null && this.dissectionEffect.atlas != null) {
             this.dissectionEffect.dispose();
             this.dissectionEffect = null;
         }

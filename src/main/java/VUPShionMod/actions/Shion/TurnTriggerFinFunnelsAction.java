@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import java.util.ArrayList;
 
 public class TurnTriggerFinFunnelsAction extends AbstractGameAction {
-    private AbstractPlayer p = AbstractDungeon.player;
+    private final AbstractPlayer p = AbstractDungeon.player;
     private boolean isDoubleDamage = false;
     private boolean isMultiDamage = false;
     private boolean isApplyBleeding = false;
@@ -27,7 +27,7 @@ public class TurnTriggerFinFunnelsAction extends AbstractGameAction {
     private boolean isCard = false;
 
 
-    public TurnTriggerFinFunnelsAction(int amount,boolean isCard) {
+    public TurnTriggerFinFunnelsAction(int amount, boolean isCard) {
         this.duration = 1.0f;
         this.amount = amount;
         this.isCard = isCard;
@@ -92,7 +92,7 @@ public class TurnTriggerFinFunnelsAction extends AbstractGameAction {
                 addToBot(new VFXAction(new AllFinFunnelBeamEffect(availableFinFunnel, p.flipHorizontal), 0.4f));
             } else {
 //                单体部分的实体代码在特效里面
-                addToBot(new VFXAction(p, new AllFinFunnelSmallLaserEffect(availableFinFunnel,effect), 0.3f, true));
+                addToBot(new VFXAction(p, new AllFinFunnelSmallLaserEffect(availableFinFunnel, effect), 0.3f, true));
                 addToBot(new VFXAction(new BorderFlashEffect(Color.SKY)));
             }
 

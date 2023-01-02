@@ -1,7 +1,6 @@
 package VUPShionMod.helpers;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
-import VUPShionMod.cards.WangChuan.AbstractWCCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

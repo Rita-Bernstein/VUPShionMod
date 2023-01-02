@@ -18,7 +18,7 @@ public class EnergyOrbShion extends CustomEnergyOrb {
     private float angle2;
     private float angle1;
 
-    private Color glowColor = Color.WHITE.cpy();
+    private final Color glowColor = Color.WHITE.cpy();
     private float duration = 1.0f;
     private float timer = 0.0f;
 

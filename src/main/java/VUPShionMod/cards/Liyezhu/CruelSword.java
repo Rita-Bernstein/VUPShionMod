@@ -40,16 +40,16 @@ public class CruelSword extends AbstractLiyezhuCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                int count =0;
+                int count = 0;
                 for (AbstractCard card : AbstractDungeon.player.hand.group) {
                     if (card.type == CardType.CURSE || card.type == CardType.STATUS) {
                         count++;
                     }
                 }
 
-                for (int i = 0; i < count; i++){
-                    addToTop(new ApplySinAction(m,magicNumber));
-                    addToTop(new ApplyPowerAction(m,p,new WeakPower(m,magicNumber,false)));
+                for (int i = 0; i < count; i++) {
+                    addToTop(new ApplySinAction(m, magicNumber));
+                    addToTop(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
                 }
 
                 for (int i = 0; i < count; i++) {
@@ -59,7 +59,7 @@ public class CruelSword extends AbstractLiyezhuCard {
 
                 for (AbstractCard card : AbstractDungeon.player.hand.group) {
                     if (card.type == CardType.CURSE || card.type == CardType.STATUS) {
-                        addToTop(new ExhaustSpecificCardAction(card,AbstractDungeon.player.hand));
+                        addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand));
                     }
                 }
                 isDone = true;

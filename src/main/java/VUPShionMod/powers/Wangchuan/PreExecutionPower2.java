@@ -25,8 +25,7 @@ public class PreExecutionPower2 extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PoisePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/PoisePower36.png")), 0, 0, 36, 36);
+        loadShionRegion("PoisePower");
     }
 
 
@@ -41,10 +40,10 @@ public class PreExecutionPower2 extends AbstractShionPower {
     }
 
     @Override
-    public void onStackPower(AbstractPower power) {
+    public void onStackPower(AbstractPower power, int preAmount) {
         if (power.ID.equals(CorGladiiPower.POWER_ID)) {
             flash();
-            addToBot(new GainBlockAction(this.owner, this.amount * power.amount));
+            addToBot(new GainBlockAction(this.owner, this.amount * preAmount));
         }
     }
 }

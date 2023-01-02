@@ -34,8 +34,8 @@ public class ShieldAttack extends AbstractEisluRenCard {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         addToBot(new PlayerMinionTakeTurnAction());
         addToBot(new DrawCardAction(this.magicNumber));
-        if(this.upgraded)
-        addToBot(new GainRefundChargeAction(this.secondaryM));
+        if (this.upgraded)
+            addToBot(new GainRefundChargeAction(this.secondaryM));
     }
 
     @Override

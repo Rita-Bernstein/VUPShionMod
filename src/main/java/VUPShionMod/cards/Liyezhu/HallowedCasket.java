@@ -28,10 +28,10 @@ public class HallowedCasket extends AbstractLiyezhuCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new HallowedCasketPower(p, this.magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new HallowedCasketPower2(p,this.secondaryM)));
+        addToBot(new ApplyPowerAction(p, p, new HallowedCasketPower2(p, this.secondaryM)));
 
-        if(this.upgraded)
-            addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,1)));
+        if (this.upgraded)
+            addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, 1)));
     }
 
     @Override

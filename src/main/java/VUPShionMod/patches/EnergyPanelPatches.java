@@ -6,6 +6,7 @@ import VUPShionMod.character.Liyezhu;
 import VUPShionMod.character.Shion;
 import VUPShionMod.character.WangChuan;
 import VUPShionMod.powers.AbstractShionPower;
+import VUPShionMod.relics.AbstractShionRelic;
 import VUPShionMod.ui.FinFunnelCharge;
 import VUPShionMod.ui.SansMeter;
 import VUPShionMod.ui.SwardCharge;
@@ -26,6 +27,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CannotCompileException;
@@ -103,7 +105,7 @@ public class EnergyPanelPatches {
             clz = EnergyPanel.class,
             method = "useEnergy"
     )
-    public static class PatchUseEnergy {
+    public static class PatchPreUseEnergy {
         public static void Prefix(int e) {
             energyUsedThisTurn += Math.min(e, EnergyPanel.totalCount);
             rolling = true;
@@ -112,8 +114,14 @@ public class EnergyPanelPatches {
 
             for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (p instanceof AbstractShionPower)
-                    ((AbstractShionPower) p).onLoseEnergy(Math.min(e, EnergyPanel.totalCount));
+                    ((AbstractShionPower) p).onLoseEnergy(e,Math.min(e, EnergyPanel.totalCount));
             }
+
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                if (r instanceof AbstractShionRelic)
+                    ((AbstractShionRelic) r).onLoseEnergy(e,Math.min(e, EnergyPanel.totalCount));
+            }
+
         }
     }
 
@@ -340,17 +348,13 @@ public class EnergyPanelPatches {
 
     public static boolean isShionModChar(AbstractCreature creature) {
         if (creature.isPlayer) {
-            if (creature instanceof Shion
+            return creature instanceof Shion
                     || creature instanceof WangChuan
                     || creature instanceof Liyezhu
-                    || creature instanceof EisluRen
-            ) {
-                return true;
-            }
+                    || creature instanceof EisluRen;
         }
         return false;
     }
-
 
 
 }

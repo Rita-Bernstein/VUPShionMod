@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.stance.DivinityParticleEffect;
 
 public class MonsterDivinityParticleEffect extends DivinityParticleEffect {
-    private TextureAtlas.AtlasRegion img;
+    private final TextureAtlas.AtlasRegion img;
 
-    public MonsterDivinityParticleEffect(AbstractCreature owner){
+    public MonsterDivinityParticleEffect(AbstractCreature owner) {
         super();
         this.img = ImageMaster.EYE_ANIM_0;
         float x = owner.hb.cX + MathUtils.random(-owner.hb.width / 2.0F - 50.0F * Settings.scale, owner.hb.width / 2.0F + 50.0F * Settings.scale);
@@ -23,10 +23,10 @@ public class MonsterDivinityParticleEffect extends DivinityParticleEffect {
             this.rotation = -this.rotation;
         }
 
-        x -= (float)this.img.packedWidth / 2.0F;
-        y -= (float)this.img.packedHeight / 2.0F;
+        x -= (float) this.img.packedWidth / 2.0F;
+        y -= (float) this.img.packedHeight / 2.0F;
 
-        ReflectionHacks.setPrivate(this,DivinityParticleEffect.class,"x",x);
-        ReflectionHacks.setPrivate(this,DivinityParticleEffect.class,"y",y);
+        ReflectionHacks.setPrivate(this, DivinityParticleEffect.class, "x", x);
+        ReflectionHacks.setPrivate(this, DivinityParticleEffect.class, "y", y);
     }
 }

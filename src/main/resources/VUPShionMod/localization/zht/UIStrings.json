@@ -15,7 +15,7 @@
   "VUPShionMod:EnduranceInitiationAction": {
     "TEXT": [
       "複製",
-      " NL vup_shion_mod:加載完成。 消耗 。"
+      " NL vup_shion_mod:加載完成 。 消耗 。"
     ]
   },
   "VUPShionMod:SelectCardToHandAction": {
@@ -301,7 +301,7 @@
   "VUPShionMod:DrawPileLoadCardAction": {
     "TEXT": [
       "將抽牌堆的牌賦予加載完成",
-      " NL vup_shion_mod:加載完成。 消耗 。"
+      " NL vup_shion_mod:加載完成 。 消耗 。"
     ]
   }
 }

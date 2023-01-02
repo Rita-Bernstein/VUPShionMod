@@ -36,7 +36,6 @@ public class SetupFinFunnel extends AbstractShionMinamiCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new AddFinFunnelAction(this.magicNumber));
-        addToBot(new ApplyPowerAction(p,p,new EnergyDownPower(p,1)));
     }
 
     @Override

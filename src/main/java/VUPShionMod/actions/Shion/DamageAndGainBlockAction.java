@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class DamageAndGainBlockAction extends AbstractGameAction {
-    private DamageInfo info;
-    private float blockScale;
+    private final DamageInfo info;
+    private final float blockScale;
 
     public DamageAndGainBlockAction(AbstractCreature target, DamageInfo info, float blockScale) {
         this.info = info;

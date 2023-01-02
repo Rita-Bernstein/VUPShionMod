@@ -23,8 +23,13 @@ public abstract class AbstractShionRelic extends CustomRelic {
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
     }
 
-    public void onAddShieldCharge(int amount){}
+    public void onAddShieldCharge(int amount) {
+    }
 
-    public void onLoseShieldCharge(int amount){}
+    public void onLoseShieldCharge(int amount) {
+    }
+
+    public void onLoseEnergy(int e,int energyUsed) {
+    }
 
 }

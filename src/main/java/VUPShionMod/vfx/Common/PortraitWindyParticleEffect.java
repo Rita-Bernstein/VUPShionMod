@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class PortraitWindyParticleEffect extends AbstractGameEffect {
-    private float scaleY;
+    private final float scaleY;
     private float x;
     private float y;
     private float vX;
-    private float vY;
+    private final float vY;
 
 
     public PortraitWindyParticleEffect(Color setColor, boolean reverse) {

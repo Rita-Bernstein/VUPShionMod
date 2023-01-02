@@ -88,8 +88,8 @@ public class ChinaWangChuan extends AbstractSkin {
 
     @Override
     public void postCreateStartingDeck(CardGroup cardGroup) {
-        for(AbstractCard card : cardGroup.group){
-            if(card.cardID.equals(PreExecution.ID)){
+        for (AbstractCard card : cardGroup.group) {
+            if (card.cardID.equals(PreExecution.ID)) {
                 card.upgrade();
             }
         }

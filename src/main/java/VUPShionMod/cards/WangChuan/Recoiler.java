@@ -35,12 +35,12 @@ public class Recoiler extends AbstractWCCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new RecoilerPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new RecoilerPower(p, this.magicNumber)));
 
-        if(this.upgraded){
-            Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, this.secondaryM,false);
+        if (this.upgraded) {
+            Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, this.secondaryM, false);
             addToBot(new ApplyPowerToAllEnemyAction(powerToApply));
-            Supplier<AbstractPower> powerToApply2 = () -> new VulnerablePower(null, this.secondaryM,false);
+            Supplier<AbstractPower> powerToApply2 = () -> new VulnerablePower(null, this.secondaryM, false);
             addToBot(new ApplyPowerToAllEnemyAction(powerToApply2));
         }
 

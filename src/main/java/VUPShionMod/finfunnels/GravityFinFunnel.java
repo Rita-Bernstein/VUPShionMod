@@ -70,12 +70,14 @@ public class GravityFinFunnel extends AbstractFinFunnel {
     @Override
     public void upgradeLevel(int amount) {
         super.upgradeLevel(amount);
+        if(this.index <0)
         SaveHelper.gravityFinFunnelLevel = level;
     }
 
     @Override
     public void loseLevel(int amount) {
         super.loseLevel(amount);
+        if(this.index <0)
         SaveHelper.gravityFinFunnelLevel = level;
     }
 
@@ -140,8 +142,8 @@ public class GravityFinFunnel extends AbstractFinFunnel {
                 this.state.setAnimation(0, "weapon2_attack", false).setTimeScale(3.0f);
                 this.state.addAnimation(0, "weapon2_idle", true, 0.0F);
             } else {
-                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(3.0f);
-                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F);
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(1.9f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
             }
         }
     }

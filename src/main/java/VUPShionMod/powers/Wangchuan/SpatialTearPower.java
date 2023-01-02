@@ -26,10 +26,10 @@ public class SpatialTearPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/SpatialTearPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/SpatialTearPower48.png"), 0, 0, 48, 48);
         updateDescription();
         this.isTurnBased = true;
+
+        loadShionRegion("SpatialTearPower");
     }
 
     @Override
@@ -43,7 +43,7 @@ public class SpatialTearPower extends AbstractShionPower {
         if (this.amount >= 18) {
             flash();
             addToBot(new MakeTempCardInHandAction(new Exile()));
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
     }
 
@@ -53,7 +53,7 @@ public class SpatialTearPower extends AbstractShionPower {
         if (this.amount >= 18) {
             flash();
             addToBot(new MakeTempCardInHandAction(new Exile()));
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
     }
 

@@ -17,8 +17,8 @@
   },
   "VUPShionMod:AttackSystemPreload": {
     "NAME": "Offensive Preload",
-    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Hyperlink. NL Shuffle !M! *Quick *Attack into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Hyperlink. NL Shuffle !M! *Quick *Attack+ into your draw pile.",
+    "DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Hyperlink. NL Shuffle !M! *Quick *Attack into your discard pile. NL Draw a card.",
+    "UPGRADE_DESCRIPTION": "Lose !VUPShionSecondM! vup_shion_mod:Hyperlink. NL Shuffle !M! *Quick *Attack+ into your discard pile. NL Draw a card.",
     "EXTENDED_DESCRIPTION": [
       " NL (Not enough Hyperlink.)"
     ]
@@ -97,7 +97,8 @@
   },
   "VUPShionMod:Goodbye": {
     "NAME": "Enough!",
-    "DESCRIPTION": "Retain. Grave. NL Exhaust your hand. NL Play !M! copies of random Attacks. NL Exhaust."
+    "DESCRIPTION": "Retain. Grave. NL Exhaust your hand. NL Play !M! copies of random Attacks. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. Grave. NL Exhaust your hand. NL Play !M! copies of random Attacks."
   },
   "VUPShionMod:EnhancedWeapon": {
     "NAME": "Accelerate",
@@ -121,7 +122,7 @@
     "DESCRIPTION": "Deal damage equal to vup_shion_mod:Total\u00a0Sychro. NL If Fatal, gain !M! gold.",
     "UPGRADE_DESCRIPTION": "Deal damage equal to 4+ vup_shion_mod:Total\u00a0Sychro. NL If Fatal, gain !M! gold.",
     "EXTENDED_DESCRIPTION": [
-      "（Deal !D! damage.）"
+      " NL （Deal !D! damage.）"
     ]
   },
   "VUPShionMod:AttackOrderAlpha": {
@@ -346,7 +347,7 @@
   },
   "VUPShionMod:DivineRedemption": {
     "NAME": "Divine Redemption",
-    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperlink. NL Gain !B! Block. NL Exhuast !VUPShionSecondM! random Status or Curse."
+    "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperlink. NL Gain !B! Block. NL Exhaust !VUPShionSecondM! random Status or Curse."
   },
   "VUPShionMod:BlueBlade": {
     "NAME": "Azure Blade",
@@ -373,7 +374,7 @@
     "NAME": "Cross",
     "DESCRIPTION": "Gain !M! vup_shion_mod:Hyperlink. NL Gain Block !VUPShionSecondM! times of vup_shion_mod:Hyperlink.",
     "EXTENDED_DESCRIPTION": [
-      "(Gain !B! Block.)"
+      " NL (Gain !B! Block.)"
     ]
   },
   "VUPShionMod:ReleaseFormLiyezhu": {
@@ -392,7 +393,7 @@
     "NAME": "Crucifixion",
     "DESCRIPTION": "Deal damage equal to 7+ vup_shion_mod:Hyperlink !M! times. NL Gain !VUPShionSecondM! vup_shion_mod:Hyperlink. NL Can be Upgraded any number of times.",
     "EXTENDED_DESCRIPTION": [
-      "(Deal !D! damage)"
+      " NL (Deal !D! damage)"
     ]
   },
   "VUPShionMod:PainfulConfession": {
@@ -453,8 +454,8 @@
   },
   "VUPShionMod:Slide": {
     "NAME": "Slide",
-    "DESCRIPTION": "Gain !B! Block twice. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii .",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block thrice. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii .",
+    "DESCRIPTION": "Gain !B! Block twice. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii . NL Gain 1 temporary Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block thrice. NL Gain !VUPShionSecondM! vup_shion_mod:Cor\u00a0Gladii . NL Gain 1 temporary Dexterity.",
     "EXTENDED_DESCRIPTION": [
       "Multi Slide"
     ]
@@ -529,12 +530,12 @@
   },
   "VUPShionMod:VertexGladii": {
     "NAME": "Vertex Gladii",
-    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !B! Block. NL Gain 3 vup_shion_mod:Stiffness. NL Draw 2 cards.",
+    "DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for twice. NL Gain !B! Block. NL Gain 3 vup_shion_mod:Stiffness. NL Draw a card.",
     "UPGRADE_DESCRIPTION": "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 25 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 3 vup_shion_mod:Stiffness. NL Draw 2 cards. NL Gain 1 vup_shion_mod:Magiam\u00a0Obruor and 1 vup_shion_mod:Intensa.",
     "EXTENDED_DESCRIPTION": [
       "Turbo Gladii",
       "Auster Gladii",
-      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 3 vup_shion_mod:Stiffness. NL Draw 2 cards.",
+      "Deal damage equal to !M! + vup_shion_mod:Cor\u00a0Gladii for thrice. NL Gain Block equal to 9 + vup_shion_mod:Cor\u00a0Gladii. NL Gain 3 vup_shion_mod:Stiffness. NL Draw a card.",
       " NL (Deal !D! damage, gain !B! Block.)"
     ]
   },
@@ -618,7 +619,7 @@
   "VUPShionMod:SubLuna": {
     "NAME": "Sub Luna",
     "DESCRIPTION": "Gain 1 vup_shion_mod:Nihil. NL Gain 1 vup_shion_mod:Sub\u00a0Luna. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] next turn. NL End your turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain 1 vup_shion_mod:Nihil. NL Gain 1 vup_shion_mod:Sub\u00a0Luna. NL Lose !M! vup_shion_mod:Stiffness. NL Gain 1 vup_shion_mod:Intensa. NL Gain [E] [E] next turn. NL End your turn. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain 1 vup_shion_mod:Nihil. NL Gain 1 vup_shion_mod:Sub\u00a0Luna. NL Lose !M! vup_shion_mod:Stiffness. NL Gain [E] [E] next turn. NL End your turn. NL Exhaust."
   },
   "VUPShionMod:SeverCurrent": {
     "NAME": "Sever Current",
@@ -1232,7 +1233,7 @@
     "DESCRIPTION": "Deal damage equal to your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Remove a random Debuff. NL Add a *Miracle to your hand.",
     "UPGRADE_DESCRIPTION": "Deal damage equal to your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Remove a random Debuff. NL Add a *Miracle to your hand. NL Draw a card.",
     "EXTENDED_DESCRIPTION": [
-      "(Deal !D! damage)"
+      " NL (Deal !D! damage)"
     ]
   },
   "VUPShionMod:SavageSeries": {
@@ -1245,7 +1246,7 @@
     "DESCRIPTION": "Retain. NL Deal damage equal to twice of your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Exhaust ALL your *Miracle. NL Heal !VUPShionSecondM! HP,deal an additional damage and vup_shion_mod:Punitive for each card you Exhausted.",
     "UPGRADE_DESCRIPTION": "Retain. NL Deal damage equal to twice of your vup_shion_mod:Psychic. NL Gain !M! vup_shion_mod:Psychic. NL Exhaust ALL your *Miracle. NL Heal !VUPShionSecondM! HP,deal an additional damage and vup_shion_mod:Punitive 2 for each card you Exhausted.",
     "EXTENDED_DESCRIPTION": [
-      "(Deal !D! damage)"
+      " NL (Deal !D! damage)"
     ]
   },
   "VUPShionMod:ReapTheSinful": {
@@ -1273,7 +1274,8 @@
   },
   "VUPShionMod:Execution": {
     "NAME": "Conduct",
-    "DESCRIPTION": "Heal 2 HP. NL Lose !VUPShionSecondM! vup_shion_mod:Sinful. NL Gain !M! vup_shion_mod:Execution. NL Apply 1 vup_shion_mod:Sinful\u00a0Mark."
+    "DESCRIPTION": "Heal 4 HP. NL Lose !VUPShionSecondM! vup_shion_mod:Sinful. NL Gain !M! vup_shion_mod:Execution. NL Apply 1 vup_shion_mod:Sinful\u00a0Mark.",
+    "UPGRADE_DESCRIPTION": "Heal 4 HP. NL Lose !VUPShionSecondM! vup_shion_mod:Sinful. NL Gain !M! vup_shion_mod:Execution. NL Apply 1 vup_shion_mod:Sinful\u00a0Mark."
   },
   "VUPShionMod:Enchant": {
     "NAME": "Enchant",
@@ -1336,7 +1338,7 @@
     "DESCRIPTION": "Can play if vup_shion_mod:Sinful ALL ENTITIES have are more than !VUPShionSecondM!. NL ALL ENTITIES lose their vup_shion_mod:Sinful. NL Gain max HP equal to 3% of current. Exhaust.",
     "UPGRADE_DESCRIPTION": " Retain.Can play if vup_shion_mod:Sinful ALL ENTITIES have are more than !VUPShionSecondM!. NL ALL ENTITIES lose their vup_shion_mod:Sinful. NL Gain max HP equal to 3% of current. Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "not enough total sinful"
+      "Not enough total Sinful"
     ]
   },
   "VUPShionMod:VerdictUponHeart": {
@@ -1504,8 +1506,8 @@
   },
   "VUPShionMod:DefensiveOrder": {
     "NAME": "Defensive Command",
-    "DESCRIPTION": "Retain. NL This turn, any vup_shion_mod:Bleeding, vup_shion_mod:Pursued damage to deal is converted into Block, any active damage dealt by vup_shion_mod:Funnel is converted into vup_shion_mod:Shield.",
-    "UPGRADE_DESCRIPTION": "Retain. vup_shion_mod:Return. NL This turn, any vup_shion_mod:Bleeding, vup_shion_mod:Pursued damage to deal is converted into Block, any active damage dealt by vup_shion_mod:Funnel is converted into vup_shion_mod:Shield."
+    "DESCRIPTION": "Retain. NL Gain Block equal to !M! times of your vup_shion_mod:Total\u00a0Sychro. NL Set vup_shion_mod:Total\u00a0Sychro to 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to !M! times of your vup_shion_mod:Total Sychro."
   },
   "VUPShionMod:LiXiaoNan": {
     "NAME": "Extremis",
@@ -1889,7 +1891,7 @@
   },
   "VUPShionMod:SetupFinFunnel": {
     "NAME": "Deploy Funnel",
-    "DESCRIPTION": "Innate. Retain. vup_shion_mod:Return. NL Deploy a vup_shion_mod:Funnel of *Minami with !M! sychronization. NL Lose [E] at the start of your turn."
+    "DESCRIPTION": "Innate. Retain. vup_shion_mod:Return. NL Deploy a vup_shion_mod:Funnel of *Minami with !M! sychronization. NL It spends [E] at the start of your turn."
   },
   "VUPShionMod:CalibrationDeployment": {
     "NAME": "Calibrated Deployment",
@@ -1897,7 +1899,7 @@
   },
   "VUPShionMod:MinamiHandCard": {
     "NAME": "Ace in Store",
-    "DESCRIPTION": " Grave. NL vup_shion_mod:Activate vup_shion_mod:Auto\u00a0Funnel. NL Choose 1 *Power to add into your hand."
+    "DESCRIPTION": " Grave. NL vup_shion_mod:Activate vup_shion_mod:Auto\u00a0Funnel. NL Choose 1 *Power to add into your hand. NL it cost 0 in this turn."
   },
   "VUPShionMod:MinamiReact": {
     "NAME": "Action and Reaction",

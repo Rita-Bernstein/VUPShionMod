@@ -27,15 +27,15 @@ public class SummonElf extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.upgraded)
-        addToBot(new RemoveDebuffsAction(p));
+        if (this.upgraded)
+            addToBot(new RemoveDebuffsAction(p));
         addToBot(new SummonElfAction(new ElfMinion(0)));
     }
 
 
     @Override
     public void triggerAfterOtherCardPlayed(AbstractCard card) {
-        if(card instanceof SynchroSummon || card instanceof LifeLinkCard)
+        if (card instanceof SynchroSummon || card instanceof LifeLinkCard)
             updateCost(-1);
     }
 

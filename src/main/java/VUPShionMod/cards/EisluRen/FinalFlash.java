@@ -29,17 +29,17 @@ public class FinalFlash extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 3;
         this.isMultiDamage = true;
-        GraveField.grave.set(this,true);
+        GraveField.grave.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
             addToBot(new LoseWingShieldAction(WingShield.getWingShield().getCount()));
-        addToBot(new VFXAction(new FinalFlashBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal),0.0f));
+        addToBot(new VFXAction(new FinalFlashBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.0f));
 
         for (int i = 0; i < WingShield.getWingShield().getCount() * 3; i++) {
-            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE,true));
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
         }
     }
 

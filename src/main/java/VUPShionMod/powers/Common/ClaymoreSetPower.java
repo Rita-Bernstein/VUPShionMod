@@ -36,7 +36,7 @@ public class ClaymoreSetPower extends AbstractShionPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
             flash();
-            addToTop(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS),
                     AbstractGameAction.AttackEffect.FIRE, true));
         }

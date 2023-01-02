@@ -376,9 +376,9 @@
       "intensa"
     ],
     "PROPER_NAME": "Intensa",
-    "DESCRIPTION": "At the start of your next turn, regain #b60% #yCor #yGladii that you have lost in this turn. NL #b120% of #yCor #yGladii may be regained in this way at most."
+    "DESCRIPTION": "At the start of your next turn, regain #b50% #yCor #yGladii that you have lost in this turn. NL #b100% of #yCor #yGladii may be regained in this way at most."
   },
-    {
+  {
     "NAMES": [
       "resonance"
     ],

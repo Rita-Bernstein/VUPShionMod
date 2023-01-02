@@ -45,14 +45,14 @@ public class LignumNimium extends AbstractCodexCard {
             if (this.timesUpgraded == 1) {
                 upgradeBaseCost(1);
                 upgradeMagicNumber(3);
-                this.isEthereal =true;
+                this.isEthereal = true;
             }
 
 
             if (this.timesUpgraded == 2) {
                 upgradeMagicNumber(5);
                 upgradeBaseCost(0);
-                this.isEthereal =false;
+                this.isEthereal = false;
             }
         }
     }

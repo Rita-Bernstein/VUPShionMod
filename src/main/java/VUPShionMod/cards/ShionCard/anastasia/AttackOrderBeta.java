@@ -22,7 +22,7 @@ public class AttackOrderBeta extends AbstractShionAnastasiaCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new AttackOrderBetaPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new AttackOrderBetaPower(p)));
     }
 
     @Override

@@ -51,7 +51,7 @@ public class LetItRot extends AbstractImageEvent {
                     case 1:
                         this.imageEventText.updateBodyText(eventStrings.DESCRIPTIONS[2]);
                         AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
-                        logMetricHeal(NAME,"Rest",AbstractDungeon.player.maxHealth);
+                        logMetricHeal(NAME, "Rest", AbstractDungeon.player.maxHealth);
                         break;
                 }
 

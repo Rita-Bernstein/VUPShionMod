@@ -32,7 +32,7 @@ public class AchievementShionItem extends AchievementItem {
     @Override
     public void reloadImg() {
         ReflectionHacks.setPrivate(this, AchievementItem.class, "img",
-                achievemenAtlas.findRegion( ((TextureAtlas.AtlasRegion) ReflectionHacks.getPrivate(this, AchievementItem.class, "img")).name));
+                achievemenAtlas.findRegion(((TextureAtlas.AtlasRegion) ReflectionHacks.getPrivate(this, AchievementItem.class, "img")).name));
     }
 
 }

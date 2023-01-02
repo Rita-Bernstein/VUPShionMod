@@ -17,12 +17,12 @@ public class Replenish extends AbstractWCCard {
     public Replenish() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 9;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new HealAction(p,p,this.magicNumber));
+        addToBot(new HealAction(p, p, this.magicNumber));
     }
 
     @Override

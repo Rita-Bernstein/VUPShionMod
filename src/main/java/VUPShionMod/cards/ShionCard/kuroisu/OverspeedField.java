@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.kuroisu;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.GainHyperdimensionalLinksAction;
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.Common.DenergizePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FlayTheEvilAction extends AbstractGameAction {
-    private int cutoff;
+    private final int cutoff;
 
     public FlayTheEvilAction(AbstractCreature target, int cutoff) {
         this.duration = Settings.ACTION_DUR_FAST;

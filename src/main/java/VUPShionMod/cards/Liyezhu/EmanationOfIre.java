@@ -27,7 +27,7 @@ public class EmanationOfIre extends AbstractLiyezhuCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseDamage = 7;
         this.magicNumber = this.baseMagicNumber = 99;
-        this.secondaryM = this.baseSecondaryM =2;
+        this.secondaryM = this.baseSecondaryM = 2;
         this.exhaust = true;
     }
 

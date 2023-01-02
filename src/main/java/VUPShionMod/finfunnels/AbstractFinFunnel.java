@@ -15,11 +15,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.utils.Disposable;
 import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -40,7 +42,7 @@ import java.util.List;
 
 import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
-public abstract class AbstractFinFunnel {
+public abstract class AbstractFinFunnel implements Disposable {
     public String id;
     public String name;
     public String description;
@@ -94,9 +96,9 @@ public abstract class AbstractFinFunnel {
         this.state = new AnimationState(this.stateData);
     }
 
-    protected void initAnimation(int index){
+    protected void initAnimation(int index) {
         this.state.setAnimation(0, "weapon" + (index + 1) + "_come_in", false);
-        this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f);
+        this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
     }
 
 
@@ -108,9 +110,18 @@ public abstract class AbstractFinFunnel {
             this.description = String.format(CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(this.id)).DESCRIPTION[0],
                     getLevel(), getFinalDamage(), getFinalEffect());
         }
+
+
+        if (this.index >= 0) {
+            this.name = String.format(CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(this.id)).DESCRIPTION[2], CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(this.id)).NAME);
+            this.description = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(this.id)).DESCRIPTION[3] + this.description;
+        }
     }
 
     public void atTurnStart() {
+        if (this.index >= 0) {
+            addToBot(new LoseEnergyAction(1));
+        }
     }
 
     public void preBattlePrep() {
@@ -441,6 +452,12 @@ public abstract class AbstractFinFunnel {
         }
     }
 
-
+    @Override
+    public void dispose() {
+        if (this.atlas != null) {
+            atlas.dispose();
+            atlas = null;
+        }
+    }
 
 }

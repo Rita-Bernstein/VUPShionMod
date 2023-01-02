@@ -27,8 +27,9 @@ public class PlagaAMundoCounterPower extends AbstractShionPower {
         this.amount = amount;
         updateDescription();
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ContortTimePower32.png")), 0, 0, 32, 32);
+        loadShionRegion("ContortTimePower");
+
+
     }
 
 
@@ -40,7 +41,7 @@ public class PlagaAMundoCounterPower extends AbstractShionPower {
     @Override
     public void duringTurn() {
         if (this.amount == 1 && !this.owner.isDying) {
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         } else {
             addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
             updateDescription();

@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class GainMaxHPAction extends AbstractGameAction {
-    private boolean showEffect;
+    private final boolean showEffect;
 
     public GainMaxHPAction(AbstractCreature target, int amount) {
         this(target, amount, true);

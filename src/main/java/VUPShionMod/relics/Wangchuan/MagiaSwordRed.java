@@ -46,7 +46,7 @@ public class MagiaSwordRed extends AbstractShionRelic {
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (info.type == DamageInfo.DamageType.NORMAL)
             addToBot(new BetterDamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, 4, DamageInfo.DamageType.THORNS),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL,true));
+                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true));
     }
 
     @Override

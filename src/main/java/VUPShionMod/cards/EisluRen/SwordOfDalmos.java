@@ -32,13 +32,13 @@ public class SwordOfDalmos extends AbstractEisluRenCard {
         this.baseDamage = 18;
         this.magicNumber = this.baseMagicNumber = 1;
         this.secondaryM = this.baseSecondaryM = 1;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+            addToBot(new LoseWingShieldAction(this.secondaryM));
 
         if (m != null)
             addToBot(new VFXAction(new AbstractAtlasGameEffect("Energy 019 Ray Up", m.hb.cX, m.hb.y + 700.0f * Settings.scale,
@@ -50,16 +50,16 @@ public class SwordOfDalmos extends AbstractEisluRenCard {
 
     @Override
     public void onRetained() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,1)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1)));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

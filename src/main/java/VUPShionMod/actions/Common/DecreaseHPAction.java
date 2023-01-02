@@ -24,7 +24,7 @@ public class DecreaseHPAction extends AbstractGameAction {
         this.target.currentHealth -= this.amount;
         if (this.target.currentHealth <= 0) this.target.currentHealth = 0;
         this.target.healthBarUpdatedEvent();
-        this.target.damage(new DamageInfo((AbstractCreature) null, 0, DamageInfo.DamageType.HP_LOSS));
+        this.target.damage(new DamageInfo(null, 0, DamageInfo.DamageType.HP_LOSS));
         isDone = true;
     }
 }

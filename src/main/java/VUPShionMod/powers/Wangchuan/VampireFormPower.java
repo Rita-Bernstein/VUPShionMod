@@ -26,9 +26,7 @@ public class VampireFormPower extends AbstractShionPower {
         this.owner = owner;
         this.amount = amount;
         updateDescription();
-
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/VampireFormPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/VampireFormPower36.png")), 0, 0, 36, 36);
+        loadShionRegion("VampireFormPower");
     }
 
 
@@ -38,7 +36,7 @@ public class VampireFormPower extends AbstractShionPower {
     }
 
     @Override
-    public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m,int damageAmount) {
+    public void monsterAfterOnAttack(DamageInfo info, AbstractMonster m, int damageAmount) {
         if (m != null && info.type == DamageInfo.DamageType.NORMAL)
             if (m.lastDamageTaken > 0) {
                 flash();

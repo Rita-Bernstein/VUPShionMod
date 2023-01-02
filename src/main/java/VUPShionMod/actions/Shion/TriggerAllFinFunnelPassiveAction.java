@@ -19,9 +19,9 @@ import java.util.ArrayList;
 
 public class TriggerAllFinFunnelPassiveAction extends AbstractGameAction {
     private AbstractMonster target;
-    private boolean random;
+    private final boolean random;
     private boolean isCard = true;
-    private AbstractPlayer p = AbstractDungeon.player;
+    private final AbstractPlayer p = AbstractDungeon.player;
 
 
     public TriggerAllFinFunnelPassiveAction(AbstractMonster target) {
@@ -30,7 +30,7 @@ public class TriggerAllFinFunnelPassiveAction extends AbstractGameAction {
         this.duration = 1.0f;
     }
 
-    public TriggerAllFinFunnelPassiveAction(boolean random,boolean isCard) {
+    public TriggerAllFinFunnelPassiveAction(boolean random, boolean isCard) {
         this.random = random;
         this.isCard = isCard;
     }

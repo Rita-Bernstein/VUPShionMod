@@ -1,6 +1,6 @@
 package VUPShionMod.actions.Liyezhu;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.patches.EnergyPanelPatches;
 import VUPShionMod.powers.Liyezhu.SinPower;
 import VUPShionMod.powers.Liyezhu.SinfulMarkPower;

@@ -27,12 +27,12 @@ public class Identify extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(upgraded)
-        addToBot(new ApplySinAction(m,this.magicNumber));
+        if (upgraded)
+            addToBot(new ApplySinAction(m, this.magicNumber));
 
 
-        addToBot(new ApplyPowerAction(m,p,new WeakPower(m,this.secondaryM,false)));
-        addToBot(new ApplyPowerAction(m,p,new VulnerablePower(m,this.secondaryM,false)));
+        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.secondaryM, false)));
+        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.secondaryM, false)));
     }
 
     @Override

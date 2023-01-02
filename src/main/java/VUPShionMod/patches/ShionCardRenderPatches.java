@@ -1,6 +1,6 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.cards.ShionCard.anastasia.FinFunnelUpgrade;
 import VUPShionMod.helpers.CardTypeHelper;
 import VUPShionMod.util.SaveHelper;

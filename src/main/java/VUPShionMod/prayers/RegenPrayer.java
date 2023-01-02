@@ -28,16 +28,16 @@ public class RegenPrayer extends AbstractPrayer {
 
     @Override
     public void updateDescription() {
-            this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
     public void use() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new RegenPower(AbstractDungeon.player,this.amount)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RegenPower(AbstractDungeon.player, this.amount)));
     }
 
     @Override
     public AbstractPrayer makeCopy() {
-        return new RegenPrayer(this.turns,this.amount);
+        return new RegenPrayer(this.turns, this.amount);
     }
 }

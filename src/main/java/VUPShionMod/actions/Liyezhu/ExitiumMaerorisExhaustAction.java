@@ -21,7 +21,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
         this.duration = this.startDuration;
     }
 
-    private boolean cardToExhaust(AbstractCard c){
+    private boolean cardToExhaust(AbstractCard c) {
         return c.hasTag(CardTagsEnum.Suffering_CARD) || c instanceof Miracle;
     }
 
@@ -29,21 +29,20 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             int statusCount = 0;
 
-            for(AbstractCard c : AbstractDungeon.player.drawPile.group){
-                if(cardToExhaust(c))
+            for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+                if (cardToExhaust(c))
                     statusCount++;
             }
 
-            for(AbstractCard c : AbstractDungeon.player.discardPile.group){
-                if(cardToExhaust(c))
+            for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+                if (cardToExhaust(c))
                     statusCount++;
             }
 
-            for(AbstractCard c : AbstractDungeon.player.hand.group){
-                if(cardToExhaust(c))
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (cardToExhaust(c))
                     statusCount++;
             }
-
 
 
             if (statusCount <= 20) {
@@ -63,7 +62,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
                     addToTop(new WaitAction(0.1F));
                     addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.limbo));
 
-                }else {
+                } else {
                     i++;
                 }
             }
@@ -79,7 +78,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
                     c.target_y = AbstractDungeon.cardRandomRng.random(AbstractCard.IMG_HEIGHT, Settings.HEIGHT - AbstractCard.IMG_HEIGHT);
                     addToTop(new WaitAction(0.1F));
                     addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.limbo));
-                }else {
+                } else {
                     i++;
                 }
             }
@@ -96,7 +95,7 @@ public class ExitiumMaerorisExhaustAction extends AbstractGameAction {
                     addToTop(new WaitAction(0.1F));
                     addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.limbo));
 
-                }else {
+                } else {
                     i++;
                 }
             }

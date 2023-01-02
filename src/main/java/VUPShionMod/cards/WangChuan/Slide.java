@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 
 public class Slide extends AbstractWCCard {
     public static final String ID = VUPShionMod.makeID(Slide.class.getSimpleName());
@@ -25,7 +27,8 @@ public class Slide extends AbstractWCCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseBlock = 2;
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.secondaryM = this.baseSecondaryM = 2;
+        this.secondaryM = this.baseSecondaryM = 1;
+        this.magicNumber =this.baseMagicNumber = 1;
     }
 
     @Override
@@ -37,6 +40,10 @@ public class Slide extends AbstractWCCard {
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new GainBlockAction(p, this.block));
         addToBot(new ApplyCorGladiiAction(this.secondaryM));
+
+
+        addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p,p,new LoseDexterityPower(p,this.magicNumber)));
     }
 
     @Override

@@ -35,7 +35,7 @@ public class ShieldPatches {
         @SpireInsertPatch(rloc = 16)
         public static void Insert(AbstractCreature _instance, SpriteBatch sb,
                                   float ___hbYOffset, float ___blockOffset, float ___blockScale) {
-            ShieldPatches.AddFields.shield.get(_instance).render(sb,_instance,
+            ShieldPatches.AddFields.shield.get(_instance).render(sb, _instance,
                     _instance.hb.cX - _instance.hb.width / 2.0F,
                     _instance.hb.cY - _instance.hb.height / 2.0F + ___hbYOffset,
                     ___blockOffset, ___blockScale);
@@ -47,8 +47,8 @@ public class ShieldPatches {
             method = "damage"
     )
     public static class PatchAbsMonster {
-        @SpireInsertPatch(rloc = 22 , localvars = {"damageAmount"})
-        public static void Insert(AbstractMonster _instance, DamageInfo info,@ByRef int[] damageAmount) {
+        @SpireInsertPatch(rloc = 22, localvars = {"damageAmount"})
+        public static void Insert(AbstractMonster _instance, DamageInfo info, @ByRef int[] damageAmount) {
             damageAmount[0] = ShieldPatches.AddFields.shield.get(_instance).decrementBlock(info, damageAmount[0], _instance);
         }
     }
@@ -59,7 +59,7 @@ public class ShieldPatches {
     )
     public static class PatchAbsPlayer {
         @SpireInsertPatch(rloc = 17, localvars = {"damageAmount"})
-        public static void Insert(AbstractPlayer _instance, DamageInfo info,@ByRef int[] damageAmount) {
+        public static void Insert(AbstractPlayer _instance, DamageInfo info, @ByRef int[] damageAmount) {
             damageAmount[0] = ShieldPatches.AddFields.shield.get(_instance).decrementBlock(info, damageAmount[0], _instance);
         }
     }

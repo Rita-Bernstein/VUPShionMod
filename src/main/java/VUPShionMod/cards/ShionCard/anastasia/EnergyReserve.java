@@ -28,7 +28,7 @@ public class EnergyReserve extends AbstractShionAnastasiaCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainEnergyAction(1));
-        addToBot(new DrawCardAction(p,this.magicNumber));
+        addToBot(new DrawCardAction(p, this.magicNumber));
     }
 
 

@@ -3,6 +3,7 @@ package VUPShionMod.monsters.HardModeBoss.WangChuan;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.actions.Common.GainShieldAction;
+import VUPShionMod.actions.Unique.VersusEffectAction;
 import VUPShionMod.monsters.AbstractVUPShionBoss;
 import VUPShionMod.monsters.HardModeBoss.EisluRen.ElfKnight;
 import VUPShionMod.monsters.HardModeBoss.EisluRen.HighElf;
@@ -15,6 +16,8 @@ import VUPShionMod.powers.Monster.PlagaAMundo.StrengthenPower;
 import VUPShionMod.powers.Wangchuan.ImmuneDamagePower;
 import VUPShionMod.powers.Wangchuan.MorsLibraquePower;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.OriShion;
+import VUPShionMod.skins.sk.WangChuan.ChinaWangChuan;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import VUPShionMod.vfx.Common.PortraitWindyPetalEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -38,7 +41,7 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
 
 
     private int moveCount = 1;
-    private boolean stateChanged = false;
+    private final boolean stateChanged = false;
 
     public ChinaWangChuanBoss() {
         super(NAME, ID, 88, 0.0F, -5.0F, 420.0F, 400.0F, null, 5.0F, -7.0f);
@@ -86,8 +89,9 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
 
-
+        addToBot(new VersusEffectAction(ChinaWangChuan.ID));
         addToBot(new GainShieldAction(this, 100));
+        addToBot(new ApplyPowerAction(this,this,new ImmuneDamagePower(this)));
         addToBot(new ApplyPowerAction(this, this, new MagicFlyingBladePower(this, 4)));
         addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.5f), "Heat")));
         addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, 4)));
@@ -99,7 +103,7 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
         switch (this.nextMove) {
             case 1:
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Fire 043 Right Transition", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
-                        96.0f, 54.0f, 10.0f * Settings.scale, 2, false,true)));
+                        96.0f, 54.0f, 10.0f * Settings.scale, 2, false, true)));
                 addToBot(new CustomWaitAction(1.5f));
                 addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE, true));
                 addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, 3, true)));
@@ -117,16 +121,16 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
                 addToBot(new TalkAction(this, DIALOG[0], 1.5F, 1.5F));
                 for (int i = 0; i < 4; i++)
                     addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.FIRE, true));
-                addToBot(new ApplyPowerAction(this,this,new ImmuneDamagePower(this)));
+                addToBot(new ApplyPowerAction(this, this, new ImmuneDamagePower(this)));
                 break;
             case 5:
                 addToBot(new TalkAction(this, DIALOG[1], 1.5F, 1.5F));
                 addToBot(new VFXAction(new AbstractAtlasGameEffect("Smoke 037 Radial Transition", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
-                        96.0f, 54.0f, 10.0f * Settings.scale, 2, false,true)));
-                addToBot(new VFXAction(new PortraitWindyPetalEffect("MorsLibraque",true),1.0f));
+                        96.0f, 54.0f, 10.0f * Settings.scale, 2, false, true)));
+                addToBot(new VFXAction(new PortraitWindyPetalEffect("MorsLibraque", true), 1.0f));
                 addToBot(new CustomWaitAction(1.5f));
-                addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new MorsLibraquePower(AbstractDungeon.player,3)));
-                addToBot(new ApplyPowerAction(this,this,new ImmuneDamagePower(this)));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new MorsLibraquePower(AbstractDungeon.player, 3)));
+                addToBot(new ApplyPowerAction(this, this, new ImmuneDamagePower(this)));
                 break;
         }
 
@@ -154,7 +158,7 @@ public class ChinaWangChuanBoss extends AbstractVUPShionBoss {
                 this.moveCount = 1;
                 break;
             case 5:
-                setMove(MOVES[0],(byte) 5, Intent.STRONG_DEBUFF);
+                setMove(MOVES[0], (byte) 5, Intent.STRONG_DEBUFF);
                 this.moveCount = 3;
                 break;
             case 6:

@@ -27,7 +27,7 @@ public class AutoShieldPower extends AbstractShionPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         flash();
-        addToBot(new GainShieldAction(this.owner,this.amount));
+        addToBot(new GainShieldAction(this.owner, this.amount));
     }
 
     public void updateDescription() {

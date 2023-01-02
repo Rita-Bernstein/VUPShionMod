@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FirstStrike extends AbstractShionCard {
     public static final String ID = VUPShionMod.makeID(FirstStrike.class.getSimpleName());
-    public static final String IMG =  VUPShionMod.assetPath("img/cards/ShionCard/shion/zy21.png");
+    public static final String IMG = VUPShionMod.assetPath("img/cards/ShionCard/shion/zy21.png");
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -29,14 +29,14 @@ public class FirstStrike extends AbstractShionCard {
         this.baseDamage = 14;
         this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(CardTags.STRIKE);
-        ExhaustiveVariable.setBaseValue(this,2);
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("ATTACK_HEAVY"));
         if (m != null)
-        addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
-                212.0f, 255.0f, 1.0f * Settings.scale, 2,false)));
+            addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 041 Shot Right", m.hb.cX, m.hb.cY,
+                    212.0f, 255.0f, 1.0f * Settings.scale, 2, false)));
 
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         addToBot(new ChangeCostAction(this.uuid, this.magicNumber));

@@ -34,7 +34,7 @@ public class Sentence extends AbstractLiyezhuCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID)) {
+        if (AbstractDungeon.player.stance.ID.equals(PrayerStance.STANCE_ID)) {
             this.cantUseMessage = EXTENDED_DESCRIPTION[0];
             return false;
         }

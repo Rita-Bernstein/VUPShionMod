@@ -25,9 +25,9 @@ public class BoundaryOfChaos extends AbstractImageEvent {
 
     private CurrentScreen curScreen = CurrentScreen.INTRO;
 
-    private AbstractCard codex;
-    private AbstractCard codex1;
-    private AbstractCard codex2;
+    private final AbstractCard codex;
+    private final AbstractCard codex1;
+    private final AbstractCard codex2;
 
     private enum CurrentScreen {
         INTRO, COMPLETE,
@@ -36,11 +36,11 @@ public class BoundaryOfChaos extends AbstractImageEvent {
 
     public BoundaryOfChaos() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/BoundaryOfChaos.png"));
-        if(AbstractDungeon.eventRng.randomBoolean(0.5f)){
+        if (AbstractDungeon.eventRng.randomBoolean(0.5f)) {
             codex = new ChaosNimius();
             codex1 = new ChaosNimius();
             codex2 = new ChaosNimius();
-        }else {
+        } else {
             codex = new ChaosRapidus();
             codex1 = new ChaosRapidus();
             codex2 = new ChaosRapidus();
@@ -52,21 +52,19 @@ public class BoundaryOfChaos extends AbstractImageEvent {
 
 
         if (hasCodex())
-            this.imageEventText.setDialogOption(OPTIONS[0],codex);
+            this.imageEventText.setDialogOption(OPTIONS[0], codex);
         else
             this.imageEventText.setDialogOption(OPTIONS[1], true);
 
         if (hasCodex1()) {
-            this.imageEventText.setDialogOption(OPTIONS[2],codex1);
-        }
-        else
+            this.imageEventText.setDialogOption(OPTIONS[2], codex1);
+        } else
             this.imageEventText.setDialogOption(OPTIONS[3], true);
 
         if (hasCodex2()) {
 
-            this.imageEventText.setDialogOption(OPTIONS[4],codex2);
-        }
-        else
+            this.imageEventText.setDialogOption(OPTIONS[4], codex2);
+        } else
             this.imageEventText.setDialogOption(OPTIONS[5], true);
 
         this.imageEventText.setDialogOption(OPTIONS[6]);

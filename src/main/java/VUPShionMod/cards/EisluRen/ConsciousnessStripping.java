@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class    ConsciousnessStripping extends AbstractEisluRenCard {
+public class ConsciousnessStripping extends AbstractEisluRenCard {
     public static final String ID = VUPShionMod.makeID(ConsciousnessStripping.class.getSimpleName());
     public static final String IMG = VUPShionMod.assetPath("img/cards/EisluRen/ConsciousnessStripping.png");
     private static final CardType TYPE = CardType.ATTACK;
@@ -42,11 +42,11 @@ public class    ConsciousnessStripping extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.upgraded){
+        if (this.upgraded) {
             addToBot(new SFXAction("ATTACK_HEAVY"));
             addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
             for (int i = 0; i < this.magicNumber; i++)
-            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE,true));
+                addToBot(new DamageAllEnemiesAction(p, this.multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
 
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
@@ -66,7 +66,7 @@ public class    ConsciousnessStripping extends AbstractEisluRenCard {
 
             Supplier<AbstractPower> powerToApply2 = () -> new StrengthPower(null, -this.secondaryM);
             addToBot(new ApplyPowerToAllEnemyAction(powerToApply2));
-        }else {
+        } else {
             for (int i = 0; i < this.magicNumber; i++)
                 addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             for (int i = 0; i < this.magicNumber; i++) {

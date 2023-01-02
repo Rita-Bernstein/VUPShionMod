@@ -47,7 +47,7 @@ public class ShionBossBackgroundEffect extends AbstractGameEffect {
         this.state = new AnimationState(this.stateData);
     }
 
-    public void setAnimation(int trackIndex, String animationName,boolean loop) {
+    public void setAnimation(int trackIndex, String animationName, boolean loop) {
         this.state.setAnimation(trackIndex, animationName, loop);
     }
 

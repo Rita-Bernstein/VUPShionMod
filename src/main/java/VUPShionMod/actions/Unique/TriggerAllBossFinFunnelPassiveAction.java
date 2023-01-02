@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 public class TriggerAllBossFinFunnelPassiveAction extends AbstractGameAction {
-    private AbstractShionBoss boss;
+    private final AbstractShionBoss boss;
 
     public TriggerAllBossFinFunnelPassiveAction(AbstractShionBoss boss) {
-        this.boss =boss;
+        this.boss = boss;
         this.target = AbstractDungeon.player;
         this.duration = 1.0f;
     }

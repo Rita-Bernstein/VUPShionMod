@@ -27,9 +27,9 @@ public class StrengthenPower extends AbstractShionPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if(skipFirst){
+        if (skipFirst) {
             this.skipFirst = false;
-        }else {
+        } else {
             flash();
             addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
         }

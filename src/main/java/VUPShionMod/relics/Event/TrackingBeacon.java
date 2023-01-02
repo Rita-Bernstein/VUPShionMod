@@ -44,7 +44,7 @@ public class TrackingBeacon extends AbstractShionRelic implements OnPlayerDeathR
     public boolean saveCannotLose = false;
 
 
-    private CGlayout cg = new CGlayout("WangChuan");
+    private final CGlayout cg = new CGlayout("WangChuan");
 
     public TrackingBeacon() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -130,7 +130,7 @@ public class TrackingBeacon extends AbstractShionRelic implements OnPlayerDeathR
             CardCrawlGame.music.justFadeOutTempBGM();
             triggerRelic();
             AbstractDungeon.player.hideHealthBar();
-           this.saveCannotLose= (AbstractDungeon.getCurrRoom()).cannotLose;
+            this.saveCannotLose = (AbstractDungeon.getCurrRoom()).cannotLose;
             (AbstractDungeon.getCurrRoom()).cannotLose = true;
             return false;
         } else {

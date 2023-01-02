@@ -17,7 +17,7 @@ public class CroissantEvent extends AbstractImageEvent {
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    private int damage = 15;
+    private final int damage = 15;
     private CurrentScreen curScreen = CurrentScreen.INTRO;
 
     private enum CurrentScreen {

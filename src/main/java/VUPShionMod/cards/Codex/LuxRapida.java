@@ -33,8 +33,6 @@ public class LuxRapida extends AbstractCodexCard {
     }
 
 
-
-
     public LuxRapida() {
         this(0);
     }

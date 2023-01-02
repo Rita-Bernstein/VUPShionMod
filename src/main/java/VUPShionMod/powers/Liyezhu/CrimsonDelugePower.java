@@ -16,7 +16,7 @@ public class CrimsonDelugePower extends AbstractShionPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public CrimsonDelugePower(AbstractCreature owner,int amount) {
+    public CrimsonDelugePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -27,15 +27,15 @@ public class CrimsonDelugePower extends AbstractShionPower {
 
     @Override
     public int onHeal(int healAmount) {
-        addToTop(new GainShieldAction(this.owner,(int)((this.owner.currentHealth + healAmount - this.owner.maxHealth) *0.5f)));
+        addToTop(new GainShieldAction(this.owner, (int) ((this.owner.currentHealth + healAmount - this.owner.maxHealth) * 0.5f)));
         return super.onHeal(healAmount);
     }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card.type == AbstractCard.CardType.ATTACK){
+        if (card.type == AbstractCard.CardType.ATTACK) {
             flash();
-            addToBot(new HealAction(this.owner,this.owner,this.amount));
+            addToBot(new HealAction(this.owner, this.owner, this.amount));
         }
     }
 

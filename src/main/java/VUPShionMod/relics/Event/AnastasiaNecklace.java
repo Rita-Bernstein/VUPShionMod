@@ -60,7 +60,7 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
     public boolean saveCannotLose = false;
 
 
-    private CGlayout cg = new CGlayout("Shion");
+    private final CGlayout cg = new CGlayout("Shion");
 
     public AnastasiaNecklace() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -151,8 +151,8 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
             ArrayList<AbstractPower> powerToRemove = new ArrayList<>();
             if (monster != null) {
-                for(AbstractPower p : monster.powers){
-                    if(p.ID.equals(LifeLinkPower.POWER_ID)|| p.ID.equals(StrengthPower.POWER_ID))
+                for (AbstractPower p : monster.powers) {
+                    if (p.ID.equals(LifeLinkPower.POWER_ID) || p.ID.equals(StrengthPower.POWER_ID))
                         powerToRemove.add(p);
                 }
                 monster.powers.remove(powerToRemove);
@@ -164,20 +164,19 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
         addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
         addToBot(new ShakeScreenAction(0.0F, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
 
-        if(AbstractDungeon.getCurrRoom().monsters != null)
-        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if(!monster.isDeadOrEscaped()) {
-                addToBot(new LoseHPAction(monster, AbstractDungeon.player, 500));
-                addToBot(new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        monster.decreaseMaxHealth(500);
-                        isDone = true;
-                    }
-                });
+        if (AbstractDungeon.getCurrRoom().monsters != null)
+            for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (!monster.isDeadOrEscaped()) {
+                    addToBot(new LoseHPAction(monster, AbstractDungeon.player, 500));
+                    addToBot(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            monster.decreaseMaxHealth(500);
+                            isDone = true;
+                        }
+                    });
+                }
             }
-        }
-
 
 
     }
@@ -203,7 +202,7 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
             int amount = (m.getPower(PursuitPower.POWER_ID)).amount;
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 flash();
-                addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new PursuitPower(null,  AbstractDungeon.player,amount), amount, false, AbstractGameAction.AttackEffect.NONE));
+                addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player, new PursuitPower(null, AbstractDungeon.player, amount), amount, false, AbstractGameAction.AttackEffect.NONE));
             }
 
             if (triggered && m.hasPower(BleedingPower.POWER_ID)) {
@@ -216,7 +215,7 @@ public class AnastasiaNecklace extends AbstractShionRelic implements OnPlayerDea
         }
     }
 
-    public static boolean eventRelicCanTrigger(){
+    public static boolean eventRelicCanTrigger() {
         boolean canTrigger = false;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (m.id.equals(PlagaAMundoMinion.ID) || m.id.equals(TimePortal.ID) || m.id.equals(Ouroboros.ID)) {

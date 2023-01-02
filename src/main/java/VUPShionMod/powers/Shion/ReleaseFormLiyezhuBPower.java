@@ -28,8 +28,7 @@ public class ReleaseFormLiyezhuBPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReleaseFormLiyezhuPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/ReleaseFormLiyezhuPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("ReleaseFormLiyezhuPower");
         updateDescription();
     }
 
@@ -51,7 +50,7 @@ public class ReleaseFormLiyezhuBPower extends AbstractShionPower {
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDeadOrEscaped()) {
                         addToBot(new VFXAction(new AbstractAtlasGameEffect("Sparks 097 Explosion Radial MIX", m.hb.cX, m.hb.cY,
-                                124.0f, 132.0f, 1.5f * Settings.scale, 2,false)));
+                                124.0f, 132.0f, 1.5f * Settings.scale, 2, false)));
                     }
                 }
                 addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(dmg * this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));

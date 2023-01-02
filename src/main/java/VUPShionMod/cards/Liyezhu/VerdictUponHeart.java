@@ -56,14 +56,13 @@ public class VerdictUponHeart extends AbstractLiyezhuCard {
             }
         }
 
-        if(p.hasPower(SinPower.POWER_ID))
+        if (p.hasPower(SinPower.POWER_ID))
             count += p.getPower(SinPower.POWER_ID).amount;
 
-        if(count>0){
-            addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,count)));
-            addToBot(new HealAction(p,p,count));
+        if (count > 0) {
+            addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, count)));
+            addToBot(new HealAction(p, p, count));
         }
-
 
 
     }

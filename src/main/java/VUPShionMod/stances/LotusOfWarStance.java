@@ -36,10 +36,10 @@ public class LotusOfWarStance extends AbstractVUPShionStance {
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new GainWingShieldChargeAction(1));
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,
-                new StrengthPower(AbstractDungeon.player,1)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,
-                new DexterityPower(AbstractDungeon.player,1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                new StrengthPower(AbstractDungeon.player, 1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
+                new DexterityPower(AbstractDungeon.player, 1)));
     }
 
     @Override

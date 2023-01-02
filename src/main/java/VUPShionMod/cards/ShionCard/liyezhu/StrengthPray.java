@@ -25,7 +25,7 @@ public class StrengthPray extends AbstractShionLiyezhuCard {
     public StrengthPray() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 4;
-        this.secondaryM= this.baseSecondaryM = 1;
+        this.secondaryM = this.baseSecondaryM = 1;
         this.selfRetain = true;
     }
 

@@ -43,10 +43,10 @@ public class Pandora extends AbstractEisluRenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+            addToBot(new LoseWingShieldAction(this.secondaryM));
 
         for (int i = 0; i < 8; i++) {
-            AbstractDungeon.effectList.add(new FinFunnelMinionEffect(null, SkinManager.getSkinCharacter(0).reskinCount,i, true));
+            AbstractDungeon.effectList.add(new FinFunnelMinionEffect(null, SkinManager.getSkinCharacter(0).reskinCount, i, true));
         }
 
 
@@ -62,10 +62,10 @@ public class Pandora extends AbstractEisluRenCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

@@ -40,11 +40,11 @@ public class LoseHPPrayer extends AbstractPrayer {
             @Override
             public void update() {
                 if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    addToTop(new LoseHPAction(AbstractDungeon.player,AbstractDungeon.player,count));
+                    addToTop(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, count));
 
                     for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                         if (!monster.isDeadOrEscaped()) {
-                            addToTop(new LoseHPAction(monster,AbstractDungeon.player,count));
+                            addToTop(new LoseHPAction(monster, AbstractDungeon.player, count));
                         }
                     }
                 }

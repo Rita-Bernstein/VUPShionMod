@@ -7,15 +7,17 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
 public abstract class AbstractVUPShionStance extends AbstractStance {
-    public AbstractVUPShionStance(){
+    public AbstractVUPShionStance() {
     }
 
 
-    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target){}
+    public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
+    }
 
-    public void onVictory(){}
+    public void onVictory() {
+    }
 
-    public int onHeal(int healAmount){
+    public int onHeal(int healAmount) {
         return healAmount;
     }
 

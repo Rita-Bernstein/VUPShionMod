@@ -34,7 +34,7 @@ public class ShieldHRzy2 extends AbstractShionRelic {
     @Override
     public void atBattleStart() {
         WingShield.getWingShield().upgradeMax();
-        addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,5)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, 5)));
     }
 
     @Override
@@ -72,7 +72,6 @@ public class ShieldHRzy2 extends AbstractShionRelic {
             addToBot(new GainWingShieldChargeAction(2));
         }
     }
-
 
 
     @Override

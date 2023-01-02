@@ -43,6 +43,6 @@ public class MoonstriderPower extends AbstractShionPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player,MoonstriderPower.POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, MoonstriderPower.POWER_ID));
     }
 }

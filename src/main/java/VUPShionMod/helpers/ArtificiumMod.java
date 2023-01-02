@@ -17,7 +17,7 @@ public class ArtificiumMod extends AbstractCardModifier {
     }
 
     public boolean shouldApply(AbstractCard card) {
-        return !CardModifierManager.hasModifier(card,ID);
+        return !CardModifierManager.hasModifier(card, ID);
     }
 
 
@@ -28,7 +28,7 @@ public class ArtificiumMod extends AbstractCardModifier {
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         super.onUse(card, target, action);
         AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new MagiamObruorPower(AbstractDungeon.player,1)));
+                new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MagiamObruorPower(AbstractDungeon.player, 1)));
     }
 
     @Override

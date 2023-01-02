@@ -39,18 +39,18 @@ public class SpaceSlice extends AbstractWCCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         switch (this.timesUpgraded) {
             default:
-                if(m != null)
-                addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
+                if (m != null)
+                    addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
 
                 this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 break;
             case 1:
-                if(m != null)
+                if (m != null)
                     addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
                 this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
                 break;
             case 2:
-                if(m != null)
+                if (m != null)
                     addToBot(new VFXAction(new ClashEffect(m.hb.cX, m.hb.cY), 0.1F));
                 for (int i = 0; i < 4; i++) {
                     this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));

@@ -20,7 +20,6 @@ public class OldOmamori extends AbstractShionRelic {
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
 
-
     public OldOmamori() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.COMMON, LandingSound.CLINK);
     }
@@ -29,7 +28,6 @@ public class OldOmamori extends AbstractShionRelic {
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
-
 
 
     @Override

@@ -37,9 +37,9 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
 
         addToBot(new DamageAction(p, new DamageInfo(p, this.baseDamage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
-        if(p.hasPower(PsychicPower.POWER_ID)){
+        if (p.hasPower(PsychicPower.POWER_ID)) {
             int powerAmount = p.getPower(PsychicPower.POWER_ID).amount;
-            if(this.upgraded) {
+            if (this.upgraded) {
                 this.baseDamage = powerAmount * this.magicNumber;
                 applyPowers();
 
@@ -49,9 +49,9 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
 
                 addToBot(new RemoveSpecificPowerAction(p, p, PsychicPower.POWER_ID));
 
-                addToBot(new ApplyPowerAction(p,p,new PsychicPower(p,powerAmount)));
+                addToBot(new ApplyPowerAction(p, p, new PsychicPower(p, powerAmount)));
 
-            }else {
+            } else {
                 this.baseDamage = powerAmount * this.magicNumber;
                 applyPowers();
 
@@ -59,7 +59,7 @@ public class AnnihilatingChoir extends AbstractLiyezhuCard {
                 addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
                 addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageType, AbstractGameAction.AttackEffect.NONE, true));
 
-                addToBot(new HealAction(p, p, powerAmount *10));
+                addToBot(new HealAction(p, p, powerAmount * 10));
 
                 addToBot(new RemoveSpecificPowerAction(p, p, PsychicPower.POWER_ID));
             }

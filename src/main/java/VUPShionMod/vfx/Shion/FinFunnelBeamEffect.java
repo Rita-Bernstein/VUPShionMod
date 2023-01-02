@@ -17,13 +17,13 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class FinFunnelBeamEffect extends AbstractGameEffect {
-    private AbstractFinFunnel finFunnel;
+    private final AbstractFinFunnel finFunnel;
     private float sX;
     private float sY;
     private float dX;
     private float dY;
     private float dst;
-    private boolean isFlipped = false;
+    private final boolean isFlipped = false;
     private static TextureAtlas.AtlasRegion img;
     private boolean posUpdated = false;
 
@@ -50,8 +50,8 @@ public class FinFunnelBeamEffect extends AbstractGameEffect {
         this.startingDuration = 0.5F;
     }
 
-    public FinFunnelBeamEffect(AbstractFinFunnel finFunnel, boolean isFlipped,float scaleY) {
-        this(finFunnel,isFlipped);
+    public FinFunnelBeamEffect(AbstractFinFunnel finFunnel, boolean isFlipped, float scaleY) {
+        this(finFunnel, isFlipped);
         this.scaleY = scaleY;
     }
 
@@ -62,7 +62,7 @@ public class FinFunnelBeamEffect extends AbstractGameEffect {
 
     @Override
     public void update() {
-        if(this.finFunnel ==null){
+        if (this.finFunnel == null) {
             this.isDone = true;
             return;
         }
@@ -70,7 +70,6 @@ public class FinFunnelBeamEffect extends AbstractGameEffect {
         if (duration == 0.9F) {
             finFunnel.playFinFunnelAnimation(finFunnel.id);
         }
-
 
 
         if (this.duration < this.startingDuration) {

@@ -1,1 +1,5290 @@
-{"skeleton":{"hash":"AhrTgzRNJviqfp+/Zny4heuC5A8","spine":"3.7.94","width":772.81,"height":511,"images":"./images/","audio":"F:/委托/紫音/杀戮尖塔mod企划/Boss/时之虫/images"},"bones":[{"name":"root"},{"name":"Wormhole_root","parent":"root","x":62.31,"y":469.89,"color":"abe323ff"},{"name":"Wormhole_wing_L","parent":"Wormhole_root","length":121.33,"rotation":12.43,"x":171.44,"y":21.51},{"name":"Wormhole_wing_R","parent":"Wormhole_root","length":118.93,"rotation":142.9,"x":-114.24,"y":81.49},{"name":"Wormhole_wing_R2","parent":"Wormhole_wing_R","length":105.01,"rotation":57.23,"x":103.55,"y":12.11},{"name":"Wormhole_wing_R3","parent":"Wormhole_wing_R","length":60.09,"rotation":107.26,"x":28.05,"y":16.81},{"name":"Wormhole_lighting1","parent":"Wormhole_root","length":94.76,"rotation":-4.33,"x":86.71,"y":-26.31},{"name":"Wormhole_lighting2","parent":"Wormhole_root","length":80.51,"rotation":13.36,"x":86.71,"y":-6.46,"color":"abe323ff"},{"name":"Wormhole_lighting3","parent":"Wormhole_root","length":103.89,"rotation":22.94,"x":90.68,"y":27.68,"color":"abe323ff"},{"name":"Wormhole_lighting4","parent":"Wormhole_root","length":122.7,"rotation":43.82,"x":79.16,"y":47.93,"color":"abe323ff"},{"name":"Wormhole_lighting5","parent":"Wormhole_root","length":103.81,"rotation":57.41,"x":51.26,"y":75.22,"color":"abe323ff"},{"name":"Wormhole_lighting6","parent":"Wormhole_root","length":100.93,"rotation":73.41,"x":10.79,"y":75.91,"color":"abe323ff"},{"name":"Wormhole_lighting7","parent":"Wormhole_root","length":107.08,"rotation":92.02,"x":-17.68,"y":53.62,"color":"abe323ff"},{"name":"Wormhole_lighting8","parent":"Wormhole_root","length":100.33,"rotation":115.95,"x":-43.75,"y":51.56,"color":"abe323ff"},{"name":"Wormhole_lighting9","parent":"Wormhole_root","length":39.73,"rotation":158.89,"x":-84.08,"y":72.61,"color":"abe323ff"},{"name":"Wormhole_piece1","parent":"Wormhole_root","x":360.07,"y":130.64,"color":"abe323ff"},{"name":"Wormhole_piece2","parent":"Wormhole_root","x":328.21,"y":50.46,"color":"abe323ff"},{"name":"Wormhole_piece3","parent":"Wormhole_root","x":292.1,"y":-46.19,"color":"abe323ff"},{"name":"Wormhole_piece5","parent":"Wormhole_root","x":-244.52,"y":28.46,"color":"abe323ff"},{"name":"Wormhole_piece4","parent":"Wormhole_root","x":-202.46,"y":-20.56,"color":"abe323ff"},{"name":"Wormhole_big_piece1","parent":"Wormhole_root","x":29.04,"y":190.99,"color":"abe323ff"},{"name":"Wormhole_big_piece2","parent":"Wormhole_root","x":167.71,"y":-11.03,"color":"abe323ff"},{"name":"Wormhole_big_piece3","parent":"Wormhole_root","x":-154.65,"y":-17.55,"color":"abe323ff"}],"slots":[{"name":"Wormhole_wing_L","bone":"Wormhole_wing_L","attachment":"Wormhole_wing_L"},{"name":"Wormhole_wing_R_piece4","bone":"Wormhole_wing_R3","attachment":"Wormhole_wing_R_piece4"},{"name":"Wormhole_wing_R_piece3","bone":"Wormhole_wing_R3","attachment":"Wormhole_wing_R_piece3"},{"name":"Wormhole_wing_R_piece2","bone":"Wormhole_wing_R","attachment":"Wormhole_wing_R_piece2"},{"name":"Wormhole_wing_R_piece1","bone":"Wormhole_wing_R2","attachment":"Wormhole_wing_R_piece1"},{"name":"Wormhole_ground","bone":"Wormhole_root","attachment":"Wormhole_ground"},{"name":"Wormhole_lighting1","bone":"Wormhole_lighting1","color":"ffffff00","attachment":"Wormhole_lighting1"},{"name":"Wormhole_lighting2","bone":"Wormhole_lighting2","color":"ffffff00","attachment":"Wormhole_lighting2"},{"name":"Wormhole_lighting3","bone":"Wormhole_lighting3","color":"ffffff00","attachment":"Wormhole_lighting3"},{"name":"Wormhole_lighting4","bone":"Wormhole_lighting4","color":"ffffff00","attachment":"Wormhole_lighting4"},{"name":"Wormhole_lighting5","bone":"Wormhole_lighting5","color":"ffffff00","attachment":"Wormhole_lighting5"},{"name":"Wormhole_lighting6","bone":"Wormhole_lighting6","color":"ffffff00","attachment":"Wormhole_lighting6"},{"name":"Wormhole_lighting7","bone":"Wormhole_lighting7","color":"ffffff00","attachment":"Wormhole_lighting7"},{"name":"Wormhole_lighting8","bone":"Wormhole_lighting8","color":"ffffff00","attachment":"Wormhole_lighting8"},{"name":"Wormhole_lighting9","bone":"Wormhole_lighting9","color":"ffffff00","attachment":"Wormhole_lighting9"},{"name":"Wormhole_red","bone":"Wormhole_root","attachment":"Wormhole_red"},{"name":"Wormhole","bone":"Wormhole_root","attachment":"Wormhole"},{"name":"Wormhole_green_ring","bone":"Wormhole_root","color":"ffffff73","attachment":"Wormhole_green_ring"},{"name":"Wormhole_blue_ring","bone":"Wormhole_root","color":"ffffffbf","attachment":"Wormhole_blue_ring"},{"name":"Wormhole_red_ring","bone":"Wormhole_root","color":"ffffffa5","attachment":"Wormhole_red_ring"},{"name":"Wormhole_piece_big3","bone":"Wormhole_big_piece3","color":"ffffff00","attachment":"Wormhole_piece_big3"},{"name":"Wormhole_piece_big2","bone":"Wormhole_big_piece2","color":"ffffff00","attachment":"Wormhole_piece_big2"},{"name":"Wormhole_piece_big1","bone":"Wormhole_big_piece1","color":"ffffff00","attachment":"Wormhole_piece_big1"},{"name":"Wormhole_piece5","bone":"Wormhole_piece4","color":"ffffff00","attachment":"Wormhole_piece5"},{"name":"Wormhole_piece4","bone":"Wormhole_piece5","color":"ffffff00","attachment":"Wormhole_piece4"},{"name":"Wormhole_piece3","bone":"Wormhole_piece3","color":"ffffff00","attachment":"Wormhole_piece3"},{"name":"Wormhole_piece2","bone":"Wormhole_piece2","color":"ffffff00","attachment":"Wormhole_piece2"},{"name":"Wormhole_piece1","bone":"Wormhole_piece1","color":"ffffff00","attachment":"Wormhole_piece1"}],"transform":[{"name":"Wormhole_big_piece_bone","order":2,"bones":["Wormhole_big_piece1","Wormhole_big_piece2","Wormhole_big_piece3"],"target":"Wormhole_root","x":29.04,"y":190.99,"rotateMix":0.001,"translateMix":0.001,"scaleMix":0.001,"shearMix":0.001},{"name":"Wormhole_lighting_bone","order":1,"bones":["Wormhole_lighting9","Wormhole_lighting8","Wormhole_lighting7","Wormhole_lighting6","Wormhole_lighting5","Wormhole_lighting4","Wormhole_lighting3","Wormhole_lighting2","Wormhole_lighting1"],"target":"Wormhole_root","rotation":158.89,"x":-84.08,"y":72.61,"shearY":-360,"rotateMix":0.001,"translateMix":0.001,"scaleMix":0.001,"shearMix":0.001},{"name":"Wormhole_lightwing_LR","order":0,"bones":["Wormhole_wing_R","Wormhole_wing_R3","Wormhole_wing_R2","Wormhole_wing_L"],"target":"Wormhole_root","rotation":142.9,"x":-114.24,"y":81.49,"shearY":-360,"rotateMix":0.001,"translateMix":0.001,"scaleMix":0.001,"shearMix":0.001},{"name":"Wormhole_piece","order":3,"bones":["Wormhole_piece5","Wormhole_piece4","Wormhole_piece3","Wormhole_piece2","Wormhole_piece1"],"target":"Wormhole_root","x":-244.52,"y":28.46,"rotateMix":0.001,"translateMix":0.001,"scaleMix":0.001,"shearMix":0.001}],"skins":{"default":{"Wormhole":{"Wormhole":{"x":14.7,"y":-16.72,"width":288,"height":329}},"Wormhole_blue_ring":{"Wormhole_blue_ring":{"type":"mesh","uvs":[1,1,0,1,0,0,1,0],"triangles":[1,2,3,1,3,0],"vertices":[160.7,-183.22,-131.3,-183.22,-131.3,148.78,160.7,148.78],"hull":4,"edges":[0,2,2,4,4,6,0,6],"width":292,"height":332}},"Wormhole_green_ring":{"Wormhole_green_ring":{"type":"mesh","uvs":[1,1,0,1,0,0,1,0],"triangles":[1,2,3,1,3,0],"vertices":[160.7,-183.22,-130.3,-183.22,-130.3,149.78,160.7,149.78],"hull":4,"edges":[0,2,2,4,4,6,0,6],"width":291,"height":333}},"Wormhole_ground":{"Wormhole_ground":{"x":13.7,"y":-132.72,"width":454,"height":345}},"Wormhole_lighting1":{"Wormhole_lighting1":{"color":"ffffff00","x":54.37,"y":-7.09,"rotation":4.16,"width":131,"height":46}},"Wormhole_lighting2":{"Wormhole_lighting2":{"x":47.11,"y":-6,"rotation":-13.51,"width":132,"height":48}},"Wormhole_lighting3":{"Wormhole_lighting3":{"x":33.52,"y":4.24,"rotation":-23.08,"width":158,"height":66}},"Wormhole_lighting4":{"Wormhole_lighting4":{"x":49.91,"y":-1.11,"rotation":-43.94,"width":146,"height":122}},"Wormhole_lighting5":{"Wormhole_lighting5":{"x":84.68,"y":-10.83,"rotation":-57.51,"width":140,"height":116}},"Wormhole_lighting6":{"Wormhole_lighting6":{"x":42.42,"y":-6.23,"rotation":-73.5,"width":68,"height":142}},"Wormhole_lighting7":{"Wormhole_lighting7":{"x":55.21,"y":-15.47,"rotation":-92.09,"width":54,"height":131}},"Wormhole_lighting8":{"Wormhole_lighting8":{"x":50.61,"y":-7.41,"rotation":-115.99,"width":86,"height":121}},"Wormhole_lighting9":{"Wormhole_lighting9":{"x":29.2,"y":-3.31,"rotation":-158.89,"width":53,"height":58}},"Wormhole_piece1":{"Wormhole_piece1":{"x":0.74,"y":-2.26,"width":5,"height":17}},"Wormhole_piece2":{"Wormhole_piece2":{"x":0.57,"y":-1.66,"width":5,"height":22}},"Wormhole_piece3":{"Wormhole_piece3":{"x":0.14,"y":-1.11,"width":4,"height":18}},"Wormhole_piece4":{"Wormhole_piece4":{"x":2.23,"y":-2.69,"width":8,"height":20}},"Wormhole_piece5":{"Wormhole_piece5":{"x":0.21,"y":-0.71,"width":4,"height":12}},"Wormhole_piece_big1":{"Wormhole_piece_big1":{"x":-13.34,"y":-0.71,"width":90,"height":31}},"Wormhole_piece_big2":{"Wormhole_piece_big2":{"x":18.63,"y":-2.4,"width":111,"height":48}},"Wormhole_piece_big3":{"Wormhole_piece_big3":{"x":3.66,"y":9.11,"width":59,"height":76}},"Wormhole_red":{"Wormhole_red":{"x":16.2,"y":-16.22,"width":347,"height":388}},"Wormhole_red_ring":{"Wormhole_red_ring":{"type":"mesh","uvs":[1,1,0,1,0,0,1,0],"triangles":[1,2,3,1,3,0],"vertices":[159.7,-181.22,-129.3,-181.22,-129.3,147.78,159.7,147.78],"hull":4,"edges":[0,2,2,4,4,6,0,6],"width":289,"height":329}},"Wormhole_wing_L":{"Wormhole_wing_L":{"x":124.2,"y":-9.18,"rotation":-12.43,"width":284,"height":201}},"Wormhole_wing_R_piece1":{"Wormhole_wing_R_piece1":{"x":74.42,"y":2.05,"rotation":159.88,"width":126,"height":58}},"Wormhole_wing_R_piece2":{"Wormhole_wing_R_piece2":{"x":88.85,"y":41.77,"rotation":-142.9,"width":144,"height":118}},"Wormhole_wing_R_piece3":{"Wormhole_wing_R_piece3":{"x":38.27,"y":-9.62,"rotation":109.84,"width":37,"height":93}},"Wormhole_wing_R_piece4":{"Wormhole_wing_R_piece4":{"x":23.75,"y":27.66,"rotation":109.84,"width":47,"height":69}}}},"animations":{"Wormhole_close":{"slots":{"Wormhole":{"color":[{"time":1.6667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00"}]},"Wormhole_blue_ring":{"color":[{"time":1.6667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00"}]},"Wormhole_green_ring":{"color":[{"time":1.6667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00"}]},"Wormhole_ground":{"color":[{"time":1.6667,"color":"ffffffff"},{"time":2.6667,"color":"ffffff00"}]},"Wormhole_red":{"color":[{"time":1.6667,"color":"ffffffff"},{"time":2.6667,"color":"ffffff00"}]},"Wormhole_red_ring":{"color":[{"time":1.6667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00"}]},"Wormhole_wing_L":{"color":[{"time":0.6667,"color":"ffffffff"},{"time":1.6667,"color":"ffffff00"}]},"Wormhole_wing_R_piece1":{"color":[{"time":0.3333,"color":"ffffffff"},{"time":1.3333,"color":"ffffff00"}]},"Wormhole_wing_R_piece2":{"color":[{"time":0.3333,"color":"ffffffff"},{"time":1.3333,"color":"ffffff00"}]},"Wormhole_wing_R_piece3":{"color":[{"time":0.3333,"color":"ffffffff"},{"time":1.3333,"color":"ffffff00"}]},"Wormhole_wing_R_piece4":{"color":[{"time":0.3333,"color":"ffffffff"},{"time":1.3333,"color":"ffffff00"}]}},"bones":{"Wormhole_wing_R":{"rotate":[{"time":0,"angle":0},{"time":0.3333,"angle":8.27},{"time":2,"angle":64.73}],"translate":[{"time":0,"x":0,"y":0},{"time":0.3333,"x":-27.61,"y":22.74},{"time":2,"x":-73.08,"y":-305.31}]},"Wormhole_wing_L":{"rotate":[{"time":0.3333,"angle":0},{"time":0.6667,"angle":-21.37},{"time":2,"angle":-45.53}],"translate":[{"time":0.3333,"x":0,"y":0},{"time":0.6667,"x":34.1,"y":22.74},{"time":2,"x":74.7,"y":-269.58}]},"Wormhole_root":{"scale":[{"time":1.6667,"x":1,"y":1},{"time":2.6667,"x":0,"y":1,"curve":"stepped"},{"time":3,"x":0,"y":1}]}}},"Wormhole_idle":{"slots":{"Wormhole_lighting1":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":0.4,"color":"ffffffff","curve":"stepped"},{"time":0.6,"color":"ffffffff"},{"time":0.6667,"color":"ffffff00","curve":"stepped"},{"time":1.3333,"color":"ffffff00"},{"time":1.4,"color":"ffffffff","curve":"stepped"},{"time":1.6,"color":"ffffffff"},{"time":1.6667,"color":"ffffff00","curve":"stepped"},{"time":3,"color":"ffffff00"},{"time":3.0667,"color":"ffffffff","curve":"stepped"},{"time":3.2667,"color":"ffffffff"},{"time":3.3333,"color":"ffffff00","curve":"stepped"},{"time":3.6667,"color":"ffffff00"},{"time":3.7333,"color":"ffffffff","curve":"stepped"},{"time":3.9333,"color":"ffffffff"},{"time":4,"color":"ffffff00","curve":"stepped"},{"time":4.6667,"color":"ffffff00"},{"time":4.7333,"color":"ffffffff","curve":"stepped"},{"time":4.9333,"color":"ffffffff"},{"time":5,"color":"ffffff00"}]},"Wormhole_lighting2":{"color":[{"time":0.6667,"color":"ffffff00"},{"time":0.7333,"color":"ffffffff","curve":"stepped"},{"time":0.9333,"color":"ffffffff"},{"time":1,"color":"ffffff00","curve":"stepped"},{"time":1.6667,"color":"ffffff00"},{"time":1.7333,"color":"ffffffff","curve":"stepped"},{"time":1.9333,"color":"ffffffff"},{"time":2,"color":"ffffff00","curve":"stepped"},{"time":3.3333,"color":"ffffff00"},{"time":3.4,"color":"ffffffff","curve":"stepped"},{"time":3.6,"color":"ffffffff"},{"time":3.6667,"color":"ffffff00","curve":"stepped"},{"time":4.6667,"color":"ffffff00"},{"time":4.7333,"color":"ffffffff","curve":"stepped"},{"time":4.9333,"color":"ffffffff"},{"time":5,"color":"ffffff00"}]},"Wormhole_lighting3":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":0.4,"color":"ffffffff","curve":"stepped"},{"time":0.6,"color":"ffffffff"},{"time":0.6667,"color":"ffffff00","curve":"stepped"},{"time":1.6667,"color":"ffffff00"},{"time":1.7333,"color":"ffffffff","curve":"stepped"},{"time":1.9333,"color":"ffffffff"},{"time":2,"color":"ffffff00","curve":"stepped"},{"time":3.3333,"color":"ffffff00"},{"time":3.4,"color":"ffffffff","curve":"stepped"},{"time":3.6,"color":"ffffffff"},{"time":3.6667,"color":"ffffff00","curve":"stepped"},{"time":4,"color":"ffffff00"},{"time":4.0667,"color":"ffffffff","curve":"stepped"},{"time":4.2667,"color":"ffffffff"},{"time":4.3333,"color":"ffffff00","curve":"stepped"},{"time":5,"color":"ffffff00"},{"time":5.0667,"color":"ffffffff","curve":"stepped"},{"time":5.2667,"color":"ffffffff"},{"time":5.3333,"color":"ffffff00"}]},"Wormhole_lighting4":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":0.4,"color":"ffffffff","curve":"stepped"},{"time":0.6,"color":"ffffffff"},{"time":0.6667,"color":"ffffff00","curve":"stepped"},{"time":1.3333,"color":"ffffff00"},{"time":1.4,"color":"ffffffff","curve":"stepped"},{"time":1.6,"color":"ffffffff"},{"time":1.6667,"color":"ffffff00","curve":"stepped"},{"time":2,"color":"ffffff00"},{"time":2.0667,"color":"ffffffff","curve":"stepped"},{"time":2.2667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00","curve":"stepped"},{"time":3,"color":"ffffff00"},{"time":3.0667,"color":"ffffffff","curve":"stepped"},{"time":3.2667,"color":"ffffffff"},{"time":3.3333,"color":"ffffff00","curve":"stepped"},{"time":4.3333,"color":"ffffff00"},{"time":4.4,"color":"ffffffff","curve":"stepped"},{"time":4.6,"color":"ffffffff"},{"time":4.6667,"color":"ffffff00"}]},"Wormhole_lighting5":{"color":[{"time":0.6667,"color":"ffffff00"},{"time":0.7333,"color":"ffffffff","curve":"stepped"},{"time":0.9333,"color":"ffffffff"},{"time":1,"color":"ffffff00","curve":"stepped"},{"time":1.3333,"color":"ffffff00"},{"time":1.4,"color":"ffffffff","curve":"stepped"},{"time":1.6,"color":"ffffffff"},{"time":1.6667,"color":"ffffff00","curve":"stepped"},{"time":2.3333,"color":"ffffff00"},{"time":2.4,"color":"ffffffff","curve":"stepped"},{"time":2.6,"color":"ffffffff"},{"time":2.6667,"color":"ffffff00","curve":"stepped"},{"time":3.6667,"color":"ffffff00"},{"time":3.7333,"color":"ffffffff","curve":"stepped"},{"time":3.9333,"color":"ffffffff"},{"time":4,"color":"ffffff00","curve":"stepped"},{"time":4.6667,"color":"ffffff00"},{"time":4.7333,"color":"ffffffff","curve":"stepped"},{"time":4.9333,"color":"ffffffff"},{"time":5,"color":"ffffff00"}]},"Wormhole_lighting6":{"color":[{"time":0.6667,"color":"ffffff00"},{"time":0.7333,"color":"ffffffff","curve":"stepped"},{"time":0.9333,"color":"ffffffff"},{"time":1,"color":"ffffff00","curve":"stepped"},{"time":2,"color":"ffffff00"},{"time":2.0667,"color":"ffffffff","curve":"stepped"},{"time":2.2667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00","curve":"stepped"},{"time":3.3333,"color":"ffffff00"},{"time":3.4,"color":"ffffffff","curve":"stepped"},{"time":3.6,"color":"ffffffff"},{"time":3.6667,"color":"ffffff00","curve":"stepped"},{"time":4.3333,"color":"ffffff00"},{"time":4.4,"color":"ffffffff","curve":"stepped"},{"time":4.6,"color":"ffffffff"},{"time":4.6667,"color":"ffffff00","curve":"stepped"},{"time":5,"color":"ffffff00"},{"time":5.0667,"color":"ffffffff","curve":"stepped"},{"time":5.2667,"color":"ffffffff"},{"time":5.3333,"color":"ffffff00"}]},"Wormhole_lighting7":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":0.4,"color":"ffffffff","curve":"stepped"},{"time":0.6,"color":"ffffffff"},{"time":0.6667,"color":"ffffff00","curve":"stepped"},{"time":1,"color":"ffffff00"},{"time":1.0667,"color":"ffffffff","curve":"stepped"},{"time":1.2667,"color":"ffffffff"},{"time":1.3333,"color":"ffffff00","curve":"stepped"},{"time":2,"color":"ffffff00"},{"time":2.0667,"color":"ffffffff","curve":"stepped"},{"time":2.2667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00","curve":"stepped"},{"time":3.3333,"color":"ffffff00"},{"time":3.4,"color":"ffffffff","curve":"stepped"},{"time":3.6,"color":"ffffffff"},{"time":3.6667,"color":"ffffff00","curve":"stepped"},{"time":4.3333,"color":"ffffff00"},{"time":4.4,"color":"ffffffff","curve":"stepped"},{"time":4.6,"color":"ffffffff"},{"time":4.6667,"color":"ffffff00","curve":"stepped"},{"time":5,"color":"ffffff00"},{"time":5.0667,"color":"ffffffff","curve":"stepped"},{"time":5.2667,"color":"ffffffff"},{"time":5.3333,"color":"ffffff00"}]},"Wormhole_lighting8":{"color":[{"time":0.6667,"color":"ffffff00"},{"time":0.7333,"color":"ffffffff","curve":"stepped"},{"time":0.9333,"color":"ffffffff"},{"time":1,"color":"ffffff00","curve":"stepped"},{"time":2,"color":"ffffff00"},{"time":2.0667,"color":"ffffffff","curve":"stepped"},{"time":2.2667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00","curve":"stepped"},{"time":3.6667,"color":"ffffff00"},{"time":3.7333,"color":"ffffffff","curve":"stepped"},{"time":3.9333,"color":"ffffffff"},{"time":4,"color":"ffffff00","curve":"stepped"},{"time":4.3333,"color":"ffffff00"},{"time":4.4,"color":"ffffffff","curve":"stepped"},{"time":4.6,"color":"ffffffff"},{"time":4.6667,"color":"ffffff00"}]},"Wormhole_lighting9":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":0.4,"color":"ffffffff","curve":"stepped"},{"time":0.6,"color":"ffffffff"},{"time":0.6667,"color":"ffffff00","curve":"stepped"},{"time":2,"color":"ffffff00"},{"time":2.0667,"color":"ffffffff","curve":"stepped"},{"time":2.2667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00","curve":"stepped"},{"time":3,"color":"ffffff00"},{"time":3.0667,"color":"ffffffff","curve":"stepped"},{"time":3.2667,"color":"ffffffff"},{"time":3.3333,"color":"ffffff00","curve":"stepped"},{"time":3.6667,"color":"ffffff00"},{"time":3.7333,"color":"ffffffff","curve":"stepped"},{"time":3.9333,"color":"ffffffff"},{"time":4,"color":"ffffff00","curve":"stepped"},{"time":4.6667,"color":"ffffff00"},{"time":4.7333,"color":"ffffffff","curve":"stepped"},{"time":4.9333,"color":"ffffffff"},{"time":5,"color":"ffffff00"}]},"Wormhole_piece1":{"color":[{"time":0.0667,"color":"ffffff00"},{"time":0.3333,"color":"ffffffff"},{"time":1.3333,"color":"ffffff0f"},{"time":3.6667,"color":"ffffffff"},{"time":5,"color":"ffffff00"}]},"Wormhole_piece2":{"color":[{"time":0.0667,"color":"ffffff00"},{"time":0.3333,"color":"ffffffff"},{"time":2,"color":"ffffff00","curve":"stepped"},{"time":2.3333,"color":"ffffff00"},{"time":3.3333,"color":"ffffffff"},{"time":4.6667,"color":"ffffff00"}]},"Wormhole_piece3":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":1,"color":"ffffffff"},{"time":2,"color":"ffffff00","curve":"stepped"},{"time":2.3333,"color":"ffffff00"},{"time":3.6667,"color":"ffffffff"},{"time":4.6667,"color":"ffffff00"}]},"Wormhole_piece4":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":1,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00","curve":"stepped"},{"time":2.6667,"color":"ffffff00"},{"time":3.6667,"color":"ffffffff"},{"time":5,"color":"ffffff00"}]},"Wormhole_piece5":{"color":[{"time":0.6667,"color":"ffffff00"},{"time":1.6667,"color":"ffffffff"},{"time":3,"color":"ffffff00","curve":"stepped"},{"time":3.3333,"color":"ffffff00"},{"time":4.3333,"color":"ffffffff"},{"time":5,"color":"ffffff00"}]},"Wormhole_piece_big1":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":0.4,"color":"ffffffff","curve":"stepped"},{"time":0.6,"color":"ffffffff"},{"time":0.6667,"color":"ffffff00","curve":"stepped"},{"time":2,"color":"ffffff00"},{"time":2.0667,"color":"ffffffff","curve":"stepped"},{"time":2.2667,"color":"ffffffff"},{"time":2.3333,"color":"ffffff00","curve":"stepped"},{"time":3.3333,"color":"ffffff00"},{"time":3.4,"color":"ffffffff","curve":"stepped"},{"time":3.6,"color":"ffffffff"},{"time":3.6667,"color":"ffffff00"}]},"Wormhole_piece_big2":{"color":[{"time":1,"color":"ffffff00"},{"time":1.0667,"color":"ffffffff","curve":"stepped"},{"time":1.2667,"color":"ffffffff"},{"time":1.3333,"color":"ffffff00","curve":"stepped"},{"time":2.3333,"color":"ffffff00"},{"time":2.4,"color":"ffffffff","curve":"stepped"},{"time":2.6,"color":"ffffffff"},{"time":2.6667,"color":"ffffff00","curve":"stepped"},{"time":4,"color":"ffffff00"},{"time":4.0667,"color":"ffffffff","curve":"stepped"},{"time":4.2667,"color":"ffffffff"},{"time":4.3333,"color":"ffffff00"}]},"Wormhole_piece_big3":{"color":[{"time":0.3333,"color":"ffffff00"},{"time":0.4,"color":"ffffffff","curve":"stepped"},{"time":0.6,"color":"ffffffff"},{"time":0.6667,"color":"ffffff00","curve":"stepped"},{"time":1.6667,"color":"ffffff00"},{"time":1.7333,"color":"ffffffff","curve":"stepped"},{"time":1.9333,"color":"ffffffff"},{"time":2,"color":"ffffff00","curve":"stepped"},{"time":3.3333,"color":"ffffff00"},{"time":3.4,"color":"ffffffff","curve":"stepped"},{"time":3.6,"color":"ffffffff"},{"time":3.6667,"color":"ffffff00","curve":"stepped"},{"time":4.3333,"color":"ffffff00"},{"time":4.4,"color":"ffffffff","curve":"stepped"},{"time":4.6,"color":"ffffffff"},{"time":4.6667,"color":"ffffff00"}]},"Wormhole_red":{"color":[{"time":0.3333,"color":"ffffffff"},{"time":1.3333,"color":"ffffff00","curve":"stepped"},{"time":1.6667,"color":"ffffff00"},{"time":3,"color":"ffffffc2","curve":"stepped"},{"time":3.3333,"color":"ffffffc2"},{"time":5.3333,"color":"ffffffff"}]}},"bones":{"Wormhole_root":{"translate":[{"time":0,"x":0,"y":0},{"time":1.3333,"x":0,"y":-9.84},{"time":2.6667,"x":0,"y":0,"curve":"stepped"},{"time":3,"x":0,"y":0},{"time":4.3333,"x":0,"y":-9.84},{"time":5.6667,"x":0,"y":0}]},"Wormhole_piece1":{"translate":[{"time":0,"x":-0.6,"y":-0.1},{"time":0.0667,"x":-1.2,"y":-4.9},{"time":0.1333,"x":-6.05,"y":-9.69},{"time":0.2,"x":-1.8,"y":-14.56},{"time":0.2667,"x":-5.45,"y":-19.25},{"time":0.3333,"x":-1.2,"y":-23.87},{"time":0.4,"x":-6.05,"y":-28.67},{"time":0.4667,"x":-1.2,"y":-33.33},{"time":0.5333,"x":-6.05,"y":-38.12},{"time":0.6,"x":-1.2,"y":-42.79},{"time":0.6667,"x":-6.05,"y":-47.56},{"time":0.7333,"x":-1.2,"y":-52.23},{"time":0.8,"x":-6.05,"y":-56.99},{"time":0.8667,"x":-1.2,"y":-61.66},{"time":0.9333,"x":-6.05,"y":-66.41},{"time":1,"x":-1.2,"y":-71.08},{"time":1.0667,"x":-6.05,"y":-75.81},{"time":1.1333,"x":-1.2,"y":-80.49},{"time":1.2,"x":-6.05,"y":-85.21},{"time":1.2667,"x":-1.2,"y":-89.89},{"time":1.3333,"x":-6.05,"y":-94.6},{"time":1.4,"x":-1.2,"y":-99.28},{"time":1.4667,"x":-6.05,"y":-103.97},{"time":1.5333,"x":-1.2,"y":-108.67},{"time":1.6,"x":-6.05,"y":-113.34},{"time":1.6667,"x":-1.2,"y":-118.04},{"time":1.7333,"x":-6.05,"y":-122.7},{"time":1.8,"x":-1.2,"y":-127.4},{"time":1.8667,"x":-6.05,"y":-132.05},{"time":1.9333,"x":-1.2,"y":-136.76},{"time":2,"x":-6.05,"y":-141.39},{"time":2.0667,"x":-1.2,"y":-146.1},{"time":2.1333,"x":-6.05,"y":-150.73},{"time":2.2,"x":-1.2,"y":-155.44},{"time":2.2667,"x":-6.05,"y":-160.05},{"time":2.3333,"x":-1.2,"y":-164.78},{"time":2.4,"x":-6.05,"y":-169.37},{"time":2.4667,"x":-1.2,"y":-174.1},{"time":2.5333,"x":-6.65,"y":-178.69},{"time":2.6,"x":-1.2,"y":-183.43},{"time":2.6667,"x":-6.65,"y":-188},{"time":2.7333,"x":-1.2,"y":-192.74},{"time":2.8,"x":-6.65,"y":-197.3},{"time":2.8667,"x":-1.2,"y":-202.06},{"time":2.9333,"x":-6.65,"y":-206.61},{"time":3,"x":-1.2,"y":-211.37},{"time":3.0667,"x":-6.65,"y":-215.91},{"time":3.1333,"x":-1.2,"y":-220.67},{"time":3.2,"x":-6.65,"y":-225.2},{"time":3.2667,"x":-1.2,"y":-229.98},{"time":3.3333,"x":-6.65,"y":-234.5},{"time":3.4,"x":-1.2,"y":-239.29},{"time":3.4667,"x":-6.65,"y":-243.8},{"time":3.5333,"x":-1.2,"y":-248.6},{"time":3.6,"x":-6.65,"y":-253.1},{"time":3.6667,"x":-1.2,"y":-257.91},{"time":3.7333,"x":-6.65,"y":-262.41},{"time":3.8,"x":-1.2,"y":-267.23},{"time":3.8667,"x":-6.65,"y":-271.72},{"time":3.9333,"x":-1.2,"y":-276.56},{"time":4,"x":-6.65,"y":-281.05},{"time":4.0667,"x":-1.2,"y":-285.9},{"time":4.1333,"x":-6.65,"y":-290.39},{"time":4.2,"x":-1.2,"y":-295.26},{"time":4.2667,"x":-6.65,"y":-299.75},{"time":4.3333,"x":-1.2,"y":-304.64},{"time":4.4,"x":-6.65,"y":-309.14},{"time":4.4667,"x":-1.2,"y":-314.05},{"time":4.5333,"x":-6.65,"y":-318.56},{"time":4.6,"x":-1.2,"y":-323.51},{"time":4.6667,"x":-6.65,"y":-328.04},{"time":4.7333,"x":-1.2,"y":-333.03},{"time":4.8,"x":-6.65,"y":-337.6},{"time":4.8667,"x":-1.2,"y":-342.65},{"time":4.9333,"x":-6.65,"y":-347.33},{"time":5,"x":-1.2,"y":-352.51},{"time":5.6,"x":-1.2,"y":-0.2}]},"Wormhole_piece2":{"translate":[{"time":0,"x":0,"y":0},{"time":0.0667,"x":-0.57,"y":-4.71},{"time":0.1333,"x":-8.68,"y":-9.42},{"time":0.2,"x":-0.57,"y":-14.1},{"time":0.2667,"x":-8.68,"y":-18.8},{"time":0.3333,"x":-0.57,"y":-23.5},{"time":0.4,"x":-8.68,"y":-28.19},{"time":0.4667,"x":-0.57,"y":-32.89},{"time":0.5333,"x":-8.68,"y":-37.57},{"time":0.6,"x":-0.57,"y":-42.28},{"time":0.6667,"x":-8.68,"y":-46.95},{"time":0.7333,"x":-0.57,"y":-51.67},{"time":0.8,"x":-8.68,"y":-56.33},{"time":0.8667,"x":-0.57,"y":-61.06},{"time":0.9333,"x":-8.68,"y":-65.72},{"time":1,"x":-0.57,"y":-70.45},{"time":1.0667,"x":-8.68,"y":-75.1},{"time":1.1333,"x":-0.57,"y":-79.85},{"time":1.2,"x":-8.68,"y":-84.48},{"time":1.2667,"x":-0.57,"y":-89.24},{"time":1.3333,"x":-8.12,"y":-93.86},{"time":1.4,"x":-0.57,"y":-98.63},{"time":1.4667,"x":-8.12,"y":-103.24},{"time":1.5333,"x":-0.57,"y":-108.02},{"time":1.6,"x":-8.12,"y":-112.63},{"time":1.6667,"x":-0.57,"y":-117.41},{"time":1.7333,"x":-8.12,"y":-122.01},{"time":1.8,"x":-0.57,"y":-126.8},{"time":1.8667,"x":-8.12,"y":-131.39},{"time":1.9333,"x":-0.57,"y":-136.2},{"time":2,"x":-8.12,"y":-140.77},{"time":2.0667,"x":-0.57,"y":-145.59},{"time":2.1333,"x":-8.12,"y":-150.16},{"time":2.2,"x":-0.57,"y":-154.98},{"time":2.2667,"x":-8.12,"y":-159.54},{"time":2.3333,"x":-0.57,"y":-164.37},{"time":2.4,"x":-8.12,"y":-168.92},{"time":2.4667,"x":-0.57,"y":-173.76},{"time":2.5333,"x":-8.12,"y":-178.3},{"time":2.6,"x":-0.57,"y":-183.15},{"time":2.6667,"x":-8.12,"y":-187.68},{"time":2.7333,"x":-0.57,"y":-192.55},{"time":2.8,"x":-8.12,"y":-197.07},{"time":2.8667,"x":-0.57,"y":-201.94},{"time":2.9333,"x":-8.12,"y":-206.45},{"time":3,"x":-0.57,"y":-211.33},{"time":3.0667,"x":-8.12,"y":-215.83},{"time":3.1333,"x":-0.57,"y":-220.72},{"time":3.2,"x":-8.12,"y":-225.21},{"time":3.2667,"x":-0.57,"y":-230.11},{"time":3.3333,"x":-8.12,"y":-234.6},{"time":3.4,"x":-0.57,"y":-239.5},{"time":3.4667,"x":-8.12,"y":-243.98},{"time":3.5333,"x":-0.57,"y":-248.9},{"time":3.6,"x":-8.12,"y":-253.36},{"time":3.6667,"x":-0.57,"y":-258.29},{"time":3.7333,"x":-8.12,"y":-262.74},{"time":3.8,"x":-0.57,"y":-267.68},{"time":3.8667,"x":-8.12,"y":-272.12},{"time":3.9333,"x":-0.57,"y":-277.07},{"time":4,"x":-8.12,"y":-281.51},{"time":4.0667,"x":-0.57,"y":-286.46},{"time":4.1333,"x":-8.12,"y":-290.89},{"time":4.2,"x":-0.57,"y":-295.85},{"time":4.2667,"x":-8.12,"y":-300.27},{"time":4.3333,"x":-0.57,"y":-305.25},{"time":4.4,"x":-8.12,"y":-309.65},{"time":4.4667,"x":-0.57,"y":-314.64},{"time":4.5333,"x":-8.12,"y":-319.04},{"time":4.6,"x":-0.57,"y":-324.03},{"time":4.6667,"x":-8.12,"y":-328.42},{"time":4.7333,"x":-0.57,"y":-333.42},{"time":4.8,"x":-8.12,"y":-337.8},{"time":4.8667,"x":-0.57,"y":-342.81},{"time":4.9333,"x":-7.56,"y":-347.51},{"time":5,"x":-0.57,"y":-352.2},{"time":5.6,"x":-0.57,"y":-0.02}]},"Wormhole_piece3":{"translate":[{"time":0,"x":0,"y":0},{"time":0.0667,"x":0,"y":-4.85},{"time":0.1333,"x":-12.87,"y":-9.62},{"time":0.2,"x":0,"y":-14.56},{"time":0.2667,"x":-12.87,"y":-19.32},{"time":0.3333,"x":0,"y":-24.26},{"time":0.4,"x":-12.87,"y":-29.01},{"time":0.4667,"x":0,"y":-33.97},{"time":0.5333,"x":-12.87,"y":-38.71},{"time":0.6,"x":0,"y":-43.67},{"time":0.6667,"x":-12.87,"y":-48.4},{"time":0.7333,"x":0,"y":-53.38},{"time":0.8,"x":-12.87,"y":-58.1},{"time":0.8667,"x":0,"y":-63.08},{"time":0.9333,"x":-12.87,"y":-67.79},{"time":1,"x":0,"y":-72.79},{"time":1.0667,"x":-12.87,"y":-77.49},{"time":1.1333,"x":0,"y":-82.49},{"time":1.2,"x":-12.87,"y":-87.18},{"time":1.2667,"x":0,"y":-92.2},{"time":1.3333,"x":-12.87,"y":-96.88},{"time":1.4,"x":0,"y":-101.9},{"time":1.4667,"x":-12.87,"y":-106.57},{"time":1.5333,"x":0,"y":-111.61},{"time":1.6,"x":-12.87,"y":-116.27},{"time":1.6667,"x":0,"y":-121.31},{"time":1.7333,"x":-12.87,"y":-125.96},{"time":1.8,"x":0,"y":-131.02},{"time":1.8667,"x":-12.87,"y":-135.66},{"time":1.9333,"x":0,"y":-140.72},{"time":2,"x":-12.87,"y":-145.35},{"time":2.0667,"x":0,"y":-150.43},{"time":2.1333,"x":-12.87,"y":-155.05},{"time":2.2,"x":0,"y":-160.13},{"time":2.2667,"x":-12.87,"y":-164.74},{"time":2.3333,"x":0,"y":-169.84},{"time":2.4,"x":-12.87,"y":-174.44},{"time":2.4667,"x":0,"y":-179.54},{"time":2.5333,"x":-12.87,"y":-184.14},{"time":2.6,"x":0,"y":-189.25},{"time":2.6667,"x":-12.87,"y":-193.83},{"time":2.7333,"x":0,"y":-198.95},{"time":2.8,"x":-12.87,"y":-203.53},{"time":2.8667,"x":0,"y":-208.66},{"time":2.9333,"x":-12.87,"y":-213.22},{"time":3,"x":0,"y":-218.36},{"time":3.0667,"x":-12.87,"y":-222.92},{"time":3.1333,"x":0,"y":-228.07},{"time":3.2,"x":-12.87,"y":-232.61},{"time":3.2667,"x":0,"y":-237.77},{"time":3.3333,"x":-12.87,"y":-242.31},{"time":3.4,"x":0,"y":-247.48},{"time":3.4667,"x":-12.87,"y":-252},{"time":3.5333,"x":0,"y":-257.18},{"time":3.6,"x":-12.87,"y":-261.7},{"time":3.6667,"x":0,"y":-266.89},{"time":3.7333,"x":-12.87,"y":-271.39},{"time":3.8,"x":0,"y":-276.59},{"time":3.8667,"x":-12.87,"y":-281.09},{"time":3.9333,"x":0,"y":-286.3},{"time":4,"x":-12.87,"y":-290.78},{"time":4.0667,"x":0,"y":-296},{"time":4.1333,"x":-12.87,"y":-300.48},{"time":4.2,"x":0,"y":-305.71},{"time":4.2667,"x":-12.87,"y":-310.17},{"time":4.3333,"x":0,"y":-315.41},{"time":4.4,"x":-12.87,"y":-319.87},{"time":4.4667,"x":0,"y":-325.12},{"time":4.5333,"x":-12.87,"y":-329.56},{"time":4.6,"x":0,"y":-334.82},{"time":4.6667,"x":-12.87,"y":-339.26},{"time":4.7333,"x":0,"y":-344.53},{"time":4.8,"x":-12.87,"y":-348.95},{"time":4.8667,"x":0,"y":-354.23},{"time":4.9333,"x":-12.35,"y":-359.08},{"time":5,"x":0,"y":-363.94},{"time":5.6,"x":0,"y":0}]},"Wormhole_piece4":{"translate":[{"time":0,"x":0,"y":0},{"time":0.0667,"x":0,"y":-10.73},{"time":0.1333,"x":5.15,"y":-15.76},{"time":0.2,"x":0,"y":-21.31},{"time":0.2667,"x":5.15,"y":-26.45},{"time":0.3333,"x":0,"y":-31.9},{"time":0.4,"x":5.15,"y":-37.01},{"time":0.4667,"x":0,"y":-42.48},{"time":0.5333,"x":5.15,"y":-47.58},{"time":0.6,"x":0,"y":-53.06},{"time":0.6667,"x":5.15,"y":-58.14},{"time":0.7333,"x":0,"y":-63.65},{"time":0.8,"x":5.15,"y":-68.7},{"time":0.8667,"x":0,"y":-74.23},{"time":0.9333,"x":5.15,"y":-79.26},{"time":1,"x":0,"y":-84.81},{"time":1.0667,"x":5.15,"y":-89.83},{"time":1.1333,"x":0,"y":-95.4},{"time":1.2,"x":5.15,"y":-100.39},{"time":1.2667,"x":0,"y":-105.98},{"time":1.3333,"x":5.15,"y":-110.95},{"time":1.4,"x":0,"y":-116.56},{"time":1.4667,"x":5.15,"y":-121.51},{"time":1.5333,"x":0,"y":-127.15},{"time":1.6,"x":5.15,"y":-132.08},{"time":1.6667,"x":0,"y":-137.73},{"time":1.7333,"x":5.15,"y":-142.64},{"time":1.8,"x":0,"y":-148.31},{"time":1.8667,"x":5.15,"y":-153.2},{"time":1.9333,"x":0,"y":-158.9},{"time":2,"x":5.15,"y":-163.76},{"time":2.0667,"x":0,"y":-169.48},{"time":2.1333,"x":5.15,"y":-174.33},{"time":2.2,"x":0,"y":-180.06},{"time":2.2667,"x":5.15,"y":-184.89},{"time":2.3333,"x":0,"y":-190.65},{"time":2.4,"x":5.15,"y":-195.45},{"time":2.4667,"x":0,"y":-201.23},{"time":2.5333,"x":5.15,"y":-206.01},{"time":2.6,"x":0,"y":-211.81},{"time":2.6667,"x":5.15,"y":-216.57},{"time":2.7333,"x":0,"y":-222.4},{"time":2.8,"x":5.15,"y":-227.14},{"time":2.8667,"x":0,"y":-232.98},{"time":2.9333,"x":5.15,"y":-237.7},{"time":3,"x":0,"y":-243.57},{"time":3.0667,"x":5.15,"y":-248.26},{"time":3.1333,"x":0,"y":-254.15},{"time":3.2,"x":5.15,"y":-258.82},{"time":3.2667,"x":0,"y":-264.73},{"time":3.3333,"x":5.15,"y":-269.39},{"time":3.4,"x":0,"y":-275.32},{"time":3.4667,"x":5.15,"y":-279.95},{"time":3.5333,"x":0,"y":-285.9},{"time":3.6,"x":5.15,"y":-290.51},{"time":3.6667,"x":0,"y":-296.48},{"time":3.7333,"x":5.15,"y":-301.07},{"time":3.8,"x":0,"y":-307.07},{"time":3.8667,"x":5.15,"y":-311.64},{"time":3.9333,"x":0,"y":-317.65},{"time":4,"x":5.15,"y":-322.2},{"time":4.0667,"x":0,"y":-328.23},{"time":4.1333,"x":5.15,"y":-332.76},{"time":4.2,"x":0,"y":-338.82},{"time":4.2667,"x":5.15,"y":-343.32},{"time":4.3333,"x":0,"y":-349.4},{"time":4.4,"x":5.15,"y":-353.89},{"time":4.4667,"x":0,"y":-359.98},{"time":4.5333,"x":5.15,"y":-364.45},{"time":4.6,"x":0,"y":-370.57},{"time":4.6667,"x":5.15,"y":-375.01},{"time":4.7333,"x":0,"y":-381.15},{"time":4.8,"x":5.15,"y":-385.57},{"time":4.8667,"x":0,"y":-391.73},{"time":4.9333,"x":5.15,"y":-396.58},{"time":5,"x":0,"y":-402.32},{"time":5.5333,"x":0,"y":0}]},"Wormhole_piece5":{"translate":[{"time":0,"x":0,"y":0},{"time":0.0667,"x":0,"y":-3.53},{"time":0.1333,"x":-8.14,"y":-7.06},{"time":0.2,"x":0,"y":-10.6},{"time":0.2667,"x":-8.14,"y":-14.12},{"time":0.3333,"x":0,"y":-17.67},{"time":0.4,"x":-8.14,"y":-21.18},{"time":0.4667,"x":0,"y":-24.74},{"time":0.5333,"x":-8.14,"y":-28.24},{"time":0.6,"x":0,"y":-31.81},{"time":0.6667,"x":-8.14,"y":-35.3},{"time":0.7333,"x":0,"y":-38.87},{"time":0.8,"x":-8.14,"y":-42.36},{"time":0.8667,"x":0,"y":-45.94},{"time":0.9333,"x":-8.14,"y":-49.43},{"time":1,"x":0,"y":-53.01},{"time":1.0667,"x":-8.14,"y":-56.49},{"time":1.1333,"x":0,"y":-60.08},{"time":1.2,"x":-8.14,"y":-63.55},{"time":1.2667,"x":0,"y":-67.14},{"time":1.3333,"x":-8.14,"y":-70.61},{"time":1.4,"x":0,"y":-74.21},{"time":1.4667,"x":-8.14,"y":-77.67},{"time":1.5333,"x":0,"y":-81.28},{"time":1.6,"x":-8.14,"y":-84.73},{"time":1.6667,"x":0,"y":-88.35},{"time":1.7333,"x":-8.14,"y":-91.79},{"time":1.8,"x":0,"y":-95.42},{"time":1.8667,"x":-8.14,"y":-98.85},{"time":1.9333,"x":0,"y":-102.48},{"time":2,"x":-8.14,"y":-105.91},{"time":2.0667,"x":0,"y":-109.55},{"time":2.1333,"x":-8.14,"y":-112.97},{"time":2.2,"x":0,"y":-116.62},{"time":2.2667,"x":-8.14,"y":-120.03},{"time":2.3333,"x":0,"y":-123.69},{"time":2.4,"x":-8.14,"y":-127.09},{"time":2.4667,"x":0,"y":-130.76},{"time":2.5333,"x":-8.14,"y":-134.15},{"time":2.6,"x":0,"y":-137.82},{"time":2.6667,"x":-8.14,"y":-141.22},{"time":2.7333,"x":0,"y":-144.89},{"time":2.8,"x":-8.14,"y":-148.28},{"time":2.8667,"x":0,"y":-151.96},{"time":2.9333,"x":-8.14,"y":-155.34},{"time":3,"x":0,"y":-159.03},{"time":3.0667,"x":-8.14,"y":-162.4},{"time":3.1333,"x":0,"y":-166.09},{"time":3.2,"x":-8.14,"y":-169.46},{"time":3.2667,"x":0,"y":-173.16},{"time":3.3333,"x":-8.14,"y":-176.52},{"time":3.4,"x":0,"y":-180.23},{"time":3.4667,"x":-8.14,"y":-183.58},{"time":3.5333,"x":0,"y":-187.3},{"time":3.6,"x":-8.14,"y":-190.64},{"time":3.6667,"x":0,"y":-194.37},{"time":3.7333,"x":-8.14,"y":-197.7},{"time":3.8,"x":0,"y":-201.43},{"time":3.8667,"x":-8.14,"y":-204.76},{"time":3.9333,"x":0,"y":-208.5},{"time":4,"x":-8.14,"y":-211.82},{"time":4.0667,"x":0,"y":-215.57},{"time":4.1333,"x":-8.14,"y":-218.88},{"time":4.2,"x":0,"y":-222.64},{"time":4.2667,"x":-8.14,"y":-225.94},{"time":4.3333,"x":0,"y":-229.7},{"time":4.4,"x":-8.14,"y":-233.01},{"time":4.4667,"x":0,"y":-236.77},{"time":4.5333,"x":-8.14,"y":-240.07},{"time":4.6,"x":0,"y":-243.84},{"time":4.6667,"x":-8.14,"y":-247.13},{"time":4.7333,"x":0,"y":-250.91},{"time":4.8,"x":-8.14,"y":-254.19},{"time":4.8667,"x":0,"y":-257.98},{"time":4.9333,"x":-8.15,"y":-261.25},{"time":5,"x":0,"y":-265.04},{"time":5.5333,"x":0,"y":0}]},"Wormhole_wing_R":{"rotate":[{"time":0,"angle":0,"curve":[0.25,0,0.75,1]},{"time":2.3333,"angle":-7.73,"curve":[0.25,0,0.75,1]},{"time":5.6667,"angle":0}]},"Wormhole_wing_R2":{"rotate":[{"time":0,"angle":0,"curve":[0.25,0,0.75,1]},{"time":3,"angle":-8.11,"curve":[0.25,0,0.75,1]},{"time":5.6667,"angle":0}]},"Wormhole_wing_L":{"rotate":[{"time":0,"angle":0,"curve":[0.25,0,0.75,1]},{"time":2.6667,"angle":8.18,"curve":[0.25,0,0.75,1]},{"time":5.6667,"angle":0}]}},"deform":{"default":{"Wormhole_blue_ring":{"Wormhole_blue_ring":[{"time":0.0333},{"time":0.1667,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":0.3,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":0.4333,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":0.5667},{"time":0.7,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":0.8333,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":0.9667,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":1.1},{"time":1.2333,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":1.3667,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":1.5,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":1.6333},{"time":1.7667,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":1.9,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":2.0333,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":2.1667},{"time":2.3,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":2.4333,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":2.5667,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":2.7},{"time":2.8333,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":2.9667,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":3.1,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":3.2333},{"time":3.3667,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":3.5,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":3.6333,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":3.7667},{"time":3.9,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":4.0333,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":4.1667,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":4.3},{"time":4.4333,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":4.5667,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":4.7,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":4.8333},{"time":4.9667,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":5.1,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]},{"time":5.2333,"vertices":[-6.50999,0,-6.50999,0,-6.50999,0,-6.50999]},{"time":5.3667},{"time":5.5,"vertices":[3.71997,0,3.71997,0,3.71997,0,3.71997]},{"time":5.6333,"offset":1,"vertices":[-5.58002,0,-5.58002,0,-5.58002,0,-5.58002]}]},"Wormhole_red_ring":{"Wormhole_red_ring":[{"time":0.0333},{"time":0.1667,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":0.3},{"time":0.4333,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":0.5667},{"time":0.7,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":0.8333,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":0.9667,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":1.1},{"time":1.2333,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":1.3667,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":1.5,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":1.6333},{"time":1.7667,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":1.9,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":2.0333,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":2.1667},{"time":2.3,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":2.4333,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":2.5667,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":2.7},{"time":2.8333,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":2.9667,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":3.1,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":3.2333},{"time":3.3667,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":3.5,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":3.6333,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":3.7667},{"time":3.9,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":4.0333,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":4.1667,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":4.3},{"time":4.4333,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":4.5667,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":4.7,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":4.8333},{"time":4.9667,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":5.1,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]},{"time":5.2333,"vertices":[4.89999,0,4.89999,0,4.89999,0,4.89999]},{"time":5.3667},{"time":5.5,"vertices":[-4.2,0,-4.2,0,-4.2,0,-4.2]},{"time":5.6333,"offset":1,"vertices":[6.30002,0,6.30002,0,6.30002,0,6.30002]}]}}}},"Wormhole_open":{"slots":{"Wormhole":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_blue_ring":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_green_ring":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_ground":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_red":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_red_ring":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_wing_L":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_wing_R_piece1":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_wing_R_piece2":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_wing_R_piece3":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]},"Wormhole_wing_R_piece4":{"color":[{"time":0,"color":"ffffff00"},{"time":1,"color":"ffffffff"}]}},"bones":{"Wormhole_root":{"translate":[{"time":1,"x":0,"y":0},{"time":2.1667,"x":0,"y":-7.16},{"time":3.3333,"x":0,"y":0}],"scale":[{"time":0,"x":0,"y":0.9},{"time":0.8333,"x":1,"y":1}]}}}}}
+{
+  "skeleton": {
+    "hash": "AhrTgzRNJviqfp+/Zny4heuC5A8",
+    "spine": "3.7.94",
+    "width": 772.81,
+    "height": 511,
+    "images": "./images/",
+    "audio": "F:/委托/紫音/杀戮尖塔mod企划/Boss/时之虫/images"
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "Wormhole_root",
+      "parent": "root",
+      "x": 62.31,
+      "y": 469.89,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_wing_L",
+      "parent": "Wormhole_root",
+      "length": 121.33,
+      "rotation": 12.43,
+      "x": 171.44,
+      "y": 21.51
+    },
+    {
+      "name": "Wormhole_wing_R",
+      "parent": "Wormhole_root",
+      "length": 118.93,
+      "rotation": 142.9,
+      "x": -114.24,
+      "y": 81.49
+    },
+    {
+      "name": "Wormhole_wing_R2",
+      "parent": "Wormhole_wing_R",
+      "length": 105.01,
+      "rotation": 57.23,
+      "x": 103.55,
+      "y": 12.11
+    },
+    {
+      "name": "Wormhole_wing_R3",
+      "parent": "Wormhole_wing_R",
+      "length": 60.09,
+      "rotation": 107.26,
+      "x": 28.05,
+      "y": 16.81
+    },
+    {
+      "name": "Wormhole_lighting1",
+      "parent": "Wormhole_root",
+      "length": 94.76,
+      "rotation": -4.33,
+      "x": 86.71,
+      "y": -26.31
+    },
+    {
+      "name": "Wormhole_lighting2",
+      "parent": "Wormhole_root",
+      "length": 80.51,
+      "rotation": 13.36,
+      "x": 86.71,
+      "y": -6.46,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_lighting3",
+      "parent": "Wormhole_root",
+      "length": 103.89,
+      "rotation": 22.94,
+      "x": 90.68,
+      "y": 27.68,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_lighting4",
+      "parent": "Wormhole_root",
+      "length": 122.7,
+      "rotation": 43.82,
+      "x": 79.16,
+      "y": 47.93,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_lighting5",
+      "parent": "Wormhole_root",
+      "length": 103.81,
+      "rotation": 57.41,
+      "x": 51.26,
+      "y": 75.22,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_lighting6",
+      "parent": "Wormhole_root",
+      "length": 100.93,
+      "rotation": 73.41,
+      "x": 10.79,
+      "y": 75.91,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_lighting7",
+      "parent": "Wormhole_root",
+      "length": 107.08,
+      "rotation": 92.02,
+      "x": -17.68,
+      "y": 53.62,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_lighting8",
+      "parent": "Wormhole_root",
+      "length": 100.33,
+      "rotation": 115.95,
+      "x": -43.75,
+      "y": 51.56,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_lighting9",
+      "parent": "Wormhole_root",
+      "length": 39.73,
+      "rotation": 158.89,
+      "x": -84.08,
+      "y": 72.61,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_piece1",
+      "parent": "Wormhole_root",
+      "x": 360.07,
+      "y": 130.64,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_piece2",
+      "parent": "Wormhole_root",
+      "x": 328.21,
+      "y": 50.46,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_piece3",
+      "parent": "Wormhole_root",
+      "x": 292.1,
+      "y": -46.19,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_piece5",
+      "parent": "Wormhole_root",
+      "x": -244.52,
+      "y": 28.46,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_piece4",
+      "parent": "Wormhole_root",
+      "x": -202.46,
+      "y": -20.56,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_big_piece1",
+      "parent": "Wormhole_root",
+      "x": 29.04,
+      "y": 190.99,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_big_piece2",
+      "parent": "Wormhole_root",
+      "x": 167.71,
+      "y": -11.03,
+      "color": "abe323ff"
+    },
+    {
+      "name": "Wormhole_big_piece3",
+      "parent": "Wormhole_root",
+      "x": -154.65,
+      "y": -17.55,
+      "color": "abe323ff"
+    }
+  ],
+  "slots": [
+    {
+      "name": "Wormhole_wing_L",
+      "bone": "Wormhole_wing_L",
+      "attachment": "Wormhole_wing_L"
+    },
+    {
+      "name": "Wormhole_wing_R_piece4",
+      "bone": "Wormhole_wing_R3",
+      "attachment": "Wormhole_wing_R_piece4"
+    },
+    {
+      "name": "Wormhole_wing_R_piece3",
+      "bone": "Wormhole_wing_R3",
+      "attachment": "Wormhole_wing_R_piece3"
+    },
+    {
+      "name": "Wormhole_wing_R_piece2",
+      "bone": "Wormhole_wing_R",
+      "attachment": "Wormhole_wing_R_piece2"
+    },
+    {
+      "name": "Wormhole_wing_R_piece1",
+      "bone": "Wormhole_wing_R2",
+      "attachment": "Wormhole_wing_R_piece1"
+    },
+    {
+      "name": "Wormhole_ground",
+      "bone": "Wormhole_root",
+      "attachment": "Wormhole_ground"
+    },
+    {
+      "name": "Wormhole_lighting1",
+      "bone": "Wormhole_lighting1",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting1"
+    },
+    {
+      "name": "Wormhole_lighting2",
+      "bone": "Wormhole_lighting2",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting2"
+    },
+    {
+      "name": "Wormhole_lighting3",
+      "bone": "Wormhole_lighting3",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting3"
+    },
+    {
+      "name": "Wormhole_lighting4",
+      "bone": "Wormhole_lighting4",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting4"
+    },
+    {
+      "name": "Wormhole_lighting5",
+      "bone": "Wormhole_lighting5",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting5"
+    },
+    {
+      "name": "Wormhole_lighting6",
+      "bone": "Wormhole_lighting6",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting6"
+    },
+    {
+      "name": "Wormhole_lighting7",
+      "bone": "Wormhole_lighting7",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting7"
+    },
+    {
+      "name": "Wormhole_lighting8",
+      "bone": "Wormhole_lighting8",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting8"
+    },
+    {
+      "name": "Wormhole_lighting9",
+      "bone": "Wormhole_lighting9",
+      "color": "ffffff00",
+      "attachment": "Wormhole_lighting9"
+    },
+    {
+      "name": "Wormhole_red",
+      "bone": "Wormhole_root",
+      "attachment": "Wormhole_red"
+    },
+    {
+      "name": "Wormhole",
+      "bone": "Wormhole_root",
+      "attachment": "Wormhole"
+    },
+    {
+      "name": "Wormhole_green_ring",
+      "bone": "Wormhole_root",
+      "color": "ffffff73",
+      "attachment": "Wormhole_green_ring"
+    },
+    {
+      "name": "Wormhole_blue_ring",
+      "bone": "Wormhole_root",
+      "color": "ffffffbf",
+      "attachment": "Wormhole_blue_ring"
+    },
+    {
+      "name": "Wormhole_red_ring",
+      "bone": "Wormhole_root",
+      "color": "ffffffa5",
+      "attachment": "Wormhole_red_ring"
+    },
+    {
+      "name": "Wormhole_piece_big3",
+      "bone": "Wormhole_big_piece3",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece_big3"
+    },
+    {
+      "name": "Wormhole_piece_big2",
+      "bone": "Wormhole_big_piece2",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece_big2"
+    },
+    {
+      "name": "Wormhole_piece_big1",
+      "bone": "Wormhole_big_piece1",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece_big1"
+    },
+    {
+      "name": "Wormhole_piece5",
+      "bone": "Wormhole_piece4",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece5"
+    },
+    {
+      "name": "Wormhole_piece4",
+      "bone": "Wormhole_piece5",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece4"
+    },
+    {
+      "name": "Wormhole_piece3",
+      "bone": "Wormhole_piece3",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece3"
+    },
+    {
+      "name": "Wormhole_piece2",
+      "bone": "Wormhole_piece2",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece2"
+    },
+    {
+      "name": "Wormhole_piece1",
+      "bone": "Wormhole_piece1",
+      "color": "ffffff00",
+      "attachment": "Wormhole_piece1"
+    }
+  ],
+  "transform": [
+    {
+      "name": "Wormhole_big_piece_bone",
+      "order": 2,
+      "bones": [
+        "Wormhole_big_piece1",
+        "Wormhole_big_piece2",
+        "Wormhole_big_piece3"
+      ],
+      "target": "Wormhole_root",
+      "x": 29.04,
+      "y": 190.99,
+      "rotateMix": 0.001,
+      "translateMix": 0.001,
+      "scaleMix": 0.001,
+      "shearMix": 0.001
+    },
+    {
+      "name": "Wormhole_lighting_bone",
+      "order": 1,
+      "bones": [
+        "Wormhole_lighting9",
+        "Wormhole_lighting8",
+        "Wormhole_lighting7",
+        "Wormhole_lighting6",
+        "Wormhole_lighting5",
+        "Wormhole_lighting4",
+        "Wormhole_lighting3",
+        "Wormhole_lighting2",
+        "Wormhole_lighting1"
+      ],
+      "target": "Wormhole_root",
+      "rotation": 158.89,
+      "x": -84.08,
+      "y": 72.61,
+      "shearY": -360,
+      "rotateMix": 0.001,
+      "translateMix": 0.001,
+      "scaleMix": 0.001,
+      "shearMix": 0.001
+    },
+    {
+      "name": "Wormhole_lightwing_LR",
+      "order": 0,
+      "bones": [
+        "Wormhole_wing_R",
+        "Wormhole_wing_R3",
+        "Wormhole_wing_R2",
+        "Wormhole_wing_L"
+      ],
+      "target": "Wormhole_root",
+      "rotation": 142.9,
+      "x": -114.24,
+      "y": 81.49,
+      "shearY": -360,
+      "rotateMix": 0.001,
+      "translateMix": 0.001,
+      "scaleMix": 0.001,
+      "shearMix": 0.001
+    },
+    {
+      "name": "Wormhole_piece",
+      "order": 3,
+      "bones": [
+        "Wormhole_piece5",
+        "Wormhole_piece4",
+        "Wormhole_piece3",
+        "Wormhole_piece2",
+        "Wormhole_piece1"
+      ],
+      "target": "Wormhole_root",
+      "x": -244.52,
+      "y": 28.46,
+      "rotateMix": 0.001,
+      "translateMix": 0.001,
+      "scaleMix": 0.001,
+      "shearMix": 0.001
+    }
+  ],
+  "skins": {
+    "default": {
+      "Wormhole": {
+        "Wormhole": {
+          "x": 14.7,
+          "y": -16.72,
+          "width": 288,
+          "height": 329
+        }
+      },
+      "Wormhole_blue_ring": {
+        "Wormhole_blue_ring": {
+          "type": "mesh",
+          "uvs": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "triangles": [
+            1,
+            2,
+            3,
+            1,
+            3,
+            0
+          ],
+          "vertices": [
+            160.7,
+            -183.22,
+            -131.3,
+            -183.22,
+            -131.3,
+            148.78,
+            160.7,
+            148.78
+          ],
+          "hull": 4,
+          "edges": [
+            0,
+            2,
+            2,
+            4,
+            4,
+            6,
+            0,
+            6
+          ],
+          "width": 292,
+          "height": 332
+        }
+      },
+      "Wormhole_green_ring": {
+        "Wormhole_green_ring": {
+          "type": "mesh",
+          "uvs": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "triangles": [
+            1,
+            2,
+            3,
+            1,
+            3,
+            0
+          ],
+          "vertices": [
+            160.7,
+            -183.22,
+            -130.3,
+            -183.22,
+            -130.3,
+            149.78,
+            160.7,
+            149.78
+          ],
+          "hull": 4,
+          "edges": [
+            0,
+            2,
+            2,
+            4,
+            4,
+            6,
+            0,
+            6
+          ],
+          "width": 291,
+          "height": 333
+        }
+      },
+      "Wormhole_ground": {
+        "Wormhole_ground": {
+          "x": 13.7,
+          "y": -132.72,
+          "width": 454,
+          "height": 345
+        }
+      },
+      "Wormhole_lighting1": {
+        "Wormhole_lighting1": {
+          "color": "ffffff00",
+          "x": 54.37,
+          "y": -7.09,
+          "rotation": 4.16,
+          "width": 131,
+          "height": 46
+        }
+      },
+      "Wormhole_lighting2": {
+        "Wormhole_lighting2": {
+          "x": 47.11,
+          "y": -6,
+          "rotation": -13.51,
+          "width": 132,
+          "height": 48
+        }
+      },
+      "Wormhole_lighting3": {
+        "Wormhole_lighting3": {
+          "x": 33.52,
+          "y": 4.24,
+          "rotation": -23.08,
+          "width": 158,
+          "height": 66
+        }
+      },
+      "Wormhole_lighting4": {
+        "Wormhole_lighting4": {
+          "x": 49.91,
+          "y": -1.11,
+          "rotation": -43.94,
+          "width": 146,
+          "height": 122
+        }
+      },
+      "Wormhole_lighting5": {
+        "Wormhole_lighting5": {
+          "x": 84.68,
+          "y": -10.83,
+          "rotation": -57.51,
+          "width": 140,
+          "height": 116
+        }
+      },
+      "Wormhole_lighting6": {
+        "Wormhole_lighting6": {
+          "x": 42.42,
+          "y": -6.23,
+          "rotation": -73.5,
+          "width": 68,
+          "height": 142
+        }
+      },
+      "Wormhole_lighting7": {
+        "Wormhole_lighting7": {
+          "x": 55.21,
+          "y": -15.47,
+          "rotation": -92.09,
+          "width": 54,
+          "height": 131
+        }
+      },
+      "Wormhole_lighting8": {
+        "Wormhole_lighting8": {
+          "x": 50.61,
+          "y": -7.41,
+          "rotation": -115.99,
+          "width": 86,
+          "height": 121
+        }
+      },
+      "Wormhole_lighting9": {
+        "Wormhole_lighting9": {
+          "x": 29.2,
+          "y": -3.31,
+          "rotation": -158.89,
+          "width": 53,
+          "height": 58
+        }
+      },
+      "Wormhole_piece1": {
+        "Wormhole_piece1": {
+          "x": 0.74,
+          "y": -2.26,
+          "width": 5,
+          "height": 17
+        }
+      },
+      "Wormhole_piece2": {
+        "Wormhole_piece2": {
+          "x": 0.57,
+          "y": -1.66,
+          "width": 5,
+          "height": 22
+        }
+      },
+      "Wormhole_piece3": {
+        "Wormhole_piece3": {
+          "x": 0.14,
+          "y": -1.11,
+          "width": 4,
+          "height": 18
+        }
+      },
+      "Wormhole_piece4": {
+        "Wormhole_piece4": {
+          "x": 2.23,
+          "y": -2.69,
+          "width": 8,
+          "height": 20
+        }
+      },
+      "Wormhole_piece5": {
+        "Wormhole_piece5": {
+          "x": 0.21,
+          "y": -0.71,
+          "width": 4,
+          "height": 12
+        }
+      },
+      "Wormhole_piece_big1": {
+        "Wormhole_piece_big1": {
+          "x": -13.34,
+          "y": -0.71,
+          "width": 90,
+          "height": 31
+        }
+      },
+      "Wormhole_piece_big2": {
+        "Wormhole_piece_big2": {
+          "x": 18.63,
+          "y": -2.4,
+          "width": 111,
+          "height": 48
+        }
+      },
+      "Wormhole_piece_big3": {
+        "Wormhole_piece_big3": {
+          "x": 3.66,
+          "y": 9.11,
+          "width": 59,
+          "height": 76
+        }
+      },
+      "Wormhole_red": {
+        "Wormhole_red": {
+          "x": 16.2,
+          "y": -16.22,
+          "width": 347,
+          "height": 388
+        }
+      },
+      "Wormhole_red_ring": {
+        "Wormhole_red_ring": {
+          "type": "mesh",
+          "uvs": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "triangles": [
+            1,
+            2,
+            3,
+            1,
+            3,
+            0
+          ],
+          "vertices": [
+            159.7,
+            -181.22,
+            -129.3,
+            -181.22,
+            -129.3,
+            147.78,
+            159.7,
+            147.78
+          ],
+          "hull": 4,
+          "edges": [
+            0,
+            2,
+            2,
+            4,
+            4,
+            6,
+            0,
+            6
+          ],
+          "width": 289,
+          "height": 329
+        }
+      },
+      "Wormhole_wing_L": {
+        "Wormhole_wing_L": {
+          "x": 124.2,
+          "y": -9.18,
+          "rotation": -12.43,
+          "width": 284,
+          "height": 201
+        }
+      },
+      "Wormhole_wing_R_piece1": {
+        "Wormhole_wing_R_piece1": {
+          "x": 74.42,
+          "y": 2.05,
+          "rotation": 159.88,
+          "width": 126,
+          "height": 58
+        }
+      },
+      "Wormhole_wing_R_piece2": {
+        "Wormhole_wing_R_piece2": {
+          "x": 88.85,
+          "y": 41.77,
+          "rotation": -142.9,
+          "width": 144,
+          "height": 118
+        }
+      },
+      "Wormhole_wing_R_piece3": {
+        "Wormhole_wing_R_piece3": {
+          "x": 38.27,
+          "y": -9.62,
+          "rotation": 109.84,
+          "width": 37,
+          "height": 93
+        }
+      },
+      "Wormhole_wing_R_piece4": {
+        "Wormhole_wing_R_piece4": {
+          "x": 23.75,
+          "y": 27.66,
+          "rotation": 109.84,
+          "width": 47,
+          "height": 69
+        }
+      }
+    }
+  },
+  "animations": {
+    "Wormhole_close": {
+      "slots": {
+        "Wormhole": {
+          "color": [
+            {
+              "time": 1.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_blue_ring": {
+          "color": [
+            {
+              "time": 1.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_green_ring": {
+          "color": [
+            {
+              "time": 1.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_ground": {
+          "color": [
+            {
+              "time": 1.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_red": {
+          "color": [
+            {
+              "time": 1.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_red_ring": {
+          "color": [
+            {
+              "time": 1.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_wing_L": {
+          "color": [
+            {
+              "time": 0.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece1": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece2": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece3": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece4": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "Wormhole_wing_R": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0
+            },
+            {
+              "time": 0.3333,
+              "angle": 8.27
+            },
+            {
+              "time": 2,
+              "angle": 64.73
+            }
+          ],
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.3333,
+              "x": -27.61,
+              "y": 22.74
+            },
+            {
+              "time": 2,
+              "x": -73.08,
+              "y": -305.31
+            }
+          ]
+        },
+        "Wormhole_wing_L": {
+          "rotate": [
+            {
+              "time": 0.3333,
+              "angle": 0
+            },
+            {
+              "time": 0.6667,
+              "angle": -21.37
+            },
+            {
+              "time": 2,
+              "angle": -45.53
+            }
+          ],
+          "translate": [
+            {
+              "time": 0.3333,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.6667,
+              "x": 34.1,
+              "y": 22.74
+            },
+            {
+              "time": 2,
+              "x": 74.7,
+              "y": -269.58
+            }
+          ]
+        },
+        "Wormhole_root": {
+          "scale": [
+            {
+              "time": 1.6667,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "time": 2.6667,
+              "x": 0,
+              "y": 1,
+              "curve": "stepped"
+            },
+            {
+              "time": 3,
+              "x": 0,
+              "y": 1
+            }
+          ]
+        }
+      }
+    },
+    "Wormhole_idle": {
+      "slots": {
+        "Wormhole_lighting1": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting2": {
+          "color": [
+            {
+              "time": 0.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting3": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            },
+            {
+              "time": 5.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 5.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting4": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting5": {
+          "color": [
+            {
+              "time": 0.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting6": {
+          "color": [
+            {
+              "time": 0.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            },
+            {
+              "time": 5.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 5.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting7": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            },
+            {
+              "time": 5.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 5.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting8": {
+          "color": [
+            {
+              "time": 0.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_lighting9": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece1": {
+          "color": [
+            {
+              "time": 0.0667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff0f"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece2": {
+          "color": [
+            {
+              "time": 0.0667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece3": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece4": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece5": {
+          "color": [
+            {
+              "time": 0.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 5,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece_big1": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece_big2": {
+          "color": [
+            {
+              "time": 1,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 2.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 2.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.0667,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.2667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_piece_big3": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1.7333,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.9333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 2,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 3.6667,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.3333,
+              "color": "ffffff00"
+            },
+            {
+              "time": 4.4,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 4.6,
+              "color": "ffffffff"
+            },
+            {
+              "time": 4.6667,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "Wormhole_red": {
+          "color": [
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1.3333,
+              "color": "ffffff00",
+              "curve": "stepped"
+            },
+            {
+              "time": 1.6667,
+              "color": "ffffff00"
+            },
+            {
+              "time": 3,
+              "color": "ffffffc2",
+              "curve": "stepped"
+            },
+            {
+              "time": 3.3333,
+              "color": "ffffffc2"
+            },
+            {
+              "time": 5.3333,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "Wormhole_root": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 1.3333,
+              "x": 0,
+              "y": -9.84
+            },
+            {
+              "time": 2.6667,
+              "x": 0,
+              "y": 0,
+              "curve": "stepped"
+            },
+            {
+              "time": 3,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 4.3333,
+              "x": 0,
+              "y": -9.84
+            },
+            {
+              "time": 5.6667,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "Wormhole_piece1": {
+          "translate": [
+            {
+              "time": 0,
+              "x": -0.6,
+              "y": -0.1
+            },
+            {
+              "time": 0.0667,
+              "x": -1.2,
+              "y": -4.9
+            },
+            {
+              "time": 0.1333,
+              "x": -6.05,
+              "y": -9.69
+            },
+            {
+              "time": 0.2,
+              "x": -1.8,
+              "y": -14.56
+            },
+            {
+              "time": 0.2667,
+              "x": -5.45,
+              "y": -19.25
+            },
+            {
+              "time": 0.3333,
+              "x": -1.2,
+              "y": -23.87
+            },
+            {
+              "time": 0.4,
+              "x": -6.05,
+              "y": -28.67
+            },
+            {
+              "time": 0.4667,
+              "x": -1.2,
+              "y": -33.33
+            },
+            {
+              "time": 0.5333,
+              "x": -6.05,
+              "y": -38.12
+            },
+            {
+              "time": 0.6,
+              "x": -1.2,
+              "y": -42.79
+            },
+            {
+              "time": 0.6667,
+              "x": -6.05,
+              "y": -47.56
+            },
+            {
+              "time": 0.7333,
+              "x": -1.2,
+              "y": -52.23
+            },
+            {
+              "time": 0.8,
+              "x": -6.05,
+              "y": -56.99
+            },
+            {
+              "time": 0.8667,
+              "x": -1.2,
+              "y": -61.66
+            },
+            {
+              "time": 0.9333,
+              "x": -6.05,
+              "y": -66.41
+            },
+            {
+              "time": 1,
+              "x": -1.2,
+              "y": -71.08
+            },
+            {
+              "time": 1.0667,
+              "x": -6.05,
+              "y": -75.81
+            },
+            {
+              "time": 1.1333,
+              "x": -1.2,
+              "y": -80.49
+            },
+            {
+              "time": 1.2,
+              "x": -6.05,
+              "y": -85.21
+            },
+            {
+              "time": 1.2667,
+              "x": -1.2,
+              "y": -89.89
+            },
+            {
+              "time": 1.3333,
+              "x": -6.05,
+              "y": -94.6
+            },
+            {
+              "time": 1.4,
+              "x": -1.2,
+              "y": -99.28
+            },
+            {
+              "time": 1.4667,
+              "x": -6.05,
+              "y": -103.97
+            },
+            {
+              "time": 1.5333,
+              "x": -1.2,
+              "y": -108.67
+            },
+            {
+              "time": 1.6,
+              "x": -6.05,
+              "y": -113.34
+            },
+            {
+              "time": 1.6667,
+              "x": -1.2,
+              "y": -118.04
+            },
+            {
+              "time": 1.7333,
+              "x": -6.05,
+              "y": -122.7
+            },
+            {
+              "time": 1.8,
+              "x": -1.2,
+              "y": -127.4
+            },
+            {
+              "time": 1.8667,
+              "x": -6.05,
+              "y": -132.05
+            },
+            {
+              "time": 1.9333,
+              "x": -1.2,
+              "y": -136.76
+            },
+            {
+              "time": 2,
+              "x": -6.05,
+              "y": -141.39
+            },
+            {
+              "time": 2.0667,
+              "x": -1.2,
+              "y": -146.1
+            },
+            {
+              "time": 2.1333,
+              "x": -6.05,
+              "y": -150.73
+            },
+            {
+              "time": 2.2,
+              "x": -1.2,
+              "y": -155.44
+            },
+            {
+              "time": 2.2667,
+              "x": -6.05,
+              "y": -160.05
+            },
+            {
+              "time": 2.3333,
+              "x": -1.2,
+              "y": -164.78
+            },
+            {
+              "time": 2.4,
+              "x": -6.05,
+              "y": -169.37
+            },
+            {
+              "time": 2.4667,
+              "x": -1.2,
+              "y": -174.1
+            },
+            {
+              "time": 2.5333,
+              "x": -6.65,
+              "y": -178.69
+            },
+            {
+              "time": 2.6,
+              "x": -1.2,
+              "y": -183.43
+            },
+            {
+              "time": 2.6667,
+              "x": -6.65,
+              "y": -188
+            },
+            {
+              "time": 2.7333,
+              "x": -1.2,
+              "y": -192.74
+            },
+            {
+              "time": 2.8,
+              "x": -6.65,
+              "y": -197.3
+            },
+            {
+              "time": 2.8667,
+              "x": -1.2,
+              "y": -202.06
+            },
+            {
+              "time": 2.9333,
+              "x": -6.65,
+              "y": -206.61
+            },
+            {
+              "time": 3,
+              "x": -1.2,
+              "y": -211.37
+            },
+            {
+              "time": 3.0667,
+              "x": -6.65,
+              "y": -215.91
+            },
+            {
+              "time": 3.1333,
+              "x": -1.2,
+              "y": -220.67
+            },
+            {
+              "time": 3.2,
+              "x": -6.65,
+              "y": -225.2
+            },
+            {
+              "time": 3.2667,
+              "x": -1.2,
+              "y": -229.98
+            },
+            {
+              "time": 3.3333,
+              "x": -6.65,
+              "y": -234.5
+            },
+            {
+              "time": 3.4,
+              "x": -1.2,
+              "y": -239.29
+            },
+            {
+              "time": 3.4667,
+              "x": -6.65,
+              "y": -243.8
+            },
+            {
+              "time": 3.5333,
+              "x": -1.2,
+              "y": -248.6
+            },
+            {
+              "time": 3.6,
+              "x": -6.65,
+              "y": -253.1
+            },
+            {
+              "time": 3.6667,
+              "x": -1.2,
+              "y": -257.91
+            },
+            {
+              "time": 3.7333,
+              "x": -6.65,
+              "y": -262.41
+            },
+            {
+              "time": 3.8,
+              "x": -1.2,
+              "y": -267.23
+            },
+            {
+              "time": 3.8667,
+              "x": -6.65,
+              "y": -271.72
+            },
+            {
+              "time": 3.9333,
+              "x": -1.2,
+              "y": -276.56
+            },
+            {
+              "time": 4,
+              "x": -6.65,
+              "y": -281.05
+            },
+            {
+              "time": 4.0667,
+              "x": -1.2,
+              "y": -285.9
+            },
+            {
+              "time": 4.1333,
+              "x": -6.65,
+              "y": -290.39
+            },
+            {
+              "time": 4.2,
+              "x": -1.2,
+              "y": -295.26
+            },
+            {
+              "time": 4.2667,
+              "x": -6.65,
+              "y": -299.75
+            },
+            {
+              "time": 4.3333,
+              "x": -1.2,
+              "y": -304.64
+            },
+            {
+              "time": 4.4,
+              "x": -6.65,
+              "y": -309.14
+            },
+            {
+              "time": 4.4667,
+              "x": -1.2,
+              "y": -314.05
+            },
+            {
+              "time": 4.5333,
+              "x": -6.65,
+              "y": -318.56
+            },
+            {
+              "time": 4.6,
+              "x": -1.2,
+              "y": -323.51
+            },
+            {
+              "time": 4.6667,
+              "x": -6.65,
+              "y": -328.04
+            },
+            {
+              "time": 4.7333,
+              "x": -1.2,
+              "y": -333.03
+            },
+            {
+              "time": 4.8,
+              "x": -6.65,
+              "y": -337.6
+            },
+            {
+              "time": 4.8667,
+              "x": -1.2,
+              "y": -342.65
+            },
+            {
+              "time": 4.9333,
+              "x": -6.65,
+              "y": -347.33
+            },
+            {
+              "time": 5,
+              "x": -1.2,
+              "y": -352.51
+            },
+            {
+              "time": 5.6,
+              "x": -1.2,
+              "y": -0.2
+            }
+          ]
+        },
+        "Wormhole_piece2": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.0667,
+              "x": -0.57,
+              "y": -4.71
+            },
+            {
+              "time": 0.1333,
+              "x": -8.68,
+              "y": -9.42
+            },
+            {
+              "time": 0.2,
+              "x": -0.57,
+              "y": -14.1
+            },
+            {
+              "time": 0.2667,
+              "x": -8.68,
+              "y": -18.8
+            },
+            {
+              "time": 0.3333,
+              "x": -0.57,
+              "y": -23.5
+            },
+            {
+              "time": 0.4,
+              "x": -8.68,
+              "y": -28.19
+            },
+            {
+              "time": 0.4667,
+              "x": -0.57,
+              "y": -32.89
+            },
+            {
+              "time": 0.5333,
+              "x": -8.68,
+              "y": -37.57
+            },
+            {
+              "time": 0.6,
+              "x": -0.57,
+              "y": -42.28
+            },
+            {
+              "time": 0.6667,
+              "x": -8.68,
+              "y": -46.95
+            },
+            {
+              "time": 0.7333,
+              "x": -0.57,
+              "y": -51.67
+            },
+            {
+              "time": 0.8,
+              "x": -8.68,
+              "y": -56.33
+            },
+            {
+              "time": 0.8667,
+              "x": -0.57,
+              "y": -61.06
+            },
+            {
+              "time": 0.9333,
+              "x": -8.68,
+              "y": -65.72
+            },
+            {
+              "time": 1,
+              "x": -0.57,
+              "y": -70.45
+            },
+            {
+              "time": 1.0667,
+              "x": -8.68,
+              "y": -75.1
+            },
+            {
+              "time": 1.1333,
+              "x": -0.57,
+              "y": -79.85
+            },
+            {
+              "time": 1.2,
+              "x": -8.68,
+              "y": -84.48
+            },
+            {
+              "time": 1.2667,
+              "x": -0.57,
+              "y": -89.24
+            },
+            {
+              "time": 1.3333,
+              "x": -8.12,
+              "y": -93.86
+            },
+            {
+              "time": 1.4,
+              "x": -0.57,
+              "y": -98.63
+            },
+            {
+              "time": 1.4667,
+              "x": -8.12,
+              "y": -103.24
+            },
+            {
+              "time": 1.5333,
+              "x": -0.57,
+              "y": -108.02
+            },
+            {
+              "time": 1.6,
+              "x": -8.12,
+              "y": -112.63
+            },
+            {
+              "time": 1.6667,
+              "x": -0.57,
+              "y": -117.41
+            },
+            {
+              "time": 1.7333,
+              "x": -8.12,
+              "y": -122.01
+            },
+            {
+              "time": 1.8,
+              "x": -0.57,
+              "y": -126.8
+            },
+            {
+              "time": 1.8667,
+              "x": -8.12,
+              "y": -131.39
+            },
+            {
+              "time": 1.9333,
+              "x": -0.57,
+              "y": -136.2
+            },
+            {
+              "time": 2,
+              "x": -8.12,
+              "y": -140.77
+            },
+            {
+              "time": 2.0667,
+              "x": -0.57,
+              "y": -145.59
+            },
+            {
+              "time": 2.1333,
+              "x": -8.12,
+              "y": -150.16
+            },
+            {
+              "time": 2.2,
+              "x": -0.57,
+              "y": -154.98
+            },
+            {
+              "time": 2.2667,
+              "x": -8.12,
+              "y": -159.54
+            },
+            {
+              "time": 2.3333,
+              "x": -0.57,
+              "y": -164.37
+            },
+            {
+              "time": 2.4,
+              "x": -8.12,
+              "y": -168.92
+            },
+            {
+              "time": 2.4667,
+              "x": -0.57,
+              "y": -173.76
+            },
+            {
+              "time": 2.5333,
+              "x": -8.12,
+              "y": -178.3
+            },
+            {
+              "time": 2.6,
+              "x": -0.57,
+              "y": -183.15
+            },
+            {
+              "time": 2.6667,
+              "x": -8.12,
+              "y": -187.68
+            },
+            {
+              "time": 2.7333,
+              "x": -0.57,
+              "y": -192.55
+            },
+            {
+              "time": 2.8,
+              "x": -8.12,
+              "y": -197.07
+            },
+            {
+              "time": 2.8667,
+              "x": -0.57,
+              "y": -201.94
+            },
+            {
+              "time": 2.9333,
+              "x": -8.12,
+              "y": -206.45
+            },
+            {
+              "time": 3,
+              "x": -0.57,
+              "y": -211.33
+            },
+            {
+              "time": 3.0667,
+              "x": -8.12,
+              "y": -215.83
+            },
+            {
+              "time": 3.1333,
+              "x": -0.57,
+              "y": -220.72
+            },
+            {
+              "time": 3.2,
+              "x": -8.12,
+              "y": -225.21
+            },
+            {
+              "time": 3.2667,
+              "x": -0.57,
+              "y": -230.11
+            },
+            {
+              "time": 3.3333,
+              "x": -8.12,
+              "y": -234.6
+            },
+            {
+              "time": 3.4,
+              "x": -0.57,
+              "y": -239.5
+            },
+            {
+              "time": 3.4667,
+              "x": -8.12,
+              "y": -243.98
+            },
+            {
+              "time": 3.5333,
+              "x": -0.57,
+              "y": -248.9
+            },
+            {
+              "time": 3.6,
+              "x": -8.12,
+              "y": -253.36
+            },
+            {
+              "time": 3.6667,
+              "x": -0.57,
+              "y": -258.29
+            },
+            {
+              "time": 3.7333,
+              "x": -8.12,
+              "y": -262.74
+            },
+            {
+              "time": 3.8,
+              "x": -0.57,
+              "y": -267.68
+            },
+            {
+              "time": 3.8667,
+              "x": -8.12,
+              "y": -272.12
+            },
+            {
+              "time": 3.9333,
+              "x": -0.57,
+              "y": -277.07
+            },
+            {
+              "time": 4,
+              "x": -8.12,
+              "y": -281.51
+            },
+            {
+              "time": 4.0667,
+              "x": -0.57,
+              "y": -286.46
+            },
+            {
+              "time": 4.1333,
+              "x": -8.12,
+              "y": -290.89
+            },
+            {
+              "time": 4.2,
+              "x": -0.57,
+              "y": -295.85
+            },
+            {
+              "time": 4.2667,
+              "x": -8.12,
+              "y": -300.27
+            },
+            {
+              "time": 4.3333,
+              "x": -0.57,
+              "y": -305.25
+            },
+            {
+              "time": 4.4,
+              "x": -8.12,
+              "y": -309.65
+            },
+            {
+              "time": 4.4667,
+              "x": -0.57,
+              "y": -314.64
+            },
+            {
+              "time": 4.5333,
+              "x": -8.12,
+              "y": -319.04
+            },
+            {
+              "time": 4.6,
+              "x": -0.57,
+              "y": -324.03
+            },
+            {
+              "time": 4.6667,
+              "x": -8.12,
+              "y": -328.42
+            },
+            {
+              "time": 4.7333,
+              "x": -0.57,
+              "y": -333.42
+            },
+            {
+              "time": 4.8,
+              "x": -8.12,
+              "y": -337.8
+            },
+            {
+              "time": 4.8667,
+              "x": -0.57,
+              "y": -342.81
+            },
+            {
+              "time": 4.9333,
+              "x": -7.56,
+              "y": -347.51
+            },
+            {
+              "time": 5,
+              "x": -0.57,
+              "y": -352.2
+            },
+            {
+              "time": 5.6,
+              "x": -0.57,
+              "y": -0.02
+            }
+          ]
+        },
+        "Wormhole_piece3": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.0667,
+              "x": 0,
+              "y": -4.85
+            },
+            {
+              "time": 0.1333,
+              "x": -12.87,
+              "y": -9.62
+            },
+            {
+              "time": 0.2,
+              "x": 0,
+              "y": -14.56
+            },
+            {
+              "time": 0.2667,
+              "x": -12.87,
+              "y": -19.32
+            },
+            {
+              "time": 0.3333,
+              "x": 0,
+              "y": -24.26
+            },
+            {
+              "time": 0.4,
+              "x": -12.87,
+              "y": -29.01
+            },
+            {
+              "time": 0.4667,
+              "x": 0,
+              "y": -33.97
+            },
+            {
+              "time": 0.5333,
+              "x": -12.87,
+              "y": -38.71
+            },
+            {
+              "time": 0.6,
+              "x": 0,
+              "y": -43.67
+            },
+            {
+              "time": 0.6667,
+              "x": -12.87,
+              "y": -48.4
+            },
+            {
+              "time": 0.7333,
+              "x": 0,
+              "y": -53.38
+            },
+            {
+              "time": 0.8,
+              "x": -12.87,
+              "y": -58.1
+            },
+            {
+              "time": 0.8667,
+              "x": 0,
+              "y": -63.08
+            },
+            {
+              "time": 0.9333,
+              "x": -12.87,
+              "y": -67.79
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": -72.79
+            },
+            {
+              "time": 1.0667,
+              "x": -12.87,
+              "y": -77.49
+            },
+            {
+              "time": 1.1333,
+              "x": 0,
+              "y": -82.49
+            },
+            {
+              "time": 1.2,
+              "x": -12.87,
+              "y": -87.18
+            },
+            {
+              "time": 1.2667,
+              "x": 0,
+              "y": -92.2
+            },
+            {
+              "time": 1.3333,
+              "x": -12.87,
+              "y": -96.88
+            },
+            {
+              "time": 1.4,
+              "x": 0,
+              "y": -101.9
+            },
+            {
+              "time": 1.4667,
+              "x": -12.87,
+              "y": -106.57
+            },
+            {
+              "time": 1.5333,
+              "x": 0,
+              "y": -111.61
+            },
+            {
+              "time": 1.6,
+              "x": -12.87,
+              "y": -116.27
+            },
+            {
+              "time": 1.6667,
+              "x": 0,
+              "y": -121.31
+            },
+            {
+              "time": 1.7333,
+              "x": -12.87,
+              "y": -125.96
+            },
+            {
+              "time": 1.8,
+              "x": 0,
+              "y": -131.02
+            },
+            {
+              "time": 1.8667,
+              "x": -12.87,
+              "y": -135.66
+            },
+            {
+              "time": 1.9333,
+              "x": 0,
+              "y": -140.72
+            },
+            {
+              "time": 2,
+              "x": -12.87,
+              "y": -145.35
+            },
+            {
+              "time": 2.0667,
+              "x": 0,
+              "y": -150.43
+            },
+            {
+              "time": 2.1333,
+              "x": -12.87,
+              "y": -155.05
+            },
+            {
+              "time": 2.2,
+              "x": 0,
+              "y": -160.13
+            },
+            {
+              "time": 2.2667,
+              "x": -12.87,
+              "y": -164.74
+            },
+            {
+              "time": 2.3333,
+              "x": 0,
+              "y": -169.84
+            },
+            {
+              "time": 2.4,
+              "x": -12.87,
+              "y": -174.44
+            },
+            {
+              "time": 2.4667,
+              "x": 0,
+              "y": -179.54
+            },
+            {
+              "time": 2.5333,
+              "x": -12.87,
+              "y": -184.14
+            },
+            {
+              "time": 2.6,
+              "x": 0,
+              "y": -189.25
+            },
+            {
+              "time": 2.6667,
+              "x": -12.87,
+              "y": -193.83
+            },
+            {
+              "time": 2.7333,
+              "x": 0,
+              "y": -198.95
+            },
+            {
+              "time": 2.8,
+              "x": -12.87,
+              "y": -203.53
+            },
+            {
+              "time": 2.8667,
+              "x": 0,
+              "y": -208.66
+            },
+            {
+              "time": 2.9333,
+              "x": -12.87,
+              "y": -213.22
+            },
+            {
+              "time": 3,
+              "x": 0,
+              "y": -218.36
+            },
+            {
+              "time": 3.0667,
+              "x": -12.87,
+              "y": -222.92
+            },
+            {
+              "time": 3.1333,
+              "x": 0,
+              "y": -228.07
+            },
+            {
+              "time": 3.2,
+              "x": -12.87,
+              "y": -232.61
+            },
+            {
+              "time": 3.2667,
+              "x": 0,
+              "y": -237.77
+            },
+            {
+              "time": 3.3333,
+              "x": -12.87,
+              "y": -242.31
+            },
+            {
+              "time": 3.4,
+              "x": 0,
+              "y": -247.48
+            },
+            {
+              "time": 3.4667,
+              "x": -12.87,
+              "y": -252
+            },
+            {
+              "time": 3.5333,
+              "x": 0,
+              "y": -257.18
+            },
+            {
+              "time": 3.6,
+              "x": -12.87,
+              "y": -261.7
+            },
+            {
+              "time": 3.6667,
+              "x": 0,
+              "y": -266.89
+            },
+            {
+              "time": 3.7333,
+              "x": -12.87,
+              "y": -271.39
+            },
+            {
+              "time": 3.8,
+              "x": 0,
+              "y": -276.59
+            },
+            {
+              "time": 3.8667,
+              "x": -12.87,
+              "y": -281.09
+            },
+            {
+              "time": 3.9333,
+              "x": 0,
+              "y": -286.3
+            },
+            {
+              "time": 4,
+              "x": -12.87,
+              "y": -290.78
+            },
+            {
+              "time": 4.0667,
+              "x": 0,
+              "y": -296
+            },
+            {
+              "time": 4.1333,
+              "x": -12.87,
+              "y": -300.48
+            },
+            {
+              "time": 4.2,
+              "x": 0,
+              "y": -305.71
+            },
+            {
+              "time": 4.2667,
+              "x": -12.87,
+              "y": -310.17
+            },
+            {
+              "time": 4.3333,
+              "x": 0,
+              "y": -315.41
+            },
+            {
+              "time": 4.4,
+              "x": -12.87,
+              "y": -319.87
+            },
+            {
+              "time": 4.4667,
+              "x": 0,
+              "y": -325.12
+            },
+            {
+              "time": 4.5333,
+              "x": -12.87,
+              "y": -329.56
+            },
+            {
+              "time": 4.6,
+              "x": 0,
+              "y": -334.82
+            },
+            {
+              "time": 4.6667,
+              "x": -12.87,
+              "y": -339.26
+            },
+            {
+              "time": 4.7333,
+              "x": 0,
+              "y": -344.53
+            },
+            {
+              "time": 4.8,
+              "x": -12.87,
+              "y": -348.95
+            },
+            {
+              "time": 4.8667,
+              "x": 0,
+              "y": -354.23
+            },
+            {
+              "time": 4.9333,
+              "x": -12.35,
+              "y": -359.08
+            },
+            {
+              "time": 5,
+              "x": 0,
+              "y": -363.94
+            },
+            {
+              "time": 5.6,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "Wormhole_piece4": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.0667,
+              "x": 0,
+              "y": -10.73
+            },
+            {
+              "time": 0.1333,
+              "x": 5.15,
+              "y": -15.76
+            },
+            {
+              "time": 0.2,
+              "x": 0,
+              "y": -21.31
+            },
+            {
+              "time": 0.2667,
+              "x": 5.15,
+              "y": -26.45
+            },
+            {
+              "time": 0.3333,
+              "x": 0,
+              "y": -31.9
+            },
+            {
+              "time": 0.4,
+              "x": 5.15,
+              "y": -37.01
+            },
+            {
+              "time": 0.4667,
+              "x": 0,
+              "y": -42.48
+            },
+            {
+              "time": 0.5333,
+              "x": 5.15,
+              "y": -47.58
+            },
+            {
+              "time": 0.6,
+              "x": 0,
+              "y": -53.06
+            },
+            {
+              "time": 0.6667,
+              "x": 5.15,
+              "y": -58.14
+            },
+            {
+              "time": 0.7333,
+              "x": 0,
+              "y": -63.65
+            },
+            {
+              "time": 0.8,
+              "x": 5.15,
+              "y": -68.7
+            },
+            {
+              "time": 0.8667,
+              "x": 0,
+              "y": -74.23
+            },
+            {
+              "time": 0.9333,
+              "x": 5.15,
+              "y": -79.26
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": -84.81
+            },
+            {
+              "time": 1.0667,
+              "x": 5.15,
+              "y": -89.83
+            },
+            {
+              "time": 1.1333,
+              "x": 0,
+              "y": -95.4
+            },
+            {
+              "time": 1.2,
+              "x": 5.15,
+              "y": -100.39
+            },
+            {
+              "time": 1.2667,
+              "x": 0,
+              "y": -105.98
+            },
+            {
+              "time": 1.3333,
+              "x": 5.15,
+              "y": -110.95
+            },
+            {
+              "time": 1.4,
+              "x": 0,
+              "y": -116.56
+            },
+            {
+              "time": 1.4667,
+              "x": 5.15,
+              "y": -121.51
+            },
+            {
+              "time": 1.5333,
+              "x": 0,
+              "y": -127.15
+            },
+            {
+              "time": 1.6,
+              "x": 5.15,
+              "y": -132.08
+            },
+            {
+              "time": 1.6667,
+              "x": 0,
+              "y": -137.73
+            },
+            {
+              "time": 1.7333,
+              "x": 5.15,
+              "y": -142.64
+            },
+            {
+              "time": 1.8,
+              "x": 0,
+              "y": -148.31
+            },
+            {
+              "time": 1.8667,
+              "x": 5.15,
+              "y": -153.2
+            },
+            {
+              "time": 1.9333,
+              "x": 0,
+              "y": -158.9
+            },
+            {
+              "time": 2,
+              "x": 5.15,
+              "y": -163.76
+            },
+            {
+              "time": 2.0667,
+              "x": 0,
+              "y": -169.48
+            },
+            {
+              "time": 2.1333,
+              "x": 5.15,
+              "y": -174.33
+            },
+            {
+              "time": 2.2,
+              "x": 0,
+              "y": -180.06
+            },
+            {
+              "time": 2.2667,
+              "x": 5.15,
+              "y": -184.89
+            },
+            {
+              "time": 2.3333,
+              "x": 0,
+              "y": -190.65
+            },
+            {
+              "time": 2.4,
+              "x": 5.15,
+              "y": -195.45
+            },
+            {
+              "time": 2.4667,
+              "x": 0,
+              "y": -201.23
+            },
+            {
+              "time": 2.5333,
+              "x": 5.15,
+              "y": -206.01
+            },
+            {
+              "time": 2.6,
+              "x": 0,
+              "y": -211.81
+            },
+            {
+              "time": 2.6667,
+              "x": 5.15,
+              "y": -216.57
+            },
+            {
+              "time": 2.7333,
+              "x": 0,
+              "y": -222.4
+            },
+            {
+              "time": 2.8,
+              "x": 5.15,
+              "y": -227.14
+            },
+            {
+              "time": 2.8667,
+              "x": 0,
+              "y": -232.98
+            },
+            {
+              "time": 2.9333,
+              "x": 5.15,
+              "y": -237.7
+            },
+            {
+              "time": 3,
+              "x": 0,
+              "y": -243.57
+            },
+            {
+              "time": 3.0667,
+              "x": 5.15,
+              "y": -248.26
+            },
+            {
+              "time": 3.1333,
+              "x": 0,
+              "y": -254.15
+            },
+            {
+              "time": 3.2,
+              "x": 5.15,
+              "y": -258.82
+            },
+            {
+              "time": 3.2667,
+              "x": 0,
+              "y": -264.73
+            },
+            {
+              "time": 3.3333,
+              "x": 5.15,
+              "y": -269.39
+            },
+            {
+              "time": 3.4,
+              "x": 0,
+              "y": -275.32
+            },
+            {
+              "time": 3.4667,
+              "x": 5.15,
+              "y": -279.95
+            },
+            {
+              "time": 3.5333,
+              "x": 0,
+              "y": -285.9
+            },
+            {
+              "time": 3.6,
+              "x": 5.15,
+              "y": -290.51
+            },
+            {
+              "time": 3.6667,
+              "x": 0,
+              "y": -296.48
+            },
+            {
+              "time": 3.7333,
+              "x": 5.15,
+              "y": -301.07
+            },
+            {
+              "time": 3.8,
+              "x": 0,
+              "y": -307.07
+            },
+            {
+              "time": 3.8667,
+              "x": 5.15,
+              "y": -311.64
+            },
+            {
+              "time": 3.9333,
+              "x": 0,
+              "y": -317.65
+            },
+            {
+              "time": 4,
+              "x": 5.15,
+              "y": -322.2
+            },
+            {
+              "time": 4.0667,
+              "x": 0,
+              "y": -328.23
+            },
+            {
+              "time": 4.1333,
+              "x": 5.15,
+              "y": -332.76
+            },
+            {
+              "time": 4.2,
+              "x": 0,
+              "y": -338.82
+            },
+            {
+              "time": 4.2667,
+              "x": 5.15,
+              "y": -343.32
+            },
+            {
+              "time": 4.3333,
+              "x": 0,
+              "y": -349.4
+            },
+            {
+              "time": 4.4,
+              "x": 5.15,
+              "y": -353.89
+            },
+            {
+              "time": 4.4667,
+              "x": 0,
+              "y": -359.98
+            },
+            {
+              "time": 4.5333,
+              "x": 5.15,
+              "y": -364.45
+            },
+            {
+              "time": 4.6,
+              "x": 0,
+              "y": -370.57
+            },
+            {
+              "time": 4.6667,
+              "x": 5.15,
+              "y": -375.01
+            },
+            {
+              "time": 4.7333,
+              "x": 0,
+              "y": -381.15
+            },
+            {
+              "time": 4.8,
+              "x": 5.15,
+              "y": -385.57
+            },
+            {
+              "time": 4.8667,
+              "x": 0,
+              "y": -391.73
+            },
+            {
+              "time": 4.9333,
+              "x": 5.15,
+              "y": -396.58
+            },
+            {
+              "time": 5,
+              "x": 0,
+              "y": -402.32
+            },
+            {
+              "time": 5.5333,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "Wormhole_piece5": {
+          "translate": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 0.0667,
+              "x": 0,
+              "y": -3.53
+            },
+            {
+              "time": 0.1333,
+              "x": -8.14,
+              "y": -7.06
+            },
+            {
+              "time": 0.2,
+              "x": 0,
+              "y": -10.6
+            },
+            {
+              "time": 0.2667,
+              "x": -8.14,
+              "y": -14.12
+            },
+            {
+              "time": 0.3333,
+              "x": 0,
+              "y": -17.67
+            },
+            {
+              "time": 0.4,
+              "x": -8.14,
+              "y": -21.18
+            },
+            {
+              "time": 0.4667,
+              "x": 0,
+              "y": -24.74
+            },
+            {
+              "time": 0.5333,
+              "x": -8.14,
+              "y": -28.24
+            },
+            {
+              "time": 0.6,
+              "x": 0,
+              "y": -31.81
+            },
+            {
+              "time": 0.6667,
+              "x": -8.14,
+              "y": -35.3
+            },
+            {
+              "time": 0.7333,
+              "x": 0,
+              "y": -38.87
+            },
+            {
+              "time": 0.8,
+              "x": -8.14,
+              "y": -42.36
+            },
+            {
+              "time": 0.8667,
+              "x": 0,
+              "y": -45.94
+            },
+            {
+              "time": 0.9333,
+              "x": -8.14,
+              "y": -49.43
+            },
+            {
+              "time": 1,
+              "x": 0,
+              "y": -53.01
+            },
+            {
+              "time": 1.0667,
+              "x": -8.14,
+              "y": -56.49
+            },
+            {
+              "time": 1.1333,
+              "x": 0,
+              "y": -60.08
+            },
+            {
+              "time": 1.2,
+              "x": -8.14,
+              "y": -63.55
+            },
+            {
+              "time": 1.2667,
+              "x": 0,
+              "y": -67.14
+            },
+            {
+              "time": 1.3333,
+              "x": -8.14,
+              "y": -70.61
+            },
+            {
+              "time": 1.4,
+              "x": 0,
+              "y": -74.21
+            },
+            {
+              "time": 1.4667,
+              "x": -8.14,
+              "y": -77.67
+            },
+            {
+              "time": 1.5333,
+              "x": 0,
+              "y": -81.28
+            },
+            {
+              "time": 1.6,
+              "x": -8.14,
+              "y": -84.73
+            },
+            {
+              "time": 1.6667,
+              "x": 0,
+              "y": -88.35
+            },
+            {
+              "time": 1.7333,
+              "x": -8.14,
+              "y": -91.79
+            },
+            {
+              "time": 1.8,
+              "x": 0,
+              "y": -95.42
+            },
+            {
+              "time": 1.8667,
+              "x": -8.14,
+              "y": -98.85
+            },
+            {
+              "time": 1.9333,
+              "x": 0,
+              "y": -102.48
+            },
+            {
+              "time": 2,
+              "x": -8.14,
+              "y": -105.91
+            },
+            {
+              "time": 2.0667,
+              "x": 0,
+              "y": -109.55
+            },
+            {
+              "time": 2.1333,
+              "x": -8.14,
+              "y": -112.97
+            },
+            {
+              "time": 2.2,
+              "x": 0,
+              "y": -116.62
+            },
+            {
+              "time": 2.2667,
+              "x": -8.14,
+              "y": -120.03
+            },
+            {
+              "time": 2.3333,
+              "x": 0,
+              "y": -123.69
+            },
+            {
+              "time": 2.4,
+              "x": -8.14,
+              "y": -127.09
+            },
+            {
+              "time": 2.4667,
+              "x": 0,
+              "y": -130.76
+            },
+            {
+              "time": 2.5333,
+              "x": -8.14,
+              "y": -134.15
+            },
+            {
+              "time": 2.6,
+              "x": 0,
+              "y": -137.82
+            },
+            {
+              "time": 2.6667,
+              "x": -8.14,
+              "y": -141.22
+            },
+            {
+              "time": 2.7333,
+              "x": 0,
+              "y": -144.89
+            },
+            {
+              "time": 2.8,
+              "x": -8.14,
+              "y": -148.28
+            },
+            {
+              "time": 2.8667,
+              "x": 0,
+              "y": -151.96
+            },
+            {
+              "time": 2.9333,
+              "x": -8.14,
+              "y": -155.34
+            },
+            {
+              "time": 3,
+              "x": 0,
+              "y": -159.03
+            },
+            {
+              "time": 3.0667,
+              "x": -8.14,
+              "y": -162.4
+            },
+            {
+              "time": 3.1333,
+              "x": 0,
+              "y": -166.09
+            },
+            {
+              "time": 3.2,
+              "x": -8.14,
+              "y": -169.46
+            },
+            {
+              "time": 3.2667,
+              "x": 0,
+              "y": -173.16
+            },
+            {
+              "time": 3.3333,
+              "x": -8.14,
+              "y": -176.52
+            },
+            {
+              "time": 3.4,
+              "x": 0,
+              "y": -180.23
+            },
+            {
+              "time": 3.4667,
+              "x": -8.14,
+              "y": -183.58
+            },
+            {
+              "time": 3.5333,
+              "x": 0,
+              "y": -187.3
+            },
+            {
+              "time": 3.6,
+              "x": -8.14,
+              "y": -190.64
+            },
+            {
+              "time": 3.6667,
+              "x": 0,
+              "y": -194.37
+            },
+            {
+              "time": 3.7333,
+              "x": -8.14,
+              "y": -197.7
+            },
+            {
+              "time": 3.8,
+              "x": 0,
+              "y": -201.43
+            },
+            {
+              "time": 3.8667,
+              "x": -8.14,
+              "y": -204.76
+            },
+            {
+              "time": 3.9333,
+              "x": 0,
+              "y": -208.5
+            },
+            {
+              "time": 4,
+              "x": -8.14,
+              "y": -211.82
+            },
+            {
+              "time": 4.0667,
+              "x": 0,
+              "y": -215.57
+            },
+            {
+              "time": 4.1333,
+              "x": -8.14,
+              "y": -218.88
+            },
+            {
+              "time": 4.2,
+              "x": 0,
+              "y": -222.64
+            },
+            {
+              "time": 4.2667,
+              "x": -8.14,
+              "y": -225.94
+            },
+            {
+              "time": 4.3333,
+              "x": 0,
+              "y": -229.7
+            },
+            {
+              "time": 4.4,
+              "x": -8.14,
+              "y": -233.01
+            },
+            {
+              "time": 4.4667,
+              "x": 0,
+              "y": -236.77
+            },
+            {
+              "time": 4.5333,
+              "x": -8.14,
+              "y": -240.07
+            },
+            {
+              "time": 4.6,
+              "x": 0,
+              "y": -243.84
+            },
+            {
+              "time": 4.6667,
+              "x": -8.14,
+              "y": -247.13
+            },
+            {
+              "time": 4.7333,
+              "x": 0,
+              "y": -250.91
+            },
+            {
+              "time": 4.8,
+              "x": -8.14,
+              "y": -254.19
+            },
+            {
+              "time": 4.8667,
+              "x": 0,
+              "y": -257.98
+            },
+            {
+              "time": 4.9333,
+              "x": -8.15,
+              "y": -261.25
+            },
+            {
+              "time": 5,
+              "x": 0,
+              "y": -265.04
+            },
+            {
+              "time": 5.5333,
+              "x": 0,
+              "y": 0
+            }
+          ]
+        },
+        "Wormhole_wing_R": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.3333,
+              "angle": -7.73,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 5.6667,
+              "angle": 0
+            }
+          ]
+        },
+        "Wormhole_wing_R2": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 3,
+              "angle": -8.11,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 5.6667,
+              "angle": 0
+            }
+          ]
+        },
+        "Wormhole_wing_L": {
+          "rotate": [
+            {
+              "time": 0,
+              "angle": 0,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 2.6667,
+              "angle": 8.18,
+              "curve": [
+                0.25,
+                0,
+                0.75,
+                1
+              ]
+            },
+            {
+              "time": 5.6667,
+              "angle": 0
+            }
+          ]
+        }
+      },
+      "deform": {
+        "default": {
+          "Wormhole_blue_ring": {
+            "Wormhole_blue_ring": [
+              {
+                "time": 0.0333
+              },
+              {
+                "time": 0.1667,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 0.3,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 0.4333,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 0.5667
+              },
+              {
+                "time": 0.7,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 0.8333,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 0.9667,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 1.1
+              },
+              {
+                "time": 1.2333,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 1.3667,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 1.5,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 1.6333
+              },
+              {
+                "time": 1.7667,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 1.9,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 2.0333,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 2.1667
+              },
+              {
+                "time": 2.3,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 2.4333,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 2.5667,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 2.7
+              },
+              {
+                "time": 2.8333,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 2.9667,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 3.1,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 3.2333
+              },
+              {
+                "time": 3.3667,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 3.5,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 3.6333,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 3.7667
+              },
+              {
+                "time": 3.9,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 4.0333,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 4.1667,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 4.3
+              },
+              {
+                "time": 4.4333,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 4.5667,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 4.7,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 4.8333
+              },
+              {
+                "time": 4.9667,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 5.1,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              },
+              {
+                "time": 5.2333,
+                "vertices": [
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999,
+                  0,
+                  -6.50999
+                ]
+              },
+              {
+                "time": 5.3667
+              },
+              {
+                "time": 5.5,
+                "vertices": [
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997,
+                  0,
+                  3.71997
+                ]
+              },
+              {
+                "time": 5.6333,
+                "offset": 1,
+                "vertices": [
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002,
+                  0,
+                  -5.58002
+                ]
+              }
+            ]
+          },
+          "Wormhole_red_ring": {
+            "Wormhole_red_ring": [
+              {
+                "time": 0.0333
+              },
+              {
+                "time": 0.1667,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 0.3
+              },
+              {
+                "time": 0.4333,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 0.5667
+              },
+              {
+                "time": 0.7,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 0.8333,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 0.9667,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 1.1
+              },
+              {
+                "time": 1.2333,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 1.3667,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 1.5,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 1.6333
+              },
+              {
+                "time": 1.7667,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 1.9,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 2.0333,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 2.1667
+              },
+              {
+                "time": 2.3,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 2.4333,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 2.5667,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 2.7
+              },
+              {
+                "time": 2.8333,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 2.9667,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 3.1,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 3.2333
+              },
+              {
+                "time": 3.3667,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 3.5,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 3.6333,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 3.7667
+              },
+              {
+                "time": 3.9,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 4.0333,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 4.1667,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 4.3
+              },
+              {
+                "time": 4.4333,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 4.5667,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 4.7,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 4.8333
+              },
+              {
+                "time": 4.9667,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 5.1,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              },
+              {
+                "time": 5.2333,
+                "vertices": [
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999,
+                  0,
+                  4.89999
+                ]
+              },
+              {
+                "time": 5.3667
+              },
+              {
+                "time": 5.5,
+                "vertices": [
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2,
+                  0,
+                  -4.2
+                ]
+              },
+              {
+                "time": 5.6333,
+                "offset": 1,
+                "vertices": [
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002,
+                  0,
+                  6.30002
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "Wormhole_open": {
+      "slots": {
+        "Wormhole": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_blue_ring": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_green_ring": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_ground": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_red": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_red_ring": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_wing_L": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece1": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece2": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece3": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        },
+        "Wormhole_wing_R_piece4": {
+          "color": [
+            {
+              "time": 0,
+              "color": "ffffff00"
+            },
+            {
+              "time": 1,
+              "color": "ffffffff"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "Wormhole_root": {
+          "translate": [
+            {
+              "time": 1,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "time": 2.1667,
+              "x": 0,
+              "y": -7.16
+            },
+            {
+              "time": 3.3333,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "scale": [
+            {
+              "time": 0,
+              "x": 0,
+              "y": 0.9
+            },
+            {
+              "time": 0.8333,
+              "x": 1,
+              "y": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+}

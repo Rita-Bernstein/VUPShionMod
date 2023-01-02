@@ -34,14 +34,14 @@ public class RealizingCanticle extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new ArtifactPower(p,1)));
+        addToBot(new ApplyPowerAction(p, p, new ArtifactPower(p, 1)));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 if (isInPrayer())
                     addToTop(new ApplyPrayerAction(new ArtifactPrayer(secondaryM, magicNumber)));
 
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new BeinglessMoment();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

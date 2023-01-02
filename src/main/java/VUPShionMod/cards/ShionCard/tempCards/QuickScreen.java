@@ -2,7 +2,7 @@ package VUPShionMod.cards.ShionCard.tempCards;
 
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Shion.TriggerFinFunnelPassiveAction;
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.DissectingFinFunnel;
 import VUPShionMod.patches.CardTagsEnum;
 import basemod.patches.com.megacrit.cardcrawl.dungeons.AbstractDungeon.NoPools;

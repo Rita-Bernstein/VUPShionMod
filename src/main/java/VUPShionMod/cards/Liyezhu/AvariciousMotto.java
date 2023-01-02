@@ -37,7 +37,7 @@ public class AvariciousMotto extends AbstractLiyezhuCard {
                 if (isInPrayer()) {
                     addToTop(new ApplyPrayerAction(new AvariciousPrayer(secondaryM, 1)));
                 }
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new BurnishedRazor();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

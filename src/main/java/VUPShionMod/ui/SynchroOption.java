@@ -14,7 +14,7 @@ public class SynchroOption extends AbstractCampfireOption {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VUPShionMod.makeID(SynchroOption.class.getSimpleName()));
     public static final String[] TEXT = uiStrings.TEXT;
 
-    private AbstractRelic synchroRelic;
+    private final AbstractRelic synchroRelic;
 
     public SynchroOption(AbstractRelic synchroRelic) {
         this.label = TEXT[0];
@@ -34,7 +34,7 @@ public class SynchroOption extends AbstractCampfireOption {
             CardCrawlGame.sound.play("ATTACK_MAGIC_SLOW_2");
             synchroRelic.counter += 3;
 
-            ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
+            ((RestRoom) AbstractDungeon.getCurrRoom()).fadeIn();
             AbstractRoom.waitTimer = 0.0F;
             (AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.COMPLETE;
         }

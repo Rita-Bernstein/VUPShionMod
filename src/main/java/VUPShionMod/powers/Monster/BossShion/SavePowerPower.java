@@ -11,7 +11,7 @@ public abstract class SavePowerPower extends AbstractShionPower {
     public boolean justApplied = true;
     public boolean endingEffect = false;
 
-    public SavePowerPower(){
+    public SavePowerPower() {
 
     }
 }

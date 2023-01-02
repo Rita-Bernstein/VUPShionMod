@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class ChangeCostAction extends AbstractGameAction {
     UUID uuid;
-    private AbstractCard card;
+    private final AbstractCard card;
 
     public ChangeCostAction(UUID targetUUID, int amount) {
         this.card = null;

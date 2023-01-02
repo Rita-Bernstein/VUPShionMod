@@ -83,21 +83,20 @@ public class SpiritStance extends AbstractVUPShionStance {
 
     @Override
     public void onPlayCard(AbstractCard card) {
-        if(card.type == AbstractCard.CardType.ATTACK){
+        if (card.type == AbstractCard.CardType.ATTACK) {
             AbstractDungeon.actionManager.addToBottom(new DuelSinAction());
         }
     }
 
     @Override
     public void onInflictDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
-        addToTop(new GainShieldAction(AbstractDungeon.player,AbstractDungeon.player.lastDamageTaken/2));
+        addToTop(new GainShieldAction(AbstractDungeon.player, AbstractDungeon.player.lastDamageTaken / 2));
     }
 
     @Override
     public void onVictory() {
-        AbstractDungeon.player.increaseMaxHp(5,true);
+        AbstractDungeon.player.increaseMaxHp(5, true);
     }
-
 
 
     @Override

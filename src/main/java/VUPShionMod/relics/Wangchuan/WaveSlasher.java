@@ -20,7 +20,7 @@ public class WaveSlasher extends AbstractShionRelic {
     private static final Texture IMG = new Texture(VUPShionMod.assetPath(IMG_PATH));
     private static final Texture OUTLINE_IMG = new Texture(VUPShionMod.assetPath(OUTLINE_PATH));
 
-    private boolean triggered = false;
+    private final boolean triggered = false;
 
     public WaveSlasher() {
         super(ID, IMG, OUTLINE_IMG, RelicTier.STARTER, LandingSound.CLINK);

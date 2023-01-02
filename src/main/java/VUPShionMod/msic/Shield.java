@@ -19,14 +19,14 @@ import com.megacrit.cardcrawl.vfx.combat.BlockedNumberEffect;
 import com.megacrit.cardcrawl.vfx.combat.BlockedWordEffect;
 
 public class Shield implements Disposable {
-    private Texture blockImg = ImageMaster.loadImage("VUPShionMod/img/ui/Shield.png");
+    private final Texture blockImg = ImageMaster.loadImage("VUPShionMod/img/ui/Shield.png");
     private int currentShield = 0;
 
     protected static final float BLOCK_ICON_X = -14.0F * Settings.scale;
     protected static final float BLOCK_ICON_Y = -14.0F * Settings.scale;
-    private Color blockColor = Color.WHITE.cpy();
-    private Color blockTextColor = new Color(0.9F, 0.9F, 0.9F, 1.0F);
-    private float renderScale = 0.8f;
+    private final Color blockColor = Color.WHITE.cpy();
+    private final Color blockTextColor = new Color(0.9F, 0.9F, 0.9F, 1.0F);
+    private final float renderScale = 0.8f;
 
     public Shield() {
     }
@@ -34,7 +34,7 @@ public class Shield implements Disposable {
     public void update() {
     }
 
-    public void render(SpriteBatch sb, AbstractCreature owner,float x, float y, float blockOffset, float blockScale) {
+    public void render(SpriteBatch sb, AbstractCreature owner, float x, float y, float blockOffset, float blockScale) {
         sb.setColor(this.blockColor);
 
         if (this.currentShield > 0) {
@@ -127,11 +127,11 @@ public class Shield implements Disposable {
         CardCrawlGame.sound.play("BLOCK_BREAK");
     }
 
-    public int getCurrentShield(){
+    public int getCurrentShield() {
         return currentShield;
     }
 
-    public static Shield getShield(AbstractCreature owner){
+    public static Shield getShield(AbstractCreature owner) {
         return ShieldPatches.AddFields.shield.get(owner);
     }
 

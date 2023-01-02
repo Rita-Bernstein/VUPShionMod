@@ -60,11 +60,7 @@ public class WordFragment extends AbstractShionImagePotion {
             return false;
         }
 
-        if ((AbstractDungeon.getCurrRoom()).phase != AbstractRoom.RoomPhase.COMBAT && AbstractDungeon.isScreenUp) {
-            return false;
-        }
-
-        return true;
+        return (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT || !AbstractDungeon.isScreenUp;
     }
 
     public int getPotency(int ascensionLevel) {

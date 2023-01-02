@@ -28,7 +28,7 @@ public class AnastasiaCore extends AbstractShionCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("SHION_16"));
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("Shion"),1.0f));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("Shion"), 1.0f));
         addToBot(new ApplyPowerAction(p, p, new AnastasiaCorePower(p, 1)));
     }
 

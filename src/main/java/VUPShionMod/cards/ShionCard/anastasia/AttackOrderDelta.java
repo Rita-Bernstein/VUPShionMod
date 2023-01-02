@@ -1,7 +1,7 @@
 package VUPShionMod.cards.ShionCard.anastasia;
 
 import VUPShionMod.VUPShionMod;
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.Shion.AttackOrderDeltaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,7 +22,7 @@ public class AttackOrderDelta extends AbstractVUPShionCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new AttackOrderDeltaPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new AttackOrderDeltaPower(p)));
     }
 
     @Override

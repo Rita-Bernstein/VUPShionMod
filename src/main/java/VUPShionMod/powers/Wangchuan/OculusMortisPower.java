@@ -24,8 +24,7 @@ public class OculusMortisPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/CircuitPower32.png")), 0, 0, 32, 32);
+        loadShionRegion("CircuitPower");
         updateDescription();
         this.isTurnBased = true;
     }
@@ -39,7 +38,7 @@ public class OculusMortisPower extends AbstractShionPower {
     public void atStartOfTurn() {
         for (int i = 0; i < this.amount; i++) {
             addToBot(new ApplyPowerToRandomEnemyAction(AbstractDungeon.player,
-                    new VulnerablePower(null, 1,false), 1, false, AbstractGameAction.AttackEffect.NONE));
+                    new VulnerablePower(null, 1, false), 1, false, AbstractGameAction.AttackEffect.NONE));
         }
     }
 }

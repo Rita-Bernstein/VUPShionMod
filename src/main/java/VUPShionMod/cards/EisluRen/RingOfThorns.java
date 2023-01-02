@@ -35,9 +35,9 @@ public class RingOfThorns extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!this.upgraded)
-        if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-            addToBot(new LoseWingShieldAction(this.secondaryM));
+        if (!this.upgraded)
+            if (!hasTag(CardTagsEnum.NoWingShieldCharge))
+                addToBot(new LoseWingShieldAction(this.secondaryM));
         addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));
 
         Supplier<AbstractPower> powerToApply = () -> new WeakPower(null, 1, false);

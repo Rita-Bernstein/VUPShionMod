@@ -24,7 +24,7 @@ public class SynchroSummon extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p,p,new SynchroSummonPower(p,this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new SynchroSummonPower(p, this.magicNumber)));
     }
 
     @Override

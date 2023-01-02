@@ -29,7 +29,7 @@ public class Limit extends AbstractShionKuroisuCard {
         this.baseDamage = 8;
 
         this.isMultiDamage = true;
-        ExhaustiveVariable.setBaseValue(this,2);
+        ExhaustiveVariable.setBaseValue(this, 2);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

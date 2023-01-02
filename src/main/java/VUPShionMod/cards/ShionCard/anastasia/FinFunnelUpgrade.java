@@ -26,7 +26,7 @@ public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
 
     private float rotationTimer;
     private int previewIndex;
-    private ArrayList<AbstractCard> cardsList = new ArrayList<>();
+    private final ArrayList<AbstractCard> cardsList = new ArrayList<>();
 
     public FinFunnelUpgrade() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
@@ -51,7 +51,6 @@ public class FinFunnelUpgrade extends AbstractShionAnastasiaCard {
                 !p.hasPower(DissectingFinFunnelUpgradePower.POWER_ID) &&
                 !p.hasPower(PursuitFinFunnelUpgradePower.POWER_ID);
     }
-
 
 
     @Override

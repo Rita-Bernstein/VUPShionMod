@@ -20,26 +20,25 @@ public class AttackOrderGammaPower extends AbstractShionPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = -1;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AttackOrderPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/AttackOrderPower48.png"), 0, 0, 48, 48);
+        loadShionRegion("AttackOrderPower");
 
         updateDescription();
     }
 
     @Override
     public void onInitialApplication() {
-        if(this.owner.hasPower(AttackOrderAlphaPower.POWER_ID))
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, AttackOrderAlphaPower.POWER_ID));
+        if (this.owner.hasPower(AttackOrderAlphaPower.POWER_ID))
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, AttackOrderAlphaPower.POWER_ID));
 
-        if(this.owner.hasPower(AttackOrderBetaPower.POWER_ID))
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, AttackOrderBetaPower.POWER_ID));
+        if (this.owner.hasPower(AttackOrderBetaPower.POWER_ID))
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, AttackOrderBetaPower.POWER_ID));
 
-        if(this.owner.hasPower(AttackOrderDeltaPower.POWER_ID))
-            addToBot(new RemoveSpecificPowerAction(this.owner,this.owner, AttackOrderDeltaPower.POWER_ID));
+        if (this.owner.hasPower(AttackOrderDeltaPower.POWER_ID))
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, AttackOrderDeltaPower.POWER_ID));
     }
 
     @Override
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],this.amount) ;
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }

@@ -15,9 +15,9 @@ import static com.megacrit.cardcrawl.core.AbstractCreature.sr;
 
 public class WangchuanVictoryEffect extends AbstractGameEffect {
 
-    private float speed;
+    private final float speed;
 
-    private static TextureAtlas Atlas = null;
+    private static final TextureAtlas Atlas = null;
     private static com.esotericsoftware.spine.Skeleton Skeleton;
     private static AnimationState State;
     private static AnimationStateData StateData;
@@ -29,7 +29,7 @@ public class WangchuanVictoryEffect extends AbstractGameEffect {
         this.speed = speed;
         this.duration = 3.0f;
 
-        loadanimation(this.speed);
+        loadAnimation(this.speed);
 
         this.img = ImageMaster.loadImage("VUPShionMod/characters/WangChuan/victory/victory.sff");
     }
@@ -38,7 +38,7 @@ public class WangchuanVictoryEffect extends AbstractGameEffect {
         this(1.0f);
     }
 
-    private static void loadanimation(float timeScale) {
+    private static void loadAnimation(float timeScale) {
 //        Atlas = new TextureAtlas(Gdx.files.internal("VUPShionMod/characters/Shion/victory/ShionVictory.atlas"));
 //        SkeletonJson json = new SkeletonJson(Atlas);
 //        json.setScale(Settings.scale / 1.0F);
@@ -68,7 +68,7 @@ public class WangchuanVictoryEffect extends AbstractGameEffect {
     public void render(SpriteBatch sb) {
         sb.setColor(Color.WHITE.cpy());
         sb.draw(this.img,
-                Settings.WIDTH / 2.0f - 960.0F, Settings.HEIGHT/2.0f - 600.0F,
+                Settings.WIDTH / 2.0f - 960.0F, Settings.HEIGHT / 2.0f - 600.0F,
                 960.0F, 600.0F,
                 1920.0F, 1200.0F,
                 Settings.scale, Settings.scale,
@@ -95,7 +95,7 @@ public class WangchuanVictoryEffect extends AbstractGameEffect {
     public void dispose() {
         Atlas.dispose();
 
-        if(img != null){
+        if (img != null) {
             img.dispose();
             img = null;
         }

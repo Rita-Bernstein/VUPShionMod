@@ -1,6 +1,6 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.powers.Common.FreeCardPower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -111,8 +111,8 @@ public class AbstractCardPatches {
                 AbstractDungeon.player.hand.moveToHand(card);
                 AbstractDungeon.player.onCardDrawOrDiscard();
                 c.returnToHandOnce = false;
-                if(!GameStatsPatch.returnToHandList.contains(card.cardID) && c.returnToHand)
-                GameStatsPatch.returnToHandList.add(card.cardID);
+                if (!GameStatsPatch.returnToHandList.contains(card.cardID) && c.returnToHand)
+                    GameStatsPatch.returnToHandList.add(card.cardID);
             } else {
                 AbstractDungeon.player.hand.moveToDiscardPile(card);
             }

@@ -68,7 +68,7 @@ public class AbyssalCrux extends AbstractShionRelic {
             if (!upgraded) {
                 if (!this.dontHeal && info.type == DamageInfo.DamageType.HP_LOSS) {
                     flash();
-                    addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, (int)Math.floor(damageAmount * 0.3f)));
+                    addToTop(new HealAction(AbstractDungeon.player, AbstractDungeon.player, (int) Math.floor(damageAmount * 0.3f)));
                     addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 }
             } else {

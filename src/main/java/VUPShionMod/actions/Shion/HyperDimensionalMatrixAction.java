@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class HyperDimensionalMatrixAction extends AbstractGameAction {
-    private int magicNumber;
+    private final int magicNumber;
 
     public HyperDimensionalMatrixAction(int magicNumber) {
         this.magicNumber = magicNumber;

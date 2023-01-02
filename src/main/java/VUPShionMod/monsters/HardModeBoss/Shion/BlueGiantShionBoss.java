@@ -3,10 +3,7 @@ package VUPShionMod.monsters.HardModeBoss.Shion;
 import VUPShionMod.VUPShionMod;
 import VUPShionMod.actions.Common.CustomWaitAction;
 import VUPShionMod.actions.Common.GainShieldAction;
-import VUPShionMod.actions.Unique.BossFinFunnelMinionAction;
-import VUPShionMod.actions.Unique.RemovePlayerBuffAction;
-import VUPShionMod.actions.Unique.TriggerAllBossFinFunnelPassiveAction;
-import VUPShionMod.actions.Unique.TurnTriggerAllBossFinFunnelAction;
+import VUPShionMod.actions.Unique.*;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
 import VUPShionMod.monsters.HardModeBoss.Shion.bossfinfunnels.*;
@@ -14,6 +11,8 @@ import VUPShionMod.patches.AbstractPlayerEnum;
 import VUPShionMod.powers.Monster.BossShion.*;
 import VUPShionMod.powers.Shion.GravitoniumPower;
 import VUPShionMod.skins.SkinManager;
+import VUPShionMod.skins.sk.Shion.BlueGiantShion;
+import VUPShionMod.skins.sk.Shion.OriShion;
 import VUPShionMod.vfx.Atlas.AbstractAtlasGameEffect;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.math.MathUtils;
@@ -99,7 +98,7 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");
 
-
+        addToBot(new VersusEffectAction(BlueGiantShion.ID));
         addToBot(new GainShieldAction(this, 100));
         addToBot(new ApplyPowerAction(this, this, new GravitoniumPower(this)));
 //        addToBot(new ApplyPowerAction(this, this, new PotentialOutbreakPower(this, (int) (this.maxHealth * 0.3f), "Time")));
@@ -202,11 +201,11 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
 
         if (!MinionGroup.areMinionsBasicallyDead()) {
             AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-            if(minion !=null)
-            for (AbstractPower p : minion.powers) {
-                tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
+            if (minion != null)
+                for (AbstractPower p : minion.powers) {
+                    tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
 
-            }
+                }
         }
 
         tmp = AbstractDungeon.player.stance.atDamageReceive(tmp, DamageInfo.DamageType.THORNS);
@@ -223,10 +222,10 @@ public class BlueGiantShionBoss extends AbstractShionBoss {
 
         if (!MinionGroup.areMinionsBasicallyDead()) {
             AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-            if(minion !=null)
-            for (AbstractPower p : minion.powers) {
-                tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
-            }
+            if (minion != null)
+                for (AbstractPower p : minion.powers) {
+                    tmp = p.atDamageFinalReceive(tmp, DamageInfo.DamageType.THORNS);
+                }
         }
 
         dmg = MathUtils.floor(tmp);

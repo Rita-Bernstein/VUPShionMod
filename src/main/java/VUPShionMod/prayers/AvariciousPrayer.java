@@ -33,7 +33,7 @@ public class AvariciousPrayer extends AbstractPrayer {
 
     @Override
     public void updateDescription() {
-        this.description = String.format(this.amount>1? DESCRIPTIONS[1]:DESCRIPTIONS[0], this.amount,this.amount);
+        this.description = String.format(this.amount > 1 ? DESCRIPTIONS[1] : DESCRIPTIONS[0], this.amount, this.amount);
     }
 
     @Override

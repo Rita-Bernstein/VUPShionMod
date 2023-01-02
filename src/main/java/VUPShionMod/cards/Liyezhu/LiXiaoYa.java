@@ -38,8 +38,8 @@ public class LiXiaoYa extends AbstractLiyezhuCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainMaxHPAction(p,this.magicNumber));
-        addToBot(new HealAction(p,p,this.secondaryM));
+        addToBot(new GainMaxHPAction(p, this.magicNumber));
+        addToBot(new HealAction(p, p, this.secondaryM));
     }
 
     @Override

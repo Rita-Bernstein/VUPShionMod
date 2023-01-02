@@ -30,19 +30,20 @@ public class MagiamObruorPower extends AbstractShionPower {
         updateDescription();
         this.type = PowerType.DEBUFF;
 
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MagiamObruorPower128.png")), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(VUPShionMod.assetPath("img/powers/MagiamObruorPower36.png")), 0, 0, 36, 36);
+        loadShionRegion("MagiamObruorPower");
+
+
     }
 
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        for(AbstractPower p : AbstractDungeon.player.powers){
-            if(p instanceof AbstractShionPower){
-                ((AbstractShionPower) p).onStackPower(this);
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof AbstractShionPower) {
+                ((AbstractShionPower) p).onStackPower(this,this.amount);
             }
 
-            if(p instanceof NihilImmensumPower || p instanceof NihilImmensum2Power){
+            if (p instanceof NihilImmensumPower || p instanceof NihilImmensum2Power) {
                 p.onSpecificTrigger();
             }
         }
@@ -53,17 +54,17 @@ public class MagiamObruorPower extends AbstractShionPower {
     public void stackPower(int stackAmount) {
         int before = this.amount;
         super.stackPower(stackAmount);
-        for(AbstractPower p : AbstractDungeon.player.powers){
-            if(p instanceof AbstractShionPower){
-                ((AbstractShionPower) p).onStackPower(this);
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof AbstractShionPower) {
+                ((AbstractShionPower) p).onStackPower(this,this.amount - before);
             }
 
-            if(p instanceof  NihilImmensumPower || p instanceof NihilImmensum2Power){
+            if (p instanceof NihilImmensumPower || p instanceof NihilImmensum2Power) {
                 p.onSpecificTrigger();
             }
         }
 
-        SwardCharge.getSwardCharge().onApplyMagiamObruor(this.amount-before);
+        SwardCharge.getSwardCharge().onApplyMagiamObruor(this.amount - before);
     }
 
     @Override
@@ -75,14 +76,14 @@ public class MagiamObruorPower extends AbstractShionPower {
             addToBot(new ApplyCorGladiiAction(p.amount * this.amount));
         } else {
             addToBot(new LoseEnergyAction(this.amount));
-            for(AbstractPower p : AbstractDungeon.player.powers){
-                if(p instanceof AbstractShionPower){
+            for (AbstractPower p : AbstractDungeon.player.powers) {
+                if (p instanceof AbstractShionPower) {
                     ((AbstractShionPower) p).onTriggerMagiamObruor(this);
                 }
             }
         }
 
-        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player,MagiamObruorPower.POWER_ID));
+        addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, MagiamObruorPower.POWER_ID));
     }
 
     @Override

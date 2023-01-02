@@ -1,6 +1,6 @@
 package VUPShionMod.patches;
 
-import VUPShionMod.cards.ShionCard.AbstractVUPShionCard;
+import VUPShionMod.cards.AbstractVUPShionCard;
 import VUPShionMod.finfunnels.FinFunnelManager;
 import VUPShionMod.minions.AbstractPlayerMinion;
 import VUPShionMod.minions.MinionGroup;
@@ -552,8 +552,8 @@ public class AbstractPlayerPatches {
                     tmp = p.atDamageReceive(tmp, DamageInfo.DamageType.NORMAL);
                 }
 
-                if(target instanceof AbstractVUPShionBoss)
-                tmp = ((AbstractVUPShionBoss)target).stance.atDamageReceive(tmp, DamageInfo.DamageType.NORMAL);
+                if (target instanceof AbstractVUPShionBoss)
+                    tmp = ((AbstractVUPShionBoss) target).stance.atDamageReceive(tmp, DamageInfo.DamageType.NORMAL);
 
 
                 for (AbstractPower p : _instance.powers) {

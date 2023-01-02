@@ -34,14 +34,14 @@ public class MorsLibraque extends AbstractWCCard {
         this.secondaryM = this.baseSecondaryM = 4;
         this.selfRetain = true;
 
-        GraveField.grave.set(this,true);
+        GraveField.grave.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new AbstractAtlasGameEffect("Smoke 037 Radial Transition", Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f,
                 96.0f, 54.0f, 10.0f * Settings.scale, 2, false)));
-        addToBot(new VFXAction(new PortraitWindyPetalEffect("MorsLibraque"),1.0f));
+        addToBot(new VFXAction(new PortraitWindyPetalEffect("MorsLibraque"), 1.0f));
         addToBot(new CustomWaitAction(1.5f));
 
         addToBot(new ApplyPowerAction(p, p, new TurnObruorPower(p, this.magicNumber)));

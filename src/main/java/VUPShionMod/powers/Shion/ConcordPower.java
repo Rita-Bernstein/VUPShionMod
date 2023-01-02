@@ -22,9 +22,7 @@ public class ConcordPower extends AbstractShionPower {
         this.owner = owner;
         this.ID = POWER_ID;
         this.amount = amount;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/ConcordPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/ConcordPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("ConcordPower");
         updateDescription();
     }
 
@@ -39,10 +37,10 @@ public class ConcordPower extends AbstractShionPower {
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
 //        if (type == DamageInfo.DamageType.NORMAL) {
-            if (50 - this.amount > 0)
-                return damage * ((100 - (50 - this.amount)) * 0.01f);
-            else
-                return damage * ((100 + (this.amount - 50))) * 0.01f;
+        if (50 - this.amount > 0)
+            return damage * ((100 - (50 - this.amount)) * 0.01f);
+        else
+            return damage * ((100 + (this.amount - 50))) * 0.01f;
 //        }
 //        return damage;
 
@@ -51,10 +49,10 @@ public class ConcordPower extends AbstractShionPower {
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType) {
 //        if (damageType == DamageInfo.DamageType.NORMAL) {
-            if (50 - this.amount > 0)
-                return damage * ((100 + (50 - this.amount)) * 0.01f);
-            else
-                return damage * ((100 - (this.amount - 50)) * 0.01f);
+        if (50 - this.amount > 0)
+            return damage * ((100 + (50 - this.amount)) * 0.01f);
+        else
+            return damage * ((100 - (this.amount - 50)) * 0.01f);
 //        }
 //        return damage;
     }

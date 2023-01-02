@@ -25,7 +25,7 @@ public class AttackWithDefense extends AbstractShionMinamiCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new MakeLoadedCardAction(new QuickAttack(),this.magicNumber));
+        addToBot(new MakeLoadedCardAction(new QuickAttack(), this.magicNumber));
 //        addToBot(new MakeTempCardInDrawPileAction(new QuickAttack(), this.magicNumber, true, true, false));
         addToBot(new GainBlockAction(p, this.block));
     }

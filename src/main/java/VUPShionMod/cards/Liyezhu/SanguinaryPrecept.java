@@ -37,9 +37,9 @@ public class SanguinaryPrecept extends AbstractLiyezhuCard {
             @Override
             public void update() {
                 if (isInPrayer()) {
-                        addToTop(new ApplyPrayerAction(new SanguinaryPreceptPrayer(secondaryM, magicNumber)));
+                    addToTop(new ApplyPrayerAction(new SanguinaryPreceptPrayer(secondaryM, magicNumber)));
                 }
-                if (isInJudge() ) {
+                if (isInJudge()) {
                     AbstractCard temp = new FlickeringTip();
                     if (upgraded) temp.upgrade();
                     temp.setCostForTurn(0);

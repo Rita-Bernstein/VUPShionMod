@@ -22,9 +22,9 @@ public class FertileSoil extends AbstractEisluRenCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ExhaustDiscardPileAction(p, 1,true));
-        if(this.upgraded)
-        addToBot(new GainRefundChargeAction(this.magicNumber));
+        addToBot(new ExhaustDiscardPileAction(p, 1, true));
+        if (this.upgraded)
+            addToBot(new GainRefundChargeAction(this.magicNumber));
     }
 
     @Override

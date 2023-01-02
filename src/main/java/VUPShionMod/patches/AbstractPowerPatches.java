@@ -4,6 +4,7 @@ import VUPShionMod.powers.AbstractShionPower;
 import VUPShionMod.powers.Wangchuan.CorGladiiPower;
 import VUPShionMod.powers.Wangchuan.SubLunaPower;
 import VUPShionMod.ui.SwardCharge;
+import VUPShionMod.util.ShionImageHelper;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.GameActionManager;
@@ -16,11 +17,36 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import javassist.CtBehavior;
 
 public class AbstractPowerPatches {
+
+    @SpirePatch(
+            clz = CardCrawlGame.class,
+            method = "create"
+    )
+    public static class initializePatch {
+        @SpireInsertPatch(locator = TabNameLocator.class)
+        public static SpireReturn<Void> Insert() {
+            AbstractShionPower.initialize();
+            return SpireReturn.Continue();
+        }
+
+
+        private static class TabNameLocator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher.MethodCallMatcher methodCallMatcher = new Matcher.MethodCallMatcher(AbstractPower.class, "initialize");
+                return LineFinder.findInOrder(ctMethodToPatch, methodCallMatcher);
+            }
+        }
+    }
+
+
     @SpirePatch(
             clz = EmptyDeckShuffleAction.class,
             method = SpirePatch.CONSTRUCTOR

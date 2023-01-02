@@ -31,7 +31,7 @@ public class BlueGiantShion extends AbstractSkin {
 
     public BlueGiantShion(int index) {
         super(ID, index);
-        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Shion/portrait2.png");
+        this.portrait_IMG = ImageMaster.loadImage("VUPShionMod/characters/Shion/portrait.png");
         this.name = uiString.TEXT[0];
         this.flavorText = uiString.TEXT[1];
         this.level = uiString.TEXT[2];
@@ -39,7 +39,7 @@ public class BlueGiantShion extends AbstractSkin {
 
 
         this.portraitAtlasPath = "VUPShionMod/characters/Shion/portrait_spine/Background_ZYLJX_idle";
-        loadAnimation(0.76f);
+        loadAnimation(getScale(0.76f));
         setAnimation();
 
         this.SHOULDER1 = "VUPShionMod/characters/Shion/shoulder2.png";
@@ -53,9 +53,25 @@ public class BlueGiantShion extends AbstractSkin {
 
     }
 
+    private float getScale(float scale) {
+        if (Settings.isFourByThree)
+            return scale * 1.3f;
+
+        if (Settings.isSixteenByTen) {
+            return scale * 1.12f;
+        }
+
+        return scale;
+    }
+
+
     @Override
     public void setPos() {
-        portraitSkeleton.setPosition(-18.0f * Settings.scale, -360.0f * Settings.scale);
+        if (Settings.isFourByThree) {
+            portraitSkeleton.setPosition(-320.0f * Settings.xScale, -360.0f * Settings.yScale);
+        } else {
+            portraitSkeleton.setPosition(-18.0f * Settings.xScale, -360.0f * Settings.yScale);
+        }
     }
 
     @Override

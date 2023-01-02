@@ -22,13 +22,13 @@ public class SupportShieldPrayer extends AbstractEisluRenCard {
         this.baseBlock = 12;
         this.magicNumber = this.baseMagicNumber = 5;
         this.secondaryM = this.baseSecondaryM = 3;
-        this.exhaust =true;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.upgraded)
-        addToBot(new GainShieldAction(p, 7));
+        if (this.upgraded)
+            addToBot(new GainShieldAction(p, 7));
         addToBot(new GainRefundChargeAction(this.magicNumber));
         addToBot(new AddWingShieldDamageReduceCombatAction(this.secondaryM));
     }

@@ -29,7 +29,7 @@ public class ElfSublimation extends AbstractEisluRenCard {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 30;
         this.secondaryM = this.baseSecondaryM = 2;
-        this.selfRetain =true;
+        this.selfRetain = true;
     }
 
     @Override
@@ -41,8 +41,8 @@ public class ElfSublimation extends AbstractEisluRenCard {
             public void update() {
                 if (!MinionGroup.areMinionsBasicallyDead()) {
                     AbstractPlayerMinion minion = MinionGroup.getCurrentMinion();
-                    if(minion !=null)
-                    addToTop(new ApplyPowerAction(minion, p, new IntangiblePlayerPower(minion, secondaryM)));
+                    if (minion != null)
+                        addToTop(new ApplyPowerAction(minion, p, new IntangiblePlayerPower(minion, secondaryM)));
                 }
                 isDone = true;
             }
@@ -50,10 +50,9 @@ public class ElfSublimation extends AbstractEisluRenCard {
     }
 
 
-
     @Override
     public void triggerAfterOtherCardPlayed(AbstractCard card) {
-        if(card instanceof SynchroSummon || card instanceof LifeLinkCard)
+        if (card instanceof SynchroSummon || card instanceof LifeLinkCard)
             updateCost(-1);
     }
 

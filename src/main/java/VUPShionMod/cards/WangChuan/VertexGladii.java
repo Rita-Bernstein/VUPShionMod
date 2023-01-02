@@ -55,13 +55,13 @@ public class VertexGladii extends AbstractWCCard {
         addToBot(new GainBlockAction(p, p, this.block));
 
 
-        addToBot(new ApplyStiffnessAction( 3));
+        addToBot(new ApplyStiffnessAction(3));
 
-        addToBot(new DrawCardAction(2));
+        addToBot(new DrawCardAction(this.timesUpgraded > 1 ? 2 : 1));
 
-        if(timesUpgraded >=2){
+        if (timesUpgraded >= 2) {
             addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
-            addToBot(new ApplyPowerAction(p,p,new IntensaPower(p,1)));
+            addToBot(new ApplyPowerAction(p, p, new IntensaPower(p, 1)));
         }
 
         this.rawDescription = getDescription(timesUpgraded);

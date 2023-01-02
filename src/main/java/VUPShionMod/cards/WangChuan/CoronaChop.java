@@ -61,15 +61,15 @@ public class CoronaChop extends AbstractWCCard {
                     amount += p.getPower(CorGladiiPower.POWER_ID).amount;
                 }
 
-                if(m != null)
-                addToBot(new VFXAction(new AbstractAtlasGameEffect("Red Line", m.hb.cX, m.hb.cY + 720.0f * Settings.scale,
-                        50.0f, 90.0f, 10.0f * Settings.scale, 2, false)));
+                if (m != null)
+                    addToBot(new VFXAction(new AbstractAtlasGameEffect("Red Line", m.hb.cX, m.hb.cY + 720.0f * Settings.scale,
+                            50.0f, 90.0f, 10.0f * Settings.scale, 2, false)));
 
                 addToBot(new ApplyPowerAction(m, p, new BleedingPower(m, p, amount)));
                 addToBot(new ExhaustAction(2, false, true, true));
                 addToBot(new ApplyCorGladiiAction(this.magicNumber));
                 addToBot(new ApplyStiffnessAction(this.secondaryM));
-                addToBot(new ApplyPowerAction(p,p,new MagiamObruorPower(p,1)));
+                addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
                 break;
         }
     }

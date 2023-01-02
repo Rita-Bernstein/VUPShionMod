@@ -14,7 +14,7 @@ public class WingShieldPatches {
     )
     public static class DamagePatch {
         @SpireInsertPatch(rloc = 35, localvars = {"damageAmount"})
-        public static void Insert(AbstractPlayer _instance, DamageInfo info,@ByRef int[] damageAmount) {
+        public static void Insert(AbstractPlayer _instance, DamageInfo info, @ByRef int[] damageAmount) {
             damageAmount[0] = WingShield.getWingShield().onAttackedToChangeDamage(info, damageAmount[0]);
         }
     }

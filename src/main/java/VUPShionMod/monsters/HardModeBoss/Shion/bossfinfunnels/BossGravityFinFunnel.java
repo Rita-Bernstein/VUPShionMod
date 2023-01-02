@@ -25,12 +25,12 @@ public class BossGravityFinFunnel extends AbstractBossFinFunnel {
     public static final String ID = GravityFinFunnel.class.getSimpleName();
     private static final OrbStrings orbStrings = CardCrawlGame.languagePack.getOrbString(VUPShionMod.makeID(GravityFinFunnel.class.getSimpleName()));
 
-    public BossGravityFinFunnel(int level, AbstractCreature owner, int skinIndex){
-        this(level,owner,-1,skinIndex);
+    public BossGravityFinFunnel(int level, AbstractCreature owner, int skinIndex) {
+        this(level, owner, -1, skinIndex);
     }
 
     public BossGravityFinFunnel(int level, AbstractCreature owner, int index, int skinIndex) {
-        super(owner, ID,skinIndex);
+        super(owner, ID, skinIndex);
         upgradeLevel(level);
         this.effect = 1;
 
@@ -134,8 +134,8 @@ public class BossGravityFinFunnel extends AbstractBossFinFunnel {
                 this.state.setAnimation(0, "weapon2_attack", false).setTimeScale(3.0f);
                 this.state.addAnimation(0, "weapon2_idle", true, 0.0F);
             } else {
-                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(2.0f);
-                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0F).setTimeScale(0.5f);
+                this.state.setAnimation(0, "weapon" + (index + 1) + "_attack", false).setTimeScale(1.9f);
+                this.state.addAnimation(0, "weapon" + (index + 1) + "_idle", true, 0.0f).setTimeScale(0.5f);
             }
         }
     }

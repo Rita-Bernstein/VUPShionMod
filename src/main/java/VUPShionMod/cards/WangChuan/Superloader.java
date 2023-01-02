@@ -28,7 +28,7 @@ public class Superloader extends AbstractWCCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new SuperloaderPower(p, this.magicNumber)));
 
-        if(this.upgraded)
+        if (this.upgraded)
             addToBot(new GainEnergyAction(2));
 
         addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));

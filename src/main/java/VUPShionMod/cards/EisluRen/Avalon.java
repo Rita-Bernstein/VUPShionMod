@@ -35,52 +35,52 @@ public class Avalon extends AbstractEisluRenCard {
         this.secondaryM = this.baseSecondaryM = 7;
         this.baseBlock = 12;
         this.magicNumber = this.baseMagicNumber = 2;
-        GraveField.grave.set(this,true);
+        GraveField.grave.set(this, true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        addToBot(new LoseWingShieldAction(this.secondaryM));
+            addToBot(new LoseWingShieldAction(this.secondaryM));
 
-        if(this.upgraded)
-        addToBot(new GainShieldAction(p, 7));
+        if (this.upgraded)
+            addToBot(new GainShieldAction(p, 7));
 
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber)));
 
-        if(this.upgraded) {
+        if (this.upgraded) {
             addToBot(new HealAction(p, p, p.maxHealth));
-            if(!MinionGroup.getMinions().isEmpty())
-            for(AbstractPlayerMinion minion : MinionGroup.getMinions()){
-                if(minion instanceof ElfMinion){
-                    ElfMinion elf = (ElfMinion)minion;
-                    addToBot(new AbstractGameAction() {
-                        @Override
-                        public void update() {
-                            elf.heal(elf.maxHealth,true);
-                            isDone = true;
-                        }
-                    });
+            if (!MinionGroup.getMinions().isEmpty())
+                for (AbstractPlayerMinion minion : MinionGroup.getMinions()) {
+                    if (minion instanceof ElfMinion) {
+                        ElfMinion elf = (ElfMinion) minion;
+                        addToBot(new AbstractGameAction() {
+                            @Override
+                            public void update() {
+                                elf.heal(elf.maxHealth, true);
+                                isDone = true;
+                            }
+                        });
 
-                    continue;
+                        continue;
+                    }
+                    if (minion != null && !minion.isDeadOrEscaped()) {
+                        addToBot(new HealAction(minion, p, minion.maxHealth));
+                    }
                 }
-                if (minion != null && !minion.isDeadOrEscaped()) {
-                    addToBot(new HealAction(minion,p,minion.maxHealth));
-                }
-            }
         }
 
 
-        addToBot(new ApplyPowerAction(p,p,new CoverMinionPower(p)));
+        addToBot(new ApplyPowerAction(p, p, new CoverMinionPower(p)));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!hasTag(CardTagsEnum.NoWingShieldCharge))
-        if (WingShield.getWingShield().getCount() < this.secondaryM) {
-            cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
-            return false;
-        }
+            if (WingShield.getWingShield().getCount() < this.secondaryM) {
+                cantUseMessage = CardCrawlGame.languagePack.getUIString("VUPShionMod:WingShield").TEXT[2];
+                return false;
+            }
 
         return super.canUse(p, m);
     }

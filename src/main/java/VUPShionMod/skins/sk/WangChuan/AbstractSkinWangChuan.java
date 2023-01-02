@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 public class AbstractSkinWangChuan extends AbstractSkinCharacter {
     public AbstractSkinWangChuan() {
         super();
-        if(this.skins.isEmpty()) {
+        if (this.skins.isEmpty()) {
             skins.add(new OriWangChuan(0));
             skins.add(new PurityWangChuan(1));
             skins.add(new AquaWangChuan(2));

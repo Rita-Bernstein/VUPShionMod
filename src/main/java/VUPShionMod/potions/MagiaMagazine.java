@@ -42,7 +42,7 @@ public class MagiaMagazine extends AbstractShionImagePotion {
     public void use(AbstractCreature target) {
         if ((AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
             addToBot(new GainEnergyAction(this.potency));
-            addToBot(new DrawCardAction(this.potency*2));
+            addToBot(new DrawCardAction(this.potency * 2));
         }
     }
 

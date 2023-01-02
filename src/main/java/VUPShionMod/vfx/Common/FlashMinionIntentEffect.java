@@ -13,8 +13,8 @@ public class FlashMinionIntentEffect extends AbstractGameEffect {
     private static final float DURATION = 1.0F;
     private static final float FLASH_INTERVAL = 0.17F;
     private float intervalTimer = 0.0F;
-    private Texture img;
-    private AbstractPlayerMinion m;
+    private final Texture img;
+    private final AbstractPlayerMinion m;
 
     public FlashMinionIntentEffect(Texture img, AbstractPlayerMinion m) {
         this.duration = 1.0F;

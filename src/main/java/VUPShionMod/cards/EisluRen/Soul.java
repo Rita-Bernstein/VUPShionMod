@@ -27,15 +27,15 @@ public class Soul extends AbstractEisluRenCard {
     public Soul() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 300;
-        this.secondaryM = this.baseSecondaryM =2;
+        this.secondaryM = this.baseSecondaryM = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SFXAction("STANCE_ENTER_WRATH"));
         addToBot(new ApplyPowerAction(p, p, new TurnAttackIncreasePower(p, this.magicNumber)));
-        if(this.upgraded)
-        addToBot(new GainEnergyAction(1));
+        if (this.upgraded)
+            addToBot(new GainEnergyAction(1));
         addToBot(new ApplyPowerAction(p, p, new ExtremeOverloadPower(p, this.secondaryM)));
     }
 

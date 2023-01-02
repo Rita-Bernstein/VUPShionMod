@@ -34,7 +34,7 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private AbstractCreature source;
+    private final AbstractCreature source;
 
     public PursuitPower(AbstractCreature owner, AbstractCreature source, int amount) {
         this.name = NAME;
@@ -43,9 +43,7 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
         this.source = source;
         this.amount = amount;
         this.type = PowerType.DEBUFF;
-        this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/PursuitPower128.png"), 0, 0, 128, 128);
-        this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage("VUPShionMod/img/powers/PursuitPower48.png"), 0, 0, 48, 48);
-
+        loadShionRegion("PursuitPower");
         updateDescription();
     }
 
@@ -63,9 +61,9 @@ public class PursuitPower extends AbstractShionPower implements HealthBarRenderP
             flash();
 
             boolean hasPur = false;
-            if (!FinFunnelManager.getFinFunnelList().isEmpty()){
-                for(AbstractFinFunnel finFunnel   :FinFunnelManager.getFinFunnelList()){
-                    if(finFunnel instanceof PursuitFinFunnel){
+            if (!FinFunnelManager.getFinFunnelList().isEmpty()) {
+                for (AbstractFinFunnel finFunnel : FinFunnelManager.getFinFunnelList()) {
+                    if (finFunnel instanceof PursuitFinFunnel) {
                         hasPur = true;
                         break;
                     }

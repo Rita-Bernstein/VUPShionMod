@@ -1,5 +1,6 @@
 package VUPShionMod.vfx.Atlas;
 
+import VUPShionMod.util.ShionImageHelper;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
@@ -27,7 +28,11 @@ public class LayerAnimation {
 
     void update() {
         if (currFrameIndex >= frames.size()) {
-            return;
+            if (!loop) {
+                isDone = true;
+                return;
+            } else
+                currFrameIndex = 0;
         }
 
         currFrame = frames.get(currFrameIndex).makeCopy();
@@ -35,13 +40,6 @@ public class LayerAnimation {
         if (currDelay >= currFrame.delay) {
             currFrameIndex++;
             currDelay = 0;
-        }
-
-        if (currFrameIndex >= frames.size()) {
-            if (!loop)
-                isDone = true;
-            else
-                currFrameIndex = 0;
         }
     }
 
@@ -54,6 +52,15 @@ public class LayerAnimation {
 
             if (atlas != null) {
                 TextureAtlas.AtlasRegion img = atlas.findRegion(spriteSheetId + String.format("_%05d", currFrameIndex));
+
+//                ShionImageHelper.renderScreenTexture(sb, ShionImageHelper.getScreenTexture(sb, sb1 -> sb.draw(img,
+//                        rootPositionX - currFrame.originalX,
+//                        rootPositionY - currFrame.originalY,
+//                        currFrame.originalX,
+//                        currFrame.originalY,
+//                        img.packedWidth, img.packedHeight,
+//                        currFrame.xScale, currFrame.yScale,
+//                        0.0F)), flipX);
 
 
                 sb.draw(img.getTexture(),

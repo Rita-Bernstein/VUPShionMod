@@ -21,20 +21,18 @@ public class RitaShop extends AbstractVUPShionBoss {
     public static final String[] DIALOG = monsterStrings.DIALOG;
 
 
-
-    private int timeLimit = 4;
-
+    private final int timeLimit = 4;
 
 
     public RitaShop() {
         super(NAME, ID, 160, 0.0F, 8.0F, 300.0F, 380.0F, "VUPShionMod/img/monsters/Rita/maid/MaidRita.png", 0.0F, -30.0F);
         if (AbstractDungeon.ascensionLevel >= 9) {
-            setHp(630);
+            setHp(560);
         } else {
-            setHp(600);
+            setHp(500);
         }
 
-        this.type = AbstractMonster.EnemyType.BOSS;
+        this.type = EnemyType.ELITE;
         this.dialogX = -50.0F * Settings.scale;
         this.dialogY = 50.0F * Settings.scale;
 
@@ -103,14 +101,6 @@ public class RitaShop extends AbstractVUPShionBoss {
                 CardCrawlGame.sound.play(VUPShionMod.makeID("RitaB_Hit" + MathUtils.random(5)));
             }
         }
-    }
-
-
-    @Override
-    public void update() {
-        super.update();
-
-
     }
 }
 

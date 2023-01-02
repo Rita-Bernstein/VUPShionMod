@@ -12,13 +12,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class DamageAndApplyPursuitAction extends AbstractGameAction {
-    private DamageInfo info;
-    private boolean applyPower;
-    private boolean gainBlock;
-    private int times;
-    private int pursuitAmount;
+    private final DamageInfo info;
+    private final boolean applyPower;
+    private final boolean gainBlock;
+    private final int times;
+    private final int pursuitAmount;
 
-    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info,int times, boolean applyPower,boolean gainBlock,int pursuitAmount) {
+    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info, int times, boolean applyPower, boolean gainBlock, int pursuitAmount) {
         this.info = info;
         setValues(target, info);
         this.actionType = ActionType.DAMAGE;
@@ -30,7 +30,7 @@ public class DamageAndApplyPursuitAction extends AbstractGameAction {
         this.pursuitAmount = pursuitAmount;
     }
 
-    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info,int times, boolean applyPower,int pursuitAmount){
+    public DamageAndApplyPursuitAction(AbstractCreature target, DamageInfo info, int times, boolean applyPower, int pursuitAmount) {
         this.info = info;
         setValues(target, info);
         this.actionType = ActionType.DAMAGE;
@@ -52,16 +52,16 @@ public class DamageAndApplyPursuitAction extends AbstractGameAction {
         tickDuration();
 
         if (this.isDone) {
-            for(int i = 0;i <times;i++){
+            for (int i = 0; i < times; i++) {
                 AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.FIRE, false));
                 this.target.damage(this.info);
             }
 
             if (this.target.lastDamageTaken > 0) {
-                if(gainBlock)
+                if (gainBlock)
                     addToTop(new GainBlockAction(this.source, (int) Math.floor(this.target.lastDamageTaken)));
-                if (!this.target.isDeadOrEscaped() && applyPower && pursuitAmount >0) {
-                    addToTop(new ApplyPowerAction(this.target, this.target, new PursuitPower(this.target,  AbstractDungeon.player,pursuitAmount)));
+                if (!this.target.isDeadOrEscaped() && applyPower && pursuitAmount > 0) {
+                    addToTop(new ApplyPowerAction(this.target, this.target, new PursuitPower(this.target, AbstractDungeon.player, pursuitAmount)));
                 }
             }
 

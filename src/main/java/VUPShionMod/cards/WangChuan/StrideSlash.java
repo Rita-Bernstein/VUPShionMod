@@ -39,19 +39,19 @@ public class StrideSlash extends AbstractWCCard {
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new ApplyCorGladiiAction(this.magicNumber));
 
-        if(this.timesUpgraded>=2)
-        if (p.hasPower(CorGladiiPower.POWER_ID)) {
-            int temp = this.baseDamage;
-            this.baseDamage = p.getPower(CorGladiiPower.POWER_ID).amount + this.magicNumber;
-            calculateCardDamage(m);
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            this.baseDamage = temp;
-        }
+        if (this.timesUpgraded >= 2)
+            if (p.hasPower(CorGladiiPower.POWER_ID)) {
+                int temp = this.baseDamage;
+                this.baseDamage = p.getPower(CorGladiiPower.POWER_ID).amount + this.magicNumber;
+                calculateCardDamage(m);
+                addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                this.baseDamage = temp;
+            }
 
         addToBot(new DrawCardAction(1));
-        if(this.timesUpgraded>=2)
-        addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
+        if (this.timesUpgraded >= 2)
+            addToBot(new ApplyPowerAction(p, p, new MagiamObruorPower(p, 1)));
     }
 
     @Override

@@ -43,7 +43,7 @@ public class CombatNotes extends AbstractShionRelic {
 
     @Override
     public void atTurnStartPostDraw() {
-        if(!this.isEliteOrBoss){
+        if (!this.isEliteOrBoss) {
             flash();
             addToBot(new GainEnergyAction(1));
         }

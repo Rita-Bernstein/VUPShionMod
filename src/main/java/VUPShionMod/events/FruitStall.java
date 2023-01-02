@@ -26,21 +26,24 @@ public class FruitStall extends AbstractImageEvent {
 
     private int screenCount = 0;
 
-    private boolean[] Fruit = new boolean[]{false, false, false, false};
+    private final boolean[] Fruit = new boolean[]{false, false, false, false};
 
     private int StrawberryGold = 72;
     private int MANGOGold = 40;
     private int PEARGold = 36;
 
     private int goldLoss = 100;
+    private int maxHpGain = 0;
 
-    private AbstractRelic cake = new FruitCake();
+    private final AbstractRelic cake = new FruitCake();
 
 
     public FruitStall() {
         super(NAME, DESCRIPTIONS[0], VUPShionMod.assetPath("img/events/FruitStall.png"));
 
         getPlayerFruit();
+
+        maxHpGain = Math.max(10, AbstractDungeon.player.maxHealth / 5);
 
         if (AbstractDungeon.ascensionLevel >= 15) {
             this.StrawberryGold = 60;
@@ -68,12 +71,12 @@ public class FruitStall extends AbstractImageEvent {
     private void refreshMainScreen() {
         imageEventText.updateBodyText(DESCRIPTIONS[2]);
         imageEventText.clearRemainingOptions();
-        imageEventText.optionList.set(0, new LargeDialogOptionButton(0, OPTIONS[3], cake));
+        imageEventText.optionList.set(0, new LargeDialogOptionButton(0, OPTIONS[3]));
 
         if (AbstractDungeon.player.gold >= this.goldLoss) {
-            imageEventText.updateDialogOption(1, String.format(OPTIONS[4], this.goldLoss));
+            imageEventText.updateDialogOption(1, String.format(OPTIONS[4], this.goldLoss, maxHpGain));
         } else {
-            imageEventText.updateDialogOption(1, String.format(OPTIONS[5], this.goldLoss), true);
+            imageEventText.updateDialogOption(1, String.format(OPTIONS[5], this.goldLoss, maxHpGain), true);
         }
 
         if (Fruit[3]) {
@@ -115,20 +118,19 @@ public class FruitStall extends AbstractImageEvent {
                     case 0:
                         imageEventText.updateBodyText(DESCRIPTIONS[3]);
                         imageEventText.clearRemainingOptions();
-                        imageEventText.updateDialogOption(0, OPTIONS[11]);
+                        imageEventText.optionList.set(0, new LargeDialogOptionButton(0, OPTIONS[11], cake));
                         imageEventText.updateDialogOption(1, OPTIONS[12], true);
                         imageEventText.updateDialogOption(2, OPTIONS[13], true);
                         this.imageEventText.loadImage("VUPShionMod/img/events/FruitStall2.png");
 
                         this.screenCount = 30;
-                        if (!AbstractDungeon.player.hasRelic(FruitCake.ID))
-                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH * 0.5f, Settings.HEIGHT * 0.5f, cake);
+
                         break;
                     case 1:
                         imageEventText.updateBodyText(DESCRIPTIONS[4]);
                         imageEventText.clearRemainingOptions();
                         AbstractDungeon.player.loseGold(this.goldLoss);
-                        AbstractDungeon.player.increaseMaxHp(10, true);
+                        AbstractDungeon.player.increaseMaxHp(maxHpGain, true);
                         imageEventText.updateDialogOption(0, OPTIONS[8]);
                         this.screenCount = 40;
                         break;
@@ -211,10 +213,7 @@ public class FruitStall extends AbstractImageEvent {
     private void steal() {
         (AbstractDungeon.getCurrRoom()).monsters = MonsterHelper.getEncounter(RitaShop.ID);
         (AbstractDungeon.getCurrRoom()).rewards.clear();
-        AbstractDungeon.getCurrRoom().addPotionToRewards(new FruitJuice());
-        AbstractDungeon.getCurrRoom().addPotionToRewards(new FruitJuice());
         AbstractDungeon.getCurrRoom().addGoldToRewards(100);
-//        AbstractDungeon.getCurrRoom().addRelicToRewards(new FruitCake());
         enterCombatFromImage();
 
     }

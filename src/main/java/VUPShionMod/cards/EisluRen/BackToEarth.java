@@ -45,7 +45,7 @@ public class BackToEarth extends AbstractEisluRenCard {
             }
         });
 
-      addToBot(new ExhaustAllStatusAndCurseAction());
+        addToBot(new ExhaustAllStatusAndCurseAction());
 
         addToBot(new RemoveDebuffsAction(p));
 

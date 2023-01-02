@@ -46,7 +46,7 @@ public class FaithLeap extends AbstractEisluRenCard {
                         isDone = true;
                     }
                 });
-        }else {
+        } else {
             if (AbstractDungeon.cardRandomRng.random(99) < 35)
                 addToBot(new DamageAction(p, new DamageInfo(p, 15, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 

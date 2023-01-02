@@ -31,8 +31,6 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
     }
 
 
-
-
     private void exhaustCard(AbstractCard card) {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.uuid.equals(card.uuid)) {
@@ -56,8 +54,8 @@ public class RuinGuardianStanceAction extends AbstractGameAction {
         }
     }
 
-    private boolean canAddCard(AbstractCard c){
-        return c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID)&& !c.cardID.equals(GaiaBreath.ID);
+    private boolean canAddCard(AbstractCard c) {
+        return c.type == AbstractCard.CardType.SKILL && !c.cardID.equals(Apparition.ID) && !c.cardID.equals(GaiaBreath.ID);
     }
 
     public void update() {
